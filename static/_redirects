@@ -1,10 +1,11 @@
 # OpenMS web site redirect file for Netlify
-# Version 1.1 by Rahul Agrawal, Juliuanus Pfeuffer and Tjeerd Dijkstra
+# Version 1.2 by Rahul Agrawal, Juliuanus Pfeuffer and Tjeerd Dijkstra
 /current_doxygen/*  https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/:splat  200
 /develop_doxygen/* https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/:splat  200
 /doxygen/* https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/:splat  200
 #
 /rtd_documentation/* https://openms.readthedocs.io/en/latest/:splat 200
+/documentation/ https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html  200
 /documentation/* https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/:splat  200
 #
 /download https://github.com/OpenMS/OpenMS/releases/latest  200
