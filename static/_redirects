@@ -1,21 +1,21 @@
 # OpenMS web site redirect file for Netlify
 # Version 1.1 by Rahul Agrawal, Juliuanus Pfeuffer and Tjeerd Dijkstra
-/current_doxygen/*  https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/:splat  200
-/develop_doxygen/* https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/:splat  200
-/doxygen/* https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/:splat  200
+/current_doxygen/*  https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/:splat  200!
+/develop_doxygen/* https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/:splat  200!
+/doxygen/* https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/:splat  200!
 #
-/rtd_documentation/* https://openms.readthedocs.io/en/latest/:splat 200
-/documentation/* https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/:splat  200
+/rtd_documentation/* https://openms.readthedocs.io/en/latest/:splat 200!
+/documentation/* https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/:splat  200!
 #
-/download https://github.com/OpenMS/OpenMS/releases/latest  200
+/download https://github.com/OpenMS/OpenMS/releases/latest  200!
 #
-/team /teams/ 200
+/team /teams/ 200!
 #
-/xml-stylesheet/* https://raw.githubusercontent.com/OpenMS/OpenMS/develop/share/OpenMS/XSL/:splat  200
-/xml-schema/* https://raw.githubusercontent.com/OpenMS/OpenMS/develop/share/OpenMS/SCHEMAS/:splat  200
+/xml-stylesheet/* https://raw.githubusercontent.com/OpenMS/OpenMS/develop/share/OpenMS/XSL/:splat  200!
+/xml-schema/* https://raw.githubusercontent.com/OpenMS/OpenMS/develop/share/OpenMS/SCHEMAS/:splat  200!
 # publication related links go here
-/epifany /application/epifany 200
-/FLASHDeconv /application/FLASHDeconv 200
-/FLASHIda /application/FLASHIda 200
-/openpepxl /application/openpepxl 200
-/nase /application/nase 200
+/epifany /application/epifany 200!
+/FLASHDeconv /application/FLASHDeconv 200!
+/FLASHIda /application/FLASHIda 200!
+/openpepxl /application/openpepxl 200!
+/nase /application/nase 200!
