@@ -23,7 +23,7 @@ _1 Sep 2022_ The OpenMS team is proud to present a new OpenMS manual at openms.r
 
 _14 Apr 2022_ The OpenMS team has won a 2022 Google Season of Docs grant to update the OpenMS documentation. Combined with money from the University of Tübingen and from the Chan-Zuckerberg Initiative, a team of three technical writers will review and rewrite OpenMS documentation. The 2022 team consists of Rahul Agrawal, Christina Kumar and Tapasweni Pathak.
 
-### Summary of the OpenMS developer meeting 2022
+### Summary of the OpenMS developer meeting 2022 {#devmeeting-2022}
 
 The OpenMS developer meeting 2022 near Corinth, Greece was a highly successful gathering of OpenMS developers and those interested in becoming one. The meeting was filled with insightful presentations, productive breakout sessions, and engaging social events.
 
