@@ -5,13 +5,14 @@
 # For an explanation of the hack with the addSlash function for redirects without trailing slash, see https://answers.netlify.com/t/bug-in-non-trailing-slash-rewrite/452/39
 
 /current_doxygen    /.netlify/functions/addSlash  200
-/current_doxygen/*  https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/:splat  200
+/current_doxygen/*  /doxygen/release/latest/:splat  200
+
+/develop_doxygen.   /.netlify/functions/addSlash  200
+/develop_doxygen/*  /doxygen/nightly/:splat  200
 
 /documentation      /.netlify/functions/addSlash  200
-/documentation/*    https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/:splat  200
+/documentation/*    /doxygen/release/latest/:splat  200
 
-/develop_doxygen    /.netlify/functions/addSlash  200
-/develop_doxygen/*  https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/:splat  200
 
 ## should never be called as openms.de/doxygen. Only to be used as openms.de/doxygen/release/2.9.0 for example.
 /doxygen/*          https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/:splat  200
