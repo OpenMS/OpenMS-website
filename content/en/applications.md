@@ -24,11 +24,11 @@ FLASHIda beta version (under construction)
 {{< /notice >}}
 ***
 
-### Quantification for Top-down Proteomics (FLASHDECONVQ)
+### Quantification for Top-down Proteomics (FLASHQUANT)
 
-FLASHDeconvQ performs MS1-level label-free quantification data analysis in top-down proteomics with an automatic coeluting proteoform resolution method. 
+FLASHQuant performs MS1-level label-free quantification data analysis in top-down proteomics with an automatic overlapping signal resolution method. 
 
-To read more about it, please click <a href="/application/flashdeconvq/">here</a>.
+To read more about it, please click <a href="/application/flashquant/">here</a>.
 
 ***
 
