@@ -62,6 +62,7 @@ languages:
           subtitle: Enhance workflows with pyOpenMS scripts or develop novel methods using pyOpenMS
           leftAlign: true
           image: pyopenms_logo.png
+          # use special image class for custom scaling of pyopenms logo
           imgClass: pyopenms-img
           bottomBorderRadius: true
           buttonText: Get Started
