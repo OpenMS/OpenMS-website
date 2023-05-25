@@ -61,7 +61,7 @@ languages:
         - title: Use OpenMS in Python
           subtitle: Enhance workflows with pyOpenMS scripts or develop novel methods using pyOpenMS
           leftAlign: true
-          image: pyopenms4.png
+          image: pyopenms_logo.png
           imgClass: pyopenms-img
           bottomBorderRadius: true
           buttonText: Get Started
