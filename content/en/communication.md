@@ -12,9 +12,9 @@ OpenMS is a community-driven open source project developed by a diverse group of
 Here's how to get started:
 
 - 📚 Browse through the main library code under [OpenMS/OpenMS](https://github.com/openms/openms/issues)
-- 👩‍💻 Check out the [documentation](https://www.openms.de/documentation).
+- 👩‍💻 Check out the [documentation](https://openms.readthedocs.io/en/latest/index.html).
 - 🙋‍♀️ Come and say hi on our [![Discord Shield](https://img.shields.io/discord/832282841836159006?style=flat-square&message=Discord&color=5865F2&logo=Discord&logoColor=FFFFFF&label=Discord)](https://discord.gg/4TAGhqJ7s5) or [![Gitter](https://img.shields.io/static/v1?style=flat-square&message=on%20Gitter&color=ED1965&logo=Gitter&logoColor=FFFFFF&label=Chat)](https://gitter.im/OpenMS/OpenMS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) channels.
-- 🍿 Tune in for news about developer/user meetings and events, [get involved](/news)!
+- 🍿 Tune in for news about developer/user meetings and events, [get involved]({{< ref "news.md" >}})!
 - 🌈 Please abide by our [community code of conduct](https://github.com/OpenMS/OpenMS/blob/develop/CODE_OF_CONDUCT.md)
 
 We offer several communication channels to learn, share your knowledge and connect with others within the OpenMS community.

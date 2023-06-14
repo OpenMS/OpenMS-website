@@ -98,7 +98,7 @@ languages:
         - title: Workflows
           text: Every tool that is developed within OpenMS is available on flexible, scalable and easy-to-use workflow engines (such as KNIME, Galaxy, and nextflow) facilitating reproducible science.
           img: /images/content_images/keyfeatures/workflows2.png
-          url: /keyfeatures/workflows
+          url: https://openms.readthedocs.io/en/latest/run-workflows-with-openms-tools/recommended-workflow-systems.html
       section5: false
     
     navbar:

@@ -26,10 +26,10 @@ As output OpenPepXL supports
 
 ## Beginners: use OpenPepXL through the workflow manager KNIME
 
-To use OpenPepXL in KNIME, first install the newest KNIME release and install OpenMS 2.5 through the KNIME community contributions. Instructions are at www.openms.de/getting-started/creating-workflows/).
+To use OpenPepXL in KNIME, first install the newest KNIME release and install OpenMS 2.5 through the KNIME community contributions. Instructions are at https://openms.readthedocs.io/en/latest/run-workflows-with-openms-tools/knime/installation.html).
 
 For a general introduction to KNIME and OpenMS start here:
-https://www.openms.de/getting-started/creating-workflows/
+https://openms.readthedocs.io/en/latest/run-workflows-with-openms-tools/knime/installation.html
 Building workflows is done by finding tools in the tool list (e.g. by text search) and dragging and dropping their nodes on the workflow pane. The output from one node can be connected to the input of another node by dragging the mouse from one port to another. The ports are the rectangular or triangular symbols on the left and right sides of tool nodes. Inputs are always on the left, outputs on the right. Each node can be configured by double-clicking on its icon or right-clicking and selecting the configure option. A pop-up window will then list the parameters of the node. The figures below show example workflows for OpenPepXL (labeled cross-linkers) and OpenPepXLLF (unlabeled cross-linkers).
 
 

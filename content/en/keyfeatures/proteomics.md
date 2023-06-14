@@ -6,7 +6,7 @@ sidebar: false
 {{< figure src="/images/content_images/kf/PROTEINS.jpeg" >}}
 
 OpenMS provides a large amount of tools to analyse your proteomics datasets.
-Starting from input files in either vendor-specific raw formats (convertible with the integrated ProteoWizard) or a number of open HUPO-compliant formats (mzML, mzXML), you can process your data by simply combining a set of our almost 200 ready-made tools from „The OpenMS proteomics pipeline (TOPP)”. These tools are available on the [command line](https://www.openms.de/getting-started/command-line-and-visualisations/), from within [workflow engines](https://www.openms.de/getting-started/creating-workflows/) (e.g. KNIME and Galaxy) and a subset of them was packaged as [ProteomeDiscoverer 2.x plugin](http://www.openms.de/getting-started/proteome-and-compound-discoverer-integration/).
+Starting from input files in either vendor-specific raw formats (convertible with the integrated ProteoWizard) or a number of open HUPO-compliant formats (mzML, mzXML), you can process your data by simply combining a set of our almost 200 ready-made tools from „The OpenMS proteomics pipeline (TOPP)”. These tools are available from the [command line](https://openms.readthedocs.io/en/latest/openms-applications-and-tools/command-line-interface.html) and from within [workflow engines](https://openms.readthedocs.io/en/latest/run-workflows-with-openms-tools/recommended-workflow-systems.html) (e.g. KNIME and Galaxy).
 
 #### TOOL CATEGORIES
 
@@ -46,4 +46,4 @@ A full list of the tools can be found in our documentation [here](https://abibui
 
 #### NOT ENOUGH?
 
-If you do not find what you are looking for and you have some experience in developing C++, you can adapt, extend as well as add new tools by contributing to our library or using the library in your own project (see our [“Getting Started for developers”](https://www.openms.de/getting-started/develop-your-own-openms-tools/)).
+If you do not find what you are looking for and you have some experience in developing C++, you can adapt, extend as well as add new tools by contributing to our library or using the library in your own project (see our [“Getting Started”](https://openms.readthedocs.io/en/latest/tutorials-and-quickstart-guides/guides/contributors-quickstart-guide.html)).
