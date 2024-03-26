@@ -116,7 +116,6 @@ languages:
           icon: twitter
         quicklinks:
           column1:
-            title: ""
             links:
               - text: Install
                 link: https://openms.readthedocs.io/en/latest/openms-applications-and-tools/installation.html
@@ -124,11 +123,8 @@ languages:
                 link: https://openms.readthedocs.io/en/latest/
               - text: Citing OpenMS
                 link: /citing-openms
-      
           column2:
             links:
-              - text: About us
-                link: /about
               - text: Community
                 link: /communication
               - text: Contribute
@@ -137,17 +133,23 @@ languages:
                 link: /code-of-conduct
           column3:
             links:
+              - text: About us
+                link: /about
               - text: Help
                 link: /help
+              - text: Jobs
+                link: /jobs
+          column4:
+            links:
               - text: Terms of use
                 link: /terms
               - text: Privacy
                 link: /privacy
               - text: Press kit
                 link: /press-kit
-              - text: Jobs
-                link: /jobs
-    
+              - text: Impressum
+                link: /impressum
+
     navbar:
       - title: News
         url: /news
