@@ -10,12 +10,12 @@ When:  17 and 18 October 2024.<br>
 Where: KNIME GmbH, Körtestr. 10, 10967 Berlin, Germany.<br>
 What:
 1.	Basic introduction to data analysis with OpenMS (2 days, 17-18 Oct) led by Sam Wein.
-2.	Advanced Tutorial: programming with pyOpenMS (1 day, 17 Oct) led by Matteo Pilz.
-3.	Advanced Tutorial: web-apps with OpenMS (1 day, 18 Oct) led by Axel Walter.
-4.	Advanced Tutorial: top-down proteomics with OpenMS (1 day, 17 Oct) led by Kyowon Jeong.
-5.	Advanced Tutorial: DIA proteomics with OpenSwath/OpenMS (1 day, 18 Oct) led by Joshua Charkow.
+2.	Advanced Tutorial: pyOpenMS and web-apps (1 day, 17 Oct) led by Matteo Pilz and Axel Walter.
+3.	Advanced Tutorial: top-down proteomics with OpenMS (1 day, 17 Oct) led by Kyowon Jeong.
+4.	Advanced Tutorial: DIA proteomics with OpenSwath/OpenMS (1 day, 18 Oct) led by Joshua Charkow.
 
 Registration is 200 Euros for Thursday the 17th (including coffee/tea, lunch, dinner and poster session), 150 Euros for Friday the 18th (including coffee/tea and lunch) and 300 Euros for both days combined.<br>
+After 1 September 2024, registration fees are 250 Euros for Thursday the 17th, 200 Euros for Friday the 18th and 400 Euros for both days combined.<br>
 The meeting is planned such that one can attend the OpenMS user meeting in Berlin 17-18 October and [HUPO](https://2024.hupo.org) in Dresden 20-24 October 2024. Note that HUPO requires separate registration.
 <br>
 [Click here to register](https://docs.google.com/forms/d/1hGBNNXHtxGyk6MO6EiKHNhbrPbklLhBnAqKwZ2O-ZuU)
