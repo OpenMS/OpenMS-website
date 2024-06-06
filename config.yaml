@@ -41,10 +41,10 @@ languages:
         # Button text
         buttontext: Get started
         # Where the main hero button links to
-        buttonlink: https://openms.readthedocs.io/en/latest/openms-applications-and-tools/installation.html
+        buttonlink: https://openms.readthedocs.io/en/latest/about/installation.html
         # Hero image (from static/images/___)
         image: openms-logo.png
-    
+
       heroGroup:
         - title: "OpenMS allows users to:"
           bgColor: ECF2F9
@@ -54,12 +54,12 @@ languages:
             leftAlign: true
             image: knime-analytics.png
             buttonText: Get Started
-            buttonLink: "https://openms.readthedocs.io/en/latest/run-workflows-with-openms-tools/openms-in-knime.html"
+            buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/knime-get-started.html"
           - title: Create your own workflows
             subtitle: Modify and create your own OpenMS workflows in Galaxy, KNIME and Nextflow.
             image: knime-edit.png
             buttonText: Get Started
-            buttonLink: "https://openms.readthedocs.io/en/latest/run-workflows-with-openms-tools/recommended-workflow-systems.html"
+            buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/workflows.html"
           - title: Use OpenMS in Python
             subtitle: Enhance workflows with pyOpenMS scripts or develop novel methods using pyOpenMS
             leftAlign: true
@@ -77,7 +77,7 @@ languages:
             imgClass: img-fit
             image: nf-core-logo.png
             buttonText: Get Started
-            buttonLink: "https://openms.readthedocs.io/en/latest/run-workflows-with-openms-tools/openms-in-nextflow.html"
+            buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/nextflow-get-started.html"
           - title: Create high-performance tools
             subtitle: Develop high-performance tools or algorithms with the C++ OpenMS library
             terminal: true
@@ -100,7 +100,7 @@ languages:
         - title: Workflows
           text: Every tool that is developed within OpenMS is available on flexible, scalable and easy-to-use workflow engines (such as KNIME, Galaxy, and nextflow) facilitating reproducible science.
           img: /images/content_images/keyfeatures/workflows2.png
-          url: https://openms.readthedocs.io/en/latest/run-workflows-with-openms-tools/recommended-workflow-systems.html
+          url: https://openms.readthedocs.io/en/latest/getting-started/workflows.html
           
       section5: false
 
@@ -116,19 +116,15 @@ languages:
           icon: twitter
         quicklinks:
           column1:
-            title: ""
             links:
               - text: Install
-                link: https://openms.readthedocs.io/en/latest/openms-applications-and-tools/installation.html
+                link: https://openms.readthedocs.io/en/latest/about/installation.html
               - text: Documentation
                 link: https://openms.readthedocs.io/en/latest/
               - text: Citing OpenMS
                 link: /citing-openms
-      
           column2:
             links:
-              - text: About us
-                link: /about
               - text: Community
                 link: /communication
               - text: Contribute
@@ -137,22 +133,28 @@ languages:
                 link: /code-of-conduct
           column3:
             links:
+              - text: About us
+                link: /about
               - text: Help
                 link: /help
+              - text: Jobs
+                link: /jobs
+          column4:
+            links:
               - text: Terms of use
                 link: /terms
               - text: Privacy
                 link: /privacy
               - text: Press kit
                 link: /press-kit
-              - text: Jobs
-                link: /jobs
-    
+              - text: Impressum
+                link: /impressum
+
     navbar:
       - title: News
         url: /news
       - title: Install
-        url: https://openms.readthedocs.io/en/latest/openms-applications-and-tools/installation.html
+        url: https://openms.readthedocs.io/en/latest/about/installation.html
       - title: Documentation
         url: https://openms.readthedocs.io/en/latest/index.html
       - title: Community
@@ -161,6 +163,8 @@ languages:
             url: /communication
           - title: Contribute
             url: /contribute
+          - title: Awards
+            url: /news/fellowship2024
         url: /community
       - title: About Us
         sublinks:

@@ -56,6 +56,6 @@ Documentation on how to use OpenMS in python can be found here: [pyOpenMS](https
 
 ### OpenMS in KNIME
 
-An introductory tutorial for using OpenMS tools in workflows using KNIME can be found in our documentation [OpenMS KNIME User Tutorial](https://openms.readthedocs.io/en/latest/run-workflows-with-openms-tools/knime/tutorial.html).
+An introductory tutorial for using OpenMS tools in workflows using KNIME can be found in our documentation [OpenMS KNIME User Tutorial](https://openms.readthedocs.io/en/latest/tutorials/knime-user-tutorial.html).
 
 A general quick start guide for KNIME can be found [here](https://tech.knime.org/files/KNIME_quickstart.pdf) and the documentation for the KNIME Analytics Platform [here](https://tech.knime.org/documentation). There is also a separate forum for our community nodes in the KNIME community forums [here](https://tech.knime.org/forum/openms).
