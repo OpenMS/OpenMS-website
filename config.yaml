@@ -101,7 +101,24 @@ languages:
           text: Every tool that is developed within OpenMS is available on flexible, scalable and easy-to-use workflow engines (such as KNIME, Galaxy, and nextflow) facilitating reproducible science.
           img: /images/content_images/keyfeatures/workflows2.png
           url: https://openms.readthedocs.io/en/latest/run-workflows-with-openms-tools/recommended-workflow-systems.html
-          
+
+      hextra:
+      - url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
+        title: FLASHTaggerViewer
+        description: visualize output from FLASH* tools.
+        image: images/webapp/FLASHTaggerviewer.png
+      - url: https://abi-services.cs.uni-tuebingen.de/nuxl/
+        title: NuXL
+        description: A specialized protein nucleic-acid crosslink search engine.
+        image: images/webapp/nuxl.jpg
+      - url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
+        title: UmetaFlow
+        description: A universal metabolomics tool
+        image: images/webapp/umetaflow.png
+
+
+
+
       section5: false
 
       footer:

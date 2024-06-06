@@ -23,7 +23,9 @@
     {{ partial "heroitems.html" . }}
     {{ end }}
 
+    {{ if .Site.Params.hextra }}
     {{ partial "hextra.html" . }}  
+    {{ end }}
     
     {{ partial "quick-facts.html" . }}
 
