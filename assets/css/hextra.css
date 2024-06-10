@@ -58,6 +58,16 @@ body {
 3. Ensure horizontal rules are visible by default.
 */
 
+.hextra {
+  margin: 15px 0;
+}
+
+.hextra .container {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+}
+
 hr {
   height: 0; /* 1 */
   color: inherit; /* 2 */

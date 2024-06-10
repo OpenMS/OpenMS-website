@@ -18,14 +18,15 @@
     {{ if .Site.Params.keyfeatures }}
     {{ partial "keyfeatures.html" . }}
     {{ end }}
+
+    {{ if .Site.Params.hextra }}
+    {{ partial "hextra.html" . }}  
+    {{ end }}
     
     {{ if .Site.Params.heroGroup }}
     {{ partial "heroitems.html" . }}
     {{ end }}
 
-    {{ if .Site.Params.hextra }}
-    {{ partial "hextra.html" . }}  
-    {{ end }}
     
     {{ partial "quick-facts.html" . }}
 

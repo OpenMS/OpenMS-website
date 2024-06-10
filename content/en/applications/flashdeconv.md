@@ -69,11 +69,7 @@ FLASHDeconv basic parameters are found by simply running FLASHDeconv. Only -in a
 |**write_detail**|To write peak information per deconvolved mass in detail or not in tsv files for deconvolved spectra. If set to 1, all peak information (m/z, intensity, charge and isotope index) per mass is reported.|
 |**precursor_snr <snr value>**|Precursor SNR threshold for TopFD MS2 msalign tsv files. (default: '1.0')|
 |**min_mz <m/z value>**|If set to positive value, minimum m/z to deconvolve. (default: '-1.0')|
-<<<<<<< HEAD
 |**max_mz <m/z value>**|If set to positive value, maximum m/z to deconvolve. (default: '-1.0') |
-=======
-|**max_mz <m/z value>r**|If set to positive value, maximum m/z to deconvolve. (default: '-1.0') |
->>>>>>> 2b237597b55eb9a632a618b8d08675058c2ab8ea
 |**min_rt <RT value>**|If set to positive value, minimum RT (in second) to deconvolve. (default: '-1.0')|
 |**max_rt <RT value>**|If set to positive value, maximum RT (in second) to deconvolve. (default:'-1.0')|
 |**ini <file>**| Use the given TOPP INI file|
