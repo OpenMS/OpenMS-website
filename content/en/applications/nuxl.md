@@ -53,6 +53,24 @@ Note: Coming soon: One-click installer so no manual copy is required. The instal
       - In case you want to use a preconfigured workflow click 'Open' and select the template of your choice.
       - For a minimal workflow, add and connect 'Spectrum Files', 'Spectrum Selector' and 'NuXL' node. You will find the NuXL node under the “Sequence Database Search” category.
       - Important settings in 'Spectrum Selector': set “MS Order” to “Any” to ensure MS1 spectra are not discarded.
+      - Configuring NuXL:
+         - By clicking on the NuXL processing node symbol in the workflow tree, you can adapt settings Note: If you click on "Show Advanced Parameter", you will find additional parameters.   
+         - NuXL provides 'Presets' for different crosslinking mass spectrometry protocols. For most use cases, users just need to select a preset that fits to their experimental protocol. In most cases, default parameters work reasonably well but results can sometimes be improved by tweaking some other parameters.
+         - Other Parameters:
+            - 'Peptide identification' -> 'Precursor mass tolerance' and 'Fragment mass tolerance': Adjust the fragment search mass accuracy according to the used instrument.
+            - 'Peptide identification' -> 'Static modification' and 'Dynamic modification': Standard fixed modification (e.g. 'Carbamidomethyl (C)') should be specified as variable, if the expected amino acid can form crosslinks, as otherwise these identifications would be lost.
+            - 'Cross-links' -> 'Length': Dependent on your nuclease digestion protocol, you might expect different lengths of nucleotide adducts. NuXL is trained and tested on nucleotide adducts of 1-4 nucleotide length. For properly RNA digested samples we recommend lowering the RNA length value to 2. In most cases, the default value works well.
+            - 'Cross-links' -> 'Sequence': In case your experiment involves a specific RNA or DNA species with known sequence, it can be useful to enter the sequence in this field. The node then only considers possible nucleotide adduct combinations.
+            - 'Peptide identification' -> 'Peptide length min': For complex proteome searches, we recommend using 6 as minimum amino acid count. For complexes of few proteins, that would allow manual validation this can be further decreased.
+            - 'Peptide identification' -> 'Peptide length max': We recommend setting a limit of ~30 for complex proteome wide searches.
+            - 'Peptide identification' -> 'Missed cleavages': If significant crosslinking is expected to occur and create missed cleavages, the value can be increased up to 3.
+
+         - Advanced users: 
+            - Users can define their own fragmentation rules and crosslink adduct settings. Select 'none' in 'Presets'. You can then define 'Fragment adducts' and 'Modifications' in advanced parameters according to your protocol in the following format: [target nucleotide]:[formula] or [precursor adduct] ->[fragment adduct formula];[name]. NuXL will use this information to generate all chemically feasible precursor adduct, fragment adduct combinations.
+            - 'Cross-link identification' -> 'Can cross-link’: In case you expect only a single or subset of nucleotides to be amenable to crosslinking, it can be useful to set this up here. Nucleotides are specified by their one letter code without a separator (e.g. UA for U and A nucleotides)
+            - 'Cross-link identification' -> 'Cysteine adduct’: If DTT is present during UV irradiation, it can generate additional crosslinks including a 152 Da linker. For more information see 1. If needed to be identified, we recommend specifying the composition of the linker in modifications and 'Fragment adducts' instead. Set this flag to true, if the 152 adduct is expected.
+            - 'Cross-links' -> 'Target nucleotides': Sum formulas of the target nucleotides of the crosslink.  Heavy labelled atoms are specified with parenthesis in front with the nominal mass of the respective isotope (e.g. (13)C, (15)N).
+             
    - **Consensus Workflow**: Click on Edit in the 'Consensus Step' window
       - Connect an 'MSF Files' node to the 'NuXL Consensus' node. 
       - Set “Spectra to Store” to “All” in the MSF Files node.
