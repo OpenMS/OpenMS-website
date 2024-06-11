@@ -52,7 +52,9 @@ Note: Coming soon: One-click installer so no manual copy is required. The instal
       - Click on Edit in the 'Processing Step' window
       - In case you want to use a preconfigured workflow click 'Open' and select the template of your choice.
       - For a minimal workflow, add and connect 'Spectrum Files', 'Spectrum Selector' and 'NuXL' node. You will find the NuXL node under the “Sequence Database Search” category.
+      
       <center>{{< figure src="/images/content_images/applications/NuXL_minimalwf.png" >}}</center>
+
       - Important settings in 'Spectrum Selector': set “MS Order” to “Any” to ensure MS1 spectra are not discarded.
       - Configuring NuXL:
          - By clicking on the NuXL processing node symbol in the workflow tree, you can adapt settings Note: If you click on "Show Advanced Parameter", you will find additional parameters.   
