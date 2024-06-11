@@ -28,6 +28,7 @@ NuXL can be installed for Proteome Discoverer 3.0 and 3.1.
    3.	Copy ZedGraph_OpenMS.dll to C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Thermo.Discoverer
    4.	Go to C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Tools and copy the folder “NuXL” from the .zip. 
    5.	Open PD, go to Administration -> Manage Licenses. Click “Scan for Missing Features” on top of the list of available licenses on the right side of the PD window.
+
 3. **Troubleshooting**
    - Sometimes the operating system blocks execution of .dlls copied from an external source. In these cases, it is necessary to go to the folder containing the .dll, right click on it, choose properties, then security. The dialog offers an option to unblock the .dll from execution.
 
@@ -64,16 +65,21 @@ Note: Coming soon: One-click installer so no manual copy is required. The instal
 
 ## Post-Analysis
 
+You can monitor the progress of your analysis by opening 'Administration' -> 'Show Job Queue'.
+
 1. **Viewing Results:**
-   - Results can be accessed from the Administration tab by double-clicking on a "Consensus" type result row.
-   - The results will be displayed primarily in the “XLs” table. Key columns include Proteins, Peptide, and Score (Cross-link PSM-level q-value).
+   - Result files are not exported automatically. You can view your results in Proteome Discoverer, by double clicking on a successfully finished 'Consensus' type result row.
+   - Results are displayed in several tabs. You can choose to view: 'Proteins', 'PSMs and NuXL', 'MS/MS Spectrum Info', 'Input Files', 'Specialized Traces', and 'Study Information'. Dependent on your consensus workflow, you might see additional tabs.
+   - In the 'PSMs and NuXL' table, information about all peptide and crosslink spectrum matches (PSMs and NuXLs, respectively) is displayed.  Key columns include 'Annotated Sequence', 'Modifications', 'Protein Accessions', 'q-value' (CSM-level q-value). We recommend to filter your results for 1% CSM-level FDR ('q-value' <= 0.01).
 
 2. **Exporting Data:**
    - To export the results for further analysis in spreadsheet software (e.g., Microsoft Excel), navigate to File -> Export -> To Microsoft Excel.
 
 3. **Quality Assessment:**
-   - Manually validate spectra quality by viewing annotated spectra through the "Show Spectrum" button.
+   - You can manually validate spectra quality by viewing annotated spectra. To do so, click on the "Show Spectrum" button in the 'PSM and NuXL' tab.
    - Assess features such as peptide sequence coverage and the presence of key ions.
+
+Note: For general information on Proteome Discoverer and additional nodes, please refer to the Proteome Discoverer user guide.
 
 ## Figures
 
@@ -82,5 +88,5 @@ Note: Coming soon: One-click installer so no manual copy is required. The instal
 
 ## Conclusion
 
-This guide provides the essential steps to successfully run cross-linking analyses using NuXL within Proteome Discoverer. For more detailed guidance on specific analysis settings and troubleshooting, please refer to the full user manual included in the NuXL installation directory.
+This guide provides the essential steps to successfully run cross-linking analyses using NuXL within Proteome Discoverer.
 
