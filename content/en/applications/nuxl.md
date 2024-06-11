@@ -52,10 +52,12 @@ Note: Coming soon: One-click installer so no manual copy is required. The instal
       - Click on Edit in the 'Processing Step' window
       - In case you want to use a preconfigured workflow click 'Open' and select the template of your choice.
       - For a minimal workflow, add and connect 'Spectrum Files', 'Spectrum Selector' and 'NuXL' node. You will find the NuXL node under the “Sequence Database Search” category.
+      <center>{{< figure src="/images/content_images/applications/NuXL_minimalwf.png" >}}</center>
       - Important settings in 'Spectrum Selector': set “MS Order” to “Any” to ensure MS1 spectra are not discarded.
       - Configuring NuXL:
          - By clicking on the NuXL processing node symbol in the workflow tree, you can adapt settings Note: If you click on "Show Advanced Parameter", you will find additional parameters.   
          - NuXL provides 'Presets' for different crosslinking mass spectrometry protocols. For most use cases, users just need to select a preset that fits to their experimental protocol. In most cases, default parameters work reasonably well but results can sometimes be improved by tweaking some other parameters.
+         <center>{{< figure src="/images/content_images/applications/NuXL_params.png" >}}</center>
          - Other Parameters:
             - 'Peptide identification' -> 'Precursor mass tolerance' and 'Fragment mass tolerance': Adjust the fragment search mass accuracy according to the used instrument.
             - 'Peptide identification' -> 'Static modification' and 'Dynamic modification': Standard fixed modification (e.g. 'Carbamidomethyl (C)') should be specified as variable, if the expected amino acid can form crosslinks, as otherwise these identifications would be lost.
@@ -74,12 +76,16 @@ Note: Coming soon: One-click installer so no manual copy is required. The instal
    - **Consensus Workflow**: Click on Edit in the 'Consensus Step' window
       - Connect an 'MSF Files' node to the 'NuXL Consensus' node. 
       - Set “Spectra to Store” to “All” in the MSF Files node.
+      <center>{{< figure src="/images/content_images/applications/NuXL_minimalcwf.png" >}}</center>
+
 
 3. **Running the Workflow:**
    - Drag and drop your Thermo Scientific .raw files onto the Processing Step in the Analysis tab
    - Important: Ensure the "By File" checkbox is selected.
    - Save the template
    - Run the workflow
+   <center>{{< figure src="/images/content_images/applications/NuXL_files.png" >}}</center>
+
 
 ## Post-Analysis
 
@@ -90,6 +96,8 @@ You can monitor the progress of your analysis by opening 'Administration' -> 'Sh
    - Results are displayed in several tabs. You can choose to view: 'Proteins', 'PSMs and NuXL', 'MS/MS Spectrum Info', 'Input Files', 'Specialized Traces', and 'Study Information'. Dependent on your consensus workflow, you might see additional tabs.
    - In the 'PSMs and NuXL' table, information about all peptide and crosslink spectrum matches (PSMs and NuXLs, respectively) is displayed.  Key columns include 'Annotated Sequence', 'Modifications', 'Protein Accessions', 'q-value' (CSM-level q-value). We recommend to filter your results for 1% CSM-level FDR ('q-value' <= 0.01).
 
+<center>{{< figure src="/images/content_images/applications/NuXL_visualize.png" >}}</center>
+
 2. **Exporting Data:**
    - To export the results for further analysis in spreadsheet software (e.g., Microsoft Excel), navigate to File -> Export -> To Microsoft Excel.
 
@@ -99,12 +107,4 @@ You can monitor the progress of your analysis by opening 'Administration' -> 'Sh
 
 Note: For general information on Proteome Discoverer and additional nodes, please refer to the Proteome Discoverer user guide.
 
-## Figures
-
-- **Cross-link Spectra Examples:**
-  - Figures showing examples of cross-link spectra can be found in the supplementary materials. These illustrate typical results for DNA-UV, DNA-DEB, and RNA-UV datasets.
-
-## Conclusion
-
-This guide provides the essential steps to successfully run cross-linking analyses using NuXL within Proteome Discoverer.
 
