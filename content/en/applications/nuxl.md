@@ -52,14 +52,16 @@ Note: Coming soon: One-click installer so no manual copy is required. The instal
       - Click on Edit in the 'Processing Step' window
       - In case you want to use a preconfigured workflow click 'Open' and select the template of your choice.
       - For a minimal workflow, add and connect 'Spectrum Files', 'Spectrum Selector' and 'NuXL' node. You will find the NuXL node under the “Sequence Database Search” category.
-      
+
       <center>{{< figure src="/images/content_images/applications/NuXL_minimalwf.png" >}}</center>
 
       - Important settings in 'Spectrum Selector': set “MS Order” to “Any” to ensure MS1 spectra are not discarded.
       - Configuring NuXL:
          - By clicking on the NuXL processing node symbol in the workflow tree, you can adapt settings Note: If you click on "Show Advanced Parameter", you will find additional parameters.   
          - NuXL provides 'Presets' for different crosslinking mass spectrometry protocols. For most use cases, users just need to select a preset that fits to their experimental protocol. In most cases, default parameters work reasonably well but results can sometimes be improved by tweaking some other parameters.
+
          <center>{{< figure src="/images/content_images/applications/NuXL_params.png" >}}</center>
+
          - Other Parameters:
             - 'Peptide identification' -> 'Precursor mass tolerance' and 'Fragment mass tolerance': Adjust the fragment search mass accuracy according to the used instrument.
             - 'Peptide identification' -> 'Static modification' and 'Dynamic modification': Standard fixed modification (e.g. 'Carbamidomethyl (C)') should be specified as variable, if the expected amino acid can form crosslinks, as otherwise these identifications would be lost.
@@ -78,6 +80,7 @@ Note: Coming soon: One-click installer so no manual copy is required. The instal
    - **Consensus Workflow**: Click on Edit in the 'Consensus Step' window
       - Connect an 'MSF Files' node to the 'NuXL Consensus' node. 
       - Set “Spectra to Store” to “All” in the MSF Files node.
+
       <center>{{< figure src="/images/content_images/applications/NuXL_minimalcwf.png" >}}</center>
 
 
@@ -86,6 +89,7 @@ Note: Coming soon: One-click installer so no manual copy is required. The instal
    - Important: Ensure the "By File" checkbox is selected.
    - Save the template
    - Run the workflow
+   
    <center>{{< figure src="/images/content_images/applications/NuXL_files.png" >}}</center>
 
 
