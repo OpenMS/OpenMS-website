@@ -7,17 +7,7 @@
         <h1 class="keyfeatures-title">{{ $title }}</h1>
         <p>{{ $subtitle }}</p>
         <div class="keyfeatures-box-container">
-            {{- range $features }}
-            <a class="keyfeatures-box-content keyfeatures-underline" href="{{ .url }}">
-                <center>
-                    <div class="cards">
-                        <img class="keyfeatures-img" src="{{ .img }}" alt="{{ .alttext }}">
-                    </div>
-                    <div class="keyfeatures-box-title">{{ .title }}</div>
-                    <div class="keyfeatures-box-text">{{ .text | markdownify }}</div>
-                </center>
-            </a>
-            {{- end }}
+
         </div>
     </div>
 </section>
