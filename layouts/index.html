@@ -20,6 +20,8 @@
     {{ end }}
 
     {{partial "webapps.html" . }}
+
+    {{partial "carousel.html" . }}
     
     {{ if .Site.Params.heroGroup }}
     {{ partial "heroitems.html" . }}
