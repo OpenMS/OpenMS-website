@@ -115,6 +115,7 @@ You can monitor the progress of your analysis by opening 'Administration' -> 'Sh
 Note: Please take a look at the Proteome Discoverer user guide for general information on Proteome Discoverer and additional nodes.
 
 ## Installation as stand-alone tool
+
 NuXL is developed using the OpenMS framework. Once installed, it is accessible through the OpenNuXL tool. OpenMS offers a suite of tools for graphical interfaces and command-line operations, compatible with Windows, MacOS, and Linux platforms. This guide focuses specifically on using the graphical application on Windows.
 
 Alongside NuXL, the following core OpenMS software modules are also available and will be utilized in this tutorial. You can click on each term to access the respective documentation:
@@ -124,6 +125,7 @@ TOPPView: A visualization tool that enables detailed analysis and review of mass
 This step-by-step guide ensures you can leverage the full capabilities of NuXL and the associated OpenMS modules efficiently.
 
 ### Preparing the input files: Raw data conversion.
+
 NuXL is compatible with Thermo raw files and also supports files that have been converted to the mzML format using freely available tools such as ProteoWizard's msconvert. If you provide NuXL with Thermo raw files, it automatically utilizes the ThermoRawFileParser from Thermo Scientific™ for efficient data conversion. This flexibility ensures seamless integration with your existing data processing workflows.
 
 ### Getting started – setting up a basic processing workflow.
@@ -168,17 +170,28 @@ These steps ensure that Percolator is properly integrated into your workflow, en
 
 With this step, the initial configuration of the OpenNuXL is completed and the pipeline can be saved from `File -> Save as` and used as a template.
 
-### Run Configuration
+<center>{{< figure src="/images/content_images/applications/NuXL_toppas_basic.png" >}}</center>
 
-Depending on your experiment, you can select an RNA or DNA preset or define your own adduct settings for custom protocols (Figure T4).
+### Run Configuration
 
 **Preset Selection**: Select a nucleotide adduct preset according to your workflow.
 
-The MS1 (modifications) and MS2 (fragment_adducts) of the specific presets are accessible upon ticking the box for advanced parameters. If no preset is selected ('none'), you can add custom sum formulae in the same format as shown in advanced parameters for the presets (format: `[target nucleotide]:[formula]` or `[precursor adduct] ->[fragment adduct formula];[name]; Figure T5`).
+Depending on your experiment, you can select an RNA or DNA preset or define your own adduct settings for custom protocols:
 
-**Setting up Custom Nucleotide Adducts**: In case none of the available presets matches your workflow, custom presets can be defined by defining 'target_nucleotides', 'can_cross-link', 'fragment_adducts' and 'modifications'.
+<center>{{< figure src="/images/content_images/applications/NuXL_toppas_presets.png" >}}</center>
 
-In addition to nucleotide adduct presets, numerous other parameters can be specified (Table T1).
+To view the MS1 (modifications) and MS2 (fragment_adducts) of the specific presets you can tick the box for advanced parameters and scroll to your preset of interest.
+
+**Advanced Users: Setting up Custom Nucleotide Adducts** 
+
+In case none of the available presets matches your workflow, custom presets can be defined by defining 'target_nucleotides', 'can_cross-link', 'fragment_adducts', and 'modifications'.
+ If no preset is selected ('none'), you can add custom sum formulae in the same format as shown in advanced parameters for the presets (format: `[target nucleotide]:[formula]` or `[precursor adduct] ->[fragment adduct formula];[name]; 
+
+<center>{{< figure src="/images/content_images/applications/NuXL_toppas_adducts.png" >}}</center>
+
+**Other settings** 
+
+Numerous other parameters can be specified to fine tune the search process (Table T1). In most cases defaults combined with proper presets should work.
 
 **Table T1. OpenNuXL Parameters Editable by the User**
 
@@ -215,30 +228,37 @@ In addition to nucleotide adduct presets, numerous other parameters can be speci
 
 **Note**: Each `.raw`/`.mzML` file will be processed separately and requires one database file to be added.
 
-As an alternative to loading database files via an `<Input Files>` node, you can define the database in the OpenNuXL node by double clicking the value field of the database parameter and selecting the respective database (Figure T7).
+As an alternative to loading database files via an `<Input Files>` node, you can define the database in the OpenNuXL node by double-clicking the value field of the database parameter and selecting the respective database (Figure T7).
+
+<center>{{< figure src="/images/content_images/applications/NuXL_toppas_db.png" >}}</center>
 
 **Figure Database configuration**:  Within the OpenNuXL node, select the sequence database.
 
-**Tip**: In case you would like to combine several files in one search, we suggest to use the OpenMS node `<FileMerger>`, which can be found in 'File Handling'. The node needs to be combined with `<Input Files>`+`<Collector>` and `<Output Files>` (Figure T8).
+**Advanced Users**: In case you would like to combine several files in one search, we suggest using the OpenMS node `<FileMerger>`, which can be found in 'File Handling'. The node needs to be combined with `<Input Files>`+`<Collector>` and `<Output Files>`.
+
+<center>{{< figure src="/images/content_images/applications/NuXL_toppas_merge.png" >}}</center>
 
 **Figure Workflow to merge `.mzML` files**: The `<FileMerger>` node can be used as shown in this scheme for merging `.mzML` files e.g., from multiple fractions.
 
-To export FDR filtered result files, specify the absolute path for an output folder by double clicking the value field of the `output_folder` parameter and pasting your selected path.
+To export FDR-filtered result files, specify the absolute path for an output folder by double-clicking the value field of the `output_folder` parameter and pasting your selected path.
+
+<center>{{< figure src="/images/content_images/applications/NuXL_toppas_outputfolder.png" >}}</center>
 
 **Figure Output folder path**: To generate FDR filtered result files, a path needs to be specified.
 
 ### OpenNuXL Pipeline Execution
 
-After selection of analysis parameters and defining input files, the workflow can be executed by selecting 'Pipeline' -> 'Run' or pressing F5. A popup window asking to specify the output directory appears (Figure T10). Once specified, OpenNuXL analysis is started. All current tasks are displayed in the Log window below the workflow window (Figure T11). Unfiltered result files will be saved in the `TOPPAS_out` folder, which is automatically generated in the selected path.
+After selection of analysis parameters and defining input files, the workflow can be executed by selecting 'Pipeline' -> 'Run' or pressing F5. A popup window asking to specify the output directory appears. Once specified, OpenNuXL analysis is started. All current tasks are displayed in the Log window below the workflow window. Unfiltered result files will be saved in the `TOPPAS_out` folder, which is automatically generated in the selected path.
 
-**Figure Output directory.**: Upon pipeline execution, the displayed pop-up window appears for definition of the absolute path of the output folder.
+**Figure Output directory.**: Upon pipeline execution, the displayed pop-up window appears to enter the absolute path of the output folder.
+
+<center>{{< figure src="/images/content_images/applications/NuXL_toppas_log.png" >}}</center>
 
 **Figure OpenNuXL Log window.**: The progress of OpenNuXL search is shown.
 
 ### Result File Access - Visualization of Crosslinked Peptide-(Oligo)Nucleotide Spectra Using TOPPView
 
-If executed on `.raw` files, the OpenNuXL node will create corresponding `.mzML` files in the output directory (defined as in Figure T10). For visualization of annotated spectra, open `.mzML` files in TOPPView. By default, double clicking on `.mzML` files should automatically open the file in TOPPView. Once it is loaded, spectrum annotations matched by OpenNuXL can be added by loading `.idXML` files generated by the tool. Select: 'Tools' -> 'Annotate with peptide identifications'. See Figure T12 for an annotated MS2 spectrum of a UV-crosslinked peptide-RNA(oligo)nucleotide. To add/remove columns of the result grid 'identifications' below the spectrum window, right-click on the column header and a list of potential columns appears that you can choose from (Figure T13).
-
+If executed on `.raw` files, the OpenNuXL node will create corresponding `.mzML` files in the output directory (defined as in Figure T10). For visualization of annotated spectra, open `.mzML` files in TOPPView. By default, double-clicking on `.mzML` files should automatically open the file in TOPPView. Once it is loaded, spectrum annotations matched by OpenNuXL can be added by loading `.idXML` files generated by the tool. Select: 'Tools' -> 'Annotate with peptide identifications'. See Figure T12 for an annotated MS2 spectrum of a UV-crosslinked peptide-RNA(oligo)nucleotide. To add/remove columns of the result grid 'identifications' below the spectrum window, right-click on the column header and a list of potential columns appears that you can choose from (Figure Custom columns).
 
 **Note**: The FDR-controlled results for crosslinked and non-crosslinked peptides are available in the `output_folder` as defined in the OpenNuXL node (Figure T9). Results contain `.csv`, `.tsv`, and `.idXML` files. File suffixes indicate whether percolator rescoring was performed ('_perc'), on which level results are reported ('_proteins', '_peptides', or '_XLs'), and for which FDR the results were filtered (e.g., FDR of 1%, '_0.0100'). The '_ambiguous_masses.csv' file contains precursor ion masses that match to...
 
