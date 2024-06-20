@@ -7,7 +7,7 @@ sidebar: false
 ## Introduction
 
 NuXL is a novel tool for protein-RNA and DNA cross-linking studies. It is available as a 
-[stand-alone tool](#Installation as stand-alone tool) and as a [Proteome Discoverer community node](#Installation for Proteome Discoverer). This guide outlines the steps to install NuXL, set up your analysis, and interpret your data using the provided tools and workflows.
+[stand-alone tool](#installation-as-stand-alone-tool) and as a [Proteome Discoverer community node](#installation-for-proteome-discoverer). This guide outlines the steps to install NuXL, set up your analysis, and interpret your data using the provided tools and workflows.
 
 <center>{{< figure src="/images/content_images/applications/NuXL.png" >}}</center>
 
@@ -244,9 +244,11 @@ If executed on `.raw` files, the OpenNuXL node will create corresponding `.mzML`
 **Tip**: You can export the TOPPView inbuilt result table by clicking on 'Export table' below the result grid.
 
 <center>{{< figure src="/images/content_images/applications/nuxl_tv_vis.png" >}}</center>
+
 **Figure**: MS2 spectrum of a UV-crosslinked peptide-RNA(oligo)nucleotide displayed in TOPPView. The spectrum window shows OpenNuXL peak annotations in color (green and red) and unmatched peaks in black. The window contains the peptide sequence showing coverage with annotated fragment peaks.
 
 <center>{{< figure src="/images/content_images/applications/nuxl_tv_columns.png" >}}</center>
+
 **Figure**: By right-clicking on the result grid header, a pop-up window appears that allows choosing different columns to be added/removed.
 
 To export an image of the annotated spectrum, right-click on the spectrum and choose 'Save' -> 'As image'. You then have the option to export the image as a vector or raster image.
