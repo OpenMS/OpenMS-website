@@ -242,9 +242,11 @@ If executed on `.raw` files, the OpenNuXL node will create corresponding `.mzML`
 
 **Tip**: You can export the TOPPView inbuilt result table by clicking on 'Export table' below the result grid.
 
-**Figure TODO**: MS2 spectrum of a UV-crosslinked peptide-RNA(oligo)nucleotide displayed in TOPPView. The spectrum window shows OpenNuXL peak annotations in color (green and red) and unmatched peaks in black. The window contains the peptide sequence showing coverage with annotated fragment peaks.
+<center>{{< figure src="/images/content_images/applications/nuxl_tv_vis.png" >}}</center>
+**Figure**: MS2 spectrum of a UV-crosslinked peptide-RNA(oligo)nucleotide displayed in TOPPView. The spectrum window shows OpenNuXL peak annotations in color (green and red) and unmatched peaks in black. The window contains the peptide sequence showing coverage with annotated fragment peaks.
 
-**Figure TODO**: Custom setup of result grid columns. By right-clicking on the result grid header, a pop-up window appears that allows choosing different columns to be added/removed.
+<center>{{< figure src="/images/content_images/applications/nuxl_tv_columns.png" >}}</center>
+**Figure**: By right-clicking on the result grid header, a pop-up window appears that allows choosing different columns to be added/removed.
 
 To export an image of the annotated spectrum, right-click on the spectrum and choose 'Save' -> 'As image'. You then have the option to export the image as a vector or raster image.
 
