@@ -217,23 +217,23 @@ In addition to nucleotide adduct presets, numerous other parameters can be speci
 
 As an alternative to loading database files via an `<Input Files>` node, you can define the database in the OpenNuXL node by double clicking the value field of the database parameter and selecting the respective database (Figure T7).
 
-**Figure T7**: Database configuration within OpenNuXL node. Select the sequence database.
+**Figure Database configuration**:  Within the OpenNuXL node, select the sequence database.
 
 **Tip**: In case you would like to combine several files in one search, we suggest to use the OpenMS node `<FileMerger>`, which can be found in 'File Handling'. The node needs to be combined with `<Input Files>`+`<Collector>` and `<Output Files>` (Figure T8).
 
-**Figure T8**: Workflow to merge `.mzML` files. The `<FileMerger>` node can be used as shown in this scheme for merging `.mzML` files.
+**Figure Workflow to merge `.mzML` files**: The `<FileMerger>` node can be used as shown in this scheme for merging `.mzML` files e.g., from multiple fractions.
 
-To export FDR filtered result files, specify the absolute path for an output folder by double clicking the value field of the `output_folder` parameter and pasting your selected path (Figure T9).
+To export FDR filtered result files, specify the absolute path for an output folder by double clicking the value field of the `output_folder` parameter and pasting your selected path.
 
-**Figure T9**: Configuration of output folder path. To generate FDR filtered result files, a path needs to be specified.
+**Figure Output folder path**: To generate FDR filtered result files, a path needs to be specified.
 
 ### OpenNuXL Pipeline Execution
 
 After selection of analysis parameters and defining input files, the workflow can be executed by selecting 'Pipeline' -> 'Run' or pressing F5. A popup window asking to specify the output directory appears (Figure T10). Once specified, OpenNuXL analysis is started. All current tasks are displayed in the Log window below the workflow window (Figure T11). Unfiltered result files will be saved in the `TOPPAS_out` folder, which is automatically generated in the selected path.
 
-**Figure T10**: Output directory specification window. Upon pipeline execution, the displayed pop-up window appears for definition of the absolute path of the output folder.
+**Figure Output directory.**: Upon pipeline execution, the displayed pop-up window appears for definition of the absolute path of the output folder.
 
-**Figure T11**: OpenNuXL Log window. The progress of OpenNuXL search is shown.
+**Figure OpenNuXL Log window.**: The progress of OpenNuXL search is shown.
 
 ### Result File Access - Visualization of Crosslinked Peptide-(Oligo)Nucleotide Spectra Using TOPPView
 
@@ -245,11 +245,11 @@ If executed on `.raw` files, the OpenNuXL node will create corresponding `.mzML`
 
 <center>{{< figure src="/images/content_images/applications/nuxl_tv_vis.png" >}}</center>
 
-**Figure**: MS2 spectrum of a UV-crosslinked peptide-RNA(oligo)nucleotide displayed in TOPPView. The spectrum window shows OpenNuXL peak annotations in color (green and red) and unmatched peaks in black. The window contains the peptide sequence showing coverage with annotated fragment peaks.
+**Figure MS2 spectrum**:  of a UV-crosslinked peptide-RNA(oligo)nucleotide displayed in TOPPView. The spectrum window shows OpenNuXL peak annotations in color (green and red) and unmatched peaks in black. The window contains the peptide sequence showing coverage with annotated fragment peaks.
 
 <center>{{< figure src="/images/content_images/applications/nuxl_tv_columns.png" >}}</center>
 
-**Figure**: By right-clicking on the result grid header, a pop-up window appears that allows choosing different columns to be added/removed.
+**Figure Columns**: By right-clicking on the result grid header, a pop-up window appears that allows choosing different columns to be added/removed.
 
 To export an image of the annotated spectrum, right-click on the spectrum and choose 'Save' -> 'As image'. You then have the option to export the image as a vector or raster image.
 
