@@ -7,7 +7,7 @@ sidebar: false
 ## Introduction
 
 NuXL is a novel tool for protein-RNA and DNA cross-linking studies. It is available as a 
-[stand-alone tool](#installation-as-stand-alone-tool) and as a [Proteome Discoverer community node](#installation-for-proteome-discoverer) or as a [web application]([#installation-for-proteome-discoverer](https://abi-services.cs.uni-tuebingen.de/nuxl/)) that doesn't require you to install additional software. This guide outlines the steps to install NuXL, set up your analysis, and interpret your data using the provided tools and workflows.
+[stand-alone tool](#installation-as-stand-alone-tool) and as a [Proteome Discoverer community node](#installation-for-proteome-discoverer) or as a [web application](https://abi-services.cs.uni-tuebingen.de/nuxl/) that doesn't require you to install additional software. This guide outlines the steps to install NuXL, set up your analysis, and interpret your data using the provided tools and workflows.
 
 <center>{{< figure src="/images/content_images/applications/NuXL.png" >}}</center>
 
