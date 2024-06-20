@@ -59,8 +59,10 @@
 /openpepxl /applications/openpepxl 200
 /OpenpepXL /applications/openpepxl 200
 
-/rnpxl /applications/rnpxl 200
-/RNPxl /applications/rnpxl 200
+/rnpxl /applications/nuxl 200
+/RNPxl /applications/nuxl 200
+/nuxl /applications/nuxl 200
+/NuXL /applications/nuxl 200
 
 /FLASHIda /applications/flashida 200
 /flashida /applications/flashida 200
