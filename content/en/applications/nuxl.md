@@ -36,8 +36,8 @@ Download the PD archive from https://github.com/timosachsenberg/OpenMS/releases/
    5.	Open PD, go to `Administration -> Manage Licenses`. Click `Scan for Missing Features` on top of the list of available licenses on the right side of the PD window.
 
    For PD 3.0 you need to:
-   1.	Copy `PD.OpenMS.AdapterNodes.dll` to `C:\Program Files\Thermo\Proteome Discoverer 3.0\Proteome Discoverer 3.0\Thermo.Magellan.Server`
-   3.	Copy `ZedGraph_OpenMS.dll` to `C:\Program Files\Thermo\Proteome Discoverer 3.0\Proteome Discoverer 3.0\Thermo.Discoverer`
+   1.	Copy `PD.OpenMS.AdapterNodes.dll` to `C:\Program Files\Thermo\Proteome Discoverer 3.0\Proteome Discoverer 3.0\System\Release`
+   3.	Copy `ZedGraph_OpenMS.dll` to `C:\Program Files\Thermo\Proteome Discoverer 3.0\Proteome Discoverer 3.0\System\Release`
    4.	Go to `C:\Program Files\Thermo\Proteome Discoverer 3.0\Proteome Discoverer 3.0\Tools` and copy the folder `NuXL` from the .zip. 
    5.	Open PD, go to `Administration -> Manage Licenses`. Click `Scan for Missing Features` on top of the list of available licenses on the right side of the PD window.
 
@@ -58,7 +58,7 @@ Note: Coming soon: One-click installer so no manual copy is required. The instal
 ### Analysis Workflows
 
 1. **Generating an analysis Template:**
-   - Click on `New Analysis`. Note: Once completed, you will later find the analysis template in "Open Analysis Template".
+   - Click on `New Analysis`. Note: Once completed you will be able to save your template and you will later find the analysis template in "Open Analysis Template".
    - In the analysis window you can set up 'processing' and 'consensus' workflows for NuXL
    - **Processing Workflow**
       - Click on Edit in the 'Processing Step' window
