@@ -285,4 +285,4 @@ To export an image of the annotated spectrum, right-click on the spectrum and ch
 ## Run as Web-Application
 Please visit https://abi-services.cs.uni-tuebingen.de/nuxl/ to try out (or download) the experimental NuXL web app.
 
-<center>{{< figure src="/images/content_images/applications/NuXL_webapp.png" >}}</center>
+<center>{{< figure src="/images/content_images/applications/NuXL_webapp.jpg" >}}</center>
