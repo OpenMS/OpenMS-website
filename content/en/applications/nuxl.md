@@ -19,10 +19,12 @@ NuXL is a novel tool for protein-RNA and DNA cross-linking studies. It is availa
 ## Installation for Proteome Discoverer
 NuXL is currently compatible with Proteome Discoverer 3.0 and 3.1. 
 
-1. **Before Installation:**
+1. **Before Installation:** Download the PD archive from https://github.com/timosachsenberg/OpenMS/releases/tag/NuXLPublication
+
+2. **Before Installation:**
    - Please make sure that Proteome Discoverer is closed before running the NuXL installer.
 
-2. **Manual Installation:**
+3. **Manual Installation:**
    For PD three .dll files need to be copied to different folders in the 'ProteomeDiscoverer 3.1' folder structure and a folder containing the data processing of OpenMS which needs to go to the 'Tools' directory. For PD 3.1 you would:
    1.	Copy PD.OpenMS.NuXLNode.dll to C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Thermo.Magellan.Server
    2.	Copy PD.OpenMS.NuXLViewer.dll to C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Thermo.Discoverer
@@ -30,7 +32,7 @@ NuXL is currently compatible with Proteome Discoverer 3.0 and 3.1.
    4.	Go to C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Tools and copy the folder “NuXL” from the .zip. 
    5.	Open PD, go to Administration -> Manage Licenses. Click “Scan for Missing Features” on top of the list of available licenses on the right side of the PD window.
 
-3. **Troubleshooting**
+4. **Troubleshooting**
    - Sometimes the operating system blocks the execution of .dlls copied from an external source. In these cases, it is necessary to go to the folder containing the .dll, right-click on it, choose properties, and then security. The dialog offers an option to unblock the .dll from execution.
 
 Note: Coming soon: One-click installer so no manual copy is required. The installer will automatically detect your Proteome Discoverer installation directory and deploy the NuXL nodes correctly.
@@ -123,6 +125,9 @@ Alongside NuXL, the following core OpenMS software modules are also available an
 TOPPAS: A workflow design and processing tool that allows for the automated analysis of mass spectrometry data.
 TOPPView: A visualization tool that enables detailed analysis and review of mass spectrometric data.
 This step-by-step guide ensures you can leverage the full capabilities of NuXL and the associated OpenMS modules efficiently.
+
+### Downloading the OpenMS installer with NuXL.
+Download the OpenMS-NuXL installer from https://github.com/timosachsenberg/OpenMS/releases/tag/NuXLPublication
 
 ### Preparing the input files: Raw data conversion.
 
