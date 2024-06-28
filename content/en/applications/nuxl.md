@@ -7,7 +7,7 @@ sidebar: false
 ## Introduction
 
 NuXL is a novel tool for protein-RNA and DNA cross-linking studies. It is available as a 
-[stand-alone tool](#installation-as-stand-alone-tool) and as a [Proteome Discoverer community node](#installation-for-proteome-discoverer) or as a [web application](https://abi-services.cs.uni-tuebingen.de/nuxl/) that doesn't require you to install additional software. This guide outlines the steps to install NuXL, set up your analysis, and interpret your data using the provided tools and workflows.
+[stand-alone tool](#installation-as-stand-alone-tool) and as a [Proteome Discoverer community node](#installation-for-proteome-discoverer) or as a [web application](#run-as-web-application) that doesn't require you to install additional software. This guide outlines the steps to install NuXL, set up your analysis, and interpret your data using the provided tools and workflows.
 
 <center>{{< figure src="/images/content_images/applications/NuXL.png" >}}</center>
 
@@ -281,3 +281,8 @@ If executed on `.raw` files, the OpenNuXL node will create corresponding `.mzML`
 To export an image of the annotated spectrum, right-click on the spectrum and choose 'Save' -> 'As image'. You then have the option to export the image as a vector or raster image.
 
 **Tip**: You can add annotations manually by right-clicking on a peak. You can choose to define a label or an annotation ('Add label', 'Add peak annotation') and/or to display the m/z value ('Add peak annotation mz').
+
+## Run as Web-Application
+Please visit https://abi-services.cs.uni-tuebingen.de/nuxl/ to try out (or download) the experimental NuXL web app.
+
+<center>{{< figure src="/images/content_images/applications/NuXL_webapp.png" >}}</center>
