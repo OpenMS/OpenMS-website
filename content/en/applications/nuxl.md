@@ -26,14 +26,22 @@ Download the PD archive from https://github.com/timosachsenberg/OpenMS/releases/
    - Please make sure that Proteome Discoverer is closed before running the NuXL installer.
 
 4. **Manual Installation:**
-   For PD three .dll files need to be copied to different folders in the `ProteomeDiscoverer 3.1` folder structure and a folder containing the data processing of OpenMS which needs to go to the `Tools` directory. For PD 3.1 you would:
+   To register the NuXL nodes in ProteomeDiscoverer, files must be copied manually to the correct folder. Note: We are currently preparing an installer that will automatize the installation process.
+   
+   For PD 3.1 you need to:
    1.	Copy `PD.OpenMS.NuXLNode.dll` to `C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Thermo.Magellan.Server`
    2.	Copy `PD.OpenMS.NuXLViewer.dll` to `C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Thermo.Discoverer`
    3.	Copy `ZedGraph_OpenMS.dll` to `C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Thermo.Discoverer`
    4.	Go to `C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Tools` and copy the folder `NuXL` from the .zip. 
    5.	Open PD, go to `Administration -> Manage Licenses`. Click `Scan for Missing Features` on top of the list of available licenses on the right side of the PD window.
 
-5. **Troubleshooting**
+   For PD 3.0 you need to:
+   1.	Copy `PD.OpenMS.AdapterNodes.dll` to `C:\Program Files\Thermo\Proteome Discoverer 3.0\Proteome Discoverer 3.0\Thermo.Magellan.Server`
+   3.	Copy `ZedGraph_OpenMS.dll` to `C:\Program Files\Thermo\Proteome Discoverer 3.0\Proteome Discoverer 3.0\Thermo.Discoverer`
+   4.	Go to `C:\Program Files\Thermo\Proteome Discoverer 3.0\Proteome Discoverer 3.0\Tools` and copy the folder `NuXL` from the .zip. 
+   5.	Open PD, go to `Administration -> Manage Licenses`. Click `Scan for Missing Features` on top of the list of available licenses on the right side of the PD window.
+
+6. **Troubleshooting**
    - Sometimes the operating system blocks the execution of .dlls copied from an external source. In these cases, it is necessary to go to the folder containing the .dll, right-click on it, choose properties, and then security. The dialog offers an option to unblock the .dll from execution.
 
 Note: Coming soon: One-click installer so no manual copy is required. The installer will automatically detect your Proteome Discoverer installation directory and deploy the NuXL nodes correctly.
