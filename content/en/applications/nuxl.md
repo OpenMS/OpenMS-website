@@ -23,10 +23,10 @@ NuXL is currently compatible with Proteome Discoverer 3.0 and 3.1.
 Download the PD archive from https://github.com/timosachsenberg/OpenMS/releases/tag/NuXLPublication
 
 3. **Before Installation:**
-   - Please make sure that Proteome Discoverer is closed before running the NuXL installer.
+   - Please ensure that Proteome Discoverer is closed before running the NuXL installer.
 
 4. **Manual Installation:**
-   To register the NuXL nodes in ProteomeDiscoverer, files must be copied manually to the correct folder. Note: We are currently preparing an installer that will automatize the installation process.
+   To register the NuXL nodes in ProteomeDiscoverer, files must be copied manually to the correct folder. Note: We are currently preparing an installer to automate the installation process.
    
    For PD 3.1 you need to:
    1.	Copy `PD.OpenMS.NuXLNode.dll` to `C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Thermo.Magellan.Server`
@@ -53,7 +53,7 @@ Note: Coming soon: One-click installer so no manual copy is required. The instal
    - Create a new study, define a root directory and study name (e.g., `NuXL Study`). If you set up your first NuXL study, leave `(empty workflow)`
 
 2. **Adding a Protein Database:**
-   - Use the `Maintain FASTA file` option in Proteome Discoverer to add new protein databases to your project. Once configured, you can select this database in the NuXL node of the processing workflow.
+   - Use the `Administration' -> `Maintain FASTA file` option in Proteome Discoverer to add new protein databases to your project. Once configured, you can select this database in the NuXL node of the processing workflow.
 
 ### Analysis Workflows
 
@@ -110,8 +110,8 @@ Note: Coming soon: One-click installer so no manual copy is required. The instal
 You can monitor the progress of your analysis by opening `Administration` -> `Show Job Queue`.
 
 1. **Viewing Results:**
-   - Result files are not exported automatically. You can view your results in Proteome Discoverer, by double-clicking on a successfully finished `Consensus` type result row.
-   - Results are displayed in several tabs. You can choose to view: `Proteins`, `PSMs and NuXL`, `MS/MS Spectrum Info`, `Input Files`, `Specialized Traces`, and `Study Information`. Depending on your consensus workflow, you might see additional tabs.
+   - Result files are not exported automatically. All results are listed under the Analysis Results tab. You can view your results in Proteome Discoverer by double-clicking the result file.
+   - Results are displayed in several tabs. You can view: `Proteins`, `PSMs and NuXL`, `MS/MS Spectrum Info`, `Input Files`, `Specialized Traces`, and `Study Information`. Depending on your consensus workflow, you might see additional tabs.
    - In the `PSMs and NuXL` table, information about all peptide and crosslink spectrum matches (PSMs and NuXLs, respectively) is displayed.  Key columns include `Annotated Sequence`, `Modifications`, `Protein Accessions`, `q-value` (CSM-level q-value). We recommend to filter your results for 1% CSM-level FDR (`q-value` <= 0.01).
 
 <center>{{< figure src="/images/content_images/applications/NuXL_visualize.png" >}}</center>
