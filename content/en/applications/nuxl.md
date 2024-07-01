@@ -111,8 +111,11 @@ You can monitor the progress of your analysis by opening `Administration` -> `Sh
 
 1. **Viewing Results:**
    - Result files are not exported automatically. All results are listed under the Analysis Results tab. You can view your results in Proteome Discoverer by double-clicking the result file.
+  
+   <center>{{< figure src="/images/content_images/applications/NuXL_result_file.png" >}}</center>
+      
    - Results are displayed in several tabs. You can view: `Proteins`, `PSMs and NuXL`, `MS/MS Spectrum Info`, `Input Files`, `Specialized Traces`, and `Study Information`. Depending on your consensus workflow, you might see additional tabs.
-   - In the `PSMs and NuXL` table, information about all peptide and crosslink spectrum matches (PSMs and NuXLs, respectively) is displayed.  Key columns include `Annotated Sequence`, `Modifications`, `Protein Accessions`, `q-value` (CSM-level q-value). We recommend to filter your results for 1% CSM-level FDR (`q-value` <= 0.01).
+   - The `PSMs and NuXL` table provides information about all peptide and crosslink spectrum matches (PSMs and NuXLs, respectively).  Key columns include `Annotated Sequence`, `Modifications`, `Protein Accessions`, `q-value` (CSM-level q-value). We recommend to filter your results for 1% CSM-level FDR (`q-value` <= 0.01).
 
 <center>{{< figure src="/images/content_images/applications/NuXL_visualize.png" >}}</center>
 
