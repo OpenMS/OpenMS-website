@@ -16,24 +16,46 @@
 .swiper-wrapper .swiper-slide {
  display: flex;
  flex-direction: column;
- height: 90%;
+ height: 65%;
  width: 90%;
  border: 1px solid lightgray;
  border-radius: 25px;
  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+ transition: height 0.6s ease;
 }
+
 
 .swiper-slide p {
  margin: 0px;
  padding-top: 3px;
  margin-left: 25px;
- 
+ display: none;
+ transition: display 2.5s ease;
 }
 
 .swiper-slide img {
  width: 250px;
  height: 262px;
  margin-bottom: 10px;
+}
+
+.swiper-slide .naseweise-logo,
+.swiper-slide .nuxl-logo {
+ height: 200px;
+}
+
+.swiper-slide .naseweise-logo {
+ width: 200px;
+ height: 110px;
+ margin: 60px 0 90px 25px;
+}
+
+.swiper-slide .nuxl-logo {
+ width: 200px;
+ height: 150px;
+ margin-top: 40px;
+ margin-left: 25px;
+ margin-bottom: 70px;
 }
 
 .swiper-button-prev, .swiper-button-next {
