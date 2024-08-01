@@ -1,57 +1,22 @@
+{{- $webapps := .Site.Params.webapps }}
+
 <section class="webapps-container">
+    
  <h1 class="title is-1 is-bold is-spaced heroItemTitle" > WebApps </h1>
-      <div class="swiper">
+ {{- range $webapps}} 
+ <div class="swiper">
         <div class="swiper-wrapper">
+
+          <a href="{{ .url }}">
           <div class="swiper-slide">
-            <img src="/images/webapp/logo/umetaflow-logo.png" alt="">
-            <p>This app offers the powerful</p>
-            <p>UmetaFlow [1] pipeline for</p>
-            <p>untargeted metabolomics ...</p>
+            <img src="{{ .logo }}" alt="">
+            <p>"{{ .description }}"</p>
           </div>
-          <div class="swiper-slide">
-            <img src="/images/webapp/logo/naseweis.png" alt="" class="naseweise-logo">
-            <p>This is a longer card with</p>
-            <p>supporting text below as a</p>
-            <p>natural lead-in to addition...</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="/images/webapp/logo/umetaflow-logo.png" alt="">
-            <p>This is a longer card with</p>
-            <p>supporting text below as a</p>
-            <p>natural lead-in to addition...</p>
-          </div>
-	  <div class="swiper-slide">
-            <img src="/images/webapp/logo/NuXL_logo.png" alt="" class="nuxl-logo">
-            <p>This is a longer card with</p>
-            <p>supporting text below as a</p>
-            <p>natural lead-in to addition...</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="/images/webapp/logo/umetaflow-logo.png" alt="">
-            <p>This is a longer card with</p>
-            <p>supporting text below as a</p>
-            <p>natural lead-in to addition...</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="/images/webapp/logo/naseweis.png" alt="" class="naseweise-logo">
-            <p>This is a longer card with</p>
-            <p>supporting text below as a</p>
-            <p>natural lead-in to addition...</p>
-          </div>
-	  <div class="swiper-slide">
-            <img src="/images/webapp/logo/umetaflow-logo.png" alt="">
-            <p>This is a longer card with</p>
-            <p>supporting text below as a</p>
-            <p>natural lead-in to addition...</p>
-          </div>
-	  <div class="swiper-slide">
-            <img src="/images/webapp/logo/NuXL_logo.png" alt="" class="nuxl-logo">
-            <p>This is a longer card with</p>
-            <p>supporting text below as a</p>
-            <p>natural lead-in to addition...</p>
-          </div>
+          </a>
+
         </div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
       </div>
-    </section>
+    {{- end}}
+</section>
