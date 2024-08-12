@@ -3,20 +3,22 @@
 <section class="webapps-container">
     
  <h1 class="title is-1 is-bold is-spaced heroItemTitle" > WebApps </h1>
- {{- range $webapps}} 
+ 
  <div class="swiper">
         <div class="swiper-wrapper">
-
-          <a href="{{ .url }}">
+          {{- range $webapps}}
+          <!-- <a href="{{ .url }}"> -->
           <div class="swiper-slide">
             <img src="{{ .logo }}" alt="">
             <p>"{{ .description }}"</p>
           </div>
-          </a>
+          {{- end}}
+          <!-- </a> -->
 
         </div>
+        
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
       </div>
-    {{- end}}
+
 </section>

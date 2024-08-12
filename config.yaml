@@ -115,6 +115,18 @@ languages:
       - url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
         logo:
         description: FLASHTaggerviewer visualize output from FLASH* tools.
+      - url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
+        logo: /images/webapp/logo/umetaflow-logo.png
+        description: This app offers the powerful UmetaFlow pipeline for untargeted metabolomics in an accessible user interface.
+      - url: https://abi-services.cs.uni-tuebingen.de/nuxl/
+        logo: /images/webapp/logo/NuXL_logo.png
+        description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry) data obtained from UV and chemically crosslinked protein–RNA/DNA samples. 
+      - url:
+        logo: /images/webapp/logo/naseweis.png
+        description: NASEWEIS is webapp version of the NucleicAcidSearchEngine, it is a tool to do library searching of Oligonucleotide RNA data.
+      - url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
+        logo:
+        description: FLASHTaggerviewer visualize output from FLASH* tools.
           
       section5: false
 
