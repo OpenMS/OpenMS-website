@@ -7,7 +7,7 @@
  <div class="swiper">
         <div class="swiper-wrapper">
           {{- range $index, $webapp := $webapps}}
-          <div class="swiper-slide slide-{{ $index }}">
+          <div class="swiper-slide slide-{{ $index }}" data-url="{{ $webapp.url }}">
             <img src="{{ $webapp.logo }}" alt="">
             <p>"{{ $webapp.description }}"</p>
           </div>

@@ -68,6 +68,13 @@ $(document).ready(function(){
                 p.style.display = 'none';
             });
         });
+        
+       slide.addEventListener('click', () => {
+            const url = slide.getAttribute('data-url');
+            if (url) {
+              window.location.href = url;
+            }
+       });  
     });
 
 })
