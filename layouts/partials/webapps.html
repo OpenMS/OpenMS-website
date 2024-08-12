@@ -6,14 +6,12 @@
  
  <div class="swiper">
         <div class="swiper-wrapper">
-          {{- range $webapps}}
-          <!-- <a href="{{ .url }}"> -->
-          <div class="swiper-slide">
-            <img src="{{ .logo }}" alt="">
-            <p>"{{ .description }}"</p>
+          {{- range $index, $webapp := $webapps}}
+          <div class="swiper-slide slide-{{ $index }}">
+            <img src="{{ $webapp.logo }}" alt="">
+            <p>"{{ $webapp.description }}"</p>
           </div>
           {{- end}}
-          <!-- </a> -->
 
         </div>
         
