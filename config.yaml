@@ -110,15 +110,14 @@ languages:
       - index: 1
         url: https://abi-services.cs.uni-tuebingen.de/nuxl/
         logo: /images/webapp/logo/NuXL_logo.png
-        description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry) data obtained from UV and chemically crosslinked protein–RNA/DNA samples. 
+        description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry)...<br>    
       - index: 2
-        url:
         logo: /images/webapp/logo/naseweis.png
-        description: NASEWEIS is webapp version of the NucleicAcidSearchEngine, it is a tool to do library searching of Oligonucleotide RNA data.
+        description: NASEWEIS is webapp version of<br> the NucleicAcidSearchEngine,<br>it is a tool to do library searching of Oligonucleotide
       - index: 3
         url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
         logo: /images/webapp/logo/FLASH_TnT.png
-        description: FLASHTaggerviewer visualize output from FLASH* tools.
+        description: FLASHTaggerviewer visualize output from FLASH* tools. FLASH* tools can deconvolute your Topdown data very...
       - index: 4
         url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
         logo: /images/webapp/logo/umetaflow-logo.png
@@ -126,15 +125,15 @@ languages:
       - index: 5
         url: https://abi-services.cs.uni-tuebingen.de/nuxl/
         logo: /images/webapp/logo/NuXL_logo.png
-        description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry) data obtained from UV and chemically crosslinked protein–RNA/DNA samples. 
+        description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry)...
       - index: 6
         url:
         logo: /images/webapp/logo/naseweis.png
-        description: NASEWEIS is webapp version of the NucleicAcidSearchEngine, it is a tool to do library searching of Oligonucleotide RNA data.
+        description: NASEWEIS is webapp version<br>of the NucleicAcidSearch<br>Engine, it is a tool to do library searching of...
       - index: 7
         url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
         logo: /images/webapp/logo/FLASH_TnT.png
-        description: FLASHTaggerviewer visualize output from FLASH* tools.
+        description: FLASHTaggerviewer visualize output from FLASH* tools. FLASH* tools can deconvolute your Topdown data very...
           
       section5: false
 

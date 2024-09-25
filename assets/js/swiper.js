@@ -3,7 +3,7 @@ $(document).ready(function(){
     // Optional parameters
     loop: true,
     grabCursor: true,
-    spaceBetween: 50,
+    spaceBetween: 55,
 
     // If we need pagination
     pagination: {
@@ -16,6 +16,7 @@ $(document).ready(function(){
       prevEl: '.swiper-button-prev',
     },
 
+  
     breakpoints: {
       800: {
         slidesPerView: 1
@@ -62,8 +63,8 @@ $(document).ready(function(){
             }
         });
 
-        slide.addEventListener('mouseout', () => {
-            slide.style.height = '65%';
+        slide.addEventListener('mouseleave', () => {
+            slide.style.height = '60%';
             paragraphs.forEach(p => {
                 p.style.display = 'none';
             });
