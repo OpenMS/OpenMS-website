@@ -62,19 +62,58 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 /openpepxl /applications/openpepxl 200
 /OpenpepXL /applications/openpepxl 200
 
-/rnpxl /applications/rnpxl 200
-/RNPxl /applications/rnpxl 200
+/rnpxl /applications/nuxl 200
+/RNPxl /applications/nuxl 200
+/nuxl /applications/nuxl 200
+/NuXL /applications/nuxl 200
 
 /FLASHIda /applications/flashida 200
 /flashida /applications/flashida 200
 /FlashIda /applications/flashida 200
 
-#SPW: Add NASEWEIS redirect to ABI-services
+# Redirects for WebApps
 
+# Template App
+/streamlit-template https://abi-services.cs.uni-tuebingen.de/streamlit-template/ 301
+/STREAMLIT-TEMPLATE https://abi-services.cs.uni-tuebingen.de/streamlit-template/ 301
+/StreamlitTemplate https://abi-services.cs.uni-tuebingen.de/streamlit-template/ 301
+/streamlittemplate https://abi-services.cs.uni-tuebingen.de/streamlit-template/ 301
+
+# Naseweis
 /NASEWEIS https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
 /naseweis https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
+/NaseWeis https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
 /nase-weis https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
 /NASE-WEIS https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
 
+# Umetaflow
+/UMETAFLOW https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
+/umetaflow https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
+/UmetaFlow https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
+/umeta-flow https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
+/UMETA-FLOW https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
 
+# NuXL-app 
+/nuxl-app https://abi-services.cs.uni-tuebingen.de/nuxl/ 301
+/NUXL-APP https://abi-services.cs.uni-tuebingen.de/nuxl/ 301
+/nuXL-app https://abi-services.cs.uni-tuebingen.de/nuxl/ 301
+/nu-xl-app https://abi-services.cs.uni-tuebingen.de/nuxl/ 301
+/NU-XL-app https://abi-services.cs.uni-tuebingen.de/nuxl/ 301
 
+# FLASHViewer
+/FLASHViewer https://abi-services.cs.uni-tuebingen.de/flashviewer/ 301
+/FLASHviewer https://abi-services.cs.uni-tuebingen.de/flashviewer/ 301
+/FlashViewer https://abi-services.cs.uni-tuebingen.de/flashviewer/ 301
+/FLASHVIEWER https://abi-services.cs.uni-tuebingen.de/flashviewer/ 301
+/flashviewer https://abi-services.cs.uni-tuebingen.de/flashviewer/ 301
+/FLASH-Viewer https://abi-services.cs.uni-tuebingen.de/flashviewer/ 301
+/Flash-Viewer https://abi-services.cs.uni-tuebingen.de/flashviewer/ 301
+/FLASH-viewer https://abi-services.cs.uni-tuebingen.de/flashviewer/ 301
+/flash-viewer https://abi-services.cs.uni-tuebingen.de/flashviewer/ 301
+
+# SagePTMScanner 
+/SagePTMScanner https://abi-services.cs.uni-tuebingen.de/SagePTMScanner/ 301
+/SAGEPTMSCANNER https://abi-services.cs.uni-tuebingen.de/SagePTMScanner/ 301
+/sageptmscanner https://abi-services.cs.uni-tuebingen.de/SagePTMScanner/ 301
+/SAGE-PTM-SCANNER https://abi-services.cs.uni-tuebingen.de/SagePTMScanner/ 301
+/sage-ptm-scanner https://abi-services.cs.uni-tuebingen.de/SagePTMScanner/ 301
