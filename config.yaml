@@ -113,7 +113,7 @@ languages:
         description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry)...<br>    
       - index: 2
         logo: /images/webapp/logo/naseweis.png
-        description: NASEWEIS is webapp version of<br> the NucleicAcidSearchEngine,<br>it is a tool to do library searching of Oligonucleotide
+        description: NASEWEIS is webapp version of the NucleicAcidSearch<br>Engine, it is a tool to do library searching of Oligonucleotide
       - index: 3
         url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
         logo: /images/webapp/logo/FLASH_TnT.png
