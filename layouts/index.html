@@ -18,6 +18,9 @@
     {{ if .Site.Params.keyfeatures }}
     {{ partial "keyfeatures.html" . }}
     {{ end }}
+
+    {{partial "webapps.html" . }}
+    <!--{{partial "webapps_1.html" . }}-->
     
     {{ if .Site.Params.heroGroup }}
     {{ partial "heroitems.html" . }}

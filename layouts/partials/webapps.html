@@ -1,0 +1,22 @@
+{{- $webapps := .Site.Params.webapps }}
+
+<section class="webapps-container">
+    
+ <h1 class="title is-1 is-bold is-spaced heroItemTitle" > WebApps </h1>
+ 
+ <div class="swiper">
+        <div class="swiper-wrapper">
+          {{- range $index, $webapp := $webapps}}
+          <div class="swiper-slide slide-{{ $index }}" data-url="{{ $webapp.url }}">
+            <img src="{{ $webapp.logo }}" alt="">
+            <p>{{ $webapp.description | safeHTML}}</p>
+          </div>
+          {{- end}}
+
+        </div>
+        
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+</section>

@@ -101,6 +101,39 @@ languages:
           text: Every tool that is developed within OpenMS is available on flexible, scalable and easy-to-use workflow engines (such as KNIME, Galaxy, and nextflow) facilitating reproducible science.
           img: /images/content_images/keyfeatures/workflows2.png
           url: https://openms.readthedocs.io/en/latest/getting-started/workflows.html
+
+      webapps:
+      - index: 0
+        url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
+        logo: /images/webapp/logo/umetaflow-logo.png
+        description: This app offers the powerful UmetaFlow pipeline for untargeted metabolomics in an accessible user interface.
+      - index: 1
+        url: https://abi-services.cs.uni-tuebingen.de/nuxl/
+        logo: /images/webapp/logo/NuXL_logo.png
+        description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry)...<br>    
+      - index: 2
+        logo: /images/webapp/logo/naseweis.png
+        description: NASEWEIS is webapp version of the NucleicAcidSearch<br>Engine, it is a tool to do library searching of Oligonucleotide
+      - index: 3
+        url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
+        logo: /images/webapp/logo/FLASH_TnT.png
+        description: FLASHTaggerviewer visualize output from FLASH* tools. FLASH* tools can deconvolute your Topdown data very...
+      - index: 4
+        url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
+        logo: /images/webapp/logo/umetaflow-logo.png
+        description: This app offers the powerful UmetaFlow pipeline for untargeted metabolomics in an accessible user interface.
+      - index: 5
+        url: https://abi-services.cs.uni-tuebingen.de/nuxl/
+        logo: /images/webapp/logo/NuXL_logo.png
+        description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry)...
+      - index: 6
+        url:
+        logo: /images/webapp/logo/naseweis.png
+        description: NASEWEIS is webapp version<br>of the NucleicAcidSearch<br>Engine, it is a tool to do library searching of...
+      - index: 7
+        url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
+        logo: /images/webapp/logo/FLASH_TnT.png
+        description: FLASHTaggerviewer visualize output from FLASH* tools. FLASH* tools can deconvolute your Topdown data very...
           
       section5: false
 
