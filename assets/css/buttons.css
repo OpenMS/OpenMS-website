@@ -1,0 +1,22 @@
+.icon-btn {
+    background-color: var(--colorPrimaryDarkBtn);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 25px;
+  }
+  
+  .icon-img {
+    margin-right: 0.5rem;
+  }
+
+  @media (max-width: 400px) {
+    .icon-btn {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    .icon-img {
+      margin-right: 0.25rem;
+    }
+  }

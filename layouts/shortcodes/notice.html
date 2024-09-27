@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{{/*
+
+doc: Create note, warning, information, and tip notices.
+
+{{< notice note >}}
+This is a note.
+{{< /notice >}}
+
+{{< notice info >}}
+This is information.
+{{< /notice >}}
+
+{{< notice warning >}}
+This is a warning.
+{{< /notice >}}
+
+{{< notice tip >}}
+This is a tip.
+{{< /notice >}}
+
+*/}}
+
+<div class="notice {{ .Get 0 }}-notice">
+  <div class="notice-type">
+  {{ if eq (.Get 0) "note" }}<i class="fa fa-pencil-square-o"></i>{{ end }}
+  {{ if eq (.Get 0) "info" }}<i class="fa fa-info"></i>{{ end }}
+  {{ if eq (.Get 0) "warning" }}<i class="fa fa-exclamation-triangle"></i>{{ end }}
+  {{ if eq (.Get 0) "tip" }}<i class="fa fa-commenting-o"></i>{{ end }}  &nbsp;{{ .Get 0 | humanize }}</div>
+  <div class="notice-content">
+    {{ .Inner | markdownify }}
+  </div></br>
+</div>

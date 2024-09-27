@@ -1,0 +1,28 @@
+<!-- Visualization Tab Content -->
+{{- $visualization := .Site.Params.visualization }}
+{{- $content := index $visualization "content" }}
+{{- $images := index $visualization "images" }}
+<li class="visualization">
+    <div class="grid-container">
+        <div class="visualization-images">
+            <div class="image-grid">
+                {{- range $images  }}
+                    <div>
+                        <a href="{{ .url }}">
+                            <img src="{{ .img }}" alt="{{ .alttext }}" align="middle"/>
+                        </a>
+                    </div>
+                {{- end }}
+            </div>
+        </div>
+        <div>
+            {{- range $content  }}
+            <p>
+                {{ .text | markdownify }}
+            </p>
+            {{- end }}
+        </div>
+        <div>
+        </div>
+    </div>
+</li>

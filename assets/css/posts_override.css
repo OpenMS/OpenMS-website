@@ -1,0 +1,13 @@
+.post-authors::before {
+  content: "by ";
+}
+
+.post-list article {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.post-list .post-title h3 {
+  padding: 0;
+  margin: 0%;
+}

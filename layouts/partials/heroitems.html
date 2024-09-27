@@ -1,0 +1,48 @@
+{{- $heroGroup := .Site.Params.heroGroup }}
+{{- range $heroGroup }}
+{{- $bgColor := .bgColor }}
+<center>
+    <h1 class="title is-1 is-bold is-spaced heroItemTitle" style="background-color: #{{- $bgColor }};"> {{ .title }} </h1>
+</center>
+{{- range .heroItems }}
+<div class="hero-body {{- if .bottomBorderRadius }} heroBottomRadius {{- end}}" style="padding: 2rem 2rem; background-color: #{{- $bgColor }};">
+    <div class="container is-max-widescreen">
+        <div class="columns is-vcentered">
+            {{- if .leftAlign }}
+            <div class="column is-5 is-offset-1 hide-mobile">
+                <figure class="image is-4by3">
+                    <img class="{{ .imgClass }}"  src="{{ printf "/images/%s" .image | relURL }}" alt="Description">
+                </figure>
+            </div>
+            {{- end}}
+            <div class="column is-5 is-offset-1 landing-caption">
+                <h1 class="title is-2 is-bold is-spaced">
+                    {{ .title }}
+                </h1>
+                {{- with .subtitle }}
+                <h2 class="subtitle is-5 is-muted">
+                    {{ . }}
+                </h2>
+                {{- end }}
+                <div class="hero-cta">
+                    <a href="{{ .buttonLink }}"><button class="cta-button">{{ .buttonText }}</button></a>
+                </div>
+            </div>
+            {{- if and (not .leftAlign) (not .terminal) }}
+            <div class="column is-5 is-offset-1 hide-mobile">
+                <figure class="image is-4by3">
+                    <img src="{{ printf "/images/%s" .image | relURL }}" alt="Description">
+                </figure>
+            </div>
+            {{- end }}
+            {{- if .terminal }}
+            <div class="column is-5 is-offset-1 hide-mobile">
+                {{ partial "terminal.html" . }}
+              </div>
+            {{- end }}
+        </div>
+    </div>
+</div>
+{{- end }}
+<br>
+{{- end }}

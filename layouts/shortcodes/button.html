@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{{/*
+
+doc: Create download, normal buttons.
+
+{{< button normal link >}}
+Normal Button
+{{< /button >}}
+
+{{< button download link >}}
+Download Button
+{{< /button >}}
+
+{{< button github link >}}
+Github Button
+{{< /button >}}
+
+{{< button rocket link >}}
+Rocket Button
+{{< /button >}}
+
+*/}}
+
+<center style="margin: 1rem;">
+    <a class="icon-btn" href='{{ .Get 1 }}' target="_blank" style="color: #fff;">
+        <i class="fa fa-{{ .Get 0 }} icon-img"></i>
+        {{ .Inner | markdownify }}
+    </a>
+</center>

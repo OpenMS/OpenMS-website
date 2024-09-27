@@ -1,0 +1,43 @@
+.content-container .divider {
+    background: #1e0010;
+}
+
+.content-container h1 {
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+.content-container h2 {
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+.content-container h3 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.content-container h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: -10px;
+}
+
+.content-container h5 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 22px;
+}
+
+.content-container h6 {
+    text-transform: uppercase;
+    font-weight: bold;
+}

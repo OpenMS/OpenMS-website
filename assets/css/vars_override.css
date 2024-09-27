@@ -1,0 +1,6 @@
+:root {
+  --fontFamily: {{ .Site.Params.font.name }};
+
+  --colorPrimaryDark: #0c2a60;
+  --colorPrimaryDarkBtn: #0c2a60;
+}
