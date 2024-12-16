@@ -158,6 +158,15 @@ border-radius: 30px;
 }
 
 @media (max-width: 699px) {
-
-
+  .topdowns-section-container {
+    padding: 0 20px;
+  }
+  .topdowns-container {    
+    flex-direction: column;
+    gap: 20px;
+  }
+  .topdown-item {
+    width: 100%;
+    margin: 0;
+  }
 }
