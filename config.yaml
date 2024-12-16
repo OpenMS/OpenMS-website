@@ -107,7 +107,7 @@ languages:
         url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
         image: /images/dias/DIAMetAlyzer.png
         title: DIAMetalyzer
-        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1). It performs DDA based candidate identification and constructs a target/decoy assay library, which is used for DIA target extraction and statistical validation (FDR estimation)
+        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1).  
         link1: https://github.com/knime
         link1-logo: /images/link-icon/knime.jpg
         link2: https://github.com/nf-core
@@ -120,7 +120,7 @@ languages:
         url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
         image: /images/dias/DIAMetAlyzer.png
         title: DIAProteomics
-        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1). It performs DDA based candidate identification and constructs a target/decoy assay library, which is used for DIA target extraction and statistical validation (FDR estimation)
+        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1).  
         link1: https://github.com/knime
         link1-logo: /images/link-icon/knime.jpg
         link2: https://github.com/nf-core
@@ -135,7 +135,7 @@ languages:
         url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
         image: /images/topdowns/FLASHTnT.png
         title: FLASHDeconv
-        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1). It performs DDA based candidate identification and constructs a target/decoy assay library, which is used for DIA target extraction and statistical validation (FDR estimation)
+        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1).  
         link1: https://github.com/knime
         link1-logo: /images/link-icon/knime.jpg
         link2: https://github.com/nf-core
@@ -148,7 +148,7 @@ languages:
         url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
         image: /images/topdowns/FLASHTnT.png
         title: FLASHQuant
-        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1). It performs DDA based candidate identification and constructs a target/decoy assay library, which is used for DIA target extraction and statistical validation (FDR estimation)
+        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1).  
         link1: https://github.com/knime
         link1-logo: /images/link-icon/knime.jpg
         link2: https://github.com/nf-core
@@ -161,7 +161,7 @@ languages:
         url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
         image: /images/topdowns/FLASHTnT.png
         title: FLASHTnT
-        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1). It performs DDA based candidate identification and constructs a target/decoy assay library, which is used for DIA target extraction and statistical validation (FDR estimation)
+        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1).  
         link1: https://github.com/knime
         link1-logo: /images/link-icon/knime.jpg
         link2: https://github.com/nf-core

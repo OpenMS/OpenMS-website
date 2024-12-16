@@ -1,143 +1,154 @@
 .topdowns-section-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto 30px;
-    max-width: 1152px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 30px;
+  max-width: 1152px;
 }
 
 .topdowns-container {
-    display: flex;
-    margin-bottom: 30px;
-    
+  display: flex;
+  margin-bottom: 30px;
+  
 }
 .topdown-item {
-    margin: 0 20px;
-    margin: 0 20px;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
-    justify-content: space-between;
-    gap: 0.5rem;
-    border: 1px solid #DFDFDF;
-    border-radius: 6px;
+  margin: 0 20px;
+  margin: 0 20px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  justify-content: space-between;
+  gap: 0.5rem;
+  border: 1px solid #DFDFDF;
+  border-radius: 6px;
 }
 .topdown-item-image {
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.topdown-under-pics {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 }
 .topdown-item-desc {
-    padding: 20px;
+padding: 10px 20px 5px;
 }
 .topdown-item-desc h3 {
-    font-size: 18px;
-    line-height: 21px;
-    text-transform: none;
-    transition: color 0.3s ease;
+  font-size: 18px;
+  line-height: 21px;
+  text-transform: none;    
+  transition: color 0.3s ease;
+  padding: 0;
 }
 .topdown-item-desc a:hover h3 {
-  color: #7A76FF;
+color: #7A76FF;
+}
+.topdown-under-pics p{
+font-size: 14px;
+padding: 5px 20px 10px;
 }
 .topdown-links {
-    border-top: 1px solid #DFDFDF;
-    width: 100%;
-    padding: 10px 20px;
-    display: flex;    
-    justify-content: flex-end;
-    gap: 10px;
+  border-top: 1px solid #DFDFDF;
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;    
+  justify-content: flex-end;
+  gap: 10px;
 }
 .topdown-links a {
-    width: 30px;
-    height: 30px;
-    border-radius: 30px;
-    border: 2px solid #fff;
-    transition: border-color 0.3s ease;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  border: 2px solid #fff;
+  transition: border-color 0.3s ease;
 }
 .topdown-links a:hover {
-  border: 2px solid #7A76FF;
+border: 2px solid #7A76FF;
 }
 .topdown-links img {
-  border-radius: 30px;
+border-radius: 30px;
 }
 /* dia-item 스타일 */
 .topdown-item {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  /* 이미지 컨테이너 스타일 */
-  .topdown-item .image-wrapper {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  /* 이미지 스타일 */
-  .topdown-item-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease; /* 이미지 확대 효과 */
-  }
-  
-  /* hover 시 이미지 확대 */
-  .topdown-item:hover .image-wrapper .topdown-item-image {
-    transform: scale(1.1); /* 이미지 확대 */
-  }
-  
-  /* 오버레이 스타일 */
-  .image-wrapper .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정색 */
-    opacity: 0; /* 기본값은 보이지 않음 */
-    pointer-events: none; /* 오버레이가 클릭 이벤트를 방해하지 않도록 설정 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.3s ease; /* 부드러운 전환 효과 */
-  }
-  
-  /* hover 시 오버레이 표시 */
-  .topdown-item:hover .image-wrapper .overlay {
-    opacity: 1; /* 오버레이 표시 */
-  }
-  
-  /* 중앙 아이콘 스타일 */
-  .image-wrapper .overlay i {
-    width: 40px;
-    height: 40px;
-    background-image: url('https://via.placeholder.com/40'); /* 아이콘 URL */
-    background-size: cover;
-    background-position: center;
-  }
-  .image-wrapper .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정색 */
-    opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.3s ease;
-  }
-  
-  .image-wrapper:hover .overlay {
-    opacity: 1; /* hover 시 오버레이 표시 */
-  }
-  
-  .overlay svg {
-    width: 50px;
-    height: 50px;
-    fill: #ffffff; /* 아이콘 색상 */
-  }
-  
+  position: relative;
+  overflow: hidden;
+}
+
+/* 이미지 컨테이너 스타일 */
+.topdown-item .image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 이미지 스타일 */
+.topdown-item-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; /* 이미지 확대 효과 */
+  min-height: 200px;
+}
+
+/* hover 시 이미지 확대 */
+.topdown-item:hover .image-wrapper .topdown-item-image {
+  transform: scale(1.1); /* 이미지 확대 */
+}
+
+/* 오버레이 스타일 */
+.image-wrapper .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정색 */
+  opacity: 0; /* 기본값은 보이지 않음 */
+  pointer-events: none; /* 오버레이가 클릭 이벤트를 방해하지 않도록 설정 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+/* hover 시 오버레이 표시 */
+.topdown-item:hover .image-wrapper .overlay {
+  opacity: 1; /* 오버레이 표시 */
+}
+
+/* 중앙 아이콘 스타일 */
+.image-wrapper .overlay i {
+  width: 40px;
+  height: 40px;
+  background-image: url('https://via.placeholder.com/40'); /* 아이콘 URL */
+  background-size: cover;
+  background-position: center;
+}
+.image-wrapper .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정색 */
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover .overlay {
+  opacity: 1; /* hover 시 오버레이 표시 */
+}
+
+.overlay svg {
+  width: 50px;
+  height: 50px;
+  fill: #ffffff; /* 아이콘 색상 */
+}
+
 @media (max-width: 1349px) {
 
 }
