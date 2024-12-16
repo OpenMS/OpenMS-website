@@ -1,4 +1,4 @@
-baseURL: https://openms.de/
+baseURL: /
 languageCode: en-us
 theme: scientific-python-hugo-theme
 disableKinds: ["taxonomy", "term"]
@@ -101,6 +101,75 @@ languages:
           text: Every tool that is developed within OpenMS is available on flexible, scalable and easy-to-use workflow engines (such as KNIME, Galaxy, and nextflow) facilitating reproducible science.
           img: /images/content_images/keyfeatures/workflows2.png
           url: https://openms.readthedocs.io/en/latest/getting-started/workflows.html
+      
+      DIAs:
+      - index: 0
+        url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
+        image: /images/dias/DIAMetAlyzer.png
+        title: DIAMetalyzer
+        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1). It performs DDA based candidate identification and constructs a target/decoy assay library, which is used for DIA target extraction and statistical validation (FDR estimation)
+        link1: https://github.com/knime
+        link1-logo: /images/link-icon/knime.jpg
+        link2: https://github.com/nf-core
+        link2-logo: /images/link-icon/nf-core.jpg
+        link3: https://x.com/streamlit
+        link3-logo: /images/link-icon/Streamlit.jpg
+        link4: https://openms.de/documentation/TOPPAS_tutorial.html
+        link4-logo: /images/link-icon/OpenMS_TOPPAS.jpg
+      - index: 1
+        url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
+        image: /images/dias/DIAMetAlyzer.png
+        title: DIAProteomics
+        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1). It performs DDA based candidate identification and constructs a target/decoy assay library, which is used for DIA target extraction and statistical validation (FDR estimation)
+        link1: https://github.com/knime
+        link1-logo: /images/link-icon/knime.jpg
+        link2: https://github.com/nf-core
+        link2-logo: /images/link-icon/nf-core.jpg
+        link3: https://x.com/streamlit
+        link3-logo: /images/link-icon/Streamlit.jpg
+        link4: https://openms.de/documentation/TOPPAS_tutorial.html
+        link4-logo: /images/link-icon/OpenMS_TOPPAS.jpg
+    
+      topdowns:
+      - index: 0
+        url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
+        image: /images/topdowns/FLASHTnT.png
+        title: FLASHDeconv
+        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1). It performs DDA based candidate identification and constructs a target/decoy assay library, which is used for DIA target extraction and statistical validation (FDR estimation)
+        link1: https://github.com/knime
+        link1-logo: /images/link-icon/knime.jpg
+        link2: https://github.com/nf-core
+        link2-logo: /images/link-icon/nf-core.jpg
+        link3: https://x.com/streamlit
+        link3-logo: /images/link-icon/Streamlit.jpg
+        link4: https://openms.de/documentation/TOPPAS_tutorial.html
+        link4-logo: /images/link-icon/OpenMS_TOPPAS.jpg
+      - index: 1
+        url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
+        image: /images/topdowns/FLASHTnT.png
+        title: FLASHQuant
+        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1). It performs DDA based candidate identification and constructs a target/decoy assay library, which is used for DIA target extraction and statistical validation (FDR estimation)
+        link1: https://github.com/knime
+        link1-logo: /images/link-icon/knime.jpg
+        link2: https://github.com/nf-core
+        link2-logo: /images/link-icon/nf-core.jpg
+        link3: https://x.com/streamlit
+        link3-logo: /images/link-icon/Streamlit.jpg
+        link4: https://openms.de/documentation/TOPPAS_tutorial.html
+        link4-logo: /images/link-icon/OpenMS_TOPPAS.jpg
+      - index: 2
+        url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
+        image: /images/topdowns/FLASHTnT.png
+        title: FLASHTnT
+        description: DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1). It performs DDA based candidate identification and constructs a target/decoy assay library, which is used for DIA target extraction and statistical validation (FDR estimation)
+        link1: https://github.com/knime
+        link1-logo: /images/link-icon/knime.jpg
+        link2: https://github.com/nf-core
+        link2-logo: /images/link-icon/nf-core.jpg
+        link3: https://x.com/streamlit
+        link3-logo: /images/link-icon/Streamlit.jpg
+        link4: https://openms.de/documentation/TOPPAS_tutorial.html
+        link4-logo: /images/link-icon/OpenMS_TOPPAS.jpg
 
       webapps:
       - index: 0
