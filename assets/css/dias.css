@@ -45,9 +45,10 @@
 .dia-item-desc a:hover h3 {
   color: #7A76FF;
 }
-.dia-under-pics p{
+.dia-under-pics p {
   font-size: 14px;
   padding: 5px 20px 10px;
+  color: #5B6372;
 }
 .dia-links {
     border-top: 1px solid #DFDFDF;
