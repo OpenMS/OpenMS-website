@@ -18,8 +18,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;    
-  justify-content: space-between;
-  gap: 0.5rem;
   border: 1px solid #DFDFDF;
   border-radius: 6px;
 }
@@ -31,23 +29,24 @@
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+height: 100%;
 }
 .topdown-item-desc {
-padding: 10px 20px 5px;
+padding: 10px 20px;
 }
 .topdown-item-desc h3 {
   font-size: 18px;
   line-height: 21px;
   text-transform: none;    
   transition: color 0.3s ease;
-  padding: 0;
+  padding: 0 0 10px;
 }
 .topdown-item-desc a:hover h3 {
 color: #7A76FF;
 }
 .topdown-under-pics p {
 font-size: 14px;
-padding: 5px 20px 10px;
+padding: 0;
 color: #5B6372;
 }
 .topdown-links {
@@ -159,15 +158,16 @@ border-radius: 30px;
 }
 
 @media (max-width: 699px) {
-  .topdowns-section-container {
-    padding: 0 20px;
-  }
-  .topdowns-container {    
-    flex-direction: column;
-    gap: 20px;
-  }
-  .topdown-item {
-    width: 100%;
-    margin: 0;
-  }
+.topdowns-section-container {
+  padding: 0 20px;
+}
+.topdowns-container {    
+  flex-direction: column;
+  gap: 20px;
+}
+.topdown-item {
+  width: 100%;
+  margin: 0;
+}
+
 }

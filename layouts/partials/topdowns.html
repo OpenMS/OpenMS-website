@@ -34,8 +34,8 @@
     <div class="topdown-under-pics">
       <div class="topdown-item-desc">
         <a target="_blank" href="{{ $topdown.url }}"><h3>{{ $topdown.title }}</h3></a>
+        <p>{{ $topdown.description | safeHTML }}</p>
       </div>
-      <p>{{ $topdown.description | safeHTML }}</p>
       <!-- Links Section -->
       <div class="topdown-links">
         {{- range $key, $value := $topdown }}
