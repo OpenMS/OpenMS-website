@@ -33,9 +33,8 @@
     <div class="dia-under-pics">
       <div class="dia-item-desc">
         <a target="_blank" href="{{ $dia.url }}"><h3>{{ $dia.title }}</h3></a>
-        
+        <p>{{ $dia.description | safeHTML }}</p>
       </div>
-      <p>{{ $dia.description | safeHTML }}</p>
       <!-- Links Section -->
       <div class="dia-links">
         {{- range $key, $value := $dia }}
