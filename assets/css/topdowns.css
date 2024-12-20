@@ -121,9 +121,6 @@ border-radius: 30px;
 .image-wrapper .overlay i {
   width: 40px;
   height: 40px;
-  background-image: url('https://via.placeholder.com/40'); /* 아이콘 URL */
-  background-size: cover;
-  background-position: center;
 }
 .image-wrapper .overlay {
   position: absolute;
