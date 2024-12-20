@@ -76,48 +76,48 @@
     overflow: hidden;
   }
   
-  /* 이미지 컨테이너 스타일 */
+/* Image container styles */
   .dia-item .image-wrapper {
     position: relative;
     overflow: hidden;
   }
   
-  /* 이미지 스타일 */
+/* Image styles */
   .dia-item-image {
     display: block;
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease; /* 이미지 확대 효과 */
+    transition: transform 0.3s ease; /* Image zoom effect */
     min-height: 200px;
   }
   
-  /* hover 시 이미지 확대 */
+  /* Zoom image on hover */
   .dia-item:hover .image-wrapper .dia-item-image {
-    transform: scale(1.1); /* 이미지 확대 */
+    transform: scale(1.1); /* Zoom image */
   }
   
-  /* 오버레이 스타일 */
+  /* Overlay styles */
   .image-wrapper .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정색 */
-    opacity: 0; /* 기본값은 보이지 않음 */
-    pointer-events: none; /* 오버레이가 클릭 이벤트를 방해하지 않도록 설정 */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Prevent the overlay from blocking clicks */
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.3s ease; /* 부드러운 전환 효과 */
+    transition: opacity 0.3s ease; /* Smooth transition effect */
   }
   
-  /* hover 시 오버레이 표시 */
+  /* Show overlay on hover */
   .dia-item:hover .image-wrapper .overlay {
-    opacity: 1; /* 오버레이 표시 */
+    opacity: 1; /* Display overlay */
   }
   
-  /* 중앙 아이콘 스타일 */
+  /* Center icon styles */
   .image-wrapper .overlay i {
     width: 40px;
     height: 40px;
@@ -128,7 +128,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정색 */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
     opacity: 0;
     display: flex;
     align-items: center;
@@ -137,13 +137,13 @@
   }
   
   .image-wrapper:hover .overlay {
-    opacity: 1; /* hover 시 오버레이 표시 */
+    opacity: 1; /* Show overlay on hover */
   }
   
   .overlay svg {
     width: 50px;
     height: 50px;
-    fill: #ffffff; /* 아이콘 색상 */
+    fill: #ffffff; /* Icon color */
   }
   
 @media (max-width: 1349px) {
