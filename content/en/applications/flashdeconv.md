@@ -39,7 +39,7 @@ Under development
 
 ## Installation
 
-FLASHDeconv installation files (OpenMS-2.x.0-HEAD-, for windows *.exe, for mac *.dmg, and for linux *.deb) and source code (*-src.tar.gz) are found in [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/experimental/FLASHDeconvFix/). For the latest version, go to the bottom side of the page and select the most recent installation file.
+FLASHDeconv installation files (OpenMS-3.x.0-HEAD-, for windows *.exe, for mac *.dmg, and for linux *.deb) and source code (*-src.tar.gz) are found in [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/experimental/FVdeploy/). For the latest version, go to the bottom side of the page and select the most recent installation file.
 
 ## Parameters
 
