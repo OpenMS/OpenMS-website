@@ -2,7 +2,7 @@
 
 [Google Summer of Code (GSoC)](https://summerofcode.withgoogle.com) fantastic opportunity to contribute to the growth and innovation in the field of computational mass spectrometry by mentoring talented students from around the world. OpenMS is planning to apply as an umbrella organization and we would like to extend an invitation to other projects and groups within the computational mass spectrometry and proteomics/metabolomics communities to join us in this effort. If your project aligns with the goals of GSoC and you are interested in mentoring a student project, we encourage you to submit your proposals by Feburary 11th at 18:00 UTC 
 
-As an umbrella organization, we would like to extend an invitation to other projects and groups within the computational mass spectrometry and proteomics/metabolomics communities to join us in this effort. If your project aligns with the goals of GSoC and you are interested in mentoring a student project, we encourage you to submit your proposals by **February 11th at 18:00 UTC.**
+As an umbrella organization, we would like to extend an invitation to other projects and groups within the computational mass spectrometry and proteomics/metabolomics communities to join us in this effort. If your project aligns with the goals of GSoC and you are interested in mentoring a student project, we encourage you to submit your proposals by **February 7th at 23:59 UTC.**
 
 > **Note:** This webpage will be continuously updated to reflect new project proposals. Please check in regularly.
 
@@ -44,6 +44,7 @@ As an umbrella organization, we would like to extend an invitation to other proj
 Proteomics and metabolomics mass spectrometry studies are generating datasets of unprecedented size as they scale to include more and more samples. Managing and processing these large datasets efficiently requires robust and scalable data handling solutions to make results readily available for downstream processing tasks like machine learning.
 
 The task is to integrate Apache Parquet, a columnar storage format, into OpenMS as a fundamental step toward enabling faster data processing, reducing memory usage, and improving scalability. The integration will involve:
+
 1. Updating the OpenMS build system with new CMake configurations.  
 2. Developing comprehensive tests to validate functionality and performance.  
 3. Adapting CI/CD pipelines for macOS, Linux, and Windows to ensure cross-platform compatibility.
