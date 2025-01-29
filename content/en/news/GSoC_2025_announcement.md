@@ -1,6 +1,6 @@
 # OpenMS Invites the Computational Mass Spectrometry Community to Join Google Summer of Code 2025! 
 
-**We are excited to announce** that OpenMS is applying to participate as an umbrella organization in this year’s [Google Summer of Code (GSoC)](https://summerofcode.withgoogle.com)! This provides a fantastic opportunity to contribute to the growth and innovation in the field of computational mass spectrometry by mentoring talented students from around the world.
+[Google Summer of Code (GSoC)](https://summerofcode.withgoogle.com) fantastic opportunity to contribute to the growth and innovation in the field of computational mass spectrometry by mentoring talented students from around the world. OpenMS is planning to apply as an umbrella organization and we would like to extend an invitation to other projects and groups within the computational mass spectrometry and proteomics/metabolomics communities to join us in this effort. If your project aligns with the goals of GSoC and you are interested in mentoring a student project, we encourage you to submit your proposals by Feburary 11th at 18:00 UTC 
 
 As an umbrella organization, we would like to extend an invitation to other projects and groups within the computational mass spectrometry and proteomics/metabolomics communities to join us in this effort. If your project aligns with the goals of GSoC and you are interested in mentoring a student project, we encourage you to submit your proposals by **February 11th at 18:00 UTC.**
 
@@ -37,7 +37,7 @@ As an umbrella organization, we would like to extend an invitation to other proj
 
 ### 1) Integrate Apache Parquet into OpenMS Build System
 
-**Proposed Mentors:** Timo Sachsenberg  
+**Proposed Mentors:** Timo Sachsenberg, Samuel Wein  
 **Skills:** CMake, GitHub CI, C++, Python  
 **Estimated Project Length:** 350 hours | **Difficulty:** Medium  
 
@@ -47,6 +47,42 @@ The task is to integrate Apache Parquet, a columnar storage format, into OpenMS 
 1. Updating the OpenMS build system with new CMake configurations.  
 2. Developing comprehensive tests to validate functionality and performance.  
 3. Adapting CI/CD pipelines for macOS, Linux, and Windows to ensure cross-platform compatibility.
+
+---
+
+### 2) Write a C++ library to read/write mzQC
+
+**Proposed Mentors:** Chris Bielow,   
+**Skills:**  C++, Controlled Vocabularies, JSON, CMake, GitHub CI  
+**Estimated Project Length:** 350 hours | **Difficulty:** Easy to Medium
+
+Adoption and public exposure of quality control in mass-spectrometry (MS) has gained increasing traction in recent years. The Proteomics Standard Initiative (PSI) has developed an open exchange format
+named [mzQC](https://hupo-psi.github.io/mzQC/),which aims to foster capturing, exchanging and archiving quality control related data across all MS-based OMICS, such as proteomics, metabolomics and lipidomics.
+Currently, there exist core libraries to read and write mzQC in Python, R, and Java. See [MS-Quality-Hub](https://github.com/MS-Quality-Hub).  
+
+Tasks:
+
+1. implement a new mzQC Core library in C++ which supports reading/writing of mzQC
+2. publish the library on GitHub under a permissive license (BSD-3clause) as a subproject of [MS-Quality-Hub](https://github.com/MS-Quality-Hub).
+3. write class/unit tests and run them using GithubActions
+4. integrate your library into OpenMS (incl. adaptation of the build system to include your library) and substitute existing code to create an mzQC
+
+---
+
+### 3) Write a generic visualization app for mzQC
+
+**Proposed Mentors:** Chris Bielow, Arslan Siraj   
+**Skills:**  Visualization, Controlled Vocabularies, Python|R  
+**Estimated Project Length:** 175 hours | **Difficulty:** Easy to Medium
+
+Adoption and public exposure of quality control in mass-spectrometry (MS) has gained increasing traction in recent years. The Proteomics Standard Initiative (PSI) has developed an open exchange format
+named [mzQC](https://hupo-psi.github.io/mzQC/), which aims to foster capturing, exchanging and archiving quality control related data across all MS-based OMICS, such as proteomics, metabolomics and lipidomics.
+Currently, there exists no package which is capable of visualizing and summarizing the content of any given mzQC file (e.g. as obtained from a publication's supplemental material). 
+
+Tasks:
+
+1.  Pick a visualization framework of your choice (e.g. Streamlit or R Shiny) and write code (Python or R) to allow a user to explore the content of a given (uploaded) mzQC file.
+2. Visualization could be a textual summary as well as (interactive) plots for the QC data contained within the mzQC file. Depending on the metrics properties, automated plot types should be chosen.
 
 ---
 
