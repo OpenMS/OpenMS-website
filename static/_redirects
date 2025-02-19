@@ -14,6 +14,10 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 /documentation/html/*  https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/:splat  200
 /documentation/*       https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/:splat  200
 
+/tutorials             https://openms.readthedocs.io/en/latest/index.html
+/tutorials/html/*      https://openms.readthedocs.io/en/latest/index.html
+/tutorials/*           https://openms.readthedocs.io/en/latest/index.html
+
 /develop_doxygen    /.netlify/functions/addSlash  200
 /develop_doxygen/*  https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/:splat  200
 
