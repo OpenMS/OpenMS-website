@@ -1,4 +1,4 @@
-baseURL: /
+baseURL: https://openms.de/
 languageCode: en-us
 theme: scientific-python-hugo-theme
 disableKinds: ["taxonomy", "term"]
@@ -174,7 +174,7 @@ languages:
           items:
             - title: DIAMetalyzer
               url: diametalyzer
-              image: /images/applications/DIAMetAlyzer.png
+              image: /images/content_images/applications/Figure_1-1536x765.png
               description: Workflow which integrates DDA and targeted DIA analysis for metabolomics.
               link1: https://hub.knime.com/s/xkTudSasYpw78ZE6
               link1-logo: /images/link-icon/knime.jpg
@@ -185,7 +185,7 @@ languages:
               link3: https://abi-services.cs.uni-tuebingen.de/umetaflow/
               link3-logo: /images/link-icon/Streamlit.jpg
         topdown:
-          name: TopDown
+          name: Top-Down
           items:
             - title: FLASHDeconv
               url: flashdeconv
@@ -199,7 +199,7 @@ languages:
               description: FLASHQuant performs MS1-level label-free quantification data analysis in top-down proteomics with an automatic overlapping signal resolution method.
             - title: FLASHTnT
               url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
-              image: /images/topdowns/FLASHTnT.png
+              image: /images/webapp/logo/FLASH_TnT.png
               description: FLASHTaggerviewer visualize output from FLASH* tools. FLASH* tools can deconvolute your Topdown data very...
               link3: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
               link3-logo: /images/link-icon/Streamlit.jpg
