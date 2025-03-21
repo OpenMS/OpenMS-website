@@ -31,7 +31,7 @@ languages:
     params:
       description: Why OpenMS? Mass Spectrometry. Visualizations. Open source.
       navbarlogo:
-        image: openms-logo.png
+        image: OpenMS_transparent_blackFont.png
         link: /
       hero:
         # Main hero title
@@ -43,7 +43,7 @@ languages:
         # Where the main hero button links to
         buttonlink: https://openms.readthedocs.io/en/latest/about/installation.html
         # Hero image (from static/images/___)
-        image: openms-logo.png
+        image: OpenMS_transparent_blackFont.png
 
       heroGroup:
         - title: "OpenMS allows users to:"
@@ -236,8 +236,8 @@ languages:
         socialmedia:
         - link: https://github.com/OpenMS/OpenMS
           icon: github
-        - link: https://twitter.com/OpenMSTeam
-          icon: twitter
+        - link: https://discord.com/invite/4TAGhqJ7s5
+          icon: discord
         quicklinks:
           column1:
             links:

@@ -1,8 +1,15 @@
+---
+title: OpenMS 3.3 released
+authors: ["Chris Bielow"]
+date: 2025-01-17
+summary: We have just released OpenMS 3.3 click here to see changes and improvements
+---
+
 Dear OpenMS-Users,
 
-we are proud to announce the release of OpenMS 3.3. Grab it <a href="https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/3.3.0">here</a>
+we are proud to announce the release of OpenMS 3.3. Grab it <a href="https://github.com/OpenMS/OpenMS/releases/tag/release%2F3.3.0">here</a>
 
-In the following you find all important changes to the previous version:
+Important changes to the previous version:
 
 ------------------------------------------------------------------------------------------
 

@@ -87,7 +87,7 @@ If you have questions — please email us at edi@openms.org
    open, inclusive, and positive community in the computational mass spectrometry field.
 
 <p align="left">
-  <img alt="OpenMS" src="/images/logos/OpenMS.svg" width="15%">
+  <img alt="OpenMS" src="/images/logos/OpenMS_transparent_blackFont.svg" width="15%">
 &nbsp; &nbsp; &nbsp; &nbsp;
   <img alt="CZI" src="/images/logos/CZI.svg" width="15%">
 </p>
