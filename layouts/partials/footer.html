@@ -1,10 +1,10 @@
-{{- $title          := .Site.Params.footer.title }}
-{{- $deployedBy          := .Site.Params.footer.deployedBy }}
 {{- $footer      := .Site.Params.footer }}
-{{- $logo        := index $footer "logo" }}
+{{- $title       := index $footer "title" }}
+{{- $deployedBy  := index $footer "deployedBy" }}
 {{- $quickLinks  := index $footer "quicklinks" }}
 {{- $socialMedia := index $footer "socialmedia" }}
-{{- $navbarLogo     := .Site.Params.navbarlogo }}
+{{- $logo        := index $footer "logo" }}
+{{- $navbarLogo  := .Site.Params.navbarlogo }}
 
 <footer id="footer" class="footer">
   <div class="container is-max-widescreen">
