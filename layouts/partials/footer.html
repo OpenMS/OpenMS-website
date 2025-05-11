@@ -1,6 +1,8 @@
 {{- $footer      := .Site.Params.footer }}
 {{- $title       := index $footer "title" }}
 {{- $deployedBy  := index $footer "deployedBy" }}
+{{- $sponsorLogo1 := index $footer "sponsorLogo1" }}
+{{- $sponsorLogo2 := index $footer "sponsorLogo2" }}
 {{- $quickLinks  := index $footer "quicklinks" }}
 {{- $socialMedia := index $footer "socialmedia" }}
 {{- $logo        := index $footer "logo" }}
@@ -13,6 +15,8 @@
         <!-- <img id="footer-logo" src="{{ printf "/images/%s" $logo | relURL }}" alt="{{ $title }} logo. {{ $navbarLogo.altText }}"> -->
         <div><p style="font-weight: bolder; font-size: xx-large; color: aliceblue;">{{ $title }}</p></div>
         <div><a href="https://www.netlify.com"> <img src="{{ $deployedBy }}" alt="Deploys by Netlify" style="width: 6rem;" /> </a></div>
+        <div><a href="https://www.denbi.de"> <img src="{{ $sponsorLogo1 }}" alt="Supported by deNBI" style="width: 6rem;" /> </a></div>
+        <div><a href="https://elixir-europe.org/platforms/data/core-data-resources"> <img src="{{ $sponsorLogo2 }}" alt="Supported by Elixir" style="width: 6rem;" /> </a></div>
       </div>
       {{- range $quickLinks }}
         <div class="link-column">
