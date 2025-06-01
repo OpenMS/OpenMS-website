@@ -116,7 +116,7 @@ languages:
         description: NASEWEIS is webapp version of the NucleicAcidSearch<br>Engine, it is a tool to do library searching of Oligonucleotide
       - index: 3
         url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
-        logo: /images/webapp/logo/FLASH_TnT.png
+        logo: /images/webapp/logo/FLASHApp.png
         description: FLASHTaggerviewer visualize output from FLASH* tools. FLASH* tools can deconvolute your Topdown data very...
       - index: 4
         url: https://abi-services.cs.uni-tuebingen.de/SagePTMScanner/
