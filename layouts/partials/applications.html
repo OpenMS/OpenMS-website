@@ -1,11 +1,129 @@
-{{ range first 1 (or (where .Site.RegularPages "Section" "news") (slice (.Site.GetPage "news"))) }}
-{{ $newsLink := default "/news" .Params.newsLink }}
-{{ $newsHeader := default .Title .Params.newsHeader }}
-{{ $date := .Date.Format "2006-01-02" }}
-<div class="news-container">
-  <div class="news-title"><a href="{{ relURL $newsLink }}"> {{ $newsHeader }}</a></div>
-  {{ if .Date }}
-  <div class="news-date"><a href="{{ relURL $newsLink }}">{{ $date }}</a></div>
-  {{ end }}
+<div class="container">
+  <h2>OpenMS Software Database</h2>
+  <p>Introduction text explaining how to use this database.</p>
+
+  <!-- Search Field -->
+  <input type="text" id="search" class="search-bar" placeholder="Search tools or applications..." onkeyup="filterItems()" list="tag-suggestions">
+  <datalist id="tag-suggestions"></datalist>
+  <div id="category-buttons" class="category-select"></div>
+  <div id="tag-buttons"></div>
+  <button id="reset-tags">Reset Tags</button>
+  <div id="match-count"></div>
+  <div id="item-list" data-category="All"></div>
+
 </div>
-{{ end }}
+
+<style>
+  .container { max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+  h2 { text-align: center; color: #2c3e50; }
+  p { text-align: center; color: #555; }
+  .search-bar { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; }
+  .category-select { display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; }
+  .category-select button {
+    padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;
+    background-color: #3498db; color: white; font-size: 14px; transition: 0.3s;
+  }
+  .category-select button:hover { background-color: #2980b9; }
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px; }
+
+  .tag-button {
+    margin: 4px;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    background: #bdc3c7;
+    color: white;
+    transition: background 0.2s ease;
+  }
+
+  .tag-button.positive {
+    background: #d4edda;
+    color: black;
+  }
+
+  .tag-button.negative {
+    background: #f8d7da;
+    color: black;
+  }
+
+  .tag-button:hover {
+    color: black;
+  }
+
+  #tag-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .entry-tag {
+    padding: 3px 8px;
+    margin: 2px;
+    border-radius: 12px;
+    background-color: #e0e0e0;
+    color: #333;
+    display: inline-block;
+    font-size: 0.85em;
+    cursor: pointer;
+  }
+
+  .entry-tag.positive {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .entry-tag.negative {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+
+  .item {
+    background: white;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+  }
+
+  .item:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+  }
+  .item-content { margin-bottom: 10px; }
+  .item strong {
+    font-size: 18px;
+    color: #2c3e50;
+  }
+
+  .item .item-description {
+    color: #555;
+    margin-top: 4px;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .item-category { font-size: 14px; padding: 5px 10px; border-radius: 5px; display: inline-block; margin-top: 5px; }
+  .application { background-color: #3498db; color: white; }
+  .tool { background-color: #9b59b6; color: white; }
+  .entry-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 5px; }
+  .entry-tag { font-size: 12px; padding: 5px 8px; background: #bdc3c7; color: white; border-radius: 4px; }
+
+  #match-count {
+    margin-top: 12px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  .filter-bar {
+    position: sticky;
+    top: 60px;
+    background: #fff;
+    z-index: 10;
+    padding: 12px 0;
+  }
+
+</style>
+
+<!--<script>console.log("Partial loaded!")</script>-->

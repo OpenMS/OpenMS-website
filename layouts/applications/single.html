@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+    <head>
+        <!-- Font Awesome -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        {{ partial "meta.html" . }}
+        <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+        <!-- Render theme css -->
+        {{ partial "css.html" . }}
+
+        <!-- Render custom header -->
+        {{ partial "head.html" . }}
+
+        <!-- Refer: https://regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/ -->
+        {{ if .IsTranslated }}
+        {{ range .Translations }}
+        <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}" />
+        {{ end }}
+        {{ end }}
+        {{ template "_internal/twitter_cards.html" . }}
+    </head>
+    <body>
+    <script type="text/javascript">
+        (function(window, document, dataLayerName, id) {
+            window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+            function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString()}document.cookie=a+"="+b+d+"; path=/"}
+            var isStgDebug=(window.location.href.match("stg_debug")||document.cookie.match("stg_debug"))&&!window.location.href.match("stg_disable_debug");stgCreateCookie("stg_debug",isStgDebug?1:"",isStgDebug?14:-1);
+            var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName),isStgDebug&&qP.push("stg_debug");var qPString=qP.length>0?("?"+qP.join("&")):"";
+            tags.async=!0,tags.src="https://openms-web.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+            !function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+        })(window, document, 'dataLayer', 'dc313113-a933-4228-87c2-08bbd48f8786');
+    </script>
+
+    <!-- Preloader. Set to true for front-page fade-in animation -->
+    {{ if (and .IsHome .Site.Params.fadeFrontPage) }}
+    <div id="preloader"></div>
+    {{ end }}
+
+    {{ block "navbar" . }}
+    {{ partial "navbar.html" . }}
+    {{ partial "navbar-clone.html" . }}
+    {{ end }}
+
+    {{ block "main" . }}
+    {{ end }}
+
+    {{ partial "applications.html" . }}
+    {{ if .IsPage }}
+    {{ if eq .File.BaseFileName "applications" }}
+    <script src="/js/applications.js"></script>
+    {{ end }}
+    {{ end }}
+
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#" id="backtotop-color"></a></div>
+
+    {{ if .Site.Params.footer }}
+    {{ partial "footer.html" . }}
+    {{ end }}
+
+    {{ partial "javascript.html" . }}
+    {{ partial "analytics.html" . }}
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    </body>
+</html>

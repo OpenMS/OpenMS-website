@@ -28,7 +28,7 @@ for _, entry in tqdm(citations.iterrows(), total=len(citations)):
     urls.append(url)
 
 citations['url'] = urls
-with open("content/en/publications.md", "w") as file:
+with open("../content/en/publications.md", "w") as file:
     file.write(f"# List of OpenMS Publications\n\n")
     for year, year_citations in citations.groupby('Year', sort=False):
         year = int(year)
