@@ -1,6 +1,3 @@
-const fetch = require("node-fetch");
-const AbortController = require("abort-controller");
-
 exports.handler = async function (event) {
   try {
     const controller = new AbortController();
