@@ -36,10 +36,16 @@ exports.handler = async function (event) {
       };
     }
   } catch (err) {
-    console.error("AddSlash function error: err.message");
+    console.error("AddSlash function error:", err.message);
+
+    // Check if it's a timeout or network error
+    const isTimeoutError = err.name === 'AbortError' || err.code === 'ETIMEDOUT';
+
     return {
-      statusCode: 504,
-      body: "ABIBuilder access timed out or failed"
+      statusCode: isTimeoutError ? 504 : 500,
+      body: isTimeoutError
+        ? "ABIBuilder access timed out or failed"
+        : "Internal server error"
     };
   }
 };
