@@ -37,8 +37,8 @@ exports.handler = async function (event) {
     return {
       statusCode: isTimeoutError ? 504 : 500,
       body: isTimeoutError
-        ? "OpenMS documentation is not currently available because the documentation server timed out. If you see this persistantly, please open a bug report at https://github.com/OpenMS/OpenMS-website/issues"
-        : "Internal server error. If you see this persistantly, please open a bug report at https://github.com/OpenMS/OpenMS-website/issues"
+        ? "OpenMS documentation is not currently available because the documentation server timed out. If you see this persistently, please open a bug report at https://github.com/OpenMS/OpenMS-website/issues"
+        : "Internal server error. If you see this persistently, please open a bug report at https://github.com/OpenMS/OpenMS-website/issues"
     };
   }
 };
