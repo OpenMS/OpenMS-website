@@ -1,33 +1,29 @@
 const fetch = require("node-fetch");
+const AbortController = require("abort-controller");
 
 exports.handler = async function (event) {
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+    let url = null;
     if (
       event.path.endsWith("documentation/") ||
       event.path.endsWith("current_doxygen/")
     ) {
-      // Return the page root
-      const response = await fetch(
-        "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/",
-        { timeout: 5000 } 
-      );
-      const body = await response.text();
-      return {
-        statusCode: 200,
-        body,
-      };
+      url = "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/";  
     } else if (event.path.endsWith("develop_doxygen/")) {
-      // Return the page root
-      const response = await fetch(
-        "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/",
-        { timeout: 5000 }
-      );
+      url = "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/";
+    }
+    if (url) {
+      const response = await fetch(url, { signal: controller.signal });
+      clearTimeout(timeout);
       const body = await response.text();
       return {
         statusCode: 200,
         body,
       };
-    } else {
+    }
+    else {
       return {
         statusCode: 301,
         headers: {
@@ -36,10 +32,10 @@ exports.handler = async function (event) {
       };
     }
   } catch (err) {
-    console.error("AddSlash function error:", err.message);
+    console.error("AddSlash function error:", err.name, err.message);
 
     // Check if it's a timeout or network error
-    const isTimeoutError = err.name === 'AbortError' || err.code === 'ETIMEDOUT';
+    const isTimeoutError = err.name === 'AbortError';
 
     return {
       statusCode: isTimeoutError ? 504 : 500,
