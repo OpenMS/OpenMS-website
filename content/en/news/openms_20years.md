@@ -1,12 +1,12 @@
 ---
-title: Celebrating 20 years of OpenMS on 1 August 2025 with BBQ at Sand, Tübingen University
-authors: ["Tjeerd Dijkstra, Timo Sachsenberg"]
+title: Celebrating 20 years of OpenMS
+authors: ["Tjeerd Dijkstra"]
 date: 2025-07-04
-summary: We are hosting a developers meeting near Xewkija, Gozo, Malta! Click the header above for more information.
+summary: We are celebrating 20 years of OpenMS on 1 August 2025 with a BBQ at Sand, Tübingen University. Click the header above for more information.
 ---
 
-The OpenMS developers conference brings together people working in computational mass spectrometry to shape the future development of OpenMS. It is targeted to core developers, new developers, and potential future contributors. Short talks, developer tutorials, and code sprints will be intertwined. Participants will have the opportunity to design custom tools and workflows together with instructors. New developers will receive help getting started in OpenMS development. Progress will be tracked on our GitHub page with a resume of each day. For more details ping Tjeerd Dijkstra or Timo Sachsenberg on discord or by email.
+OpenMS was first announced in an abstract for the HUPO fourth Annual World Congress published in Molecular and Cellular Proteomics on 1 August 2005. The OpenMS team invites everyone who has contributed to OpenMS to a BBQ in the garden of Sand at Tübingen University. We estimate that over a hundred individuals have contributed time to OpenMS and we invite all of you to celebrate this milestone.
 <br>
-[Click here for more details and registration](https://docs.google.com/forms/d/1rQi2QdYjpTTqLUwcU98qJ0sArVff-pn09wYJNgvBfGI/edit)
+[Click here for registration](https://docs.google.com/forms/d/1rQi2QdYjpTTqLUwcU98qJ0sArVff-pn09wYJNgvBfGI/edit)
 <br><br>
 ![denbi](/images/logos/denbi.jpeg)
