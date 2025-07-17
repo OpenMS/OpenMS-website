@@ -125,7 +125,7 @@ languages:
       - index: 5
         url: https://https://abi-services.cs.uni-tuebingen.de/streamsage/
         logo: /images/webapp/logo/streamsage.png
-        description: StreamSage is a web application for performing proteomics database searching using Sage in your browser.
+        description: StreamSage is a web application for performing proteomics database searching in your browser.
 
       section5: false
 
