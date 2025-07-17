@@ -123,7 +123,7 @@ languages:
         logo: /images/webapp/logo/sageptmscanner.png
         description: SagePTMScanner is a web application for the discovery of post-translational modifications (PTMs).
       - index: 5
-        url: https://https://abi-services.cs.uni-tuebingen.de/streamsage/
+        url: https://abi-services.cs.uni-tuebingen.de/streamsage/
         logo: /images/webapp/logo/streamsage.png
         description: StreamSage is a web application for performing proteomics database searching in your browser.
 
