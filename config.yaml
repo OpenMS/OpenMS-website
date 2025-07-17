@@ -104,24 +104,24 @@ languages:
       webapps:
       - index: 0
         url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
-        logo: /images/webapp/logo/umetaflow-logo.png
+        logo: /images/webapp/logo/umetaflow.png
         description: This app offers the powerful UmetaFlow pipeline for untargeted metabolomics in an accessible user interface.
       - index: 1
         url: https://abi-services.cs.uni-tuebingen.de/nuxl/
-        logo: /images/webapp/logo/NuXL_logo.png
-        description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry)...<br>    
+        logo: /images/webapp/logo/nuxl.png
+        description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry).
       - index: 2
         logo: /images/webapp/logo/naseweis.png
         url: https://abi-services.cs.uni-tuebingen.de/naseweis/
-        description: NASEWEIS is webapp version of the NucleicAcidSearch<br>Engine, it is a tool to do library searching of Oligonucleotide
+        description: NASEWEIS is webapp version of the NucleicAcidSearch Engine. It is a tool to do library searching of Oligonucleotides.
       - index: 3
         url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
-        logo: /images/webapp/logo/FLASHApp.png
+        logo: /images/webapp/logo/flashapp.png
         description: FLASHApp allows for interactive analysis and visualization of top-down proteomics data. 
       - index: 4
         url: https://abi-services.cs.uni-tuebingen.de/SagePTMScanner/
-        logo: /images/webapp/logo/SagePTMScannerlogo.png
-        description: Sage search engine is a fast and reliable proteomics search engine for the anaylsis of MS data...
+        logo: /images/webapp/logo/sageptmscanner.png
+        description: Sage search engine is a fast and reliable proteomics search engine for the anaylsis of MS data.
       - index: 5
         url: https://https://abi-services.cs.uni-tuebingen.de/streamsage/
         logo: /images/webapp/logo/streamsage.png
