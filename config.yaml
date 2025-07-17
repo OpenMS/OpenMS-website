@@ -113,7 +113,7 @@ languages:
       - index: 2
         logo: /images/webapp/logo/naseweis.png
         url: https://abi-services.cs.uni-tuebingen.de/naseweis/
-        description: NASEWEIS is webapp version of the NucleicAcidSearch Engine. It is a tool to do library searching of Oligonucleotides.
+        description: NASEWEIS is a WebApp for the NucleicAcidSearch Engine. It allows for library searching of Oligonucleotides.
       - index: 3
         url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
         logo: /images/webapp/logo/flashapp.png
@@ -121,7 +121,7 @@ languages:
       - index: 4
         url: https://abi-services.cs.uni-tuebingen.de/SagePTMScanner/
         logo: /images/webapp/logo/sageptmscanner.png
-        description: Sage search engine is a fast and reliable proteomics search engine for the anaylsis of MS data.
+        description: The sage search engine is a fast and reliable proteomics search engine for the anaylsis of MS data.
       - index: 5
         url: https://https://abi-services.cs.uni-tuebingen.de/streamsage/
         logo: /images/webapp/logo/streamsage.png
