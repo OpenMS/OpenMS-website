@@ -122,6 +122,10 @@ languages:
         url: https://abi-services.cs.uni-tuebingen.de/SagePTMScanner/
         logo: /images/webapp/logo/SagePTMScannerlogo.png
         description: Sage search engine is a fast and reliable proteomics search engine for the anaylsis of MS data...
+      - index: 5
+        url: https://https://abi-services.cs.uni-tuebingen.de/streamsage/
+        logo: /images/webapp/logo/streamsage.png
+        description: StreamSage is a web application for performing proteomics database searching using Sage in your browser.
 
       section5: false
 
