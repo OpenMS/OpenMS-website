@@ -36,13 +36,14 @@ Download the PD archive from https://github.com/timosachsenberg/OpenMS/releases/
    5.	Open PD, go to `Administration -> Manage Licenses`. Click `Scan for Missing Features` on top of the list of available licenses on the right side of the PD window.
 
    For PD 3.0 you need to:
-   1.	Install `PDNuXLNode_3_0.msi` from https://github.com/Arslan-Siraj/PDNuXLNodeInstaller/releases/tag/v0.0.2
-   2.	Open PD, go to `Administration -> Manage Licenses`. Click `Scan for Missing Features` on top of the list of available licenses on the right side of the PD window.
+   1.	Download and Install `PDNuXLNode_3_0.msi` from https://github.com/Arslan-Siraj/PDNuXLNodeInstaller/releases/tag/v0.0.2
+   2.	The installer will automatically detect your Proteome Discoverer installation directory and deploy the NuXL nodes correctly.
+   3.	Open PD, go to `Administration -> Manage Licenses`. Click `Scan for Missing Features` on top of the list of available licenses on the right side of the PD window.
 
 6. **Troubleshooting**
    - Sometimes the operating system blocks the execution of .dlls copied from an external source. In these cases, it is necessary to go to the folder containing the .dll, right-click on it, choose properties, and then security. The dialog offers an option to unblock the .dll from execution.
 
-Note: Coming soon: One-click installer so no manual copy is required. The installer will automatically detect your Proteome Discoverer installation directory and deploy the NuXL nodes correctly.
+Note: Coming soon: One-click installer for PD 3.1 so no manual copy is required. The installer will automatically detect your Proteome Discoverer installation directory and deploy the NuXL nodes correctly.
 
 ### Setting Up Your Study
 
