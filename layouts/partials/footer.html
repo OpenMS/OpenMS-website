@@ -3,6 +3,7 @@
 {{- $deployedBy  := index $footer "deployedBy" }}
 {{- $sponsorLogo1 := index $footer "sponsorLogo1" }}
 {{- $sponsorLogo2 := index $footer "sponsorLogo2" }}
+{{- $sponsorLogo3 := index $footer "sponsorLogo3" }}
 {{- $quickLinks  := index $footer "quicklinks" }}
 {{- $socialMedia := index $footer "socialmedia" }}
 {{- $logo        := index $footer "logo" }}
@@ -17,8 +18,9 @@
         <div><a href="https://www.netlify.com"> <img src="{{ $deployedBy }}" alt="Deploys by Netlify" style="width: 6rem;" /> </a></div>
       </div>
       <div class="footer-logo-column">
-        <div><a href="https://www.denbi.de"> <img src="{{ $sponsorLogo1 }}" alt="Supported by deNBI" style="width: 6rem;" /> </a></div>
-        <div><a href="https://elixir-europe.org/platforms/data/core-data-resources"> <img src="{{ $sponsorLogo2 }}" alt="Supported by Elixir" style="width: 6rem;" /> </a></div>
+        <div><a href="https://www.denbi.de"> <img src="{{ $sponsorLogo1 }}" alt="Supported by deNBI" style="width: 5rem;" /> </a></div>
+        <div><a href="https://elixir-europe.org/platforms/data/core-data-resources"> <img src="{{ $sponsorLogo2 }}" alt="Supported by Elixir" style="width: 3rem;" /> </a></div>
+        <div><a href="https://libis.uni-heidelberg.de/"> <img src="{{ $sponsorLogo3 }}" alt="Supported by LiBiS" style="width: 3rem;" /> </a></div>
       </div>
       {{- range $quickLinks }}
         <div class="link-column">
