@@ -1,6 +1,12 @@
+---
+title: OpenMS 3.4 released
+authors: ["Tjeerd Dijkstra"]
+date: 2025-07-30
+summary: We have just released OpenMS 3.4.1
+---
 Dear OpenMS-Users,
 
-we are proud to announce the release of OpenMS 3.4. Grab it <a href="https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/3.4">here</a>
+We are proud to announce the release of OpenMS 3.4.1. Grab it <a href="https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/3.4">here</a>
 
 In the following you find all important changes to the previous version:
 
