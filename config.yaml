@@ -119,6 +119,9 @@ languages:
       footer:
         title: OpenMS
         deployedBy: /images/deployed-by-netlify.png
+        sponsorLogo1: /images/logos/denbi-logo-white.svg
+        sponsorLogo2: /images/logos/elixir-logo-white.png
+        sponsorLogo3: /images/logos/libis-logo-white.svg
         logo: 
         socialmediatitle: ""
         socialmedia:
