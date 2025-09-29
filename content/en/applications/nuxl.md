@@ -19,32 +19,19 @@ NuXL is a novel tool for protein-RNA and DNA cross-linking studies. It is availa
 ## Installation for Proteome Discoverer
 NuXL is currently compatible with Proteome Discoverer 3.0 and 3.1. 
 
-1. **Before Installation:**
-Download the PD archive from https://github.com/timosachsenberg/OpenMS/releases/tag/NuXLPublication
+**For PD 3.1 you need to:**
+1.	Download and install `PDNuXLNode_3_1.msi` from https://github.com/Arslan-Siraj/PDNuXLNodeInstaller/releases/tag/v0.0.3
+2.	The installer will automatically detect your Proteome Discoverer installation directory and deploy the NuXL nodes correctly.
 
-3. **Before Installation:**
-   - Please ensure that Proteome Discoverer is closed before running the NuXL installer.
+**For PD 3.0 you need to:**
+1.	Download and install `PDNuXLNode_3_0.msi` from https://github.com/Arslan-Siraj/PDNuXLNodeInstaller/releases/tag/v0.0.2
+2.	The installer will automatically detect your Proteome Discoverer installation directory and deploy the NuXL nodes correctly.
 
-4. **Manual Installation:**
-   To register the NuXL nodes in ProteomeDiscoverer, files must be copied manually to the correct folder. Note: We are currently preparing an installer to automate the installation process.
-   
-   For PD 3.1 you need to:
-   1.	Copy `PD.OpenMS.NuXLNode.dll` to `C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Thermo.Magellan.Server`
-   2.	Copy `PD.OpenMS.NuXLViewer.dll` to `C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Thermo.Discoverer`
-   3.	Copy `ZedGraph_OpenMS.dll` to `C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Thermo.Discoverer`
-   4.	Go to `C:\Program Files\Thermo\Proteome Discoverer 3.1\Proteome Discoverer 3.1\Tools` and copy the folder `NuXL` from the .zip. 
-   5.	Open PD, go to `Administration -> Manage Licenses`. Click `Scan for Missing Features` on top of the list of available licenses on the right side of the PD window.
+> **Note:** After installation, open PD, go to `Administration -> Manage Licenses`. Click `Scan for Missing Features` on top of the list of available licenses on the right side of the PD window.
 
-   For PD 3.0 you need to:
-   1.	Download and install `PDNuXLNode_3_0.msi` from https://github.com/Arslan-Siraj/PDNuXLNodeInstaller/releases/tag/v0.0.2
-   2.	The installer will automatically detect your Proteome Discoverer installation directory and deploy the NuXL nodes correctly.
-   3.	Open PD, go to `Administration -> Manage Licenses`. Click `Scan for Missing Features` on top of the list of available licenses on the right side of the PD window.
-
-6. **Troubleshooting**
+**Troubleshooting**
    - Sometimes the operating system blocks the execution of .dlls copied from an external source. In these cases, it is necessary to go to the folder containing the .dll, right-click on it, choose properties, and then security. The dialog offers an option to unblock the .dll from execution.
-
-Note: Coming soon: One-click installer for PD 3.1 so no manual copy is required. The installer will automatically detect your Proteome Discoverer installation directory and deploy the NuXL nodes correctly.
-
+   
 ### Setting Up Your Study
 
 1. **Create a New Study:**
@@ -296,3 +283,4 @@ To export an image of the annotated spectrum, right-click on the spectrum and ch
 Please visit https://abi-services.cs.uni-tuebingen.de/nuxl/ to try out (or download) the experimental NuXL web app.
 
 <center>{{< figure src="/images/content_images/applications/NuXL_webapp.jpg" >}}</center>
+
