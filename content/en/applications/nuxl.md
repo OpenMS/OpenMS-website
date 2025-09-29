@@ -31,7 +31,10 @@ NuXL is currently compatible with Proteome Discoverer 3.0 and 3.1.
 
 **Troubleshooting**
    - Sometimes the operating system blocks the execution of .dlls copied from an external source. In these cases, it is necessary to go to the folder containing the .dll, right-click on it, choose properties, and then security. The dialog offers an option to unblock the .dll from execution.
-   
+
+**Manuall installation**
+   - If the installer fails, see the manual installation guide: https://github.com/Arslan-Siraj/PDNuXLNodeInstaller
+     
 ### Setting Up Your Study
 
 1. **Create a New Study:**
@@ -283,4 +286,5 @@ To export an image of the annotated spectrum, right-click on the spectrum and ch
 Please visit https://abi-services.cs.uni-tuebingen.de/nuxl/ to try out (or download) the experimental NuXL web app.
 
 <center>{{< figure src="/images/content_images/applications/NuXL_webapp.jpg" >}}</center>
+
 
