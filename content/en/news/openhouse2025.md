@@ -6,7 +6,7 @@ summary: We are organizing an open house in Toronto, Canada! Click the header ab
 ---
 
 We are pleased to announce the 2025 OpenMS Open House.<br>
-**Location: Myhal Centre for Engineering Innovation and Entrepreneurship (MY), University of Toronto Room 430** <br>
+**Location: Myhal Centre for Engineering Innovation and Entrepreneurship (MY), Room 430, University of Toronto** <br>
 **Date: November 9th, 2025 From 10am-2pm** <br>
 **Format: Drop-in session — come by anytime, stay as long or as little as you’d like**! <br>
 
