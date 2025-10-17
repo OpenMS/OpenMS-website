@@ -11,7 +11,7 @@ We are pleased to announce the 2025 OpenMS Open House.<br>
 **Format: Drop-in session — come by anytime, stay as long or as little as you’d like**! <br>
 
 This event offers a great opportunity to:
-- Discuss **computational mass spectrometry** and its application
+- Discuss **computational mass spectrometry** and its applications
 - Learn more about **open-source software development**
 - Explore posters on selected topics including pyOpenMS, pyOpenMS_viz, OpenMS WebApps, Library Free DIA with OpenSWATH and DIAWeaver
 - **Bring your own data** for discussion and feedback
