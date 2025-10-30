@@ -11,7 +11,7 @@ Check it out on Github!
 {{< /button >}}
 
 Now <u>binary installer files for all platforms</u> are available here: (Please use the latest version) 
-{{< button normal "https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/experimental/feature/FLASHQuantDevelop/">}}
+{{< button normal "https://github.com/OpenMS/OpenMS/releases">}}
 Download Page
 {{< /button >}}
 

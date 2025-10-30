@@ -50,7 +50,7 @@ If you have any questions, suggestions, or bug reports, please visit the support
 
 ## Advanced: use OpenPepXL as stand-alone application
 
-The current stand-alone version of OpenPepXL, version 1.1 is available as part of OpenMS 2.5. Installers for Windows, MacOS and Linux can be found [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.5.0/).
+The current stand-alone version of OpenPepXL, version 1.1 is available as part of OpenMS 2.5. Installers for Windows, MacOS and Linux can be found [here](https://github.com/OpenMS/OpenMS/releases).
 
 ### Introduction to tool settings for command line use
 

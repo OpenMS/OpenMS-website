@@ -45,7 +45,7 @@ max-product inference (for this, set the regularize flag and choose a p-norm sma
 EPIFANY can now also be found in the official OpenMS 2.5 release (or later). We recommend using the version that ships with your OpenMS distribution of choice. For the
 binary used in the publication, you can use the installation links and methods below or check out the source code from the [corresponding GitHub tag](https://github.com/jpfeuffer/OpenMS/tree/epifany_paper).
 
-{{< button download "https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/experimental/feature/proteomic_lfq/" >}}
+{{< button download "https://github.com/OpenMS/OpenMS/releases" >}}
 DOWNLOAD EPIFANY WITH OpenMS AS COMMAND LINE TOOL
 {{< /button >}}
 
@@ -94,7 +94,7 @@ Inputs can be replicates and/or fractions. Depending on your goals you could als
 
 **Publication:** J. Pfeuffer, T. Sachsenberg, T. M. Dijkstra, O. Serang, K. Reinert, and O. Kohlbacher, “EPIFANY-A method for efficient high-confidence protein inference,” Journal of proteome research, p. 734327, 2019.
 
-Experimental **installer downloads** until it is merged into the OpenMS Release: [OpenMS experimental archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/experimental/feature/proteomic_lfq)
+**Installer downloads**: EPIFANY is included in OpenMS releases. Get the latest version from the [OpenMS releases page](https://github.com/OpenMS/OpenMS/releases).
 
 **Example Data**: You can use the converted mzMLs on our [server](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Data/iPRG2016/) as direct input to the KNIME workflow that is also linked there. The data comes from the [iPRG2016](https://www.ebi.ac.uk/pride/archive/projects/PXD008425) study (sample “B”). You can also use the merged idXML on the server for a direct input to EPIFANY.
 

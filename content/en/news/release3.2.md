@@ -7,7 +7,7 @@ summary: We have just release OpenMS 3.2 click here to see changes and improveme
 
 Dear OpenMS-Users,
 
-we are proud to announce the release of OpenMS 3.2. Grab it <a href="https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/3.2">here</a>
+we are proud to announce the release of OpenMS 3.2. Grab it <a href="https://github.com/OpenMS/OpenMS/releases/tag/release%2F3.2.0">here</a>
 
 In the following you find all important changes to the previous version:
 
