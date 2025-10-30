@@ -13,7 +13,7 @@ With pyOpenMS, OpenMS offers Python bindings to a large part of the OpenMS API t
 
 OpenMS Inc. is the corporate entity and fiscal home of the OpenMS project. As a Pennsylvania–based nonprofit organization recognized as a 501(c)(3) public charity, OpenMS Inc. supports the continued development, governance, and community stewardship of the OpenMS open-source software ecosystem. Through nonprofit oversight and dedicated fiscal management, we ensure that OpenMS remains freely available, sustainable, and driven by the needs of its scientific community. As a registered 501(c)(3) nonprofit organization. Contributions are tax-deductible to the extent permitted by law. EIN: 93-3818533
 
-The board of directors of OpenMS inc consists of Dr. Samuel Wein as chief executive officer, Prof. Dr. Oliver Kohlbacher as chief scientific officer, and Dr. Timo Sachsenberg as chief technology officer.
+The board of directors of OpenMS Inc. consists of Dr. Samuel Wein as chief executive officer, Prof. Dr. Oliver Kohlbacher as chief scientific officer, and Dr. Timo Sachsenberg as chief technology officer.
 
 ## Sponsors
 
