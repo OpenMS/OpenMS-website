@@ -1,79 +1,11 @@
 ---
-title: About Us
+title: OpenMS Inc.
 sidebar: false
 ---
 
-_Some information about the OpenMS project and community_
+OpenMS Inc. is the corporate entity and fiscal home of the OpenMS project. As a Pennsylvania–based nonprofit organization recognized as a 501(c)(3) public charity, OpenMS Inc. supports the continued development, governance, and community stewardship of the OpenMS open-source software ecosystem. Through nonprofit oversight and dedicated fiscal management, we ensure that OpenMS remains freely available, sustainable, and driven by the needs of its scientific community. As a registered 501(c)(3) nonprofit organization. Contributions are tax-deductible to the extent permitted by law. EIN: 93-3818533
 
-OpenMS is an open-source software C++ library for LC-MS data management and analyses. It offers an infrastructure for rapid development of mass spectrometry related software. OpenMS is available under a modified three clause [BSD license](https://github.com/openms/openms/blob/main/License.txt) and runs under Windows, macOS, and Linux.
-
-With pyOpenMS, OpenMS offers Python bindings to a large part of the OpenMS API to enable rapid algorithm development. OpenMS supports the Proteomics Standard Initiative (PSI) formats for MS data. The main contributors of OpenMS are currently the Eberhard-Karls-Universität in Tübingen, the Freie Universität Berlin, and the ETH Zürich.
-
-## Executive Committee
-
-Governance of the OpenMS project shall be led by the Executive committee. This committee shall consist of core developers on the project, and be headed by the executive chairperson.
-
-Responsibilities of the committee:
-
- - Determining the mission, direction, and vision of the project.
-
- - Planning for long-term continuity of the project
-
- - Directing development resources in line with the project vision
-
- - Maintaining and updating these bylaws
-
- - Enhancing the image of OpenMS
-
- - Forming other committees as needed
-
- - Electing the executive chairperson
-
- - Managing the list of core project members
-
- - Handle code-of-conduct issues
-
-Regular meetings and quorum:
-
- - The executive committee shall meet at least once every calendar month
-
- - Regular meetings shall be scheduled by the executive chairperson (or in the absence of someone filling that role, by any member of the committee)
-
- - All members of the committee shall be given notice of the meeting at minimum 48 hours before the scheduled meeting time (though they may voluntarily waive this requirement)
-
- - Quorum is five members
-
- - Proceedings shall follow Roberts Rules of Order Newly Revised at the request of any member of the committee
-
-Notice:
-
- - All members of the executive committee shall provide an email address to use for receiving notice of meetings
-
- - Sending email to this address shall constitute notice
-
-Executive Chairperson:
-
- - The executive chairperson shall be elected from the executive committee to serve a term of 1 year.
-
-Responsibilities:
-
- - convene and chair the executive committee
-
- - give notice to members of meetings
-
- - break any tie votes
-
-Election:
-
-The executive chairperson shall be elected by the members of the executive committee by means of either verbal, or secret ballot. In the event of a vacancy, the next order of business must be electing a new executive chairperson.
-
-Removal:
-
- - The executive chairperson can be removed at any meeting by an affirmative vote of 2/3 of the executive committee
-
-Core Developers:
-
-Core developers are people who are active and key participants in the project. The addition of new core developers shall be made by a simple majority vote of a quorum of the executive committee. Removal of core developers may be made (either due to inactivity, or violation of the code-of-conduct) by a 2/3 majority vote of a quorum of the executive committee, or by request of the member themself.
+The board of directors of OpenMS Inc. consists of Dr. Samuel Wein as chief executive officer, Prof. Dr. Oliver Kohlbacher as chief scientific officer, and Dr. Timo Sachsenberg as chief technology officer.
 
 ## Sponsors
 

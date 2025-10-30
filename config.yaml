@@ -8,7 +8,7 @@ markup:
     renderer:
       unsafe: true
   highlight:
-      guessSyntax: true
+    guessSyntax: true
 
 # Uncomment this to disable the translations for the specified languages.
 # This may be useful to be able to merge partial translations without deploying
@@ -17,7 +17,7 @@ disableLanguages: []
 
 params:
   images:
-  - /images/logo.svg
+    - /images/logo.svg
   navColor: blue
   plausible:
     dataDomain: openms.de
@@ -48,67 +48,67 @@ languages:
         - title: "OpenMS allows users to:"
           bgColor: ECF2F9
           heroItems:
-          - title: Run existing workflows
-            subtitle: Run existing workflows for proteomics and metabolomics with OpenMS in KNIME.
-            leftAlign: true
-            image: knime-analytics.png
-            buttonText: Get Started
-            buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/knime-get-started.html"
-          - title: Create your own workflows
-            subtitle: Modify and create your own OpenMS workflows in Galaxy, KNIME and Nextflow.
-            image: knime-edit.png
-            buttonText: Get Started
-            buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/workflows.html"
-          - title: Use OpenMS in Python
-            subtitle: Enhance workflows with pyOpenMS scripts or develop novel methods using pyOpenMS
-            leftAlign: true
-            image: pyopenms-logo.png
-            imgClass: img-fit
-            bottomBorderRadius: true
-            buttonText: Get Started
-            buttonLink: "https://pyopenms.readthedocs.io/en/latest/"
+            - title: Run existing workflows
+              subtitle: Run existing workflows for proteomics and metabolomics with OpenMS in KNIME.
+              leftAlign: true
+              image: knime-analytics.png
+              buttonText: Get Started
+              buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/knime-get-started.html"
+            - title: Create your own workflows
+              subtitle: Modify and create your own OpenMS workflows in Galaxy, KNIME and Nextflow.
+              image: knime-edit.png
+              buttonText: Get Started
+              buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/workflows.html"
+            - title: Use OpenMS in Python
+              subtitle: Enhance workflows with pyOpenMS scripts or develop novel methods using pyOpenMS
+              leftAlign: true
+              image: pyopenms-logo.png
+              imgClass: img-fit
+              bottomBorderRadius: true
+              buttonText: Get Started
+              buttonLink: "https://pyopenms.readthedocs.io/en/latest/"
         - title: "Advanced users / developers can use OpenMS to:"
           bgColor: FFF1E0
           heroItems:
-          - title: Analyze large datasets
-            subtitle: Run workflows on very large datasets on powerful compute infrastructure
-            leftAlign: true
-            imgClass: img-fit
-            image: nf-core-logo.png
-            buttonText: Get Started
-            buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/nextflow-get-started.html"
-          - title: Create high-performance tools
-            subtitle: Develop high-performance tools or algorithms with the C++ OpenMS library
-            terminal: true
-            buttonText: Get Started
-            bottomBorderRadius: true
-            buttonLink: "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/OpenMS_tutorial.html"
-    
+            - title: Analyze large datasets
+              subtitle: Run workflows on very large datasets on powerful compute infrastructure
+              leftAlign: true
+              imgClass: img-fit
+              image: nf-core-logo.png
+              buttonText: Get Started
+              buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/nextflow-get-started.html"
+            - title: Create high-performance tools
+              subtitle: Develop high-performance tools or algorithms with the C++ OpenMS library
+              terminal: true
+              buttonText: Get Started
+              bottomBorderRadius: true
+              buttonLink: "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/OpenMS_tutorial.html"
+
       keyfeatures:
         title: What is OpenMS ?
         subtitle: OpenMS offers an open-source C++ library (+ Python bindings) for LC/MS data management, analysis and visualization. It empowers rapid development of mass spectrometry related software. OpenMS is freely  available under the three clause BSD license and runs under Windows, macOS and Linux. The OpenMS members have a strong commitment to creating an open, inclusive, and positive community. Please read the OpenMS Code of Conduct for guidance on how to interact with others in a way that makes the community thrive.
 
       webapps:
-      - index: 0
-        url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
-        logo: /images/webapp/logo/umetaflow.png
-        description: This app offers the powerful UmetaFlow pipeline for untargeted metabolomics in an accessible user interface.
-      - index: 1
-        url: https://abi-services.cs.uni-tuebingen.de/nuxl/
-        logo: /images/webapp/logo/nuxl.png
-        description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry).
-      - index: 2
-        logo: /images/webapp/logo/naseweis.png
-        url: https://abi-services.cs.uni-tuebingen.de/naseweis/
-        description: NASEWEIS is a WebApp for the NucleicAcidSearch Engine. It allows for library searching of Oligonucleotides.
-      - index: 3
-        url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
-        logo: /images/webapp/logo/flashapp.png
-        description: FLASHApp allows for interactive analysis and visualization of top-down proteomics data. 
-      - index: 4
-        url: https://abi-services.cs.uni-tuebingen.de/streamsage/
-        logo: /images/webapp/logo/streamsage.png
-        description: StreamSage is a web application for performing proteomics database searching in your browser.
+        - index: 0
+          url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
+          logo: /images/webapp/logo/umetaflow.png
+          description: This app offers the powerful UmetaFlow pipeline for untargeted metabolomics in an accessible user interface.
+        - index: 1
+          url: https://abi-services.cs.uni-tuebingen.de/nuxl/
+          logo: /images/webapp/logo/nuxl.png
+          description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry).
+        - index: 2
+          logo: /images/webapp/logo/naseweis.png
+          url: https://abi-services.cs.uni-tuebingen.de/naseweis/
+          description: NASEWEIS is a WebApp for the NucleicAcidSearch Engine. It allows for library searching of Oligonucleotides.
+        - index: 3
+          url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
+          logo: /images/webapp/logo/flashapp.png
+          description: FLASHApp allows for interactive analysis and visualization of top-down proteomics data.
+        - index: 4
+          url: https://abi-services.cs.uni-tuebingen.de/streamsage/
+          logo: /images/webapp/logo/streamsage.png
+          description: StreamSage is a web application for performing proteomics database searching in your browser.
 
       section5: false
 
@@ -118,13 +118,13 @@ languages:
         sponsorLogo1: /images/logos/denbi-logo-white.svg
         sponsorLogo2: /images/logos/elixir-logo-white.png
         sponsorLogo3: /images/logos/libis-logo-white.svg
-        logo: 
+        logo:
         socialmediatitle: ""
         socialmedia:
-        - link: https://github.com/OpenMS/OpenMS
-          icon: github
-        - link: https://discord.com/invite/4TAGhqJ7s5
-          icon: discord
+          - link: https://github.com/OpenMS/OpenMS
+            icon: github
+          - link: https://discord.com/invite/4TAGhqJ7s5
+            icon: discord
         quicklinks:
           column1:
             links:
@@ -144,7 +144,7 @@ languages:
                 link: /code-of-conduct
           column3:
             links:
-              - text: About us
+              - text: OpenMS Inc.
                 link: /about
               - text: Help
                 link: /help
@@ -179,7 +179,7 @@ languages:
         url: /community
       - title: About Us
         sublinks:
-          - title: OpenMS Project
+          - title: OpenMS Inc.
             url: /about
           - title: Contributors
             url: /contributors
@@ -194,6 +194,3 @@ languages:
       - title: Help Request
         url: /help-request
         button: true
-
-    
-  
