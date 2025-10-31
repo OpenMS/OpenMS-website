@@ -9,8 +9,6 @@ communities worldwide by building quality, open-source software.
 
 {{< include-html "static/gallery/members.html" >}}
 
-{{< include-html "static/gallery/code-of-conduct.html" >}}
-
 # Governance
 
 For information about the Executive Committee, please see [here]({{< relref "/about" >}}).
