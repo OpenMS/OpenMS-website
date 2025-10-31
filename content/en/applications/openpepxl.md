@@ -34,15 +34,15 @@ https://openms.readthedocs.io/en/latest/getting-started/knime-get-started.html
 Building workflows is done by finding tools in the tool list (e.g. by text search) and dragging and dropping their nodes on the workflow pane. The output from one node can be connected to the input of another node by dragging the mouse from one port to another. The ports are the rectangular or triangular symbols on the left and right sides of tool nodes. Inputs are always on the left, outputs on the right. Each node can be configured by double-clicking on its icon or right-clicking and selecting the configure option. A pop-up window will then list the parameters of the node. The figures below show example workflows for OpenPepXL (labeled cross-linkers) and OpenPepXLLF (unlabeled cross-linkers).
 
 
-{{< figure src="/images/content_images/applications/KNIME_PepXLLF-1.png" >}}
+{{< figure >}} src="/images/content_images/applications/KNIME_PepXLLF-1.png" {{< /figure >}}
 
-{{< figure src="/images/content_images/applications/KNIME_PepXL.png" >}}
+{{< figure >}} src="/images/content_images/applications/KNIME_PepXL.png" {{< /figure >}}
 
 For reading in input files there are the nodes Input File and Input Files. Input File has one file path as its parameter and can be used for single files, like a protein database. The Input Files node takes a list of file paths for other nodes to iterate over. The ZipLoopStart and ZipLoopEnd nodes allow for a section of the workflow to iterate over multiple entries in a list. In this case FeatureFinderMultiplex and OpenPepXL or OpenPepXLLF are run multiple times, once for each input file defined in the Input Files node. The Output Folder nodes have a path to a directory as their parameter and write out all incoming data as files into that directory. The names of these files will be equal to the names of the mzML input files, but with a different file ending. The ZipLoopEnd node collects all the results of the loop before sending them further to the output nodes, so the results are written once after all processing is finished. Putting an Output Folder node inside the loop, e.g. right after OpenPepXL, will write out the results of the current input file right after OpenPepXL is finished with it. This type of workflow will go through the input files iteratively one by one and parallelization for each run can be set using the -threads parameter of OpenPepXL. To run a KNIME workflow, click on the green arrow button above the workflow pane.
 
 Below you can see a more complex workflow with FDR estimation and additional filtering. This is a label-free OpenPepXL workflow available for download at the [OpenMS 2.5 page](https://github.com/enetz/OpenMS/releases).
 
-{{< figure src="/images/content_images/applications/OpenPepXL_fullWorkflow-1.png" >}}
+{{< figure >}} src="/images/content_images/applications/OpenPepXL_fullWorkflow-1.png" {{< /figure >}}
 
 It will run OpenPepXLLF on all mzML input files, run the FDR estimation, filter by 5% FDR, remove decoys and write out idXML files for visualization in TOPPView (more below), as well as an CSV file containing all 1st ranked PSMs with FDR < 5% from all input mzML files. To run FeatureFinderMultiplex and OpenPepXL for labeled cross-link search, remove the OpenPepXLLF node and drag those two in. Connect the inputs and outputs in a similar way to the workflow above. You can also add a PeakPickerHiRes node for peak picking in front of FeatureFinderMultiplex or OpenPepXLLF if needed and adapt the filters as needed. The IDFilter node has a lot of options, but the only one used here is to filter by specific meta values of each ID (cross-link). The parameter -remove_peptide_hits_by_metavalue accepts three text strings that make up a condition. All IDs that fulfill this condition are accepted, others are filtered out. Look at the conditions set in the nodes of the workflow to get an idea about how this works. Most of the columns in the table returned by TextExporter can be used for filtering.
 
@@ -60,9 +60,9 @@ All the TOPP (The OpenMS Proteomics Pipeline) tools are controlled through so-ca
 OpenPepXLLF -write_ini OPXL.ini
 ```
 
-To edit the settings open the .ini file in the TOPP tool INIFileEditor. An example of an INI file is shown in the figure. 
+To edit the settings open the .ini file in the TOPP tool INIFileEditor. An example of an INI file is shown in the figure.
 
-<center>{{< figure src="/images/content_images/applications/INIFileEditor-1.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/INIFileEditor-1.png" {{< /figure >}}</center>
 
 The INIFileEditor shows a description of each parameter at the bottom and helps to fill out many parameters, e.g. by using a file browser to select input and output files and showing the possible choices of parameters with limited options. To see the full list of parameters, including advanced parameters that should not be necessary for most users, check the box for advanced parameters on the bottom. The INI files can also be edited using a text editor when opening a GUI is not possible, e.g. when working on a remote server.
 To run a tool using the edited INI file, call the tool executable with the parameter `-ini filename.ini`.
@@ -154,7 +154,7 @@ FeatureFinderMultiplex -ini FFM.ini -in filename.mzML -out_multiplets filename.c
 3. Generate a default parameter file for OpenPepXL:
 
 ```bash
-OpenPepXL -write_ini OPXL.ini 
+OpenPepXL -write_ini OPXL.ini
 ```
 
 4. Edit parameter file using INIFileEditor (or a text editor) and run the tool using the parameter file:
@@ -191,13 +191,13 @@ PeakPickerHiRes -ini picker.ini
 
 ### Visualizing spectra and matched peaks with TOPPView:
 
-<center>{{< figure src="/images/content_images/applications/TOPPView_annotate.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/TOPPView_annotate.png" {{< /figure >}}</center>
 
 First, open a spectrum in TOPPView. Then go to Tools->Annotate with identification and select the .mzid or .idXML file produced by OpenPepXL.
 You can select an identified cross-link in the table on the right side of the TOPPView window to visualize it.
 TOPPView allows you to zoom in and out freely. Peak annotations are read from the identification file but can be edited, moved, added or removed, e.g. to prepare clean images for publication. These custom labels can also be stored to file and retrieved in .idXML files, the internal OpenMS identification data format.
 
-<center>{{< figure src="/images/content_images/applications/TOPPView_Spec-1024x505.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/TOPPView_Spec-1024x505.png" {{< /figure >}}</center>
 
 The identified features and feature pairs from FeatureFinderMultiplex (FFM) can also be visualized in TOPPView by loading in the .mzML, then the .featureXML output file (optional, not necessary for OpenPepXL, but contains detailed information about each feature, FFM parameter: -out) and the .consensusXML as additional layers through File->Open file and selecting new layer in the appearing pop-up window.
 
@@ -214,6 +214,3 @@ Kosinski, J., et al. (2015) Xlink Analyzer: Software for analysis and visualizat
 Vizcaíno, J. A., Mayer, G., Perkins, S. R., Barsnes, H., Vaudel, M., Perez-Riverol, Y., … & Rappsilber, J. (2017). The mzIdentML data standard version 1.2, supporting advances in proteome informatics. Molecular & Cellular Proteomics, mcp-M117.
 
 Ternent, T., Csordas, A., Qi, D., Gómez‐Baena, G., Beynon, R.J., Jones, A.R., Hermjakob, H. and Vizcaíno, J.A., 2014. How to submit MS proteomics data to ProteomeXchange via the PRIDE database. Proteomics, 14(20), pp.2233-2241.
-
-
-

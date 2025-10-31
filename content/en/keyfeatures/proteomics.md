@@ -3,7 +3,7 @@ title: "OpenMS For Proteomics"
 sidebar: false
 ---
 
-{{< figure src="/images/content_images/kf/PROTEINS.jpeg" >}}
+{{< figure >}} src="/images/content_images/kf/PROTEINS.jpeg" {{< /figure >}}
 
 OpenMS provides a large amount of tools to analyse your proteomics datasets.
 Starting from input files in either vendor-specific raw formats (convertible with the integrated ProteoWizard) or a number of open HUPO-compliant formats (mzML, mzXML), you can process your data by simply combining a set of our almost 200 ready-made tools from „The OpenMS proteomics pipeline (TOPP)”. These tools are available from the [command line](https://openms.readthedocs.io/en/latest/getting-started/topp-tools.html#command-line-interface) and from within [workflow engines](https://openms.readthedocs.io/en/latest/getting-started/workflows.html) (e.g. KNIME and Galaxy).

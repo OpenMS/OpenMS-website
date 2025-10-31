@@ -4,13 +4,13 @@ subtitle: Quantification for top-down proteomics
 sidebar: false
 ---
 
-FLASHQuant performs MS1-level label-free quantification data analysis in top-down proteomics with an automatic overlapping signal resolution method. 
+FLASHQuant performs MS1-level label-free quantification data analysis in top-down proteomics with an automatic overlapping signal resolution method.
 
 {{< button github "https://github.com/JeeH-K/OpenMS/tree/feature/FLASHQuant">}}
 Check it out on Github!
 {{< /button >}}
 
-Now <u>binary installer files for all platforms</u> are available here: (Please use the latest version) 
+Now <u>binary installer files for all platforms</u> are available here: (Please use the latest version)
 {{< button normal "https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/experimental/feature/FLASHQuantDevelop/">}}
 Download Page
 {{< /button >}}
@@ -26,6 +26,6 @@ FLASHQuant executes per LC-MS run; thus, we provide an additional simple tool fo
 
 ### GUI
 FLASHQuant and (consecutive) ConsensusFeatureGroupDetector can be executed easily with the GUI, **FLASHQuantWizard**.
-<center>{{< figure src="/images/content_images/FLASHQuantWizard.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/FLASHQuantWizard.png" {{< /figure >}}</center>
 
 To learn how to run the programs, please check <a href="/applications/flashdeconv/">FLASHDeconv</a> page for details.

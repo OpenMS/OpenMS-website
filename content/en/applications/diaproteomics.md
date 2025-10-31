@@ -10,7 +10,7 @@ The workflow is based on the OpenSwathWorkflow for SWATH-MS proteomic data. DIA 
 
 The pipeline is built using Nextflow, a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. It comes with docker / singularity containers making installation trivial and results highly reproducible.
 
-<center>{{< figure src="/images/content_images/applications/DIAproteomics.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/DIAproteomics.png" {{< /figure >}}</center>
 
 The Nextflow Workflow is available at:
 
@@ -19,4 +19,3 @@ https://github.com/nf-core/diaproteomics
 See also the detailed description of parameters and workflow output at:
 
 https://nf-co.re/diaproteomics
-

@@ -6,7 +6,12 @@ sidebar: false
 
 DIAMetAlyzer is a KNIME workflow which integrates DDA and targeted DIA analysis for metabolomics, which allows for false-discovery rate estimation based a target-decoy approach (see figure 1). It performs DDA based candidate identification and constructs a target/decoy assay library, which is used for DIA target extraction and statistical validation (FDR estimation)
 
-<center>{{< figure src="/images/content_images/applications/Figure_1-1536x765.png" caption="**Fig. 1: DIAMetAlyzer – pipeline for assay library generation and targeted analysis with statistical validation**" >}}</center>
+<center>
+{{< figure >}}
+src="/images/content_images/applications/Figure_1-1536x765.png"
+caption="**Fig. 1: DIAMetAlyzer – pipeline for assay library generation and targeted analysis with statistical validation**"
+{{< /figure >}}
+</center>
 
 Candidate identification includes feature detection, adduct grouping and accurate mass search. Library construction uses the knowledge determined by compound identification. Here, potential composition, adducts and corresponding fragment spectra are used to perform fragment annotation via compositional fragmentation trees to extract transitions for assay library.  FDR estimation is based on the target-decoy approach, with decoys being generated using a fragmentation tree method, which reduces bias in decoy generation. In the targeted extraction step,  the assay library is used to analyse DIA data, which involves chromatogram extraction and peak-group scoring. Statistical validation uses semi-supervised learning to build a composite score and estimate q-values.
 

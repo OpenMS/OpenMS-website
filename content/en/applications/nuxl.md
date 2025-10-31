@@ -6,10 +6,10 @@ sidebar: false
 
 ## Introduction
 
-NuXL is a novel tool for protein-RNA and DNA cross-linking studies. It is available as a 
+NuXL is a novel tool for protein-RNA and DNA cross-linking studies. It is available as a
 [stand-alone tool](#installation-as-stand-alone-tool) and as a [Proteome Discoverer community node](#installation-for-proteome-discoverer) or as a [web application](#run-as-web-application) that doesn't require you to install additional software. This guide outlines the steps to install NuXL, set up your analysis, and interpret your data using the provided tools and workflows.
 
-<center>{{< figure src="/images/content_images/applications/NuXL.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/NuXL.png" {{< /figure >}}</center>
 
 ### Requirements:
 
@@ -17,7 +17,7 @@ NuXL is a novel tool for protein-RNA and DNA cross-linking studies. It is availa
 - Developed and tested on orbitrap instruments (including Velos, Lumos, and Astral)
 
 ## Installation for Proteome Discoverer
-NuXL is currently compatible with Proteome Discoverer 3.0 and 3.1. 
+NuXL is currently compatible with Proteome Discoverer 3.0 and 3.1.
 
 **For PD 3.1 you need to:**
 1.	Download and install `PDNuXLNode_3_1.msi` from https://github.com/Arslan-Siraj/PDNuXLNodeInstaller/releases/tag/v0.0.3
@@ -34,7 +34,7 @@ NuXL is currently compatible with Proteome Discoverer 3.0 and 3.1.
 
 **Manuall installation**
    - If the installer fails, see the manual installation guide: https://github.com/Arslan-Siraj/PDNuXLNodeInstaller
-     
+
 ### Setting Up Your Study
 
 1. **Create a New Study:**
@@ -54,14 +54,14 @@ NuXL is currently compatible with Proteome Discoverer 3.0 and 3.1.
       - If you want to use a preconfigured workflow click `Open` and select the template of your choice.
       - For a minimal workflow, add and connect `Spectrum Files`, `Spectrum Selector`, and `NuXL` nodes. Note: You will find the NuXL node under the `Sequence Database Search` category.
 
-      <center>{{< figure src="/images/content_images/applications/NuXL_minimalwf.png" >}}</center>
+      <center>{{< figure >}} src="/images/content_images/applications/NuXL_minimalwf.png" {{< /figure >}}</center>
 
       - Important settings in `Spectrum Selector`: set `MS Order` to `Any` to ensure MS1 spectra are not discarded.
       - Configuring NuXL:
-         - By clicking on the NuXL processing node symbol in the workflow tree, you can adapt settings Note: If you click on `Show Advanced Parameter`, you will find additional parameters.   
+         - By clicking on the NuXL processing node symbol in the workflow tree, you can adapt settings Note: If you click on `Show Advanced Parameter`, you will find additional parameters.
          - NuXL provides `Presets` for different crosslinking mass spectrometry protocols. For most use cases, users just need to select a preset that fits their experimental protocol. In most cases, default parameters work reasonably well but results can sometimes be improved by tweaking other parameters.
 
-         <center>{{< figure src="/images/content_images/applications/NuXL_params.png" >}}</center>
+         <center>{{< figure >}} src="/images/content_images/applications/NuXL_params.png" {{< /figure >}}</center>
 
          - Other Parameters:
             - `Peptide identification` -> `Precursor mass tolerance` and `Fragment mass tolerance`: Adjust the fragment search mass accuracy according to your instrument.
@@ -72,17 +72,17 @@ NuXL is currently compatible with Proteome Discoverer 3.0 and 3.1.
             - `Peptide identification` -> `Peptide length max`: We recommend setting a limit of ~30 for complex proteome-wide searches.
             - `Peptide identification` -> `Missed cleavages`: If significant crosslinking is expected to occur and create missed cleavages, the value can be increased up to 3.
 
-         - Advanced users: 
+         - Advanced users:
             - Users can define their own fragmentation rules and crosslink adduct settings. Select `none` in `Presets`. You can then define `Fragment adducts` and `Modifications` in advanced parameters according to your protocol in the following format: `[target nucleotide]:[formula]` or `[precursor adduct] ->[fragment adduct formula];[name]`. NuXL will use this information to generate all chemically feasible precursor adduct and fragment adduct combinations.
             - `Cross-link identification` -> `Can cross-link`: If you expect only a single or subset of nucleotides to be amenable to crosslinking, set this up here. Nucleotides are specified by their one-letter code without a separator (e.g. UA for U and A nucleotides)
             - `Cross-link identification` -> `Cysteine adduct`: If DTT is present during UV irradiation, it can generate additional crosslinks including a 152 Da linker. For more information see 1. If needed to be identified, we recommend specifying the composition of the linker in modifications and 'Fragment adducts' instead. Set this flag to true, if the 152 adduct is expected.
             - `Cross-links` -> `Target nucleotides`: Sum formulas of the target nucleotides of the crosslink.  Heavy labeled atoms are specified with parenthesis in front with the nominal mass of the respective isotope (e.g. (13)C, (15)N).
-             
+
    - **Consensus Workflow**: Click on Edit in the 'Consensus Step' window
-      - Connect an `MSF Files` node to the 'NuXL Consensus' node. 
+      - Connect an `MSF Files` node to the 'NuXL Consensus' node.
       - Set `Spectra to Store` to `All` in the MSF Files node.
 
-      <center>{{< figure src="/images/content_images/applications/NuXL_minimalcwf.png" >}}</center>
+      <center>{{< figure >}} src="/images/content_images/applications/NuXL_minimalcwf.png" {{< /figure >}}</center>
 
 
 3. **Running the Workflow:**
@@ -90,8 +90,8 @@ NuXL is currently compatible with Proteome Discoverer 3.0 and 3.1.
    - Important: Ensure the "By File" checkbox is selected.
    - Save the template
    - Run the workflow
-   
-   <center>{{< figure src="/images/content_images/applications/NuXL_files.png" >}}</center>
+
+   <center>{{< figure >}} src="/images/content_images/applications/NuXL_files.png" {{< /figure >}}</center>
 
 
 ### Post-Analysis
@@ -100,13 +100,13 @@ You can monitor the progress of your analysis by opening `Administration` -> `Sh
 
 1. **Viewing Results:**
    - Result files are not exported automatically. All results are listed under the Analysis Results tab. You can view your results in Proteome Discoverer by double-clicking the result file.
-  
-   <center>{{< figure src="/images/content_images/applications/NuXL_result_file.png" >}}</center>
-      
+
+   <center>{{< figure >}} src="/images/content_images/applications/NuXL_result_file.png" {{< /figure >}}</center>
+
    - Results are displayed in several tabs. You can view: `Proteins`, `PSMs and NuXL`, `MS/MS Spectrum Info`, `Input Files`, `Specialized Traces`, and `Study Information`. Depending on your consensus workflow, you might see additional tabs.
    - The `PSMs and NuXL` table provides information about all peptide and crosslink spectrum matches (PSMs and NuXLs, respectively).  Key columns include `Annotated Sequence`, `Modifications`, `Protein Accessions`, `q-value` (CSM-level q-value). We recommend to filter your results for 1% CSM-level FDR (`q-value` <= 0.01).
 
-<center>{{< figure src="/images/content_images/applications/NuXL_visualize.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/NuXL_visualize.png" {{< /figure >}}</center>
 
 2. **Exporting Data:**
    - To export the results for further analysis in spreadsheet software (e.g., Microsoft Excel), navigate to `File -> Export -> To Microsoft Excel`.
@@ -176,7 +176,7 @@ These steps ensure that Percolator is properly integrated into your workflow, en
 
 With this step, the initial configuration of the OpenNuXL is completed and the pipeline can be saved from `File -> Save as` and used as a template.
 
-<center>{{< figure src="/images/content_images/applications/NuXL_toppas_basic.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/NuXL_toppas_basic.png" {{< /figure >}}</center>
 
 ### Run Configuration
 
@@ -184,18 +184,18 @@ With this step, the initial configuration of the OpenNuXL is completed and the p
 
 Depending on your experiment, you can select an RNA or DNA preset or define your own adduct settings for custom protocols:
 
-<center>{{< figure src="/images/content_images/applications/NuXL_toppas_presets.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/NuXL_toppas_presets.png" {{< /figure >}}</center>
 
 To view the MS1 (modifications) and MS2 (fragment_adducts) of the specific presets you can tick the box for advanced parameters and scroll to your preset of interest.
 
-**Advanced Users: Setting up Custom Nucleotide Adducts** 
+**Advanced Users: Setting up Custom Nucleotide Adducts**
 
 In case none of the available presets matches your workflow, custom presets can be defined by defining 'target_nucleotides', 'can_cross-link', 'fragment_adducts', and 'modifications'.
- If no preset is selected ('none'), you can add custom sum formulae in the same format as shown in advanced parameters for the presets (format: `[target nucleotide]:[formula]` or `[precursor adduct] ->[fragment adduct formula];[name]; 
+ If no preset is selected ('none'), you can add custom sum formulae in the same format as shown in advanced parameters for the presets (format: `[target nucleotide]:[formula]` or `[precursor adduct] ->[fragment adduct formula];[name];
 
-<center>{{< figure src="/images/content_images/applications/NuXL_toppas_adducts.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/NuXL_toppas_adducts.png" {{< /figure >}}</center>
 
-**Other settings** 
+**Other settings**
 
 Numerous other parameters can be specified to fine tune the search process (Table T1). In most cases defaults combined with proper presets should work.
 
@@ -236,19 +236,19 @@ Numerous other parameters can be specified to fine tune the search process (Tabl
 
 As an alternative to loading database files via an `<Input Files>` node, you can define the database in the OpenNuXL node by double-clicking the value field of the database parameter and selecting the respective database (Figure Database Configuration).
 
-<center>{{< figure src="/images/content_images/applications/NuXL_toppas_db.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/NuXL_toppas_db.png" {{< /figure >}}</center>
 
 **Figure Database Configuration**:  Within the OpenNuXL node, select the sequence database.
 
 **Advanced Users**: In case you would like to combine several files in one search, we suggest using the OpenMS node `<FileMerger>`, which can be found in 'File Handling'. The node needs to be combined with `<Input Files>`+`<Collector>` and `<Output Files>`.
 
-<center>{{< figure src="/images/content_images/applications/NuXL_toppas_merge.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/NuXL_toppas_merge.png" {{< /figure >}}</center>
 
 **Figure Workflow to merge `.mzML` files**: The `<FileMerger>` node can be used as shown in this scheme for merging `.mzML` files e.g., from multiple fractions.
 
 To export FDR-filtered result files, specify the absolute path for an output folder by double-clicking the value field of the `output_folder` parameter and pasting your selected path.
 
-<center>{{< figure src="/images/content_images/applications/NuXL_toppas_outputfolder.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/NuXL_toppas_outputfolder.png" {{< /figure >}}</center>
 
 **Figure Output folder path**: To generate FDR filtered result files, a path needs to be specified.
 
@@ -258,7 +258,7 @@ After selection of analysis parameters and defining input files, the workflow ca
 
 **Figure Output Directory.**: Upon pipeline execution, the displayed pop-up window appears to enter the absolute path of the output folder.
 
-<center>{{< figure src="/images/content_images/applications/NuXL_toppas_log.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/NuXL_toppas_log.png" {{< /figure >}}</center>
 
 **Figure OpenNuXL Log window.**: The progress of OpenNuXL search is shown.
 
@@ -270,11 +270,11 @@ If executed on `.raw` files, the OpenNuXL node will create corresponding `.mzML`
 
 **Tip**: You can export the TOPPView inbuilt result table by clicking on 'Export table' below the result grid.
 
-<center>{{< figure src="/images/content_images/applications/nuxl_tv_vis.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/nuxl_tv_vis.png" {{< /figure >}}</center>
 
 **Figure Annotated MS2 spectrum**: of a UV-crosslinked peptide-RNA(oligo)nucleotide displayed in TOPPView. The spectrum window shows OpenNuXL peak annotations in color (green and red) and unmatched peaks in black. The window contains the peptide sequence showing coverage with annotated fragment peaks.
 
-<center>{{< figure src="/images/content_images/applications/nuxl_tv_columns.png" >}}</center>
+<center>{{< figure >}} src="/images/content_images/applications/nuxl_tv_columns.png" {{< /figure >}}</center>
 
 **Figure Custom Columns**: By right-clicking on the result grid header, a pop-up window appears that allows choosing different columns to be added/removed.
 
@@ -285,6 +285,4 @@ To export an image of the annotated spectrum, right-click on the spectrum and ch
 ## Run as Web-Application
 Please visit https://abi-services.cs.uni-tuebingen.de/nuxl/ to try out (or download) the experimental NuXL web app.
 
-<center>{{< figure src="/images/content_images/applications/NuXL_webapp.jpg" >}}</center>
-
-
+<center>{{< figure >}} src="/images/content_images/applications/NuXL_webapp.jpg" {{< /figure >}}</center>

@@ -32,6 +32,39 @@ languages:
       navbarlogo:
         image: OpenMS_transparent_blackFont.png
         link: /
+      navbar:
+        - title: News
+          url: /news
+        - title: Install
+          url: https://openms.readthedocs.io/en/latest/about/installation.html
+        - title: Documentation
+          url: https://openms.readthedocs.io/en/latest/index.html
+        - title: Community
+          sublinks:
+            - title: Communication
+              url: /communication
+            - title: Contribute
+              url: /contribute
+            - title: Awards
+              url: /news/fellowship2024
+          url: /community
+        - title: About Us
+          sublinks:
+            - title: OpenMS Inc.
+              url: /about
+            - title: Contributors
+              url: /contributors
+          url: /about
+        - title: Use Cases
+          url: /publications
+          sublinks:
+            - title: Applications
+              url: /applications
+            - title: Publications
+              url: /publications
+        - title: Help Request
+          url: /help-request
+          button: true
       hero:
         # Main hero title
         # title: OpenMS
@@ -160,37 +193,3 @@ languages:
                 link: /press-kit
               - text: Impressum
                 link: /impressum
-
-    navbar:
-      - title: News
-        url: /news
-      - title: Install
-        url: https://openms.readthedocs.io/en/latest/about/installation.html
-      - title: Documentation
-        url: https://openms.readthedocs.io/en/latest/index.html
-      - title: Community
-        sublinks:
-          - title: Communication
-            url: /communication
-          - title: Contribute
-            url: /contribute
-          - title: Awards
-            url: /news/fellowship2024
-        url: /community
-      - title: About Us
-        sublinks:
-          - title: OpenMS Inc.
-            url: /about
-          - title: Contributors
-            url: /contributors
-        url: /about
-      - title: Use Cases
-        url: /publications
-        sublinks:
-          - title: Applications
-            url: /applications
-          - title: Publications
-            url: /publications
-      - title: Help Request
-        url: /help-request
-        button: true

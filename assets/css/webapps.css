@@ -23,7 +23,6 @@
     cursor: pointer;
 }
 
-
 .swiper-wrapper .swiper-slide {
     display: flex;
     flex-direction: column;
@@ -117,9 +116,8 @@
     .swiper {
         width: 350px;
     }
-  
+
     .swiper-slide p {
         font-size: 15px;
     }
-
 }
