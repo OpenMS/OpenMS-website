@@ -5,8 +5,7 @@ sidebar: false
 
 **User questions:** The best way to get help is to post your question to a site
 like [StackOverflow](https://stackoverflow.com/search?q=openms), with
-thousands of users available to answer.  Smaller alternatives include
-[Gitter](https://gitter.im/openms/openms). We wish we could keep an eye on
+thousands of users available to answer. We wish we could keep an eye on
 these sites, or answer questions directly, but the volume is just a little
 overwhelming!
 
@@ -31,12 +30,6 @@ is available [here](https://lists.sourceforge.net/lists/listinfo/open-ms-general
 - For bug reports;
 - documentation issues (e.g. "I found this section unclear");
 - and feature requests (e.g. "I would like to have a new interpolation method in `spectrum.sortByPosition()`").
-
-***
-
-### [Gitter](https://gitter.im/openms/openms)
-
-A real-time chat room where users and community members help each other.
 
 ***
 
