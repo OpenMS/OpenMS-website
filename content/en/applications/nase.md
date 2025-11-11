@@ -4,14 +4,14 @@ subtitle: Nucleic acid search engine
 sidebar: false
 ---
 
-NASE is now included in OpenMS release, 2.5.
+NASE is now included in OpenMS release, 2.5 or later.
 
 Requirements:
 
 - HCD (or ETD) data of RNA oligonucleotides acquired on a high-resolution mass spectrometer
 - Fragment spectra (MS/MS) need to be centroided (either on acquisition, conversion, or in a workflow using the TOPP tool PeakPickerHiRes)
 - Developed and tested on Linux (Ubuntu 18.04 and 18.10) systems with data from orbitrap instruments
-- Operating system: OpenMS installers have been tested on Ubuntu Linux 18.04, Windows 7/8/10, and macOS 10.12-10.14. If you experience any troubles don’t hesitate to contact the OpenMS team on Gitter [chat](https://gitter.im/OpenMS/OpenMS) or open an issue in the OpenMS [GitHub repository](https://github.com/OpenMS/OpenMS/issues).
+- Operating system: OpenMS installers have been tested on Ubuntu Linux 18.04, Windows 7/8/10, and macOS 10.12-10.14. If you experience any troubles don’t hesitate to contact the OpenMS team or open an issue in the OpenMS [GitHub repository](https://github.com/OpenMS/OpenMS/issues).
 
 ### Publication:
 

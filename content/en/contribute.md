@@ -15,7 +15,7 @@ list](https://lists.sourceforge.net/lists/listinfo/open-ms-general/) or
 issue).
 
 Those are our preferred channels (open source is open by nature), but
-if you prefer to talk privately, contact our community coordinators at [Gitter](https://gitter.im/OpenMS/OpenMS).
+if you prefer to talk privately, contact our community coordinators on the [OpenMS Discord Server](https://discord.gg/aJyWqf6uCn).
 
 If you only want to be informed of new versions of OpenMS, please subscribe to the mailing list [open-ms-announcements](https://lists.sourceforge.net/lists/listinfo/open-ms-announcements).
 
