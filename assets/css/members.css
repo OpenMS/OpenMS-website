@@ -1,0 +1,17 @@
+.member {
+    margin-bottom: 1rem;
+}
+
+.roles {
+    margin-top: 0.5rem;
+}
+
+.role {
+    display: inline-block;
+    background-color: #eee;
+    color: #333;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.85em;
+    margin-right: 0.3rem;
+}
