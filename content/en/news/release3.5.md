@@ -1,6 +1,11 @@
 Dear OpenMS-Users,
 
-we are proud to announce the release of OpenMS 3.5. Grab it <a href="https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/3.5">here</a>
+we are proud to announce the release of OpenMS 3.5. Grab it <a href="https://github.com/OpenMS/OpenMS/releases/tag/release%2F3.5.0">here</a>
+A couple of things are different this time:
+- This will be the last release for MacOS Intel, we will continue providing docker images for AMD64 processors here: https://github.com/OpenMS/OpenMS/pkgs/container/openms-tools-thirdparty . If that doesn't work, and you desperately need continued MacOS Intel support, please reach out to us at info@openms.de
+- We now have ARM64 Linux support! Both for OpenMS and pyOpenMS. These also run on MacOS silicon.
+- We will be using Github as opposed to our traditional archive as the primary repository of installers.
+- We are now a 501c3! For any nonprofit nerds out there, we've put together a legal entity to ensure the long term stability of OpenMS.
 
 In the following you find all important changes to the previous version:
 
