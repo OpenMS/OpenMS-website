@@ -1,3 +1,9 @@
+---
+title: OpenMS 3.5 released
+authors: ["Tjeerd Dijkstra"]
+date: 2025-12-11
+summary: We have just released OpenMS 3.5.0
+---
 Dear OpenMS-Users,
 
 we are proud to announce the release of OpenMS 3.5. Grab it <a href="https://github.com/OpenMS/OpenMS/releases/tag/release%2F3.5.0">here</a>
