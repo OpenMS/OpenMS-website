@@ -90,22 +90,30 @@ languages:
 
       webapps:
         - index: 0
-          url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
-          logo: /images/webapp/logo/umetaflow.png
-          description: This app offers the powerful UmetaFlow pipeline for untargeted metabolomics in an accessible user interface.
-        - index: 1
-          url: https://abi-services.cs.uni-tuebingen.de/nuxl/
-          logo: /images/webapp/logo/nuxl.png
-          description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry).
-        - index: 2
-          logo: /images/webapp/logo/naseweis.png
-          url: https://abi-services.cs.uni-tuebingen.de/naseweis/
-          description: NASEWEIS is a WebApp for the NucleicAcidSearch Engine. It allows for library searching of Oligonucleotides.
-        - index: 3
           url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
           logo: /images/webapp/logo/flashapp.png
           description: FLASHApp allows for interactive analysis and visualization of top-down proteomics data.
+        - index: 1
+          url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
+          logo: /images/webapp/logo/umetaflow.png
+          description: This app offers the powerful UmetaFlow pipeline for untargeted metabolomics in an accessible user interface.
+        - index: 2
+          url: https://abi-services.cs.uni-tuebingen.de/nuxl/
+          logo: /images/webapp/logo/nuxl.png
+          description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry).
+        - index: 3
+          url: https://abi-services.cs.uni-tuebingen.de/mhcquant/
+          logo: /images/webapp/logo/mhcquant.svg
+          description: MHCQuant is a web application for analysis of MHC-bound peptides in immunopeptidomics studies.
         - index: 4
+          url: https://abi-services.cs.uni-tuebingen.de/toppview-lite/
+          logo: /images/webapp/logo/toppview-lite.svg
+          description: TOPPView Lite is a web-based viewer for interactive visualization and exploration of mass spectrometry data.
+        - index: 5
+          logo: /images/webapp/logo/naseweis.png
+          url: https://abi-services.cs.uni-tuebingen.de/naseweis/
+          description: NASEWEIS is a WebApp for the NucleicAcidSearch Engine. It allows for library searching of Oligonucleotides.
+        - index: 6
           url: https://abi-services.cs.uni-tuebingen.de/streamsage/
           logo: /images/webapp/logo/streamsage.png
           description: StreamSage is a web application for performing proteomics database searching in your browser.

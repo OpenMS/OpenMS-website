@@ -108,6 +108,22 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 /flash-app https://abi-services.cs.uni-tuebingen.de/flashviewer/ 301
 /FLASHApp/ https://abi-services.cs.uni-tuebingen.de/flashviewer/ 301
 
+/TOPPViewLite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/TOPPView-Lite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/TOPPView-lite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/ToppViewLite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/Toppview-Lite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/toppview-lite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/toppviewlite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/TOPPVIEWLITE https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/TOPPVIEW-LITE https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+
+/MHCQuantWeb https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
+/MHCQuant-Web https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
+/mhcquant-web https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
+/mhcquantweb https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
+/MHCQUANTWEB https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
+/MHCQUANT-WEB https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
 
 # Redirects for WebApps
 /webapps/* https://abi-services.cs.uni-tuebingen.de/:splat 301
