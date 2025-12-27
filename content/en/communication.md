@@ -13,7 +13,7 @@ Here's how to get started:
 
 - 📚 Browse through the main library code under [OpenMS/OpenMS](https://github.com/openms/openms/issues)
 - 👩‍💻 Check out the [documentation](https://openms.readthedocs.io/en/latest/index.html).
-- 🙋‍♀️ Come and say hi on our [![Discord Shield](https://img.shields.io/discord/832282841836159006?style=flat-square&message=Discord&color=5865F2&logo=Discord&logoColor=FFFFFF&label=Discord)](https://discord.gg/4TAGhqJ7s5) or [![Gitter](https://img.shields.io/static/v1?style=flat-square&message=on%20Gitter&color=ED1965&logo=Gitter&logoColor=FFFFFF&label=Chat)](https://gitter.im/OpenMS/OpenMS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) channels.
+- 🙋‍♀️ Come and say hi on our [![Discord Shield](https://img.shields.io/discord/832282841836159006?style=flat-square&message=Discord&color=5865F2&logo=Discord&logoColor=FFFFFF&label=Discord)](https://discord.gg/4TAGhqJ7s5) channel.
 - 🍿 Tune in for news about developer/user meetings and events, [get involved]({{< ref "news.md" >}})!
 - 🌈 Please abide by our [community code of conduct](https://github.com/OpenMS/OpenMS/blob/develop/CODE_OF_CONDUCT.md)
 
@@ -55,12 +55,6 @@ Documentation
 
 ***
 
-### <a class="button cta rounded primary-btn raised" href="https://gitter.im/OpenMS/OpenMS">Gitter</a>
-
-A real-time chat room to ask questions about OpenMS.
-
-***
-
 ### <a class="button cta rounded primary-btn raised" href="https://sourceforge.net/p/open-ms/mailman/open-ms-announcements">OpenMS mailing list</a>
 
 
@@ -70,11 +64,6 @@ There are two mailing list currently:
 - [open-ms-announcements](https://sourceforge.net/p/open-ms/mailman/open-ms-announcements/) - Announcements about OpenMS, such as for releases, developer meetings, sprints or conference talks are made on this list.
 - [open-ms-general](https://sourceforge.net/p/open-ms/mailman/open-ms-general/) - For addressing any queries or suggestion from the users.
 
-***
-
-### <a class="button cta rounded primary-btn raised" href="https://twitter.com/openmsteam">Twitter</a> 
-
-Contact us or just follow the latest OpenMS news on Twitter.
 
 ***
 
