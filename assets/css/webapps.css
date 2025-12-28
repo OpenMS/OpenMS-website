@@ -50,48 +50,67 @@
     margin-bottom: 10px;
 }
 
-.swiper-slide.slide-0 img,
-.swiper-slide.slide-4 img {
-    width: 100%;
-    height: 250px;
-}
-
-.swiper-slide.slide-0 p,
-.swiper-slide.slide-4 p {
-    margin-top: 10px;
-}
-
-.swiper-slide.slide-1 img,
-.swiper-slide.slide-5 img {
-    height: 150px;
-    margin-top: 60px;
-}
-
-.swiper-slide.slide-1 p,
-.swiper-slide.slide-5 p {
-    margin-top: 50px;
-}
-
-.swiper-slide.slide-2 img,
-.swiper-slide.slide-6 img {
-    height: 100px;
-    margin-top: 80px;
-}
-
-.swiper-slide.slide-2 p,
-.swiper-slide.slide-6 p {
-    margin-top: 80px;
-}
-
-.swiper-slide.slide-3 img,
-.swiper-slide.slide-7 img {
+/* slide-0: FLASHApp */
+.swiper-slide.slide-0 img {
     height: 230px;
     margin-top: 10px;
 }
-
-.swiper-slide.slide-3 p,
-.swiper-slide.slide-7 p {
+.swiper-slide.slide-0 p {
     margin-top: 20px;
+}
+
+/* slide-1: umetaflow */
+.swiper-slide.slide-1 img {
+    width: 100%;
+    height: 250px;
+}
+.swiper-slide.slide-1 p {
+    margin-top: 10px;
+}
+
+/* slide-2: NuXL */
+.swiper-slide.slide-2 img {
+    height: 150px;
+    margin-top: 60px;
+}
+.swiper-slide.slide-2 p {
+    margin-top: 50px;
+}
+
+/* slide-3: MHCQuant */
+.swiper-slide.slide-3 img {
+    height: 180px;
+    margin-top: 40px;
+}
+.swiper-slide.slide-3 p {
+    margin-top: 40px;
+}
+
+/* slide-4: TOPPView-lite */
+.swiper-slide.slide-4 img {
+    height: 180px;
+    margin-top: 40px;
+}
+.swiper-slide.slide-4 p {
+    margin-top: 40px;
+}
+
+/* slide-5: NASEWEIS */
+.swiper-slide.slide-5 img {
+    height: 100px;
+    margin-top: 80px;
+}
+.swiper-slide.slide-5 p {
+    margin-top: 80px;
+}
+
+/* slide-6: StreamSage */
+.swiper-slide.slide-6 img {
+    width: 100%;
+    height: 250px;
+}
+.swiper-slide.slide-6 p {
+    margin-top: 10px;
 }
 
 .swiper-button-prev,
