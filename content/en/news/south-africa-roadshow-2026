@@ -1,12 +1,19 @@
 ---
-title: OpenMS roadshow in South Africa from 9 until 20 February 2026.
+title: OpenMS/CIBI roadshow in South Africa from 9 until 20 February 2026.
 authors: ["Tjeerd Dijkstra"]
 date: 2026-01-21
 summary: We are teaching four two-day workshops in February 2026 in South Africa! Click the header above for more information.
 ---
 
-The OpenMS developers conference brings together people working in computational mass spectrometry to shape the future development of OpenMS. It is targeted to core developers, new developers, and potential future contributors. Short talks, developer tutorials, and code sprints will be intertwined. Participants will have the opportunity to design custom tools and workflows together with instructors. New developers will receive help getting started in OpenMS development. Progress will be tracked on our GitHub page with a resume of each day. For more details ping Tjeerd Dijkstra or Timo Sachsenberg on discord or by email.
+The OpenMS team and Steffen Neuman from CIBI will teach four workshops is South Africa. In detail:
+## 9 and 10 February 2026, University of Western Cape, Cape Town: Plant Proteomics and Metabolomics
+This course highlights the technologies of metabolomics and proteomics for plant biotechnology.  Equal time will be given to lectures and hands-on exercises. Topics include an introduction to biological liquid chromatography tandem mass spectrometry (LC-MS/MS), targeted and untargeted methods for metabolomics, metabolite identification, quantitation in LC-MS/MS, web resources for plan molecular biology, ontologies for plan research, and RNA-Seq for organisms lacking published genomes.
+[Click here for registration for the UWC ](https://docs.google.com/forms/d/e/1FAIpQLSd8R8-tNAKEIWTM9elDKZ0sZtKsgIhB1UEkHq60lVz4a2A30g/viewform)
 <br>
-[Click here for more details and registration](https://docs.google.com/forms/d/1tyg3uMQoidQ45C7lUqic9GF-AqDCs5cBdIyOzfrl_uA/edit)
+## 12 and 13 February 2026, University of Cape Town Upper Campus, Cape Town: Plant Proteomics and Metabolomics
+<br>
+## 16 and 17 February 2026, University of Africa Center for Gene Technologies, Pretoria: Plant Proteomics and Metabolomics
+<br>
+## 19 and 20 February 2026, University of Mpumalanga, Mbombela: Plant Proteomics and Metabolomics
 <br><br>
 ![denbi](/images/logos/denbi.jpeg)
