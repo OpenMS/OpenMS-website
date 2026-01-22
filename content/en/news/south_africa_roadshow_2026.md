@@ -6,8 +6,9 @@ summary: We are teaching four two-day workshops in February 2026 in South Africa
 ---
 
 The OpenMS team and Steffen Neumann from CIBI will teach four workshops in South Africa.
-### Plant Proteomics and Metabolomics
-The workshop highlights the technologies of metabolomics and proteomics for plant biotechnology.  Equal time will be given to lectures and hands-on exercises. Topics include an introduction to biological liquid chromatography tandem mass spectrometry (LC-MS/MS), targeted and untargeted methods for metabolomics, metabolite identification, quantitation in LC-MS/MS, web resources for plan molecular biology, ontologies for plan research, and RNA-Seq for organisms lacking published genomes.
+<br>
+Topic: **Plant Proteomics and Metabolomics**
+The workshop highlights the technologies of metabolomics and proteomics for plant biotechnology. Equal time will be given to lectures and hands-on exercises. Topics include an introduction to biological liquid chromatography tandem mass spectrometry (LC-MS/MS), targeted and untargeted methods for metabolomics, metabolite identification, quantitation in LC-MS/MS, web resources for plant molecular biology, ontologies for plant research, and RNA-Seq for organisms lacking published genomes.
 <br>
 1. 9 and 10 February 2026, University of Western Cape, Cape Town
 1. 11 and 12 February 2026, University of Cape Town Upper Campus, Cape Town
