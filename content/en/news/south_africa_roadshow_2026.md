@@ -14,5 +14,7 @@ The workshop highlights the technologies of metabolomics and proteomics for plan
 1. 11 and 12 February 2026, University of Cape Town Upper Campus, Cape Town
 1. 16 and 17 February 2026, African Center for Gene Technologies, Pretoria
 1. 19 and 20 February 2026, University of Mpumalanga, Mbombela
+<br>
+For more details ping Tjeerd Dijkstra or Sam Wein on discord or by email.
 <br><br>
 ![denbi](/images/logos/denbi.jpeg)
