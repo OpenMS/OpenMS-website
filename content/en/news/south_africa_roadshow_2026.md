@@ -1,7 +1,7 @@
 ---
 title: OpenMS/CIBI roadshow in South Africa from 9 until 20 February 2026.
 authors: ["Tjeerd Dijkstra"]
-date: 2026-01-21
+date: 2026-01-22
 summary: We are teaching four two-day workshops in February 2026 in South Africa! Click the header above for more information.
 ---
 
