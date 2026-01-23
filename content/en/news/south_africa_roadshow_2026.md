@@ -11,7 +11,7 @@ Topic: **Plant Proteomics and Metabolomics**
 <br>
 The workshop highlights the technologies of metabolomics and proteomics for plant biotechnology. Equal time will be given to lectures and hands-on exercises. Topics include an introduction to biological liquid chromatography tandem mass spectrometry (LC-MS/MS), targeted and untargeted methods for metabolomics, metabolite identification, quantitation in LC-MS/MS, web resources for plant molecular biology, ontologies for plant research, and RNA-Seq for organisms lacking published genomes.
 <br>
-1. 9 and 10 February 2026, University of Western Cape, Cape Town
+1. 9 and 10 February 2026, University of Western Cape, Bellville
 1. 11 and 12 February 2026, University of Cape Town Upper Campus, Cape Town
 1. 16 and 17 February 2026, African Center for Gene Technologies, Pretoria
 1. 19 and 20 February 2026, University of Mpumalanga, Mbombela
