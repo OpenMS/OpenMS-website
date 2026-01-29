@@ -22,7 +22,7 @@ params:
   plausible:
     dataDomain: openms.de
   # matomo:
-  #   url: "https://your-matomo-cloud.matomo.cloud/"
+  #   url: "https://your-matomo-cloud.matomo.cloud/"  # Must end with /
   #   siteId: "1"
 languages:
   en:
