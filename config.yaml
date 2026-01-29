@@ -21,9 +21,10 @@ params:
   navColor: blue
   plausible:
     dataDomain: openms.de
-  # matomo:
-  #   url: "https://your-matomo-cloud.matomo.cloud/"  # Must end with /
-  #   siteId: "1"
+  # matomo is for web site tracking
+  matomo:
+    url: "https://openms.matomo.cloud/"  # Must end with /
+    siteId: "1"
 languages:
   en:
     title: OpenMS
