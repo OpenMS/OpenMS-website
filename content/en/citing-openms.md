@@ -4,7 +4,7 @@ authors: ["Tjeerd Dijkstra", "Matteo Pilz"]
 sidebar: false
 ---
 
-Pfeuffer, J., Bielow, C., Wein, S., Jeong, K., Netz, E., Walter, A., ... , Sachsenberg, T.
+Julianus Pfeuffer, Chris Bielow, Samuel Wein, Kyowon Jeong, Eugen Netz, Axel Walter, Oliver Alka, Lars Nilse, Pasquale Domenico Colaianni, Douglas McCloskey, Jihyung Kim, George Rosenberger, Leon Bichmann, Mathias Walzer, Johannes Veit, Bertrand Boudaud, Matthias Bernt, Nikolaos Patikas, Matteo Pilz, Michał Piotr Startek, Svetlana Kutuzova, Lukas Heumos, Joshua Charkow, Justin Cyril Sing, Ayesha Feroz, Arslan Siraj, Hendrik Weisser, Tjeerd M. H. Dijkstra, Yasset Perez-Riverol, Hannes Röst, Oliver Kohlbacher and Timo Sachsenberg
 
 * OpenMS 3 enables reproducible analysis of large-scale mass spectrometry data. Nature Methods, vol. 21, 2024.
 
