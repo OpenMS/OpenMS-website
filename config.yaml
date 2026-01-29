@@ -21,11 +21,9 @@ params:
   navColor: blue
   plausible:
     dataDomain: openms.de
-  # Matomo analytics configuration
-  # To enable Matomo tracking, uncomment and configure the following:
   # matomo:
-  #   url: "https://your-matomo-instance.com/"  # Matomo server URL (must end with /)
-  #   siteId: "1"  # Your Matomo site ID
+  #   url: "https://your-matomo-cloud.matomo.cloud/"
+  #   siteId: "1"
 languages:
   en:
     title: OpenMS
