@@ -127,3 +127,7 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 
 # Redirects for WebApps
 /webapps/* https://abi-services.cs.uni-tuebingen.de/:splat 301
+
+# Redirects for Workshops
+
+/workshops/upss26 https://colab.research.google.com/github/t0mdavid-m/Notebooks-ZA2026/blob/master/PeptideSearch.ipynb
