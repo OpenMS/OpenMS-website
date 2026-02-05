@@ -30,4 +30,4 @@ https://github.com/nf-core/mhcquant
 
 If you use MHCquant2, please cite:
 
-Scheid et al. (2025). MHCquant2: Automated and reproducible data analysis for immunopeptidomics with enhanced rescoring capabilities.
+Scheid et al. (2025). MHCquant2 refines immunopeptidomics tumor antigen discovery. Genome Biology.
