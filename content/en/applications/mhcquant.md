@@ -25,3 +25,9 @@ The pipeline is built using Nextflow, a workflow tool to run tasks across multip
 The Nextflow Workflow is available at:
 
 https://github.com/nf-core/mhcquant
+
+## Citation
+
+If you use MHCquant2, please cite:
+
+Scheid et al. (2025). MHCquant2: Automated and reproducible data analysis for immunopeptidomics with enhanced rescoring capabilities.
