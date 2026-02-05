@@ -28,6 +28,6 @@ https://github.com/nf-core/mhcquant
 
 ## Citation
 
-If you use MHCquant2, please cite:
+If you use MHCquant, please cite:
 
 Scheid et al. (2025). MHCquant2 refines immunopeptidomics tumor antigen discovery. Genome Biology.
