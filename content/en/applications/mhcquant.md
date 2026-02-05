@@ -12,7 +12,7 @@ It was specifically designed to analyze immunopeptidomics data, which deals with
 
 This analysis has central implications for clinical research and T cell-centric immunotherapies in the context of cancer vaccines and personalized medicine.
 
-<center>{{< figure src="/images/content_images/applications/mhcquant.png" >}}</center>
+<center>{{< figure src="/images/content_images/applications/mhcquant2.png" >}}</center>
 
 The workflow is based on the OpenMS C++ framework for computational mass spectrometry. Spectrum files (mzML/Thermo raw/Bruker tdf) serve as inputs and a database search (Comet) is performed based on a given input protein database. Peptide properties are predicted by MS²Rescore, which combines retention time prediction (DeepLC), fragment ion intensity prediction (MS²PIP), and ion mobility prediction (Ionmob) to dramatically boost immunopeptide identification rates. FDR rescoring is then applied using Percolator or Mokapot based on a competitive target-decoy approach (reversed decoys). The pipeline supports both local FDR control (per sample-condition group) and global FDR control (across all samples), providing flexibility for different experimental designs.
 
