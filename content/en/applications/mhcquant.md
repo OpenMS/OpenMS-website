@@ -6,20 +6,28 @@ sidebar: false
 
 **MHCquant: Identify and quantify peptides from mass spectrometry raw data**
 
-MHCquant is an analysis pipeline used for quantitative processing of data dependent (DDA) peptidomics data.
+MHCquant is an nf-core best-practice bioinformatics analysis pipeline used for quantitative processing of data dependent (DDA) peptidomics data.
 
-It was specifically designed to analyze immunopeptidomics data, which deals with the analysis of affinity-purified, unspecifically cleaved peptides that have recently been discussed intensively in the context of cancer vaccines. (https://www.nature.com/articles/ncomms13404)
+It was specifically designed to analyze immunopeptidomics data, which deals with the analysis of affinity-purified, unspecifically cleaved peptides presented on major histocompatibility complex (MHC) molecules. 
 
-<center>{{< figure src="/images/content_images/applications/mhcquant.png" >}}</center>
+This analysis has central implications for clinical research and T cell-centric immunotherapies in the context of cancer vaccines and personalized medicine.
 
-The workflow is based on the OpenMS C++ framework for computational mass spectrometry. RAW files (mzML) serve as inputs and a database search (Comet) is performed based on a given input protein database. FDR rescoring is applied using Percolator 3.0 based on a competitive target-decoy approach (reversed decoys). Moreover, binding predictions on specified alleles (alleles.tsv) using various binding prediction tools can be directly run on all matched PSMs to directly annotate MHC binders and non-binders and calculate a refined FDR on a subset of PSMs leading to higher identification rates. For label-free quantification all input files undergo identification based retention time alignment (MapAlignerIdentification), and targeted feature extraction matching ids between runs (FeatureFinderIdentification). In addition, a variant calling file (vcf) can be specified to translate variants into proteins that will be included in the database search.
+<center>{{< figure src="/images/content_images/applications/mhcquant2.png" >}}</center>
 
-The pipeline is built using KNIME and Nextflow, a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. It comes with docker / singularity containers making installation trivial and results highly reproducible.
+The workflow is based on the OpenMS C++ framework for computational mass spectrometry. Spectrum files (mzML/Thermo raw/Bruker tdf) serve as inputs and a database search (Comet) is performed based on a given input protein database. Peptide properties are predicted by MS²Rescore, which combines retention time prediction (DeepLC), fragment ion intensity prediction (MS²PIP), and ion mobility prediction (Ionmob) to dramatically boost immunopeptide identification rates. FDR rescoring is then applied using Percolator or Mokapot based on a competitive target-decoy approach (reversed decoys). The pipeline supports both local FDR control (per sample-condition group) and global FDR control (across all samples), providing flexibility for different experimental designs.
+
+Moreover, binding predictions on specified alleles using various binding prediction tools can be directly run on all matched PSMs to directly annotate MHC binders and non-binders and calculate a refined FDR on a subset of PSMs leading to higher identification rates. For label-free quantification, all input files undergo identification-based retention time alignment and targeted feature extraction. The pipeline can also generate spectrum libraries suitable for DIA-based searches as well as computing consensus epitopes using epicore.
+
+In addition, mutation-informed fastas can be specified to search for patient-specific neo-epitopes.
+
+The pipeline is built using Nextflow, a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. It comes with docker / singularity containers making installation trivial and results highly reproducible.
 
 The Nextflow Workflow is available at:
 
 https://github.com/nf-core/mhcquant
 
-The KNIME Workflow is available at:
+## Citation
 
-https://kni.me/w/fxPFJudJ0JvIlA0F
+If you use MHCquant, please cite:
+
+Scheid et al. (2025). MHCquant2 refines immunopeptidomics tumor antigen discovery. Genome Biology.
