@@ -125,6 +125,8 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 /MHCQUANTWEB https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
 /MHCQUANT-WEB https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
 
+/webapps/toolbox https://abi-services.cs.uni-tuebingen.de/peakstorm/ 301
+
 # Redirects for WebApps
 /webapps/* https://abi-services.cs.uni-tuebingen.de/:splat 301
 
