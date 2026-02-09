@@ -133,7 +133,7 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 # Redirects for Workshops
 
 /workshops/roadshow/introduction https://colab.research.google.com/github/t0mdavid-m/Notebooks-ZA2026/blob/master/Introduction.ipynb
-www.openms.org/workshops/roadshow/fragments http://abi-services.cs.uni-tuebingen.de/toppview-lite/?workspace=workshop
-www.openms.org/workshops/roadshow/umetaflow http://abi-services.cs.uni-tuebingen.de/umetaflow/?workspace=workshop
-www.openms.org/workshops/roadshow/quantms http://abi-services.cs.uni-tuebingen.de/quantms-web/?workspace=workshop
+/workshops/roadshow/fragments http://abi-services.cs.uni-tuebingen.de/toppview-lite/?workspace=workshop
+/workshops/roadshow/umetaflow http://abi-services.cs.uni-tuebingen.de/umetaflow/?workspace=workshop
+/workshops/roadshow/quantms http://abi-services.cs.uni-tuebingen.de/quantms-web/?workspace=workshop
 /workshops/upss26 https://colab.research.google.com/github/t0mdavid-m/Notebooks-ZA2026/blob/master/PeptideSearch.ipynb
