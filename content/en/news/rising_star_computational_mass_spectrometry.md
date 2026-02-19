@@ -5,6 +5,7 @@ date: 2026-02-19
 summary: OpenMS announces Maria Llambrich Rodriguez as the 2026 Rising Star in Computational Mass Spectrometry recipient.
 ---
 
+
 The OpenMS team is excited to announce that the 2026 Rising Star in
 Computational Mass Spectrometry recipient is [Maria Llambrich
 Rodriguez](https://www.linkedin.com/in/mariallambrichrodriguez/).
