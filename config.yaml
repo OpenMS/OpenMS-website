@@ -150,6 +150,8 @@ languages:
             links:
               - text: Community
                 link: /communication
+              - text: Executive committee
+                link: /exec_committee
               - text: Contribute
                 link: /contribute
               - text: Code of conduct
@@ -195,6 +197,8 @@ languages:
           sublinks:
             - title: OpenMS Inc.
               url: /about
+            - title: Executive Committee
+              url: /exec_committee
             - title: Governance
               url: /governance
             - title: Contributors
