@@ -5,6 +5,7 @@ This page describes the governance structure of the OpenMS project and its legal
 
 - [OpenMS Inc.](/about) - The nonprofit corporation supporting the project
 - [Executive Committee](/exec_committee) - The technical governance body
+- [Core Developers](/core_developers) - Maintainers of the project
 
 ## Legal Entity: OpenMS Inc.
 

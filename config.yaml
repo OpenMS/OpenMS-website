@@ -150,24 +150,26 @@ languages:
             links:
               - text: Community
                 link: /communication
-              - text: Executive committee
-                link: /exec_committee
-              - text: Contribute
-                link: /contribute
               - text: Code of conduct
                 link: /code-of-conduct
+              - text: Contribute
+                link: /contribute
+              - text: Core Developers
+                link: /core-developers
           column3:
             links:
               - text: OpenMS Inc.
                 link: /about
+              - text: Executive committee
+                link: /exec_committee
               - text: Governance
                 link: /governance
-              - text: Help
-                link: /help
               - text: Jobs
                 link: /jobs
           column4:
             links:
+              - text: Help
+                link: /help
               - text: Terms of use
                 link: /terms
               - text: Privacy
