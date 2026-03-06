@@ -1,6 +1,11 @@
 
 # Governance Structure of OpenMS
 
+This page describes the governance structure of the OpenMS project and its legal entity. For more information, see:
+
+- [OpenMS Inc.](/about) - The nonprofit corporation supporting the project
+- [Executive Committee](/exec_committee) - The technical governance body
+
 ## Legal Entity: OpenMS Inc.
 
 OpenMS Inc. is a U.S. nonprofit corporation organized under section 501(c)(3) of the Internal Revenue Code. Its mission is to develop open-source scientific software and collaborate with academic institutions to improve experimental data analysis.

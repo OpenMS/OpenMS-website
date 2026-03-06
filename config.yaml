@@ -195,10 +195,6 @@ languages:
           url: /community
         - title: About Us
           sublinks:
-            - title: OpenMS Inc.
-              url: /about
-            - title: Executive Committee
-              url: /exec_committee
             - title: Governance
               url: /governance
             - title: Contributors
