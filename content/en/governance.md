@@ -102,7 +102,7 @@ Rules:
 - meeting minutes should be recorded
 - minutes are public unless the committee votes otherwise
 
-## 7. Relationship Between OpenMS Inc. and the OpenMS Executive Committee
+## Relationship Between OpenMS Inc. and the OpenMS Executive Committee
 
 ### Corporate Governance
 
