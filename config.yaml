@@ -146,6 +146,8 @@ languages:
             links:
               - text: OpenMS Inc.
                 link: /about
+              - text: Governance
+                link: /governance
               - text: Help
                 link: /help
               - text: Jobs
@@ -181,6 +183,8 @@ languages:
         sublinks:
           - title: OpenMS Inc.
             url: /about
+          - title: Governance
+            url: /governance
           - title: Contributors
             url: /contributors
         url: /about
