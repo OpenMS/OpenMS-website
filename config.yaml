@@ -155,7 +155,7 @@ languages:
               - text: Contribute
                 link: /contribute
               - text: Core Developers
-                link: /core-developers
+                link: /core_developers
           column3:
             links:
               - text: OpenMS Inc.

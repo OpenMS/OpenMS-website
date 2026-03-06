@@ -46,7 +46,7 @@ New core developers may be added by a **simple majority vote of a quorum of the 
 
 ### Removal of Core Developers
 
-Core developers may be removed due to inactivity or violation of the Code of Conduct by a **two-thirds majority vote of a quorum of the Executive Committee**, or by request of the member themself.
+Core developers may be removed due to inactivity or violation of the Code of Conduct by a **two-thirds majority vote of a quorum of the Executive Committee**, or by request of the member.
 
 ---
 
