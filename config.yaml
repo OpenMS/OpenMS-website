@@ -133,9 +133,7 @@ languages:
         logo:
         socialmediatitle: ""
         socialmedia:
-          - link: https://github.com/OpenMS/OpenMS
-            icon: github
-          - link: https://discord.com/invite/4TAGhqJ7s5
+          - link: https://discord.gg/v9tv5BxPch
             icon: discord
         quicklinks:
           column1:

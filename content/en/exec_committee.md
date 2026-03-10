@@ -102,3 +102,9 @@ In keeping with the principles of open science and open-source collaboration:
 - Meeting minutes are made publicly available unless the committee votes otherwise
 
 This commitment ensures transparency and accountability in the governance of the OpenMS project.
+
+---
+
+## See Also
+
+For guidance on getting started as a contributor, see the [Contributor Onboarding Guide]({{< relref "/onboarding" >}}).

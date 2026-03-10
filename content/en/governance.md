@@ -62,3 +62,9 @@ For more information about the role and responsibilities of core developers, see
 **Project governance** (handled by the Executive Committee) focuses on software development, technical direction, and community management.
 
 This separation allows the project to benefit from the legal and financial stability provided by the nonprofit corporation while maintaining independent technical governance by the community of core developers.
+
+---
+
+## See Also
+
+For guidance on getting started as a contributor, see the [Contributor Onboarding Guide]({{< relref "/onboarding" >}}).

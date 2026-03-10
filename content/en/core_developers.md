@@ -112,3 +112,9 @@ Core developers participate in Executive Committee meetings where project govern
 Coming soon
 
 This list is maintained by the Executive Committee and updated as membership changes.
+
+---
+
+## See Also
+
+For guidance on getting started as a contributor, see the [Contributor Onboarding Guide]({{< relref "/onboarding" >}}).

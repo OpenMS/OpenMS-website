@@ -174,7 +174,7 @@ Examples include:
 
 Issues labeled **"good first issue"** are often a good place for new contributors to begin.
 
-If you are unsure where to start, feel free to ask for suggestions in our discord server, or send us an email.
+If you are unsure where to start, feel free to ask for suggestions on the [OpenMS Discord Server](https://discord.gg/v9tv5BxPch), or by opening a [GitHub issue](https://github.com/OpenMS/OpenMS/issues).
 
 ---
 

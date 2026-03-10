@@ -7,6 +7,8 @@ The OpenMS project welcomes your expertise and enthusiasm!
 Your choices aren't limited to programming, as you can
 see below there are many areas where we need **your** help.
 
+**New to the project?** Check out our [Contributor Onboarding Guide]({{< relref "/onboarding" >}}) to learn about project structure, communication channels, and how to get started.
+
 If you're unsure where to start or how your skills fit in, _reach out!_ You
 can ask on the [mailing
 list](https://lists.sourceforge.net/lists/listinfo/open-ms-general/) or
@@ -15,7 +17,7 @@ list](https://lists.sourceforge.net/lists/listinfo/open-ms-general/) or
 issue).
 
 Those are our preferred channels (open source is open by nature), but
-if you prefer to talk privately, contact our community coordinators on the [OpenMS Discord Server](https://discord.gg/aJyWqf6uCn).
+if you prefer to talk privately, contact our community coordinators on the [OpenMS Discord Server](https://discord.gg/v9tv5BxPch).
 
 If you only want to be informed of new versions of OpenMS, please subscribe to the mailing list [open-ms-announcements](https://lists.sourceforge.net/lists/listinfo/open-ms-announcements).
 
