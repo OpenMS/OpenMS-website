@@ -1,3 +1,7 @@
+---
+title: "Executive Committee"
+---
+
 # OpenMS Executive Committee
 
 The **Executive Committee** is the primary governance body of the OpenMS project. It is responsible for guiding the technical direction, long-term sustainability, and community governance of OpenMS.

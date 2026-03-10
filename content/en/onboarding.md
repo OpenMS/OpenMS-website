@@ -1,3 +1,7 @@
+---
+title: "Contributor Onboarding"
+---
+
 # OpenMS Contributor Onboarding
 
 Welcome! This section provides an overview of how the OpenMS project is organized and how new contributors can get involved.
@@ -32,9 +36,9 @@ OpenMS is organized as both an **open-source software project** and a **nonprofi
 
 The governance of the project is described in the following documents:
 
-- [Governance](./governance.md)
-- [Executive Committee](./exec_committee.md)
-- [Core Developers](./core_developers.md)
+- [Governance]({{< relref "/governance" >}})
+- [Executive Committee]({{< relref "/exec_committee" >}})
+- [Core Developers]({{< relref "/core_developers" >}})
 
 In general:
 
@@ -52,7 +56,7 @@ Most project discussions take place through the OpenMS GitHub organization and t
 
 These platforms serve different purposes within the community.
 
-### GitHub Issues
+## GitHub Issues
 
 Used for more **formal discussions** related to the project, including:
 
@@ -63,7 +67,7 @@ Used for more **formal discussions** related to the project, including:
 
 If you encounter a problem with OpenMS or want to propose an improvement, opening a GitHub issue is usually the best place to start.
 
-### GitHub Pull Requests
+## GitHub Pull Requests
 
 Used for:
 
@@ -73,7 +77,7 @@ Used for:
 
 Pull requests are the primary mechanism for contributing changes to the project.
 
-### Discord
+## Discord
 
 For **informal discussions and quick questions**, the OpenMS community also maintains a Discord server:
 
@@ -88,7 +92,7 @@ Discord is useful for:
 
 While Discord is helpful for informal communication, important technical discussions and decisions should generally be recorded on GitHub so they remain searchable and accessible to the wider community.
 
-### Project Meetings
+## Project Meetings
 
 Governance discussions also take place during meetings of the Executive Committee. Minutes from these meetings are recorded and made publicly available.
 
@@ -101,7 +105,7 @@ OpenMS development follows a collaborative workflow typical of many open-source 
 For detailed developer guidelines, see the
 [OpenMS Developer Guide](https://openms.readthedocs.io/en/latest/manual/develop.html).
 
-### Reporting Issues
+## Reporting Issues
 
 If you encounter a bug or have an idea for an improvement, open a GitHub issue describing:
 
@@ -109,7 +113,7 @@ If you encounter a bug or have an idea for an improvement, open a GitHub issue d
 - steps to reproduce it (if applicable)
 - possible ideas for improvement
 
-### Submitting Changes
+## Submitting Changes
 
 Contributions are typically submitted through pull requests.
 
@@ -122,7 +126,7 @@ The typical process is:
 
 Core developers will review the proposed changes and provide feedback.
 
-### Code Review
+## Code Review
 
 All significant changes are reviewed before being merged into the project. Code review helps maintain code quality and ensures that changes fit well within the overall architecture of OpenMS.
 
@@ -180,16 +184,14 @@ Many contributors start by reporting issues or submitting small fixes. Over time
 
 A typical progression in open-source projects looks like this:
 
-
-User
-→ Contributor
-→ Frequent contributor
-→ Core developer
-
+- **User** — uses the software and provides feedback
+- **Contributor** — submits improvements, bug reports, or fixes
+- **Frequent contributor** — regularly contributes to the project
+- **Core developer** — trusted maintainer who guides the project
 
 Core developers are trusted maintainers who help guide the project and participate in governance.
 
-More information about this role is available on the [Core Developers](./core_developers.md) page.
+More information about this role is available on the [Core Developers]({{< relref "/core_developers" >}}) page.
 
 ---
 

@@ -1,133 +1,64 @@
+---
+title: "Governance"
+---
 
 # Governance Structure of OpenMS
 
-This page describes the governance structure of the OpenMS project and its legal entity. For more information, see:
+OpenMS is governed through two complementary structures: a **nonprofit corporation** that provides legal and financial support, and an **Executive Committee** that guides the technical development and community governance of the project.
 
-- [OpenMS Inc.](/about) - The nonprofit corporation supporting the project
-- [Executive Committee](/exec_committee) - The technical governance body
-- [Core Developers](/core_developers) - Maintainers of the project
+This page provides an overview of how the project is organized and makes decisions.
 
-## Legal Entity: OpenMS Inc.
+---
 
-OpenMS Inc. is a U.S. nonprofit corporation organized under section 501(c)(3) of the Internal Revenue Code. Its mission is to develop open-source scientific software and collaborate with academic institutions to improve experimental data analysis.
+## OpenMS Inc.
 
-Key characteristics:
+[OpenMS Inc.]({{< relref "/about" >}}) is a U.S. nonprofit corporation organized under section 501(c)(3) of the Internal Revenue Code. It provides legal and financial infrastructure to support the development of the OpenMS software project.
 
-- nonprofit public-benefit corporation
-- operates for scientific, educational, and charitable purposes
-- may provide internships or volunteer opportunities to support those goals
-- cannot distribute profits to individuals except as reasonable compensation for services
+The corporation is governed by a **Board of Directors** responsible for fiduciary oversight, legal compliance, and financial management.
 
-The corporation has no members, meaning governance authority rests entirely with the Board of Directors.
+For more information about the nonprofit entity, see the [about page]({{< relref "/about" >}}).
 
-### Board of Directors
+---
 
-The Board of Directors is the governing body of the nonprofit corporation.
+## Executive Committee
 
-Initial directors:
+The [Executive Committee]({{< relref "/exec_committee" >}}) is the primary governance body of the OpenMS project itself. It is composed of the **core developers** and is led by an elected **Executive Chairperson**.
 
-- Samuel Wein
-- Timo Sachsenberg
-- Oliver Kohlbacher
+The Executive Committee is responsible for:
 
-Responsibilities include:
+- Defining the mission, direction, and vision of OpenMS
+- Guiding technical development and resource allocation
+- Maintaining project bylaws and governance policies
+- Managing the list of core developers
+- Addressing Code of Conduct issues
 
-- fiduciary oversight of the corporation
-- legal compliance
-- financial oversight
-- approving amendments to the Articles of Incorporation (2/3 vote)
-- selecting asset recipients if the organization dissolves
+The committee meets regularly to coordinate project development and governance. Meeting minutes are made publicly available to ensure transparency.
 
-This body governs the corporate entity, not the day-to-day development of the software project.
+For detailed information about the committee's responsibilities, meeting procedures, and decision-making processes, see the [Executive Committee page]({{< relref "/exec_committee" >}}).
 
-## Executive (Steering) Committee
+---
 
-The Executive Committee governs the OpenMS project itself, separate from the legal corporate board.
+## Core Developers
 
-Composition:
+[Core developers]({{< relref "/core_developers" >}}) are trusted maintainers who play a central role in the development and governance of OpenMS. They collectively form the Executive Committee.
 
-- core developers of the project
-- led by an Executive Chairperson
+Core developers:
 
-Responsibilities include:
+- Review and approve contributions to the codebase
+- Help guide the technical direction of the project
+- Support and mentor new contributors
+- Participate in governance decisions
 
-- defining project mission, direction, and vision
-- long-term continuity planning
-- directing development resources
-- maintaining project bylaws
-- managing the list of core developers
-- forming committees
-- handling code-of-conduct issues
+New core developers are added by a majority vote of the Executive Committee. Core developers may step down voluntarily or be removed due to inactivity or Code of Conduct violations by a two-thirds vote of the committee.
 
-This committee is effectively the technical and community governance body of the OpenMS project.
-### Core Developers
+For more information about the role and responsibilities of core developers, see the [Core Developers page]({{< relref "/core_developers" >}}).
 
-- Core developers are defined as active and key participants in the project. They collectively form the Executive Committee.
+---
 
-### Executive Chairperson
+## Relationship Between the Corporation and the Project
 
-The chairperson:
+**Corporate governance** (handled by the Board of Directors) focuses on the legal entity, finances, and nonprofit compliance.
 
-- must be a member of the executive committee
-- serves 1-year term
-- is elected by the committee
-- breaks tie votes
+**Project governance** (handled by the Executive Committee) focuses on software development, technical direction, and community management.
 
-Responsibilities:
-
-- convene and chair meetings
-- notify members of meetings
-- coordinate committee activities
-
-Removal requires a 2/3 vote of the executive committee.
-Rules:
-
-**Adding a core developer:**
-
-- simple majority vote of a quorum
-
-**Removing a core developer:**
-
-- 2/3 vote of quorum or voluntary departure
-
-## Executive Committee Operations
-
-**Meeting requirements:**
-
-- at least one meeting per month
-- 48 hours notice
-- quorum: five members
-
-**Decision process:**
-
-- majority vote unless otherwise specified
-- Robert's Rules of Order may be invoked if requested
-
-**Transparency requirement:**
-
-- meeting minutes should be recorded
-- minutes are public unless the committee votes otherwise
-
-## Relationship Between OpenMS Inc. and the OpenMS Executive Committee
-
-### Corporate Governance
-
-Handled by: **Board of Directors**
-
-Responsible for:
-
-- legal entity
-- finances
-- compliance
-- nonprofit obligations
-
-### Project Governance
-
-Handled by: **Executive (Steering) Committee**
-
-Responsible for:
-
-- software development
-- project roadmap
-- community management
-- technical leadership
+This separation allows the project to benefit from the legal and financial stability provided by the nonprofit corporation while maintaining independent technical governance by the community of core developers.
