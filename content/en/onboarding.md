@@ -128,18 +128,7 @@ All significant changes are reviewed before being merged into the project. Code 
 
 ---
 
-# Infrastructure Overview
-
-The OpenMS project consists of several repositories and supporting infrastructure that together make up the OpenMS ecosystem.
-
-Key components include:
-
-- the main OpenMS C++ codebase
-- pyOpenMS Python bindings
-- documentation hosted on ReadTheDocs
-- continuous integration systems that automatically test contributions
-
-## Main Repositories
+# Main Repositories
 
 The most important repositories in the OpenMS GitHub organization are:
 
@@ -181,7 +170,7 @@ Examples include:
 
 Issues labeled **"good first issue"** are often a good place for new contributors to begin.
 
-If you are unsure where to start, feel free to ask for suggestions in the issue tracker.
+If you are unsure where to start, feel free to ask for suggestions in our discord server, or send us an email.
 
 ---
 
@@ -204,27 +193,14 @@ More information about this role is available on the [Core Developers](./core_de
 
 ---
 
-# Where to Ask for Help
-
-If you have questions about contributing, the best place to ask is the OpenMS GitHub repository.
-
-You can:
-
-- open an issue with your question
-- comment on an existing issue
-- ask for clarification during pull request discussions
-
-The OpenMS community welcomes new contributors and is happy to help you get started.
-
----
 
 # Next Steps
 
 To continue exploring the project, you may want to:
 
-- read the developer documentation
-- explore the OpenMS repositories
-- review open issues
-- submit your first pull request
+- read the [developer documentation](https://openms.readthedocs.io/en/latest/manual/develop.html)
+- explore the [OpenMS repositories](https://github.com/OpenMS)
+- review [open issues](https://github.com/OpenMS/OpenMS/issues)
+- submit your first [pull request](https://github.com/OpenMS/OpenMS/pulls)
 
 We are glad you are interested in contributing to OpenMS!
