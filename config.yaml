@@ -42,7 +42,7 @@ languages:
         # Hero subtitle (optional)
         subtitle: The open-source framework for Mass Spectrometry
         # Button text
-        buttontext: Get started
+        buttontext: Install
         # Where the main hero button links to
         buttonlink: https://openms.readthedocs.io/en/latest/about/installation.html
         # Hero image (from static/images/___)
@@ -82,11 +82,11 @@ languages:
               buttonText: Get Started
               buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/nextflow-get-started.html"
             - title: Create high-performance tools
-              subtitle: Develop high-performance tools or algorithms with the C++ OpenMS library
-              terminal: true
-              buttonText: Get Started
+              sottomBorderRadius: true
+              buttonLink: "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/OpenMS_tutorial.html
+              buttonText: Start Contributing
               bottomBorderRadius: true
-              buttonLink: "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/OpenMS_tutorial.html"
+              buttonLink: "/onboarding"
 
       keyfeatures:
         title: What is OpenMS ?
