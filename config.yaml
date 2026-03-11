@@ -82,8 +82,8 @@ languages:
               buttonText: Get Started
               buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/nextflow-get-started.html"
             - title: Create high-performance tools
-              sottomBorderRadius: true
-              buttonLink: "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/OpenMS_tutorial.html
+              subtitle: Develop high-performance tools or algorithms with the C++ OpenMS library
+              terminal: true
               buttonText: Start Contributing
               bottomBorderRadius: true
               buttonLink: "/onboarding"
