@@ -84,9 +84,9 @@ languages:
             - title: Create high-performance tools
               subtitle: Develop high-performance tools or algorithms with the C++ OpenMS library
               terminal: true
-              buttonText: Start Contributing
+              buttonText: Get Started
               bottomBorderRadius: true
-              buttonLink: "/onboarding"
+              buttonLink: "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/OpenMS_tutorial.html"
 
       keyfeatures:
         title: What is OpenMS ?

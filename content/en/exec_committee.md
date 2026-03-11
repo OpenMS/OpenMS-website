@@ -107,4 +107,4 @@ This commitment ensures transparency and accountability in the governance of the
 
 ## See Also
 
-For guidance on getting started as a contributor, see the [Contributor Onboarding Guide]({{< relref "/onboarding" >}}).
+For guidance on getting started as a contributor, see the [Contributing Guide]({{< relref "/contribute" >}}).

@@ -117,4 +117,4 @@ This list is maintained by the Executive Committee and updated as membership cha
 
 ## See Also
 
-For guidance on getting started as a contributor, see the [Contributor Onboarding Guide]({{< relref "/onboarding" >}}).
+For guidance on getting started as a contributor, see the [Contributing Guide]({{< relref "/contribute" >}}).

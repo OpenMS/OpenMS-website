@@ -67,4 +67,4 @@ This separation allows the project to benefit from the legal and financial stabi
 
 ## See Also
 
-For guidance on getting started as a contributor, see the [Contributor Onboarding Guide]({{< relref "/onboarding" >}}).
+For guidance on getting started as a contributor, see the [Contributing Guide]({{< relref "/contribute" >}}).
