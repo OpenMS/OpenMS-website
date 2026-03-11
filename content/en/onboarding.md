@@ -100,35 +100,11 @@ Governance discussions also take place during meetings of the Executive Committe
 
 # Development Workflow
 
-OpenMS development follows a collaborative workflow typical of many open-source projects.
+OpenMS development follows a collaborative workflow typical of many open-source projects. Contributors report issues, propose changes through pull requests, and participate in code review.
 
-For detailed developer guidelines, see the
-[OpenMS Developer Guide](https://openms.readthedocs.io/en/latest/manual/develop.html).
+**For step-by-step contribution guidelines**, including how to report issues, submit pull requests, and follow OpenMS-specific conventions, see the [**CONTRIBUTING.md guide**](https://github.com/OpenMS/OpenMS/blob/develop/CONTRIBUTING.md) in the main repository.
 
-## Reporting Issues
-
-If you encounter a bug or have an idea for an improvement, open a GitHub issue describing:
-
-- what problem you encountered
-- steps to reproduce it (if applicable)
-- possible ideas for improvement
-
-## Submitting Changes
-
-Contributions are typically submitted through pull requests.
-
-The typical process is:
-
-1. Fork the repository
-2. Create a new branch
-3. Implement your changes
-4. Open a pull request
-
-Core developers will review the proposed changes and provide feedback.
-
-## Code Review
-
-All significant changes are reviewed before being merged into the project. Code review helps maintain code quality and ensures that changes fit well within the overall architecture of OpenMS.
+**For technical documentation** on coding conventions, building OpenMS, and architectural details, see the [OpenMS Developer Guide](https://openms.readthedocs.io/en/latest/manual/develop.html).
 
 ---
 
