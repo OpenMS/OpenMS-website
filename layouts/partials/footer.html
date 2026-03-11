@@ -1,10 +1,10 @@
-{{- $footer      := .Site.Params.footer }}
-{{- $title       := index $footer "title" }}
-{{- $deployedBy  := index $footer "deployedBy" }}
+{{- $footer := .Site.Params.footer }}
+{{- $title := index $footer "title" }}
+{{- $deployedBy := index $footer "deployedBy" }}
 {{- $sponsorLogo1 := index $footer "sponsorLogo1" }}
 {{- $sponsorLogo2 := index $footer "sponsorLogo2" }}
 {{- $sponsorLogo3 := index $footer "sponsorLogo3" }}
-{{- $quickLinks  := index $footer "quicklinks" }}
+{{- $quickLinks := index $footer "quicklinks" }}
 {{- $socialMedia := index $footer "socialmedia" }}
 
 <footer id="footer" class="footer-redesign">
@@ -20,7 +20,8 @@
         <a href="https://www.denbi.de" target="_blank" rel="noopener noreferrer">
           <img src="{{ $sponsorLogo1 }}" alt="Supported by deNBI" />
         </a>
-        <a href="https://elixir-europe.org/platforms/data/core-data-resources" target="_blank" rel="noopener noreferrer">
+        <a href="https://elixir-europe.org/platforms/data/core-data-resources" target="_blank"
+          rel="noopener noreferrer">
           <img src="{{ $sponsorLogo2 }}" alt="Supported by Elixir" />
         </a>
         <a href="https://libis.uni-heidelberg.de/" target="_blank" rel="noopener noreferrer">
@@ -53,7 +54,7 @@
   <div class="footer-bottom">
     <div class="footer-socials">
       {{- range $socialMedia }}
-      <a href="{{ .link }}" aria-label="{{ .link }}" target="_blank" rel="noopener noreferrer">
+      <a href="{{ .link }}" aria-label="{{ .icon | humanize }}" target="_blank" rel="noopener noreferrer">
         {{if .icon -}}
         {{- partial "svg-icon" .icon -}}
         {{- else -}}

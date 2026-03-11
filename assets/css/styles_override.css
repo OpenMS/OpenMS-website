@@ -3,49 +3,51 @@
   background-color: #0b214a;
   border: 2px solid rgba(255, 255, 255, 0.25);
 }
+
 #backtotop.visible a:hover {
   background-color: #1a3a7a;
 }
+
 .hero-title-content {
-    max-width: 1200px;
-    margin: 1vh auto;
+  max-width: 1200px;
+  margin: 1vh auto;
 }
 
 .hero-logo {
-    max-height: 200px;
+  max-height: 200px;
 }
 
 .navbar.is-fresh .navbar-item.has-dropdown .navbar-link {
-    color: var(--colorPrimaryDark);
+  color: var(--colorPrimaryDark);
 }
 
 .navbar.is-fresh .navbar-brand img {
-    max-height: 50px !important;
-    height: 50px;
+  max-height: 50px !important;
+  height: 50px;
 }
 
 @media only screen and (max-width: 850px) {
-    .social-media-icons {
-        width: 100%;
-    }
+  .social-media-icons {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .hero-logo {
-        max-height: 150px;
-    }
+  .hero-logo {
+    max-height: 150px;
+  }
 }
 
 @media only screen and (max-width: 400px) {
-    .hero-logo {
-        max-height: 120px;
-    }
+  .hero-logo {
+    max-height: 120px;
+  }
 }
 
 @media only screen and (max-width: 320px) {
-    .hero-logo {
-        max-height: 100px;
-    }
+  .hero-logo {
+    max-height: 100px;
+  }
 }
 
 /* =============================================
@@ -88,12 +90,16 @@
   flex-wrap: wrap;
   gap: 1.25rem;
   align-items: center;
-  opacity: 0.7;
+  /* Removed container-level opacity */
 }
 
 .footer-partners a {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  /* Ensure touch target is large enough */
+  min-height: 44px;
 }
 
 .footer-partners img {
@@ -101,11 +107,15 @@
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
+  opacity: 0.7;
+  /* Individual logo is dimmed */
   transition: opacity 0.2s ease;
 }
 
-.footer-partners a:hover img {
-  opacity: 0.85;
+.footer-partners a:hover img,
+.footer-partners a:focus-visible img {
+  opacity: 1;
+  /* Lights up to full brightness on hover/focus */
 }
 
 /* ---- Link columns grid ---- */
