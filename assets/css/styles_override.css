@@ -1,5 +1,10 @@
-#backtotop a:after {
-    content: "⇧";
+/* Back to top – colour override to match footer theme */
+#backtotop a {
+  background-color: #0b214a;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+}
+#backtotop.visible a:hover {
+  background-color: #1a3a7a;
 }
 .hero-title-content {
     max-width: 1200px;
@@ -43,53 +48,194 @@
     }
 }
 
-/* Footer */
-@media (max-width: 850px){
-    .footer-column > ul.link-list {
-        padding-left: unset;
-    }
+/* =============================================
+   FOOTER — REDESIGN
+   ============================================= */
 
-    .footer-column {
-        padding-left: unset;
-    }
+.footer-redesign {
+  background-color: #0b214a;
+  color: #e2e8f0;
+  padding: 3rem 0 0;
+  font-family: inherit;
 }
 
-.footer-logo-column {
-    display: flex;
-    justify-content: flex-start;
+/* ---- Inner wrapper (brand + link grid) ---- */
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 2.5rem;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* ---- Brand block ---- */
+.footer-brand {
+  flex: 0 0 200px;
+}
+
+.footer-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.3px;
+}
+
+/* ---- Partner logo row ---- */
+.footer-partners {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+  opacity: 0.7;
+}
+
+.footer-partners a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-partners img {
+  max-height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.2s ease;
+}
+
+.footer-partners a:hover img {
+  opacity: 0.85;
+}
+
+/* ---- Link columns grid ---- */
+.footer-links {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* ---- Column heading ---- */
+.footer-group-heading {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0 0 0.875rem 0;
+  padding: 0;
+}
+
+/* ---- Link list ---- */
+.footer-link-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-link-group ul li a {
+  color: #c8d4e8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  transition: color 0.2s ease;
+}
+
+.footer-link-group ul li a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ---- Bottom bar ---- */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ---- Social icons ---- */
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: #c8d4e8;
+  transition: color 0.2s ease;
+}
+
+.footer-socials a:hover {
+  color: #ffffff;
+}
+
+.footer-socials svg.icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: currentColor;
+}
+
+/* ---- Copyright ---- */
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.85rem;
+}
+
+/* =============================================
+   FOOTER — MOBILE  (max-width: 768px)
+   ============================================= */
+@media (max-width: 768px) {
+  .footer-inner {
     flex-direction: column;
-    padding: 0.5rem;
-}
-
-.footer-column {
-    padding-left: 30px;
-}
-
-.social-media-icons {
-    display: flex;
-}
-
-@media (max-width: 400px) {
-    ul {
-      padding-left: 0px !important;
-      padding-right: 30px;
-    }
+    gap: 2rem;
+    padding: 0 1.25rem 2rem;
   }
 
-/* Icon size slightly enlargened for footer */
-#footer .social-media-icons {
-  font-size: 1.5em;
+  .footer-brand {
+    flex: unset;
+    width: 100%;
+  }
+
+  .footer-partners {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-links {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 1rem;
+  }
+
+  .footer-link-group ul li a {
+    text-align: left;
+  }
+
+  .footer-bottom {
+    padding: 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
-#footer svg.icon {
-  fill: #1e87f0;
-}
-
-/* For information ⓘ, when icon is missing */
-#footer .icon {
-  color: #1e87f0;
-}
-
+/* =============================================
+   UTILITIES
+   ============================================= */
 .img-fit {
-    object-fit: contain;
+  object-fit: contain;
 }

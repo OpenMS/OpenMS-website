@@ -6,55 +6,62 @@
 {{- $sponsorLogo3 := index $footer "sponsorLogo3" }}
 {{- $quickLinks  := index $footer "quicklinks" }}
 {{- $socialMedia := index $footer "socialmedia" }}
-{{- $logo        := index $footer "logo" }}
-{{- $navbarLogo  := .Site.Params.navbarlogo }}
 
-<footer id="footer" class="footer">
-  <div class="container is-max-widescreen">
-    <div id="footer-columns" class="columns">
-      <div class="footer-logo-column">
-        <!-- <img id="footer-logo" src="{{ printf "/images/%s" $logo | relURL }}" alt="{{ $title }} logo. {{ $navbarLogo.altText }}"> -->
-        <div><p style="font-weight: bolder; font-size: xx-large; color: aliceblue;">{{ $title }}</p></div>
-        <div><a href="https://www.netlify.com"> <img src="{{ $deployedBy }}" alt="Deploys by Netlify" style="width: 6rem;" /> </a></div>
+<footer id="footer" class="footer-redesign">
+  <div class="footer-inner">
+
+    <!-- Brand + Partner logos -->
+    <div class="footer-brand">
+      <div class="footer-title">{{ $title }}</div>
+      <div class="footer-partners">
+        <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
+          <img src="{{ $deployedBy }}" alt="Deploys by Netlify" />
+        </a>
+        <a href="https://www.denbi.de" target="_blank" rel="noopener noreferrer">
+          <img src="{{ $sponsorLogo1 }}" alt="Supported by deNBI" />
+        </a>
+        <a href="https://elixir-europe.org/platforms/data/core-data-resources" target="_blank" rel="noopener noreferrer">
+          <img src="{{ $sponsorLogo2 }}" alt="Supported by Elixir" />
+        </a>
+        <a href="https://libis.uni-heidelberg.de/" target="_blank" rel="noopener noreferrer">
+          <img src="{{ $sponsorLogo3 }}" alt="Supported by LiBiS" />
+        </a>
       </div>
-      <div class="footer-logo-column">
-        <div><a href="https://www.denbi.de"> <img src="{{ $sponsorLogo1 }}" alt="Supported by deNBI" style="width: 5rem;" /> </a></div>
-        <div><a href="https://elixir-europe.org/platforms/data/core-data-resources"> <img src="{{ $sponsorLogo2 }}" alt="Supported by Elixir" style="width: 3rem;" /> </a></div>
-        <div><a href="https://libis.uni-heidelberg.de/"> <img src="{{ $sponsorLogo3 }}" alt="Supported by LiBiS" style="width: 3rem;" /> </a></div>
-      </div>
-      {{- range $quickLinks }}
-        <div class="link-column">
-          <div class="footer-column">
-            <div class="footer-header">
-            </div>
-            <ul class="link-list">
-              {{- range .links }}
-              <li class="link-list">
-                <a class="footer-link" href="{{ .link }}">
-                  {{ .text }}
-                </a>
-              </li>
-              {{- end }}
-            </ul>
-          </div>
-        </div>
-      {{- end }}
-        <div class="footer-actions">
-          <nav class="level is-mobile">
-            <div class="social-media-icons">
-              {{- range $socialMedia }}
-              <a class="level-item" href="{{ .link }}" aria-label="{{ .link }}">
-                {{if .icon -}}
-                {{- partial "svg-icon" .icon -}}
-                {{- else -}}
-                <span class="icon">ⓘ</span>
-                {{- end }}
-              </a>
-              {{- end }}
-            </div>
-          </nav>
-          <div class="copyright">&copy; {{ now.Year}} {{ $title }}. All rights reserved.</div>
-        </div>
     </div>
+
+    <!-- Link columns -->
+    <nav class="footer-links" aria-label="Footer navigation">
+      {{- range $quickLinks }}
+      <div class="footer-link-group">
+        {{- if .heading }}
+        <h4 class="footer-group-heading">{{ .heading }}</h4>
+        {{- end }}
+        <ul>
+          {{- range .links }}
+          <li>
+            <a href="{{ .link }}">{{ .text }}</a>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
+    </nav>
+
+  </div>
+
+  <!-- Bottom bar: socials + copyright -->
+  <div class="footer-bottom">
+    <div class="footer-socials">
+      {{- range $socialMedia }}
+      <a href="{{ .link }}" aria-label="{{ .link }}" target="_blank" rel="noopener noreferrer">
+        {{if .icon -}}
+        {{- partial "svg-icon" .icon -}}
+        {{- else -}}
+        <span class="icon">ⓘ</span>
+        {{- end }}
+      </a>
+      {{- end }}
+    </div>
+    <div class="footer-copyright">&copy; {{ now.Year }} {{ $title }}. All rights reserved.</div>
   </div>
 </footer>
