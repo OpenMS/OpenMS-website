@@ -11,4 +11,5 @@ communities worldwide by building quality, open-source software.
 
 # Governance
 
-For information about the Executive Committee, please see [here]({{< relref "/about" >}}).
+For information about the Executive Committee, please see the [Executive Committee page]({{< relref "/exec_committee" >}}).
+
