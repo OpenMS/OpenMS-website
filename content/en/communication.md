@@ -13,7 +13,7 @@ Here's how to get started:
 
 - 📚 Browse through the main library code under [OpenMS/OpenMS](https://github.com/openms/openms/issues)
 - 👩‍💻 Check out the [documentation](https://openms.readthedocs.io/en/latest/index.html).
-- 🙋‍♀️ Come and say hi on our [![Discord Shield](https://img.shields.io/discord/832282841836159006?style=flat-square&message=Discord&color=5865F2&logo=Discord&logoColor=FFFFFF&label=Discord)](https://discord.gg/4TAGhqJ7s5) channel.
+- 🙋‍♀️ Come and say hi on our [![Discord Shield](https://img.shields.io/discord/832282841836159006?style=flat-square&message=Discord&color=5865F2&logo=Discord&logoColor=FFFFFF&label=Discord)](https://discord.gg/v9tv5BxPch) channel.
 - 🍿 Tune in for news about developer/user meetings and events, [get involved]({{< ref "news.md" >}})!
 - 🌈 Please abide by our [community code of conduct](https://github.com/OpenMS/OpenMS/blob/develop/CODE_OF_CONDUCT.md)
 
@@ -21,7 +21,7 @@ We offer several communication channels to learn, share your knowledge and conne
 
 ***
 
-### <a class="button cta rounded primary-btn raised" href="https://discord.gg/aJyWqf6uCn">Discord</a>
+### <a class="button cta rounded primary-btn raised" href="https://discord.gg/v9tv5BxPch">Discord</a>
 
 Discord allows the users to communicate in different channels, publicly as well as privately
 
