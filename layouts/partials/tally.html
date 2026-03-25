@@ -16,12 +16,4 @@ window.TallyConfig = {
 };
 </script>
 
-<script>
-  // Replace with your existing consent signal / CMP API
-  if (window.userHasConsentedToExternalEmbeds === true) {
-    const s = document.createElement("script");
-    s.async = true;
-    s.src = "https://tally.so/widgets/embed.js";
-    document.head.appendChild(s);
-  }
-</script>
+<script async src="https://tally.so/widgets/embed.js"></script>
