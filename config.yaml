@@ -42,7 +42,7 @@ languages:
         # Hero subtitle (optional)
         subtitle: The open-source framework for Mass Spectrometry
         # Button text
-        buttontext: Get started
+        buttontext: Install
         # Where the main hero button links to
         buttonlink: https://openms.readthedocs.io/en/latest/about/installation.html
         # Hero image (from static/images/___)
@@ -133,9 +133,7 @@ languages:
         logo:
         socialmediatitle: ""
         socialmedia:
-          - link: https://github.com/OpenMS/OpenMS
-            icon: github
-          - link: https://discord.com/invite/4TAGhqJ7s5
+          - link: https://discord.gg/v9tv5BxPch
             icon: discord
         quicklinks:
           column1:
@@ -152,22 +150,28 @@ languages:
             links:
               - text: Community
                 link: /communication
-              - text: Contribute
-                link: /contribute
               - text: Code of conduct
                 link: /code-of-conduct
+              - text: Contribute
+                link: /contribute
+              - text: Core Developers
+                link: /core_developers
           column3:
             heading: ABOUT
             links:
               - text: OpenMS Inc.
                 link: /about
-              - text: Help
-                link: /help
+              - text: Executive committee
+                link: /exec_committee
+              - text: Governance
+                link: /governance
               - text: Jobs
                 link: /jobs
           column4:
             heading: LEGAL
             links:
+              - text: Help
+                link: /help
               - text: Terms of use
                 link: /terms
               - text: Privacy
@@ -195,8 +199,8 @@ languages:
           url: /community
         - title: About Us
           sublinks:
-            - title: OpenMS Inc.
-              url: /about
+            - title: Governance
+              url: /governance
             - title: Contributors
               url: /contributors
           url: /about
