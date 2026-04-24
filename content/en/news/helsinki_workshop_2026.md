@@ -1,5 +1,5 @@
 ---
-title: MS analysis with OpenMS and OpenDIAKiosk workshop in Helsinki on April 30th 2026.
+title: Workshop at University of Helsinki on April 30th 2026.
 authors: ["Tom David Müller"]
 date: 2026-04-24
 summary: We are teaching a one-day workshop on MS analysis with OpenMS and OpenDIAKiosk at the University of Helsinki on April 30th 2026. Click the header above for more information.
