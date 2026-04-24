@@ -1,6 +1,6 @@
 ---
 title: MS analysis with OpenMS and OpenDIAKiosk workshop in Helsinki on April 30th 2026.
-authors: ["Sam Wein"]
+authors: ["Tom David Müller"]
 date: 2026-04-24
 summary: We are teaching a one-day workshop on MS analysis with OpenMS and OpenDIAKiosk at the University of Helsinki on April 30th 2026. Click the header above for more information.
 ---
@@ -9,7 +9,7 @@ The OpenMS team will teach a one-day workshop on mass spectrometry analysis with
 <br><br>
 Topic: **MS analysis with OpenMS and OpenDIAKiosk**
 <br>
-**Educators:** Sam Wein and Tom Müller, OpenMS Inc., and University of Tübingen, Germany
+**Educators:** Sam Wein and Tom David Müller
 <br>
 **Date:** April 30th, 9:00-17:00
 <br>
