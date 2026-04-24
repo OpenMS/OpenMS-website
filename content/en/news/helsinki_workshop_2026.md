@@ -7,7 +7,7 @@ summary: We are teaching a one-day workshop on MS analysis with OpenMS and OpenD
 
 The OpenMS team will teach a one-day workshop on mass spectrometry analysis with OpenMS and OpenDIAKiosk at the University of Helsinki.
 <br><br>
-Topic: **MS analysis with OpenMS and OpenDIAKiosk**
+**Topic:** MS analysis with OpenMS and OpenDIAKiosk
 <br>
 **Educators:** Sam Wein and Tom David Müller
 <br>
