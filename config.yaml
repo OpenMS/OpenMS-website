@@ -102,11 +102,11 @@ languages:
           logo: /images/webapp/logo/umetaflow.png
           description: This app offers the powerful UmetaFlow pipeline for untargeted metabolomics in an accessible           url: https://opendia.webapps.openms.org/
           logo: /images/webapp/logo/OpenDIAKiosk_logo_portrait.svg
-          description: OpenDIA is an interactive web app for teaching Data-Independent Acquisition (DIA) concepts and running practical DIA analysis tools.
+          description: OpenDIA is an interactive web app for Data-Independent Acquisition (DIA) analysis.
         - index: 3
           url: https://opendda.webapps.openms.org/
           logo: /images/webapp/logo/openDDA.svg
-          description: OpenDDA is a browser-based tool to identify and quantify proteins from mass spectrometry data, with built-in volcano plots, PCA, and heatmaps — no command line required.
+          description: OpenDDA is a browser-based tool to identify and quantify proteins from DDA mass spectrometry data..
         - index: 4
           url: https://abi-services.cs.uni-tuebingen.de/nuxl/
           logo: /images/webapp/logo/nuxl.png
