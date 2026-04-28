@@ -102,22 +102,30 @@ languages:
           logo: /images/webapp/logo/umetaflow.png
           description: This app offers the powerful UmetaFlow pipeline for untargeted metabolomics in an accessible user interface.
         - index: 2
+          url: https://opendia.webapps.openms.org/
+          logo: /images/webapp/logo/OpenDIAKiosk_logo_portrait.svg
+          description: OpenDIA is an interactive web app for teaching Data-Independent Acquisition (DIA) concepts and running practical DIA analysis tools.
+        - index: 3
+          url: https://opendda.webapps.openms.org/
+          logo: /images/webapp/logo/openDDA.svg
+          description: OpenDDA is a browser-based tool to identify and quantify proteins from mass spectrometry data, with built-in volcano plots, PCA, and heatmaps — no command line required.
+        - index: 4
           url: https://abi-services.cs.uni-tuebingen.de/nuxl/
           logo: /images/webapp/logo/nuxl.png
           description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry).
-        - index: 3
+        - index: 5
           url: https://abi-services.cs.uni-tuebingen.de/mhcquant/
           logo: /images/webapp/logo/mhcquant.svg
           description: MHCQuant is a web application for analysis of MHC-bound peptides in immunopeptidomics studies.
-        - index: 4
+        - index: 6
           url: https://abi-services.cs.uni-tuebingen.de/toppview-lite/
           logo: /images/webapp/logo/toppview-lite.svg
           description: TOPPView Lite is a web-based viewer for interactive visualization and exploration of mass spectrometry data.
-        - index: 5
+        - index: 7
           logo: /images/webapp/logo/naseweis.png
           url: https://abi-services.cs.uni-tuebingen.de/naseweis/
           description: NASEWEIS is a WebApp for the NucleicAcidSearch Engine. It allows for library searching of Oligonucleotides.
-        - index: 6
+        - index: 8
           url: https://abi-services.cs.uni-tuebingen.de/streamsage/
           logo: /images/webapp/logo/streamsage.png
           description: StreamSage is a web application for performing proteomics database searching in your browser.

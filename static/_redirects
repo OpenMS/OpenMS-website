@@ -127,6 +127,36 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 
 /webapps/toolbox https://abi-services.cs.uni-tuebingen.de/peakstorm/ 301
 
+/OpenDDA https://opendda.webapps.openms.org/ 301
+/Opendda https://opendda.webapps.openms.org/ 301
+/opendda https://opendda.webapps.openms.org/ 301
+/OPENDDA https://opendda.webapps.openms.org/ 301
+/open-dda https://opendda.webapps.openms.org/ 301
+/Open-DDA https://opendda.webapps.openms.org/ 301
+
+/quantms-web https://opendda.webapps.openms.org/ 301
+/quantmsweb https://opendda.webapps.openms.org/ 301
+/QuantMS-Web https://opendda.webapps.openms.org/ 301
+/QuantMSWeb https://opendda.webapps.openms.org/ 301
+/quantms https://opendda.webapps.openms.org/ 301
+/QuantMS https://opendda.webapps.openms.org/ 301
+/QUANTMS https://opendda.webapps.openms.org/ 301
+
+/OpenDIA https://opendia.webapps.openms.org/ 301
+/Opendia https://opendia.webapps.openms.org/ 301
+/opendia https://opendia.webapps.openms.org/ 301
+/OPENDIA https://opendia.webapps.openms.org/ 301
+/open-dia https://opendia.webapps.openms.org/ 301
+/Open-DIA https://opendia.webapps.openms.org/ 301
+/OpenDIAKiosk https://opendia.webapps.openms.org/ 301
+/opendiakiosk https://opendia.webapps.openms.org/ 301
+/OPENDIAKIOSK https://opendia.webapps.openms.org/ 301
+
+/webapps/quantms-web https://opendda.webapps.openms.org/ 301
+/webapps/opendda https://opendda.webapps.openms.org/ 301
+/webapps/opendia https://opendia.webapps.openms.org/ 301
+/webapps/opendiakiosk https://opendia.webapps.openms.org/ 301
+
 # Redirects for WebApps
 /webapps/* https://abi-services.cs.uni-tuebingen.de/:splat 301
 
@@ -137,5 +167,5 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 /workshops/quantification https://colab.research.google.com/github/t0mdavid-m/Notebooks-ZA2026/blob/master/Quantification.ipynb
 /workshops/roadshow/fragments http://abi-services.cs.uni-tuebingen.de/toppview-lite/?workspace=workshop
 /workshops/roadshow/umetaflow http://abi-services.cs.uni-tuebingen.de/umetaflow/?workspace=workshop
-/workshops/roadshow/quantms http://abi-services.cs.uni-tuebingen.de/quantms-web/?workspace=workshop
+/workshops/roadshow/quantms https://opendda.webapps.openms.org/?workspace=workshop
 /workshops/upss26 https://colab.research.google.com/github/t0mdavid-m/Notebooks-ZA2026/blob/master/PeptideSearch.ipynb
