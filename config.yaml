@@ -100,11 +100,13 @@ languages:
         - index: 1
           url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
           logo: /images/webapp/logo/umetaflow.png
-          description: This app offers the powerful UmetaFlow pipeline for untargeted metabolomics in an accessible           url: https://opendia.webapps.openms.org/
+          description: This app offers the powerful UmetaFlow pipeline for untargeted metabolomics in an accessible
+        - index: 2
+          url: http://opendia.webapps.openms.org/
           logo: /images/webapp/logo/OpenDIAKiosk_logo_portrait.svg
           description: OpenDIA is an interactive web app for Data-Independent Acquisition (DIA) analysis.
         - index: 3
-          url: https://opendda.webapps.openms.org/
+          url: http://opendda.webapps.openms.org/
           logo: /images/webapp/logo/openDDA.svg
           description: OpenDDA is a browser-based tool to identify and quantify proteins from DDA mass spectrometry data..
         - index: 4
