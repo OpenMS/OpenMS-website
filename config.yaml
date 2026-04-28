@@ -108,7 +108,7 @@ languages:
         - index: 3
           url: http://opendda.webapps.openms.org/
           logo: /images/webapp/logo/openDDA.svg
-          description: OpenDDA is a browser-based tool to identify and quantify proteins from DDA mass spectrometry data..
+          description: OpenDDA is a browser-based tool to identify and quantify proteins from DDA mass spectrometry data.
         - index: 4
           url: https://abi-services.cs.uni-tuebingen.de/nuxl/
           logo: /images/webapp/logo/nuxl.png
