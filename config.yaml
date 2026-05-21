@@ -94,7 +94,7 @@ languages:
 
       webapps:
         - index: 0
-          url: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
+          url: http://flashapp.webapps.openms.org/
           logo: /images/webapp/logo/flashapp.png
           description: FLASHApp allows for interactive analysis and visualization of top-down proteomics data.
         - index: 1
