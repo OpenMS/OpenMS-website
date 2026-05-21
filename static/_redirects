@@ -87,26 +87,26 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 /umeta-flow https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
 /UMETA-FLOW https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
 
-/FLASHViewer https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/FLASHviewer https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/FlashViewer https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/FLASHVIEWER https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/flashviewer https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/FLASH-Viewer https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/Flash-Viewer https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/FLASH-viewer https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/flash-viewer https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
+/FLASHViewer http://flashapp.webapps.openms.org/ 301
+/FLASHviewer http://flashapp.webapps.openms.org/ 301
+/FlashViewer http://flashapp.webapps.openms.org/ 301
+/FLASHVIEWER http://flashapp.webapps.openms.org/ 301
+/flashviewer http://flashapp.webapps.openms.org/ 301
+/FLASH-Viewer http://flashapp.webapps.openms.org/ 301
+/Flash-Viewer http://flashapp.webapps.openms.org/ 301
+/FLASH-viewer http://flashapp.webapps.openms.org/ 301
+/flash-viewer http://flashapp.webapps.openms.org/ 301
 
-/FLASHApp https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/FLASHapp https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/FlashApp https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/FLASHAPP https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/flashapp https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/FLASH-App https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/Flash-App https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/FLASH-app https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/flash-app https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
-/FLASHApp/ https://abi-services.cs.uni-tuebingen.de/flashapp/ 301
+/FLASHApp http://flashapp.webapps.openms.org/ 301
+/FLASHapp http://flashapp.webapps.openms.org/ 301
+/FlashApp http://flashapp.webapps.openms.org/ 301
+/FLASHAPP http://flashapp.webapps.openms.org/ 301
+/flashapp http://flashapp.webapps.openms.org/ 301
+/FLASH-App http://flashapp.webapps.openms.org/ 301
+/Flash-App http://flashapp.webapps.openms.org/ 301
+/FLASH-app http://flashapp.webapps.openms.org/ 301
+/flash-app http://flashapp.webapps.openms.org/ 301
+/FLASHApp/ http://flashapp.webapps.openms.org/ 301
 
 /TOPPViewLite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
 /TOPPView-Lite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
