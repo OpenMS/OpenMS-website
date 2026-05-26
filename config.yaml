@@ -36,6 +36,8 @@ languages:
       navbarlogo:
         image: OpenMS_transparent_blackFont.png
         link: /
+        text: OpenMS
+        altText: OpenMS
       hero:
         titleBefore: "The "
         titleHighlight: open-source framework
