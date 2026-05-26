@@ -150,6 +150,21 @@
     grid-column: 3;
     justify-self: end;
     align-self: center;
+    flex-shrink: 0;
+    padding: 0.375rem 0.625rem;
+    border-radius: 0.5rem;
+    background: rgba(var(--openms-white-rgb), 0.06);
+    border: 1px solid rgba(var(--openms-white-rgb), 0.12);
+  }
+
+  .hero-modern__stat-sep {
+    display: none;
+  }
+
+  .hero-modern__stat:not(:first-child) {
+    padding-left: clamp(0.625rem, 1.5vw, 1rem);
+    margin-left: clamp(0.625rem, 1.5vw, 1rem);
+    border-left: 1px solid rgba(var(--openms-white-rgb), 0.22);
   }
 }
 
@@ -354,12 +369,85 @@
   }
 
   .hero-modern__actions {
-    column-gap: 1.5rem;
+    grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+    column-gap: 1rem;
     align-items: center;
   }
 
+  .hero-modern__buttons {
+    grid-column: 1;
+  }
+
   .hero-modern__actions .hero-modern__stats {
-    gap: clamp(0.5rem, 1.5vw, 1.25rem);
+    grid-column: 2;
+    gap: 0;
+    padding: 0.5rem 0.625rem;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-modern__actions .hero-modern__stat {
+    align-items: center;
+    text-align: center;
+    gap: 0.2rem;
+    min-width: 0;
+    flex: 0 1 auto;
+  }
+
+  .hero-modern__actions .hero-modern__stat:not(:first-child) {
+    padding-left: 0.625rem;
+    margin-left: 0.625rem;
+  }
+
+  .hero-modern__actions .hero-modern__stat-number {
+    font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+    min-width: auto;
+    line-height: 1;
+  }
+
+  .hero-modern__actions .hero-modern__stat-label {
+    font-size: var(--openms-text-min);
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    color: rgba(var(--openms-white-rgb), 0.85);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 5.75rem;
+  }
+}
+
+/* Large (lg) — roomier stats beside the CTA */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .hero-modern__actions .hero-modern__stats {
+    gap: 0;
+    padding: 0.5rem 0.875rem;
+  }
+
+  .hero-modern__actions .hero-modern__stat {
+    align-items: flex-end;
+    text-align: right;
+    gap: 0.25rem;
+  }
+
+  .hero-modern__actions .hero-modern__stat:not(:first-child) {
+    padding-left: 1rem;
+    margin-left: 1rem;
+  }
+
+  .hero-modern__actions .hero-modern__stat-number {
+    font-size: clamp(1.35rem, 2vw, 1.6rem);
+  }
+
+  .hero-modern__actions .hero-modern__stat-label {
+    text-transform: none;
+    letter-spacing: 0.02em;
+    max-width: 7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
