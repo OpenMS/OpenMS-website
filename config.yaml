@@ -297,6 +297,5 @@ languages:
             - title: Sponsor Us
               url: /about#sponsors
         - title: Donate
-          shortTitle: Give
           url: /about#donate
           button: true
