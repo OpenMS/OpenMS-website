@@ -37,16 +37,24 @@ languages:
         image: OpenMS_transparent_blackFont.png
         link: /
       hero:
-        # Main hero title
-        # title: OpenMS
-        # Hero subtitle (optional)
-        subtitle: The open-source framework for Mass Spectrometry
-        # Button text
-        buttontext: Install
-        # Where the main hero button links to
+        titleBefore: "The "
+        titleHighlight: open-source framework
+        titleAfter: " for Mass Spectrometry"
+        description: >-
+          Build sophisticated LC/MS data analysis tools with C++ or Python.
+          Process large datasets at scale. Create high-performance algorithms.
+          Join 1000+ researchers worldwide.
+        buttontext: Get Started Now
         buttonlink: https://openms.readthedocs.io/en/latest/about/installation.html
-        # Hero image (from static/images/___)
-        image: OpenMS_transparent_blackFont.png
+        secondaryButtonText: Watch Demo
+        secondaryButtonLink: https://openms.readthedocs.io/en/latest/getting-started/walkthrough.html
+        stats:
+          - number: "10+"
+            label: Years Active
+          - number: "1000+"
+            label: Researchers
+          - number: "3.5.0"
+            label: Latest Version
 
       heroGroup:
         - title: "OpenMS allows users to:"

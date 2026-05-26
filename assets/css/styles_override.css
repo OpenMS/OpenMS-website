@@ -8,15 +8,6 @@
   background-color: #1a3a7a;
 }
 
-.hero-title-content {
-  max-width: 1200px;
-  margin: 1vh auto;
-}
-
-.hero-logo {
-  max-height: 200px;
-}
-
 .navbar.is-fresh .navbar-item.has-dropdown .navbar-link {
   color: var(--colorPrimaryDark);
 }
@@ -29,24 +20,6 @@
 @media only screen and (max-width: 850px) {
   .social-media-icons {
     width: 100%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .hero-logo {
-    max-height: 150px;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .hero-logo {
-    max-height: 120px;
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  .hero-logo {
-    max-height: 100px;
   }
 }
 
