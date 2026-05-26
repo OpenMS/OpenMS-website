@@ -9,45 +9,47 @@
 {{- $secondaryLink := index $hero "secondaryButtonLink" }}
 {{- $stats := index $hero "stats" }}
 
-<section class="hero-modern" aria-label="OpenMS introduction">
-  <div class="hero-modern__container">
-    <div class="hero-modern__content">
-      <h1 class="hero-modern__title">
-        {{ $titleBefore }}<span class="hero-modern__gradient-text">{{ $titleHighlight }}</span>{{ $titleAfter }}
-      </h1>
-      {{- with $description }}
-      <p class="hero-modern__description">{{ . }}</p>
-      {{- end }}
-      <div class="hero-modern__buttons">
-        {{- if $buttonText }}
-        <a class="hero-modern__btn hero-modern__btn--primary" href="{{ $buttonLink }}">{{ $buttonText }}</a>
-        {{- end }}
-        {{- if and $secondaryText $secondaryLink }}
-        <a class="hero-modern__btn hero-modern__btn--secondary" href="{{ $secondaryLink }}">{{ $secondaryText }}</a>
+<div class="hero-modern-wrap">
+  <section class="hero-modern" aria-label="OpenMS introduction">
+    <div class="hero-modern__container">
+      <div class="hero-modern__content">
+        <h1 class="hero-modern__title">
+          {{ $titleBefore }}<span class="hero-modern__gradient-text">{{ $titleHighlight }}</span>{{ $titleAfter }}
+        </h1>
+        {{- with $description }}
+        <p class="hero-modern__description">{{ . }}</p>
         {{- end }}
       </div>
-      {{- with $stats }}
-      <div class="hero-modern__stats">
-        {{- range . }}
-        <div class="hero-modern__stat">
-          <div
-            class="hero-modern__stat-number"
-            data-count-value="{{ .value }}"
-            data-count-suffix="{{ .suffix | default "" }}"
-            data-count-decimals="{{ .decimals | default 0 }}"
-          >0{{ .suffix | default "" }}</div>
-          <div class="hero-modern__stat-label">{{ .label }}</div>
+      <div class="hero-modern__visual" aria-hidden="true">
+        <div class="hero-modern__waveform">
+          {{- range seq 11 }}
+          <div class="hero-modern__wave-bar"></div>
+          {{- end }}
         </div>
-        {{- end }}
       </div>
-      {{- end }}
-    </div>
-    <div class="hero-modern__visual" aria-hidden="true">
-      <div class="hero-modern__waveform">
-        {{- range seq 11 }}
-        <div class="hero-modern__wave-bar"></div>
-        {{- end }}
+      <div class="hero-modern__actions">
+        <div class="hero-modern__buttons" role="group" aria-label="Primary actions">
+          {{- if $buttonText }}
+          <a
+            class="hero-modern__btn hero-modern__btn--primary"
+            href="{{ $buttonLink }}"
+            {{- if in $buttonLink "://" }}
+            rel="noopener noreferrer"
+            {{- end }}
+          >{{ $buttonText }}</a>
+          {{- end }}
+          {{- if and $secondaryText $secondaryLink }}
+          <a
+            class="hero-modern__btn hero-modern__btn--secondary"
+            href="{{ $secondaryLink }}"
+            {{- if in $secondaryLink "://" }}
+            rel="noopener noreferrer"
+            {{- end }}
+          >{{ $secondaryText }}</a>
+          {{- end }}
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  {{ partial "hero-stats.html" (dict "stats" $stats "class" "hero-modern__stats") }}
+</div>

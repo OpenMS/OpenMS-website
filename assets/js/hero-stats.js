@@ -1,5 +1,10 @@
 (function () {
-  var counters = document.querySelectorAll(".hero-modern__stat-number[data-count-value]");
+  var counters = Array.prototype.filter.call(
+    document.querySelectorAll(".hero-modern__stat-number[data-count-value]"),
+    function (counter) {
+      return counter.offsetParent !== null;
+    }
+  );
   if (!counters.length) return;
 
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

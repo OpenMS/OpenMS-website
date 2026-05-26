@@ -138,30 +138,36 @@
 .navbar.is-fresh .navbar-burger span,
 #navbar-clone.navbar.is-fresh .navbar-burger span {
   background-color: var(--openms-dark);
-  height: 3px;
-  width: 1.75rem;
-  left: calc(50% - 0.875rem);
+  height: 2px;
+  width: 1.5rem;
+  left: calc(50% - 0.75rem);
   border-radius: 1px;
 }
 
 .navbar.is-fresh .navbar-burger span:nth-child(1),
 #navbar-clone.navbar.is-fresh .navbar-burger span:nth-child(1) {
-  top: calc(50% - 8px);
+  top: calc(50% - 6px);
 }
 
 .navbar.is-fresh .navbar-burger span:nth-child(2),
 #navbar-clone.navbar.is-fresh .navbar-burger span:nth-child(2) {
-  top: calc(50% - 1.5px);
+  top: calc(50% - 1px);
 }
 
 .navbar.is-fresh .navbar-burger span:nth-child(3),
 #navbar-clone.navbar.is-fresh .navbar-burger span:nth-child(3) {
-  top: calc(50% + 5px);
+  top: calc(50% + 4px);
 }
 
 .navbar.is-fresh .navbar-burger:hover,
-#navbar-clone.navbar.is-fresh .navbar-burger:hover {
-  background-color: rgba(var(--openms-yellow-rgb), 0.15);
+.navbar.is-fresh .navbar-burger:focus,
+.navbar.is-fresh .navbar-burger:focus-visible,
+.navbar.is-fresh .navbar-burger:active,
+#navbar-clone.navbar.is-fresh .navbar-burger:hover,
+#navbar-clone.navbar.is-fresh .navbar-burger:focus,
+#navbar-clone.navbar.is-fresh .navbar-burger:focus-visible,
+#navbar-clone.navbar.is-fresh .navbar-burger:active {
+  background-color: transparent;
 }
 
 .navbar.is-fresh {
@@ -171,6 +177,41 @@
 .navbar.is-fresh .container,
 .navbar.is-fresh .navbar-brand {
   min-height: 5.5rem;
+}
+
+/* Top-level dropdown labels (e.g. Partner with OpenMS) */
+.navbar.is-fresh .navbar-item.has-dropdown.is-emphasized > .navbar-link,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown.is-emphasized > .navbar-link {
+  font-weight: 700;
+}
+
+/* Navbar dropdown section headings & nested links */
+.navbar.is-fresh .navbar-dropdown-heading,
+#navbar-clone.navbar.is-fresh .navbar-dropdown-heading {
+  display: block;
+  padding: 0.5rem 1rem 0.35rem;
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--openms-blue);
+  border-top: 1px solid rgba(var(--openms-blue-rgb), 0.12);
+  margin-top: 0.25rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.navbar.is-fresh .navbar-dropdown-heading:first-child,
+#navbar-clone.navbar.is-fresh .navbar-dropdown-heading:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0.35rem;
+}
+
+.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested,
+#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested {
+  padding-left: 1.5rem;
+  font-size: calc(var(--openms-body-size) * 0.95);
 }
 
 .navbar.is-fresh .navbar-item:has(.signup-button) {
@@ -243,12 +284,66 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
 
 /* ---- Brand block ---- */
 .footer-brand {
-  flex: 0 0 200px;
+  flex: 0 0 300px;
+}
+
+.footer-brand-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.footer-logo img {
+  display: block;
+  max-height: 88px;
+  max-width: min(100%, 280px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.footer-logo:focus-visible {
+  outline: 2px solid rgba(var(--openms-white-rgb), 0.45);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.footer-donate-btn.signup-button {
+  display: inline-block !important;
+  padding: 0.55rem 1.35rem !important;
+  font-size: var(--openms-body-size);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footer-redesign .footer-donate-btn.signup-button.secondary-btn {
+  background-color: var(--openms-orange) !important;
+  color: var(--openms-white) !important;
+  border: 2px solid var(--openms-orange) !important;
+  box-shadow: 0 0.25rem 0.75rem rgba(var(--openms-orange-rgb), 0.3);
+}
+
+.footer-redesign .footer-donate-btn.signup-button.secondary-btn:hover,
+.footer-redesign .footer-donate-btn.signup-button.secondary-btn:focus-visible {
+  background-color: var(--openms-yellow) !important;
+  color: var(--openms-dark) !important;
+  border-color: var(--openms-yellow) !important;
+  box-shadow: 0 0.35rem 1rem rgba(var(--openms-yellow-rgb), 0.35);
 }
 
 .footer-title {
   color: var(--openms-white);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 
 /* ---- Partner logo row ---- */
@@ -392,6 +487,20 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
   .footer-brand {
     flex: unset;
     width: 100%;
+  }
+
+  .footer-brand-top {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .footer-logo img {
+    max-height: 72px;
+    max-width: min(65vw, 240px);
   }
 
   .footer-partners {

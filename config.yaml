@@ -173,10 +173,20 @@ languages:
         sponsorLogo2: /images/logos/elixir-logo-white.png
         sponsorLogo3: /images/logos/libis-logo-white.svg
         logo:
+          image: OpenMS_transparent_blackFont.png
+          link: /
+          altText: OpenMS
+        donate:
+          text: Donate
+          link: /about#donate
         socialmediatitle: ""
         socialmedia:
-          - link: https://discord.gg/v9tv5BxPch
+          - link: https://discord.com/invite/v9tv5BxPch
             icon: discord
+          - link: https://www.linkedin.com/company/openms-org
+            icon: linkedin
+          - link: https://github.com/openMS
+            icon: github
         quicklinks:
           column1:
             heading: RESOURCES
@@ -207,13 +217,10 @@ languages:
                 link: /exec_committee
               - text: Governance
                 link: /governance
-              - text: Jobs
-                link: /jobs
+           
           column4:
             heading: LEGAL
             links:
-              - text: Help
-                link: /help
               - text: Terms of use
                 link: /terms
               - text: Privacy
@@ -224,40 +231,71 @@ languages:
                 link: /impressum
 
       navbar:
-        - title: News
-          url: /news
-        - title: Install
-          url: https://openms.readthedocs.io/en/latest/about/installation.html
-        - title: Documentation
-          url: https://openms.readthedocs.io/en/latest/index.html
+        - title: Infrastructure
+          sublinks:
+            - title: OpenMS-lib
+              url: https://openms.readthedocs.io/en/latest/develop-with-openms/openms-cpp-core-library.html
+              is_external: true
+            - title: pyOpenMS
+              url: https://pyopenms.readthedocs.io/en/latest/
+              is_external: true
+            - title: WebApp-template
+              url: https://github.com/OpenMS/streamlit-template
+              is_external: true
+        - title: Projects
+          url: /applications
+          sublinks:
+            - title: Featured Projects
+              url: /applications
+            - title: Affiliated Projects
+              url: /applications
+            - title: Archived Projects
+              url: /applications
+        - title: Learn
+          sublinks:
+            - title: Liquid Chromatography
+              url: https://openms.readthedocs.io/en/latest/about/learning/lc-chromatography.html
+              is_external: true
+            - title: Mass Spectrometry
+              url: https://openms.readthedocs.io/en/latest/about/learning/mass-spectrometry.html
+              is_external: true
+            - title: Identification and Quantification
+              url: https://openms.readthedocs.io/en/latest/about/learning/id-and-quant.html
+              is_external: true
+            - title: Background
+              url: https://pyopenms.readthedocs.io/en/release-3.5.0/user_guide/background.html
+              is_external: true
+            - title: Glossary
+              url: https://openms.readthedocs.io/en/latest/manual/glossary.html
+              is_external: true
         - title: Community
           sublinks:
-            - title: Communication
-              url: /communication
-            - title: Contribute
+            - title: News
+              url: /news
+            - title: Getting Involved
               url: /contribute
-            - title: Awards
-              url: /news/fellowship2024
-          url: /community
-        - title: About Us
+            - title: Annual Developer Meeting
+              url: /news/
+        - title: About
           sublinks:
+            - title: About
+              url: /about
             - title: Governance
               url: /governance
-            - title: Contributors
-              url: /contributors
-          url: /about
-        - title: Use Cases
-          url: /publications
-          sublinks:
-            - title: Applications
-              url: /applications
             - title: Publications
               url: /publications
-        - title: Sponsor
-          shortTitle: Spon
-          url: /about#sponsors
-          button: true
-          buttonVariant: sponsor
+            - title: Contact
+              url: /communication
+        - title: Partner with OpenMS
+          url: /about#institutional-partners
+          is_emphasized: true
+          sublinks:
+            - title: Research Partnerships
+              url: /about#institutional-partners
+            - title: Scientific and Technical Support
+              url: /help
+            - title: Sponsor Us
+              url: /about#sponsors
         - title: Donate
           shortTitle: Give
           url: /about#donate

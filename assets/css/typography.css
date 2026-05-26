@@ -148,9 +148,7 @@ blockquote p {
   font-size: inherit;
 }
 
-/* Web minimum — nothing smaller than 11pt */
-.news-banner__label,
-.news-banner__message,
+/* Web minimum — nothing smaller than 11pt (news banner uses compact sizes in news-banner.css) */
 .hero-modern__stat-label,
 .hero-modern__btn,
 .footer-link-group ul li a,

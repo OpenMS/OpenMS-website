@@ -34,19 +34,14 @@
       <div class="navbar-end">
         {{- range $navbar }}
         {{- if .sublinks }}
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
+        <div class="navbar-item has-dropdown is-hoverable{{ if .is_emphasized }} is-emphasized{{ end }}">
+          <a href="{{ .url | default "#" }}" class="navbar-link" role="button" aria-expanded="false">
             {{ .title }}
             {{ if .is_external }}{{ partial "svg-icon" "launch" }}{{ end }}
           </a>
 
           <div class="navbar-dropdown">
-            {{- range .sublinks }}
-            <a href="{{ .url }}" class="navbar-item">
-              {{ .title }}
-              {{ if .is_external }}{{ partial "svg-icon" "launch" }}{{ end }}
-            </a>
-            {{- end }}
+            {{ partial "navbar-sublinks.html" .sublinks }}
           </div>
         </div>
         {{- else if .button }}
@@ -62,6 +57,8 @@
         {{- if .IsTranslated }}
         {{ partial "translation.html" . }}
         {{- end }}
+
+        {{ partial "navbar-social.html" . }}
       </div>
     </div>
   </div>

@@ -7,13 +7,13 @@ OpenMS Inc. is the corporate entity and fiscal home of the OpenMS project. As a 
 
 The board of directors of OpenMS Inc. consists of Dr. Samuel Wein as chief executive officer, Prof. Dr. Oliver Kohlbacher as chief scientific officer, and Dr. Timo Sachsenberg as chief technology officer.
 
-## Sponsors
+## Sponsors {#sponsors}
 
 OpenMS receives direct funding from the following sources:
 {{< sponsors >}}
 
 
-## Institutional Partners
+## Institutional Partners {#institutional-partners}
 
 Institutional Partners are organizations that support the project by employing people that contribute to OpenMS as part of their job. Current Institutional Partners include:
 

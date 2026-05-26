@@ -12,25 +12,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.75rem;
-  padding: 0.625rem 2.5rem;
+  min-height: 1.25rem;
+  padding: 0.15rem 0.55rem;
   text-align: center;
 }
 
 .news-banner__message {
   margin: 0;
-  font-size: var(--openms-body-size);
-  line-height: 1.5;
+  font-size: 0.75rem;
+  line-height: 1.25;
   flex: 1;
 }
 
 /* Matches hero primary button */
 .news-banner__label {
   display: inline-block;
-  margin-right: 0.625rem;
+  margin-right: 0.5rem;
   padding: 0.125rem 0.5rem;
-  font-size: var(--openms-text-min);
-  font-weight: 700;
+  font-size: inherit;
+  font-weight: 600;
+  line-height: 1.2;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: 0.25rem;
@@ -53,11 +54,13 @@
 
 .news-banner__text {
   font-weight: 500;
+  color: var(--openms-white);
 }
 
 /* Matches hero stat numbers */
 .news-banner__cta {
-  margin-left: 0.5rem;
+  margin-left: 0.3rem;
+  font-size: 0.5rem;
   font-weight: 600;
   color: var(--openms-yellow);
   white-space: nowrap;
@@ -70,7 +73,8 @@
 
 @media (max-width: 768px) {
   .news-banner__inner {
-    padding: 0.75rem 1rem;
+    min-height: 1.125rem;
+    padding: 0.125rem 0.4rem;
     text-align: center;
     justify-content: center;
   }
@@ -78,13 +82,19 @@
   .news-banner__message {
     flex: none;
     width: 100%;
-    font-size: var(--openms-body-size);
+    font-size: 0.7375rem;
+    line-height: 1.2;
     text-align: center;
   }
 
   .news-banner__label {
     display: inline-block;
-    margin: 0 0 0.375rem;
+    margin: 0 0.35rem 0 0;
+    padding: 0.1rem 0.45rem;
+  }
+
+  .news-banner__cta {
+    font-size: 0.4375rem;
   }
 
   .news-banner__link {

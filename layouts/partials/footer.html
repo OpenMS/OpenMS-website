@@ -6,13 +6,29 @@
 {{- $sponsorLogo3 := index $footer "sponsorLogo3" }}
 {{- $quickLinks := index $footer "quicklinks" }}
 {{- $socialMedia := index $footer "socialmedia" }}
+{{- $footerLogo := index $footer "logo" | default .Site.Params.navbarlogo }}
+{{- $donate := index $footer "donate" }}
 
 <footer id="footer" class="footer-redesign">
   <div class="footer-inner">
 
     <!-- Brand + Partner logos -->
     <div class="footer-brand">
-      <div class="footer-title">{{ $title }}</div>
+      <div class="footer-brand-top">
+        {{- if $footerLogo }}
+        <a class="footer-logo" href="{{ $footerLogo.link | default "/" }}">
+          <img src="{{ printf "/images/%s" $footerLogo.image | relURL }}"
+            alt="{{ default (printf "%s logo" $title) $footerLogo.altText }}">
+        </a>
+        {{- else }}
+        <div class="footer-title">{{ $title }}</div>
+        {{- end }}
+        {{- with $donate }}
+        <a href="{{ .link }}" class="footer-donate-btn button signup-button rounded raised secondary-btn">
+          {{ .text }}
+        </a>
+        {{- end }}
+      </div>
       <div class="footer-partners">
         <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
           <img src="{{ $deployedBy }}" alt="Deployed by Netlify" />
