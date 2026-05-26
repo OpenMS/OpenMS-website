@@ -1,0 +1,164 @@
+/* OpenMS typography
+   Montserrat — primary headings (h1, h2, large titles)
+   Raleway — body copy & secondary headings (h3–h6)
+   JetBrains Mono thin — quotes, callouts & emphasis
+   Web minimum — 11pt
+*/
+
+html {
+  font-size: var(--openms-body-size);
+}
+
+body {
+  font-family: var(--openms-font-body);
+  font-size: 1rem;
+  font-weight: var(--openms-body-weight);
+  line-height: 1.5;
+  color: var(--openms-dark);
+}
+
+/* Normal text — 11–14pt */
+p,
+li,
+dd,
+dt,
+td,
+th,
+label,
+input,
+textarea,
+select,
+button,
+.content-container,
+.subtitle:not(.is-1):not(.is-2):not(.is-3),
+.navbar-item,
+.navbar-link,
+.news-banner__message {
+  font-family: var(--openms-font-body);
+  font-weight: var(--openms-body-weight);
+}
+
+.openms-text-sm {
+  font-size: var(--openms-text-min);
+}
+
+.openms-text-lg {
+  font-size: var(--openms-body-size-lg);
+}
+
+/* Presentations — 18pt */
+.openms-text-presentation,
+.hero-modern__description,
+.keyfeatures > .container > p {
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-presentation-size);
+  font-weight: var(--openms-body-weight);
+  line-height: 1.55;
+}
+
+/* Titles & large headings — Montserrat extra bold 26pt */
+h1,
+.title.is-1,
+.keyfeatures-title,
+.casestudies-title,
+.heroItemTitle,
+.facts-title,
+.shell-title,
+.tabs-title,
+.section-title,
+.content-container h1 {
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-heading-xl-size);
+  font-weight: var(--openms-heading-xl-weight);
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* Chapters & headings — Montserrat bold 20pt */
+h2,
+.title.is-2,
+.footer-title,
+.content-container h2,
+.post-title h2 {
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-heading-lg-size);
+  font-weight: var(--openms-heading-lg-weight);
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* Secondary headings — Raleway regular */
+h3,
+.title.is-3,
+.keyfeatures-box-title,
+.casestudies-box-title,
+.content-container h3,
+.post-subtitle h3 {
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-secondary-heading-size-lg);
+  font-weight: var(--openms-secondary-heading-weight);
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+h4,
+h5,
+h6,
+.title.is-4,
+.title.is-5,
+.title.is-6,
+.content-container h4,
+.content-container h5,
+.content-container h6 {
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-secondary-heading-size);
+  font-weight: var(--openms-secondary-heading-weight);
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* Quotes, callouts & emphasis — JetBrains Mono thin */
+blockquote,
+blockquote p,
+q,
+.notice,
+.notice-content,
+.notice-type,
+em,
+i,
+cite,
+mark {
+  font-family: var(--openms-font-mono);
+  font-weight: var(--openms-mono-weight);
+  font-style: normal;
+  font-size: max(var(--openms-text-min), 1em);
+  line-height: 1.55;
+}
+
+.notice-type {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+blockquote p {
+  font-size: inherit;
+}
+
+/* Web minimum — nothing smaller than 11pt */
+.news-banner__label,
+.news-banner__message,
+.hero-modern__stat-label,
+.hero-modern__btn,
+.footer-link-group ul li a,
+.footer-copyright,
+.footer-column-label,
+.tabs-section .tab,
+.mailchimp-form,
+.members-card,
+.casestudies-box-text {
+  font-size: max(var(--openms-text-min), 1em);
+}

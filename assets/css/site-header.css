@@ -1,0 +1,26 @@
+/* Sticky site header — news banner + navbar stay aligned at top */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  width: 100%;
+  background: var(--openms-white);
+}
+
+.site-header .news-banner {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.site-header #nav.navbar.is-fresh {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Scroll clone duplicates nav only — hide; sticky header handles scroll */
+#navbar-clone.navbar.is-fresh {
+  display: none !important;
+}

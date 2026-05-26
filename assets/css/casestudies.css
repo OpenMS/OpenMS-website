@@ -10,8 +10,6 @@
 .casestudies-title {
     display: flex;
     justify-content: center;
-    letter-spacing: 1.5px;
-    font-size: 27px;
 }
 
 .casestudies-box-container {
@@ -40,7 +38,7 @@
 
 .casestudies-box-text {
     margin: 30px 15px;
-    font-size: 14px;
+    font-size: var(--openms-body-size-lg);
 }
 
 @media only screen and (max-width: 1300px) {

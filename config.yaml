@@ -16,6 +16,23 @@ markup:
 disableLanguages: []
 
 params:
+  font:
+    name: Montserrat
+    sizes:
+      - 400
+      - 600
+      - 700
+      - 800
+  bodyFont:
+    name: Raleway
+    sizes:
+      - 400
+      - 500
+      - 600
+  monoFont:
+    name: JetBrains Mono
+    sizes:
+      - 100
   images:
     - /images/logo.svg
   navColor: blue
@@ -36,9 +53,9 @@ languages:
       newsBanner:
         enabled: true
         label: News
-        text: OpenMS 3.5.0 is now available — ARM64 Linux support and more.
-        link: /news/release3.5/
-        linkText: Read more
+        text: Workshop at University of Helsinki on April 30th 2026.
+        link: /news/
+        # linkText: Learn more
       navbarlogo:
         image: OpenMS_transparent_blackFont.png
         link: /
@@ -53,14 +70,16 @@ languages:
           Join 1000+ researchers worldwide.
         buttontext: Get Started Now
         buttonlink: https://openms.readthedocs.io/en/latest/about/installation.html
-        secondaryButtonText: Watch Demo
-        secondaryButtonLink: https://openms.readthedocs.io/en/latest/getting-started/walkthrough.html
         stats:
-          - number: "10+"
+          - value: 10
+            suffix: "+"
             label: Years Active
-          - number: "1000+"
+          - value: 1000
+            suffix: "+"
             label: Researchers
-          - number: "3.5.0"
+          - value: 3.5
+            suffix: ".0"
+            decimals: 1
             label: Latest Version
 
       heroGroup:
@@ -234,6 +253,12 @@ languages:
               url: /applications
             - title: Publications
               url: /publications
-        - title: Help Request
-          url: /help-request
+        - title: Sponsor
+          shortTitle: Spon
+          url: /about#sponsors
+          button: true
+          buttonVariant: sponsor
+        - title: Donate
+          shortTitle: Give
+          url: /about#donate
           button: true

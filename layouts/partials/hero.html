@@ -30,7 +30,12 @@
       <div class="hero-modern__stats">
         {{- range . }}
         <div class="hero-modern__stat">
-          <div class="hero-modern__stat-number">{{ .number }}</div>
+          <div
+            class="hero-modern__stat-number"
+            data-count-value="{{ .value }}"
+            data-count-suffix="{{ .suffix | default "" }}"
+            data-count-decimals="{{ .decimals | default 0 }}"
+          >0{{ .suffix | default "" }}</div>
           <div class="hero-modern__stat-label">{{ .label }}</div>
         </div>
         {{- end }}

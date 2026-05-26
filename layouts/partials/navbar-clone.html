@@ -13,11 +13,21 @@
       </a>
       {{- end }}
 
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="cloned-navbar-menu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+      <div class="navbar-brand-actions">
+        <div class="navbar-mobile-ctas-end" aria-label="Sponsor, donate, and menu">
+          {{- range $navbar }}
+          {{- if .button }}
+          {{ partial "navbar-cta.html" . }}
+          {{- end }}
+          {{- end }}
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="cloned-navbar-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        </div>
+      </div>
     </div>
 
     <div id="cloned-navbar-menu" class="navbar-menu is-fixed">
@@ -40,12 +50,7 @@
           </div>
         </div>
         {{- else if .button }}
-        <a href="{{ .url }}" class="navbar-item">
-          <span class="button signup-button rounded secondary-btn raised">
-            {{ .title }}
-            {{ if .is_external }}{{ partial "svg-icon" "launch" }}{{ end }}
-          </span>
-        </a>
+        <span class="navbar-desktop-cta">{{ partial "navbar-cta.html" . }}</span>
         {{- else }}
         <a href="{{ .url }}" class="navbar-item is-secondary">
           {{ .title }}

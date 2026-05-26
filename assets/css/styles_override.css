@@ -8,8 +8,160 @@
   background-color: var(--openms-purple);
 }
 
-.navbar.is-fresh .navbar-item.has-dropdown .navbar-link {
-  color: var(--colorPrimaryDark);
+.navbar.is-fresh .navbar-item,
+.navbar.is-fresh .navbar-link,
+.navbar.is-fresh a.navbar-item.is-secondary,
+.navbar.is-fresh .navbar-menu .navbar-item,
+#navbar-clone.navbar.is-fresh .navbar-item,
+#navbar-clone.navbar.is-fresh .navbar-link,
+#navbar-clone.navbar.is-fresh a.navbar-item.is-secondary,
+#navbar-clone.navbar.is-fresh .navbar-menu .navbar-item {
+  color: var(--openms-dark) !important;
+}
+
+.navbar.is-fresh .navbar-item:focus-visible,
+.navbar.is-fresh .navbar-link:focus-visible,
+.navbar.is-fresh .navbar-dropdown .navbar-item:focus-visible,
+#navbar-clone.navbar.is-fresh .navbar-item:focus-visible,
+#navbar-clone.navbar.is-fresh .navbar-link:focus-visible,
+#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item:focus-visible {
+  outline: 2px solid var(--openms-blue);
+  outline-offset: 2px;
+}
+
+.navbar.is-fresh .navbar-item:hover,
+.navbar.is-fresh .navbar-link:hover,
+.navbar.is-fresh .navbar-item.has-dropdown:hover .navbar-link,
+.navbar.is-fresh .navbar-brand .navbar-brand-link:hover,
+#navbar-clone.navbar.is-fresh .navbar-item:hover,
+#navbar-clone.navbar.is-fresh .navbar-link:hover,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown:hover .navbar-link,
+#navbar-clone.navbar.is-fresh .navbar-brand .navbar-brand-link:hover {
+  color: var(--openms-blue) !important;
+}
+
+.navbar.is-fresh a.navbar-item.is-secondary,
+#navbar-clone.navbar.is-fresh a.navbar-item.is-secondary {
+  transition: color 0.2s ease;
+}
+
+.navbar.is-fresh a.navbar-item.is-secondary:hover,
+.navbar.is-fresh a.navbar-item.is-secondary:focus-visible,
+#navbar-clone.navbar.is-fresh a.navbar-item.is-secondary:hover,
+#navbar-clone.navbar.is-fresh a.navbar-item.is-secondary:focus-visible {
+  color: var(--openms-blue) !important;
+  background-color: transparent !important;
+}
+
+.navbar.is-fresh .navbar-item.has-dropdown .navbar-link::after,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown .navbar-link::after {
+  border-color: var(--openms-dark) !important;
+}
+
+.navbar.is-fresh .navbar-item.has-dropdown:hover .navbar-link::after,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown:hover .navbar-link::after {
+  border-color: var(--openms-blue) !important;
+}
+
+.navbar.is-fresh .navbar-item.has-dropdown .navbar-dropdown,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown .navbar-dropdown {
+  border-top-color: var(--openms-blue);
+  box-shadow: 0 0.5rem 1.5rem rgba(var(--openms-dark-rgb), 0.08);
+}
+
+.navbar.is-fresh .navbar-dropdown .navbar-item,
+#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item {
+  color: var(--openms-dark) !important;
+}
+
+.navbar.is-fresh .navbar-dropdown .navbar-item:hover,
+#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item:hover {
+  color: var(--openms-blue) !important;
+  background-color: rgba(var(--openms-blue-rgb), 0.1);
+}
+
+/* Navbar CTA buttons (mailchimp.css must not hide these) */
+.navbar.is-fresh .signup-button,
+#navbar-clone.navbar.is-fresh .signup-button {
+  display: inline-block !important;
+}
+
+/* Donate — matches hero primary button */
+.navbar.is-fresh .signup-button.secondary-btn,
+#navbar-clone.navbar.is-fresh .signup-button.secondary-btn {
+  background-color: var(--openms-orange) !important;
+  color: var(--openms-white) !important;
+  border: 2px solid var(--openms-orange) !important;
+  box-shadow: 0 0.25rem 0.75rem rgba(var(--openms-orange-rgb), 0.3);
+}
+
+.navbar.is-fresh .signup-button.secondary-btn:hover,
+#navbar-clone.navbar.is-fresh .signup-button.secondary-btn:hover {
+  background-color: var(--openms-yellow) !important;
+  color: var(--openms-dark) !important;
+  border-color: var(--openms-yellow) !important;
+  box-shadow: 0 0.35rem 1rem rgba(var(--openms-yellow-rgb), 0.35);
+}
+
+/* Sponsor — outline blue */
+.navbar.is-fresh .signup-button.sponsor-btn,
+#navbar-clone.navbar.is-fresh .signup-button.sponsor-btn {
+  background-color: transparent !important;
+  color: var(--openms-blue) !important;
+  border: 2px solid var(--openms-blue) !important;
+  box-shadow: none;
+}
+
+.navbar.is-fresh .signup-button.sponsor-btn:hover,
+#navbar-clone.navbar.is-fresh .signup-button.sponsor-btn:hover {
+  background-color: var(--openms-blue) !important;
+  color: var(--openms-white) !important;
+  border-color: var(--openms-blue) !important;
+  box-shadow: 0 0.25rem 0.75rem rgba(var(--openms-blue-rgb), 0.3);
+}
+
+.navbar.is-fresh .navbar-burger,
+#navbar-clone.navbar.is-fresh .navbar-burger {
+  color: var(--openms-dark);
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 1023px) {
+  .navbar.is-fresh .navbar-burger,
+  #navbar-clone.navbar.is-fresh .navbar-burger {
+    margin-right: 0;
+  }
+}
+
+.navbar.is-fresh .navbar-burger span,
+#navbar-clone.navbar.is-fresh .navbar-burger span {
+  background-color: var(--openms-dark);
+  height: 3px;
+  width: 1.75rem;
+  left: calc(50% - 0.875rem);
+  border-radius: 1px;
+}
+
+.navbar.is-fresh .navbar-burger span:nth-child(1),
+#navbar-clone.navbar.is-fresh .navbar-burger span:nth-child(1) {
+  top: calc(50% - 8px);
+}
+
+.navbar.is-fresh .navbar-burger span:nth-child(2),
+#navbar-clone.navbar.is-fresh .navbar-burger span:nth-child(2) {
+  top: calc(50% - 1.5px);
+}
+
+.navbar.is-fresh .navbar-burger span:nth-child(3),
+#navbar-clone.navbar.is-fresh .navbar-burger span:nth-child(3) {
+  top: calc(50% + 5px);
+}
+
+.navbar.is-fresh .navbar-burger:hover,
+#navbar-clone.navbar.is-fresh .navbar-burger:hover {
+  background-color: rgba(var(--openms-yellow-rgb), 0.15);
 }
 
 .navbar.is-fresh {
@@ -19,6 +171,12 @@
 .navbar.is-fresh .container,
 .navbar.is-fresh .navbar-brand {
   min-height: 5.5rem;
+}
+
+.navbar.is-fresh .navbar-item:has(.signup-button) {
+  flex-shrink: 0;
+  padding-left: 0.35rem;
+  padding-right: 0.35rem;
 }
 
 .navbar.is-fresh .navbar-brand .navbar-brand-link {
@@ -35,36 +193,22 @@
   padding-right: 0;
 }
 
-.navbar.is-fresh .navbar-logo-text {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: var(--openms-dark);
+.navbar.is-fresh .navbar-logo-text,
+#navbar-clone.navbar.is-fresh .navbar-logo-text {
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-heading-lg-size);
+  font-weight: var(--openms-heading-lg-weight);
+  color: var(--openms-dark) !important;
   line-height: 1;
 }
 
-@media only screen and (max-width: 768px) {
-  .navbar.is-fresh,
-  .navbar.is-fresh .container,
-  .navbar.is-fresh .navbar-brand {
-    min-height: 4.5rem;
-  }
-
-  .navbar.is-fresh .navbar-brand {
-    padding-left: 1.25rem;
-  }
-
-  .navbar.is-fresh .navbar-brand img.navbar-logo {
-    max-height: 56px !important;
-    height: 56px !important;
-  }
-
-  .navbar.is-fresh .navbar-logo-text {
-    font-size: 1.5rem;
-  }
+.navbar.is-fresh .navbar-brand .navbar-brand-link:hover .navbar-logo-text,
+#navbar-clone.navbar.is-fresh .navbar-brand .navbar-brand-link:hover .navbar-logo-text {
+  color: var(--openms-blue) !important;
 }
 
 /* Solid bar over the dark homepage hero (matches design mockup) */
-body:has(.hero-modern) #nav.navbar.is-fresh {
+body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
   background: rgba(var(--openms-white-rgb), 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 2px solid var(--openms-grey);
@@ -103,11 +247,8 @@ body:has(.hero-modern) #nav.navbar.is-fresh {
 }
 
 .footer-title {
-  font-size: 1.75rem;
-  font-weight: 800;
   color: var(--openms-white);
   margin-bottom: 1.5rem;
-  letter-spacing: -0.3px;
 }
 
 /* ---- Partner logo row ---- */
@@ -161,7 +302,7 @@ body:has(.hero-modern) #nav.navbar.is-fresh {
 
 /* ---- Column heading ---- */
 .footer-group-heading {
-  font-size: 0.68rem;
+  font-size: var(--openms-text-min);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -180,7 +321,7 @@ body:has(.hero-modern) #nav.navbar.is-fresh {
 .footer-link-group ul li a {
   color: var(--openms-grey);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: var(--openms-body-size);
   display: flex;
   align-items: center;
   min-height: 44px;
@@ -235,7 +376,7 @@ body:has(.hero-modern) #nav.navbar.is-fresh {
 /* ---- Copyright ---- */
 .footer-copyright {
   color: rgba(var(--openms-white-rgb), 0.45);
-  font-size: 0.85rem;
+  font-size: var(--openms-text-min);
 }
 
 /* =============================================

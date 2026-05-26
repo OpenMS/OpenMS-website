@@ -32,11 +32,6 @@
     align-items: center;
 }
 
-.shell-title {
-    font-size: 35px;
-    font-weight: bold;
-}
-
 .shell-lesson {
     text-align: left;
     flex: 1;
