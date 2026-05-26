@@ -48,8 +48,8 @@
           >{{ $secondaryText }}</a>
           {{- end }}
         </div>
+        {{ partial "hero-stats.html" (dict "stats" $stats "class" "hero-modern__stats") }}
       </div>
     </div>
   </section>
-  {{ partial "hero-stats.html" (dict "stats" $stats "class" "hero-modern__stats") }}
 </div>

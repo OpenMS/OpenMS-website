@@ -48,7 +48,6 @@ button,
 
 /* Presentations — 18pt */
 .openms-text-presentation,
-.hero-modern__description,
 .keyfeatures > .container > p {
   font-family: var(--openms-font-body);
   font-size: var(--openms-presentation-size);
