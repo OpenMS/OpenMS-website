@@ -1,0 +1,43 @@
+/* OpenMS brand palette — load before other site CSS (filename sorts first) */
+:root {
+  --fontFamily: {{ .Site.Params.font.name }};
+
+  --openms-yellow: #ffcb4f;
+  --openms-orange: #ff7501;
+  --openms-pink: #ff03cb;
+  --openms-purple: #b503ff;
+  --openms-blue: #3157e9;
+  --openms-dark: #231f20;
+  --openms-grey: #c2babc;
+  --openms-white: #ffffff;
+
+  --openms-yellow-rgb: 255, 203, 79;
+  --openms-orange-rgb: 255, 117, 1;
+  --openms-pink-rgb: 255, 3, 203;
+  --openms-purple-rgb: 181, 3, 255;
+  --openms-blue-rgb: 49, 87, 233;
+  --openms-dark-rgb: 35, 31, 32;
+  --openms-grey-rgb: 194, 186, 188;
+  --openms-white-rgb: 255, 255, 255;
+
+  --colorPrimaryDark: var(--openms-blue);
+  --colorPrimaryDarkBtn: var(--openms-orange);
+  --colorPrimary: var(--openms-blue);
+  --colorPrimaryLight: var(--openms-purple);
+  --colorSecondaryDark: var(--openms-dark);
+  --colorSecondary: var(--openms-grey);
+  --colorSecondaryLight: var(--openms-white);
+  --colorHeading: var(--openms-dark);
+  --colorHighlight: var(--openms-yellow);
+  --colorShadow: rgba(var(--openms-dark-rgb), 0.1);
+  --colorContentLink: var(--openms-blue);
+  --colorIcon: var(--openms-blue);
+  --colorNoteHeading: var(--openms-blue);
+  --colorNoteContent: var(--openms-grey);
+  --colorInfoHeading: var(--openms-orange);
+  --colorInfoContent: var(--openms-grey);
+  --colorWarningHeading: var(--openms-pink);
+  --colorWarningContent: var(--openms-grey);
+  --colorTipHeading: var(--openms-purple);
+  --colorTipContent: var(--openms-grey);
+}

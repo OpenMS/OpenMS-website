@@ -4,7 +4,7 @@
 
 .casestudies a:hover {
     text-decoration: none;
-    color:black
+    color: var(--openms-dark);
 }
 
 .casestudies-title {
@@ -29,7 +29,7 @@
 }
 
 .casestudies a {
-    color: rgb(1, 50, 67) !important;
+    color: var(--openms-blue) !important;
 }
 
 .casestudies-box-title {
@@ -62,7 +62,7 @@
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     /* Black, with 10% opacity */
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 15px rgba(var(--openms-dark-rgb), 0.1);
     position: relative;
     overflow: hidden;
 }
@@ -74,7 +74,7 @@
     left: 0;
     right: 100%;
     bottom: 0;
-    background: rgb(1, 50, 67);
+    background: var(--openms-blue);
     height: 4px;
     -webkit-transition-property: right;
     transition-property: right;

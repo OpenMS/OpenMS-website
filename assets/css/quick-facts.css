@@ -28,12 +28,12 @@
   height: 86px;
   font-size: 36px;
   font-family: 'Bebas Neue', cursive;
-  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  background: linear-gradient(45deg, transparent 5%, var(--openms-pink) 5%);
   border: 0;
-  color: #fff;
+  color: var(--openms-white);
   letter-spacing: 3px;
   line-height: 88px;
-  box-shadow: 6px 0px 0px #00E6F6;
+  box-shadow: 6px 0px 0px var(--openms-blue);
   outline: transparent;
   position: relative;
 }
@@ -53,8 +53,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
-  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  background: linear-gradient(45deg, transparent 3%, var(--openms-blue) 3%, var(--openms-blue) 5%, var(--openms-pink) 5%);
+  text-shadow: -3px -3px 0px var(--openms-yellow), 3px 3px 0px var(--openms-blue);
   clip-path: var(--slice-0);
 }
 

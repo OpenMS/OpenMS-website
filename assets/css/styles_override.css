@@ -1,42 +1,73 @@
 /* Back to top – colour override to match footer theme */
 #backtotop a {
-  background-color: #0b214a;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  background-color: var(--openms-blue);
+  border: 2px solid rgba(var(--openms-white-rgb), 0.25);
 }
 
 #backtotop.visible a:hover {
-  background-color: #1a3a7a;
+  background-color: var(--openms-purple);
 }
 
 .navbar.is-fresh .navbar-item.has-dropdown .navbar-link {
   color: var(--colorPrimaryDark);
 }
 
+.navbar.is-fresh {
+  min-height: 5.5rem;
+}
+
+.navbar.is-fresh .container,
+.navbar.is-fresh .navbar-brand {
+  min-height: 5.5rem;
+}
+
 .navbar.is-fresh .navbar-brand .navbar-brand-link {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.875rem;
   padding-left: 0;
 }
 
-.navbar.is-fresh .navbar-brand img {
-  max-height: 50px !important;
-  height: 50px;
-  width: auto;
+.navbar.is-fresh .navbar-brand img.navbar-logo {
+  max-height: 88px !important;
+  height: 88px !important;
+  width: auto !important;
+  padding-right: 0;
 }
 
 .navbar.is-fresh .navbar-logo-text {
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   font-weight: 700;
-  color: #001a4d;
+  color: var(--openms-dark);
   line-height: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar.is-fresh,
+  .navbar.is-fresh .container,
+  .navbar.is-fresh .navbar-brand {
+    min-height: 4.5rem;
+  }
+
+  .navbar.is-fresh .navbar-brand {
+    padding-left: 1.25rem;
+  }
+
+  .navbar.is-fresh .navbar-brand img.navbar-logo {
+    max-height: 56px !important;
+    height: 56px !important;
+  }
+
+  .navbar.is-fresh .navbar-logo-text {
+    font-size: 1.5rem;
+  }
 }
 
 /* Solid bar over the dark homepage hero (matches design mockup) */
 body:has(.hero-modern) #nav.navbar.is-fresh {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(var(--openms-white-rgb), 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 2px solid #e8eaed;
+  border-bottom: 2px solid var(--openms-grey);
 }
 
 @media only screen and (max-width: 850px) {
@@ -50,8 +81,8 @@ body:has(.hero-modern) #nav.navbar.is-fresh {
    ============================================= */
 
 .footer-redesign {
-  background-color: #0b214a;
-  color: #e2e8f0;
+  background-color: var(--openms-blue);
+  color: var(--openms-grey);
   padding: 3rem 0 0;
   font-family: inherit;
 }
@@ -74,7 +105,7 @@ body:has(.hero-modern) #nav.navbar.is-fresh {
 .footer-title {
   font-size: 1.75rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--openms-white);
   margin-bottom: 1.5rem;
   letter-spacing: -0.3px;
 }
@@ -99,8 +130,8 @@ body:has(.hero-modern) #nav.navbar.is-fresh {
 
 .footer-link-group ul li a:focus-visible,
 .footer-socials a:focus-visible {
-  color: #ffffff;
-  outline: 2px solid rgba(255, 255, 255, 0.45);
+  color: var(--openms-white);
+  outline: 2px solid rgba(var(--openms-white-rgb), 0.45);
   outline-offset: 4px;
 }
 
@@ -134,7 +165,7 @@ body:has(.hero-modern) #nav.navbar.is-fresh {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(var(--openms-white-rgb), 0.45);
   margin: 0 0 0.875rem 0;
   padding: 0;
 }
@@ -147,7 +178,7 @@ body:has(.hero-modern) #nav.navbar.is-fresh {
 }
 
 .footer-link-group ul li a {
-  color: #c8d4e8;
+  color: var(--openms-grey);
   text-decoration: none;
   font-size: 0.9rem;
   display: flex;
@@ -157,7 +188,7 @@ body:has(.hero-modern) #nav.navbar.is-fresh {
 }
 
 .footer-link-group ul li a:hover {
-  color: #ffffff;
+  color: var(--openms-white);
   text-decoration: underline;
 }
 
@@ -166,7 +197,7 @@ body:has(.hero-modern) #nav.navbar.is-fresh {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.25rem 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(var(--openms-white-rgb), 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -187,12 +218,12 @@ body:has(.hero-modern) #nav.navbar.is-fresh {
   justify-content: center;
   min-width: 44px;
   min-height: 44px;
-  color: #c8d4e8;
+  color: var(--openms-grey);
   transition: color 0.2s ease;
 }
 
 .footer-socials a:hover {
-  color: #ffffff;
+  color: var(--openms-white);
 }
 
 .footer-socials svg.icon {
@@ -203,7 +234,7 @@ body:has(.hero-modern) #nav.navbar.is-fresh {
 
 /* ---- Copyright ---- */
 .footer-copyright {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(var(--openms-white-rgb), 0.45);
   font-size: 0.85rem;
 }
 

@@ -33,10 +33,15 @@ languages:
     languageName: English
     params:
       description: Why OpenMS? Mass Spectrometry. Visualizations. Open source.
+      newsBanner:
+        enabled: true
+        label: News
+        text: OpenMS 3.5.0 is now available — ARM64 Linux support and more.
+        link: /news/release3.5/
+        linkText: Read more
       navbarlogo:
         image: OpenMS_transparent_blackFont.png
         link: /
-        text: OpenMS
         altText: OpenMS
       hero:
         titleBefore: "The "
@@ -60,7 +65,7 @@ languages:
 
       heroGroup:
         - title: "OpenMS allows users to:"
-          bgColor: ECF2F9
+          bgColor: C2BABC
           heroItems:
             - title: Run existing workflows
               subtitle: Run existing workflows for proteomics and metabolomics with OpenMS in KNIME.
@@ -82,7 +87,7 @@ languages:
               buttonText: Get Started
               buttonLink: "https://pyopenms.readthedocs.io/en/latest/"
         - title: "Advanced users / developers can use OpenMS to:"
-          bgColor: FFF1E0
+          bgColor: FFCB4F
           heroItems:
             - title: Analyze large datasets
               subtitle: Run workflows on very large datasets on powerful compute infrastructure

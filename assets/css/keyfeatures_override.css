@@ -4,7 +4,7 @@
 
 .keyfeatures a:hover {
     text-decoration: none;
-    color:black
+    color: var(--openms-dark);
 }
 
 .keyfeatures-img{
@@ -38,11 +38,11 @@
 }
 
 .keyfeatures-box-content:hover {
-    box-shadow: 0 8px 16px 0 rgba(12, 42, 96, 0.4);
+    box-shadow: 0 8px 16px 0 rgba(var(--openms-blue-rgb), 0.4);
   }
 
 .keyfeatures a {
-    color: rgb(1, 50, 67) !important;
+    color: var(--openms-blue) !important;
 }
 
 .keyfeatures-box-title {
@@ -70,5 +70,5 @@
 }
 
 .keyfeatures-underline:before {
-    background: rgb(1, 50, 67);
+    background: var(--openms-blue);
 }

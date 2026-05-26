@@ -1,16 +1,15 @@
-/* Modern hero — matches OpenMS_Modern_Dynamic_Design mockup */
+/* Modern hero — OpenMS brand palette */
 
 .hero-modern {
-  --hero-orange: #ff9500;
-  --hero-pink: #ff1b9e;
-  --hero-navy: #001a4d;
-  --hero-accent-yellow: #ffd700;
-  --hero-white: #ffffff;
-
   position: relative;
   overflow: hidden;
-  color: var(--hero-white);
-  background: linear-gradient(135deg, var(--hero-navy) 0%, #1a2a5f 50%, #0a1a3f 100%);
+  color: var(--openms-white);
+  background: linear-gradient(
+    135deg,
+    var(--openms-blue) 0%,
+    var(--openms-purple) 50%,
+    var(--openms-dark) 100%
+  );
   padding: 5rem 2.5rem;
   min-height: 32rem;
 }
@@ -29,7 +28,11 @@
   right: -10%;
   width: 37.5rem;
   height: 37.5rem;
-  background: radial-gradient(circle, rgba(255, 149, 0, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(var(--openms-orange-rgb), 0.15) 0%,
+    transparent 70%
+  );
 }
 
 .hero-modern::after {
@@ -37,7 +40,11 @@
   left: -5%;
   width: 31.25rem;
   height: 31.25rem;
-  background: radial-gradient(circle, rgba(255, 27, 158, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(var(--openms-pink-rgb), 0.1) 0%,
+    transparent 70%
+  );
 }
 
 .hero-modern__container {
@@ -57,11 +64,16 @@
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
-  color: var(--hero-white);
+  color: var(--openms-white);
 }
 
 .hero-modern__gradient-text {
-  background: linear-gradient(90deg, var(--hero-accent-yellow), var(--hero-orange), var(--hero-pink));
+  background: linear-gradient(
+    90deg,
+    var(--openms-yellow),
+    var(--openms-orange),
+    var(--openms-pink)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -89,32 +101,33 @@
   font-weight: 600;
   border-radius: 0.5rem;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .hero-modern__btn--primary {
-  color: var(--hero-white);
-  background: linear-gradient(135deg, var(--hero-orange), var(--hero-pink));
-  box-shadow: 0 0.5rem 1.5rem rgba(255, 149, 0, 0.3);
+  color: var(--openms-white);
+  background: linear-gradient(135deg, var(--openms-orange), var(--openms-pink));
+  box-shadow: 0 0.5rem 1.5rem rgba(var(--openms-orange-rgb), 0.3);
 }
 
 .hero-modern__btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0.75rem 2rem rgba(255, 149, 0, 0.4);
-  color: var(--hero-white);
+  box-shadow: 0 0.75rem 2rem rgba(var(--openms-orange-rgb), 0.4);
+  color: var(--openms-white);
 }
 
 .hero-modern__btn--secondary {
-  color: var(--hero-white);
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid var(--hero-white);
+  color: var(--openms-white);
+  background: rgba(var(--openms-white-rgb), 0.15);
+  border: 2px solid var(--openms-white);
   backdrop-filter: blur(10px);
 }
 
 .hero-modern__btn--secondary:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: var(--hero-accent-yellow);
-  color: var(--hero-white);
+  background: rgba(var(--openms-white-rgb), 0.25);
+  border-color: var(--openms-yellow);
+  color: var(--openms-white);
 }
 
 .hero-modern__stats {
@@ -122,7 +135,7 @@
   flex-wrap: wrap;
   gap: 2.5rem;
   padding-top: 2.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(var(--openms-white-rgb), 0.1);
 }
 
 .hero-modern__stat {
@@ -134,7 +147,7 @@
 .hero-modern__stat-number {
   font-size: 1.75rem;
   font-weight: 800;
-  background: linear-gradient(90deg, var(--hero-accent-yellow), var(--hero-orange));
+  background: linear-gradient(90deg, var(--openms-yellow), var(--openms-orange));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -169,7 +182,7 @@
   width: 0.375rem;
   height: 20%;
   border-radius: 0.1875rem;
-  background: linear-gradient(180deg, var(--hero-orange), var(--hero-pink));
+  background: linear-gradient(180deg, var(--openms-orange), var(--openms-pink));
   animation: hero-modern-waveform 2s ease-in-out infinite;
 }
 

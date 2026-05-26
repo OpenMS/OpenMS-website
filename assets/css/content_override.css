@@ -1,5 +1,5 @@
 .content-container .divider {
-    background: #1e0010;
+    background: var(--openms-dark);
 }
 
 .content-container h1 {

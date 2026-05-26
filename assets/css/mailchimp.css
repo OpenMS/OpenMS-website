@@ -1,5 +1,5 @@
 :root {
-  --openmsSlateGray: rgb(108, 122, 137);
+  --openmsSlateGray: var(--openms-grey);
 }
 
 .sign-up-container {
