@@ -1,39 +1,79 @@
 {{ define "main" }}
     {{ if .Site.Params.hero }}
-    {{ partial "hero.html" . }}
+    <div class="landing-section landing-section--first">
+      {{ partial "hero.html" . }}
+    </div>
     {{ end }}
 
     {{ if .Site.Params.panel }}
-    {{ partial "panel.html" . }}
+    <div class="landing-section">
+      {{ partial "panel.html" . }}
+    </div>
     {{ end }}
 
     {{ if .Content }}
-    {{ partial "single/content.html" . }}
+    <div class="landing-section">
+      {{ partial "single/content.html" . }}
+    </div>
     {{ end }}
 
     {{ if .Site.Params.keyfeatures }}
-    {{ partial "keyfeatures.html" . }}
+    <div class="landing-section landing-section--after-hero">
+      {{ partial "keyfeatures.html" . }}
+    </div>
     {{ end }}
 
-    {{partial "webapps.html" . }}
-    
+    <div class="landing-section">
+      {{ partial "university-partners.html" (dict "showHeader" true) }}
+    </div>
+
+    {{ partial "webapps.html" . }}
+
     {{ if .Site.Params.heroGroup }}
-    {{ partial "heroitems.html" . }}
+    <div class="landing-section">
+      {{ partial "heroitems.html" (dict "Site" .Site "variant" "users") }}
+    </div>
     {{ end }}
+
+    <div class="landing-section">
+      {{ partial "trusted-by.html" . }}
+    </div>
+
+    {{ if .Site.Params.heroGroup }}
+    <div class="landing-section">
+      {{ partial "heroitems.html" (dict "Site" .Site "variant" "developers") }}
+    </div>
+    {{ end }}
+
+    <div class="landing-section">
+      {{ partial "hero-sponsors.html" . }}
+    </div>
+
+    <div class="landing-section">
+      {{ partial "contact-area.html" . }}
+    </div>
     
-    {{ partial "quick-facts.html" . }}
+    {{/* quick-facts hidden per UX/UI update */}}
 
     {{ if .Site.Params.shell }}
-    {{ partial "shell.html" . }}
+    <div class="landing-section">
+      {{ partial "shell.html" . }}
+    </div>
     {{ end }}
 
     {{ if .Site.Params.tabs }}
-    {{ partial "tabs.html" . }}
+    <div class="landing-section">
+      {{ partial "tabs.html" . }}
+    </div>
     {{ end }}
 
     {{ if .Site.Params.casestudies }}
-    {{ partial "casestudies.html" . }}
+    <div class="landing-section">
+      {{ partial "casestudies.html" . }}
+    </div>
     {{ end }}
 
-    {{ partial "tally.html" . }}
+    <div class="landing-section">
+      {{ partial "tally.html" . }}
+    </div>
 {{ end }}

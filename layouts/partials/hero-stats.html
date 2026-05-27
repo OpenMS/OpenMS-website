@@ -1,11 +1,29 @@
 {{- $stats := .stats }}
 {{- $class := .class | default "hero-modern__stats" }}
+{{- $below := in $class "hero-modern__stats--below" }}
 {{- with $stats }}
 {{- $statCount := len . }}
 <dl class="{{ $class }}" aria-label="Key metrics">
   {{- range $index, $stat := . }}
-  <div class="hero-modern__stat">
-    <dt class="hero-modern__stat-label">{{ $stat.label }}</dt>
+  <div class="hero-modern__stat{{ if $below }} hero-modern__stat--card{{ end }}">
+    <dt class="hero-modern__stat-label">
+      <span class="hero-modern__stat-icon" aria-hidden="true">
+        {{- if eq $index 0 -}}
+        <svg viewBox="0 0 24 24" width="14" height="14" focusable="false" aria-hidden="true">
+          <path fill="currentColor" d="M8 2h2v2h4V2h2v2h2a2 2 0 0 1 2 2v3H4V6a2 2 0 0 1 2-2h2V2Zm12 9v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-9h16Zm-11 4v2h2v-2H9Zm4 0v2h2v-2h-2Z"/>
+        </svg>
+        {{- else if eq $index 1 -}}
+        <svg viewBox="0 0 24 24" width="14" height="14" focusable="false" aria-hidden="true">
+          <path fill="currentColor" d="M9 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm6 0a4 4 0 1 0-4-4 4 4 0 0 0 4 4ZM9 13c-2.67 0-7 1.34-7 4v2h9v-2c0-.76.22-1.47.6-2.08A10.6 10.6 0 0 0 9 13Zm6 0c-2.97 0-9 1.49-9 4.5V20h18v-2.5c0-3.01-6.03-4.5-9-4.5Z"/>
+        </svg>
+        {{- else -}}
+        <svg viewBox="0 0 24 24" width="14" height="14" focusable="false" aria-hidden="true">
+          <path fill="currentColor" d="M12 2 2 7v6c0 5.3 3.4 10.26 10 12 6.6-1.74 10-6.7 10-12V7L12 2Zm4.6 9.2-5.1 5.1a1 1 0 0 1-1.41 0l-2.7-2.7 1.41-1.41 2 1.99 4.39-4.39 1.41 1.41Z"/>
+        </svg>
+        {{- end -}}
+      </span>
+      <span>{{ $stat.label }}</span>
+    </dt>
     <dd
       class="hero-modern__stat-number"
       data-count-value="{{ $stat.value }}"
