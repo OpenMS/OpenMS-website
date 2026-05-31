@@ -44,6 +44,9 @@
   --openms-blue-rgb: 49, 87, 233;
   --openms-navy-rgb: 12, 33, 113;
   --openms-dark-rgb: 35, 31, 32;
+
+  /* Solid section backgrounds */
+  --openms-bg-navy: var(--openms-navy);
   --openms-grey-rgb: 194, 186, 188;
   --openms-white-rgb: 255, 255, 255;
 

@@ -1,0 +1,73 @@
+{{- $section := .Site.Params.trustedBySection | default dict -}}
+{{- $items := .Site.Params.trustedBy | default (slice) -}}
+{{- if gt (len $items) 0 -}}
+{{- $eyebrow := index $section "eyebrow" | default "Trusted by" -}}
+{{- $title := index $section "title" | default "As used by leading teams" -}}
+{{- $titleHighlight := index $section "titleHighlight" -}}
+{{- $subtitle := index $section "subtitle" | default "" -}}
+<section class="trusted-by" aria-labelledby="trusted-by-title">
+  <div class="trusted-by__inner">
+    <header class="trusted-by__header">
+      <p class="trusted-by__eyebrow">{{ $eyebrow }}</p>
+      <h2 id="trusted-by-title" class="trusted-by__title">
+        {{- if and $titleHighlight (in $title $titleHighlight) -}}
+        {{ replace $title $titleHighlight (printf "<span class=\"trusted-by__title-accent\">%s</span>" $titleHighlight) | safeHTML }}
+        {{- else -}}
+        {{ $title }}
+        {{- end -}}
+      </h2>
+      {{- with $subtitle }}
+      <p class="trusted-by__subtitle">{{ . }}</p>
+      {{- end }}
+    </header>
+
+    <ul class="trusted-by__rail" role="list" aria-label="Trusted by organizations">
+      {{- range $items }}
+      {{- $name := .name | default "Organization" -}}
+      {{- $url := .url | default "" -}}
+      {{- $logo := .logo | default "" -}}
+      {{- $logoSize := .logoSize | default "" -}}
+      {{- $abbr := .abbr | default (substr $name 0 1) -}}
+      {{- $isExternal := and $url (in $url "://") -}}
+      <li class="trusted-by__entry" role="listitem">
+        {{- $hasLogo := ne $logo "" -}}
+        {{- if $url }}
+        <a
+          class="trusted-by__tile trusted-by__tile--link{{ if $hasLogo }} trusted-by__tile--has-logo{{ end }}"
+          href="{{ $url }}"
+          {{- if $isExternal }}
+          target="_blank"
+          rel="noopener noreferrer"
+          {{- end }}
+          aria-label="{{ $name }}{{ if $isExternal }} (opens in new tab){{ end }}"
+        >
+        {{- else }}
+        <div class="trusted-by__tile trusted-by__tile--static{{ if $hasLogo }} trusted-by__tile--has-logo{{ end }}" aria-label="{{ $name }}">
+        {{- end }}
+          <div class="trusted-by__mark" aria-hidden="{{ if $hasLogo }}true{{ else }}false{{ end }}">
+            {{- if $hasLogo }}
+            <img
+              class="trusted-by__logo{{ with $logoSize }} trusted-by__logo--{{ . }}{{ end }}"
+              src="{{ $logo | relURL }}"
+              alt="{{ $name }}"
+              loading="lazy"
+              decoding="async"
+            />
+            {{- else }}
+            <span class="trusted-by__monogram" aria-hidden="true">{{ $abbr }}</span>
+            {{- end }}
+          </div>
+          {{- if not $hasLogo }}
+          <span class="trusted-by__name">{{ $name }}</span>
+          {{- end }}
+        {{- if $url }}
+        </a>
+        {{- else }}
+        </div>
+        {{- end }}
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+</section>
+{{- end -}}

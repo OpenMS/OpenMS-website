@@ -2,7 +2,14 @@
     padding: 20px;
 }
 
-.keyfeatures a:hover {
+/* Modern homepage keyfeatures — spacing lives in keyfeatures-modern.css */
+.keyfeatures.keyfeatures-modern {
+    margin: 0;
+    width: 100%;
+    max-width: none;
+}
+
+.keyfeatures:not(.keyfeatures-modern) a:hover {
     text-decoration: none;
     color: var(--openms-dark);
 }
@@ -38,7 +45,7 @@
     box-shadow: 0 8px 16px 0 rgba(var(--openms-blue-rgb), 0.4);
   }
 
-.keyfeatures a {
+.keyfeatures:not(.keyfeatures-modern) a {
     color: var(--openms-blue) !important;
 }
 

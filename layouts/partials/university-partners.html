@@ -1,6 +1,7 @@
 {{- $showHeader := .showHeader | default true -}}
+{{- $staticOnly := .staticOnly | default false -}}
 <section
-  class="uni-partners"
+  class="uni-partners{{ if $staticOnly }} uni-partners--static{{ end }}"
   {{- if $showHeader }}
   aria-labelledby="uni-partners-title"
   {{- else }}
@@ -10,11 +11,16 @@
   <div class="uni-partners__inner">
     {{- if $showHeader }}
     <header class="uni-partners__header">
-      <p class="uni-partners__eyebrow">Partners</p>
-      <h2 id="uni-partners-title" class="uni-partners__title">University Partners</h2>
+      <div class="uni-partners__header-main">
+        <p class="uni-partners__eyebrow">Partners</p>
+        <h2 id="uni-partners-title" class="uni-partners__title">
+          University <span class="uni-partners__title-accent">Partners</span>
+        </h2>
+      </div>
     </header>
     {{- end }}
 
+    {{- if not $staticOnly }}
     <div class="uni-partners__marquee" aria-hidden="true">
       <div class="uni-partners__track">
         <div class="uni-partners__row">
@@ -71,6 +77,7 @@
         </div>
       </div>
     </div>
+    {{- end }}
 
     <div class="uni-partners__static" role="list" aria-label="University partners logos">
       <a class="uni-partners__item" href="https://kohlbacherlab.org/" target="_blank" rel="noopener noreferrer">

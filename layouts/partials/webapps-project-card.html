@@ -1,0 +1,33 @@
+{{- $project := .project }}
+{{- $ctaText := .ctaText | default "View project" }}
+{{- $url := $project.url }}
+{{- $isExternal := in $url "://" }}
+{{- $ariaLabel := printf "%s — %s" $project.name $ctaText }}
+{{- if $isExternal }}
+  {{- $ariaLabel = printf "%s (opens in new tab)" $ariaLabel }}
+{{- end }}
+<article class="webapps-project-card">
+  <a
+    class="webapps-project-card__surface"
+    href="{{ $url }}"
+    aria-label="{{ $ariaLabel }}"
+    {{- if $isExternal }}
+    target="_blank"
+    rel="noopener noreferrer"
+    {{- end }}
+  >
+    <div class="webapps-project-card__media">
+      <img
+        src="{{ $project.logo | relURL }}"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <div class="webapps-project-card__overlay" aria-hidden="true">
+      <p class="webapps-project-card__text">{{ $project.description }}</p>
+      <span class="webapps-project-card__cta">{{ $ctaText }} →</span>
+    </div>
+  </a>
+</article>

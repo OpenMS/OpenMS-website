@@ -33,7 +33,7 @@ button,
 .subtitle:not(.is-1):not(.is-2):not(.is-3),
 .navbar-item,
 .navbar-link,
-.news-banner__message {
+.news-banner__headline {
   font-family: var(--openms-font-body);
   font-weight: var(--openms-body-weight);
 }
@@ -147,9 +147,10 @@ blockquote p {
   font-size: inherit;
 }
 
-/* Web minimum — nothing smaller than 11pt (news banner uses compact sizes in news-banner.css) */
+/* Web minimum — nothing smaller than 11pt */
 .hero-modern__stat-label,
 .hero-modern__btn,
+.footer-tagline,
 .footer-link-group ul li a,
 .footer-copyright,
 .footer-column-label,

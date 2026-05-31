@@ -73,17 +73,18 @@ languages:
         linkLabel: Visit website
       trustedBy:
         - name: Immatics
-          abbr: I
+          logo: /images/logos/immatics.png
           url: https://immatics.com/
         - name: Korean team
           abbr: KR
           # url: https://example.com
         - name: University of Toronto
-          abbr: UofT
-          # logo: /images/logos/toronto.jpeg
+          logo: /images/logos/toronto.jpeg
+          logoSize: large
+          url: http://www.moleculargenetics.utoronto.ca/faculty/2017/7/19/hannes-rost
         - name: University of Tübingen
-          abbr: UT
-          # logo: /images/logos/logo-uni-tuebingen.png
+          logo: /images/logos/logo-uni-tuebingen.png
+          url: https://kohlbacherlab.org/
       navbarlogo:
         image: OpenMS_transparent_blackFont.png
         link: /
@@ -295,6 +296,8 @@ languages:
                 link: /code-of-conduct
               - text: Contribute
                 link: /contribute
+              - text: OpenMS Fellowship
+                link: /news/fellowship2024/
               - text: Core Developers
                 link: /core_developers
           column3:
@@ -363,6 +366,8 @@ languages:
               url: /news
             - title: Getting Involved
               url: /contribute
+            - title: OpenMS Fellowship
+              url: /news/fellowship2024/
             - title: Annual Developer Meeting
               url: /news/
         - title: About
@@ -373,6 +378,8 @@ languages:
               url: /governance
             - title: Publications
               url: /publications
+            - title: Contact
+              url: /#contact
         - title: Partner with OpenMS
           url: /about#institutional-partners
           is_emphasized: true
@@ -383,6 +390,11 @@ languages:
               url: /help
             - title: Sponsor Us
               url: /about#sponsors
+        - title: Sponsor us
+          shortTitle: Sponsor
+          url: /about#sponsors
+          button: true
+          buttonVariant: sponsor
         - title: Donate
           url: /about#donate
           button: true

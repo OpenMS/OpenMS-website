@@ -39,16 +39,6 @@
       {{ partial "trusted-by.html" . }}
     </div>
 
-    {{ if .Site.Params.heroGroup }}
-    <div class="landing-section">
-      {{ partial "heroitems.html" (dict "Site" .Site "variant" "developers") }}
-    </div>
-    {{ end }}
-
-    <div class="landing-section">
-      {{ partial "hero-sponsors.html" . }}
-    </div>
-
     <div class="landing-section">
       {{ partial "contact-area.html" . }}
     </div>

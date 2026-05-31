@@ -36,12 +36,11 @@
 
 {{- $themeCssFiles := resources.Match "theme-css/*.css" -}}
 {{- $userCssFiles := resources.Match "css/*.css" -}}
-{{- $cssFiles := $themeCssFiles | append $userCssFiles }}
 
-{{- range $cssFiles -}}
-
-{{- $targetFile := printf "css/%s.css" . -}}
-
+{{- range $themeCssFiles -}}
+{{- $cssFileName := path.Base .Name -}}
+{{- if ne $cssFileName "keyfeatures.css" -}}
+{{- $targetFile := printf "css/%s" $cssFileName -}}
 {{ if $inServerMode -}}
 {{ $custom_style := . | resources.ExecuteAsTemplate $targetFile $page -}}
 <link rel="stylesheet" href="{{ $custom_style.RelPermalink }}">
@@ -49,5 +48,17 @@
 {{ $custom_style := . | resources.ExecuteAsTemplate $targetFile $page | minify | fingerprint -}}
 <link rel="stylesheet" href="{{ $custom_style.RelPermalink }}" integrity="{{ $custom_style.Data.Integrity }}">
 {{- end -}}
+{{- end -}}
+{{- end -}}
 
+{{- range $userCssFiles -}}
+{{- $cssFileName := path.Base .Name -}}
+{{- $targetFile := printf "css/%s" $cssFileName -}}
+{{ if $inServerMode -}}
+{{ $custom_style := . | resources.ExecuteAsTemplate $targetFile $page -}}
+<link rel="stylesheet" href="{{ $custom_style.RelPermalink }}">
+{{ else }}
+{{ $custom_style := . | resources.ExecuteAsTemplate $targetFile $page | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $custom_style.RelPermalink }}" integrity="{{ $custom_style.Data.Integrity }}">
+{{- end -}}
 {{- end -}}
