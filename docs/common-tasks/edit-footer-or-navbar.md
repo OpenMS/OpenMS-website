@@ -17,7 +17,7 @@ navbar:
     url: /research-partnerships/
     is_emphasized: true
   - title: Donate
-    url: /about#donate
+    url: /donate/
     button: true
 ```
 
@@ -56,7 +56,7 @@ footer:
     link: /sponsor-us/
   donate:
     text: Donate
-    link: /about#donate
+    link: /donate/
   socialmedia:
     - link: https://discord.com/invite/v9tv5BxPch
       icon: discord

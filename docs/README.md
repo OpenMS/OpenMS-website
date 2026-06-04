@@ -20,6 +20,7 @@ This guide is for **non–front-end contributors** who update [openms.de](https:
 | Change homepage headline, stats, or “What is OpenMS?” | [Edit the homepage hero & key features](common-tasks/edit-homepage-hero.md) |
 | Add or reorder a project on the homepage carousel | [Add a webapp to the homepage](common-tasks/add-webapp-to-homepage.md) |
 | Change footer links, navbar, or social links | [Edit footer or navbar](common-tasks/edit-footer-or-navbar.md) |
+| Set up Zeffy on the donate page | [Configure the donate page (Zeffy)](common-tasks/configure-donate-zeffy.md) |
 | Edit About, Contribute, Governance, etc. | [Edit a page](common-tasks/edit-a-page.md) |
 | Add or replace an image | [Add images](common-tasks/add-images.md) |
 | Preview the site on my computer | [Preview locally](getting-started/preview-locally.md) |

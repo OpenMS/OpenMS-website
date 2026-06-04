@@ -54,6 +54,8 @@
         {{- end }}
         </div>
 
+        {{ partial "navbar-mobile-ctas.html" (dict "Site" .Site "placement" "menu") }}
+
         <div class="navbar-actions">
         {{ partial "navbar-search.html" (dict "Site" .Site "variant" "desktop" "inputId" "navbar-search-input-clone") }}
         {{- range $navbar }}
@@ -63,7 +65,6 @@
         {{- end }}
         </div>
 
-        {{ partial "navbar-mobile-ctas.html" . }}
         {{ partial "navbar-social.html" . }}
       </div>
     </div>

@@ -94,6 +94,26 @@
   box-shadow: 0 0.5rem 1.5rem rgba(var(--openms-dark-rgb), 0.08);
 }
 
+/* Mobile menu — stack submenus below parent, not beside */
+@media (max-width: 1279px) {
+  .navbar.is-fresh .navbar-menu .navbar-item.has-dropdown,
+  #navbar-clone.navbar.is-fresh .navbar-menu .navbar-item.has-dropdown {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar.is-fresh .navbar-menu .navbar-item.has-dropdown .navbar-dropdown,
+  #navbar-clone.navbar.is-fresh .navbar-menu .navbar-item.has-dropdown .navbar-dropdown {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    float: none;
+    width: 100%;
+  }
+}
+
 @media (min-width: 1280px) {
   .navbar.is-fresh .navbar-item.has-dropdown .navbar-dropdown,
   #navbar-clone.navbar.is-fresh .navbar-item.has-dropdown .navbar-dropdown {
@@ -126,7 +146,30 @@
 .navbar.is-fresh .navbar-dropdown .navbar-item:hover,
 #navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item:hover {
   color: var(--openms-blue) !important;
-  background-color: rgba(var(--openms-blue-rgb), 0.1);
+  background-color: transparent !important;
+}
+
+/* Navbar links — color on hover only, no blue fill */
+.navbar.is-fresh .navbar-item:not(.navbar-cta-item):hover,
+.navbar.is-fresh .navbar-link:hover,
+.navbar.is-fresh a.navbar-item.is-secondary:hover,
+.navbar.is-fresh a.navbar-item.is-secondary:focus-visible,
+.navbar.is-fresh .navbar-item.has-dropdown:hover > .navbar-link,
+.navbar.is-fresh .navbar-item.has-dropdown > .navbar-link:hover,
+.navbar.is-fresh .navbar-item.has-dropdown > .navbar-link:focus-visible,
+.navbar.is-fresh .navbar-item.has-dropdown.is-active > .navbar-link,
+.navbar.is-fresh .navbar-dropdown .navbar-item:focus-visible,
+#navbar-clone.navbar.is-fresh .navbar-item:not(.navbar-cta-item):hover,
+#navbar-clone.navbar.is-fresh .navbar-link:hover,
+#navbar-clone.navbar.is-fresh a.navbar-item.is-secondary:hover,
+#navbar-clone.navbar.is-fresh a.navbar-item.is-secondary:focus-visible,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown:hover > .navbar-link,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown > .navbar-link:hover,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown > .navbar-link:focus-visible,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown.is-active > .navbar-link,
+#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item:focus-visible {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 /* Navbar CTAs — sizing in openms-buttons.css */
@@ -197,12 +240,12 @@
 
 @media (min-width: 1280px) {
   .navbar.is-fresh {
-    min-height: 5.5rem;
+    min-height: var(--openms-header-bar-min-height, 5.5rem);
   }
 
   .navbar.is-fresh .container,
   .navbar.is-fresh .navbar-brand {
-    min-height: 5.5rem;
+    min-height: var(--openms-header-bar-min-height, 5.5rem);
   }
 }
 
@@ -251,10 +294,14 @@
   padding-left: 0;
 }
 
-.navbar.is-fresh .navbar-brand img.navbar-logo {
-  max-height: 88px !important;
-  height: 88px !important;
+.navbar.is-fresh .navbar-brand img.navbar-logo,
+#navbar-clone.navbar.is-fresh .navbar-brand img.navbar-logo {
+  max-height: var(--openms-navbar-logo-height, 68px) !important;
+  height: var(--openms-navbar-logo-height, 68px) !important;
   width: auto !important;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
   padding-right: 0;
 }
 
@@ -1248,7 +1295,7 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
 
 /* Publications layout */
 .publications-layout__container {
-  max-width: min(100%, 52rem);
+  max-width: min(100%, 64rem);
 }
 
 .publications-layout .governance-hero {

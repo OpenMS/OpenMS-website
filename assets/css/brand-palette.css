@@ -15,6 +15,8 @@
   /* Body & secondary headings — Raleway (pt) */
   --openms-text-min: 11pt;
   --openms-navbar-font-size: 16px;
+  --openms-navbar-logo-height: 68px;
+  --openms-header-bar-min-height: calc(var(--openms-navbar-logo-height) + 1.25rem);
   /* Nav breakpoints: burger < 1280px; compact xl 1280–1535px; full desktop 1536px+ */
   --openms-nav-desktop-min: 1280px;
   --openms-nav-xl-wide-min: 1536px;

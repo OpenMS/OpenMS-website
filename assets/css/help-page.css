@@ -1,0 +1,27 @@
+.content-padding:has(.help-page) .content-container {
+  max-width: min(100%, 64rem);
+}
+
+.help-page__hint {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--openms-text-muted, #5a6474);
+}
+
+.help-page__resources {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.help-page__card--wide {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 860px) {
+  .help-page__resources {
+    grid-template-columns: 1fr;
+  }
+
+  .help-page__card--wide {
+    grid-column: auto;
+  }
+}

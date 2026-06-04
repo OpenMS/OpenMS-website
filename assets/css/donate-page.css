@@ -1,0 +1,67 @@
+.donate-page-layout__container {
+  max-width: min(100%, 64rem);
+}
+
+.donate-page__tax-note {
+  font-size: 0.95rem;
+  color: var(--openms-text-muted, #5a6474);
+}
+
+.donate-page__embed {
+  margin-top: 2rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--openms-border, #e2e8f0);
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+
+.donate-page__zeffy-iframe {
+  display: block;
+  width: 100%;
+  min-height: 42rem;
+  border: 0;
+}
+
+.donate-page__actions {
+  margin-top: 1.25rem;
+}
+
+.donate-page__embed-hint {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--openms-text-muted, #5a6474);
+}
+
+.donate-page__embed-hint code {
+  font-size: 0.85em;
+}
+
+.donate-page__pending {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--openms-surface-muted, #f4f6f9);
+  border: 1px dashed var(--openms-border, #cbd5e1);
+}
+
+.donate-page__pending p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.donate-page__alt {
+  margin-top: 2.5rem;
+  padding-top: 0;
+}
+
+.donate-page__alt h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .donate-page__zeffy-iframe {
+    min-height: 36rem;
+  }
+}

@@ -6,9 +6,7 @@ sidebar: false
 ---
 
 <article class="openms-lib-page">
-
 <div class="governance-page openms-lib-page__intro">
-
   <header class="governance-hero" aria-label="OpenMS C++ core library">
     <p class="governance-hero__eyebrow">Infrastructure</p>
     <h1 class="governance-hero__title">
@@ -34,7 +32,6 @@ sidebar: false
       >WebApp template</a>
     </div>
   </header>
-
   <nav class="governance-jump-links" aria-label="OpenMS-lib page sections">
     <a href="#overview">Overview</a>
     <a href="#what-is-openms">What is OpenMS?</a>
@@ -42,7 +39,6 @@ sidebar: false
     <a href="#developers">For developers</a>
     <a href="#get-started">Get started</a>
   </nav>
-
   <section class="governance-grid" id="overview" aria-label="OpenMS library overview">
     <article class="governance-card">
       <p class="governance-card__eyebrow">Core library</p>
@@ -73,9 +69,7 @@ sidebar: false
       </p>
     </article>
   </section>
-
 </div>
-
 <div class="openms-lib-page__modules" aria-label="OpenMS capabilities and workflows">
   <div id="what-is-openms" class="openms-lib-page__anchor">
     {{< keyfeatures >}}
@@ -87,9 +81,7 @@ sidebar: false
     {{< heroitems variant="developers" >}}
   </div>
 </div>
-
 <div class="governance-page openms-lib-page__outro">
-
   <section class="governance-section" id="get-started">
     <h2>Get started developing</h2>
     <p>
@@ -123,7 +115,5 @@ sidebar: false
       <a class="about-cta-btn about-cta-btn--donate" href="https://github.com/OpenMS/OpenMS" target="_blank" rel="noopener noreferrer">View on GitHub</a>
     </div>
   </section>
-
 </div>
-
 </article>

@@ -5,7 +5,7 @@ hideShortcuts: true
 hidePageTitle: true
 ---
 
-<div class="governance-page">
+<div class="governance-page about-page">
   <header class="governance-hero" aria-label="About OpenMS Inc.">
     <p class="governance-hero__eyebrow">About us</p>
     <h1 class="governance-hero__title">
@@ -67,11 +67,11 @@ hidePageTitle: true
       support OpenMS open-source software, documentation, and community development.
     </p>
     <p>
-      You can also donate via
-      <a href="https://opencollective.com/openms">Open Collective</a>.
+      Give online via our
+      <a href="/donate/">donation page</a> (Zeffy and Open Collective).
     </p>
     <div class="about-donate-actions">
-      <a class="about-cta-btn about-cta-btn--donate" href="https://opencollective.com/openms" target="_blank" rel="noopener noreferrer">Donate now</a>
+      <a class="about-cta-btn about-cta-btn--donate" href="/donate/">Donate now</a>
       <a class="openms-step__cta openms-btn-primary about-cta-btn--sponsor" href="/sponsor-us/">Sponsor us</a>
     </div>
   </section>

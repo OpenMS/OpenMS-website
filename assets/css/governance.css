@@ -1,3 +1,7 @@
+.content-padding:has(.governance-main-page) .content-container {
+  max-width: min(100%, 64rem);
+}
+
 .governance-page {
   display: grid;
   gap: clamp(2rem, 3.8vw, 3.2rem);

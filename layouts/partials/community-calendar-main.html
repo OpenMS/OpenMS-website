@@ -18,6 +18,7 @@
         <p class="governance-hero__description">{{ $subtitle }}</p>
       </header>
 
+      <div class="community-calendar-page__main">
       <section class="governance-section community-calendar-page__update" aria-labelledby="calendar-update-title">
         <h2 id="calendar-update-title">Updating events</h2>
         <p>
@@ -53,6 +54,7 @@
       </div>
 
       <script type="application/json" id="community-events-data">{{ $events | jsonify | safeHTML }}</script>
+      </div>
     </div>
   </div>
 </section>

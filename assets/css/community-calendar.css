@@ -1,11 +1,31 @@
-/* Community calendar page */
+/* Community calendar page — same width rhythm as news */
 
-.community-calendar-layout__container {
-  max-width: min(100%, 56rem);
+.community-calendar-page {
+  margin-top: 0;
+}
+
+.content-padding:has(.community-calendar-layout) .content-container,
+.content-container.community-calendar-layout__container {
+  max-width: min(100%, 64rem);
+  width: 100%;
+}
+
+.community-calendar-layout .governance-hero {
+  margin-left: calc(-1 * clamp(1rem, 3vw, 2rem));
+  margin-right: calc(-1 * clamp(1rem, 3vw, 2rem));
+  width: calc(100% + 2 * clamp(1rem, 3vw, 2rem));
+  max-width: 100vw;
+  padding-left: clamp(2rem, 5vw, 3.5rem);
+  padding-right: clamp(1.25rem, 3vw, 2rem);
+}
+
+.community-calendar-page__main {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 .community-calendar-page__update p {
-  max-width: 65ch;
+  max-width: none;
 }
 
 .community-calendar-page__update a {

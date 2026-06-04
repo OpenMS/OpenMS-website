@@ -17,7 +17,7 @@ sidebar: false
     </p>
     <div class="governance-hero__meta">
       <a href="/contact/">Discuss sponsorship</a>
-      <a href="/about#donate">Make a donation</a>
+      <a href="/donate/">Make a donation</a>
     </div>
   </header>
 
@@ -54,6 +54,8 @@ sidebar: false
     </article>
   </section>
 
+  {{< sponsor-tiers >}}
+
   <section class="governance-section governance-section--contrast" id="current-sponsors" aria-labelledby="current-sponsors-title">
     <h2 id="current-sponsors-title">Current sponsors</h2>
     <p>
@@ -72,7 +74,7 @@ sidebar: false
     </p>
     <div class="about-donate-actions sponsor-us-page__actions">
       <a class="openms-step__cta openms-btn-primary about-cta-btn--sponsor" href="/contact/">Contact us</a>
-      <a class="about-cta-btn about-cta-btn--donate" href="https://opencollective.com/openms" target="_blank" rel="noopener noreferrer">Donate via Open Collective</a>
+      <a class="about-cta-btn about-cta-btn--donate" href="/donate/">Make a donation</a>
     </div>
   </section>
 
@@ -80,7 +82,7 @@ sidebar: false
     <h2>Related</h2>
     <ul>
       <li><a href="/research-partnerships/">Research partnerships</a> — institutional collaboration and partner groups</li>
-      <li><a href="/about#donate">Donate</a> — individual and community giving</li>
+      <li><a href="/donate/">Donate</a> — individual and community giving</li>
       <li><a href="/contribute/">Contribute</a> — volunteer code, docs, and community work</li>
     </ul>
   </section>

@@ -52,6 +52,31 @@
   display: none;
 }
 
+/* Help page: hide left TOC */
+.content-padding:has(.help-page) .shortcuts-container {
+  display: none;
+}
+
+/* News listing & articles: hide left TOC */
+.content-padding:has(.news-page-layout) .shortcuts-container {
+  display: none;
+}
+
+/* Community calendar: hide left TOC */
+.content-padding:has(.community-calendar-layout) .shortcuts-container {
+  display: none;
+}
+
+/* Contribute page: hide left TOC */
+.content-padding:has(.contribute-page-layout) .shortcuts-container {
+  display: none;
+}
+
+/* Applications listing: hide left TOC */
+.content-padding:has(.applications-page-layout) .shortcuts-container {
+  display: none;
+}
+
 /* OpenMS-lib page: hide left TOC */
 .content-padding:has(.openms-lib-layout) .shortcuts-container {
   display: none;

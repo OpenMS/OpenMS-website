@@ -96,7 +96,24 @@
     closeResults(results, input);
   }
 
+  function closeMobileNavMenu() {
+    var nav = document.getElementById("nav");
+    if (!nav || !nav.classList.contains("is-menu-open")) return;
+    var menu = nav.querySelector(".navbar-menu");
+    var burger = nav.querySelector(".navbar-burger");
+    var backdrop = nav.querySelector("[data-navbar-backdrop]");
+    if (menu) menu.classList.remove("is-active");
+    if (burger) {
+      burger.classList.remove("is-active");
+      burger.setAttribute("aria-expanded", "false");
+    }
+    if (backdrop) backdrop.hidden = true;
+    nav.classList.remove("is-menu-open");
+    document.body.classList.remove("navbar-menu-open");
+  }
+
   function openPanel(root, toggle, panel, input) {
+    closeMobileNavMenu();
     root.classList.add("is-open");
     toggle.setAttribute("aria-expanded", "true");
     panel.hidden = false;

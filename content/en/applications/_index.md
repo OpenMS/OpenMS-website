@@ -1,8 +1,10 @@
 ---
 title: OpenMS Applications
+subtitle: Pipelines and tools integrated into OpenMS releases or available via KNIME and Nextflow.
 date: 2017-03-23
 publishdate: 2017-03-24
-shortcutDepth: 2
+hidePageTitle: true
+hideShortcuts: true
 ---
 
 OpenMS is a flexible codebase that can be tailored to many different applications ranging from the standard label free analysis to top down, metabolomics, crosslinking or DIA.

@@ -1,8 +1,14 @@
-/* OpenMS-lib — unified About-style page + embedded capability sections */
+/* OpenMS-lib (Infrastructure) — same width rhythm as news */
 
 .openms-lib-layout .shortcuts-container,
 .content-padding:has(.openms-lib-layout) .shortcuts-container {
   display: none;
+}
+
+.content-padding:has(.openms-lib-layout) .content-container,
+.content-container.openms-lib-layout__container {
+  max-width: min(100%, 64rem);
+  width: 100%;
 }
 
 .openms-lib-layout__shell {
@@ -21,9 +27,9 @@
 .openms-lib-page__outro.governance-page {
   display: grid;
   gap: clamp(2rem, 3.8vw, 3.2rem);
-  max-width: min(100%, 52rem);
-  margin: 0 auto;
-  padding-inline: clamp(1rem, 3vw, 2rem);
+  max-width: none;
+  margin: 0;
+  padding-inline: 0;
 }
 
 .openms-lib-page__intro {
@@ -70,18 +76,22 @@
   scroll-margin-top: 5.5rem;
 }
 
-/* Full-width module band */
+/* Capability modules — full width within page column (like governance hero) */
 .openms-lib-page__modules {
   display: grid;
   gap: 0;
   margin-block: clamp(0.5rem, 2vh, 1rem);
+  margin-left: calc(-1 * clamp(1rem, 3vw, 2rem));
+  margin-right: calc(-1 * clamp(1rem, 3vw, 2rem));
+  width: calc(100% + 2 * clamp(1rem, 3vw, 2rem));
+  max-width: 100vw;
   border-block: 1px solid rgba(var(--openms-navy-rgb), 0.08);
   background: var(--openms-white);
 }
 
 .openms-lib-band__inner {
   width: 100%;
-  max-width: 75rem;
+  max-width: none;
   margin-inline: auto;
   padding-inline: clamp(1.25rem, 4vw, 2.5rem);
 }
@@ -211,7 +221,7 @@
 }
 
 .keyfeatures-modern--openms-lib .keyfeatures-modern__note {
-  max-width: 52rem;
+  max-width: none;
   color: rgba(var(--openms-navy-rgb), 0.88);
   background: rgba(var(--openms-blue-rgb), 0.06);
   border: 1px solid rgba(var(--openms-blue-rgb), 0.14);
@@ -318,7 +328,7 @@
 
 .openms-steps--openms-lib.openms-steps--developers .openms-steps__header {
   text-align: left;
-  max-width: 56rem;
+  max-width: none;
   margin: 0 0 clamp(1.65rem, 3.5vh, 2.25rem);
 }
 

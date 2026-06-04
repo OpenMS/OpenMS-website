@@ -66,6 +66,14 @@ languages:
         enabled: true
         label: News
         text: Workshop at University of Helsinki on April 30th 2026.
+      contributePage:
+        eyebrow: Community
+        subtitle: >-
+          Learn how to get involved with code, documentation, outreach, fundraising,
+          and more — whether you are new to OpenMS or a seasoned contributor.
+      applicationsPage:
+        eyebrow: Projects
+        readMoreLabel: Read application
       newsSection:
         eyebrow: OpenMS
         title: News
@@ -81,6 +89,61 @@ languages:
         eyebrow: Community
         title: Community calendar
         subtitle: Upcoming OpenMS meetings, workshops, and community events.
+      # Donate page (/donate/) — paste URLs from Zeffy: Donations → My forms → Share
+      donatePage:
+        eyebrow: Support OpenMS
+        subtitle: >-
+          Your gift helps sustain open-source mass spectrometry software,
+          documentation, and community programs.
+        taxNote: >-
+          OpenMS Inc. is a U.S. 501(c)(3) public charity. Donations may be
+          tax-deductible for U.S. donors where permitted by law.
+        # iframe src from Zeffy “Embed your form on your site” (recommended)
+        zeffyEmbedUrl: ""
+        # Full Zeffy form URL if you prefer a button instead of embed
+        zeffyFormUrl: ""
+        openCollectiveUrl: https://opencollective.com/openms
+        showOpenCollective: true
+      sponsorTiers:
+        title: Foundation sponsorship levels
+        intro: >-
+          Foundation sponsorship is how organizations contribute substantially to OpenMS Inc.
+          In return, sponsors receive public acknowledgment on this site and other channels
+          appropriate to their level—similar to tiered programs used by foundations such as
+          the Apache Software Foundation.
+        note: >-
+          Contribution levels are agreed individually. To get started, contact us via the
+          form below. OpenMS Inc. is a U.S. 501(c)(3) public charity; U.S.-based sponsors
+          may be eligible for tax benefits where permitted by law.
+        levels:
+          - id: platinum
+            name: Platinum
+            summary: Premier visibility for organizations making the largest commitments.
+            benefits:
+              - Largest logo on the sponsor page (top section, prominent placement)
+              - Sponsored link to your organization from the OpenMS website
+              - Acknowledgment in OpenMS community news or annual highlights where appropriate
+              - Opportunity to discuss co-branded community initiatives
+          - id: gold
+            name: Gold
+            summary: Strong visibility for major sponsors of OpenMS development.
+            benefits:
+              - Large logo on the sponsor page (upper section)
+              - Sponsored link from the sponsor page
+              - Alphabetical placement among peers at the same level
+          - id: silver
+            name: Silver
+            summary: Visible support for ongoing maintenance and community programs.
+            benefits:
+              - Standard logo on the sponsor page (middle section)
+              - Sponsored link from the sponsor page
+              - Alphabetical placement among peers at the same level
+          - id: bronze
+            name: Bronze
+            summary: Public thanks for organizations supporting the project.
+            benefits:
+              - Text mention and link on the sponsor page (lower section)
+              - Alphabetical placement among peers at the same level
       trustedBySection:
         eyebrow: Trusted by
         title: As used by leading teams
@@ -305,7 +368,7 @@ languages:
           link: /sponsor-us/
         donate:
           text: Donate
-          link: /about#donate
+          link: /donate/
         socialmediatitle: ""
         socialmedia:
           - link: https://discord.com/invite/v9tv5BxPch
@@ -427,5 +490,5 @@ languages:
           button: true
           buttonVariant: sponsor
         - title: Donate
-          url: /about#donate
+          url: /donate/
           button: true

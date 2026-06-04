@@ -49,6 +49,22 @@ Site logo in header (`image`, `link`, `altText`).
 
 Main homepage hero: titles, description, CTA button, `stats` array.
 
+### donatePage
+
+**`/donate/`** — Zeffy embed and Open Collective fallback. See [Configure the donate page (Zeffy)](../common-tasks/configure-donate-zeffy.md).
+
+| Key | Purpose |
+|-----|---------|
+| `zeffyEmbedUrl` | iframe `src` from Zeffy Share → Embed (preferred) |
+| `zeffyFormUrl` | Full Zeffy form URL if not using embed |
+| `openCollectiveUrl` | Secondary donation channel |
+| `showOpenCollective` | Show Open Collective section on donate page |
+| `taxNote` | 501(c)(3) disclaimer text |
+
+### sponsorTiers
+
+Tiered foundation sponsorship copy on **/sponsor-us/** (Platinum, Gold, Silver, Bronze). Edit `levels` under `params.sponsorTiers` in `config.yaml`—benefits list per tier, intro, and footnote.
+
 ### homeSponsors
 
 “Supported by” logos under hero (`enabled`, `sponsors` list with `name`, `url`, `logo`, `alt`).

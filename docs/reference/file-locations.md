@@ -24,6 +24,7 @@
 | Trusted by section | `config.yaml` → `params.trustedBy` |
 | Community calendar events | `data/community_events.yaml` |
 | Community calendar page | `content/en/calendar.md`, `layouts/partials/community-calendar-main.html` |
+| Donate page (Zeffy) | `content/en/donate.md`, `layouts/partials/donate-main.html`, `config.yaml` → `params.donatePage` |
 | Navbar & footer | `config.yaml` → `params.navbar`, `params.footer` |
 | Site URL, theme, analytics | `config.yaml` (top) |
 

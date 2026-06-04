@@ -1,0 +1,24 @@
+{{- $cfg := .Site.Params.contributePage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Community" -}}
+{{- $subtitle := index $cfg "subtitle" | default "Learn how to get involved with code, documentation, outreach, fundraising, and more — whether you are new to OpenMS or a seasoned contributor." -}}
+<section class="content-padding flex-row contribute-page-layout">
+  <div class="content-container contribute-page-layout__container">
+    <div class="governance-page contribute-page">
+      <header class="governance-hero" aria-label="Contributing to OpenMS">
+        <p class="governance-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="governance-hero__title">
+          Contribute to <span>OpenMS</span>.
+        </h1>
+        <p class="governance-hero__description">{{ $subtitle }}</p>
+        <div class="governance-hero__meta">
+          <a href="https://github.com/OpenMS/OpenMS/blob/develop/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">CONTRIBUTING.md</a>
+          <a href="/communication/">Community channels</a>
+          <a href="/governance/">Governance</a>
+        </div>
+      </header>
+      <div class="contribute-page__content post-content">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</section>

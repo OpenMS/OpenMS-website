@@ -1,44 +1,65 @@
 {{ define "main" }}
+{{- $cfg := .Site.Params.applicationsPage | default dict }}
+{{- $title := index $cfg "title" | default .Title }}
+{{- $subtitle := index $cfg "subtitle" | default .Params.Subtitle }}
+{{- $eyebrow := index $cfg "eyebrow" | default "Projects" }}
+{{- $readMore := index $cfg "readMoreLabel" | default "Read more" }}
+{{- $pages := .Pages.ByTitle }}
+<section class="content-padding flex-row applications-page-layout">
+  <div class="content-container applications-page-layout__container">
+    <div class="governance-page applications-page">
+      <header class="governance-hero" aria-label="OpenMS applications">
+        <p class="governance-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="governance-hero__title">
+          {{- if or (eq $title "OpenMS Applications") (eq $title "Applications") -}}
+          OpenMS <span>applications</span>.
+          {{- else -}}
+          {{ $title }}
+          {{- end }}
+        </h1>
+        {{- with $subtitle }}
+        <p class="governance-hero__description">{{ . }}</p>
+        {{- end }}
+        <div class="governance-hero__meta">
+          <a href="https://openms.readthedocs.io/en/latest/getting-started/topp-tools.html" target="_blank" rel="noopener noreferrer">TOPP tools</a>
+          <a href="/contribute/">Contribute</a>
+          <a href="/openms-lib/">OpenMS-lib</a>
+        </div>
+      </header>
 
-<section class="content-padding flex-row">
-<div class="shortcuts-container">
-  <div class="shortcuts-title"><img src="/images/icons/list-bulleted.svg"/>On this page</div>
-  <div id="shortcuts"></div>
-</div>
-<div class="content-container">
-  <div class="columns">
-    <div class="column is-centered-tablet-portrait">
-      <h1 class="title section-title">{{ .Title }}</h1>
-      <h5 class="subtitle is-5 is-muted">{{ .Params.Subtitle }}</h5>
-      <div class="divider"></div>
+      {{- if .Content }}
+      <div class="applications-page__intro post-content">
+        {{ .Content }}
+      </div>
+      {{- end }}
+
+      <section class="governance-grid applications-page__list" aria-label="OpenMS application pages">
+        {{- range $pages }}
+        <article class="governance-card applications-page__card">
+          <p class="governance-card__eyebrow">Application</p>
+          <h2>{{ .Title }}</h2>
+          {{- with .Params.Subtitle }}
+          <p>{{ . }}</p>
+          {{- else }}
+          {{- with .Summary }}
+          <p>{{ . }}</p>
+          {{- end }}
+          {{- end }}
+          {{- with or .Params.authors .Params.Authors }}
+          <p class="applications-page__authors">
+            {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end }}
+          </p>
+          {{- end }}
+          {{- if .Date }}
+          <p class="applications-page__date">{{ .Date.Format "January 2, 2006" }}</p>
+          {{- end }}
+          <p class="governance-card__link">
+            <a href="{{ .RelPermalink }}">{{ $readMore }} →</a>
+          </p>
+        </article>
+        {{- end }}
+      </section>
     </div>
   </div>
-  {{ .Content }}
-  {{ range .Pages }}
-  <div class="post-list">
-    <article>
-      <div class="post-title"><h2 id="{{ .Title }}">{{ .Title }}</h2></div>
-      <div class="post-subtitle"><h3>{{ .Params.Subtitle }}</h3></div>
-      {{ if .Params.Authors }}
-      <div class="post-authors">
-        {{- range .Params.Authors -}}
-        <div class="post-author">{{ . }}</div>
-        {{- end -}}
-      </div>
-      {{ end }}
-      {{ if .Date }}
-      <div class="post-date">{{.Date.Format "January 2, 2006"}}</div>
-      {{ end }}
-      <div class="post-summary">{{ .Summary }}</div>
-      <center style="margin: 1rem;">
-        <a class="icon-btn" href='{{ .RelPermalink }}' target="_blank" style="color: #fff;">
-            <i class="fas fa-search icon-img" style="color: #fff;"></i>
-            Read more...
-        </a>
-      </center>
-    </article>
-  </div>
-  {{ end }}
-</div>
 </section>
 {{ end }}

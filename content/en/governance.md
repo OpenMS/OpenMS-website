@@ -3,7 +3,7 @@ title: "Governance"
 hidePageTitle: true
 ---
 
-<div class="governance-page">
+<div class="governance-page governance-main-page">
   <header class="governance-hero" aria-label="Governance overview">
     <p class="governance-hero__eyebrow">OpenMS governance</p>
     <h1 class="governance-hero__title">

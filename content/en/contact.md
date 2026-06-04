@@ -79,7 +79,7 @@ hideShortcuts: true
     <p class="governance-note">
       You can also support the project as a
       <a href="/sponsor-us/">sponsor</a> or through
-      <a href="/about#donate">donations</a>. For governance and partnerships, see
+      <a href="/donate/">donations</a>. For governance and partnerships, see
       <a href="/research-partnerships/">Research partnerships</a> and
       <a href="/about/">About OpenMS Inc.</a>
     </p>

@@ -84,8 +84,15 @@
 #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.openms-step__cta:focus-visible,
 .navbar-menu .navbar-mobile-ctas .navbar-cta-item.openms-btn-primary:focus-visible,
 .navbar-menu .navbar-mobile-ctas .navbar-cta-item.openms-step__cta:focus-visible {
-  box-shadow: var(--openms-hero-focus-ring, 0 0 0 3px var(--openms-navy), 0 0 0 5px var(--openms-yellow)),
+  box-shadow: 0 0 0 3px var(--openms-navy), 0 0 0 5px var(--openms-blue),
     0 0.75rem 2rem rgba(var(--openms-blue-rgb), 0.35);
+}
+
+.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:focus-visible,
+#navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:focus-visible,
+.navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:focus-visible {
+  box-shadow: 0 0 0 3px var(--openms-navy), 0 0 0 5px var(--openms-blue),
+    0 0.75rem 2rem rgba(var(--openms-blue-rgb), 0.35) !important;
 }
 
 /* Default + hover — force Contact us colors (overrides Bulma .navbar-item / .button) */

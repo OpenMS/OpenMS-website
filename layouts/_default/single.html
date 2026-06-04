@@ -7,6 +7,10 @@
 {{ partial "openms-lib-main.html" . }}
 {{- else if eq .File.BaseFileName "calendar" -}}
 {{ partial "community-calendar-main.html" . }}
+{{- else if eq .File.BaseFileName "donate" -}}
+{{ partial "donate-main.html" . }}
+{{- else if eq .File.BaseFileName "contribute" -}}
+{{ partial "contribute-main.html" . }}
 {{- else -}}
 {{ partial "single/content.html" . }}
 {{- end -}}
