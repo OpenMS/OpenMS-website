@@ -1,0 +1,581 @@
+/* OpenMS-lib — unified About-style page + embedded capability sections */
+
+.openms-lib-layout .shortcuts-container,
+.content-padding:has(.openms-lib-layout) .shortcuts-container {
+  display: none;
+}
+
+.openms-lib-layout__shell {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.openms-lib-page {
+  display: grid;
+  gap: 0;
+}
+
+/* Intro / outro — readable column (About rhythm) */
+.openms-lib-page__intro.governance-page,
+.openms-lib-page__outro.governance-page {
+  display: grid;
+  gap: clamp(2rem, 3.8vw, 3.2rem);
+  max-width: min(100%, 52rem);
+  margin: 0 auto;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+.openms-lib-page__intro {
+  padding-top: 0.5rem;
+}
+
+.openms-lib-page__outro {
+  padding-bottom: clamp(2rem, 5vh, 3rem);
+}
+
+.openms-lib-layout .openms-lib-page__intro .governance-hero {
+  margin-left: calc(-1 * clamp(1rem, 3vw, 2rem));
+  margin-right: calc(-1 * clamp(1rem, 3vw, 2rem));
+  width: calc(100% + 2 * clamp(1rem, 3vw, 2rem));
+  max-width: 100vw;
+  padding-left: clamp(2rem, 5vw, 3.5rem);
+  padding-right: clamp(1.25rem, 3vw, 2rem);
+}
+
+.openms-lib-page__infra-btns a.openms-btn-primary {
+  min-height: 2.5rem;
+  padding: 0.55rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  color: var(--openms-white) !important;
+  background: rgba(var(--openms-white-rgb), 0.14);
+  border: 1px solid rgba(var(--openms-white-rgb), 0.35);
+  box-shadow: none;
+}
+
+.openms-lib-page__infra-btns a.openms-btn-primary:hover,
+.openms-lib-page__infra-btns a.openms-btn-primary:focus-visible {
+  background: rgba(var(--openms-yellow-rgb), 0.28);
+  border-color: rgba(var(--openms-white-rgb), 0.5);
+  color: var(--openms-white) !important;
+}
+
+.openms-lib-page__intro .governance-jump-links {
+  margin-top: -0.15rem;
+}
+
+.openms-lib-page__anchor {
+  scroll-margin-top: 5.5rem;
+}
+
+/* Full-width module band */
+.openms-lib-page__modules {
+  display: grid;
+  gap: 0;
+  margin-block: clamp(0.5rem, 2vh, 1rem);
+  border-block: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+  background: var(--openms-white);
+}
+
+.openms-lib-band__inner {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* ── What is OpenMS? (light governance style) ── */
+.keyfeatures-modern--openms-lib {
+  --kf-layout-gap: clamp(1.5rem, 3vh, 2rem);
+  --kf-radius: 0.85rem;
+
+  margin: 0;
+  padding: clamp(2.5rem, 5vh, 3.5rem) 0;
+  color: var(--openms-navy);
+  background: linear-gradient(
+    180deg,
+    rgba(var(--openms-blue-rgb), 0.04) 0%,
+    var(--openms-white) 28%
+  );
+  border-top: none;
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__inner {
+  padding-block: 0;
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__layout {
+  gap: var(--kf-layout-gap);
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__header {
+  position: static;
+  max-width: none;
+  margin: 0;
+  padding-top: 0;
+  text-align: left;
+  display: grid;
+  gap: clamp(0.85rem, 2vw, 1.15rem);
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__eyebrow {
+  color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.1);
+  border-color: rgba(var(--openms-blue-rgb), 0.2);
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__title {
+  font-size: clamp(1.65rem, 3.2vw, 2.15rem);
+  color: var(--openms-navy);
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__title-accent {
+  background: linear-gradient(
+    90deg,
+    var(--openms-blue) 0%,
+    var(--openms-purple) 55%,
+    var(--openms-pink) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__lead {
+  color: rgba(var(--openms-navy-rgb), 0.78);
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.62;
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__topics {
+  gap: clamp(0.85rem, 1.6vw, 1.1rem);
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-height: 100%;
+  padding: 1.15rem 1.1rem 1.2rem 1.4rem;
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+  border-radius: var(--kf-radius);
+  background: var(--openms-white);
+  box-shadow: 0 0.3rem 1rem rgba(var(--openms-navy-rgb), 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  bottom: 0.65rem;
+  width: 0.24rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--openms-blue) 0%, var(--openms-purple) 100%);
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-card:hover,
+.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-card:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(var(--openms-blue-rgb), 0.22);
+  box-shadow: 0 0.65rem 1.75rem rgba(var(--openms-blue-rgb), 0.12);
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-color: rgba(var(--openms-blue-rgb), 0.18);
+  background: rgba(var(--openms-blue-rgb), 0.08);
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-icon img {
+  filter: none;
+  opacity: 0.95;
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-icon--mark {
+  color: var(--openms-blue);
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-title {
+  color: var(--openms-navy);
+  font-size: clamp(1rem, 1.15vw, 1.08rem);
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-text {
+  color: rgba(var(--openms-navy-rgb), 0.74);
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__note {
+  max-width: 52rem;
+  color: rgba(var(--openms-navy-rgb), 0.88);
+  background: rgba(var(--openms-blue-rgb), 0.06);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.14);
+  border-left: 4px solid var(--openms-yellow);
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__note a {
+  color: var(--openms-blue);
+}
+
+.keyfeatures-modern--openms-lib .keyfeatures-modern__note a:hover,
+.keyfeatures-modern--openms-lib .keyfeatures-modern__note a:focus-visible {
+  color: var(--openms-navy);
+}
+
+/* ── Capabilities (users) ── */
+.openms-steps--openms-lib.openms-steps--users {
+  padding: clamp(2.5rem, 5vh, 3.5rem) 0;
+  border-top: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+  background: var(--openms-white);
+}
+
+.openms-steps--openms-lib.openms-steps--users::before,
+.openms-steps--openms-lib.openms-steps--users::after {
+  opacity: 0.65;
+}
+
+.openms-steps--openms-lib .openms-steps__header {
+  max-width: none;
+  margin: 0 0 clamp(1.5rem, 3vh, 2rem);
+  text-align: left;
+}
+
+.openms-steps--openms-lib .openms-steps__eyebrow {
+  margin-bottom: 0.65rem;
+}
+
+.openms-steps--openms-lib.openms-steps--users .openms-steps__eyebrow {
+  color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.1);
+  border-color: rgba(var(--openms-blue-rgb), 0.2);
+}
+
+.openms-steps--openms-lib .openms-steps__title {
+  font-size: clamp(1.65rem, 3.2vw, 2.15rem);
+  text-wrap: balance;
+}
+
+.openms-steps--openms-lib.openms-steps--users .openms-steps__subtitle {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 60ch;
+  text-align: left;
+}
+
+.openms-steps--openms-lib.openms-steps--users .openms-step--showcase {
+  border-radius: 0.85rem;
+  border-color: rgba(var(--openms-navy-rgb), 0.1);
+  box-shadow: 0 0.3rem 1rem rgba(var(--openms-navy-rgb), 0.06);
+}
+
+.openms-steps--openms-lib.openms-steps--users .openms-step--showcase:hover {
+  border-color: rgba(var(--openms-blue-rgb), 0.28);
+  box-shadow: 0 0.7rem 1.85rem rgba(var(--openms-blue-rgb), 0.14);
+}
+
+.openms-steps--openms-lib.openms-steps--users .openms-step--showcase .openms-step__media {
+  background: linear-gradient(
+    165deg,
+    rgba(var(--openms-blue-rgb), 0.07) 0%,
+    var(--openms-white) 100%
+  );
+}
+
+.openms-steps--openms-lib .openms-step__cta.openms-btn-primary {
+  min-height: 2.5rem;
+  padding: 0.55rem 1.25rem;
+  font-size: var(--openms-text-min);
+}
+
+/* ── Advanced users / developers ── */
+.openms-steps--openms-lib.openms-steps--developers {
+  --dev-card-media-min-h: clamp(11rem, 22vw, 14rem);
+  --dev-logo-max-h: clamp(5rem, 12vw, 7.5rem);
+  --dev-terminal-h: clamp(10rem, 18vw, 12.5rem);
+
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.75rem, 5.5vh, 3.75rem) 0;
+  border-top: none;
+  color: var(--openms-white);
+  background: linear-gradient(
+    135deg,
+    var(--openms-navy) 0%,
+    #1a2f8f 48%,
+    #2a4fd4 100%
+  );
+}
+
+.openms-steps--openms-lib.openms-steps--developers::before,
+.openms-steps--openms-lib.openms-steps--developers::after {
+  opacity: 1;
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-steps__header {
+  text-align: left;
+  max-width: 56rem;
+  margin: 0 0 clamp(1.65rem, 3.5vh, 2.25rem);
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-steps__eyebrow {
+  color: var(--openms-yellow);
+  background: rgba(var(--openms-white-rgb), 0.1);
+  border-color: rgba(var(--openms-white-rgb), 0.22);
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-steps__title {
+  color: var(--openms-white);
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-steps__title-accent {
+  background: linear-gradient(
+    90deg,
+    var(--openms-yellow) 0%,
+    var(--openms-orange) 45%,
+    var(--openms-pink) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-steps__subtitle {
+  margin-left: 0;
+  text-align: left;
+  max-width: 58ch;
+  color: rgba(var(--openms-white-rgb), 0.92);
+  line-height: 1.62;
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-steps__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.1rem, 2.2vw, 1.5rem);
+  align-items: stretch;
+}
+
+/* White showcase cards on navy band (matches users section pattern) */
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 0;
+  border: 1px solid rgba(var(--openms-white-rgb), 0.22);
+  border-radius: 1rem;
+  background: var(--openms-white);
+  box-shadow: 0 0.5rem 1.75rem rgba(var(--openms-dark-rgb), 0.22);
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer:hover {
+  transform: translateY(-5px);
+  border-color: rgba(var(--openms-yellow-rgb), 0.55);
+  box-shadow: 0 1rem 2.5rem rgba(var(--openms-dark-rgb), 0.32);
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__index {
+  display: none;
+}
+
+/* Consistent top media / bottom content (no alternating layout) */
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__media,
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer:nth-child(even) .openms-step__media {
+  order: -1;
+  width: 100%;
+  min-height: var(--dev-card-media-min-h);
+  margin: 0;
+  padding: clamp(1rem, 2vw, 1.35rem);
+  border: none;
+  border-bottom: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+  border-top: none;
+  background: linear-gradient(
+    165deg,
+    rgba(var(--openms-blue-rgb), 0.1) 0%,
+    rgba(var(--openms-navy-rgb), 0.04) 55%,
+    color-mix(in srgb, var(--openms-steps-accent) 22%, var(--openms-white)) 100%
+  );
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__content,
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer:nth-child(even) .openms-step__content {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 0.55rem;
+  padding: clamp(1.15rem, 2.2vw, 1.4rem) clamp(1.2rem, 2.4vw, 1.5rem)
+    clamp(1.25rem, 2.4vw, 1.55rem);
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__tag {
+  margin: 0;
+  padding: 0.32rem 0.65rem;
+  font-size: var(--openms-text-min);
+  color: var(--openms-navy);
+  background: color-mix(in srgb, var(--openms-steps-accent) 35%, var(--openms-white));
+  border: 1px solid color-mix(in srgb, var(--openms-steps-accent) 50%, transparent);
+  border-radius: 999px;
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__title {
+  padding-right: 0;
+  font-size: clamp(1.12rem, 1.55vw, 1.28rem);
+  line-height: 1.28;
+  color: var(--openms-navy);
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__subtitle {
+  flex: 1 1 auto;
+  font-size: clamp(0.92rem, 1.05vw, 1.02rem);
+  line-height: 1.55;
+  color: rgba(var(--openms-navy-rgb), 0.76);
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__img,
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__img.img-fit {
+  display: block;
+  width: auto;
+  max-width: min(100%, 14rem);
+  height: auto;
+  max-height: var(--dev-logo-max-h);
+  min-height: 4.5rem;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: none;
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__cta {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__cta.openms-btn-primary {
+  background: var(--openms-blue);
+  border-color: var(--openms-blue);
+  color: var(--openms-white) !important;
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__cta.openms-btn-primary:hover,
+.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__cta.openms-btn-primary:focus-visible {
+  background: var(--openms-navy);
+  border-color: var(--openms-navy);
+  color: var(--openms-white) !important;
+}
+
+/* Terminal card */
+.openms-steps--openms-lib.openms-steps--developers .openms-step--terminal .openms-step__media {
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+  background: linear-gradient(180deg, #1a1d24 0%, #0f1118 100%);
+  border-bottom-color: rgba(var(--openms-navy-rgb), 0.12);
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-step--terminal .openms-step__terminal {
+  width: 100%;
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-step--terminal .openms-step__terminal .terminal-window {
+  width: 100%;
+  height: var(--dev-terminal-h);
+  min-height: var(--dev-terminal-h);
+  margin: 0;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(var(--openms-white-rgb), 0.12);
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.35);
+}
+
+.openms-steps--openms-lib.openms-steps--developers .openms-step--terminal .terminal-window section.terminal {
+  font-size: clamp(0.58rem, 0.85vw, 0.68rem);
+  line-height: 1.5;
+}
+
+/* Outro */
+.openms-lib-page__outro .governance-pillars {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.openms-lib-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.openms-lib-page__outro .governance-section p,
+.openms-lib-page__intro .governance-card p {
+  max-width: 72ch;
+}
+
+.openms-lib-page__intro .governance-card a {
+  font-weight: 600;
+}
+
+@media (max-width: 1000px) {
+  .keyfeatures-modern--openms-lib .keyfeatures-modern__topics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .openms-steps--openms-lib.openms-steps--users .openms-steps__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .openms-lib-layout .openms-lib-page__intro .governance-hero {
+    margin-left: calc(-1 * clamp(0.75rem, 4vw, 1.25rem));
+    margin-right: calc(-1 * clamp(0.75rem, 4vw, 1.25rem));
+    width: calc(100% + 2 * clamp(0.75rem, 4vw, 1.25rem));
+    padding-left: clamp(1.25rem, 4vw, 1.75rem);
+    padding-right: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .openms-lib-page__outro .governance-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .openms-lib-actions .openms-step__cta,
+  .openms-lib-actions .about-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .keyfeatures-modern--openms-lib .keyfeatures-modern__topics {
+    grid-template-columns: 1fr;
+  }
+
+  .openms-steps--openms-lib.openms-steps--developers .openms-steps__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .openms-steps--openms-lib.openms-steps--developers {
+    --dev-card-media-min-h: clamp(10rem, 28vw, 12rem);
+    --dev-logo-max-h: clamp(4.5rem, 14vw, 6rem);
+    --dev-terminal-h: clamp(9rem, 24vw, 11rem);
+  }
+}
+
+@media (min-width: 1100px) {
+  .openms-steps--openms-lib.openms-steps--developers {
+    --dev-card-media-min-h: 13.5rem;
+    --dev-logo-max-h: 7rem;
+    --dev-terminal-h: 12rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .keyfeatures-modern--openms-lib .keyfeatures-modern__topic-card:hover,
+  .openms-steps--openms-lib .openms-step--showcase:hover,
+  .openms-steps--openms-lib.openms-steps--developers .openms-step--developer:hover {
+    transform: none;
+  }
+}

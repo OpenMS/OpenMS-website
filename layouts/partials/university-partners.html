@@ -1,7 +1,9 @@
 {{- $showHeader := .showHeader | default true -}}
 {{- $staticOnly := .staticOnly | default false -}}
+{{- $variant := .variant | default "" -}}
+{{- $compact := or (eq $variant "compact") (eq $variant "home") -}}
 <section
-  class="uni-partners{{ if $staticOnly }} uni-partners--static{{ end }}"
+  class="uni-partners{{ if $staticOnly }} uni-partners--static{{ end }}{{ if $compact }} uni-partners--compact{{ end }}{{ if eq $variant "home" }} uni-partners--home{{ end }}"
   {{- if $showHeader }}
   aria-labelledby="uni-partners-title"
   {{- else }}
@@ -10,14 +12,27 @@
 >
   <div class="uni-partners__inner">
     {{- if $showHeader }}
+    {{- if eq $variant "home" }}
+    <header class="uni-partners__header uni-partners__header--trust">
+      <p id="uni-partners-title" class="uni-partners__tagline">
+        Trusted by researchers at <span class="uni-partners__tagline-strong">leading institutions</span>
+      </p>
+    </header>
+    {{- else }}
     <header class="uni-partners__header">
       <div class="uni-partners__header-main">
         <p class="uni-partners__eyebrow">Partners</p>
         <h2 id="uni-partners-title" class="uni-partners__title">
           University <span class="uni-partners__title-accent">Partners</span>
         </h2>
+        {{- if not $compact }}
+        <p class="uni-partners__lead">
+          Research groups and institutions contributing to OpenMS development and adoption.
+        </p>
+        {{- end }}
       </div>
     </header>
+    {{- end }}
     {{- end }}
 
     {{- if not $staticOnly }}

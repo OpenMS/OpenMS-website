@@ -160,7 +160,7 @@ The most important repositories in the OpenMS GitHub organization are:
 
 - **[streamlit-template](https://github.com/OpenMS/streamlit-template)** — A template for building lightweight web applications around OpenMS tools
 
-- **[OpenMS-website](https://github.com/OpenMS/OpenMS-website)** — Source repository for the OpenMS project website
+- **[OpenMS-website](https://github.com/OpenMS/OpenMS-website)** — Source repository for the OpenMS project website. For updating news or homepage text without front-end experience, see the [website maintainer guide](https://github.com/OpenMS/OpenMS-website/blob/main/docs/README.md) in that repository.
 
 There are additional repositories for tutorials, experimental features, and supporting infrastructure.
 

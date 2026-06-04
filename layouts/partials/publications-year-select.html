@@ -1,0 +1,21 @@
+{{- $years := slice -}}
+{{- range findRE `data-publication-year="20[0-9]{2}"` .RawContent -}}
+  {{- $y := replaceRE `data-publication-year="([0-9]{4})"` `$1` . -}}
+  {{- if and $y (not (in $years $y)) -}}
+    {{- $years = $years | append $y -}}
+  {{- end -}}
+{{- end -}}
+{{- if gt (len $years) 0 -}}
+  {{- $years = sort $years "value" "desc" -}}
+{{- end -}}
+<select
+  id="publications-year-select"
+  class="publications-toolbar__select"
+  data-publications-year-select
+  aria-label="Filter publications by year"
+>
+  <option value="all">All years</option>
+  {{- range $years -}}
+  <option value="{{ . }}">{{ . }}</option>
+  {{- end -}}
+</select>

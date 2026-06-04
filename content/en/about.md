@@ -1,27 +1,78 @@
 ---
 title: OpenMS Inc.
 sidebar: false
+hideShortcuts: true
+hidePageTitle: true
 ---
 
-OpenMS Inc. is the corporate entity and fiscal home of the OpenMS project. As a Pennsylvania–based nonprofit organization recognized as a 501(c)(3) public charity, OpenMS Inc. supports the continued development, governance, and community stewardship of the OpenMS open-source software ecosystem. Through nonprofit oversight and dedicated fiscal management, we ensure that OpenMS remains freely available, sustainable, and driven by the needs of its scientific community. As a registered 501(c)(3) nonprofit organization. Contributions are tax-deductible to the extent permitted by law. EIN: 93-3818533
+<div class="governance-page">
+  <header class="governance-hero" aria-label="About OpenMS Inc.">
+    <p class="governance-hero__eyebrow">About us</p>
+    <h1 class="governance-hero__title">
+      Built for <span>sustainability</span>, guided by <span>community</span>.
+    </h1>
+    <p class="governance-hero__description">
+      OpenMS Inc. is the corporate entity and fiscal home of the OpenMS project.
+      As a Pennsylvania-based 501(c)(3) public charity, it supports development,
+      governance, and long-term stewardship of the OpenMS ecosystem.
+    </p>
+  </header>
 
-The board of directors of OpenMS Inc. consists of Dr. Samuel Wein as chief executive officer, Prof. Dr. Oliver Kohlbacher as chief scientific officer, and Dr. Timo Sachsenberg as chief technology officer.
+  <section class="governance-grid" aria-label="About OpenMS Inc. overview">
+    <article class="governance-card">
+      <p class="governance-card__eyebrow">Who we are</p>
+      <h2>OpenMS Inc.</h2>
+      <p>
+        Through nonprofit oversight and dedicated fiscal management, OpenMS Inc.
+        helps ensure OpenMS remains freely available, sustainable, and community-driven.
+      </p>
+      <p class="governance-card__link">
+        Contributions are tax-deductible to the extent permitted by law. EIN: 93-3818533.
+      </p>
+    </article>
+    <article class="governance-card">
+      <p class="governance-card__eyebrow">Board of directors</p>
+      <h2>Leadership</h2>
+      <ul>
+        <li>Dr. Samuel Wein (chief executive officer)</li>
+        <li>Prof. Dr. Oliver Kohlbacher (chief scientific officer)</li>
+        <li>Dr. Timo Sachsenberg (chief technology officer)</li>
+      </ul>
+    </article>
+  </section>
 
-## Sponsors {#sponsors}
+  <section class="governance-section" id="sponsors">
+    <h2>Sponsors</h2>
+    <p>
+      OpenMS receives direct funding from organizations that sponsor the project.
+      See <a href="/sponsor-us/">sponsor us</a> for current sponsors and how to support OpenMS financially.
+    </p>
+  </section>
 
-OpenMS receives direct funding from the following sources:
-{{< sponsors >}}
+  <section class="governance-section governance-section--contrast" id="institutional-partners">
+    <h2>Institutional Partners</h2>
+    <p>
+      Institutional partners are organizations that support the project by employing people
+      who contribute to OpenMS as part of their work.
+      See the <a href="/research-partnerships/">research partnerships</a> page for partner
+      institutions and how to collaborate.
+    </p>
+  </section>
 
-
-## Institutional Partners {#institutional-partners}
-
-Institutional Partners are organizations that support the project by employing people that contribute to OpenMS as part of their job. Current Institutional Partners include:
-
-{{< partners >}}
-
-
-## Donate
-
-If you have found OpenMS useful in your work, research, or company, please consider a donation to the project commensurate with your resources. Any amount helps! All donations will be used strictly to fund the development of openms’s open source software, documentation, and community.
-
-You can also donate using our [opencollective](https://opencollective.com/openms) account.
+  <section class="governance-section governance-section--contrast" id="donate">
+    <h2>Donate</h2>
+    <p>
+      If you have found OpenMS useful in your work, research, or company, please consider
+      a donation commensurate with your resources. Any amount helps and is used strictly to
+      support OpenMS open-source software, documentation, and community development.
+    </p>
+    <p>
+      You can also donate via
+      <a href="https://opencollective.com/openms">Open Collective</a>.
+    </p>
+    <div class="about-donate-actions">
+      <a class="about-cta-btn about-cta-btn--donate" href="https://opencollective.com/openms" target="_blank" rel="noopener noreferrer">Donate now</a>
+      <a class="openms-step__cta openms-btn-primary about-cta-btn--sponsor" href="/sponsor-us/">Sponsor us</a>
+    </div>
+  </section>
+</div>

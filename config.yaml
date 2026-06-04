@@ -15,6 +15,18 @@ markup:
 # them to openms.de immediately.
 disableLanguages: []
 
+outputFormats:
+  SearchIndex:
+    mediaType: application/json
+    baseName: search-index
+    isPlainText: true
+    notAlternative: true
+
+outputs:
+  home:
+    - HTML
+    - SearchIndex
+
 params:
   font:
     name: Montserrat
@@ -65,6 +77,10 @@ languages:
         # defaultYear: "2026"
         defaultToLatestYear: false
         emptyMessage: No news items for the selected year.
+      calendarSection:
+        eyebrow: Community
+        title: Community calendar
+        subtitle: Upcoming OpenMS meetings, workshops, and community events.
       trustedBySection:
         eyebrow: Trusted by
         title: As used by leading teams
@@ -89,6 +105,11 @@ languages:
         image: OpenMS_transparent_blackFont.png
         link: /
         altText: OpenMS
+      navbarSearch:
+        enabled: true
+        placeholder: Search OpenMS…
+        minChars: 2
+        maxResults: 8
       hero:
         titleBefore: "The "
         titleHighlight: open-source framework
@@ -97,8 +118,10 @@ languages:
           Build sophisticated LC/MS data analysis tools with C++ or Python.
           Process large datasets at scale. Create high-performance algorithms.
           Join 1000+ researchers worldwide.
-        buttontext: Get Started Now
         buttonlink: https://openms.readthedocs.io/en/latest/about/installation.html
+        secondaryButtonText: Explore the library
+        secondaryButtonLink: /openms-lib/
+        microcopy: Open source · Free to use · Trusted by researchers worldwide
         stats:
           - value: 10
             suffix: "+"
@@ -110,13 +133,27 @@ languages:
             decimals: 1
             label: Latest Version
 
+      homePage:
+        pathwaysEyebrow: Get started
+        pathwaysTitle: Choose your entry point
+        pathways:
+          - title: Documentation
+            text: Installation, tutorials, and workflow guides on Read the Docs.
+            url: https://openms.readthedocs.io/en/latest/
+          - title: OpenMS library
+            text: Capabilities for users, developers, and what OpenMS includes.
+            url: /openms-lib/
+          - title: All applications
+            text: Community web apps and tools built on OpenMS.
+            url: /applications/
+
       homeSponsors:
-        enabled: true
+        enabled: false
         label: Supported by
         description: OpenMS receives direct funding from leading life-science organizations.
         cta:
           text: Our sponsors
-          url: /about#sponsors
+          url: /sponsor-us/
         sponsors:
           - name: deNBI
             url: https://www.denbi.de
@@ -265,7 +302,7 @@ languages:
         tagline: The open-source framework for mass spectrometry.
         sponsor:
           text: Sponsor us
-          link: /about#sponsors
+          link: /sponsor-us/
         donate:
           text: Donate
           link: /about#donate
@@ -324,16 +361,7 @@ languages:
 
       navbar:
         - title: Infrastructure
-          sublinks:
-            - title: OpenMS-lib
-              url: https://openms.readthedocs.io/en/latest/develop-with-openms/openms-cpp-core-library.html
-              is_external: true
-            - title: pyOpenMS
-              url: https://pyopenms.readthedocs.io/en/latest/
-              is_external: true
-            - title: WebApp-template
-              url: https://github.com/OpenMS/streamlit-template
-              is_external: true
+          url: /openms-lib/
         - title: Projects
           url: /applications
           sublinks:
@@ -361,7 +389,10 @@ languages:
               url: https://openms.readthedocs.io/en/latest/manual/glossary.html
               is_external: true
         - title: Community
+          url: /calendar/
           sublinks:
+            - title: Calendar
+              url: /calendar/
             - title: News
               url: /news
             - title: Getting Involved
@@ -379,20 +410,20 @@ languages:
             - title: Publications
               url: /publications
             - title: Contact
-              url: /#contact
+              url: /contact/
         - title: Partner with OpenMS
-          url: /about#institutional-partners
+          url: /research-partnerships/
           is_emphasized: true
           sublinks:
             - title: Research Partnerships
-              url: /about#institutional-partners
+              url: /research-partnerships/
             - title: Scientific and Technical Support
               url: /help
             - title: Sponsor Us
-              url: /about#sponsors
+              url: /sponsor-us/
         - title: Sponsor us
           shortTitle: Sponsor
-          url: /about#sponsors
+          url: /sponsor-us/
           button: true
           buttonVariant: sponsor
         - title: Donate

@@ -1,0 +1,8 @@
+{{- $navbar := .Site.Params.navbar }}
+<div class="navbar-mobile-ctas" aria-label="Sponsor and donate">
+  {{- range $navbar }}
+  {{- if .button }}
+  {{ partial "navbar-cta.html" . }}
+  {{- end }}
+  {{- end }}
+</div>

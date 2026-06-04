@@ -1,0 +1,2 @@
+{{- $variant := .Get "variant" -}}
+{{ partial "heroitems.html" (dict "Site" site "variant" $variant "embed" "openms-lib") }}

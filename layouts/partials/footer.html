@@ -43,7 +43,7 @@
         {{- if or $sponsor $donate }}
         <div class="footer-brand__actions">
           {{- with $sponsor }}
-          <a href="{{ .link }}" class="footer-sponsor-btn footer-brand-btn button signup-button rounded raised">
+          <a href="{{ .link }}" class="footer-sponsor-btn footer-brand-btn openms-btn-primary">
             {{ .text }}
           </a>
           {{- end }}
@@ -71,7 +71,7 @@
               </li>
               {{- if and (eq $groupHeading "ABOUT") (eq .text "Governance") }}
               <li>
-                <a class="footer-link-contact-us" href="mailto:webmaster@openms.de">Contact us</a>
+                <a class="footer-link-contact-us" href="/contact/">Contact us</a>
               </li>
               {{- end }}
               {{- end }}
@@ -83,14 +83,15 @@
         <div class="footer-sponsors" aria-label="Partners and supporters">
           <p class="footer-section-label">Supported by</p>
           <div class="footer-sponsors__logos">
-            <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
-              <img src="{{ $deployedBy }}" alt="Deployed by Netlify" />
-            </a>
             <a href="https://www.denbi.de" target="_blank" rel="noopener noreferrer">
               <img src="{{ $sponsorLogo1 }}" alt="Supported by deNBI" />
             </a>
-            <a href="https://elixir-europe.org/platforms/data/core-data-resources" target="_blank"
-              rel="noopener noreferrer">
+            <a
+              class="footer-sponsors__logo-link footer-sponsors__logo-link--elixir"
+              href="https://elixir-europe.org/platforms/data/core-data-resources"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="{{ $sponsorLogo2 }}" alt="Supported by Elixir" />
             </a>
             <a href="https://libis.uni-heidelberg.de/" target="_blank" rel="noopener noreferrer">
@@ -104,6 +105,17 @@
 
   <div class="footer-bottom">
     <p class="footer-copyright">&copy; {{ now.Year }} {{ $title }}. All rights reserved.</p>
+    {{- with $deployedBy }}
+    <a
+      class="footer-deploy"
+      href="https://www.netlify.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Deployed by Netlify"
+    >
+      <img src="{{ . | relURL }}" alt="" width="114" height="32" decoding="async" />
+    </a>
+    {{- end }}
   </div>
 </footer>
 

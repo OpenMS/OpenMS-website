@@ -1,0 +1,50 @@
+{{- $site := .Site -}}
+{{- $cfg := $site.Params.navbarSearch -}}
+{{- if and $cfg (ne $cfg.enabled false) -}}
+{{- $id := .inputId | default "navbar-search-input" -}}
+{{- $variant := .variant | default "desktop" -}}
+<div
+  class="navbar-search navbar-search--{{ $variant }}"
+  data-search-index="{{ "search-index.json" | relURL }}"
+  data-min-chars="{{ default 2 $cfg.minChars }}"
+  data-max-results="{{ default 8 $cfg.maxResults }}"
+>
+  <button
+    type="button"
+    class="navbar-search__toggle"
+    aria-label="Open search"
+    aria-expanded="false"
+    aria-controls="{{ $id }}-panel"
+  >
+    <svg class="navbar-search__toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5" />
+      <path d="M15.25 15.25L20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+    </svg>
+  </button>
+
+  <div id="{{ $id }}-panel" class="navbar-search__panel" role="search" hidden>
+    <label class="navbar-search__label" for="{{ $id }}">Search site</label>
+    <div class="navbar-search__field">
+      <input
+        type="search"
+        id="{{ $id }}"
+        class="navbar-search__input"
+        name="q"
+        placeholder="{{ default "Search…" $cfg.placeholder }}"
+        autocomplete="off"
+        enterkeyhint="search"
+        aria-controls="{{ $id }}-results"
+        aria-expanded="false"
+        aria-autocomplete="list"
+      />
+    </div>
+    <div
+      id="{{ $id }}-results"
+      class="navbar-search__results"
+      role="listbox"
+      aria-label="Search results"
+      hidden
+    ></div>
+  </div>
+</div>
+{{- end -}}

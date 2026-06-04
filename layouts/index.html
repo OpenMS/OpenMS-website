@@ -1,69 +1,49 @@
 {{ define "main" }}
-    {{ if .Site.Params.hero }}
-    <div class="landing-section landing-section--first">
-      {{ partial "hero.html" . }}
-    </div>
-    {{ end }}
+<main id="content" class="home-page" aria-label="OpenMS homepage">
+  {{- if .Site.Params.hero }}
+  <header class="home-page__hero" aria-label="Introduction">
+    {{ partial "hero.html" . }}
+  </header>
+  {{- end }}
 
-    {{ if .Site.Params.panel }}
-    <div class="landing-section">
-      {{ partial "panel.html" . }}
-    </div>
-    {{ end }}
+  <section class="home-page__block home-page__block--partners" aria-labelledby="uni-partners-title">
+    {{ partial "university-partners.html" (dict "showHeader" true "variant" "home") }}
+  </section>
 
-    {{ if .Content }}
-    <div class="landing-section">
+  <section class="home-page__block home-page__block--projects" aria-labelledby="webapps-featured-title">
+    {{ partial "webapps.html" (dict "Page" . "embed" "home") }}
+  </section>
+
+  {{- with .Site.Params.keyfeatures }}
+  <section class="home-page__block home-page__block--overview" aria-labelledby="keyfeatures-title">
+    {{ partial "keyfeatures.html" (dict "Page" . "embed" "home") }}
+  </section>
+  {{- end }}
+
+  <section class="home-page__trust" aria-label="Organizations using OpenMS">
+    {{ partial "trusted-by.html" (dict "Site" .Site "variant" "home") }}
+  </section>
+
+  <section class="home-page__cta" aria-labelledby="contact-area-title">
+    {{ partial "contact-area.html" (dict "variant" "home") }}
+  </section>
+
+  {{- if .Site.Params.panel }}
+  <section class="home-page__block home-page__block--panel">
+    {{ partial "panel.html" . }}
+  </section>
+  {{- end }}
+
+  {{- if .Content }}
+  <section class="home-page__block home-page__block--content">
+    <div class="home-page__container">
       {{ partial "single/content.html" . }}
     </div>
-    {{ end }}
+  </section>
+  {{- end }}
 
-    {{ if .Site.Params.keyfeatures }}
-    <div class="landing-section landing-section--after-hero">
-      {{ partial "keyfeatures.html" . }}
-    </div>
-    {{ end }}
-
-    <div class="landing-section">
-      {{ partial "university-partners.html" (dict "showHeader" true) }}
-    </div>
-
-    {{ partial "webapps.html" . }}
-
-    {{ if .Site.Params.heroGroup }}
-    <div class="landing-section">
-      {{ partial "heroitems.html" (dict "Site" .Site "variant" "users") }}
-    </div>
-    {{ end }}
-
-    <div class="landing-section">
-      {{ partial "trusted-by.html" . }}
-    </div>
-
-    <div class="landing-section">
-      {{ partial "contact-area.html" . }}
-    </div>
-    
-    {{/* quick-facts hidden per UX/UI update */}}
-
-    {{ if .Site.Params.shell }}
-    <div class="landing-section">
-      {{ partial "shell.html" . }}
-    </div>
-    {{ end }}
-
-    {{ if .Site.Params.tabs }}
-    <div class="landing-section">
-      {{ partial "tabs.html" . }}
-    </div>
-    {{ end }}
-
-    {{ if .Site.Params.casestudies }}
-    <div class="landing-section">
-      {{ partial "casestudies.html" . }}
-    </div>
-    {{ end }}
-
-    <div class="landing-section">
-      {{ partial "tally.html" . }}
-    </div>
+  <div class="home-page__widgets" hidden>
+    {{ partial "tally.html" . }}
+  </div>
+</main>
 {{ end }}

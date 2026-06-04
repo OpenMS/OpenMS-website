@@ -1,5 +1,6 @@
 {{- $site := .Site -}}
 {{- $filterVariant := .variant -}}
+{{- $embed := .embed -}}
 {{- $heroGroup := $site.Params.heroGroup -}}
 {{- range $heroGroup }}
 {{- if and $filterVariant (ne (.variant | default "") $filterVariant) }}{{- continue }}{{- end }}
@@ -9,11 +10,11 @@
 {{- $subtitle := .subtitle }}
 {{- $variant := .variant | default "default" }}
 <section
-  class="openms-steps openms-steps--{{ $variant }}"
+  class="openms-steps openms-steps--{{ $variant }}{{- with $embed }} openms-steps--{{ $embed }}{{- end }}"
   style="--openms-steps-accent: #{{- $bgColor }};"
   aria-labelledby="openms-steps-title-{{ .title | anchorize }}"
 >
-  <div class="openms-steps__inner">
+  <div class="openms-steps__inner openms-lib-band__inner">
     <header class="openms-steps__header">
       {{- with $eyebrow }}
       <p class="openms-steps__eyebrow">{{ . }}</p>
@@ -33,7 +34,7 @@
     <ul class="openms-steps__grid" role="list" aria-label="{{ .title }}">
       {{- range $index, $item := .heroItems }}
       <li class="openms-steps__item" role="listitem">
-        <article class="openms-step{{- if .terminal }} openms-step--terminal{{- end }}{{- if eq $variant "users" }} openms-step--showcase{{- end }}">
+        <article class="openms-step{{- if .terminal }} openms-step--terminal{{- end }}{{- if eq $variant "users" }} openms-step--showcase{{- end }}{{- if eq $variant "developers" }} openms-step--developer{{- end }}">
           <span class="openms-step__index" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
 
           <div class="openms-step__media" aria-hidden="true">
@@ -61,7 +62,7 @@
             <p class="openms-step__subtitle">{{ . }}</p>
             {{- end }}
             {{- if and .buttonText .buttonLink }}
-            <a class="openms-step__cta" href="{{ .buttonLink }}">
+            <a class="openms-step__cta openms-btn-primary" href="{{ .buttonLink }}">
               <span>{{ .buttonText }}</span>
               <span class="openms-step__cta-arrow" aria-hidden="true">→</span>
             </a>

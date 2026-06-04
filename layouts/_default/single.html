@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{- if eq .Section "news" -}}
+{{ partial "news-single-main.html" . }}
+{{- else if or (eq .File.BaseFileName "publications") (eq .File.Path "publications.md") -}}
+{{ partial "publications-main.html" . }}
+{{- else if eq .File.BaseFileName "openms-lib" -}}
+{{ partial "openms-lib-main.html" . }}
+{{- else if eq .File.BaseFileName "calendar" -}}
+{{ partial "community-calendar-main.html" . }}
+{{- else -}}
+{{ partial "single/content.html" . }}
+{{- end -}}
+{{ end }}

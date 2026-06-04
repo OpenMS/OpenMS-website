@@ -14,12 +14,8 @@
       {{- end }}
 
       <div class="navbar-brand-actions">
-        <div class="navbar-mobile-ctas-end" aria-label="Sponsor, donate, and menu">
-          {{- range $navbar }}
-          {{- if .button }}
-          {{ partial "navbar-cta.html" . }}
-          {{- end }}
-          {{- end }}
+        <div class="navbar-mobile-toolbar navbar-mobile-ctas-end" aria-label="Search and menu">
+        {{ partial "navbar-search.html" (dict "Site" .Site "variant" "mobile" "inputId" "navbar-search-input-mobile") }}
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
           <span aria-hidden="true"></span>
@@ -32,6 +28,7 @@
 
     <div id="navbar-menu" class="navbar-menu is-static">
       <div class="navbar-end">
+        <div class="navbar-links">
         {{- range $navbar }}
         {{- if .sublinks }}
         <div class="navbar-item has-dropdown is-hoverable{{ if .is_emphasized }} is-emphasized{{ end }}">
@@ -44,9 +41,7 @@
             {{ partial "navbar-sublinks.html" .sublinks }}
           </div>
         </div>
-        {{- else if .button }}
-        <span class="navbar-desktop-cta">{{ partial "navbar-cta.html" . }}</span>
-        {{- else }}
+        {{- else if not .button }}
         <a href="{{ .url }}" class="navbar-item is-secondary">
           {{ .title }}
           {{ if .is_external }}{{ partial "svg-icon" "launch" }}{{ end }}
@@ -57,9 +52,21 @@
         {{- if .IsTranslated }}
         {{ partial "translation.html" . }}
         {{- end }}
+        </div>
 
+        <div class="navbar-actions">
+        {{ partial "navbar-search.html" (dict "Site" .Site "variant" "desktop" "inputId" "navbar-search-input") }}
+        {{- range $navbar }}
+        {{- if .button }}
+        <span class="navbar-desktop-cta">{{ partial "navbar-cta.html" . }}</span>
+        {{- end }}
+        {{- end }}
+        </div>
+
+        {{ partial "navbar-mobile-ctas.html" . }}
         {{ partial "navbar-social.html" . }}
       </div>
     </div>
+    <div class="navbar-backdrop" data-navbar-backdrop hidden aria-hidden="true"></div>
   </div>
 </nav>

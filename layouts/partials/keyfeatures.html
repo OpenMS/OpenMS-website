@@ -1,11 +1,16 @@
-{{- $keyfeatures := .Site.Params.keyfeatures }}
+{{- $page := .Page | default . -}}
+{{- $keyfeatures := $page.Site.Params.keyfeatures }}
+{{- $embed := .embed -}}
 {{- $title := index $keyfeatures "title" }}
 {{- $eyebrow := index $keyfeatures "eyebrow" }}
 {{- $description := index $keyfeatures "description" | default (index $keyfeatures "subtitle") }}
 {{- $note := index $keyfeatures "note" }}
 {{- $features := index $keyfeatures "features" }}
-<section class="keyfeatures keyfeatures-modern" aria-labelledby="keyfeatures-title">
-  <div class="keyfeatures-modern__inner">
+<section
+  class="keyfeatures keyfeatures-modern{{- with $embed }} keyfeatures-modern--{{ $embed }}{{- end }}"
+  aria-labelledby="keyfeatures-title"
+>
+  <div class="keyfeatures-modern__inner openms-lib-band__inner">
     <div class="keyfeatures-modern__layout">
       <header class="keyfeatures-modern__header">
         <div class="keyfeatures-modern__header-main">

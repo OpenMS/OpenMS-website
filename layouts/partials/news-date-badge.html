@@ -1,0 +1,9 @@
+{{- if not .Date.IsZero }}
+<div class="news-card__date-block">
+  <time class="news-card__date" datetime="{{ .Date.Format "2006-01-02" }}">
+    <span class="news-card__date-month">{{ .Date.Format "Jan" }}</span>
+    <span class="news-card__date-day">{{ .Date.Format "02" }}</span>
+    <span class="news-card__date-year">{{ .Date.Format "2006" }}</span>
+  </time>
+</div>
+{{- end }}

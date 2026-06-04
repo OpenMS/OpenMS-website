@@ -1,70 +1,94 @@
 ---
 title: "Governance"
+hidePageTitle: true
 ---
 
-# Governance Structure of OpenMS
+<div class="governance-page">
+  <header class="governance-hero" aria-label="Governance overview">
+    <p class="governance-hero__eyebrow">OpenMS governance</p>
+    <h1 class="governance-hero__title">
+      Built for <span>stability</span>, guided by <span>community</span>.
+    </h1>
+    <p class="governance-hero__description">
+      OpenMS combines a nonprofit corporation for legal and financial stewardship
+      with an Executive Committee that leads technical direction and community governance.
+    </p>
+  </header>
 
-OpenMS is governed through two complementary structures: a **nonprofit corporation** that provides legal and financial support, and an **Executive Committee** that guides the technical development and community governance of the project.
+  <section class="governance-grid" aria-label="Governance overview">
+    <article class="governance-card">
+      <p class="governance-card__eyebrow">Corporate Governance</p>
+      <h2 id="openms-inc">OpenMS Inc.</h2>
+      <p>
+        OpenMS Inc. is a U.S. nonprofit corporation under 501(c)(3)
+        that provides legal and financial infrastructure for the project.
+      </p>
+      <ul>
+        <li>Board of Directors handles fiduciary and legal oversight</li>
+        <li>Supports fundraising, compliance, and organizational continuity</li>
+      </ul>
+      <p class="governance-card__link">
+        OpenMS Inc. provides legal, financial, and organizational stewardship for the project.
+      </p>
+    </article>
+    <article class="governance-card">
+      <p class="governance-card__eyebrow">Project Governance</p>
+      <h2 id="executive-committee">Executive Committee</h2>
+      <p>
+        The <a href='{{< relref "/exec_committee" >}}'>Executive Committee</a> is the primary governance body
+        for the software project. It is composed of core developers and led by an elected Executive Chairperson.
+      </p>
+      <ul>
+        <li>Defines project direction and technical priorities</li>
+        <li>Maintains governance policies and core developer membership</li>
+        <li>Handles Code of Conduct escalations and process decisions</li>
+      </ul>
+      <p class="governance-card__link">
+        <a href='{{< relref "/exec_committee" >}}'>See committee details and procedures</a>
+      </p>
+    </article>
+  </section>
 
-This page provides an overview of how the project is organized and makes decisions.
+  <section class="governance-section" id="core-developers">
+    <h2>How Core Developers Fit In</h2>
+    <p>
+      <a href='{{< relref "/core_developers" >}}'>Core developers</a> are trusted maintainers who review contributions,
+      mentor contributors, and participate in project governance decisions through the Executive Committee.
+    </p>
+    <div class="governance-pillars" aria-label="Core developer responsibilities">
+      <div class="governance-pillar">Review and approve contributions</div>
+      <div class="governance-pillar">Guide technical direction</div>
+      <div class="governance-pillar">Mentor new contributors</div>
+      <div class="governance-pillar">Participate in governance votes</div>
+    </div>
+    <p class="governance-note">
+      New core developers are added by majority vote of the Executive Committee.
+      Core developers may step down voluntarily or be removed for inactivity or Code of Conduct violations by a two-thirds vote.
+    </p>
+  </section>
 
----
+  <section class="governance-section governance-section--contrast" id="responsibilities">
+    <h2>Separation of Responsibilities</h2>
+    <div class="governance-compare" aria-label="Corporate vs project governance">
+      <div>
+        <p class="governance-compare__title">Corporate (Board of Directors)</p>
+        <p>Legal entity, nonprofit compliance, financial stewardship.</p>
+      </div>
+      <div>
+        <p class="governance-compare__title">Project (Executive Committee)</p>
+        <p>Software roadmap, contributor governance, technical/community decisions.</p>
+      </div>
+    </div>
+    <p>
+      This model gives OpenMS institutional stability while preserving independent technical governance by the active maintainer community.
+    </p>
+  </section>
 
-## OpenMS Inc.
-
-[OpenMS Inc.]({{< relref "/about" >}}) is a U.S. nonprofit corporation organized under section 501(c)(3) of the Internal Revenue Code. It provides legal and financial infrastructure to support the development of the OpenMS software project.
-
-The corporation is governed by a **Board of Directors** responsible for fiduciary oversight, legal compliance, and financial management.
-
-For more information about the nonprofit entity, see the [about page]({{< relref "/about" >}}).
-
----
-
-## Executive Committee
-
-The [Executive Committee]({{< relref "/exec_committee" >}}) is the primary governance body of the OpenMS project itself. It is composed of the **core developers** and is led by an elected **Executive Chairperson**.
-
-The Executive Committee is responsible for:
-
-- Defining the mission, direction, and vision of OpenMS
-- Guiding technical development and resource allocation
-- Maintaining project bylaws and governance policies
-- Managing the list of core developers
-- Addressing Code of Conduct issues
-
-The committee meets regularly to coordinate project development and governance. Meeting minutes are made publicly available to ensure transparency.
-
-For detailed information about the committee's responsibilities, meeting procedures, and decision-making processes, see the [Executive Committee page]({{< relref "/exec_committee" >}}).
-
----
-
-## Core Developers
-
-[Core developers]({{< relref "/core_developers" >}}) are trusted maintainers who play a central role in the development and governance of OpenMS. They collectively form the Executive Committee.
-
-Core developers:
-
-- Review and approve contributions to the codebase
-- Help guide the technical direction of the project
-- Support and mentor new contributors
-- Participate in governance decisions
-
-New core developers are added by a majority vote of the Executive Committee. Core developers may step down voluntarily or be removed due to inactivity or Code of Conduct violations by a two-thirds vote of the committee.
-
-For more information about the role and responsibilities of core developers, see the [Core Developers page]({{< relref "/core_developers" >}}).
-
----
-
-## Relationship Between the Corporation and the Project
-
-**Corporate governance** (handled by the Board of Directors) focuses on the legal entity, finances, and nonprofit compliance.
-
-**Project governance** (handled by the Executive Committee) focuses on software development, technical direction, and community management.
-
-This separation allows the project to benefit from the legal and financial stability provided by the nonprofit corporation while maintaining independent technical governance by the community of core developers.
-
----
-
-## See Also
-
-For guidance on getting started as a contributor, see the [Contributing Guide]({{< relref "/contribute" >}}).
+  <section class="governance-links" id="related-pages">
+    <h2>See Also</h2>
+    <p>
+      For guidance on getting started as a contributor, see the
+      <a href='{{< relref "/contribute" >}}'>Contributing Guide</a>.
+    </p>
+  </section>
+</div>

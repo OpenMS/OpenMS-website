@@ -1,3 +1,58 @@
-.shortcuts-H2 {
-  font-weight: bold;
+/* Global polish for "On this page" */
+.shortcuts-container {
+  border-radius: 0.75rem;
+}
+
+.shortcuts-title {
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-secondary-heading-size);
+  font-weight: 700;
+  color: var(--openms-navy);
+}
+
+#shortcuts {
+  max-height: min(65vh, 36rem);
+  overflow: auto;
+  padding-right: 0.2rem;
+}
+
+#shortcuts > div {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+#shortcuts > div:not(.active) {
+  border-left-color: rgba(var(--openms-blue-rgb), 0.35);
+}
+
+#shortcuts > div.active {
+  color: var(--openms-blue);
+  border-left-color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.08);
+}
+
+.shortcuts-H2,
+.shortcuts-H3,
+.shortcuts-H4 {
+  border-radius: 0 0.45rem 0.45rem 0;
+}
+
+.shortcuts-H2:hover,
+.shortcuts-H3:hover,
+.shortcuts-H4:hover {
+  background: rgba(var(--openms-blue-rgb), 0.08);
+}
+
+/* Governance page: use top jump links only (hide left TOC) */
+.content-padding:has(.governance-page) .shortcuts-container {
+  display: none;
+}
+
+/* About page: hide left TOC */
+.content-padding:has(.about-page) .shortcuts-container {
+  display: none;
+}
+
+/* OpenMS-lib page: hide left TOC */
+.content-padding:has(.openms-lib-layout) .shortcuts-container {
+  display: none;
 }

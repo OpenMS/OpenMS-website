@@ -1,0 +1,40 @@
+# Community calendar — edit this file to add or update events (see docs/common-tasks/update-community-calendar.md)
+events:
+  - title: OpenMS Developer Meeting 2026
+    start: 2026-03-23
+    end: 2026-03-27
+    location: Piotrowice Nyskie Palace, Otmuchów, Poland
+    category: developer-meeting
+    summary: Annual developer meeting with talks, tutorials, and code sprints.
+    url: https://docs.google.com/forms/d/1tyg3uMQoidQ45C7lUqic9GF-AqDCs5cBdIyOzfrl_uA/edit
+    news_url: /news/devmeeting2026/
+
+  - title: OpenMS/CIBI workshops — South Africa
+    start: 2026-02-09
+    end: 2026-02-20
+    location: South Africa
+    category: workshop
+    summary: Four two-day workshops on metabolomics and proteomics for plant biotechnology.
+    news_url: /news/south_africa_roadshow_2026/
+
+  - title: Workshop at University of Helsinki
+    start: 2026-04-30
+    location: University of Helsinki, Finland
+    category: workshop
+    summary: One-day workshop on MS analysis with OpenMS and OpenDIAKiosk.
+    news_url: /news/helsinki_workshop_2026/
+
+  - title: OpenMS Open House 2025
+    start: 2025-11-09
+    location: University of Toronto, Canada
+    category: outreach
+    summary: Drop-in session on computational mass spectrometry and open-source development.
+    news_url: /news/openhouse2025/
+
+  - title: OpenMS Developer Meeting 2025
+    start: 2025-03-17
+    end: 2025-03-21
+    location: Xewkija, Gozo, Malta
+    category: developer-meeting
+    summary: Developer meeting with tutorials and code sprints.
+    news_url: /news/devmeeting2025/

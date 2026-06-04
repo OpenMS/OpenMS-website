@@ -41,3 +41,9 @@ error: failed to transform resource: TOCSS: failed to transform "style.sass"
 ```
 
 if you don't have the Hugo extended version.
+
+## Maintainer documentation
+
+**Non-developers** updating news, pages, or homepage text should start here:
+
+**[docs/README.md](docs/README.md)** — task guides (add news, edit banner, config.yaml reference, PR workflow, troubleshooting).

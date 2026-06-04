@@ -1,5 +1,8 @@
-{{- $section := .Site.Params.webappsSection }}
-{{- $webapps := .Site.Params.webapps }}
+{{- $page := .Page | default . -}}
+{{- $site := $page.Site | default site -}}
+{{- $embed := .embed | default "" -}}
+{{- $section := $site.Params.webappsSection }}
+{{- $webapps := $site.Params.webapps }}
 {{- if $webapps }}
 {{- $eyebrow := index $section "eyebrow" }}
 {{- $title := index $section "title" | default "Our Open Source Projects" }}
@@ -8,10 +11,38 @@
 {{- $ctaText := index $section "ctaText" | default "View project" }}
 {{- $showAll := index $section "showAll" }}
 {{- $cardCtx := dict "ctaText" $ctaText }}
-<div class="webapps-modern-wrap">
-  <section class="webapps-featured" aria-labelledby="webapps-featured-title">
+<div class="webapps-modern-wrap{{ with $embed }} webapps-modern-wrap--{{ . }}{{ end }}">
+  <section class="webapps-featured{{ with $embed }} webapps-featured--{{ . }}{{ end }}" aria-labelledby="webapps-featured-title">
     <div class="webapps-featured__inner">
-      <header class="webapps-featured__header">
+      {{- if eq $embed "home" }}
+      <header class="webapps-featured__header webapps-featured__header--home webapps-featured__header--split">
+        <div class="webapps-featured__header-intro">
+          {{- with $eyebrow }}
+          <p class="webapps-featured__eyebrow">
+            <span class="webapps-featured__eyebrow-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14" focusable="false" aria-hidden="true">
+                <path fill="currentColor" d="M2 2.5h4.5v4.5H2V2.5zm7.5 0H14v4.5H9.5V2.5zM2 9h4.5v4.5H2V9zm7.5 0H14v4.5H9.5V9z"/>
+              </svg>
+            </span>
+            {{ . }}
+          </p>
+          {{- end }}
+          {{- with $description }}
+          <p class="webapps-featured__lead">{{ . }}</p>
+          {{- end }}
+        </div>
+        <div class="webapps-featured__header-title-wrap">
+          <h2 id="webapps-featured-title" class="webapps-featured__title">
+            {{- if and $titleHighlight (in $title $titleHighlight) }}
+            {{ replace $title $titleHighlight (printf "<span class=\"webapps-featured__title-accent\">%s</span>" $titleHighlight) | safeHTML }}
+            {{- else }}
+            {{ $title }}
+            {{- end }}
+          </h2>
+        </div>
+      </header>
+      {{- else }}
+      <header class="webapps-featured__header{{ with $embed }} webapps-featured__header--{{ . }}{{ end }}">
         <div class="webapps-featured__header-main">
           {{- with $eyebrow }}
           <p class="webapps-featured__eyebrow">{{ . }}</p>
@@ -28,11 +59,12 @@
           {{- end }}
         </div>
       </header>
+      {{- end }}
 
-      <ul class="webapps-featured__grid" role="list" aria-label="OpenMS projects">
+      <ul class="webapps-featured__grid{{ if eq $embed "home" }} webapps-featured__grid--bento{{ end }}" role="list" aria-label="OpenMS projects">
         {{- range $webapps }}
         <li class="webapps-featured__item" role="listitem">
-          {{ partial "webapps-project-card.html" (merge $cardCtx (dict "project" .)) }}
+          {{ partial "webapps-project-card.html" (merge $cardCtx (dict "project" . "embed" $embed)) }}
         </li>
         {{- end }}
       </ul>
@@ -40,7 +72,7 @@
       {{- with $showAll }}
       <div class="webapps-featured__footer">
         <a
-          class="webapps-featured__show-all hero-modern__btn hero-modern__btn--primary"
+          class="webapps-featured__show-all openms-step__cta openms-btn-primary"
           href="{{ .url }}"
         >{{ .text }}</a>
       </div>

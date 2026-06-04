@@ -1,11 +1,39 @@
 {{- $stats := .stats }}
 {{- $class := .class | default "hero-modern__stats" }}
+{{- $layout := .layout | default "" }}
 {{- $below := in $class "hero-modern__stats--below" }}
+{{- $homeMetrics := eq $class "hero-home__metrics" }}
+{{- $bento := eq $layout "bento" }}
 {{- with $stats }}
+{{- if $bento }}
+{{- $featured := index . 1 -}}
+{{- $sideA := index . 0 -}}
+{{- $sideB := index . 2 -}}
+<div class="{{ $class }}" role="group" aria-label="Key metrics">
+  <div class="hero-home__bento-stack">
+    {{ partial "hero-stat-card.html" (dict "stat" $featured "modifier" "featured") }}
+    <div class="hero-home__bento-duo">
+      {{ partial "hero-stat-card.html" (dict "stat" $sideA) }}
+      {{ partial "hero-stat-card.html" (dict "stat" $sideB "modifier" "accent") }}
+    </div>
+  </div>
+</div>
+{{- else }}
 {{- $statCount := len . }}
 <dl class="{{ $class }}" aria-label="Key metrics">
   {{- range $index, $stat := . }}
-  <div class="hero-modern__stat{{ if $below }} hero-modern__stat--card{{ end }}">
+  <div class="hero-modern__stat{{ if $below }} hero-modern__stat--card{{ end }}{{ if $homeMetrics }} hero-modern__stat--metric{{ end }}">
+    {{- if $homeMetrics }}
+    <dt class="hero-modern__stat-label">
+      <span>{{ $stat.label }}</span>
+    </dt>
+    <dd
+      class="hero-modern__stat-number"
+      data-count-value="{{ $stat.value }}"
+      data-count-suffix="{{ $stat.suffix | default "" }}"
+      data-count-decimals="{{ $stat.decimals | default 0 }}"
+    >0{{ $stat.suffix | default "" }}</dd>
+    {{- else }}
     <dt class="hero-modern__stat-label">
       <span class="hero-modern__stat-icon" aria-hidden="true">
         {{- if eq $index 0 -}}
@@ -30,10 +58,12 @@
       data-count-suffix="{{ $stat.suffix | default "" }}"
       data-count-decimals="{{ $stat.decimals | default 0 }}"
     >0{{ $stat.suffix | default "" }}</dd>
+    {{- end }}
   </div>
-  {{- if lt (add $index 1) $statCount }}
+  {{- if and (not $homeMetrics) (lt (add $index 1) $statCount) }}
   <span class="hero-modern__stat-sep" aria-hidden="true">|</span>
   {{- end }}
   {{- end }}
 </dl>
+{{- end }}
 {{- end }}

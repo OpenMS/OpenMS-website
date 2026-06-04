@@ -46,13 +46,13 @@
 .uni-partners__title {
   margin: 0 auto;
   font-family: var(--openms-font-heading);
-  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-size: clamp(1.75rem, 3.4vw, 2.35rem);
   font-weight: var(--openms-heading-lg-weight);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: var(--openms-navy);
   text-wrap: balance;
-  max-width: 18ch;
+  max-width: none;
 }
 
 .uni-partners__title-accent {
@@ -67,6 +67,16 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.uni-partners__lead {
+  margin: 0.85rem auto 0;
+  max-width: 42rem;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.62;
+  color: rgba(var(--openms-dark-rgb), 0.8);
+  text-wrap: pretty;
 }
 
 .uni-partners__marquee {

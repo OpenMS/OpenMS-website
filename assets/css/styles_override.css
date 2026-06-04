@@ -2,10 +2,28 @@
 .navbar.is-fresh .navbar-link,
 .navbar.is-fresh a.navbar-item.is-secondary,
 .navbar.is-fresh .navbar-menu .navbar-item,
-#navbar-clone.navbar.is-fresh .navbar-item,
+.navbar.is-fresh .navbar-dropdown .navbar-item,
+.navbar.is-fresh .navbar-dropdown-heading,
+.navbar.is-fresh .navbar-cta-label,
+#navbar-clone.navbar.is-fresh .navbar-cta-label {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.navbar.is-fresh .navbar-item:not(.navbar-cta-item),
+.navbar.is-fresh .navbar-link,
+.navbar.is-fresh a.navbar-item.is-secondary,
+.navbar.is-fresh .navbar-menu .navbar-item,
+.navbar.is-fresh .navbar-dropdown .navbar-item,
+.navbar.is-fresh .navbar-dropdown-heading,
+#navbar-clone.navbar.is-fresh .navbar-item:not(.navbar-cta-item),
 #navbar-clone.navbar.is-fresh .navbar-link,
 #navbar-clone.navbar.is-fresh a.navbar-item.is-secondary,
-#navbar-clone.navbar.is-fresh .navbar-menu .navbar-item {
+#navbar-clone.navbar.is-fresh .navbar-menu .navbar-item,
+#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item,
+#navbar-clone.navbar.is-fresh .navbar-dropdown-heading {
+  font-size: var(--openms-navbar-font-size);
   color: var(--openms-dark) !important;
 }
 
@@ -19,11 +37,11 @@
   outline-offset: 2px;
 }
 
-.navbar.is-fresh .navbar-item:hover,
+.navbar.is-fresh .navbar-item:not(.navbar-cta-item):hover,
 .navbar.is-fresh .navbar-link:hover,
 .navbar.is-fresh .navbar-item.has-dropdown:hover .navbar-link,
 .navbar.is-fresh .navbar-brand .navbar-brand-link:hover,
-#navbar-clone.navbar.is-fresh .navbar-item:hover,
+#navbar-clone.navbar.is-fresh .navbar-item:not(.navbar-cta-item):hover,
 #navbar-clone.navbar.is-fresh .navbar-link:hover,
 #navbar-clone.navbar.is-fresh .navbar-item.has-dropdown:hover .navbar-link,
 #navbar-clone.navbar.is-fresh .navbar-brand .navbar-brand-link:hover {
@@ -43,9 +61,26 @@
   background-color: transparent !important;
 }
 
+.navbar.is-fresh .navbar-item.has-dropdown > .navbar-link,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown > .navbar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 .navbar.is-fresh .navbar-item.has-dropdown .navbar-link::after,
 #navbar-clone.navbar.is-fresh .navbar-item.has-dropdown .navbar-link::after {
   border-color: var(--openms-dark) !important;
+}
+
+@media (min-width: 1280px) {
+  .navbar.is-fresh .navbar-item.has-dropdown > .navbar-link::after,
+  #navbar-clone.navbar.is-fresh .navbar-item.has-dropdown > .navbar-link::after {
+    position: relative;
+    top: 0.1em;
+    right: auto;
+    margin-left: 0.25rem;
+  }
 }
 
 .navbar.is-fresh .navbar-item.has-dropdown:hover .navbar-link::after,
@@ -59,6 +94,30 @@
   box-shadow: 0 0.5rem 1.5rem rgba(var(--openms-dark-rgb), 0.08);
 }
 
+@media (min-width: 1280px) {
+  .navbar.is-fresh .navbar-item.has-dropdown .navbar-dropdown,
+  #navbar-clone.navbar.is-fresh .navbar-item.has-dropdown .navbar-dropdown {
+    min-width: max(100%, 13.5rem);
+    width: max-content;
+    max-width: min(22rem, 92vw);
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+  }
+
+  .navbar.is-fresh .navbar-dropdown .navbar-item,
+  .navbar.is-fresh .navbar-dropdown-heading,
+  #navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item,
+  #navbar-clone.navbar.is-fresh .navbar-dropdown-heading {
+    white-space: nowrap;
+  }
+
+  .navbar.is-fresh .navbar-dropdown .navbar-item,
+  #navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .navbar.is-fresh .navbar-dropdown .navbar-item,
 #navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item {
   color: var(--openms-dark) !important;
@@ -70,48 +129,20 @@
   background-color: rgba(var(--openms-blue-rgb), 0.1);
 }
 
-/* Navbar CTA buttons (mailchimp.css must not hide these) */
-.navbar.is-fresh .signup-button,
-#navbar-clone.navbar.is-fresh .signup-button {
-  display: inline-block !important;
+/* Navbar CTAs — sizing in openms-buttons.css */
+.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate,
+.navbar.is-fresh a.navbar-item.navbar-cta-item.openms-btn-primary,
+#navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate,
+#navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.openms-btn-primary {
+  display: inline-flex !important;
+  flex-shrink: 0;
 }
 
-/* Donate — matches hero primary button */
-.navbar.is-fresh .signup-button.secondary-btn,
-#navbar-clone.navbar.is-fresh .signup-button.secondary-btn {
-  background-color: var(--openms-orange) !important;
-  color: var(--openms-white) !important;
-  border: 2px solid var(--openms-orange) !important;
-  box-shadow: 0 0.25rem 0.75rem rgba(var(--openms-orange-rgb), 0.3);
-}
-
-.navbar.is-fresh .signup-button.secondary-btn:hover,
-#navbar-clone.navbar.is-fresh .signup-button.secondary-btn:hover {
-  background-color: var(--openms-yellow) !important;
-  color: var(--openms-dark) !important;
-  border-color: var(--openms-yellow) !important;
-  box-shadow: 0 0.35rem 1rem rgba(var(--openms-yellow-rgb), 0.35);
-}
-
-/* Sponsor — blue primary with orange-button geometry */
-.navbar.is-fresh .signup-button.sponsor-btn,
-#navbar-clone.navbar.is-fresh .signup-button.sponsor-btn {
-  background-color: var(--openms-blue) !important;
-  color: var(--openms-white) !important;
-  border: 2px solid var(--openms-blue) !important;
-  box-shadow: 0 0.5rem 1.5rem rgba(var(--openms-blue-rgb), 0.35);
-  font-size: var(--openms-text-min);
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.navbar.is-fresh .signup-button.sponsor-btn:hover,
-#navbar-clone.navbar.is-fresh .signup-button.sponsor-btn:hover {
-  background-color: var(--openms-navy) !important;
-  color: var(--openms-white) !important;
-  border-color: var(--openms-navy) !important;
-  box-shadow: 0 0.75rem 2rem rgba(var(--openms-blue-rgb), 0.35);
-  transform: translateY(-2px);
+.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:hover,
+.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:focus-visible,
+#navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:hover,
+#navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:focus-visible {
+  transform: none;
 }
 
 .navbar.is-fresh .navbar-burger,
@@ -122,7 +153,7 @@
   margin-right: 1rem;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   .navbar.is-fresh .navbar-burger,
   #navbar-clone.navbar.is-fresh .navbar-burger {
     margin-right: 0;
@@ -164,13 +195,15 @@
   background-color: transparent;
 }
 
-.navbar.is-fresh {
-  min-height: 5.5rem;
-}
+@media (min-width: 1280px) {
+  .navbar.is-fresh {
+    min-height: 5.5rem;
+  }
 
-.navbar.is-fresh .container,
-.navbar.is-fresh .navbar-brand {
-  min-height: 5.5rem;
+  .navbar.is-fresh .container,
+  .navbar.is-fresh .navbar-brand {
+    min-height: 5.5rem;
+  }
 }
 
 /* Top-level dropdown labels (e.g. Partner with OpenMS) */
@@ -184,7 +217,6 @@
 #navbar-clone.navbar.is-fresh .navbar-dropdown-heading {
   display: block;
   padding: 0.5rem 1rem 0.35rem;
-  font-size: var(--openms-text-min);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: none;
@@ -205,13 +237,11 @@
 .navbar.is-fresh .navbar-dropdown .navbar-item.is-nested,
 #navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested {
   padding-left: 1.5rem;
-  font-size: calc(var(--openms-body-size) * 0.95);
 }
 
-.navbar.is-fresh .navbar-item:has(.signup-button) {
+.navbar.is-fresh .navbar-actions .navbar-cta-item,
+#navbar-clone.navbar.is-fresh .navbar-actions .navbar-cta-item {
   flex-shrink: 0;
-  padding-left: 0.35rem;
-  padding-right: 0.35rem;
 }
 
 .navbar.is-fresh .navbar-brand .navbar-brand-link {
@@ -344,51 +374,10 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
 
 
 .footer-brand-btn.signup-button {
-  display: inline-block !important;
-  min-height: 2.75rem;
-  padding: 0.75rem 1.75rem !important;
-  border-radius: 0.5rem !important;
-  font-size: var(--openms-body-size-lg);
-  font-weight: 600;
-  line-height: 1.3;
-  text-decoration: none;
-  white-space: nowrap;
+  display: inline-flex !important;
 }
 
-.footer-redesign .footer-sponsor-btn.signup-button {
-  color: var(--openms-white) !important;
-  background-color: var(--openms-blue) !important;
-  border: 2px solid var(--openms-blue) !important;
-  box-shadow: 0 0.5rem 1.5rem rgba(var(--openms-blue-rgb), 0.35);
-  font-size: var(--openms-text-min) !important;
-}
-
-.footer-redesign .footer-sponsor-btn.signup-button:hover,
-.footer-redesign .footer-sponsor-btn.signup-button:focus-visible {
-  color: var(--openms-white) !important;
-  background-color: var(--openms-navy) !important;
-  border-color: var(--openms-navy) !important;
-  box-shadow: 0 0.75rem 2rem rgba(var(--openms-blue-rgb), 0.35);
-  transform: translateY(-2px);
-}
-
-.footer-redesign .footer-donate-btn.signup-button.secondary-btn {
-  background-color: var(--openms-orange) !important;
-  color: var(--openms-white) !important;
-  border: 2px solid var(--openms-orange) !important;
-  box-shadow: 0 0.25rem 0.75rem rgba(var(--openms-orange-rgb), 0.3);
-  font-size: var(--openms-text-min) !important;
-  font-weight: 600 !important;
-  line-height: 1.3 !important;
-}
-
-.footer-redesign .footer-donate-btn.signup-button.secondary-btn:hover,
-.footer-redesign .footer-donate-btn.signup-button.secondary-btn:focus-visible {
-  background-color: var(--openms-yellow) !important;
-  color: var(--openms-dark) !important;
-  border-color: var(--openms-yellow) !important;
-  box-shadow: 0 0.35rem 1rem rgba(var(--openms-yellow-rgb), 0.35);
-}
+/* Footer Donate — secondary blue (openms-buttons.css) */
 
 .footer-title {
   color: var(--openms-white);
@@ -399,6 +388,7 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(1rem, 2.5vw, 2rem);
+  padding-top: clamp(1.25rem, 2.5vw, 2rem);
 }
 
 .footer-links-area {
@@ -506,6 +496,16 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
   transition: opacity 0.2s ease;
 }
 
+.footer-sponsors__logo-link--elixir {
+  min-width: 4rem;
+  padding-inline: 0.6rem;
+}
+
+.footer-sponsors__logo-link--elixir img {
+  max-height: 3.35rem;
+  max-width: min(100%, 10rem);
+}
+
 .footer-sponsors__logos a:hover,
 .footer-sponsors__logos a:focus-visible {
   background: var(--openms-blue);
@@ -531,9 +531,39 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
   margin: 0 auto;
   padding: 1.25rem clamp(1.25rem, 4vw, 2.5rem);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+}
+
+.footer-deploy {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  transition: opacity 0.2s ease;
+}
+
+.footer-deploy:hover,
+.footer-deploy:focus-visible {
+  opacity: 0.9;
+  outline: none;
+}
+
+.footer-deploy:focus-visible {
+  outline: 2px solid var(--openms-yellow);
+  outline-offset: 3px;
+}
+
+.footer-deploy img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 7.125rem);
+  height: auto;
+  max-height: 2rem;
+  object-fit: contain;
 }
 
 .footer-socials {
@@ -632,10 +662,12 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
   .footer-nav {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem 2rem;
+    padding-top: clamp(1rem, 2vw, 1.5rem);
   }
 
   .footer-links-area {
     gap: 1.25rem;
+    padding-top: 0;
   }
 }
 
@@ -663,6 +695,9 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
   }
 
   .footer-bottom {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     padding-inline: 1.25rem;
   }
 }
@@ -687,7 +722,8 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
 }
 
 /* =============================================
-   LANDING — section spacing
+   LANDING — legacy section spacing (non-home pages)
+   Homepage rhythm: assets/css/landing-page.css
    ============================================= */
 .landing-section {
   margin-top: clamp(2rem, 4.5vw, 4rem);
@@ -697,13 +733,11 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
   margin-top: 0;
 }
 
-/* Hero → What is OpenMS — section padding handles vertical rhythm */
 .landing-section--after-hero {
   margin-top: 0;
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
-/* Projects block — full-width navy band (matches hero); spacing from section above */
 .webapps-modern-wrap {
   margin-top: clamp(2rem, 4.5vw, 4rem);
 }

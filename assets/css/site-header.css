@@ -6,6 +6,7 @@
   z-index: 200;
   width: 100%;
   background: var(--openms-white);
+  overflow: visible;
 }
 
 .site-header .news-banner {
@@ -18,6 +19,10 @@
   position: relative;
   z-index: 2;
   width: 100%;
+}
+
+body.navbar-menu-open {
+  overflow: hidden;
 }
 
 /* Scroll clone duplicates nav only — hide; sticky header handles scroll */
