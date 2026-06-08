@@ -502,7 +502,6 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
 
 .footer-socials a:focus-visible,
 .footer-sponsors__logos a:focus-visible {
-  color: var(--openms-white);
   outline: 2px solid var(--openms-yellow);
   outline-offset: 3px;
 }
@@ -555,7 +554,7 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
 
 .footer-sponsors__logos a:hover,
 .footer-sponsors__logos a:focus-visible {
-  background: var(--openms-blue);
+  background: transparent;
 }
 
 .footer-sponsors__logos a:hover img,
@@ -626,28 +625,30 @@ body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
   justify-content: center;
   min-width: 2.875rem;
   min-height: 2.875rem;
-  color: var(--openms-white);
+  color: rgba(var(--openms-white-rgb), 0.82);
   border-radius: 0.5rem;
-  transition: color 0.2s ease, background 0.2s ease;
+  transition: color 0.2s ease;
 }
 
-.footer-socials a:hover {
-  color: var(--openms-white);
-  background: var(--openms-blue);
+.footer-socials a:hover,
+.footer-socials a:focus-visible {
+  color: var(--openms-blue);
+  background: transparent;
 }
 
 .footer-socials svg.icon {
   width: 1.5rem;
   height: 1.5rem;
-  fill: var(--openms-white);
+  fill: currentColor;
 }
 
 .footer-socials a svg,
 .footer-socials a svg * {
-  fill: var(--openms-white) !important;
-  stroke: var(--openms-white) !important;
-  color: var(--openms-white) !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+  color: currentColor !important;
   opacity: 1 !important;
+  transition: color 0.2s ease, fill 0.2s ease, stroke 0.2s ease;
 }
 
 .footer-copyright {
