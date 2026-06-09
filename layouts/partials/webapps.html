@@ -10,6 +10,7 @@
 {{- $description := index $section "description" }}
 {{- $ctaText := index $section "ctaText" | default "View project" }}
 {{- $showAll := index $section "showAll" }}
+{{- $extraLinks := index $section "links" | default (slice) }}
 {{- $cardCtx := dict "ctaText" $ctaText }}
 <div class="webapps-modern-wrap{{ with $embed }} webapps-modern-wrap--{{ . }}{{ end }}">
   <section class="webapps-featured{{ with $embed }} webapps-featured--{{ . }}{{ end }}" aria-labelledby="webapps-featured-title">
@@ -69,12 +70,33 @@
         {{- end }}
       </ul>
 
-      {{- with $showAll }}
+      {{- if or $extraLinks $showAll }}
       <div class="webapps-featured__footer">
+        {{- if $extraLinks }}
+        <div class="webapps-featured__extras" aria-label="Core OpenMS tools">
+          {{- range $extraLinks }}
+          <div class="webapps-featured__extra">
+            <a
+              class="webapps-featured__extra-link"
+              href="{{ .url }}"
+              {{- if or (hasPrefix .url "http://") (hasPrefix .url "https://") }}
+              target="_blank"
+              rel="noopener noreferrer"
+              {{- end }}
+            >{{ .text }}</a>
+            {{- with .description }}
+            <p class="webapps-featured__extra-desc">{{ . }}</p>
+            {{- end }}
+          </div>
+          {{- end }}
+        </div>
+        {{- end }}
+        {{- with $showAll }}
         <a
           class="webapps-featured__show-all openms-step__cta openms-btn-primary"
           href="{{ .url }}"
         >{{ .text }}</a>
+        {{- end }}
       </div>
       {{- end }}
     </div>

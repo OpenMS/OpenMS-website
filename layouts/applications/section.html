@@ -5,28 +5,37 @@
 {{- $eyebrow := index $cfg "eyebrow" | default "Projects" }}
 {{- $readMore := index $cfg "readMoreLabel" | default "Read more" }}
 {{- $pages := .Pages.ByTitle }}
-<section class="content-padding flex-row applications-page-layout">
-  <div class="content-container applications-page-layout__container">
-    <div class="governance-page applications-page">
-      <header class="governance-hero" aria-label="OpenMS applications">
-        <p class="governance-hero__eyebrow">{{ $eyebrow }}</p>
-        <h1 class="governance-hero__title">
+<section class="applications-page-layout">
+  <header class="openms-lib-hero applications-page-hero" aria-label="OpenMS applications">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
           {{- if or (eq $title "OpenMS Applications") (eq $title "Applications") -}}
-          OpenMS <span>applications</span>.
+          OpenMS <span class="openms-lib-hero__accent">applications</span>.
           {{- else -}}
           {{ $title }}
           {{- end }}
         </h1>
         {{- with $subtitle }}
-        <p class="governance-hero__description">{{ . }}</p>
+        <p class="openms-lib-hero__lead">{{ . }}</p>
         {{- end }}
-        <div class="governance-hero__meta">
-          <a href="https://openms.readthedocs.io/en/latest/getting-started/topp-tools.html" target="_blank" rel="noopener noreferrer">TOPP tools</a>
-          <a href="/contribute/">Contribute</a>
-          <a href="/openms-lib/">OpenMS-lib</a>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a
+            class="openms-lib-btn openms-lib-btn--primary"
+            href="https://openms.readthedocs.io/en/latest/getting-started/topp-tools.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >TOPP tools</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/contribute/">Contribute</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/openms-lib/">OpenMS-lib</a>
         </div>
-      </header>
+      </div>
+    </div>
+  </header>
 
+  <div class="applications-page-layout__content">
+    <div class="applications-page">
       {{- if .Content }}
       <div class="applications-page__intro post-content">
         {{ .Content }}

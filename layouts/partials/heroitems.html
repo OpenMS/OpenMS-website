@@ -9,17 +9,18 @@
 {{- $titleHighlight := .titleHighlight }}
 {{- $subtitle := .subtitle }}
 {{- $variant := .variant | default "default" }}
+{{- $isLibList := eq $embed "openms-lib" }}
 <section
-  class="openms-steps openms-steps--{{ $variant }}{{- with $embed }} openms-steps--{{ $embed }}{{- end }}"
+  class="openms-steps openms-steps--{{ $variant }}{{- with $embed }} openms-steps--{{ $embed }}{{- end }}{{- if $isLibList }} openms-steps--lib-list{{- if eq $variant "users" }} openms-steps--lib-capabilities{{- else if eq $variant "developers" }} openms-steps--lib-developers{{- end }}{{- end }}"
   style="--openms-steps-accent: #{{- $bgColor }};"
   aria-labelledby="openms-steps-title-{{ .title | anchorize }}"
 >
   <div class="openms-steps__inner openms-lib-band__inner">
-    <header class="openms-steps__header">
+    <header class="openms-steps__header openms-lib-block__head">
       {{- with $eyebrow }}
-      <p class="openms-steps__eyebrow">{{ . }}</p>
+      <p class="openms-steps__eyebrow openms-lib-block__eyebrow">{{ . }}</p>
       {{- end }}
-      <h2 id="openms-steps-title-{{ .title | anchorize }}" class="openms-steps__title">
+      <h2 id="openms-steps-title-{{ .title | anchorize }}" class="openms-steps__title openms-lib-block__title">
         {{- if and $titleHighlight (in .title $titleHighlight) }}
         {{ replace .title $titleHighlight (printf "<span class=\"openms-steps__title-accent\">%s</span>" $titleHighlight) | safeHTML }}
         {{- else }}
@@ -27,42 +28,69 @@
         {{- end }}
       </h2>
       {{- with $subtitle }}
-      <p class="openms-steps__subtitle">{{ . }}</p>
+      <p class="openms-steps__subtitle openms-lib-block__lead">{{ . }}</p>
       {{- end }}
     </header>
 
-    <ul class="openms-steps__grid" role="list" aria-label="{{ .title }}">
+    <ul class="openms-steps__grid openms-lib-list{{- if $isLibList }}{{- if eq $variant "users" }} openms-lib-list--capabilities{{- else if eq $variant "developers" }} openms-lib-list--developers{{- end }}{{- end }}" role="list" aria-label="{{ .title }}">
       {{- range $index, $item := .heroItems }}
       <li class="openms-steps__item" role="listitem">
-        <article class="openms-step{{- if .terminal }} openms-step--terminal{{- end }}{{- if eq $variant "users" }} openms-step--showcase{{- end }}{{- if eq $variant "developers" }} openms-step--developer{{- end }}">
-          <span class="openms-step__index" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
+        <article class="openms-step openms-lib-list__row{{- if .terminal }} openms-step--terminal{{- end }}{{- if eq $variant "users" }} openms-step--showcase{{- end }}{{- if eq $variant "developers" }} openms-step--developer{{- end }}{{- if $isLibList }} openms-step--list-row{{- end }}">
+          {{- if and $isLibList .buttonLink (and (ne $variant "users") (ne $variant "developers")) }}
+          <a
+            class="openms-lib-card-hit"
+            href="{{ .buttonLink }}"
+            {{- if or (hasPrefix .buttonLink "http://") (hasPrefix .buttonLink "https://") }}
+            target="_blank"
+            rel="noopener noreferrer"
+            {{- end }}
+            aria-label="{{ .title }} — {{ .buttonText }}"
+            tabindex="-1"
+          ></a>
+          {{- end }}
+          <span class="openms-step__index openms-lib-list__index" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
 
-          <div class="openms-step__media" aria-hidden="true">
+          <div class="openms-step__media openms-lib-list__media{{- if and $isLibList (not .terminal) }} openms-lib-feature-icon{{- end }}"{{- if $isLibList }} aria-hidden="true"{{- end }}>
             {{- if .terminal }}
             <div class="openms-step__terminal">
               {{ partial "terminal.html" . }}
             </div>
             {{- else }}
             <img
-              class="openms-step__img {{- with .imgClass }} {{ . }}{{ end }}"
+              class="openms-step__img openms-lib-list__img {{- with .imgClass }} {{ . }}{{ end }}"
               src="{{ printf "/images/%s" .image | relURL }}"
-              alt=""
+              alt="{{ if $isLibList }}{{ .title }}{{ end }}"
               loading="lazy"
               decoding="async"
             />
             {{- end }}
           </div>
 
-          <div class="openms-step__content">
+          <div class="openms-step__content openms-lib-list__body">
             {{- with .tag }}
-            <span class="openms-step__tag">{{ . }}</span>
+            <div class="openms-step__tags openms-lib-list__tags" aria-label="Category">
+              {{- if and $isLibList (or (eq $variant "users") (eq $variant "developers")) }}
+              <span class="openms-step__tag openms-lib-list__tag">{{ index (split . " · ") 0 }}</span>
+              {{- else }}
+              {{- range (split . " · ") }}
+              <span class="openms-step__tag openms-lib-list__tag">{{ . }}</span>
+              {{- end }}
+              {{- end }}
+            </div>
             {{- end }}
-            <h3 class="openms-step__title">{{ .title }}</h3>
+            <h3 class="openms-step__title openms-lib-list__title">{{ .title }}</h3>
             {{- with .subtitle }}
-            <p class="openms-step__subtitle">{{ . }}</p>
+            <p class="openms-step__subtitle openms-lib-list__text">{{ . }}</p>
             {{- end }}
             {{- if and .buttonText .buttonLink }}
-            <a class="openms-step__cta openms-btn-primary" href="{{ .buttonLink }}">
+            <a
+              class="openms-step__cta{{- if $isLibList }} openms-lib-list__link{{- else }} openms-btn-primary{{- end }}"
+              href="{{ .buttonLink }}"
+              {{- if or (hasPrefix .buttonLink "http://") (hasPrefix .buttonLink "https://") }}
+              target="_blank"
+              rel="noopener noreferrer"
+              {{- end }}
+            >
               <span>{{ .buttonText }}</span>
               <span class="openms-step__cta-arrow" aria-hidden="true">→</span>
             </a>

@@ -1,0 +1,27 @@
+{{- $cfg := .Site.Params.researchPartnershipsPage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Partner with OpenMS" -}}
+{{- $subtitle := index $cfg "subtitle" | default "OpenMS grows through long-term collaboration with universities, institutes, and research groups that contribute software, methods, and training as part of their work." -}}
+<section class="research-partnerships-page-layout">
+  <header class="openms-lib-hero research-partnerships-page-hero" aria-label="Research partnerships with OpenMS">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          Research <span class="openms-lib-hero__accent">partnerships</span> that scale with your science.
+        </h1>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/contact/">Discuss a partnership</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/help/">Scientific &amp; technical support</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/contribute/">Contribute</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="research-partnerships-page-layout__content">
+    <div class="governance-page about-page research-partnerships-page">
+      {{ .Content }}
+    </div>
+  </div>
+</section>

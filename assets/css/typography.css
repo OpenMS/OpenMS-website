@@ -32,8 +32,7 @@ button,
 .content-container,
 .subtitle:not(.is-1):not(.is-2):not(.is-3),
 .navbar-item,
-.navbar-link,
-.news-banner__headline {
+.navbar-link {
   font-family: var(--openms-font-body);
   font-weight: var(--openms-body-weight);
 }

@@ -43,37 +43,52 @@
 }
 
 /* Governance page: use top jump links only (hide left TOC) */
-.content-padding:has(.governance-page) .shortcuts-container {
+.content-padding:has(.governance-page) .shortcuts-container,
+.governance-page-layout .shortcuts-container {
   display: none;
 }
 
 /* About page: hide left TOC */
-.content-padding:has(.about-page) .shortcuts-container {
+.content-padding:has(.about-page) .shortcuts-container,
+.about-page-layout .shortcuts-container,
+.research-partnerships-page-layout .shortcuts-container,
+.sponsor-us-page-layout .shortcuts-container {
+  display: none;
+}
+
+/* Contact page: hide left TOC */
+.content-padding:has(.contact-page) .shortcuts-container,
+.contact-page-layout .shortcuts-container {
   display: none;
 }
 
 /* Help page: hide left TOC */
-.content-padding:has(.help-page) .shortcuts-container {
+.content-padding:has(.help-page) .shortcuts-container,
+.help-page-layout .shortcuts-container {
   display: none;
 }
 
 /* News listing & articles: hide left TOC */
-.content-padding:has(.news-page-layout) .shortcuts-container {
+.content-padding:has(.news-page-layout) .shortcuts-container,
+.news-page-layout .shortcuts-container {
   display: none;
 }
 
 /* Community calendar: hide left TOC */
-.content-padding:has(.community-calendar-layout) .shortcuts-container {
+.content-padding:has(.community-calendar-layout) .shortcuts-container,
+.community-calendar-layout .shortcuts-container {
   display: none;
 }
 
 /* Contribute page: hide left TOC */
-.content-padding:has(.contribute-page-layout) .shortcuts-container {
+.content-padding:has(.contribute-page-layout) .shortcuts-container,
+.contribute-page-layout .shortcuts-container {
   display: none;
 }
 
 /* Applications listing: hide left TOC */
-.content-padding:has(.applications-page-layout) .shortcuts-container {
+.content-padding:has(.applications-page-layout) .shortcuts-container,
+.applications-page-layout .shortcuts-container {
   display: none;
 }
 

@@ -1,591 +1,1593 @@
-/* OpenMS-lib (Infrastructure) — same width rhythm as news */
+/* OpenMS-lib — unified section & list-row design system */
 
 .openms-lib-layout .shortcuts-container,
 .content-padding:has(.openms-lib-layout) .shortcuts-container {
   display: none;
 }
 
-.content-padding:has(.openms-lib-layout) .content-container,
-.content-container.openms-lib-layout__container {
-  max-width: min(100%, 64rem);
-  width: 100%;
-}
-
-.openms-lib-layout__shell {
+.openms-lib-layout {
+  display: block;
   width: 100%;
   max-width: none;
   margin: 0;
+  padding: 0 0 clamp(2.5rem, 5vh, 4rem);
 }
 
+.openms-lib-layout a:focus-visible {
+  outline: 2px solid var(--openms-blue);
+  outline-offset: 3px;
+}
+
+/* ── Tokens ── */
 .openms-lib-page {
-  display: grid;
-  gap: 0;
-}
+  --olib-max: 72rem;
+  --olib-pad-x: clamp(1.25rem, 4vw, 2rem);
+  --olib-section-y: clamp(4rem, 8vh, 5.5rem);
+  --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
+  --olib-line: rgba(var(--openms-navy-rgb), 0.08);
+  --olib-text-muted: rgba(var(--openms-navy-rgb), 0.68);
+  --olib-bg-soft: #f4f6f9;
+  --olib-thumb: clamp(5.5rem, 9vw, 6.75rem);
+  --olib-img-max: clamp(3.25rem, 5.5vw, 4.25rem);
+  --olib-radius: 1.25rem;
+  --olib-radius-sm: 0.65rem;
+  --olib-shadow: 0 0.35rem 1.5rem rgba(var(--openms-navy-rgb), 0.06);
+  --olib-shadow-hover: 0 0.75rem 2rem rgba(var(--openms-navy-rgb), 0.1);
+  --olib-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --olib-feature-gap: clamp(1.5rem, 3vw, 2.5rem);
 
-/* Intro / outro — readable column (About rhythm) */
-.openms-lib-page__intro.governance-page,
-.openms-lib-page__outro.governance-page {
-  display: grid;
-  gap: clamp(2rem, 3.8vw, 3.2rem);
-  max-width: none;
-  margin: 0;
-  padding-inline: 0;
+  color: var(--openms-navy);
+  background: var(--openms-white);
 }
 
 .openms-lib-page__intro {
-  padding-top: 0.5rem;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: 0;
 }
 
+.openms-lib-page__body,
 .openms-lib-page__outro {
-  padding-bottom: clamp(2rem, 5vh, 3rem);
-}
-
-.openms-lib-layout .openms-lib-page__intro .governance-hero {
-  margin-left: calc(-1 * clamp(1rem, 3vw, 2rem));
-  margin-right: calc(-1 * clamp(1rem, 3vw, 2rem));
-  width: calc(100% + 2 * clamp(1rem, 3vw, 2rem));
-  max-width: 100vw;
-  padding-left: clamp(2rem, 5vw, 3.5rem);
-  padding-right: clamp(1.25rem, 3vw, 2rem);
-}
-
-.openms-lib-page__infra-btns a.openms-btn-primary {
-  min-height: 2.5rem;
-  padding: 0.55rem 1.25rem;
-  border-radius: 0.5rem;
-  font-size: var(--openms-text-min);
-  font-weight: 600;
-  color: var(--openms-white) !important;
-  background: rgba(var(--openms-white-rgb), 0.14);
-  border: 1px solid rgba(var(--openms-white-rgb), 0.35);
-  box-shadow: none;
-}
-
-.openms-lib-page__infra-btns a.openms-btn-primary:hover,
-.openms-lib-page__infra-btns a.openms-btn-primary:focus-visible {
-  background: rgba(var(--openms-yellow-rgb), 0.28);
-  border-color: rgba(var(--openms-white-rgb), 0.5);
-  color: var(--openms-white) !important;
-}
-
-.openms-lib-page__intro .governance-jump-links {
-  margin-top: -0.15rem;
+  width: min(100%, var(--olib-max));
+  max-width: var(--olib-max);
+  margin-inline: auto;
+  padding-inline: var(--olib-pad-x);
+  overflow-x: clip;
 }
 
 .openms-lib-page__anchor {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: calc(var(--openms-header-height, 4.25rem) + 1rem);
 }
 
-/* Capability modules — full width within page column (like governance hero) */
-.openms-lib-page__modules {
-  display: grid;
-  gap: 0;
-  margin-block: clamp(0.5rem, 2vh, 1rem);
-  margin-left: calc(-1 * clamp(1rem, 3vw, 2rem));
-  margin-right: calc(-1 * clamp(1rem, 3vw, 2rem));
-  width: calc(100% + 2 * clamp(1rem, 3vw, 2rem));
-  max-width: 100vw;
-  border-block: 1px solid rgba(var(--openms-navy-rgb), 0.08);
-  background: var(--openms-white);
+.openms-lib-page__body,
+.openms-lib-page__outro {
+  border: none;
 }
 
 .openms-lib-band__inner {
   width: 100%;
   max-width: none;
-  margin-inline: auto;
-  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  margin-inline: 0;
+  padding-inline: 0;
 }
 
-/* ── What is OpenMS? (light governance style) ── */
-.keyfeatures-modern--openms-lib {
-  --kf-layout-gap: clamp(1.5rem, 3vh, 2rem);
-  --kf-radius: 0.85rem;
-
-  margin: 0;
-  padding: clamp(2.5rem, 5vh, 3.5rem) 0;
-  color: var(--openms-navy);
-  background: linear-gradient(
-    180deg,
-    rgba(var(--openms-blue-rgb), 0.04) 0%,
-    var(--openms-white) 28%
-  );
-  border-top: none;
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__inner {
-  padding-block: 0;
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__layout {
-  gap: var(--kf-layout-gap);
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__header {
-  position: static;
-  max-width: none;
-  margin: 0;
-  padding-top: 0;
-  text-align: left;
+/* ── Section blocks ── */
+.openms-lib-block {
   display: grid;
-  gap: clamp(0.85rem, 2vw, 1.15rem);
+  gap: 0;
+  padding-block: var(--olib-section-y);
 }
 
-.keyfeatures-modern--openms-lib .keyfeatures-modern__eyebrow {
-  color: var(--openms-blue);
-  background: rgba(var(--openms-blue-rgb), 0.1);
-  border-color: rgba(var(--openms-blue-rgb), 0.2);
+.keyfeatures-modern--openms-lib.keyfeatures-modern--overview {
+  padding-inline: 0;
 }
 
-.keyfeatures-modern--openms-lib .keyfeatures-modern__title {
-  font-size: clamp(1.65rem, 3.2vw, 2.15rem);
+.keyfeatures-modern--openms-lib.keyfeatures-modern--overview:not(.keyfeatures-modern--lib-tiles),
+.openms-steps--openms-lib.openms-steps--lib-list:not(.openms-steps--lib-capabilities):not(.openms-steps--lib-developers) {
+  margin: 0;
+  padding: var(--olib-section-y) 0;
   color: var(--openms-navy);
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__title-accent {
-  background: linear-gradient(
-    90deg,
-    var(--openms-blue) 0%,
-    var(--openms-purple) 55%,
-    var(--openms-pink) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__lead {
-  color: rgba(var(--openms-navy-rgb), 0.78);
-  font-size: var(--openms-body-size-lg);
-  line-height: 1.62;
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__topics {
-  gap: clamp(0.85rem, 1.6vw, 1.1rem);
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  min-height: 100%;
-  padding: 1.15rem 1.1rem 1.2rem 1.4rem;
-  border: 1px solid rgba(var(--openms-navy-rgb), 0.1);
-  border-radius: var(--kf-radius);
   background: var(--openms-white);
-  box-shadow: 0 0.3rem 1rem rgba(var(--openms-navy-rgb), 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  border: none;
+  overflow: visible;
 }
 
-.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.65rem;
-  bottom: 0.65rem;
-  width: 0.24rem;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--openms-blue) 0%, var(--openms-purple) 100%);
+.openms-steps--openms-lib.openms-steps--lib-capabilities,
+.openms-steps--openms-lib.openms-steps--lib-developers {
+  margin: 0;
+  padding: var(--olib-section-y) 0;
+  border: none;
+  overflow: visible;
 }
 
-.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-card:hover,
-.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-card:focus-within {
-  transform: translateY(-3px);
-  border-color: rgba(var(--openms-blue-rgb), 0.22);
-  box-shadow: 0 0.65rem 1.75rem rgba(var(--openms-blue-rgb), 0.12);
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-color: rgba(var(--openms-blue-rgb), 0.18);
-  background: rgba(var(--openms-blue-rgb), 0.08);
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-icon img {
-  filter: none;
-  opacity: 0.95;
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-icon--mark {
-  color: var(--openms-blue);
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-title {
-  color: var(--openms-navy);
-  font-size: clamp(1rem, 1.15vw, 1.08rem);
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__topic-text {
-  color: rgba(var(--openms-navy-rgb), 0.74);
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__note {
-  max-width: none;
-  color: rgba(var(--openms-navy-rgb), 0.88);
-  background: rgba(var(--openms-blue-rgb), 0.06);
-  border: 1px solid rgba(var(--openms-blue-rgb), 0.14);
-  border-left: 4px solid var(--openms-yellow);
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__note a {
-  color: var(--openms-blue);
-}
-
-.keyfeatures-modern--openms-lib .keyfeatures-modern__note a:hover,
-.keyfeatures-modern--openms-lib .keyfeatures-modern__note a:focus-visible {
-  color: var(--openms-navy);
-}
-
-/* ── Capabilities (users) ── */
-.openms-steps--openms-lib.openms-steps--users {
-  padding: clamp(2.5rem, 5vh, 3.5rem) 0;
-  border-top: 1px solid rgba(var(--openms-navy-rgb), 0.08);
-  background: var(--openms-white);
-}
-
+/* Neutralize homepage variant styles (capabilities / developers cards) */
 .openms-steps--openms-lib.openms-steps--users::before,
-.openms-steps--openms-lib.openms-steps--users::after {
-  opacity: 0.65;
-}
-
-.openms-steps--openms-lib .openms-steps__header {
-  max-width: none;
-  margin: 0 0 clamp(1.5rem, 3vh, 2rem);
-  text-align: left;
-}
-
-.openms-steps--openms-lib .openms-steps__eyebrow {
-  margin-bottom: 0.65rem;
-}
-
-.openms-steps--openms-lib.openms-steps--users .openms-steps__eyebrow {
-  color: var(--openms-blue);
-  background: rgba(var(--openms-blue-rgb), 0.1);
-  border-color: rgba(var(--openms-blue-rgb), 0.2);
-}
-
-.openms-steps--openms-lib .openms-steps__title {
-  font-size: clamp(1.65rem, 3.2vw, 2.15rem);
-  text-wrap: balance;
-}
-
-.openms-steps--openms-lib.openms-steps--users .openms-steps__subtitle {
-  margin-left: 0;
-  margin-right: 0;
-  max-width: 60ch;
-  text-align: left;
-}
-
-.openms-steps--openms-lib.openms-steps--users .openms-step--showcase {
-  border-radius: 0.85rem;
-  border-color: rgba(var(--openms-navy-rgb), 0.1);
-  box-shadow: 0 0.3rem 1rem rgba(var(--openms-navy-rgb), 0.06);
-}
-
-.openms-steps--openms-lib.openms-steps--users .openms-step--showcase:hover {
-  border-color: rgba(var(--openms-blue-rgb), 0.28);
-  box-shadow: 0 0.7rem 1.85rem rgba(var(--openms-blue-rgb), 0.14);
-}
-
-.openms-steps--openms-lib.openms-steps--users .openms-step--showcase .openms-step__media {
-  background: linear-gradient(
-    165deg,
-    rgba(var(--openms-blue-rgb), 0.07) 0%,
-    var(--openms-white) 100%
-  );
-}
-
-.openms-steps--openms-lib .openms-step__cta.openms-btn-primary {
-  min-height: 2.5rem;
-  padding: 0.55rem 1.25rem;
-  font-size: var(--openms-text-min);
-}
-
-/* ── Advanced users / developers ── */
-.openms-steps--openms-lib.openms-steps--developers {
-  --dev-card-media-min-h: clamp(11rem, 22vw, 14rem);
-  --dev-logo-max-h: clamp(5rem, 12vw, 7.5rem);
-  --dev-terminal-h: clamp(10rem, 18vw, 12.5rem);
-
-  position: relative;
-  overflow: hidden;
-  padding: clamp(2.75rem, 5.5vh, 3.75rem) 0;
-  border-top: none;
-  color: var(--openms-white);
-  background: linear-gradient(
-    135deg,
-    var(--openms-navy) 0%,
-    #1a2f8f 48%,
-    #2a4fd4 100%
-  );
-}
-
-.openms-steps--openms-lib.openms-steps--developers::before,
-.openms-steps--openms-lib.openms-steps--developers::after {
-  opacity: 1;
-}
-
-.openms-steps--openms-lib.openms-steps--developers .openms-steps__header {
-  text-align: left;
-  max-width: none;
-  margin: 0 0 clamp(1.65rem, 3.5vh, 2.25rem);
-}
-
-.openms-steps--openms-lib.openms-steps--developers .openms-steps__eyebrow {
-  color: var(--openms-yellow);
-  background: rgba(var(--openms-white-rgb), 0.1);
-  border-color: rgba(var(--openms-white-rgb), 0.22);
-}
-
-.openms-steps--openms-lib.openms-steps--developers .openms-steps__title {
-  color: var(--openms-white);
-}
-
-.openms-steps--openms-lib.openms-steps--developers .openms-steps__title-accent {
-  background: linear-gradient(
-    90deg,
-    var(--openms-yellow) 0%,
-    var(--openms-orange) 45%,
-    var(--openms-pink) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.openms-steps--openms-lib.openms-steps--developers .openms-steps__subtitle {
-  margin-left: 0;
-  text-align: left;
-  max-width: 58ch;
-  color: rgba(var(--openms-white-rgb), 0.92);
-  line-height: 1.62;
-}
-
-.openms-steps--openms-lib.openms-steps--developers .openms-steps__grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1.1rem, 2.2vw, 1.5rem);
-  align-items: stretch;
-}
-
-/* White showcase cards on navy band (matches users section pattern) */
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  padding: 0;
-  border: 1px solid rgba(var(--openms-white-rgb), 0.22);
-  border-radius: 1rem;
-  background: var(--openms-white);
-  box-shadow: 0 0.5rem 1.75rem rgba(var(--openms-dark-rgb), 0.22);
-  overflow: hidden;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-}
-
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer:hover {
-  transform: translateY(-5px);
-  border-color: rgba(var(--openms-yellow-rgb), 0.55);
-  box-shadow: 0 1rem 2.5rem rgba(var(--openms-dark-rgb), 0.32);
-}
-
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__index {
+.openms-steps--openms-lib.openms-steps--users::after,
+.openms-steps--openms-lib.openms-steps--developers:not(.openms-steps--lib-developers)::before,
+.openms-steps--openms-lib.openms-steps--developers:not(.openms-steps--lib-developers)::after {
   display: none;
 }
 
-/* Consistent top media / bottom content (no alternating layout) */
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__media,
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer:nth-child(even) .openms-step__media {
-  order: -1;
-  width: 100%;
-  min-height: var(--dev-card-media-min-h);
-  margin: 0;
-  padding: clamp(1rem, 2vw, 1.35rem);
-  border: none;
-  border-bottom: 1px solid rgba(var(--openms-navy-rgb), 0.08);
-  border-top: none;
-  background: linear-gradient(
-    165deg,
-    rgba(var(--openms-blue-rgb), 0.1) 0%,
-    rgba(var(--openms-navy-rgb), 0.04) 55%,
-    color-mix(in srgb, var(--openms-steps-accent) 22%, var(--openms-white)) 100%
-  );
+.openms-steps--openms-lib .openms-steps__header {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__content,
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer:nth-child(even) .openms-step__content {
-  order: 2;
+.openms-steps--openms-lib .openms-step {
+  width: auto;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  transform: none;
+}
+
+.openms-steps--openms-lib .openms-step:hover,
+.openms-steps--openms-lib .openms-step:focus-within {
+  border: none;
+  box-shadow: none;
+  transform: none;
+}
+
+.openms-steps--openms-lib .openms-step--showcase,
+.openms-steps--openms-lib .openms-step--developer {
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.openms-steps--openms-lib:not(.openms-steps--lib-capabilities) .openms-step--showcase .openms-step__media,
+.openms-steps--openms-lib:not(.openms-steps--lib-developers) .openms-step--developer .openms-step__media {
+  order: unset;
+  flex: none;
+  min-height: 0;
+  border: 1px solid var(--olib-line);
+  border-radius: 0.5rem;
+  background: var(--olib-bg-soft);
+}
+
+.openms-steps--openms-lib .openms-step--showcase .openms-step__img,
+.openms-steps--openms-lib .openms-step--showcase .openms-step__img.img-fit {
+  min-height: 0;
+  max-height: var(--olib-img-max);
+}
+
+.openms-steps--openms-lib .openms-step--showcase .openms-step__content,
+.openms-steps--openms-lib:not(.openms-steps--lib-developers) .openms-step--developer .openms-step__content {
+  flex: none;
+  padding: 0;
+}
+
+.openms-steps--openms-lib .openms-step__index {
+  display: block;
+}
+
+.keyfeatures-modern--overview .keyfeatures-modern__inner,
+.openms-steps--lib-list .openms-steps__inner {
+  display: grid;
+  gap: 0;
+  padding-block: 0;
+}
+
+.openms-steps--lib-list::before,
+.openms-steps--lib-list::after {
+  display: none;
+}
+
+/* ── Shared section header (centered, Stratex-style) ── */
+.openms-lib-block__head,
+.keyfeatures-modern--overview .keyfeatures-modern__header,
+.openms-steps--lib-list .openms-steps__header {
+  display: grid;
+  gap: 0.65rem;
+  justify-items: center;
+  max-width: 46rem;
+  width: 100%;
+  margin: 0 auto clamp(2rem, 4vw, 3rem);
+  padding: 0;
+  border: none;
+  text-align: center;
+}
+
+.openms-lib-block__eyebrow,
+.keyfeatures-modern--overview .keyfeatures-modern__eyebrow,
+.openms-steps--lib-list .openms-steps__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--olib-text-muted);
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+
+.openms-lib-block__eyebrow::before,
+.keyfeatures-modern--overview .keyfeatures-modern__eyebrow::before,
+.openms-steps--lib-list .openms-steps__eyebrow::before {
+  content: "";
+  flex-shrink: 0;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--openms-blue);
+}
+
+.openms-lib-block__title,
+.keyfeatures-modern--overview .keyfeatures-modern__title,
+.openms-steps--lib-list .openms-steps__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  font-weight: var(--openms-heading-lg-weight);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--openms-navy);
+  text-wrap: balance;
+}
+
+.openms-lib-block__title-accent,
+.keyfeatures-modern--overview .keyfeatures-modern__title-accent {
+  background: linear-gradient(
+    90deg,
+    var(--openms-blue) 0%,
+    var(--openms-purple) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.openms-steps--lib-list .openms-steps__title-accent {
+  color: var(--openms-blue);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.openms-lib-block__lead,
+.keyfeatures-modern--overview .keyfeatures-modern__lead,
+.openms-steps--lib-list .openms-steps__subtitle {
+  margin: 0.35rem 0 0;
+  max-width: 42ch;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.65;
+  color: var(--olib-text-muted);
+  text-align: center;
+}
+
+.openms-lib-block__lead p,
+.keyfeatures-modern--overview .keyfeatures-modern__lead p {
+  margin: 0;
+}
+
+.openms-lib-block__lead a {
+  color: var(--openms-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.openms-lib-block__lead a:hover,
+.openms-lib-block__lead a:focus-visible {
+  color: var(--openms-navy);
+  text-decoration: underline;
+}
+
+/* ── Shared list container ── */
+.openms-lib-list,
+.keyfeatures-modern--overview .keyfeatures-modern__topics,
+.openms-steps--lib-list .openms-steps__grid {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
-  gap: 0.55rem;
-  padding: clamp(1.15rem, 2.2vw, 1.4rem) clamp(1.2rem, 2.4vw, 1.5rem)
-    clamp(1.25rem, 2.4vw, 1.55rem);
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--olib-line);
+  border-radius: 0.65rem;
+  overflow: hidden;
+  background: var(--openms-white);
 }
 
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__tag {
+.openms-lib-list__row + .openms-lib-list__row,
+.openms-lib-list > li + li,
+.openms-lib-list > .keyfeatures-modern__topic + .keyfeatures-modern__topic,
+.openms-lib-list > .openms-steps__item + .openms-steps__item {
+  border-top: 1px solid var(--olib-line);
+}
+
+.openms-lib-list > li,
+.openms-lib-list > .keyfeatures-modern__topic,
+.openms-lib-list > .openms-steps__item {
   margin: 0;
-  padding: 0.32rem 0.65rem;
-  font-size: var(--openms-text-min);
-  color: var(--openms-navy);
-  background: color-mix(in srgb, var(--openms-steps-accent) 35%, var(--openms-white));
-  border: 1px solid color-mix(in srgb, var(--openms-steps-accent) 50%, transparent);
+  min-width: 0;
+  display: block;
+}
+
+.openms-lib-list > .keyfeatures-modern__topic,
+.openms-lib-list > .openms-steps__item {
+  min-width: 0;
+}
+
+/* ── Shared list row ── */
+.openms-lib-list:not(.openms-lib-list--capabilities):not(.openms-lib-list--developers):not(.openms-lib-list--split):not(.openms-lib-list--tiles):not(.openms-lib-list--resource-grid)
+  .openms-lib-list__row,
+.keyfeatures-modern--overview:not(.keyfeatures-modern--lib-tiles) .keyfeatures-modern__topic-card--overview,
+.openms-steps--lib-list:not(.openms-steps--lib-capabilities):not(.openms-steps--lib-developers) .openms-step--list-row {
+  display: grid;
+  grid-template-columns: 2.75rem var(--olib-thumb) minmax(0, 1fr);
+  grid-template-areas: "index media content";
+  align-items: start;
+  gap: clamp(0.85rem, 1.6vw, 1.25rem);
+  padding: clamp(1.1rem, 2vw, 1.35rem) clamp(1rem, 2vw, 1.35rem);
+  background: var(--openms-white);
+  transition: background-color 0.15s ease;
+}
+
+.openms-lib-list:not(.openms-lib-list--capabilities):not(.openms-lib-list--developers):not(.openms-lib-list--split):not(.openms-lib-list--tiles):not(.openms-lib-list--resource-grid)
+  .openms-lib-list__row:hover,
+.openms-lib-list:not(.openms-lib-list--capabilities):not(.openms-lib-list--developers):not(.openms-lib-list--split):not(.openms-lib-list--tiles):not(.openms-lib-list--resource-grid)
+  .openms-lib-list__row:focus-within,
+.keyfeatures-modern--overview:not(.keyfeatures-modern--lib-tiles) .keyfeatures-modern__topic-card--overview:hover,
+.keyfeatures-modern--overview:not(.keyfeatures-modern--lib-tiles) .keyfeatures-modern__topic-card--overview:focus-within,
+.openms-steps--lib-list:not(.openms-steps--lib-capabilities):not(.openms-steps--lib-developers) .openms-step--list-row:hover,
+.openms-steps--lib-list:not(.openms-steps--lib-capabilities):not(.openms-steps--lib-developers) .openms-step--list-row:focus-within {
+  background: var(--olib-bg-soft);
+}
+
+.openms-lib-list__index,
+.keyfeatures-modern--overview .keyfeatures-modern__topic-index,
+.openms-steps--lib-list .openms-step__index {
+  grid-area: index;
+  display: block;
+  align-self: start;
+  margin-top: 0.15rem;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.35rem, 2vw, 1.55rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: rgba(var(--openms-blue-rgb), 0.22);
+}
+
+.openms-lib-list__media,
+.keyfeatures-modern--overview .keyfeatures-modern__topic-media,
+.openms-steps--lib-list .openms-step__media {
+  grid-area: media;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--olib-thumb);
+  height: var(--olib-thumb);
+  margin: 0;
+  padding: 0.55rem;
+  border: 1px solid var(--olib-line);
+  border-radius: 0.5rem;
+  background: var(--olib-bg-soft);
+  overflow: hidden;
+}
+
+.openms-lib-list__mark,
+.keyfeatures-modern--overview .keyfeatures-modern__topic-mark {
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.35rem, 2vw, 1.6rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--openms-blue);
+}
+
+.openms-lib-list__img,
+.keyfeatures-modern--overview .keyfeatures-modern__topic-img,
+.openms-steps--lib-list .openms-step__img,
+.openms-steps--lib-list .openms-step__img.img-fit {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: var(--olib-img-max);
+  min-height: 0;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+}
+
+.openms-lib-list__body,
+.keyfeatures-modern--overview .keyfeatures-modern__topic-body,
+.openms-steps--lib-list .openms-step__content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+  padding: 0;
+}
+
+.openms-lib-list__tags,
+.keyfeatures-modern--overview .keyfeatures-modern__topic-tags,
+.openms-steps--lib-list .openms-step__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.openms-lib-list__tag,
+.keyfeatures-modern--overview .keyfeatures-modern__topic-tag,
+.openms-steps--lib-list .openms-step__tag {
+  display: inline-flex;
+  margin: 0;
+  padding: 0.18rem 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.07);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.14);
   border-radius: 999px;
 }
 
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__title {
-  padding-right: 0;
-  font-size: clamp(1.12rem, 1.55vw, 1.28rem);
-  line-height: 1.28;
+.openms-lib-list__title,
+.keyfeatures-modern--overview .keyfeatures-modern__topic-title,
+.openms-steps--lib-list .openms-step__title {
+  margin: 0;
+  padding: 0;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-secondary-heading-size-lg);
+  font-weight: var(--openms-secondary-heading-weight);
+  line-height: 1.35;
   color: var(--openms-navy);
 }
 
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__subtitle {
-  flex: 1 1 auto;
-  font-size: clamp(0.92rem, 1.05vw, 1.02rem);
-  line-height: 1.55;
-  color: rgba(var(--openms-navy-rgb), 0.76);
-  display: block;
-  overflow: visible;
-  -webkit-line-clamp: unset;
+.openms-lib-list__text,
+.keyfeatures-modern--overview .keyfeatures-modern__topic-text,
+.openms-steps--lib-list .openms-step__subtitle {
+  margin: 0;
+  max-width: 52ch;
+  font-size: var(--openms-body-size);
+  line-height: 1.62;
+  color: var(--olib-text-muted);
 }
 
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__img,
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__img.img-fit {
+.openms-lib-list__bullets {
+  margin: 0.15rem 0 0;
+  padding-left: 1.15rem;
+  font-size: var(--openms-body-size);
+  line-height: 1.6;
+  color: var(--olib-text-muted);
+}
+
+.openms-lib-list__bullets li + li {
+  margin-top: 0.25rem;
+}
+
+.openms-lib-list__bullets a {
+  color: var(--openms-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.openms-lib-list__bullets a:hover,
+.openms-lib-list__bullets a:focus-visible {
+  text-decoration: underline;
+}
+
+.openms-lib-list__link,
+.openms-steps--lib-list .openms-step__cta {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.3rem;
+  margin-top: 0.25rem;
+  padding: 0;
+  min-height: 0;
+  width: auto;
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  color: var(--openms-blue) !important;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.openms-lib-list__link:hover,
+.openms-lib-list__link:focus-visible,
+.openms-steps--lib-list .openms-step__cta:hover,
+.openms-steps--lib-list .openms-step__cta:focus-visible {
+  color: var(--openms-navy) !important;
+  background: none;
+  border: none;
+  box-shadow: none;
+  transform: none;
+}
+
+.openms-steps--lib-list .openms-step__cta-arrow {
+  transition: transform 0.15s ease;
+}
+
+.openms-steps--lib-list .openms-step__cta:hover .openms-step__cta-arrow,
+.openms-steps--lib-list .openms-step__cta:focus-visible .openms-step__cta-arrow {
+  transform: translateX(0.15rem);
+}
+
+/* ── Shared footnote ── */
+.openms-lib-block__note,
+.keyfeatures-modern--overview .keyfeatures-modern__note {
+  max-width: none;
+  margin: clamp(1rem, 2vw, 1.25rem) 0 0;
+  padding: clamp(0.85rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.25rem);
+  font-size: var(--openms-body-size);
+  line-height: 1.62;
+  color: var(--olib-text-muted);
+  background: var(--olib-bg-soft);
+  border: 1px solid var(--olib-line);
+  border-radius: 0.65rem;
+}
+
+.openms-lib-block__note p,
+.keyfeatures-modern--overview .keyfeatures-modern__note p {
+  margin: 0;
+}
+
+.openms-lib-block__note a,
+.keyfeatures-modern--overview .keyfeatures-modern__note a {
+  color: var(--openms-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.openms-lib-block__note a:hover,
+.openms-lib-block__note a:focus-visible,
+.keyfeatures-modern--overview .keyfeatures-modern__note a:hover,
+.keyfeatures-modern--overview .keyfeatures-modern__note a:focus-visible {
+  color: var(--openms-navy);
+  text-decoration: underline;
+}
+
+/* ── Developer terminal row ── */
+.openms-steps--lib-list .openms-step--terminal .openms-step__media {
+  padding: 0.5rem;
+  background: #141820;
+  border-color: rgba(var(--openms-navy-rgb), 0.2);
+}
+
+.openms-steps--lib-list .openms-step--terminal .openms-step__terminal {
+  width: 100%;
+  height: 100%;
+}
+
+.openms-steps--lib-list .openms-step--terminal .openms-step__terminal .terminal-window {
+  width: 100%;
+  height: 100%;
+  min-height: calc(var(--olib-thumb) - 1.1rem);
+  margin: 0;
+  border-radius: 0.35rem;
+  border: 1px solid rgba(var(--openms-white-rgb), 0.1);
+  box-shadow: none;
+}
+
+.openms-steps--lib-list .openms-step--terminal .terminal-window section.terminal {
+  font-size: clamp(0.5rem, 0.75vw, 0.62rem);
+  line-height: 1.45;
+}
+
+/* ── Feature icon (Stratex-style navy tile) ── */
+.openms-lib-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.35rem;
+  height: 3.35rem;
+  margin-inline: auto;
+  padding: 0.55rem;
+  border: none;
+  border-radius: var(--olib-radius-sm);
+  background: var(--openms-navy);
+  box-shadow: none;
+}
+
+.openms-lib-feature-icon .openms-lib-list__mark {
+  font-family: var(--openms-font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--openms-white);
+}
+
+.openms-lib-list--capabilities .openms-lib-feature-icon,
+.openms-lib-list--developers .openms-lib-feature-icon,
+.openms-steps--lib-capabilities .openms-lib-feature-icon,
+.openms-steps--lib-developers .openms-lib-feature-icon {
+  flex-shrink: 0;
+  width: 3.35rem;
+  height: 3.35rem;
+  min-height: 0;
+  max-height: 3.35rem;
+}
+
+.openms-lib-feature-icon .openms-lib-list__img,
+.openms-lib-feature-icon .openms-step__img,
+.openms-steps--lib-capabilities .openms-step__img,
+.openms-steps--lib-developers .openms-step__img {
   display: block;
   width: auto;
-  max-width: min(100%, 14rem);
+  max-width: 2rem;
+  max-height: 2rem;
+  min-height: 0;
   height: auto;
-  max-height: var(--dev-logo-max-h);
-  min-height: 4.5rem;
-  margin: 0 auto;
+  margin: 0;
   object-fit: contain;
   filter: none;
 }
 
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__cta {
-  align-self: flex-start;
-  margin-top: auto;
-  padding-top: 0.35rem;
+.openms-lib-feature-icon .openms-step__terminal,
+.openms-lib-feature-icon .openms-step__terminal .terminal-window {
+  width: 100%;
+  min-height: 0;
+  height: 2.35rem;
+  border-radius: 0.35rem;
+  overflow: hidden;
 }
 
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__cta.openms-btn-primary {
+.openms-lib-feature-icon .terminal-window section.terminal {
+  font-size: 0.45rem;
+  line-height: 1.35;
+}
+
+/* ── Hero (full-viewport background band) ── */
+.openms-lib-hero {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 0 var(--olib-section-y);
+  padding: clamp(2rem, 4.5vw, 3.25rem) var(--olib-pad-x) clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--openms-navy);
+  background: linear-gradient(
+    180deg,
+    var(--olib-hero-bg-top) 0%,
+    color-mix(in srgb, var(--openms-blue) 4%, var(--openms-white)) 55%,
+    var(--openms-white) 100%
+  );
+  overflow: visible;
+  isolation: isolate;
+}
+
+.openms-lib-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: clamp(2rem, 4vw, 3rem);
+  background: linear-gradient(180deg, transparent 0%, var(--openms-white) 100%);
+  pointer-events: none;
+}
+
+.openms-lib-hero__panel {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  background: transparent;
+  text-align: center;
+}
+
+.openms-lib-hero__panel::after {
+  display: none;
+}
+
+.openms-lib-page__intro .openms-lib-block--overview {
+  width: min(100%, var(--olib-max));
+  max-width: var(--olib-max);
+  margin-inline: auto;
+  padding-inline: var(--olib-pad-x);
+}
+
+.openms-lib-hero + .openms-lib-block--overview {
+  padding-top: 0;
+}
+
+.openms-lib-hero__content {
+  position: relative;
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.openms-lib-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 auto 0.85rem;
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--olib-text-muted);
+}
+
+.openms-lib-hero__eyebrow::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
   background: var(--openms-blue);
-  border-color: var(--openms-blue);
-  color: var(--openms-white) !important;
 }
 
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__cta.openms-btn-primary:hover,
-.openms-steps--openms-lib.openms-steps--developers .openms-step--developer .openms-step__cta.openms-btn-primary:focus-visible {
+.openms-lib-hero__title {
+  margin: 0 auto;
+  max-width: 22ch;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(2rem, 4.8vw, 3.2rem);
+  font-weight: var(--openms-heading-xl-weight);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--openms-navy);
+  text-align: center;
+  text-wrap: balance;
+}
+
+.openms-lib-hero__accent {
+  color: var(--openms-blue);
+}
+
+.openms-lib-hero__accent--warm {
+  color: var(--openms-pink);
+}
+
+.openms-lib-hero__lead {
+  margin: 1rem auto 0;
+  max-width: 46ch;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size-lg);
+  font-weight: var(--openms-body-weight);
+  line-height: 1.65;
+  color: var(--olib-text-muted);
+  text-align: center;
+}
+
+.openms-lib-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.openms-lib-hero__chip {
+  display: inline-flex;
+  padding: 0.32rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.07);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.14);
+  border-radius: 999px;
+}
+
+.openms-lib-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* ── Buttons (hero only) ── */
+.openms-lib-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.openms-lib-btn--primary {
+  gap: 0.5rem;
+  padding-inline: 1.15rem;
   background: var(--openms-navy);
   border-color: var(--openms-navy);
   color: var(--openms-white) !important;
 }
 
-/* Terminal card */
-.openms-steps--openms-lib.openms-steps--developers .openms-step--terminal .openms-step__media {
-  padding: clamp(0.75rem, 1.5vw, 1rem);
-  background: linear-gradient(180deg, #1a1d24 0%, #0f1118 100%);
-  border-bottom-color: rgba(var(--openms-navy-rgb), 0.12);
+.openms-lib-hero .openms-lib-btn--primary::after {
+  content: "→";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  line-height: 1;
+  background: var(--openms-white);
+  color: var(--openms-navy);
 }
 
-.openms-steps--openms-lib.openms-steps--developers .openms-step--terminal .openms-step__terminal {
-  width: 100%;
+.openms-lib-btn--primary:hover,
+.openms-lib-btn--primary:focus-visible {
+  background: color-mix(in srgb, var(--openms-navy) 88%, var(--openms-blue));
+  border-color: color-mix(in srgb, var(--openms-navy) 88%, var(--openms-blue));
+  color: var(--openms-white) !important;
 }
 
-.openms-steps--openms-lib.openms-steps--developers .openms-step--terminal .openms-step__terminal .terminal-window {
-  width: 100%;
-  height: var(--dev-terminal-h);
-  min-height: var(--dev-terminal-h);
-  margin: 0;
-  border-radius: 0.6rem;
-  border: 1px solid rgba(var(--openms-white-rgb), 0.12);
-  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.35);
+.openms-lib-btn--ghost {
+  padding-inline: 0.15rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--openms-blue) !important;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
-.openms-steps--openms-lib.openms-steps--developers .openms-step--terminal .terminal-window section.terminal {
-  font-size: clamp(0.58rem, 0.85vw, 0.68rem);
-  line-height: 1.5;
+.openms-lib-btn--ghost:hover,
+.openms-lib-btn--ghost:focus-visible {
+  background: transparent;
+  color: var(--openms-navy) !important;
 }
 
-/* Outro */
-.openms-lib-page__outro .governance-pillars {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.openms-lib-btn--navy {
+  background: var(--openms-navy);
+  border-color: var(--openms-navy);
+  color: var(--openms-white) !important;
 }
 
-.openms-lib-actions {
+.openms-lib-btn--navy:hover,
+.openms-lib-btn--navy:focus-visible {
+  background: color-mix(in srgb, var(--openms-navy) 88%, var(--openms-blue));
+  border-color: color-mix(in srgb, var(--openms-navy) 88%, var(--openms-blue));
+  color: var(--openms-white) !important;
+}
+
+.openms-lib-btn--outline {
+  background: var(--openms-white);
+  border-color: var(--olib-line);
+  color: var(--openms-navy) !important;
+}
+
+.openms-lib-btn--outline:hover,
+.openms-lib-btn--outline:focus-visible {
+  border-color: rgba(var(--openms-blue-rgb), 0.35);
+  background: var(--olib-bg-soft);
+  color: var(--openms-navy) !important;
+}
+
+/* ── Navbar-style CTA motion (openms-lib page only) ── */
+.openms-lib-page .openms-lib-btn,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__cta,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-developers .openms-step__cta,
+.openms-lib-page .openms-lib-block--overview .openms-lib-list__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  padding: var(--openms-btn-padding);
+  border-radius: var(--openms-btn-pill-radius);
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 0 0 0 var(--openms-btn-glow);
+  transition: var(--openms-btn-motion);
+}
+
+.openms-lib-page .openms-lib-btn--primary {
+  gap: 0.5rem;
+  padding-inline: 1.15rem;
+  border: 2px solid var(--openms-navy);
+  background: var(--openms-navy);
+  color: var(--openms-white) !important;
+}
+
+.openms-lib-page .openms-lib-btn--ghost,
+.openms-lib-page .openms-lib-btn--outline,
+.openms-lib-page .openms-lib-block--overview .openms-lib-list__link {
+  border: 2px solid var(--openms-blue);
+  background: transparent;
+  background-color: transparent;
+  color: var(--openms-blue) !important;
+}
+
+.openms-lib-page .openms-lib-btn--navy {
+  border: 2px solid var(--openms-navy);
+  background: var(--openms-navy);
+  color: var(--openms-white) !important;
+}
+
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__cta,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-developers .openms-step__cta {
+  align-self: center;
+  margin-top: 0.75rem;
+  width: auto;
+  min-height: 2.75rem;
+  border: 2px solid var(--openms-blue);
+  background: var(--openms-blue);
+  color: var(--openms-white) !important;
+}
+
+.openms-lib-page .openms-lib-block--overview .openms-lib-list__link {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+.openms-lib-page .openms-lib-btn--primary:hover,
+.openms-lib-page .openms-lib-btn--primary:focus-visible,
+.openms-lib-page .openms-lib-btn--primary:active,
+.openms-lib-page .openms-lib-btn--navy:hover,
+.openms-lib-page .openms-lib-btn--navy:focus-visible,
+.openms-lib-page .openms-lib-btn--navy:active,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__cta:hover,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__cta:focus-visible,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__cta:active,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-developers .openms-step__cta:hover,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-developers .openms-step__cta:focus-visible,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-developers .openms-step__cta:active {
+  transform: scale(var(--openms-btn-hover-scale));
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow);
+  outline: none;
+  text-decoration: none;
+}
+
+.openms-lib-page .openms-lib-btn--primary:hover,
+.openms-lib-page .openms-lib-btn--primary:focus-visible,
+.openms-lib-page .openms-lib-btn--primary:active,
+.openms-lib-page .openms-lib-btn--navy:hover,
+.openms-lib-page .openms-lib-btn--navy:focus-visible,
+.openms-lib-page .openms-lib-btn--navy:active {
+  background: var(--openms-navy);
+  border-color: var(--openms-navy);
+  color: var(--openms-white) !important;
+}
+
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__cta:hover,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__cta:focus-visible,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__cta:active,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-developers .openms-step__cta:hover,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-developers .openms-step__cta:focus-visible,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-developers .openms-step__cta:active {
+  background: var(--openms-blue);
+  border-color: var(--openms-blue);
+  color: var(--openms-white) !important;
+}
+
+.openms-lib-page .openms-lib-btn--ghost:hover,
+.openms-lib-page .openms-lib-btn--ghost:focus-visible,
+.openms-lib-page .openms-lib-btn--ghost:active,
+.openms-lib-page .openms-lib-btn--outline:hover,
+.openms-lib-page .openms-lib-btn--outline:focus-visible,
+.openms-lib-page .openms-lib-btn--outline:active,
+.openms-lib-page .openms-lib-block--overview .openms-lib-list__link:hover,
+.openms-lib-page .openms-lib-block--overview .openms-lib-list__link:focus-visible,
+.openms-lib-page .openms-lib-block--overview .openms-lib-list__link:active {
+  background: transparent;
+  background-color: transparent;
+  border-color: var(--openms-blue);
+  color: var(--openms-blue) !important;
+  transform: scale(var(--openms-btn-hover-scale));
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow);
+  outline: none;
+  text-decoration: none;
+}
+
+.openms-lib-page .openms-lib-btn--primary:focus-visible,
+.openms-lib-page .openms-lib-btn--navy:focus-visible,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__cta:focus-visible,
+.openms-lib-page .openms-steps--openms-lib.openms-steps--lib-developers .openms-step__cta:focus-visible {
+  box-shadow: 0 0 0 3px var(--openms-navy), 0 0 0 5px var(--openms-blue),
+    0 0 0 calc(5px + var(--openms-btn-glow-size)) var(--openms-btn-glow);
+}
+
+.openms-lib-page .openms-lib-btn--ghost:focus-visible,
+.openms-lib-page .openms-lib-btn--outline:focus-visible,
+.openms-lib-page .openms-lib-block--overview .openms-lib-list__link:focus-visible {
+  box-shadow: var(--openms-hero-focus-ring, 0 0 0 3px var(--openms-navy), 0 0 0 5px var(--openms-yellow)),
+    0 0 0 calc(5px + var(--openms-btn-glow-size)) var(--openms-btn-glow);
+}
+
+.openms-lib-page .openms-steps--openms-lib .openms-step__cta-arrow {
+  transition: transform 0.15s ease;
+}
+
+.openms-lib-page .openms-steps--openms-lib .openms-step__cta:hover .openms-step__cta-arrow,
+.openms-lib-page .openms-steps--openms-lib .openms-step__cta:focus-visible .openms-step__cta-arrow {
+  transform: translateX(0.15rem);
+}
+
+.openms-lib-page .openms-lib-page__cta-actions {
+  gap: calc(var(--openms-btn-glow-size, 6px) * 2 + 0.75rem);
+}
+
+/* ── Clickable cards ── */
+.openms-lib-card-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  text-decoration: none;
+}
+
+/* ── Page footer CTA ── */
+.openms-lib-page__cta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+  padding: clamp(1.5rem, 2.5vw, 2rem) clamp(1.25rem, 2.5vw, 1.6rem);
+  border-radius: calc(var(--olib-radius) * 1.1);
+  text-align: center;
+  background: var(--olib-bg-soft);
+  border: 1px solid var(--olib-line);
 }
 
-.openms-lib-page__outro .governance-section p,
-.openms-lib-page__intro .governance-card p {
-  max-width: 72ch;
-}
-
-.openms-lib-page__intro .governance-card a {
+.openms-lib-page__cta-text {
+  margin: 0;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size-lg);
   font-weight: 600;
+  color: var(--openms-navy);
 }
 
-@media (max-width: 1000px) {
-  .keyfeatures-modern--openms-lib .keyfeatures-modern__topics {
+.openms-lib-page__cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+/* ══════════════════════════════════════════
+   Section variants — Stratex-inspired feature grids
+   ══════════════════════════════════════════ */
+
+/* Shared feature cell layout */
+.openms-lib-list--split .openms-lib-list__row,
+.openms-lib-list--tiles .openms-lib-list__row,
+.keyfeatures-modern--lib-tiles .keyfeatures-modern__topic-card--overview,
+.openms-lib-list--capabilities .openms-lib-list__row,
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--list-row,
+.openms-lib-list--developers .openms-lib-list__row,
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--list-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "media"
+    "content";
+  gap: 1rem;
+  align-items: start;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+}
+
+.openms-lib-list--split .openms-lib-list__body,
+.openms-lib-list--tiles .openms-lib-list__body,
+.keyfeatures-modern--lib-tiles .keyfeatures-modern__topic-body,
+.openms-lib-list--capabilities .openms-lib-list__body,
+.openms-steps--lib-capabilities .openms-step__content,
+.openms-lib-list--developers .openms-lib-list__body,
+.openms-steps--lib-developers .openms-step__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.openms-lib-list--split .openms-lib-list__tags,
+.openms-lib-list--tiles .openms-lib-list__tags,
+.keyfeatures-modern--lib-tiles .keyfeatures-modern__topic-tags,
+.openms-lib-list--capabilities .openms-lib-list__tags,
+.openms-steps--lib-capabilities .openms-step__tags,
+.openms-lib-list--developers .openms-lib-list__tags,
+.openms-steps--lib-developers .openms-step__tags {
+  display: none;
+}
+
+.openms-lib-list--split .openms-lib-list__text,
+.openms-lib-list--tiles .openms-lib-list__text,
+.keyfeatures-modern--lib-tiles .keyfeatures-modern__topic-text,
+.openms-lib-list--capabilities .openms-lib-list__text,
+.openms-steps--lib-capabilities .openms-step__subtitle,
+.openms-lib-list--developers .openms-lib-list__text,
+.openms-steps--lib-developers .openms-step__subtitle {
+  max-width: 28ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.openms-lib-list--split .openms-lib-list__link,
+.openms-steps--lib-capabilities .openms-step__cta,
+.openms-steps--lib-developers .openms-step__cta {
+  align-self: center;
+}
+
+/* 1. Overview */
+.openms-lib-block--overview {
+  padding-bottom: 0;
+}
+
+.openms-lib-list--split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--olib-feature-gap);
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.openms-lib-list--split .openms-lib-list__row:hover,
+.openms-lib-list--split .openms-lib-list__row:focus-within {
+  background: transparent;
+  transform: none;
+}
+
+.openms-lib-list--split .openms-lib-list__bullets {
+  text-align: left;
+  margin-inline: auto;
+  max-width: 28ch;
+}
+
+/* 2. What is OpenMS? */
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles {
+  padding: var(--olib-section-y) 0;
+  background: transparent;
+}
+
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles::before {
+  display: none;
+}
+
+.openms-lib-list--tiles,
+.keyfeatures-modern--lib-tiles .keyfeatures-modern__topics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--olib-feature-gap);
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.openms-lib-list--tiles > li + li,
+.openms-lib-list--tiles > .keyfeatures-modern__topic + .keyfeatures-modern__topic {
+  border-top: none;
+}
+
+.openms-lib-list--tiles > li,
+.openms-lib-list--tiles > .keyfeatures-modern__topic {
+  display: flex;
+}
+
+.openms-lib-list--tiles .openms-lib-list__row:hover,
+.keyfeatures-modern--lib-tiles .keyfeatures-modern__topic-card--overview:hover,
+.openms-lib-list--tiles .openms-lib-list__row:focus-within,
+.keyfeatures-modern--lib-tiles .keyfeatures-modern__topic-card--overview:focus-within {
+  background: transparent;
+  transform: none;
+}
+
+.keyfeatures-modern--lib-tiles .keyfeatures-modern__note {
+  max-width: 40rem;
+  margin-inline: auto;
+  text-align: center;
+  background: var(--olib-bg-soft);
+  border: 1px solid var(--olib-line);
+  border-left: none;
+  border-radius: var(--olib-radius-sm);
+}
+
+/* 3. Capabilities */
+.openms-steps--openms-lib.openms-steps--lib-capabilities {
+  color: var(--openms-navy);
+  background: var(--openms-white);
+}
+
+.openms-lib-list--capabilities,
+.openms-steps--lib-capabilities .openms-steps__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--olib-feature-gap);
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.openms-lib-list--capabilities > li + li,
+.openms-lib-list--capabilities > .openms-steps__item + .openms-steps__item {
+  border-top: none;
+}
+
+.openms-lib-list--capabilities > li,
+.openms-lib-list--capabilities > .openms-steps__item {
+  display: flex;
+}
+
+.openms-lib-list--capabilities .openms-lib-list__index,
+.openms-steps--lib-capabilities .openms-step__index {
+  display: none;
+}
+
+/* 4. For developers */
+.openms-steps--openms-lib.openms-steps--lib-developers {
+  overflow: visible;
+  color: var(--openms-navy);
+  background: var(--openms-white);
+  border-top-color: transparent;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers::before,
+.openms-steps--openms-lib.openms-steps--lib-developers::after {
+  display: none;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-steps__inner {
+  position: static;
+  z-index: auto;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--list-row {
+  display: grid;
+  flex-direction: unset;
+  align-items: stretch;
+  min-height: 0;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__media {
+  order: unset;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__content {
+  order: unset;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step:nth-child(even) .openms-step__media,
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step:nth-child(even) .openms-step__content {
+  order: unset;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__title {
+  padding-right: 0;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .openms-step__media {
+  width: 3.35rem;
+  height: 3.35rem;
+  min-height: 0;
+  max-height: 3.35rem;
+  margin-inline: auto;
+  padding: 0.35rem;
+  border-radius: var(--olib-radius-sm);
+  background: var(--openms-navy);
+  overflow: hidden;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .openms-step__terminal,
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .openms-step__terminal .terminal-window {
+  width: 100%;
+  height: 2.35rem;
+  min-height: 0;
+  max-height: 2.35rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .terminal-window section.terminal {
+  font-size: 0.4rem;
+  line-height: 1.3;
+}
+
+.openms-lib-list--developers,
+.openms-steps--lib-developers .openms-steps__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--olib-feature-gap);
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.openms-lib-list--developers > li + li,
+.openms-lib-list--developers > .openms-steps__item + .openms-steps__item {
+  border-top: none;
+}
+
+.openms-lib-list--developers > li,
+.openms-lib-list--developers > .openms-steps__item {
+  display: flex;
+}
+
+.openms-lib-list--developers .openms-lib-list__index,
+.openms-steps--lib-developers .openms-step__index {
+  display: none;
+}
+
+/* 5. Get started — feature-style resource grid */
+.openms-lib-block--resources .openms-lib-block__head {
+  max-width: 46rem;
+}
+
+.openms-lib-list--resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--olib-feature-gap);
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.openms-lib-resource-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s var(--olib-ease), background-color 0.2s var(--olib-ease),
+    box-shadow 0.2s var(--olib-ease), transform 0.2s var(--olib-ease);
+}
+
+.openms-lib-list--resource-grid .openms-lib-list__row,
+.openms-lib-list--resource-grid .openms-lib-resource-card {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "media"
+    "content";
+  gap: 1rem;
+  align-items: start;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+}
+
+.openms-lib-list--resource-grid .openms-lib-list__row + .openms-lib-list__row,
+.openms-lib-list--resource-grid .openms-resource-card + .openms-resource-card {
+  border-top: none;
+}
+
+.openms-lib-list--resource-grid .openms-lib-list__row:hover,
+.openms-lib-list--resource-grid .openms-lib-list__row:focus-visible,
+.openms-lib-resource-card:hover,
+.openms-lib-resource-card:focus-visible {
+  background: transparent;
+  transform: none;
+  outline: none;
+}
+
+.openms-lib-list--resource-grid .openms-lib-list__index {
+  display: none;
+}
+
+.openms-lib-list--resource-grid .openms-lib-list__media {
+  width: 3.35rem;
+  height: 3.35rem;
+  margin-inline: auto;
+  padding: 0;
+  border: none;
+  border-radius: var(--olib-radius-sm);
+  background: var(--openms-navy);
+}
+
+.openms-lib-list--resource-grid .openms-lib-list__mark {
+  font-size: 1.15rem;
+  color: var(--openms-white);
+}
+
+.openms-lib-list--resource-grid .openms-lib-list__body {
+  align-items: center;
+}
+
+.openms-lib-resource-card__tag {
+  display: none;
+}
+
+.openms-lib-list--resource-grid .openms-lib-list__title {
+  font-size: 1rem;
+}
+
+.openms-lib-list--resource-grid .openms-lib-list__text {
+  display: block;
+  max-width: 26ch;
+  margin-inline: auto;
+  font-size: var(--openms-body-size);
+  line-height: 1.55;
+  color: var(--olib-text-muted);
+  text-align: center;
+}
+
+.openms-lib-resource-card .openms-lib-list__link {
+  align-self: center;
+  margin-top: 0.25rem;
+  font-size: var(--openms-text-min);
+  pointer-events: none;
+}
+
+.openms-lib-block--resources .openms-lib-block__note {
+  max-width: 40rem;
+  margin-inline: auto;
+  text-align: center;
+  border: 1px solid var(--olib-line);
+  border-left: none;
+  border-radius: var(--olib-radius-sm);
+}
+
+/* ── Responsive ── */
+
+/* Neutralize homepage heroitems/keyfeatures rules on this page */
+.openms-steps--openms-lib .openms-steps__header,
+.keyfeatures-modern--openms-lib .keyfeatures-modern__header {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.openms-steps--openms-lib .openms-step__cta {
+  width: auto;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--showcase .openms-step__img,
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--showcase .openms-step__img.img-fit {
+  min-height: 0;
+  max-height: 2rem;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__media {
+  order: unset;
+  width: 3.35rem;
+  min-height: 0;
+  border: none;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__content {
+  order: unset;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step:nth-child(even) .openms-step__media,
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step:nth-child(even) .openms-step__content {
+  order: unset;
+}
+
+@media (max-width: 1024px) {
+  .openms-lib-list--capabilities,
+  .openms-steps--lib-capabilities .openms-steps__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .openms-steps--openms-lib.openms-steps--users .openms-steps__grid {
-    grid-template-columns: 1fr;
+  .openms-lib-list--resource-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 860px) {
-  .openms-lib-layout .openms-lib-page__intro .governance-hero {
-    margin-left: calc(-1 * clamp(0.75rem, 4vw, 1.25rem));
-    margin-right: calc(-1 * clamp(0.75rem, 4vw, 1.25rem));
-    width: calc(100% + 2 * clamp(0.75rem, 4vw, 1.25rem));
-    padding-left: clamp(1.25rem, 4vw, 1.75rem);
-    padding-right: clamp(1rem, 3vw, 1.25rem);
+@media (max-width: 720px) {
+  .openms-lib-page {
+    --olib-section-y: clamp(2.75rem, 6vh, 3.5rem);
+    --olib-feature-gap: clamp(1.25rem, 4vw, 1.75rem);
+    --olib-pad-x: clamp(1rem, 4vw, 1.25rem);
   }
 
-  .openms-lib-page__outro .governance-pillars {
+  .openms-lib-hero__title {
+    max-width: none;
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+  }
+
+  .openms-lib-block__title,
+  .keyfeatures-modern--overview .keyfeatures-modern__title,
+  .openms-steps--lib-list .openms-steps__title {
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+  }
+
+  .openms-lib-list--split,
+  .openms-lib-list--tiles,
+  .keyfeatures-modern--lib-tiles .keyfeatures-modern__topics,
+  .openms-lib-list--capabilities,
+  .openms-steps--lib-capabilities .openms-steps__grid,
+  .openms-lib-list--developers,
+  .openms-steps--lib-developers .openms-steps__grid,
+  .openms-lib-list--resource-grid {
     grid-template-columns: 1fr;
   }
 
-  .openms-lib-actions .openms-step__cta,
-  .openms-lib-actions .about-cta-btn {
+  .openms-lib-list--split .openms-lib-list__bullets {
+    max-width: none;
+    width: 100%;
+  }
+
+  .openms-lib-list--split .openms-lib-list__text,
+  .openms-lib-list--tiles .openms-lib-list__text,
+  .keyfeatures-modern--lib-tiles .keyfeatures-modern__topic-text,
+  .openms-lib-list--capabilities .openms-lib-list__text,
+  .openms-steps--lib-capabilities .openms-step__subtitle,
+  .openms-lib-list--developers .openms-lib-list__text,
+  .openms-steps--lib-developers .openms-step__subtitle,
+  .openms-lib-list--resource-grid .openms-lib-list__text {
+    max-width: none;
+  }
+
+  .openms-lib-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+  }
+
+  .openms-lib-hero__actions .openms-lib-btn--primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .openms-lib-hero__actions .openms-lib-btn--ghost {
+    align-self: center;
+  }
+
+  .openms-lib-page__cta {
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .openms-lib-page__cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .openms-lib-page__cta-actions .openms-lib-btn {
     width: 100%;
     justify-content: center;
   }
 }
 
-@media (max-width: 640px) {
-  .keyfeatures-modern--openms-lib .keyfeatures-modern__topics {
-    grid-template-columns: 1fr;
+@media (max-width: 480px) {
+  .openms-lib-hero__chip {
+    font-size: 0.68rem;
   }
 
-  .openms-steps--openms-lib.openms-steps--developers .openms-steps__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .openms-steps--openms-lib.openms-steps--developers {
-    --dev-card-media-min-h: clamp(10rem, 28vw, 12rem);
-    --dev-logo-max-h: clamp(4.5rem, 14vw, 6rem);
-    --dev-terminal-h: clamp(9rem, 24vw, 11rem);
-  }
-}
-
-@media (min-width: 1100px) {
-  .openms-steps--openms-lib.openms-steps--developers {
-    --dev-card-media-min-h: 13.5rem;
-    --dev-logo-max-h: 7rem;
-    --dev-terminal-h: 12rem;
+  .openms-lib-block__head,
+  .keyfeatures-modern--overview .keyfeatures-modern__header,
+  .openms-steps--lib-list .openms-steps__header {
+    margin-bottom: clamp(1.25rem, 4vw, 1.75rem);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .keyfeatures-modern--openms-lib .keyfeatures-modern__topic-card:hover,
-  .openms-steps--openms-lib .openms-step--showcase:hover,
-  .openms-steps--openms-lib.openms-steps--developers .openms-step--developer:hover {
+  .openms-lib-page .openms-lib-btn:hover,
+  .openms-lib-page .openms-lib-btn:focus-visible,
+  .openms-lib-page .openms-steps--openms-lib .openms-step__cta:hover,
+  .openms-lib-page .openms-steps--openms-lib .openms-step__cta:focus-visible,
+  .openms-lib-page .openms-lib-block--overview .openms-lib-list__link:hover,
+  .openms-lib-page .openms-lib-block--overview .openms-lib-list__link:focus-visible {
+    transform: none;
+  }
+
+  .openms-steps--lib-list .openms-step__cta-arrow,
+  .openms-lib-list--split .openms-lib-list__row,
+  .openms-lib-list--tiles .openms-lib-list__row,
+  .openms-lib-resource-card {
+    transition: none;
+  }
+
+  .openms-lib-list--tiles .openms-lib-list__row:hover,
+  .openms-lib-resource-card:hover {
     transform: none;
   }
 }

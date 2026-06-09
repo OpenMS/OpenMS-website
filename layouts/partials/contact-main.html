@@ -1,0 +1,32 @@
+{{- $cfg := .Site.Params.contactPage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Contact" -}}
+{{- $subtitle := index $cfg "subtitle" | default "Whether you need help with pipelines, integrations, consulting, or joining the community — reach out and we will point you to the right next step." -}}
+<section class="contact-page-layout">
+  <header class="openms-lib-hero contact-page-hero" aria-label="Contact OpenMS">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          Let's talk about your <span class="openms-lib-hero__accent">workflow</span>
+        </h1>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <div class="openms-lib-hero__actions" aria-label="Contact options">
+          <a
+            class="openms-lib-btn openms-lib-btn--primary"
+            href="https://tally.so/r/pbV6Qq"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Open contact form</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="mailto:webmaster@openms.de">Email us</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/communication/">Community channels</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="contact-page-layout__content">
+    <div class="governance-page contact-page">
+      {{ .Content }}
+    </div>
+  </div>
+</section>

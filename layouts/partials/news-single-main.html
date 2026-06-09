@@ -9,20 +9,24 @@
 {{- if $year }}
   {{- $newsUrl = printf "%s?year=%s" $newsUrl $year }}
 {{- end }}
-<section class="content-padding flex-row news-page-layout">
-  <div class="content-container news-page-layout__container">
-    <div class="governance-page news-page news-page--article">
-      <header class="governance-hero" aria-label="News article">
-        <p class="governance-hero__eyebrow">{{ $eyebrow }} · News</p>
-        <h1 class="governance-hero__title">{{ .Title }}</h1>
+<section class="news-page-layout">
+  <header class="openms-lib-hero news-page-hero news-page-hero--article" aria-label="News article">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }} · News</p>
+        <h1 class="openms-lib-hero__title">{{ .Title }}</h1>
         {{- with .Params.subtitle }}
-        <p class="governance-hero__description">{{ . }}</p>
+        <p class="openms-lib-hero__lead">{{ . }}</p>
         {{- end }}
-        <div class="governance-hero__meta">
-          <a href="{{ $newsUrl }}">{{ $backLabel }}</a>
+        <div class="openms-lib-hero__actions" aria-label="Article navigation">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="{{ $newsUrl }}">{{ $backLabel }}</a>
         </div>
-      </header>
+      </div>
+    </div>
+  </header>
 
+  <div class="news-page-layout__content">
+    <div class="news-page news-page--article">
       <div class="news-page__main">
         <article class="news-article">
           <header class="news-article__header">
@@ -39,12 +43,6 @@
           <div class="news-article__content">
             {{ .Content }}
           </div>
-
-          <footer class="news-article__footer">
-            <a class="news-article__back-link" href="{{ $newsUrl }}">
-              <span aria-hidden="true">←</span> {{ $backLabel }}
-            </a>
-          </footer>
         </article>
       </div>
     </div>

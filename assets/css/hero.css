@@ -352,14 +352,14 @@
   align-items: center;
   justify-content: center;
   min-height: 2.75rem;
-  padding: 0.75rem 1.75rem;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem);
   font-size: var(--openms-body-size-lg);
   font-weight: 600;
-  border-radius: 0.5rem;
+  border-radius: var(--openms-btn-pill-radius, 999px);
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
-    border-color 0.2s ease, color 0.2s ease;
+  transition: var(--openms-btn-motion, transform 0.35s cubic-bezier(0.44, 0, 0.56, 1),
+    box-shadow 0.35s cubic-bezier(0.44, 0, 0.56, 1));
 }
 
 .hero-modern__btn:focus {
@@ -379,14 +379,15 @@
   color: var(--openms-white);
   background: var(--openms-blue-secondary);
   border: 2px solid var(--openms-blue-secondary);
-  box-shadow: 0 0.5rem 1.5rem rgba(var(--openms-blue-secondary-rgb), 0.35);
+  box-shadow: 0 0 0 0 rgba(var(--openms-blue-secondary-rgb), 0.22);
 }
 
-.hero-modern__btn--primary:hover {
-  transform: translateY(-2px);
-  background: var(--openms-navy);
-  border-color: var(--openms-navy);
-  box-shadow: 0 0.75rem 2rem rgba(var(--openms-blue-rgb), 0.35);
+.hero-modern__btn--primary:hover,
+.hero-modern__btn--primary:focus-visible {
+  transform: scale(var(--openms-btn-hover-scale, 1.03));
+  background: var(--openms-blue-secondary);
+  border-color: var(--openms-blue-secondary);
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(var(--openms-blue-secondary-rgb), 0.22);
   color: var(--openms-white);
 }
 
@@ -395,11 +396,15 @@
   background: rgba(var(--openms-white-rgb), 0.15);
   border: 2px solid var(--openms-white);
   backdrop-filter: blur(10px);
+  box-shadow: 0 0 0 0 rgba(var(--openms-white-rgb), 0.18);
 }
 
-.hero-modern__btn--secondary:hover {
-  background: rgba(var(--openms-white-rgb), 0.25);
-  border-color: var(--openms-yellow);
+.hero-modern__btn--secondary:hover,
+.hero-modern__btn--secondary:focus-visible {
+  transform: scale(var(--openms-btn-hover-scale, 1.03));
+  background: rgba(var(--openms-white-rgb), 0.15);
+  border-color: var(--openms-white);
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(var(--openms-white-rgb), 0.18);
   color: var(--openms-white);
 }
 
@@ -763,7 +768,7 @@
     width: 100%;
     box-sizing: border-box;
     min-height: 2.75rem;
-    padding: 0.75rem 1.25rem;
+    padding: var(--openms-btn-padding, 0.7rem 1.25rem);
   }
 
   .hero-modern__visual {

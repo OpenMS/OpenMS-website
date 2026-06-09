@@ -1,17 +1,31 @@
-<section class="content-padding flex-row publications-layout">
-  <div class="content-container publications-layout__container">
-    <div class="governance-page publications-page" data-publications-year-filter>
-      <header class="governance-hero" aria-label="OpenMS publications">
-        <p class="governance-hero__eyebrow">Research</p>
-        <h1 class="governance-hero__title">
-          OpenMS in <span>peer-reviewed</span> publications.
+{{- $cfg := .Site.Params.publicationsPage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Research" -}}
+{{- $subtitle := index $cfg "subtitle" | default "A curated bibliography of scientific publications that reference OpenMS software, methods, and workflows. Showing publications from the two most recent years. Use the dropdown to switch between them." -}}
+<section class="publications-page-layout">
+  <header class="openms-lib-hero publications-page-hero" aria-label="OpenMS publications">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          OpenMS in <span class="openms-lib-hero__accent">peer-reviewed</span> publications.
         </h1>
-        <p class="governance-hero__description">
-          A curated bibliography of scientific publications that reference OpenMS software, methods, and workflows.
-          Showing publications from the two most recent years. Use the dropdown to switch between them.
-        </p>
-      </header>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/citing-openms/">Citing OpenMS</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/openms-lib/">OpenMS-lib</a>
+          <a
+            class="openms-lib-btn openms-lib-btn--ghost"
+            href="https://openms.readthedocs.io/en/latest/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Documentation</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
+  <div class="publications-page-layout__content">
+    <div class="publications-page" data-publications-year-filter>
       <div class="publications-body">
         {{ .Content }}
       </div>

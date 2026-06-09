@@ -71,6 +71,43 @@ languages:
         subtitle: >-
           Learn how to get involved with code, documentation, outreach, fundraising,
           and more — whether you are new to OpenMS or a seasoned contributor.
+      aboutPage:
+        eyebrow: About us
+        subtitle: >-
+          OpenMS Inc. is the corporate entity and fiscal home of the OpenMS project.
+          As a Pennsylvania-based 501(c)(3) public charity, it supports development,
+          governance, and long-term stewardship of the OpenMS ecosystem.
+      governancePage:
+        eyebrow: OpenMS governance
+        subtitle: >-
+          OpenMS combines a nonprofit corporation for legal and financial stewardship
+          with an Executive Committee that leads technical direction and community governance.
+      publicationsPage:
+        eyebrow: Research
+        subtitle: >-
+          A curated bibliography of scientific publications that reference OpenMS software,
+          methods, and workflows. Showing publications from the two most recent years.
+          Use the dropdown to switch between them.
+      contactPage:
+        eyebrow: Contact
+        subtitle: >-
+          Whether you need help with pipelines, integrations, consulting, or joining the
+          community — reach out and we will point you to the right next step.
+      researchPartnershipsPage:
+        eyebrow: Partner with OpenMS
+        subtitle: >-
+          OpenMS grows through long-term collaboration with universities, institutes, and
+          research groups that contribute software, methods, and training as part of their work.
+      sponsorUsPage:
+        eyebrow: Support OpenMS
+        subtitle: >-
+          Sponsorship provides direct funding for software engineering, documentation,
+          community events, and the long-term sustainability of the OpenMS ecosystem.
+      helpPage:
+        eyebrow: Support
+        subtitle: >-
+          Find the right channel for user questions, development issues, documentation,
+          and community discussion — from Stack Overflow to the OpenMS mailing list.
       applicationsPage:
         eyebrow: Projects
         readMoreLabel: Read application
@@ -232,36 +269,40 @@ languages:
             alt: LiBiS — Life Science Informatics
 
       heroGroup:
-        - title: "OpenMS allows users to:"
+        - title: "Three ways to use OpenMS"
           variant: users
           eyebrow: Capabilities
-          titleHighlight: "allows users to"
+          titleHighlight: "Three ways"
+          subtitle: Run ready-made workflows, build custom pipelines, or script with Python—choose the path that fits your lab.
           bgColor: C2BABC
           heroItems:
             - title: Run existing workflows
-              subtitle: Run existing workflows for proteomics and metabolomics with OpenMS in KNIME.
+              tag: KNIME
+              subtitle: Use OpenMS workflows for proteomics and metabolomics in KNIME without writing code.
               leftAlign: true
               image: knime-analytics.png
-              buttonText: Get Started
+              buttonText: KNIME guide
               buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/knime-get-started.html"
             - title: Create your own workflows
-              subtitle: Modify and create your own OpenMS workflows in Galaxy, KNIME and Nextflow.
+              tag: Galaxy · KNIME · Nextflow
+              subtitle: Modify and compose OpenMS workflows across Galaxy, KNIME, and Nextflow.
               image: knime-edit.png
-              buttonText: Get Started
+              buttonText: Workflow guide
               buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/workflows.html"
             - title: Use OpenMS in Python
-              subtitle: Enhance workflows with pyOpenMS scripts or develop novel methods using pyOpenMS
+              tag: pyOpenMS
+              subtitle: Extend pipelines with pyOpenMS scripts or prototype new analysis methods in Python.
               leftAlign: true
               image: pyopenms-logo.png
               imgClass: img-fit
               bottomBorderRadius: true
-              buttonText: Get Started
+              buttonText: pyOpenMS docs
               buttonLink: "https://pyopenms.readthedocs.io/en/latest/"
-        - title: "Advanced users / developers can use OpenMS to:"
+        - title: "Scale OpenMS for advanced work"
           variant: developers
           eyebrow: For developers
-          titleHighlight: developers
-          subtitle: Scale workflows on HPC clusters and extend OpenMS with high-performance C++ tools.
+          titleHighlight: advanced
+          subtitle: Run large workflows on HPC clusters or extend OpenMS with high-performance C++ tools.
           bgColor: FFCB4F
           heroItems:
             - title: Analyze large datasets
@@ -279,21 +320,25 @@ languages:
               buttonLink: "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/OpenMS_tutorial.html"
 
       keyfeatures:
-        eyebrow: Overview
-        title: What is OpenMS?
+        eyebrow: What is OpenMS?
+        title: The open-source LC-MS library
+        titleHighlight: open-source
         description: >-
-          OpenMS is an open-source C++ library with Python bindings for LC/MS
-          data management, analysis, and visualization—built for rapid
-          development of mass spectrometry software.
+          A C++ core with Python bindings for LC/MS data management, analysis,
+          and visualization—built for rapid development of mass spectrometry software.
         features:
           - title: Open source
-            text: BSD-licensed core library and tools you can extend, share, and ship.
+            tag: BSD licensed
+            text: Core library and tools you can extend, share, and ship under a three-clause BSD license.
           - title: C++ & Python
+            tag: C++ · Python
             text: High-performance algorithms with pyOpenMS for scripting and workflows.
           - title: Cross-platform
-            text: Build and run on Windows, macOS, and Linux with the same toolchain.
+            tag: Windows · macOS · Linux
+            text: Build and run on all major platforms with the same toolchain.
           - title: TOPP pipeline
-            text: Nearly 200 ready-made tools for proteomics and metabolomics analysis.
+            tag: 200+ tools
+            text: Ready-made command-line utilities for proteomics and metabolomics analysis.
         note: >-
           Our community is committed to being open, inclusive, and welcoming.
           Read the [OpenMS Code of Conduct](/code-of-conduct) for guidance on
@@ -311,12 +356,15 @@ languages:
         showAll:
           text: Show all projects
           url: /applications
+        links:
+          - text: TOPP Tools
+            url: https://openms.readthedocs.io/en/latest/getting-started/topp-tools.html
+            description: Command-line tools for proteomics and metabolomics data analysis.
+          - text: pyOpenMS
+            url: https://pyopenms.readthedocs.io/en/latest/
+            description: Python bindings for scripting workflows, prototyping, and integrations.
 
       webapps:
-        - name: TOPP Tools
-          url: https://openms.readthedocs.io/en/latest/getting-started/topp-tools.html
-          logo: /images/logo.svg
-          description: Collection of command line tools for mass spectrometry data analysis.
         - name: FLASH App
           url: http://flashapp.webapps.openms.org/
           logo: /images/webapp/logo/flashapp.png

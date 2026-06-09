@@ -8,7 +8,8 @@
 .home-page__trust + .home-page__cta .contact-home {
   background: linear-gradient(
     180deg,
-    var(--openms-white) 0%,
+    var(--home-bg-mist, #f8fafc) 0%,
+    var(--openms-white) 18%,
     rgba(var(--openms-blue-rgb), 0.04) 55%,
     rgba(var(--openms-blue-rgb), 0.07) 100%
   );
@@ -77,8 +78,7 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
   align-items: center;
   justify-content: center;
   min-height: 2.75rem;
-  padding: 0.7rem 1.5rem;
-  border-radius: 0.5rem;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem);
   font-size: var(--openms-text-min);
   font-weight: 600;
   text-decoration: none;
@@ -254,22 +254,26 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
   align-items: center;
   justify-content: center;
   min-height: 2.75rem;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid rgba(var(--openms-navy-rgb), 0.16);
-  border-radius: 0.5rem;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem);
+  border: 2px solid rgba(var(--openms-navy-rgb), 0.2);
+  border-radius: var(--openms-btn-pill-radius, 999px);
   background: transparent;
   color: var(--openms-navy);
   font-family: var(--openms-font-body);
   font-size: var(--openms-text-min);
   font-weight: 600;
   text-decoration: none;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  box-shadow: 0 0 0 0 rgba(var(--openms-blue-rgb), 0.18);
+  transition: var(--openms-btn-motion, transform 0.35s cubic-bezier(0.44, 0, 0.56, 1),
+    box-shadow 0.35s cubic-bezier(0.44, 0, 0.56, 1));
 }
 
 .contact-area__cta-secondary:hover,
 .contact-area__cta-secondary:focus-visible {
-  border-color: rgba(var(--openms-blue-rgb), 0.4);
-  color: var(--openms-blue);
+  border-color: rgba(var(--openms-navy-rgb), 0.2);
+  color: var(--openms-navy);
+  transform: scale(var(--openms-btn-hover-scale, 1.03));
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(var(--openms-blue-rgb), 0.18);
   outline: none;
 }
 
@@ -282,7 +286,7 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
 
 .contact-area__actions .contact-area__cta {
   width: 100%;
-  border-radius: 0.5rem;
+  border-radius: var(--openms-btn-pill-radius, 999px);
 }
 
 .contact-area__details {

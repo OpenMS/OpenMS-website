@@ -2,12 +2,12 @@
 {{- if and $banner $banner.enabled }}
 <aside class="news-banner" role="region" aria-label="Site announcement">
   <div class="news-banner__inner">
-    <header class="news-banner__header">
+    <div class="news-banner__content">
       {{- with $banner.label }}
-      <p class="news-banner__eyebrow">{{ . }}</p>
+      <span class="news-banner__eyebrow">{{ . }}</span>
       {{- end }}
       <p class="news-banner__headline">{{ $banner.text }}</p>
-    </header>
+    </div>
   </div>
 </aside>
 {{- end }}

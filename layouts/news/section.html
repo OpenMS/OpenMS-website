@@ -21,29 +21,38 @@
 {{- if and (not $defaultYear) $defaultToLatest (gt (len $years) 0) }}
   {{- $defaultYear = index $years 0 }}
 {{- end }}
-<section class="content-padding flex-row news-page-layout">
-  <div class="content-container news-page-layout__container">
-    <div
-      class="governance-page news-page"
-      data-news-year-filter
-      {{- with $defaultYear }}
-      data-news-default-year="{{ . }}"
-      {{- end }}
-    >
-      <header class="governance-hero" aria-label="OpenMS news">
-        <p class="governance-hero__eyebrow">{{ $eyebrow }}</p>
-        <h1 class="governance-hero__title">
+<section class="news-page-layout">
+  <header class="openms-lib-hero news-page-hero" aria-label="OpenMS news">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
           {{- if eq $title "News" -}}
-          OpenMS <span>news</span>.
+          OpenMS <span class="openms-lib-hero__accent">news</span>.
           {{- else -}}
           {{ $title }}
           {{- end }}
         </h1>
         {{- with $subtitle }}
-        <p class="governance-hero__description">{{ . }}</p>
+        <p class="openms-lib-hero__lead">{{ . }}</p>
         {{- end }}
-      </header>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/calendar/">Community calendar</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/contribute/">Contribute</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/applications/">Projects</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
+  <div class="news-page-layout__content">
+    <div
+      class="news-page"
+      data-news-year-filter
+      {{- with $defaultYear }}
+      data-news-default-year="{{ . }}"
+      {{- end }}
+    >
       <div class="news-page__main">
         {{- if gt (len $years) 0 }}
         <div class="news-page__toolbar">

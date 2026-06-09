@@ -11,6 +11,18 @@
 {{ partial "donate-main.html" . }}
 {{- else if eq .File.BaseFileName "contribute" -}}
 {{ partial "contribute-main.html" . }}
+{{- else if eq .File.BaseFileName "about" -}}
+{{ partial "about-main.html" . }}
+{{- else if eq .File.BaseFileName "governance" -}}
+{{ partial "governance-main.html" . }}
+{{- else if eq .File.BaseFileName "contact" -}}
+{{ partial "contact-main.html" . }}
+{{- else if eq .File.BaseFileName "research-partnerships" -}}
+{{ partial "research-partnerships-main.html" . }}
+{{- else if eq .File.BaseFileName "help" -}}
+{{ partial "help-main.html" . }}
+{{- else if eq .File.BaseFileName "sponsor-us" -}}
+{{ partial "sponsor-us-main.html" . }}
 {{- else -}}
 {{ partial "single/content.html" . }}
 {{- end -}}
