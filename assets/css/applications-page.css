@@ -242,14 +242,20 @@
 }
 
 /* Navbar-style CTA motion (hero) */
+.applications-page-layout .openms-lib-hero__actions .openms-lib-btn {
+  width: auto;
+  min-width: 0;
+}
+
 .applications-page-layout .openms-lib-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
+  box-sizing: border-box;
   min-height: 2.75rem;
-  padding: var(--openms-btn-padding);
-  border-radius: var(--openms-btn-pill-radius);
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem);
+  border-radius: var(--openms-btn-pill-radius, 999px);
   font-family: var(--openms-font-body);
   font-size: var(--openms-text-min);
   font-weight: 600;
@@ -261,8 +267,6 @@
 }
 
 .applications-page-layout .openms-lib-btn--primary {
-  gap: 0.5rem;
-  padding-inline: 1.15rem;
   border: 2px solid var(--openms-navy);
   background: var(--openms-navy);
   color: var(--openms-white) !important;
@@ -273,6 +277,7 @@
   background: transparent;
   background-color: transparent;
   color: var(--openms-blue) !important;
+  text-decoration: none;
 }
 
 .applications-page-layout .openms-lib-btn--primary:hover,
