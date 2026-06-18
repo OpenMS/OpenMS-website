@@ -11,7 +11,7 @@ section.webapps-featured {
   --webapps-logo-size: clamp(4.5rem, 10vw, 5.5rem);
   --webapps-card-text-lines: 3;
   --openms-webapps-focus-ring: 0 0 0 3px var(--openms-blue),
-    0 0 0 5px var(--openms-yellow);
+    0 0 0 5px rgba(var(--openms-blue-rgb), 0.2);
 
   position: relative;
   overflow: hidden;
@@ -30,12 +30,7 @@ section.webapps-featured::before {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--openms-blue) 0%,
-    var(--openms-purple) 45%,
-    var(--openms-pink) 100%
-  );
+  background: var(--openms-blue);
   pointer-events: none;
 }
 
@@ -93,15 +88,7 @@ section.webapps-featured::after {
 
 .webapps-featured__title-accent {
   display: inline;
-  background: linear-gradient(
-    90deg,
-    var(--openms-blue) 0%,
-    var(--openms-purple) 55%,
-    var(--openms-pink) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--openms-blue);
 }
 
 .webapps-featured__lead {
@@ -170,12 +157,7 @@ section.webapps-featured::after {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--openms-blue) 0%,
-    var(--openms-purple) 55%,
-    var(--openms-pink) 100%
-  );
+  background: var(--openms-blue);
   opacity: 0.55;
   transition: opacity 0.2s ease, height 0.2s ease;
 }

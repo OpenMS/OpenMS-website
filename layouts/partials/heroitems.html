@@ -50,7 +50,7 @@
           {{- end }}
           <span class="openms-step__index openms-lib-list__index" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
 
-          <div class="openms-step__media openms-lib-list__media{{- if and $isLibList (not .terminal) }} openms-lib-feature-icon{{- end }}"{{- if $isLibList }} aria-hidden="true"{{- end }}>
+          <div class="openms-step__media openms-lib-list__media{{- if and $isLibList (not .terminal) (ne $variant "users") (ne $variant "developers") }} openms-lib-feature-icon{{- end }}"{{- if $isLibList }} aria-hidden="true"{{- end }}>
             {{- if .terminal }}
             <div class="openms-step__terminal">
               {{ partial "terminal.html" . }}
@@ -69,12 +69,8 @@
           <div class="openms-step__content openms-lib-list__body">
             {{- with .tag }}
             <div class="openms-step__tags openms-lib-list__tags" aria-label="Category">
-              {{- if and $isLibList (or (eq $variant "users") (eq $variant "developers")) }}
-              <span class="openms-step__tag openms-lib-list__tag">{{ index (split . " · ") 0 }}</span>
-              {{- else }}
               {{- range (split . " · ") }}
               <span class="openms-step__tag openms-lib-list__tag">{{ . }}</span>
-              {{- end }}
               {{- end }}
             </div>
             {{- end }}

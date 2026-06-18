@@ -74,21 +74,4 @@ hideShortcuts: true
       <a href="https://pyopenms.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">Read pyOpenMS docs</a>
     </p>
   </article>
-  <article class="governance-card help-page__card--wide">
-    <p class="governance-card__eyebrow">Workflows</p>
-    <h2>OpenMS in KNIME</h2>
-    <p>
-      Introductory tutorial for using OpenMS tools in KNIME workflows, plus links
-      to KNIME quick start and community forums for OpenMS nodes.
-    </p>
-    <p class="governance-card__link">
-      <a href="https://openms.readthedocs.io/en/latest/tutorials/knime-user-tutorial.html" target="_blank" rel="noopener noreferrer">OpenMS KNIME user tutorial</a>
-      ·
-      <a href="https://tech.knime.org/files/KNIME_quickstart.pdf" target="_blank" rel="noopener noreferrer">KNIME quick start (PDF)</a>
-      ·
-      <a href="https://tech.knime.org/documentation" target="_blank" rel="noopener noreferrer">KNIME platform docs</a>
-      ·
-      <a href="https://tech.knime.org/forum/openms" target="_blank" rel="noopener noreferrer">KNIME OpenMS forum</a>
-    </p>
-  </article>
 </section>

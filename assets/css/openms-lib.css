@@ -10,7 +10,7 @@
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: 0 0 clamp(2.5rem, 5vh, 4rem);
+  padding: 0 0 clamp(4.5rem, 9vh, 6.5rem);
 }
 
 .openms-lib-layout a:focus-visible {
@@ -22,7 +22,8 @@
 .openms-lib-page {
   --olib-max: 72rem;
   --olib-pad-x: clamp(1.25rem, 4vw, 2rem);
-  --olib-section-y: clamp(4rem, 8vh, 5.5rem);
+  --olib-section-y: clamp(6rem, 12vh, 8rem);
+  --olib-block-gap: clamp(3.5rem, 7vh, 5.5rem);
   --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
   --olib-line: rgba(var(--openms-navy-rgb), 0.08);
   --olib-text-muted: rgba(var(--openms-navy-rgb), 0.68);
@@ -34,10 +35,12 @@
   --olib-shadow: 0 0.35rem 1.5rem rgba(var(--openms-navy-rgb), 0.06);
   --olib-shadow-hover: 0 0.75rem 2rem rgba(var(--openms-navy-rgb), 0.1);
   --olib-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --olib-feature-gap: clamp(1.5rem, 3vw, 2.5rem);
+  --olib-feature-gap: clamp(2rem, 4vw, 3.5rem);
+  --olib-card-gap: clamp(1.25rem, 2.5vw, 1.75rem);
 
   color: var(--openms-navy);
   background: var(--openms-white);
+  overflow-x: clip;
 }
 
 .openms-lib-page__intro {
@@ -45,19 +48,133 @@
   max-width: none;
   margin-inline: 0;
   padding-inline: 0;
+  overflow-x: clip;
+  background: linear-gradient(
+    180deg,
+    var(--openms-white) 0%,
+    color-mix(in srgb, var(--olib-bg-soft) 40%, var(--openms-white)) 100%
+  );
 }
 
-.openms-lib-page__body,
-.openms-lib-page__outro {
+.openms-lib-page__intro-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--olib-block-gap);
   width: min(100%, var(--olib-max));
   max-width: var(--olib-max);
   margin-inline: auto;
   padding-inline: var(--olib-pad-x);
+  padding-top: clamp(2rem, 4vw, 3.25rem);
+  padding-bottom: clamp(6.5rem, 12vh, 9rem);
+}
+
+.openms-lib-page__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  margin-top: clamp(3.5rem, 6vh, 5rem);
+  padding-inline: 0;
   overflow-x: clip;
+}
+
+.openms-lib-page__outro {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  margin-top: clamp(1.5rem, 3vh, 2.5rem);
+  padding-inline: 0;
+  overflow-x: clip;
+  background: var(--olib-bg-soft);
+  border-top: 1px solid var(--olib-line);
+}
+
+.openms-lib-page__body > .openms-lib-page__anchor {
+  width: 100%;
+  padding-block: clamp(5.5rem, 11vh, 7.5rem);
+  padding-inline: max(var(--olib-pad-x), calc((100% - var(--olib-max)) / 2 + var(--olib-pad-x)));
+}
+
+.openms-lib-page__body > .openms-lib-page__anchor:nth-child(even) {
+  background: var(--olib-bg-soft);
+}
+
+.openms-lib-page__body .keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles,
+.openms-lib-page__body .openms-steps--openms-lib.openms-steps--lib-capabilities,
+.openms-lib-page__body .openms-steps--openms-lib.openms-steps--lib-developers {
+  padding-block: 0;
+}
+
+.openms-lib-page__outro .openms-lib-block {
+  gap: 0;
+  padding-block: 0;
+}
+
+.openms-lib-page__outro .openms-lib-block--resources {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 3.5rem);
+  width: min(100%, var(--olib-max));
+  max-width: var(--olib-max);
+  margin-inline: auto;
+  padding-inline: var(--olib-pad-x);
+  padding-block: clamp(5.5rem, 11vh, 7.5rem) clamp(4.5rem, 9vh, 6rem);
 }
 
 .openms-lib-page__anchor {
   scroll-margin-top: calc(var(--openms-header-height, 4.25rem) + 1rem);
+}
+
+.openms-lib-page__nav {
+  position: sticky;
+  top: var(--openms-header-height, 4.25rem);
+  z-index: 15;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0.65rem max(var(--olib-pad-x), calc((100% - var(--olib-max)) / 2 + var(--olib-pad-x))) 0.85rem;
+  background: color-mix(in srgb, var(--openms-white) 96%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--olib-line);
+  box-shadow: 0 0.35rem 1rem rgba(var(--openms-navy-rgb), 0.04);
+}
+
+.openms-lib-page__nav::-webkit-scrollbar {
+  display: none;
+}
+
+.openms-lib-page__nav-link {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.1rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  color: var(--openms-blue);
+  text-decoration: none;
+  background: rgba(var(--openms-blue-rgb), 0.07);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.12);
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.openms-lib-page__nav-link:hover,
+.openms-lib-page__nav-link:focus-visible {
+  color: var(--openms-navy);
+  background: rgba(var(--openms-blue-rgb), 0.12);
+  border-color: rgba(var(--openms-blue-rgb), 0.22);
 }
 
 .openms-lib-page__body,
@@ -186,7 +303,7 @@
   justify-items: center;
   max-width: 46rem;
   width: 100%;
-  margin: 0 auto clamp(2rem, 4vw, 3rem);
+  margin: 0 auto clamp(3rem, 6vw, 4.5rem);
   padding: 0;
   border: none;
   text-align: center;
@@ -199,16 +316,16 @@
   align-items: center;
   gap: 0.45rem;
   margin: 0;
-  padding: 0;
+  padding: 0.35rem 0.75rem;
   font-family: var(--openms-font-body);
   font-size: var(--openms-text-min);
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: none;
-  color: var(--olib-text-muted);
-  background: none;
-  border: none;
-  border-radius: 0;
+  color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.1);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.18);
+  border-radius: 999px;
 }
 
 .openms-lib-block__eyebrow::before,
@@ -318,7 +435,7 @@
 }
 
 /* ── Shared list row ── */
-.openms-lib-list:not(.openms-lib-list--capabilities):not(.openms-lib-list--developers):not(.openms-lib-list--split):not(.openms-lib-list--tiles):not(.openms-lib-list--resource-grid)
+.openms-lib-list:not(.openms-lib-list--capabilities):not(.openms-lib-list--developers):not(.openms-lib-list--split):not(.openms-lib-list--overview):not(.openms-lib-list--tiles):not(.openms-lib-list--resource-grid)
   .openms-lib-list__row,
 .keyfeatures-modern--overview:not(.keyfeatures-modern--lib-tiles) .keyfeatures-modern__topic-card--overview,
 .openms-steps--lib-list:not(.openms-steps--lib-capabilities):not(.openms-steps--lib-developers) .openms-step--list-row {
@@ -332,9 +449,9 @@
   transition: background-color 0.15s ease;
 }
 
-.openms-lib-list:not(.openms-lib-list--capabilities):not(.openms-lib-list--developers):not(.openms-lib-list--split):not(.openms-lib-list--tiles):not(.openms-lib-list--resource-grid)
+.openms-lib-list:not(.openms-lib-list--capabilities):not(.openms-lib-list--developers):not(.openms-lib-list--split):not(.openms-lib-list--overview):not(.openms-lib-list--tiles):not(.openms-lib-list--resource-grid)
   .openms-lib-list__row:hover,
-.openms-lib-list:not(.openms-lib-list--capabilities):not(.openms-lib-list--developers):not(.openms-lib-list--split):not(.openms-lib-list--tiles):not(.openms-lib-list--resource-grid)
+.openms-lib-list:not(.openms-lib-list--capabilities):not(.openms-lib-list--developers):not(.openms-lib-list--split):not(.openms-lib-list--overview):not(.openms-lib-list--tiles):not(.openms-lib-list--resource-grid)
   .openms-lib-list__row:focus-within,
 .keyfeatures-modern--overview:not(.keyfeatures-modern--lib-tiles) .keyfeatures-modern__topic-card--overview:hover,
 .keyfeatures-modern--overview:not(.keyfeatures-modern--lib-tiles) .keyfeatures-modern__topic-card--overview:focus-within,
@@ -649,8 +766,8 @@
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  margin: 0 0 var(--olib-section-y);
-  padding: clamp(2rem, 4.5vw, 3.25rem) var(--olib-pad-x) clamp(2.5rem, 5vw, 3.5rem);
+  margin: 0 0 clamp(2.5rem, 5vh, 4rem);
+  padding: clamp(2rem, 4.5vw, 3.25rem) var(--olib-pad-x) clamp(2.25rem, 4.5vw, 3rem);
   color: var(--openms-navy);
   background: linear-gradient(
     180deg,
@@ -686,13 +803,14 @@
   display: none;
 }
 
-.openms-lib-page__intro .openms-lib-block--overview {
-  width: min(100%, var(--olib-max));
-  max-width: var(--olib-max);
-  margin-inline: auto;
-  padding-inline: var(--olib-pad-x);
+.openms-lib-page__intro .openms-lib-block {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: 0;
 }
 
+.openms-lib-hero + .openms-lib-page__intro-panel .openms-lib-block--overview,
 .openms-lib-hero + .openms-lib-block--overview {
   padding-top: 0;
 }
@@ -726,7 +844,7 @@
 
 .openms-lib-hero__title {
   margin: 0 auto;
-  max-width: 22ch;
+  max-width: 30ch;
   font-family: var(--openms-font-heading);
   font-size: clamp(2rem, 4.8vw, 3.2rem);
   font-weight: var(--openms-heading-xl-weight);
@@ -784,6 +902,188 @@
   justify-content: center;
   gap: 0.75rem;
   margin-top: 1.5rem;
+}
+
+/* Page heroes — split layout (matches homepage hero structure) */
+.openms-lib-hero[class*="-page-hero"],
+.openms-lib-hero.community-calendar-hero {
+  display: flex;
+  align-items: center;
+  min-height: clamp(18rem, 40vh, 26rem);
+  padding: clamp(3rem, 7vh, 5rem) var(--olib-pad-x) clamp(2.75rem, 6vh, 4rem);
+  overflow: hidden;
+}
+
+.openms-lib-hero[class*="-page-hero"]::before,
+.openms-lib-hero.community-calendar-hero::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  width: min(55%, 36rem);
+  height: 100%;
+  background: linear-gradient(
+    165deg,
+    rgba(var(--openms-blue-rgb), 0.06) 0%,
+    rgba(var(--openms-purple-rgb), 0.04) 45%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.openms-lib-hero[class*="-page-hero"]::after,
+.openms-lib-hero.community-calendar-hero::after {
+  display: none;
+}
+
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__panel,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__panel {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__content,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(12rem, 0.92fr);
+  gap: clamp(0.85rem, 2vh, 1.25rem) clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+  max-width: none;
+  margin: 0;
+}
+
+.openms-lib-hero[class*="-page-hero"]
+  .openms-lib-hero__content:not(:has(.openms-lib-hero__actions, .openms-lib-hero__chips)),
+.openms-lib-hero.community-calendar-hero
+  .openms-lib-hero__content:not(:has(.openms-lib-hero__actions, .openms-lib-hero__chips)) {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 38rem;
+}
+
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__eyebrow,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__eyebrow {
+  grid-column: 1;
+  justify-self: start;
+  display: inline-block;
+  margin: 0 0 0.85rem;
+  padding: 0.25rem 0.62rem;
+  font-family: var(--openms-font-body);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.1);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.2);
+  border-radius: 999px;
+}
+
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__eyebrow::before,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__eyebrow::before {
+  display: none;
+}
+
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__title,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__title {
+  grid-column: 1;
+  margin: 0 0 1rem;
+  text-align: left;
+}
+
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__accent,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__accent {
+  background: linear-gradient(
+    90deg,
+    var(--openms-blue) 0%,
+    var(--openms-purple) 55%,
+    var(--openms-pink) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__accent--warm,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__accent--warm {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: var(--openms-pink);
+  -webkit-text-fill-color: var(--openms-pink);
+}
+
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__lead,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__lead {
+  grid-column: 1;
+  margin: 0;
+  text-align: left;
+}
+
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__chips,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__chips {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  align-self: center;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 14rem;
+  margin: 0;
+}
+
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__chip,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__chip {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Page layout heroes — shared typography & responsive actions */
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__title,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__title {
+  max-width: min(28ch, 100%);
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+}
+
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__lead,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__lead {
+  max-width: min(46ch, 100%);
+  font-size: clamp(0.95rem, 2.8vw, var(--openms-body-size-lg));
+  line-height: 1.6;
+}
+
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__eyebrow,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__eyebrow {
+  font-size: clamp(0.72rem, 2.2vw, var(--openms-text-min));
+}
+
+[class$="-page-layout"] .openms-lib-hero__actions,
+.community-calendar-layout .openms-lib-hero__actions {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 16rem;
+  margin: 0;
+}
+
+[class$="-page-layout"] .openms-lib-hero__actions .openms-lib-btn,
+.community-calendar-layout .openms-lib-hero__actions .openms-lib-btn {
+  flex: 0 0 auto;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  font-size: clamp(0.75rem, 2.4vw, var(--openms-text-min));
 }
 
 /* ── Buttons (hero only) ── */
@@ -1036,12 +1336,13 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-top: clamp(2rem, 4vw, 2.75rem);
+  margin-top: clamp(3rem, 6vw, 4rem);
   padding: clamp(1.5rem, 2.5vw, 2rem) clamp(1.25rem, 2.5vw, 1.6rem);
-  border-radius: calc(var(--olib-radius) * 1.1);
+  border-radius: var(--olib-radius);
   text-align: center;
-  background: var(--olib-bg-soft);
+  background: var(--openms-white);
   border: 1px solid var(--olib-line);
+  box-shadow: var(--olib-shadow);
 }
 
 .openms-lib-page__cta-text {
@@ -1126,9 +1427,265 @@
   align-self: center;
 }
 
-/* 1. Overview */
+/* 1. Overview — accent editorial panels */
 .openms-lib-block--overview {
   padding-bottom: 0;
+}
+
+.openms-lib-block--overview .openms-lib-block__head {
+  max-width: 52rem;
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.openms-lib-block--overview .openms-lib-block__lead {
+  max-width: 50ch;
+}
+
+.openms-lib-list--overview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--olib-card-gap);
+  align-items: stretch;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.openms-lib-list--overview::before {
+  display: none;
+}
+
+.openms-lib-list--overview .openms-lib-list__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  height: 100%;
+  margin: 0;
+  padding: clamp(1.5rem, 2.8vw, 2rem);
+  padding-left: clamp(1.35rem, 2.5vw, 1.65rem);
+  border: none;
+  border-left: 4px solid var(--openms-blue);
+  border-radius: 0 var(--olib-radius) var(--olib-radius) 0;
+  background: var(--openms-white);
+  box-shadow: none;
+  text-align: left;
+  transition:
+    border-color 0.2s var(--olib-ease),
+    background-color 0.2s var(--olib-ease),
+    transform 0.2s var(--olib-ease);
+}
+
+.openms-lib-list--overview .openms-lib-list__row:last-child {
+  border-left-color: var(--openms-pink);
+  background: color-mix(in srgb, var(--olib-bg-soft) 50%, var(--openms-white));
+}
+
+.openms-lib-list--overview .openms-lib-list__row:hover {
+  border-left-color: color-mix(in srgb, var(--openms-blue) 80%, var(--openms-navy));
+  background: color-mix(in srgb, var(--openms-blue) 5%, var(--openms-white));
+  transform: translateX(3px);
+}
+
+.openms-lib-list--overview .openms-lib-list__row:last-child:hover {
+  border-left-color: color-mix(in srgb, var(--openms-pink) 85%, var(--openms-navy));
+  background: color-mix(in srgb, var(--openms-pink) 6%, var(--openms-white));
+}
+
+.openms-lib-list--overview .openms-lib-list__row:focus-within {
+  outline: 2px solid var(--openms-blue);
+  outline-offset: 3px;
+}
+
+.openms-lib-list--overview .openms-lib-list__body {
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.openms-lib-list--overview .openms-lib-list__tags {
+  display: flex;
+}
+
+.openms-lib-list--overview .openms-lib-list__title {
+  font-size: clamp(1.1rem, 2.1vw, 1.25rem);
+  line-height: 1.3;
+}
+
+.openms-lib-list--overview .openms-lib-list__text {
+  max-width: none;
+  font-size: var(--openms-body-size);
+  line-height: 1.62;
+}
+
+.openms-lib-list--overview .openms-lib-list__bullets {
+  display: block;
+  margin: 0.65rem 0 0;
+  padding-left: 1.15rem;
+  list-style: disc;
+}
+
+.openms-lib-list--overview .openms-lib-list__bullets li {
+  display: list-item;
+  margin: 0;
+  padding: 0;
+  font-size: var(--openms-body-size);
+  line-height: 1.55;
+  color: var(--olib-text-muted);
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+
+.openms-lib-list--overview .openms-lib-list__bullets li + li {
+  margin-top: 0.35rem;
+}
+
+.openms-lib-list--overview .openms-lib-list__bullets li strong {
+  color: var(--openms-navy);
+}
+
+.openms-lib-list--overview .openms-lib-list__bullets a {
+  font-weight: 600;
+  color: var(--openms-blue);
+}
+
+.openms-lib-list--overview .openms-lib-list__row + .openms-lib-list__row {
+  border-top: none;
+}
+
+.openms-lib-list--overview .openms-lib-list__link {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  font-size: var(--openms-text-min);
+}
+
+.openms-lib-page__intro-panel #core-tools {
+  margin-top: clamp(2rem, 4vh, 3.5rem);
+  margin-bottom: clamp(2.5rem, 5vh, 4.5rem);
+}
+
+/* TOPP & pyOpenMS — borderless showcase */
+.openms-lib-block--core-tools {
+  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.openms-lib-block--core-tools .openms-lib-block__head {
+  justify-items: center;
+  max-width: 40rem;
+  margin-inline: auto;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+}
+
+.openms-lib-block--core-tools .openms-lib-block__lead {
+  max-width: 46ch;
+  text-align: center;
+}
+
+.openms-lib-core-tools {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--olib-card-gap);
+  align-items: stretch;
+}
+
+.openms-lib-core-tools__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.85rem, 2vw, 1.15rem);
+  min-height: clamp(12.5rem, 22vw, 16rem);
+  padding-block: clamp(1.5rem, 3.5vw, 2.25rem);
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: visible;
+  transition: transform 0.22s var(--olib-ease);
+}
+
+.openms-lib-core-tools__card::after {
+  display: none;
+}
+
+.openms-lib-core-tools__card:hover {
+  transform: translateY(-2px);
+}
+
+.openms-lib-core-tools__card:focus-visible {
+  transform: translateY(-2px);
+  outline: 2px solid var(--openms-blue);
+  outline-offset: 3px;
+}
+
+.openms-lib-core-tools__card-head {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.openms-lib-core-tools__label {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 0.22rem 0.55rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.08);
+  border-radius: 0.35rem;
+}
+
+.openms-lib-core-tools__card--pyopenms .openms-lib-core-tools__label {
+  color: var(--openms-pink);
+  background: rgba(var(--openms-pink-rgb), 0.1);
+}
+
+.openms-lib-core-tools__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.35rem, 2.6vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--openms-navy);
+}
+
+.openms-lib-core-tools__text {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.65;
+  color: var(--olib-text-muted);
+}
+
+.openms-lib-core-tools__link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.3rem;
+  margin-top: auto;
+  padding-top: clamp(0.75rem, 2vw, 1.25rem);
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  color: var(--openms-blue);
+  transition: gap 0.15s ease, color 0.15s ease;
+}
+
+.openms-lib-core-tools__card--pyopenms .openms-lib-core-tools__link {
+  color: color-mix(in srgb, var(--openms-pink) 80%, var(--openms-navy));
+}
+
+.openms-lib-core-tools__card:hover .openms-lib-core-tools__link,
+.openms-lib-core-tools__card:focus-visible .openms-lib-core-tools__link {
+  gap: 0.45rem;
+  color: var(--openms-navy);
 }
 
 .openms-lib-list--split {
@@ -1152,10 +1709,70 @@
   max-width: 28ch;
 }
 
+.openms-lib-page__intro-panel .openms-lib-block {
+  padding-block: 0;
+}
+
+.openms-lib-page__intro-panel .openms-lib-block__head {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__topic-card--overview {
+  height: 100%;
+  padding: clamp(1.15rem, 2vw, 1.35rem);
+  border: 1px solid var(--olib-line);
+  border-radius: var(--olib-radius);
+  background: var(--openms-white);
+  box-shadow: var(--olib-shadow);
+  transition: border-color 0.2s var(--olib-ease), box-shadow 0.2s var(--olib-ease);
+}
+
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__topic-card--overview:hover,
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__topic-card--overview:focus-within {
+  border-color: rgba(var(--openms-blue-rgb), 0.2);
+  box-shadow: var(--olib-shadow-hover);
+}
+
 /* 2. What is OpenMS? */
 .keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles {
+  margin: 0;
   padding: var(--olib-section-y) 0;
+  color: var(--openms-navy);
   background: transparent;
+}
+
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__inner.openms-lib-band__inner {
+  width: 100%;
+  max-width: var(--olib-max);
+  margin-inline: auto;
+  padding-inline: 0;
+  justify-items: center;
+}
+
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__header {
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__eyebrow,
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .openms-lib-block__eyebrow {
+  margin-inline: auto;
+}
+
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__title,
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .openms-lib-block__title {
+  text-align: center;
+}
+
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__lead,
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .openms-lib-block__lead {
+  margin-inline: auto;
+  text-align: center;
 }
 
 .keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles::before {
@@ -1167,9 +1784,38 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--olib-feature-gap);
+  width: min(100%, var(--olib-max));
+  max-width: var(--olib-max);
+  margin-inline: auto;
   border: none;
   background: transparent;
   overflow: visible;
+}
+
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .openms-lib-list--tiles,
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__topics {
+  justify-content: center;
+  justify-items: stretch;
+}
+
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__topic {
+  width: 100%;
+  max-width: none;
+}
+
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__topic-card--overview {
+  width: 100%;
+  justify-items: center;
+}
+
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .openms-lib-list__media {
+  justify-self: center;
+  margin-inline: auto;
+}
+
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .openms-lib-list__title,
+.keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__topic-title {
+  text-align: center;
 }
 
 .openms-lib-list--tiles > li + li,
@@ -1200,20 +1846,62 @@
   border-radius: var(--olib-radius-sm);
 }
 
-/* 3. Capabilities */
+/* 3. Capabilities — workflow showcase cards */
 .openms-steps--openms-lib.openms-steps--lib-capabilities {
+  margin: 0;
+  padding: var(--olib-section-y) 0;
   color: var(--openms-navy);
-  background: var(--openms-white);
+  background: transparent;
+  border-top: none;
+  overflow: visible;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities::before,
+.openms-steps--openms-lib.openms-steps--lib-capabilities::after {
+  display: none;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-steps__inner.openms-lib-band__inner {
+  width: 100%;
+  max-width: var(--olib-max);
+  margin-inline: auto;
+  padding-inline: 0;
+  justify-items: center;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-steps__header {
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-steps__eyebrow,
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-lib-block__eyebrow {
+  margin-inline: auto;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-steps__subtitle,
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-lib-block__lead {
+  margin-inline: auto;
+  text-align: center;
 }
 
 .openms-lib-list--capabilities,
 .openms-steps--lib-capabilities .openms-steps__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--olib-feature-gap);
+  gap: var(--olib-card-gap);
+  width: 100%;
+  max-width: var(--olib-max);
+  margin-inline: auto;
   border: none;
   background: transparent;
   overflow: visible;
+  align-items: stretch;
 }
 
 .openms-lib-list--capabilities > li + li,
@@ -1224,6 +1912,33 @@
 .openms-lib-list--capabilities > li,
 .openms-lib-list--capabilities > .openms-steps__item {
   display: flex;
+  min-width: 0;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--list-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--olib-line);
+  border-radius: var(--olib-radius);
+  background: var(--openms-white);
+  box-shadow: var(--olib-shadow);
+  overflow: hidden;
+  text-align: left;
+  transition:
+    border-color 0.22s var(--olib-ease),
+    box-shadow 0.22s var(--olib-ease),
+    transform 0.22s var(--olib-ease);
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--list-row:hover,
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--list-row:focus-within {
+  border-color: color-mix(in srgb, var(--openms-steps-accent) 45%, var(--openms-blue));
+  box-shadow: var(--olib-shadow-hover);
+  transform: translateY(-3px);
 }
 
 .openms-lib-list--capabilities .openms-lib-list__index,
@@ -1231,12 +1946,97 @@
   display: none;
 }
 
-/* 4. For developers */
-.openms-steps--openms-lib.openms-steps--lib-developers {
-  overflow: visible;
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  min-height: clamp(9rem, 18vw, 11.5rem);
+  margin: 0;
+  padding: clamp(1.35rem, 3vw, 1.85rem);
+  border: none;
+  border-bottom: 1px solid var(--olib-line);
+  border-radius: 0;
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--openms-steps-accent) 22%, var(--openms-white)) 0%,
+    color-mix(in srgb, var(--openms-steps-accent) 8%, var(--olib-bg-soft)) 100%
+  );
+  overflow: hidden;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--showcase .openms-step__img,
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--showcase .openms-step__img.img-fit {
+  display: block;
+  width: auto;
+  max-width: min(88%, 14rem);
+  height: auto;
+  max-height: clamp(4.5rem, 9vw, 6.5rem);
+  min-height: 0;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: none;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 auto;
+  gap: 0.55rem;
+  padding: clamp(1.15rem, 2.2vw, 1.45rem);
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__tags,
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-lib-list__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: flex-start;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__tag,
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-lib-list__tag {
+  display: inline-flex;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--openms-navy);
-  background: var(--openms-white);
-  border-top-color: transparent;
+  background: color-mix(in srgb, var(--openms-steps-accent) 28%, var(--openms-white));
+  border: 1px solid color-mix(in srgb, var(--openms-steps-accent) 40%, transparent);
+  border-radius: 999px;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__title,
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-lib-list__title {
+  text-align: left;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__subtitle,
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-lib-list__text {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+  line-height: 1.62;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step__cta {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+/* 4. For developers — split-panel advanced cards */
+.openms-steps--openms-lib.openms-steps--lib-developers {
+  margin: 0;
+  padding: var(--olib-section-y) 0;
+  color: var(--openms-navy);
+  background: transparent;
+  border-top: none;
+  overflow: visible;
 }
 
 .openms-steps--openms-lib.openms-steps--lib-developers::before,
@@ -1244,70 +2044,47 @@
   display: none;
 }
 
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-steps__inner {
-  position: static;
-  z-index: auto;
-}
-
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--list-row {
-  display: grid;
-  flex-direction: unset;
-  align-items: stretch;
-  min-height: 0;
-}
-
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__media {
-  order: unset;
-}
-
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__content {
-  order: unset;
-}
-
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step:nth-child(even) .openms-step__media,
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step:nth-child(even) .openms-step__content {
-  order: unset;
-}
-
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__title {
-  padding-right: 0;
-}
-
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .openms-step__media {
-  width: 3.35rem;
-  height: 3.35rem;
-  min-height: 0;
-  max-height: 3.35rem;
-  margin-inline: auto;
-  padding: 0.35rem;
-  border-radius: var(--olib-radius-sm);
-  background: var(--openms-navy);
-  overflow: hidden;
-}
-
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .openms-step__terminal,
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .openms-step__terminal .terminal-window {
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-steps__inner.openms-lib-band__inner {
   width: 100%;
-  height: 2.35rem;
-  min-height: 0;
-  max-height: 2.35rem;
-  border-radius: 0.25rem;
-  overflow: hidden;
+  max-width: var(--olib-max);
+  margin-inline: auto;
+  padding-inline: 0;
+  justify-items: center;
 }
 
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .terminal-window section.terminal {
-  font-size: 0.4rem;
-  line-height: 1.3;
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-steps__header {
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-steps__eyebrow,
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-lib-block__eyebrow {
+  margin-inline: auto;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-steps__subtitle,
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-lib-block__lead {
+  margin-inline: auto;
+  text-align: center;
 }
 
 .openms-lib-list--developers,
 .openms-steps--lib-developers .openms-steps__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--olib-feature-gap);
+  gap: var(--olib-card-gap);
+  width: 100%;
+  max-width: var(--olib-max);
+  margin-inline: auto;
   border: none;
   background: transparent;
   overflow: visible;
+  align-items: stretch;
 }
 
 .openms-lib-list--developers > li + li,
@@ -1318,6 +2095,7 @@
 .openms-lib-list--developers > li,
 .openms-lib-list--developers > .openms-steps__item {
   display: flex;
+  min-width: 0;
 }
 
 .openms-lib-list--developers .openms-lib-list__index,
@@ -1325,42 +2103,201 @@
   display: none;
 }
 
-/* 5. Get started — feature-style resource grid */
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--list-row {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 36%) minmax(0, 1fr);
+  grid-template-areas: "media content";
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  min-height: clamp(11rem, 20vw, 13.5rem);
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--olib-line);
+  border-radius: var(--olib-radius);
+  background: var(--openms-white);
+  box-shadow: var(--olib-shadow);
+  overflow: hidden;
+  text-align: left;
+  transition:
+    border-color 0.22s var(--olib-ease),
+    box-shadow 0.22s var(--olib-ease),
+    transform 0.22s var(--olib-ease);
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--list-row:hover,
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--list-row:focus-within {
+  border-color: color-mix(in srgb, var(--openms-steps-accent) 55%, var(--openms-navy));
+  box-shadow: var(--olib-shadow-hover);
+  transform: translateY(-3px);
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__media {
+  grid-area: media;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: clamp(1rem, 2.2vw, 1.35rem);
+  border: none;
+  border-right: 1px solid var(--olib-line);
+  border-radius: 0;
+  background: linear-gradient(
+    155deg,
+    color-mix(in srgb, var(--openms-steps-accent) 30%, var(--openms-white)) 0%,
+    color-mix(in srgb, var(--openms-steps-accent) 12%, var(--olib-bg-soft)) 100%
+  );
+  overflow: hidden;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--developer .openms-step__img,
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--developer .openms-step__img.img-fit {
+  display: block;
+  width: auto;
+  max-width: min(88%, 12rem);
+  height: auto;
+  max-height: clamp(4rem, 8vw, 5.75rem);
+  min-height: 0;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: none;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .openms-step__media {
+  padding: clamp(0.85rem, 2vw, 1.15rem);
+  background: linear-gradient(
+    160deg,
+    var(--openms-navy) 0%,
+    color-mix(in srgb, var(--openms-navy) 90%, black) 100%
+  );
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .openms-step__terminal,
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .openms-step__terminal .terminal-window {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: clamp(6.5rem, 12vw, 8.5rem);
+  max-height: none;
+  border-radius: 0.45rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1.25rem rgba(var(--openms-dark-rgb), 0.28);
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .terminal-window section.terminal {
+  font-size: clamp(0.44rem, 1.05vw, 0.54rem);
+  line-height: 1.38;
+  padding: 0.45rem 0.55rem;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1 1 auto;
+  gap: 0.55rem;
+  padding: clamp(1.15rem, 2.2vw, 1.5rem);
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__tags,
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-lib-list__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: flex-start;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__tag,
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-lib-list__tag {
+  display: inline-flex;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--openms-navy);
+  background: color-mix(in srgb, var(--openms-steps-accent) 32%, var(--openms-white));
+  border: 1px solid color-mix(in srgb, var(--openms-steps-accent) 45%, transparent);
+  border-radius: 999px;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__title,
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-lib-list__title {
+  padding-right: 0;
+  text-align: left;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__subtitle,
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-lib-list__text {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+  line-height: 1.62;
+}
+
+.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__cta {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+/* 5. Get started — resource directory */
 .openms-lib-block--resources .openms-lib-block__head {
+  justify-items: center;
   max-width: 46rem;
+  width: 100%;
+  margin-inline: auto;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.openms-lib-block--resources .openms-lib-block__lead {
+  max-width: 50ch;
+  margin-inline: auto;
 }
 
 .openms-lib-list--resource-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--olib-feature-gap);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--olib-card-gap);
+  width: 100%;
+  max-width: var(--olib-max);
+  margin-inline: auto;
   border: none;
   background: transparent;
   overflow: visible;
 }
 
 .openms-lib-resource-card {
+  position: relative;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  transition: border-color 0.2s var(--olib-ease), background-color 0.2s var(--olib-ease),
-    box-shadow 0.2s var(--olib-ease), transform 0.2s var(--olib-ease);
+  transition:
+    border-color 0.22s var(--olib-ease),
+    box-shadow 0.22s var(--olib-ease),
+    transform 0.22s var(--olib-ease);
 }
 
 .openms-lib-list--resource-grid .openms-lib-list__row,
 .openms-lib-list--resource-grid .openms-lib-resource-card {
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "media"
-    "content";
-  gap: 1rem;
-  align-items: start;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  height: 100%;
+  min-height: 0;
+  padding: clamp(1.1rem, 2vw, 1.35rem) clamp(1.15rem, 2.2vw, 1.4rem);
+  border: 1px solid var(--olib-line);
+  border-radius: var(--olib-radius);
+  background: var(--openms-white);
+  box-shadow: var(--olib-shadow);
+  text-align: left;
 }
 
 .openms-lib-list--resource-grid .openms-lib-list__row + .openms-lib-list__row,
@@ -1370,10 +2307,11 @@
 
 .openms-lib-list--resource-grid .openms-lib-list__row:hover,
 .openms-lib-list--resource-grid .openms-lib-list__row:focus-visible,
-.openms-lib-resource-card:hover,
-.openms-lib-resource-card:focus-visible {
-  background: transparent;
-  transform: none;
+.openms-lib-list--resource-grid .openms-lib-resource-card:hover,
+.openms-lib-list--resource-grid .openms-lib-resource-card:focus-visible {
+  border-color: rgba(var(--openms-blue-rgb), 0.24);
+  box-shadow: var(--olib-shadow-hover);
+  transform: translateY(-2px);
   outline: none;
 }
 
@@ -1381,57 +2319,120 @@
   display: none;
 }
 
-.openms-lib-list--resource-grid .openms-lib-list__media {
-  width: 3.35rem;
-  height: 3.35rem;
-  margin-inline: auto;
-  padding: 0;
-  border: none;
-  border-radius: var(--olib-radius-sm);
-  background: var(--openms-navy);
-}
-
-.openms-lib-list--resource-grid .openms-lib-list__mark {
-  font-size: 1.15rem;
-  color: var(--openms-white);
-}
-
 .openms-lib-list--resource-grid .openms-lib-list__body {
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  min-width: 0;
+  width: 100%;
 }
 
-.openms-lib-resource-card__tag {
-  display: none;
+.openms-lib-resource-card__tag,
+.openms-lib-list--resource-grid .openms-lib-list__tag {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 0.18rem 0.5rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.08);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.14);
+  border-radius: 999px;
 }
 
 .openms-lib-list--resource-grid .openms-lib-list__title {
-  font-size: 1rem;
+  margin: 0;
+  font-size: clamp(1rem, 1.8vw, 1.08rem);
+  line-height: 1.3;
 }
 
 .openms-lib-list--resource-grid .openms-lib-list__text {
   display: block;
-  max-width: 26ch;
-  margin-inline: auto;
-  font-size: var(--openms-body-size);
+  max-width: none;
+  margin: 0;
+  font-size: var(--openms-text-min);
   line-height: 1.55;
   color: var(--olib-text-muted);
-  text-align: center;
+  text-align: left;
 }
 
 .openms-lib-resource-card .openms-lib-list__link {
-  align-self: center;
-  margin-top: 0.25rem;
+  align-self: flex-start;
+  margin-top: 0.15rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  min-height: 0;
   font-size: var(--openms-text-min);
+  font-weight: 700;
+  color: var(--openms-blue);
+  box-shadow: none;
   pointer-events: none;
 }
 
 .openms-lib-block--resources .openms-lib-block__note {
-  max-width: 40rem;
-  margin-inline: auto;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 1.2rem) clamp(1.15rem, 2.5vw, 1.5rem);
   text-align: center;
+  background: var(--openms-white);
   border: 1px solid var(--olib-line);
-  border-left: none;
-  border-radius: var(--olib-radius-sm);
+  border-left: 4px solid var(--openms-blue);
+  border-radius: 0 var(--olib-radius-sm) var(--olib-radius-sm) 0;
+  box-shadow: var(--olib-shadow);
+}
+
+.openms-lib-block--resources .openms-lib-page__cta {
+  margin-top: 0;
+  padding: clamp(1.65rem, 3vw, 2.1rem) clamp(1.35rem, 3vw, 2rem);
+  border-radius: var(--olib-radius);
+  background: linear-gradient(
+    135deg,
+    var(--openms-navy) 0%,
+    color-mix(in srgb, var(--openms-navy) 88%, var(--openms-blue)) 100%
+  );
+  border: none;
+  box-shadow: 0 0.75rem 2rem rgba(var(--openms-navy-rgb), 0.18);
+}
+
+.openms-lib-block--resources .openms-lib-page__cta-text {
+  max-width: 36ch;
+  color: rgba(var(--openms-white-rgb), 0.95);
+}
+
+.openms-lib-block--resources .openms-lib-page__cta-actions {
+  justify-content: center;
+}
+
+.openms-lib-block--resources .openms-lib-btn--navy {
+  border-color: var(--openms-white);
+  background: var(--openms-white);
+  color: var(--openms-navy) !important;
+}
+
+.openms-lib-block--resources .openms-lib-btn--navy:hover,
+.openms-lib-block--resources .openms-lib-btn--navy:focus-visible,
+.openms-lib-block--resources .openms-lib-btn--navy:active {
+  border-color: var(--openms-white);
+  background: color-mix(in srgb, var(--openms-white) 92%, var(--openms-blue));
+  color: var(--openms-navy) !important;
+}
+
+.openms-lib-block--resources .openms-lib-btn--outline {
+  border-color: rgba(var(--openms-white-rgb), 0.55);
+  background: transparent;
+  color: var(--openms-white) !important;
+}
+
+.openms-lib-block--resources .openms-lib-btn--outline:hover,
+.openms-lib-block--resources .openms-lib-btn--outline:focus-visible,
+.openms-lib-block--resources .openms-lib-btn--outline:active {
+  border-color: var(--openms-white);
+  background: rgba(var(--openms-white-rgb), 0.1);
+  color: var(--openms-white) !important;
 }
 
 /* ── Responsive ── */
@@ -1447,49 +2448,156 @@
   width: auto;
 }
 
-.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--showcase .openms-step__img,
-.openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--showcase .openms-step__img.img-fit {
-  min-height: 0;
-  max-height: 2rem;
-}
-
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__media {
-  order: unset;
-  width: 3.35rem;
-  min-height: 0;
-  border: none;
-}
-
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step__content {
-  order: unset;
-}
-
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step:nth-child(even) .openms-step__media,
-.openms-steps--openms-lib.openms-steps--lib-developers .openms-step:nth-child(even) .openms-step__content {
-  order: unset;
-}
-
 @media (max-width: 1024px) {
   .openms-lib-list--capabilities,
   .openms-steps--lib-capabilities .openms-steps__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .openms-lib-list--resource-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .openms-lib-list--split {
+    gap: clamp(1.25rem, 3vw, 2rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .openms-lib-list--overview {
+    grid-template-columns: 1fr;
+    gap: var(--olib-card-gap);
+  }
+
+  .openms-lib-core-tools {
+    grid-template-columns: 1fr;
+    gap: var(--olib-card-gap);
+  }
+
+  .openms-lib-core-tools__card:hover,
+  .openms-lib-core-tools__card:focus-visible {
+    transform: none;
+  }
+
+  .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--list-row:hover,
+  .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--list-row:focus-within {
+    transform: none;
+  }
+
+  .openms-steps--openms-lib.openms-steps--lib-developers .openms-step--list-row:hover,
+  .openms-steps--openms-lib.openms-steps--lib-developers .openms-step--list-row:focus-within {
+    transform: none;
+  }
+
+  .openms-lib-list--resource-grid .openms-lib-resource-card:hover,
+  .openms-lib-list--resource-grid .openms-lib-resource-card:focus-visible {
+    transform: none;
+  }
+
+  .openms-lib-list--overview .openms-lib-list__row:hover {
+    transform: none;
+  }
+
+  .openms-lib-hero[class*="-page-hero"] .openms-lib-hero__content,
+  .openms-lib-hero.community-calendar-hero .openms-lib-hero__content {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .openms-lib-hero[class*="-page-hero"] .openms-lib-hero__actions,
+  .openms-lib-hero.community-calendar-hero .openms-lib-hero__actions,
+  .openms-lib-hero[class*="-page-hero"] .openms-lib-hero__chips,
+  .openms-lib-hero.community-calendar-hero .openms-lib-hero__chips,
+  [class$="-page-layout"] .openms-lib-hero__actions,
+  .community-calendar-layout .openms-lib-hero__actions {
+    grid-column: 1;
+    grid-row: auto;
+    max-width: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 1.25rem;
+  }
+
+  .openms-lib-hero[class*="-page-hero"] .openms-lib-hero__chips,
+  .openms-lib-hero.community-calendar-hero .openms-lib-hero__chips {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 960px) {
+  .openms-lib-hero[class*="-page-hero"] .openms-lib-hero__title,
+  .openms-lib-hero.community-calendar-hero .openms-lib-hero__title {
+    max-width: none;
+    font-size: clamp(2rem, 6.5vw, 3rem);
+  }
+
+  .openms-lib-hero[class*="-page-hero"] .openms-lib-hero__lead,
+  .openms-lib-hero.community-calendar-hero .openms-lib-hero__lead {
+    font-size: clamp(0.92rem, 3.2vw, 1.05rem);
+  }
+
+  [class$="-page-layout"] .openms-lib-btn,
+  .community-calendar-layout .openms-lib-btn {
+    white-space: normal;
+    text-wrap: balance;
+  }
+
+  [class$="-page-layout"] .openms-lib-hero__actions .openms-lib-btn,
+  .community-calendar-layout .openms-lib-hero__actions .openms-lib-btn {
+    flex: 1 1 calc(50% - 0.375rem);
   }
 }
 
 @media (max-width: 720px) {
   .openms-lib-page {
+    --olib-section-y: clamp(4rem, 8vh, 5.5rem);
+    --olib-block-gap: clamp(2.75rem, 5.5vh, 4rem);
+    --olib-feature-gap: clamp(1.5rem, 4vw, 2.25rem);
+    --olib-card-gap: clamp(1rem, 3vw, 1.35rem);
+    --olib-pad-x: clamp(1rem, 4vw, 1.25rem);
+    --olib-thumb: clamp(3.25rem, 14vw, 4.5rem);
+    --olib-img-max: clamp(2.5rem, 10vw, 3.25rem);
+  }
+
+  [class$="-page-layout"],
+  .community-calendar-layout {
     --olib-section-y: clamp(2.75rem, 6vh, 3.5rem);
-    --olib-feature-gap: clamp(1.25rem, 4vw, 1.75rem);
     --olib-pad-x: clamp(1rem, 4vw, 1.25rem);
   }
 
   .openms-lib-hero__title {
     max-width: none;
     font-size: clamp(1.75rem, 7vw, 2.25rem);
+  }
+
+  .openms-lib-hero[class*="-page-hero"] .openms-lib-hero__title,
+  .openms-lib-hero.community-calendar-hero .openms-lib-hero__title {
+    max-width: none;
+    font-size: clamp(1.85rem, 8.5vw, 2.5rem);
+  }
+
+  .openms-lib-hero[class*="-page-hero"] .openms-lib-hero__lead,
+  .openms-lib-hero.community-calendar-hero .openms-lib-hero__lead {
+    font-size: clamp(0.9rem, 3.8vw, 1rem);
+    line-height: 1.55;
+  }
+
+  .openms-lib-hero[class*="-page-hero"] .openms-lib-hero__eyebrow,
+  .openms-lib-hero.community-calendar-hero .openms-lib-hero__eyebrow {
+    font-size: clamp(0.68rem, 2.8vw, 0.8rem);
+  }
+
+  [class$="-page-layout"] .openms-lib-hero__actions,
+  .community-calendar-layout .openms-lib-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+    max-width: none;
+  }
+
+  [class$="-page-layout"] .openms-lib-hero__actions .openms-lib-btn,
+  .community-calendar-layout .openms-lib-hero__actions .openms-lib-btn {
+    width: 100%;
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: center;
   }
 
   .openms-lib-block__title,
@@ -1507,6 +2615,31 @@
   .openms-steps--lib-developers .openms-steps__grid,
   .openms-lib-list--resource-grid {
     grid-template-columns: 1fr;
+  }
+
+  .keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .openms-lib-list--tiles,
+  .keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__topics {
+    width: 100%;
+    max-width: none;
+  }
+
+  .keyfeatures-modern--openms-lib.keyfeatures-modern--lib-tiles .keyfeatures-modern__topic {
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  .openms-steps--openms-lib.openms-steps--lib-developers .openms-step--list-row {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "media"
+      "content";
+    min-height: 0;
+  }
+
+  .openms-steps--openms-lib.openms-steps--lib-developers .openms-step__media {
+    min-height: clamp(7.25rem, 22vw, 9rem);
+    border-right: none;
+    border-bottom: 1px solid var(--olib-line);
   }
 
   .openms-lib-list--split .openms-lib-list__bullets {
@@ -1529,15 +2662,100 @@
     flex-direction: column;
     align-items: stretch;
     gap: 0.55rem;
+    max-width: 22rem;
+    margin-inline: auto;
   }
 
-  .openms-lib-hero__actions .openms-lib-btn--primary {
+  .openms-lib-hero__actions .openms-lib-btn {
     width: 100%;
     justify-content: center;
   }
 
   .openms-lib-hero__actions .openms-lib-btn--ghost {
-    align-self: center;
+    align-self: stretch;
+    padding-inline: 1rem;
+    text-align: center;
+  }
+
+  .openms-lib-page__nav {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-top: 0;
+    padding-block: 0.55rem 0.7rem;
+  }
+
+  .openms-lib-page__nav-link {
+    min-height: 2.25rem;
+    padding-inline: 0.75rem;
+  }
+
+  .openms-lib-page__intro-panel #core-tools {
+    margin-top: clamp(1.5rem, 3.5vh, 2.5rem);
+    margin-bottom: clamp(2rem, 4vh, 3rem);
+  }
+
+  .openms-lib-block--core-tools {
+    padding-block: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .openms-lib-block--core-tools .openms-lib-block__head {
+    justify-items: center;
+    max-width: none;
+    margin-inline: auto;
+    margin-bottom: clamp(1.5rem, 3.5vw, 2rem);
+    text-align: center;
+  }
+
+  .openms-lib-block--core-tools .openms-lib-block__lead {
+    text-align: center;
+  }
+
+  .openms-lib-core-tools__card {
+    min-height: clamp(10.5rem, 28vw, 13rem);
+    padding-block: clamp(1.15rem, 3.5vw, 1.65rem);
+  }
+
+  .openms-lib-core-tools__card-head {
+    gap: 0.4rem;
+  }
+
+  .openms-lib-list--resource-grid .openms-lib-resource-card,
+  .openms-lib-list--resource-grid .openms-lib-list__row {
+    padding: 0.95rem 1rem;
+  }
+
+  .openms-lib-block--resources .openms-lib-page__cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .openms-lib-block--resources .openms-lib-page__cta-actions .openms-lib-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .openms-lib-list--capabilities .openms-lib-list__media,
+  .openms-steps--lib-capabilities .openms-step__media {
+    min-height: clamp(7.5rem, 24vw, 9.5rem);
+    padding: clamp(1rem, 3.5vw, 1.35rem);
+  }
+
+  .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--showcase .openms-step__img,
+  .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--showcase .openms-step__img.img-fit {
+    max-height: clamp(3.75rem, 14vw, 5rem);
+    max-width: min(90%, 12rem);
+  }
+
+  .openms-steps--openms-lib.openms-steps--lib-developers .openms-step--developer .openms-step__img,
+  .openms-steps--openms-lib.openms-steps--lib-developers .openms-step--developer .openms-step__img.img-fit {
+    max-height: clamp(3.5rem, 12vw, 4.75rem);
+    max-width: min(90%, 10rem);
+  }
+
+  .openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .openms-step__terminal,
+  .openms-steps--openms-lib.openms-steps--lib-developers .openms-step--terminal .terminal-window {
+    min-height: clamp(5.5rem, 20vw, 7rem);
   }
 
   .openms-lib-page__cta {
@@ -1557,9 +2775,40 @@
   }
 }
 
+@media (max-width: 600px) {
+  .openms-lib-list--overview .openms-lib-list__row {
+    padding: clamp(1.15rem, 3.5vw, 1.35rem);
+    padding-left: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .openms-lib-core-tools__title {
+    font-size: 1.1rem;
+  }
+
+  .openms-lib-core-tools__text {
+    font-size: var(--openms-text-min);
+    line-height: 1.55;
+  }
+}
+
 @media (max-width: 480px) {
+  .openms-lib-hero {
+    padding-block: clamp(1.65rem, 5vw, 2.25rem) clamp(2rem, 5vw, 2.75rem);
+    margin-bottom: clamp(1.75rem, 4vh, 2.5rem);
+  }
+
   .openms-lib-hero__chip {
     font-size: 0.68rem;
+    padding: 0.28rem 0.6rem;
+  }
+
+  .openms-lib-hero__chips {
+    gap: 0.35rem;
+  }
+
+  .openms-lib-page__nav-link {
+    font-size: 0.72rem;
+    padding-inline: 0.65rem;
   }
 
   .openms-lib-block__head,
@@ -1582,8 +2831,36 @@
   .openms-steps--lib-list .openms-step__cta-arrow,
   .openms-lib-list--split .openms-lib-list__row,
   .openms-lib-list--tiles .openms-lib-list__row,
+  .openms-lib-list--overview .openms-lib-list__row,
+  .openms-lib-list--capabilities .openms-lib-list__row,
+  .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--list-row,
+  .openms-lib-list--developers .openms-lib-list__row,
+  .openms-steps--openms-lib.openms-steps--lib-developers .openms-step--list-row,
   .openms-lib-resource-card {
     transition: none;
+  }
+
+  .openms-lib-core-tools__card {
+    transition: none;
+  }
+
+  .openms-lib-core-tools__card:hover,
+  .openms-lib-core-tools__card:focus-visible {
+    transform: none;
+  }
+
+  .openms-lib-list--overview .openms-lib-list__row:hover {
+    transform: none;
+  }
+
+  .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--list-row:hover,
+  .openms-steps--openms-lib.openms-steps--lib-capabilities .openms-step--list-row:focus-within {
+    transform: none;
+  }
+
+  .openms-steps--openms-lib.openms-steps--lib-developers .openms-step--list-row:hover,
+  .openms-steps--openms-lib.openms-steps--lib-developers .openms-step--list-row:focus-within {
+    transform: none;
   }
 
   .openms-lib-list--tiles .openms-lib-list__row:hover,

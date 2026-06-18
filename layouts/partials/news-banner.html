@@ -1,13 +1,27 @@
 {{- $banner := .Site.Params.newsBanner }}
 {{- if and $banner $banner.enabled }}
+{{- $link := $banner.link }}
 <aside class="news-banner" role="region" aria-label="Site announcement">
   <div class="news-banner__inner">
-    <div class="news-banner__content">
+    {{- if $link }}
+    <a
+      class="news-banner__link"
+      href="{{ $link }}"
+      aria-label="{{ with $banner.label }}{{ . }}: {{ end }}{{ $banner.text }}"
+    >
       {{- with $banner.label }}
-      <span class="news-banner__eyebrow">{{ . }}</span>
+      <span class="news-banner__label">{{ . }}</span>
       {{- end }}
-      <p class="news-banner__headline">{{ $banner.text }}</p>
-    </div>
+      <span class="news-banner__text">{{ $banner.text }}</span>
+    </a>
+    {{- else }}
+    <p class="news-banner__message">
+      {{- with $banner.label }}
+      <span class="news-banner__label">{{ . }}</span>
+      {{- end }}
+      <span class="news-banner__text">{{ $banner.text }}</span>
+    </p>
+    {{- end }}
   </div>
 </aside>
 {{- end }}

@@ -1,14 +1,16 @@
 {{- $stat := .stat -}}
-{{- $modifier := .modifier | default "" -}}
-<div class="hero-home__bento-card{{ with $modifier }} hero-home__bento-card--{{ . }}{{ end }}">
-  <span class="hero-home__bento-mark" aria-hidden="true"></span>
-  <p class="hero-home__bento-value">
+<article class="hero-home__metric">
+  <h3 class="hero-home__metric-label">{{ $stat.label }}</h3>
+  <p class="hero-home__metric-value" aria-label="{{ $stat.label }}">
+    {{- with $stat.prefix }}<span class="hero-home__metric-prefix">{{ . }}</span>{{ end -}}
     <span
       class="hero-modern__stat-number"
       data-count-value="{{ $stat.value }}"
-      data-count-suffix="{{ $stat.suffix | default "" }}"
+      data-count-suffix=""
       data-count-decimals="{{ $stat.decimals | default 0 }}"
-    >0{{ $stat.suffix | default "" }}</span>
+    >0</span>{{- with $stat.suffix -}}<span class="hero-home__metric-suffix">{{ . }}</span>{{- end -}}
   </p>
-  <p class="hero-home__bento-label">{{ $stat.label }}</p>
-</div>
+  {{- with $stat.description }}
+  <p class="hero-home__metric-description">{{ . }}</p>
+  {{- end }}
+</article>

@@ -24,10 +24,6 @@
   margin-bottom: var(--olib-section-y);
 }
 
-.sponsor-us-page-hero .openms-lib-hero__title {
-  max-width: 26ch;
-}
-
 .about-donate-actions.sponsor-us-page__actions {
   display: flex;
   flex-wrap: wrap;
@@ -95,10 +91,6 @@
   margin-top: 0;
 }
 
-.sponsor-us-page-layout .openms-lib-hero__actions {
-  gap: 0.75rem;
-}
-
 .sponsor-us-page-layout .openms-lib-btn--primary:hover,
 .sponsor-us-page-layout .openms-lib-btn--primary:focus-visible,
 .sponsor-us-page-layout .openms-lib-btn--primary:active,
@@ -160,31 +152,6 @@
 }
 
 @media (max-width: 720px) {
-  .sponsor-us-page-layout {
-    --olib-section-y: clamp(2.75rem, 6vh, 3.5rem);
-    --olib-pad-x: clamp(1rem, 4vw, 1.25rem);
-  }
-
-  .sponsor-us-page-hero .openms-lib-hero__title {
-    max-width: none;
-    font-size: clamp(1.75rem, 7vw, 2.25rem);
-  }
-
-  .sponsor-us-page-hero .openms-lib-hero__actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.55rem;
-  }
-
-  .sponsor-us-page-hero .openms-lib-hero__actions .openms-lib-btn--primary {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .sponsor-us-page-hero .openms-lib-hero__actions .openms-lib-btn--ghost {
-    align-self: center;
-  }
-
   .about-donate-actions.sponsor-us-page__actions {
     flex-direction: column;
     width: 100%;

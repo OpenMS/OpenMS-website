@@ -2,6 +2,7 @@
 {{- $staticOnly := .staticOnly | default false -}}
 {{- $variant := .variant | default "" -}}
 {{- $compact := or (eq $variant "compact") (eq $variant "home") -}}
+{{- $partners := site.Params.universityPartners | default (slice) -}}
 <section
   class="uni-partners{{ if $staticOnly }} uni-partners--static{{ end }}{{ if $compact }} uni-partners--compact{{ end }}{{ if eq $variant "home" }} uni-partners--home{{ end }}"
   {{- if $showHeader }}
@@ -14,9 +15,10 @@
     {{- if $showHeader }}
     {{- if eq $variant "home" }}
     <header class="uni-partners__header uni-partners__header--trust">
-      <p id="uni-partners-title" class="uni-partners__tagline">
-        Trusted by researchers at <span class="uni-partners__tagline-strong">leading institutions</span>
-      </p>
+      <h2 id="uni-partners-title" class="uni-partners__trust-title">
+        <span class="uni-partners__trust-eyebrow">Trusted by</span>
+        <span class="uni-partners__trust-title-main">Researchers at</span>
+      </h2>
     </header>
     {{- else }}
     <header class="uni-partners__header">
@@ -35,91 +37,29 @@
     {{- end }}
     {{- end }}
 
-    {{- if not $staticOnly }}
+    {{- if and (not $staticOnly) (gt (len $partners) 0) }}
     <div class="uni-partners__marquee" aria-hidden="true">
       <div class="uni-partners__track">
         <div class="uni-partners__row">
-          <a class="uni-partners__item" href="https://kohlbacherlab.org/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/logo-uni-tuebingen.png" alt="University of Tübingen" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="http://www.mi.fu-berlin.de/en/inf/groups/abi/index.html" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/fu-berlin.png" alt="FU Berlin" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="http://www.imsb.ethz.ch/research/aebersold.html" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/zurich.jpeg" alt="ETH Zürich" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="http://www.sanger.ac.uk/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/logo-sanger.png" alt="Wellcome Sanger Institute" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="https://www.ebi.ac.uk/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/emblebi.png" alt="EMBL-EBI" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="http://www.moleculargenetics.utoronto.ca/faculty/2017/7/19/hannes-rost" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/toronto.jpeg" alt="University of Toronto" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="https://www.biosustain.dtu.dk/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/DTU-logo.png" alt="DTU Biosustain" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="https://www.zib.de/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/ziblogo.png" alt="ZIB" loading="lazy" decoding="async" />
-          </a>
+          {{- range $partners }}
+          {{ partial "university-partner-item.html" . }}
+          {{- end }}
         </div>
         <div class="uni-partners__row" aria-hidden="true">
-          <a class="uni-partners__item" href="https://kohlbacherlab.org/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/logo-uni-tuebingen.png" alt="" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="http://www.mi.fu-berlin.de/en/inf/groups/abi/index.html" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/fu-berlin.png" alt="" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="http://www.imsb.ethz.ch/research/aebersold.html" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/zurich.jpeg" alt="" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="http://www.sanger.ac.uk/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/logo-sanger.png" alt="" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="https://www.ebi.ac.uk/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/emblebi.png" alt="" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="http://www.moleculargenetics.utoronto.ca/faculty/2017/7/19/hannes-rost" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/toronto.jpeg" alt="" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="https://www.biosustain.dtu.dk/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/DTU-logo.png" alt="" loading="lazy" decoding="async" />
-          </a>
-          <a class="uni-partners__item" href="https://www.zib.de/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/logos/ziblogo.png" alt="" loading="lazy" decoding="async" />
-          </a>
+          {{- range $partners }}
+          {{ partial "university-partner-item.html" (merge . (dict "duplicate" true)) }}
+          {{- end }}
         </div>
       </div>
     </div>
     {{- end }}
 
+  {{- if gt (len $partners) 0 }}
     <div class="uni-partners__static" role="list" aria-label="University partners logos">
-      <a class="uni-partners__item" href="https://kohlbacherlab.org/" target="_blank" rel="noopener noreferrer">
-        <img src="/images/logos/logo-uni-tuebingen.png" alt="University of Tübingen" loading="lazy" decoding="async" />
-      </a>
-      <a class="uni-partners__item" href="http://www.mi.fu-berlin.de/en/inf/groups/abi/index.html" target="_blank" rel="noopener noreferrer">
-        <img src="/images/logos/fu-berlin.png" alt="FU Berlin" loading="lazy" decoding="async" />
-      </a>
-      <a class="uni-partners__item" href="http://www.imsb.ethz.ch/research/aebersold.html" target="_blank" rel="noopener noreferrer">
-        <img src="/images/logos/zurich.jpeg" alt="ETH Zürich" loading="lazy" decoding="async" />
-      </a>
-      <a class="uni-partners__item" href="http://www.sanger.ac.uk/" target="_blank" rel="noopener noreferrer">
-        <img src="/images/logos/logo-sanger.png" alt="Wellcome Sanger Institute" loading="lazy" decoding="async" />
-      </a>
-      <a class="uni-partners__item" href="https://www.ebi.ac.uk/" target="_blank" rel="noopener noreferrer">
-        <img src="/images/logos/emblebi.png" alt="EMBL-EBI" loading="lazy" decoding="async" />
-      </a>
-      <a class="uni-partners__item" href="http://www.moleculargenetics.utoronto.ca/faculty/2017/7/19/hannes-rost" target="_blank" rel="noopener noreferrer">
-        <img src="/images/logos/toronto.jpeg" alt="University of Toronto" loading="lazy" decoding="async" />
-      </a>
-      <a class="uni-partners__item" href="https://www.biosustain.dtu.dk/" target="_blank" rel="noopener noreferrer">
-        <img src="/images/logos/DTU-logo.png" alt="DTU Biosustain" loading="lazy" decoding="async" />
-      </a>
-      <a class="uni-partners__item" href="https://www.zib.de/" target="_blank" rel="noopener noreferrer">
-        <img src="/images/logos/ziblogo.png" alt="ZIB" loading="lazy" decoding="async" />
-      </a>
+      {{- range $partners }}
+      <span role="listitem">{{ partial "university-partner-item.html" . }}</span>
+      {{- end }}
     </div>
+  {{- end }}
   </div>
 </section>
-

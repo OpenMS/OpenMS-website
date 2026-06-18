@@ -288,9 +288,9 @@
 .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate {
   background: transparent !important;
   background-color: transparent !important;
-  border: 2px solid var(--openms-blue) !important;
-  border-color: var(--openms-blue) !important;
-  color: var(--openms-blue) !important;
+  border: 2px solid rgba(var(--openms-white-rgb), 0.34) !important;
+  border-color: rgba(var(--openms-white-rgb), 0.34) !important;
+  color: var(--openms-white) !important;
 }
 
 .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:hover,
@@ -302,10 +302,10 @@
 .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:hover,
 .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:focus-visible,
 .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:active {
-  background: transparent !important;
-  background-color: transparent !important;
-  border-color: var(--openms-blue) !important;
-  color: var(--openms-blue) !important;
+  background: var(--openms-chrome-surface-hover) !important;
+  background-color: var(--openms-chrome-surface-hover) !important;
+  border-color: rgba(var(--openms-white-rgb), 0.5) !important;
+  color: var(--openms-white) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

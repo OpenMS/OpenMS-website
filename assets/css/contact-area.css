@@ -1,27 +1,12 @@
-/* Homepage contact — minimal; bridges from Trusted by when adjacent */
+/* Homepage contact — header + action cards */
 
 .contact-home {
   background: var(--openms-white);
   border-top: none;
 }
 
-.home-page__trust + .home-page__cta .contact-home {
-  background: linear-gradient(
-    180deg,
-    var(--home-bg-mist, #f8fafc) 0%,
-    var(--openms-white) 18%,
-    rgba(var(--openms-blue-rgb), 0.04) 55%,
-    rgba(var(--openms-blue-rgb), 0.07) 100%
-  );
-}
-
 .contact-home__main {
-  padding-block: 0;
-  padding-inline: var(--home-pad-x, clamp(1.25rem, 4vw, 2.5rem));
-}
-
-.home-page__trust + .home-page__cta .contact-home__main {
-  padding-top: clamp(3.5rem, 7vh, 5rem);
+  padding: var(--home-section-pad, clamp(3.5rem, 7vh, 5rem)) var(--home-pad-x, clamp(1.25rem, 4vw, 2.5rem));
 }
 
 main.home-page > section.home-page__cta:last-of-type .contact-home__main {
@@ -38,132 +23,216 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
 }
 
 .contact-home__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(2rem, 4vw, 4rem);
-  align-items: end;
-  max-width: 75rem;
-  margin: clamp(3.5rem, 7vh, 5rem) auto;
+  max-width: var(--home-max, 75rem);
+  margin: 0 auto;
 }
 
-.contact-home__content,
-.contact-home__aside {
+.contact-home__header {
+  max-width: min(100%, 46rem);
+  margin-bottom: clamp(2rem, 4vh, 2.75rem);
+}
+
+.contact-home__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.85rem;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.1);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.18);
+  border-radius: 999px;
+}
+
+.contact-home__eyebrow-icon {
+  display: inline-flex;
+  line-height: 0;
+  opacity: 0.9;
+}
+
+.contact-home__eyebrow-icon svg {
+  display: block;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.contact-home__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(2rem, 4.2vw, 3.15rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--openms-navy);
+  text-wrap: balance;
+}
+
+.contact-home__title-accent {
+  display: inline;
+  background: linear-gradient(
+    90deg,
+    var(--openms-blue-secondary) 0%,
+    var(--openms-purple) 50%,
+    var(--openms-pink) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-home__description {
+  margin: 0.85rem 0 0;
+  max-width: 52ch;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.62;
+  color: rgba(var(--openms-dark-rgb), 0.72);
+  text-wrap: pretty;
+}
+
+.contact-home__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: stretch;
+}
+
+.contact-home__item {
+  display: flex;
   min-width: 0;
 }
 
-/* Eyebrow, title, description: home.css (matches Trusted by) */
-
-.home-page__cta .contact-home__eyebrow-icon {
-  display: inline-flex;
-  line-height: 0;
-  opacity: 0.85;
-}
-
-.home-page__cta .contact-home__eyebrow-icon svg {
-  display: block;
-  width: 0.8125rem;
-  height: 0.8125rem;
-}
-
-.contact-home__aside {
+.contact-home__card {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 0.85rem;
-  text-align: right;
-}
-
-.contact-home__cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.75rem;
-  padding: var(--openms-btn-padding, 0.7rem 1.25rem);
-  font-size: var(--openms-text-min);
-  font-weight: 600;
+  width: 100%;
+  min-height: 100%;
+  padding: clamp(1rem, 2vw, 1.2rem);
+  border-radius: 1rem;
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+  background: var(--openms-white);
   text-decoration: none;
-  white-space: nowrap;
+  color: inherit;
+  box-shadow: 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
-.contact-home__links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.35rem;
-  margin: 0;
-  padding: 0;
-}
-
-.contact-home__link {
-  font-size: var(--openms-text-min);
-  font-weight: 500;
-  color: var(--openms-blue);
-  text-decoration: none;
-}
-
-.contact-home__link:hover,
-.contact-home__link:focus-visible {
-  color: var(--openms-navy);
-  text-decoration: underline;
-  text-underline-offset: 0.14em;
+.contact-home__card:hover,
+.contact-home__card:focus-visible {
+  border-color: rgba(var(--openms-blue-rgb), 0.28);
+  box-shadow: 0 0.65rem 1.5rem rgba(var(--openms-blue-rgb), 0.1);
+  transform: translateY(-2px);
   outline: none;
 }
 
-.contact-home__meta {
+.contact-home__card--primary {
+  border-color: rgba(var(--openms-blue-rgb), 0.2);
+  background: rgba(var(--openms-blue-rgb), 0.03);
+}
+
+.contact-home__card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 0.85rem;
+  border-radius: 0.65rem;
+  color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.1);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.14);
+}
+
+.contact-home__card-icon svg {
+  display: block;
+}
+
+.contact-home__card-title {
+  margin: 0 0 0.45rem;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--openms-navy);
+}
+
+.contact-home__card-text {
   margin: 0;
+  flex: 1 1 auto;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size);
+  line-height: 1.55;
+  color: rgba(var(--openms-dark-rgb), 0.72);
+}
+
+.contact-home__card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 1rem;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  color: var(--openms-blue);
+}
+
+.contact-home__card-cta-icon {
+  font-size: 1.1em;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.contact-home__card:hover .contact-home__card-cta,
+.contact-home__card:focus-visible .contact-home__card-cta {
+  color: var(--openms-blue);
+}
+
+.contact-home__card:hover .contact-home__card-cta-icon,
+.contact-home__card:focus-visible .contact-home__card-cta-icon {
+  transform: translateX(3px);
+}
+
+.contact-home__meta {
+  margin: clamp(1.25rem, 2.5vh, 1.75rem) 0 0;
+  font-family: var(--openms-font-body);
   font-size: var(--openms-text-min);
   line-height: 1.45;
-  color: rgba(var(--openms-dark-rgb), 0.45);
+  color: rgba(var(--openms-dark-rgb), 0.5);
 }
 
-/* After Trusted by — two columns, aligned with hero split */
-@media (min-width: 769px) {
-  .home-page__trust + .home-page__cta .contact-home__inner {
-    grid-template-columns: minmax(0, 1.05fr) minmax(14rem, 20rem);
-    align-items: center;
-    gap: clamp(2.5rem, 5vw, 5rem);
-  }
-
-  .home-page__trust + .home-page__cta .contact-home__content {
-    text-align: left;
-  }
-
-  .home-page__trust + .home-page__cta .contact-home__description {
-    max-width: 38rem;
-  }
-
-  .home-page__trust + .home-page__cta .contact-home__aside {
-    align-items: flex-end;
-    text-align: right;
-  }
-
-  .home-page__trust + .home-page__cta .contact-home__links {
-    align-items: flex-end;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact-home__inner {
+@media (max-width: 960px) {
+  .contact-home__grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    align-items: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-home__title {
+    font-size: clamp(1.75rem, 5vw, 2.35rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-home__card:hover,
+  .contact-home__card:focus-visible {
+    transform: none;
   }
 
-  .home-page__cta .contact-home__title {
-    max-width: none;
-  }
-
-  .contact-home__description {
-    max-width: none;
-  }
-
-  .contact-home__aside {
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .contact-home__links {
-    align-items: flex-start;
+  .contact-home__card:hover .contact-home__card-cta-icon,
+  .contact-home__card:focus-visible .contact-home__card-cta-icon {
+    transform: none;
   }
 }
 
@@ -207,7 +276,7 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
 .contact-area__eyebrow-icon svg {
   display: block;
   width: 0.8125rem;
-  height: 0.8125rem;
+  height: 0.812rem;
 }
 
 .contact-area__title {

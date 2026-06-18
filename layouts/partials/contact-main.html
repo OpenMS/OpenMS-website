@@ -19,19 +19,40 @@
   </header>
 
   <div class="contact-page-layout__content">
-    <div class="contact-page__main-grid">
+    <div class="contact-page">
       <section
         id="contact-form"
-        class="contact-page__form-section"
-        aria-label="Contact form"
+        class="contact-page__primary"
+        aria-labelledby="contact-form-title"
       >
-        {{ partial "tally-form-embed.html" . }}
+        <div class="contact-page__form-card">
+          <header class="contact-page__form-head">
+            <p class="contact-page__section-label">Message</p>
+            <h2 id="contact-form-title" class="contact-page__form-title">Send us a message</h2>
+            <p class="contact-page__form-lead">
+              Share your question or request — we will route it to the right team.
+            </p>
+          </header>
+          {{ partial "tally-form-embed.html" . }}
+        </div>
       </section>
 
-      {{ partial "contact-email-aside.html" . }}
-    </div>
+      <section class="contact-page__paths" aria-labelledby="contact-paths-title">
+        <header class="contact-page__section-head">
+          <p class="contact-page__section-label">More options</p>
+          <h2 id="contact-paths-title" class="contact-page__section-title">Other ways to reach us</h2>
+          <p class="contact-page__section-lead">
+            Prefer email, community chat, or self-service help? Pick the option that fits.
+          </p>
+        </header>
 
-    {{ partial "contact-alternatives.html" . }}
-    {{ partial "contact-support.html" . }}
+        <div class="contact-page__paths-grid">
+          {{ partial "contact-email-aside.html" . }}
+          {{ partial "contact-alternatives.html" . }}
+        </div>
+      </section>
+
+      {{ partial "contact-support.html" . }}
+    </div>
   </div>
 </section>

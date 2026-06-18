@@ -5,7 +5,7 @@
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var hero = page.querySelector(".home-page__hero");
   var scrollSections = page.querySelectorAll(
-    ".home-page__block--partners, .home-page__block--projects, .home-page__block--overview, .home-page__trust, .home-page__cta, .home-page__block--panel, .home-page__block--content"
+    ".home-page__block--partners, .home-page__block--projects, .home-page__block--overview, .home-page__cta, .home-page__block--panel, .home-page__block--content"
   );
 
   var projectsGrid = page.querySelector(".home-page__block--projects .webapps-featured__grid");
@@ -23,7 +23,7 @@
   }
 
   if (hero) {
-    hero.querySelectorAll(".hero-home__bento-card").forEach(function (card, index) {
+    hero.querySelectorAll(".hero-home__metric").forEach(function (card, index) {
       card.style.setProperty("--hero-reveal-index", String(index));
     });
 

@@ -18,12 +18,6 @@ sidebar: false
         OpenMS-lib is the BSD-licensed C++ foundation behind TOPP tools, pyOpenMS, and community
         software—for LC-MS data management, analysis, and visualization.
       </p>
-      <ul class="openms-lib-hero__chips" aria-label="Key facts">
-        <li class="openms-lib-hero__chip">BSD-3 license</li>
-        <li class="openms-lib-hero__chip">C++ &amp; Python</li>
-        <li class="openms-lib-hero__chip">Cross-platform</li>
-        <li class="openms-lib-hero__chip">200+ TOPP tools</li>
-      </ul>
       <div class="openms-lib-hero__actions" aria-label="Primary actions">
         <a
           class="openms-lib-btn openms-lib-btn--primary"
@@ -45,6 +39,7 @@ sidebar: false
     </div>
     </div>
   </header>
+  <div class="openms-lib-page__intro-panel">
   <section class="openms-lib-block openms-lib-block--overview" id="overview">
     <header class="openms-lib-block__head">
       <p class="openms-lib-block__eyebrow">At a glance</p>
@@ -53,9 +48,8 @@ sidebar: false
         One C++ core powers command-line tools, Python bindings, and community web apps.
       </p>
     </header>
-    <div class="openms-lib-list openms-lib-list--split" aria-label="OpenMS library overview">
+    <div class="openms-lib-list openms-lib-list--overview" aria-label="OpenMS library overview">
       <article class="openms-lib-list__row">
-        <div class="openms-lib-list__media openms-lib-feature-icon" aria-hidden="true"><span class="openms-lib-list__mark">C</span></div>
         <div class="openms-lib-list__body">
           <div class="openms-lib-list__tags"><span class="openms-lib-list__tag">Core library</span></div>
           <h3 class="openms-lib-list__title">C++ algorithms &amp; data structures</h3>
@@ -71,7 +65,6 @@ sidebar: false
         </div>
       </article>
       <article class="openms-lib-list__row">
-        <div class="openms-lib-list__media openms-lib-feature-icon" aria-hidden="true"><span class="openms-lib-list__mark">E</span></div>
         <div class="openms-lib-list__body">
           <div class="openms-lib-list__tags"><span class="openms-lib-list__tag">Ecosystem</span></div>
           <h3 class="openms-lib-list__title">Built on OpenMS-lib</h3>
@@ -88,6 +81,48 @@ sidebar: false
       </article>
     </div>
   </section>
+  <section class="openms-lib-block openms-lib-block--core-tools" id="core-tools">
+    <header class="openms-lib-block__head">
+      <p class="openms-lib-block__eyebrow">Core tools</p>
+      <h2 class="openms-lib-block__title">TOPP &amp; pyOpenMS</h2>
+      <p class="openms-lib-block__lead">
+        Command-line utilities and Python bindings built on the same OpenMS-lib core.
+      </p>
+    </header>
+    <div class="openms-lib-core-tools" aria-label="TOPP tools and pyOpenMS">
+      <a
+        class="openms-lib-core-tools__card openms-lib-core-tools__card--topp"
+        href="https://openms.readthedocs.io/en/latest/getting-started/topp-tools.html"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="openms-lib-core-tools__card-head">
+          <span class="openms-lib-core-tools__label">TOPP</span>
+          <h3 class="openms-lib-core-tools__title">TOPP Tools</h3>
+        </div>
+        <p class="openms-lib-core-tools__text">
+          Command-line tools for proteomics and metabolomics data analysis.
+        </p>
+        <span class="openms-lib-core-tools__link">TOPP tools guide<span aria-hidden="true"> →</span></span>
+      </a>
+      <a
+        class="openms-lib-core-tools__card openms-lib-core-tools__card--pyopenms"
+        href="https://pyopenms.readthedocs.io/en/latest/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="openms-lib-core-tools__card-head">
+          <span class="openms-lib-core-tools__label">pyOpenMS</span>
+          <h3 class="openms-lib-core-tools__title">pyOpenMS</h3>
+        </div>
+        <p class="openms-lib-core-tools__text">
+          Python bindings for scripting workflows, prototyping, and integrations.
+        </p>
+        <span class="openms-lib-core-tools__link">pyOpenMS docs<span aria-hidden="true"> →</span></span>
+      </a>
+    </div>
+  </section>
+  </div>
 </div>
 <div class="openms-lib-page__body" aria-label="OpenMS capabilities and workflows">
   <div id="what-is-openms" class="openms-lib-page__anchor">
@@ -115,7 +150,6 @@ sidebar: false
     </header>
     <div class="openms-lib-list openms-lib-list--resource-grid" aria-label="Developer resources">
       <a class="openms-lib-list__row openms-lib-resource-card" href="https://github.com/OpenMS/OpenMS/wiki/Developer-FAQ" target="_blank" rel="noopener noreferrer">
-        <div class="openms-lib-list__media" aria-hidden="true"><span class="openms-lib-list__mark">?</span></div>
         <div class="openms-lib-list__body">
           <span class="openms-lib-list__tag openms-lib-resource-card__tag">Wiki</span>
           <h3 class="openms-lib-list__title">Developer FAQ</h3>
@@ -124,7 +158,6 @@ sidebar: false
         </div>
       </a>
       <a class="openms-lib-list__row openms-lib-resource-card" href="https://github.com/OpenMS/OpenMS/wiki/Adding-your-own-tool-to-the-TOPP-suite" target="_blank" rel="noopener noreferrer">
-        <div class="openms-lib-list__media" aria-hidden="true"><span class="openms-lib-list__mark">T</span></div>
         <div class="openms-lib-list__body">
           <span class="openms-lib-list__tag openms-lib-resource-card__tag">TOPP</span>
           <h3 class="openms-lib-list__title">Add a TOPP tool</h3>
@@ -133,7 +166,6 @@ sidebar: false
         </div>
       </a>
       <a class="openms-lib-list__row openms-lib-resource-card" href="https://github.com/OpenMS/OpenMS/wiki/Cpp-Guide" target="_blank" rel="noopener noreferrer">
-        <div class="openms-lib-list__media" aria-hidden="true"><span class="openms-lib-list__mark">C</span></div>
         <div class="openms-lib-list__body">
           <span class="openms-lib-list__tag openms-lib-resource-card__tag">C++</span>
           <h3 class="openms-lib-list__title">C++ guide</h3>
@@ -142,7 +174,6 @@ sidebar: false
         </div>
       </a>
       <a class="openms-lib-list__row openms-lib-resource-card" href="https://openms.readthedocs.io/en/latest/manual/develop.html" target="_blank" rel="noopener noreferrer">
-        <div class="openms-lib-list__media" aria-hidden="true"><span class="openms-lib-list__mark">D</span></div>
         <div class="openms-lib-list__body">
           <span class="openms-lib-list__tag openms-lib-resource-card__tag">Docs</span>
           <h3 class="openms-lib-list__title">Developer manual</h3>
@@ -151,7 +182,6 @@ sidebar: false
         </div>
       </a>
       <a class="openms-lib-list__row openms-lib-resource-card" href="https://pyopenms.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">
-        <div class="openms-lib-list__media" aria-hidden="true"><span class="openms-lib-list__mark">P</span></div>
         <div class="openms-lib-list__body">
           <span class="openms-lib-list__tag openms-lib-resource-card__tag">pyOpenMS</span>
           <h3 class="openms-lib-list__title">Python bindings</h3>
@@ -160,7 +190,6 @@ sidebar: false
         </div>
       </a>
       <a class="openms-lib-list__row openms-lib-resource-card" href="/applications/">
-        <div class="openms-lib-list__media" aria-hidden="true"><span class="openms-lib-list__mark">A</span></div>
         <div class="openms-lib-list__body">
           <span class="openms-lib-list__tag openms-lib-resource-card__tag">Community</span>
           <h3 class="openms-lib-list__title">Browse projects</h3>

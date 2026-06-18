@@ -4,6 +4,8 @@
 {{- $subtitle := index $cfg "subtitle" | default .Params.Subtitle }}
 {{- $eyebrow := index $cfg "eyebrow" | default "Projects" }}
 {{- $readMore := index $cfg "readMoreLabel" | default "Read more" }}
+{{- $catalogTitle := index $cfg "catalogTitle" | default "Integrated pipelines & workflows" }}
+{{- $catalogLead := index $cfg "catalogLead" | default "Application guides with setup steps, workflows, and links to run analyses on your data." }}
 {{- $pages := .Pages.ByTitle }}
 <section class="applications-page-layout">
   <header class="openms-lib-hero applications-page-hero" aria-label="OpenMS applications">
@@ -42,31 +44,35 @@
       </div>
       {{- end }}
 
-      <section class="governance-grid applications-page__list" aria-label="OpenMS application pages">
-        {{- range $pages }}
-        <article class="governance-card applications-page__card">
-          <p class="governance-card__eyebrow">Application</p>
-          <h2>{{ .Title }}</h2>
-          {{- with .Params.Subtitle }}
-          <p>{{ . }}</p>
-          {{- else }}
-          {{- with .Summary }}
-          <p>{{ . }}</p>
+      <section class="applications-page__catalog" aria-labelledby="applications-catalog-title">
+        <header class="applications-page__catalog-head">
+          <h2 id="applications-catalog-title" class="applications-page__catalog-title">{{ $catalogTitle }}</h2>
+          <p class="applications-page__catalog-lead">{{ $catalogLead }}</p>
+        </header>
+
+        <ul class="applications-page__grid" role="list">
+          {{- range $pages }}
+          <li class="applications-page__item" role="listitem">
+            <a class="applications-page__card" href="{{ .RelPermalink }}">
+              <span class="applications-page__card-tag">Application</span>
+              <h3 class="applications-page__card-title">{{ .Title }}</h3>
+              {{- with .Params.Subtitle }}
+              <p class="applications-page__card-text">{{ . }}</p>
+              {{- else }}
+              {{- with .Summary }}
+              <p class="applications-page__card-text">{{ . }}</p>
+              {{- end }}
+              {{- end }}
+              {{- with or .Params.authors .Params.Authors }}
+              <p class="applications-page__card-meta">
+                {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end }}
+              </p>
+              {{- end }}
+              <span class="applications-page__card-cta">{{ $readMore }}<span aria-hidden="true"> →</span></span>
+            </a>
+          </li>
           {{- end }}
-          {{- end }}
-          {{- with or .Params.authors .Params.Authors }}
-          <p class="applications-page__authors">
-            {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end }}
-          </p>
-          {{- end }}
-          {{- if .Date }}
-          <p class="applications-page__date">{{ .Date.Format "January 2, 2006" }}</p>
-          {{- end }}
-          <p class="governance-card__link">
-            <a href="{{ .RelPermalink }}">{{ $readMore }} →</a>
-          </p>
-        </article>
-        {{- end }}
+        </ul>
       </section>
     </div>
   </div>

@@ -16,23 +16,11 @@
   <section class="webapps-featured{{ with $embed }} webapps-featured--{{ . }}{{ end }}" aria-labelledby="webapps-featured-title">
     <div class="webapps-featured__inner">
       {{- if eq $embed "home" }}
-      <header class="webapps-featured__header webapps-featured__header--home webapps-featured__header--split">
-        <div class="webapps-featured__header-intro">
+      <header class="webapps-featured__header webapps-featured__header--home">
+        <div class="webapps-featured__header-main">
           {{- with $eyebrow }}
-          <p class="webapps-featured__eyebrow">
-            <span class="webapps-featured__eyebrow-icon" aria-hidden="true">
-              <svg viewBox="0 0 16 16" width="14" height="14" focusable="false" aria-hidden="true">
-                <path fill="currentColor" d="M2 2.5h4.5v4.5H2V2.5zm7.5 0H14v4.5H9.5V2.5zM2 9h4.5v4.5H2V9zm7.5 0H14v4.5H9.5V9z"/>
-              </svg>
-            </span>
-            {{ . }}
-          </p>
+          <p class="webapps-featured__eyebrow">{{ . }}</p>
           {{- end }}
-          {{- with $description }}
-          <p class="webapps-featured__lead">{{ . }}</p>
-          {{- end }}
-        </div>
-        <div class="webapps-featured__header-title-wrap">
           <h2 id="webapps-featured-title" class="webapps-featured__title">
             {{- if and $titleHighlight (in $title $titleHighlight) }}
             {{ replace $title $titleHighlight (printf "<span class=\"webapps-featured__title-accent\">%s</span>" $titleHighlight) | safeHTML }}
@@ -40,6 +28,9 @@
             {{ $title }}
             {{- end }}
           </h2>
+          {{- with $description }}
+          <p class="webapps-featured__lead">{{ . }}</p>
+          {{- end }}
         </div>
       </header>
       {{- else }}
@@ -62,7 +53,7 @@
       </header>
       {{- end }}
 
-      <ul class="webapps-featured__grid{{ if eq $embed "home" }} webapps-featured__grid--bento{{ end }}" role="list" aria-label="OpenMS projects">
+      <ul class="webapps-featured__grid{{ if eq $embed "home" }} webapps-featured__grid--catalog{{ end }}" role="list" aria-label="OpenMS projects">
         {{- range $webapps }}
         <li class="webapps-featured__item" role="listitem">
           {{ partial "webapps-project-card.html" (merge $cardCtx (dict "project" . "embed" $embed)) }}
@@ -71,7 +62,7 @@
       </ul>
 
       {{- if or $extraLinks $showAll }}
-      <div class="webapps-featured__footer">
+      <div class="webapps-featured__footer{{ if eq $embed "home" }} webapps-featured__footer--home{{ end }}">
         {{- if $extraLinks }}
         <div class="webapps-featured__extras" aria-label="Core OpenMS tools">
           {{- range $extraLinks }}
@@ -93,9 +84,9 @@
         {{- end }}
         {{- with $showAll }}
         <a
-          class="webapps-featured__show-all openms-step__cta openms-btn-primary"
+          class="webapps-featured__show-all openms-btn-primary{{ if ne $embed "home" }} openms-step__cta{{ end }}"
           href="{{ .url }}"
-        >{{ .text }}</a>
+        >{{ .text }}<span class="webapps-featured__explore-icon" aria-hidden="true">›</span></a>
         {{- end }}
       </div>
       {{- end }}

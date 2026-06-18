@@ -24,6 +24,35 @@ events:
     summary: One-day workshop on MS analysis with OpenMS and OpenDIAKiosk.
     news_url: /news/helsinki_workshop_2026/
 
+  - title: Google Summer of Code 2026
+    start: 2026-06-01
+    end: 2026-08-31
+    location: Remote
+    category: outreach
+    summary: Students collaborate with mentors on OpenMS features, documentation, and tool integrations.
+    news_url: /news/GSoC2026/
+
+  - title: OpenMS Community Code Clinic
+    start: 2026-07-15
+    location: Online
+    category: outreach
+    summary: Drop-in session for workflow questions, troubleshooting, and getting started as a contributor.
+    news_url: /news/cibi_codeclinic/
+
+  - title: OpenMS Autumn Workshop
+    start: 2026-10-14
+    end: 2026-10-16
+    location: Tübingen, Germany
+    category: workshop
+    summary: Hands-on training on proteomics and metabolomics workflows with OpenMS and TOPP tools.
+
+  - title: OpenMS Developer Meeting 2027
+    start: 2027-03-15
+    end: 2027-03-19
+    location: To be announced
+    category: developer-meeting
+    summary: Annual developer meeting with tutorials, talks, and code sprints.
+
   - title: OpenMS Open House 2025
     start: 2025-11-09
     location: University of Toronto, Canada

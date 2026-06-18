@@ -3,11 +3,11 @@
 {{- $ctaText := .ctaText | default "View project" }}
 {{- $url := $project.url }}
 {{- $isExternal := in $url "://" }}
-{{- $ariaLabel := printf "%s — %s" $project.name $ctaText }}
+{{- $ariaLabel := $project.name }}
 {{- if $isExternal }}
   {{- $ariaLabel = printf "%s (opens in new tab)" $ariaLabel }}
 {{- end }}
-<article class="webapps-project-card{{ if eq $embed "home" }} webapps-project-card--bento{{ end }}">
+<article class="webapps-project-card{{ if eq $embed "home" }} webapps-project-card--catalog{{ end }}">
   <a
     class="webapps-project-card__surface"
     href="{{ $url }}"
@@ -18,9 +18,9 @@
     {{- end }}
   >
     {{- if eq $embed "home" }}
-    <div class="webapps-project-card__visual">
+    <div class="webapps-project-card__media">
       <img
-        class="webapps-project-card__logo"
+        class="webapps-project-card__image"
         src="{{ $project.logo | relURL }}"
         alt=""
         loading="lazy"
@@ -32,6 +32,10 @@
       {{- with $project.description }}
       <p class="webapps-project-card__text">{{ . }}</p>
       {{- end }}
+      <span class="webapps-project-card__cta">
+        <span class="webapps-project-card__cta-label">{{ $ctaText }}</span>
+        <span class="webapps-project-card__cta-icon" aria-hidden="true">›</span>
+      </span>
     </div>
     {{- else }}
     <span class="webapps-project-card__accent" aria-hidden="true"></span>

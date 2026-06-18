@@ -2,15 +2,20 @@
 {{- $title := index $cfg "title" | default "Community calendar" -}}
 {{- $subtitle := index $cfg "subtitle" | default "Upcoming OpenMS meetings, workshops, and community events." -}}
 {{- $eyebrow := index $cfg "eyebrow" | default "Community" -}}
+{{- $titleHighlight := index $cfg "titleHighlight" | default "calendar" -}}
 {{- $data := .Site.Data.community_events | default dict -}}
 {{- $events := index $data "events" | default (slice) -}}
 <section class="community-calendar-layout">
-  <header class="openms-lib-hero community-calendar-hero" aria-label="OpenMS community calendar">
+  <header class="openms-lib-hero calendar-page-hero" aria-label="OpenMS community calendar">
     <div class="openms-lib-hero__panel">
       <div class="openms-lib-hero__content">
         <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
         <h1 class="openms-lib-hero__title">
-          Community <span class="openms-lib-hero__accent">calendar</span>
+          {{- if and $titleHighlight (in $title $titleHighlight) }}
+          {{ replace $title $titleHighlight (printf "<span class=\"openms-lib-hero__accent\">%s</span>" $titleHighlight) | safeHTML }}
+          {{- else }}
+          {{ $title }}
+          {{- end }}
         </h1>
         <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
         <div class="openms-lib-hero__actions" aria-label="Related resources">

@@ -122,10 +122,6 @@
   color: var(--openms-blue) !important;
 }
 
-.contribute-page-layout .openms-lib-hero__actions {
-  gap: 0.75rem;
-}
-
 .contribute-page-layout .openms-lib-btn--primary:hover,
 .contribute-page-layout .openms-lib-btn--primary:focus-visible,
 .contribute-page-layout .openms-lib-btn--primary:active {
@@ -159,33 +155,6 @@
 .contribute-page-layout .openms-lib-btn--ghost:focus-visible {
   box-shadow: var(--openms-hero-focus-ring, 0 0 0 3px var(--openms-navy), 0 0 0 5px var(--openms-yellow)),
     0 0 0 calc(5px + var(--openms-btn-glow-size)) var(--openms-btn-glow);
-}
-
-@media (max-width: 720px) {
-  .contribute-page-layout {
-    --olib-section-y: clamp(2.75rem, 6vh, 3.5rem);
-    --olib-pad-x: clamp(1rem, 4vw, 1.25rem);
-  }
-
-  .contribute-page-hero .openms-lib-hero__title {
-    max-width: none;
-    font-size: clamp(1.75rem, 7vw, 2.25rem);
-  }
-
-  .contribute-page-hero .openms-lib-hero__actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.55rem;
-  }
-
-  .contribute-page-hero .openms-lib-hero__actions .openms-lib-btn--primary {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .contribute-page-hero .openms-lib-hero__actions .openms-lib-btn--ghost {
-    align-self: center;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

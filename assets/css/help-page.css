@@ -24,10 +24,6 @@
   margin-bottom: var(--olib-section-y);
 }
 
-.help-page-hero .openms-lib-hero__title {
-  max-width: 26ch;
-}
-
 .help-page {
   margin-top: 0;
 }
@@ -100,10 +96,6 @@
   margin-top: 0;
 }
 
-.help-page-layout .openms-lib-hero__actions {
-  gap: 0.75rem;
-}
-
 .help-page-layout .openms-lib-btn--primary:hover,
 .help-page-layout .openms-lib-btn--primary:focus-visible,
 .help-page-layout .openms-lib-btn--primary:active {
@@ -141,33 +133,6 @@
 .help-page-layout .help-page__resources .governance-card__link a:focus-visible {
   box-shadow: var(--openms-hero-focus-ring, 0 0 0 3px var(--openms-navy), 0 0 0 5px var(--openms-yellow)),
     0 0 0 calc(5px + var(--openms-btn-glow-size)) var(--openms-btn-glow);
-}
-
-@media (max-width: 720px) {
-  .help-page-layout {
-    --olib-section-y: clamp(2.75rem, 6vh, 3.5rem);
-    --olib-pad-x: clamp(1rem, 4vw, 1.25rem);
-  }
-
-  .help-page-hero .openms-lib-hero__title {
-    max-width: none;
-    font-size: clamp(1.75rem, 7vw, 2.25rem);
-  }
-
-  .help-page-hero .openms-lib-hero__actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.55rem;
-  }
-
-  .help-page-hero .openms-lib-hero__actions .openms-lib-btn--primary {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .help-page-hero .openms-lib-hero__actions .openms-lib-btn--ghost {
-    align-self: center;
-  }
 }
 
 @media (max-width: 860px) {

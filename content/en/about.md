@@ -57,8 +57,12 @@ hidePageTitle: true
     Give online via our
     <a href="/donate/">donation page</a> (Zeffy and Open Collective).
   </p>
-  <div class="about-donate-actions">
-    <a class="about-cta-btn about-cta-btn--donate" href="/donate/">Donate now</a>
-    <a class="openms-step__cta openms-btn-primary about-cta-btn--sponsor" href="/sponsor-us/">Sponsor us</a>
-  </div>
+</section>
+
+<section class="governance-links" id="related-pages">
+  <h2>See also</h2>
+  <p>
+    For user questions, documentation, and community support channels, see the
+    <a href="/help/">Help page</a>.
+  </p>
 </section>

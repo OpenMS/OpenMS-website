@@ -24,10 +24,6 @@
   margin-bottom: var(--olib-section-y);
 }
 
-.governance-page-hero .openms-lib-hero__title {
-  max-width: 24ch;
-}
-
 .governance-page {
   display: grid;
   gap: clamp(2rem, 3.8vw, 3.2rem);
@@ -203,6 +199,9 @@
 .governance-card h2 {
   margin-top: 0.05rem;
   margin-bottom: 0.75rem;
+  font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+  line-height: 1.25;
+  text-wrap: balance;
   color: var(--openms-navy);
 }
 
@@ -223,11 +222,17 @@
 
 .governance-card__eyebrow {
   margin: 0 0 0.2rem;
-  font-size: var(--openms-text-min);
+  font-size: clamp(0.68rem, 2vw, var(--openms-text-min));
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--openms-blue);
+}
+
+.governance-card p,
+.governance-card li {
+  font-size: clamp(0.9rem, 2.4vw, var(--openms-body-size-lg));
+  line-height: 1.6;
 }
 
 .governance-card ul {
@@ -252,7 +257,15 @@
 .governance-section h2 {
   margin-top: 0;
   margin-bottom: 0.75rem;
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+  line-height: 1.25;
+  text-wrap: balance;
   color: var(--openms-navy);
+}
+
+.governance-section p {
+  font-size: clamp(0.9rem, 2.4vw, var(--openms-body-size-lg));
+  line-height: 1.6;
 }
 
 .governance-pillars {
@@ -267,6 +280,8 @@
 .governance-pillar {
   position: relative;
   padding-left: 1.25rem;
+  font-size: clamp(0.88rem, 2.2vw, var(--openms-body-size-lg));
+  line-height: 1.45;
   color: var(--openms-dark);
   font-weight: 600;
 }
@@ -284,6 +299,8 @@
 
 .governance-note {
   margin-bottom: 0;
+  font-size: clamp(0.88rem, 2.2vw, var(--openms-body-size-lg));
+  line-height: 1.6;
   color: rgba(var(--openms-dark-rgb), 0.9);
 }
 
@@ -306,10 +323,15 @@
 .governance-compare__title {
   margin-top: 0;
   margin-bottom: 0.4rem;
-  color: var(--openms-blue);
-  font-size: var(--openms-secondary-heading-size-lg);
+  font-size: clamp(0.95rem, 2.4vw, var(--openms-secondary-heading-size-lg));
   font-weight: 600;
   line-height: 1.35;
+  color: var(--openms-blue);
+}
+
+.governance-compare p {
+  font-size: clamp(0.9rem, 2.4vw, var(--openms-body-size-lg));
+  line-height: 1.6;
 }
 
 .governance-compare > div::before {
@@ -325,6 +347,14 @@
 
 .governance-links h2 {
   margin-bottom: 0.75rem;
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.governance-links p {
+  font-size: clamp(0.9rem, 2.4vw, var(--openms-body-size-lg));
+  line-height: 1.6;
 }
 
 .governance-links ul {
@@ -344,8 +374,7 @@
 }
 
 /* Navbar-style CTA motion (governance page) */
-.governance-page-layout .openms-lib-btn,
-.governance-page-layout .governance-card__link a {
+.governance-page-layout .openms-lib-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -372,8 +401,7 @@
   color: var(--openms-white) !important;
 }
 
-.governance-page-layout .openms-lib-btn--ghost,
-.governance-page-layout .governance-card__link a {
+.governance-page-layout .openms-lib-btn--ghost {
   border: 2px solid var(--openms-blue);
   background: transparent;
   background-color: transparent;
@@ -381,11 +409,9 @@
 }
 
 .governance-page-layout .governance-card__link a {
-  margin-top: 0;
-}
-
-.governance-page-layout .openms-lib-hero__actions {
-  gap: 0.75rem;
+  font-weight: 600;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.14em;
 }
 
 .governance-page-layout .openms-lib-btn--primary:hover,
@@ -402,10 +428,7 @@
 
 .governance-page-layout .openms-lib-btn--ghost:hover,
 .governance-page-layout .openms-lib-btn--ghost:focus-visible,
-.governance-page-layout .openms-lib-btn--ghost:active,
-.governance-page-layout .governance-card__link a:hover,
-.governance-page-layout .governance-card__link a:focus-visible,
-.governance-page-layout .governance-card__link a:active {
+.governance-page-layout .openms-lib-btn--ghost:active {
   background: transparent;
   background-color: transparent;
   border-color: var(--openms-blue);
@@ -421,8 +444,7 @@
     0 0 0 calc(5px + var(--openms-btn-glow-size)) var(--openms-btn-glow);
 }
 
-.governance-page-layout .openms-lib-btn--ghost:focus-visible,
-.governance-page-layout .governance-card__link a:focus-visible {
+.governance-page-layout .openms-lib-btn--ghost:focus-visible {
   box-shadow: var(--openms-hero-focus-ring, 0 0 0 3px var(--openms-navy), 0 0 0 5px var(--openms-yellow)),
     0 0 0 calc(5px + var(--openms-btn-glow-size)) var(--openms-btn-glow);
 }
@@ -430,33 +452,6 @@
 @media (max-width: 1024px) {
   .infrastructure-links {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 720px) {
-  .governance-page-layout {
-    --olib-section-y: clamp(2.75rem, 6vh, 3.5rem);
-    --olib-pad-x: clamp(1rem, 4vw, 1.25rem);
-  }
-
-  .governance-page-hero .openms-lib-hero__title {
-    max-width: none;
-    font-size: clamp(1.75rem, 7vw, 2.25rem);
-  }
-
-  .governance-page-hero .openms-lib-hero__actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.55rem;
-  }
-
-  .governance-page-hero .openms-lib-hero__actions .openms-lib-btn--primary {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .governance-page-hero .openms-lib-hero__actions .openms-lib-btn--ghost {
-    align-self: center;
   }
 }
 
@@ -496,9 +491,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .governance-page-layout .openms-lib-btn:hover,
-  .governance-page-layout .openms-lib-btn:focus-visible,
-  .governance-page-layout .governance-card__link a:hover,
-  .governance-page-layout .governance-card__link a:focus-visible {
+  .governance-page-layout .openms-lib-btn:focus-visible {
     transform: none;
   }
 }

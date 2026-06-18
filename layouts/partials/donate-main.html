@@ -8,21 +8,25 @@
 {{- $showOC := index $cfg "showOpenCollective" | default true -}}
 {{- $hasZeffyEmbed := and $zeffyEmbed (hasPrefix $zeffyEmbed "https://www.zeffy.com/") -}}
 {{- $hasZeffyForm := and $zeffyForm (hasPrefix $zeffyForm "https://www.zeffy.com/") -}}
-<section class="content-padding flex-row donate-page-layout">
-  <div class="content-container donate-page-layout__container">
-    <div class="governance-page about-page donate-page">
-      <header class="governance-hero" aria-label="Donate to OpenMS">
-        <p class="governance-hero__eyebrow">{{ $eyebrow }}</p>
-        <h1 class="governance-hero__title">
-          Support <span>OpenMS</span> with a gift.
+<section class="donate-page-layout">
+  <header class="openms-lib-hero donate-page-hero" aria-label="Donate to OpenMS">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          Support <span class="openms-lib-hero__accent">OpenMS</span> with a gift.
         </h1>
-        <p class="governance-hero__description">{{ $subtitle }}</p>
-        <div class="governance-hero__meta">
-          <a href="/sponsor-us/">Sponsor us</a>
-          <a href="/about/">About OpenMS Inc.</a>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/sponsor-us/">Sponsor us</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/about/">About OpenMS Inc.</a>
         </div>
-      </header>
+      </div>
+    </div>
+  </header>
 
+  <div class="donate-page-layout__content">
+    <div class="donate-page governance-page about-page">
       <section class="governance-section" aria-labelledby="donate-form-title">
         <h2 id="donate-form-title">Make a donation</h2>
         <p>

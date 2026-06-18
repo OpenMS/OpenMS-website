@@ -7,7 +7,7 @@
   {{- end }}
 
   <section class="home-page__block home-page__block--partners" aria-labelledby="uni-partners-title">
-    {{ partial "university-partners.html" (dict "showHeader" true "variant" "home") }}
+    {{ partial "university-partners.html" (dict "Site" .Site "showHeader" true "variant" "home") }}
   </section>
 
   <section class="home-page__block home-page__block--projects" aria-labelledby="webapps-featured-title">
@@ -20,8 +20,12 @@
   </section>
   {{- end }}
 
-  <section class="home-page__trust" aria-label="Organizations using OpenMS">
-    {{ partial "trusted-by.html" (dict "Site" .Site "variant" "home") }}
+  <section class="home-page__block home-page__block--community" aria-labelledby="community-home-title">
+    {{ partial "community-home.html" . }}
+  </section>
+
+  <section class="home-page__block home-page__block--events" aria-labelledby="community-events-home-title">
+    {{ partial "community-events-home.html" . }}
   </section>
 
   <section class="home-page__cta" aria-labelledby="contact-area-title">

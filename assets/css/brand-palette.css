@@ -14,9 +14,21 @@
 
   /* Body & secondary headings — Raleway (pt) */
   --openms-text-min: 11pt;
-  --openms-navbar-font-size: 16px;
-  --openms-navbar-logo-height: 68px;
-  --openms-header-bar-min-height: calc(var(--openms-navbar-logo-height) + 1.25rem);
+  --openms-navbar-font-size: 15px;
+  --openms-navbar-link-color: var(--openms-white);
+  --openms-navbar-link-hover-color: color-mix(in srgb, var(--openms-white) 86%, var(--openms-blue-secondary) 14%);
+  --openms-navbar-link-hover-bg: rgba(var(--openms-white-rgb), 0.1);
+  --openms-navbar-dropdown-bg: var(--openms-white);
+  --openms-navbar-dropdown-text: rgba(var(--openms-navy-rgb), 0.9);
+  --openms-navbar-dropdown-heading: rgba(var(--openms-navy-rgb), 0.5);
+  --openms-navbar-dropdown-hover-text: var(--openms-navy);
+  --openms-navbar-dropdown-hover-bg: transparent;
+  --openms-navbar-dropdown-border: rgba(var(--openms-navy-rgb), 0.1);
+  --openms-navbar-container-pad-inline: clamp(1.25rem, 3vw, 2.25rem);
+  --openms-navbar-container-pad-inline-mobile: 1.15rem;
+  --openms-navbar-brand-slot-width: 18.5rem;
+  --openms-navbar-logo-height: 76px;
+  --openms-header-bar-min-height: calc(var(--openms-navbar-logo-height) + 0.65rem);
   /* Nav breakpoints: burger < 1280px; compact xl 1280–1535px; full desktop 1536px+ */
   --openms-nav-desktop-min: 1280px;
   --openms-nav-xl-wide-min: 1536px;
@@ -57,6 +69,30 @@
   --openms-bg-navy: var(--openms-navy);
   --openms-grey-rgb: 194, 186, 188;
   --openms-white-rgb: 255, 255, 255;
+
+  /* Site chrome — unified banner → nav → hero stack */
+  --openms-chrome-bg: var(--openms-navy);
+  --openms-chrome-border: rgba(var(--openms-white-rgb), 0.1);
+  --openms-chrome-border-strong: rgba(var(--openms-white-rgb), 0.16);
+  --openms-chrome-text: rgba(var(--openms-white-rgb), 0.92);
+  --openms-chrome-text-muted: rgba(var(--openms-white-rgb), 0.62);
+  --openms-chrome-surface: rgba(var(--openms-white-rgb), 0.07);
+  --openms-chrome-surface-hover: rgba(var(--openms-white-rgb), 0.12);
+  --openms-chrome-accent: var(--openms-pink);
+  --openms-chrome-accent-line: linear-gradient(
+    90deg,
+    var(--openms-blue) 0%,
+    var(--openms-purple) 55%,
+    var(--openms-pink) 100%
+  );
+  --openms-chrome-banner-bg: var(--openms-white);
+  --openms-chrome-banner-label: var(--openms-white);
+  --openms-chrome-banner-label-bg: var(--openms-orange);
+  --openms-chrome-banner-label-border: var(--openms-orange);
+  --openms-chrome-banner-text: rgba(var(--openms-navy-rgb), 0.88);
+  --openms-chrome-banner-border: rgba(var(--openms-navy-rgb), 0.1);
+  --openms-chrome-nav-surface: rgba(var(--openms-white-rgb), 0.97);
+  --openms-chrome-nav-border: rgba(var(--openms-navy-rgb), 0.08);
 
   --colorPrimaryDark: var(--openms-blue);
   --colorPrimaryDarkBtn: var(--openms-blue);

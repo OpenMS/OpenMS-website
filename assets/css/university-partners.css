@@ -159,6 +159,21 @@
   display: block;
 }
 
+.uni-partners__item-abbr {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--openms-navy, #1a2b4a);
+  background: rgba(var(--openms-white-rgb), 0.92);
+}
+
 @keyframes uni-partners-marquee {
   0% {
     transform: translateX(0);

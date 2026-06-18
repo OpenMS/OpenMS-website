@@ -5,67 +5,66 @@ hideShortcuts: true
 hidePageTitle: true
 ---
 
-<section class="governance-section publications-intro">
-    <h2>How to cite OpenMS</h2>
-    <p>
-      When you use OpenMS in your research, please cite the
-      <a href="#publications-featured-title">key publications</a> below and the tools you used where applicable.
-      See also the <a href="/citing-openms/">Citing OpenMS</a> page for citation guidance.
-    </p>
-  </section>
-
-  <section class="governance-section publications-featured" aria-labelledby="publications-featured-title">
-    <h2 id="publications-featured-title">Key publications</h2>
-    <p class="publications-featured__lead">
-      Primary references when citing OpenMS software and the Python interface.
-    </p>
-    <ul class="publication-list publications-featured__list">
-      <li class="publication-entry publication-entry--featured">
-        <p class="publication-title">
-          <a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/38366242" target="_blank" rel="noopener noreferrer">OpenMS 3 enables reproducible analysis of large-scale mass spectrometry data</a>
+<section class="publications-featured" aria-label="Key publications">
+    <p class="publications-section-label">Key publications</p>
+    <ul class="publications-featured__list" role="list">
+      <li class="publications-cite-card publications-cite-card--primary" role="listitem">
+        <div class="publications-cite-card__top">
+          <span class="publications-cite-card__badge">Primary cite</span>
+          <span class="publications-cite-card__topic">OpenMS software</span>
+        </div>
+        <h3 class="publications-cite-card__title">
+          <a href="https://www.ncbi.nlm.nih.gov/pubmed/38366242" target="_blank" rel="noopener noreferrer">OpenMS 3 enables reproducible analysis of large-scale mass spectrometry data</a>
+        </h3>
+        <p class="publications-cite-card__meta">
+          <span class="publications-cite-card__journal">Nature Methods</span>
+          <span class="publications-cite-card__year">2024</span>
         </p>
-        <p class="publication-meta"><span class="publication-journal">Nature Methods</span> · <span class="publication-year">2024</span></p>
-        <p class="publication-authors">Pfeuffer, Julianus; Bielow, Chris; Wein, Samuel; Jeong, Kyowon; Netz, Eugen; Walter, Axel; Alka, Oliver; Nilse, Lars; Colaianni, Pasquale Domenico; McCloskey, Douglas</p>
+        <p class="publications-cite-card__authors">Pfeuffer, Julianus; Bielow, Chris; Wein, Samuel; Jeong, Kyowon; Netz, Eugen; Walter, Axel; Alka, Oliver; Nilse, Lars; Colaianni, Pasquale Domenico; McCloskey, Douglas</p>
+        <a class="publications-cite-card__action" href="https://www.ncbi.nlm.nih.gov/pubmed/38366242" target="_blank" rel="noopener noreferrer">View on PubMed</a>
       </li>
-      <li class="publication-entry publication-entry--featured">
-        <p class="publication-title">
-          <a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/25410388" target="_blank" rel="noopener noreferrer">pyOpenMS: a Python-based interface to the OpenMS mass-spectrometry algorithm library</a>
+      <li class="publications-cite-card publications-cite-card--secondary" role="listitem">
+        <div class="publications-cite-card__top">
+          <span class="publications-cite-card__badge">Also cite</span>
+          <span class="publications-cite-card__topic">pyOpenMS</span>
+        </div>
+        <h3 class="publications-cite-card__title">
+          <a href="https://www.ncbi.nlm.nih.gov/pubmed/25410388" target="_blank" rel="noopener noreferrer">pyOpenMS: a Python-based interface to the OpenMS mass-spectrometry algorithm library</a>
+        </h3>
+        <p class="publications-cite-card__meta">
+          <span class="publications-cite-card__journal">Proteomics</span>
+          <span class="publications-cite-card__year">2014</span>
         </p>
-        <p class="publication-meta"><span class="publication-journal">Proteomics</span> · <span class="publication-year">2014</span></p>
-        <p class="publication-authors">Röst, Hannes L; Schmitt, Uwe; Aebersold, Ruedi; Malmström, Lars</p>
+        <p class="publications-cite-card__authors">Röst, Hannes L; Schmitt, Uwe; Aebersold, Ruedi; Malmström, Lars</p>
+        <a class="publications-cite-card__action" href="https://www.ncbi.nlm.nih.gov/pubmed/25410388" target="_blank" rel="noopener noreferrer">View on PubMed</a>
       </li>
     </ul>
   </section>
 
-  <div class="publications-toolbar">
-    {{< publications-year-select >}}
-    <p class="publications-toolbar__count" data-publications-count aria-live="polite"></p>
-  </div>
+<section class="publications-bibliography" aria-label="Publication bibliography">
+{{< publications-year-select >}}
+<div class="publications-bibliography__entries">
 
-  <section class="governance-section publications-year" id="year-2025" data-publication-year="2025">
-    <h2>2025</h2>
+<section class="publications-year" id="year-2025" data-publication-year="2025">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/39881492" target="_blank" rel="noopener noreferrer">OpenMS WebApps: Building User-Friendly Solutions for MS Analysis</a></p><p class="publication-meta"><span class="publication-journal">Journal of Proteome Research</span> · <span class="publication-year">2025</span></p><p class="publication-authors">Müller, Tom David; Siraj, Arslan; Walter, Axel; Kim, Jihyung; Wein, Samuel; von Kleist, Johannes; Feroz, Ayesha; Pilz, Matteo; Jeong, Kyowon; Sing, Justin Cyril</p></li>
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/40019346" target="_blank" rel="noopener noreferrer">pyOpenMS-viz: Streamlining Mass Spectrometry Data Visualization with pandas</a></p><p class="publication-meta"><span class="publication-journal">Journal of Proteome Research</span> · <span class="publication-year">2025</span></p><p class="publication-authors">Sing, Justin Cyril; Charkow, Joshua; Walter, Axel; Gao, Mingxuan; Muller, Tom David; Bittremieux, Wout; Sachsenberg, Timo; Röst, Hannes Luc</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2024" data-publication-year="2024">
-    <h2>2024</h2>
+  <section class="publications-year" id="year-2024" data-publication-year="2024">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/39424290" target="_blank" rel="noopener noreferrer">FLASHQuant: a fast algorithm for proteoform quantification in top-down proteomics</a></p><p class="publication-meta"><span class="publication-journal">Analytical Chemistry</span> · <span class="publication-year">2024</span></p><p class="publication-authors">Kim, Jihyung; Jeong, Kyowon; Kaulich, Philipp T; Winkels, Konrad; Tholey, Andreas; Kohlbacher, Oliver</p></li>
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/38629965" target="_blank" rel="noopener noreferrer">Intensity and retention time prediction improves the rescoring of protein‐nucleic acid cross‐links</a></p><p class="publication-meta"><span class="publication-journal">Proteomics</span> · <span class="publication-year">2024</span></p><p class="publication-authors">Siraj, Arslan; Bouwmeester, Robbin; Declercq, Arthur; Welp, Luisa; Chernev, Aleksandar; Wulf, Alexander; Urlaub, Henning; Martens, Lennart; Degroeve, Sven; Kohlbacher, Oliver</p></li>
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/38965444" target="_blank" rel="noopener noreferrer">quantms: a cloud-based pipeline for quantitative proteomics enables the reanalysis of public proteomics data</a></p><p class="publication-meta"><span class="publication-journal">Nature Methods</span> · <span class="publication-year">2024</span></p><p class="publication-authors">Dai, Chengxin; Pfeuffer, Julianus; Wang, Hong; Zheng, Ping; Käll, Lukas; Sachsenberg, Timo; Demichev, Vadim; Bai, Mingze; Kohlbacher, Oliver; Perez-Riverol, Yasset</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2023" data-publication-year="2023">
-    <h2>2023</h2>
+  <section class="publications-year" id="year-2023" data-publication-year="2023">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/37173725" target="_blank" rel="noopener noreferrer">UmetaFlow: an untargeted metabolomics workflow for high-throughput data processing and analysis</a></p><p class="publication-meta"><span class="publication-journal">Journal of Cheminformatics</span> · <span class="publication-year">2023</span></p><p class="publication-authors">Kontou, Eftychia E; Walter, Axel; Alka, Oliver; Pfeuffer, Julianus; Sachsenberg, Timo; Mohite, Omkar S; Nuhamunada, Matin; Kohlbacher, Oliver; Weber, Tilmann</p></li>
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/36688502" target="_blank" rel="noopener noreferrer">Unified and standardized mass spectrometry data processing in Python using spectrum_utils</a></p><p class="publication-meta"><span class="publication-journal">Journal of proteome research</span> · <span class="publication-year">2023</span></p><p class="publication-authors">Bittremieux, Wout; Levitsky, Lev; Pilz, Matteo; Sachsenberg, Timo; Huber, Florian; Wang, Mingxun; Dorrestein, Pieter C</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2022" data-publication-year="2022">
-    <h2>2022</h2>
+  <section class="publications-year" id="year-2022" data-publication-year="2022">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/35549218" target="_blank" rel="noopener noreferrer">A comprehensive evaluation of consensus spectrum generation methods in proteomics</a></p><p class="publication-meta"><span class="publication-journal">Journal of proteome research</span> · <span class="publication-year">2022</span></p><p class="publication-authors">Luo, Xiyang; Bittremieux, Wout; Griss, Johannes; Deutsch, Eric W; Sachsenberg, Timo; Levitsky, Lev I; Ivanov, Mark V; Bubis, Julia A; Gabriels, Ralf; Webel, Henry</p></li>
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/35906205" target="_blank" rel="noopener noreferrer">FLASHIda enables intelligent data acquisition for top–down proteomics to boost proteoform identification counts</a></p><p class="publication-meta"><span class="publication-journal">Nature communications</span> · <span class="publication-year">2022</span></p><p class="publication-authors">Jeong, Kyowon; Babović, Maša; Gorshkov, Vladimir; Kim, Jihyung; Jensen, Ole N; Kohlbacher, Oliver</p></li>
@@ -73,16 +72,14 @@ hidePageTitle: true
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/35657592" target="_blank" rel="noopener noreferrer">Mass Deconvolution of Top-Down Mass Spectrometry Datasets by FLASHDeconv</a></p><p class="publication-meta"><span class="publication-journal">Proteoform Identification: Methods and Protocols</span> · <span class="publication-year">2022</span></p><p class="publication-authors">Jeong, Kyowon; Kim, Jihyung; Kohlbacher, Oliver</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2021" data-publication-year="2021">
-    <h2>2021</h2>
+  <section class="publications-year" id="year-2021" data-publication-year="2021">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/34615866" target="_blank" rel="noopener noreferrer">A proteomics sample metadata representation for multiomics integration and big data analysis</a></p><p class="publication-meta"><span class="publication-journal">Nature Communications</span> · <span class="publication-year">2021</span></p><p class="publication-authors">Dai, Chengxin; Füllgrabe, Anja; Pfeuffer, Julianus; Solovyeva, Elizaveta M; Deng, Jingwen; Moreno, Pablo; Kamatchinathan, Selvakumar; Kundu, Deepti Jaiswal; George, Nancy; Fexova, Silvie</p></li>
     <li class="publication-entry"><p class="publication-title">DIAproteomics: A multifunctional data analysis pipeline for data-independent acquisition proteomics and peptidomics</p><p class="publication-meta"><span class="publication-journal">Journal of proteome research</span> · <span class="publication-year">2021</span></p><p class="publication-authors">Bichmann, Leon; Gupta, Shubham; Rosenberger, George; Kuchenbecker, Leon; Sachsenberg, Timo; Ewels, Phil; Alka, Oliver; Pfeuffer, Julianus; Kohlbacher, Oliver; Rost, Hannes</p></li>
     <li class="publication-entry"><p class="publication-title">HLA Ligand Atlas: a benign reference of HLA-presented peptides to improve T-cell-based cancer immunotherapy</p><p class="publication-meta"><span class="publication-journal">Journal for immunotherapy of cancer</span> · <span class="publication-year">2021</span></p><p class="publication-authors">Marcu, Ana; Bichmann, Leon; Kuchenbecker, Leon; Kowalewski, Daniel Johannes; Freudenmann, Lena Katharina; Backert, Linus; Mühlenbruch, Lena; Szolek, András; Lübke, Maren; Wagner, Philipp</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2020" data-publication-year="2020">
-    <h2>2020</h2>
+  <section class="publications-year" id="year-2020" data-publication-year="2020">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/32066737" target="_blank" rel="noopener noreferrer">A computational platform for high-throughput analysis of RNA sequences and modifications by mass spectrometry</a></p><p class="publication-meta"><span class="publication-journal">Nature communications</span> · <span class="publication-year">2020</span></p><p class="publication-authors">Wein, Samuel; Andrews, Byron; Sachsenberg, Timo; Santos-Rosa, Helena; Kohlbacher, Oliver; Kouzarides, Tony; Garcia, Benjamin A; Weisser, Hendrik</p></li>
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/33067435" target="_blank" rel="noopener noreferrer">Analysis of protein-DNA interactions in chromatin by UV induced cross-linking and mass spectrometry</a></p><p class="publication-meta"><span class="publication-journal">Nature communications</span> · <span class="publication-year">2020</span></p><p class="publication-authors">Stützer, Alexandra; Welp, Luisa M; Raabe, Monika; Sachsenberg, Timo; Kappert, Christin; Wulf, Alexander; Lau, Andy M; David, Stefan-Sebastian; Chernev, Aleksandar; Kramer, Katharina</p></li>
@@ -95,8 +92,7 @@ hidePageTitle: true
     <li class="publication-entry"><p class="publication-title">Tracing incorporation of heavy water into proteins for species-specific metabolic activity in complex communities</p><p class="publication-meta"><span class="publication-journal">Journal of Proteomics</span> · <span class="publication-year">2020</span></p><p class="publication-authors">Starke, Robert; Oliphant, Kaitlyn; Jehmlich, Nico; Schäpe, Stephanie Serena; Sachsenberg, Timo; Kohlbacher, Oliver; Allen-Vercoe, Emma; von Bergen, Martin</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2019" data-publication-year="2019">
-    <h2>2019</h2>
+  <section class="publications-year" id="year-2019" data-publication-year="2019">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title">EPIFANY-A method for efficient high-confidence protein inference</p><p class="publication-meta"><span class="publication-journal">Journal of proteome research</span> · <span class="publication-year">2019</span></p><p class="publication-authors">Pfeuffer, Julianus; Sachsenberg, Timo; Dijkstra, Tjeerd MH; Serang, Oliver; Reinert, Knut; Kohlbacher, Oliver</p></li>
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/31260999" target="_blank" rel="noopener noreferrer">Food fingerprinting: Mass spectrometric determination of the cocoa shell content (Theobroma cacao L.) in cocoa products by HPLC-QTOF-MS</a></p><p class="publication-meta"><span class="publication-journal">Food chemistry</span> · <span class="publication-year">2019</span></p><p class="publication-authors">Cain, Nicolas; Alka, Oliver; Segelke, Torben; von Wuthenau, Kristian; Kohlbacher, Oliver; Fischer, Markus</p></li>
@@ -107,14 +103,12 @@ hidePageTitle: true
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/31398922" target="_blank" rel="noopener noreferrer">Untargeted metabolomics reveals molecular effects of ketogenic diet on healthy and tumor xenograft mouse models</a></p><p class="publication-meta"><span class="publication-journal">International journal of molecular sciences</span> · <span class="publication-year">2019</span></p><p class="publication-authors">Licha, David; Vidali, Silvia; Aminzadeh-Gohari, Sepideh; Alka, Oliver; Breitkreuz, Leander; Kohlbacher, Oliver; Reischl, Roland J; Feichtinger, René G; Kofler, Barbara; Huber, Christian G</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2018" data-publication-year="2018">
-    <h2>2018</h2>
+  <section class="publications-year" id="year-2018" data-publication-year="2018">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/30078747" target="_blank" rel="noopener noreferrer">Comprehensive analysis of alternative splicing across tumors from 8,705 patients</a></p><p class="publication-meta"><span class="publication-journal">Cancer cell</span> · <span class="publication-year">2018</span></p><p class="publication-authors">Kahles, André; Lehmann, Kjong-Van; Toussaint, Nora C; Hüser, Matthias; Stark, Stefan G; Sachsenberg, Timo; Stegle, Oliver; Kohlbacher, Oliver; Sander, Chris; Caesar-Johnson, Samantha J</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2017" data-publication-year="2017">
-    <h2>2017</h2>
+  <section class="publications-year" id="year-2017" data-publication-year="2017">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/28188537" target="_blank" rel="noopener noreferrer">Automated SWATH data analysis using targeted extraction of ion chromatograms</a></p><p class="publication-meta"><span class="publication-journal">Proteomics: Methods and Protocols</span> · <span class="publication-year">2017</span></p><p class="publication-authors">Röst, Hannes L; Aebersold, Ruedi; Schubert, Olga T</p></li>
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/28379341" target="_blank" rel="noopener noreferrer">BioContainers: an open-source and community-driven framework for software standardization</a></p><p class="publication-meta"><span class="publication-journal">Bioinformatics</span> · <span class="publication-year">2017</span></p><p class="publication-authors">da Veiga Leprevost, Felipe; Grüning, Björn A; Alves Aflitos, Saulo; Röst, Hannes L; Uszkoreit, Julian; Barsnes, Harald; Vaudel, Marc; Moreno, Pablo; Gatto, Laurent; Weber, Jonas</p></li>
@@ -124,8 +118,7 @@ hidePageTitle: true
     <li class="publication-entry"><p class="publication-title">The mzIdentML data standard version 1.2, supporting advances in proteome informatics</p><p class="publication-meta"><span class="publication-journal">Molecular & Cellular Proteomics</span> · <span class="publication-year">2017</span></p><p class="publication-authors">Vizcaíno, Juan Antonio; Mayer, Gerhard; Perkins, Simon R; Barsnes, Harald; Vaudel, Marc; Perez-Riverol, Yasset; Ternent, Tobias; Uszkoreit, Julian; Eisenacher, Martin; Fischer, Lutz</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2016" data-publication-year="2016">
-    <h2>2016</h2>
+  <section class="publications-year" id="year-2016" data-publication-year="2016">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/27701404" target="_blank" rel="noopener noreferrer">A multicenter study benchmarks software tools for label-free proteome quantification</a></p><p class="publication-meta"><span class="publication-journal">Nature biotechnology</span> · <span class="publication-year">2016</span></p><p class="publication-authors">Navarro, Pedro; Kuharev, Jörg; Gillet, Ludovic C; Bernhardt, Oliver M; MacLean, Brendan; Röst, Hannes L; Tate, Stephen A; Tsou, Chih-Chiang; Reiter, Lukas; Distler, Ute</p></li>
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/27786492" target="_blank" rel="noopener noreferrer">Flexible data analysis pipeline for high-confidence proteogenomics</a></p><p class="publication-meta"><span class="publication-journal">Journal of Proteome Research</span> · <span class="publication-year">2016</span></p><p class="publication-authors">Weisser, Hendrik; Wright, James C; Mudge, Jonathan M; Gutenbrunner, Petra; Choudhary, Jyoti S</p></li>
@@ -134,8 +127,7 @@ hidePageTitle: true
     <li class="publication-entry"><p class="publication-title">Ten simple rules for taking advantage of Git and GitHub</p><p class="publication-meta"><span class="publication-journal">PLoS computational biology</span> · <span class="publication-year">2016</span></p><p class="publication-authors">Perez-Riverol, Yasset; Gatto, Laurent; Wang, Rui; Sachsenberg, Timo; Uszkoreit, Julian; da Veiga Leprevost, Felipe; Fufezan, Christian; Ternent, Tobias; Eglen, Stephen J; Katz, Daniel S</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2015" data-publication-year="2015">
-    <h2>2015</h2>
+  <section class="publications-year" id="year-2015" data-publication-year="2015">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/25788625" target="_blank" rel="noopener noreferrer">Efficient visualization of high-throughput targeted proteomics experiments: TAPIR</a></p><p class="publication-meta"><span class="publication-journal">Bioinformatics</span> · <span class="publication-year">2015</span></p><p class="publication-authors">Röst, Hannes L; Rosenberger, George; Aebersold, Ruedi; Malmström, Lars</p></li>
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/25927999" target="_blank" rel="noopener noreferrer">Fast and efficient XML data access for next-generation mass spectrometry</a></p><p class="publication-meta"><span class="publication-journal">PloS one</span> · <span class="publication-year">2015</span></p><p class="publication-authors">Röst, Hannes L; Schmitt, Uwe; Aebersold, Ruedi; Malmström, Lars</p></li>
@@ -146,8 +138,7 @@ hidePageTitle: true
     <li class="publication-entry"><p class="publication-title">Workflows for automated downstream data analysis and visualization in large‐scale computational mass spectrometry</p><p class="publication-meta"><span class="publication-journal">Proteomics</span> · <span class="publication-year">2015</span></p><p class="publication-authors">Aiche, Stephan; Sachsenberg, Timo; Kenar, Erhan; Walzer, Mathias; Wiswedel, Bernd; Kristl, Theresa; Boyles, Matthew; Duschl, Albert; Huber, Christian G; Berthold, Michael R</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2014" data-publication-year="2014">
-    <h2>2014</h2>
+  <section class="publications-year" id="year-2014" data-publication-year="2014">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/24176773" target="_blank" rel="noopener noreferrer">Automated label-free quantification of metabolites from liquid chromatography–mass spectrometry data</a></p><p class="publication-meta"><span class="publication-journal">Molecular & Cellular Proteomics</span> · <span class="publication-year">2014</span></p><p class="publication-authors">Kenar, Erhan; Franken, Holger; Forcisi, Sara; Wörmann, Kilian; Häring, Hans-Ulrich; Lehmann, Rainer; Schmitt-Kopplin, Philippe; Zell, Andreas; Kohlbacher, Oliver</p></li>
     <li class="publication-entry"><p class="publication-title">OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data</p><p class="publication-meta"><span class="publication-journal">Nature biotechnology</span> · <span class="publication-year">2014</span></p><p class="publication-authors">Röst, Hannes L; Rosenberger, George; Navarro, Pedro; Gillet, Ludovic; Miladinović, Saša M; Schubert, Olga T; Wolski, Witold; Collins, Ben C; Malmström, Johan; Malmström, Lars</p></li>
@@ -156,39 +147,34 @@ hidePageTitle: true
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/24760958" target="_blank" rel="noopener noreferrer">qcML: an exchange format for quality control metrics from mass spectrometry experiments</a></p><p class="publication-meta"><span class="publication-journal">Molecular & Cellular Proteomics</span> · <span class="publication-year">2014</span></p><p class="publication-authors">Walzer, Mathias; Pernas, Lucia Espona; Nasso, Sara; Bittremieux, Wout; Nahnsen, Sven; Kelchtermans, Pieter; Pichler, Peter; van den Toorn, Henk WP; Staes, An; Vandenbussche, Jonathan</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2013" data-publication-year="2013">
-    <h2>2013</h2>
+  <section class="publications-year" id="year-2013" data-publication-year="2013">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title">An automated pipeline for high-throughput label-free quantitative proteomics</p><p class="publication-meta"><span class="publication-journal">Journal of proteome research</span> · <span class="publication-year">2013</span></p><p class="publication-authors">Weisser, Hendrik; Nahnsen, Sven; Grossmann, Jonas; Nilse, Lars; Quandt, Andreas; Brauer, Hendrik; Sturm, Marc; Kenar, Erhan; Kohlbacher, Oliver; Aebersold, Ruedi</p></li>
     <li class="publication-entry"><p class="publication-title">The mzQuantML data standard for mass spectrometry-based quantitative studies in proteomics</p><p class="publication-meta"><span class="publication-journal">Molecular & Cellular Proteomics</span> · <span class="publication-year">2013</span></p><p class="publication-authors">Walzer, Mathias; Qi, Da; Mayer, Gerhard; Uszkoreit, Julian; Eisenacher, Martin; Sachsenberg, Timo; Gonzalez-Galarza, Faviel F; Fan, Jun; Bessant, Conrad; Deutsch, Eric W</p></li>
     <li class="publication-entry"><p class="publication-title">Tools for label-free peptide quantification</p><p class="publication-meta"><span class="publication-journal">Molecular & Cellular Proteomics</span> · <span class="publication-year">2013</span></p><p class="publication-authors">Nahnsen, Sven; Bielow, Chris; Reinert, Knut; Kohlbacher, Oliver</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2012" data-publication-year="2012">
-    <h2>2012</h2>
+  <section class="publications-year" id="year-2012" data-publication-year="2012">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/23176520" target="_blank" rel="noopener noreferrer">In silico design of targeted SRM-based experiments</a></p><p class="publication-meta"><span class="publication-journal">BMC bioinformatics</span> · <span class="publication-year">2012</span></p><p class="publication-authors">Nahnsen, Sven; Kohlbacher, Oliver</p></li>
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/22583024" target="_blank" rel="noopener noreferrer">TOPPAS: a graphical workflow editor for the analysis of high-throughput proteomics data</a></p><p class="publication-meta"><span class="publication-journal">Journal of proteome research</span> · <span class="publication-year">2012</span></p><p class="publication-authors">Junker, Johannes; Bielow, Chris; Bertsch, Andreas; Sturm, Marc; Reinert, Knut; Kohlbacher, Oliver</p></li>
     <li class="publication-entry"><p class="publication-title">The mzIdentML data standard for mass spectrometry-based proteomics results</p><p class="publication-meta"><span class="publication-journal">Molecular & cellular proteomics</span> · <span class="publication-year">2012</span></p><p class="publication-authors">Jones, Andrew R; Eisenacher, Martin; Mayer, Gerhard; Kohlbacher, Oliver; Siepen, Jennifer; Hubbard, Simon J; Selley, Julian N; Searle, Brian C; Shofstahl, James; Seymour, Sean L</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2011" data-publication-year="2011">
-    <h2>2011</h2>
+  <section class="publications-year" id="year-2011" data-publication-year="2011">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/21526843" target="_blank" rel="noopener noreferrer">MSSimulator: Simulation of mass spectrometry data</a></p><p class="publication-meta"><span class="publication-journal">Journal of proteome research</span> · <span class="publication-year">2011</span></p><p class="publication-authors">Bielow, Chris; Aiche, Stephan; Andreotti, Sandro; Reinert, Knut</p></li>
     <li class="publication-entry"><p class="publication-title">OpenMS and TOPP: open source software for LC-MS data analysis</p><p class="publication-meta"><span class="publication-journal">Data Mining in Proteomics: From Standards to Applications</span> · <span class="publication-year">2011</span></p><p class="publication-authors">Bertsch, Andreas; Gröpl, Clemens; Reinert, Knut; Kohlbacher, Oliver</p></li>
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/21644507" target="_blank" rel="noopener noreferrer">Probabilistic consensus scoring improves tandem mass spectrometry peptide identification</a></p><p class="publication-meta"><span class="publication-journal">Journal of proteome research</span> · <span class="publication-year">2011</span></p><p class="publication-authors">Nahnsen, Sven; Bertsch, Andreas; Rahnenführer, Jörg; Nordheim, Alfred; Kohlbacher, Oliver</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2010" data-publication-year="2010">
-    <h2>2010</h2>
+  <section class="publications-year" id="year-2010" data-publication-year="2010">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/20201589" target="_blank" rel="noopener noreferrer">Optimal de novo design of MRM experiments for rapid assay development in targeted proteomics</a></p><p class="publication-meta"><span class="publication-journal">Journal of proteome research</span> · <span class="publication-year">2010</span></p><p class="publication-authors">Bertsch, Andreas; Jung, Stephan; Zerck, Alexandra; Pfeifer, Nico; Nahnsen, Sven; Henneges, Carsten; Nordheim, Alfred; Kohlbacher, Oliver</p></li>
     <li class="publication-entry"><p class="publication-title">TOPP goes Rapid The OpenMS Proteomics Pipeline in a Grid-Enabled Web Portal</p><p class="publication-meta"><span class="publication-journal">Proceedings of the 2010 10th IEEE/ACM International Conference on Cluster, Cloud and Grid Computing</span> · <span class="publication-year">2010</span></p><p class="publication-authors">Gesing, Sandra; van Hemert, Jano; Koetsier, Jos; Bertsch, Andreas; Kohlbacher, Oliver</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2009" data-publication-year="2009">
-    <h2>2009</h2>
+  <section class="publications-year" id="year-2009" data-publication-year="2009">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title">De novo peptide sequencing by tandem MS using complementary CID and electron transfer dissociation</p><p class="publication-meta"><span class="publication-journal">Electrophoresis</span> · <span class="publication-year">2009</span></p><p class="publication-authors">Bertsch, Andreas; Leinenbach, Andreas; Pervukhin, Anton; Lubeck, Markus; Hartmer, Ralf; Baessmann, Carsten; Elnakady, Yasser Abbas; Müller, Rolf; Böcker, Sebastian; Huber, Christian G</p></li>
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/19492844" target="_blank" rel="noopener noreferrer">Improving peptide identification in proteome analysis by a two-dimensional retention time filtering approach</a></p><p class="publication-meta"><span class="publication-journal">Journal of proteome research</span> · <span class="publication-year">2009</span></p><p class="publication-authors">Pfeifer, Nico; Leinenbach, Andreas; Huber, Christian G; Kohlbacher, Oliver</p></li>
@@ -197,8 +183,7 @@ hidePageTitle: true
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/19425593" target="_blank" rel="noopener noreferrer">TOPPView: an open-source viewer for mass spectrometry data</a></p><p class="publication-meta"><span class="publication-journal">Journal of proteome research</span> · <span class="publication-year">2009</span></p><p class="publication-authors">Sturm, Marc; Kohlbacher, Oliver</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2008" data-publication-year="2008">
-    <h2>2008</h2>
+  <section class="publications-year" id="year-2008" data-publication-year="2008">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title">Analysis of mass spectrometric data: peak picking and map alignment</p><p class="publication-meta"><span class="publication-journal">Freie Universtaet Berlin</span> · <span class="publication-year">2008</span></p><p class="publication-authors">Lange, Eva</p></li>
     <li class="publication-entry"><p class="publication-title">Computational quantification of peptides from LC-MS data</p><p class="publication-meta"><span class="publication-journal">Journal of Computational Biology</span> · <span class="publication-year">2008</span></p><p class="publication-authors">Schulz-Trieglaff, Ole; Hussong, Rene; Gröpl, Clemens; Leinenbach, Andreas; Hildebrandt, Andreas; Huber, Christian; Reinert, Knut</p></li>
@@ -207,8 +192,7 @@ hidePageTitle: true
     <li class="publication-entry"><p class="publication-title">OpenMS–an open-source software framework for mass spectrometry</p><p class="publication-meta"><span class="publication-journal">BMC bioinformatics</span> · <span class="publication-year">2008</span></p><p class="publication-authors">Sturm, Marc; Bertsch, Andreas; Gröpl, Clemens; Hildebrandt, Andreas; Hussong, Rene; Lange, Eva; Pfeifer, Nico; Schulz-Trieglaff, Ole; Zerck, Alexandra; Reinert, Knut</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2007" data-publication-year="2007">
-    <h2>2007</h2>
+  <section class="publications-year" id="year-2007" data-publication-year="2007">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title">A fast and accurate algorithm for the quantification of peptides from mass spectrometry data</p><p class="publication-meta"><span class="publication-journal">Research in Computational Molecular Biology: 11th Annual International Conference, RECOMB 2007, Oakland, CA, USA, April 21-25, 2007. Proceedings 11</span> · <span class="publication-year">2007</span></p><p class="publication-authors">Schulz-Trieglaff, Ole; Hussong, Rene; Gröpl, Clemens; Hildebrandt, Andreas; Reinert, Knut</p></li>
     <li class="publication-entry"><p class="publication-title">A geometric approach for the alignment of liquid chromatography—mass spectrometry data</p><p class="publication-meta"><span class="publication-journal">Bioinformatics</span> · <span class="publication-year">2007</span></p><p class="publication-authors">Lange, Eva; Gröpl, Clemens; Schulz-Trieglaff, Ole; Leinenbach, Andreas; Huber, Christian; Reinert, Knut</p></li>
@@ -216,14 +200,12 @@ hidePageTitle: true
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/17237091" target="_blank" rel="noopener noreferrer">TOPP—the OpenMS proteomics pipeline</a></p><p class="publication-meta"><span class="publication-journal">Bioinformatics</span> · <span class="publication-year">2007</span></p><p class="publication-authors">Kohlbacher, Oliver; Reinert, Knut; Gröpl, Clemens; Lange, Eva; Pfeifer, Nico; Schulz-Trieglaff, Ole; Sturm, Marc</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2006" data-publication-year="2006">
-    <h2>2006</h2>
+  <section class="publications-year" id="year-2006" data-publication-year="2006">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title"><a class="publication-title-link" href="https://www.ncbi.nlm.nih.gov/pubmed/17094243" target="_blank" rel="noopener noreferrer">High-accuracy peak picking of proteomics data using wavelet techniques</a></p><p class="publication-meta"><span class="publication-journal">Biocomputing 2006</span> · <span class="publication-year">2006</span></p><p class="publication-authors">Lange, Eva; Gröpl, Clemens; Reinert, Knut; Kohlbacher, Oliver; Hildebrandt, Andreas</p></li>
     </ul>
   </section>
-  <section class="governance-section publications-year" id="year-2005" data-publication-year="2005">
-    <h2>2005</h2>
+  <section class="publications-year" id="year-2005" data-publication-year="2005">
     <ul class="publication-list">
     <li class="publication-entry"><p class="publication-title">Absolute quantification of myoglobin content in blood serum using HPLC/MS through automatic bioinformatics analysis</p><p class="publication-meta"><span class="publication-journal">MOLECULAR & CELLULAR PROTEOMICS</span> · <span class="publication-year">2005</span></p><p class="publication-authors">Groepl, Clemens; Lange, Eva; Reinert, Knut; Kohlbacher, Oliver; Sturm, Marc; Huber, Christian G; Mayr, Bettina M; Klein, Christoph L</p></li>
     <li class="publication-entry"><p class="publication-title">Algorithms for the automated absolute quantification of diagnostic markers in complex proteomics samples</p><p class="publication-meta"><span class="publication-journal">Computational Life Sciences: First International Symposium, CompLife 2005, Konstanz, Germany, September 25-27, 2005. Proceedings 1</span> · <span class="publication-year">2005</span></p><p class="publication-authors">Gröpl, Clemens; Lange, Eva; Reinert, Knut; Kohlbacher, Oliver; Sturm, Marc; Huber, Christian G; Mayr, Bettina M; Klein, Christoph L</p></li>
@@ -231,3 +213,6 @@ hidePageTitle: true
     <li class="publication-entry"><p class="publication-title">OpenMS-Software for Mass Spectrometry</p><p class="publication-meta"><span class="publication-journal">Poster presented at the MBI Workshop on Computational Proteomics and Mass Spectrometry</span> · <span class="publication-year">2005</span></p><p class="publication-authors">Gröpl, C; Hildebrandt, A; Kohlbacher, O; Lange, E; Lövenich, S; Sturm, M</p></li>
     </ul>
   </section>
+
+</div>
+</section>

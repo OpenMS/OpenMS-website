@@ -66,6 +66,7 @@ languages:
         enabled: true
         label: News
         text: Workshop at University of Helsinki on April 30th 2026.
+        link: /news/helsinki_workshop_2026/
       contributePage:
         eyebrow: Community
         subtitle: >-
@@ -111,11 +112,14 @@ languages:
       applicationsPage:
         eyebrow: Projects
         readMoreLabel: Read application
+        catalogTitle: Integrated pipelines & workflows
+        catalogLead: Application guides with setup steps, workflows, and links to run analyses on your data.
       newsSection:
         eyebrow: OpenMS
         title: News
         subtitle: Announcements, releases, workshops, and community updates from OpenMS.
-        yearFilterLabel: Filter by year
+        yearFilterLabel: Filter news by year
+        listTitle: All news
         allYearsLabel: All
         readMoreLabel: Read article
         backToNewsLabel: Back to news
@@ -125,6 +129,7 @@ languages:
       calendarSection:
         eyebrow: Community
         title: Community calendar
+        titleHighlight: calendar
         subtitle: Upcoming OpenMS meetings, workshops, and community events.
       # Donate page (/donate/) — paste URLs from Zeffy: Donations → My forms → Share
       donatePage:
@@ -181,28 +186,38 @@ languages:
             benefits:
               - Text mention and link on the sponsor page (lower section)
               - Alphabetical placement among peers at the same level
-      trustedBySection:
-        eyebrow: Trusted by
-        title: As used by leading teams
-        titleHighlight: leading teams
-        subtitle: Researchers and organizations worldwide rely on OpenMS for mass spectrometry workflows.
-        linkLabel: Visit website
-      trustedBy:
+      universityPartners:
+        - name: University of Tübingen
+          logo: /images/logos/logo-uni-tuebingen.png
+          url: https://kohlbacherlab.org/
+        - name: FU Berlin
+          logo: /images/logos/fu-berlin.png
+          url: http://www.mi.fu-berlin.de/en/inf/groups/abi/index.html
+        - name: ETH Zürich
+          logo: /images/logos/zurich.jpeg
+          url: http://www.imsb.ethz.ch/research/aebersold.html
+        - name: Wellcome Sanger Institute
+          logo: /images/logos/logo-sanger.png
+          url: http://www.sanger.ac.uk/
+        - name: EMBL-EBI
+          logo: /images/logos/emblebi.png
+          url: https://www.ebi.ac.uk/
+        - name: University of Toronto
+          logo: /images/logos/toronto.jpeg
+          url: http://www.moleculargenetics.utoronto.ca/faculty/2017/7/19/hannes-rost
+        - name: DTU Biosustain
+          logo: /images/logos/DTU-logo.png
+          url: https://www.biosustain.dtu.dk/
+        - name: ZIB
+          logo: /images/logos/ziblogo.png
+          url: https://www.zib.de/
         - name: Immatics
           logo: /images/logos/immatics.png
           url: https://immatics.com/
         - name: Korean team
           abbr: KR
-          # url: https://example.com
-        - name: University of Toronto
-          logo: /images/logos/toronto.jpeg
-          logoSize: large
-          url: http://www.moleculargenetics.utoronto.ca/faculty/2017/7/19/hannes-rost
-        - name: University of Tübingen
-          logo: /images/logos/logo-uni-tuebingen.png
-          url: https://kohlbacherlab.org/
       navbarlogo:
-        image: OpenMS_transparent_blackFont.png
+        image: logos/OpenMS_transparent_blackFont.svg
         link: /
         altText: OpenMS
       navbarSearch:
@@ -225,13 +240,46 @@ languages:
         stats:
           - value: 10
             suffix: "+"
-            label: Years Active
+            label: Years active
+            description: Over a decade of open-source development for mass spectrometry workflows.
           - value: 1000
             suffix: "+"
             label: Researchers
+            description: Scientists and developers worldwide building and using OpenMS tools.
           - value: 3.5
             decimals: 1
-            label: Latest Version
+            prefix: v
+            label: Latest version
+            description: Continuous releases with new algorithms, formats, and analysis workflows.
+
+      communitySection:
+        eyebrow: Community
+        title: Everyone is welcome
+        titleHighlight: welcome
+        lead: >-
+          OpenMS is built by a diverse group of contributors around the world.
+          Whether you are new to mass spectrometry or a seasoned developer, there
+          is a place for you in our community.
+        welcomeNote: >-
+          We are committed to being open, inclusive, and welcoming — read the
+          [Code of Conduct](/code-of-conduct) for how we work together.
+        image: /images/community/community-tech-bg.svg
+        imageAlt: Abstract mass spectrometry data visualization with spectral peaks and connected analysis workflows
+        ctaText: Get involved
+        ctaUrl: /contribute/
+
+      eventsSection:
+        eyebrow: Events
+        title: Upcoming events
+        titleHighlight: events
+        lead: >-
+          Workshops, developer meetings, and community outreach around the world.
+        calendarText: View full calendar
+        calendarUrl: /calendar/
+        limit: 4
+        emptyEvents: >-
+          No upcoming events scheduled right now. Browse the calendar for past
+          highlights or join the community to hear about the next meetup.
 
       homePage:
         pathwaysEyebrow: Get started
@@ -356,13 +404,6 @@ languages:
         showAll:
           text: Show all projects
           url: /applications
-        links:
-          - text: TOPP Tools
-            url: https://openms.readthedocs.io/en/latest/getting-started/topp-tools.html
-            description: Command-line tools for proteomics and metabolomics data analysis.
-          - text: pyOpenMS
-            url: https://pyopenms.readthedocs.io/en/latest/
-            description: Python bindings for scripting workflows, prototyping, and integrations.
 
       webapps:
         - name: FLASH App
@@ -433,6 +474,8 @@ languages:
                 link: https://openms.readthedocs.io/en/latest/about/installation.html
               - text: Documentation
                 link: https://openms.readthedocs.io/en/latest/
+              - text: Help
+                link: /help/
               - text: Citing OpenMS
                 link: /citing-openms
           column2:
@@ -473,6 +516,14 @@ languages:
       navbar:
         - title: Infrastructure
           url: /openms-lib/
+          sublinks:
+            - title: OpenMS-lib
+              url: /openms-lib/
+            - title: pyOpenMS
+              url: https://pyopenms.readthedocs.io/en/latest/
+              is_external: true
+            - title: OpenMS Web Apps
+              url: /applications/
         - title: Projects
           url: /applications
           sublinks:

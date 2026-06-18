@@ -26,7 +26,7 @@
   margin-top: 0;
 }
 
-.community-calendar-hero {
+.calendar-page-hero {
   margin-bottom: var(--olib-section-y);
 }
 
@@ -317,10 +317,6 @@
   padding-inline: 0;
 }
 
-.community-calendar-layout .openms-lib-hero__actions {
-  gap: 0.75rem;
-}
-
 .community-calendar-layout .community-calendar__toolbar {
   gap: 0.75rem 0.85rem;
 }
@@ -374,33 +370,6 @@
 
   .community-calendar__today {
     margin-left: 0;
-  }
-}
-
-@media (max-width: 720px) {
-  .community-calendar-layout {
-    --olib-section-y: clamp(2.75rem, 6vh, 3.5rem);
-    --olib-pad-x: clamp(1rem, 4vw, 1.25rem);
-  }
-
-  .community-calendar-hero .openms-lib-hero__title {
-    max-width: none;
-    font-size: clamp(1.75rem, 7vw, 2.25rem);
-  }
-
-  .community-calendar-hero .openms-lib-hero__actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.55rem;
-  }
-
-  .community-calendar-hero .openms-lib-hero__actions .openms-lib-btn--primary {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .community-calendar-hero .openms-lib-hero__actions .openms-lib-btn--ghost {
-    align-self: center;
   }
 }
 

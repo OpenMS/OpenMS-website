@@ -6,16 +6,11 @@
 {{- $bento := eq $layout "bento" }}
 {{- with $stats }}
 {{- if $bento }}
-{{- $featured := index . 1 -}}
-{{- $sideA := index . 0 -}}
-{{- $sideB := index . 2 -}}
 <div class="{{ $class }}" role="group" aria-label="Key metrics">
-  <div class="hero-home__bento-stack">
-    {{ partial "hero-stat-card.html" (dict "stat" $featured "modifier" "featured") }}
-    <div class="hero-home__bento-duo">
-      {{ partial "hero-stat-card.html" (dict "stat" $sideA) }}
-      {{ partial "hero-stat-card.html" (dict "stat" $sideB "modifier" "accent") }}
-    </div>
+  <div class="hero-home__metrics">
+    {{- range . }}
+    {{ partial "hero-stat-card.html" (dict "stat" .) }}
+    {{- end }}
   </div>
 </div>
 {{- else }}

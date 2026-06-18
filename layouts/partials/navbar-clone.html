@@ -5,8 +5,9 @@
   <div class="container is-max-widescreen">
     <div class="navbar-brand">
       {{- if $navbarLogo }}
+      {{- $logoImage := "logos/OpenMS_transparent_whiteFont.svg" -}}
       <a class="navbar-item navbar-brand-link" href="{{ $navbarLogo.link }}">
-        <img class="navbar-logo" src="{{ printf "/images/%s" $navbarLogo.image | relURL }}" alt="{{ default (printf "%s logo" $title) $navbarLogo.altText }}">
+        <img class="navbar-logo" src="{{ printf "/images/%s" $logoImage | relURL }}" alt="{{ default (printf "%s logo" $title) $navbarLogo.altText }}">
         {{- with $navbarLogo.text }}
         <span class="navbar-logo-text">{{ . }}</span>
         {{- end }}

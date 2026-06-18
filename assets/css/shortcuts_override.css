@@ -74,6 +74,12 @@
   display: none;
 }
 
+/* Donate page: hide left TOC */
+.content-padding:has(.donate-page-layout) .shortcuts-container,
+.donate-page-layout .shortcuts-container {
+  display: none;
+}
+
 /* Community calendar: hide left TOC */
 .content-padding:has(.community-calendar-layout) .shortcuts-container,
 .community-calendar-layout .shortcuts-container {

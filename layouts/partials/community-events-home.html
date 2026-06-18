@@ -1,0 +1,118 @@
+{{- $cfg := site.Params.eventsSection | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Events" -}}
+{{- $title := index $cfg "title" | default "Upcoming events" -}}
+{{- $titleHighlight := index $cfg "titleHighlight" | default "events" -}}
+{{- $lead := index $cfg "lead" | default "Workshops, developer meetings, and community outreach around the world." -}}
+{{- $calendarText := index $cfg "calendarText" | default "View full calendar" -}}
+{{- $calendarUrl := index $cfg "calendarUrl" | default "/calendar/" -}}
+{{- $eventsLimit := index $cfg "limit" | default 4 -}}
+{{- $emptyEvents := index $cfg "emptyEvents" | default "No upcoming events scheduled right now. Browse the calendar for past highlights or join the community to hear about the next meetup." -}}
+{{- $allEvents := site.Data.community_events.events | default (slice) -}}
+{{- $upcoming := slice -}}
+{{- range $allEvents }}
+  {{- $endStr := .end | default .start -}}
+  {{- $end := time $endStr -}}
+  {{- if not ($end.Before now) }}
+    {{- $upcoming = $upcoming | append . -}}
+  {{- end }}
+{{- end }}
+{{- $upcoming = sort $upcoming "start" -}}
+{{- $upcoming = first $eventsLimit $upcoming -}}
+{{- $eventCount := len $upcoming -}}
+<section class="community-events-home" aria-labelledby="community-events-home-title">
+  <div class="community-events-home__inner">
+    <header class="community-events-home__header">
+      <div class="community-events-home__header-main">
+        <p class="community-events-home__eyebrow">
+          <span class="community-events-home__eyebrow-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="14" height="14" focusable="false" aria-hidden="true">
+              <path fill="currentColor" d="M5 1.75a.75.75 0 0 0-.75.75v.5H3.25A2.25 2.25 0 0 0 1 5.25v7.5A2.25 2.25 0 0 0 3.25 15h9.5A2.25 2.25 0 0 0 15 12.75v-7.5A2.25 2.25 0 0 0 12.75 3H11.75v-.5a.75.75 0 0 0-1.5 0v.5H5.75v-.5A.75.75 0 0 0 5 1.75zM3.25 4.5h9.5a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 1-.75.75H3.25a.75.75 0 0 1-.75-.75V5.25a.75.75 0 0 1 .75-.75z"/>
+            </svg>
+          </span>
+          {{ $eyebrow }}
+        </p>
+        <h2 id="community-events-home-title" class="community-events-home__title">
+          {{- if and $titleHighlight (in $title $titleHighlight) }}
+          {{ replace $title $titleHighlight (printf "<span class=\"community-events-home__title-accent\">%s</span>" $titleHighlight) | safeHTML }}
+          {{- else }}
+          {{ $title }}
+          {{- end }}
+        </h2>
+        {{- with $lead }}
+        <p class="community-events-home__lead">{{ . }}</p>
+        {{- end }}
+      </div>
+    </header>
+
+    {{- if gt $eventCount 0 }}
+    <ul
+      class="community-events-home__grid"
+      role="list"
+      aria-label="Upcoming community events"
+    >
+      {{- range $upcoming }}
+      {{- $start := time .start -}}
+      {{- $eventUrl := .news_url | default .url | default "" -}}
+      {{- $isExternal := and $eventUrl (in $eventUrl "://") -}}
+      {{- $category := .category | default "event" -}}
+      {{- $categoryLabel := replace $category "-" " " | title -}}
+      <li class="community-events-home__item" role="listitem">
+        <article class="community-events-home__card community-events-home__card--{{ $category }}">
+          {{- if $eventUrl }}
+          <a
+            class="community-events-home__card-link"
+            href="{{ $eventUrl }}"
+            {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{- end }}
+          >
+          {{- else }}
+          <div class="community-events-home__card-link community-events-home__card-link--static">
+          {{- end }}
+            <div class="community-events-home__date-block">
+              <time
+                class="community-events-home__date"
+                datetime="{{ .start }}"
+                {{- if and .end (ne .end .start) }}
+                title="{{ $start.Format "Jan 2, 2006" }} – {{ (time .end).Format "Jan 2, 2006" }}"
+                {{- end }}
+              >
+                <span class="community-events-home__date-day">{{ $start.Format "2" }}</span>
+                <span class="community-events-home__date-month">{{ $start.Format "Jan" | upper }}</span>
+              </time>
+            </div>
+            <div class="community-events-home__card-body">
+              <h3 class="community-events-home__card-title">{{ .title }}</h3>
+              {{- with .location }}
+              <p class="community-events-home__card-location">{{ . }}</p>
+              {{- end }}
+            </div>
+          {{- if $eventUrl }}
+          </a>
+          {{- else }}
+          </div>
+          {{- end }}
+        </article>
+      </li>
+      {{- end }}
+    </ul>
+    <footer class="community-events-home__footer">
+      <a class="community-events-home__calendar-btn openms-btn-primary openms-step__cta" href="{{ $calendarUrl }}">{{ $calendarText }}</a>
+    </footer>
+    {{- else }}
+    <div class="community-events-home__empty">
+      <div class="community-events-home__empty-visual" aria-hidden="true">
+        <svg class="community-events-home__empty-icon" viewBox="0 0 120 120" focusable="false" aria-hidden="true">
+          <rect x="18" y="24" width="84" height="76" rx="12" fill="rgba(45,108,223,0.08)" stroke="rgba(45,108,223,0.2)" stroke-width="2"/>
+          <rect x="18" y="24" width="84" height="20" rx="12" fill="rgba(49,87,233,0.12)"/>
+          <circle cx="38" cy="52" r="5" fill="#3157e9"/>
+          <circle cx="60" cy="52" r="5" fill="#5280f0"/>
+          <circle cx="82" cy="52" r="5" fill="#3157e9"/>
+          <rect x="32" y="68" width="56" height="8" rx="4" fill="rgba(26,43,74,0.12)"/>
+          <rect x="40" y="84" width="40" height="8" rx="4" fill="rgba(26,43,74,0.08)"/>
+        </svg>
+      </div>
+      <p class="community-events-home__empty-text">{{ $emptyEvents }}</p>
+      <a class="community-events-home__calendar-btn openms-btn-primary openms-step__cta" href="{{ $calendarUrl }}">{{ $calendarText }}</a>
+    </div>
+    {{- end }}
+  </div>
+</section>

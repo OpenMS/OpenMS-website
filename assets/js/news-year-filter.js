@@ -4,12 +4,20 @@
   var root = document.querySelector("[data-news-year-filter]");
   if (!root) return;
 
-  var buttons = root.querySelectorAll("[data-news-year-btn]");
-  var items = root.querySelectorAll(".news-card[data-news-year]");
-  var headings = root.querySelectorAll("[data-news-year-heading]");
-  var emptyEl = root.querySelector("[data-news-empty]");
-  var countEl = root.querySelector("[data-news-count]");
-  var total = items.length;
+  var selectEl = root.querySelector("[data-news-year-select]");
+  var allSections = root.querySelectorAll("[data-news-year]");
+  if (!selectEl || !allSections.length) return;
+
+  var allYears = [];
+  allSections.forEach(function (section) {
+    var year = section.getAttribute("data-news-year");
+    if (year && allYears.indexOf(year) === -1) {
+      allYears.push(year);
+    }
+  });
+  allYears.sort(function (a, b) {
+    return Number(b) - Number(a);
+  });
 
   function getYearFromUrl() {
     try {
@@ -21,7 +29,7 @@
 
   function setYearInUrl(year) {
     var url = new URL(window.location.href);
-    if (!year || year === "all") {
+    if (!year || year === allYears[0]) {
       url.searchParams.delete("year");
     } else {
       url.searchParams.set("year", year);
@@ -29,80 +37,54 @@
     window.history.replaceState({}, "", url);
   }
 
-  function setActiveButton(year) {
-    buttons.forEach(function (btn) {
-      var value = btn.getAttribute("data-news-year-btn");
-      var active = value === year || (year === "all" && value === "all");
-      btn.classList.toggle("is-active", active);
-      btn.setAttribute("aria-pressed", active ? "true" : "false");
-    });
-  }
-
   function applyFilter(year) {
-    var showAll = !year || year === "all";
-    var visible = 0;
-
-    items.forEach(function (item) {
-      var itemYear = item.getAttribute("data-news-year") || "";
-      var show = showAll || itemYear === year;
-      if (show) {
-        item.removeAttribute("data-news-hidden");
-      } else {
-        item.setAttribute("data-news-hidden", "true");
-      }
-      if (show) visible += 1;
+    allSections.forEach(function (section) {
+      var sectionYear = section.getAttribute("data-news-year") || "";
+      var show = sectionYear === year;
+      section.hidden = !show;
+      section.setAttribute("aria-hidden", show ? "false" : "true");
     });
 
-    headings.forEach(function (heading) {
-      var headingYear = heading.getAttribute("data-news-year-heading") || "";
-      var showHeading = showAll || headingYear === year;
-      heading.hidden = !showHeading;
-    });
-
-    if (emptyEl) {
-      emptyEl.hidden = showAll || visible > 0;
-    }
-
-    if (countEl) {
-      if (showAll) {
-        countEl.textContent = total + " " + (total === 1 ? "article" : "articles");
-      } else {
-        countEl.textContent =
-          visible + " of " + total + " " + (total === 1 ? "article" : "articles");
-      }
-    }
+    root.setAttribute("data-active-year", year);
   }
 
   function selectYear(year) {
-    var value = year || "all";
-    setActiveButton(value);
-    applyFilter(value);
-    setYearInUrl(value);
+    if (allYears.indexOf(year) === -1) {
+      year = allYears[0];
+    }
+    selectEl.value = year;
+    applyFilter(year);
+    setYearInUrl(year);
   }
 
   function initYear() {
     var fromUrl = getYearFromUrl();
-    if (fromUrl) {
-      var match = root.querySelector('[data-news-year-btn="' + fromUrl + '"]');
-      if (match) return fromUrl;
+    if (fromUrl && allYears.indexOf(fromUrl) !== -1) {
+      return fromUrl;
     }
-    var active = root.querySelector(".news-page__year-btn.is-active");
-    if (active) {
-      return active.getAttribute("data-news-year-btn") || "all";
-    }
-    var fallback = root.getAttribute("data-news-default-year");
-    return fallback || "all";
+    return allYears[0];
   }
 
-  buttons.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      selectYear(btn.getAttribute("data-news-year-btn"));
+  function buildSelect() {
+    selectEl.innerHTML = "";
+
+    allYears.forEach(function (year) {
+      var opt = document.createElement("option");
+      opt.value = year;
+      opt.textContent = year;
+      selectEl.appendChild(opt);
     });
+  }
+
+  selectEl.addEventListener("change", function () {
+    selectYear(selectEl.value);
   });
 
+  buildSelect();
   selectYear(initYear());
+  root.classList.add("news-year-filter--ready");
 
   window.addEventListener("popstate", function () {
-    selectYear(getYearFromUrl() || "all");
+    selectYear(initYear());
   });
 })();

@@ -24,10 +24,6 @@
   margin-bottom: var(--olib-section-y);
 }
 
-.about-page-hero .openms-lib-hero__title {
-  max-width: 24ch;
-}
-
 .about-page,
 .research-partnerships-page,
 .sponsor-us-page {
@@ -129,12 +125,18 @@
 .about-section h2 {
   margin-top: 0;
   margin-bottom: 0.75rem;
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+  line-height: 1.25;
+  text-wrap: balance;
   color: var(--openms-navy);
 }
 
 .about-page .governance-links h2 {
   margin-top: 0;
   margin-bottom: 0.75rem;
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+  line-height: 1.25;
+  text-wrap: balance;
   color: var(--openms-navy) !important;
 }
 
@@ -144,6 +146,8 @@
 
 .about-section p {
   max-width: 72ch;
+  font-size: clamp(0.9rem, 2.4vw, var(--openms-body-size-lg));
+  line-height: 1.6;
 }
 
 .about-two-col {
@@ -266,7 +270,9 @@
 
 /* Navbar-style CTA motion (about page) */
 .about-page-layout .openms-lib-btn,
-.about-page-layout .about-page .about-donate-actions > a {
+.about-page-layout .about-page .about-donate-actions > a,
+.donate-page-layout .openms-lib-btn,
+.donate-page-layout .donate-page .about-donate-actions > a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -294,7 +300,9 @@
 }
 
 .about-page-layout .openms-lib-btn--ghost,
-.about-page-layout .about-page .about-donate-actions > .about-cta-btn--donate {
+.donate-page-layout .openms-lib-btn--ghost,
+.about-page-layout .about-page .about-donate-actions > .about-cta-btn--donate,
+.donate-page-layout .donate-page .about-donate-actions > .about-cta-btn--donate {
   border: 2px solid var(--openms-blue);
   background: transparent;
   background-color: transparent;
@@ -305,10 +313,6 @@
   border: 2px solid var(--openms-blue);
   background: var(--openms-blue);
   color: var(--openms-white) !important;
-}
-
-.about-page-layout .openms-lib-hero__actions {
-  gap: 0.75rem;
 }
 
 .about-page-layout .openms-lib-btn--primary:hover,
@@ -340,11 +344,17 @@
 }
 
 .about-page-layout .openms-lib-btn--ghost:hover,
+.donate-page-layout .openms-lib-btn--ghost:hover,
 .about-page-layout .openms-lib-btn--ghost:focus-visible,
+.donate-page-layout .openms-lib-btn--ghost:focus-visible,
 .about-page-layout .openms-lib-btn--ghost:active,
+.donate-page-layout .openms-lib-btn--ghost:active,
 .about-page-layout .about-page .about-donate-actions > .about-cta-btn--donate:hover,
+.donate-page-layout .donate-page .about-donate-actions > .about-cta-btn--donate:hover,
 .about-page-layout .about-page .about-donate-actions > .about-cta-btn--donate:focus-visible,
-.about-page-layout .about-page .about-donate-actions > .about-cta-btn--donate:active {
+.donate-page-layout .donate-page .about-donate-actions > .about-cta-btn--donate:focus-visible,
+.about-page-layout .about-page .about-donate-actions > .about-cta-btn--donate:active,
+.donate-page-layout .donate-page .about-donate-actions > .about-cta-btn--donate:active {
   background: transparent;
   background-color: transparent;
   border-color: var(--openms-blue);
@@ -362,7 +372,9 @@
 }
 
 .about-page-layout .openms-lib-btn--ghost:focus-visible,
-.about-page-layout .about-page .about-donate-actions > .about-cta-btn--donate:focus-visible {
+.donate-page-layout .openms-lib-btn--ghost:focus-visible,
+.about-page-layout .about-page .about-donate-actions > .about-cta-btn--donate:focus-visible,
+.donate-page-layout .donate-page .about-donate-actions > .about-cta-btn--donate:focus-visible {
   box-shadow: var(--openms-hero-focus-ring, 0 0 0 3px var(--openms-navy), 0 0 0 5px var(--openms-yellow)),
     0 0 0 calc(5px + var(--openms-btn-glow-size)) var(--openms-btn-glow);
 }
@@ -501,31 +513,6 @@
 }
 
 @media (max-width: 720px) {
-  .about-page-layout {
-    --olib-section-y: clamp(2.75rem, 6vh, 3.5rem);
-    --olib-pad-x: clamp(1rem, 4vw, 1.25rem);
-  }
-
-  .about-page-hero .openms-lib-hero__title {
-    max-width: none;
-    font-size: clamp(1.75rem, 7vw, 2.25rem);
-  }
-
-  .about-page-hero .openms-lib-hero__actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.55rem;
-  }
-
-  .about-page-hero .openms-lib-hero__actions .openms-lib-btn--primary {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .about-page-hero .openms-lib-hero__actions .openms-lib-btn--ghost {
-    align-self: center;
-  }
-
   .about-page .about-donate-actions {
     flex-direction: column;
     width: 100%;

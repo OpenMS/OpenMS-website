@@ -1,3 +1,29 @@
+.donate-page-layout {
+  --olib-pad-x: clamp(1.25rem, 4vw, 2rem);
+  --olib-section-y: clamp(4rem, 8vh, 5.5rem);
+  --olib-bg-soft: #f4f6f9;
+  --olib-text-muted: rgba(var(--openms-navy-rgb), 0.68);
+  --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
+  --donate-max: 64rem;
+
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 clamp(2.5rem, 5vh, 4rem);
+}
+
+.donate-page-layout__content {
+  width: min(100%, var(--donate-max));
+  max-width: var(--donate-max);
+  margin-inline: auto;
+  padding-inline: var(--olib-pad-x);
+}
+
+.donate-page-hero {
+  margin-bottom: var(--olib-section-y);
+}
+
 .donate-page-layout__container {
   max-width: min(100%, 64rem);
 }

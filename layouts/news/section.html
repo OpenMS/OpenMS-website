@@ -3,11 +3,7 @@
 {{- $title := index $cfg "title" | default .Title }}
 {{- $subtitle := index $cfg "subtitle" | default .Params.Subtitle }}
 {{- $eyebrow := index $cfg "eyebrow" | default "OpenMS" }}
-{{- $yearLabel := index $cfg "yearFilterLabel" | default "Filter by year" }}
-{{- $allYearsLabel := index $cfg "allYearsLabel" | default "All" }}
 {{- $readMore := index $cfg "readMoreLabel" | default "Read article" }}
-{{- $defaultYear := index $cfg "defaultYear" | default "" }}
-{{- $defaultToLatest := index $cfg "defaultToLatestYear" | default false }}
 {{- $pages := .Pages.ByDate.Reverse }}
 {{- $years := slice }}
 {{- range $pages }}
@@ -17,9 +13,6 @@
       {{- $years = $years | append $y }}
     {{- end }}
   {{- end }}
-{{- end }}
-{{- if and (not $defaultYear) $defaultToLatest (gt (len $years) 0) }}
-  {{- $defaultYear = index $years 0 }}
 {{- end }}
 <section class="news-page-layout">
   <header class="openms-lib-hero news-page-hero" aria-label="OpenMS news">
@@ -36,96 +29,88 @@
         {{- with $subtitle }}
         <p class="openms-lib-hero__lead">{{ . }}</p>
         {{- end }}
-        <div class="openms-lib-hero__actions" aria-label="Related resources">
-          <a class="openms-lib-btn openms-lib-btn--primary" href="/calendar/">Community calendar</a>
-          <a class="openms-lib-btn openms-lib-btn--ghost" href="/contribute/">Contribute</a>
-          <a class="openms-lib-btn openms-lib-btn--ghost" href="/applications/">Projects</a>
-        </div>
       </div>
     </div>
   </header>
 
   <div class="news-page-layout__content">
-    <div
-      class="news-page"
-      data-news-year-filter
-      {{- with $defaultYear }}
-      data-news-default-year="{{ . }}"
-      {{- end }}
-    >
-      <div class="news-page__main">
+    <div class="news-page" data-news-year-filter>
+      <div class="news-body">
+        {{- if .Content }}
+        <div class="news-body__intro">{{ .Content }}</div>
+        {{- end }}
+
         {{- if gt (len $years) 0 }}
-        <div class="news-page__toolbar">
-          <p class="news-page__filter-label" id="news-year-filter-label">{{ $yearLabel }}</p>
-          <div
-            class="news-page__years"
-            role="group"
-            aria-labelledby="news-year-filter-label"
-            data-news-year-buttons
-          >
-            <button
-              type="button"
-              class="news-page__year-btn{{ if not $defaultYear }} is-active{{ end }}"
-              data-news-year-btn="all"
-              aria-pressed="{{ if not $defaultYear }}true{{ else }}false{{ end }}"
-            >{{ $allYearsLabel }}</button>
+        <section class="news-bibliography" aria-label="OpenMS news articles">
+          {{ partial "news-year-select.html" . }}
+          <div class="news-bibliography__entries">
             {{- range $years }}
-            <button
-              type="button"
-              class="news-page__year-btn{{ if eq . $defaultYear }} is-active{{ end }}"
-              data-news-year-btn="{{ . }}"
-              aria-pressed="{{ if eq . $defaultYear }}true{{ else }}false{{ end }}"
-            >{{ . }}</button>
+            {{- $year := . }}
+            <section class="news-year" id="news-year-{{ $year }}" data-news-year="{{ $year }}">
+              <ul class="news-list" role="list">
+                {{- range $pages }}
+                  {{- if and (not .Date.IsZero) (eq (.Date.Format "2006") $year) }}
+                <li class="news-entry" role="listitem">
+                  <p class="news-entry__title">
+                    <a class="news-entry__title-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  </p>
+                  <p class="news-entry__meta">
+                    <time class="news-entry__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                    {{- with or .Params.authors .Params.Authors }}
+                    <span class="news-entry__sep" aria-hidden="true">·</span>
+                    <span class="news-entry__authors">
+                      {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end }}
+                    </span>
+                    {{- end }}
+                  </p>
+                  {{- with .Summary }}
+                  <p class="news-entry__summary">{{ . }}</p>
+                  {{- end }}
+                  <a class="news-entry__action" href="{{ .RelPermalink }}">{{ $readMore }}</a>
+                </li>
+                  {{- end }}
+                {{- end }}
+              </ul>
+            </section>
             {{- end }}
           </div>
-          <p class="news-page__count" data-news-count aria-live="polite"></p>
-        </div>
+        </section>
         {{- end }}
 
-        {{- if .Content }}
-        <div class="news-page__intro">{{ .Content }}</div>
+        {{- $undated := slice }}
+        {{- range $pages }}
+          {{- if .Date.IsZero }}
+            {{- $undated = $undated | append . }}
+          {{- end }}
         {{- end }}
-
-        <div id="news-section-list" class="news-page__list" data-news-list>
-          {{- $lastYear := "" }}
-          {{- range $pages }}
-          {{- $year := "" }}
-          {{- if not .Date.IsZero }}
-            {{- $year = .Date.Format "2006" }}
-            {{- if ne $year $lastYear }}
-          <h2 class="news-page__year-heading" data-news-year-heading="{{ $year }}">{{ $year }}</h2>
-              {{- $lastYear = $year }}
-            {{- end }}
-          {{- end }}
-          <article class="news-card" data-news-year="{{ $year }}">
-            <div class="news-card__inner">
-              {{ partial "news-date-badge.html" . }}
-              <div class="news-card__body">
-                <h3 class="news-card__title">
-                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </h3>
-                {{- with or .Params.authors .Params.Authors }}
-                <p class="news-card__meta">
-                  <span class="news-card__authors">
-                    {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end }}
-                  </span>
-                </p>
+        {{- if gt (len $undated) 0 }}
+        <section class="news-bibliography news-bibliography--undated" aria-label="Undated news">
+          <div class="news-bibliography__entries">
+            <section class="news-year news-year--undated">
+              <ul class="news-list" role="list">
+                {{- range $undated }}
+                <li class="news-entry" role="listitem">
+                  <p class="news-entry__title">
+                    <a class="news-entry__title-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  </p>
+                  {{- with or .Params.authors .Params.Authors }}
+                  <p class="news-entry__meta">
+                    <span class="news-entry__authors">
+                      {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end }}
+                    </span>
+                  </p>
+                  {{- end }}
+                  {{- with .Summary }}
+                  <p class="news-entry__summary">{{ . }}</p>
+                  {{- end }}
+                  <a class="news-entry__action" href="{{ .RelPermalink }}">{{ $readMore }}</a>
+                </li>
                 {{- end }}
-                {{- with .Summary }}
-                <p class="news-card__summary">{{ . }}</p>
-                {{- end }}
-                <a class="news-card__read-more" href="{{ .RelPermalink }}">
-                  {{ $readMore }}<span aria-hidden="true"> →</span>
-                </a>
-              </div>
-            </div>
-          </article>
-          {{- end }}
-        </div>
-
-        <p class="news-page__empty" data-news-empty hidden>
-          {{ index $cfg "emptyMessage" | default "No news items for the selected year." }}
-        </p>
+              </ul>
+            </section>
+          </div>
+        </section>
+        {{- end }}
       </div>
     </div>
   </div>
