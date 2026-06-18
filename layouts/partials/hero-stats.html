@@ -1,0 +1,21 @@
+{{- $stats := .stats }}
+{{- $class := .class | default "hero-modern__stats" }}
+{{- with $stats }}
+{{- $statCount := len . }}
+<dl class="{{ $class }}" aria-label="Key metrics">
+  {{- range $index, $stat := . }}
+  <div class="hero-modern__stat">
+    <dt class="hero-modern__stat-label">{{ $stat.label }}</dt>
+    <dd
+      class="hero-modern__stat-number"
+      data-count-value="{{ $stat.value }}"
+      data-count-suffix="{{ $stat.suffix | default "" }}"
+      data-count-decimals="{{ $stat.decimals | default 0 }}"
+    >0{{ $stat.suffix | default "" }}</dd>
+  </div>
+  {{- if lt (add $index 1) $statCount }}
+  <span class="hero-modern__stat-sep" aria-hidden="true">|</span>
+  {{- end }}
+  {{- end }}
+</dl>
+{{- end }}

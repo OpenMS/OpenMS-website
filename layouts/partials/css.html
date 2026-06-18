@@ -5,14 +5,19 @@
 {{- $sass         := (slice "theme-css/fresh/core.scss") -}}
 {{- $cssOpts      := cond ($inServerMode) (dict "enableSourceMap" true) (dict "outputStyle" "compressed") -}}
 
-<!-- Fonts -->
-<!-- {{- $fontName     := .Site.Params.font.name | default "Open Sans" -}}
-{{- $fontFace     := replace $fontName " " "+" -}}
-{{- $fontSizes    := delimit (.Site.Params.font.sizes | default (slice 300 400 600 700)) "," -}} -->
-<!-- {{- $fontUrl      := printf "https://fonts.googleapis.com/css?family=%s:%s" $fontFace $fontSizes -}} -->
+<!-- Fonts — Montserrat (headings) + Raleway (body) + JetBrains Mono (quotes/callouts) -->
+{{- $headingFont     := .Site.Params.font.name | default "Montserrat" -}}
+{{- $headingWeights  := .Site.Params.font.sizes | default (slice 400 600 700 800) -}}
+{{- $bodyFont        := .Site.Params.bodyFont.name | default "Raleway" -}}
+{{- $bodyWeights     := .Site.Params.bodyFont.sizes | default (slice 400 500 600) -}}
+{{- $monoFont        := .Site.Params.monoFont.name | default "JetBrains Mono" -}}
+{{- $monoWeights     := .Site.Params.monoFont.sizes | default (slice 100) -}}
+{{- $fontUrl         := printf "https://fonts.googleapis.com/css2?family=%s:wght@%s&family=%s:wght@%s&family=%s:wght@%s&display=swap" (replace $headingFont " " "+") (delimit $headingWeights ";") (replace $bodyFont " " "+") (delimit $bodyWeights ";") (replace $monoFont " " "+") (delimit $monoWeights ";") -}}
 
 <link rel="icon" href="{{ "images/favicon.png" | relURL }}" />
-<!-- <link rel="stylesheet" href="{{ $fontUrl }}"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="{{ $fontUrl }}" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
