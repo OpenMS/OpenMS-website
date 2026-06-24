@@ -1,0 +1,66 @@
+{{- $cfg := .cfg | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Getting started" -}}
+{{- $title := index $cfg "title" -}}
+{{- $lead := index $cfg "lead" -}}
+{{- $items := index $cfg "items" | default (slice) -}}
+{{- $id := .id | default "product-resources-title" -}}
+{{- $variant := .variant | default "" -}}
+<section class="openms-lib-block openms-lib-block--resources{{ with $variant }} openms-lib-block--resources-{{ . }}{{ end }}" aria-labelledby="{{ $id }}">
+  <header class="openms-lib-block__head openms-lib-block__head--resources">
+    <p class="openms-lib-block__eyebrow">{{ $eyebrow }}</p>
+    <h2 id="{{ $id }}" class="openms-lib-block__title">{{ $title | default $eyebrow }}</h2>
+    {{- with $lead }}
+    <p class="openms-lib-block__lead">{{ . }}</p>
+    {{- end }}
+  </header>
+
+  <div class="openms-lib-list openms-lib-list--resource-grid{{ with $variant }} openms-lib-list--resource-grid--{{ . }}{{ end }}" role="list" aria-label="{{ $eyebrow }}">
+    {{- range $items }}
+    {{- $type := .type | default "link" -}}
+    {{- if eq $type "online" }}
+    <article class="openms-lib-list__row openms-lib-resource-card openms-lib-resource-card--static openms-lib-resource-card--online" role="listitem">
+      <div class="openms-lib-list__body">
+        <h3 class="openms-lib-list__title">{{ .title }}</h3>
+        {{- with .text }}
+        <p class="openms-lib-list__text">{{ . }}</p>
+        {{- end }}
+        <div class="openms-lib-developers__platforms openms-lib-resource-card__platforms" role="group" aria-label="Try pyOpenMS online">
+          {{- range .links }}
+          <a
+            class="openms-lib-btn openms-lib-btn--ghost openms-lib-developers__platform-btn"
+            href="{{ .url }}"
+            {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+          >
+            {{- with .icon }}
+            <i class="{{ . }}" aria-hidden="true"></i>
+            {{- end }}
+            {{ .name }}
+          </a>
+          {{- end }}
+        </div>
+      </div>
+    </article>
+    {{- else }}
+    <a
+      class="openms-lib-list__row openms-lib-resource-card"
+      href="{{ .url }}"
+      {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+      role="listitem"
+    >
+      <div class="openms-lib-list__body">
+        {{- with .tag }}
+        <span class="openms-lib-list__tag openms-lib-resource-card__tag">{{ . }}</span>
+        {{- end }}
+        <h3 class="openms-lib-list__title">{{ .title }}</h3>
+        {{- with .text }}
+        <p class="openms-lib-list__text">{{ . }}</p>
+        {{- end }}
+        <span class="openms-lib-list__link">
+          {{ .linkText | default "Learn more" }}<span aria-hidden="true"> →</span>
+        </span>
+      </div>
+    </a>
+    {{- end }}
+    {{- end }}
+  </div>
+</section>

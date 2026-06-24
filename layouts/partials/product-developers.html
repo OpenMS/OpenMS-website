@@ -1,0 +1,138 @@
+{{- $cfg := .cfg | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "For Developers" -}}
+{{- $title := index $cfg "title" | default "Contribute" -}}
+{{- $lead := index $cfg "lead" -}}
+{{- $boxes := index $cfg "boxes" | default (slice) -}}
+{{- $citeText := index $cfg "citeText" -}}
+{{- $citation := index $cfg "citation" | default dict -}}
+{{- $citeVariant := index $citation "variant" | default "primary" -}}
+{{- $sectionId := .id | default "product-developers-title" -}}
+{{- $citeLabel := index $cfg "citeLabel" | default (printf "Cite %s" (index $citation "topic" | default "OpenMS")) -}}
+{{- $boxCount := len $boxes -}}
+<section class="openms-lib-block openms-lib-block--developers" id="for-developers" aria-labelledby="{{ $sectionId }}">
+  <header class="openms-lib-block__head openms-lib-developers__head">
+    <p class="openms-lib-block__eyebrow">{{ $eyebrow }}</p>
+    <h2 id="{{ $sectionId }}" class="openms-lib-developers__title">{{ $title }}</h2>
+    {{- with $lead }}
+    <p class="openms-lib-developers__lead">{{ . }}</p>
+    {{- end }}
+  </header>
+
+  <div class="openms-lib-developers__content{{ if or $citeText $citation }} openms-lib-developers__content--with-cite{{ end }}">
+    <div
+      class="openms-lib-developers__grid{{ with $boxCount }} openms-lib-developers__grid--count-{{ . }}{{ end }}"
+      aria-label="Contributor resources"
+    >
+      {{- range $boxes }}
+      {{- $type := .type | default "link" -}}
+      {{- if eq $type "build" }}
+      <article class="openms-lib-developers__card openms-lib-developers__card--build">
+        <div class="openms-lib-developers__card-body">
+          {{- with .tag }}
+          <span class="openms-lib-developers__card-tag">{{ . }}</span>
+          {{- else }}
+          <span class="openms-lib-developers__card-tag">Build</span>
+          {{- end }}
+          <h3 class="openms-lib-developers__card-title">{{ .title }}</h3>
+          {{- with .text }}
+          <p class="openms-lib-developers__card-text">{{ . }}</p>
+          {{- end }}
+          <div class="openms-lib-developers__platforms" role="group" aria-label="{{ .title }}">
+            {{- range .platforms }}
+            <a
+              class="openms-lib-btn openms-lib-btn--ghost openms-lib-developers__platform-btn"
+              href="{{ .url }}"
+              {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+            >
+              {{- with .icon }}
+              <i class="{{ . }}" aria-hidden="true"></i>
+              {{- end }}
+              {{ .name }}
+            </a>
+            {{- end }}
+          </div>
+        </div>
+      </article>
+      {{- else }}
+      <a
+        class="openms-lib-developers__card openms-lib-developers__card--link"
+        href="{{ .url }}"
+        {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+      >
+        <div class="openms-lib-developers__card-body">
+          {{- with .tag }}
+          <span class="openms-lib-developers__card-tag">{{ . }}</span>
+          {{- end }}
+          <h3 class="openms-lib-developers__card-title">
+            {{- with .icon }}
+            <i class="{{ . }} openms-lib-developers__card-icon" aria-hidden="true"></i>
+            {{- end }}
+            <span>{{ .title }}</span>
+          </h3>
+          {{- with .text }}
+          <p class="openms-lib-developers__card-text">{{ . }}</p>
+          {{- end }}
+          <span class="openms-lib-developers__card-link">
+            {{ .linkText | default "Learn more" }}<span aria-hidden="true"> →</span>
+          </span>
+        </div>
+      </a>
+      {{- end }}
+      {{- end }}
+    </div>
+
+    {{- if or $citeText $citation }}
+    <aside class="openms-lib-developers__cite openms-lib-developers__cite--panel" aria-label="{{ $citeLabel }}">
+      {{- with $citeText }}
+      <p class="openms-lib-developers__cite-intro">{{ . }}</p>
+      {{- end }}
+      {{- with $citation }}
+      {{- $pubUrl := .url -}}
+      {{- $actionText := .actionText | default "View on PubMed" -}}
+      {{- $moreUrl := .moreUrl -}}
+      {{- $moreText := .moreText | default "More citations" -}}
+      <article class="publications-cite-card publications-cite-card--{{ $citeVariant }} openms-lib-developers__cite-card">
+        <div class="publications-cite-card__top">
+          {{- with .badge }}
+          <span class="publications-cite-card__badge">{{ . }}</span>
+          {{- end }}
+          {{- with .topic }}
+          <span class="publications-cite-card__topic">{{ . }}</span>
+          {{- end }}
+        </div>
+        {{- with .title }}
+        <h3 class="publications-cite-card__title">
+          {{- if $pubUrl }}
+          <a href="{{ $pubUrl }}" target="_blank" rel="noopener noreferrer">{{ . }}</a>
+          {{- else }}
+          {{ . }}
+          {{- end }}
+        </h3>
+        {{- end }}
+        {{- if or .journal .year }}
+        <p class="publications-cite-card__meta">
+          {{- with .journal }}
+          <span class="publications-cite-card__journal">{{ . }}</span>
+          {{- end }}
+          {{- with .year }}
+          <span class="publications-cite-card__year">{{ . }}</span>
+          {{- end }}
+        </p>
+        {{- end }}
+        {{- with .authors }}
+        <p class="publications-cite-card__authors">{{ . }}</p>
+        {{- end }}
+        <div class="openms-lib-developers__cite-actions">
+          {{- with $pubUrl }}
+          <a class="publications-cite-card__action" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $actionText }}</a>
+          {{- end }}
+          {{- with $moreUrl }}
+          <a class="openms-lib-developers__cite-more" href="{{ . }}">{{ $moreText }}<span aria-hidden="true"> →</span></a>
+          {{- end }}
+        </div>
+      </article>
+      {{- end }}
+    </aside>
+    {{- end }}
+  </div>
+</section>

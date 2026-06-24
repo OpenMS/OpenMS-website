@@ -116,7 +116,7 @@
     });
 
     if (menu) {
-      menu.querySelectorAll("a.navbar-item[href], a.navbar-cta-item").forEach(function (anchor) {
+      menu.querySelectorAll("a.navbar-item[href], a.navbar-cta-item, .navbar-dropdown a.navbar-item").forEach(function (anchor) {
         anchor.addEventListener("click", function () {
           if (!isMobileNav()) return;
           closeMobileMenu(nav);

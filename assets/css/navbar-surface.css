@@ -113,7 +113,7 @@
 
   .site-header #nav.navbar.is-fresh .navbar-menu.is-static,
   #navbar-clone.navbar.is-fresh .navbar-menu.is-fixed {
-    border-top: 1px solid var(--openms-chrome-border);
+    border-top: none;
     border-radius: 0;
     box-shadow: none;
   }

@@ -284,8 +284,7 @@
 }
 
 .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate,
-#navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate,
-.navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate {
+#navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate {
   background: transparent !important;
   background-color: transparent !important;
   border: 2px solid rgba(var(--openms-white-rgb), 0.34) !important;
@@ -298,14 +297,30 @@
 .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:active,
 #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:hover,
 #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:focus-visible,
-#navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:active,
-.navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:hover,
-.navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:focus-visible,
-.navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:active {
+#navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:active {
   background: var(--openms-chrome-surface-hover) !important;
   background-color: var(--openms-chrome-surface-hover) !important;
   border-color: rgba(var(--openms-white-rgb), 0.5) !important;
   color: var(--openms-white) !important;
+}
+
+@media (max-width: 1279px) {
+  .site-header #nav.navbar.is-fresh .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate,
+  .site-header #nav.navbar.is-fresh .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:visited,
+  .site-header #nav.navbar.is-fresh .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:hover,
+  .site-header #nav.navbar.is-fresh .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:focus-visible,
+  .site-header #nav.navbar.is-fresh .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:active,
+  #navbar-clone.navbar.is-fresh .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate,
+  #navbar-clone.navbar.is-fresh .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:visited,
+  #navbar-clone.navbar.is-fresh .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:hover,
+  #navbar-clone.navbar.is-fresh .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:focus-visible,
+  #navbar-clone.navbar.is-fresh .navbar-menu .navbar-mobile-ctas .navbar-cta-item.about-cta-btn--donate:active {
+    border: 2px solid rgba(var(--openms-navy-rgb), 0.22) !important;
+    border-color: rgba(var(--openms-navy-rgb), 0.22) !important;
+    color: var(--openms-chrome-nav-text) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

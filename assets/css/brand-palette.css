@@ -29,6 +29,10 @@
   --openms-navbar-brand-slot-width: 18.5rem;
   --openms-navbar-logo-height: 76px;
   --openms-header-bar-min-height: calc(var(--openms-navbar-logo-height) + 0.65rem);
+  --openms-navbar-desktop-gap: clamp(0.4rem, 1.1vw, 0.9rem);
+  --openms-navbar-desktop-pad-x: clamp(0.35rem, 0.75vw, 0.7rem);
+  --openms-navbar-desktop-font-size: clamp(0.8125rem, 0.95vw, 15px);
+  --openms-navbar-actions-gap: clamp(0.5rem, 1vw, 0.85rem);
   /* Nav breakpoints: burger < 1280px; compact xl 1280–1535px; full desktop 1536px+ */
   --openms-nav-desktop-min: 1280px;
   --openms-nav-xl-wide-min: 1536px;
@@ -91,8 +95,13 @@
   --openms-chrome-banner-label-border: var(--openms-orange);
   --openms-chrome-banner-text: rgba(var(--openms-navy-rgb), 0.88);
   --openms-chrome-banner-border: rgba(var(--openms-navy-rgb), 0.1);
-  --openms-chrome-nav-surface: rgba(var(--openms-white-rgb), 0.97);
-  --openms-chrome-nav-border: rgba(var(--openms-navy-rgb), 0.08);
+  --openms-chrome-nav-surface: var(--openms-white);
+  --openms-chrome-nav-border: rgba(var(--openms-navy-rgb), 0.14);
+  --openms-chrome-nav-text: var(--openms-navy);
+  --openms-chrome-nav-text-muted: rgba(var(--openms-navy-rgb), 0.58);
+  --openms-chrome-nav-dropdown-bg: rgba(var(--openms-blue-rgb), 0.06);
+  --openms-chrome-nav-dropdown-border: rgba(var(--openms-blue-rgb), 0.2);
+  --openms-chrome-nav-backdrop: rgba(var(--openms-navy-rgb), 0.52);
 
   --colorPrimaryDark: var(--openms-blue);
   --colorPrimaryDarkBtn: var(--openms-blue);

@@ -12,121 +12,48 @@ sidebar: false
     <div class="openms-lib-hero__content">
       <p class="openms-lib-hero__eyebrow">Infrastructure</p>
       <h1 class="openms-lib-hero__title">
-        Built for <span class="openms-lib-hero__accent">mass spectrometry</span>, powered by <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">open source</span>.
+        The <span class="openms-lib-hero__accent">Open Source</span> toolkit for <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">mass spectrometry</span>.
       </h1>
       <p class="openms-lib-hero__lead">
-        OpenMS-lib is the BSD-licensed C++ foundation behind TOPP tools, pyOpenMS, and community
-        software—for LC-MS data management, analysis, and visualization.
+        OpenMS-lib is a mature and reliable C++ framework for omics based mass spectrometry data analysis.
       </p>
-      <div class="openms-lib-hero__actions" aria-label="Primary actions">
+      <div class="openms-lib-hero__actions" aria-label="Install OpenMS">
         <a
-          class="openms-lib-btn openms-lib-btn--primary"
-          href="https://openms.readthedocs.io/en/latest/develop-with-openms/openms-cpp-core-library.html"
+          class="openms-lib-btn openms-lib-btn--primary openms-lib-btn--install"
+          href="https://github.com/OpenMS/OpenMS/releases/latest"
           target="_blank"
           rel="noopener noreferrer"
-        >C++ documentation</a>
+        >
+          <span class="openms-lib-btn__label">Install</span>
+          <span class="openms-lib-btn__platforms" aria-label="Windows, macOS, and Linux">
+            <i class="fab fa-windows" aria-hidden="true"></i>
+            <i class="fab fa-apple" aria-hidden="true"></i>
+            <i class="fab fa-linux" aria-hidden="true"></i>
+          </span>
+        </a>
         <a
           class="openms-lib-btn openms-lib-btn--ghost"
-          href="https://pyopenms.readthedocs.io/en/latest/"
+          href="https://github.com/OpenMS/OpenMS/pkgs/container/openms-tools-thirdparty"
           target="_blank"
           rel="noopener noreferrer"
-        >pyOpenMS</a>
+        >
+          <i class="fab fa-docker" aria-hidden="true"></i>
+          Docker
+        </a>
         <a
           class="openms-lib-btn openms-lib-btn--ghost"
-          href="#get-started"
-        >Build from source</a>
+          href="https://anaconda.org/channels/bioconda/packages/openms/overview"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Anaconda install</a>
       </div>
     </div>
     </div>
   </header>
-  <div class="openms-lib-page__intro-panel">
-  <section class="openms-lib-block openms-lib-block--overview" id="overview">
-    <header class="openms-lib-block__head">
-      <p class="openms-lib-block__eyebrow">At a glance</p>
-      <h2 class="openms-lib-block__title">Core library &amp; ecosystem</h2>
-      <p class="openms-lib-block__lead">
-        One C++ core powers command-line tools, Python bindings, and community web apps.
-      </p>
-    </header>
-    <div class="openms-lib-list openms-lib-list--overview" aria-label="OpenMS library overview">
-      <article class="openms-lib-list__row">
-        <div class="openms-lib-list__body">
-          <div class="openms-lib-list__tags"><span class="openms-lib-list__tag">Core library</span></div>
-          <h3 class="openms-lib-list__title">C++ algorithms &amp; data structures</h3>
-          <p class="openms-lib-list__text">
-            File I/O for mzML, mzXML, TraML, mzIdentML, and related formats, plus signal
-            processing, identification, and quantification building blocks.
-          </p>
-          <ul class="openms-lib-list__bullets">
-            <li>Modular, extensible C++ API</li>
-            <li>Cross-platform (Windows, macOS, Linux)</li>
-            <li>Three-clause BSD license</li>
-          </ul>
-        </div>
-      </article>
-      <article class="openms-lib-list__row">
-        <div class="openms-lib-list__body">
-          <div class="openms-lib-list__tags"><span class="openms-lib-list__tag">Ecosystem</span></div>
-          <h3 class="openms-lib-list__title">Built on OpenMS-lib</h3>
-          <p class="openms-lib-list__text">
-            Most users interact with OpenMS through tools and bindings that share the same core.
-          </p>
-          <ul class="openms-lib-list__bullets">
-            <li><strong>TOPP tools</strong> — command-line utilities</li>
-            <li><strong>pyOpenMS</strong> — Python bindings</li>
-            <li><strong>Web apps</strong> — <a href="/applications/">community projects</a></li>
-          </ul>
-          <a class="openms-lib-list__link" href="https://github.com/OpenMS/OpenMS" target="_blank" rel="noopener noreferrer">Source on GitHub<span aria-hidden="true"> →</span></a>
-        </div>
-      </article>
-    </div>
-  </section>
-  <section class="openms-lib-block openms-lib-block--core-tools" id="core-tools">
-    <header class="openms-lib-block__head">
-      <p class="openms-lib-block__eyebrow">Core tools</p>
-      <h2 class="openms-lib-block__title">TOPP &amp; pyOpenMS</h2>
-      <p class="openms-lib-block__lead">
-        Command-line utilities and Python bindings built on the same OpenMS-lib core.
-      </p>
-    </header>
-    <div class="openms-lib-core-tools" aria-label="TOPP tools and pyOpenMS">
-      <a
-        class="openms-lib-core-tools__card openms-lib-core-tools__card--topp"
-        href="https://openms.readthedocs.io/en/latest/getting-started/topp-tools.html"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div class="openms-lib-core-tools__card-head">
-          <span class="openms-lib-core-tools__label">TOPP</span>
-          <h3 class="openms-lib-core-tools__title">TOPP Tools</h3>
-        </div>
-        <p class="openms-lib-core-tools__text">
-          Command-line tools for proteomics and metabolomics data analysis.
-        </p>
-        <span class="openms-lib-core-tools__link">TOPP tools guide<span aria-hidden="true"> →</span></span>
-      </a>
-      <a
-        class="openms-lib-core-tools__card openms-lib-core-tools__card--pyopenms"
-        href="https://pyopenms.readthedocs.io/en/latest/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div class="openms-lib-core-tools__card-head">
-          <span class="openms-lib-core-tools__label">pyOpenMS</span>
-          <h3 class="openms-lib-core-tools__title">pyOpenMS</h3>
-        </div>
-        <p class="openms-lib-core-tools__text">
-          Python bindings for scripting workflows, prototyping, and integrations.
-        </p>
-        <span class="openms-lib-core-tools__link">pyOpenMS docs<span aria-hidden="true"> →</span></span>
-      </a>
-    </div>
-  </section>
-  </div>
 </div>
 <div class="openms-lib-page__body" aria-label="OpenMS capabilities and workflows">
   <div id="what-is-openms" class="openms-lib-page__anchor">
-    {{< keyfeatures >}}
+    {{< openms-lib-highlights >}}
   </div>
   <div id="capabilities" class="openms-lib-page__anchor">
     {{< heroitems variant="users" >}}
@@ -136,85 +63,6 @@ sidebar: false
   </div>
 </div>
 <div class="openms-lib-page__outro">
-  <section class="openms-lib-block openms-lib-block--resources" id="get-started">
-    <header class="openms-lib-block__head">
-      <p class="openms-lib-block__eyebrow">Get started</p>
-      <h2 class="openms-lib-block__title">Start building with OpenMS-lib</h2>
-      <p class="openms-lib-block__lead">
-        Clone the
-        <a href="https://github.com/OpenMS/OpenMS" target="_blank" rel="noopener noreferrer">OpenMS repository</a>
-        and
-        <a href="https://github.com/OpenMS/contrib" target="_blank" rel="noopener noreferrer">contrib</a>
-        bundle, then follow the wiki and developer guides to build from source.
-      </p>
-    </header>
-    <div class="openms-lib-list openms-lib-list--resource-grid" aria-label="Developer resources">
-      <a class="openms-lib-list__row openms-lib-resource-card" href="https://github.com/OpenMS/OpenMS/wiki/Developer-FAQ" target="_blank" rel="noopener noreferrer">
-        <div class="openms-lib-list__body">
-          <span class="openms-lib-list__tag openms-lib-resource-card__tag">Wiki</span>
-          <h3 class="openms-lib-list__title">Developer FAQ</h3>
-          <p class="openms-lib-list__text">Common setup, build, and contribution questions.</p>
-          <span class="openms-lib-list__link">Read FAQ<span aria-hidden="true"> →</span></span>
-        </div>
-      </a>
-      <a class="openms-lib-list__row openms-lib-resource-card" href="https://github.com/OpenMS/OpenMS/wiki/Adding-your-own-tool-to-the-TOPP-suite" target="_blank" rel="noopener noreferrer">
-        <div class="openms-lib-list__body">
-          <span class="openms-lib-list__tag openms-lib-resource-card__tag">TOPP</span>
-          <h3 class="openms-lib-list__title">Add a TOPP tool</h3>
-          <p class="openms-lib-list__text">Add your own tool to the TOPP suite.</p>
-          <span class="openms-lib-list__link">Add a tool<span aria-hidden="true"> →</span></span>
-        </div>
-      </a>
-      <a class="openms-lib-list__row openms-lib-resource-card" href="https://github.com/OpenMS/OpenMS/wiki/Cpp-Guide" target="_blank" rel="noopener noreferrer">
-        <div class="openms-lib-list__body">
-          <span class="openms-lib-list__tag openms-lib-resource-card__tag">C++</span>
-          <h3 class="openms-lib-list__title">C++ guide</h3>
-          <p class="openms-lib-list__text">Coding conventions for OpenMS C++.</p>
-          <span class="openms-lib-list__link">C++ guide<span aria-hidden="true"> →</span></span>
-        </div>
-      </a>
-      <a class="openms-lib-list__row openms-lib-resource-card" href="https://openms.readthedocs.io/en/latest/manual/develop.html" target="_blank" rel="noopener noreferrer">
-        <div class="openms-lib-list__body">
-          <span class="openms-lib-list__tag openms-lib-resource-card__tag">Docs</span>
-          <h3 class="openms-lib-list__title">Developer manual</h3>
-          <p class="openms-lib-list__text">Official build and extension docs.</p>
-          <span class="openms-lib-list__link">Developer manual<span aria-hidden="true"> →</span></span>
-        </div>
-      </a>
-      <a class="openms-lib-list__row openms-lib-resource-card" href="https://pyopenms.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">
-        <div class="openms-lib-list__body">
-          <span class="openms-lib-list__tag openms-lib-resource-card__tag">pyOpenMS</span>
-          <h3 class="openms-lib-list__title">Python bindings</h3>
-          <p class="openms-lib-list__text">Script workflows with pyOpenMS.</p>
-          <span class="openms-lib-list__link">pyOpenMS docs<span aria-hidden="true"> →</span></span>
-        </div>
-      </a>
-      <a class="openms-lib-list__row openms-lib-resource-card" href="/applications/">
-        <div class="openms-lib-list__body">
-          <span class="openms-lib-list__tag openms-lib-resource-card__tag">Community</span>
-          <h3 class="openms-lib-list__title">Browse projects</h3>
-          <p class="openms-lib-list__text">Community web apps built on OpenMS.</p>
-          <span class="openms-lib-list__link">Browse projects<span aria-hidden="true"> →</span></span>
-        </div>
-      </a>
-    </div>
-    <aside class="openms-lib-block__note">
-      <p>
-        See the <a href="/contribute/">contributing guide</a> and
-        <a href="/getting-started/develop-your-own-openms-tools/">develop your own OpenMS tools</a>
-        for a broader overview, or jump straight to the
-        <a href="https://openms.readthedocs.io/en/latest/develop-with-openms/openms-cpp-core-library.html" target="_blank" rel="noopener noreferrer">C++ library documentation</a>
-        and
-        <a href="https://github.com/OpenMS/OpenMS" target="_blank" rel="noopener noreferrer">GitHub repository</a>.
-      </p>
-    </aside>
-    <div class="openms-lib-page__cta" aria-label="Next steps">
-      <p class="openms-lib-page__cta-text">Ready to contribute or extend OpenMS?</p>
-      <div class="openms-lib-page__cta-actions">
-        <a class="openms-lib-btn openms-lib-btn--navy" href="https://github.com/OpenMS/OpenMS" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-        <a class="openms-lib-btn openms-lib-btn--outline" href="/contribute/">Contribute</a>
-      </div>
-    </div>
-  </section>
+  {{< openms-lib-developers >}}
 </div>
 </article>

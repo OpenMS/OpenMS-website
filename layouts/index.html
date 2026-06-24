@@ -14,6 +14,10 @@
     {{ partial "webapps.html" (dict "Page" . "embed" "home") }}
   </section>
 
+  <section class="home-page__block home-page__block--ecosystem" aria-labelledby="ecosystem-home-title">
+    {{ partial "ecosystem-home.html" . }}
+  </section>
+
   {{- with .Site.Params.keyfeatures }}
   <section class="home-page__block home-page__block--overview" aria-labelledby="keyfeatures-title">
     {{ partial "keyfeatures.html" (dict "Page" . "embed" "home") }}

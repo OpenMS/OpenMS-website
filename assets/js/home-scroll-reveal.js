@@ -5,17 +5,25 @@
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var hero = page.querySelector(".home-page__hero");
   var scrollSections = page.querySelectorAll(
-    ".home-page__block--partners, .home-page__block--projects, .home-page__block--overview, .home-page__cta, .home-page__block--panel, .home-page__block--content"
+    ".home-page__block--partners, .home-page__block--projects, .home-page__block--ecosystem, .home-page__block--overview, .home-page__cta, .home-page__block--panel, .home-page__block--content"
   );
 
   var projectsGrid = page.querySelector(".home-page__block--projects .webapps-featured__grid");
   var projectsFooter = page.querySelector(".home-page__block--projects .webapps-featured__footer");
   var projectItems = projectsGrid ? projectsGrid.querySelectorAll(".webapps-featured__item") : [];
   var projectRevealTargets = [];
+  var ecosystemItems = page.querySelectorAll(".home-page__block--ecosystem .ecosystem-home__item");
+  var ecosystemRevealTargets = [];
 
   projectItems.forEach(function (item) {
     var surface = item.querySelector(".webapps-project-card__surface");
     projectRevealTargets.push({ item: item, observerTarget: surface || item });
+  });
+
+  ecosystemItems.forEach(function (item, index) {
+    var card = item.querySelector(".ecosystem-home__card");
+    item.style.setProperty("--ecosystem-reveal-index", String(index));
+    ecosystemRevealTargets.push({ item: item, observerTarget: card || item });
   });
 
   if (projectsFooter) {
@@ -41,6 +49,9 @@
     revealElement(el);
     if (el.classList.contains("home-page__block--projects")) {
       revealProjectCardsInView();
+    }
+    if (el.classList.contains("home-page__block--ecosystem")) {
+      revealEcosystemCardsInView();
     }
   }
 
@@ -68,6 +79,21 @@
     });
   }
 
+  function revealEcosystemCardsInView() {
+    ecosystemRevealTargets.forEach(function (entry) {
+      if (entry.item.classList.contains("is-revealed")) return;
+      if (isRevealTargetInView(entry.observerTarget)) {
+        revealElement(entry.item);
+      }
+    });
+  }
+
+  function revealEcosystemCards() {
+    ecosystemRevealTargets.forEach(function (entry) {
+      revealElement(entry.item);
+    });
+  }
+
   function revealHero() {
     if (hero) hero.classList.add("is-revealed");
   }
@@ -76,6 +102,7 @@
     revealHero();
     scrollSections.forEach(reveal);
     revealProjectCards();
+    revealEcosystemCards();
   }
 
   page.classList.add("home-page--motion");
@@ -92,8 +119,15 @@
   if (!("IntersectionObserver" in window)) {
     scrollSections.forEach(reveal);
     revealProjectCards();
-    window.addEventListener("scroll", revealProjectCardsInView, { passive: true });
-    window.addEventListener("resize", revealProjectCardsInView, { passive: true });
+    revealEcosystemCards();
+    window.addEventListener("scroll", function () {
+      revealProjectCardsInView();
+      revealEcosystemCardsInView();
+    }, { passive: true });
+    window.addEventListener("resize", function () {
+      revealProjectCardsInView();
+      revealEcosystemCardsInView();
+    }, { passive: true });
     return;
   }
 
@@ -121,6 +155,16 @@
         if (match) {
           revealElement(match.item);
           cardObserver.unobserve(entry.target);
+          return;
+        }
+
+        var ecosystemMatch = ecosystemRevealTargets.find(function (target) {
+          return target.observerTarget === entry.target;
+        });
+
+        if (ecosystemMatch) {
+          revealElement(ecosystemMatch.item);
+          cardObserver.unobserve(entry.target);
         }
       });
     },
@@ -135,6 +179,10 @@
     cardObserver.observe(entry.observerTarget);
   });
 
+  ecosystemRevealTargets.forEach(function (entry) {
+    cardObserver.observe(entry.observerTarget);
+  });
+
   var scrollTicking = false;
 
   function onScrollOrResize() {
@@ -143,6 +191,7 @@
 
     window.requestAnimationFrame(function () {
       revealProjectCardsInView();
+      revealEcosystemCardsInView();
       scrollTicking = false;
     });
   }
@@ -151,5 +200,9 @@
   window.addEventListener("resize", onScrollOrResize, { passive: true });
 
   revealProjectCardsInView();
-  window.setTimeout(revealProjectCardsInView, 120);
+  revealEcosystemCardsInView();
+  window.setTimeout(function () {
+    revealProjectCardsInView();
+    revealEcosystemCardsInView();
+  }, 120);
 })();

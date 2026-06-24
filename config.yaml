@@ -214,8 +214,9 @@ languages:
         - name: Immatics
           logo: /images/logos/immatics.png
           url: https://immatics.com/
-        - name: Korean team
-          abbr: KR
+        - name: FullSeeomics
+          abbr: FS
+          url: https://fullseeomics.com/
       navbarlogo:
         image: logos/OpenMS_transparent_blackFont.svg
         link: /
@@ -226,26 +227,26 @@ languages:
         minChars: 2
         maxResults: 8
       hero:
-        titleBefore: "The "
-        titleHighlight: open-source framework
-        titleAfter: " for Mass Spectrometry"
+        titleBefore: "Open Science. "
+        titleHighlight: Clear Results
+        titleAfter: ""
         description: >-
-          Build sophisticated LC/MS data analysis tools with C++ or Python.
-          Process large datasets at scale. Create high-performance algorithms.
-          Join 1000+ researchers worldwide.
+          Expert-crafted ecosystem of computational mass spectrometry tools.
+          Run scientifically vetted, cutting edge apps. Build custom tools on top
+          of robust open-source algorithms. Join the OpenMS community.
         buttonlink: https://openms.readthedocs.io/en/latest/about/installation.html
         secondaryButtonText: Explore the library
         secondaryButtonLink: /openms-lib/
-        microcopy: Open source · Free to use · Trusted by researchers worldwide
+        microcopy: Ready-to-use-apps · Modular workflows · Built by the community
         stats:
-          - value: 10
+          - value: 20
             suffix: "+"
             label: Years active
-            description: Over a decade of open-source development for mass spectrometry workflows.
+            description: Over two decades of open-source development for mass spectrometry workflows.
           - value: 1000
             suffix: "+"
-            label: Researchers
-            description: Scientists and developers worldwide building and using OpenMS tools.
+            label: Citations
+            description: Peer-reviewed research citing OpenMS tools and algorithms worldwide.
           - value: 3.5
             decimals: 1
             prefix: v
@@ -392,18 +393,198 @@ languages:
           Read the [OpenMS Code of Conduct](/code-of-conduct) for guidance on
           how we work together.
 
+      openmsLibHighlights:
+        title: What is OpenMS?
+        items:
+          - title: 20+ years of development
+            text: A mature, actively maintained framework trusted by labs worldwide.
+            icon: fas fa-history
+          - title: Open source license
+            text: Freely available under the BSD-3 clause license.
+            icon: fas fa-unlock-alt
+          - title: Active community
+            text: Backed by researchers and developers across academia and industry.
+            icon: fas fa-users
+          - title: Built for scale
+            text: High performance and optimized for large omics datasets.
+            icon: fas fa-bolt
+        note: >-
+          Our community is committed to being open, inclusive, and welcoming.
+          Read the [OpenMS Code of Conduct](/code-of-conduct) for guidance on
+          how we work together.
+
+      openmsLibDevelopers:
+        eyebrow: For Developers
+        title: Contribute
+        lead: Your improvements help researchers worldwide.
+        citeText: Used OpenMS-lib in your work? If so, please cite.
+        citation:
+          badge: Primary cite
+          topic: OpenMS 3
+          title: OpenMS 3 enables reproducible analysis of large-scale mass spectrometry data
+          url: https://www.ncbi.nlm.nih.gov/pubmed/38366242
+          journal: Nature Methods
+          year: "2024"
+          authors: >-
+            Pfeuffer, Julianus; Bielow, Chris; Wein, Samuel; Jeong, Kyowon; Netz,
+            Eugen; Walter, Axel; Alka, Oliver; Nilse, Lars; Colaianni, Pasquale
+            Domenico; McCloskey, Douglas
+          actionText: View on PubMed
+          moreUrl: /citing-openms/
+          moreText: More citations
+        boxes:
+          - title: Report an Issue
+            tag: GitHub
+            icon: fab fa-github
+            text: File bugs, request features, or discuss changes on the OpenMS tracker.
+            url: https://github.com/OpenMS/OpenMS/issues
+            linkText: Open issue tracker
+          - title: Building OpenMS from Source
+            type: build
+            tag: Build
+            text: Platform-specific guides for compiling OpenMS-lib locally.
+            platforms:
+              - name: Windows
+                icon: fab fa-windows
+                url: https://openms.de/documentation/install_win.html
+              - name: Linux
+                icon: fab fa-linux
+                url: https://openms.de/documentation/install_linux.html
+              - name: macOS
+                icon: fab fa-apple
+                url: https://openms.de/documentation/install_mac.html
+          - title: Developer manual
+            tag: Docs
+            icon: fas fa-book
+            text: Architecture, coding standards, and contribution workflows for OpenMS-lib.
+            url: https://openms.readthedocs.io/en/latest/manual/develop.html
+            linkText: Read the manual
+          - title: Add a TOPP tool
+            tag: Extend
+            icon: fas fa-puzzle-piece
+            text: Step-by-step guide for adding a new tool to the TOPP pipeline suite.
+            url: https://openms.readthedocs.io/en/latest/manual/develop/adding-new-tool-to-topp.html
+            linkText: Add a TOPP tool
+          - title: Developer FAQ
+            tag: Help
+            icon: fas fa-question-circle
+            text: Answers to common questions about building, testing, and contributing.
+            url: https://openms.readthedocs.io/en/latest/manual/develop/developer-faq.html
+            linkText: Read the FAQ
+
+      pyopenmsPage:
+        highlights:
+          title: Key features
+          items:
+            - text: Run OpenMS-lib algorithms directly in Python
+            - text: Pandas DataFrame export for common OpenMS-lib datastructures
+            - text: Run in scripts or in Jupyter Notebooks
+            - text: Seamless integration with the scientific Python stack
+        gettingStarted:
+          eyebrow: Getting Started
+          items:
+            - title: Try Online
+              type: online
+              text: Run pyOpenMS in your browser without a local install.
+              links:
+                - name: Binder
+                  icon: fas fa-external-link-alt
+                  url: https://mybinder.org/v2/gh/OpenMS/pyopenms-docs/master
+                - name: Google Colab
+                  icon: fas fa-external-link-alt
+                  url: https://colab.research.google.com/github/timosachsenberg/EuBIC2026/blob/master/notebooks/EUBIC_Task0_Prerequisites.ipynb
+            - title: Installation
+              tag: Install
+              url: https://pyopenms.readthedocs.io/en/latest/user_guide/installation.html
+              linkText: Installation
+            - title: Documentation
+              tag: Docs
+              url: https://pyopenms.readthedocs.io/
+              linkText: Documentation
+            - title: API Reference
+              tag: API
+              url: https://pyopenms.readthedocs.io/en/latest/apidocs/index.html
+              linkText: API Reference
+            - title: Developer manual
+              tag: Develop
+              url: https://pyopenms.readthedocs.io/en/latest/community/index.html
+              linkText: Developer manual
+        developers:
+          eyebrow: Developers
+          title: Contribute
+          lead: Any class in OpenMS-lib can be easily wrapped and used with PyOpenMS.
+          citeText: "Used PyOpenMS in your work? If so please cite:"
+          citation:
+            variant: secondary
+            badge: Also cite
+            topic: pyOpenMS
+            title: >-
+              pyOpenMS: a Python-based interface to the OpenMS mass-spectrometry
+              algorithm library
+            url: https://www.ncbi.nlm.nih.gov/pubmed/25410388
+            journal: Proteomics
+            year: "2014"
+            authors: Röst, Hannes L; Schmitt, Uwe; Aebersold, Ruedi; Malmström, Lars
+            actionText: View on PubMed
+            moreUrl: /citing-openms/
+            moreText: More citations
+          boxes:
+            - title: Report an Issue
+              url: https://github.com/OpenMS/OpenMS/issues
+              linkText: Report an Issue
+            - title: Build From Source
+              url: https://pyopenms.readthedocs.io/en/latest/community/build_from_source.html
+              linkText: Build From Source
+            - title: Wrapping New Classes
+              url: https://pyopenms.readthedocs.io/en/latest/community/wrapping_workflows_new_classes.html
+              linkText: Wrapping New Classes
+
       webappsSection:
         eyebrow: Community tools
-        title: Our Open Source Projects
-        titleHighlight: Open Source
+        title: Featured Apps
+        titleHighlight: Apps
         description: >-
-          Featured projects actively maintained by the OpenMS core development
-          team—from command-line tools to web applications for proteomics and
-          metabolomics workflows.
+          Apps are scientifically validated end-to-end solutions for common
+          proteomics and metabolomics analysis. Test online, then download and
+          deploy locally.
         ctaText: View project
         showAll:
           text: Show all projects
           url: /applications
+
+      ecosystemSection:
+        title: Build your own pipelines using our ecosystem
+        titleHighlight: ecosystem
+        items:
+          - name: OpenMS-lib
+            url: /openms-lib/
+            logo: /images/logos/OpenMS_transparent_blackFont.svg
+            accent: openms-lib
+            description: >-
+              Reusable C++ algorithms and data structures for mass spectrometry
+              software. Ships with The OpenMS Pipeline (TOPP) command line tools
+              for mass spectrometry analysis.
+          - name: pyOpenMS
+            url: /pyopenms/
+            monogram: py
+            accent: pyopenms
+            description: >-
+              Python bindings to OpenMS-lib. Write custom analysis scripts and
+              integrate OpenMS into Python workflows.
+          - name: OpenMS-Web apps
+            url: /webapps/
+            monogram: Web
+            accent: webapps
+            description: >-
+              Web interface template for OpenMS pipelines. Deploy custom analysis
+              tools as interactive web apps without frontend development.
+          - name: pyopenms_viz
+            url: /pyopenms-viz/
+            monogram: viz
+            accent: viz
+            description: >-
+              Visualization library for mass spectrometry data. Create interactive
+              and static plots directly from Python dataframes.
 
       webapps:
         - name: FLASH App
@@ -434,10 +615,6 @@ languages:
           url: https://abi-services.cs.uni-tuebingen.de/mhcquant/
           logo: /images/webapp/logo/mhcquant.svg
           description: Web-based analysis pipeline for immunopeptidomics.
-        - name: pyopenms-viz
-          url: https://github.com/OpenMS/pyopenms_viz
-          logo: /images/logo.svg
-          description: Python-based visualization package for mass spectrometry data directly from pandas dataframes.
 
       section5: false
 
@@ -520,10 +697,9 @@ languages:
             - title: OpenMS-lib
               url: /openms-lib/
             - title: pyOpenMS
-              url: https://pyopenms.readthedocs.io/en/latest/
-              is_external: true
+              url: /pyopenms/
             - title: OpenMS Web Apps
-              url: /applications/
+              url: /webapps/
         - title: Projects
           url: /applications
           sublinks:

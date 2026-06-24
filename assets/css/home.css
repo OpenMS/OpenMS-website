@@ -250,6 +250,7 @@
 
 /* ── Homepage scroll / load reveal ── */
 .home-page--motion .home-page__block--partners,
+.home-page--motion .home-page__block--ecosystem,
 .home-page--motion .home-page__block--overview,
 .home-page--motion .home-page__trust,
 .home-page--motion .home-page__block--panel,
@@ -262,6 +263,7 @@
 }
 
 .home-page--motion .home-page__block--partners.is-revealed,
+.home-page--motion .home-page__block--ecosystem.is-revealed,
 .home-page--motion .home-page__block--overview.is-revealed,
 .home-page--motion .home-page__trust.is-revealed,
 .home-page--motion .home-page__block--panel.is-revealed,
@@ -429,6 +431,24 @@
 
 .home-page__block--partners + .home-page__block--projects .webapps-featured--home {
   padding-top: var(--home-section-gap);
+}
+
+.home-page__block--projects:has(+ .home-page__block--ecosystem) .webapps-featured--home {
+  padding-bottom: 0;
+}
+
+.home-page__block--projects + .home-page__block--ecosystem .ecosystem-home {
+  padding-top: var(--home-section-gap);
+}
+
+.home-page__block--ecosystem:has(+ .home-page__block--overview) .ecosystem-home {
+  padding-bottom: 0;
+}
+
+.home-page__block--ecosystem + .home-page__block--overview .keyfeatures-modern--home {
+  padding-top: var(--home-section-gap);
+  border-top: none;
+  border-bottom: none;
 }
 
 .home-page__block--projects:has(+ .home-page__block--overview) .webapps-featured--home {

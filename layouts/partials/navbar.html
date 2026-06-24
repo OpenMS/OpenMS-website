@@ -28,8 +28,10 @@
     </div>
 
     <div id="navbar-menu" class="navbar-menu is-static">
-      <div class="navbar-end">
-        <div class="navbar-links">
+      <div class="navbar-menu__panel">
+        <div class="navbar-menu__nav" aria-label="Site navigation">
+          <div class="navbar-end">
+            <div class="navbar-links">
         {{- range $navbar }}
         {{- if .sublinks }}
         <div class="navbar-item has-dropdown is-hoverable{{ if .is_emphasized }} is-emphasized{{ end }}">
@@ -53,20 +55,23 @@
         {{- if .IsTranslated }}
         {{ partial "translation.html" . }}
         {{- end }}
+            </div>
+
+            <div class="navbar-actions">
+            {{ partial "navbar-search.html" (dict "Site" .Site "variant" "desktop" "inputId" "navbar-search-input") }}
+            {{- range $navbar }}
+            {{- if .button }}
+            <span class="navbar-desktop-cta">{{ partial "navbar-cta.html" . }}</span>
+            {{- end }}
+            {{- end }}
+            </div>
+          </div>
         </div>
 
-        {{ partial "navbar-mobile-ctas.html" (dict "Site" .Site "placement" "menu") }}
-
-        <div class="navbar-actions">
-        {{ partial "navbar-search.html" (dict "Site" .Site "variant" "desktop" "inputId" "navbar-search-input") }}
-        {{- range $navbar }}
-        {{- if .button }}
-        <span class="navbar-desktop-cta">{{ partial "navbar-cta.html" . }}</span>
-        {{- end }}
-        {{- end }}
+        <div class="navbar-menu__footer">
+          {{ partial "navbar-mobile-ctas.html" (dict "Site" .Site "placement" "menu") }}
+          {{ partial "navbar-social.html" . }}
         </div>
-
-        {{ partial "navbar-social.html" . }}
       </div>
     </div>
     <div class="navbar-backdrop" data-navbar-backdrop hidden aria-hidden="true"></div>
