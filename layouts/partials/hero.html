@@ -1,0 +1,69 @@
+{{- $hero := .Site.Params.hero }}
+{{- $titleBefore := index $hero "titleBefore" | default "The " }}
+{{- $titleHighlight := index $hero "titleHighlight" | default "open-source framework" }}
+{{- $titleAfter := index $hero "titleAfter" | default " for Mass Spectrometry" }}
+{{- $description := index $hero "description" }}
+{{- $buttonText := index $hero "buttontext" }}
+{{- $buttonLink := index $hero "buttonlink" }}
+{{- $secondaryText := index $hero "secondaryButtonText" }}
+{{- $secondaryLink := index $hero "secondaryButtonLink" }}
+{{- $microcopy := index $hero "microcopy" }}
+
+<div class="hero-home">
+  <section class="hero-home__main" aria-label="Homepage introduction">
+    <div class="hero-home__inner">
+      <div class="hero-home__hero-grid">
+        <div class="hero-home__copy">
+          <div class="hero-home__content">
+            <h1 class="hero-home__title">
+              {{ $titleBefore }}<span class="hero-home__title-accent">{{ $titleHighlight }}</span>{{ $titleAfter }}
+            </h1>
+            {{- with $description }}
+            <p class="hero-home__description">{{ . }}</p>
+            {{- end }}
+          </div>
+        </div>
+
+        <div class="hero-home__footer">
+          <div class="hero-home__actions-block">
+            <div class="hero-home__actions" role="group" aria-label="Primary actions">
+              {{- if $buttonText }}
+              <a
+                class="hero-home__btn hero-home__btn--primary openms-btn-primary"
+                href="{{ $buttonLink }}"
+                {{- if in $buttonLink "://" }}
+                rel="noopener noreferrer"
+                {{- end }}
+              >{{ $buttonText }}</a>
+              {{- end }}
+              {{- if and $secondaryText $secondaryLink }}
+              <a
+                class="hero-home__btn hero-home__btn--secondary"
+                href="{{ $secondaryLink }}"
+                {{- if in $secondaryLink "://" }}
+                rel="noopener noreferrer"
+                {{- end }}
+              >{{ $secondaryText }}</a>
+              {{- end }}
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-home__visual">
+          <div class="hero-home__visual-shell">
+            {{ partial "hero-logo-diagram.html" . }}
+            {{- with $microcopy }}
+            <div class="hero-home__visual-caption">
+              <ul class="hero-home__highlights" role="list" aria-label="Platform highlights">
+                {{- range split . " · " }}
+                <li class="hero-home__highlight">{{ trim . " " }}</li>
+                {{- end }}
+              </ul>
+            </div>
+            {{- end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

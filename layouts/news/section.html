@@ -1,0 +1,118 @@
+{{ define "main" }}
+{{- $cfg := .Site.Params.newsSection | default dict }}
+{{- $title := index $cfg "title" | default .Title }}
+{{- $subtitle := index $cfg "subtitle" | default .Params.Subtitle }}
+{{- $eyebrow := index $cfg "eyebrow" | default "OpenMS" }}
+{{- $readMore := index $cfg "readMoreLabel" | default "Read article" }}
+{{- $pages := .Pages.ByDate.Reverse }}
+{{- $years := slice }}
+{{- range $pages }}
+  {{- if not .Date.IsZero }}
+    {{- $y := .Date.Format "2006" }}
+    {{- if not (in $years $y) }}
+      {{- $years = $years | append $y }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+<section class="news-page-layout">
+  <header class="openms-lib-hero news-page-hero" aria-label="OpenMS news">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          {{- if eq $title "News" -}}
+          OpenMS <span class="openms-lib-hero__accent">news</span>.
+          {{- else -}}
+          {{ $title }}
+          {{- end }}
+        </h1>
+        {{- with $subtitle }}
+        <p class="openms-lib-hero__lead">{{ . }}</p>
+        {{- end }}
+      </div>
+    </div>
+  </header>
+
+  <div class="news-page-layout__content">
+    <div class="news-page" data-news-year-filter>
+      <div class="news-body">
+        {{- if .Content }}
+        <div class="news-body__intro">{{ .Content }}</div>
+        {{- end }}
+
+        {{- if gt (len $years) 0 }}
+        <section class="news-bibliography" aria-label="OpenMS news articles">
+          {{ partial "news-year-select.html" . }}
+          <div class="news-bibliography__entries">
+            {{- range $years }}
+            {{- $year := . }}
+            <section class="news-year" id="news-year-{{ $year }}" data-news-year="{{ $year }}">
+              <ul class="news-list" role="list">
+                {{- range $pages }}
+                  {{- if and (not .Date.IsZero) (eq (.Date.Format "2006") $year) }}
+                <li class="news-entry" role="listitem">
+                  <p class="news-entry__title">
+                    <a class="news-entry__title-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  </p>
+                  <p class="news-entry__meta">
+                    <time class="news-entry__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                    {{- with or .Params.authors .Params.Authors }}
+                    <span class="news-entry__sep" aria-hidden="true">·</span>
+                    <span class="news-entry__authors">
+                      {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end }}
+                    </span>
+                    {{- end }}
+                  </p>
+                  {{- with .Summary }}
+                  <p class="news-entry__summary">{{ . }}</p>
+                  {{- end }}
+                  <a class="news-entry__action" href="{{ .RelPermalink }}">{{ $readMore }}</a>
+                </li>
+                  {{- end }}
+                {{- end }}
+              </ul>
+            </section>
+            {{- end }}
+          </div>
+        </section>
+        {{- end }}
+
+        {{- $undated := slice }}
+        {{- range $pages }}
+          {{- if .Date.IsZero }}
+            {{- $undated = $undated | append . }}
+          {{- end }}
+        {{- end }}
+        {{- if gt (len $undated) 0 }}
+        <section class="news-bibliography news-bibliography--undated" aria-label="Undated news">
+          <div class="news-bibliography__entries">
+            <section class="news-year news-year--undated">
+              <ul class="news-list" role="list">
+                {{- range $undated }}
+                <li class="news-entry" role="listitem">
+                  <p class="news-entry__title">
+                    <a class="news-entry__title-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  </p>
+                  {{- with or .Params.authors .Params.Authors }}
+                  <p class="news-entry__meta">
+                    <span class="news-entry__authors">
+                      {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end }}
+                    </span>
+                  </p>
+                  {{- end }}
+                  {{- with .Summary }}
+                  <p class="news-entry__summary">{{ . }}</p>
+                  {{- end }}
+                  <a class="news-entry__action" href="{{ .RelPermalink }}">{{ $readMore }}</a>
+                </li>
+                {{- end }}
+              </ul>
+            </section>
+          </div>
+        </section>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

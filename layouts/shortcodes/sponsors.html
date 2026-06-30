@@ -1,40 +1,93 @@
-<div class="sponsor-images">
-    <a href="https://libis.uni-heidelberg.de/">
-        <img src="/images/logos/LiBiS-Logo.svg" alt="Logo of LiBiS" />
+<div class="sponsor-images" role="list" aria-label="OpenMS sponsors">
+    <a class="sponsor-images__item" role="listitem" href="https://libis.uni-heidelberg.de/" target="_blank" rel="noopener noreferrer">
+        <img src="/images/logos/LiBiS-Logo.svg" alt="LiBiS logo" />
     </a>
-    <a href="https://elixir-lang.org/">
-        <img src="/images/logos/Elixir.png" alt="Logo of the Elixir Foundation" />
+    <a class="sponsor-images__item" role="listitem" href="https://elixir-lang.org/" target="_blank" rel="noopener noreferrer">
+        <svg class="sponsor-images__elixir-badge" viewBox="0 0 280 80" role="img" aria-label="ELIXIR logo">
+            <rect x="2" y="2" width="276" height="76" rx="12" fill="#6b2fb6"></rect>
+            <text x="140" y="50" text-anchor="middle" fill="#ffffff" font-family="Montserrat, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="2">ELIXIR</text>
+        </svg>
     </a>
-    <a href="https://www.denbi.de/">
-        <img src="/images/logos/denbi.jpeg" alt="Logo of the deNBI Foundation" />
+    <a class="sponsor-images__item" role="listitem" href="https://www.denbi.de/" target="_blank" rel="noopener noreferrer">
+        <span class="sponsor-images__item-inner sponsor-images__item-inner--dark">
+            <img src="/images/logos/denbi-logo-white.svg" alt="deNBI logo" />
+        </span>
     </a>
 </div>
 
 <style>
     .sponsor-images {
-        display: flex;
-        flex-direction: row;
-        max-width: 900px;
-        justify-content: center;
-        margin: 30px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(0.75rem, 2vw, 1.25rem);
+        align-items: stretch;
+        max-width: 64rem;
+        margin: 1rem auto 0;
     }
 
-    .sponsor-images > a {
-        height: 75px;
-        width: auto;
-        padding: 0 30px;
-        margin: 30px 0;
+    .sponsor-images__item {
+        min-height: 9rem;
+        padding: 1.25rem 1.35rem;
+        border-radius: 0.75rem;
+        background: rgba(var(--openms-white-rgb), 0.95);
+        border: none;
+        box-shadow: 0 0.35rem 1rem rgba(var(--openms-dark-rgb), 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        text-decoration: none;
+    }
+
+    .sponsor-images__item:hover,
+    .sponsor-images__item:focus-visible {
+        transform: translateY(-2px);
+        border-color: rgba(var(--openms-blue-rgb), 0.45);
+        box-shadow: 0 0.65rem 1.5rem rgba(var(--openms-dark-rgb), 0.12);
+        outline: none;
+    }
+
+    .sponsor-images__item img {
+        width: 100%;
+        max-width: 13.5rem;
+        max-height: 4.25rem;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+        display: block;
+    }
+
+    .sponsor-images__elixir-badge {
+        width: 100%;
+        max-width: 13.5rem;
+        max-height: 4.25rem;
+        height: auto;
+        display: block;
+    }
+
+    .sponsor-images__item-inner {
+        width: 100%;
+        max-width: 13.5rem;
+        min-height: 4.25rem;
+        border-radius: 0.45rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.55rem 0.75rem;
+    }
+
+    .sponsor-images__item-inner--dark {
+        background: var(--openms-navy);
     }
 
     @media only screen and (max-width: 850px) {
         .sponsor-images {
-            flex-direction: column;
+            grid-template-columns: 1fr;
+            max-width: 28rem;
         }
 
-        .sponsor-images > img {
-            height: auto;
-            margin: 30px 0;
-            padding: 0;
+        .sponsor-images__item {
+            min-height: 6.5rem;
         }
     }
 </style>

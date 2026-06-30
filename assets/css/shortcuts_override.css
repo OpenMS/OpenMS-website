@@ -1,3 +1,104 @@
-.shortcuts-H2 {
-  font-weight: bold;
+/* Global polish for "On this page" */
+.shortcuts-container {
+  border-radius: 0.75rem;
+}
+
+.shortcuts-title {
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-secondary-heading-size);
+  font-weight: 700;
+  color: var(--openms-navy);
+}
+
+#shortcuts {
+  max-height: min(65vh, 36rem);
+  overflow: auto;
+  padding-right: 0.2rem;
+}
+
+#shortcuts > div {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+#shortcuts > div:not(.active) {
+  border-left-color: rgba(var(--openms-blue-rgb), 0.35);
+}
+
+#shortcuts > div.active {
+  color: var(--openms-blue);
+  border-left-color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.08);
+}
+
+.shortcuts-H2,
+.shortcuts-H3,
+.shortcuts-H4 {
+  border-radius: 0 0.45rem 0.45rem 0;
+}
+
+.shortcuts-H2:hover,
+.shortcuts-H3:hover,
+.shortcuts-H4:hover {
+  background: rgba(var(--openms-blue-rgb), 0.08);
+}
+
+/* Governance page: use top jump links only (hide left TOC) */
+.content-padding:has(.governance-page) .shortcuts-container,
+.governance-page-layout .shortcuts-container {
+  display: none;
+}
+
+/* About page: hide left TOC */
+.content-padding:has(.about-page) .shortcuts-container,
+.about-page-layout .shortcuts-container,
+.research-partnerships-page-layout .shortcuts-container,
+.sponsor-us-page-layout .shortcuts-container {
+  display: none;
+}
+
+/* Contact page: hide left TOC */
+.content-padding:has(.contact-page) .shortcuts-container,
+.contact-page-layout .shortcuts-container {
+  display: none;
+}
+
+/* Help page: hide left TOC */
+.content-padding:has(.help-page) .shortcuts-container,
+.help-page-layout .shortcuts-container {
+  display: none;
+}
+
+/* News listing & articles: hide left TOC */
+.content-padding:has(.news-page-layout) .shortcuts-container,
+.news-page-layout .shortcuts-container {
+  display: none;
+}
+
+/* Donate page: hide left TOC */
+.content-padding:has(.donate-page-layout) .shortcuts-container,
+.donate-page-layout .shortcuts-container {
+  display: none;
+}
+
+/* Community calendar: hide left TOC */
+.content-padding:has(.community-calendar-layout) .shortcuts-container,
+.community-calendar-layout .shortcuts-container {
+  display: none;
+}
+
+/* Contribute page: hide left TOC */
+.content-padding:has(.contribute-page-layout) .shortcuts-container,
+.contribute-page-layout .shortcuts-container {
+  display: none;
+}
+
+/* Applications listing: hide left TOC */
+.content-padding:has(.applications-page-layout) .shortcuts-container,
+.applications-page-layout .shortcuts-container {
+  display: none;
+}
+
+/* OpenMS-lib page: hide left TOC */
+.content-padding:has(.openms-lib-layout) .shortcuts-container {
+  display: none;
 }

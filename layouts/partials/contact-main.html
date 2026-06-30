@@ -1,0 +1,58 @@
+{{- $cfg := .Site.Params.contactPage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Contact" -}}
+{{- $subtitle := index $cfg "subtitle" | default "Whether you need help with pipelines, integrations, consulting, or joining the community — reach out and we will point you to the right next step." -}}
+<section class="contact-page-layout">
+  <header class="openms-lib-hero contact-page-hero" aria-label="Contact OpenMS">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          Let's talk about your <span class="openms-lib-hero__accent">workflow</span>
+        </h1>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <ul class="openms-lib-hero__chips" aria-label="Contact at a glance">
+          <li class="openms-lib-hero__chip">Replies in 1–2 business days</li>
+          <li class="openms-lib-hero__chip">Free &amp; open to everyone</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="contact-page-layout__content">
+    <div class="contact-page">
+      <section
+        id="contact-form"
+        class="contact-page__primary"
+        aria-labelledby="contact-form-title"
+      >
+        <div class="contact-page__form-card">
+          <header class="contact-page__form-head">
+            <p class="contact-page__section-label">Message</p>
+            <h2 id="contact-form-title" class="contact-page__form-title">Send us a message</h2>
+            <p class="contact-page__form-lead">
+              Share your question or request — we will route it to the right team.
+            </p>
+          </header>
+          {{ partial "tally-form-embed.html" . }}
+        </div>
+      </section>
+
+      <section class="contact-page__paths" aria-labelledby="contact-paths-title">
+        <header class="contact-page__section-head">
+          <p class="contact-page__section-label">More options</p>
+          <h2 id="contact-paths-title" class="contact-page__section-title">Other ways to reach us</h2>
+          <p class="contact-page__section-lead">
+            Prefer email, community chat, or self-service help? Pick the option that fits.
+          </p>
+        </header>
+
+        <div class="contact-page__paths-grid">
+          {{ partial "contact-email-aside.html" . }}
+          {{ partial "contact-alternatives.html" . }}
+        </div>
+      </section>
+
+      {{ partial "contact-support.html" . }}
+    </div>
+  </div>
+</section>

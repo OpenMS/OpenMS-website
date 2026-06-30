@@ -1,48 +1,101 @@
-{{- $heroGroup := .Site.Params.heroGroup }}
+{{- $site := .Site -}}
+{{- $filterVariant := .variant -}}
+{{- $embed := .embed -}}
+{{- $heroGroup := $site.Params.heroGroup -}}
 {{- range $heroGroup }}
+{{- if and $filterVariant (ne (.variant | default "") $filterVariant) }}{{- continue }}{{- end }}
 {{- $bgColor := .bgColor }}
-<center>
-    <h1 class="title is-1 is-bold is-spaced heroItemTitle" style="background-color: #{{- $bgColor }};"> {{ .title }} </h1>
-</center>
-{{- range .heroItems }}
-<div class="hero-body {{- if .bottomBorderRadius }} heroBottomRadius {{- end}}" style="padding: 2rem 2rem; background-color: #{{- $bgColor }};">
-    <div class="container is-max-widescreen">
-        <div class="columns is-vcentered">
-            {{- if .leftAlign }}
-            <div class="column is-5 is-offset-1 hide-mobile">
-                <figure class="image is-4by3">
-                    <img class="{{ .imgClass }}"  src="{{ printf "/images/%s" .image | relURL }}" alt="Description">
-                </figure>
-            </div>
-            {{- end}}
-            <div class="column is-5 is-offset-1 landing-caption">
-                <h1 class="title is-2 is-bold is-spaced">
-                    {{ .title }}
-                </h1>
-                {{- with .subtitle }}
-                <h2 class="subtitle is-5 is-muted">
-                    {{ . }}
-                </h2>
-                {{- end }}
-                <div class="hero-cta">
-                    <a href="{{ .buttonLink }}"><button class="cta-button">{{ .buttonText }}</button></a>
-                </div>
-            </div>
-            {{- if and (not .leftAlign) (not .terminal) }}
-            <div class="column is-5 is-offset-1 hide-mobile">
-                <figure class="image is-4by3">
-                    <img src="{{ printf "/images/%s" .image | relURL }}" alt="Description">
-                </figure>
-            </div>
+{{- $eyebrow := .eyebrow }}
+{{- $titleHighlight := .titleHighlight }}
+{{- $subtitle := .subtitle }}
+{{- $variant := .variant | default "default" }}
+{{- $isLibList := eq $embed "openms-lib" }}
+<section
+  class="openms-steps openms-steps--{{ $variant }}{{- with $embed }} openms-steps--{{ $embed }}{{- end }}{{- if $isLibList }} openms-steps--lib-list{{- if eq $variant "users" }} openms-steps--lib-capabilities{{- else if eq $variant "developers" }} openms-steps--lib-developers{{- end }}{{- end }}"
+  style="--openms-steps-accent: #{{- $bgColor }};"
+  aria-labelledby="openms-steps-title-{{ .title | anchorize }}"
+>
+  <div class="openms-steps__inner openms-lib-band__inner">
+    <header class="openms-steps__header openms-lib-block__head">
+      {{- with $eyebrow }}
+      <p class="openms-steps__eyebrow openms-lib-block__eyebrow">{{ . }}</p>
+      {{- end }}
+      <h2 id="openms-steps-title-{{ .title | anchorize }}" class="openms-steps__title openms-lib-block__title">
+        {{- if and $titleHighlight (in .title $titleHighlight) }}
+        {{ replace .title $titleHighlight (printf "<span class=\"openms-steps__title-accent\">%s</span>" $titleHighlight) | safeHTML }}
+        {{- else }}
+        {{ .title }}
+        {{- end }}
+      </h2>
+      {{- with $subtitle }}
+      <p class="openms-steps__subtitle openms-lib-block__lead">{{ . }}</p>
+      {{- end }}
+    </header>
+
+    <ul class="openms-steps__grid openms-lib-list{{- if $isLibList }}{{- if eq $variant "users" }} openms-lib-list--capabilities{{- else if eq $variant "developers" }} openms-lib-list--developers{{- end }}{{- end }}" role="list" aria-label="{{ .title }}">
+      {{- range $index, $item := .heroItems }}
+      <li class="openms-steps__item" role="listitem">
+        <article class="openms-step openms-lib-list__row{{- if .terminal }} openms-step--terminal{{- end }}{{- if eq $variant "users" }} openms-step--showcase{{- end }}{{- if eq $variant "developers" }} openms-step--developer{{- end }}{{- if $isLibList }} openms-step--list-row{{- end }}">
+          {{- if and $isLibList .buttonLink (and (ne $variant "users") (ne $variant "developers")) }}
+          <a
+            class="openms-lib-card-hit"
+            href="{{ .buttonLink }}"
+            {{- if or (hasPrefix .buttonLink "http://") (hasPrefix .buttonLink "https://") }}
+            target="_blank"
+            rel="noopener noreferrer"
             {{- end }}
+            aria-label="{{ .title }} — {{ .buttonText }}"
+            tabindex="-1"
+          ></a>
+          {{- end }}
+          <span class="openms-step__index openms-lib-list__index" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
+
+          <div class="openms-step__media openms-lib-list__media{{- if and $isLibList (not .terminal) (ne $variant "users") (ne $variant "developers") }} openms-lib-feature-icon{{- end }}"{{- if $isLibList }} aria-hidden="true"{{- end }}>
             {{- if .terminal }}
-            <div class="column is-5 is-offset-1 hide-mobile">
-                {{ partial "terminal.html" . }}
-              </div>
+            <div class="openms-step__terminal">
+              {{ partial "terminal.html" . }}
+            </div>
+            {{- else }}
+            <img
+              class="openms-step__img openms-lib-list__img {{- with .imgClass }} {{ . }}{{ end }}"
+              src="{{ printf "/images/%s" .image | relURL }}"
+              alt="{{ if $isLibList }}{{ .title }}{{ end }}"
+              loading="lazy"
+              decoding="async"
+            />
             {{- end }}
-        </div>
-    </div>
-</div>
-{{- end }}
-<br>
+          </div>
+
+          <div class="openms-step__content openms-lib-list__body">
+            {{- with .tag }}
+            <div class="openms-step__tags openms-lib-list__tags" aria-label="Category">
+              {{- range (split . " · ") }}
+              <span class="openms-step__tag openms-lib-list__tag">{{ . }}</span>
+              {{- end }}
+            </div>
+            {{- end }}
+            <h3 class="openms-step__title openms-lib-list__title">{{ .title }}</h3>
+            {{- with .subtitle }}
+            <p class="openms-step__subtitle openms-lib-list__text">{{ . }}</p>
+            {{- end }}
+            {{- if and .buttonText .buttonLink }}
+            <a
+              class="openms-step__cta{{- if $isLibList }} openms-lib-list__link{{- else }} openms-btn-primary{{- end }}"
+              href="{{ .buttonLink }}"
+              {{- if or (hasPrefix .buttonLink "http://") (hasPrefix .buttonLink "https://") }}
+              target="_blank"
+              rel="noopener noreferrer"
+              {{- end }}
+            >
+              <span>{{ .buttonText }}</span>
+              <span class="openms-step__cta-arrow" aria-hidden="true">→</span>
+            </a>
+            {{- end }}
+          </div>
+        </article>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+</section>
 {{- end }}

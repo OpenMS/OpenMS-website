@@ -1,0 +1,125 @@
+{{- $cfg := .Site.Params.calendarSection | default dict -}}
+{{- $title := index $cfg "title" | default "Community events" -}}
+{{- $subtitle := index $cfg "subtitle" | default "Upcoming OpenMS meetings, workshops, and community outreach worldwide." -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Community" -}}
+{{- $titleHighlight := index $cfg "titleHighlight" | default "events" -}}
+{{- $upcomingTitle := index $cfg "upcomingTitle" | default "Upcoming events" -}}
+{{- $emptyUpcoming := index $cfg "emptyUpcoming" | default "No upcoming events scheduled right now. Check back soon or join the community to hear about the next meetup." -}}
+{{- $readMore := index $cfg "readMoreLabel" | default "View details" -}}
+{{- $allEvents := index (.Site.Data.community_events | default dict) "events" | default (slice) -}}
+{{- $upcoming := slice -}}
+{{- $past := slice -}}
+{{- range $allEvents }}
+  {{- $endStr := .end | default .start -}}
+  {{- $end := time $endStr -}}
+  {{- if $end.Before now }}
+    {{- $past = $past | append . -}}
+  {{- else }}
+    {{- $upcoming = $upcoming | append . -}}
+  {{- end }}
+{{- end }}
+{{- $upcoming = sort $upcoming "start" -}}
+{{- $past = sort $past "start" | collections.Reverse -}}
+{{- $years := slice -}}
+{{- range $past }}
+  {{- $y := (time .start).Format "2006" -}}
+  {{- if not (in $years $y) }}
+    {{- $years = $years | append $y -}}
+  {{- end }}
+{{- end }}
+{{- $years = sort $years | collections.Reverse -}}
+<section class="community-calendar-layout">
+  <header class="openms-lib-hero calendar-page-hero" aria-label="OpenMS community events">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          {{- if and $titleHighlight (in $title $titleHighlight) }}
+          {{ replace $title $titleHighlight (printf "<span class=\"openms-lib-hero__accent\">%s</span>" $titleHighlight) | safeHTML }}
+          {{- else }}
+          {{ $title }}
+          {{- end }}
+        </h1>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a
+            class="openms-lib-btn openms-lib-btn--primary"
+            href="https://github.com/OpenMS/OpenMS-website/blob/main/docs/common-tasks/update-community-calendar.md"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Add an event</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/contribute/">Contribute</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/news/">News</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="community-calendar-layout__content">
+    <div class="community-events-page">
+      <section class="community-events-page__section community-events-page__section--upcoming community-events-upcoming-layout" aria-labelledby="calendar-upcoming-title">
+        <header class="community-events-page__header">
+          <h2 id="calendar-upcoming-title" class="community-events-page__title">{{ $upcomingTitle }}</h2>
+        </header>
+
+        {{- if gt (len $upcoming) 0 }}
+        <ul class="community-events-home__grid community-events-page__grid" role="list" aria-label="Upcoming community events">
+          {{- range $upcoming }}
+          {{ partial "community-event-card.html" (dict "event" . "hideDateLine" true "primaryCta" true "readMoreLabel" $readMore) }}
+          {{- end }}
+        </ul>
+        {{- else }}
+        <p class="community-events-page__empty">{{ $emptyUpcoming }}</p>
+        {{- end }}
+      </section>
+
+      {{- if gt (len $years) 0 }}
+      {{- $defaultYear := index $years 0 -}}
+      <section class="community-events-page__section community-events-page__section--past" aria-label="Past community events">
+        <div class="events-past-panel" data-events-year-filter>
+          {{ partial "events-year-select.html" (dict "years" $years "defaultYear" $defaultYear) }}
+          <div class="events-past-panel__entries">
+            {{- range $index, $year := $years }}
+            {{- $yearEvents := slice -}}
+            {{- range $past }}
+              {{- if eq ((time .start).Format "2006") $year }}
+                {{- $yearEvents = $yearEvents | append . -}}
+              {{- end }}
+            {{- end }}
+            <section
+              class="events-past-year{{ if eq $index 0 }} events-past-year--default{{ end }}"
+              id="events-year-{{ $year }}"
+              data-events-year="{{ $year }}"
+              {{- if ne $year $defaultYear }} hidden aria-hidden="true"{{- end }}
+            >
+              <header class="events-past-year__header">
+                <h3 class="events-past-year__title">{{ $year }}</h3>
+                <p class="events-past-year__count">
+                  {{ len $yearEvents }}
+                  {{ if eq (len $yearEvents) 1 }}event{{ else }}events{{ end }}
+                </p>
+              </header>
+              <ul class="events-past-list" role="list">
+                {{- range $yearEvents }}
+                {{ partial "community-event-entry.html" (dict "event" . "readMoreLabel" $readMore) }}
+                {{- end }}
+              </ul>
+            </section>
+            {{- end }}
+          </div>
+        </div>
+      </section>
+      {{- end }}
+
+      <section class="governance-section community-events-page__update" aria-labelledby="calendar-update-title">
+        <h2 id="calendar-update-title">Updating events</h2>
+        <p>
+          Events are maintained in
+          <a href="https://github.com/OpenMS/OpenMS-website/blob/main/data/community_events.yaml" target="_blank" rel="noopener noreferrer">data/community_events.yaml</a>
+          on GitHub. Add or edit entries via pull request—see
+          <a href="https://github.com/OpenMS/OpenMS-website/blob/main/docs/common-tasks/update-community-calendar.md" target="_blank" rel="noopener noreferrer">how to update events</a>.
+        </p>
+      </section>
+    </div>
+  </div>
+</section>

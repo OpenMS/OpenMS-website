@@ -1,0 +1,35 @@
+{{- $tiers := .Site.Params.sponsorTiers | default dict -}}
+{{- $levels := index $tiers "levels" | default (slice) -}}
+{{- if gt (len $levels) 0 -}}
+<section class="governance-section sponsor-tiers" id="sponsorship-levels" aria-labelledby="sponsorship-levels-title">
+  <h2 id="sponsorship-levels-title">{{ index $tiers "title" | default "Foundation sponsorship levels" }}</h2>
+  {{- with index $tiers "intro" }}
+  <p class="sponsor-tiers__intro">{{ . }}</p>
+  {{- end }}
+
+  <div class="sponsor-tiers__grid" role="list">
+    {{- range $levels }}
+    <article class="sponsor-tier sponsor-tier--{{ .id }}" role="listitem">
+      <header class="sponsor-tier__header">
+        <p class="sponsor-tier__badge" aria-hidden="true">{{ .name }}</p>
+        <h3 class="sponsor-tier__name">{{ .name }}</h3>
+      </header>
+      {{- with .summary }}
+      <p class="sponsor-tier__summary">{{ . }}</p>
+      {{- end }}
+      {{- with .benefits }}
+      <ul class="sponsor-tier__benefits">
+        {{- range . }}
+        <li>{{ . }}</li>
+        {{- end }}
+      </ul>
+      {{- end }}
+    </article>
+    {{- end }}
+  </div>
+
+  {{- with index $tiers "note" }}
+  <p class="sponsor-tiers__note governance-note">{{ . }}</p>
+  {{- end }}
+</section>
+{{- end -}}

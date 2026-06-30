@@ -1,0 +1,25 @@
+{{- $cfg := .Site.Params.aboutPage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "About us" -}}
+{{- $subtitle := index $cfg "subtitle" | default "OpenMS Inc. is the corporate entity and fiscal home of the OpenMS project. As a Pennsylvania-based 501(c)(3) public charity, it supports development, governance, and long-term stewardship of the OpenMS ecosystem." -}}
+<section class="about-page-layout">
+  <header class="openms-lib-hero about-page-hero" aria-label="About OpenMS Inc.">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          Built for <span class="openms-lib-hero__accent">sustainability</span>, guided by <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">community</span>.
+        </h1>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/governance/">Governance</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="about-page-layout__content">
+    <div class="about-page">
+      {{ .Content }}
+    </div>
+  </div>
+</section>

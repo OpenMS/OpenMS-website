@@ -1,0 +1,79 @@
+{{- $title          := .Site.Params.title }}
+{{- $navbar         := .Site.Params.navbar }}
+{{- $navbarLogo     := .Site.Params.navbarlogo }}
+<nav id="nav" class="navbar is-fresh is-transparent no-shadow" role="navigation" aria-label="main navigation">
+  <div class="container is-max-widescreen">
+    <div class="navbar-brand">
+      {{- if $navbarLogo }}
+      {{- $logoImage := "logos/OpenMS_transparent_whiteFont.svg" -}}
+      <a class="navbar-item navbar-brand-link" href="{{ $navbarLogo.link }}">
+        <img class="navbar-logo" src="{{ printf "/images/%s" $logoImage | relURL }}" alt="{{ default (printf "%s logo" $title) $navbarLogo.altText }}">
+        {{- with $navbarLogo.text }}
+        <span class="navbar-logo-text">{{ . }}</span>
+        {{- end }}
+      </a>
+      {{- end }}
+
+      <div class="navbar-brand-actions">
+        <div class="navbar-mobile-toolbar navbar-mobile-ctas-end" aria-label="Search and menu">
+        {{ partial "navbar-search.html" (dict "Site" .Site "variant" "mobile" "inputId" "navbar-search-input-mobile") }}
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="navbar-menu" class="navbar-menu is-static">
+      <div class="navbar-menu__panel">
+        <div class="navbar-menu__nav" aria-label="Site navigation">
+          <div class="navbar-end">
+            <div class="navbar-links">
+        {{- range $navbar }}
+        {{- if .sublinks }}
+        <div class="navbar-item has-dropdown is-hoverable{{ if .is_emphasized }} is-emphasized{{ end }}">
+          <a href="{{ .url | default "#" }}" class="navbar-link" role="button" aria-expanded="false">
+            {{ .title }}
+            {{ if .is_external }}{{ partial "svg-icon" "launch" }}{{ end }}
+          </a>
+
+          <div class="navbar-dropdown">
+            {{ partial "navbar-sublinks.html" .sublinks }}
+          </div>
+        </div>
+        {{- else if not .button }}
+        <a href="{{ .url }}" class="navbar-item is-secondary">
+          {{ .title }}
+          {{ if .is_external }}{{ partial "svg-icon" "launch" }}{{ end }}
+        </a>
+        {{- end }}
+        {{- end }}
+
+        {{- if .IsTranslated }}
+        {{ partial "translation.html" . }}
+        {{- end }}
+            </div>
+
+            <div class="navbar-actions">
+            {{ partial "navbar-search.html" (dict "Site" .Site "variant" "desktop" "inputId" "navbar-search-input") }}
+            {{- range $navbar }}
+            {{- if .button }}
+            <span class="navbar-desktop-cta">{{ partial "navbar-cta.html" . }}</span>
+            {{- end }}
+            {{- end }}
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-menu__footer">
+          {{ partial "navbar-mobile-ctas.html" (dict "Site" .Site "placement" "menu") }}
+          {{ partial "navbar-social.html" . }}
+        </div>
+      </div>
+    </div>
+    <div class="navbar-backdrop" data-navbar-backdrop hidden aria-hidden="true"></div>
+  </div>
+</nav>

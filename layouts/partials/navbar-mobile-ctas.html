@@ -1,0 +1,11 @@
+{{- $site := .Site -}}
+{{- if not $site }}{{ $site = index . "Site" }}{{ end -}}
+{{- $placement := .placement | default "menu" -}}
+{{- $navbar := $site.Params.navbar -}}
+<div class="navbar-mobile-ctas{{ if eq $placement "menu" }} navbar-mobile-ctas--menu{{ end }}" aria-label="Sponsor and donate">
+  {{- range $navbar }}
+  {{- if .button }}
+  {{ partial "navbar-cta.html" . }}
+  {{- end }}
+  {{- end }}
+</div>

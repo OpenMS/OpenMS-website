@@ -1,9 +1,9 @@
 ---
 title: Contributing to OpenMS
 sidebar: false
+hidePageTitle: true
+hideShortcuts: true
 ---
-
-# Contributing to OpenMS
 
 Welcome! The OpenMS project welcomes your expertise and enthusiasm. This guide helps you understand how to get involved, whether you're writing code, improving documentation, helping with community outreach, or contributing in other ways.
 
@@ -124,7 +124,7 @@ Through community contact we share our work more widely and learn where we're fa
 
 OpenMS was all-volunteer for many years, but as its importance grew it became clear that to ensure stability and growth we'd need financial support. Like all the nonprofit world, we're constantly searching for grants, sponsorships, and other kinds of support. We have a number of ideas and of course we welcome more. Fundraising is a scarce skill here—we'd appreciate your help.
 
-You can also donate using our [OpenCollective](https://opencollective.com/openms) account.
+You can also donate on our [donation page](/donate/) (Zeffy and [Open Collective](https://opencollective.com/openms)).
 
 ---
 
@@ -160,7 +160,7 @@ The most important repositories in the OpenMS GitHub organization are:
 
 - **[streamlit-template](https://github.com/OpenMS/streamlit-template)** — A template for building lightweight web applications around OpenMS tools
 
-- **[OpenMS-website](https://github.com/OpenMS/OpenMS-website)** — Source repository for the OpenMS project website
+- **[OpenMS-website](https://github.com/OpenMS/OpenMS-website)** — Source repository for the OpenMS project website. For updating news or homepage text without front-end experience, see the [website maintainer guide](https://github.com/OpenMS/OpenMS-website/blob/main/docs/README.md) in that repository.
 
 There are additional repositories for tutorials, experimental features, and supporting infrastructure.
 

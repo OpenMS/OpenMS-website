@@ -1,0 +1,68 @@
+{{- $hero := .Site.Params.hero }}
+{{- $diagramAlt := index $hero "imageAlt" | default "Animated OpenMS logo with pulsing mass spectrometry peak diagram" }}
+
+<figure class="hero-logo-diagram" aria-label="{{ $diagramAlt }}">
+  <div class="hero-logo-diagram__chart">
+    <div class="hero-logo-diagram__frame">
+    <svg
+      class="hero-logo-diagram__svg"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 190 720 215"
+      role="img"
+      aria-hidden="true"
+      focusable="false"
+    >
+    <defs>
+      <linearGradient id="hero-openms-logo-gradient" x1="44.08" y1="305.27" x2="811.73" y2="305.27" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#ffb401" />
+        <stop offset="0.05" stop-color="#ff9701" />
+        <stop offset="0.11" stop-color="#ff8401" />
+        <stop offset="0.16" stop-color="#ff7901" />
+        <stop offset="0.22" stop-color="#ff7501" />
+        <stop offset="0.54" stop-color="#ff03cb" />
+        <stop offset="0.77" stop-color="#b503ff" />
+        <stop offset="0.91" stop-color="#3157e9" />
+      </linearGradient>
+      <radialGradient id="hero-openms-logo-glow" cx="50%" cy="42%" r="55%">
+        <stop offset="0%" stop-color="#5280f0" stop-opacity="0.04" />
+        <stop offset="55%" stop-color="#b503ff" stop-opacity="0.015" />
+        <stop offset="100%" stop-color="#3157e9" stop-opacity="0" />
+      </radialGradient>
+      <filter id="hero-openms-logo-glow-filter" x="-12%" y="-12%" width="124%" height="124%">
+        <feGaussianBlur stdDeviation="3" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+
+    <ellipse cx="360" cy="195" rx="300" ry="155" fill="url(#hero-openms-logo-glow)" />
+
+    <g class="hero-logo-diagram__stage">
+      <g transform="translate(8 8) scale(0.98)">
+        <g class="hero-logo-diagram__peaks" filter="url(#hero-openms-logo-glow-filter)">
+          <g class="hero-logo-diagram__bar" style="--bar-i:0"><rect x="44.08" y="302.49" width="22.66" height="72.54" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:1"><rect x="81.49" y="267.8" width="22.66" height="107.23" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:2"><rect x="118.9" y="212.13" width="22.66" height="162.9" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:3"><rect x="156.31" y="290.26" width="22.66" height="84.77" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:4"><rect x="193.72" y="328.58" width="22.66" height="46.45" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:5"><rect x="231.12" y="241.86" width="22.66" height="133.17" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:6"><rect x="268.53" y="308.17" width="22.66" height="66.86" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:7"><rect x="305.94" y="282.12" width="22.66" height="92.91" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:8"><rect x="343.35" y="252.86" width="22.66" height="122.17" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:9"><rect x="380.76" y="223.51" width="22.66" height="151.52" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:10"><rect x="418.17" y="272" width="22.66" height="103.03" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:11"><rect x="455.58" y="335.2" width="22.66" height="39.83" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:12"><rect x="492.99" y="272" width="22.66" height="103.03" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:13"><rect x="530.4" y="217.7" width="22.66" height="157.33" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:14"><rect x="567.81" y="308.05" width="22.66" height="66.98" fill="url(#hero-openms-logo-gradient)" /></g>
+          <g class="hero-logo-diagram__bar" style="--bar-i:15"><rect x="605.22" y="335.2" width="22.66" height="39.83" fill="url(#hero-openms-logo-gradient)" /></g>
+        </g>
+      </g>
+    </g>
+  </svg>
+    <p class="hero-logo-diagram__wordmark">OpenMS</p>
+    </div>
+  </div>
+</figure>

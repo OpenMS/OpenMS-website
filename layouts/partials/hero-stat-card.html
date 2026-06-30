@@ -1,0 +1,16 @@
+{{- $stat := .stat -}}
+<article class="hero-home__metric">
+  <h3 class="hero-home__metric-label">{{ $stat.label }}</h3>
+  <p class="hero-home__metric-value" aria-label="{{ $stat.label }}">
+    {{- with $stat.prefix }}<span class="hero-home__metric-prefix">{{ . }}</span>{{ end -}}
+    <span
+      class="hero-modern__stat-number"
+      data-count-value="{{ $stat.value }}"
+      data-count-suffix=""
+      data-count-decimals="{{ $stat.decimals | default 0 }}"
+    >0</span>{{- with $stat.suffix -}}<span class="hero-home__metric-suffix">{{ . }}</span>{{- end -}}
+  </p>
+  {{- with $stat.description }}
+  <p class="hero-home__metric-description">{{ . }}</p>
+  {{- end }}
+</article>

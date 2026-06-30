@@ -1,0 +1,52 @@
+{{- $cfg := site.Params.communitySection | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Community" -}}
+{{- $title := index $cfg "title" | default "Everyone is welcome" -}}
+{{- $titleHighlight := index $cfg "titleHighlight" | default "welcome" -}}
+{{- $lead := index $cfg "lead" | default "" -}}
+{{- $welcomeNote := index $cfg "welcomeNote" | default "" -}}
+{{- $ctaText := index $cfg "ctaText" | default "Get involved" -}}
+{{- $ctaUrl := index $cfg "ctaUrl" | default "/contribute/" -}}
+{{- $image := index $cfg "image" -}}
+{{- $imageAlt := index $cfg "imageAlt" | default "OpenMS community" -}}
+<section
+  class="community-home{{ if $image }} community-home--has-bg{{ end }}"
+  aria-labelledby="community-home-title"
+>
+  {{- with $image }}
+  <div
+    class="community-home__media"
+    style="background-image: url('{{ . | relURL }}');"
+    role="img"
+    aria-label="{{ $imageAlt }}"
+  ></div>
+  <div class="community-home__backdrop" aria-hidden="true"></div>
+  {{- end }}
+  <div class="community-home__inner">
+    <div class="community-home__content">
+      <p class="community-home__eyebrow">
+        <span class="community-home__eyebrow-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="14" height="14" focusable="false" aria-hidden="true">
+            <path fill="currentColor" d="M5.5 7a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm5 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm-7.75 5.5c0-1.52 1.67-2.75 3.75-2.75s3.75 1.23 3.75 2.75V14a.75.75 0 0 1-.75.75h-6a.75.75 0 0 1-.75-.75v-1.5zm6.5 0c.08-.62.58-1.17 1.33-1.58.6-.34 1.35-.54 2.17-.54 1.38 0 2.5.67 2.5 1.5V14a.75.75 0 0 1-.75.75h-2.5v-1.5z"/>
+          </svg>
+        </span>
+        {{ $eyebrow }}
+      </p>
+      <h2 id="community-home-title" class="community-home__title">
+        {{- if and $titleHighlight (in $title $titleHighlight) }}
+        {{ replace $title $titleHighlight (printf "<span class=\"community-home__title-accent\">%s</span>" $titleHighlight) | safeHTML }}
+        {{- else }}
+        {{ $title }}
+        {{- end }}
+      </h2>
+      {{- with $lead }}
+      <p class="community-home__lead">{{ . }}</p>
+      {{- end }}
+      {{- with $welcomeNote }}
+      <div class="community-home__note">{{ . | markdownify }}</div>
+      {{- end }}
+      <div class="community-home__actions" aria-label="Community links">
+        <a class="community-home__cta openms-btn-primary openms-step__cta" href="{{ $ctaUrl }}">{{ $ctaText }}</a>
+      </div>
+    </div>
+  </div>
+</section>

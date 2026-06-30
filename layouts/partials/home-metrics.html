@@ -1,0 +1,13 @@
+{{- $metrics := .Site.Params.homeMetrics | default dict -}}
+{{- $stats := $metrics.stats | default (index .Site.Params.hero "stats") -}}
+{{- with $stats }}
+<section class="home-page__block home-page__block--metrics home-metrics" aria-label="Key metrics">
+  <div class="home-page__container">
+    <div class="home-metrics__grid" role="group" aria-label="Key metrics">
+      {{- range . }}
+      {{ partial "home-metric-card.html" (dict "stat" .) }}
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}

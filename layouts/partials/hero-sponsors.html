@@ -1,0 +1,38 @@
+{{- $sponsors := .Site.Params.homeSponsors }}
+{{- if and $sponsors (index $sponsors "enabled") }}
+{{- $label := index $sponsors "label" | default "Supported by" }}
+{{- $description := index $sponsors "description" }}
+{{- $items := index $sponsors "sponsors" }}
+<section class="hero-sponsors" aria-labelledby="hero-sponsors-heading">
+  <div class="hero-sponsors__inner">
+    <header class="hero-sponsors__intro">
+      <p id="hero-sponsors-heading" class="hero-sponsors__label">{{ $label }}</p>
+      {{- with $description }}
+      <p class="hero-sponsors__description">{{ . }}</p>
+      {{- end }}
+    </header>
+    {{- with $items }}
+    <ul class="hero-sponsors__logos">
+      {{- range . }}
+      <li class="hero-sponsors__logo-item">
+        <a
+          class="hero-sponsors__logo-link"
+          href="{{ .url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="hero-sponsors__logo-img"
+            src="{{ .logo | relURL }}"
+            alt="{{ .alt | default .name }}"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+    {{- end }}
+  </div>
+</section>
+{{- end }}

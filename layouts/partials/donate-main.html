@@ -1,0 +1,103 @@
+{{- $cfg := .Site.Params.donatePage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Support OpenMS" -}}
+{{- $subtitle := index $cfg "subtitle" | default "Your gift helps sustain open-source mass spectrometry software, documentation, and community programs." -}}
+{{- $taxNote := index $cfg "taxNote" | default "OpenMS Inc. is a U.S. 501(c)(3) public charity. Donations may be tax-deductible for U.S. donors where permitted by law." -}}
+{{- $zeffyEmbed := strings.TrimSpace (index $cfg "zeffyEmbedUrl" | default "") -}}
+{{- $zeffyForm := strings.TrimSpace (index $cfg "zeffyFormUrl" | default "") -}}
+{{- $openCollective := index $cfg "openCollectiveUrl" | default "https://opencollective.com/openms" -}}
+{{- $showOC := index $cfg "showOpenCollective" | default true -}}
+{{- $hasZeffyEmbed := and $zeffyEmbed (hasPrefix $zeffyEmbed "https://www.zeffy.com/") -}}
+{{- $hasZeffyForm := and $zeffyForm (hasPrefix $zeffyForm "https://www.zeffy.com/") -}}
+<section class="donate-page-layout">
+  <header class="openms-lib-hero donate-page-hero" aria-label="Donate to OpenMS">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          Support <span class="openms-lib-hero__accent">OpenMS</span> with a gift.
+        </h1>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/sponsor-us/">Sponsor us</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/about/">About OpenMS Inc.</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="donate-page-layout__content">
+    <div class="donate-page governance-page about-page">
+      <section class="governance-section" aria-labelledby="donate-form-title">
+        <h2 id="donate-form-title">Make a donation</h2>
+        <p>
+          If OpenMS has been useful in your research, teaching, or company work, please consider
+          a donation commensurate with your resources. Gifts are used strictly to support
+          OpenMS open-source software, documentation, and community development.
+        </p>
+        <p class="donate-page__tax-note">{{ $taxNote }}</p>
+        <p>
+          We process donations through
+          <a href="https://www.zeffy.com/" target="_blank" rel="noopener noreferrer">Zeffy</a>,
+          a zero-fee platform for registered nonprofits—so your contribution goes further.
+        </p>
+
+        {{- if $hasZeffyEmbed -}}
+        <div class="donate-page__embed" aria-label="Zeffy donation form">
+          <iframe
+            class="donate-page__zeffy-iframe"
+            src="{{ $zeffyEmbed }}"
+            title="Donate to OpenMS via Zeffy"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allow="payment *"
+          ></iframe>
+        </div>
+        {{- else if $hasZeffyForm -}}
+        <div class="about-donate-actions donate-page__actions">
+          <a
+            class="about-cta-btn about-cta-btn--donate"
+            href="{{ $zeffyForm }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Donate on Zeffy</a>
+        </div>
+        {{- else -}}
+        <div class="donate-page__pending" role="status">
+          <p>
+            The Zeffy donation form will be embedded on this page soon. Until then,
+            please use Open Collective below or contact us if you need another way to give.
+          </p>
+        </div>
+        {{- end -}}
+
+        {{- if $showOC -}}
+        <section class="governance-section governance-section--contrast donate-page__alt" aria-labelledby="donate-alt-title">
+          <h3 id="donate-alt-title">Donate via Open Collective</h3>
+          <p>
+            You can also support OpenMS through our
+            <a href="{{ $openCollective }}" target="_blank" rel="noopener noreferrer">Open Collective</a>
+            account—useful for recurring community contributions and transparency.
+          </p>
+          <div class="about-donate-actions donate-page__actions">
+            <a
+              class="about-cta-btn about-cta-btn--donate"
+              href="{{ $openCollective }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Open Collective</a>
+          </div>
+        </section>
+        {{- end -}}
+      </section>
+
+      <section class="governance-section governance-section--contrast" aria-label="Related links">
+        <h2>Related</h2>
+        <ul>
+          <li><a href="/sponsor-us/">Sponsor us</a> — organizational sponsorship and foundation tiers</li>
+          <li><a href="/contribute/">Contribute</a> — volunteer code, docs, and community work</li>
+          <li><a href="/contact/">Contact</a> — questions about giving or partnerships</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>

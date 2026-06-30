@@ -1,0 +1,63 @@
+{{- $cfg := site.Params.eventsSection | default dict -}}
+{{- $title := index $cfg "title" | default "Upcoming events" -}}
+{{- $titleHighlight := index $cfg "titleHighlight" | default "events" -}}
+{{- $calendarText := index $cfg "calendarText" | default "View all" -}}
+{{- $calendarUrl := index $cfg "calendarUrl" | default "/calendar/" -}}
+{{- $eventsLimit := index $cfg "limit" | default 4 -}}
+{{- $emptyEvents := index $cfg "emptyEvents" | default "No upcoming events scheduled right now. Browse the calendar for past highlights or join the community to hear about the next meetup." -}}
+{{- $readMore := index $cfg "readMoreLabel" | default "View details" -}}
+{{- $allEvents := site.Data.community_events.events | default (slice) -}}
+{{- $upcoming := slice -}}
+{{- range $allEvents }}
+  {{- $endStr := .end | default .start -}}
+  {{- $end := time $endStr -}}
+  {{- if not ($end.Before now) }}
+    {{- $upcoming = $upcoming | append . -}}
+  {{- end }}
+{{- end }}
+{{- $upcoming = sort $upcoming "start" -}}
+{{- $upcoming = first $eventsLimit $upcoming -}}
+{{- $eventCount := len $upcoming -}}
+<section
+  class="community-events-home community-events-upcoming-layout community-events-home--with-news"
+  aria-labelledby="news-home-title community-events-home-title"
+>
+  <div class="community-events-home__inner">
+    <div class="community-news-events__grid">
+      {{ partial "news-home.html" . }}
+
+      <div class="community-news-events__column community-news-events__column--events">
+        <header class="community-news-events__column-header">
+          <h2 id="community-events-home-title" class="community-news-events__column-title">
+            {{- if and $titleHighlight (in $title $titleHighlight) }}
+            {{ replace $title $titleHighlight (printf "<span class=\"community-news-events__column-title-accent\">%s</span>" $titleHighlight) | safeHTML }}
+            {{- else }}
+            {{ $title }}
+            {{- end }}
+          </h2>
+          <a class="community-news-events__view-all" href="{{ $calendarUrl }}">
+            <span>{{ $calendarText }}</span>
+            <span class="community-news-events__view-all-icon" aria-hidden="true">→</span>
+          </a>
+        </header>
+
+        {{- if gt $eventCount 0 }}
+        <ul
+          class="community-events-home__grid"
+          role="list"
+          aria-label="Upcoming community events"
+        >
+          {{- range $upcoming }}
+          {{ partial "community-event-card.html" (dict "event" . "hideDateLine" true "primaryCta" true "readMoreLabel" $readMore) }}
+          {{- end }}
+        </ul>
+        {{- else }}
+        <div class="community-events-home__empty community-events-home__empty--compact">
+          <p class="community-events-home__empty-text">{{ $emptyEvents }}</p>
+          <a class="community-events-home__view-all community-events-home__view-all--inline" href="{{ $calendarUrl }}">{{ $calendarText }}</a>
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+{{- $cfg := .cfg | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" -}}
+{{- $title := index $cfg "title" | default "Key features" -}}
+{{- $lead := index $cfg "lead" -}}
+{{- $items := index $cfg "items" | default (slice) -}}
+{{- $note := index $cfg "note" -}}
+{{- $id := .id | default "product-highlights-title" -}}
+{{- $itemCount := len $items -}}
+<section
+  class="openms-lib-block openms-lib-block--highlights keyfeatures-modern keyfeatures-modern--openms-lib"
+  aria-labelledby="{{ $id }}"
+>
+  <div class="openms-lib-highlights__inner openms-lib-band__inner">
+    <header class="openms-lib-block__head openms-lib-highlights__head">
+      {{- with $eyebrow }}
+      <p class="openms-lib-block__eyebrow">{{ . }}</p>
+      {{- end }}
+      <h2 id="{{ $id }}" class="openms-lib-block__title">{{ $title }}</h2>
+      {{- with $lead }}
+      <p class="openms-lib-block__lead">{{ . }}</p>
+      {{- end }}
+    </header>
+
+    {{- with $items }}
+    <ul
+      class="openms-lib-highlights__list openms-lib-highlights__list--grid{{ with $itemCount }} openms-lib-highlights__list--count-{{ . }}{{ end }}"
+      role="list"
+    >
+      {{- range $item := . }}
+      <li class="openms-lib-highlights__item" role="listitem">
+        {{- if $item.title }}
+        {{- if $item.icon }}
+        <span class="openms-lib-highlights__icon" aria-hidden="true">
+          <i class="{{ $item.icon }}"></i>
+        </span>
+        {{- else }}
+        <span class="openms-lib-highlights__check" aria-hidden="true"></span>
+        {{- end }}
+        <div class="openms-lib-highlights__body">
+          <h3 class="openms-lib-highlights__item-title">{{ $item.title }}</h3>
+          <p class="openms-lib-highlights__text">{{ $item.text }}</p>
+        </div>
+        {{- else }}
+        <span class="openms-lib-highlights__check" aria-hidden="true"></span>
+        <div class="openms-lib-highlights__body">
+          <p class="openms-lib-highlights__text openms-lib-highlights__text--solo">{{ $item.text }}</p>
+        </div>
+        {{- end }}
+      </li>
+      {{- end }}
+    </ul>
+    {{- end }}
+
+    {{- with $note }}
+    <aside class="openms-lib-block__note openms-lib-highlights__note">
+      {{ . | markdownify }}
+    </aside>
+    {{- end }}
+  </div>
+</section>

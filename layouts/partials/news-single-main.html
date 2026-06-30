@@ -1,0 +1,50 @@
+{{- $cfg := .Site.Params.newsSection | default dict }}
+{{- $eyebrow := index $cfg "eyebrow" | default "OpenMS" }}
+{{- $backLabel := index $cfg "backToNewsLabel" | default "Back to news" }}
+{{- $newsUrl := "/news/" | relURL }}
+{{- $year := "" }}
+{{- if not .Date.IsZero }}
+  {{- $year = .Date.Format "2006" }}
+{{- end }}
+{{- if $year }}
+  {{- $newsUrl = printf "%s?year=%s" $newsUrl $year }}
+{{- end }}
+<section class="news-page-layout">
+  <header class="openms-lib-hero news-page-hero news-page-hero--article" aria-label="News article">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }} · News</p>
+        <h1 class="openms-lib-hero__title">{{ .Title }}</h1>
+        {{- with .Params.subtitle }}
+        <p class="openms-lib-hero__lead">{{ . }}</p>
+        {{- end }}
+        <div class="openms-lib-hero__actions" aria-label="Article navigation">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="{{ $newsUrl }}">{{ $backLabel }}</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="news-page-layout__content">
+    <div class="news-page news-page--article">
+      <div class="news-page__main">
+        <article class="news-article">
+          <header class="news-article__header">
+            {{ partial "news-date-badge.html" . }}
+            {{- with or .Params.authors .Params.Authors }}
+            <p class="news-article__meta">
+              <span class="news-card__authors">
+                {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end }}
+              </span>
+            </p>
+            {{- end }}
+          </header>
+
+          <div class="news-article__content">
+            {{ .Content }}
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

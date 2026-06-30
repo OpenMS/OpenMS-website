@@ -1,0 +1,202 @@
+/* Sponsor strip — full band between hero and What is OpenMS? */
+
+.hero-modern-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero-modern-wrap > .hero-modern {
+  flex-shrink: 0;
+}
+
+.hero-sponsors {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: clamp(11rem, 24vh, 17rem);
+  margin: 0;
+  padding: clamp(1.5rem, 4vh, 2.75rem) clamp(1.25rem, 4vw, 2.5rem)
+    clamp(2.5rem, 5vh, 3.75rem);
+  box-sizing: border-box;
+  background: var(--openms-white);
+  border-top: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+  border-bottom: none;
+}
+
+.hero-sponsors__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: clamp(1rem, 2.5vh, 1.5rem);
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  flex: 1 1 auto;
+}
+
+.hero-sponsors__intro {
+  margin: 0;
+  min-width: 0;
+  text-align: center;
+}
+
+.hero-sponsors__label {
+  display: inline-block;
+  margin: 0 0 0.65rem;
+  padding: 0.3rem 0.72rem;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.1);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.2);
+  border-radius: 999px;
+}
+
+.hero-sponsors__description {
+  margin: 0.35rem auto 0;
+  max-width: 36rem;
+  font-family: var(--openms-font-body);
+  font-size: clamp(0.75rem, 1vw + 0.5rem, var(--openms-body-size));
+  line-height: 1.5;
+  color: rgba(var(--openms-dark-rgb), 0.72);
+  text-wrap: pretty;
+}
+
+.hero-sponsors__logos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(0.5rem, 1.5vw, 0.875rem);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-sponsors__logo-item {
+  min-width: 0;
+  display: flex;
+}
+
+.hero-sponsors__logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: clamp(2.75rem, 6vw, 3.4rem);
+  padding: clamp(0.4rem, 1.2vw, 0.65rem) clamp(0.55rem, 1.6vw, 0.85rem);
+  border-radius: 0.5rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (hover: hover) {
+  .hero-sponsors__logo-link:hover,
+  .hero-sponsors__logo-link:focus-visible {
+    background: transparent;
+    transform: translateY(-2px);
+    box-shadow: none;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+}
+
+.hero-sponsors__logo-link:focus-visible {
+  outline: 2px solid var(--openms-yellow);
+  outline-offset: 3px;
+}
+
+.hero-sponsors__logo-img {
+  display: block;
+  max-height: clamp(1.35rem, 3.2vw, 1.95rem);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(15%) sepia(32%) saturate(1038%)
+    hue-rotate(185deg) brightness(95%) contrast(96%);
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.hero-sponsors__logo-link:hover .hero-sponsors__logo-img,
+.hero-sponsors__logo-link:focus-visible .hero-sponsors__logo-img {
+  opacity: 1;
+}
+
+.hero-sponsors__logo-item:nth-child(2) .hero-sponsors__logo-img {
+  max-height: clamp(1.65rem, 3.8vw, 2.3rem);
+}
+
+/* Wide screens — logos span full inner width */
+@media (min-width: 48rem) {
+  .hero-sponsors__logos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: none;
+  }
+}
+
+/* Tablet & mobile — room for stats bar overlapping from hero */
+@media (max-width: 48rem) {
+  .hero-sponsors {
+    min-height: clamp(14rem, 38vh, 20rem);
+    padding-top: clamp(6.25rem, 24vw, 8rem);
+    padding-bottom: clamp(1.75rem, 4vh, 2.5rem);
+    border-top: none;
+  }
+
+  .hero-sponsors__inner {
+    gap: 1rem;
+  }
+
+  .hero-sponsors__logos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .hero-sponsors__logo-link {
+    min-height: 2.5rem;
+    padding: 0.4rem 0.35rem;
+  }
+
+  .hero-sponsors__logo-img {
+    max-height: 1.35rem;
+  }
+}
+
+@media (max-width: 24rem) {
+  .hero-sponsors__logos {
+    grid-template-columns: 1fr;
+    max-width: 14rem;
+    margin-inline: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sponsors__logo-link:hover,
+  .hero-sponsors__logo-link:focus-visible {
+    transform: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .hero-sponsors__label {
+    color: var(--openms-dark);
+  }
+
+  .hero-sponsors__logo-link {
+    border-color: var(--openms-white);
+  }
+
+  .hero-sponsors__logo-img {
+    opacity: 1;
+  }
+}
