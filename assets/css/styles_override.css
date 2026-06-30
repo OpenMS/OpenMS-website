@@ -90,6 +90,7 @@
   #navbar-clone.navbar.is-fresh .navbar-menu.is-fixed {
     --openms-navbar-link-color: var(--openms-chrome-nav-text);
     --openms-navbar-link-hover-color: var(--openms-blue);
+    --openms-navbar-link-hover-bg: rgba(var(--openms-navy-rgb), 0.06);
   }
 
   .navbar.is-fresh .navbar-menu .navbar-item.has-dropdown,
@@ -137,9 +138,9 @@
   #navbar-clone.navbar.is-fresh .navbar-menu .navbar-item.has-dropdown:hover > .navbar-link,
   #navbar-clone.navbar.is-fresh .navbar-menu .navbar-item.has-dropdown > .navbar-link:hover,
   #navbar-clone.navbar.is-fresh .navbar-menu .navbar-item.has-dropdown.is-active > .navbar-link:hover {
-    color: var(--openms-chrome-nav-text) !important;
-    background: transparent !important;
-    background-color: transparent !important;
+    color: var(--openms-navbar-link-hover-color) !important;
+    background: var(--openms-navbar-link-hover-bg) !important;
+    background-color: var(--openms-navbar-link-hover-bg) !important;
   }
 
   .site-header #nav.navbar.is-fresh .navbar-menu .navbar-item.has-dropdown .navbar-link::after,
@@ -169,12 +170,15 @@
 @media (min-width: 1280px) {
   .navbar.is-fresh .navbar-item.has-dropdown .navbar-dropdown,
   #navbar-clone.navbar.is-fresh .navbar-item.has-dropdown .navbar-dropdown {
-    min-width: max(100%, 13.5rem);
-    width: max-content;
-    max-width: min(22rem, 92vw);
+    --openms-navbar-dropdown-width: 18.5rem;
+    width: var(--openms-navbar-dropdown-width);
+    min-width: var(--openms-navbar-dropdown-width);
+    max-width: var(--openms-navbar-dropdown-width);
+    box-sizing: border-box;
     margin-top: 0;
     padding-top: 0.45rem;
     padding-bottom: 0.35rem;
+    overflow: hidden;
   }
 
   .navbar.is-fresh .navbar-dropdown .navbar-item,
@@ -182,12 +186,25 @@
   #navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item,
   #navbar-clone.navbar.is-fresh .navbar-dropdown-heading {
     white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .navbar.is-fresh .navbar-dropdown .navbar-item,
   #navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item {
     padding-left: 1rem;
     padding-right: 1rem;
+    font-weight: 500;
+    font-synthesis: none;
+    min-height: 2.25rem;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 0;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease;
   }
 }
 
@@ -196,6 +213,9 @@
 #navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item,
 #navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested {
   color: var(--openms-navbar-dropdown-text) !important;
+  font-weight: 500;
+  font-synthesis: none;
+  box-sizing: border-box;
 }
 
 .navbar.is-fresh .navbar-dropdown-heading,
@@ -209,18 +229,28 @@
   #navbar-clone.navbar.is-fresh .navbar-links > .navbar-item.has-dropdown > .navbar-link,
   #navbar-clone.navbar.is-fresh .navbar-links > a.navbar-item.is-secondary {
     color: var(--openms-navbar-link-color) !important;
+    min-height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease;
   }
 
-  /* Navbar links — subtle hover (soft tint, no strong pill); exclude dropdown panel items */
+  /* Navbar links — pill hover on navy bar */
   .navbar.is-fresh .navbar-links > a.navbar-item.is-secondary:hover,
   .navbar.is-fresh .navbar-item.has-dropdown:hover > .navbar-link,
   .navbar.is-fresh .navbar-item.has-dropdown > .navbar-link:hover,
   #navbar-clone.navbar.is-fresh .navbar-links > a.navbar-item.is-secondary:hover,
   #navbar-clone.navbar.is-fresh .navbar-item.has-dropdown:hover > .navbar-link,
   #navbar-clone.navbar.is-fresh .navbar-item.has-dropdown > .navbar-link:hover {
-    background: transparent !important;
-    background-color: transparent !important;
+    background: var(--openms-navbar-link-hover-bg) !important;
+    background-color: var(--openms-navbar-link-hover-bg) !important;
     color: var(--openms-navbar-link-hover-color) !important;
+    border-color: rgba(var(--openms-white-rgb), 0.14);
   }
 
   .navbar.is-fresh .navbar-item.has-dropdown:hover > .navbar-link::after,
@@ -234,16 +264,18 @@
   .navbar.is-fresh .navbar-item.has-dropdown > .navbar-link:focus-visible,
   #navbar-clone.navbar.is-fresh a.navbar-item.is-secondary:focus-visible,
   #navbar-clone.navbar.is-fresh .navbar-item.has-dropdown > .navbar-link:focus-visible {
-    background: transparent !important;
-    background-color: transparent !important;
+    background: var(--openms-navbar-link-hover-bg) !important;
+    background-color: var(--openms-navbar-link-hover-bg) !important;
     color: var(--openms-navbar-link-hover-color) !important;
+    border-color: rgba(var(--openms-white-rgb), 0.14);
   }
 
   .navbar.is-fresh .navbar-item.has-dropdown.is-active > .navbar-link,
   #navbar-clone.navbar.is-fresh .navbar-item.has-dropdown.is-active > .navbar-link {
-    background: transparent !important;
-    background-color: transparent !important;
+    background: var(--openms-navbar-link-hover-bg) !important;
+    background-color: var(--openms-navbar-link-hover-bg) !important;
     color: var(--openms-navbar-link-hover-color) !important;
+    border-color: rgba(var(--openms-white-rgb), 0.14);
   }
 
   .navbar.is-fresh .navbar-item.has-dropdown.is-active > .navbar-link::after,
@@ -253,23 +285,47 @@
 }
 
 .navbar.is-fresh .navbar-dropdown a.navbar-item:hover,
-.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested:hover,
+.navbar.is-fresh .navbar-dropdown a.navbar-item.is-nested:hover,
 #navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item:hover,
-#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested:hover {
-  background: transparent !important;
-  background-color: transparent !important;
+#navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item.is-nested:hover {
+  background: var(--openms-navbar-dropdown-hover-bg) !important;
+  background-color: var(--openms-navbar-dropdown-hover-bg) !important;
   color: var(--openms-navbar-dropdown-hover-text) !important;
-  font-weight: 600;
+  font-weight: 500;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: none;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested:hover,
+#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested:hover {
+  padding-left: 1.5rem;
 }
 
 .navbar.is-fresh .navbar-dropdown a.navbar-item:focus-visible,
-.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested:focus-visible,
+.navbar.is-fresh .navbar-dropdown a.navbar-item.is-nested:focus-visible,
 #navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item:focus-visible,
-#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested:focus-visible {
-  background: transparent !important;
-  background-color: transparent !important;
+#navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item.is-nested:focus-visible {
+  background: var(--openms-navbar-dropdown-hover-bg) !important;
+  background-color: var(--openms-navbar-dropdown-hover-bg) !important;
   color: var(--openms-navbar-dropdown-hover-text) !important;
-  font-weight: 600;
+  font-weight: 500;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: none;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested:focus-visible,
+#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested:focus-visible {
+  padding-left: 1.5rem;
 }
 
 /* Logo — no hover background */

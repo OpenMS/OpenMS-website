@@ -217,8 +217,9 @@
     margin-top: 0;
     transform: none;
     z-index: 400;
-    overflow: visible;
+    overflow: hidden;
     display: none;
+    box-sizing: border-box;
   }
 
   .navbar.is-fresh .navbar-links .navbar-item.has-dropdown.is-hoverable:hover .navbar-dropdown,
@@ -949,7 +950,7 @@
     gap: 0.2rem;
   }
 
-  /* Mobile drawer — flat links, no tint fills */
+  /* Mobile drawer — link hover tint */
   .site-header #nav.navbar.is-fresh .navbar-menu .navbar-item:not(.navbar-cta-item):hover,
   .site-header #nav.navbar.is-fresh .navbar-menu .navbar-link:hover,
   .site-header #nav.navbar.is-fresh .navbar-menu a.navbar-item.is-secondary:hover,
@@ -960,19 +961,19 @@
   #navbar-clone.navbar.is-fresh .navbar-menu a.navbar-item.is-secondary:hover,
   #navbar-clone.navbar.is-fresh .navbar-menu .navbar-item.has-dropdown:hover > .navbar-link,
   #navbar-clone.navbar.is-fresh .navbar-menu .navbar-item.has-dropdown > .navbar-link:hover {
-    background: transparent !important;
-    background-color: transparent !important;
-    color: var(--openms-chrome-nav-text) !important;
+    background: var(--openms-navbar-link-hover-bg, rgba(var(--openms-navy-rgb), 0.06)) !important;
+    background-color: var(--openms-navbar-link-hover-bg, rgba(var(--openms-navy-rgb), 0.06)) !important;
+    color: var(--openms-navbar-link-hover-color, var(--openms-blue)) !important;
   }
 
   .site-header #nav.navbar.is-fresh .navbar-menu .navbar-dropdown a.navbar-item:hover,
   .site-header #nav.navbar.is-fresh .navbar-menu .navbar-dropdown .navbar-item.is-nested:hover,
   #navbar-clone.navbar.is-fresh .navbar-menu .navbar-dropdown a.navbar-item:hover,
   #navbar-clone.navbar.is-fresh .navbar-menu .navbar-dropdown .navbar-item.is-nested:hover {
-    background: transparent !important;
-    background-color: transparent !important;
-    color: var(--openms-chrome-nav-text) !important;
-    font-weight: 600;
+    background: var(--openms-navbar-dropdown-hover-bg) !important;
+    background-color: var(--openms-navbar-dropdown-hover-bg) !important;
+    color: var(--openms-navbar-dropdown-hover-text) !important;
+    font-weight: 500;
   }
 
   .site-header #nav.navbar.is-fresh .navbar-menu .navbar-mobile-social a,

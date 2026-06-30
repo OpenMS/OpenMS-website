@@ -1,7 +1,7 @@
 {{ define "main" }}
 <main id="content" class="home-page" aria-label="OpenMS homepage">
   {{- if .Site.Params.hero }}
-  <header class="home-page__hero" aria-label="Introduction">
+  <header class="home-page__hero is-revealed" aria-label="Introduction">
     {{ partial "hero.html" . }}
   </header>
   {{- end }}
@@ -30,7 +30,7 @@
     {{ partial "community-home.html" . }}
   </section>
 
-  <section class="home-page__block home-page__block--events" aria-labelledby="community-events-home-title">
+  <section class="home-page__block home-page__block--events" aria-labelledby="news-home-title community-events-home-title">
     {{ partial "community-events-home.html" . }}
   </section>
 

@@ -22,7 +22,7 @@
   --openms-navbar-dropdown-text: rgba(var(--openms-navy-rgb), 0.9);
   --openms-navbar-dropdown-heading: rgba(var(--openms-navy-rgb), 0.5);
   --openms-navbar-dropdown-hover-text: var(--openms-navy);
-  --openms-navbar-dropdown-hover-bg: transparent;
+  --openms-navbar-dropdown-hover-bg: rgba(var(--openms-navy-rgb), 0.06);
   --openms-navbar-dropdown-border: rgba(var(--openms-navy-rgb), 0.1);
   --openms-navbar-container-pad-inline: clamp(1.25rem, 3vw, 2.25rem);
   --openms-navbar-container-pad-inline-mobile: 1.15rem;

@@ -21,41 +21,47 @@
             {{- with $description }}
             <p class="hero-home__description">{{ . }}</p>
             {{- end }}
-            <div class="hero-home__actions-block">
-              <div class="hero-home__actions" role="group" aria-label="Primary actions">
-                {{- if $buttonText }}
-                <a
-                  class="hero-home__btn hero-home__btn--primary openms-btn-primary"
-                  href="{{ $buttonLink }}"
-                  {{- if in $buttonLink "://" }}
-                  rel="noopener noreferrer"
-                  {{- end }}
-                >{{ $buttonText }}</a>
+          </div>
+        </div>
+
+        <div class="hero-home__footer">
+          <div class="hero-home__actions-block">
+            <div class="hero-home__actions" role="group" aria-label="Primary actions">
+              {{- if $buttonText }}
+              <a
+                class="hero-home__btn hero-home__btn--primary openms-btn-primary"
+                href="{{ $buttonLink }}"
+                {{- if in $buttonLink "://" }}
+                rel="noopener noreferrer"
                 {{- end }}
-                {{- if and $secondaryText $secondaryLink }}
-                <a
-                  class="hero-home__btn hero-home__btn--secondary"
-                  href="{{ $secondaryLink }}"
-                  {{- if in $secondaryLink "://" }}
-                  rel="noopener noreferrer"
-                  {{- end }}
-                >{{ $secondaryText }}</a>
+              >{{ $buttonText }}</a>
+              {{- end }}
+              {{- if and $secondaryText $secondaryLink }}
+              <a
+                class="hero-home__btn hero-home__btn--secondary"
+                href="{{ $secondaryLink }}"
+                {{- if in $secondaryLink "://" }}
+                rel="noopener noreferrer"
                 {{- end }}
-              </div>
-              {{- with $microcopy }}
-              <p class="hero-home__note">
-                {{- range $i, $part := split . " · " }}
-                {{- if $i }}<span class="hero-home__note-sep" aria-hidden="true">·</span>{{ end }}
-                <span class="hero-home__note-item">{{ trim $part " " }}</span>
-                {{- end }}
-              </p>
+              >{{ $secondaryText }}</a>
               {{- end }}
             </div>
           </div>
         </div>
 
         <div class="hero-home__visual">
-          {{ partial "hero-logo-diagram.html" . }}
+          <div class="hero-home__visual-shell">
+            {{ partial "hero-logo-diagram.html" . }}
+            {{- with $microcopy }}
+            <div class="hero-home__visual-caption">
+              <ul class="hero-home__highlights" role="list" aria-label="Platform highlights">
+                {{- range split . " · " }}
+                <li class="hero-home__highlight">{{ trim . " " }}</li>
+                {{- end }}
+              </ul>
+            </div>
+            {{- end }}
+          </div>
         </div>
       </div>
     </div>

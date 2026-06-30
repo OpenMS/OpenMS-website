@@ -123,6 +123,12 @@ languages:
         allYearsLabel: All
         readMoreLabel: Read article
         backToNewsLabel: Back to news
+        homeTitle: Latest news
+        homeTitleHighlight: news
+        homeViewAllText: View all
+        homeViewAllUrl: /news/
+        homeLimit: 4
+        homeEmptyMessage: No news articles yet. Check back soon for announcements and updates.
         # defaultYear: "2026"
         defaultToLatestYear: false
         emptyMessage: No news items for the selected year.
@@ -258,6 +264,7 @@ languages:
           Run scientifically vetted, cutting edge apps. Build custom tools on top
           of robust open-source algorithms. Join the OpenMS community.
         imageAlt: Animated OpenMS logo with pulsing peak diagram
+        buttontext: Get started
         buttonlink: https://openms.readthedocs.io/en/latest/about/installation.html
         secondaryButtonText: Explore the library
         secondaryButtonLink: /openms-lib/
@@ -301,7 +308,7 @@ languages:
         titleHighlight: events
         lead: >-
           Workshops, developer meetings, and community outreach around the world.
-        calendarText: View all events
+        calendarText: View all
         calendarUrl: /calendar/
         readMoreLabel: View details
         limit: 4
