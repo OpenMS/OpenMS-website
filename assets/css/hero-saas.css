@@ -39,17 +39,143 @@
   grid-template-columns: minmax(0, 1fr);
   gap: clamp(1.75rem, 4vh, 2.5rem);
   align-items: start;
-  justify-items: center;
+  justify-items: stretch;
   max-width: 75rem;
   margin: 0 auto;
+  width: 100%;
+}
+
+.hero-home__hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vh, 2.5rem);
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 901px) {
+  .hero-home__hero-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(1.75rem, 4vw, 3rem);
+  }
+}
+
+.hero-home__copy {
+  width: 100%;
+  min-width: 0;
+}
+
+.hero-home__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.hero-home__image,
+.hero-logo-diagram {
+  display: block;
+  width: 100%;
+  max-width: min(100%, 30rem);
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.hero-logo-diagram {
+  margin: 0;
+}
+
+.hero-logo-diagram__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: clamp(14rem, 34vw, 22rem);
+  overflow: visible;
+}
+
+.hero-logo-diagram__stage {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: hero-logo-float 6.5s ease-in-out infinite;
+  opacity: 0.75;
+}
+
+.hero-logo-diagram__wordmark {
+  transform-origin: center;
+  transform-box: fill-box;
+  opacity: 0.28;
+}
+
+.hero-logo-diagram__peaks {
+  opacity: 0.58;
+}
+
+.hero-logo-diagram__bar {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: hero-logo-bar-pulse 3s ease-in-out infinite;
+  animation-delay: calc(var(--bar-i, 0) * 0.09s);
+}
+
+@keyframes hero-logo-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes hero-logo-bar-pulse {
+  0%,
+  100% {
+    transform: scaleY(0.7);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo-diagram__stage,
+  .hero-logo-diagram__bar {
+    animation: none;
+  }
+
+  .hero-logo-diagram__stage {
+    opacity: 0.75;
+  }
+
+  .hero-logo-diagram__wordmark {
+    opacity: 0.28;
+  }
+
+  .hero-logo-diagram__peaks {
+    opacity: 0.58;
+  }
+
+  .hero-logo-diagram__bar {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
 .hero-home__content {
   display: grid;
   gap: 0;
-  max-width: 42rem;
-  margin-inline: auto;
-  text-align: center;
+  max-width: 36rem;
+  margin-inline: 0;
+  text-align: left;
 }
 
 .hero-home__title {
@@ -60,7 +186,7 @@
   line-height: 1.08;
   letter-spacing: -0.035em;
   color: var(--openms-navy);
-  text-align: center;
+  text-align: left;
   text-wrap: balance;
 }
 
@@ -70,99 +196,11 @@
   }
 }
 
-.hero-home__metrics-row {
-  width: 100%;
-  margin-top: clamp(2rem, 5vh, 3.5rem);
-  padding-top: clamp(1.5rem, 3.5vh, 2.5rem);
-  border-top: 1px solid rgba(var(--openms-navy-rgb), 0.1);
-}
-
-.hero-home__bento {
-  width: 100%;
-  max-width: none;
-  margin-inline: 0;
-}
-
-.hero-home__metrics {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1.25rem, 3vw, 2.5rem);
-  width: 100%;
-}
-
-.hero-home__metric {
-  position: relative;
-  display: grid;
-  gap: 0.65rem;
-  align-content: start;
-  padding: 0 clamp(1rem, 2vw, 1.75rem);
-  text-align: left;
-}
-
-.hero-home__metric:not(:first-child)::before {
-  content: "";
-  position: absolute;
-  top: 0.15rem;
-  bottom: 0.15rem;
-  left: 0;
-  width: 1px;
-  background: rgba(var(--openms-navy-rgb), 0.12);
-}
-
-.hero-home__metric-label {
-  margin: 0;
-  font-family: var(--openms-font-body);
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  color: var(--openms-navy);
-  text-wrap: balance;
-}
-
-.hero-home__metric-value {
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 0.1rem 0.15rem;
-  margin: 0;
-  font-family: var(--openms-font-heading);
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-  color: var(--openms-navy);
-}
-
-.hero-home__metric-prefix,
-.hero-home__metric-suffix {
-  font-size: clamp(2rem, 4.5vw, 3rem);
-  font-weight: 800;
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-}
-
-.hero-home__metric-value .hero-modern__stat-number {
-  font: inherit;
-  color: inherit;
-  font-size: clamp(2.75rem, 6vw, 4.25rem);
-}
-
-.hero-home__metric-description {
-  margin: 0;
-  max-width: 18rem;
-  font-family: var(--openms-font-body);
-  font-size: 0.9rem;
-  line-height: 1.55;
-  color: rgba(var(--openms-dark-rgb), 0.62);
-  text-wrap: pretty;
-}
-
 .hero-home__actions-block {
   display: grid;
   gap: 0.85rem;
   margin-top: 0.25rem;
-  justify-items: center;
+  justify-items: start;
   width: 100%;
 }
 
@@ -201,7 +239,7 @@
   font-size: var(--openms-body-size-lg);
   line-height: 1.65;
   color: rgba(var(--openms-dark-rgb), 0.82);
-  text-align: center;
+  text-align: left;
   text-wrap: pretty;
 }
 
@@ -210,7 +248,7 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .hero-home__btn {
@@ -249,13 +287,14 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.35rem 1.15rem;
   margin: 0;
   font-family: var(--openms-font-body);
   font-size: var(--openms-text-min);
   line-height: 1.5;
   color: rgba(var(--openms-dark-rgb), 0.62);
+  text-align: left;
 }
 
 .hero-home__note-sep {
@@ -288,30 +327,6 @@
   color: rgba(var(--openms-navy-rgb), 0.55);
 }
 
-@media (max-width: 720px) {
-  .hero-home__metrics {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-  }
-
-  .hero-home__metric {
-    padding: 0;
-  }
-
-  .hero-home__metric:not(:first-child)::before {
-    display: none;
-  }
-
-  .hero-home__metric:not(:first-child) {
-    padding-top: 1.75rem;
-    border-top: 1px solid rgba(var(--openms-navy-rgb), 0.1);
-  }
-
-  .hero-home__metric-description {
-    max-width: none;
-  }
-}
-
 @media (max-width: 900px) {
   .hero-home__inner {
     gap: 1.5rem;
@@ -326,14 +341,6 @@
 
   .hero-home__description {
     max-width: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-home__metric-value .hero-modern__stat-number,
-  .hero-home__metric-prefix,
-  .hero-home__metric-suffix {
-    font-size: clamp(2.25rem, 10vw, 3rem);
   }
 }
 

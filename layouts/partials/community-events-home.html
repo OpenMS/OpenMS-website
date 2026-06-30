@@ -7,6 +7,7 @@
 {{- $calendarUrl := index $cfg "calendarUrl" | default "/calendar/" -}}
 {{- $eventsLimit := index $cfg "limit" | default 4 -}}
 {{- $emptyEvents := index $cfg "emptyEvents" | default "No upcoming events scheduled right now. Browse the calendar for past highlights or join the community to hear about the next meetup." -}}
+{{- $readMore := index $cfg "readMoreLabel" | default "View details" -}}
 {{- $allEvents := site.Data.community_events.events | default (slice) -}}
 {{- $upcoming := slice -}}
 {{- range $allEvents }}
@@ -19,7 +20,7 @@
 {{- $upcoming = sort $upcoming "start" -}}
 {{- $upcoming = first $eventsLimit $upcoming -}}
 {{- $eventCount := len $upcoming -}}
-<section class="community-events-home" aria-labelledby="community-events-home-title">
+<section class="community-events-home community-events-upcoming-layout" aria-labelledby="community-events-home-title">
   <div class="community-events-home__inner">
     <header class="community-events-home__header">
       <div class="community-events-home__header-main">
@@ -51,51 +52,11 @@
       aria-label="Upcoming community events"
     >
       {{- range $upcoming }}
-      {{- $start := time .start -}}
-      {{- $eventUrl := .news_url | default .url | default "" -}}
-      {{- $isExternal := and $eventUrl (in $eventUrl "://") -}}
-      {{- $category := .category | default "event" -}}
-      {{- $categoryLabel := replace $category "-" " " | title -}}
-      <li class="community-events-home__item" role="listitem">
-        <article class="community-events-home__card community-events-home__card--{{ $category }}">
-          {{- if $eventUrl }}
-          <a
-            class="community-events-home__card-link"
-            href="{{ $eventUrl }}"
-            {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{- end }}
-          >
-          {{- else }}
-          <div class="community-events-home__card-link community-events-home__card-link--static">
-          {{- end }}
-            <div class="community-events-home__date-block">
-              <time
-                class="community-events-home__date"
-                datetime="{{ .start }}"
-                {{- if and .end (ne .end .start) }}
-                title="{{ $start.Format "Jan 2, 2006" }} – {{ (time .end).Format "Jan 2, 2006" }}"
-                {{- end }}
-              >
-                <span class="community-events-home__date-day">{{ $start.Format "2" }}</span>
-                <span class="community-events-home__date-month">{{ $start.Format "Jan" | upper }}</span>
-              </time>
-            </div>
-            <div class="community-events-home__card-body">
-              <h3 class="community-events-home__card-title">{{ .title }}</h3>
-              {{- with .location }}
-              <p class="community-events-home__card-location">{{ . }}</p>
-              {{- end }}
-            </div>
-          {{- if $eventUrl }}
-          </a>
-          {{- else }}
-          </div>
-          {{- end }}
-        </article>
-      </li>
+      {{ partial "community-event-card.html" (dict "event" . "hideDateLine" true "primaryCta" true "readMoreLabel" $readMore) }}
       {{- end }}
     </ul>
     <footer class="community-events-home__footer">
-      <a class="community-events-home__calendar-btn openms-btn-primary openms-step__cta" href="{{ $calendarUrl }}">{{ $calendarText }}</a>
+      <a class="community-events-home__view-all openms-btn-primary openms-step__cta" href="{{ $calendarUrl }}">{{ $calendarText }}</a>
     </footer>
     {{- else }}
     <div class="community-events-home__empty">
@@ -111,7 +72,7 @@
         </svg>
       </div>
       <p class="community-events-home__empty-text">{{ $emptyEvents }}</p>
-      <a class="community-events-home__calendar-btn openms-btn-primary openms-step__cta" href="{{ $calendarUrl }}">{{ $calendarText }}</a>
+      <a class="community-events-home__view-all openms-btn-primary openms-step__cta" href="{{ $calendarUrl }}">{{ $calendarText }}</a>
     </div>
     {{- end }}
   </div>

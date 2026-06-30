@@ -5,7 +5,7 @@
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var hero = page.querySelector(".home-page__hero");
   var scrollSections = page.querySelectorAll(
-    ".home-page__block--partners, .home-page__block--projects, .home-page__block--ecosystem, .home-page__block--overview, .home-page__cta, .home-page__block--panel, .home-page__block--content"
+    ".home-page__block--projects, .home-page__block--partners, .home-page__block--ecosystem, .home-page__block--overview, .home-page__cta, .home-page__block--panel, .home-page__block--content"
   );
 
   var projectsGrid = page.querySelector(".home-page__block--projects .webapps-featured__grid");
@@ -30,13 +30,17 @@
     projectRevealTargets.push({ item: projectsFooter, observerTarget: projectsFooter });
   }
 
-  if (hero) {
-    hero.querySelectorAll(".hero-home__metric").forEach(function (card, index) {
-      card.style.setProperty("--hero-reveal-index", String(index));
-    });
+  var metricsSection = page.querySelector(".home-page__block--metrics");
 
+  if (hero) {
     hero.querySelectorAll(".hero-home__actions .hero-home__btn").forEach(function (btn, index) {
       btn.style.setProperty("--hero-reveal-index", String(index));
+    });
+  }
+
+  if (metricsSection) {
+    metricsSection.querySelectorAll(".home-metrics__card").forEach(function (card, index) {
+      card.style.setProperty("--metrics-reveal-index", String(index));
     });
   }
 
@@ -98,8 +102,13 @@
     if (hero) hero.classList.add("is-revealed");
   }
 
+  function revealMetrics() {
+    if (metricsSection) metricsSection.classList.add("is-revealed");
+  }
+
   function revealAll() {
     revealHero();
+    revealMetrics();
     scrollSections.forEach(reveal);
     revealProjectCards();
     revealEcosystemCards();
@@ -113,7 +122,12 @@
   }
 
   if (hero) {
-    window.setTimeout(revealHero, 80);
+    window.setTimeout(function () {
+      revealHero();
+      revealMetrics();
+    }, 80);
+  } else {
+    revealMetrics();
   }
 
   if (!("IntersectionObserver" in window)) {

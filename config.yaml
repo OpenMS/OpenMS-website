@@ -128,9 +128,17 @@ languages:
         emptyMessage: No news items for the selected year.
       calendarSection:
         eyebrow: Community
-        title: Community calendar
-        titleHighlight: calendar
-        subtitle: Upcoming OpenMS meetings, workshops, and community events.
+        title: Community events
+        titleHighlight: events
+        subtitle: Upcoming OpenMS meetings, workshops, and community outreach worldwide.
+        upcomingTitle: Upcoming events
+        pastTitle: Past events
+        yearFilterLabel: Filter events by year
+        emptyUpcoming: >-
+          No upcoming events scheduled right now. Check back soon or join the
+          community to hear about the next meetup.
+        pastHint: Browse events from previous years.
+        readMoreLabel: View details
       # Donate page (/donate/) — paste URLs from Zeffy: Donations → My forms → Share
       donatePage:
         eyebrow: Support OpenMS
@@ -215,8 +223,23 @@ languages:
           logo: /images/logos/immatics.png
           url: https://immatics.com/
         - name: FullSeeomics
-          abbr: FS
+          logo: /images/logos/logo-fullseeomics.png
           url: https://fullseeomics.com/
+        - name: Stockholm University
+          logo: /images/logos/logo-stockholm-university.png
+          url: https://www.su.se/english
+        - name: Compomics Group
+          logo: /images/logos/logo-compomics.png
+          url: https://www.compomics.com/
+        - name: Ghent University
+          logo: /images/logos/logo-vib-ghent.png
+          url: https://vib.be/en#/
+        - name: University of Cambridge
+          logo: /images/logos/logo-university-cambridge.png
+          url: https://www.cam.ac.uk/
+        - name: University of Groningen
+          logo: /images/logos/logo-university-groningen.png
+          url: https://www.rug.nl/?lang=en
       navbarlogo:
         image: logos/OpenMS_transparent_blackFont.svg
         link: /
@@ -234,10 +257,13 @@ languages:
           Expert-crafted ecosystem of computational mass spectrometry tools.
           Run scientifically vetted, cutting edge apps. Build custom tools on top
           of robust open-source algorithms. Join the OpenMS community.
+        imageAlt: Animated OpenMS logo with pulsing peak diagram
         buttonlink: https://openms.readthedocs.io/en/latest/about/installation.html
         secondaryButtonText: Explore the library
         secondaryButtonLink: /openms-lib/
         microcopy: Ready-to-use-apps · Modular workflows · Built by the community
+
+      homeMetrics:
         stats:
           - value: 20
             suffix: "+"
@@ -275,12 +301,13 @@ languages:
         titleHighlight: events
         lead: >-
           Workshops, developer meetings, and community outreach around the world.
-        calendarText: View full calendar
+        calendarText: View all events
         calendarUrl: /calendar/
+        readMoreLabel: View details
         limit: 4
         emptyEvents: >-
-          No upcoming events scheduled right now. Browse the calendar for past
-          highlights or join the community to hear about the next meetup.
+          No upcoming events scheduled right now. Browse past events or join the
+          community to hear about the next meetup.
 
       homePage:
         pathwaysEyebrow: Get started
@@ -560,6 +587,7 @@ languages:
             url: /openms-lib/
             logo: /images/logos/OpenMS_transparent_blackFont.svg
             accent: openms-lib
+            size: wide
             description: >-
               Reusable C++ algorithms and data structures for mass spectrometry
               software. Ships with The OpenMS Pipeline (TOPP) command line tools
@@ -568,6 +596,7 @@ languages:
             url: /pyopenms/
             monogram: py
             accent: pyopenms
+            size: standard
             description: >-
               Python bindings to OpenMS-lib. Write custom analysis scripts and
               integrate OpenMS into Python workflows.
@@ -575,6 +604,7 @@ languages:
             url: /webapps/
             monogram: Web
             accent: webapps
+            size: standard
             description: >-
               Web interface template for OpenMS pipelines. Deploy custom analysis
               tools as interactive web apps without frontend development.
@@ -582,6 +612,7 @@ languages:
             url: /pyopenms-viz/
             monogram: viz
             accent: viz
+            size: wide
             description: >-
               Visualization library for mass spectrometry data. Create interactive
               and static plots directly from Python dataframes.
@@ -590,18 +621,22 @@ languages:
         - name: FLASH App
           url: http://flashapp.webapps.openms.org/
           logo: /images/webapp/logo/flashapp.png
+          logoSize: large
           description: Web-based analysis and visualization of top-down proteomics data.
         - name: OpenDIAKiosk
           url: http://opendia.webapps.openms.org/
           logo: /images/webapp/logo/OpenDIAKiosk_logo_portrait.svg
+          logoSize: large
           description: Interactive DIA proteomics data analysis.
         - name: umetaflow
           url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
           logo: /images/webapp/logo/umetaflow.png
+          logoSize: large
           description: Web-based access to the UmetaFlow pipeline.
         - name: OpenDDA
           url: http://opendda.webapps.openms.org/
           logo: /images/webapp/logo/openDDA.svg
+          logoSize: xlarge
           description: Web-based workflow for DDA proteomics.
         - name: naseweis
           url: https://abi-services.cs.uni-tuebingen.de/naseweis/
@@ -610,10 +645,12 @@ languages:
         - name: NuXL
           url: https://abi-services.cs.uni-tuebingen.de/nuxl/
           logo: /images/webapp/logo/nuxl.png
+          logoSize: large
           description: Web-based analysis pipeline for XL-MS data.
         - name: MHCquant
           url: https://abi-services.cs.uni-tuebingen.de/mhcquant/
           logo: /images/webapp/logo/mhcquant.svg
+          logoSize: xlarge
           description: Web-based analysis pipeline for immunopeptidomics.
 
       section5: false

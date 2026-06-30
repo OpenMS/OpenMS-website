@@ -1,12 +1,35 @@
 {{- $cfg := .Site.Params.calendarSection | default dict -}}
-{{- $title := index $cfg "title" | default "Community calendar" -}}
-{{- $subtitle := index $cfg "subtitle" | default "Upcoming OpenMS meetings, workshops, and community events." -}}
+{{- $title := index $cfg "title" | default "Community events" -}}
+{{- $subtitle := index $cfg "subtitle" | default "Upcoming OpenMS meetings, workshops, and community outreach worldwide." -}}
 {{- $eyebrow := index $cfg "eyebrow" | default "Community" -}}
-{{- $titleHighlight := index $cfg "titleHighlight" | default "calendar" -}}
-{{- $data := .Site.Data.community_events | default dict -}}
-{{- $events := index $data "events" | default (slice) -}}
+{{- $titleHighlight := index $cfg "titleHighlight" | default "events" -}}
+{{- $upcomingTitle := index $cfg "upcomingTitle" | default "Upcoming events" -}}
+{{- $emptyUpcoming := index $cfg "emptyUpcoming" | default "No upcoming events scheduled right now. Check back soon or join the community to hear about the next meetup." -}}
+{{- $readMore := index $cfg "readMoreLabel" | default "View details" -}}
+{{- $allEvents := index (.Site.Data.community_events | default dict) "events" | default (slice) -}}
+{{- $upcoming := slice -}}
+{{- $past := slice -}}
+{{- range $allEvents }}
+  {{- $endStr := .end | default .start -}}
+  {{- $end := time $endStr -}}
+  {{- if $end.Before now }}
+    {{- $past = $past | append . -}}
+  {{- else }}
+    {{- $upcoming = $upcoming | append . -}}
+  {{- end }}
+{{- end }}
+{{- $upcoming = sort $upcoming "start" -}}
+{{- $past = sort $past "start" | collections.Reverse -}}
+{{- $years := slice -}}
+{{- range $past }}
+  {{- $y := (time .start).Format "2006" -}}
+  {{- if not (in $years $y) }}
+    {{- $years = $years | append $y -}}
+  {{- end }}
+{{- end }}
+{{- $years = sort $years | collections.Reverse -}}
 <section class="community-calendar-layout">
-  <header class="openms-lib-hero calendar-page-hero" aria-label="OpenMS community calendar">
+  <header class="openms-lib-hero calendar-page-hero" aria-label="OpenMS community events">
     <div class="openms-lib-hero__panel">
       <div class="openms-lib-hero__content">
         <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
@@ -33,47 +56,70 @@
   </header>
 
   <div class="community-calendar-layout__content">
-    <div
-      class="community-calendar-page"
-      data-community-calendar
-    >
-      <div class="community-calendar-page__main">
-        <section class="governance-section community-calendar-page__update" aria-labelledby="calendar-update-title">
-          <h2 id="calendar-update-title">Updating events</h2>
-          <p>
-            Events are maintained in
-            <a href="https://github.com/OpenMS/OpenMS-website/blob/main/data/community_events.yaml" target="_blank" rel="noopener noreferrer">data/community_events.yaml</a>
-            on GitHub. Add or edit entries via pull request—see
-            <a href="https://github.com/OpenMS/OpenMS-website/blob/main/docs/common-tasks/update-community-calendar.md" target="_blank" rel="noopener noreferrer">how to update the calendar</a>.
-          </p>
-        </section>
+    <div class="community-events-page">
+      <section class="community-events-page__section community-events-page__section--upcoming community-events-upcoming-layout" aria-labelledby="calendar-upcoming-title">
+        <header class="community-events-page__header">
+          <h2 id="calendar-upcoming-title" class="community-events-page__title">{{ $upcomingTitle }}</h2>
+        </header>
 
-        <div class="community-calendar" aria-label="Event calendar">
-          <div class="community-calendar__toolbar">
-            <button type="button" class="community-calendar__nav" data-calendar-prev aria-label="Previous month">←</button>
-            <h2 class="community-calendar__month" data-calendar-month-label></h2>
-            <button type="button" class="community-calendar__nav" data-calendar-next aria-label="Next month">→</button>
-            <button type="button" class="community-calendar__today" data-calendar-today>Today</button>
-          </div>
+        {{- if gt (len $upcoming) 0 }}
+        <ul class="community-events-home__grid community-events-page__grid" role="list" aria-label="Upcoming community events">
+          {{- range $upcoming }}
+          {{ partial "community-event-card.html" (dict "event" . "hideDateLine" true "primaryCta" true "readMoreLabel" $readMore) }}
+          {{- end }}
+        </ul>
+        {{- else }}
+        <p class="community-events-page__empty">{{ $emptyUpcoming }}</p>
+        {{- end }}
+      </section>
 
-          <div class="community-calendar__body">
-            <div class="community-calendar__grid-wrap">
-              <div class="community-calendar__weekdays" aria-hidden="true">
-                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
-              </div>
-              <div class="community-calendar__grid" data-calendar-grid role="grid" aria-label="Calendar month view"></div>
-            </div>
-
-            <aside class="community-calendar__aside" aria-labelledby="calendar-events-title">
-              <h2 id="calendar-events-title" class="community-calendar__aside-title">Events</h2>
-              <p class="community-calendar__aside-hint" data-calendar-hint>Select a day or browse upcoming events.</p>
-              <ul class="community-calendar__event-list" data-calendar-event-list></ul>
-            </aside>
+      {{- if gt (len $years) 0 }}
+      {{- $defaultYear := index $years 0 -}}
+      <section class="community-events-page__section community-events-page__section--past" aria-label="Past community events">
+        <div class="events-past-panel" data-events-year-filter>
+          {{ partial "events-year-select.html" (dict "years" $years "defaultYear" $defaultYear) }}
+          <div class="events-past-panel__entries">
+            {{- range $index, $year := $years }}
+            {{- $yearEvents := slice -}}
+            {{- range $past }}
+              {{- if eq ((time .start).Format "2006") $year }}
+                {{- $yearEvents = $yearEvents | append . -}}
+              {{- end }}
+            {{- end }}
+            <section
+              class="events-past-year{{ if eq $index 0 }} events-past-year--default{{ end }}"
+              id="events-year-{{ $year }}"
+              data-events-year="{{ $year }}"
+              {{- if ne $year $defaultYear }} hidden aria-hidden="true"{{- end }}
+            >
+              <header class="events-past-year__header">
+                <h3 class="events-past-year__title">{{ $year }}</h3>
+                <p class="events-past-year__count">
+                  {{ len $yearEvents }}
+                  {{ if eq (len $yearEvents) 1 }}event{{ else }}events{{ end }}
+                </p>
+              </header>
+              <ul class="events-past-list" role="list">
+                {{- range $yearEvents }}
+                {{ partial "community-event-entry.html" (dict "event" . "readMoreLabel" $readMore) }}
+                {{- end }}
+              </ul>
+            </section>
+            {{- end }}
           </div>
         </div>
+      </section>
+      {{- end }}
 
-        <script type="application/json" id="community-events-data">{{ $events | jsonify | safeHTML }}</script>
-      </div>
+      <section class="governance-section community-events-page__update" aria-labelledby="calendar-update-title">
+        <h2 id="calendar-update-title">Updating events</h2>
+        <p>
+          Events are maintained in
+          <a href="https://github.com/OpenMS/OpenMS-website/blob/main/data/community_events.yaml" target="_blank" rel="noopener noreferrer">data/community_events.yaml</a>
+          on GitHub. Add or edit entries via pull request—see
+          <a href="https://github.com/OpenMS/OpenMS-website/blob/main/docs/common-tasks/update-community-calendar.md" target="_blank" rel="noopener noreferrer">how to update events</a>.
+        </p>
+      </section>
     </div>
   </div>
 </section>

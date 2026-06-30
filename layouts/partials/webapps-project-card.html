@@ -20,15 +20,14 @@
     {{- if eq $embed "home" }}
     <div class="webapps-project-card__media">
       <img
-        class="webapps-project-card__image"
+        class="webapps-project-card__image{{ with $project.logoSize }} webapps-project-card__image--{{ . }}{{ end }}"
         src="{{ $project.logo | relURL }}"
-        alt=""
+        alt="{{ $project.name }}"
         loading="lazy"
         decoding="async"
       />
     </div>
     <div class="webapps-project-card__content">
-      <h3 class="webapps-project-card__name">{{ $project.name }}</h3>
       {{- with $project.description }}
       <p class="webapps-project-card__text">{{ . }}</p>
       {{- end }}

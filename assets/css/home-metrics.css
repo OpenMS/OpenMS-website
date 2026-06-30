@@ -1,0 +1,99 @@
+/* Homepage metrics — standalone section below hero */
+
+.home-metrics {
+  position: relative;
+  z-index: 2;
+  background: var(--home-bg-soft);
+  padding-block: var(--home-section-space-y);
+}
+
+.home-metrics__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  width: 100%;
+}
+
+.home-metrics__card {
+  position: relative;
+  display: grid;
+  gap: 0.65rem;
+  align-content: start;
+  padding: clamp(1rem, 2vw, 1.35rem);
+  border-radius: 0.75rem;
+  text-align: left;
+  background: var(--openms-white);
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+}
+
+.home-metrics__label {
+  margin: 0;
+  font-family: var(--openms-font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--openms-navy);
+  text-wrap: balance;
+}
+
+.home-metrics__value {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.1rem 0.15rem;
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--openms-navy);
+}
+
+.home-metrics__prefix,
+.home-metrics__suffix {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.home-metrics__value .hero-modern__stat-number {
+  font: inherit;
+  color: inherit;
+  font-size: clamp(2.75rem, 6vw, 4.25rem);
+}
+
+.home-metrics__description {
+  margin: 0;
+  max-width: 18rem;
+  font-family: var(--openms-font-body);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: rgba(var(--openms-dark-rgb), 0.62);
+  text-wrap: pretty;
+}
+
+@media (max-width: 720px) {
+  .home-metrics__grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .home-metrics__card {
+    padding: clamp(1rem, 2vw, 1.25rem);
+  }
+
+  .home-metrics__description {
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-metrics__value .hero-modern__stat-number,
+  .home-metrics__prefix,
+  .home-metrics__suffix {
+    font-size: clamp(2rem, 9vw, 2.75rem);
+  }
+}

@@ -6,11 +6,11 @@
 }
 
 .contact-home__main {
-  padding: var(--home-section-pad, clamp(3.5rem, 7vh, 5rem)) var(--home-pad-x, clamp(1.25rem, 4vw, 2.5rem));
+  padding: var(--home-section-pad, var(--home-section-space-y, clamp(3.75rem, 7.5vh, 5.75rem))) var(--home-pad-x, clamp(1.25rem, 4vw, 2.5rem));
 }
 
 main.home-page > section.home-page__cta:last-of-type .contact-home__main {
-  padding-bottom: clamp(3.5rem, 7vh, 5rem);
+  padding-bottom: var(--home-section-space-y, clamp(3.75rem, 7.5vh, 5.75rem));
 }
 
 main.home-page > section.home-page__cta:last-of-type .contact-home {

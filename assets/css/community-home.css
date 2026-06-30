@@ -44,7 +44,8 @@
   min-height: clamp(40rem, 78vh, 56rem);
   max-width: var(--home-max, 75rem);
   margin: 0 auto;
-  padding: clamp(4rem, 8vh, 6rem) var(--home-pad-x);
+  padding-block: clamp(4.5rem, 9vh, 6.5rem);
+  padding-inline: var(--home-pad-x);
 }
 
 .community-home__content {
@@ -171,7 +172,8 @@
   }
 
   .community-home__inner {
-    padding: clamp(3.5rem, 7vh, 5rem) var(--home-pad-x);
+    padding-block: clamp(3.75rem, 7.5vh, 5.75rem);
+    padding-inline: var(--home-pad-x);
   }
 
   .community-home__title {

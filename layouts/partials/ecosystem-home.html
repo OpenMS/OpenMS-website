@@ -6,44 +6,34 @@
 <section class="ecosystem-home" aria-labelledby="ecosystem-home-title">
   <div class="ecosystem-home__inner">
     <header class="ecosystem-home__header">
-      <h2 id="ecosystem-home-title" class="ecosystem-home__title">
-        {{- if and $titleHighlight (in $title $titleHighlight) }}
-        {{ replace $title $titleHighlight (printf "<span class=\"ecosystem-home__title-accent\">%s</span>" $titleHighlight) | safeHTML }}
-        {{- else }}
-        {{ $title }}
-        {{- end }}
-      </h2>
+      <div class="ecosystem-home__header-main">
+        <h2 id="ecosystem-home-title" class="ecosystem-home__title">
+          {{- if and $titleHighlight (in $title $titleHighlight) }}
+          {{ replace $title $titleHighlight (printf "<span class=\"ecosystem-home__title-accent\">%s</span>" $titleHighlight) | safeHTML }}
+          {{- else }}
+          {{ $title }}
+          {{- end }}
+        </h2>
+      </div>
     </header>
-    <ul class="ecosystem-home__grid" role="list" aria-label="OpenMS ecosystem tools">
+    <ul class="ecosystem-home__grid ecosystem-home__grid--bento" role="list" aria-label="OpenMS ecosystem tools">
       {{- range $items }}
       {{- $url := .url | default "#" -}}
       {{- $external := and $url (in $url "://") -}}
-      <li class="ecosystem-home__item" role="listitem">
+      {{- $size := .size | default "standard" -}}
+      <li class="ecosystem-home__item ecosystem-home__item--{{ $size }}{{ with .accent }} ecosystem-home__item--{{ . }}{{ end }}" role="listitem">
         <a
-          class="ecosystem-home__card{{ with .accent }} ecosystem-home__card--{{ . }}{{ end }}"
+          class="ecosystem-home__card ecosystem-home__card--{{ $size }}{{ with .accent }} ecosystem-home__card--{{ . }}{{ end }}"
           href="{{ $url }}"
           {{- if $external }} target="_blank" rel="noopener noreferrer"{{- end }}
         >
-          <div class="ecosystem-home__card-media" aria-hidden="true">
-            {{- with .logo }}
-            <img
-              class="ecosystem-home__card-logo"
-              src="{{ . | relURL }}"
-              alt=""
-              loading="lazy"
-              decoding="async"
-            />
-            {{- else }}
-            <span class="ecosystem-home__card-monogram">{{ .monogram | default (substr .name 0 2) }}</span>
-            {{- end }}
-          </div>
           <div class="ecosystem-home__card-body">
             <h3 class="ecosystem-home__card-title">{{ .name }}</h3>
             {{- with .description }}
             <p class="ecosystem-home__card-text">{{ . }}</p>
             {{- end }}
             <span class="ecosystem-home__card-link">
-              Learn more<span class="ecosystem-home__card-link-icon" aria-hidden="true">→</span>
+              Learn more<span class="ecosystem-home__card-link-icon" aria-hidden="true">›</span>
             </span>
           </div>
         </a>

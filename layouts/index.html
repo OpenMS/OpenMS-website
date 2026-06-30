@@ -6,16 +6,14 @@
   </header>
   {{- end }}
 
-  <section class="home-page__block home-page__block--partners" aria-labelledby="uni-partners-title">
-    {{ partial "university-partners.html" (dict "Site" .Site "showHeader" true "variant" "home") }}
-  </section>
+  {{ partial "home-metrics.html" . }}
 
   <section class="home-page__block home-page__block--projects" aria-labelledby="webapps-featured-title">
     {{ partial "webapps.html" (dict "Page" . "embed" "home") }}
   </section>
 
-  <section class="home-page__block home-page__block--ecosystem" aria-labelledby="ecosystem-home-title">
-    {{ partial "ecosystem-home.html" . }}
+  <section class="home-page__block home-page__block--partners" aria-labelledby="uni-partners-title">
+    {{ partial "university-partners.html" (dict "Site" .Site "showHeader" true "variant" "home") }}
   </section>
 
   {{- with .Site.Params.keyfeatures }}
@@ -23,6 +21,10 @@
     {{ partial "keyfeatures.html" (dict "Page" . "embed" "home") }}
   </section>
   {{- end }}
+
+  <section class="home-page__block home-page__block--ecosystem" aria-labelledby="ecosystem-home-title">
+    {{ partial "ecosystem-home.html" . }}
+  </section>
 
   <section class="home-page__block home-page__block--community" aria-labelledby="community-home-title">
     {{ partial "community-home.html" . }}

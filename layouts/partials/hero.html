@@ -8,55 +8,56 @@
 {{- $secondaryText := index $hero "secondaryButtonText" }}
 {{- $secondaryLink := index $hero "secondaryButtonLink" }}
 {{- $microcopy := index $hero "microcopy" }}
-{{- $stats := index $hero "stats" }}
 
 <div class="hero-home">
   <section class="hero-home__main" aria-label="Homepage introduction">
     <div class="hero-home__inner">
-      <div class="hero-home__content">
-        <h1 class="hero-home__title">
-          {{ $titleBefore }}<span class="hero-home__title-accent">{{ $titleHighlight }}</span>{{ $titleAfter }}
-        </h1>
-        {{- with $description }}
-        <p class="hero-home__description">{{ . }}</p>
-        {{- end }}
-        <div class="hero-home__actions-block">
-          <div class="hero-home__actions" role="group" aria-label="Primary actions">
-            {{- if $buttonText }}
-            <a
-              class="hero-home__btn hero-home__btn--primary openms-btn-primary"
-              href="{{ $buttonLink }}"
-              {{- if in $buttonLink "://" }}
-              rel="noopener noreferrer"
-              {{- end }}
-            >{{ $buttonText }}</a>
+      <div class="hero-home__hero-grid">
+        <div class="hero-home__copy">
+          <div class="hero-home__content">
+            <h1 class="hero-home__title">
+              {{ $titleBefore }}<span class="hero-home__title-accent">{{ $titleHighlight }}</span>{{ $titleAfter }}
+            </h1>
+            {{- with $description }}
+            <p class="hero-home__description">{{ . }}</p>
             {{- end }}
-            {{- if and $secondaryText $secondaryLink }}
-            <a
-              class="hero-home__btn hero-home__btn--secondary"
-              href="{{ $secondaryLink }}"
-              {{- if in $secondaryLink "://" }}
-              rel="noopener noreferrer"
+            <div class="hero-home__actions-block">
+              <div class="hero-home__actions" role="group" aria-label="Primary actions">
+                {{- if $buttonText }}
+                <a
+                  class="hero-home__btn hero-home__btn--primary openms-btn-primary"
+                  href="{{ $buttonLink }}"
+                  {{- if in $buttonLink "://" }}
+                  rel="noopener noreferrer"
+                  {{- end }}
+                >{{ $buttonText }}</a>
+                {{- end }}
+                {{- if and $secondaryText $secondaryLink }}
+                <a
+                  class="hero-home__btn hero-home__btn--secondary"
+                  href="{{ $secondaryLink }}"
+                  {{- if in $secondaryLink "://" }}
+                  rel="noopener noreferrer"
+                  {{- end }}
+                >{{ $secondaryText }}</a>
+                {{- end }}
+              </div>
+              {{- with $microcopy }}
+              <p class="hero-home__note">
+                {{- range $i, $part := split . " · " }}
+                {{- if $i }}<span class="hero-home__note-sep" aria-hidden="true">·</span>{{ end }}
+                <span class="hero-home__note-item">{{ trim $part " " }}</span>
+                {{- end }}
+              </p>
               {{- end }}
-            >{{ $secondaryText }}</a>
-            {{- end }}
+            </div>
           </div>
-          {{- with $microcopy }}
-          <p class="hero-home__note">
-            {{- range $i, $part := split . " · " }}
-            {{- if $i }}<span class="hero-home__note-sep" aria-hidden="true">·</span>{{ end }}
-            <span class="hero-home__note-item">{{ trim $part " " }}</span>
-            {{- end }}
-          </p>
-          {{- end }}
+        </div>
+
+        <div class="hero-home__visual">
+          {{ partial "hero-logo-diagram.html" . }}
         </div>
       </div>
-
-      {{- with $stats }}
-      <div class="hero-home__metrics-row" aria-label="Key metrics">
-        {{ partial "hero-stats.html" (dict "stats" . "layout" "bento" "class" "hero-home__bento") }}
-      </div>
-      {{- end }}
     </div>
   </section>
 </div>
