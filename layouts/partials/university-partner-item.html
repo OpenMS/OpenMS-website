@@ -1,0 +1,31 @@
+{{- $name := .name | default "Organization" -}}
+{{- $url := .url | default "" -}}
+{{- $logo := .logo | default "" -}}
+{{- $abbr := .abbr | default (substr $name 0 2) -}}
+{{- $alt := .alt | default $name -}}
+{{- $isExternal := and $url (in $url "://") -}}
+{{- if $url -}}
+<a
+  class="uni-partners__item"
+  href="{{ $url }}"
+  {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{- end }}
+  {{- if .duplicate }} aria-hidden="true"{{- end }}
+>
+{{- else -}}
+<span class="uni-partners__item uni-partners__item--static"{{- if .duplicate }} aria-hidden="true"{{- end }}>
+{{- end -}}
+  {{- if $logo -}}
+  <img
+    src="{{ $logo | relURL }}"
+    alt="{{ if .duplicate }}{{ "" }}{{ else }}{{ $alt }}{{ end }}"
+    loading="lazy"
+    decoding="async"
+  />
+  {{- else -}}
+  <span class="uni-partners__item-abbr" aria-hidden="true">{{ $abbr }}</span>
+  {{- end -}}
+{{- if $url -}}
+</a>
+{{- else -}}
+</span>
+{{- end -}}

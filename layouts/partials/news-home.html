@@ -1,0 +1,58 @@
+{{- $cfg := site.Params.newsSection | default dict -}}
+{{- $title := index $cfg "homeTitle" | default "Latest news" -}}
+{{- $titleHighlight := index $cfg "homeTitleHighlight" | default "news" -}}
+{{- $viewAllText := index $cfg "homeViewAllText" | default "View all" -}}
+{{- $viewAllUrl := index $cfg "homeViewAllUrl" | default "/news/" -}}
+{{- $limit := index $cfg "homeLimit" | default 4 -}}
+{{- $emptyMessage := index $cfg "homeEmptyMessage" | default "No news articles yet. Check back soon for announcements and updates." -}}
+{{- $newsSection := site.GetPage "section" "news" -}}
+{{- $pages := slice -}}
+{{- if $newsSection -}}
+  {{- range $newsSection.RegularPages.ByDate.Reverse -}}
+    {{- if not .Date.IsZero -}}
+      {{- $pages = $pages | append . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $latest := first $limit $pages -}}
+{{- $newsCount := len $latest -}}
+
+<div class="community-news-events__column community-news-events__column--news">
+  <header class="community-news-events__column-header">
+    <h2 id="news-home-title" class="community-news-events__column-title">
+      {{- if and $titleHighlight (in $title $titleHighlight) -}}
+      {{ replace $title $titleHighlight (printf "<span class=\"community-news-events__column-title-accent\">%s</span>" $titleHighlight) | safeHTML }}
+      {{- else -}}
+      {{ $title }}
+      {{- end -}}
+    </h2>
+    <a class="community-news-events__view-all" href="{{ $viewAllUrl }}">
+      <span>{{ $viewAllText }}</span>
+      <span class="community-news-events__view-all-icon" aria-hidden="true">→</span>
+    </a>
+  </header>
+
+  {{- if gt $newsCount 0 -}}
+  <ul class="news-home__list" role="list" aria-label="Latest OpenMS news">
+    {{- range $latest -}}
+    {{- $summary := .Summary -}}
+    {{- with .Params.summary -}}
+      {{- $summary = . -}}
+    {{- end -}}
+    <li class="news-home__item" role="listitem">
+      <article class="news-home__card">
+        <a class="news-home__card-link" href="{{ .RelPermalink }}">
+          <h3 class="news-home__card-title">{{ .Title }}</h3>
+          <time class="news-home__card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
+          {{- with $summary -}}
+          <p class="news-home__card-summary">{{ . | plainify | truncate 160 }}</p>
+          {{- end -}}
+        </a>
+      </article>
+    </li>
+    {{- end -}}
+  </ul>
+  {{- else -}}
+  <p class="news-home__empty">{{ $emptyMessage }}</p>
+  {{- end -}}
+</div>

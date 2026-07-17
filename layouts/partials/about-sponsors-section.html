@@ -1,0 +1,43 @@
+{{- $about := .Site.Params.aboutPage | default dict -}}
+{{- $section := index $about "sponsorsSection" | default dict -}}
+{{- $sponsors := index $about "sponsors" | default (slice) -}}
+{{- $title := index $section "title" | default "Our Sponsors" -}}
+{{- $intro := index $section "intro" | default "" -}}
+{{- $contactCta := index $section "contactCta" | default "Interested in sponsoring us? Contact us for more information." -}}
+{{- $contactUrl := index $section "contactUrl" | default "/contact/" -}}
+{{- $groupByTier := index $section "groupByTier" | default false -}}
+{{- $tiers := .Site.Params.sponsorTiers.levels | default (slice) -}}
+<section class="governance-section about-sponsors-section" id="sponsors" aria-labelledby="about-sponsors-title">
+  <h2 id="about-sponsors-title">{{ $title }}</h2>
+  {{- with $intro -}}
+  <p class="about-sponsors-section__intro">{{ . }}</p>
+  {{- end -}}
+
+  {{- if $groupByTier -}}
+  {{/* Future: grouped logo wall — set aboutPage.sponsorsSection.groupByTier: true */}}
+  {{- range $tiers -}}
+  {{- $tierId := .id -}}
+  {{- $tierSponsors := where $sponsors "tier" $tierId -}}
+  {{- if gt (len $tierSponsors) 0 -}}
+  <section class="about-sponsors-tier" aria-label="{{ .name }} sponsors">
+    <h3 class="about-sponsors-tier__title">{{ .name }}</h3>
+    <div class="about-sponsors-logos" role="list">
+      {{- range $tierSponsors -}}
+      {{ partial "about-sponsor-logo.html" . }}
+      {{- end -}}
+    </div>
+  </section>
+  {{- end -}}
+  {{- end -}}
+  {{- else -}}
+  <div class="about-sponsors-logos" role="list" aria-label="OpenMS sponsors">
+    {{- range $sponsors -}}
+    {{ partial "about-sponsor-logo.html" . }}
+    {{- end -}}
+  </div>
+  {{- end -}}
+
+  <p class="about-sponsors-section__cta">
+    <a href="{{ $contactUrl }}">{{ $contactCta }}</a>
+  </p>
+</section>

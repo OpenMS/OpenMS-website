@@ -1,0 +1,208 @@
+.code-of-conduct-page-layout {
+  --coc-max: 48rem;
+  --coc-pad-x: clamp(1.25rem, 4vw, 2rem);
+  --coc-soft: #f4f6f9;
+  --coc-muted: rgba(var(--openms-navy-rgb), 0.68);
+  --coc-border: rgba(var(--openms-navy-rgb), 0.1);
+  --coc-radius: 1rem;
+
+  display: block;
+  width: 100%;
+  padding: clamp(2rem, 5vh, 3rem) 0 clamp(3rem, 6vh, 4rem);
+}
+
+.code-of-conduct-page-layout__content {
+  width: min(100%, var(--coc-max));
+  max-width: var(--coc-max);
+  margin-inline: auto;
+  padding-inline: var(--coc-pad-x);
+}
+
+.code-of-conduct-page__head {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.code-of-conduct-page__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--openms-navy);
+}
+
+.code-of-conduct-page__jumps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+}
+
+.code-of-conduct-page__jump {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.22);
+  border-radius: 999px;
+  background: var(--openms-white);
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  color: var(--openms-blue);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.code-of-conduct-page__jump:hover,
+.code-of-conduct-page__jump:focus-visible {
+  border-color: var(--openms-blue);
+  color: var(--openms-navy);
+  background: rgba(var(--openms-blue-rgb), 0.05);
+  text-decoration: none;
+}
+
+.code-of-conduct-page__content {
+  display: grid;
+  gap: clamp(2rem, 4vw, 2.75rem);
+}
+
+.code-of-conduct-page__content h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-secondary-heading-size-lg);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--openms-navy);
+  letter-spacing: -0.01em;
+}
+
+.code-of-conduct-page__content h3,
+.code-of-conduct-page__content h4 {
+  margin: 1.25rem 0 0.5rem;
+  font-family: var(--openms-font-heading);
+  color: var(--openms-navy);
+}
+
+.code-of-conduct-page__content p,
+.code-of-conduct-page__content li {
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.65;
+  color: rgba(var(--openms-dark-rgb), 0.88);
+}
+
+.code-of-conduct-page__content a {
+  color: var(--openms-blue);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.code-of-conduct-page__content a:hover {
+  color: var(--openms-navy);
+}
+
+.coc-section {
+  scroll-margin-top: calc(var(--openms-header-height, 4.25rem) + 1rem);
+}
+
+.coc-section--summary {
+  display: grid;
+  gap: 1.1rem;
+  padding: clamp(1.1rem, 2.5vw, 1.45rem);
+  border: 1px solid var(--coc-border);
+  border-radius: var(--coc-radius);
+  background: linear-gradient(
+    160deg,
+    rgba(var(--openms-blue-rgb), 0.06) 0%,
+    var(--openms-white) 55%
+  );
+  box-shadow: 0 4px 20px rgba(var(--openms-navy-rgb), 0.05);
+}
+
+.coc-section--summary > p {
+  margin: 0;
+}
+
+.coc-behaviors {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  background: var(--coc-soft);
+  border: 1px solid var(--coc-border);
+}
+
+.coc-behaviors__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-secondary-heading-size);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--openms-navy);
+}
+
+.coc-behaviors ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.coc-behaviors li {
+  margin: 0;
+}
+
+.coc-report {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid var(--openms-blue);
+  border-radius: 0 0.65rem 0.65rem 0;
+  background: rgba(var(--openms-blue-rgb), 0.06);
+}
+
+.coc-report p {
+  margin: 0;
+}
+
+.coc-report__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  margin-top: 0.15rem;
+}
+
+.coc-report__link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.coc-report__link:hover,
+.coc-report__link:focus-visible {
+  text-decoration: underline;
+}
+
+.coc-section--detailed {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.coc-section--detailed > h2 {
+  margin-bottom: 0.35rem;
+}
+
+.coc-enforcement {
+  padding: clamp(1rem, 2.5vw, 1.25rem);
+  border: 1px solid var(--coc-border);
+  border-radius: var(--coc-radius);
+  background: var(--coc-soft);
+}
+
+.coc-enforcement > h2 {
+  margin-top: 0;
+}

@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     /* Black, with 10% opacity */
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    background: rgb(238, 238, 238);
+    box-shadow: 0px 8px 15px rgba(var(--openms-dark-rgb), 0.1);
+    background: var(--openms-grey);
     padding: 15px;
 }
 
@@ -30,11 +30,6 @@
 .shell-title-container {
     text-align: center;
     align-items: center;
-}
-
-.shell-title {
-    font-size: 35px;
-    font-weight: bold;
 }
 
 .shell-lesson {
@@ -68,11 +63,11 @@
 }
 
 .CodeMirror pre {
-    color: rgb(255, 255, 255) !important;
+    color: var(--openms-white) !important;
 }
 
 .CodeMirror-cursor {
-    color: rgb(255, 255, 255) !important;
+    color: var(--openms-white) !important;
     border-left: 1px solid white !important;
 }
 

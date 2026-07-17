@@ -1,0 +1,66 @@
+{{- $showHeader := .showHeader | default true -}}
+{{- $staticOnly := .staticOnly | default false -}}
+{{- $variant := .variant | default "" -}}
+{{- $compact := or (eq $variant "compact") (eq $variant "home") -}}
+{{- $partners := site.Params.universityPartners | default (slice) -}}
+<section
+  class="uni-partners{{ if $staticOnly }} uni-partners--static{{ end }}{{ if $compact }} uni-partners--compact{{ end }}{{ if eq $variant "home" }} uni-partners--home{{ end }}"
+  {{- if $showHeader }}
+  aria-labelledby="uni-partners-title"
+  {{- else }}
+  aria-label="University partners"
+  {{- end }}
+>
+  <div class="uni-partners__inner">
+    {{- if $showHeader }}
+    {{- if eq $variant "home" }}
+    <header class="uni-partners__header uni-partners__header--trust">
+      <div class="uni-partners__header-main">
+        <h2 id="uni-partners-title" class="uni-partners__trust-title">
+          <span class="uni-partners__trust-title-main">Trusted and used by scientists worldwide.</span>
+        </h2>
+      </div>
+    </header>
+    {{- else }}
+    <header class="uni-partners__header">
+      <div class="uni-partners__header-main">
+        <p class="uni-partners__eyebrow">Partners</p>
+        <h2 id="uni-partners-title" class="uni-partners__title">
+          University <span class="uni-partners__title-accent">Partners</span>
+        </h2>
+        {{- if not $compact }}
+        <p class="uni-partners__lead">
+          Research groups and institutions contributing to OpenMS development and adoption.
+        </p>
+        {{- end }}
+      </div>
+    </header>
+    {{- end }}
+    {{- end }}
+
+    {{- if and (not $staticOnly) (gt (len $partners) 0) }}
+    <div class="uni-partners__marquee" aria-hidden="true">
+      <div class="uni-partners__track">
+        <div class="uni-partners__row">
+          {{- range $partners }}
+          {{ partial "university-partner-item.html" . }}
+          {{- end }}
+        </div>
+        <div class="uni-partners__row" aria-hidden="true">
+          {{- range $partners }}
+          {{ partial "university-partner-item.html" (merge . (dict "duplicate" true)) }}
+          {{- end }}
+        </div>
+      </div>
+    </div>
+    {{- end }}
+
+  {{- if gt (len $partners) 0 }}
+    <div class="uni-partners__static" role="list" aria-label="University partners logos">
+      {{- range $partners }}
+      <span role="listitem">{{ partial "university-partner-item.html" . }}</span>
+      {{- end }}
+    </div>
+  {{- end }}
+  </div>
+</section>

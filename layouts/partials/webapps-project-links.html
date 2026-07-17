@@ -1,0 +1,51 @@
+{{- $links := .links | default (slice) -}}
+{{- if $links }}
+<ul class="webapps-project-links" role="list">
+  {{- range $links }}
+  {{- $type := .type | default "link" -}}
+  {{- $label := .label -}}
+  {{- if not $label }}
+    {{- if eq $type "demo" }}
+      {{- $label = "Demo" }}
+    {{- else if eq $type "github" }}
+      {{- $label = "GitHub" }}
+    {{- else if eq $type "install" }}
+      {{- $label = "Install" }}
+    {{- else if eq $type "homepage" }}
+      {{- $label = "Homepage" }}
+    {{- else if eq $type "pypi" }}
+      {{- $label = "PyPI" }}
+    {{- else if eq $type "nfcore" }}
+      {{- $label = "NF Core" }}
+    {{- else }}
+      {{- $label = "Link" }}
+    {{- end }}
+  {{- end }}
+  {{- $icon := "fas fa-external-link-alt" -}}
+  {{- if eq $type "demo" }}
+    {{- $icon = "fas fa-play-circle" }}
+  {{- else if eq $type "github" }}
+    {{- $icon = "fab fa-github" }}
+  {{- else if eq $type "install" }}
+    {{- $icon = "fab fa-windows" }}
+  {{- else if eq $type "homepage" }}
+    {{- $icon = "fas fa-home" }}
+  {{- else if eq $type "pypi" }}
+    {{- $icon = "fab fa-python" }}
+  {{- else if eq $type "nfcore" }}
+    {{- $icon = "fas fa-project-diagram" }}
+  {{- end }}
+  <li class="webapps-project-links__item" role="listitem">
+    <a
+      class="webapps-project-links__btn webapps-project-links__btn--{{ $type }}"
+      href="{{ .url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="{{ $icon }}" aria-hidden="true"></i>
+      <span>{{ $label }}</span>
+    </a>
+  </li>
+  {{- end }}
+</ul>
+{{- end }}

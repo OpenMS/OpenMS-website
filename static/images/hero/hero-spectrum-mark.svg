@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="hero-spectrum-title hero-spectrum-desc">
+  <title id="hero-spectrum-title">OpenMS spectrum mark</title>
+  <desc id="hero-spectrum-desc">OpenMS emblem with smooth gradient mass spectrometry chromatogram and spectral peak cluster</desc>
+  <defs>
+    <linearGradient id="oms-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3157e9" />
+      <stop offset="20%" stop-color="#5280f0" />
+      <stop offset="38%" stop-color="#b503ff" />
+      <stop offset="55%" stop-color="#ff03cb" />
+      <stop offset="72%" stop-color="#ff7501" />
+      <stop offset="100%" stop-color="#ffcb4f" />
+    </linearGradient>
+    <linearGradient id="oms-area-fill" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3157e9" stop-opacity="0" />
+      <stop offset="25%" stop-color="#5280f0" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#ff03cb" stop-opacity="0.22" />
+      <stop offset="75%" stop-color="#ff7501" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#ffcb4f" stop-opacity="0.12" />
+    </linearGradient>
+    <linearGradient id="oms-bar-fill" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#3157e9" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#ffcb4f" stop-opacity="0.95" />
+    </linearGradient>
+    <radialGradient id="oms-ring-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5280f0" stop-opacity="0.28" />
+      <stop offset="70%" stop-color="#b503ff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#3157e9" stop-opacity="0" />
+    </radialGradient>
+    <filter id="oms-soft-glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <clipPath id="oms-peak-clip">
+      <rect x="200" y="80" width="560" height="340" rx="8" />
+    </clipPath>
+  </defs>
+
+  <!-- Ambient glow behind emblem -->
+  <ellipse cx="248" cy="248" rx="148" ry="148" fill="url(#oms-ring-glow)" />
+
+  <!-- OpenMS double-ring emblem (left, prominent) -->
+  <g transform="translate(248 248)" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="0" cy="0" r="88" stroke-width="6" opacity="0.92" />
+    <circle cx="0" cy="0" r="64" stroke-width="4.5" opacity="0.78" />
+    <circle cx="0" cy="0" r="40" stroke-width="3" opacity="0.45" />
+  </g>
+
+  <!-- Faint axis grid -->
+  <g stroke="#ffffff" stroke-opacity="0.07" stroke-width="1" fill="none">
+    <line x1="200" y1="420" x2="760" y2="420" />
+    <line x1="200" y1="360" x2="760" y2="360" />
+    <line x1="200" y1="300" x2="760" y2="300" />
+    <line x1="200" y1="240" x2="760" y2="240" />
+    <line x1="200" y1="180" x2="760" y2="180" />
+    <line x1="280" y1="120" x2="280" y2="420" />
+    <line x1="400" y1="120" x2="400" y2="420" />
+    <line x1="520" y1="120" x2="520" y2="420" />
+    <line x1="640" y1="120" x2="640" y2="420" />
+  </g>
+
+  <!-- Logo-style peak cluster (right) -->
+  <g clip-path="url(#oms-peak-clip)" transform="translate(218 148)" filter="url(#oms-soft-glow)">
+    <g fill="url(#oms-gradient)" opacity="0.95">
+      <rect x="0" y="168" width="16" height="88" rx="2" />
+      <rect x="24" y="132" width="16" height="124" rx="2" />
+      <rect x="48" y="72" width="16" height="184" rx="2" />
+      <rect x="72" y="148" width="16" height="108" rx="2" />
+      <rect x="96" y="192" width="16" height="64" rx="2" />
+      <rect x="120" y="176" width="16" height="80" rx="2" />
+      <rect x="144" y="96" width="16" height="160" rx="2" />
+      <rect x="168" y="128" width="16" height="128" rx="2" />
+      <rect x="192" y="56" width="16" height="200" rx="2" />
+      <rect x="216" y="104" width="16" height="152" rx="2" />
+      <rect x="240" y="80" width="16" height="176" rx="2" />
+      <rect x="264" y="32" width="16" height="224" rx="2" />
+      <rect x="288" y="88" width="16" height="168" rx="2" />
+      <rect x="312" y="120" width="16" height="136" rx="2" />
+      <rect x="336" y="64" width="16" height="192" rx="2" />
+      <rect x="360" y="108" width="16" height="148" rx="2" />
+      <rect x="384" y="152" width="16" height="104" rx="2" />
+      <rect x="408" y="136" width="16" height="120" rx="2" />
+      <rect x="432" y="168" width="16" height="88" rx="2" />
+      <rect x="456" y="184" width="16" height="72" rx="2" />
+      <rect x="480" y="160" width="16" height="96" rx="2" />
+      <rect x="504" y="176" width="16" height="80" rx="2" />
+    </g>
+  </g>
+
+  <!-- Smooth chromatogram overlay -->
+  <g transform="translate(0 0)" opacity="0.88" filter="url(#oms-soft-glow)">
+    <path
+      fill="url(#oms-area-fill)"
+      d="M48 420
+         C88 418, 120 419, 160 417
+         C200 415, 232 418, 272 416
+         C312 414, 344 417, 384 415
+         C424 413, 456 416, 496 414
+         C520 412, 536 380, 552 414
+         C568 414, 584 340, 600 414
+         C616 414, 632 296, 648 414
+         C664 414, 680 368, 696 414
+         C712 414, 728 312, 744 414
+         C760 414, 776 352, 792 414
+         L792 460 L48 460 Z"
+    />
+    <path
+      fill="none"
+      stroke="url(#oms-gradient)"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M48 420
+         C88 418, 120 419, 160 417
+         C200 415, 232 418, 272 416
+         C312 414, 344 417, 384 415
+         C424 413, 456 416, 496 414
+         C520 412, 536 380, 552 414
+         C568 414, 584 340, 600 414
+         C616 414, 632 296, 648 414
+         C664 414, 680 368, 696 414
+         C712 414, 728 312, 744 414
+         C760 414, 776 352, 792 414"
+    />
+  </g>
+
+  <!-- Accent peaks on chromatogram -->
+  <g fill="url(#oms-gradient)" opacity="0.55" filter="url(#oms-soft-glow)">
+    <circle cx="536" cy="380" r="3" />
+    <circle cx="600" cy="340" r="3.5" />
+    <circle cx="648" cy="296" r="4" />
+    <circle cx="728" cy="312" r="3.5" />
+    <circle cx="776" cy="352" r="3" />
+  </g>
+
+  <!-- mz axis labels (subtle) -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" fill="#ffffff" fill-opacity="0.28">
+    <text x="204" y="438">m/z</text>
+    <text x="748" y="438">intensity</text>
+  </g>
+</svg>

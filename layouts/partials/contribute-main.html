@@ -1,0 +1,50 @@
+{{- $cfg := .Site.Params.contributePage | default dict -}}
+{{- $links := index $cfg "links" | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Community" -}}
+{{- $subtitle := index $cfg "subtitle" | default "Learn how to get involved with code, documentation, outreach, fundraising, and more — whether you are new to OpenMS or a seasoned contributor." -}}
+{{- $discord := index $links "discord" | default "https://discord.com/invite/v9tv5BxPch" -}}
+{{- $githubDiscussions := index $links "githubDiscussions" | default "https://github.com/OpenMS/OpenMS/discussions" -}}
+<section class="contribute-page-layout">
+  <header class="openms-lib-hero contribute-page-hero" aria-label="Contributing to OpenMS">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          Contribute to <span class="openms-lib-hero__accent">OpenMS</span>.
+        </h1>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <div class="openms-lib-hero__actions" aria-label="On this page">
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="#getting-started">Getting Started</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="#communication-channels">Communication Channels</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="#ways-to-contribute">Ways to Contribute</a>
+          <a
+            class="openms-lib-btn openms-lib-btn--discord"
+            href="{{ $discord }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-discord" aria-hidden="true"></i>
+            Discord
+          </a>
+          <a
+            class="openms-lib-btn openms-lib-btn--github"
+            href="{{ $githubDiscussions }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-github" aria-hidden="true"></i>
+            Discuss on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="contribute-page-layout__content">
+    <div class="contribute-page">
+      <div class="contribute-page__content post-content">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</section>

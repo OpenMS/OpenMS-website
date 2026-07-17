@@ -1,0 +1,271 @@
+.developer-retreat-page-layout {
+  --olib-pad-x: clamp(1.25rem, 4vw, 2rem);
+  --olib-section-y: clamp(4rem, 8vh, 5.5rem);
+  --olib-bg-soft: #f4f6f9;
+  --olib-text-muted: rgba(var(--openms-navy-rgb), 0.68);
+  --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
+  --dev-retreat-max: 64rem;
+  --dev-retreat-card-radius: 1rem;
+  --dev-retreat-card-border: rgba(var(--openms-navy-rgb), 0.1);
+
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 clamp(2.5rem, 5vh, 4rem);
+}
+
+.developer-retreat-page-layout__content {
+  width: min(100%, var(--dev-retreat-max));
+  max-width: var(--dev-retreat-max);
+  margin-inline: auto;
+  padding-inline: var(--olib-pad-x);
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.developer-retreat-page-hero {
+  margin-bottom: var(--olib-section-y);
+}
+
+.developer-retreat-page-hero__content {
+  max-width: 44rem;
+}
+
+.developer-retreat-page-hero__kicker {
+  margin: 0 0 0.35rem;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1rem, 2.4vw, 1.15rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--openms-blue);
+  letter-spacing: 0.01em;
+}
+
+.developer-retreat-page-hero__headline {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.65rem, 4.2vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--openms-navy);
+}
+
+.developer-retreat-page-hero__about {
+  margin: 1rem 0 0;
+  font-family: var(--openms-font-body);
+  font-size: clamp(0.95rem, 2.2vw, var(--openms-body-size-lg));
+  line-height: 1.65;
+  color: rgba(var(--openms-dark-rgb), 0.86);
+}
+
+/* Past retreat photo */
+.developer-retreat-photo {
+  margin: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.developer-retreat-photo__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--dev-retreat-card-radius);
+  border: 1px solid var(--dev-retreat-card-border);
+  box-shadow: 0 8px 28px rgba(var(--openms-navy-rgb), 0.08);
+}
+
+.developer-retreat-photo__caption {
+  font-size: var(--openms-body-size);
+  line-height: 1.5;
+  color: var(--olib-text-muted);
+  text-align: center;
+}
+
+/* Upcoming retreat */
+.developer-retreat-upcoming {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 18rem);
+  gap: clamp(1.25rem, 3vw, 2rem);
+  align-items: start;
+  padding: clamp(1.1rem, 2.5vw, 1.5rem);
+  border: 1px solid var(--dev-retreat-card-border);
+  border-radius: var(--dev-retreat-card-radius);
+  background: linear-gradient(
+    135deg,
+    rgba(var(--openms-blue-rgb), 0.06) 0%,
+    var(--openms-white) 58%
+  );
+  box-shadow: 0 4px 24px rgba(var(--openms-navy-rgb), 0.05);
+}
+
+.developer-retreat-upcoming__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-secondary-heading-size-lg);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--openms-navy);
+  letter-spacing: -0.01em;
+}
+
+.developer-retreat-upcoming__info {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.developer-retreat-upcoming__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.developer-retreat-upcoming__list li {
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.6;
+  color: rgba(var(--openms-dark-rgb), 0.88);
+}
+
+.developer-retreat-upcoming__register {
+  margin-top: 0.25rem;
+}
+
+.developer-retreat-poster {
+  margin: 0;
+}
+
+.developer-retreat-poster__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  border: 1px solid var(--dev-retreat-card-border);
+  box-shadow: 0 4px 16px rgba(var(--openms-navy-rgb), 0.06);
+}
+
+/* Register button */
+.developer-retreat-page-layout .openms-lib-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  padding: var(--openms-btn-padding);
+  border-radius: var(--openms-btn-pill-radius);
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 0 0 0 var(--openms-btn-glow);
+  transition: var(--openms-btn-motion);
+}
+
+.developer-retreat-page-layout .openms-lib-btn--primary {
+  border: 2px solid var(--openms-navy);
+  background: var(--openms-navy);
+  color: var(--openms-white) !important;
+}
+
+.developer-retreat-page-layout .openms-lib-btn--ghost {
+  border: 2px solid var(--openms-blue);
+  background: transparent;
+  color: var(--openms-blue) !important;
+}
+
+.developer-retreat-page-layout .openms-lib-btn--primary:hover,
+.developer-retreat-page-layout .openms-lib-btn--primary:focus-visible,
+.developer-retreat-page-layout .openms-lib-btn--ghost:hover,
+.developer-retreat-page-layout .openms-lib-btn--ghost:focus-visible {
+  transform: scale(var(--openms-btn-hover-scale));
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow);
+  outline: none;
+  text-decoration: none;
+}
+
+.developer-retreat-page-layout .openms-lib-btn--primary:hover,
+.developer-retreat-page-layout .openms-lib-btn--primary:focus-visible {
+  background: var(--openms-navy);
+  border-color: var(--openms-navy);
+  color: var(--openms-white) !important;
+}
+
+.developer-retreat-page-layout .openms-lib-btn--ghost:hover,
+.developer-retreat-page-layout .openms-lib-btn--ghost:focus-visible {
+  background: transparent;
+  border-color: var(--openms-blue);
+  color: var(--openms-blue) !important;
+}
+
+.developer-retreat-register--closed {
+  position: relative;
+  opacity: 0.5;
+  filter: grayscale(0.35);
+  cursor: not-allowed;
+  pointer-events: auto;
+}
+
+.developer-retreat-register--closed:hover,
+.developer-retreat-register--closed:focus-visible {
+  transform: none !important;
+  box-shadow: none !important;
+  background: var(--openms-navy);
+  border-color: var(--openms-navy);
+  color: var(--openms-white) !important;
+}
+
+.developer-retreat-register--closed::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.55rem);
+  z-index: 2;
+  width: max-content;
+  max-width: min(18rem, 80vw);
+  padding: 0.45rem 0.7rem;
+  border-radius: 0.5rem;
+  background: var(--openms-navy);
+  color: var(--openms-white);
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+  pointer-events: none;
+}
+
+.developer-retreat-register--closed:hover::after,
+.developer-retreat-register--closed:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 768px) {
+  .developer-retreat-upcoming {
+    grid-template-columns: 1fr;
+  }
+
+  .developer-retreat-poster {
+    order: -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .developer-retreat-page-layout .openms-lib-btn:hover,
+  .developer-retreat-page-layout .openms-lib-btn:focus-visible {
+    transform: none;
+  }
+
+  .developer-retreat-register--closed::after {
+    transition: none;
+  }
+}

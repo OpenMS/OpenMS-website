@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Keyfeatures on OpenMS</title>
+    <link>https://openms.de/keyfeatures/</link>
+    <description>Recent content in Keyfeatures on OpenMS</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://openms.de/keyfeatures/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenMS For Metabolomics</title>
+      <link>https://openms.de/keyfeatures/metabolomics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/keyfeatures/metabolomics/</guid>
+      <description>&lt;h4 id=&#34;openms-for-metabolomics&#34;&gt;OpenMS FOR METABOLOMICS&lt;/h4&gt;&#xA;&lt;p&gt;Many of the tools and algorithms provided by OpenMS are developed with both proteomics and metabolomics in mind. First you convert vendor-specific formats into an open community-driven format. You can then filter, centroid, and recalibrate your spectra. OpenMS provides tools that are specifically designed for the metabolite quantification and metabolite identification. All tools are available as nodes in the workflow engine KNIME.&lt;/p&gt;&#xA;&lt;h4 id=&#34;selected-tools&#34;&gt;SELECTED TOOLS&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Import, export and conversion of vendor formats and several open community-driven formats (e.g. mzML, mzIdentML, mzQuantML, mzTab)&lt;/li&gt;&#xA;&lt;li&gt;Peak picking&lt;/li&gt;&#xA;&lt;li&gt;Baseline and noise filtering&lt;/li&gt;&#xA;&lt;li&gt;Recalibration&lt;/li&gt;&#xA;&lt;li&gt;Retention time alignment&lt;/li&gt;&#xA;&lt;li&gt;Metabolite quantification&lt;/li&gt;&#xA;&lt;li&gt;Metabolite identification based on&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Accurate mass&lt;/li&gt;&#xA;&lt;li&gt;Tandem mass spectra&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>OpenMS For Proteomics</title>
+      <link>https://openms.de/keyfeatures/proteomics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/keyfeatures/proteomics/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;https://openms.de/images/content_images/kf/PROTEINS.jpeg&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;OpenMS provides a large amount of tools to analyse your proteomics datasets.&#xA;Starting from input files in either vendor-specific raw formats (convertible with the integrated ProteoWizard) or a number of open HUPO-compliant formats (mzML, mzXML), you can process your data by simply combining a set of our almost 200 ready-made tools from „The OpenMS proteomics pipeline (TOPP)”. These tools are available from the &lt;a href=&#34;https://openms.readthedocs.io/en/latest/getting-started/topp-tools.html#command-line-interface&#34;&gt;command line&lt;/a&gt; and from within &lt;a href=&#34;https://openms.readthedocs.io/en/latest/getting-started/workflows.html&#34;&gt;workflow engines&lt;/a&gt; (e.g. KNIME and Galaxy).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

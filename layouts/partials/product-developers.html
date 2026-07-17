@@ -1,0 +1,95 @@
+{{- $cfg := .cfg | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "For Developers" -}}
+{{- $title := index $cfg "title" | default "Contribute" -}}
+{{- $lead := index $cfg "lead" -}}
+{{- $boxes := index $cfg "boxes" | default (slice) -}}
+{{- $citeText := index $cfg "citeText" -}}
+{{- $citation := index $cfg "citation" | default dict -}}
+{{- $citeVariant := index $citation "variant" | default "primary" -}}
+{{- $citeSeparate := index $cfg "citeSeparate" | default false -}}
+{{- $hasCite := or $citeText $citation -}}
+{{- $sectionId := .id | default "product-developers-title" -}}
+{{- $citeLabel := index $cfg "citeLabel" | default (printf "Cite %s" (index $citation "topic" | default "OpenMS")) -}}
+{{- $boxCount := len $boxes -}}
+{{- $citeCtx := dict "citeText" $citeText "citation" $citation "citeVariant" $citeVariant "citeLabel" $citeLabel -}}
+<section class="openms-lib-block openms-lib-block--developers" id="for-developers" aria-labelledby="{{ $sectionId }}">
+  <header class="openms-lib-block__head openms-lib-developers__head">
+    <p class="openms-lib-block__eyebrow">{{ $eyebrow }}</p>
+    <h2 id="{{ $sectionId }}" class="openms-lib-developers__title">{{ $title }}</h2>
+    {{- with $lead }}
+    <p class="openms-lib-developers__lead">{{ . }}</p>
+    {{- end }}
+  </header>
+
+  <div class="openms-lib-developers__content{{ if and $hasCite (not $citeSeparate) }} openms-lib-developers__content--with-cite{{ end }}">
+    <div
+      class="openms-lib-developers__grid{{ with $boxCount }} openms-lib-developers__grid--count-{{ . }}{{ end }}"
+      aria-label="Contributor resources"
+    >
+      {{- range $boxes }}
+      {{- $type := .type | default "link" -}}
+      {{- if eq $type "build" }}
+      <article class="openms-lib-developers__card openms-lib-developers__card--build">
+        <div class="openms-lib-developers__card-body">
+          {{- with .tag }}
+          <span class="openms-lib-developers__card-tag">{{ . }}</span>
+          {{- else }}
+          <span class="openms-lib-developers__card-tag">Build</span>
+          {{- end }}
+          <h3 class="openms-lib-developers__card-title">{{ .title }}</h3>
+          {{- with .text }}
+          <p class="openms-lib-developers__card-text">{{ . }}</p>
+          {{- end }}
+          <div class="openms-lib-developers__platforms" role="group" aria-label="{{ .title }}">
+            {{- range .platforms }}
+            <a
+              class="openms-lib-btn openms-lib-btn--ghost openms-lib-developers__platform-btn"
+              href="{{ .url }}"
+              {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+            >
+              {{- with .icon }}
+              <i class="{{ . }}" aria-hidden="true"></i>
+              {{- end }}
+              {{ .name }}
+            </a>
+            {{- end }}
+          </div>
+        </div>
+      </article>
+      {{- else }}
+      <a
+        class="openms-lib-developers__card openms-lib-developers__card--link"
+        href="{{ .url }}"
+        {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+      >
+        <div class="openms-lib-developers__card-body">
+          {{- with .tag }}
+          <span class="openms-lib-developers__card-tag">{{ . }}</span>
+          {{- end }}
+          <h3 class="openms-lib-developers__card-title">
+            {{- with .icon }}
+            <i class="{{ . }} openms-lib-developers__card-icon" aria-hidden="true"></i>
+            {{- end }}
+            <span>{{ .title }}</span>
+          </h3>
+          {{- with .text }}
+          <p class="openms-lib-developers__card-text">{{ . }}</p>
+          {{- end }}
+          <span class="openms-lib-developers__card-link">
+            {{ .linkText | default "Learn more" }}<span aria-hidden="true"> →</span>
+          </span>
+        </div>
+      </a>
+      {{- end }}
+      {{- end }}
+    </div>
+
+    {{- if and $hasCite (not $citeSeparate) }}
+    {{ partial "product-developers-cite.html" $citeCtx }}
+    {{- end }}
+  </div>
+
+  {{- if and $hasCite $citeSeparate }}
+  {{ partial "product-developers-cite.html" (merge $citeCtx (dict "separate" true)) }}
+  {{- end }}
+</section>

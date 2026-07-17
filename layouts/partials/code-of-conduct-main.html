@@ -1,0 +1,16 @@
+<section class="code-of-conduct-page-layout">
+  <div class="code-of-conduct-page-layout__content">
+    <header class="code-of-conduct-page__head" aria-label="OpenMS Code of Conduct">
+      <h1 class="code-of-conduct-page__title">{{ .Title }}</h1>
+      <nav class="code-of-conduct-page__jumps" aria-label="On this page">
+        <a class="code-of-conduct-page__jump" href="#code-of-conduct-summary-view">Summary</a>
+        <a class="code-of-conduct-page__jump" href="#code-of-conduct-detailed-view">Detailed view</a>
+        <a class="code-of-conduct-page__jump" href="/report-handling-manual/">Report handling manual</a>
+      </nav>
+    </header>
+
+    <div class="code-of-conduct-page__content post-content">
+      {{ .Content }}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,94 @@
+{{- $cfg := .Site.Params.developerRetreatPage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Community" -}}
+{{- $pageTitle := index $cfg "pageTitle" | default "Annual Developer Retreat" -}}
+{{- $headline := index $cfg "headline" | default "Take part in shaping the future of computational mass spectrometry." -}}
+{{- $about := index $cfg "about" | default "" -}}
+{{- $pastPhoto := index $cfg "pastPhoto" | default dict -}}
+{{- $upcoming := index $cfg "upcoming" | default dict -}}
+{{- $registration := index $cfg "registration" | default dict -}}
+{{- $regOpen := index $registration "open" | default false -}}
+{{- $regUrl := index $registration "url" | default "" -}}
+{{- $regLabel := index $registration "label" | default "Register here" -}}
+{{- $regClosedHint := index $registration "closedHint" | default "Registration is not open yet." -}}
+{{- $upcomingTitle := index $upcoming "title" | default "Upcoming retreat" -}}
+{{- $bullets := index $upcoming "bullets" | default slice -}}
+{{- $poster := index $upcoming "poster" | default dict -}}
+<section class="developer-retreat-page-layout">
+  <header class="openms-lib-hero developer-retreat-page-hero" aria-label="{{ $pageTitle }}">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content developer-retreat-page-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <p class="developer-retreat-page-hero__kicker">{{ $pageTitle }}</p>
+        <h1 class="developer-retreat-page-hero__headline">{{ $headline }}</h1>
+        {{- if $about -}}
+        <p class="developer-retreat-page-hero__about">{{ $about }}</p>
+        {{- end -}}
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/calendar/">Community calendar</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/news/">News</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="developer-retreat-page-layout__content">
+    {{- with $pastPhoto -}}
+    <figure class="developer-retreat-photo">
+      <img
+        class="developer-retreat-photo__image"
+        src="{{ .src }}"
+        alt="{{ .alt | default "OpenMS developer retreat" }}"
+        loading="lazy"
+        decoding="async"
+      />
+      {{- with .caption -}}
+      <figcaption class="developer-retreat-photo__caption">{{ . }}</figcaption>
+      {{- end -}}
+    </figure>
+    {{- end -}}
+
+    <section class="developer-retreat-upcoming" id="upcoming-retreat" aria-labelledby="upcoming-retreat-title">
+      <div class="developer-retreat-upcoming__info">
+        <h2 id="upcoming-retreat-title" class="developer-retreat-upcoming__title">{{ $upcomingTitle }}</h2>
+        {{- if $bullets -}}
+        <ul class="developer-retreat-upcoming__list">
+          {{- range $bullets -}}
+          <li>{{ . }}</li>
+          {{- end -}}
+        </ul>
+        {{- end -}}
+
+        <div class="developer-retreat-upcoming__register">
+          {{- if and $regOpen $regUrl -}}
+          <a
+            class="openms-lib-btn openms-lib-btn--primary developer-retreat-register"
+            href="{{ $regUrl }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >{{ $regLabel }}</a>
+          {{- else -}}
+          <span
+            class="openms-lib-btn openms-lib-btn--primary developer-retreat-register developer-retreat-register--closed"
+            role="button"
+            aria-disabled="true"
+            tabindex="0"
+            data-tooltip="{{ $regClosedHint }}"
+          >{{ $regLabel }}</span>
+          {{- end -}}
+        </div>
+      </div>
+
+      {{- with $poster -}}
+      <figure class="developer-retreat-poster">
+        <img
+          class="developer-retreat-poster__image"
+          src="{{ .src }}"
+          alt="{{ .alt | default "Upcoming developer retreat poster" }}"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+      {{- end -}}
+    </section>
+  </div>
+</section>

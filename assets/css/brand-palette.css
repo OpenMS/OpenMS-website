@@ -1,0 +1,126 @@
+/* OpenMS brand palette — load before other site CSS (filename sorts first) */
+:root {
+  --fontFamily: "{{ .Site.Params.font.name | default "Montserrat" }}", system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --openms-font-heading: var(--fontFamily);
+  --openms-font-body: "{{ .Site.Params.bodyFont.name | default "Raleway" }}", system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Primary headings — Montserrat (pt) */
+  --openms-heading-xl-size: 26pt;
+  --openms-heading-xl-weight: 800;
+  --openms-heading-lg-size: 20pt;
+  --openms-heading-lg-weight: 700;
+
+  /* Body & secondary headings — Raleway (pt) */
+  --openms-text-min: 11pt;
+  --openms-navbar-font-size: 15px;
+  --openms-navbar-link-color: var(--openms-white);
+  --openms-navbar-link-hover-color: color-mix(in srgb, var(--openms-white) 86%, var(--openms-blue-secondary) 14%);
+  --openms-navbar-link-hover-bg: rgba(var(--openms-white-rgb), 0.1);
+  --openms-navbar-dropdown-bg: var(--openms-white);
+  --openms-navbar-dropdown-text: rgba(var(--openms-navy-rgb), 0.9);
+  --openms-navbar-dropdown-heading: rgba(var(--openms-navy-rgb), 0.5);
+  --openms-navbar-dropdown-hover-text: var(--openms-navy);
+  --openms-navbar-dropdown-hover-bg: rgba(var(--openms-navy-rgb), 0.06);
+  --openms-navbar-dropdown-border: rgba(var(--openms-navy-rgb), 0.1);
+  --openms-navbar-container-pad-inline: clamp(1.25rem, 3vw, 2.25rem);
+  --openms-navbar-container-pad-inline-mobile: 1.15rem;
+  --openms-navbar-brand-slot-width: 18.5rem;
+  --openms-navbar-logo-height: 76px;
+  --openms-header-bar-min-height: calc(var(--openms-navbar-logo-height) + 0.65rem);
+  --openms-navbar-desktop-gap: clamp(0.4rem, 1.1vw, 0.9rem);
+  --openms-navbar-desktop-pad-x: clamp(0.35rem, 0.75vw, 0.7rem);
+  --openms-navbar-desktop-font-size: clamp(0.8125rem, 0.95vw, 15px);
+  --openms-navbar-actions-gap: clamp(0.5rem, 1vw, 0.85rem);
+  /* Nav breakpoints: burger < 1280px; compact xl 1280–1535px; full desktop 1536px+ */
+  --openms-nav-desktop-min: 1280px;
+  --openms-nav-xl-wide-min: 1536px;
+  --openms-body-size: 12pt;
+  --openms-body-size-lg: 14pt;
+  --openms-secondary-heading-size: 14pt;
+  --openms-secondary-heading-size-lg: 16pt;
+  --openms-presentation-size: 18pt;
+  --openms-body-weight: 400;
+  --openms-secondary-heading-weight: 400;
+
+  /* Quotes, callouts & emphasis — JetBrains Mono thin */
+  --openms-font-mono: "{{ .Site.Params.monoFont.name | default "JetBrains Mono" }}", ui-monospace,
+    "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  --openms-mono-weight: 100;
+
+  --openms-yellow: #ffcb4f;
+  --openms-orange: #ff7501;
+  --openms-pink: #ff03cb;
+  --openms-purple: #b503ff;
+  --openms-blue: #3157e9;
+  --openms-blue-secondary: #5280f0;
+  --openms-navy: #0c2171;
+  --openms-dark: #231f20;
+  --openms-grey: #c2babc;
+  --openms-white: #ffffff;
+
+  --openms-yellow-rgb: 255, 203, 79;
+  --openms-orange-rgb: 255, 117, 1;
+  --openms-pink-rgb: 255, 3, 203;
+  --openms-purple-rgb: 181, 3, 255;
+  --openms-blue-rgb: 49, 87, 233;
+  --openms-blue-secondary-rgb: 82, 128, 240;
+  --openms-navy-rgb: 12, 33, 113;
+  --openms-dark-rgb: 35, 31, 32;
+
+  /* Solid section backgrounds */
+  --openms-bg-navy: var(--openms-navy);
+  --openms-grey-rgb: 194, 186, 188;
+  --openms-white-rgb: 255, 255, 255;
+
+  /* Site chrome — unified banner → nav → hero stack */
+  --openms-chrome-bg: var(--openms-navy);
+  --openms-chrome-border: rgba(var(--openms-white-rgb), 0.1);
+  --openms-chrome-border-strong: rgba(var(--openms-white-rgb), 0.16);
+  --openms-chrome-text: rgba(var(--openms-white-rgb), 0.92);
+  --openms-chrome-text-muted: rgba(var(--openms-white-rgb), 0.62);
+  --openms-chrome-surface: rgba(var(--openms-white-rgb), 0.07);
+  --openms-chrome-surface-hover: rgba(var(--openms-white-rgb), 0.12);
+  --openms-chrome-accent: var(--openms-pink);
+  --openms-chrome-accent-line: linear-gradient(
+    90deg,
+    var(--openms-blue) 0%,
+    var(--openms-purple) 55%,
+    var(--openms-pink) 100%
+  );
+  --openms-chrome-banner-bg: var(--openms-white);
+  --openms-chrome-banner-label: var(--openms-white);
+  --openms-chrome-banner-label-bg: var(--openms-orange);
+  --openms-chrome-banner-label-border: var(--openms-orange);
+  --openms-chrome-banner-text: rgba(var(--openms-navy-rgb), 0.88);
+  --openms-chrome-banner-border: rgba(var(--openms-navy-rgb), 0.1);
+  --openms-chrome-nav-surface: var(--openms-white);
+  --openms-chrome-nav-border: rgba(var(--openms-navy-rgb), 0.14);
+  --openms-chrome-nav-text: var(--openms-navy);
+  --openms-chrome-nav-text-muted: rgba(var(--openms-navy-rgb), 0.58);
+  --openms-chrome-nav-dropdown-bg: rgba(var(--openms-blue-rgb), 0.06);
+  --openms-chrome-nav-dropdown-border: rgba(var(--openms-blue-rgb), 0.2);
+  --openms-chrome-nav-backdrop: rgba(var(--openms-navy-rgb), 0.52);
+
+  --colorPrimaryDark: var(--openms-blue);
+  --colorPrimaryDarkBtn: var(--openms-blue);
+  --colorPrimary: var(--openms-blue);
+  --colorPrimaryLight: var(--openms-purple);
+  --colorSecondaryDark: var(--openms-dark);
+  --colorSecondary: var(--openms-grey);
+  --colorSecondaryLight: var(--openms-white);
+  --colorHeading: var(--openms-dark);
+  --colorHighlight: var(--openms-yellow);
+  --colorShadow: rgba(var(--openms-dark-rgb), 0.1);
+  --colorContentLink: var(--openms-blue);
+  --colorIcon: var(--openms-blue);
+  --colorNoteHeading: var(--openms-blue);
+  --colorNoteContent: var(--openms-grey);
+  --colorInfoHeading: var(--openms-orange);
+  --colorInfoContent: var(--openms-grey);
+  --colorWarningHeading: var(--openms-pink);
+  --colorWarningContent: var(--openms-grey);
+  --colorTipHeading: var(--openms-purple);
+  --colorTipContent: var(--openms-grey);
+}

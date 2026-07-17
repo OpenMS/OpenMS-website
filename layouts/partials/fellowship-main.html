@@ -1,0 +1,85 @@
+{{- $cfg := .Site.Params.fellowshipPage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Community" -}}
+{{- $headline := index $cfg "headline" | default "Gain hands-on experience contributing to a world-class open-source mass spectrometry platform." -}}
+{{- $blurb := index $cfg "blurb" | default "" -}}
+{{- $formId := index $cfg "tallyFormId" | default "44qqqd" -}}
+{{- $projectsTitle := index $cfg "projectsTitle" | default "Projects you can contribute to" -}}
+{{- $projectsLead := index $cfg "projectsLead" | default "" -}}
+{{- $projects := index $cfg "projects" | default slice -}}
+<section class="fellowship-page-layout">
+  <header class="openms-lib-hero fellowship-page-hero" aria-label="OpenMS Fellowship">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content fellowship-page-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="fellowship-page-hero__headline">{{ $headline }}</h1>
+        {{- if $blurb -}}
+        <p class="fellowship-page-hero__blurb">{{ $blurb }}</p>
+        {{- end -}}
+        <div class="openms-lib-hero__actions" aria-label="Fellowship actions">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="#fellowship-application">Apply now</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="#fellowship-projects">Explore projects</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="fellowship-page-layout__content">
+    <section
+      class="fellowship-page__section fellowship-page__application"
+      id="fellowship-application"
+      aria-labelledby="fellowship-application-title"
+    >
+      <div class="fellowship-page__form-card">
+        <div class="fellowship-page__form-head">
+          <h2 id="fellowship-application-title" class="fellowship-page__form-title">Apply for the fellowship</h2>
+          <p class="fellowship-page__form-lead">
+            Complete the application below. We review submissions on a rolling basis and will follow up by email.
+          </p>
+        </div>
+        {{ partial "fellowship-form-embed.html" (dict "formId" $formId) }}
+      </div>
+    </section>
+
+    <section
+      class="fellowship-page__section fellowship-page__projects"
+      id="fellowship-projects"
+      aria-labelledby="fellowship-projects-title"
+    >
+      <header class="fellowship-page__section-head">
+        <h2 id="fellowship-projects-title">{{ $projectsTitle }}</h2>
+        {{- if $projectsLead -}}
+        <p class="fellowship-page__section-lead">{{ $projectsLead }}</p>
+        {{- end -}}
+      </header>
+      <div class="fellowship-projects-grid">
+        {{- range $projects -}}
+        {{- $external := .external | default false -}}
+        <article class="fellowship-project-card">
+          <h3 class="fellowship-project-card__title">
+            {{- if $external -}}
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+            {{- else -}}
+            <a href="{{ .url }}">{{ .title }}</a>
+            {{- end -}}
+          </h3>
+          <p class="fellowship-project-card__text">{{ .description }}</p>
+          <div class="fellowship-project-card__actions">
+            {{- if $external -}}
+            <a class="fellowship-project-card__link" href="{{ .url }}" target="_blank" rel="noopener noreferrer">Learn more <span aria-hidden="true">→</span></a>
+            {{- else -}}
+            <a class="fellowship-project-card__link" href="{{ .url }}">Learn more <span aria-hidden="true">→</span></a>
+            {{- end -}}
+            {{- with .contributeUrl -}}
+            <a
+              class="fellowship-project-card__link fellowship-project-card__link--contribute"
+              href="{{ . }}"
+              {{- if or $external (hasPrefix . "http") -}}target="_blank" rel="noopener noreferrer"{{- end -}}
+            >How to contribute <span aria-hidden="true">→</span></a>
+            {{- end -}}
+          </div>
+        </article>
+        {{- end -}}
+      </div>
+    </section>
+  </div>
+</section>

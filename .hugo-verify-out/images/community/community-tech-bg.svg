@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="community-tech-title community-tech-desc">
+  <title id="community-tech-title">OpenMS technology background</title>
+  <desc id="community-tech-desc">Abstract mass spectrometry data visualization with spectral peaks, analysis nodes, and connected workflows.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07164f"/>
+      <stop offset="45%" stop-color="#0c2171"/>
+      <stop offset="100%" stop-color="#120a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3157e9"/>
+      <stop offset="55%" stop-color="#5280f0"/>
+      <stop offset="100%" stop-color="#b503ff"/>
+    </linearGradient>
+    <linearGradient id="peakFill" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#3157e9" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#5280f0" stop-opacity="0.28"/>
+    </linearGradient>
+    <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5280f0" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#5280f0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowPurple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b503ff" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#b503ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+
+  <ellipse cx="1180" cy="260" rx="280" ry="220" fill="url(#glowBlue)"/>
+  <ellipse cx="420" cy="620" rx="320" ry="240" fill="url(#glowPurple)"/>
+
+  <g opacity="0.55" stroke="url(#accent)" stroke-width="2.5" fill="none" filter="url(#softGlow)">
+    <path d="M80 700 L180 520 L240 580 L310 420 L380 500 L450 360 L520 430 L590 310 L660 390 L730 280 L800 360 L870 250 L940 330 L1010 220 L1080 300 L1150 260 L1220 340 L1290 290 L1360 380 L1430 320 L1520 700"/>
+    <path d="M80 760 L220 600 L300 660 L390 500 L470 560 L560 430 L650 500 L740 390 L830 450 L920 360 L1010 420 L1100 340 L1190 400 L1280 350 L1370 430 L1460 380 L1520 760" opacity="0.55"/>
+  </g>
+
+  <g fill="url(#peakFill)" stroke="none" opacity="0.9">
+    <path d="M80 700 L180 520 L240 580 L310 420 L380 500 L450 360 L520 430 L590 310 L660 390 L730 280 L800 360 L870 250 L940 330 L1010 220 L1080 300 L1150 260 L1220 340 L1290 290 L1360 380 L1430 320 L1520 700 Z"/>
+  </g>
+
+  <g stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5" fill="none">
+    <path d="M220 180 H420 V280"/>
+    <path d="M980 140 H1180 V240"/>
+    <path d="M1240 560 H1440 V660"/>
+    <path d="M120 420 H320 V520"/>
+  </g>
+
+  <g fill="#ffffff" fill-opacity="0.08">
+    <rect x="220" y="180" width="200" height="100" rx="12"/>
+    <rect x="980" y="140" width="200" height="100" rx="12"/>
+    <rect x="1240" y="560" width="200" height="100" rx="12"/>
+    <rect x="120" y="420" width="200" height="100" rx="12"/>
+  </g>
+
+  <g font-family="ui-monospace, monospace" font-size="11" fill="#ffffff" fill-opacity="0.42">
+    <text x="240" y="212">mzML pipeline</text>
+    <text x="1000" y="172">feature detection</text>
+    <text x="1260" y="592">OpenMS TOPP</text>
+    <text x="140" y="452">workflow engine</text>
+  </g>
+
+  <g stroke="#5280f0" stroke-opacity="0.22" stroke-width="1.5" fill="none">
+    <path d="M420 230 C560 230 620 180 760 180"/>
+    <path d="M1180 190 C1280 260 1320 320 1380 410"/>
+    <path d="M320 470 C520 500 700 540 900 560"/>
+    <path d="M900 560 C1040 520 1120 470 1240 610"/>
+  </g>
+
+  <g>
+    <circle cx="420" cy="230" r="7" fill="#5280f0" fill-opacity="0.85"/>
+    <circle cx="760" cy="180" r="7" fill="#3157e9" fill-opacity="0.85"/>
+    <circle cx="1180" cy="190" r="7" fill="#b503ff" fill-opacity="0.85"/>
+    <circle cx="1380" cy="410" r="7" fill="#5280f0" fill-opacity="0.85"/>
+    <circle cx="320" cy="470" r="7" fill="#3157e9" fill-opacity="0.85"/>
+    <circle cx="900" cy="560" r="7" fill="#b503ff" fill-opacity="0.85"/>
+    <circle cx="1240" cy="610" r="7" fill="#ff03cb" fill-opacity="0.75"/>
+  </g>
+
+  <g opacity="0.18" stroke="#ffffff" stroke-width="1">
+    <path d="M0 120 H1600"/>
+    <path d="M0 300 H1600"/>
+    <path d="M0 480 H1600"/>
+    <path d="M0 660 H1600"/>
+    <path d="M200 0 V900"/>
+    <path d="M600 0 V900"/>
+    <path d="M1000 0 V900"/>
+    <path d="M1400 0 V900"/>
+  </g>
+
+  <g transform="translate(1320 720)">
+    <rect width="220" height="120" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+    <path d="M28 78 L48 48 L68 62 L92 34 L116 58 L140 42 L164 72" fill="none" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="48" cy="48" r="4" fill="#5280f0"/>
+    <circle cx="92" cy="34" r="4" fill="#b503ff"/>
+    <circle cx="140" cy="42" r="4" fill="#ff03cb"/>
+    <text x="28" y="28" font-family="ui-monospace, monospace" font-size="11" fill="#ffffff" fill-opacity="0.55">signal trace</text>
+  </g>
+</svg>

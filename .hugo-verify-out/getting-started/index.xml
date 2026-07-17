@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting-Starteds on OpenMS</title>
+    <link>https://openms.de/getting-started/</link>
+    <description>Recent content in Getting-Starteds on OpenMS</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://openms.de/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Develop Your Own OpenMS Tools</title>
+      <link>https://openms.de/getting-started/develop-your-own-openms-tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/getting-started/develop-your-own-openms-tools/</guid>
+      <description>&lt;h2 id=&#34;source-code&#34;&gt;SOURCE CODE&lt;/h2&gt;&#xA;&lt;p&gt;The source code of the OpenMS library as well as the TOPP tools and TOPPView are hosted on &lt;a href=&#34;https://github.com/OpenMS&#34;&gt;GitHub&lt;/a&gt;. The most important repositories for starting developers will be &lt;a href=&#34;https://github.com/OpenMS/OpenMS&#34;&gt;OpenMS&lt;/a&gt; itself and its &lt;a href=&#34;https://github.com/OpenMS/contrib&#34;&gt;contrib&lt;/a&gt; (i.e. its dependencies). The source code is released under a three-clause BSD license.&lt;/p&gt;&#xA;&lt;h2 id=&#34;documentation&#34;&gt;DOCUMENTATION&lt;/h2&gt;&#xA;&lt;p&gt;A good starting point for developers is the OpenMS GitHub wiki. For a quick dive into developing your own, see the Developer FAQ and the Adding your own tool to the TOPP suite.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

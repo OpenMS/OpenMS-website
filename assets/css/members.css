@@ -8,8 +8,8 @@
 
 .role {
     display: inline-block;
-    background-color: #eee;
-    color: #333;
+    background-color: var(--openms-grey);
+    color: var(--openms-dark);
     padding: 0.2rem 0.5rem;
     border-radius: 0.5rem;
     font-size: 0.85em;

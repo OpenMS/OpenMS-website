@@ -1,0 +1,64 @@
+{{- $project := .project }}
+{{- $embed := .embed | default "" }}
+{{- $ctaText := .ctaText | default "View project" }}
+{{- $url := $project.url }}
+{{- $isExternal := in $url "://" }}
+{{- $ariaLabel := $project.name }}
+{{- if $isExternal }}
+  {{- $ariaLabel = printf "%s (opens in new tab)" $ariaLabel }}
+{{- end }}
+<article class="webapps-project-card{{ if eq $embed "home" }} webapps-project-card--catalog{{ end }}">
+  <a
+    class="webapps-project-card__surface"
+    href="{{ $url }}"
+    aria-label="{{ $ariaLabel }}"
+    {{- if $isExternal }}
+    target="_blank"
+    rel="noopener noreferrer"
+    {{- end }}
+  >
+    {{- if eq $embed "home" }}
+    <div class="webapps-project-card__media">
+      <img
+        class="webapps-project-card__image{{ with $project.logoSize }} webapps-project-card__image--{{ . }}{{ end }}"
+        src="{{ $project.logo | relURL }}"
+        alt="{{ $project.name }}"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+    <div class="webapps-project-card__content">
+      {{- with $project.description }}
+      <p class="webapps-project-card__text">{{ . }}</p>
+      {{- end }}
+      <span class="webapps-project-card__cta">
+        <span class="webapps-project-card__cta-label">{{ $ctaText }}</span>
+        <span class="webapps-project-card__cta-icon" aria-hidden="true">›</span>
+      </span>
+    </div>
+    {{- else }}
+    <span class="webapps-project-card__accent" aria-hidden="true"></span>
+
+    <div class="webapps-project-card__logo-wrap">
+      <img
+        class="webapps-project-card__logo"
+        src="{{ $project.logo | relURL }}"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <div class="webapps-project-card__body">
+      <h3 class="webapps-project-card__name">{{ $project.name }}</h3>
+      {{- with $project.description }}
+      <p class="webapps-project-card__text">{{ . }}</p>
+      {{- end }}
+      <span class="webapps-project-card__cta">
+        <span class="webapps-project-card__cta-label">{{ $ctaText }}</span>
+        <span class="webapps-project-card__cta-icon" aria-hidden="true">→</span>
+      </span>
+    </div>
+    {{- end }}
+  </a>
+</article>

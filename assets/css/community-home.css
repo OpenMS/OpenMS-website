@@ -1,0 +1,188 @@
+/* Homepage community — minimalist copy over fixed photo */
+
+.community-home {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #000;
+}
+
+.community-home--has-bg {
+  min-height: clamp(40rem, 78vh, 56rem);
+}
+
+.community-home__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  pointer-events: none;
+}
+
+.community-home__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.34) 0%,
+    rgba(0, 0, 0, 0.18) 48%,
+    rgba(0, 0, 0, 0.06) 100%
+  );
+}
+
+.community-home__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  min-height: clamp(40rem, 78vh, 56rem);
+  max-width: var(--home-max, 75rem);
+  margin: 0 auto;
+  padding-block: clamp(4.5rem, 9vh, 6.5rem);
+  padding-inline: var(--home-pad-x);
+}
+
+.community-home__content {
+  max-width: min(100%, 38rem);
+  min-width: 0;
+}
+
+.community-home__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.85rem;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--openms-white);
+  background: rgba(var(--openms-white-rgb), 0.12);
+  border: 1px solid rgba(var(--openms-white-rgb), 0.24);
+  border-radius: 999px;
+}
+
+.community-home__eyebrow-icon {
+  display: inline-flex;
+  line-height: 0;
+  opacity: 0.9;
+}
+
+.community-home__eyebrow-icon svg {
+  display: block;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.community-home__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--openms-white);
+  text-wrap: balance;
+}
+
+.community-home__title-accent {
+  display: inline;
+  background: linear-gradient(
+    90deg,
+    var(--openms-blue-secondary) 0%,
+    var(--openms-purple) 50%,
+    var(--openms-pink) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.community-home__lead {
+  margin: 0.85rem 0 0;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size-lg);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(var(--openms-white-rgb), 0.92);
+  text-wrap: pretty;
+}
+
+.community-home__note {
+  margin: 0.75rem 0 0;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size);
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(var(--openms-white-rgb), 0.8);
+  text-wrap: pretty;
+}
+
+.community-home__note p {
+  margin: 0;
+}
+
+.community-home__note a {
+  color: var(--openms-white);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.community-home__note a:hover,
+.community-home__note a:focus-visible {
+  color: var(--openms-blue-secondary);
+}
+
+.community-home__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin-top: 1.35rem;
+}
+
+.community-home__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .community-home--has-bg,
+  .community-home__inner {
+    min-height: clamp(32rem, 72vh, 48rem);
+  }
+
+  .community-home__media {
+    background-attachment: scroll;
+  }
+
+  .community-home__inner {
+    padding-block: clamp(3.75rem, 7.5vh, 5.75rem);
+    padding-inline: var(--home-pad-x);
+  }
+
+  .community-home__title {
+    font-size: clamp(1.55rem, 5vw, 2rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .community-home__media {
+    background-attachment: scroll;
+  }
+}

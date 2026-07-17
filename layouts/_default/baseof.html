@@ -39,15 +39,15 @@
     {{ end }}
 
     {{ block "navbar" . }}
-    {{ partial "navbar.html" . }}
+    <header class="site-header">
+      {{ partial "news-banner.html" . }}
+      {{ partial "navbar.html" . }}
+    </header>
     {{ partial "navbar-clone.html" . }}
     {{ end }}
 
     {{ block "main" . }}
     {{ end }}
-
-    <!-- Back To Top Button -->
-    <div id="backtotop"><a href="#" id="backtotop-color"></a></div>
 
     {{ if .Site.Params.footer }}
     {{ partial "footer.html" . }}

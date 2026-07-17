@@ -1,0 +1,53 @@
+{{- $section := site.Params.archivedSection | default dict -}}
+{{- $projects := site.Params.archivedProjects | default (slice) -}}
+{{- if $projects }}
+<section class="webapps-archived" id="archived-apps" aria-labelledby="webapps-archived-title">
+  <div class="webapps-archived__inner">
+    <header class="webapps-archived__header">
+      <h2 id="webapps-archived-title" class="webapps-archived__title">
+        {{ index $section "title" | default "Archived Apps" }}
+      </h2>
+      {{- with index $section "description" }}
+      <p class="webapps-archived__lead">{{ . }}</p>
+      {{- end }}
+    </header>
+
+    <ul class="webapps-archived__grid" role="list" aria-label="Archived apps">
+      {{- range $projects }}
+      <li class="webapps-archived__item" role="listitem">
+        <article class="webapps-project-detail-card webapps-project-detail-card--archived">
+          <div class="webapps-project-detail-card__body">
+            <h3 class="webapps-project-detail-card__name">{{ .name }}</h3>
+            {{- with .description }}
+            <p class="webapps-project-detail-card__text">{{ . }}</p>
+            {{- end }}
+            {{- with .maintainers }}
+            <p class="webapps-project-detail-card__maintainers">
+              <span class="webapps-project-detail-card__maintainers-label">Maintainers</span>
+              {{ . }}
+            </p>
+            {{- end }}
+            {{ partial "webapps-project-links.html" (dict "links" .links) }}
+          </div>
+        </article>
+      </li>
+      {{- end }}
+    </ul>
+
+  {{- $revivalPrompt := index $section "revivalPrompt" -}}
+  {{- $contactText := index $section "contactText" | default "Contact Us" -}}
+  {{- $contactUrl := index $section "contactUrl" | default "/contact/" -}}
+  {{- $sponsorText := index $section "sponsorText" | default "Sponsor Us" -}}
+  {{- $sponsorUrl := index $section "sponsorUrl" | default "/sponsor-us/" -}}
+  {{- with $revivalPrompt }}
+    <div class="webapps-archived__revival">
+      <p class="webapps-archived__revival-text">{{ . }}</p>
+      <div class="webapps-archived__revival-actions" aria-label="Revive a project">
+        <a class="openms-lib-btn openms-lib-btn--ghost" href="{{ $contactUrl }}">{{ $contactText }}</a>
+        <a class="openms-lib-btn openms-lib-btn--primary" href="{{ $sponsorUrl }}">{{ $sponsorText }}</a>
+      </div>
+    </div>
+  {{- end }}
+  </div>
+</section>
+{{- end }}

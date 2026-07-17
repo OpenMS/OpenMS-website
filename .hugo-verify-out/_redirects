@@ -1,0 +1,175 @@
+# OpenMS web site redirect file for Netlify
+# Version 1.1 by Rahul Agrawal, Julianus Pfeuffer and Tjeerd Dijkstra
+
+# Restore cdash redirect. NFI how it got clobber, or why it's taken a year to break.
+https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
+
+# Redirects to the API and developer documentation
+# For an explanation of the hack with the addSlash function for redirects without trailing slash, see https://answers.netlify.com/t/bug-in-non-trailing-slash-rewrite/452/39
+
+/current_doxygen    /.netlify/functions/addSlash  200
+/current_doxygen/*  https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/:splat  200
+
+/documentation         /.netlify/functions/addSlash  200
+/documentation/html/*  https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/:splat  200
+/documentation/*       https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/:splat  200
+
+/tutorials             https://openms.readthedocs.io/en/latest/index.html
+/tutorials/html/*      https://openms.readthedocs.io/en/latest/index.html
+/tutorials/*           https://openms.readthedocs.io/en/latest/index.html
+
+/develop_doxygen    /.netlify/functions/addSlash  200
+/develop_doxygen/*  https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/:splat  200
+
+## should never be called as openms.de/doxygen. Only to be used as openms.de/doxygen/release/2.9.0 for example.
+/doxygen/*          https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/:splat  200
+
+# The new user documentation based on ReadTheDocs
+/rtd_documentation/* https://openms.readthedocs.io/en/latest/:splat 200
+
+# Links to the latest release on GitHub. Be careful if you ever create a page for downloads and call it download.
+/download https://github.com/OpenMS/OpenMS/releases/latest  200
+
+# For backwards-compatibility with the old website
+/team /teams/ 200
+
+# For a stable reference in XML files, such that parsers and IDEs can download the stylesheets on the fly
+# and validate
+/xml-stylesheet/* https://raw.githubusercontent.com/OpenMS/OpenMS/develop/share/OpenMS/XSL/:splat  200
+/xml-schema/* https://raw.githubusercontent.com/OpenMS/OpenMS/develop/share/OpenMS/SCHEMAS/:splat  200
+
+# Applications section retired — apps live on /webapps/
+/applications /webapps/ 301
+/applications/* /webapps/ 301
+
+# publication related links go here
+/diametalyzer /webapps/ 301
+/DIAMetalzyer /webapps/ 301
+
+/diaproteomics /webapps/#archived-apps 301
+/DIAProteomics /webapps/#archived-apps 301
+
+/epifany /webapps/ 301
+
+/FLASHDeconv /webapps/ 301
+/flashdeconv /webapps/ 301
+/FlashDeconv /webapps/ 301
+
+/FLASHQuant /webapps/ 301
+/flashquant /webapps/ 301
+/FlashQuant /webapps/ 301
+
+/metaprosip /webapps/ 301
+
+/mhcquant /webapps/#featured-webapps 301
+/MHCQuant /webapps/#featured-webapps 301
+
+/nase /webapps/#featured-webapps 301
+/NASE /webapps/#featured-webapps 301
+
+/openpepxl /webapps/ 301
+/OpenpepXL /webapps/ 301
+
+/rnpxl /webapps/#featured-webapps 301
+/RNPxl /webapps/#featured-webapps 301
+/nuxl /webapps/#featured-webapps 301
+/NuXL /webapps/#featured-webapps 301
+
+/FLASHIda /webapps/ 301
+/flashida /webapps/ 301
+/FlashIda /webapps/ 301
+
+/NASEWEIS https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
+/naseweis https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
+/NaseWeis https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
+/nase-weis https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
+/NASE-WEIS https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
+
+/UMETAFLOW https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
+/umetaflow https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
+/UmetaFlow https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
+/umeta-flow https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
+/UMETA-FLOW https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
+
+/FLASHViewer http://flashapp.webapps.openms.org/ 301
+/FLASHviewer http://flashapp.webapps.openms.org/ 301
+/FlashViewer http://flashapp.webapps.openms.org/ 301
+/FLASHVIEWER http://flashapp.webapps.openms.org/ 301
+/flashviewer http://flashapp.webapps.openms.org/ 301
+/FLASH-Viewer http://flashapp.webapps.openms.org/ 301
+/Flash-Viewer http://flashapp.webapps.openms.org/ 301
+/FLASH-viewer http://flashapp.webapps.openms.org/ 301
+/flash-viewer http://flashapp.webapps.openms.org/ 301
+
+/FLASHApp http://flashapp.webapps.openms.org/ 301
+/FLASHapp http://flashapp.webapps.openms.org/ 301
+/FlashApp http://flashapp.webapps.openms.org/ 301
+/FLASHAPP http://flashapp.webapps.openms.org/ 301
+/flashapp http://flashapp.webapps.openms.org/ 301
+/FLASH-App http://flashapp.webapps.openms.org/ 301
+/Flash-App http://flashapp.webapps.openms.org/ 301
+/FLASH-app http://flashapp.webapps.openms.org/ 301
+/flash-app http://flashapp.webapps.openms.org/ 301
+/FLASHApp/ http://flashapp.webapps.openms.org/ 301
+
+/TOPPViewLite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/TOPPView-Lite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/TOPPView-lite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/ToppViewLite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/Toppview-Lite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/toppview-lite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/toppviewlite https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/TOPPVIEWLITE https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+/TOPPVIEW-LITE https://abi-services.cs.uni-tuebingen.de/toppview-lite/ 301
+
+/MHCQuantWeb https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
+/MHCQuant-Web https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
+/mhcquant-web https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
+/mhcquantweb https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
+/MHCQUANTWEB https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
+/MHCQUANT-WEB https://abi-services.cs.uni-tuebingen.de/mhcquant/ 301
+
+/webapps/toolbox https://abi-services.cs.uni-tuebingen.de/peakstorm/ 301
+
+/OpenDDA http://opendda.webapps.openms.org/ 301
+/Opendda http://opendda.webapps.openms.org/ 301
+/opendda http://opendda.webapps.openms.org/ 301
+/OPENDDA http://opendda.webapps.openms.org/ 301
+/open-dda http://opendda.webapps.openms.org/ 301
+/Open-DDA http://opendda.webapps.openms.org/ 301
+
+/quantms-web http://opendda.webapps.openms.org/ 301
+/quantmsweb http://opendda.webapps.openms.org/ 301
+/QuantMS-Web http://opendda.webapps.openms.org/ 301
+/QuantMSWeb http://opendda.webapps.openms.org/ 301
+/quantms http://opendda.webapps.openms.org/ 301
+/QuantMS http://opendda.webapps.openms.org/ 301
+/QUANTMS http://opendda.webapps.openms.org/ 301
+
+/OpenDIA http://opendia.webapps.openms.org/ 301
+/Opendia http://opendia.webapps.openms.org/ 301
+/opendia http://opendia.webapps.openms.org/ 301
+/OPENDIA http://opendia.webapps.openms.org/ 301
+/open-dia http://opendia.webapps.openms.org/ 301
+/Open-DIA http://opendia.webapps.openms.org/ 301
+/OpenDIAKiosk http://opendia.webapps.openms.org/ 301
+/opendiakiosk http://opendia.webapps.openms.org/ 301
+/OPENDIAKIOSK http://opendia.webapps.openms.org/ 301
+
+/webapps/quantms-web http://opendda.webapps.openms.org/ 301
+/webapps/opendda http://opendda.webapps.openms.org/ 301
+/webapps/opendia http://opendia.webapps.openms.org/ 301
+/webapps/opendiakiosk http://opendia.webapps.openms.org/ 301
+
+# Redirects for WebApps
+/webapps/* https://abi-services.cs.uni-tuebingen.de/:splat 301
+
+# Redirects for Workshops
+
+/workshops/roadshow/introduction https://colab.research.google.com/github/t0mdavid-m/Notebooks-ZA2026/blob/master/Introduction.ipynb
+/workshops/identification https://colab.research.google.com/github/t0mdavid-m/Notebooks-ZA2026/blob/master/PeptideSearch.ipynb
+/workshops/quantification https://colab.research.google.com/github/t0mdavid-m/Notebooks-ZA2026/blob/master/Quantification.ipynb
+/workshops/roadshow/fragments http://abi-services.cs.uni-tuebingen.de/toppview-lite/?workspace=workshop
+/workshops/roadshow/umetaflow http://abi-services.cs.uni-tuebingen.de/umetaflow/?workspace=workshop
+/workshops/roadshow/quantms http://opendda.webapps.openms.org/?workspace=workshop
+/workshops/upss26 https://colab.research.google.com/github/t0mdavid-m/Notebooks-ZA2026/blob/master/PeptideSearch.ipynb

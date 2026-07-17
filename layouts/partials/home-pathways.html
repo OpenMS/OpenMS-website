@@ -1,0 +1,35 @@
+{{- $page := .Page -}}
+{{- $section := $page.Site.Params.homePage | default dict -}}
+{{- $eyebrow := index $section "pathwaysEyebrow" | default "Explore" -}}
+{{- $title := index $section "pathwaysTitle" | default "Where to go next" -}}
+{{- $items := .items | default (index $section "pathways") | default (slice) -}}
+{{- if gt (len $items) 0 }}
+<div class="home-pathways home-pathways--steps">
+  <div class="home-page__container home-pathways__container">
+    <header class="home-pathways__head">
+      <p class="home-pathways__eyebrow">{{ $eyebrow }}</p>
+      <h2 id="home-pathways-title" class="home-pathways__title">{{ $title }}</h2>
+    </header>
+    <ol class="home-pathways__steps" role="list">
+      {{- range $index, $item := $items }}
+      <li class="home-pathways__step" role="listitem">
+        <a
+          class="home-pathways__step-link"
+          href="{{ $item.url }}"
+          {{- if in $item.url "://" }}target="_blank" rel="noopener noreferrer"{{- end }}
+        >
+          <span class="home-pathways__step-num" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
+          <span class="home-pathways__step-body">
+            <span class="home-pathways__step-label">{{ $item.title }}</span>
+            {{- with $item.text }}
+            <span class="home-pathways__step-text">{{ . }}</span>
+            {{- end }}
+          </span>
+          <span class="home-pathways__step-go" aria-hidden="true">→</span>
+        </a>
+      </li>
+      {{- end }}
+    </ol>
+  </div>
+</div>
+{{- end }}

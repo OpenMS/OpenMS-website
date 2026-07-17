@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    
+<meta name="description" content="Why OpenMS? Mass Spectrometry. Visualizations. Open source." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>OpenMS</title>
+
+    
+    <link rel="icon" href="/images/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Raleway:wght@400;500;600&amp;family=JetBrains&#43;Mono:wght@100&amp;display=swap" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+
+<link rel="stylesheet" type="text/css" href="/theme-css/fresh/core.min.3997f86943b5337a6aab5eac5003a41b9a03e1159a7e779d8e99f5c1353ad503.css" integrity="sha256-OZf4aUO1M3pqq16sUAOkG5oD4RWafnedjpn1wTU61QM=">
+<link rel="stylesheet" href="/css/code-highlight.min.60358f6aca833402d029f1625f9d78ac9331cb988429c4541f68207cfe3894ed.css" integrity="sha256-YDWPasqDNALQKfFiX514rJMxy5iEKcRUH2ggfP44lO0=">
+<link rel="stylesheet" href="/css/content.min.9b9c28bf5d39d5abb052261b1a781a1a2486bb94550306659bedc01d6061d101.css" integrity="sha256-m5wov1051auwUiYbGngaGiSGu5RVAwZlm&#43;3AHWBh0QE=">
+<link rel="stylesheet" href="/css/news.min.4bffc1f3e8e1dfedfa26d21423b0f206b10be408002e80d7628649afd6bb6a9d.css" integrity="sha256-S//B8&#43;jh3&#43;36JtIUI7DyBrEL5AgALoDXYoZJr9a7ap0=">
+<link rel="stylesheet" href="/css/notices.min.a1ba05c782ca3a59361d6e284f0c2e1ff14e5a17a87057974212c60aa30fed2c.css" integrity="sha256-oboFx4LKOlk2HW4oTwwuH/FOWheocFeXQhLGCqMP7Sw=">
+<link rel="stylesheet" href="/css/panel.min.8333f6c4de69fe1711b46ff59f8de58de980187ede994913ca5f3b981a5454e4.css" integrity="sha256-gzP2xN5p/hcRtG/1n43ljemAGH7emUkTyl87mBpUVOQ=">
+<link rel="stylesheet" href="/css/posts.min.6d27826ef3e7467b2bc97db6a0068283b47dddb32f6bf29504911aea6c237dd7.css" integrity="sha256-bSeCbvPnRnsryX22oAaCg7R93bMva/KVBJEa6mwjfdc=">
+<link rel="stylesheet" href="/css/shortcuts.min.66eb490f98d06a7f1980356f649d586f140b68294e9aa3600404f393ce50dacb.css" integrity="sha256-ZutJD5jQan8ZgDVvZJ1YbxQLaClOmqNgBATzk85Q2ss=">
+<link rel="stylesheet" href="/css/styles.min.e52ba073ff42bb16467624f8da8b816825c353ce77ef531cd729cf05d6526903.css" integrity="sha256-5Sugc/9CuxZGdiT42ouBaCXDU85371Mc1ynPBdZSaQM=">
+<link rel="stylesheet" href="/css/tables.min.fb97ebea26ca35733dddd7051622133c047b532bf1aa066155c69a118d445803.css" integrity="sha256-&#43;5fr6ibKNXM93dcFFiITPAR7UyvxqgZhVcaaEY1EWAM=">
+<link rel="stylesheet" href="/css/teams.min.fcfb8db7476eab78560aefc0efcec4366740523e08279ec26c568590c69002fc.css" integrity="sha256-/PuNt0duq3hWCu/A787ENmdAUj4IJ57CbFaFkMaQAvw=">
+<link rel="stylesheet" href="/css/vars.min.e3d14adeb20e20230b58d3257cc95abdc7282f3eed47fc9d08ae6f0b712f05ea.css" integrity="sha256-49FK3rIOICMLWNMlfMlavccoLz7tR/ydCK5vC3EvBeo=">
+<link rel="stylesheet" href="/css/videos.min.98bcd90b41cf89ae9efe1563bec2481adce7737a50725267abc6fd44da571130.css" integrity="sha256-mLzZC0HPia6e/hVjvsJIGtznc3pQclJnq8b9RNpXETA=">
+<link rel="stylesheet" href="/css/about.min.255020c4b605bf017c83080f2e6d7a343fcaf07d7dc3facad033f4e242f69e65.css" integrity="sha256-JVAgxLYFvwF8gwgPLm16ND/K8H19w/rK0DP04kL2nmU=">
+<link rel="stylesheet" href="/css/brand-palette.min.ba2003dc71164cf7471b913298c0acf32a4fe23a325b9ae377fa61d7009805a4.css" integrity="sha256-uiAD3HEWTPdHG5EymMCs8ypP4joyW5rjd/ph1wCYBaQ=">
+<link rel="stylesheet" href="/css/buttons.min.ea06123b74a7c5b381789a4cdcd12f4664d9800594f39e5f815bce90a842cfbf.css" integrity="sha256-6gYSO3SnxbOBeJpM3NEvRmTZgAWU855fgVvOkKhCz78=">
+<link rel="stylesheet" href="/css/casestudies.min.e2264120d19c339eb45d3537f41bf4494aebfac47edd34a1c6ec1726e03089ee.css" integrity="sha256-4iZBINGcM560XTU39Bv0SUrr&#43;sR&#43;3TShxuwXJuAwie4=">
+<link rel="stylesheet" href="/css/code-of-conduct-page.min.f485a6e92a9918909370145a43b90015af8583b1950b3085b55508f14987801e.css" integrity="sha256-9IWm6SqZGJCTcBRaQ7kAFa&#43;Fg7GVCzCFtVUI8UmHgB4=">
+<link rel="stylesheet" href="/css/community-calendar.min.3b44a97f4e59bb88ab5e0fb56c0eea6a4d2b27021bf2b2f272c65dbd21e5f83f.css" integrity="sha256-O0Spf05Zu4irXg&#43;1bA7qak0rJwIb8rLycsZdvSHl&#43;D8=">
+<link rel="stylesheet" href="/css/community-events-home.min.7a87df78bdc475c44d8660c9d7297714af4284fe3c9ff8a2f6934eea05c534a9.css" integrity="sha256-eoffeL3EdcRNhmDJ1yl3FK9ChP48n/ii9pNO6gXFNKk=">
+<link rel="stylesheet" href="/css/community-events-news-home.min.491e5a5bfbbe1ef4106c41e9e4df0c2a25c8dd74e971809498f0b6254f7a6045.css" integrity="sha256-SR5aW/u&#43;HvQQbEHp5N8MKiXI3XTpcYCUmPC2JU96YEU=">
+<link rel="stylesheet" href="/css/community-home.min.ef3c1f96e4f63e54ae2bc429ccdec52c0aedeba365ca38ed773256addfcca10e.css" integrity="sha256-7zwfluT2PlSuK8QpzN7FLArt66NlyjjtdzJWrd/MoQ4=">
+<link rel="stylesheet" href="/css/contact-area.min.81fe3b10c244075d9a1fbbb9b3440539c3dd522a1589c9b75a4a4de633d6f54f.css" integrity="sha256-gf47EMJEB12aH7u5s0QFOcPdUioVicm3WkpN5jPW9U8=">
+<link rel="stylesheet" href="/css/contact-page.min.6881a3fc9e93077083a55e48b55e8de7e2d24161ff59fdc20e94c140a6b8f962.css" integrity="sha256-aIGj/J6TB3CDpV5ItV6N5&#43;LSQWH/Wf3CDpTBQKa4&#43;WI=">
+<link rel="stylesheet" href="/css/content_override.min.348490d72673e6a37996a18eba440de6a94e8736cc0cce0d89af1e33d559af9e.css" integrity="sha256-NISQ1yZz5qN5lqGOukQN5qlOhzbMDM4Nia8eM9VZr54=">
+<link rel="stylesheet" href="/css/contribute-page.min.cbf79d95e15dc1399c943813a6f87de28be9c0a715b8c86b2700260cf408fbe6.css" integrity="sha256-y/edleFdwTmclDgTpvh94ovpwKcVuMhrJwAmDPQI&#43;&#43;Y=">
+<link rel="stylesheet" href="/css/developer-retreat-page.min.eb65f687cf89e0e8c3a7794dab6e33699b1ee2bf21aa0a5d4a0b6e14cf026c43.css" integrity="sha256-62X2h8&#43;J4OjDp3lNq24zaZse4r8hqgpdSgtuFM8CbEM=">
+<link rel="stylesheet" href="/css/donate-page.min.340c0127e9a9c8a21d4fae43714190a530f71672e34f18bb501155f1c408810c.css" integrity="sha256-NAwBJ&#43;mpyKIdT65DcUGQpTD3FnLjTxi7UBFV8cQIgQw=">
+<link rel="stylesheet" href="/css/ecosystem-home.min.8e0eb26e2e1fce9f25927f9f36a9902712dabe1a09da16bd537bdd6ad7c0aa3c.css" integrity="sha256-jg6ybi4fzp8lkn&#43;fNqmQJxLavhoJ2ha9U3vdatfAqjw=">
+<link rel="stylesheet" href="/css/fellowship-page.min.a31ff486e0b9428bc42fb8b80af614873a7b61fd0058d633244bc447889d9ef4.css" integrity="sha256-ox/0huC5QovEL7i4CvYUhzp7Yf0AWNYzJEvER4idnvQ=">
+<link rel="stylesheet" href="/css/governance.min.77568d00afb0d3bc51e612bff97275b6ae044110237b12e34bc31ebd672cda29.css" integrity="sha256-d1aNAK&#43;w07xR5hK/&#43;XJ1tq4EQRAjexLjS8MevWcs2ik=">
+<link rel="stylesheet" href="/css/help-page.min.c16668552462e5325fa8dad3bee4a9a7a8302c5d78669c95db740869ca3822b8.css" integrity="sha256-wWZoVSRi5TJfqNrTvuSpp6gwLF14ZpyV23QIaco4Irg=">
+<link rel="stylesheet" href="/css/hero-saas.min.691a31db20202d2c56574f3e0deba235c2e655e7f6e82aae629003e02c0f8867.css" integrity="sha256-aRox2yAgLSxWV08&#43;DeuiNcLmVef26CquYpAD4CwPiGc=">
+<link rel="stylesheet" href="/css/hero-sponsors.min.1376e6353921a1c1f372d35df07fcf2cfbe38e0b16083992a0eeba76aa54ede3.css" integrity="sha256-E3bmNTkhocHzctNd8H/PLPvjjgsWCDmSoO66dqpU7eM=">
+<link rel="stylesheet" href="/css/hero.min.038b70c87abd087f1cdfef30feb5421b877219449a4ed4f2baa25ccc82f0174b.css" integrity="sha256-A4twyHq9CH8c3&#43;8w/rVCG4dyGUSaTtTyuqJczILwF0s=">
+<link rel="stylesheet" href="/css/heroitems.min.c753e7f8cad85c7f4e04f2ea94d8abe200db137272b06e8d310b36db24dac55c.css" integrity="sha256-x1Pn&#43;MrYXH9OBPLqlNir4gDbE3JysG6NMQs22yTaxVw=">
+<link rel="stylesheet" href="/css/home-metrics.min.1eab57484da13876cb092cc0d58e0736e71cd5472cf7a092f4c53482215177a1.css" integrity="sha256-HqtXSE2hOHbLCSzA1Y4HNucc1Ucs96CS9MU0giFRd6E=">
+<link rel="stylesheet" href="/css/home-section-head.min.ec8692329a5e4f51c2548b242db8c172ca8512902474b27e2b10231aaad73f04.css" integrity="sha256-7IaSMppeT1HCVIskLbjBcsqFEpAkdLJ&#43;KxAjGqrXPwQ=">
+<link rel="stylesheet" href="/css/home.min.28c8cda0b6bb2d51950395417b8c1ae83ccf3c0523260ecffa47e8a5d71c2ad3.css" integrity="sha256-KMjNoLa7LVGVA5VBe4wa6DzPPAUjJg7P&#43;kfopdccKtM=">
+<link rel="stylesheet" href="/css/keyfeatures-modern.min.d3f7a5988cb458e93926672f682d5b9bcae381184bfc96db93ed8a1f778c135b.css" integrity="sha256-0/elmIy0WOk5JmcvaC1bm8rjgRhL/Jbbk&#43;2KH3eME1s=">
+<link rel="stylesheet" href="/css/keyfeatures_override.min.e9ffedf8fc09fa4bb7287c6d0b88d04f5f78c2187f52533969324a5d14af5546.css" integrity="sha256-6f/t&#43;PwJ&#43;ku3KHxtC4jQT194whh/UlM5aTJKXRSvVUY=">
+<link rel="stylesheet" href="/css/landing-page.min.5f3ba9cdd536b2e8e60419cd52dbd6035c75dc198791ca2f75a1c84de3a9cbe7.css" integrity="sha256-XzupzdU2sujmBBnNUtvWA1x13BmHkcovdaHITeOpy&#43;c=">
+<link rel="stylesheet" href="/css/mailchimp.min.bc74c183133ed33b46acf26da3159646120488df78023fa2279583d7ae93c273.css" integrity="sha256-vHTBgxM&#43;0ztGrPJtoxWWRhIEiN94Aj&#43;iJ5WD166TwnM=">
+<link rel="stylesheet" href="/css/members.min.aa60e4e824af5bed434280cf35864bbef4ad14e54b63d39a64212044d7fc71f7.css" integrity="sha256-qmDk6CSvW&#43;1DQoDPNYZLvvStFOVLY9OaZCEgRNf8cfc=">
+<link rel="stylesheet" href="/css/navbar-responsive.min.ac05db9b25b802f4ae0990c2a757ea14017ffc54f49c32a69537a8839f5245e8.css" integrity="sha256-rAXbmyW4AvSuCZDCp1fqFAF//FT0nDKmlTeog59SReg=">
+<link rel="stylesheet" href="/css/navbar-search.min.f2be5c721d33d37b09340bd9c30cae480e1c23c22926c687777ae655ae71812d.css" integrity="sha256-8r5cch0z03sJNAvZwwyuSA4cI8IpJsaHd3rmVa5xgS0=">
+<link rel="stylesheet" href="/css/navbar-surface.min.f494d0ea4bf0e07df4c7c1fead69fabeaaeb8af3bcb850b6f68423ad9eac3389.css" integrity="sha256-9JTQ6kvw4H30x8H&#43;rWn6vqrrivO8uFC29oQjrZ6sM4k=">
+<link rel="stylesheet" href="/css/news-banner.min.12e645b49218b7b19c8c9ca0d1d4d27658bb65758371d9d7b49e0199e04d8b86.css" integrity="sha256-EuZFtJIYt7GcjJyg0dTSdli7ZXWDcdnXtJ4BmeBNi4Y=">
+<link rel="stylesheet" href="/css/news-section.min.1b52850788582ff22659dc740c55fadbfca74ce6cb9b13bfd5ec5769089bee95.css" integrity="sha256-G1KFB4hYL/ImWdx0DFX62/ynTObLmxO/1exXaQib7pU=">
+<link rel="stylesheet" href="/css/openms-buttons.min.c59f5b79b4a11d79680a72c2445aed244c0f72d5f4c7e5613e0718a190d90331.css" integrity="sha256-xZ9bebShHXloCnLCRFrtJEwPctX0x&#43;VhPgcYoZDZAzE=">
+<link rel="stylesheet" href="/css/openms-lib.min.0f976cc9067f2fa254cb428a03baa1b32e0740508790edabc88b0cdf1ec66c53.css" integrity="sha256-D5dsyQZ/L6JUy0KKA7qhsy4HQFCHkO2ryIsM3x7GbFM=">
+<link rel="stylesheet" href="/css/posts_override.min.f30cd1f024123ceef135d2645408ceb0e3c1efa001c9b86e5f3887c9b44b174f.css" integrity="sha256-8wzR8CQSPO7xNdJkVAjOsOPB76ABybhuXziHybRLF08=">
+<link rel="stylesheet" href="/css/publications.min.de533ce286fc5f8c435fe5d4fde8c63a551ad9ee66c9bacddc9ee4e7f8103479.css" integrity="sha256-3lM84ob8X4xDX&#43;XU/ejGOlUa2e5mybrN3J7k5/gQNHk=">
+<link rel="stylesheet" href="/css/quick-facts.min.bc32eb5e35f7358167af75befc36f4725292995fd1adea359ccf713e8c53d011.css" integrity="sha256-vDLrXjX3NYFnr3W&#43;/Db0clKSmV/Rreo1nM9xPoxT0BE=">
+<link rel="stylesheet" href="/css/research-partnerships-page.min.827a8ad43d5b05c0331f0c2936bbccb601aa990a038484b6d376befa61b1f06f.css" integrity="sha256-gnqK1D1bBcAzHwwpNrvMtgGqmQoDhIS203a&#43;&#43;mGx8G8=">
+<link rel="stylesheet" href="/css/shell.min.55ae160d659edeeecbfc5bd0fa4a510feb6d31720ab430343266cb0ea5a21e77.css" integrity="sha256-Va4WDWWe3u7L/FvQ&#43;kpRD&#43;ttMXIKtDA0MmbLDqWiHnc=">
+<link rel="stylesheet" href="/css/shortcuts_override.min.47f2e19c4e177a2bfbc3ec3cd4c4d2aa2b27846107c173ab61ee166a8146a857.css" integrity="sha256-R/LhnE4Xeiv7w&#43;w81MTSqisnhGEHwXOrYe4WaoFGqFc=">
+<link rel="stylesheet" href="/css/site-header.min.fb3980516fb526fe642d801d4e7fac3a617780609816794d668a0b2e78db96be.css" integrity="sha256-&#43;zmAUW&#43;1Jv5kLYAdTn&#43;sOmF3gGCYFnlNZooLLnjblr4=">
+<link rel="stylesheet" href="/css/sponsor-us-page.min.061caf93a6f3020e2feaee211610289084abc82f71376a334945bb4f80a73777.css" integrity="sha256-Bhyvk6bzAg4v6u4hFhAokISryC9xN2ozSUW7T4CnN3c=">
+<link rel="stylesheet" href="/css/styles_override.min.e848f979934585a1f395e5d19025627913bfcbffa4b209cf8bd2f14e15bed06e.css" integrity="sha256-6Ej5eZNFhaHzleXRkCVieRO/y/&#43;ksgnPi9LxThW&#43;0G4=">
+<link rel="stylesheet" href="/css/tabs.min.cb560ae9c3343a75d0d35a075e0af7569c43c415a370849a237f24c8511c75ad.css" integrity="sha256-y1YK6cM0OnXQ01oHXgr3VpxDxBWjcISaI38kyFEcda0=">
+<link rel="stylesheet" href="/css/terminal.min.23734c4e1e4cca73439a3579caa81ad666d50d4caeda11abeafbff6f0286c5c3.css" integrity="sha256-I3NMTh5MynNDmjV5yqga1mbVDUyu2hGr6vv/bwKGxcM=">
+<link rel="stylesheet" href="/css/trusted-by.min.5a7a14137633c8e73a3e31c203291990b93caa6844dd9e2e39cf7ef8d8d2bbae.css" integrity="sha256-WnoUE3YzyOc6PjHCAykZkLk8qmhE3Z4uOc9&#43;&#43;NjSu64=">
+<link rel="stylesheet" href="/css/typography.min.8175fe91ec565e4ca0c02c6e4c648c8b1ca8826e8307f4546e60131473e44ae4.css" integrity="sha256-gXX&#43;kexWXkygwCxuTGSMixyogm6DB/RUbmATFHPkSuQ=">
+<link rel="stylesheet" href="/css/university-partners.min.ea35271ea799c50c9dfb2a48809e78f2cab39e9acb5805effad07ce43c34f8f0.css" integrity="sha256-6jUnHqeZxQyd&#43;ypIgJ548sqznprLWAXv&#43;tB85Dw0&#43;PA=">
+<link rel="stylesheet" href="/css/webapps.min.077c3233b3fd84046dc83d6fe1e64f148e84b0ace960ed23f39475b69098de95.css" integrity="sha256-B3wyM7P9hARtyD1v4eZPFI6EsKzpYO0j85R1tpCY3pU=">
+<link rel="stylesheet" href="/css/z-openms-lib-hub.min.7539ead4b60d31db68346369ea0dcb26eaaa7aeb34385d83a206112009ea7af4.css" integrity="sha256-dTnq1LYNMdtoNGNp6g3LJuqqeus0OF2DogYRIAnqevQ=">
+
+    
+    
+
+    
+    
+    
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://openms.de/images/logo.svg">
+  <meta name="twitter:title" content="Help">
+  <meta name="twitter:description" content="Where to start User questions: The best way to get help is to post your question to a site like Stack Overflow, with thousands of users available to answer. We wish we could keep an eye on these sites, or answer questions directly, but the volume is just a little overwhelming! Development issues: For OpenMS development-related matters (e.g. bug reports), please see Community. Discussion
+OpenMS mailing list The main forum for longer-form discussions — new features, roadmap changes, and project-wide decisions. Announcements about releases, developer meetings, sprints, and conference talks are also made here.">
+
+  </head>
+  <body>
+    <script type="text/javascript">
+      (function(window, document, dataLayerName, id) {
+      window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+      function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString()}document.cookie=a+"="+b+d+"; path=/"}
+      var isStgDebug=(window.location.href.match("stg_debug")||document.cookie.match("stg_debug"))&&!window.location.href.match("stg_disable_debug");stgCreateCookie("stg_debug",isStgDebug?1:"",isStgDebug?14:-1);
+      var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName),isStgDebug&&qP.push("stg_debug");var qPString=qP.length>0?("?"+qP.join("&")):"";
+      tags.async=!0,tags.src="https://openms-web.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+      !function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+      })(window, document, 'dataLayer', 'dc313113-a933-4228-87c2-08bbd48f8786');
+      </script>
+
+    
+    
+
+    
+    <header class="site-header">
+      
+<aside class="news-banner" role="region" aria-label="Site announcement">
+  <div class="news-banner__inner">
+    <a
+      class="news-banner__link"
+      href="/news/helsinki_workshop_2026/"
+      aria-label="News: Workshop at University of Helsinki on April 30th 2026."
+    >
+      <span class="news-banner__label">News</span>
+      <span class="news-banner__text">Workshop at University of Helsinki on April 30th 2026.</span>
+    </a>
+  </div>
+</aside>
+
+      
+<nav id="nav" class="navbar is-fresh is-transparent no-shadow" role="navigation" aria-label="main navigation">
+  <div class="container is-max-widescreen">
+    <div class="navbar-brand"><a class="navbar-item navbar-brand-link" href="/">
+        <img class="navbar-logo" src="/images/logos/OpenMS_transparent_whiteFont.svg" alt="OpenMS">
+      </a>
+
+      <div class="navbar-brand-actions">
+        <div class="navbar-mobile-toolbar navbar-mobile-ctas-end" aria-label="Search and menu">
+        <div
+  class="navbar-search navbar-search--mobile"
+  data-search-index="/search-index.json"
+  data-min-chars="2"
+  data-max-results="8"
+>
+  <button
+    type="button"
+    class="navbar-search__toggle"
+    aria-label="Open search"
+    aria-expanded="false"
+    aria-controls="navbar-search-input-mobile-panel"
+  >
+    <svg class="navbar-search__toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.15" />
+      <path d="M15.25 15.25L20 20" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" />
+    </svg>
+  </button>
+
+  <div id="navbar-search-input-mobile-panel" class="navbar-search__panel" role="search" hidden>
+    <div class="navbar-search__panel-inner">
+      <label class="navbar-search__label" for="navbar-search-input-mobile">Search OpenMS</label>
+      <div class="navbar-search__field">
+        <svg class="navbar-search__field-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.15" />
+          <path d="M15.25 15.25L20 20" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" />
+        </svg>
+        <input
+          type="search"
+          id="navbar-search-input-mobile"
+          class="navbar-search__input"
+          name="q"
+          placeholder="Search OpenMS…"
+          autocomplete="off"
+          enterkeyhint="search"
+          aria-controls="navbar-search-input-mobile-results"
+          aria-expanded="false"
+          aria-autocomplete="list"
+        />
+        <button type="button" class="navbar-search__close" aria-label="Close search">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.75.75 0 1 1 1.06 1.06L9.06 8l3.22 3.22a.75.75 0 1 1-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06z"/>
+          </svg>
+        </button>
+      </div>
+      <div
+        id="navbar-search-input-mobile-results"
+        class="navbar-search__results"
+        role="listbox"
+        aria-label="Search results"
+        hidden
+      ></div>
+    </div>
+  </div>
+</div>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="navbar-menu" class="navbar-menu is-static">
+      <div class="navbar-menu__panel">
+        <div class="navbar-menu__nav" aria-label="Site navigation">
+          <div class="navbar-end">
+            <div class="navbar-links">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a href="/openms-lib/" class="navbar-link" role="button" aria-expanded="false">
+            Projects
+            
+          </a>
+
+          <div class="navbar-dropdown">
+            
+<a href="/openms-lib/" class="navbar-item">
+  OpenMS-lib
+  
+</a>
+<a href="/pyopenms/" class="navbar-item">
+  pyOpenMS
+  
+</a>
+<a href="/webapps/" class="navbar-item">
+  OpenMS Web Apps
+  
+</a>
+
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a href="/webapps/#featured-webapps" class="navbar-link" role="button" aria-expanded="false">
+            Apps
+            
+          </a>
+
+          <div class="navbar-dropdown">
+            
+<a href="/webapps/#featured-webapps" class="navbar-item">
+  Featured Apps
+  
+</a>
+<a href="/webapps/#affiliated-apps" class="navbar-item">
+  Affiliated Apps
+  
+</a>
+<a href="/webapps/#archived-apps" class="navbar-item">
+  Archived Apps
+  
+</a>
+
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a href="#" class="navbar-link" role="button" aria-expanded="false">
+            Learn
+            
+          </a>
+
+          <div class="navbar-dropdown">
+            
+<a href="https://openms.readthedocs.io/en/latest/about/learning/lc-chromatography.html" class="navbar-item">
+  Liquid Chromatography
+  
+
+
+
+
+
+<svg class="icon launch-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+
+
+</a>
+<a href="https://openms.readthedocs.io/en/latest/about/learning/mass-spectrometry.html" class="navbar-item">
+  Mass Spectrometry
+  
+
+
+
+
+
+<svg class="icon launch-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+
+
+</a>
+<a href="https://openms.readthedocs.io/en/latest/about/learning/id-and-quant.html" class="navbar-item">
+  Identification and Quantification
+  
+
+
+
+
+
+<svg class="icon launch-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+
+
+</a>
+<a href="https://pyopenms.readthedocs.io/en/release-3.5.0/user_guide/background.html" class="navbar-item">
+  Background
+  
+
+
+
+
+
+<svg class="icon launch-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+
+
+</a>
+<a href="https://openms.readthedocs.io/en/latest/manual/glossary.html" class="navbar-item">
+  Glossary
+  
+
+
+
+
+
+<svg class="icon launch-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+
+
+</a>
+
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a href="/calendar/" class="navbar-link" role="button" aria-expanded="false">
+            Community
+            
+          </a>
+
+          <div class="navbar-dropdown">
+            
+<a href="/calendar/" class="navbar-item">
+  Calendar
+  
+</a>
+<a href="/news" class="navbar-item">
+  News
+  
+</a>
+<a href="/contribute" class="navbar-item">
+  Getting Involved
+  
+</a>
+<a href="/fellowship/" class="navbar-item">
+  OpenMS Fellowship
+  
+</a>
+<a href="/developer-retreat/" class="navbar-item">
+  Annual Developer Retreat
+  
+</a>
+
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a href="#" class="navbar-link" role="button" aria-expanded="false">
+            About
+            
+          </a>
+
+          <div class="navbar-dropdown">
+            
+<a href="/about" class="navbar-item">
+  About
+  
+</a>
+<a href="/governance" class="navbar-item">
+  Governance
+  
+</a>
+<a href="/publications" class="navbar-item">
+  Publications
+  
+</a>
+<a href="/contact/" class="navbar-item">
+  Contact
+  
+</a>
+
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable is-emphasized">
+          <a href="/research-partnerships/" class="navbar-link" role="button" aria-expanded="false">
+            Partner with OpenMS
+            
+          </a>
+
+          <div class="navbar-dropdown">
+            
+<a href="/research-partnerships/" class="navbar-item">
+  Research Partnerships
+  
+</a>
+<a href="/help" class="navbar-item">
+  Scientific and Technical Support
+  
+</a>
+<a href="/sponsor-us/" class="navbar-item">
+  Sponsor Us
+  
+</a>
+
+          </div>
+        </div>
+            </div>
+
+            <div class="navbar-actions">
+            <div
+  class="navbar-search navbar-search--desktop"
+  data-search-index="/search-index.json"
+  data-min-chars="2"
+  data-max-results="8"
+>
+  <button
+    type="button"
+    class="navbar-search__toggle"
+    aria-label="Open search"
+    aria-expanded="false"
+    aria-controls="navbar-search-input-panel"
+  >
+    <svg class="navbar-search__toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.15" />
+      <path d="M15.25 15.25L20 20" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" />
+    </svg>
+  </button>
+
+  <div id="navbar-search-input-panel" class="navbar-search__panel" role="search" hidden>
+    <div class="navbar-search__panel-inner">
+      <label class="navbar-search__label" for="navbar-search-input">Search OpenMS</label>
+      <div class="navbar-search__field">
+        <svg class="navbar-search__field-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.15" />
+          <path d="M15.25 15.25L20 20" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" />
+        </svg>
+        <input
+          type="search"
+          id="navbar-search-input"
+          class="navbar-search__input"
+          name="q"
+          placeholder="Search OpenMS…"
+          autocomplete="off"
+          enterkeyhint="search"
+          aria-controls="navbar-search-input-results"
+          aria-expanded="false"
+          aria-autocomplete="list"
+        />
+        <button type="button" class="navbar-search__close" aria-label="Close search">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.75.75 0 1 1 1.06 1.06L9.06 8l3.22 3.22a.75.75 0 1 1-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06z"/>
+          </svg>
+        </button>
+      </div>
+      <div
+        id="navbar-search-input-results"
+        class="navbar-search__results"
+        role="listbox"
+        aria-label="Search results"
+        hidden
+      ></div>
+    </div>
+  </div>
+</div>
+            <span class="navbar-desktop-cta">
+<a
+  href="/sponsor-us/"
+  class="navbar-item navbar-cta-item openms-step__cta openms-btn-primary"
+  aria-label="Sponsor us"
+>
+  <span class="navbar-cta-label navbar-cta-label--full">Sponsor us</span>
+  <span class="navbar-cta-label navbar-cta-label--short">Sponsor</span>
+  
+</a>
+</span>
+            <span class="navbar-desktop-cta">
+<a
+  href="/donate/"
+  class="navbar-item navbar-cta-item about-cta-btn about-cta-btn--donate"
+  aria-label="Donate"
+>
+  <span class="navbar-cta-label navbar-cta-label--full">Donate</span>
+  <span class="navbar-cta-label navbar-cta-label--short">Donate</span>
+  
+</a>
+</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-menu__footer">
+          <div class="navbar-mobile-ctas navbar-mobile-ctas--menu" aria-label="Sponsor and donate">
+  
+<a
+  href="/sponsor-us/"
+  class="navbar-item navbar-cta-item openms-step__cta openms-btn-primary"
+  aria-label="Sponsor us"
+>
+  <span class="navbar-cta-label navbar-cta-label--full">Sponsor us</span>
+  <span class="navbar-cta-label navbar-cta-label--short">Sponsor</span>
+  
+</a>
+
+  
+<a
+  href="/donate/"
+  class="navbar-item navbar-cta-item about-cta-btn about-cta-btn--donate"
+  aria-label="Donate"
+>
+  <span class="navbar-cta-label navbar-cta-label--full">Donate</span>
+  <span class="navbar-cta-label navbar-cta-label--short">Donate</span>
+  
+</a>
+
+</div>
+
+          
+<div class="navbar-mobile-social" aria-label="Social media">
+  <a href="https://discord.com/invite/v9tv5BxPch" aria-label="Discord" target="_blank" rel="noopener noreferrer">
+
+
+
+
+
+<svg class="icon discord-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+
+
+  </a>
+  <a href="https://www.linkedin.com/company/openms-org" aria-label="Linkedin" target="_blank" rel="noopener noreferrer">
+
+
+
+
+
+<svg class="icon linkedin-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 4.126 0 2.062 2.062 0 0 1-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+
+
+  </a>
+  <a href="https://github.com/openMS" aria-label="Github" target="_blank" rel="noopener noreferrer">
+
+
+
+
+
+<svg class="icon github-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+
+
+  </a>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div class="navbar-backdrop" data-navbar-backdrop hidden aria-hidden="true"></div>
+  </div>
+</nav>
+
+    </header>
+    
+<nav id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation">
+  <div class="container is-max-widescreen">
+    <div class="navbar-brand"><a class="navbar-item navbar-brand-link" href="/">
+        <img class="navbar-logo" src="/images/logos/OpenMS_transparent_whiteFont.svg" alt="OpenMS">
+      </a>
+
+      <div class="navbar-brand-actions">
+        <div class="navbar-mobile-toolbar navbar-mobile-ctas-end" aria-label="Search and menu">
+        <div
+  class="navbar-search navbar-search--mobile"
+  data-search-index="/search-index.json"
+  data-min-chars="2"
+  data-max-results="8"
+>
+  <button
+    type="button"
+    class="navbar-search__toggle"
+    aria-label="Open search"
+    aria-expanded="false"
+    aria-controls="navbar-search-input-clone-mobile-panel"
+  >
+    <svg class="navbar-search__toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.15" />
+      <path d="M15.25 15.25L20 20" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" />
+    </svg>
+  </button>
+
+  <div id="navbar-search-input-clone-mobile-panel" class="navbar-search__panel" role="search" hidden>
+    <div class="navbar-search__panel-inner">
+      <label class="navbar-search__label" for="navbar-search-input-clone-mobile">Search OpenMS</label>
+      <div class="navbar-search__field">
+        <svg class="navbar-search__field-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.15" />
+          <path d="M15.25 15.25L20 20" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" />
+        </svg>
+        <input
+          type="search"
+          id="navbar-search-input-clone-mobile"
+          class="navbar-search__input"
+          name="q"
+          placeholder="Search OpenMS…"
+          autocomplete="off"
+          enterkeyhint="search"
+          aria-controls="navbar-search-input-clone-mobile-results"
+          aria-expanded="false"
+          aria-autocomplete="list"
+        />
+        <button type="button" class="navbar-search__close" aria-label="Close search">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.75.75 0 1 1 1.06 1.06L9.06 8l3.22 3.22a.75.75 0 1 1-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06z"/>
+          </svg>
+        </button>
+      </div>
+      <div
+        id="navbar-search-input-clone-mobile-results"
+        class="navbar-search__results"
+        role="listbox"
+        aria-label="Search results"
+        hidden
+      ></div>
+    </div>
+  </div>
+</div>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="cloned-navbar-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="cloned-navbar-menu" class="navbar-menu is-fixed">
+      <div class="navbar-menu__panel">
+        <div class="navbar-menu__nav" aria-label="Site navigation">
+          <div class="navbar-end">
+            <div class="navbar-links">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a href="/openms-lib/" class="navbar-link" role="button" aria-expanded="false">
+            Projects
+            
+          </a>
+
+          <div class="navbar-dropdown">
+            
+<a href="/openms-lib/" class="navbar-item">
+  OpenMS-lib
+  
+</a>
+<a href="/pyopenms/" class="navbar-item">
+  pyOpenMS
+  
+</a>
+<a href="/webapps/" class="navbar-item">
+  OpenMS Web Apps
+  
+</a>
+
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a href="/webapps/#featured-webapps" class="navbar-link" role="button" aria-expanded="false">
+            Apps
+            
+          </a>
+
+          <div class="navbar-dropdown">
+            
+<a href="/webapps/#featured-webapps" class="navbar-item">
+  Featured Apps
+  
+</a>
+<a href="/webapps/#affiliated-apps" class="navbar-item">
+  Affiliated Apps
+  
+</a>
+<a href="/webapps/#archived-apps" class="navbar-item">
+  Archived Apps
+  
+</a>
+
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a href="#" class="navbar-link" role="button" aria-expanded="false">
+            Learn
+            
+          </a>
+
+          <div class="navbar-dropdown">
+            
+<a href="https://openms.readthedocs.io/en/latest/about/learning/lc-chromatography.html" class="navbar-item">
+  Liquid Chromatography
+  
+
+
+
+
+
+<svg class="icon launch-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+
+
+</a>
+<a href="https://openms.readthedocs.io/en/latest/about/learning/mass-spectrometry.html" class="navbar-item">
+  Mass Spectrometry
+  
+
+
+
+
+
+<svg class="icon launch-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+
+
+</a>
+<a href="https://openms.readthedocs.io/en/latest/about/learning/id-and-quant.html" class="navbar-item">
+  Identification and Quantification
+  
+
+
+
+
+
+<svg class="icon launch-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+
+
+</a>
+<a href="https://pyopenms.readthedocs.io/en/release-3.5.0/user_guide/background.html" class="navbar-item">
+  Background
+  
+
+
+
+
+
+<svg class="icon launch-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+
+
+</a>
+<a href="https://openms.readthedocs.io/en/latest/manual/glossary.html" class="navbar-item">
+  Glossary
+  
+
+
+
+
+
+<svg class="icon launch-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+
+
+</a>
+
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a href="/calendar/" class="navbar-link" role="button" aria-expanded="false">
+            Community
+            
+          </a>
+
+          <div class="navbar-dropdown">
+            
+<a href="/calendar/" class="navbar-item">
+  Calendar
+  
+</a>
+<a href="/news" class="navbar-item">
+  News
+  
+</a>
+<a href="/contribute" class="navbar-item">
+  Getting Involved
+  
+</a>
+<a href="/fellowship/" class="navbar-item">
+  OpenMS Fellowship
+  
+</a>
+<a href="/developer-retreat/" class="navbar-item">
+  Annual Developer Retreat
+  
+</a>
+
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a href="#" class="navbar-link" role="button" aria-expanded="false">
+            About
+            
+          </a>
+
+          <div class="navbar-dropdown">
+            
+<a href="/about" class="navbar-item">
+  About
+  
+</a>
+<a href="/governance" class="navbar-item">
+  Governance
+  
+</a>
+<a href="/publications" class="navbar-item">
+  Publications
+  
+</a>
+<a href="/contact/" class="navbar-item">
+  Contact
+  
+</a>
+
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable is-emphasized">
+          <a href="/research-partnerships/" class="navbar-link" role="button" aria-expanded="false">
+            Partner with OpenMS
+            
+          </a>
+
+          <div class="navbar-dropdown">
+            
+<a href="/research-partnerships/" class="navbar-item">
+  Research Partnerships
+  
+</a>
+<a href="/help" class="navbar-item">
+  Scientific and Technical Support
+  
+</a>
+<a href="/sponsor-us/" class="navbar-item">
+  Sponsor Us
+  
+</a>
+
+          </div>
+        </div>
+            </div>
+
+            <div class="navbar-actions">
+            <div
+  class="navbar-search navbar-search--desktop"
+  data-search-index="/search-index.json"
+  data-min-chars="2"
+  data-max-results="8"
+>
+  <button
+    type="button"
+    class="navbar-search__toggle"
+    aria-label="Open search"
+    aria-expanded="false"
+    aria-controls="navbar-search-input-clone-panel"
+  >
+    <svg class="navbar-search__toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.15" />
+      <path d="M15.25 15.25L20 20" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" />
+    </svg>
+  </button>
+
+  <div id="navbar-search-input-clone-panel" class="navbar-search__panel" role="search" hidden>
+    <div class="navbar-search__panel-inner">
+      <label class="navbar-search__label" for="navbar-search-input-clone">Search OpenMS</label>
+      <div class="navbar-search__field">
+        <svg class="navbar-search__field-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.15" />
+          <path d="M15.25 15.25L20 20" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" />
+        </svg>
+        <input
+          type="search"
+          id="navbar-search-input-clone"
+          class="navbar-search__input"
+          name="q"
+          placeholder="Search OpenMS…"
+          autocomplete="off"
+          enterkeyhint="search"
+          aria-controls="navbar-search-input-clone-results"
+          aria-expanded="false"
+          aria-autocomplete="list"
+        />
+        <button type="button" class="navbar-search__close" aria-label="Close search">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.75.75 0 1 1 1.06 1.06L9.06 8l3.22 3.22a.75.75 0 1 1-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06z"/>
+          </svg>
+        </button>
+      </div>
+      <div
+        id="navbar-search-input-clone-results"
+        class="navbar-search__results"
+        role="listbox"
+        aria-label="Search results"
+        hidden
+      ></div>
+    </div>
+  </div>
+</div>
+            <span class="navbar-desktop-cta">
+<a
+  href="/sponsor-us/"
+  class="navbar-item navbar-cta-item openms-step__cta openms-btn-primary"
+  aria-label="Sponsor us"
+>
+  <span class="navbar-cta-label navbar-cta-label--full">Sponsor us</span>
+  <span class="navbar-cta-label navbar-cta-label--short">Sponsor</span>
+  
+</a>
+</span>
+            <span class="navbar-desktop-cta">
+<a
+  href="/donate/"
+  class="navbar-item navbar-cta-item about-cta-btn about-cta-btn--donate"
+  aria-label="Donate"
+>
+  <span class="navbar-cta-label navbar-cta-label--full">Donate</span>
+  <span class="navbar-cta-label navbar-cta-label--short">Donate</span>
+  
+</a>
+</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-menu__footer">
+          <div class="navbar-mobile-ctas navbar-mobile-ctas--menu" aria-label="Sponsor and donate">
+  
+<a
+  href="/sponsor-us/"
+  class="navbar-item navbar-cta-item openms-step__cta openms-btn-primary"
+  aria-label="Sponsor us"
+>
+  <span class="navbar-cta-label navbar-cta-label--full">Sponsor us</span>
+  <span class="navbar-cta-label navbar-cta-label--short">Sponsor</span>
+  
+</a>
+
+  
+<a
+  href="/donate/"
+  class="navbar-item navbar-cta-item about-cta-btn about-cta-btn--donate"
+  aria-label="Donate"
+>
+  <span class="navbar-cta-label navbar-cta-label--full">Donate</span>
+  <span class="navbar-cta-label navbar-cta-label--short">Donate</span>
+  
+</a>
+
+</div>
+
+          
+<div class="navbar-mobile-social" aria-label="Social media">
+  <a href="https://discord.com/invite/v9tv5BxPch" aria-label="Discord" target="_blank" rel="noopener noreferrer">
+
+
+
+
+
+<svg class="icon discord-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+
+
+  </a>
+  <a href="https://www.linkedin.com/company/openms-org" aria-label="Linkedin" target="_blank" rel="noopener noreferrer">
+
+
+
+
+
+<svg class="icon linkedin-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 4.126 0 2.062 2.062 0 0 1-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+
+
+  </a>
+  <a href="https://github.com/openMS" aria-label="Github" target="_blank" rel="noopener noreferrer">
+
+
+
+
+
+<svg class="icon github-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+
+
+  </a>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    
+
+    <section class="help-page-layout">
+  <header class="openms-lib-hero help-page-hero" aria-label="OpenMS help and support">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">Support</p>
+        <h1 class="openms-lib-hero__title">
+          Scientific &amp; <span class="openms-lib-hero__accent">technical</span> help for OpenMS.
+        </h1>
+        <p class="openms-lib-hero__lead">Find the right channel for user questions, development issues, documentation, and community discussion — from Stack Overflow to the OpenMS mailing list.</p>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/contact/">Contact us</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/communication/">Community channels</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/contribute/">Contribute</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="help-page-layout__content">
+    <div class="governance-page help-page">
+      <section class="governance-section" aria-labelledby="help-overview-title">
+  <h2 id="help-overview-title">Where to start</h2>
+  <p>
+    <strong>User questions:</strong> The best way to get help is to post your question
+    to a site like
+    <a href="https://stackoverflow.com/search?q=openms" target="_blank" rel="noopener noreferrer">Stack Overflow</a>,
+    with thousands of users available to answer. We wish we could keep an eye on
+    these sites, or answer questions directly, but the volume is just a little
+    overwhelming!
+  </p>
+  <p>
+    <strong>Development issues:</strong> For OpenMS development-related matters (e.g.
+    bug reports), please see <a href="/community/">Community</a>.
+  </p>
+</section>
+<section class="governance-grid help-page__resources" aria-label="Help resources">
+  <article class="governance-card">
+    <p class="governance-card__eyebrow">Discussion</p>
+    <h2>OpenMS mailing list</h2>
+    <p>
+      The main forum for longer-form discussions — new features, roadmap changes,
+      and project-wide decisions. Announcements about releases, developer meetings,
+      sprints, and conference talks are also made here.
+    </p>
+    <p class="governance-card__link">
+      <a href="https://mail.python.org/mailman/listinfo/openms-discussion" target="_blank" rel="noopener noreferrer">Join the mailing list</a>
+      ·
+      <a href="https://lists.sourceforge.net/lists/listinfo/open-ms-general/" target="_blank" rel="noopener noreferrer">Search the archive</a>
+    </p>
+    <p class="help-page__hint">
+      Please use bottom posting, reply to the list (rather than to another sender),
+      and do not reply to digests.
+    </p>
+  </article>
+  <article class="governance-card">
+    <p class="governance-card__eyebrow">Development</p>
+    <h2>GitHub issue tracker</h2>
+    <p>
+      Use the tracker for bug reports, documentation issues (e.g. unclear sections),
+      and feature requests (e.g. new interpolation methods).
+    </p>
+    <p class="governance-card__link">
+      <a href="https://github.com/openms/openms/issues" target="_blank" rel="noopener noreferrer">Open issues on GitHub</a>
+    </p>
+  </article>
+  <article class="governance-card">
+    <p class="governance-card__eyebrow">C++ / OpenMS</p>
+    <h2>OpenMS documentation</h2>
+    <p>
+      Documentation for the newest release — all classes, functions, and build
+      instructions for several operating systems. Includes an introduction to core
+      data structures and algorithms for new developers.
+    </p>
+    <p class="governance-card__link">
+      <a href="https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html" target="_blank" rel="noopener noreferrer">Browse the docs</a>
+      ·
+      <a href="https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html" target="_blank" rel="noopener noreferrer">Developer tutorial</a>
+    </p>
+  </article>
+  <article class="governance-card">
+    <p class="governance-card__eyebrow">Python</p>
+    <h2>pyOpenMS documentation</h2>
+    <p>
+      Documentation on how to use OpenMS in Python.
+    </p>
+    <p class="governance-card__link">
+      <a href="https://pyopenms.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">Read pyOpenMS docs</a>
+    </p>
+  </article>
+</section>
+
+    </div>
+  </div>
+</section>
+
+
+    
+    
+
+<footer id="footer" class="footer-redesign bg-navy">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand__intro">
+          <a class="footer-logo" href="/">
+            <img src="/images/OpenMS_transparent_blackFont.png"
+              alt="OpenMS">
+          </a>
+          <p class="footer-tagline">The open-source framework for mass spectrometry.</p>
+        </div>
+        <div class="footer-socials" aria-label="Follow OpenMS">
+          <a href="https://discord.com/invite/v9tv5BxPch" aria-label="Discord" target="_blank" rel="noopener noreferrer">
+            
+
+
+
+
+
+<svg class="icon discord-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+
+
+          </a>
+          <a href="https://www.linkedin.com/company/openms-org" aria-label="Linkedin" target="_blank" rel="noopener noreferrer">
+            
+
+
+
+
+
+<svg class="icon linkedin-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 4.126 0 2.062 2.062 0 0 1-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+
+
+          </a>
+          <a href="https://github.com/openMS" aria-label="Github" target="_blank" rel="noopener noreferrer">
+            
+
+
+
+
+
+<svg class="icon github-icon" viewBox="0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+
+
+          </a>
+        </div>
+        <div class="footer-brand__actions">
+          <a href="/sponsor-us/" class="footer-sponsor-btn footer-brand-btn openms-btn-primary">
+            Sponsor us
+          </a>
+          <a href="/donate/" class="footer-donate-btn footer-brand-btn button signup-button rounded raised secondary-btn">
+            Donate
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links-area">
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-link-group">
+            <h4 class="footer-group-heading">RESOURCES</h4>
+            <ul>
+              <li>
+                <a href="https://openms.readthedocs.io/en/latest/about/installation.html">Install</a>
+              </li>
+              <li>
+                <a href="https://openms.readthedocs.io/en/latest/">Documentation</a>
+              </li>
+              <li>
+                <a href="/help/">Help</a>
+              </li>
+              <li>
+                <a href="/citing-openms">Citing OpenMS</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-link-group">
+            <h4 class="footer-group-heading">COMMUNITY</h4>
+            <ul>
+              <li>
+                <a href="/communication">Community</a>
+              </li>
+              <li>
+                <a href="/code-of-conduct">Code of conduct</a>
+              </li>
+              <li>
+                <a href="/contribute">Contribute</a>
+              </li>
+              <li>
+                <a href="/fellowship/">OpenMS Fellowship</a>
+              </li>
+              <li>
+                <a href="/core_developers">Core Developers</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-link-group">
+            <h4 class="footer-group-heading">ABOUT</h4>
+            <ul>
+              <li>
+                <a href="/about">OpenMS Inc.</a>
+              </li>
+              <li>
+                <a href="/exec_committee">Executive committee</a>
+              </li>
+              <li>
+                <a href="/governance">Governance</a>
+              </li>
+              <li>
+                <a class="footer-link-contact-us" href="/contact/">Contact us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-link-group">
+            <h4 class="footer-group-heading">LEGAL</h4>
+            <ul>
+              <li>
+                <a href="/terms">Terms of use</a>
+              </li>
+              <li>
+                <a href="/privacy">Privacy</a>
+              </li>
+              <li>
+                <a href="/press-kit">Press kit</a>
+              </li>
+              <li>
+                <a href="/impressum">Impressum</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="footer-sponsors" aria-label="Partners and supporters">
+          <p class="footer-section-label">Supported by</p>
+          <div class="footer-sponsors__logos">
+            <a href="https://www.denbi.de" target="_blank" rel="noopener noreferrer">
+              <img src="/images/logos/denbi-logo-white.svg" alt="Supported by deNBI" />
+            </a>
+            <a
+              class="footer-sponsors__logo-link footer-sponsors__logo-link--elixir"
+              href="https://elixir-europe.org/platforms/data/core-data-resources"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/logos/elixir-logo-white.png" alt="Supported by Elixir" />
+            </a>
+            <a href="https://libis.uni-heidelberg.de/" target="_blank" rel="noopener noreferrer">
+              <img src="/images/logos/libis-logo-white.svg" alt="Supported by LiBiS" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copyright">&copy; 2026 OpenMS. All rights reserved.</p>
+    <a
+      class="footer-deploy"
+      href="https://www.netlify.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Deployed by Netlify"
+    >
+      <img src="/images/deployed-by-netlify.png" alt="" width="114" height="32" decoding="async" />
+    </a>
+  </div>
+</footer>
+
+<button class="back-to-top" type="button" aria-label="Back to top">
+  <svg class="back-to-top__icon" viewBox="0 0 24 24" width="18" height="18" focusable="false" aria-hidden="true">
+    <path d="M12 19V8M6 14l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+
+<script type="text/javascript" src=/js/bundle.min.js></script><script type="text/javascript">setupShortcuts(maxLevel= 2 );</script>
+
+    
+
+<script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https:\/\/openms.matomo.cloud\/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>

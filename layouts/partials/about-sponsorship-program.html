@@ -1,0 +1,85 @@
+{{- $about := .Site.Params.aboutPage | default dict -}}
+{{- $program := index $about "sponsorshipProgram" | default dict -}}
+{{- $tiersCfg := .Site.Params.sponsorTiers | default dict -}}
+{{- $levels := index $tiersCfg "levels" | default (slice) -}}
+{{- $sponsors := index $about "sponsors" | default (slice) -}}
+{{- $onlyWithSponsors := index $program "onlyShowTiersWithSponsors" | default false -}}
+{{- $title := index $program "title" | default "Our Sponsorship Program" -}}
+{{- $headline := index $program "headline" | default "" -}}
+{{- $blurb := index $program "blurb" | default "" -}}
+{{- $enablesTitle := index $program "enablesTitle" | default "Your sponsorship enables" -}}
+{{- $enables := index $program "enables" | default (slice) -}}
+{{- $taxNote := index $program "taxNote" | default "" -}}
+{{- $contactCta := index $program "contactCta" | default "" -}}
+{{- $contactUrl := index $program "contactUrl" | default "/contact/" -}}
+<section class="governance-section about-sponsorship-program" id="sponsorship-program" aria-labelledby="about-sponsorship-program-title">
+  <h2 id="about-sponsorship-program-title">{{ $title }}</h2>
+
+  {{- with $headline -}}
+  <p class="about-sponsorship-program__headline">{{ . }}</p>
+  {{- end -}}
+  {{- with $blurb -}}
+  <p class="about-sponsorship-program__blurb">{{ . }}</p>
+  {{- end -}}
+
+  {{- if $enables -}}
+  <div class="about-sponsorship-program__enables">
+    <h3 class="about-sponsorship-program__enables-title">{{ $enablesTitle }}</h3>
+    <ul>
+      {{- range $enables -}}
+      <li>{{ . }}</li>
+      {{- end -}}
+    </ul>
+  </div>
+  {{- end -}}
+
+  {{- with $taxNote -}}
+  <p class="about-sponsorship-program__tax">{{ . }}</p>
+  {{- end -}}
+
+  <div class="about-sponsorship-program__tiers" role="list" aria-label="Sponsorship levels">
+    {{- range $levels -}}
+    {{- $show := .showInProgram | default true -}}
+    {{- if $onlyWithSponsors -}}
+      {{- $tierSponsors := where $sponsors "tier" .id -}}
+      {{- $show = gt (len $tierSponsors) 0 -}}
+    {{- end -}}
+    {{- if $show -}}
+    <article class="about-sponsorship-tier about-sponsorship-tier--{{ .id }}" role="listitem">
+      <header class="about-sponsorship-tier__head">
+        <p class="about-sponsorship-tier__badge">{{ .name }}</p>
+        <p class="about-sponsorship-tier__contribution">{{ .contribution }}</p>
+      </header>
+      {{- with .motto -}}
+      <p class="about-sponsorship-tier__motto">{{ . }}</p>
+      {{- end -}}
+      {{- with .summary -}}
+      <p class="about-sponsorship-tier__summary">{{ . }}</p>
+      {{- end -}}
+      {{- with .benefits -}}
+      <div class="about-sponsorship-tier__benefits-wrap">
+        <h4 class="about-sponsorship-tier__label">Benefits</h4>
+        <ul class="about-sponsorship-tier__benefits">
+          {{- range . -}}
+          <li>{{ . }}</li>
+          {{- end -}}
+        </ul>
+      </div>
+      {{- end -}}
+      {{- with .impact -}}
+      <div class="about-sponsorship-tier__impact-wrap">
+        <h4 class="about-sponsorship-tier__label">Impact</h4>
+        <p class="about-sponsorship-tier__impact">{{ . }}</p>
+      </div>
+      {{- end -}}
+    </article>
+    {{- end -}}
+    {{- end -}}
+  </div>
+
+  {{- with $contactCta -}}
+  <p class="about-sponsorship-program__cta">
+    <a class="openms-lib-btn openms-lib-btn--primary" href="{{ $contactUrl }}">{{ . }}</a>
+  </p>
+  {{- end -}}
+</section>

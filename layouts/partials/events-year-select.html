@@ -1,0 +1,25 @@
+{{- $cfg := .Site.Params.calendarSection | default dict -}}
+{{- $listTitle := index $cfg "pastTitle" | default "Past events" -}}
+{{- $yearFilterLabel := index $cfg "yearFilterLabel" | default "Filter events by year" -}}
+{{- $pastHint := index $cfg "pastHint" | default "Browse events from previous years." -}}
+{{- $years := .years | default (slice) -}}
+{{- $defaultYear := .defaultYear | default (index $years 0) -}}
+<div class="events-past-toolbar">
+  <div class="events-past-toolbar__intro">
+    <h2 class="events-past-toolbar__title">{{ $listTitle }}</h2>
+    <p class="events-past-toolbar__hint">{{ $pastHint }}</p>
+  </div>
+  <label class="events-past-toolbar__filter" for="events-year-select">
+    <span class="events-past-toolbar__filter-label">Year</span>
+    <select
+      id="events-year-select"
+      class="events-past-toolbar__select"
+      data-events-year-select
+      aria-label="{{ $yearFilterLabel }}"
+    >
+      {{- range $years }}
+      <option value="{{ . }}"{{ if eq . $defaultYear }} selected{{ end }}>{{ . }}</option>
+      {{- end }}
+    </select>
+  </label>
+</div>

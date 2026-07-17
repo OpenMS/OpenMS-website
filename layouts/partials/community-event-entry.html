@@ -1,0 +1,61 @@
+{{- $event := .event -}}
+{{- $readMore := .readMoreLabel | default "View details" -}}
+{{- if $event }}
+{{- $start := time $event.start -}}
+{{- $eventUrl := $event.news_url | default $event.url | default "" -}}
+{{- $isExternal := and $eventUrl (in $eventUrl "://") -}}
+{{- $category := $event.category | default "event" -}}
+{{- $categoryLabel := replace $category "-" " " | title -}}
+<li class="events-past-list__item" role="listitem">
+  <article class="events-past-card events-past-card--{{ $category }}">
+    <div class="events-past-card__date-block" aria-hidden="true">
+      <time class="community-events-home__date" datetime="{{ $event.start }}">
+        <span class="community-events-home__date-day">{{ $start.Format "2" }}</span>
+        <span class="community-events-home__date-month">{{ $start.Format "Jan" | upper }}</span>
+        <span class="community-events-home__date-year">{{ $start.Format "2006" }}</span>
+      </time>
+    </div>
+
+    <div class="events-past-card__body">
+      <div class="events-past-card__header">
+        <h3 class="events-past-card__title">
+          {{- if $eventUrl }}
+          <a
+            class="events-past-card__title-link"
+            href="{{ $eventUrl }}"
+            {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{- end }}
+          >{{ $event.title }}</a>
+          {{- else }}
+          {{ $event.title }}
+          {{- end }}
+        </h3>
+        <span class="events-past-card__category">{{ $categoryLabel }}</span>
+      </div>
+
+      {{- with $event.summary }}
+      <p class="events-past-card__summary">{{ . }}</p>
+      {{- end }}
+
+      <div class="events-past-card__footer">
+        {{- with $event.location }}
+        <p class="events-past-card__location">
+          <span class="events-past-card__location-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="14" height="14" focusable="false" aria-hidden="true">
+              <path fill="currentColor" d="M8 1.5a4.25 4.25 0 0 0-4.25 4.25c0 3.19 4.25 8.75 4.25 8.75s4.25-5.56 4.25-8.75A4.25 4.25 0 0 0 8 1.5Zm0 5.75a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/>
+            </svg>
+          </span>
+          <span>{{ . }}</span>
+        </p>
+        {{- end }}
+        {{- if $eventUrl }}
+        <a
+          class="events-past-card__cta openms-btn-primary openms-step__cta"
+          href="{{ $eventUrl }}"
+          {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{- end }}
+        >{{ $readMore }}</a>
+        {{- end }}
+      </div>
+    </div>
+  </article>
+</li>
+{{- end }}

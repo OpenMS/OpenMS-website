@@ -1,0 +1,26 @@
+{{- $cfg := .Site.Params.sponsorUsPage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Support OpenMS" -}}
+{{- $subtitle := index $cfg "subtitle" | default "Sponsorship provides direct funding for software engineering, documentation, community events, and the long-term sustainability of the OpenMS ecosystem." -}}
+<section class="sponsor-us-page-layout">
+  <header class="openms-lib-hero sponsor-us-page-hero" aria-label="Sponsor OpenMS">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          Help keep <span class="openms-lib-hero__accent">open-source</span> mass spectrometry strong.
+        </h1>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/contact/">Discuss sponsorship</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/donate/">Make a donation</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="sponsor-us-page-layout__content">
+    <div class="governance-page about-page sponsor-us-page">
+      {{ .Content }}
+    </div>
+  </div>
+</section>

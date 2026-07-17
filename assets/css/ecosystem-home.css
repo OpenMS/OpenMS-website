@@ -1,0 +1,245 @@
+/* Homepage — ecosystem tool cards (bento layout) */
+
+.ecosystem-home {
+  --ecosystem-max: min(100%, 96rem);
+  max-width: var(--ecosystem-max);
+  margin: 0 auto;
+  padding: var(--home-section-pad) var(--home-pad-x, clamp(1.25rem, 4vw, 2.5rem));
+}
+
+.ecosystem-home__inner {
+  display: grid;
+  gap: clamp(1.5rem, 3vh, 2.25rem);
+}
+
+.ecosystem-home__header {
+  margin: 0;
+}
+
+.home-page .home-page__block--ecosystem .ecosystem-home__header-main {
+  max-width: min(100%, 58rem);
+}
+
+.ecosystem-home__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  color: var(--openms-navy);
+  text-wrap: balance;
+}
+
+.ecosystem-home__title-accent {
+  color: var(--openms-blue);
+}
+
+.ecosystem-home__grid--bento {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: minmax(0, auto);
+  gap: clamp(0.85rem, 1.5vw, 1.15rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: stretch;
+}
+
+.ecosystem-home__item {
+  display: flex;
+  min-width: 0;
+}
+
+.ecosystem-home__item--wide {
+  grid-column: span 7;
+}
+
+.ecosystem-home__item--standard {
+  grid-column: span 5;
+}
+
+.ecosystem-home__card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  padding: clamp(1rem, 2vw, 1.35rem);
+  border: 1px solid rgba(var(--openms-white-rgb), 0.12);
+  border-radius: 1rem;
+  background: var(--openms-navy);
+  color: var(--openms-white);
+  text-decoration: none;
+  box-shadow: 0 0.25rem 1rem rgba(var(--openms-navy-rgb), 0.28);
+  transition:
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    background-color 0.22s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ecosystem-home__card--wide {
+  padding: clamp(1.15rem, 2.2vw, 1.6rem);
+}
+
+.ecosystem-home__card:hover,
+.ecosystem-home__card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(var(--openms-white-rgb), 0.22);
+  background: color-mix(in srgb, var(--openms-blue) 14%, var(--openms-navy));
+  box-shadow: 0 0.65rem 1.5rem rgba(var(--openms-navy-rgb), 0.38);
+  outline: none;
+}
+
+.ecosystem-home__card:focus-visible {
+  box-shadow:
+    0 0 0 2px rgba(var(--openms-blue-rgb), 0.25),
+    0 0.65rem 1.5rem rgba(var(--openms-navy-rgb), 0.38);
+}
+
+.ecosystem-home__card-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.ecosystem-home__card--wide .ecosystem-home__card-body {
+  gap: 0.55rem;
+  justify-content: center;
+}
+
+.ecosystem-home__card-title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--openms-white);
+}
+
+.ecosystem-home__card--wide .ecosystem-home__card-title {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+}
+
+.ecosystem-home__card:hover .ecosystem-home__card-title,
+.ecosystem-home__card:focus-visible .ecosystem-home__card-title {
+  color: var(--openms-white);
+}
+
+.ecosystem-home__card-text {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: var(--openms-body-size);
+  line-height: 1.58;
+  color: rgba(var(--openms-white-rgb), 0.78);
+  text-wrap: pretty;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ecosystem-home__card--standard .ecosystem-home__card-text {
+  -webkit-line-clamp: 3;
+}
+
+.ecosystem-home__card--wide .ecosystem-home__card-text {
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.6;
+  -webkit-line-clamp: 2;
+  max-width: 56ch;
+}
+
+.ecosystem-home__card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: auto;
+  padding-top: 0.25rem;
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  color: var(--openms-white);
+  transition: gap 0.15s ease;
+}
+
+.ecosystem-home__card:hover .ecosystem-home__card-link,
+.ecosystem-home__card:focus-visible .ecosystem-home__card-link {
+  gap: 0.35rem;
+  color: var(--openms-white);
+}
+
+.ecosystem-home__card-link-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.home-page__block--ecosystem {
+  background: linear-gradient(
+    180deg,
+    var(--home-bg-base, #fff) 0%,
+    var(--home-bg-soft, #f4f6fa) 100%
+  );
+  border-bottom: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+}
+
+.home-page--motion .home-page__block--ecosystem:not(.is-revealed) .ecosystem-home__header {
+  opacity: 0;
+  transform: translateY(1.25rem);
+}
+
+.home-page--motion .home-page__block--ecosystem .ecosystem-home__header {
+  transition:
+    opacity var(--home-reveal-duration, 0.65s) var(--home-reveal-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    transform var(--home-reveal-duration, 0.65s) var(--home-reveal-ease, cubic-bezier(0.22, 1, 0.36, 1));
+}
+
+.home-page--motion .home-page__block--ecosystem.is-revealed .ecosystem-home__header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-page--motion .home-page__block--ecosystem .ecosystem-home__item:not(.is-revealed) {
+  opacity: 0;
+  transform: translateY(1.1rem);
+}
+
+.home-page--motion .home-page__block--ecosystem .ecosystem-home__item {
+  transition:
+    opacity var(--home-reveal-duration, 0.65s) var(--home-reveal-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    transform var(--home-reveal-duration, 0.65s) var(--home-reveal-ease, cubic-bezier(0.22, 1, 0.36, 1));
+  transition-delay: calc(var(--ecosystem-reveal-index, 0) * 0.07s);
+}
+
+.home-page--motion .home-page__block--ecosystem .ecosystem-home__item.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+  .ecosystem-home__item--wide,
+  .ecosystem-home__item--standard {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 768px) {
+  .ecosystem-home__grid--bento {
+    grid-template-columns: 1fr;
+  }
+
+  .ecosystem-home__item--wide,
+  .ecosystem-home__item--standard {
+    grid-column: span 1;
+  }
+
+  .ecosystem-home__card--wide .ecosystem-home__card-text {
+    -webkit-line-clamp: 3;
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ecosystem-home__card:hover,
+  .ecosystem-home__card:focus-visible {
+    transform: none;
+  }
+}

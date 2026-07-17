@@ -1,0 +1,151 @@
+{{- $cfg := .cfg | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Getting started" -}}
+{{- $title := index $cfg "title" -}}
+{{- $lead := index $cfg "lead" -}}
+{{- $items := index $cfg "items" | default (slice) -}}
+{{- $id := .id | default "openms-lib-getting-started-title" -}}
+{{- $spotlight := index $items 0 -}}
+{{- $featured := index $items 1 -}}
+{{- $python := index $items 2 -}}
+{{- $docs := index $items 3 -}}
+{{- $api := index $items 4 -}}
+{{- $support := index $items 5 -}}
+<section class="openms-lib-block openms-lib-block--resources openms-lib-explore" aria-labelledby="{{ $id }}">
+  <header class="openms-lib-explore__intro">
+    {{- with $eyebrow }}
+    <p class="openms-lib-block__eyebrow openms-lib-explore__eyebrow">{{ . }}</p>
+    {{- end }}
+    {{- with $title }}
+    <h2 id="{{ $id }}" class="openms-lib-block__title openms-lib-explore__title">{{ . }}</h2>
+    {{- end }}
+    {{- with $lead }}
+    <p class="openms-lib-block__lead openms-lib-explore__lead">{{ . }}</p>
+    {{- end }}
+  </header>
+
+  <div class="openms-lib-explore__deck">
+    {{- with $spotlight }}
+    <a
+      class="openms-lib-explore__spotlight openms-lib-explore__spotlight--topp openms-lib-hub__reveal openms-lib-hub__reveal--scale"
+      href="{{ .url }}"
+      {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+    >
+      <div class="openms-lib-explore__spotlight-main">
+        <h3 class="openms-lib-explore__spotlight-title">{{ .title }}</h3>
+        {{- with .text }}
+        <p class="openms-lib-explore__spotlight-text">{{ . }}</p>
+        {{- end }}
+        <span class="openms-lib-explore__spotlight-cta">
+          {{ .linkText | default "Learn more" }}<span aria-hidden="true"> →</span>
+        </span>
+      </div>
+    </a>
+    {{- end }}
+
+    <div class="openms-lib-explore__routes openms-lib-hub__reveal" role="navigation" aria-label="OpenMS-lib resource paths">
+      <div class="openms-lib-explore__routes-head">
+        <p class="openms-lib-explore__route-label">Integrate</p>
+        <p class="openms-lib-explore__route-label">Reference</p>
+      </div>
+      <div class="openms-lib-explore__routes-grid">
+        {{- with $featured }}
+        <a
+          class="openms-lib-explore__route-link"
+          href="{{ .url }}"
+          {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+        >
+          {{- with .icon }}
+          <span class="openms-lib-explore__route-icon" aria-hidden="true"><i class="{{ . }}"></i></span>
+          {{- end }}
+          <span class="openms-lib-explore__route-copy">
+            <span class="openms-lib-explore__route-title">{{ .title }}</span>
+            {{- with .text }}
+            <span class="openms-lib-explore__route-text">{{ . }}</span>
+            {{- end }}
+          </span>
+          <span class="openms-lib-explore__route-arrow" aria-hidden="true">→</span>
+        </a>
+        {{- end }}
+        {{- with $docs }}
+        <a
+          class="openms-lib-explore__route-link"
+          href="{{ .url }}"
+          {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+        >
+          {{- with .icon }}
+          <span class="openms-lib-explore__route-icon" aria-hidden="true"><i class="{{ . }}"></i></span>
+          {{- end }}
+          <span class="openms-lib-explore__route-copy">
+            <span class="openms-lib-explore__route-title">{{ .title }}</span>
+            {{- with .text }}
+            <span class="openms-lib-explore__route-text">{{ . }}</span>
+            {{- end }}
+          </span>
+          <span class="openms-lib-explore__route-arrow" aria-hidden="true">→</span>
+        </a>
+        {{- end }}
+        {{- with $python }}
+        <a
+          class="openms-lib-explore__route-link"
+          href="{{ .url }}"
+          {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+        >
+          {{- with .icon }}
+          <span class="openms-lib-explore__route-icon" aria-hidden="true"><i class="{{ . }}"></i></span>
+          {{- end }}
+          <span class="openms-lib-explore__route-copy">
+            <span class="openms-lib-explore__route-title">{{ .title }}</span>
+            {{- with .text }}
+            <span class="openms-lib-explore__route-text">{{ . }}</span>
+            {{- end }}
+          </span>
+          <span class="openms-lib-explore__route-arrow" aria-hidden="true">→</span>
+        </a>
+        {{- end }}
+        {{- with $api }}
+        <a
+          class="openms-lib-explore__route-link"
+          href="{{ .url }}"
+          {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+        >
+          {{- with .icon }}
+          <span class="openms-lib-explore__route-icon" aria-hidden="true"><i class="{{ . }}"></i></span>
+          {{- end }}
+          <span class="openms-lib-explore__route-copy">
+            <span class="openms-lib-explore__route-title">{{ .title }}</span>
+            {{- with .text }}
+            <span class="openms-lib-explore__route-text">{{ . }}</span>
+            {{- end }}
+          </span>
+          <span class="openms-lib-explore__route-arrow" aria-hidden="true">→</span>
+        </a>
+        {{- end }}
+      </div>
+    </div>
+
+    {{- with $support }}
+    <aside class="openms-lib-explore__support openms-lib-hub__reveal" aria-label="{{ .title }}">
+      <div class="openms-lib-explore__support-copy">
+        <h3 class="openms-lib-explore__support-title">{{ .title }}</h3>
+        {{- with .text }}
+        <p class="openms-lib-explore__support-text">{{ . }}</p>
+        {{- end }}
+      </div>
+      <div class="openms-lib-explore__support-actions" role="group" aria-label="{{ .title }}">
+        {{- range .links }}
+        <a
+          class="openms-lib-explore__support-btn"
+          href="{{ .url }}"
+          {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+        >
+          {{- with .icon }}
+          <i class="{{ . }}" aria-hidden="true"></i>
+          {{- end }}
+          {{ .name }}
+        </a>
+        {{- end }}
+      </div>
+    </aside>
+    {{- end }}
+  </div>
+</section>

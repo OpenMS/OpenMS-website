@@ -1,0 +1,129 @@
+/* Homepage — unified section hero headings (layout + typography) */
+
+.home-page {
+  --home-section-head-max: min(100%, 46rem);
+  --home-section-head-gap: clamp(2rem, 4vh, 2.75rem);
+  --home-section-head-title-size: clamp(2rem, 4.2vw, 3.15rem);
+}
+
+.home-page .home-page__block--projects .webapps-featured__header-main,
+.home-page .community-events-home__header-main,
+.home-page .contact-home__header,
+.home-page .home-page__block--ecosystem .ecosystem-home__header-main,
+.home-page .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__header-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: var(--home-section-head-max);
+  margin-inline: 0;
+  text-align: left;
+}
+
+.home-page .home-page__block--projects .webapps-featured__header--home,
+.home-page .community-events-home__header,
+.home-page .home-page__block--ecosystem .ecosystem-home__header,
+.home-page .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__header {
+  display: block;
+  margin: 0 0 var(--home-section-head-gap);
+  text-align: left;
+}
+
+.home-page .home-page__block--projects .webapps-featured__eyebrow,
+.home-page .community-events-home__eyebrow,
+.home-page .contact-home__eyebrow,
+.home-page .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.85rem;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.1);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.18);
+  border-radius: 999px;
+}
+
+.home-page .home-page__block--projects .webapps-featured__title,
+.home-page .home-page__block--ecosystem .ecosystem-home__title,
+.home-page .community-events-home__title,
+.home-page .contact-home__title,
+.home-page .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--home-section-head-title-size);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--openms-navy);
+  text-align: left;
+  text-wrap: balance;
+}
+
+.home-page .home-page__block--projects .webapps-featured__title-accent,
+.home-page .home-page__block--ecosystem .ecosystem-home__title-accent,
+.home-page .community-events-home__title-accent,
+.home-page .contact-home__title-accent,
+.home-page .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__title-accent {
+  display: inline;
+  color: var(--openms-blue);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: currentColor;
+}
+
+.home-page .home-page__block--projects .webapps-featured__header-main .webapps-featured__lead,
+.home-page .community-events-home__lead,
+.home-page .contact-home__description,
+.home-page .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__lead {
+  margin: 0.85rem 0 0;
+  max-width: 52ch;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.62;
+  text-align: left;
+  text-wrap: pretty;
+}
+
+.home-page .home-page__block--projects .webapps-featured__header-main .webapps-featured__lead,
+.home-page .community-events-home__lead,
+.home-page .contact-home__description,
+.home-page .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__lead {
+  color: rgba(var(--openms-dark-rgb), 0.72);
+}
+
+/* Community — same heading scale on dark photo panel */
+.home-page .community-home__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--home-section-head-title-size);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--openms-white);
+  text-align: left;
+  text-wrap: balance;
+}
+
+.home-page .community-home__title-accent {
+  display: inline;
+  color: var(--openms-blue-secondary);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: currentColor;
+}
+
+.home-page .community-home__lead {
+  margin: 0.85rem 0 0;
+  max-width: 52ch;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.62;
+  text-align: left;
+  color: rgba(var(--openms-white-rgb), 0.88);
+}

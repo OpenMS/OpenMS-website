@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News on OpenMS</title>
+    <link>https://openms.de/news/</link>
+    <description>Recent content in News on OpenMS</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://openms.de/news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Workshop at University of Helsinki on April 30th 2026.</title>
+      <link>https://openms.de/news/helsinki_workshop_2026/</link>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/helsinki_workshop_2026/</guid>
+      <description>We are teaching a one-day workshop on MS analysis with OpenMS and OpenDIAKiosk at the University of Helsinki on April 30th 2026. Click the header above for more information.</description>
+    </item>
+    <item>
+      <title>2026 Recipient Announced: Rising Star in Computational Mass Spectrometry</title>
+      <link>https://openms.de/news/rising_star_computational_mass_spectrometry/</link>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/rising_star_computational_mass_spectrometry/</guid>
+      <description>OpenMS announces Maria Llambrich Rodriguez as the 2026 Rising Star in Computational Mass Spectrometry recipient.</description>
+    </item>
+    <item>
+      <title>Google Summer of Code 2026</title>
+      <link>https://openms.de/news/gsoc2026/</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/gsoc2026/</guid>
+      <description>The OpenMS team applies as an organization for GSoC 2026 and invites the computational mass spectrometry community to join us in this effort.</description>
+    </item>
+    <item>
+      <title>OpenMS/CIBI workshops in South Africa from 9 until 20 February 2026.</title>
+      <link>https://openms.de/news/south_africa_roadshow_2026/</link>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/south_africa_roadshow_2026/</guid>
+      <description>We are teaching four two-day workshops in February 2026 in South Africa! Click the header above for more information.</description>
+    </item>
+    <item>
+      <title>OpenMS developers meeting 23-27 March 2026, in Piotrowice Nyskie Palace, Otmuchów, Poland.</title>
+      <link>https://openms.de/news/devmeeting2026/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/devmeeting2026/</guid>
+      <description>We are hosting the developers meeting near Otmuchów, Poland! Click the header above for more information.</description>
+    </item>
+    <item>
+      <title>OpenMS 3.5 Released</title>
+      <link>https://openms.de/news/release3.5/</link>
+      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/release3.5/</guid>
+      <description>We have just released OpenMS 3.5.0</description>
+    </item>
+    <item>
+      <title>OpenMS Open House November 9th 2025, @10am in Toronto, Canada</title>
+      <link>https://openms.de/news/openhouse2025/</link>
+      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/openhouse2025/</guid>
+      <description>We are organizing an open house in Toronto, Canada! Click the header above for more information.</description>
+    </item>
+    <item>
+      <title>Celebrating 20 years of OpenMS</title>
+      <link>https://openms.de/news/openms_20years/</link>
+      <pubDate>Fri, 04 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/openms_20years/</guid>
+      <description>We are celebrating 20 years of OpenMS on 1 August 2025 with a BBQ at Sand, Tübingen University. Click the header above for more information.</description>
+    </item>
+    <item>
+      <title>GSoC 2025 – Two Projects Accepted!</title>
+      <link>https://openms.de/news/gsoc2025/</link>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/gsoc2025/</guid>
+      <description>We&amp;rsquo;re thrilled to announce that two OpenMS projects have been accepted for Google Summer of Code 2025! 🚀</description>
+    </item>
+    <item>
+      <title>OpenMS 3.4.1 released</title>
+      <link>https://openms.de/news/release3.4/</link>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/release3.4/</guid>
+      <description>We have just released OpenMS 3.4.1</description>
+    </item>
+    <item>
+      <title>OpenMS 3.3 released</title>
+      <link>https://openms.de/news/release3.3/</link>
+      <pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/release3.3/</guid>
+      <description>We have just released OpenMS 3.3 click here to see changes and improvements</description>
+    </item>
+    <item>
+      <title>OpenMS developers meeting 17-21 March 2025, in Xewkija, Gozo, Malta</title>
+      <link>https://openms.de/news/devmeeting2025/</link>
+      <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/devmeeting2025/</guid>
+      <description>We are hosting a developers meeting near Xewkija, Gozo, Malta! Click the header above for more information.</description>
+    </item>
+    <item>
+      <title>OpenMS 3.2 Released</title>
+      <link>https://openms.de/news/release3.2/</link>
+      <pubDate>Fri, 20 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/release3.2/</guid>
+      <description>We have just release OpenMS 3.2 click here to see changes and improvements</description>
+    </item>
+    <item>
+      <title>OpenMS Users Meeting 17-18 October 2024, in Berlin, Germany</title>
+      <link>https://openms.de/news/usermeeting2024/</link>
+      <pubDate>Tue, 21 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/usermeeting2024/</guid>
+      <description>We are organizing a users meeting in Berlin, Germany! Click the header above for more information.</description>
+    </item>
+    <item>
+      <title>OpenMS Summer 2024 Fellowship Application</title>
+      <link>https://openms.de/news/fellowship2024/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/fellowship2024/</guid>
+      <description>The OpenMS fellowship aims to increase diversity within the computational mass spectrometry field by recruiting scientists from underrepresented backgrounds to join an immersive in-person mentorship program.</description>
+    </item>
+    <item>
+      <title>OpenMS developers conference 10-16 March 2024, near Malaga, Spain</title>
+      <link>https://openms.de/news/devmeeting2024/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/devmeeting2024/</guid>
+      <description>We are hosting a developers conference near Malaga, Spain! Click the header above for more information.</description>
+    </item>
+    <item>
+      <title>OpenMS 3.0.0 Released</title>
+      <link>https://openms.de/news/release3.0.0/</link>
+      <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/release3.0.0/</guid>
+      <description>New release!</description>
+    </item>
+    <item>
+      <title>Conclusion of the OpenMS Developers Meeting March 27-31, on Kaprije island, Croatia</title>
+      <link>https://openms.de/news/devmeeting2023_summary/</link>
+      <pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/devmeeting2023_summary/</guid>
+      <description>The OpenMS Deveopers meeting concluded successfully after several days of fruitful discussions and coding sessions.</description>
+    </item>
+    <item>
+      <title>OpenMS developers meeting March 27-31, on Kaprije island, Croatia</title>
+      <link>https://openms.de/news/devmeeting2023/</link>
+      <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/devmeeting2023/</guid>
+      <description>We are hosting a developers meeting in Croatia soon! Click the header above for more information.</description>
+    </item>
+    <item>
+      <title>New OpenMS website</title>
+      <link>https://openms.de/news/newwebsite/</link>
+      <pubDate>Fri, 25 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/newwebsite/</guid>
+      <description>The OpenMS team is proud to present its new website, hosting courtesy of Netlify.</description>
+    </item>
+    <item>
+      <title>New OpenMS read-the-docs manual</title>
+      <link>https://openms.de/news/newrtddocs/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/newrtddocs/</guid>
+      <description>The OpenMS team is proud to present a new OpenMS manual at &lt;a href=&#34;openms.readthedocs.io&#34;&gt;openms.readthedocs.io&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Cibi Data &amp; Code Clinic</title>
+      <link>https://openms.de/news/cibi_codeclinic/</link>
+      <pubDate>Fri, 24 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/cibi_codeclinic/</guid>
+      <description>A web-based video help desk for proteomics and metabolomics researchers</description>
+    </item>
+    <item>
+      <title>Second OpenMS documentation update</title>
+      <link>https://openms.de/news/gsod2022/</link>
+      <pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/gsod2022/</guid>
+      <description>The OpenMS team has won a 2022 Google Season of Docs grant to update the OpenMS documentation</description>
+    </item>
+    <item>
+      <title>OpenMS developers meeting April 4-8, 2022 near Corinth, Greece</title>
+      <link>https://openms.de/news/devmeeting2022/</link>
+      <pubDate>Fri, 31 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/devmeeting2022/</guid>
+      <description>We are hosting a developers meeting in Greece soon! Click below for more information.</description>
+    </item>
+    <item>
+      <title>OpenMS 2.7.0 Released</title>
+      <link>https://openms.de/news/release2.7.0/</link>
+      <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/release2.7.0/</guid>
+      <description>New release!</description>
+    </item>
+    <item>
+      <title>OpenMS documentation Update Funded by Google Season of Docs</title>
+      <link>https://openms.de/news/gsod2021/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/gsod2021/</guid>
+      <description>The OpenMS team has won a 2021 &lt;a href=&#34;https://developers.google.com/season-of-docs/docs/participants&#34;&gt;Google Season of Docs&lt;/a&gt; grant to update the OpenMS documentation.</description>
+    </item>
+    <item>
+      <title>OpenMS 2.6.0 Released</title>
+      <link>https://openms.de/news/release2.6.0/</link>
+      <pubDate>Fri, 02 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/release2.6.0/</guid>
+      <description>New release!</description>
+    </item>
+    <item>
+      <title>Virtual OpenMS Developers Meeting April 15-16, 2021</title>
+      <link>https://openms.de/news/devmeeting2021/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://openms.de/news/devmeeting2021/</guid>
+      <description>We are hosting a virtual developers meeting soon! Click the header above for more information.</description>
+    </item>
+  </channel>
+</rss>

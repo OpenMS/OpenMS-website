@@ -1,0 +1,1624 @@
+/* OpenMS-lib hub — dynamic section layouts, brand colors & fonts only */
+
+.openms-lib-page--hub .openms-lib-page__nav {
+  display: none !important;
+}
+
+.openms-lib-page--hub {
+  --hub-radius: 1.35rem;
+  --hub-radius-sm: 0.9rem;
+  --hub-pad: clamp(2.25rem, 5vw, 3.75rem);
+  --hub-wide-max: 92rem;
+  --hub-reveal-distance: 1.5rem;
+  --hub-reveal-duration: 0.62s;
+  --hub-reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --hub-shadow-sm: 0 0.4rem 1.35rem rgba(var(--openms-navy-rgb), 0.06);
+  --hub-shadow-md: 0 0.9rem 2.5rem rgba(var(--openms-navy-rgb), 0.09);
+  --hub-shadow-lg: 0 1.35rem 3.25rem rgba(var(--openms-navy-rgb), 0.12);
+  --hub-glass: color-mix(in srgb, var(--openms-white) 76%, transparent);
+  --hub-label: rgba(var(--openms-navy-rgb), 0.52);
+  --hub-link: rgba(var(--openms-navy-rgb), 0.82);
+  --hub-link-hover: var(--openms-blue);
+  --hub-icon-bg: rgba(var(--openms-blue-rgb), 0.1);
+  --hub-icon-color: var(--openms-navy);
+  --hub-brand-gradient: linear-gradient(
+    120deg,
+    var(--openms-blue) 0%,
+    var(--openms-purple) 48%,
+    var(--openms-pink) 100%
+  );
+}
+
+/* ── Ambient motion ── */
+@keyframes hub-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -0.65rem, 0) scale(1.03);
+  }
+}
+
+@keyframes hub-shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@keyframes hub-pulse-ring {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes hub-line-flow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 200%;
+  }
+}
+
+@keyframes hub-fact-float {
+  0%,
+  100% {
+    transform: translate3d(0, var(--hub-fact-offset-y, 0), 0);
+  }
+  50% {
+    transform: translate3d(0, calc(var(--hub-fact-offset-y, 0) - 0.35rem), 0);
+  }
+}
+
+/* ── Hero: editorial left rail + floating orbs ── */
+.openms-lib-page--hub .openms-lib-hero {
+  position: relative;
+  margin-bottom: 0;
+  padding: clamp(2.5rem, 5vw, 3.5rem) max(var(--olib-pad-x), calc((100% - var(--olib-max)) / 2 + var(--olib-pad-x)))
+    clamp(3rem, 6vw, 4.25rem);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 55% 45% at 8% 18%, rgba(var(--openms-yellow-rgb), 0.14), transparent 62%),
+    radial-gradient(ellipse 50% 55% at 92% 8%, rgba(var(--openms-blue-rgb), 0.14), transparent 58%),
+    radial-gradient(ellipse 40% 35% at 78% 88%, rgba(var(--openms-pink-rgb), 0.1), transparent 65%),
+    linear-gradient(
+      165deg,
+      var(--olib-hero-bg-top) 0%,
+      color-mix(in srgb, var(--openms-blue) 4%, var(--openms-white)) 55%,
+      var(--openms-white) 100%
+    );
+}
+
+.openms-lib-page--hub .openms-lib-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(var(--openms-navy-rgb), 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--openms-navy-rgb), 0.035) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  mask-image: radial-gradient(ellipse 80% 70% at 30% 40%, black, transparent 78%);
+}
+
+.openms-lib-page--hub .openms-lib-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: auto;
+  height: clamp(2rem, 4vw, 3rem);
+  border-radius: 0;
+  background: linear-gradient(180deg, transparent 0%, var(--openms-white) 100%);
+  opacity: 1;
+  filter: none;
+  animation: none;
+  pointer-events: none;
+}
+
+.openms-lib-page--hub .openms-lib-hero__panel {
+  position: relative;
+  text-align: center;
+}
+
+.openms-lib-page--hub .openms-lib-hero__panel::after {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  right: -1rem;
+  z-index: 0;
+  width: clamp(9rem, 18vw, 14rem);
+  height: clamp(9rem, 18vw, 14rem);
+  border-radius: 42% 58% 63% 37% / 38% 42% 58% 62%;
+  background: var(--hub-brand-gradient);
+  opacity: 0.14;
+  filter: blur(0.5px);
+  animation: hub-float 9s var(--hub-reveal-ease) infinite;
+  pointer-events: none;
+}
+
+.openms-lib-page--hub .openms-lib-hero__panel,
+.openms-lib-page--hub .openms-lib-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.openms-lib-page--hub .openms-lib-hero__content {
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.openms-lib-page--hub .openms-lib-hero__eyebrow {
+  margin: 0 auto 0.85rem;
+}
+
+.openms-lib-page--hub .openms-lib-hero__title {
+  margin: 0 auto;
+  max-width: 30ch;
+  font-size: clamp(2rem, 4.8vw, 3.2rem);
+  font-weight: var(--openms-heading-xl-weight);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.openms-lib-page--hub .openms-lib-hero__title::after {
+  display: none;
+}
+
+.openms-lib-page--hub .openms-lib-hero__accent {
+  color: inherit;
+}
+
+.openms-lib-page--hub .openms-lib-hero__accent--warm {
+  color: color-mix(in srgb, var(--openms-blue) 78%, var(--openms-navy));
+}
+
+.openms-lib-page--hub .openms-lib-hero__lead {
+  margin: 1rem auto 0;
+  max-width: 46ch;
+  text-align: center;
+}
+
+.openms-lib-page--hub .openms-lib-hero__actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+.openms-lib-page--hub .openms-lib-hero__actions .openms-lib-btn--ghost {
+  background: transparent;
+  background-color: transparent;
+}
+
+.openms-lib-page--hub .openms-lib-hero__actions .openms-lib-btn {
+  transition:
+    transform 0.22s var(--hub-reveal-ease),
+    box-shadow 0.22s ease,
+    background-color 0.22s ease;
+}
+
+.openms-lib-page--hub .openms-lib-hero__actions .openms-lib-btn:hover,
+.openms-lib-page--hub .openms-lib-hero__actions .openms-lib-btn:focus-visible {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ── Page shell ── */
+.openms-lib-page--hub .openms-lib-page__body {
+  margin-top: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.openms-lib-page--hub .openms-lib-page__body > .openms-lib-page__anchor {
+  position: relative;
+  padding: 0;
+  background: transparent !important;
+  scroll-margin-top: var(--openms-header-height, 4.25rem);
+  overflow: hidden;
+}
+
+.openms-lib-page--hub .openms-lib-page__body > .openms-lib-page__anchor > .openms-lib-block {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding: var(--hub-pad) max(var(--olib-pad-x), calc((100% - var(--olib-max)) / 2 + var(--olib-pad-x)));
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.openms-lib-page--hub .openms-lib-block__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--openms-blue);
+  background: rgba(var(--openms-blue-rgb), 0.1);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.18);
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+.openms-lib-page--hub .openms-lib-block__eyebrow::before {
+  display: none;
+}
+
+.openms-lib-page--hub .openms-lib-page__body .openms-lib-block--highlights,
+.openms-lib-page--hub .openms-lib-page__body .openms-lib-block--topp,
+.openms-lib-page--hub .openms-lib-page__body .openms-lib-block--resources {
+  padding-block: var(--hub-pad);
+}
+
+/* ── Section 1: What is OpenMS — split editorial + staggered stat deck ── */
+.openms-lib-page--hub #what-is-openms {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(var(--openms-purple-rgb), 0.09), transparent 58%),
+    radial-gradient(ellipse 45% 40% at 0% 100%, rgba(var(--openms-yellow-rgb), 0.1), transparent 55%),
+    var(--openms-white);
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+  align-items: start;
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__head .openms-lib-block__eyebrow,
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__head .openms-lib-block__title {
+  width: fit-content;
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-block__title,
+.openms-lib-page--hub #what-is-openms .openms-lib-block__lead {
+  color: var(--openms-navy);
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-block__lead {
+  color: rgba(var(--openms-navy-rgb), 0.68);
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__head {
+  position: sticky;
+  top: calc(var(--openms-header-height, 4.25rem) + 1.25rem);
+  max-width: none;
+  margin-bottom: 0;
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__list--facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.85rem, 1.6vw, 1.1rem);
+  max-width: none;
+  counter-reset: hub-fact;
+  transform-origin: center right;
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__list--facts.openms-lib-hub__reveal {
+  transition-delay: calc(var(--hub-reveal-index, 0) * 90ms);
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact {
+  --hub-fact-offset-y: 0;
+  --hub-fact-float-delay: 0s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0;
+  min-height: clamp(6.5rem, 12vw, 7.75rem);
+  padding: clamp(1.15rem, 2vw, 1.45rem);
+  padding-top: clamp(3.25rem, 5vw, 4rem);
+  border: none;
+  background: var(--openms-navy);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: var(--hub-shadow-sm);
+  text-align: left;
+  transition:
+    box-shadow 0.32s var(--hub-reveal-ease),
+    transform 0.32s var(--hub-reveal-ease);
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact:nth-child(1) {
+  --hub-fact-offset-y: 0;
+  --hub-fact-float-delay: 0s;
+  border-radius: 1.35rem 1.35rem 0.55rem 1.35rem;
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact:nth-child(2) {
+  --hub-fact-offset-y: 0.85rem;
+  --hub-fact-float-delay: 0.45s;
+  border-radius: 0.55rem 1.35rem 1.35rem 1.35rem;
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact:nth-child(3) {
+  --hub-fact-offset-y: -0.35rem;
+  --hub-fact-float-delay: 0.9s;
+  border-radius: 1.35rem 0.55rem 1.35rem 1.35rem;
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact:nth-child(4) {
+  --hub-fact-offset-y: 0.55rem;
+  --hub-fact-float-delay: 1.35s;
+  border-radius: 1.35rem 1.35rem 1.35rem 0.55rem;
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact.openms-lib-hub__reveal--left {
+  transform: translate3d(calc(var(--hub-reveal-distance) * -1.1), var(--hub-fact-offset-y), 0);
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact.openms-lib-hub__reveal--right {
+  transform: translate3d(var(--hub-reveal-distance), var(--hub-fact-offset-y), 0);
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact.openms-lib-hub__reveal {
+  transition-delay: calc(var(--hub-reveal-index, 0) * 90ms);
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact.openms-lib-hub__reveal.is-revealed {
+  transform: translate3d(0, var(--hub-fact-offset-y), 0);
+  animation: hub-fact-float 5.5s var(--hub-reveal-ease) var(--hub-fact-float-delay) infinite;
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact::before {
+  content: counter(hub-fact, decimal-leading-zero);
+  counter-increment: hub-fact;
+  position: absolute;
+  top: 0.65rem;
+  right: 0.85rem;
+  z-index: 2;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.16);
+  transform: scale(0.88);
+  transform-origin: top right;
+  transition:
+    color 0.35s var(--hub-reveal-ease),
+    transform 0.45s var(--hub-reveal-ease);
+  pointer-events: none;
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact.is-revealed::before,
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact:hover::before,
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact:focus-within::before {
+  color: rgba(255, 255, 255, 0.38);
+  transform: scale(1);
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact::after {
+  display: none;
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact:hover,
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact:focus-within {
+  animation-play-state: paused;
+  transform: translate3d(0, calc(var(--hub-fact-offset-y) - 0.45rem), 0);
+  box-shadow: var(--hub-shadow-lg);
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact-icon,
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact-check {
+  display: none;
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact-text {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-right: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(0.95rem, 1.45vw, 1.05rem);
+  text-align: left;
+  color: rgba(255, 255, 255, 0.72);
+  transform: translate3d(0, 0.4rem, 0);
+  transition:
+    transform 0.45s var(--hub-reveal-ease),
+    color 0.3s ease;
+}
+
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact.is-revealed .openms-lib-highlights__fact-text,
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact:hover .openms-lib-highlights__fact-text,
+.openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact:focus-within .openms-lib-highlights__fact-text {
+  transform: translate3d(0, 0, 0);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ── Section 2: TOPP — editorial intro + feature rail ── */
+.openms-lib-page--hub #topp-tools {
+  background:
+    radial-gradient(ellipse 70% 60% at 0% 50%, rgba(var(--openms-blue-rgb), 0.11), transparent 62%),
+    linear-gradient(180deg, color-mix(in srgb, var(--olib-bg-soft) 65%, var(--openms-white)) 0%, var(--openms-white) 100%);
+}
+
+.openms-lib-page--hub .openms-lib-topp__deck {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(16rem, 0.95fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+.openms-lib-page--hub .openms-lib-topp__intro {
+  display: grid;
+  gap: 0.75rem;
+  max-width: min(100%, 38rem);
+}
+
+.openms-lib-page--hub .openms-lib-topp__eyebrow {
+  margin: 0;
+  width: fit-content;
+}
+
+.openms-lib-page--hub .openms-lib-topp__kicker {
+  margin: 0;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--hub-label);
+}
+
+.openms-lib-page--hub .openms-lib-topp__title {
+  margin: 0;
+  max-width: 16ch;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+}
+
+.openms-lib-page--hub .openms-lib-topp__lead {
+  margin: 0;
+  max-width: 44ch;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.58;
+  color: rgba(var(--openms-navy-rgb), 0.66);
+}
+
+.openms-lib-page--hub .openms-lib-topp__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: fit-content;
+  margin-top: 0.35rem;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--hub-link);
+  background: transparent;
+  box-shadow: none;
+  transition: gap 0.22s ease, color 0.22s ease;
+}
+
+.openms-lib-page--hub .openms-lib-topp__cta:hover,
+.openms-lib-page--hub .openms-lib-topp__cta:focus-visible {
+  gap: 0.55rem;
+  color: var(--hub-link-hover);
+  outline: none;
+}
+
+.openms-lib-page--hub .openms-lib-topp__features {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+  margin: 0;
+  padding: clamp(0.35rem, 1vw, 0.65rem) 0 0;
+  border: none;
+  border-top: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+  background: transparent;
+  box-shadow: none;
+  list-style: none;
+}
+
+.openms-lib-page--hub .openms-lib-topp__feature {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: start;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.openms-lib-page--hub .openms-lib-topp__feature .openms-lib-highlights__check {
+  margin-top: 0.2rem;
+}
+
+.openms-lib-page--hub .openms-lib-topp__feature-body {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.openms-lib-page--hub .openms-lib-topp__feature-text {
+  margin: 0;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.55;
+  color: rgba(var(--openms-navy-rgb), 0.78);
+}
+
+.openms-lib-page--hub .openms-lib-topp__feature .openms-lib-topp__cta {
+  margin-top: 0.2rem;
+}
+
+@media (min-width: 1025px) {
+  .openms-lib-page--hub .openms-lib-topp__features {
+    margin-top: clamp(1.5rem, 3vw, 2.25rem);
+    padding: clamp(1.5rem, 3vw, 2.25rem) 0 0 clamp(1.5rem, 3vw, 2.5rem);
+    border-top: none;
+    border-left: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+  }
+}
+
+/* ── Section 3: Explore OpenMS-lib — launch pad layout ── */
+.openms-lib-page--hub #getting-started {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(var(--openms-purple-rgb), 0.1), transparent 42%),
+    radial-gradient(circle at 12% 88%, rgba(var(--openms-blue-rgb), 0.08), transparent 38%),
+    radial-gradient(circle at 88% 72%, rgba(var(--openms-pink-rgb), 0.07), transparent 36%),
+    var(--openms-white);
+}
+
+.openms-lib-page--hub #getting-started::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: radial-gradient(rgba(var(--openms-navy-rgb), 0.08) 1px, transparent 1px);
+  background-size: 1.15rem 1.15rem;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 92%);
+}
+
+.openms-lib-page--hub .openms-lib-explore {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: clamp(2rem, 4.5vh, 3rem);
+}
+
+.openms-lib-page--hub .openms-lib-explore__intro {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: center;
+  max-width: 40rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.openms-lib-page--hub .openms-lib-explore__title {
+  margin: 0;
+}
+
+.openms-lib-page--hub .openms-lib-explore__lead {
+  margin: 0;
+  max-width: 42ch;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.6;
+  color: rgba(var(--openms-navy-rgb), 0.68);
+}
+
+.openms-lib-page--hub .openms-lib-explore__deck {
+  display: grid;
+  gap: clamp(1.1rem, 2.2vw, 1.5rem);
+}
+
+.openms-lib-page--hub .openms-lib-explore__spotlight--topp {
+  position: relative;
+  display: block;
+  padding: clamp(0.5rem, 1.5vw, 0.85rem) 0;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  text-decoration: none;
+  color: var(--openms-navy);
+  background: transparent;
+  box-shadow: none;
+  transition: transform 0.34s var(--hub-reveal-ease);
+}
+
+.openms-lib-page--hub .openms-lib-explore__spotlight--topp:hover,
+.openms-lib-page--hub .openms-lib-explore__spotlight--topp:focus-visible {
+  transform: translateX(6px);
+  box-shadow: none;
+  outline: none;
+}
+
+.openms-lib-page--hub .openms-lib-explore__spotlight-main {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.openms-lib-page--hub .openms-lib-explore__spotlight-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.25rem;
+}
+
+.openms-lib-page--hub .openms-lib-explore__spotlight-kicker {
+  margin: 0;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--hub-label);
+}
+
+.openms-lib-page--hub .openms-lib-explore__spotlight-title {
+  margin: 0;
+  max-width: 14ch;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.75rem, 3.8vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--openms-navy);
+}
+
+.openms-lib-page--hub .openms-lib-explore__spotlight-text {
+  margin: 0;
+  max-width: 52ch;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.55;
+  color: rgba(var(--openms-navy-rgb), 0.66);
+}
+
+.openms-lib-page--hub .openms-lib-explore__spotlight-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: fit-content;
+  margin-top: 0.15rem;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  color: var(--hub-link);
+  background: transparent;
+  box-shadow: none;
+  transition: gap 0.22s ease, color 0.22s ease;
+}
+
+.openms-lib-page--hub .openms-lib-explore__spotlight--topp:hover .openms-lib-explore__spotlight-cta,
+.openms-lib-page--hub .openms-lib-explore__spotlight--topp:focus-visible .openms-lib-explore__spotlight-cta {
+  gap: 0.55rem;
+  color: var(--hub-link-hover);
+}
+
+.openms-lib-page--hub .openms-lib-explore__routes {
+  display: grid;
+  gap: 0.65rem;
+  padding: clamp(0.85rem, 1.8vw, 1.1rem);
+  border-radius: var(--hub-radius);
+  background: rgba(var(--openms-white-rgb), 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--hub-shadow-sm);
+}
+
+.openms-lib-page--hub .openms-lib-explore__routes-head {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.85rem, 1.8vw, 1.15rem);
+}
+
+.openms-lib-page--hub .openms-lib-explore__routes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem clamp(0.85rem, 1.8vw, 1.15rem);
+  align-items: start;
+}
+
+.openms-lib-page--hub .openms-lib-explore__route-label {
+  margin: 0;
+  padding-inline: 0.35rem;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--hub-label);
+}
+
+.openms-lib-page--hub .openms-lib-explore__route-link {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.8rem 0.85rem;
+  border-radius: calc(var(--hub-radius-sm) + 0.1rem);
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+  transition:
+    background-color 0.22s ease,
+    transform 0.22s var(--hub-reveal-ease);
+}
+
+.openms-lib-page--hub .openms-lib-explore__route-link:hover,
+.openms-lib-page--hub .openms-lib-explore__route-link:focus-visible {
+  background: var(--hub-icon-bg);
+  transform: translateX(4px);
+  outline: none;
+}
+
+.openms-lib-page--hub .openms-lib-explore__route-icon {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 0.75rem;
+  color: var(--hub-icon-color);
+  background: var(--hub-icon-bg);
+}
+
+.openms-lib-page--hub .openms-lib-explore__route-copy {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.openms-lib-page--hub .openms-lib-explore__route-title {
+  font-family: var(--openms-font-heading);
+  font-size: clamp(0.98rem, 1.7vw, 1.08rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--openms-navy);
+}
+
+.openms-lib-page--hub .openms-lib-explore__route-text {
+  font-size: var(--openms-text-min);
+  line-height: 1.45;
+  color: rgba(var(--openms-navy-rgb), 0.64);
+}
+
+.openms-lib-page--hub .openms-lib-explore__route-arrow {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(var(--openms-navy-rgb), 0.38);
+  transition: transform 0.22s ease, color 0.22s ease;
+}
+
+.openms-lib-page--hub .openms-lib-explore__route-link:hover .openms-lib-explore__route-arrow,
+.openms-lib-page--hub .openms-lib-explore__route-link:focus-visible .openms-lib-explore__route-arrow {
+  transform: translateX(3px);
+  color: var(--hub-link-hover);
+}
+
+.openms-lib-page--hub .openms-lib-explore__support {
+  display: grid;
+  gap: 0.55rem;
+  justify-items: center;
+  text-align: center;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem) 0 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.openms-lib-page--hub .openms-lib-explore__support-copy {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+  max-width: 36rem;
+  justify-items: center;
+}
+
+.openms-lib-page--hub .openms-lib-explore__support-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex: 0 0 auto;
+}
+
+.openms-lib-page--hub .openms-lib-explore__support-title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.02rem, 1.85vw, 1.15rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--openms-navy);
+}
+
+.openms-lib-page--hub .openms-lib-explore__support-text {
+  margin: 0;
+  font-size: var(--openms-text-min);
+  line-height: 1.5;
+  color: rgba(var(--openms-navy-rgb), 0.64);
+}
+
+
+.openms-lib-page--hub .openms-lib-explore__support-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0.4rem 0;
+  min-height: 0;
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--hub-link) !important;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.openms-lib-page--hub .openms-lib-explore__support-btn:not(:last-child) {
+  padding-right: 0.85rem;
+  margin-right: 0.85rem;
+  border-right: 1px solid rgba(var(--openms-navy-rgb), 0.14);
+}
+
+.openms-lib-page--hub .openms-lib-explore__support-btn:hover,
+.openms-lib-page--hub .openms-lib-explore__support-btn:focus-visible {
+  transform: translateY(-1px);
+  color: var(--hub-link-hover) !important;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+}
+
+
+/* ── Section 4: Contribute — editorial grid (cite panel unchanged below) ── */
+.openms-lib-page--hub .openms-lib-page__outro {
+  margin-top: 0;
+  padding: 0;
+  border: none;
+  background: var(--openms-white);
+  overflow-x: visible;
+}
+
+.openms-lib-page--hub .openms-lib-page__outro .openms-lib-block--developers {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding: var(--hub-pad) max(var(--olib-pad-x), calc((100% - var(--hub-wide-max)) / 2 + var(--olib-pad-x)));
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.openms-lib-page--hub .openms-lib-developers__head,
+.openms-lib-page--hub .openms-lib-developers__content {
+  width: 100%;
+  max-width: var(--olib-max);
+  margin-inline: auto;
+}
+
+.openms-lib-page--hub .openms-lib-developers__head {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  align-items: start;
+  max-width: var(--olib-max);
+  width: 100%;
+  margin-inline: auto;
+  margin-bottom: clamp(2.25rem, 4.5vh, 3.25rem);
+  padding-bottom: 0;
+  border-bottom: none;
+  text-align: left;
+  justify-items: start;
+}
+
+.openms-lib-page--hub .openms-lib-developers__head .openms-lib-block__eyebrow {
+  grid-column: 1;
+}
+
+.openms-lib-page--hub .openms-lib-developers__head .openms-lib-developers__title {
+  grid-column: 1;
+  align-self: start;
+}
+
+.openms-lib-page--hub .openms-lib-developers__head .openms-lib-developers__lead {
+  grid-column: 1;
+  align-self: start;
+}
+
+.openms-lib-page--hub .openms-lib-developers__title {
+  margin: 0;
+  text-align: left;
+}
+
+.openms-lib-page--hub .openms-lib-developers__lead {
+  margin: 0;
+  max-width: 42ch;
+  justify-self: start;
+  text-align: left;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.6;
+  color: rgba(var(--openms-navy-rgb), 0.68);
+}
+
+.openms-lib-page--hub .openms-lib-developers__content {
+  gap: 0;
+}
+
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0;
+  align-items: stretch;
+}
+
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(1),
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(2) {
+  grid-column: span 3;
+  min-height: clamp(9rem, 16vw, 11rem);
+}
+
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(3),
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(4),
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(5) {
+  grid-column: span 2;
+}
+
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card--build {
+  grid-column: 1 / -1;
+  order: 0;
+}
+
+.openms-lib-page--hub .openms-lib-developers__card {
+  position: relative;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: clamp(1.35rem, 2.4vw, 1.85rem) clamp(1.35rem, 2.5vw, 2rem);
+  transition:
+    transform 0.28s var(--hub-reveal-ease),
+    color 0.2s ease;
+}
+
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:not(.openms-lib-developers__card--build) {
+  border-right: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+  border-bottom: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+}
+
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(2),
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(5) {
+  border-right: none;
+}
+
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(3),
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(4),
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(5) {
+  border-bottom: none;
+}
+
+.openms-lib-page--hub .openms-lib-developers__card--build {
+  padding-top: clamp(1.5rem, 2.8vw, 2rem);
+  border-top: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+}
+
+.openms-lib-page--hub .openms-lib-developers__card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  height: 100%;
+  min-width: 0;
+}
+
+.openms-lib-page--hub .openms-lib-developers__card-tag {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--hub-label);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.openms-lib-page--hub .openms-lib-developers__card-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin: 0;
+  font-size: clamp(1.08rem, 1.95vw, 1.28rem);
+  line-height: 1.28;
+  color: var(--openms-navy);
+}
+
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(1) .openms-lib-developers__card-title,
+.openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(2) .openms-lib-developers__card-title {
+  font-size: clamp(1.15rem, 2.1vw, 1.38rem);
+}
+
+.openms-lib-page--hub .openms-lib-developers__card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 2.35rem;
+  height: 2.35rem;
+  margin-top: 0.05rem;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--hub-icon-color);
+  background: var(--hub-icon-bg);
+  box-shadow: inset 0 0 0 1px rgba(var(--openms-navy-rgb), 0.08);
+}
+
+.openms-lib-page--hub .openms-lib-developers__card-text {
+  margin: 0;
+  flex: 1 1 auto;
+  font-size: var(--openms-text-min);
+  line-height: 1.58;
+  color: rgba(var(--openms-navy-rgb), 0.66);
+}
+
+.openms-lib-page--hub .openms-lib-developers__card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: auto;
+  padding-top: 0.45rem;
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  color: var(--hub-link);
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.openms-lib-page--hub .openms-lib-developers__card--link:hover,
+.openms-lib-page--hub .openms-lib-developers__card--link:focus-visible {
+  border: none;
+  box-shadow: none;
+  transform: none;
+  outline: none;
+}
+
+.openms-lib-page--hub .openms-lib-developers__card--link:hover .openms-lib-developers__card-link,
+.openms-lib-page--hub .openms-lib-developers__card--link:focus-visible .openms-lib-developers__card-link {
+  gap: 0.5rem;
+  color: var(--hub-link-hover);
+}
+
+.openms-lib-page--hub .openms-lib-developers__card--build {
+  color: var(--openms-navy);
+}
+
+.openms-lib-page--hub .openms-lib-developers__card--build .openms-lib-developers__card-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto auto;
+  column-gap: clamp(1.5rem, 3.5vw, 3rem);
+  row-gap: 0.35rem;
+  align-items: center;
+  width: 100%;
+}
+
+.openms-lib-page--hub .openms-lib-developers__card--build .openms-lib-developers__card-tag {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.openms-lib-page--hub .openms-lib-developers__card--build .openms-lib-developers__card-title {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.openms-lib-page--hub .openms-lib-developers__card--build .openms-lib-developers__card-text {
+  grid-column: 1;
+  grid-row: 3;
+  color: rgba(var(--openms-navy-rgb), 0.66);
+}
+
+.openms-lib-page--hub .openms-lib-developers__card--build .openms-lib-developers__platforms {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem 0.85rem;
+  margin: 0;
+}
+
+.openms-lib-page--hub .openms-lib-developers__platform-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0.4rem 0;
+  min-height: 0;
+  color: var(--hub-link) !important;
+  text-decoration: none;
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.openms-lib-page--hub .openms-lib-developers__platform-btn:not(:last-child) {
+  padding-right: 0.85rem;
+  border-right: 1px solid rgba(var(--openms-navy-rgb), 0.14);
+}
+
+.openms-lib-page--hub .openms-lib-developers__platform-btn:hover,
+.openms-lib-page--hub .openms-lib-developers__platform-btn:focus-visible,
+.openms-lib-page--hub .openms-lib-developers__platform-btn:active {
+  transform: translateY(-1px);
+  color: var(--hub-link-hover) !important;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* ── Citation panel (full width within wide outro, no negative breakout) ── */
+.openms-lib-page--hub .openms-lib-developers__cite--panel {
+  margin-top: clamp(2rem, 4vh, 3rem);
+  width: 100%;
+  max-width: var(--hub-wide-max);
+  margin-inline: auto;
+  padding: 0;
+  border: none;
+  border-radius: var(--hub-radius);
+  overflow: hidden;
+  background: var(--openms-white);
+  box-shadow: var(--hub-shadow-lg);
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite--separate {
+  display: grid;
+  grid-template-columns: minmax(22rem, 0.58fr) minmax(0, 1.42fr);
+  gap: 0;
+  align-items: stretch;
+  position: static;
+  width: 100%;
+  max-width: none;
+  margin-top: clamp(2rem, 4vh, 3rem);
+  padding-top: 0;
+  border-top: none;
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite-promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.85rem;
+  padding: clamp(2rem, 3.5vw, 3rem) clamp(2.25rem, 4vw, 3.75rem);
+  overflow: hidden;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 90% 80% at 0% 100%, rgba(var(--openms-white-rgb), 0.12), transparent 58%),
+    linear-gradient(
+      155deg,
+      var(--openms-navy) 0%,
+      color-mix(in srgb, var(--openms-navy) 78%, var(--openms-blue)) 45%,
+      color-mix(in srgb, var(--openms-blue) 72%, var(--openms-purple)) 100%
+    );
+  color: var(--openms-white);
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite-promo::before {
+  content: "\201C";
+  position: absolute;
+  top: 0.15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--openms-font-heading);
+  font-size: clamp(5rem, 12vw, 7.5rem);
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(var(--openms-white-rgb), 0.28);
+  pointer-events: none;
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite-promo::after {
+  content: "";
+  position: absolute;
+  inset: auto -2rem -2rem auto;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  background: rgba(var(--openms-pink-rgb), 0.22);
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite-kicker {
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(var(--openms-white-rgb), 0.95);
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite-intro {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.45rem, 2.9vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  color: var(--openms-white);
+  text-align: center;
+  text-wrap: pretty;
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite-details {
+  display: flex;
+  align-items: center;
+  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(2rem, 3.5vw, 3.25rem);
+  background:
+    radial-gradient(ellipse 70% 60% at 100% 0%, rgba(var(--openms-blue-rgb), 0.07), transparent 62%),
+    var(--openms-white);
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite--panel .openms-lib-developers__cite-card,
+.openms-lib-page--hub .openms-lib-developers__cite--panel .publications-cite-card {
+  width: 100%;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-left: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite--panel .publications-cite-card:hover {
+  border: none;
+  box-shadow: none;
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite--panel .publications-cite-card__badge {
+  padding: 0.28rem 0.65rem;
+  color: var(--openms-navy);
+  background: linear-gradient(
+    120deg,
+    rgba(var(--openms-yellow-rgb), 0.35) 0%,
+    rgba(var(--openms-blue-rgb), 0.14) 100%
+  );
+  border-radius: 999px;
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite--panel .publications-cite-card__topic {
+  color: var(--openms-navy);
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite--panel .publications-cite-card__title {
+  font-size: clamp(1.15rem, 2.1vw, 1.45rem);
+  line-height: 1.32;
+  max-width: 52ch;
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite--panel .publications-cite-card__meta {
+  gap: 0.5rem;
+  font-size: var(--openms-text-min);
+  color: rgba(var(--openms-navy-rgb), 0.62);
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite--panel .publications-cite-card__journal {
+  font-weight: 700;
+  color: var(--openms-navy);
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite--panel .publications-cite-card__authors {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin: 0;
+  font-size: var(--openms-text-min);
+  line-height: 1.5;
+  color: rgba(var(--openms-navy-rgb), 0.68);
+}
+
+.openms-lib-page--hub .openms-lib-developers__cite-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+}
+
+/* ── Scroll reveal variants ── */
+.openms-lib-page--hub .openms-lib-hub__reveal {
+  opacity: 0;
+  transform: translateY(var(--hub-reveal-distance));
+  transition:
+    opacity var(--hub-reveal-duration) var(--hub-reveal-ease),
+    transform var(--hub-reveal-duration) var(--hub-reveal-ease);
+  transition-delay: calc(var(--hub-reveal-index, 0) * 70ms);
+}
+
+.openms-lib-page--hub .openms-lib-hub__reveal--left {
+  transform: translateX(calc(var(--hub-reveal-distance) * -1.1));
+}
+
+.openms-lib-page--hub .openms-lib-hub__reveal--right {
+  transform: translateX(var(--hub-reveal-distance));
+}
+
+.openms-lib-page--hub .openms-lib-hub__reveal--scale {
+  transform: scale(0.94);
+}
+
+.openms-lib-page--hub.is-hub-ready .openms-lib-hub__reveal.is-revealed,
+.openms-lib-page--hub .openms-lib-hub__reveal.is-revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+.openms-lib-page--hub .openms-lib-page__body > .openms-lib-page__anchor > .openms-lib-block.openms-lib-hub__reveal {
+  opacity: 0;
+  transform: translateY(calc(var(--hub-reveal-distance) * 1.15));
+  transition:
+    opacity 0.68s var(--hub-reveal-ease),
+    transform 0.68s var(--hub-reveal-ease);
+}
+
+.openms-lib-page--hub.is-hub-ready .openms-lib-page__body > .openms-lib-page__anchor > .openms-lib-block.openms-lib-hub__reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .openms-lib-page--hub #what-is-openms .openms-lib-highlights__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .openms-lib-page--hub #what-is-openms .openms-lib-highlights__head {
+    position: static;
+  }
+
+  .openms-lib-page--hub .openms-lib-topp__deck {
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .openms-lib-page--hub .openms-lib-topp__title {
+    max-width: none;
+  }
+
+  .openms-lib-page--hub .openms-lib-topp__lead {
+    max-width: none;
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__head {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__head .openms-lib-developers__title,
+  .openms-lib-page--hub .openms-lib-developers__head .openms-lib-developers__lead {
+    grid-column: 1;
+    align-self: start;
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__lead {
+    justify-self: start;
+    text-align: left;
+    max-width: none;
+  }
+
+  .openms-lib-page--hub .openms-lib-explore__spotlight-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .openms-lib-page--hub .openms-lib-explore__spotlight-title {
+    max-width: none;
+  }
+
+  .openms-lib-page--hub .openms-lib-explore__routes-head,
+  .openms-lib-page--hub .openms-lib-explore__routes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__grid--count-6 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(1),
+  .openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(2),
+  .openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(3),
+  .openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(4),
+  .openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(5) {
+    grid-column: span 1;
+    min-height: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(odd):not(.openms-lib-developers__card--build) {
+    border-right: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card--build {
+    grid-column: 1 / -1;
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__cite--separate {
+    grid-template-columns: 1fr;
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__cite-intro {
+    max-width: none;
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__cite--panel {
+    width: 100%;
+    margin-inline: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .openms-lib-page--hub .openms-lib-hero__content {
+    width: 100%;
+  }
+
+  .openms-lib-page--hub #what-is-openms .openms-lib-highlights__list--facts {
+    grid-template-columns: 1fr;
+  }
+
+  .openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact:nth-child(n) {
+    --hub-fact-offset-y: 0;
+    --hub-fact-float-delay: 0s;
+  }
+
+  .openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact.openms-lib-hub__reveal.is-revealed {
+    animation: none;
+  }
+
+  .openms-lib-page--hub .openms-lib-explore__support-actions {
+    gap: 0.5rem;
+  }
+
+  .openms-lib-page--hub .openms-lib-explore__support-btn:not(:last-child) {
+    padding-right: 0;
+    margin-right: 0;
+    border-right: none;
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__grid--count-6,
+  .openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:nth-child(n) {
+    grid-template-columns: 1fr;
+    grid-column: auto;
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__grid--count-6 .openms-lib-developers__card:not(.openms-lib-developers__card--build) {
+    border-right: none;
+    border-bottom: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__card--build .openms-lib-developers__card-body {
+    grid-template-columns: 1fr;
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__card--build .openms-lib-developers__card-tag,
+  .openms-lib-page--hub .openms-lib-developers__card--build .openms-lib-developers__card-title,
+  .openms-lib-page--hub .openms-lib-developers__card--build .openms-lib-developers__card-text,
+  .openms-lib-page--hub .openms-lib-developers__card--build .openms-lib-developers__platforms {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__card--build .openms-lib-developers__platforms {
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .openms-lib-page--hub .openms-lib-developers__platform-btn:not(:last-child) {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .openms-lib-page--hub #getting-started .openms-lib-resource-card--online {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .openms-lib-page--hub .openms-lib-hero__actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .openms-lib-page--hub .openms-lib-hero__panel::after {
+    animation: none;
+  }
+
+  .openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact.openms-lib-hub__reveal.is-revealed {
+    animation: none;
+    transform: translate3d(0, var(--hub-fact-offset-y, 0), 0);
+  }
+
+  .openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact::before {
+    transform: none;
+    color: rgba(255, 255, 255, 0.24);
+  }
+
+  .openms-lib-page--hub #what-is-openms .openms-lib-highlights__fact-text {
+    transform: none;
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .openms-lib-page--hub .openms-lib-hub__reveal,
+  .openms-lib-page--hub .openms-lib-page__body > .openms-lib-page__anchor > .openms-lib-block.openms-lib-hub__reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .openms-lib-page--hub .openms-lib-highlights__fact:hover,
+  .openms-lib-page--hub .openms-lib-explore__spotlight--topp:hover,
+  .openms-lib-page--hub .openms-lib-explore__route-link:hover,
+  .openms-lib-page--hub .openms-lib-explore__support-btn:hover,
+  .openms-lib-page--hub .openms-lib-developers__card--link:hover,
+  .openms-lib-page--hub .openms-lib-hero__actions .openms-lib-btn:hover {
+    transform: none;
+  }
+}
