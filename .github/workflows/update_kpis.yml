@@ -1,0 +1,97 @@
+name: KPI Updates
+  # Runs weekly, counts the number of contributors in the organization and updates the KPI.csv accordingly
+  # Updates the citations accordingly 
+
+on:
+  schedule:
+    # Every Monday at 09:00 UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-KPI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.OPENMS_GITHUB_APP_ID }}
+          private-key: ${{ secrets.OPENMS_GITHUB_APP_PRIVATE_KEY }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pandas requests
+
+      - name: Run citations KPI update script
+        run: python get_total_citations.py
+
+      - name: Get contributors data
+        id: contributors
+        uses: github/contributors@v1
+        with:
+          organization: 'OpenMS'
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update CSV with total contributors
+        run: |
+          # Extract the total number from the JSON report
+          NUM_CONTRIBUTORS=$(jq '.contributors | length' "$CONTRIBUTORS_JSON")
+          
+          # Update the specific line in your CSV file
+          sed -i "s/^Contributors,.*/Contributors,$NUM_CONTRIBUTORS/" kpi.csv
+
+          # Print confirmation for the logs
+          echo "Updated KPI CSV with total contributors: $NUM_CONTRIBUTORS"
+        env:
+          CONTRIBUTORS_JSON: ${{ steps.contributors.outputs.contributors_json }}
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          if git diff --quiet -- KPI.csv; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create branch and commit
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config user.name "${{ steps.app-token.outputs.app-slug }}[bot]"
+          git config user.email "${{ vars.OPENMS_GITHUB_APP_ID }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com"
+          git checkout -b update-KPIs
+          git add KPI.csv 
+          git commit -m "Update KPIs"
+          git push --force https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/${{ github.repository }} update-KPIs
+
+      - name: Create or update Pull Request
+        if: steps.git-check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          if gh pr view update-KPIs --json url >/dev/null 2>&1; then
+            echo "PR already exists, branch updated."
+          else
+            gh pr create \
+              --title "Automated KPIs update" \
+              --body "Automated update of \`KPIs.csv\`." \
+              --head update-KPIs \
+              --base main \
+              --label automated,KPIs
+          fi
