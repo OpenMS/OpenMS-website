@@ -30,23 +30,17 @@ jobs:
         with:
           token: ${{ steps.app-token.outputs.token }}
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install dependencies
-        run: pip install pandas requests biopython
-
-      - name: Run citations KPI update script
-        run: python get_total_citations.py
-
       - name: Get contributors data
         id: contributors
         uses: github/contributors@v1
         env:
           ORGANIZATION: 'OpenMS'
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Debug contributors output
+        run: |
+          echo "All outputs from contributors action:"
+          echo "${{ toJSON(steps.contributors.outputs) }}"
 
       - name: Update CSV with total contributors
         run: |
