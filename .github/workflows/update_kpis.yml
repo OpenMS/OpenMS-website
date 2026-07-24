@@ -54,7 +54,7 @@ jobs:
           NUM_CONTRIBUTORS=$(jq '.contributors | length' "$CONTRIBUTORS_JSON")
           
           # Update the specific line in your CSV file
-          sed -i "s/^Contributors,.*/Contributors,$NUM_CONTRIBUTORS/" kpi.csv
+          sed -i "s/^Contributors,.*/Contributors,$NUM_CONTRIBUTORS/" KPI.csv
 
           # Print confirmation for the logs
           echo "Updated KPI CSV with total contributors: $NUM_CONTRIBUTORS"
