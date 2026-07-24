@@ -44,9 +44,9 @@ jobs:
       - name: Get contributors data
         id: contributors
         uses: github/contributors@v1
-        with:
-          organization: 'OpenMS'
-          gh_token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          ORGANIZATION: 'OpenMS'
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update CSV with total contributors
         run: |
