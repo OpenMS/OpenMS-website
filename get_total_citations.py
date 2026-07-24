@@ -1,10 +1,11 @@
-import os
 import re
 import time
 import requests
 import pandas as pd
+from Bio import Entrez
 
 # --- CONFIGURATION ---
+Entrez.email = "your.email@example.com"
 OPENALEX_EMAIL = "your.email@example.com"
 # --- END CONFIGURATION ---
 
@@ -91,8 +92,45 @@ def get_openalex_citation_counts(pmids, title_map):
 
     return per_pmid_counts, all_citing_works
 
+
 pmids = load_pmids()
 print(f"Loaded {len(pmids)} PMIDs from local list.")
+
+# --- Fetch article metadata from PubMed ---
+citations_data = []
+chunk_size = 100
+for i in range(0, len(pmids), chunk_size):
+    chunk = pmids[i:i + chunk_size]
+    try:
+        handle = Entrez.efetch(db="pubmed", id=",".join(chunk), rettype="xml")
+        xml_records = Entrez.read(handle)
+        handle.close()
+        for pubmed_article in xml_records.get("PubmedArticle", []):
+            citation = pubmed_article.get("MedlineCitation", {})
+            article = citation.get("Article", {})
+            
+            pubmed_id = str(citation.get("PMID", ""))
+            title = str(article.get("ArticleTitle", "")).rstrip(".")
+            journal = article.get("Journal", {}).get("Title", "")
+            pub_date = article.get("Journal", {}).get("JournalIssue", {}).get("PubDate", {})
+            year = pub_date.get("Year")
+            if not year and "MedlineDate" in pub_date:
+                year_match = re.search(r"\d{4}", pub_date["MedlineDate"])
+                if year_match:
+                    year = year_match.group(0)
+            if title and year and pubmed_id:
+                citations_data.append({
+                    "Title": title,
+                    "PubMedID": pubmed_id,
+                })
+    except Exception as e:
+        print(f"Error fetching metadata batch starting at index {i}: {e}")
+
+citations = pd.DataFrame(citations_data)
+if citations.empty:
+    raise RuntimeError("No PubMed records were retrieved; refusing to overwrite publications.md")
+
+title_map = dict(zip(citations["PubMedID"], citations["Title"]))
 
 # --- Fetch citation counts from OpenAlex ---
 per_pmid_counts, all_citing_works = get_openalex_citation_counts(
