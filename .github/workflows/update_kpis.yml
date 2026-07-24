@@ -36,7 +36,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install pandas requests
+        run: pip install pandas requests biopython
 
       - name: Run citations KPI update script
         run: python get_total_citations.py
