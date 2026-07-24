@@ -3,6 +3,7 @@ import time
 import requests
 import pandas as pd
 from Bio import Entrez
+import os
 
 # --- CONFIGURATION ---
 Entrez.email = "your.email@example.com"
@@ -120,6 +121,7 @@ for i in range(0, len(pmids), chunk_size):
                     year = year_match.group(0)
             if title and year and pubmed_id:
                 citations_data.append({
+                    "Year": year,
                     "Title": title,
                     "PubMedID": pubmed_id,
                 })
