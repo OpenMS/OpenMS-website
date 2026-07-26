@@ -95,5 +95,4 @@ jobs:
               --body "Automated update of \`KPIs.csv\`." \
               --head update-KPIs \
               --base main \
-              --label automated,KPIs
           fi
