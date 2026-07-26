@@ -94,5 +94,5 @@ jobs:
               --title "Automated KPIs update" \
               --body "Automated update of \`KPIs.csv\`." \
               --head update-KPIs \
-              --base main \
+              --base main
           fi
