@@ -30,30 +30,38 @@ jobs:
         with:
           token: ${{ steps.app-token.outputs.token }}
 
-      - name: Get contributors data
+      - name: Get total unique contributors across all repositories
         id: contributors
-        uses: github/contributors@v1
         env:
-          ORGANIZATION: 'OpenMS'
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Debug contributors output
+          GH_TOKEN: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
         run: |
-          echo "All outputs from contributors action:"
-          echo "${{ toJSON(steps.contributors.outputs) }}"
+          NUM_CONTRIBUTORS=$(
+            for repo in $(gh repo list OpenMS --source --limit 1000 --json name -q '.[].name'); do
+              gh api "repos/OpenMS/$repo/contributors" --paginate -q '.[].login' 2>/dev/null || true
+            done | sort -u | wc -l
+          )
+          echo "num_contributors=$NUM_CONTRIBUTORS" >> "$GITHUB_OUTPUT"
+          echo "Total unique contributors: $NUM_CONTRIBUTORS"
 
-      - name: Update CSV with total contributors
-        run: |
-          # Extract the total number from the JSON report
-          NUM_CONTRIBUTORS=$(jq '.contributors | length' "$CONTRIBUTORS_JSON")
-          
-          # Update the specific line in your CSV file
+          # Update the specific line in KPI.csv
           sed -i "s/^Contributors,.*/Contributors,$NUM_CONTRIBUTORS/" KPI.csv
 
-          # Print confirmation for the logs
-          echo "Updated KPI CSV with total contributors: $NUM_CONTRIBUTORS"
+      - name: Get unique contributors from last year across all repositories
+        id: contributors-last-year
         env:
-          CONTRIBUTORS_JSON: ${{ steps.contributors.outputs.contributors_json }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+        run: |
+          SINCE_DATE=$(date -u -d "1 year ago" +"%Y-%m-%dT%H:%M:%SZ")
+          NUM_RECENT_CONTRIBUTORS=$(
+            for repo in $(gh repo list OpenMS --limit 1000 --source --json name -q '.[].name'); do
+              gh api "repos/OpenMS/$repo/commits?since=$SINCE_DATE" --paginate -q '.[].author | select(. != null) | .login' 2>/dev/null || true
+            done | sort -u | wc -l
+          )
+          echo "num_recent_contributors=$NUM_RECENT_CONTRIBUTORS" >> "$GITHUB_OUTPUT"
+          echo "Total unique contributors (last year): $NUM_RECENT_CONTRIBUTORS"
+
+          # Update the specific line in KPI.csv
+          sed -i "s/^Year to Date Contributors,.*/Year to Date Contributors,$NUM_RECENT_CONTRIBUTORS/" KPI.csv
 
       - name: Check for changes
         id: git-check
