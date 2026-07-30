@@ -29,9 +29,9 @@
     flex-direction: column;
     align-items: center;
     height: 60%;
-    border: 1px solid lightgray;
+    border: 1px solid var(--openms-grey);
     border-radius: 25px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 6px rgba(var(--openms-dark-rgb), 0.1);
     transition: height 0.6s ease;
 }
 
@@ -115,7 +115,7 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-    color: #000080;
+    color: var(--openms-blue);
     position: absolute;
     top: 40%;
 }

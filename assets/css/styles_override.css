@@ -1,29 +1,258 @@
 /* Back to top – colour override to match footer theme */
 #backtotop a {
-  background-color: #0b214a;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  background-color: var(--openms-blue);
+  border: 2px solid rgba(var(--openms-white-rgb), 0.25);
 }
 
 #backtotop.visible a:hover {
-  background-color: #1a3a7a;
+  background-color: var(--openms-purple);
 }
 
-.hero-title-content {
-  max-width: 1200px;
-  margin: 1vh auto;
+.navbar.is-fresh .navbar-item,
+.navbar.is-fresh .navbar-link,
+.navbar.is-fresh a.navbar-item.is-secondary,
+.navbar.is-fresh .navbar-menu .navbar-item,
+#navbar-clone.navbar.is-fresh .navbar-item,
+#navbar-clone.navbar.is-fresh .navbar-link,
+#navbar-clone.navbar.is-fresh a.navbar-item.is-secondary,
+#navbar-clone.navbar.is-fresh .navbar-menu .navbar-item {
+  color: var(--openms-dark) !important;
 }
 
-.hero-logo {
-  max-height: 200px;
+.navbar.is-fresh .navbar-item:focus-visible,
+.navbar.is-fresh .navbar-link:focus-visible,
+.navbar.is-fresh .navbar-dropdown .navbar-item:focus-visible,
+#navbar-clone.navbar.is-fresh .navbar-item:focus-visible,
+#navbar-clone.navbar.is-fresh .navbar-link:focus-visible,
+#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item:focus-visible {
+  outline: 2px solid var(--openms-blue);
+  outline-offset: 2px;
 }
 
-.navbar.is-fresh .navbar-item.has-dropdown .navbar-link {
-  color: var(--colorPrimaryDark);
+.navbar.is-fresh .navbar-item:hover,
+.navbar.is-fresh .navbar-link:hover,
+.navbar.is-fresh .navbar-item.has-dropdown:hover .navbar-link,
+.navbar.is-fresh .navbar-brand .navbar-brand-link:hover,
+#navbar-clone.navbar.is-fresh .navbar-item:hover,
+#navbar-clone.navbar.is-fresh .navbar-link:hover,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown:hover .navbar-link,
+#navbar-clone.navbar.is-fresh .navbar-brand .navbar-brand-link:hover {
+  color: var(--openms-blue) !important;
 }
 
-.navbar.is-fresh .navbar-brand img {
-  max-height: 50px !important;
-  height: 50px;
+.navbar.is-fresh a.navbar-item.is-secondary,
+#navbar-clone.navbar.is-fresh a.navbar-item.is-secondary {
+  transition: color 0.2s ease;
+}
+
+.navbar.is-fresh a.navbar-item.is-secondary:hover,
+.navbar.is-fresh a.navbar-item.is-secondary:focus-visible,
+#navbar-clone.navbar.is-fresh a.navbar-item.is-secondary:hover,
+#navbar-clone.navbar.is-fresh a.navbar-item.is-secondary:focus-visible {
+  color: var(--openms-blue) !important;
+  background-color: transparent !important;
+}
+
+.navbar.is-fresh .navbar-item.has-dropdown .navbar-link::after,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown .navbar-link::after {
+  border-color: var(--openms-dark) !important;
+}
+
+.navbar.is-fresh .navbar-item.has-dropdown:hover .navbar-link::after,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown:hover .navbar-link::after {
+  border-color: var(--openms-blue) !important;
+}
+
+.navbar.is-fresh .navbar-item.has-dropdown .navbar-dropdown,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown .navbar-dropdown {
+  border-top-color: var(--openms-blue);
+  box-shadow: 0 0.5rem 1.5rem rgba(var(--openms-dark-rgb), 0.08);
+}
+
+.navbar.is-fresh .navbar-dropdown .navbar-item,
+#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item {
+  color: var(--openms-dark) !important;
+}
+
+.navbar.is-fresh .navbar-dropdown .navbar-item:hover,
+#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item:hover {
+  color: var(--openms-blue) !important;
+  background-color: rgba(var(--openms-blue-rgb), 0.1);
+}
+
+/* Navbar CTA buttons (mailchimp.css must not hide these) */
+.navbar.is-fresh .signup-button,
+#navbar-clone.navbar.is-fresh .signup-button {
+  display: inline-block !important;
+}
+
+/* Donate — matches hero primary button */
+.navbar.is-fresh .signup-button.secondary-btn,
+#navbar-clone.navbar.is-fresh .signup-button.secondary-btn {
+  background-color: var(--openms-orange) !important;
+  color: var(--openms-white) !important;
+  border: 2px solid var(--openms-orange) !important;
+  box-shadow: 0 0.25rem 0.75rem rgba(var(--openms-orange-rgb), 0.3);
+}
+
+.navbar.is-fresh .signup-button.secondary-btn:hover,
+#navbar-clone.navbar.is-fresh .signup-button.secondary-btn:hover {
+  background-color: var(--openms-yellow) !important;
+  color: var(--openms-dark) !important;
+  border-color: var(--openms-yellow) !important;
+  box-shadow: 0 0.35rem 1rem rgba(var(--openms-yellow-rgb), 0.35);
+}
+
+/* Sponsor — outline blue */
+.navbar.is-fresh .signup-button.sponsor-btn,
+#navbar-clone.navbar.is-fresh .signup-button.sponsor-btn {
+  background-color: transparent !important;
+  color: var(--openms-blue) !important;
+  border: 2px solid var(--openms-blue) !important;
+  box-shadow: none;
+}
+
+.navbar.is-fresh .signup-button.sponsor-btn:hover,
+#navbar-clone.navbar.is-fresh .signup-button.sponsor-btn:hover {
+  background-color: var(--openms-blue) !important;
+  color: var(--openms-white) !important;
+  border-color: var(--openms-blue) !important;
+  box-shadow: 0 0.25rem 0.75rem rgba(var(--openms-blue-rgb), 0.3);
+}
+
+.navbar.is-fresh .navbar-burger,
+#navbar-clone.navbar.is-fresh .navbar-burger {
+  color: var(--openms-dark);
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 1023px) {
+  .navbar.is-fresh .navbar-burger,
+  #navbar-clone.navbar.is-fresh .navbar-burger {
+    margin-right: 0;
+  }
+}
+
+.navbar.is-fresh .navbar-burger span,
+#navbar-clone.navbar.is-fresh .navbar-burger span {
+  background-color: var(--openms-dark);
+  height: 2px;
+  width: 1.5rem;
+  left: calc(50% - 0.75rem);
+  border-radius: 1px;
+}
+
+.navbar.is-fresh .navbar-burger span:nth-child(1),
+#navbar-clone.navbar.is-fresh .navbar-burger span:nth-child(1) {
+  top: calc(50% - 6px);
+}
+
+.navbar.is-fresh .navbar-burger span:nth-child(2),
+#navbar-clone.navbar.is-fresh .navbar-burger span:nth-child(2) {
+  top: calc(50% - 1px);
+}
+
+.navbar.is-fresh .navbar-burger span:nth-child(3),
+#navbar-clone.navbar.is-fresh .navbar-burger span:nth-child(3) {
+  top: calc(50% + 4px);
+}
+
+.navbar.is-fresh .navbar-burger:hover,
+.navbar.is-fresh .navbar-burger:focus,
+.navbar.is-fresh .navbar-burger:focus-visible,
+.navbar.is-fresh .navbar-burger:active,
+#navbar-clone.navbar.is-fresh .navbar-burger:hover,
+#navbar-clone.navbar.is-fresh .navbar-burger:focus,
+#navbar-clone.navbar.is-fresh .navbar-burger:focus-visible,
+#navbar-clone.navbar.is-fresh .navbar-burger:active {
+  background-color: transparent;
+}
+
+.navbar.is-fresh {
+  min-height: 5.5rem;
+}
+
+.navbar.is-fresh .container,
+.navbar.is-fresh .navbar-brand {
+  min-height: 5.5rem;
+}
+
+/* Top-level dropdown labels (e.g. Partner with OpenMS) */
+.navbar.is-fresh .navbar-item.has-dropdown.is-emphasized > .navbar-link,
+#navbar-clone.navbar.is-fresh .navbar-item.has-dropdown.is-emphasized > .navbar-link {
+  font-weight: 700;
+}
+
+/* Navbar dropdown section headings & nested links */
+.navbar.is-fresh .navbar-dropdown-heading,
+#navbar-clone.navbar.is-fresh .navbar-dropdown-heading {
+  display: block;
+  padding: 0.5rem 1rem 0.35rem;
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--openms-blue);
+  border-top: 1px solid rgba(var(--openms-blue-rgb), 0.12);
+  margin-top: 0.25rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.navbar.is-fresh .navbar-dropdown-heading:first-child,
+#navbar-clone.navbar.is-fresh .navbar-dropdown-heading:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0.35rem;
+}
+
+.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested,
+#navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item.is-nested {
+  padding-left: 1.5rem;
+  font-size: calc(var(--openms-body-size) * 0.95);
+}
+
+.navbar.is-fresh .navbar-item:has(.signup-button) {
+  flex-shrink: 0;
+  padding-left: 0.35rem;
+  padding-right: 0.35rem;
+}
+
+.navbar.is-fresh .navbar-brand .navbar-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding-left: 0;
+}
+
+.navbar.is-fresh .navbar-brand img.navbar-logo {
+  max-height: 88px !important;
+  height: 88px !important;
+  width: auto !important;
+  padding-right: 0;
+}
+
+.navbar.is-fresh .navbar-logo-text,
+#navbar-clone.navbar.is-fresh .navbar-logo-text {
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-heading-lg-size);
+  font-weight: var(--openms-heading-lg-weight);
+  color: var(--openms-dark) !important;
+  line-height: 1;
+}
+
+.navbar.is-fresh .navbar-brand .navbar-brand-link:hover .navbar-logo-text,
+#navbar-clone.navbar.is-fresh .navbar-brand .navbar-brand-link:hover .navbar-logo-text {
+  color: var(--openms-blue) !important;
+}
+
+/* Solid bar over the dark homepage hero (matches design mockup) */
+body:has(.hero-modern) .site-header #nav.navbar.is-fresh {
+  background: rgba(var(--openms-white-rgb), 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--openms-grey);
 }
 
 @media only screen and (max-width: 850px) {
@@ -32,31 +261,13 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .hero-logo {
-    max-height: 150px;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .hero-logo {
-    max-height: 120px;
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  .hero-logo {
-    max-height: 100px;
-  }
-}
-
 /* =============================================
    FOOTER — REDESIGN
    ============================================= */
 
 .footer-redesign {
-  background-color: #0b214a;
-  color: #e2e8f0;
+  background-color: var(--openms-blue);
+  color: var(--openms-grey);
   padding: 3rem 0 0;
   font-family: inherit;
 }
@@ -73,15 +284,66 @@
 
 /* ---- Brand block ---- */
 .footer-brand {
-  flex: 0 0 200px;
+  flex: 0 0 300px;
+}
+
+.footer-brand-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.footer-logo img {
+  display: block;
+  max-height: 88px;
+  max-width: min(100%, 280px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.footer-logo:focus-visible {
+  outline: 2px solid rgba(var(--openms-white-rgb), 0.45);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.footer-donate-btn.signup-button {
+  display: inline-block !important;
+  padding: 0.55rem 1.35rem !important;
+  font-size: var(--openms-body-size);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footer-redesign .footer-donate-btn.signup-button.secondary-btn {
+  background-color: var(--openms-orange) !important;
+  color: var(--openms-white) !important;
+  border: 2px solid var(--openms-orange) !important;
+  box-shadow: 0 0.25rem 0.75rem rgba(var(--openms-orange-rgb), 0.3);
+}
+
+.footer-redesign .footer-donate-btn.signup-button.secondary-btn:hover,
+.footer-redesign .footer-donate-btn.signup-button.secondary-btn:focus-visible {
+  background-color: var(--openms-yellow) !important;
+  color: var(--openms-dark) !important;
+  border-color: var(--openms-yellow) !important;
+  box-shadow: 0 0.35rem 1rem rgba(var(--openms-yellow-rgb), 0.35);
 }
 
 .footer-title {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.3px;
+  color: var(--openms-white);
+  margin-bottom: 0;
 }
 
 /* ---- Partner logo row ---- */
@@ -104,8 +366,8 @@
 
 .footer-link-group ul li a:focus-visible,
 .footer-socials a:focus-visible {
-  color: #ffffff;
-  outline: 2px solid rgba(255, 255, 255, 0.45);
+  color: var(--openms-white);
+  outline: 2px solid rgba(var(--openms-white-rgb), 0.45);
   outline-offset: 4px;
 }
 
@@ -135,11 +397,11 @@
 
 /* ---- Column heading ---- */
 .footer-group-heading {
-  font-size: 0.68rem;
+  font-size: var(--openms-text-min);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(var(--openms-white-rgb), 0.45);
   margin: 0 0 0.875rem 0;
   padding: 0;
 }
@@ -152,9 +414,9 @@
 }
 
 .footer-link-group ul li a {
-  color: #c8d4e8;
+  color: var(--openms-grey);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: var(--openms-body-size);
   display: flex;
   align-items: center;
   min-height: 44px;
@@ -162,7 +424,7 @@
 }
 
 .footer-link-group ul li a:hover {
-  color: #ffffff;
+  color: var(--openms-white);
   text-decoration: underline;
 }
 
@@ -171,7 +433,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.25rem 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(var(--openms-white-rgb), 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -192,12 +454,12 @@
   justify-content: center;
   min-width: 44px;
   min-height: 44px;
-  color: #c8d4e8;
+  color: var(--openms-grey);
   transition: color 0.2s ease;
 }
 
 .footer-socials a:hover {
-  color: #ffffff;
+  color: var(--openms-white);
 }
 
 .footer-socials svg.icon {
@@ -208,8 +470,8 @@
 
 /* ---- Copyright ---- */
 .footer-copyright {
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 0.85rem;
+  color: rgba(var(--openms-white-rgb), 0.45);
+  font-size: var(--openms-text-min);
 }
 
 /* =============================================
@@ -225,6 +487,20 @@
   .footer-brand {
     flex: unset;
     width: 100%;
+  }
+
+  .footer-brand-top {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .footer-logo img {
+    max-height: 72px;
+    max-width: min(65vw, 240px);
   }
 
   .footer-partners {

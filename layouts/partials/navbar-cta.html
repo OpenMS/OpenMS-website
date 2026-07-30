@@ -1,0 +1,8 @@
+{{- $item := . }}
+<a href="{{ $item.url }}" class="navbar-item navbar-cta-item" aria-label="{{ $item.title }}">
+  <span class="button signup-button rounded raised{{ if eq $item.buttonVariant "sponsor" }} sponsor-btn{{ else }} secondary-btn{{ end }}">
+    <span class="navbar-cta-label navbar-cta-label--full">{{ $item.title }}</span>
+    <span class="navbar-cta-label navbar-cta-label--short">{{ $item.shortTitle | default $item.title }}</span>
+    {{ if $item.is_external }}{{ partial "svg-icon" "launch" }}{{ end }}
+  </span>
+</a>

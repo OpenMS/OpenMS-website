@@ -1,0 +1,22 @@
+{{- $banner := .Site.Params.newsBanner }}
+{{- if and $banner $banner.enabled }}
+<div class="news-banner" role="region" aria-label="Site announcement">
+  <div class="news-banner__inner container is-max-widescreen">
+    <p class="news-banner__message">
+      {{- with $banner.label }}
+      <span class="news-banner__label">{{ . }}</span>
+      {{- end }}
+      {{- if $banner.link }}
+      <a href="{{ $banner.link }}" class="news-banner__link">
+        <span class="news-banner__text">{{ $banner.text }}</span>
+        {{- with $banner.linkText }}
+        <span class="news-banner__cta">{{ . }} →</span>
+        {{- end }}
+      </a>
+      {{- else }}
+      <span class="news-banner__text">{{ $banner.text }}</span>
+      {{- end }}
+    </p>
+  </div>
+</div>
+{{- end }}
