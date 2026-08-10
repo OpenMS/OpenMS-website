@@ -1,0 +1,109 @@
+name: KPI Updates
+  # Runs weekly, counts the number of contributors in the organization and updates the KPI.csv accordingly
+  # Updates the citations accordingly 
+
+on:
+  schedule:
+    # Every Monday at 09:00 UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-KPI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.OPENMS_GITHUB_APP_ID }}
+          private-key: ${{ secrets.OPENMS_GITHUB_APP_PRIVATE_KEY }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pandas requests biopython
+
+      - name: Run citations KPI update script
+        run: python get_total_citations.py
+
+      - name: Get total unique contributors across all repositories
+        id: contributors
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+        run: |
+          NUM_CONTRIBUTORS=$(
+            for repo in $(gh repo list OpenMS --source --limit 1000 --json name -q '.[].name'); do
+              gh api "repos/OpenMS/$repo/contributors" --paginate -q '.[].login' 2>/dev/null || true
+            done | sort -u | wc -l
+          )
+          echo "num_contributors=$NUM_CONTRIBUTORS" >> "$GITHUB_OUTPUT"
+          echo "Total unique contributors: $NUM_CONTRIBUTORS"
+
+          # Update the specific line in KPI.csv
+          sed -i "s/^Contributors,.*/Contributors,$NUM_CONTRIBUTORS/" KPI.csv
+
+      - name: Get unique contributors from last year across all repositories
+        id: contributors-last-year
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+        run: |
+          SINCE_DATE=$(date -u -d "1 year ago" +"%Y-%m-%dT%H:%M:%SZ")
+          NUM_RECENT_CONTRIBUTORS=$(
+            for repo in $(gh repo list OpenMS --limit 1000 --source --json name -q '.[].name'); do
+              gh api "repos/OpenMS/$repo/commits?since=$SINCE_DATE" --paginate -q '.[].author | select(. != null) | .login' 2>/dev/null || true
+            done | sort -u | wc -l
+          )
+          echo "num_recent_contributors=$NUM_RECENT_CONTRIBUTORS" >> "$GITHUB_OUTPUT"
+          echo "Total unique contributors (last year): $NUM_RECENT_CONTRIBUTORS"
+
+          # Update the specific line in KPI.csv
+          sed -i "s/^Year to Date Contributors,.*/Year to Date Contributors,$NUM_RECENT_CONTRIBUTORS/" KPI.csv
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          if git diff --quiet -- KPI.csv; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create branch and commit
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config user.name "${{ steps.app-token.outputs.app-slug }}[bot]"
+          git config user.email "${{ vars.OPENMS_GITHUB_APP_ID }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com"
+          git checkout -b update-KPIs
+          git add KPI.csv 
+          git commit -m "Update KPIs"
+          git push --force https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/${{ github.repository }} update-KPIs
+
+      - name: Create or update Pull Request
+        if: steps.git-check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          if gh pr view update-KPIs --json url >/dev/null 2>&1; then
+            echo "PR already exists, branch updated."
+          else
+            gh pr create \
+              --title "Automated KPIs update" \
+              --body "Automated update of \`KPIs.csv\`." \
+              --head update-KPIs \
+              --base main
+          fi

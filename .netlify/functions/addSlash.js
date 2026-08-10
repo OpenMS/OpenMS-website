@@ -7,9 +7,9 @@ exports.handler = async function (event) {
       event.path.endsWith("documentation/") ||
       event.path.endsWith("current_doxygen/")
     ) {
-      url = "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/";  
+      url = "https://archive.openms.de/openms/Documentation/release/latest/";  
     } else if (event.path.endsWith("develop_doxygen/")) {
-      url = "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/";
+      url = "https://archive.openms.de/openms/Documentation/nightly/";
     }
     if (url) {
       const response = await fetch(url, { signal: controller.signal });

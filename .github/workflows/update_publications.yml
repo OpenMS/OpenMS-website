@@ -1,0 +1,78 @@
+name: Update Publications List
+
+on:
+  schedule:
+    # Every Sunday at 06:00 UTC
+    - cron: '0 6 * * 0'
+  push:
+    branches:
+      - main
+    paths:
+      - 'pmids.txt'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-publications:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.OPENMS_GITHUB_APP_ID }}
+          private-key: ${{ secrets.OPENMS_GITHUB_APP_PRIVATE_KEY }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install biopython pandas requests
+
+      - name: Run publications update script
+        run: python generate_bib.py
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          if git diff --quiet -- content/en/publications.md; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create branch and commit
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config user.name "${{ steps.app-token.outputs.app-slug }}[bot]"
+          git config user.email "${{ vars.OPENMS_GITHUB_APP_ID }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com"
+          git checkout -b update-publications
+          git add content/en/publications.md
+          git commit -m "Update publications list from pmids.txt"
+          git push --force https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/${{ github.repository }} update-publications
+
+      - name: Create or update Pull Request
+        if: steps.git-check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          if gh pr view update-publications --json url >/dev/null 2>&1; then
+            echo "PR already exists, branch updated."
+          else
+            gh pr create \
+              --title "Automated publications update" \
+              --body "Automated update of \`content/en/publications.md\` from \`pmids.txt\`." \
+              --head update-publications \
+              --base main \
+              --label automated,publications
+          fi
