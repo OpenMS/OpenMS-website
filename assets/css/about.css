@@ -1,8 +1,7 @@
 .about-page-layout {
-  --olib-pad-x: clamp(1.25rem, 4vw, 2rem);
-  --olib-section-y: clamp(4rem, 8vh, 5.5rem);
+  --olib-section-y: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
   --olib-bg-soft: #f4f6f9;
-  --olib-text-muted: rgba(var(--openms-navy-rgb), 0.68);
+  --olib-text-muted: var(--openms-text-muted);
   --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
   --about-max: 64rem;
 
@@ -174,7 +173,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  max-width: 64rem;
+  max-width: var(--pro-cluster-max, min(100%, 68rem));
   margin-top: 1rem;
 }
 
@@ -248,7 +247,7 @@
 .about-donate-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: calc(var(--openms-btn-glow-size, 6px) * 2 + 1rem);
+  gap: var(--openms-btn-gap, 0.75rem);
   margin-top: 1rem;
 }
 
@@ -263,7 +262,8 @@
   box-sizing: border-box;
   flex: 1 1 11.75rem;
   min-width: 11.75rem;
-  height: 2.75rem;
+  min-height: var(--openms-btn-min-height, 2.75rem);
+  height: auto;
   margin-top: 0;
   text-align: center;
 }
@@ -278,11 +278,11 @@
   justify-content: center;
   gap: 0.35rem;
   width: fit-content;
-  min-height: 2.75rem;
+  min-height: var(--openms-btn-min-height, 2.75rem);
   padding: var(--openms-btn-padding);
   border-radius: var(--openms-btn-pill-radius);
   font-family: var(--openms-font-body);
-  font-size: var(--openms-text-min);
+  font-size: var(--openms-btn-font-size, var(--openms-text-min));
   font-weight: 600;
   line-height: 1.3;
   white-space: nowrap;
@@ -292,10 +292,8 @@
 }
 
 .about-page-layout .openms-lib-btn--primary {
-  gap: 0.5rem;
-  padding-inline: 1.15rem;
-  border: 2px solid var(--openms-navy);
-  background: var(--openms-navy);
+  border: 2px solid var(--openms-blue);
+  background: var(--openms-blue);
   color: var(--openms-white) !important;
 }
 
@@ -330,8 +328,8 @@
 .about-page-layout .openms-lib-btn--primary:hover,
 .about-page-layout .openms-lib-btn--primary:focus-visible,
 .about-page-layout .openms-lib-btn--primary:active {
-  background: var(--openms-navy);
-  border-color: var(--openms-navy);
+  background: var(--openms-blue);
+  border-color: var(--openms-blue);
   color: var(--openms-white) !important;
 }
 
@@ -738,10 +736,16 @@
 }
 
 .sponsor-faq__answer a {
-  color: var(--openms-blue);
-  font-weight: 600;
+  color: var(--openms-content-link, var(--openms-navy));
+  font-weight: var(--openms-content-link-weight, 600);
+  text-decoration: none;
+  text-underline-offset: var(--openms-content-link-underline-offset, 0.12em);
+}
+
+.sponsor-faq__answer a:hover,
+.sponsor-faq__answer a:focus-visible {
+  color: var(--openms-content-link-hover, var(--openms-blue));
   text-decoration: underline;
-  text-underline-offset: 0.15em;
 }
 
 @media (max-width: 640px) {
@@ -971,8 +975,8 @@
 }
 
 .about-page-layout .about-sponsorship-program__cta .openms-lib-btn--primary {
-  border: 2px solid var(--openms-navy);
-  background: var(--openms-navy);
+  border: 2px solid var(--openms-blue);
+  background: var(--openms-blue);
   color: var(--openms-white) !important;
 }
 

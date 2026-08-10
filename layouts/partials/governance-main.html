@@ -43,21 +43,18 @@
         <div class="openms-lib-about__mosaic" role="list">
           <article class="openms-lib-about__tile" role="listitem" id="openms-inc">
             <span class="openms-lib-about__num" aria-hidden="true">01</span>
-            <p class="governance-tile__tag">Corporate Governance</p>
             <h3 class="openms-lib-about__tile-title">OpenMS Inc.</h3>
-            <p class="openms-lib-about__tile-text">A U.S. nonprofit corporation under 501(c)(3) that provides legal and financial infrastructure for the project.</p>
+            <p class="openms-lib-about__tile-text">A U.S. 501(c)(3) nonprofit that holds the project’s legal entity, compliance, and financial continuity.</p>
             <ul class="governance-tile__list" role="list">
-              <li>Board of Directors handles fiduciary and legal oversight</li>
-              <li>Supports fundraising, compliance, and organizational continuity</li>
+              <li>Board of Directors oversees fiduciary and legal duties</li>
+              <li>Supports fundraising, grants, and organizational continuity</li>
             </ul>
-            <p class="governance-tile__note">OpenMS Inc. provides legal, financial, and organizational stewardship for the project.</p>
           </article>
 
           <article class="openms-lib-about__tile" role="listitem" id="executive-committee">
             <span class="openms-lib-about__num" aria-hidden="true">02</span>
-            <p class="governance-tile__tag">Project Governance</p>
             <h3 class="openms-lib-about__tile-title">Executive Committee</h3>
-            <p class="openms-lib-about__tile-text">The primary governance body for the software project — composed of core developers and led by an elected Executive Chairperson.</p>
+            <p class="openms-lib-about__tile-text">Core developers who set the software roadmap, community policies, and day-to-day technical decisions.</p>
             <ul class="governance-tile__list" role="list">
               <li>Defines project direction and technical priorities</li>
               <li>Maintains governance policies and core developer membership</li>
@@ -115,10 +112,34 @@
           </div>
         </div>
 
-        <p class="governance-note">
-          New core developers are added by majority vote of the Executive Committee.
-          Core developers may step down voluntarily or be removed for inactivity or Code of Conduct violations by a two-thirds vote.
-        </p>
+        <aside class="governance-membership" aria-labelledby="membership-title">
+          <header class="governance-membership__head">
+            <p class="governance-membership__eyebrow">Process</p>
+            <h3 id="membership-title" class="governance-membership__title">Membership</h3>
+            <p class="governance-membership__lead">How people join and leave the core developer group.</p>
+          </header>
+          <div class="governance-membership__track" role="list">
+            <article class="governance-membership__step" role="listitem">
+              <div class="governance-membership__marker" aria-hidden="true">
+                <span class="governance-membership__icon"><i class="fas fa-user-plus"></i></span>
+              </div>
+              <div class="governance-membership__card">
+                <p class="governance-membership__tag">Joining</p>
+                <p class="governance-membership__text">New core developers are added by majority vote of the Executive Committee.</p>
+              </div>
+            </article>
+            <div class="governance-membership__connector" aria-hidden="true"></div>
+            <article class="governance-membership__step" role="listitem">
+              <div class="governance-membership__marker" aria-hidden="true">
+                <span class="governance-membership__icon"><i class="fas fa-user-minus"></i></span>
+              </div>
+              <div class="governance-membership__card">
+                <p class="governance-membership__tag">Leaving</p>
+                <p class="governance-membership__text">Core developers may step down voluntarily or be removed for inactivity or Code of Conduct violations by a two-thirds vote.</p>
+              </div>
+            </article>
+          </div>
+        </aside>
       </div>
     </section>
   </div>
@@ -137,22 +158,22 @@
           </div>
         </header>
 
-        <div class="openms-lib-about__mosaic" role="list">
-          <article class="openms-lib-about__tile" role="listitem">
-            <div class="governance-tile__top">
-              <span class="openms-lib-about__num" aria-hidden="true">01</span>
-              <p class="governance-tile__tag">Board of Directors</p>
+        <div class="openms-lib-resources__grid governance-compare-grid" role="list">
+          <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
+            <div class="openms-lib-resources__item-top">
+              <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-landmark"></i></span>
+              <span class="openms-lib-resources__item-tag">Board of Directors</span>
             </div>
-            <h3 class="openms-lib-about__tile-title">Corporate</h3>
-            <p class="openms-lib-about__tile-text">Legal entity, nonprofit compliance, and financial stewardship.</p>
+            <h3 class="openms-lib-resources__item-title">Corporate</h3>
+            <p class="openms-lib-resources__item-text">Legal entity, nonprofit compliance, and financial stewardship.</p>
           </article>
-          <article class="openms-lib-about__tile" role="listitem">
-            <div class="governance-tile__top">
-              <span class="openms-lib-about__num" aria-hidden="true">02</span>
-              <p class="governance-tile__tag">Executive Committee</p>
+          <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
+            <div class="openms-lib-resources__item-top">
+              <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-code"></i></span>
+              <span class="openms-lib-resources__item-tag">Executive Committee</span>
             </div>
-            <h3 class="openms-lib-about__tile-title">Project</h3>
-            <p class="openms-lib-about__tile-text">Software roadmap, contributor governance, and technical or community decisions.</p>
+            <h3 class="openms-lib-resources__item-title">Project</h3>
+            <p class="openms-lib-resources__item-text">Software roadmap, contributor governance, and technical or community decisions.</p>
           </article>
         </div>
       </div>
@@ -162,21 +183,19 @@
 
 <div class="openms-lib-page__outro">
   <div id="related-pages" class="openms-lib-page__anchor">
-    <section class="openms-lib-block openms-lib-block--developers" aria-labelledby="related-pages-title">
-      <article class="openms-lib-developers__card openms-lib-developers__card--build openms-lib-developers__review">
-        <div class="openms-lib-developers__card-body">
-          <span class="openms-lib-developers__card-tag">See also</span>
-          <h2 id="related-pages-title" class="openms-lib-developers__card-title">
-            <span>Ready to get involved?</span>
-          </h2>
-          <p class="openms-lib-developers__card-text">For guidance on getting started as a contributor, see the Contributing Guide.</p>
-          <div class="openms-lib-developers__platforms" role="group" aria-label="Related pages">
-            <a class="openms-lib-btn openms-lib-btn--primary" href="/contribute/">
-              <span class="openms-lib-btn__label">Contributing Guide</span>
-            </a>
-          </div>
+    <section class="governance-cta-band" aria-labelledby="related-pages-title">
+      <div class="governance-cta-band__panel">
+        <div class="governance-cta-band__copy">
+          <p class="governance-cta-band__kicker">See also</p>
+          <p class="governance-cta-band__text">
+            <strong id="related-pages-title">Ready to get involved?</strong>
+            <span class="governance-cta-band__note">For guidance on getting started as a contributor, see the Contributing Guide.</span>
+          </p>
         </div>
-      </article>
+        <div class="governance-cta-band__actions" role="group" aria-label="Related pages">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/contribute/">Contributing Guide</a>
+        </div>
+      </div>
     </section>
   </div>
 </div>

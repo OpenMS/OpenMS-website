@@ -1,19 +1,22 @@
 {{- $project := .project -}}
 {{- $class := .class | default "" -}}
 {{- $hideName := .hideName | default false -}}
-<article class="webapps-project-detail-card{{ with $class }} {{ . }}{{ end }}{{ if $hideName }} webapps-project-detail-card--logo-title{{ end }}">
+{{- $logo := $project.logo | default "" -}}
+<article class="webapps-project-detail-card{{ with $class }} {{ . }}{{ end }}{{ if $hideName }} webapps-project-detail-card--logo-title{{ end }}{{ if not $logo }} webapps-project-detail-card--text-logo{{ end }}">
   <div class="webapps-project-detail-card__main">
-    {{- with $project.logo }}
-    <div class="webapps-project-detail-card__logo-wrap{{ with $project.logoSize }} webapps-project-detail-card__logo-wrap--{{ . }}{{ end }}">
+    <div class="webapps-project-detail-card__logo-wrap{{ with $project.logoSize }} webapps-project-detail-card__logo-wrap--{{ . }}{{ end }}{{ if not $logo }} webapps-project-detail-card__logo-wrap--text{{ end }}">
+      {{- if $logo }}
       <img
         class="webapps-project-detail-card__logo{{ with $project.logoSize }} webapps-project-detail-card__logo--{{ . }}{{ end }}"
-        src="{{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}{{ . }}{{ else }}{{ . | relURL }}{{ end }}"
-        alt="{{ $project.name }}"
+        src="{{ if or (hasPrefix $logo "http://") (hasPrefix $logo "https://") }}{{ $logo }}{{ else }}{{ $logo | relURL }}{{ end }}"
+        alt="{{ if $hideName }}{{ $project.name }}{{ end }}"
         loading="lazy"
         decoding="async"
       />
+      {{- else }}
+      <span class="webapps-project-detail-card__logo-text" aria-hidden="true">{{ $project.name }}</span>
+      {{- end }}
     </div>
-    {{- end }}
     <div class="webapps-project-detail-card__body">
       {{- if not $hideName }}
       <h3 class="webapps-project-detail-card__name">{{ $project.name }}</h3>

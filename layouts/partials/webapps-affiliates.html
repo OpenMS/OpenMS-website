@@ -6,7 +6,7 @@
     <ul class="webapps-affiliates__grid" role="list" aria-label="Affiliated apps">
       {{- range $projects }}
       <li class="webapps-affiliates__item" role="listitem">
-        {{ partial "webapps-project-detail-card.html" (dict "project" . "class" "webapps-project-detail-card--affiliate") }}
+        {{ partial "webapps-project-detail-card.html" (dict "project" . "class" "webapps-project-detail-card--featured") }}
       </li>
       {{- end }}
     </ul>

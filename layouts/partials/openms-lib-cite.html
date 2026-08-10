@@ -56,7 +56,7 @@
       </p>
       {{- end }}
       {{- with .authors }}
-      <p class="publications-cite-card__authors">{{ . }}</p>
+      <p class="publications-cite-card__authors">{{ partial "cite-authors.html" . }}</p>
       {{- end }}
       <div class="openms-lib-cite__actions">
         {{- with $pubUrl }}

@@ -1,30 +1,49 @@
 {{- $page := .page -}}
 {{- $readMore := .readMore -}}
-<li class="news-entry" role="listitem"{{ if not $page.Date.IsZero }} data-news-year="{{ $page.Date.Format "2006" }}"{{ end }}>
-  <p class="news-entry__title">
-    <a class="news-entry__title-link" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
-  </p>
-  {{- if not $page.Date.IsZero }}
-  <p class="news-entry__meta">
-    <time class="news-entry__date" datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "January 2, 2006" }}</time>
-    {{- with or $page.Params.authors $page.Params.Authors }}
-    <span class="news-entry__sep" aria-hidden="true">·</span>
-    <span class="news-entry__authors">
-      {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end }}
-    </span>
-    {{- end }}
-  </p>
-  {{- else }}
-  {{- with or $page.Params.authors $page.Params.Authors }}
-  <p class="news-entry__meta">
-    <span class="news-entry__authors">
-      {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end }}
-    </span>
-  </p>
-  {{- end }}
-  {{- end }}
-  {{- with $page.Summary }}
-  <p class="news-entry__summary">{{ . }}</p>
-  {{- end }}
-  <a class="news-entry__action" href="{{ $page.RelPermalink }}">{{ $readMore }}</a>
+{{- $summary := $page.Summary -}}
+{{- with $page.Params.summary -}}
+  {{- $summary = . -}}
+{{- end -}}
+<li
+  class="news-entry community-events-home__item news-home__item"
+  role="listitem"
+  {{- if not $page.Date.IsZero }} data-news-year="{{ $page.Date.Format "2006" }}"{{ end -}}
+>
+  <article class="community-events-home__card news-home__card">
+    <a
+      class="community-events-home__card-link{{ if not $page.Date.IsZero }} community-events-home__card-link--split{{ end }} news-home__card-link"
+      href="{{ $page.RelPermalink }}"
+    >
+      {{- if not $page.Date.IsZero }}
+      <div class="community-events-home__date-block">
+        <time
+          class="community-events-home__date"
+          datetime="{{ $page.Date.Format "2006-01-02" }}"
+          title="{{ $page.Date.Format "January 2, 2006" }}"
+        >
+          <span class="community-events-home__date-day">{{ $page.Date.Format "2" }}</span>
+          <span class="community-events-home__date-month">{{ $page.Date.Format "Jan" | upper }}</span>
+          <span class="community-events-home__date-year">{{ $page.Date.Format "2006" }}</span>
+        </time>
+      </div>
+      {{- end }}
+
+      <div class="community-events-home__card-main">
+        <div class="community-events-home__card-header">
+          <h3 class="community-events-home__card-title news-home__card-title">{{ $page.Title }}</h3>
+        </div>
+        {{- with or $page.Params.authors $page.Params.Authors }}
+        <p class="news-entry__authors news-home__card-authors">
+          {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end -}}
+        </p>
+        {{- end }}
+        {{- with $summary }}
+        <p class="community-events-home__card-summary news-home__card-summary">{{ . | plainify | truncate 160 }}</p>
+        {{- end }}
+        {{- with $readMore }}
+        <span class="news-entry__action news-home__card-cta">{{ . }}<span aria-hidden="true"> →</span></span>
+        {{- end }}
+      </div>
+    </a>
+  </article>
 </li>

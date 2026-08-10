@@ -76,7 +76,7 @@ html[data-navbar-layout="mobile"] #navbar-clone.navbar.is-fresh .navbar-logo-tex
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0;
     flex-shrink: 0;
     margin-left: auto;
     overflow: visible;
@@ -95,6 +95,7 @@ html[data-navbar-layout="mobile"] #navbar-clone.navbar.is-fresh .navbar-logo-tex
     justify-content: center;
     width: 2.75rem;
     height: 2.75rem;
+    margin-left: -0.35rem;
     margin-right: 0;
     border-radius: 0.65rem;
     background: rgba(var(--openms-white-rgb), 0.1);
@@ -953,7 +954,7 @@ html[data-navbar-layout="mobile"] #navbar-clone.navbar.is-fresh .navbar-brand-ac
   }
 
   html[data-navbar-layout="mobile"] .navbar-mobile-toolbar.navbar-mobile-ctas-end {
-    gap: 0.5rem;
+    gap: 0;
     padding: 0;
     border: none;
     border-radius: 0;
@@ -970,6 +971,10 @@ html[data-navbar-layout="mobile"] .navbar-mobile-toolbar .navbar-burger {
     border: none;
     background: transparent;
     box-shadow: none;
+  }
+
+  html[data-navbar-layout="mobile"] .navbar-mobile-toolbar .navbar-burger {
+    margin-left: -0.35rem;
   }
 
   html[data-navbar-layout="mobile"] .navbar-mobile-toolbar .navbar-search--mobile.is-open .navbar-search__toggle,
@@ -1011,7 +1016,7 @@ html[data-navbar-layout="mobile"] #navbar-clone.navbar.is-fresh .navbar-menu .na
   }
 
   html[data-navbar-layout="mobile"] .navbar-mobile-toolbar.navbar-mobile-ctas-end {
-    gap: 0.5rem;
+    gap: 0;
   }
 
   /* Mobile drawer — light gray hover on the link row only (text color unchanged) */
@@ -1152,7 +1157,7 @@ html[data-navbar-layout="mobile"] #navbar-clone.navbar.is-fresh .navbar-brand {
     }
 
     html[data-navbar-layout="mobile"] .navbar-mobile-toolbar.navbar-mobile-ctas-end {
-      gap: 0.5rem;
+      gap: 0;
     }
 
     html[data-navbar-layout="mobile"] .site-header #nav.navbar.is-fresh .navbar-menu.is-static,

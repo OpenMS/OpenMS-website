@@ -1,1 +1,2 @@
-{{ partial "product-developers.html" (dict "cfg" site.Params.webappsPage.developers "id" "webapps-developers-title") }}
+{{- $cfg := site.Params.webappsPage.developers | default dict -}}
+{{ partial "product-developers.html" (dict "cfg" $cfg "id" "webapps-developers-title" "omitSeparateCite" true) }}

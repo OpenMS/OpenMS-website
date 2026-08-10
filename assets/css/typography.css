@@ -14,7 +14,7 @@ body {
   font-size: 1rem;
   font-weight: var(--openms-body-weight);
   line-height: 1.5;
-  color: var(--openms-dark);
+  color: var(--openms-text-body, var(--openms-dark));
 }
 
 /* Normal text — 11–14pt */

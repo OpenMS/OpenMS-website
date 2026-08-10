@@ -7,6 +7,7 @@
 {{- $citation := index $cfg "citation" | default dict -}}
 {{- $citeVariant := index $citation "variant" | default "primary" -}}
 {{- $citeSeparate := index $cfg "citeSeparate" | default false -}}
+{{- $omitSeparateCite := .omitSeparateCite | default false -}}
 {{- $hasCite := or $citeText $citation -}}
 {{- $sectionId := .id | default "product-developers-title" -}}
 {{- $citeLabel := index $cfg "citeLabel" | default (printf "Cite %s" (index $citation "topic" | default "OpenMS")) -}}
@@ -58,7 +59,7 @@
             <h3 class="openms-lib-developers__card-title">
               <span>{{ .title }}</span>
             </h3>
-            {{- with .text }}
+            {{- with .text | default .subtitle }}
             <p class="openms-lib-developers__card-text">{{ . }}</p>
             {{- end }}
             <span class="openms-lib-developers__card-link">
@@ -146,7 +147,9 @@
   </article>
   {{- end }}
 
-  {{- if and $hasCite $citeSeparate }}
-  {{ partial "product-developers-cite.html" (merge $citeCtx (dict "separate" true)) }}
-  {{- end }}
 </section>
+{{- if and $hasCite $citeSeparate (not $omitSeparateCite) }}
+<div class="openms-lib-page__cite" id="research-impact">
+  {{ partial "product-developers-cite.html" (merge $citeCtx (dict "separate" true)) }}
+</div>
+{{- end }}

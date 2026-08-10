@@ -4,14 +4,14 @@
 .donate-page__zeffy-iframe {
   display: block;
   width: 100%;
-  min-height: 42rem;
+  min-height: 52rem;
   border: 0;
-  overflow: hidden;
   background: transparent;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   .donate-page__zeffy-iframe {
-    min-height: 36rem;
+    /* Zeffy has no dynamicHeight — keep tall enough that the page scrolls, not the iframe */
+    min-height: 72rem;
   }
 }

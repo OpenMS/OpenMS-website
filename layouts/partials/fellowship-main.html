@@ -15,16 +15,33 @@
         {{- if $blurb -}}
         <p class="openms-lib-hero__lead">{{ $blurb | safeHTML }}</p>
         {{- end -}}
-        {{- with $chips }}
-        <ul class="openms-lib-hero__chips fellowship-hero-chips" aria-label="Fellowship at a glance">
-          {{- range . }}
-          <li class="openms-lib-hero__chip">{{ . }}</li>
-          {{- end }}
-        </ul>
-        {{- end }}
       </div>
     </div>
   </header>
+  {{- with $chips }}
+  <ul class="fellowship-facts" aria-label="Fellowship at a glance">
+    {{- range $i, $chip := . }}
+    {{- $text := "" -}}
+    {{- $icon := "" -}}
+    {{- if reflect.IsMap $chip -}}
+      {{- $text = index $chip "text" | default "" -}}
+      {{- $icon = index $chip "icon" | default "" -}}
+    {{- else -}}
+      {{- $text = $chip -}}
+    {{- end -}}
+    {{- if not $icon -}}
+      {{- if eq $i 0 }}{{ $icon = "fas fa-globe" }}
+      {{- else if eq $i 1 }}{{ $icon = "fas fa-comments" }}
+      {{- else }}{{ $icon = "fas fa-award" }}
+      {{- end -}}
+    {{- end -}}
+    <li class="fellowship-facts__item">
+      <span class="fellowship-facts__icon" aria-hidden="true"><i class="{{ $icon }}"></i></span>
+      <span class="fellowship-facts__text">{{ $text }}</span>
+    </li>
+    {{- end }}
+  </ul>
+  {{- end }}
 </div>
 
 <div class="openms-lib-page__body" aria-label="Fellowship application">

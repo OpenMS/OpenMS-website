@@ -94,15 +94,9 @@
               class="events-past-year{{ if eq $index 0 }} events-past-year--default{{ end }}"
               id="events-year-{{ $year }}"
               data-events-year="{{ $year }}"
+              aria-label="{{ $year }} events"
               {{- if ne $year $defaultYear }} hidden aria-hidden="true"{{- end }}
             >
-              <header class="events-past-year__header">
-                <h3 class="events-past-year__title">{{ $year }}</h3>
-                <p class="events-past-year__count">
-                  {{ len $yearEvents }}
-                  {{ if eq (len $yearEvents) 1 }}event{{ else }}events{{ end }}
-                </p>
-              </header>
               <ul class="community-events-home__grid" role="list">
                 {{- range $yearEvents }}
                 {{ partial "community-event-card.html" (dict "event" . "hideDateLine" true "primaryCta" true "readMoreLabel" $readMore) }}

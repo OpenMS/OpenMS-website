@@ -43,10 +43,10 @@
             {{- end }}
           {{- end }}
           {{- if gt (len $dated) 0 }}
-          <section class="news-bibliography news-archive" aria-label="OpenMS news articles">
+          <section class="news-bibliography news-archive community-events-upcoming-layout" aria-label="OpenMS news articles">
             {{ partial "news-year-select.html" . }}
             <div class="news-bibliography__entries">
-              <ul class="news-list" role="list" data-news-list>
+              <ul class="news-list community-events-home__grid news-home__list" role="list" data-news-list>
                 {{- range $dated }}
                 {{ partial "news-entry.html" (dict "page" . "readMore" $readMore) }}
                 {{- end }}
@@ -67,10 +67,10 @@
             {{- end }}
           {{- end }}
           {{- if gt (len $undated) 0 }}
-          <section class="news-bibliography news-bibliography--undated" aria-label="Undated news">
+          <section class="news-bibliography news-bibliography--undated community-events-upcoming-layout" aria-label="Undated news">
             <div class="news-bibliography__entries">
               <section class="news-year news-year--undated">
-                <ul class="news-list" role="list">
+                <ul class="news-list community-events-home__grid news-home__list" role="list">
                   {{- range $undated }}
                   {{ partial "news-entry.html" (dict "page" . "readMore" $readMore) }}
                   {{- end }}

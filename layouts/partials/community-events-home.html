@@ -24,7 +24,8 @@
 >
   <div class="community-events-home__inner">
     <div class="community-news-events__grid">
-      {{ partial "news-home.html" . }}
+      {{/* Keep Latest news count aligned with Upcoming events */}}
+      {{ partial "news-home.html" (dict "limit" $eventCount) }}
 
       <div class="community-news-events__column community-news-events__column--events">
         <header class="community-news-events__column-header">
@@ -35,7 +36,7 @@
             {{ $title }}
             {{- end }}
           </h2>
-          <a class="community-news-events__view-all about-cta-btn--donate" href="{{ $calendarUrl }}">
+          <a class="community-news-events__view-all" href="{{ $calendarUrl }}">
             <span>{{ $calendarText }}</span>
             <span class="community-news-events__view-all-icon" aria-hidden="true">→</span>
           </a>
@@ -54,7 +55,7 @@
         {{- else }}
         <div class="community-events-home__empty community-events-home__empty--compact">
           <p class="community-events-home__empty-text">{{ $emptyEvents }}</p>
-          <a class="community-events-home__view-all community-events-home__view-all--inline about-cta-btn--donate" href="{{ $calendarUrl }}">{{ $calendarText }}</a>
+          <a class="community-events-home__view-all community-events-home__view-all--inline community-news-events__view-all" href="{{ $calendarUrl }}">{{ $calendarText }}</a>
         </div>
         {{- end }}
       </div>

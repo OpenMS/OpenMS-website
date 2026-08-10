@@ -1,2 +1,41 @@
-/* Research partnerships page styles live in z-openms-lib-pro.css
-   under .openms-lib-page--research-partnerships. */
+/* Research partnerships — standard section rhythm */
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about,
+.openms-lib-page--research-partnerships #our-partners .openms-lib-resources,
+.openms-lib-page--research-partnerships #partnership-form .openms-lib-resources {
+  padding-block: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
+}
+
+/* Research partnerships — section intros centered */
+
+.openms-lib-page--research-partnerships #our-partners .openms-lib-resources__head,
+.openms-lib-page--research-partnerships #partnership-form .openms-lib-resources__head {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.openms-lib-page--research-partnerships #our-partners .openms-lib-resources__eyebrow,
+.openms-lib-page--research-partnerships #our-partners .openms-lib-resources__title,
+.openms-lib-page--research-partnerships #our-partners .openms-lib-resources__lead,
+.openms-lib-page--research-partnerships #partnership-form .openms-lib-resources__eyebrow,
+.openms-lib-page--research-partnerships #partnership-form .openms-lib-resources__title,
+.openms-lib-page--research-partnerships #partnership-form .openms-lib-resources__lead {
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+  text-align: center;
+  justify-self: center;
+}
+
+.openms-lib-page--research-partnerships #our-partners .openms-lib-resources__eyebrow,
+.openms-lib-page--research-partnerships #partnership-form .openms-lib-resources__eyebrow {
+  justify-content: center;
+}
+
+.openms-lib-page--research-partnerships #our-partners .openms-lib-resources__lead,
+.openms-lib-page--research-partnerships #partnership-form .openms-lib-resources__lead {
+  margin-top: var(--pro-stack-lead, 0.75rem);
+}

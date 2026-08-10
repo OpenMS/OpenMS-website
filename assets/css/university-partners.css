@@ -16,9 +16,9 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(0.8rem, 2vw, 1.15rem);
-  max-width: 90rem;
+  max-width: var(--pro-max, 75rem);
   margin: 0 auto clamp(1.75rem, 3.5vh, 2.5rem);
-  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  padding-inline: var(--olib-pad-x);
   text-align: center;
 }
 
@@ -121,7 +121,7 @@
   display: flex;
   align-items: center;
   gap: clamp(1.25rem, 3vw, 2.25rem);
-  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  padding: 0 var(--olib-pad-x);
 }
 
 .uni-partners__item {
@@ -188,9 +188,9 @@
   display: none;
   flex-wrap: wrap;
   gap: 0.75rem;
-  max-width: 75rem;
+  max-width: var(--pro-max, 75rem);
   margin: 0 auto;
-  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  padding-inline: var(--olib-pad-x);
 }
 
 .uni-partners--static .uni-partners__marquee {
@@ -201,9 +201,9 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.75rem;
-  max-width: 75rem;
+  max-width: var(--pro-max, 75rem);
   margin: 0 auto;
-  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  padding-inline: var(--olib-pad-x);
 }
 
 .uni-partners--static .uni-partners__item {

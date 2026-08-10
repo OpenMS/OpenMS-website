@@ -1,0 +1,650 @@
+/* Site-wide card normalization.
+   Filename sorts last (after zz-*) so it wins over page-specific overrides;
+   !important is required because page scopes like
+   .openms-lib-page--hub.openms-lib-page--openms-lib have higher specificity. */
+
+:root {
+  --openms-equal-card-min-h: 14.5rem;
+  --openms-equal-card-min-h-mobile: 16rem;
+}
+
+/* ── Equal-height cards within grids (all breakpoints) ── */
+.ecosystem-home__grid,
+.community-events-home__grid,
+.community-news-events__grid,
+.keyfeatures-modern__topics,
+.contact-home__grid,
+.contact-page__support-list,
+.contact-paths-grid,
+.openms-lib-page--contact .contact-paths-grid,
+.webapps-featured__grid,
+.webapps-featured__grid--catalog,
+.webapps-featured__grid--detail,
+.webapps-affiliates__grid,
+.webapps-archived__grid,
+.openms-lib-resources__grid,
+.openms-lib-resources__explore-grid,
+.openms-lib-resources__toolkit,
+.openms-lib-topp-split__cards,
+.openms-lib-developers__grid,
+.openms-lib-developers__grid--routes,
+.openms-lib-developers__cards-grid,
+.contribute-channels__grid,
+.contribute-ways__grid,
+.governance-pillars-grid,
+.governance-compare-grid,
+.help-page__resources,
+.sponsor-tiers__grid,
+.sponsor-why__grid,
+.leadership-grid,
+.fellowship-projects-grid,
+.developer-retreat-highlights__grid,
+.donate-impact-grid,
+.home-metrics__grid,
+.trusted-by__wall-grid {
+  align-items: stretch !important;
+}
+
+.ecosystem-home__card,
+.community-events-home__card-link,
+.contact-home__card,
+.contact-page__support-card,
+.contact-page__path-item,
+.keyfeatures-modern__topic-card,
+.webapps-project-card,
+.webapps-project-card__surface,
+.webapps-project-detail-card,
+.webapps-archived-entry,
+.openms-lib-resources__explore-card,
+.openms-lib-resources__explore-card--featured,
+.openms-lib-resources__item,
+.openms-lib-topp-split__card,
+.openms-lib-developers__card,
+.openms-lib-developers__route,
+.contribute-way,
+.contribute-ways__feature,
+.contribute-channel,
+.governance-card,
+.governance-membership__card,
+.sponsor-tier,
+.sponsor-why__card,
+.leadership-card,
+.fellowship-project-card,
+.developer-retreat-highlights__card,
+.donate-impact-card,
+.home-metrics__card,
+.trusted-by__card,
+.trusted-by__home-card,
+.trusted-by__wall-card,
+.help-page__card--wide,
+.openms-lib-page .openms-lib-resources__explore-card,
+.openms-lib-page .openms-lib-resources__explore-card--featured,
+.openms-lib-page .openms-lib-topp-split__card,
+.openms-lib-page .openms-lib-developers__card,
+.openms-lib-page--hub .openms-lib-developers__card,
+.openms-lib-page--hub .openms-lib-resources__explore-card {
+  box-sizing: border-box !important;
+  height: 100% !important;
+  min-height: var(--openms-equal-card-min-h) !important;
+  max-height: none;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Explore grid items fill the cell so row cards match */
+.openms-lib-resources__explore-item,
+.openms-lib-page .openms-lib-resources__explore-item {
+  display: flex !important;
+  height: 100%;
+  min-height: var(--openms-equal-card-min-h);
+  align-self: stretch;
+}
+
+/* Multi-row grids: lock a shared shell so row 1 and row 2 match */
+.openms-lib-resources__explore-card,
+.openms-lib-resources__explore-card--featured,
+.openms-lib-page .openms-lib-resources__explore-card,
+.openms-lib-page .openms-lib-resources__explore-card--featured,
+.openms-lib-developers__cards-grid > .openms-lib-developers__card,
+.openms-lib-page--hub .openms-lib-developers__cards-grid > .openms-lib-developers__card,
+.webapps-featured__grid--catalog .webapps-project-card,
+.webapps-featured__grid--catalog .webapps-project-card__surface,
+.webapps-featured__grid--detail .webapps-project-detail-card,
+.webapps-affiliates__grid .webapps-project-card,
+.webapps-affiliates__grid .webapps-project-card__surface,
+.sponsor-why__grid .sponsor-why__card,
+.sponsor-tiers__grid .sponsor-tier,
+.governance-pillars-grid .governance-card,
+.leadership-grid .leadership-card,
+.fellowship-projects-grid .fellowship-project-card,
+.donate-impact-grid .donate-impact-card,
+.ecosystem-home__grid .ecosystem-home__card,
+.contact-home__grid .contact-home__card,
+.keyfeatures-modern__topics .keyfeatures-modern__topic-card {
+  min-height: var(--openms-equal-card-min-h) !important;
+  height: var(--openms-equal-card-min-h) !important;
+  max-height: var(--openms-equal-card-min-h) !important;
+  overflow: hidden !important;
+}
+
+/* Featured / affiliate app cards need a taller equal shell for logos */
+.webapps-featured__grid--catalog .webapps-project-card,
+.webapps-featured__grid--catalog .webapps-project-card__surface,
+.webapps-affiliates__grid .webapps-project-card,
+.webapps-affiliates__grid .webapps-project-card__surface,
+.home-page__block--projects .webapps-project-card--catalog,
+.home-page__block--projects .webapps-project-card--catalog .webapps-project-card__surface {
+  --openms-equal-card-min-h: 17.5rem;
+  min-height: 17.5rem !important;
+  height: 17.5rem !important;
+  max-height: 17.5rem !important;
+}
+
+.webapps-project-card__surface,
+.webapps-project-card--catalog .webapps-project-card__surface {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.webapps-project-card__content,
+.webapps-project-card__body,
+.home-page__block--projects .webapps-project-card--catalog .webapps-project-card__content {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+}
+
+.webapps-project-card__media,
+.home-page__block--projects .webapps-project-card--catalog .webapps-project-card__media {
+  flex: 0 0 auto;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 4.5rem;
+  max-height: 5.25rem;
+}
+
+.webapps-project-card__cta,
+.home-page__block--projects .webapps-project-card--catalog .webapps-project-card__cta {
+  margin-top: auto !important;
+}
+
+/* Keep CTAs pinned to the bottom so equal shells look balanced */
+.ecosystem-home__card-link,
+.contact-home__card-cta,
+.community-events-home__card-cta,
+.keyfeatures-modern__topic-card .openms-btn-link,
+.openms-lib-resources__explore-link,
+.openms-lib-topp-split__card-link,
+.openms-lib-developers__card-cta,
+.openms-lib-developers__card-link,
+.openms-lib-developers__platforms,
+.contribute-way__link,
+.contribute-channel__link,
+.webapps-project-card__cta,
+.sponsor-tier__cta,
+.sponsor-why__card-link,
+.fellowship-project-card__cta,
+.donate-impact-card__cta,
+.governance-card__link,
+.help-page__card--wide .openms-btn-link {
+  margin-top: auto;
+}
+
+/* Hover/focus must not change card shell size */
+.ecosystem-home__card:hover,
+.ecosystem-home__card:focus-visible,
+.contact-home__card:hover,
+.contact-home__card:focus-visible,
+.contact-page__support-card:hover,
+.contact-page__support-card:focus-visible,
+.contact-page__path-item:hover,
+.contact-page__path-item:focus-within,
+.keyfeatures-modern__topic-card:hover,
+.keyfeatures-modern__topic-card:focus-visible,
+.webapps-project-card:hover,
+.webapps-project-card:focus-within,
+.webapps-project-card__surface:hover,
+.webapps-project-card__surface:focus-visible,
+.webapps-project-detail-card:hover,
+.webapps-project-detail-card:focus-within,
+.webapps-archived-entry:hover,
+.webapps-archived-entry:focus-within,
+.openms-lib-resources__explore-card:hover,
+.openms-lib-resources__explore-card:focus-visible,
+.openms-lib-resources__explore-card--featured:hover,
+.openms-lib-resources__explore-card--featured:focus-visible,
+.openms-lib-page .openms-lib-resources__explore-card:hover,
+.openms-lib-page .openms-lib-resources__explore-card:focus-visible,
+.openms-lib-resources__item:hover,
+.openms-lib-resources__item:focus-visible,
+.openms-lib-topp-split__card:hover,
+.openms-lib-topp-split__card:focus-within,
+.openms-lib-developers__card:hover,
+.openms-lib-developers__card:focus-visible,
+.openms-lib-developers__card:focus-within,
+.openms-lib-developers__route:hover,
+.openms-lib-developers__route:focus-visible,
+.contribute-way:hover,
+.contribute-way:focus-within,
+.contribute-channel:hover,
+.contribute-channel:focus-within,
+.governance-card:hover,
+.governance-card:focus-within,
+.sponsor-tier:hover,
+.sponsor-tier:focus-within,
+.sponsor-why__card:hover,
+.sponsor-why__card:focus-within,
+.leadership-card:hover,
+.leadership-card:focus-within,
+.fellowship-project-card:hover,
+.fellowship-project-card:focus-within,
+.developer-retreat-highlights__card:hover,
+.developer-retreat-highlights__card:focus-within,
+.donate-impact-card:hover,
+.donate-impact-card:focus-within,
+.home-metrics__card:hover,
+.trusted-by__card:hover,
+.trusted-by__wall-card:hover,
+.help-page__card--wide:hover {
+  min-height: var(--openms-equal-card-min-h) !important;
+  height: 100% !important;
+}
+
+/* Clamp body copy so equal shells don’t overflow */
+.ecosystem-home__card-text,
+.contact-home__card-text,
+.contact-page__support-card p,
+.keyfeatures-modern__topic-card p,
+.openms-lib-resources__explore-text,
+.openms-lib-resources__item-text,
+.openms-lib-topp-split__card-text,
+.openms-lib-developers__card-subtitle,
+.openms-lib-developers__card-text,
+.contribute-way__text,
+.contribute-channel__text,
+.governance-card__text,
+.sponsor-why__card-text,
+.sponsor-tier__blurb,
+.leadership-card__role,
+.fellowship-project-card__text,
+.developer-retreat-highlights__card-text,
+.donate-impact-card__text,
+.webapps-project-card__text,
+.webapps-project-detail-card__text,
+.webapps-archived-entry__text,
+.help-page__card--wide p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+@media (max-width: 720px) {
+  /* ── Content card grids: one full-width column ── */
+  .ecosystem-home__grid,
+  .community-news-events__grid,
+  .community-events-home__grid,
+  .keyfeatures-modern__topics,
+  .contact-home__grid,
+  .contact-page__support-list,
+  .contact-paths-grid,
+  .openms-lib-page--contact .contact-paths-grid,
+  .webapps-featured__grid,
+  .webapps-featured__grid--catalog,
+  .webapps-featured__grid--detail,
+  .webapps-affiliates__grid,
+  .webapps-archived__grid,
+  .openms-lib-about__mosaic,
+  .openms-lib-page--openms-lib .openms-lib-about__mosaic,
+  .coc-overview__principles,
+  .openms-lib-resources__grid,
+  .openms-lib-page--openms-lib .openms-lib-resources__grid,
+  .openms-lib-resources__explore-grid,
+  .openms-lib-resources__toolkit,
+  .openms-lib-topp-split__cards,
+  .openms-lib-developers__grid,
+  .openms-lib-developers__grid--routes,
+  .openms-lib-developers__cards-grid,
+  .openms-lib-list--tiles,
+  .contribute-channels__grid,
+  .contribute-channels__strip,
+  .contribute-ways__grid,
+  .openms-lib-about__benefits,
+  .governance-pillars,
+  .governance-pillars-grid,
+  .governance-compare,
+  .governance-compare-grid,
+  .help-page__resources,
+  .about-sponsors-grid,
+  .about-sponsorship-program__tiers,
+  .sponsor-tiers__grid,
+  .sponsor-why__grid,
+  .leadership-grid,
+  .publications-featured__list,
+  .fellowship-projects-grid,
+  .developer-retreat-highlights__grid,
+  .donate-impact-grid,
+  .privacy-overview__list,
+  .events-past-list,
+  .trusted-by__wall-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Featured WebApps logo rail — keep three logos in one row */
+  .openms-lib-page--webapps-pro .openms-lib-resources__examples-layout {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .openms-lib-page--webapps-pro .openms-lib-resources__examples-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Research Partnerships — keep five numbered tiles in one row */
+  .openms-lib-page--research-partnerships .rp-include__mosaic {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: 0 !important;
+  }
+
+  /* WebApps Features — one column on phones (inherits mosaic stack above) */
+  .openms-lib-page--webapps-pro .openms-lib-about__mosaic {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: 0 !important;
+  }
+
+  /* Logo tiles and avatars are thumbnails, not cards — pair them so the
+     lists stay scannable instead of becoming one very long column */
+  .sponsors-logo-grid,
+  .openms-lib-page--sponsor-us .sponsors-logo-grid,
+  .uni-partners__static,
+  .uni-partners--static .uni-partners__static,
+  .footer-sponsors__logos,
+  .contributors-members {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Our Sponsors page: three logos stay on one row */
+  .openms-lib-page--our-sponsors .sponsors-logo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.35rem 0.45rem;
+    max-width: 100%;
+  }
+
+  .openms-lib-page--our-sponsors .about-sponsors-logos__item {
+    min-height: 4.75rem;
+    padding: 0.2rem;
+  }
+
+  .openms-lib-page--our-sponsors .about-sponsors-logos__logo {
+    max-width: 100%;
+    max-height: 3.25rem;
+  }
+
+  .openms-lib-page--our-sponsors .about-sponsors-logos__item .about-sponsors-logos__logo[src*="Elixir"] {
+    max-width: 100%;
+    max-height: 4.5rem;
+  }
+
+  /* Partner logos: no marquee on phones — the animation is off-screen motion
+     users can't control, so show the static grid instead */
+  .uni-partners__marquee,
+  .uni-partners--home .uni-partners__marquee,
+  .home-page__block--partners .uni-partners--home .uni-partners__marquee {
+    display: none !important;
+  }
+
+  .uni-partners__static,
+  .uni-partners--home .uni-partners__static,
+  .home-page__block--partners .uni-partners--home .uni-partners__static {
+    gap: 0.6rem;
+    /* Replaces the margin the hidden marquee used to contribute */
+    margin-top: clamp(1rem, 2.5vh, 1.5rem);
+    padding-inline: 0;
+  }
+
+  /* Home variant pins each logo slot to a fixed width — let it fill its column */
+  .home-page__block--partners .uni-partners--home .uni-partners__static .uni-partners__item,
+  .uni-partners--home .uni-partners__static .uni-partners__item {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: 4.25rem;
+    min-height: 4.25rem;
+    max-height: 4.25rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Greyscale exists for the marquee's hover reveal; touch has no hover */
+  .home-page__block--partners .uni-partners--home .uni-partners__static .uni-partners__item img,
+  .uni-partners--home .uni-partners__static .uni-partners__item img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    opacity: 1;
+    filter: none;
+  }
+
+  .uni-partners__static > [role="listitem"] {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* ── Card shells: same width + equal height (1-col stacks) ── */
+  .about-sponsor-card,
+  .about-sponsorship-tier,
+  .community-events-home__card,
+  .contact-home__card,
+  .contact-page__support-card,
+  .contribute-channel,
+  .contribute-way,
+  .contribute-ways__feature,
+  .developer-retreat-highlights__card,
+  .donate-impact-card,
+  .ecosystem-home__card,
+  .events-past-card,
+  .fellowship-project-card,
+  .governance-card,
+  .governance-membership__card,
+  .help-page__card--wide,
+  .home-metrics__card,
+  .keyfeatures-modern__topic-card,
+  .leadership-card,
+  .openms-lib-core-tools__card,
+  .openms-lib-developers__card,
+  .openms-lib-developers__route,
+  .openms-lib-resource-card,
+  .openms-lib-resources__explore-card,
+  .openms-lib-resources__item,
+  .openms-lib-topp-split__card,
+  .openms-lib-topp__cta-card,
+  .sponsor-tier,
+  .sponsor-why__card,
+  .trusted-by__card,
+  .trusted-by__home-card,
+  .trusted-by__wall-card,
+  .webapps-project-card,
+  .webapps-project-detail-card,
+  .webapps-archived-entry {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: var(--openms-equal-card-min-h-mobile) !important;
+    min-height: var(--openms-equal-card-min-h-mobile) !important;
+    max-height: var(--openms-equal-card-min-h-mobile) !important;
+    margin-inline: 0;
+    overflow: hidden !important;
+    overflow-wrap: break-word;
+  }
+
+  /* Variable-length panels keep full width but not a fixed shell height */
+  .contact-page__form-card,
+  .contribute-coc-band__panel,
+  .contributors-exec-panel,
+  .events-past-panel,
+  .fellowship-page__form-card,
+  .fellowship-application__form-card,
+  .governance-cta-band__panel,
+  .news-entry,
+  .openms-lib-cite__card,
+  .privacy-details__item,
+  .privacy-overview__note,
+  .coc-details__item,
+  .coc-report,
+  .publications-cite-card,
+  .sponsor-benefits__panel,
+  .uni-partners__item {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto;
+    margin-inline: 0;
+    overflow-wrap: break-word;
+  }
+
+  .ecosystem-home__card:hover,
+  .ecosystem-home__card:focus-visible,
+  .contact-home__card:hover,
+  .contact-home__card:focus-visible,
+  .contact-page__support-card:hover,
+  .openms-lib-resources__explore-card:hover,
+  .openms-lib-resources__explore-card:focus-visible,
+  .openms-lib-topp-split__card:hover,
+  .openms-lib-topp-split__card:focus-within,
+  .openms-lib-developers__card:hover,
+  .openms-lib-developers__card:focus-visible,
+  .openms-lib-developers__card:focus-within,
+  .webapps-project-card:hover,
+  .webapps-project-detail-card:hover,
+  .sponsor-tier:hover,
+  .sponsor-why__card:hover,
+  .governance-card:hover,
+  .leadership-card:hover,
+  .fellowship-project-card:hover,
+  .donate-impact-card:hover,
+  .contribute-way:hover,
+  .contribute-channel:hover,
+  .keyfeatures-modern__topic-card:hover,
+  .home-metrics__card:hover {
+    height: var(--openms-equal-card-min-h-mobile) !important;
+    min-height: var(--openms-equal-card-min-h-mobile) !important;
+    max-height: var(--openms-equal-card-min-h-mobile) !important;
+  }
+
+  .webapps-featured__grid--catalog .webapps-project-card,
+  .webapps-featured__grid--catalog .webapps-project-card__surface,
+  .webapps-affiliates__grid .webapps-project-card,
+  .webapps-affiliates__grid .webapps-project-card__surface,
+  .home-page__block--projects .webapps-project-card--catalog,
+  .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__surface,
+  .home-page__block--projects .webapps-project-card--catalog:hover,
+  .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__surface:hover {
+    height: 17.5rem !important;
+    min-height: 17.5rem !important;
+    max-height: 17.5rem !important;
+  }
+
+  /* Grid/flex children must be allowed to shrink */
+  .webapps-featured__grid > *,
+  .webapps-featured__grid--catalog > *,
+  .webapps-featured__grid--detail > *,
+  .webapps-affiliates__grid > *,
+  .webapps-affiliates__item,
+  .webapps-archived__grid > *,
+  .openms-lib-about__mosaic > *,
+  .openms-lib-resources__grid > *,
+  .openms-lib-resources__explore-grid > *,
+  .openms-lib-developers__grid > *,
+  .openms-lib-developers__grid--routes > *,
+  .openms-lib-developers__cards-grid > *,
+  .contribute-channels__grid > *,
+  .contribute-ways__grid > *,
+  .governance-pillars-grid > *,
+  .governance-compare-grid > *,
+  .about-sponsors-grid > *,
+  .sponsor-tiers__grid > *,
+  .sponsor-why__grid > *,
+  .leadership-grid > *,
+  .fellowship-projects-grid > *,
+  .developer-retreat-highlights__grid > *,
+  .donate-impact-grid > * {
+    min-width: 0;
+    max-width: 100%;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  /* Card media never forces the card wider than the screen */
+  .webapps-project-card img,
+  .webapps-project-detail-card img,
+  .webapps-archived-entry img,
+  .openms-lib-about__tile img,
+  .openms-lib-resources__item img,
+  .uni-partners__item img,
+  .trusted-by__card img,
+  .trusted-by__wall-card img,
+  .leadership-card img,
+  .sponsors-logo-grid img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Long strings inside cards should wrap rather than widen the card */
+  .ecosystem-home__card-tag,
+  .home-metrics__value,
+  .publications-cite-card__authors-more,
+  .sponsor-tier__badge,
+  .help-page__card--wide a,
+  .keyfeatures-modern__topic-card a {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .contributors-members {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* Homepage metrics: keep 3 columns until phones, then one column */
+@media (min-width: 641px) {
+  .home-metrics__grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-metrics__grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}

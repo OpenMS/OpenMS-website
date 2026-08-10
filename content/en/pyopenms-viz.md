@@ -43,4 +43,7 @@ sidebar: false
 <div class="openms-lib-page__outro">
   {{< pyopenms-viz-developers >}}
 </div>
+<div class="openms-lib-page__cite">
+  {{< pyopenms-viz-cite >}}
+</div>
 </article>

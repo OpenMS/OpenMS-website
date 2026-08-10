@@ -1,9 +1,9 @@
 /* OpenMS brand palette — load before other site CSS (filename sorts first) */
 :root {
-  --fontFamily: "{{ .Site.Params.font.name | default "Montserrat" }}", system-ui, -apple-system,
+  --fontFamily: "Montserrat", system-ui, -apple-system,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --openms-font-heading: var(--fontFamily);
-  --openms-font-body: "{{ .Site.Params.bodyFont.name | default "Raleway" }}", system-ui, -apple-system,
+  --openms-font-body: "Raleway", system-ui, -apple-system,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   /* Primary headings — Montserrat (pt) */
@@ -11,6 +11,82 @@
   --openms-heading-xl-weight: 800;
   --openms-heading-lg-size: 20pt;
   --openms-heading-lg-weight: 700;
+
+  /* Shared page title design (heroes + section H2s) */
+  --openms-page-hero-title-size: calc(var(--openms-heading-xl-size) * 1.25);
+  --openms-page-hero-title-weight: var(--openms-heading-xl-weight);
+  --openms-page-hero-title-color: var(--openms-navy);
+  --openms-section-title-size: calc(var(--openms-heading-lg-size) * 1.15);
+  --openms-section-title-weight: var(--openms-heading-lg-weight);
+  --openms-section-title-color: var(--openms-navy);
+
+  /* Shared step/overview numbers — match Contribute channels 01/02/03 */
+  --openms-step-num-size: clamp(2.5rem, 5vw, 3.5rem);
+  --openms-step-num-color: rgba(var(--openms-navy-rgb), 0.1);
+  --openms-step-num-color-hover: rgba(var(--openms-navy-rgb), 0.22);
+  --openms-num-strip-border: rgba(var(--openms-navy-rgb), 0.1);
+  --openms-num-strip-hover-bg: rgba(var(--openms-blue-rgb), 0.03);
+  --openms-num-strip-pad-y: clamp(1.35rem, 3vw, 2rem);
+  --openms-num-strip-pad-x: clamp(0.85rem, 2vw, 1.35rem);
+  --openms-card-title-size: clamp(1rem, 1.4vw, 1.1rem);
+  --openms-card-title-color: rgba(var(--openms-dark-rgb), 0.82);
+  --openms-card-title-weight: 700;
+  --openms-card-title-weight-strong: 800;
+  --pro-card-icon-size: clamp(2.5rem, 4.2vw, 3.15rem);
+  --openms-card-icon-chip: 2rem;
+  --openms-card-icon-glyph: 0.85rem;
+  /* Shared glyph size for TOPP / Explore / Contribute cards */
+  --openms-card-icon-size: clamp(2.5rem, 3.8vw, 3rem);
+
+  /* Shared page spacing rhythm (all pages inherit these).
+     Default 75rem (~1200px) suits laptops; larger desktops step up so
+     cards/grids aren’t stranded in a narrow column. Cap grows with
+     viewport but stays off the edges via --openms-page-inline. */
+  --pro-max: 75rem;
+  --hub-wide-max: var(--pro-max);
+  /* Page side gutter — keep content off the screen edges (incl. notches) */
+  --openms-page-gutter: max(1.25rem, env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+  --pro-pad: max(var(--openms-page-gutter), clamp(1.25rem, 5vw, 2.5rem));
+  --olib-pad-x: max(var(--openms-page-gutter), clamp(1.25rem, 5vw, 2.5rem));
+  --home-pad-x: var(--olib-pad-x);
+  /* Matches homepage: side gutter, or center within --pro-max (no extra gutter) */
+  --openms-page-inline: max(var(--olib-pad-x), calc((100% - var(--pro-max)) / 2));
+  --pro-section-y: clamp(4rem, 9vw, 6.5rem);
+  --pro-space-1: 0.5rem;
+  --pro-space-2: 0.75rem;
+  --pro-space-3: 1rem;
+  --pro-space-4: 1.25rem;
+  --pro-space-5: 1.75rem;
+  --pro-space-6: clamp(2.25rem, 4.5vw, 3.25rem);
+  --pro-stack-eyebrow: var(--pro-space-1);
+  --pro-stack-lead: var(--pro-space-2);
+  --pro-stack-actions: var(--pro-space-5);
+  --pro-head-to-content: var(--pro-space-6);
+  --pro-card-gap: clamp(1rem, 2vw, 1.5rem);
+  --pro-card-pad: clamp(1rem, 2vw, 1.2rem);
+  --pro-card-pad-lg: clamp(1rem, 2vw, 1.2rem);
+  --pro-col-gap: clamp(2rem, 5vw, 4rem);
+  --olib-section-y: var(--pro-section-y);
+  --olib-card-gap: var(--pro-card-gap);
+  --olib-block-gap: var(--pro-section-y);
+  /* Hero / cite / clusters share the same shell width as body content */
+  --pro-hero-content-max: min(100%, var(--pro-max));
+  --pro-cite-promo-max: 26rem;
+  --pro-cite-intro-max: 22ch;
+  --pro-cluster-max: min(100%, var(--pro-max));
+
+  /* Shared text links (inline content) */
+  --openms-content-link: var(--openms-navy);
+  --openms-content-link-hover: var(--openms-blue);
+  --openms-content-link-weight: 600;
+  --openms-content-link-underline-offset: 0.12em;
+  --pro-link: var(--openms-content-link);
+  --home-link-color: var(--openms-content-link);
+
+  /* Shared text CTA links (Read more →) */
+  --openms-cta-link: var(--openms-navy);
+  --openms-cta-link-hover: var(--openms-blue);
+  --openms-cta-link-weight: 700;
 
   /* Body & secondary headings — Raleway (pt) */
   --openms-text-min: 11pt;
@@ -32,7 +108,7 @@
   --openms-navbar-desktop-gap: clamp(0.2rem, 0.65vw, 0.55rem);
   --openms-navbar-desktop-pad-x: clamp(0.25rem, 0.55vw, 0.5rem);
   --openms-navbar-desktop-font-size: clamp(0.8125rem, 0.95vw, 15px);
-  --openms-navbar-actions-gap: clamp(0.5rem, 1vw, 0.85rem);
+  --openms-navbar-actions-gap: var(--openms-btn-gap, 0.75rem);
   /* Nav breakpoints: burger ≤1023px; horizontal bar from 1024px unless search overlaps links (JS) */
   --openms-nav-mobile-max: 1023px;
   --openms-nav-desktop-min: 1024px;
@@ -45,9 +121,47 @@
   --openms-presentation-size: 18pt;
   --openms-body-weight: 400;
   --openms-secondary-heading-weight: 400;
+  --openms-label-weight: 600;
+  --openms-eyebrow-weight: 700;
+  --openms-meta-weight: 600;
+
+  /*
+    Semantic text roles (light surfaces).
+    Prefer these over one-off rgba(dark/navy, …) so primary / muted / soft
+    stay consistent across home, product, and content pages.
+  */
+  --openms-text: var(--openms-navy);
+  --openms-text-body: rgba(var(--openms-dark-rgb), 0.86);
+  --openms-text-muted: rgba(var(--openms-dark-rgb), 0.72);
+  --openms-text-soft: rgba(var(--openms-dark-rgb), 0.55);
+  --openms-text-faint: rgba(var(--openms-dark-rgb), 0.42);
+  --openms-text-disabled: rgba(var(--openms-dark-rgb), 0.38);
+  --openms-text-eyebrow: rgba(var(--openms-blue-rgb), 0.72);
+  /* Status — reuse brand hues; no separate green in the palette */
+  --openms-text-success: var(--openms-blue);
+  --openms-text-warning: var(--openms-orange);
+  --openms-text-error: var(--openms-pink);
+  /* On dark / navy chrome */
+  --openms-text-on-dark: rgba(var(--openms-white-rgb), 0.92);
+  --openms-text-muted-on-dark: rgba(var(--openms-white-rgb), 0.72);
+  --openms-text-soft-on-dark: rgba(var(--openms-white-rgb), 0.62);
+
+  /* Aliases used by page scopes (home / pro / olib) */
+  --pro-text: var(--openms-text);
+  --pro-text-muted: var(--openms-text-muted);
+  --pro-text-soft: var(--openms-text-soft);
+  --pro-text-on-dark: var(--openms-text-muted-on-dark);
+  --pro-kicker-on-dark: var(--openms-text-soft-on-dark);
+  --pro-eyebrow: var(--openms-text-eyebrow);
+  --pro-card-title: var(--openms-card-title-color);
+  --olib-text-muted: var(--openms-text-muted);
+  --home-body-color: var(--openms-text-muted);
+  --home-eyebrow-color: var(--openms-text-eyebrow);
+  --home-title-color: var(--openms-section-title-color);
+  --home-card-title-color: var(--openms-card-title-color);
 
   /* Quotes, callouts & emphasis — JetBrains Mono thin */
-  --openms-font-mono: "{{ .Site.Params.monoFont.name | default "JetBrains Mono" }}", ui-monospace,
+  --openms-font-mono: "JetBrains Mono", ui-monospace,
     "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
   --openms-mono-weight: 100;
 
@@ -122,10 +236,10 @@
   --openms-mobile-menu-footer-gap: 1.15rem;
   --openms-mobile-menu-footer-lift: 1.75rem;
   --openms-mobile-menu-footer-glow-pad: var(--openms-btn-glow-size, 6px);
-  --openms-mobile-cta-min-height: 2.45rem;
-  --openms-mobile-cta-font-size: 0.875rem;
-  --openms-mobile-cta-pad-y: 0.55rem;
-  --openms-mobile-cta-pad-x: 0.75rem;
+  --openms-mobile-cta-min-height: var(--openms-btn-min-height, 2.75rem);
+  --openms-mobile-cta-font-size: var(--openms-btn-font-size, var(--openms-text-min));
+  --openms-mobile-cta-pad-y: var(--openms-btn-padding-y, 0.7rem);
+  --openms-mobile-cta-pad-x: var(--openms-btn-padding-x, 1.25rem);
 
   --colorPrimaryDark: var(--openms-blue);
   --colorPrimaryDarkBtn: var(--openms-blue);
@@ -137,7 +251,7 @@
   --colorHeading: var(--openms-dark);
   --colorHighlight: var(--openms-yellow);
   --colorShadow: rgba(var(--openms-dark-rgb), 0.1);
-  --colorContentLink: var(--openms-blue);
+  --colorContentLink: var(--openms-content-link);
   --colorIcon: var(--openms-blue);
   --colorNoteHeading: var(--openms-blue);
   --colorNoteContent: var(--openms-grey);
@@ -147,4 +261,230 @@
   --colorWarningContent: var(--openms-grey);
   --colorTipHeading: var(--openms-purple);
   --colorTipContent: var(--openms-grey);
+}
+
+/* Shared step / overview numbers — large pale display (Contribute channels) */
+.contribute-channel__index,
+.openms-lib-about__num,
+.openms-lib-about__benefit-num,
+.openms-lib-about__list-num,
+.openms-step__index,
+.openms-lib-list__index,
+.home-pathways__step-num,
+.coc-principle__num,
+.coc-summary__num,
+.privacy-overview__num,
+.webapps-archived__notice-index,
+.keyfeatures-modern__topic-index {
+  display: block;
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  margin: 0 0 0.2rem;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-step-num-size);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--openms-step-num-color);
+  box-sizing: border-box;
+  transition: color 0.22s ease;
+}
+
+.openms-lib-about__tile:hover .openms-lib-about__num,
+.openms-lib-about__tile:focus-within .openms-lib-about__num,
+.openms-lib-about__benefit:hover .openms-lib-about__benefit-num,
+.openms-lib-about__benefit:focus-within .openms-lib-about__benefit-num,
+.contribute-channel:hover .contribute-channel__index,
+.contribute-channel:focus-within .contribute-channel__index,
+.coc-principle:hover .coc-principle__num,
+.coc-principle:focus-within .coc-principle__num,
+.privacy-overview__item:hover .privacy-overview__num {
+  color: var(--openms-step-num-color-hover);
+  background: transparent;
+  border-color: transparent;
+}
+
+/* Titles next to step / overview numbers */
+.openms-lib-about__tile-title,
+.openms-lib-about__benefit-title,
+.openms-lib-about__list-title,
+.home-pathways__step-label {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-card-title-size);
+  font-weight: var(--openms-card-title-weight, 700);
+  line-height: 1.3;
+  letter-spacing: normal;
+  color: var(--openms-card-title-color);
+}
+
+/* Canonical inline content links — navy, weight 600, underline on hover */
+.openms-lib-layout :where(p, li, dd, td, .content) > a:not([class]):not(.openms-lib-btn),
+.home-page :where(p, li, dd, td) > a:not([class]):not(.openms-lib-btn):not(.navbar-item),
+.contribute-page-layout :where(p, li) > a:not([class]):not(.openms-lib-btn),
+.news-page-layout :where(p, li) > a:not([class]):not(.openms-lib-btn),
+.community-calendar-layout :where(p, li) > a:not([class]):not(.openms-lib-btn),
+[class$="-page-layout"] :where(p, li) > a:not([class]):not(.openms-lib-btn),
+.openms-content-link {
+  color: var(--openms-content-link);
+  font-weight: var(--openms-content-link-weight);
+  text-decoration: none;
+  text-underline-offset: var(--openms-content-link-underline-offset);
+}
+
+.openms-lib-layout :where(p, li, dd, td, .content) > a:not([class]):not(.openms-lib-btn):hover,
+.openms-lib-layout :where(p, li, dd, td, .content) > a:not([class]):not(.openms-lib-btn):focus-visible,
+.home-page :where(p, li, dd, td) > a:not([class]):not(.openms-lib-btn):not(.navbar-item):hover,
+.home-page :where(p, li, dd, td) > a:not([class]):not(.openms-lib-btn):not(.navbar-item):focus-visible,
+.contribute-page-layout :where(p, li) > a:not([class]):not(.openms-lib-btn):hover,
+.contribute-page-layout :where(p, li) > a:not([class]):not(.openms-lib-btn):focus-visible,
+.news-page-layout :where(p, li) > a:not([class]):not(.openms-lib-btn):hover,
+.news-page-layout :where(p, li) > a:not([class]):not(.openms-lib-btn):focus-visible,
+.community-calendar-layout :where(p, li) > a:not([class]):not(.openms-lib-btn):hover,
+.community-calendar-layout :where(p, li) > a:not([class]):not(.openms-lib-btn):focus-visible,
+[class$="-page-layout"] :where(p, li) > a:not([class]):not(.openms-lib-btn):hover,
+[class$="-page-layout"] :where(p, li) > a:not([class]):not(.openms-lib-btn):focus-visible,
+.openms-content-link:hover,
+.openms-content-link:focus-visible {
+  color: var(--openms-content-link-hover);
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Canonical text CTA links (Read more →) */
+.openms-cta-link,
+.webapps-project-card__cta,
+.news-home__card-cta,
+.contact-home__card-cta,
+.community-events-home__card-cta,
+.events-past-card__cta,
+.contribute-channel__link,
+.contribute-way__link,
+.openms-lib-about__tile-link,
+.coc-report__link,
+.privacy-overview__note-link,
+.contact-page__path-link,
+.webapps-featured__extra-link {
+  color: var(--openms-cta-link);
+  font-weight: var(--openms-cta-link-weight);
+  text-decoration: none;
+}
+
+.openms-cta-link:hover,
+.openms-cta-link:focus-visible,
+.webapps-project-card__surface:hover .webapps-project-card__cta,
+.webapps-project-card__surface:focus-visible .webapps-project-card__cta,
+.news-home__card-link:hover .news-home__card-cta,
+.news-home__card-link:focus-visible .news-home__card-cta,
+.contact-home__card:hover .contact-home__card-cta,
+.contact-home__card:focus-visible .contact-home__card-cta,
+.community-events-home__card-link:hover .community-events-home__card-cta,
+.community-events-home__card-link:focus-visible .community-events-home__card-cta,
+.contribute-channel:hover .contribute-channel__link,
+.contribute-channel:focus-within .contribute-channel__link,
+.contribute-channel__link:hover,
+.contribute-channel__link:focus-visible,
+.contribute-way:hover .contribute-way__link,
+.contribute-way:focus-within .contribute-way__link,
+.contribute-way__link:hover,
+.contribute-way__link:focus-visible,
+.openms-lib-about__tile:hover .openms-lib-about__tile-link,
+.openms-lib-about__tile:focus-within .openms-lib-about__tile-link,
+.openms-lib-about__tile-link:hover,
+.openms-lib-about__tile-link:focus-visible,
+.coc-report__link:hover,
+.coc-report__link:focus-visible,
+.privacy-overview__note-link:hover,
+.privacy-overview__note-link:focus-visible,
+.contact-page__path-link:hover,
+.contact-page__path-link:focus-visible,
+.webapps-featured__extra-link:hover,
+.webapps-featured__extra-link:focus-visible {
+  color: var(--openms-cta-link-hover);
+  outline: none;
+}
+
+/* Mobile — keep a clear side gutter on every page */
+@media (max-width: 720px) {
+  :root,
+  .openms-lib-page,
+  .home-page,
+  [class$="-page-layout"],
+  .community-calendar-layout {
+    --openms-page-gutter: max(1.35rem, env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+    --olib-pad-x: var(--openms-page-gutter);
+    --pro-pad: var(--openms-page-gutter);
+    --home-pad-x: var(--openms-page-gutter);
+    --openms-page-inline: var(--openms-page-gutter);
+    --pro-cite-promo-max: min(100%, 22rem);
+    --pro-cite-intro-max: 20ch;
+  }
+
+  .openms-lib-page__intro-panel,
+  .openms-lib-page__body > .openms-lib-page__anchor,
+  [class$="-page-layout"] .openms-lib-hero[class*="-page-hero"],
+  .home-page__block,
+  .webapps-featured,
+  .webapps-affiliates,
+  .webapps-archived {
+    padding-inline: var(--olib-pad-x);
+  }
+
+  /* Footer gutters live on #footer; keep the --pro-max rail flush */
+  .footer-redesign {
+    padding-inline: var(--openms-page-inline, var(--olib-pad-x));
+  }
+
+  .footer-inner,
+  .footer-bottom {
+    padding-inline: 0;
+  }
+
+  /* Avoid double gutters when the section already insets content */
+  .webapps-featured__inner,
+  .webapps-affiliates__inner,
+  .webapps-archived__inner {
+    padding-inline: 0;
+  }
+}
+
+/* Large desktops — use width without becoming billboard-wide */
+@media (min-width: 1280px) {
+  :root {
+    --pro-max: min(88rem, 94vw);
+    --hub-wide-max: var(--pro-max);
+    --pro-card-pad: clamp(1.05rem, 1.4vw, 1.35rem);
+    --pro-card-pad-lg: clamp(1.05rem, 1.4vw, 1.35rem);
+    --pro-card-gap: clamp(1.1rem, 1.6vw, 1.65rem);
+    --pro-col-gap: clamp(2.25rem, 4vw, 4.5rem);
+    --pro-hero-content-max: min(100%, var(--pro-max));
+    --pro-cite-promo-max: 28rem;
+    --pro-cite-intro-max: 26ch;
+    --pro-cluster-max: min(100%, var(--pro-max));
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --pro-max: min(96rem, 92vw);
+    --hub-wide-max: var(--pro-max);
+    --pro-hero-content-max: min(100%, var(--pro-max));
+    --pro-cite-promo-max: 30rem;
+    --pro-cite-intro-max: 28ch;
+    --pro-cluster-max: min(100%, var(--pro-max));
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --pro-max: min(104rem, 90vw);
+    --hub-wide-max: var(--pro-max);
+    --pro-hero-content-max: min(100%, var(--pro-max));
+    --pro-cluster-max: min(100%, var(--pro-max));
+  }
 }

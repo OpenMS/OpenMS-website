@@ -12,8 +12,8 @@
 }
 
 .hero-modern-wrap > .hero-modern__stats--below {
-  width: min(100%, 75rem);
-  max-width: 75rem;
+  width: min(100%, var(--pro-max, 75rem));
+  max-width: var(--pro-max, 75rem);
   margin: clamp(1rem, 2.5vh, 1.5rem) auto 0;
   padding: clamp(1.25rem, 3vh, 1.75rem) clamp(1rem, 4vw, 2rem);
   min-height: clamp(7rem, 16vh, 9.5rem);
@@ -246,7 +246,7 @@
   column-gap: 3.75rem;
   row-gap: clamp(1rem, 2vh, 1.75rem);
   align-items: center;
-  max-width: 75rem;
+  max-width: var(--pro-max, 75rem);
   width: 100%;
   margin: 0 auto;
 }

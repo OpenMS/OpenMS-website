@@ -12,14 +12,6 @@
           Let's talk about your <span class="openms-lib-hero__accent">workflow</span>
         </h1>
         <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
-        <div class="openms-lib-hero__actions" aria-label="Contact actions">
-          <a class="openms-lib-btn openms-lib-btn--primary" href="#contact-form">
-            <span class="openms-lib-btn__label">Send a message</span>
-          </a>
-          <a class="openms-lib-btn openms-lib-btn--ghost" href="#contact-paths">
-            <span class="openms-lib-btn__label">Other ways</span>
-          </a>
-        </div>
       </div>
     </div>
   </header>
@@ -27,22 +19,14 @@
 
 <div class="openms-lib-page__body" aria-label="Contact options">
   <div id="contact-form" class="openms-lib-page__anchor">
-    <section class="openms-lib-resources openms-lib-resources--no-feature contact-application" aria-labelledby="contact-form-title">
-      <div class="openms-lib-resources__inner contact-application__inner">
-        <header class="openms-lib-resources__head contact-application__head">
+    <section class="openms-lib-resources openms-lib-resources--no-feature" aria-labelledby="contact-form-title">
+      <div class="openms-lib-resources__inner">
+        <header class="openms-lib-resources__head">
           <p class="openms-lib-resources__eyebrow">Message</p>
-          <h2 id="contact-form-title" class="openms-lib-resources__title">Welcome To OpenMS</h2>
-          <p class="contact-application__lead-intro">Thanks for your interest in OpenMS!</p>
-          <div class="contact-application__lead-columns">
-            <p class="contact-application__lead-col">
-              <span class="contact-application__lead-label">Support</span>
-              <span class="contact-application__lead-text">Taking the time to fill out this form can help us better provide you with support and focus development on the tools you are interested in.</span>
-            </p>
-            <p class="contact-application__lead-col">
-              <span class="contact-application__lead-label">Privacy</span>
-              <span class="contact-application__lead-text">Your information will be kept private and used only for communication (with your consent) and, in anonymized form, for statistical purposes.</span>
-            </p>
-          </div>
+          <h2 id="contact-form-title" class="openms-lib-resources__title">Send us a message</h2>
+          <p class="openms-lib-resources__lead">
+            Thanks for your interest in OpenMS. Your information stays private and is used only for communication and anonymized statistics.
+          </p>
         </header>
         <div class="contact-application__form">
           {{ partial "tally-form-embed.html" . }}
@@ -56,7 +40,7 @@
       <div class="openms-lib-resources__inner">
         <header class="openms-lib-resources__head">
           <p class="openms-lib-resources__eyebrow">More options</p>
-          <h2 id="contact-paths-title" class="openms-lib-resources__title">Other ways to reach us</h2>
+          <h2 id="contact-paths-title" class="openms-lib-resources__title">Ways to reach us</h2>
           <p class="openms-lib-resources__lead">Prefer email, community chat, or self-service help? Pick the option that fits.</p>
         </header>
         <div class="openms-lib-resources__toolkit">
@@ -64,6 +48,26 @@
             {{ partial "contact-email-aside.html" . }}
             {{ partial "contact-alternatives.html" . }}
           </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="openms-lib-page__outro">
+  <div id="get-help" class="openms-lib-page__anchor">
+    <section class="contribute-coc-band" aria-labelledby="contact-cta-title">
+      <div class="contribute-coc-band__panel">
+        <div class="contribute-coc-band__copy">
+          <p class="contribute-coc-band__kicker">Need a hand?</p>
+          <p class="contribute-coc-band__text">
+            <strong id="contact-cta-title">Looking for docs or community support?</strong>
+            <span class="contribute-coc-band__note">Browse Help for guides and consulting options, or jump into Contribute to join the conversation.</span>
+          </p>
+        </div>
+        <div class="contribute-coc-band__actions" role="group" aria-label="Support actions">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/help/">OpenMS Help</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost openms-lib-cta-band__btn-ghost" href="/contribute/">Contribute</a>
         </div>
       </div>
     </section>

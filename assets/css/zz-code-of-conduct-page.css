@@ -1,0 +1,687 @@
+/* Code of Conduct — polished hub layout aligned with Privacy / governance pages */
+
+.openms-lib-page--code-of-conduct .openms-lib-hero--pro {
+  padding-bottom: 0;
+}
+
+.openms-lib-page--code-of-conduct .openms-lib-hero__title {
+  max-width: 16ch;
+}
+
+.openms-lib-page--code-of-conduct .openms-lib-hero__lead {
+  max-width: 40ch;
+}
+
+.openms-lib-page--code-of-conduct.openms-lib-page--openms-lib .openms-lib-page__body > .openms-lib-page__anchor,
+.openms-lib-page--code-of-conduct .openms-lib-page__body > .openms-lib-page__anchor,
+.openms-lib-page--code-of-conduct .openms-lib-page__outro {
+  padding-inline: 0;
+}
+
+.openms-lib-page--code-of-conduct.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) .openms-lib-page__body > .openms-lib-page__anchor,
+.openms-lib-page--code-of-conduct .openms-lib-page__body > .openms-lib-page__anchor {
+  padding-top: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem)) !important;
+  padding-bottom: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem)) !important;
+}
+
+.openms-lib-page--code-of-conduct #summary {
+  background: var(--pro-band-soft, #f4f6f9) !important;
+}
+
+.openms-lib-page--code-of-conduct #detailed {
+  background: var(--openms-white) !important;
+}
+
+/* Shared content column — same width as Privacy (page gutters only, no double max-width) */
+.openms-lib-page--code-of-conduct.openms-lib-page--openms-lib .openms-lib-about__inner,
+.openms-lib-page--code-of-conduct .coc-overview__inner,
+.openms-lib-page--code-of-conduct .coc-details__inner {
+  display: grid;
+  gap: clamp(2.75rem, 5.5vw, 4rem);
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: var(--openms-page-inline);
+  box-sizing: border-box;
+}
+
+/* —— Overview head: left-aligned for policy readability —— */
+.openms-lib-page--code-of-conduct .coc-overview__head,
+.openms-lib-page--code-of-conduct .coc-overview .openms-lib-about__head {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  text-align: left;
+  max-width: min(100%, 40rem);
+  margin-inline: 0;
+}
+
+.openms-lib-page--code-of-conduct .coc-overview .openms-lib-about__head-copy {
+  justify-items: start;
+}
+
+.openms-lib-page--code-of-conduct .coc-overview .openms-lib-about__eyebrow {
+  justify-content: flex-start;
+}
+
+.openms-lib-page--code-of-conduct .coc-overview .openms-lib-about__title,
+.openms-lib-page--code-of-conduct .coc-overview .openms-lib-about__lead {
+  text-align: left;
+  margin-inline: 0;
+}
+
+.openms-lib-page--code-of-conduct .coc-overview .openms-lib-about__lead {
+  max-width: min(100%, 46rem);
+}
+
+/* —— Principles: numbered items with clear breathing room —— */
+.openms-lib-page--code-of-conduct .coc-overview__principles {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem) clamp(1.35rem, 2.8vw, 2.25rem);
+  width: 100%;
+  margin: 0;
+  padding: clamp(0.35rem, 1vw, 0.75rem) 0 0;
+  list-style: none;
+  border-top: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+}
+
+.openms-lib-page--code-of-conduct .coc-principle {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: clamp(1.15rem, 2vw, 1.5rem) 0.35rem 0.25rem;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.openms-lib-page--code-of-conduct .coc-principle:last-child {
+  padding-right: 0.35rem;
+}
+
+.openms-lib-page--code-of-conduct .coc-principle:first-child {
+  padding-left: 0;
+}
+
+/* Principle numbers use shared step-num tokens (Contribute channels) */
+
+.openms-lib-page--code-of-conduct .coc-principle__body {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.openms-lib-page--code-of-conduct .coc-principle__num {
+  color: var(--openms-step-num-color) !important;
+}
+
+.openms-lib-page--code-of-conduct .coc-principle:hover .coc-principle__num,
+.openms-lib-page--code-of-conduct .coc-principle:focus-within .coc-principle__num {
+  color: var(--openms-step-num-color-hover) !important;
+}
+
+.openms-lib-page--code-of-conduct .coc-principle__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-card-title-size, clamp(1rem, 1.4vw, 1.1rem));
+  font-weight: var(--openms-card-title-weight, 700);
+  line-height: 1.3;
+  color: var(--openms-card-title-color, var(--pro-card-title, rgba(var(--openms-dark-rgb), 0.82))) !important;
+}
+
+.openms-lib-page--code-of-conduct .coc-principle__text {
+  margin: 0;
+  font-size: var(--openms-body-size);
+  line-height: 1.5;
+  color: rgba(var(--openms-navy-rgb), 0.68);
+}
+
+/* —— Report callout —— */
+.openms-lib-page--code-of-conduct .coc-report {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem 1.75rem;
+  width: 100%;
+  margin: 0;
+  padding: clamp(1.15rem, 2.5vw, 1.45rem) clamp(1.2rem, 2.8vw, 1.6rem);
+  border: none;
+  border-radius: var(--pro-radius, 0.85rem);
+  background: var(--openms-white);
+  box-shadow: var(--pro-shadow, 0 0.15rem 0.65rem rgba(var(--openms-navy-rgb), 0.04));
+}
+
+.openms-lib-page--code-of-conduct .coc-report__copy {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.openms-lib-page--code-of-conduct .coc-report__kicker {
+  margin: 0;
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pro-eyebrow, rgba(var(--openms-blue-rgb), 0.72));
+}
+
+.openms-lib-page--code-of-conduct .coc-report__text {
+  margin: 0;
+  font-size: var(--openms-body-size);
+  line-height: 1.55;
+  color: rgba(var(--openms-dark-rgb), 0.78);
+}
+
+.openms-lib-page--code-of-conduct .coc-report__text a,
+.openms-lib-page--code-of-conduct .coc-details__answer a {
+  color: var(--openms-content-link, var(--openms-navy));
+  font-weight: var(--openms-content-link-weight, 600);
+  text-decoration: none;
+  text-underline-offset: var(--openms-content-link-underline-offset, 0.12em);
+  overflow-wrap: anywhere;
+}
+
+.openms-lib-page--code-of-conduct .coc-report__text a:hover,
+.openms-lib-page--code-of-conduct .coc-details__answer a:hover,
+.openms-lib-page--code-of-conduct .coc-report__text a:focus-visible,
+.openms-lib-page--code-of-conduct .coc-details__answer a:focus-visible {
+  color: var(--openms-content-link-hover, var(--openms-blue));
+  text-decoration: underline;
+}
+
+.openms-lib-page--code-of-conduct .coc-report__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  font-size: var(--openms-text-min);
+  font-weight: var(--openms-cta-link-weight, 700);
+  line-height: 1.35;
+  color: var(--openms-cta-link, var(--openms-navy));
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.openms-lib-page--code-of-conduct .coc-report__link:hover,
+.openms-lib-page--code-of-conduct .coc-report__link:focus-visible {
+  color: var(--openms-cta-link-hover, var(--openms-blue));
+  outline: none;
+}
+
+/* —— Detailed accordion —— */
+.openms-lib-page--code-of-conduct .coc-details {
+  /* Bottom spacing comes from the outro band so soft→white→soft abut cleanly */
+  padding-bottom: 0;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__head {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__head-copy {
+  display: grid;
+  justify-items: start;
+  text-align: left;
+  max-width: min(100%, 42rem);
+}
+
+.openms-lib-page--code-of-conduct .coc-details__head-copy .openms-lib-resources__lead {
+  max-width: min(100%, 42rem);
+  margin-inline: 0;
+  text-align: left;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__list {
+  display: grid;
+  gap: 0.55rem;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__item {
+  margin: 0;
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+  border-radius: var(--pro-radius, 0.85rem);
+  background: var(--openms-white);
+  box-shadow: none;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__item[open] {
+  border-color: rgba(var(--openms-blue-rgb), 0.28);
+  box-shadow: 0 0.35rem 1.1rem rgba(var(--openms-navy-rgb), 0.05);
+}
+
+.openms-lib-page--code-of-conduct .coc-details__question {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.05rem 1.2rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__question::-webkit-details-marker {
+  display: none;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__question::after {
+  content: "+";
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(var(--openms-blue-rgb), 0.08);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--openms-blue);
+}
+
+.openms-lib-page--code-of-conduct .coc-details__item[open] .coc-details__question::after {
+  content: "−";
+  background: rgba(var(--openms-blue-rgb), 0.12);
+}
+
+.openms-lib-page--code-of-conduct .coc-details__question:focus-visible {
+  outline: 2px solid var(--openms-blue);
+  outline-offset: -2px;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__question-copy {
+  display: grid;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__question-title {
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-card-title-size, clamp(1rem, 1.4vw, 1.12rem));
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--openms-navy);
+}
+
+.openms-lib-page--code-of-conduct .coc-details__question-summary {
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size);
+  line-height: 1.45;
+  color: rgba(var(--openms-dark-rgb), 0.68);
+}
+
+.openms-lib-page--code-of-conduct .coc-details__answer {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0 1.2rem 1.25rem;
+  border-top: 1px solid rgba(var(--openms-navy-rgb), 0.06);
+  padding-top: 1rem;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__answer p,
+.openms-lib-page--code-of-conduct .coc-details__answer li {
+  margin: 0;
+  font-size: var(--openms-body-size);
+  line-height: 1.65;
+  color: rgba(var(--openms-dark-rgb), 0.86);
+}
+
+.openms-lib-page--code-of-conduct .coc-details__answer ul,
+.openms-lib-page--code-of-conduct .coc-details__answer ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__steps {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: coc-step;
+  gap: 0.65rem;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__steps li {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.45rem;
+  align-items: start;
+  padding: 0.15rem 0;
+  border-radius: 0;
+  background: transparent;
+  counter-increment: coc-step;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__steps li::before {
+  content: counter(coc-step, decimal-leading-zero);
+  display: block;
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.65rem, 3vw, 2.15rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  color: var(--openms-step-num-color);
+  transition: color 0.22s ease;
+}
+
+.openms-lib-page--code-of-conduct .coc-details__steps li:hover::before,
+.openms-lib-page--code-of-conduct .coc-details__steps li:focus-within::before {
+  color: var(--openms-step-num-color-hover, var(--openms-navy));
+  background: transparent;
+}
+
+/* —— Outro CTA band —— */
+.openms-lib-page--code-of-conduct .openms-lib-page__outro {
+  background: var(--pro-band-soft, #f4f6f9);
+  padding-inline: 0;
+  padding-block: 0;
+}
+
+.openms-lib-page--code-of-conduct .openms-lib-page__outro > .openms-lib-page__anchor {
+  padding-inline: var(--openms-page-inline);
+  padding-block: clamp(6.5rem, 14vw, 9.5rem) clamp(4.5rem, 10vw, 7rem);
+  box-sizing: border-box;
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: 0;
+  box-sizing: border-box;
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--pro-stack-actions, 1.25rem);
+  margin: 0;
+  padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.25rem, 3vw, 2rem);
+  border: none;
+  border-radius: var(--pro-radius, 0.85rem);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(var(--openms-blue-rgb), 0.28), transparent 42%),
+    var(--openms-navy);
+  box-shadow: none;
+  color: var(--openms-white);
+  text-align: center;
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band__copy {
+  flex: initial;
+  max-width: 46ch;
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band__kicker {
+  margin: 0 0 var(--pro-stack-eyebrow, 0.45rem);
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pro-kicker-on-dark, rgba(var(--openms-white-rgb), 0.72));
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band__text {
+  margin: 0;
+  color: var(--openms-white);
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band__text strong {
+  display: block;
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-section-title-size, calc(var(--openms-heading-lg-size) * 1.15));
+  font-weight: var(--openms-section-title-weight, var(--openms-heading-lg-weight));
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--openms-white);
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band__note {
+  display: block;
+  margin-top: var(--pro-stack-lead, 0.75rem);
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.6;
+  color: rgba(var(--openms-white-rgb), 0.88);
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band__note a {
+  color: rgba(var(--openms-white-rgb), 0.95);
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band__note a:hover {
+  color: var(--openms-white);
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--openms-btn-gap, 0.75rem);
+}
+
+/* Match other navy CTA bands (Privacy / governance / sponsor-us) */
+.openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-lib-btn {
+  min-width: clamp(10rem, 22vw, 14rem);
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.22);
+  transition: var(--openms-btn-motion);
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-lib-btn--primary {
+  border: 2px solid var(--openms-white);
+  background: var(--openms-white);
+  color: var(--openms-navy) !important;
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-lib-btn--primary:hover,
+.openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-lib-btn--primary:focus-visible,
+.openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-lib-btn--primary:active {
+  border-color: var(--openms-white);
+  background: var(--openms-white);
+  color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale));
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) rgba(255, 255, 255, 0.22);
+  outline: none;
+  text-decoration: none;
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-lib-btn--ghost {
+  border: 2px solid rgba(var(--openms-white-rgb), 0.34) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--openms-white) !important;
+  text-decoration: none !important;
+  box-shadow: 0 0 0 0 var(--openms-btn-glow) !important;
+}
+
+.openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-lib-btn--ghost:hover,
+.openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-lib-btn--ghost:focus-visible,
+.openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-lib-btn--ghost:active,
+.openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-lib-cta-band__btn-ghost:hover,
+.openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-lib-cta-band__btn-ghost:focus-visible,
+.openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-lib-cta-band__btn-ghost:active {
+  /* Match navbar “Partner with OpenMS”: outline stays, scale + glow only */
+  border-color: rgba(var(--openms-white-rgb), 0.34) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--openms-white) !important;
+  transform: scale(var(--openms-btn-hover-scale));
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow) !important;
+  outline: none;
+  text-decoration: none !important;
+}
+
+@media (max-width: 1100px) {
+  .openms-lib-page--code-of-conduct .coc-overview__principles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .openms-lib-page--code-of-conduct .openms-lib-hero__actions {
+    width: 100%;
+  }
+
+  .openms-lib-page--code-of-conduct .openms-lib-hero__actions .openms-btn-primary,
+  .openms-lib-page--code-of-conduct .openms-lib-hero__actions .about-cta-btn--donate {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-overview__principles {
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-principle {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 0.85rem 1rem;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+  }
+
+  .openms-lib-page--code-of-conduct .coc-principle:first-child {
+    border-top: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+    padding-left: 0;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-principle:last-child {
+    border-bottom: none;
+    padding-right: 0;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-principle__num {
+    font-size: 1.45rem;
+    margin-top: 0.1rem;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-report {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-report__link {
+    white-space: normal;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-details__question {
+    padding: 0.95rem 1rem;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-details__answer {
+    padding: 0.95rem 1rem 1.1rem;
+  }
+
+  .openms-lib-page--code-of-conduct .contribute-coc-band__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    gap: var(--openms-btn-gap, 1.6rem);
+  }
+
+  .openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-lib-btn {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .openms-lib-page--code-of-conduct .openms-lib-hero__actions {
+    width: 100%;
+  }
+
+  .openms-lib-page--code-of-conduct .openms-lib-hero__actions .openms-lib-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-overview__principles {
+    grid-template-columns: 1fr;
+    border-top: none;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-principle {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 0.85rem;
+    padding: 1rem 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+  }
+
+  .openms-lib-page--code-of-conduct .coc-principle:first-child {
+    border-top: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+  }
+
+  .openms-lib-page--code-of-conduct .coc-principle:last-child {
+    border-bottom: none;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-principle:nth-child(n + 4) {
+    border-top: none;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-principle__num {
+    margin-top: 0;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-report {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-report__link {
+    white-space: normal;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-details__question {
+    padding: 0.95rem 1rem;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-details__answer {
+    padding: 0.95rem 1rem 1.1rem;
+  }
+
+  .openms-lib-page--code-of-conduct .contribute-coc-band__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    gap: var(--openms-btn-gap, 0.75rem);
+  }
+
+  .openms-lib-page--code-of-conduct .contribute-coc-band__actions .openms-btn-primary,
+  .openms-lib-page--code-of-conduct .contribute-coc-band__actions .about-cta-btn--donate {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+}

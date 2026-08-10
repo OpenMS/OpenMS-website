@@ -1,0 +1,58 @@
+{{- $cfg := .cfg | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Examples" -}}
+{{- $title := index $cfg "title" | default "Featured WebApps" -}}
+{{- $lead := index $cfg "lead" | default "Community apps built on the OpenMS WebApps framework." -}}
+{{- $url := index $cfg "url" -}}
+{{- $linkText := index $cfg "linkText" | default "Browse all apps" -}}
+{{- $apps := index $cfg "apps" | default (slice) -}}
+{{- $id := .id | default "webapps-examples-title" -}}
+<section class="openms-lib-resources openms-lib-resources--examples" aria-labelledby="{{ $id }}">
+  <div class="openms-lib-resources__inner openms-lib-resources__examples-layout">
+    <header class="openms-lib-resources__head openms-lib-hub__reveal openms-lib-hub__reveal--left">
+      {{- with $eyebrow }}
+      <p class="openms-lib-resources__eyebrow">{{ . }}</p>
+      {{- end }}
+      <h2 id="{{ $id }}" class="openms-lib-resources__title">{{ $title }}</h2>
+      {{- with $lead }}
+      <p class="openms-lib-resources__lead">{{ . }}</p>
+      {{- end }}
+      {{- with $url }}
+      <div class="openms-lib-resources__examples-actions">
+        <a
+          class="openms-lib-btn openms-lib-btn--primary"
+          href="{{ . }}"
+          {{- if in . "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+        ><span class="openms-lib-btn__label">{{ $linkText }}</span></a>
+      </div>
+      {{- end }}
+    </header>
+
+    {{- with $apps }}
+    <ul class="openms-lib-resources__examples-grid openms-lib-hub__reveal" role="list">
+      {{- range . }}
+      {{- $appName := .name -}}
+      {{- $logoSize := .logoSize -}}
+      <li class="openms-lib-resources__examples-item" role="listitem">
+        <a
+          class="openms-lib-resources__examples-card"
+          href="{{ .url }}"
+          aria-label="{{ $appName }}"
+          {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+        >
+          {{- with .logo }}
+          <span class="openms-lib-resources__examples-logo{{- with $logoSize }} openms-lib-resources__examples-logo--{{ . }}{{- end }}">
+            <img
+              src="{{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}{{ . }}{{ else }}{{ . | relURL }}{{ end }}"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
+          {{- end }}
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+    {{- end }}
+  </div>
+</section>

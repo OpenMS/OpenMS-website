@@ -95,9 +95,12 @@ languages:
           develop algorithms, test software, and write tutorials for
           computational mass spectrometry.
         chips:
-          - Fully remote & unpaid
-          - Biweekly mentor meetings
-          - Certificate of completion
+          - icon: fas fa-globe
+            text: Fully remote & unpaid
+          - icon: fas fa-comments
+            text: Biweekly mentor meetings
+          - icon: fas fa-award
+            text: Certificate of completion
         tallyFormId: 44qqqd
         projectsTitle: Projects you can contribute to
         projectsLead: >-
@@ -692,6 +695,13 @@ languages:
         title: Explore OpenMS-lib
         lead: Documentation, tools, and community resources to start building with OpenMS-lib.
         items:
+          - title: Read Documentation
+            tag: Docs
+            icon: fas fa-book-open
+            text: Tutorials and guides to help you get productive quickly.
+            url: https://openms.readthedocs.io/en/latest/getting-started/introduction.html
+            linkText: Open docs
+            featured: true
           - title: TOPP Tools
             tag: Pipeline
             icon: fas fa-terminal
@@ -710,12 +720,6 @@ languages:
             text: Use OpenMS algorithms and data structures directly from Python.
             url: /pyopenms/
             linkText: Explore pyOpenMS
-          - title: Read Documentation
-            tag: Docs
-            icon: fas fa-book-open
-            text: Tutorials and guides to help you get productive quickly.
-            url: https://openms.readthedocs.io/en/latest/getting-started/introduction.html
-            linkText: Open docs
           - title: API Reference
             tag: API
             icon: fas fa-code
@@ -854,8 +858,10 @@ languages:
           items:
             # TODO (Josh): Get google colab updated link (Binder removed — no longer maintained)
             - title: Try Online
+              tag: No install needed
               icon: fas fa-laptop-code
               linkText: Open in Colab
+              featured: true
             - title: Installation
               icon: fab fa-python
               url: https://pyopenms.readthedocs.io/en/latest/user_guide/installation.html
@@ -962,13 +968,13 @@ languages:
             - title: Report an Issue
               tag: GitHub
               icon: fab fa-github
-              subtitle: Report bugs or request new plot types on GitHub.
+              text: Report bugs or request new plot types on GitHub.
               url: https://github.com/OpenMS/pyopenms_viz/issues/new
               linkText: Open on GitHub
             - title: API Reference
               tag: API
               icon: fas fa-code
-              subtitle: Explore the Python API for plot types and customization options.
+              text: Explore the Python API for plot types and customization options.
               url: https://pyopenms-viz.readthedocs.io/en/latest/API.html
               linkText: View reference
 
@@ -1019,23 +1025,23 @@ languages:
               title: Deploy as Windows Executable
               icon: fab fa-windows
               text: Package your WebApp as a standalone Windows executable.
-            - type: featured-apps
-              tag: Examples
-              title: Featured WebApps
-              text: Community apps built on the OpenMS WebApps framework.
-              url: /featured-apps/
-              linkText: Browse all apps
-              apps:
-                - name: OpenDIAKiosk
-                  logo: /images/webapp/logo/OpenDIAKiosk_logo_portrait.svg
-                  url: http://opendia.webapps.openms.org/
-                - name: umetaflow
-                  logo: /images/webapp/logo/umetaflow.png
-                  url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
-                - name: OpenDDA
-                  logo: /images/webapp/logo/openDDA.svg
-                  logoSize: large
-                  url: http://opendda.webapps.openms.org/
+
+        examples:
+          eyebrow: Examples
+          title: Featured WebApps
+          lead: Community apps built on the OpenMS WebApps framework.
+          url: /featured-apps/
+          linkText: Browse all apps
+          apps:
+            - name: OpenDIAKiosk
+              logo: /images/webapp/logo/OpenDIAKiosk_logo_portrait.svg
+              url: http://opendia.webapps.openms.org/
+            - name: umetaflow
+              logo: /images/webapp/logo/umetaflow.png
+              url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
+            - name: OpenDDA
+              logo: /images/webapp/logo/openDDA.svg
+              url: http://opendda.webapps.openms.org/
 
         developers:
           eyebrow: For Developers
@@ -1058,6 +1064,18 @@ languages:
               text: Report bugs or suggest features for the Streamlit template.
               url: https://github.com/OpenMS/streamlit-template/issues/new
               linkText: File on GitHub
+            - title: Template repository
+              tag: Source
+              icon: fas fa-code-branch
+              text: Explore the Streamlit template, fork it, and open a pull request.
+              url: https://github.com/OpenMS/streamlit-template
+              linkText: View on GitHub
+            - title: Deploy apps
+              tag: Deploy
+              icon: fas fa-server
+              text: Add template-based apps to the shared docker-compose deployment.
+              url: https://github.com/OpenMS/streamlit-deployment
+              linkText: Open deployment repo
 
       webappsSection:
         eyebrow: Community tools

@@ -1,8 +1,7 @@
 .help-page-layout {
-  --olib-pad-x: clamp(1.25rem, 4vw, 2rem);
-  --olib-section-y: clamp(4rem, 8vh, 5.5rem);
+  --olib-section-y: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
   --olib-bg-soft: #f4f6f9;
-  --olib-text-muted: rgba(var(--openms-navy-rgb), 0.68);
+  --olib-text-muted: var(--openms-text-muted);
   --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
   --help-max: 64rem;
 
@@ -77,10 +76,8 @@
 }
 
 .help-page-layout .openms-lib-btn--primary {
-  gap: 0.5rem;
-  padding-inline: 1.15rem;
-  border: 2px solid var(--openms-navy);
-  background: var(--openms-navy);
+  border: 2px solid var(--openms-blue);
+  background: var(--openms-blue);
   color: var(--openms-white) !important;
 }
 
@@ -99,8 +96,8 @@
 .help-page-layout .openms-lib-btn--primary:hover,
 .help-page-layout .openms-lib-btn--primary:focus-visible,
 .help-page-layout .openms-lib-btn--primary:active {
-  background: var(--openms-navy);
-  border-color: var(--openms-navy);
+  background: var(--openms-blue);
+  border-color: var(--openms-blue);
   color: var(--openms-white) !important;
   transform: scale(var(--openms-btn-hover-scale));
   box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow);

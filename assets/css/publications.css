@@ -1,16 +1,21 @@
-/* Publications page — unified layout and bibliography UX */
+/* Publications page — unified layout and bibliography UX
+   Shell width / gutters live on .openms-lib-page--publications
+   (see zz-publications-layout.css) via --pro-max + --openms-page-inline. */
 
 .publications-page {
-  --pub-gap: clamp(2rem, 4vw, 3rem);
-  --pub-line: rgba(var(--openms-navy-rgb), 0.1);
-  --pub-card-radius: 0.85rem;
-  --pub-card-border: rgba(var(--openms-navy-rgb), 0.12);
-  --pub-card-pad: clamp(1rem, 2vw, 1.25rem);
+  --pub-gap: var(--pro-head-to-content, clamp(2rem, 4vw, 3rem));
+  --pub-line: var(--pro-line, rgba(var(--openms-navy-rgb), 0.1));
+  --pub-card-radius: var(--pro-radius, 0.85rem);
+  --pub-card-border: var(--pro-line, rgba(var(--openms-navy-rgb), 0.12));
+  --pub-card-pad: var(--pro-card-pad-lg, clamp(1rem, 2vw, 1.25rem));
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .publications-body {
-  display: grid;
-  gap: var(--pub-gap);
+  display: contents;
 }
 
 /* —— Key publications —— */
@@ -29,26 +34,43 @@
 
 .publications-cite-card {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.4rem;
   margin: 0;
   padding: var(--pub-card-pad);
   border: 1px solid var(--pub-card-border);
   border-radius: var(--pub-card-radius);
   background: var(--openms-white);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.publications-featured .publications-cite-card {
+  border: none;
+  box-shadow: none;
 }
 
 .publications-cite-card:hover {
-  border-color: rgba(var(--openms-blue-rgb), 0.28);
+  border-color: rgba(var(--openms-navy-rgb), 0.2);
   box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
 }
 
-.publications-cite-card--primary {
-  border-left: 4px solid var(--openms-navy);
+.publications-featured .publications-cite-card:hover,
+.publications-featured .publications-cite-card:focus-within {
+  border: none;
 }
 
+.publications-cite-card--primary,
 .publications-cite-card--secondary {
-  border-left: 4px solid var(--openms-blue);
+  border-left: 1px solid var(--pub-card-border);
+}
+
+.publications-featured .publications-cite-card--primary,
+.publications-featured .publications-cite-card--secondary {
+  border-left: none;
 }
 
 .publications-cite-card__top {
@@ -69,11 +91,12 @@
   color: var(--openms-navy);
   background: rgba(var(--openms-navy-rgb), 0.08);
   border-radius: 999px;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .publications-cite-card--secondary .publications-cite-card__badge {
-  color: var(--openms-blue);
-  background: rgba(var(--openms-blue-rgb), 0.1);
+  color: var(--openms-navy);
+  background: rgba(var(--openms-navy-rgb), 0.08);
 }
 
 .publications-cite-card__topic {
@@ -82,6 +105,7 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba(var(--openms-navy-rgb), 0.5);
+  transition: color 0.2s ease;
 }
 
 .publications-cite-card__title {
@@ -92,10 +116,7 @@
   line-height: 1.35;
   letter-spacing: -0.02em;
   color: var(--openms-navy);
-}
-
-.publications-cite-card--primary .publications-cite-card__title {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  transition: color 0.2s ease;
 }
 
 .publications-cite-card__title a {
@@ -106,7 +127,7 @@
 
 .publications-cite-card__title a:hover,
 .publications-cite-card__title a:focus-visible {
-  color: var(--openms-blue);
+  color: inherit;
   outline: none;
 }
 
@@ -119,10 +140,12 @@
   font-size: var(--openms-body-size);
   font-weight: 600;
   color: rgba(var(--openms-navy-rgb), 0.75);
+  transition: color 0.2s ease;
 }
 
 .publications-cite-card__journal {
-  color: var(--openms-blue);
+  color: var(--openms-navy);
+  transition: color 0.2s ease;
 }
 
 .publications-cite-card__year::before {
@@ -137,14 +160,32 @@
   font-size: var(--openms-text-min);
   line-height: 1.55;
   color: rgba(var(--openms-navy-rgb), 0.62);
+  transition: color 0.2s ease;
+}
+
+.publications-cite-card__authors-more {
+  display: inline;
+  margin: 0 0.1em;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  font-size: 0.92em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: inherit;
+  white-space: nowrap;
+  vertical-align: baseline;
+  color: rgba(var(--openms-navy-rgb), 0.62);
+  transition: color 0.2s ease;
 }
 
 .publications-cite-card__action {
   justify-self: start;
-  margin-top: 0.15rem;
-  font-size: 0.8rem;
+  margin-top: 0;
+  font-size: var(--openms-body-size);
   font-weight: 700;
-  color: var(--openms-blue);
+  color: var(--openms-navy);
   text-decoration: none;
   transition: color 0.15s ease;
 }
@@ -152,23 +193,122 @@
 .publications-cite-card__action:hover,
 .publications-cite-card__action:focus-visible {
   color: var(--openms-navy);
-  text-decoration: underline;
+  text-decoration: none;
   outline: none;
+}
+
+/* Key publications — blue fill on hover, light text */
+.publications-featured .publications-cite-card:hover,
+.publications-featured .publications-cite-card:focus-within {
+  border: none;
+  background: var(--openms-blue);
+  box-shadow: 0 0.65rem 1.5rem rgba(var(--openms-blue-rgb), 0.28);
+  color: var(--openms-white);
+}
+
+.publications-featured .publications-cite-card:hover .publications-cite-card__badge,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__badge,
+.publications-featured .publications-cite-card:hover .publications-cite-card__topic,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__topic,
+.publications-featured .publications-cite-card:hover .publications-cite-card__title,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__title,
+.publications-featured .publications-cite-card:hover .publications-cite-card__title a,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__title a,
+.publications-featured .publications-cite-card:hover .publications-cite-card__meta,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__meta,
+.publications-featured .publications-cite-card:hover .publications-cite-card__journal,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__journal,
+.publications-featured .publications-cite-card:hover .publications-cite-card__year,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__year,
+.publications-featured .publications-cite-card:hover .publications-cite-card__authors,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__authors,
+.publications-featured .publications-cite-card:hover .publications-cite-card__authors-more,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__authors-more {
+  color: #ffffff;
+}
+
+.publications-featured .publications-cite-card:hover .publications-cite-card__action,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__action {
+  color: #ffffff;
+}
+
+.publications-featured .publications-cite-card:hover .publications-cite-card__action:hover,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__action:hover,
+.publications-featured .publications-cite-card:hover .publications-cite-card__action:focus-visible,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__action:focus-visible {
+  color: #ffffff;
+}
+
+.publications-featured .publications-cite-card:hover .publications-cite-card__badge,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__badge {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.publications-featured .publications-cite-card:hover .publications-cite-card__authors-more,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__authors-more {
+  border: 0;
+  background: none;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.publications-featured .publications-cite-card:hover .publications-cite-card__year::before,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__year::before {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.publications-featured .publications-cite-card:hover .publications-cite-card__topic,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__topic,
+.publications-featured .publications-cite-card:hover .publications-cite-card__authors,
+.publications-featured .publications-cite-card:focus-within .publications-cite-card__authors {
+  color: rgba(255, 255, 255, 0.86);
 }
 
 @media (min-width: 900px) {
   .publications-featured__list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto auto 1fr auto;
     align-items: stretch;
+    column-gap: 0.85rem;
+    row-gap: 0.4rem;
+  }
+
+  .publications-featured__list > .publications-cite-card {
+    grid-row: span 5;
+    grid-template-rows: subgrid;
+    /* Parent row-gap sets shared line spacing across both cards */
+    gap: 0;
+  }
+
+  .publications-featured__list > .publications-cite-card .publications-cite-card__authors {
+    align-self: start;
+  }
+
+  .publications-featured__list > .publications-cite-card .publications-cite-card__action {
+    align-self: start;
+  }
+}
+
+@supports not (grid-template-rows: subgrid) {
+  @media (min-width: 900px) {
+    .publications-featured__list > .publications-cite-card {
+      grid-row: auto;
+      grid-template-rows: none;
+      gap: 0.4rem;
+    }
   }
 }
 
 /* —— Bibliography —— */
 .publications-bibliography {
   display: grid;
-  gap: 1rem;
+  gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem));
   margin: 0;
-  padding-top: 0.25rem;
+  padding-top: 0;
+}
+
+.publications-bibliography > .openms-lib-resources__head {
+  margin-bottom: 0;
 }
 
 .publications-toolbar {
@@ -177,14 +317,18 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 0.75rem 1.25rem;
-  padding: 0.15rem 0 0.35rem;
+  padding: 0;
+  margin: 0;
 }
 
 .publications-toolbar__filter {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  min-width: min(100%, 9rem);
+  width: fit-content;
+  max-width: 100%;
+  min-width: 0;
+  margin-left: auto;
 }
 
 .publications-toolbar__select {
@@ -306,7 +450,7 @@
 .publication-journal {
   font-style: italic;
   font-weight: 500;
-  color: rgba(var(--openms-navy-rgb), 0.78);
+  color: var(--openms-text-muted);
 }
 
 .publication-year {

@@ -1,8 +1,7 @@
 .fellowship-page-layout {
-  --olib-pad-x: clamp(1.25rem, 4vw, 2rem);
-  --olib-section-y: clamp(4rem, 8vh, 5.5rem);
+  --olib-section-y: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
   --olib-bg-soft: #f4f6f9;
-  --olib-text-muted: rgba(var(--openms-navy-rgb), 0.68);
+  --olib-text-muted: var(--openms-text-muted);
   --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
   --fellowship-max: 64rem;
   --fellowship-card-radius: 1rem;
@@ -76,11 +75,12 @@
 .fellowship-page__section-head h2 {
   margin: 0;
   font-family: var(--openms-font-heading);
-  font-size: var(--openms-secondary-heading-size-lg);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--openms-navy);
-  letter-spacing: -0.01em;
+  font-size: var(--openms-section-title-size, calc(var(--openms-heading-lg-size) * 1.15));
+  font-weight: var(--openms-section-title-weight, var(--openms-heading-lg-weight));
+  line-height: 1.3;
+  color: var(--openms-section-title-color, var(--openms-navy));
+  letter-spacing: normal;
+  text-transform: uppercase;
 }
 
 .fellowship-page__section-lead {
@@ -134,18 +134,17 @@
 }
 
 .fellowship-page__form-body {
-  --fellowship-form-height: max(100svh, 56rem);
-  min-height: var(--fellowship-form-height);
-  padding: 0 clamp(1rem, 2.5vw, 1.45rem) clamp(1rem, 2.5vw, 1.45rem);
+  min-height: auto;
+  overflow: visible;
+  padding: 0;
 }
 
 .fellowship-page__tally-iframe {
   display: block;
   width: 100%;
-  min-height: var(--fellowship-form-height);
-  height: auto;
+  min-height: 0;
   border: 0;
-  overflow: hidden;
+  background: transparent;
 }
 
 /* Projects grid */
@@ -204,16 +203,15 @@
   align-items: center;
   gap: 0.2rem;
   font-size: var(--openms-text-min);
-  font-weight: 600;
-  color: var(--openms-blue);
+  font-weight: var(--openms-cta-link-weight, 700);
+  color: var(--openms-cta-link, var(--openms-navy));
   text-decoration: none;
 }
 
 .fellowship-project-card__link:hover,
 .fellowship-project-card__link:focus-visible {
-  color: var(--openms-navy);
-  text-decoration: underline;
-  text-underline-offset: 0.14em;
+  color: var(--openms-cta-link-hover, var(--openms-blue));
+  text-decoration: none;
 }
 
 .fellowship-project-card__link--contribute {
@@ -240,8 +238,8 @@
 }
 
 .fellowship-page-layout .openms-lib-btn--primary {
-  border: 2px solid var(--openms-navy);
-  background: var(--openms-navy);
+  border: 2px solid var(--openms-blue);
+  background: var(--openms-blue);
   color: var(--openms-white) !important;
 }
 
@@ -263,8 +261,8 @@
 
 .fellowship-page-layout .openms-lib-btn--primary:hover,
 .fellowship-page-layout .openms-lib-btn--primary:focus-visible {
-  background: var(--openms-navy);
-  border-color: var(--openms-navy);
+  background: var(--openms-blue);
+  border-color: var(--openms-blue);
   color: var(--openms-white) !important;
 }
 

@@ -1,1 +1,2 @@
-{{ partial "openms-lib-developers.html" (dict "cfg" site.Params.pyopenmsVizPage.developers "id" "pyopenms-viz-developers-title") }}
+{{- $cfg := site.Params.pyopenmsVizPage.developers | default dict -}}
+{{ partial "product-developers.html" (dict "cfg" $cfg "id" "pyopenms-viz-developers-title" "omitSeparateCite" true) }}

@@ -1,0 +1,144 @@
+/* Form embeds (Tally / Zeffy) — never clip; let the page scroll.
+   Loads last (zzzz-*) so it beats page shells and pro overrides.
+
+   Causes:
+   1) .openms-lib-page / __body use overflow-x: clip → overflow-y computes to auto
+   2) .openms-lib-page--hub .openms-lib-page__anchor uses overflow: hidden (for reveal)
+   3) Form cards / iframes used overflow: hidden + height: auto
+   All of that breaks Tally iframe-resizer and can clip tall embeds. */
+
+.openms-lib-page--contact,
+.openms-lib-page--fellowship,
+.openms-lib-page--services-support,
+.openms-lib-page--research-partnerships,
+.openms-lib-page--donate,
+.openms-lib-page--contact .openms-lib-page__intro,
+.openms-lib-page--contact .openms-lib-page__body,
+.openms-lib-page--contact .openms-lib-page__outro,
+.openms-lib-page--fellowship .openms-lib-page__intro,
+.openms-lib-page--fellowship .openms-lib-page__body,
+.openms-lib-page--fellowship .openms-lib-page__outro,
+.openms-lib-page--services-support .openms-lib-page__intro,
+.openms-lib-page--services-support .openms-lib-page__body,
+.openms-lib-page--services-support .openms-lib-page__outro,
+.openms-lib-page--research-partnerships .openms-lib-page__intro,
+.openms-lib-page--research-partnerships .openms-lib-page__body,
+.openms-lib-page--research-partnerships .openms-lib-page__outro,
+.openms-lib-page--donate .openms-lib-page__intro,
+.openms-lib-page--donate .openms-lib-page__body,
+.openms-lib-page--donate .openms-lib-page__outro,
+.openms-lib-page--contact .openms-lib-page__body > .openms-lib-page__anchor,
+.openms-lib-page--fellowship .openms-lib-page__body > .openms-lib-page__anchor,
+.openms-lib-page--services-support .openms-lib-page__body > .openms-lib-page__anchor,
+.openms-lib-page--research-partnerships .openms-lib-page__body > .openms-lib-page__anchor,
+.openms-lib-page--donate .openms-lib-page__body > .openms-lib-page__anchor,
+.openms-lib-page--hub.openms-lib-page--contact .openms-lib-page__body > .openms-lib-page__anchor,
+.openms-lib-page--hub.openms-lib-page--fellowship .openms-lib-page__body > .openms-lib-page__anchor,
+.openms-lib-page--hub.openms-lib-page--services-support .openms-lib-page__body > .openms-lib-page__anchor,
+.openms-lib-page--hub.openms-lib-page--research-partnerships .openms-lib-page__body > .openms-lib-page__anchor,
+.openms-lib-page--hub.openms-lib-page--donate .openms-lib-page__body > .openms-lib-page__anchor {
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  max-height: none;
+}
+
+/* Wrappers around embeds */
+.contact-page__form-card,
+.contact-page__form-body,
+.contact-application__form,
+.fellowship-page__form-card,
+.fellowship-page__form-body,
+.fellowship-application__form-card,
+.services-page__form,
+.services-page__form-body,
+.services-support-application__form,
+.rp-application__form,
+.donate-application__form,
+.donate-page__embed,
+.openms-lib-page--contact .contact-application__form,
+.openms-lib-page--contact .contact-page__form-body,
+.openms-lib-page--fellowship .fellowship-application__form-card,
+.openms-lib-page--fellowship .fellowship-page__form-body,
+.openms-lib-page--services-support .services-support-application__form,
+.openms-lib-page--services-support .services-page__form-body,
+.openms-lib-page--research-partnerships .rp-application__form,
+.openms-lib-page--donate .donate-application__form,
+.openms-lib-page--donate .donate-page__embed {
+  overflow: visible !important;
+  max-height: none !important;
+  height: auto;
+}
+
+/* Grid/flex children must not shrink-wrap the iframe away */
+.fellowship-page__form-body,
+.openms-lib-page--fellowship .fellowship-page__form-body {
+  min-height: auto;
+}
+
+/* Iframes: tall floor; allow Tally/Zeffy to set height via attr/inline style */
+.contact-page__tally-iframe,
+.fellowship-page__tally-iframe,
+.services-page__tally-iframe,
+.rp-application__tally-iframe,
+.donate-page__zeffy-iframe,
+.openms-lib-page--contact .contact-page__tally-iframe,
+.openms-lib-page--fellowship .fellowship-page__tally-iframe,
+.openms-lib-page--services-support .services-page__tally-iframe,
+.openms-lib-page--research-partnerships .rp-application__tally-iframe,
+.openms-lib-page--donate .donate-page__zeffy-iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: none !important;
+  overflow: visible !important;
+  border: 0;
+  background: transparent;
+}
+
+.contact-page__tally-iframe,
+.openms-lib-page--contact .contact-page__tally-iframe {
+  min-height: 50rem;
+}
+
+.fellowship-page__tally-iframe,
+.openms-lib-page--fellowship .fellowship-page__tally-iframe {
+  /* No tall floor — Tally dynamicHeight sets the real height */
+  min-height: 0;
+}
+
+.services-page__tally-iframe,
+.openms-lib-page--services-support .services-page__tally-iframe {
+  min-height: 48rem;
+}
+
+.rp-application__tally-iframe,
+.openms-lib-page--research-partnerships .rp-application__tally-iframe {
+  min-height: 48rem;
+}
+
+.donate-page__zeffy-iframe,
+.openms-lib-page--donate .donate-page__zeffy-iframe {
+  min-height: 52rem;
+}
+
+@media (max-width: 720px) {
+  .donate-page__zeffy-iframe,
+  .openms-lib-page--donate .donate-page__zeffy-iframe {
+    min-height: 72rem;
+  }
+
+  .contact-page__tally-iframe,
+  .fellowship-page__tally-iframe,
+  .services-page__tally-iframe,
+  .rp-application__tally-iframe,
+  .donate-page__zeffy-iframe,
+  .openms-lib-page--contact .contact-page__tally-iframe,
+  .openms-lib-page--fellowship .fellowship-page__tally-iframe,
+  .openms-lib-page--services-support .services-page__tally-iframe,
+  .openms-lib-page--research-partnerships .rp-application__tally-iframe,
+  .openms-lib-page--donate .donate-page__zeffy-iframe {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}

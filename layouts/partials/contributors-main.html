@@ -26,12 +26,36 @@
 </div>
 
 <div class="openms-lib-page__body" aria-label="OpenMS contributors">
-  <div id="contributors" class="openms-lib-page__anchor">
-    <section class="openms-lib-resources openms-lib-resources--no-feature" aria-label="Contributors content">
-      <div class="openms-lib-resources__inner contributors-page">
-        <div class="contributors-body">
-          {{ .Content }}
-        </div>
+  <div id="leadership" class="openms-lib-page__anchor">
+    <section class="openms-lib-resources openms-lib-resources--no-feature" aria-labelledby="leadership-board-title">
+      <div class="openms-lib-resources__inner">
+        <header class="openms-lib-resources__head">
+          <p class="openms-lib-resources__eyebrow">Leadership</p>
+          <h2 id="leadership-board-title" class="openms-lib-resources__title">Board of directors</h2>
+          <p class="openms-lib-resources__lead">The board provides legal and financial stewardship for OpenMS Inc., our nonprofit organization.</p>
+        </header>
+        {{ partial "contributors-leadership.html" . }}
+      </div>
+    </section>
+  </div>
+
+  <div id="executive-committee" class="openms-lib-page__anchor">
+    <section class="openms-lib-resources openms-lib-resources--no-feature" aria-labelledby="executive-committee-title">
+      <div class="openms-lib-resources__inner">
+        {{ partial "contributors-exec.html" . }}
+      </div>
+    </section>
+  </div>
+
+  <div id="members" class="openms-lib-page__anchor">
+    <section class="openms-lib-resources openms-lib-resources--no-feature" aria-labelledby="members-title">
+      <div class="openms-lib-resources__inner contributors-members">
+        <header class="openms-lib-resources__head">
+          <p class="openms-lib-resources__eyebrow">Community</p>
+          <h2 id="members-title" class="openms-lib-resources__title">Members</h2>
+          <p class="openms-lib-resources__lead"><span>Maintainers, docs contributors, and community managers</span><span>who keep OpenMS moving forward.</span></p>
+        </header>
+        {{ readFile "static/gallery/members.html" | safeHTML }}
       </div>
     </section>
   </div>
@@ -39,24 +63,18 @@
 
 <div class="openms-lib-page__outro">
   <div id="join-community" class="openms-lib-page__anchor">
-    <section class="openms-lib-block openms-lib-block--developers" aria-labelledby="contributors-cta-title">
-      <article class="openms-lib-developers__card openms-lib-developers__card--build openms-lib-developers__review">
-        <div class="openms-lib-developers__card-body">
-          <span class="openms-lib-developers__card-tag">Get involved</span>
-          <h2 id="contributors-cta-title" class="openms-lib-developers__card-title">
-            <span>Want to contribute?</span>
-          </h2>
-          <p class="openms-lib-developers__card-text">OpenMS is built by a global community. Join us to improve tools, docs, and support for mass spectrometry research.</p>
-          <div class="openms-lib-developers__platforms" role="group" aria-label="Contributor actions">
-            <a class="openms-lib-btn openms-lib-btn--primary" href="/contribute/">
-              <span class="openms-lib-btn__label">Contributing Guide</span>
-            </a>
-            <a class="openms-lib-btn openms-lib-btn--primary" href="/contact/">
-              <span class="openms-lib-btn__label">Contact us</span>
-            </a>
-          </div>
-        </div>
-      </article>
+    <section class="webapps-archived__revival" aria-labelledby="contributors-cta-title">
+      <div class="webapps-archived__revival-copy">
+        <p class="webapps-archived__revival-kicker">Get involved</p>
+        <p class="webapps-archived__revival-text">
+          <strong id="contributors-cta-title">Want to contribute?</strong>
+          <span class="webapps-archived__revival-note">OpenMS is built by a global community. Join us to improve tools, docs, and support for mass spectrometry research.</span>
+        </p>
+      </div>
+      <div class="webapps-archived__revival-actions" role="group" aria-label="Contributor actions">
+        <a class="openms-lib-btn openms-lib-btn--ghost" href="/contact/">Contact us</a>
+        <a class="openms-lib-btn openms-lib-btn--primary" href="/contribute/">Contributing Guide</a>
+      </div>
     </section>
   </div>
 </div>

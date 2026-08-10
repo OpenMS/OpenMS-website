@@ -43,5 +43,14 @@ sidebar: false
   <div id="using-the-template" class="openms-lib-page__anchor">
     {{< webapps-using-template >}}
   </div>
+  <div id="examples" class="openms-lib-page__anchor">
+    {{< webapps-examples >}}
+  </div>
+</div>
+<div class="openms-lib-page__outro">
+  {{< webapps-developers >}}
+</div>
+<div class="openms-lib-page__cite">
+  {{< webapps-cite >}}
 </div>
 </article>

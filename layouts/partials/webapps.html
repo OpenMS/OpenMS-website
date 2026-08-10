@@ -70,7 +70,7 @@
         {{- range $webapps }}
         <li class="webapps-featured__item" role="listitem">
           {{- if $isPage }}
-          {{ partial "webapps-project-detail-card.html" (dict "project" . "hideName" true) }}
+          {{ partial "webapps-project-detail-card.html" (dict "project" . "class" "webapps-project-detail-card--featured") }}
           {{- else }}
           {{ partial "webapps-project-card.html" (merge $cardCtx (dict "project" . "embed" $embed)) }}
           {{- end }}

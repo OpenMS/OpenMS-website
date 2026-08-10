@@ -1,0 +1,108 @@
+/* Hero layout on small screens — widths, wrapping and alignment only.
+   Type sizes live in zzzzz-type-scale.css, which owns the whole site's scale.
+   !important is needed here because page scopes like
+   .openms-lib-page--hub.openms-lib-page--openms-lib out-specify anything
+   reasonable. */
+
+@media (max-width: 720px) {
+  /* ── Inner-page heroes (.openms-lib-hero, every non-home page) ── */
+  .openms-lib-hero__title,
+  [class$="-page-layout"] .openms-lib-hero[class*="-page-hero"] .openms-lib-hero__title,
+  .community-calendar-layout .openms-lib-hero .openms-lib-hero__title,
+  .contribute-page-layout .openms-lib-hero.contribute-page-hero .openms-lib-hero__title {
+    width: 100% !important;
+    max-width: 100% !important;
+    line-height: 1.18 !important;
+    letter-spacing: normal !important;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  .openms-lib-hero__lead,
+  [class$="-page-layout"] .openms-lib-hero[class*="-page-hero"] .openms-lib-hero__lead,
+  .community-calendar-layout .openms-lib-hero .openms-lib-hero__lead,
+  .contribute-page-layout .openms-lib-hero.contribute-page-hero .openms-lib-hero__lead,
+  .openms-lib-page--openms-lib .openms-lib-hero__lead,
+  .openms-lib-page--calendar .openms-lib-hero__lead,
+  .openms-lib-page--news .openms-lib-hero__lead,
+  .openms-lib-page--contribute .openms-lib-hero__lead {
+    width: min(100%, 46ch) !important;
+    max-width: 100% !important;
+    line-height: 1.55 !important;
+    white-space: normal !important;
+    text-wrap: pretty;
+  }
+
+  /* Retreat hero fakes a hanging indent with a negative margin on one line —
+     it pushes text off-canvas once the line is allowed to wrap */
+  .openms-lib-page--developer-retreat .openms-lib-hero__title,
+  .openms-lib-page--developer-retreat .openms-lib-hero__title-line {
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  /* ── Homepage hero (.hero-home) ── */
+  .home-page__hero .hero-home__title,
+  .hero-home__title {
+    width: 100% !important;
+    max-width: 100% !important;
+    line-height: 1.12 !important;
+    letter-spacing: 0.01em !important;
+    overflow-wrap: break-word !important;
+    text-wrap: balance;
+  }
+
+  .home-page__hero .hero-home__title-line,
+  .hero-home__title-line {
+    display: block !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .home-page__hero .hero-home__description,
+  .hero-home__description {
+    width: var(--hero-lead-width, min(100%, 26rem)) !important;
+    max-width: 100% !important;
+    line-height: 1.6 !important;
+    text-wrap: pretty;
+  }
+
+  .hero-home__visual-caption {
+    font-size: var(--openms-text-min);
+    line-height: 1.45;
+  }
+
+}
+
+/* ── Homepage hero alignment: left at every viewport ──
+   No media query on purpose. The headline, copy and CTAs start on the same
+   edge from 320px up to the widest desktop. Placed at the end of the last
+   stylesheet so it also beats the mobile button grid in zz-openms-buttons.css,
+   which centres paired CTAs everywhere else. */
+.home-page__hero .hero-home__content,
+.home-page__hero .hero-home__copy,
+.home-page__hero .hero-home__footer,
+.home-page__hero .hero-home__actions-block,
+/* the title is a column flexbox, so its line spans need this too */
+.home-page__hero .hero-home__title {
+  align-items: flex-start !important;
+  text-align: left !important;
+  margin-inline: 0 !important;
+}
+
+.home-page__hero .hero-home__title,
+.home-page__hero .hero-home__description,
+.home-page__hero .hero-home__note {
+  text-align: left !important;
+  margin-inline: 0 !important;
+}
+
+.home-page__hero .hero-home__eyebrow,
+.home-page__hero .hero-home__actions,
+.home-page__hero .hero-home__note,
+.home-page__hero .hero-home__highlights {
+  justify-content: flex-start !important;
+  margin-inline: 0 !important;
+}

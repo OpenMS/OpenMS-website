@@ -76,9 +76,6 @@ sidebar: false
 <div class="openms-lib-page__outro">
   {{< openms-lib-developers >}}
 </div>
-<div class="openms-lib-page__review">
-  {{< openms-lib-review >}}
-</div>
 <div class="openms-lib-page__cite">
   {{< openms-lib-cite >}}
 </div>

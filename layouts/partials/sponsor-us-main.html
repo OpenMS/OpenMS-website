@@ -34,19 +34,15 @@
             <p class="openms-lib-about__eyebrow">Impact</p>
             <h2 id="why-sponsor-title" class="openms-lib-about__title">Why sponsor OpenMS</h2>
             <p class="openms-lib-about__lead">
-              <span class="sponsor-lead-line">Your sponsorship helps OpenMS build and maintain a unified, trusted, and openly accessible</span>
-              <span class="sponsor-lead-line">commons of knowledge, software, education, and research resources</span>
-              <span class="sponsor-lead-line">for the mass spectrometry community.</span>
+              Your sponsorship helps OpenMS build and maintain a unified, trusted, and openly accessible commons of knowledge, software, education, and research resources for the mass spectrometry community.
             </p>
           </div>
         </header>
 
         <div class="openms-lib-about__mosaic" role="list">
           <article class="openms-lib-about__tile" role="listitem">
-            <div class="sponsor-tile__top">
-              <span class="openms-lib-about__num" aria-hidden="true">01</span>
-              <h3 class="openms-lib-about__tile-title">Your sponsorship enables</h3>
-            </div>
+            <span class="openms-lib-about__num" aria-hidden="true">01</span>
+            <h3 class="openms-lib-about__tile-title">Your sponsorship enables</h3>
             <ul class="sponsor-tile__list" role="list">
               <li>Continued development and maintenance of OpenMS software and infrastructure</li>
               <li>Training programs, workshops, and educational materials</li>
@@ -55,10 +51,8 @@
             </ul>
           </article>
           <article class="openms-lib-about__tile" role="listitem">
-            <div class="sponsor-tile__top">
-              <span class="openms-lib-about__num" aria-hidden="true">02</span>
-              <h3 class="openms-lib-about__tile-title">How sponsorship works</h3>
-            </div>
+            <span class="openms-lib-about__num" aria-hidden="true">02</span>
+            <h3 class="openms-lib-about__tile-title">How sponsorship works</h3>
             <p class="openms-lib-about__tile-text">OpenMS Inc. is a U.S. 501(c)(3) public charity that stewards project finances and accepts sponsorships aligned with our nonprofit mission.</p>
             <ul class="sponsor-tile__list" role="list">
               <li>Organizational sponsorships and grants</li>
@@ -76,48 +70,6 @@
     <div class="sponsor-tiers-band">
       {{ partial "sponsor-tiers.html" . }}
     </div>
-  </div>
-
-  <div id="current-sponsors" class="openms-lib-page__anchor">
-    <section class="sponsor-logos" aria-labelledby="current-sponsors-title">
-      <div class="sponsor-logos__inner">
-        <div class="sponsor-logos__copy">
-          <p class="sponsor-logos__eyebrow">Community</p>
-          <h2 id="current-sponsors-title" class="sponsor-logos__title">Current sponsors</h2>
-          <p class="sponsor-logos__lead">
-            OpenMS receives direct funding from the organizations below.
-            We are grateful for their support of open-source mass spectrometry software.
-          </p>
-        </div>
-
-        <ul class="sponsor-logos__rail" role="list" aria-label="OpenMS sponsors">
-          {{- range .Site.Params.aboutPage.sponsors -}}
-          {{- $name := .name | default "Sponsor" -}}
-          {{- $url := .url | default "#" -}}
-          {{- $logo := .logo | default "" -}}
-          {{- $alt := .alt | default $name -}}
-          <li class="sponsor-logos__item" role="listitem">
-            <a
-              class="sponsor-logos__link"
-              href="{{ $url }}"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-            >
-              {{- if $logo -}}
-              <img class="sponsor-logos__img" src="{{ $logo }}" alt="{{ $alt }}" loading="lazy" decoding="async" />
-              {{- else -}}
-              <span class="sponsor-logos__fallback">{{ $name }}</span>
-              {{- end -}}
-            </a>
-          </li>
-          {{- end -}}
-        </ul>
-
-        <p class="sponsor-logos__more">
-          <a href="/our-sponsors/">See all sponsors<span aria-hidden="true"> →</span></a>
-        </p>
-      </div>
-    </section>
   </div>
 
   <div id="faq" class="openms-lib-page__anchor">
@@ -166,27 +118,24 @@
 
 <div class="openms-lib-page__outro">
   <div id="become-a-sponsor" class="openms-lib-page__anchor">
-    <section class="openms-lib-block openms-lib-block--developers" aria-labelledby="become-a-sponsor-title">
-      <article class="openms-lib-developers__card openms-lib-developers__card--build openms-lib-developers__review">
-        <div class="openms-lib-developers__card-body">
-          <span class="openms-lib-developers__card-tag">Get started</span>
-          <h2 id="become-a-sponsor-title" class="openms-lib-developers__card-title">
-            <span>Become a sponsor</span>
-          </h2>
-          <p class="openms-lib-developers__card-text">
-            <span class="sponsor-cta-line">Whether you represent a company, institute, or foundation, we would like to hear about your goals</span>
-            <span class="sponsor-cta-line">and how sponsorship can support OpenMS development and the broader community.</span>
+    <section class="governance-cta-band" aria-labelledby="become-a-sponsor-title">
+      <div class="governance-cta-band__panel">
+        <div class="governance-cta-band__copy">
+          <p class="governance-cta-band__kicker">Get started</p>
+          <p class="governance-cta-band__text">
+            <strong id="become-a-sponsor-title">Become a sponsor</strong>
+            <span class="governance-cta-band__note">
+              <span class="sponsor-cta-note-line">Whether you represent a company, institute, or foundation,</span>
+              <span class="sponsor-cta-note-line">we would like to hear about your goals and how sponsorship can support</span>
+              <span class="sponsor-cta-note-line">OpenMS development and the broader community.</span>
+            </span>
           </p>
-          <div class="openms-lib-developers__platforms" role="group" aria-label="Sponsorship actions">
-            <a class="openms-lib-btn openms-lib-btn--primary" href="/contact/">
-              <span class="openms-lib-btn__label">Contact us</span>
-            </a>
-            <a class="openms-lib-btn openms-lib-btn--ghost" href="/donate/">
-              <span class="openms-lib-btn__label">Make a donation</span>
-            </a>
-          </div>
         </div>
-      </article>
+        <div class="governance-cta-band__actions" role="group" aria-label="Sponsorship actions">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/contact/">Contact us</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/donate/">Make a donation</a>
+        </div>
+      </div>
     </section>
   </div>
 </div>

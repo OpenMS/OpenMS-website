@@ -101,13 +101,14 @@
   font-family: var(--openms-font-body);
   font-size: 0.9rem;
   line-height: 1.55;
-  color: rgba(var(--openms-dark-rgb), 0.62);
+  color: var(--home-body-color, rgba(var(--openms-dark-rgb), 0.72));
   text-wrap: pretty;
 }
 
-@media (max-width: 720px) {
+/* Keep three columns on tablet; stack only on phones */
+@media (max-width: 640px) {
   .home-metrics__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0.85rem;
   }
 

@@ -1,0 +1,422 @@
+/* ============================================================================
+   Site-wide type & color roles — loads after zzzzz-type-scale.css.
+
+   Size steps live in the type-scale sheet. This file settles weight + color
+   for the same semantic jobs (eyebrow, card body, meta, CTA, tags) so pages
+   stop inventing near-duplicate rgba / rem values for identical roles.
+   ========================================================================== */
+
+/* ── Page titles ────────────────────────────────────────────────────────── */
+.openms-lib-hero__title,
+.openms-lib-hero[class*="-page-hero"] .openms-lib-hero__title,
+.openms-lib-hero.community-calendar-hero .openms-lib-hero__title,
+[class$="-page-layout"] .openms-lib-hero[class*="-page-hero"] .openms-lib-hero__title,
+.community-calendar-layout .openms-lib-hero .openms-lib-hero__title,
+.contribute-page-layout .openms-lib-hero.contribute-page-hero .openms-lib-hero__title,
+.openms-lib-page--hub .openms-lib-hero__title,
+.openms-lib-page--openms-lib .openms-lib-hero__title,
+.openms-lib-page--webapps .openms-lib-hero__title,
+.hero-home__title,
+.home-page__hero .hero-home__title,
+.hero-modern__title,
+.about-hero__title,
+.governance-hero__title {
+  font-weight: var(--openms-page-hero-title-weight, var(--openms-heading-xl-weight)) !important;
+  color: var(--openms-page-hero-title-color, var(--openms-navy)) !important;
+  -webkit-text-fill-color: var(--openms-page-hero-title-color, var(--openms-navy)) !important;
+}
+
+/* Title accent spans match the page title color (no separate blue/warm) */
+.openms-lib-hero__title .openms-lib-hero__accent,
+.openms-lib-hero__title .openms-lib-hero__accent--warm,
+.openms-lib-hero__accent,
+.openms-lib-hero__accent--warm,
+.openms-lib-page--hub .openms-lib-hero__accent,
+.openms-lib-page--hub .openms-lib-hero__accent--warm,
+.openms-lib-page--openms-lib .openms-lib-hero__accent--warm,
+.openms-lib-page--webapps .openms-lib-hero__accent--warm,
+.openms-lib-page--hub.openms-lib-page--webapps .openms-lib-hero__accent--warm,
+.openms-lib-page--webapps:not(.openms-lib-page--openms-lib) .openms-lib-hero__accent--warm {
+  color: var(--openms-page-hero-title-color, var(--openms-navy)) !important;
+  -webkit-text-fill-color: var(--openms-page-hero-title-color, var(--openms-navy)) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+}
+
+/* Dark heroes keep white titles for contrast */
+.home-page__hero .hero-home__title,
+.home-page__hero .hero-home__title-accent,
+.about-hero__title,
+.about-hero__title span,
+.governance-hero__title,
+.governance-hero__title span,
+.community-home__title,
+.community-home__title-accent {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+/* ── Section titles ─────────────────────────────────────────────────────── */
+.home-section-head__title,
+.openms-lib-block__title,
+.openms-lib-topp__title,
+.openms-lib-topp-split__title,
+.openms-lib-explore__title,
+.openms-lib-resources__title,
+.openms-lib-developers__title,
+.openms-lib-cta-band__title,
+.openms-lib-core-tools__title,
+.openms-lib-cite__title,
+.openms-lib-review__title,
+.openms-lib-about__title,
+.openms-steps__title,
+.keyfeatures-modern__title,
+.webapps-featured__title,
+.webapps-affiliates__title,
+.webapps-archived__title,
+.webapps-contribute__title,
+.uni-partners__title,
+.uni-partners__trust-title,
+.uni-partners__trust-title-main,
+.trusted-by__title,
+.ecosystem-home__title,
+.community-home__title,
+.community-events-home__title,
+.community-news-events__column-title,
+.community-events-page__title,
+.events-past-toolbar__title,
+.news-home__title,
+.contact-home__title,
+.contact-area__title,
+.contact-page__section-title,
+.home-pathways__title,
+.developer-retreat-highlights__title,
+.developer-retreat-upcoming__title,
+.contribute-channels__title,
+.contribute-ways__title,
+.contribute-conduct__title,
+.governance-membership__title,
+.contributors-exec-panel__title,
+.sponsor-benefits__title,
+.sponsor-logos__title,
+.publications-key__title,
+.about-section h2,
+.about-page .governance-links h2,
+.governance-section h2,
+.governance-links h2,
+.fellowship-page__section-head h2,
+.sponsor-section__head h2,
+.sponsor-us-page .sponsor-donations h2,
+.contribute-coc-band__text strong,
+.governance-cta-band__text strong,
+.webapps-archived__revival-text strong {
+  font-weight: var(--openms-section-title-weight, var(--openms-heading-lg-weight)) !important;
+  color: var(--openms-section-title-color, var(--openms-navy)) !important;
+}
+
+/* Navy CTA bands — keep titles white over dark backgrounds */
+.contribute-coc-band__kicker,
+.contribute-coc-band__text strong,
+.governance-cta-band__kicker,
+.governance-cta-band__text strong,
+.webapps-archived__revival-kicker,
+.webapps-archived__revival-text strong {
+  color: var(--openms-white) !important;
+}
+
+/* ── Card titles ────────────────────────────────────────────────────────── */
+.openms-lib-about__tile-title,
+.openms-lib-about__benefit-title,
+.openms-lib-about__list-title,
+.openms-lib-list__title,
+.openms-lib-highlights__item-title,
+.openms-lib-developers__card-title,
+.openms-lib-resources__support-title,
+.openms-lib-resources__assist-title,
+.openms-lib-resources__explore-title,
+.openms-lib-resources__route-title,
+.openms-lib-resources__item-title,
+.openms-lib-resource-card__title,
+.openms-lib-topp-split__card-title,
+.openms-step__title,
+.home-pathways__step-label,
+.ecosystem-home__card-title,
+.community-events-home__card-title,
+.news-home__card-title,
+.contact-home__card-title,
+.events-past-card__title,
+.keyfeatures-modern__topic-title,
+.webapps-project-card__name,
+.webapps-project-card__title,
+.webapps-project-detail-card__name,
+.webapps-archived-entry__name,
+.webapps-archived__notice-title,
+.webapps-contribute__action-title,
+.contact-page__form-title,
+.contact-page__path-title,
+.contact-page__support-card-title,
+.fellowship-page__form-title,
+.fellowship-project-card__title,
+.services-page__form-title,
+.developer-retreat-highlights__card-title,
+.publications-cite-card__title,
+.leadership-card__name,
+.donate-impact-card__title,
+.contribute-channel__title,
+.contribute-way__title,
+.contribute-track__title,
+.contribute-support__title,
+.contribute-outreach__title,
+.coc-principle__title,
+.governance-compare__title,
+.privacy-details__question-title,
+.coc-details__question-title,
+.sponsor-faq__question,
+.sponsor-why__card h3,
+.governance-card h2,
+.infrastructure-card h2 {
+  font-weight: var(--openms-card-title-weight, 700) !important;
+}
+
+.openms-lib-developers__card--build .openms-lib-developers__card-title,
+.contribute-ways__feature-title,
+.contribute-track__item--wide .contribute-track__title,
+.contribute-track__item--mid .contribute-track__title {
+  font-weight: var(--openms-card-title-weight-strong, 800) !important;
+}
+
+/* ── Leads (intro under section / hero titles) ──────────────────────────── */
+.openms-lib-hero__lead,
+.openms-lib-block__lead,
+.openms-lib-about__lead,
+.openms-lib-topp__lead,
+.openms-lib-explore__lead,
+.openms-lib-resources__lead,
+.openms-lib-developers__lead,
+.home-section-head__lead,
+.hero-home__description,
+.hero-modern__description,
+.about-hero__description,
+.governance-hero__description,
+.webapps-featured__lead,
+.webapps-affiliates__lead,
+.webapps-archived__lead,
+.webapps-contribute__lead,
+.uni-partners__lead,
+.trusted-by__subtitle,
+.keyfeatures-modern__lead,
+.community-home__lead,
+.community-events-home__lead,
+.contact-home__description,
+.contact-page__section-lead,
+.contribute-channels__lead,
+.contribute-ways__lead,
+.openms-steps__subtitle,
+.sponsor-section__lead {
+  font-weight: var(--openms-body-weight, 400) !important;
+}
+
+/* ── Eyebrows / kickers / section labels ────────────────────────────────── */
+.openms-lib-hero__eyebrow,
+.openms-lib-about__eyebrow,
+.openms-lib-topp-split__eyebrow,
+.openms-lib-resources__eyebrow,
+.openms-lib-block__eyebrow,
+.openms-lib-developers__head .openms-lib-block__eyebrow,
+.openms-lib-cta-band__eyebrow,
+.openms-lib-cite__eyebrow,
+.webapps-featured__eyebrow,
+.webapps-affiliates__eyebrow,
+.webapps-archived__eyebrow,
+.webapps-contribute__eyebrow,
+.contribute-channels__eyebrow,
+.contribute-ways__eyebrow,
+.contribute-outreach__eyebrow,
+.contribute-conduct__eyebrow,
+.contact-home__eyebrow,
+.contact-page__path-label,
+.contact-page__support-card-label,
+.contact-page__section-eyebrow,
+.ecosystem-home__eyebrow,
+.keyfeatures-modern__eyebrow,
+.community-home__eyebrow,
+.community-events-home__eyebrow,
+.trusted-by__home-eyebrow,
+.trusted-by__eyebrow,
+.home-pathways__eyebrow,
+.hero-sponsors__label,
+.uni-partners__eyebrow,
+.openms-steps__eyebrow,
+.governance-hero__eyebrow,
+.governance-card__eyebrow,
+.sponsor-eyebrow,
+.sponsor-section-eyebrow,
+.about-hero__eyebrow,
+.news-home__eyebrow,
+.publications-key__eyebrow,
+.developer-retreat-highlights__eyebrow,
+.developer-retreat-upcoming__eyebrow {
+  font-size: var(--openms-text-min) !important;
+  font-weight: var(--openms-eyebrow-weight, 700) !important;
+}
+
+/* ── Card / tile body copy ──────────────────────────────────────────────── */
+.openms-lib-about__tile-text,
+.openms-lib-about__benefit-text,
+.openms-lib-about__list-text,
+.openms-lib-topp-split__card-text,
+.openms-lib-resources__item-text,
+.openms-lib-resources__feature-text,
+.openms-lib-resources__support-text,
+.openms-lib-resources__assist-text,
+.openms-lib-resources__explore-text,
+.openms-lib-list__text,
+.openms-lib-developers__card-text,
+.openms-lib-developers__route .openms-lib-developers__card-text,
+.openms-step__text,
+.webapps-project-card__text,
+.webapps-project-detail-card__text,
+.webapps-archived-entry__text,
+.webapps-archived__notice-text,
+.webapps-contribute__action-text,
+.ecosystem-home__card-text,
+.contact-home__card-text,
+.contact-page__path-desc,
+.contact-page__support-card-desc,
+.news-home__card-summary,
+.news-entry__summary,
+.community-events-home__card-summary,
+.community-events-home__empty-text,
+.contribute-channel__text,
+.contribute-track__text,
+.contribute-support__text,
+.contribute-way__text,
+.contribute-ways__feature-text,
+.keyfeatures-modern__topic-text,
+.home-pathways__step-text,
+.developer-retreat-highlights__card-text,
+.donate-impact-card__text,
+.fellowship-project-card__text,
+.governance-compare__text,
+.privacy-overview__text,
+.coc-principle__text,
+.events-past-card__summary {
+  font-size: var(--openms-body-size) !important;
+  font-weight: var(--openms-body-weight, 400) !important;
+}
+
+/* Light-surface body/meta — use shared muted tokens without fighting inverse cards */
+.home-page .webapps-project-card__text,
+.home-page .ecosystem-home__card-text,
+.home-page .contact-home__card-text,
+.home-page .news-home__card-summary,
+.home-page .community-events-home__card-summary,
+.home-page .keyfeatures-modern__topic-text,
+.home-page .home-pathways__step-text,
+.home-page .webapps-featured__lead,
+.home-page .community-events-home__lead,
+.home-page .contact-home__description,
+.home-page .keyfeatures-modern__lead,
+.openms-lib-page--openms-lib .openms-lib-about__tile-text,
+.openms-lib-page--openms-lib .openms-lib-topp-split__card-text,
+.openms-lib-page--openms-lib .openms-lib-resources__item-text,
+.openms-lib-page--openms-lib .openms-lib-list__text,
+.webapps-project-card__text,
+.webapps-project-detail-card__text,
+.webapps-archived-entry__text,
+.contribute-channel__text,
+.contribute-track__text,
+.contribute-way__text,
+.news-home__card-summary,
+.contact-home__card-text,
+.contact-page__path-desc {
+  color: var(--openms-text-muted, var(--home-body-color, var(--olib-text-muted)));
+}
+
+/* ── Meta / captions / authors / dates ──────────────────────────────────── */
+.news-home__card-authors,
+.news-article__meta,
+.news-card__date,
+.news-card__date-day,
+.news-card__date-month,
+.contact-home__meta,
+.contact-area__meta,
+.publications-cite-card__meta,
+.publications-cite-card__authors,
+.publications-cite-card__journal,
+.publications-cite-card__year,
+.community-events-home__card-dates,
+.community-events-home__date-month,
+.community-events-home__date-year,
+.community-events-home__category,
+.governance-hero__meta,
+.events-past-card__meta,
+.home-metrics__label,
+.home-metrics__description,
+.members .role {
+  font-size: var(--openms-text-min) !important;
+  font-weight: var(--openms-meta-weight, 600) !important;
+  color: var(--openms-text-soft, var(--pro-text-soft));
+}
+
+/* ── Tags / badges (compact labels inside cards) ────────────────────────── */
+.openms-lib-resources__item-tag,
+.openms-lib-developers__card-tag,
+.openms-lib-developers__route .openms-lib-developers__card-tag,
+.contribute-channel__tag,
+.ecosystem-home__card-tag,
+.webapps-project-card__badge,
+.webapps-archived__notice-label,
+.openms-step__tag,
+.news-banner__label {
+  font-size: var(--openms-text-min) !important;
+  font-weight: var(--openms-label-weight, 600) !important;
+}
+
+/* ── Text CTAs (Read more →) — color already in brand-palette ───────────── */
+.openms-cta-link,
+.webapps-project-card__cta,
+.news-home__card-cta,
+.contact-home__card-cta,
+.community-events-home__card-cta,
+.events-past-card__cta,
+.contribute-channel__link,
+.contribute-track__cta,
+.contribute-way__link,
+.openms-lib-about__tile-link,
+.openms-lib-developers__card-link,
+.coc-report__link,
+.privacy-overview__note-link,
+.contact-page__path-link,
+.webapps-featured__extra-link,
+.ecosystem-home__card-link,
+.home-pathways__step-go {
+  font-size: var(--openms-text-min) !important;
+  font-weight: var(--openms-cta-link-weight, 700) !important;
+}
+
+/* ── Disabled / status helpers ──────────────────────────────────────────── */
+[disabled],
+:disabled,
+.is-disabled,
+.news-pager__btn:disabled {
+  color: var(--openms-text-disabled);
+}
+
+.is-success,
+.text-success {
+  color: var(--openms-text-success);
+}
+
+.is-warning,
+.text-warning {
+  color: var(--openms-text-warning);
+}
+
+.is-error,
+.is-danger,
+.text-error,
+.text-danger {
+  color: var(--openms-text-error);
+}

@@ -5,46 +5,6 @@ hideShortcuts: true
 hidePageTitle: true
 ---
 
-<section class="publications-featured" aria-labelledby="key-publications-title">
-    <header class="openms-lib-resources__head">
-      <p class="openms-lib-resources__eyebrow">How to cite</p>
-      <h2 id="key-publications-title" class="openms-lib-resources__title">Key publications</h2>
-      <p class="openms-lib-resources__lead">Please reference these papers when you publish work that uses OpenMS or pyOpenMS.</p>
-    </header>
-    <ul class="publications-featured__list" role="list">
-      <li class="publications-cite-card publications-cite-card--primary" role="listitem">
-        <div class="publications-cite-card__top">
-          <span class="publications-cite-card__badge">Primary cite</span>
-          <span class="publications-cite-card__topic">OpenMS software</span>
-        </div>
-        <h3 class="publications-cite-card__title">
-          <a href="https://www.ncbi.nlm.nih.gov/pubmed/38366242" target="_blank" rel="noopener noreferrer">OpenMS 3 enables reproducible analysis of large-scale mass spectrometry data</a>
-        </h3>
-        <p class="publications-cite-card__meta">
-          <span class="publications-cite-card__journal">Nature Methods</span>
-          <span class="publications-cite-card__year">2024</span>
-        </p>
-        <p class="publications-cite-card__authors">Pfeuffer, Julianus; Bielow, Chris; Wein, Samuel; Jeong, Kyowon; Netz, Eugen; Walter, Axel; Alka, Oliver; Nilse, Lars; Colaianni, Pasquale Domenico; McCloskey, Douglas</p>
-        <a class="publications-cite-card__action" href="https://www.ncbi.nlm.nih.gov/pubmed/38366242" target="_blank" rel="noopener noreferrer">View on PubMed</a>
-      </li>
-      <li class="publications-cite-card publications-cite-card--secondary" role="listitem">
-        <div class="publications-cite-card__top">
-          <span class="publications-cite-card__badge">Also cite</span>
-          <span class="publications-cite-card__topic">pyOpenMS</span>
-        </div>
-        <h3 class="publications-cite-card__title">
-          <a href="https://www.ncbi.nlm.nih.gov/pubmed/25410388" target="_blank" rel="noopener noreferrer">pyOpenMS: a Python-based interface to the OpenMS mass-spectrometry algorithm library</a>
-        </h3>
-        <p class="publications-cite-card__meta">
-          <span class="publications-cite-card__journal">Proteomics</span>
-          <span class="publications-cite-card__year">2014</span>
-        </p>
-        <p class="publications-cite-card__authors">Röst, Hannes L; Schmitt, Uwe; Aebersold, Ruedi; Malmström, Lars</p>
-        <a class="publications-cite-card__action" href="https://www.ncbi.nlm.nih.gov/pubmed/25410388" target="_blank" rel="noopener noreferrer">View on PubMed</a>
-      </li>
-    </ul>
-  </section>
-
 <section class="publications-bibliography" aria-labelledby="all-publications-title">
     <header class="openms-lib-resources__head">
       <p class="openms-lib-resources__eyebrow">Archive</p>

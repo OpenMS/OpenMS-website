@@ -33,7 +33,7 @@
 .trusted-by__shell {
   position: relative;
   z-index: 1;
-  max-width: 75rem;
+  max-width: var(--pro-max, 75rem);
   margin: 0 auto;
   display: grid;
   gap: clamp(1.75rem, 3.5vh, 2.5rem);

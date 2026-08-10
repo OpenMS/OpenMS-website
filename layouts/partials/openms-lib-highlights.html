@@ -31,7 +31,7 @@
         {{- with $item.title }}
         <h3 class="openms-lib-about__benefit-title">{{ . }}</h3>
         {{- end }}
-        <p class="openms-lib-about__benefit-text">{{ $item.text }}</p>
+        <p class="openms-lib-about__benefit-text">{{ $item.text | safeHTML }}</p>
       </li>
       {{- end }}
     </ul>

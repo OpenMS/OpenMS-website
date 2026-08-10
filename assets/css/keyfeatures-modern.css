@@ -9,14 +9,14 @@
 
   margin: 0;
   padding-block: var(--kf-section-pad-block);
-  padding-inline: clamp(2rem, 6vw, 3.5rem);
+  padding-inline: var(--openms-page-inline);
   color: var(--openms-white);
   background: var(--openms-navy);
 }
 
 .keyfeatures-modern__inner {
   width: 100%;
-  max-width: 75rem;
+  max-width: var(--pro-max, 75rem);
   margin: 0 auto;
   padding-block: clamp(1.25rem, 3vh, 2.25rem);
 }
@@ -239,7 +239,7 @@
   .keyfeatures-modern {
     --kf-section-pad-block: clamp(6.5rem, 13vh, 8.5rem);
     --kf-layout-gap: clamp(2.25rem, 5vh, 3rem);
-    padding-inline: clamp(1.25rem, 5vw, 1.85rem);
+    padding-inline: var(--openms-page-inline);
   }
 
   .keyfeatures-modern__inner {

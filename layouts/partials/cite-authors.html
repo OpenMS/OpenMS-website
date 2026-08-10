@@ -1,0 +1,23 @@
+{{- /* Show a few authors; if 20+ remain, show a 20+ chip, else +N. */ -}}
+{{- $raw := . | string -}}
+{{- $parts := split $raw ";" -}}
+{{- $authors := slice -}}
+{{- range $parts -}}
+  {{- $name := strings.TrimSpace . -}}
+  {{- if $name -}}
+    {{- $authors = $authors | append $name -}}
+  {{- end -}}
+{{- end -}}
+{{- $limit := 7 -}}
+{{- $total := len $authors -}}
+{{- if le $total $limit -}}
+  {{- delimit $authors "; " -}}
+{{- else -}}
+  {{- $visible := first $limit $authors -}}
+  {{- $more := sub $total $limit -}}
+  {{- $label := printf "+%d" $more -}}
+  {{- if ge $more 20 -}}
+    {{- $label = "20+" -}}
+  {{- end -}}
+  {{- delimit $visible "; " }} <span class="publications-cite-card__authors-more" title="{{ $total }} authors total · {{ $more }} more not shown">{{ $label }}</span>
+{{- end -}}

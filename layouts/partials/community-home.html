@@ -32,7 +32,7 @@
         {{- end }}
       </h2>
       {{- with $lead }}
-      <p class="community-home__lead">{{ . }}</p>
+      <div class="community-home__lead">{{ . | markdownify }}</div>
       {{- end }}
       {{- with $welcomeNote }}
       <div class="community-home__note">{{ . | markdownify }}</div>

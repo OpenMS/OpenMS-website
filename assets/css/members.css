@@ -18,15 +18,15 @@
 
 .leadership-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(1rem, 2.5vw, 1.75rem);
   margin-top: 1.25rem;
 }
 
 .leadership-card {
   display: flex;
-  align-items: flex-start;
-  gap: 1.15rem;
+  flex-direction: column;
+  gap: 1rem;
   padding: clamp(1.1rem, 2.5vw, 1.5rem);
   background: var(--openms-white);
   border: 1px solid rgba(var(--openms-navy-rgb), 0.1);
@@ -34,44 +34,71 @@
   box-shadow: 0 0.3rem 1rem rgba(var(--openms-navy-rgb), 0.05);
 }
 
+.leadership-card__identity {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  padding-bottom: 0.95rem;
+  border-bottom: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+}
+
 .leadership-card__photo {
   flex: 0 0 auto;
-  width: 6.5rem;
-  height: 6.5rem;
+  width: 4.75rem;
+  height: 4.75rem;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-  border: 3px solid rgba(var(--openms-blue-rgb), 0.18);
+  border: 3px solid rgba(var(--openms-blue-rgb), 0.14);
 }
 
-.leadership-card__body {
+.leadership-card__who {
   min-width: 0;
+  display: grid;
+  gap: 0.4rem;
 }
 
 .leadership-card__name {
-  margin: 0 0 0.15rem;
+  margin: 0;
   font-size: 1.1rem;
   line-height: 1.3;
   color: var(--openms-navy);
 }
 
 .leadership-card__role {
-  margin: 0 0 0.55rem;
-  font-size: var(--openms-text-min);
+  display: inline-flex;
+  width: fit-content;
+  margin: 0;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(var(--openms-navy-rgb), 0.06);
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--openms-blue);
+  color: rgba(var(--openms-navy-rgb), 0.72);
 }
 
 .leadership-card__bio {
+  display: grid;
+  gap: 0.65rem;
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
+.leadership-card__bio p {
+  margin: 0;
+}
+
 .leadership-exec {
   margin: 0 0 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .leadership-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 860px) {
@@ -81,9 +108,17 @@
 }
 
 @media (max-width: 480px) {
-  .leadership-card {
+  .leadership-card__identity {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+
+  .leadership-card__who {
+    justify-items: center;
+  }
+
+  .leadership-card__bio {
     text-align: center;
   }
 }

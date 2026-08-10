@@ -407,3 +407,59 @@
     transform: none;
   }
 }
+
+/* Need a hand? — keep space after the CTA before the footer */
+.openms-lib-page--contact #get-help.openms-lib-page__anchor {
+  padding-block: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
+}
+
+.openms-lib-page--contact .contribute-coc-band__panel {
+  border-radius: var(--pro-radius, 0.85rem);
+}
+
+/* Ways to reach us — full blue icons on card hover */
+@media (hover: hover) and (pointer: fine) {
+  .openms-lib-page--contact #contact-paths .openms-lib-resources__item:hover .openms-lib-resources__item-icon,
+  .openms-lib-page--contact #contact-paths .openms-lib-resources__item:focus-visible .openms-lib-resources__item-icon,
+  .openms-lib-page--contact #contact-paths .openms-lib-resources__item:hover .openms-lib-resources__item-icon .fab,
+  .openms-lib-page--contact #contact-paths .openms-lib-resources__item:focus-visible .openms-lib-resources__item-icon .fab,
+  .openms-lib-page--contact #contact-paths .openms-lib-resources__item:hover .openms-lib-resources__item-icon .fas,
+  .openms-lib-page--contact #contact-paths .openms-lib-resources__item:focus-visible .openms-lib-resources__item-icon .fas,
+  .openms-lib-page--contact #contact-paths .openms-lib-resources__item:hover .openms-lib-resources__item-icon .svg-inline--fa,
+  .openms-lib-page--contact #contact-paths .openms-lib-resources__item:focus-visible .openms-lib-resources__item-icon .svg-inline--fa {
+    color: var(--openms-blue) !important;
+  }
+
+  .openms-lib-page--contact #contact-paths .openms-lib-resources__item:hover .openms-lib-resources__item-icon .svg-inline--fa path,
+  .openms-lib-page--contact #contact-paths .openms-lib-resources__item:focus-visible .openms-lib-resources__item-icon .svg-inline--fa path {
+    fill: currentColor !important;
+  }
+}
+
+/* Contact form intro — centered Message / Send us a message */
+.openms-lib-page--contact #contact-form .openms-lib-resources__head {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.openms-lib-page--contact #contact-form .openms-lib-resources__eyebrow,
+.openms-lib-page--contact #contact-form .openms-lib-resources__title,
+.openms-lib-page--contact #contact-form .openms-lib-resources__lead {
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+  text-align: center;
+  justify-self: center;
+}
+
+.openms-lib-page--contact #contact-form .openms-lib-resources__eyebrow {
+  justify-content: center;
+}
+
+.openms-lib-page--contact #contact-form .openms-lib-resources__lead {
+  margin-top: var(--pro-stack-lead, 0.75rem);
+}

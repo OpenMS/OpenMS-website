@@ -12,7 +12,7 @@
 }
 
 .openms-steps__inner {
-  max-width: 75rem;
+  max-width: var(--pro-max, 75rem);
   margin: 0 auto;
 }
 
@@ -65,7 +65,7 @@
   font-family: var(--openms-font-body);
   font-size: var(--openms-body-size-lg);
   line-height: 1.6;
-  color: rgba(var(--openms-dark-rgb), 0.82);
+  color: var(--openms-card-title-color);
   text-wrap: pretty;
 }
 
@@ -144,7 +144,7 @@
 .openms-steps--users .openms-steps__subtitle {
   margin-left: auto;
   margin-right: auto;
-  color: rgba(var(--openms-dark-rgb), 0.82);
+  color: var(--openms-card-title-color);
 }
 
 .openms-steps--users .openms-steps__title {

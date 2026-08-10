@@ -3,7 +3,15 @@
 {{- $titleHighlight := index $cfg "homeTitleHighlight" | default "news" -}}
 {{- $viewAllText := index $cfg "homeViewAllText" | default "View all" -}}
 {{- $viewAllUrl := index $cfg "homeViewAllUrl" | default "/news/" -}}
-{{- $limit := index $cfg "homeLimit" | default 4 -}}
+{{- $defaultLimit := index $cfg "homeLimit" | default 4 -}}
+{{- $limit := $defaultLimit -}}
+{{- with . -}}
+  {{- if reflect.IsMap . -}}
+    {{- with index . "limit" -}}
+      {{- if gt . 0 -}}{{- $limit = . -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 {{- $emptyMessage := index $cfg "homeEmptyMessage" | default "No news articles yet. Check back soon for announcements and updates." -}}
 {{- $newsSection := site.GetPage "section" "news" -}}
 {{- $pages := slice -}}
@@ -26,27 +34,41 @@
       {{ $title }}
       {{- end -}}
     </h2>
-    <a class="community-news-events__view-all about-cta-btn--donate" href="{{ $viewAllUrl }}">
+    <a class="community-news-events__view-all" href="{{ $viewAllUrl }}">
       <span>{{ $viewAllText }}</span>
       <span class="community-news-events__view-all-icon" aria-hidden="true">→</span>
     </a>
   </header>
 
   {{- if gt $newsCount 0 -}}
-  <ul class="news-home__list" role="list" aria-label="Latest OpenMS news">
+  <ul class="community-events-home__grid news-home__list" role="list" aria-label="Latest OpenMS news">
     {{- range $latest -}}
     {{- $summary := .Summary -}}
     {{- with .Params.summary -}}
       {{- $summary = . -}}
     {{- end -}}
-    <li class="news-home__item" role="listitem">
-      <article class="news-home__card">
-        <a class="news-home__card-link" href="{{ .RelPermalink }}">
-          <h3 class="news-home__card-title">{{ .Title }}</h3>
-          <time class="news-home__card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
-          {{- with $summary -}}
-          <p class="news-home__card-summary">{{ . | plainify | truncate 160 }}</p>
-          {{- end -}}
+    <li class="community-events-home__item news-home__item" role="listitem">
+      <article class="community-events-home__card news-home__card">
+        <a class="community-events-home__card-link community-events-home__card-link--split news-home__card-link" href="{{ .RelPermalink }}">
+          <div class="community-events-home__date-block">
+            <time
+              class="community-events-home__date"
+              datetime="{{ .Date.Format "2006-01-02" }}"
+            >
+              <span class="community-events-home__date-day">{{ .Date.Format "2" }}</span>
+              <span class="community-events-home__date-month">{{ .Date.Format "Jan" | upper }}</span>
+              <span class="community-events-home__date-year">{{ .Date.Format "2006" }}</span>
+            </time>
+          </div>
+
+          <div class="community-events-home__card-main">
+            <div class="community-events-home__card-header">
+              <h3 class="community-events-home__card-title news-home__card-title">{{ .Title }}</h3>
+            </div>
+            {{- with $summary -}}
+            <p class="community-events-home__card-summary news-home__card-summary">{{ . | plainify | truncate 160 }}</p>
+            {{- end -}}
+          </div>
         </a>
       </article>
     </li>

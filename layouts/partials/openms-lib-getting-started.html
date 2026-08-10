@@ -31,7 +31,7 @@
       <li class="openms-lib-resources__explore-item openms-lib-hub__reveal openms-lib-hub__reveal--scale" role="listitem">
         {{- if .url }}
         <a
-          class="openms-lib-resources__explore-card"
+          class="openms-lib-resources__explore-card{{- if .featured }} openms-lib-resources__explore-card--featured{{- end }}"
           href="{{ .url }}"
           {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
         >
@@ -52,7 +52,7 @@
           </span>
         </a>
         {{- else }}
-        <div class="openms-lib-resources__explore-card openms-lib-resources__explore-card--pending">
+        <div class="openms-lib-resources__explore-card openms-lib-resources__explore-card--pending{{- if .featured }} openms-lib-resources__explore-card--featured{{- end }}">
           {{- with .icon }}
           <span class="openms-lib-resources__explore-icon" aria-hidden="true"><i class="{{ . }}"></i></span>
           {{- else }}

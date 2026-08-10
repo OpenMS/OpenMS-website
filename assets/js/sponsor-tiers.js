@@ -15,7 +15,7 @@
     (featured && featured.getAttribute("data-sponsor-tier")) ||
     toggles[0].getAttribute("data-sponsor-tier");
 
-  function activate(tierId, scroll) {
+  function activate(tierId, reveal) {
     benefits.setAttribute("data-active-tier", tierId);
     toggles.forEach(function (toggle) {
       var match = toggle.getAttribute("data-sponsor-tier") === tierId;
@@ -24,7 +24,8 @@
         .closest(".sponsor-tier")
         .classList.toggle("sponsor-tier--active", match);
     });
-    if (scroll) {
+    if (reveal) {
+      benefits.open = true;
       benefits.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
   }
