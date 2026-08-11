@@ -96,6 +96,7 @@
 .webapps-featured__title,
 .webapps-affiliates__title,
 .webapps-archived__title,
+.webapps-archived__projects-title,
 .webapps-contribute__title,
 .uni-partners__title,
 .uni-partners__trust-title,
@@ -119,7 +120,6 @@
 .contribute-conduct__title,
 .governance-membership__title,
 .contributors-exec-panel__title,
-.sponsor-benefits__title,
 .sponsor-logos__title,
 .publications-key__title,
 .about-section h2,
@@ -150,8 +150,8 @@
 .openms-lib-developers__card--build .openms-lib-developers__card-title,
 .openms-lib-spotlight__title,
 .contribute-ways__feature-title,
-.webapps-archived__projects-title,
-.events-past-year__title {
+.events-past-year__title,
+.sponsor-benefits__title {
   font-size: var(--openms-secondary-heading-size-lg) !important;
 }
 
@@ -177,11 +177,8 @@
 .contact-home__card-title,
 .events-past-card__title,
 .keyfeatures-modern__topic-title,
-.webapps-project-card__name,
 .webapps-project-card__title,
-.webapps-project-detail-card__name,
 .webapps-archived-entry__name,
-.webapps-archived__notice-title,
 .webapps-contribute__action-title,
 .contact-page__form-title,
 .contact-page__path-title,
@@ -206,14 +203,17 @@
 }
 
 /* ── Lead paragraphs ──────────────────────────────────────────────────────
-   The intro under a hero or section title. */
+   The intro under a hero or section title. Fluid width matches the Contact
+   section: wide measure on desktop, full container width on small screens. */
 .openms-lib-hero__lead,
 .openms-lib-block__lead,
 .openms-lib-about__lead,
 .openms-lib-topp__lead,
+.openms-lib-topp-split__lead,
 .openms-lib-explore__lead,
 .openms-lib-resources__lead,
 .openms-lib-developers__lead,
+.openms-lib-cta-band__lead,
 .home-section-head__lead,
 .hero-home__description,
 .hero-modern__description,
@@ -225,6 +225,8 @@
 .webapps-contribute__lead,
 .uni-partners__lead,
 .trusted-by__subtitle,
+.trusted-by__home-lead,
+.trusted-by__minimal-lead,
 .keyfeatures-modern__lead,
 .community-home__lead,
 .community-events-home__lead,
@@ -232,8 +234,53 @@
 .contact-page__section-lead,
 .contribute-channels__lead,
 .contribute-ways__lead,
-.openms-steps__subtitle {
+.ecosystem-home__lead,
+.openms-steps__subtitle,
+.sponsor-section__lead,
+.home-pathways__lead {
   font-size: var(--openms-body-size-lg) !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: min(100%, var(--pro-measure-wide, 58ch)) !important;
+  text-wrap: pretty;
+}
+
+@media (max-width: 768px) {
+  .openms-lib-hero__lead,
+  .openms-lib-block__lead,
+  .openms-lib-about__lead,
+  .openms-lib-topp__lead,
+  .openms-lib-topp-split__lead,
+  .openms-lib-explore__lead,
+  .openms-lib-resources__lead,
+  .openms-lib-developers__lead,
+  .openms-lib-cta-band__lead,
+  .home-section-head__lead,
+  .hero-home__description,
+  .hero-modern__description,
+  .about-hero__description,
+  .governance-hero__description,
+  .webapps-featured__lead,
+  .webapps-affiliates__lead,
+  .webapps-archived__lead,
+  .webapps-contribute__lead,
+  .uni-partners__lead,
+  .trusted-by__subtitle,
+  .trusted-by__home-lead,
+  .trusted-by__minimal-lead,
+  .keyfeatures-modern__lead,
+  .community-home__lead,
+  .community-events-home__lead,
+  .contact-home__description,
+  .contact-page__section-lead,
+  .contribute-channels__lead,
+  .contribute-ways__lead,
+  .ecosystem-home__lead,
+  .openms-steps__subtitle,
+  .sponsor-section__lead,
+  .home-pathways__lead {
+    max-width: 100% !important;
+  }
 }
 
 /* ── Stragglers that never used a token ───────────────────────────────── */
@@ -244,7 +291,7 @@
 
 .home-metrics__label,
 .home-metrics__description,
-.hero-mockup__tagline-text,
+.hero-mockup__chrome-title,
 .members .role {
   font-size: var(--openms-text-min);
 }

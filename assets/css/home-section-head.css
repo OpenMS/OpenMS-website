@@ -197,10 +197,20 @@
 
 .home-page .home-page__block--projects .webapps-featured__header-main .webapps-featured__lead,
 .home-page .community-events-home__lead,
-.home-page .contact-home__description,
 .home-page .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__lead {
   margin: var(--home-section-head-lead-gap) 0 0;
-  max-width: 42ch;
+  max-width: min(100%, var(--pro-measure-wide, 58ch));
+  width: 100%;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.65;
+  text-align: left;
+  text-wrap: pretty;
+}
+
+.home-page .contact-home__description {
+  margin: var(--home-section-head-lead-gap) 0 0;
+  max-width: min(100%, var(--pro-measure-wide, 58ch));
+  width: 100%;
   font-size: var(--openms-body-size-lg);
   line-height: 1.65;
   text-align: left;
@@ -273,6 +283,20 @@
     max-width: none;
     width: 100%;
     text-wrap: pretty;
+  }
+
+  .home-page .home-page__block--projects .webapps-featured__header-main,
+  .home-page .community-events-home__header-main,
+  .home-page .contact-home__header,
+  .home-page .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__header-main {
+    max-width: 100%;
+  }
+
+  .home-page .home-page__block--projects .webapps-featured__header-main .webapps-featured__lead,
+  .home-page .community-events-home__lead,
+  .home-page .contact-home__description,
+  .home-page .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__lead {
+    max-width: 100%;
   }
 
   .home-page .community-home__content,

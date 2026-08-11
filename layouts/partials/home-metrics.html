@@ -1,5 +1,6 @@
 {{- $metrics := .Site.Params.homeMetrics | default dict -}}
 {{- $stats := $metrics.stats | default (index .Site.Params.hero "stats") -}}
+{{- $supportNote := $metrics.supportNote -}}
 {{- with $stats }}
 <section class="home-page__block home-page__block--metrics home-metrics" aria-label="Key metrics">
   <div class="home-page__container">
@@ -8,6 +9,9 @@
       {{ partial "home-metric-card.html" (dict "stat" .) }}
       {{- end }}
     </div>
+    {{- with $supportNote }}
+    <p class="home-metrics__support">{{ . }}</p>
+    {{- end }}
   </div>
 </section>
 {{- end }}

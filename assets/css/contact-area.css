@@ -83,12 +83,23 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
 
 .contact-home__description {
   margin: 0.85rem 0 0;
-  max-width: 52ch;
+  max-width: min(100%, var(--pro-measure-wide, 58ch));
+  width: 100%;
   font-family: var(--openms-font-body);
   font-size: var(--openms-body-size-lg);
   line-height: 1.62;
   color: var(--openms-text-muted);
   text-wrap: pretty;
+}
+
+@media (max-width: 768px) {
+  .contact-home__header {
+    max-width: 100%;
+  }
+
+  .contact-home__description {
+    max-width: 100%;
+  }
 }
 
 .contact-home__grid {

@@ -187,15 +187,17 @@
         </li>
       </ol>
 
-      {{/* Support: slim horizontal CTA */}}
-      <a class="contribute-support" id="contribute-support" href="/sponsor-us/">
+      {{/* Support: horizontal CTA band */}}
+      <aside class="contribute-support" id="contribute-support" aria-labelledby="contribute-support-title">
         <div class="contribute-support__copy">
           <p class="contribute-support__kicker">Support</p>
-          <h3 class="contribute-support__title">Fundraising</h3>
+          <h3 id="contribute-support-title" class="contribute-support__title">Fundraising</h3>
           <p class="contribute-support__text">Help secure grants and sponsorships that keep OpenMS stable and growing.</p>
         </div>
-        <span class="contribute-support__cta">Sponsorship program<span aria-hidden="true"> →</span></span>
-      </a>
+        <a class="openms-lib-btn openms-lib-btn--primary contribute-support__cta" href="/sponsor-us/">
+          <span class="openms-lib-btn__label">Sponsorship program</span>
+        </a>
+      </aside>
 
       {{/* Outreach */}}
       <aside class="contribute-outreach" id="contribute-outreach" aria-labelledby="contribute-outreach-title">

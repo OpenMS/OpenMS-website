@@ -114,7 +114,8 @@
 
 .rp-application__tally-iframe,
 .openms-lib-page--research-partnerships .rp-application__tally-iframe {
-  min-height: 48rem;
+  /* No tall floor — Tally dynamicHeight sets the real height */
+  min-height: 0 !important;
 }
 
 .donate-page__zeffy-iframe,

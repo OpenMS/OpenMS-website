@@ -61,11 +61,16 @@
 }
 
 .openms-lib-page--governance #governance-bodies .openms-lib-about__tile:hover,
-.openms-lib-page--governance #governance-bodies .openms-lib-about__tile:focus-within {
+.openms-lib-page--governance #governance-bodies .openms-lib-about__tile:focus-within,
+.contribute-channel:hover,
+.contribute-channel:focus-within {
   background: var(--openms-num-strip-hover-bg) !important;
   margin: 0 !important;
   transform: none !important;
   box-shadow: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
 }
 
 /* Sponsor-us Impact strip — no top/bottom hairlines under Why sponsor OpenMS */
@@ -485,11 +490,15 @@
   .openms-lib-page--sponsor-us .openms-lib-about__mosaic,
   .openms-lib-page--governance #governance-bodies .openms-lib-about__mosaic,
   .openms-lib-page--openms-lib .openms-lib-about__mosaic,
-  .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefits,
   .openms-lib-page--pyopenms-pro .openms-lib-about__mosaic,
   .openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-about__mosaic,
   .openms-lib-page--code-of-conduct .coc-overview__principles {
     grid-template-columns: 1fr !important;
+  }
+
+  /* Overview (What is OpenMS?) — keep 2×2 on phones */
+  .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
   /* Research Partnerships — keep one 5-up row on phones */

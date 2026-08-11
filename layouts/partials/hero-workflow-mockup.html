@@ -10,24 +10,20 @@
 <aside class="hero-mockup" aria-label="{{ index $hero "imageAlt" | default "OpenMS workflow preview" }}">
   <div class="hero-mockup__window">
     <div class="hero-mockup__chrome" aria-hidden="true">
-      <span class="hero-mockup__chrome-dot"></span>
-      <span class="hero-mockup__chrome-dot"></span>
-      <span class="hero-mockup__chrome-dot"></span>
+      <span class="hero-mockup__chrome-dots">
+        <span class="hero-mockup__chrome-dot"></span>
+        <span class="hero-mockup__chrome-dot"></span>
+        <span class="hero-mockup__chrome-dot"></span>
+      </span>
+      <p class="hero-mockup__chrome-title">
+        <span class="hero-mockup__chrome-title-lead">{{ $label }}</span>
+        <span class="hero-mockup__chrome-title-arrow">{{ $labelArrow }}</span>
+        <span class="hero-mockup__chrome-title-result">{{ $labelAfter }}</span>
+      </p>
+      <span class="hero-mockup__chrome-brand">{{ $brand }}</span>
     </div>
 
     <div class="hero-mockup__body">
-      <div class="hero-mockup__meta-row">
-        <p class="hero-mockup__tagline">
-          <span class="hero-mockup__tagline-dot" aria-hidden="true"></span>
-          <span class="hero-mockup__tagline-text">
-            <span class="hero-mockup__tagline-lead">{{ $label }}</span>
-            <span class="hero-mockup__tagline-arrow" aria-hidden="true">{{ $labelArrow }}</span>
-            <span class="hero-mockup__tagline-result">{{ $labelAfter }}</span>
-          </span>
-        </p>
-        <p class="hero-mockup__brand">{{ $brand }}</p>
-      </div>
-
       <div class="hero-mockup__chart" aria-hidden="true">
         {{- range $i, $h := $bars }}
         <span class="hero-mockup__bar" style="--bar-h: {{ $h }}%"></span>

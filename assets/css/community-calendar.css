@@ -1,14 +1,17 @@
 /* Community events page (/calendar/) */
 
-.community-calendar-layout {
+.community-calendar-layout,
+.openms-lib-page--calendar {
   --olib-section-y: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
   --olib-bg-soft: #f4f6f9;
   --olib-text-muted: var(--openms-text-muted);
   --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
-  --calendar-max: 48rem;
+  --calendar-max: 56rem;
   --home-card-title-color: rgba(var(--openms-dark-rgb), 0.82);
   --home-body-color: var(--openms-text-muted);
+}
 
+.community-calendar-layout {
   display: block;
   width: 100%;
   max-width: none;
@@ -580,9 +583,9 @@
 }
 
 @media (max-width: 640px) {
-  /* Stack date above body so long locations (e.g. Piotrowice…) get full card width */
+  /* Keep date | title side-by-side on news + calendar cards */
   .community-events-upcoming-layout .community-events-home__card-link--split {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: start;
     justify-items: stretch;
     gap: 0.65rem;
@@ -597,8 +600,8 @@
   }
 
   .community-events-upcoming-layout .community-events-home__card-main {
-    grid-column: 1;
-    grid-row: 2;
+    grid-column: 2;
+    grid-row: 1;
     width: 100%;
     min-width: 0;
     justify-self: stretch;
@@ -624,10 +627,13 @@
     overflow-wrap: break-word;
   }
 
-  .community-events-upcoming-layout .community-events-home__card-footer .events-past-card__cta {
-    width: 100%;
+  .community-events-upcoming-layout .community-events-home__card-footer .events-past-card__cta,
+  .community-events-upcoming-layout .community-events-home__card-footer .openms-step__cta,
+  .community-events-upcoming-layout .community-events-home__card-footer .openms-btn-primary {
+    width: fit-content !important;
     max-width: 100%;
-    margin-left: 0;
+    margin-left: auto;
+    align-self: flex-end;
     justify-content: center;
   }
 
@@ -642,17 +648,19 @@
   }
 
   .events-past-card {
-    grid-template-columns: 1fr;
-  }
-
-  .events-past-card__date-block,
-  .events-past-card__body {
-    grid-column: 1;
-    grid-row: auto;
+    grid-template-columns: auto minmax(0, 1fr);
   }
 
   .events-past-card__date-block {
+    grid-column: 1;
+    grid-row: 1;
     width: fit-content;
+  }
+
+  .events-past-card__body {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
   }
 
   .events-past-card__footer {

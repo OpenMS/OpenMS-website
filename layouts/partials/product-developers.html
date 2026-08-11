@@ -17,7 +17,7 @@
 {{- $review := false -}}
 {{- range $boxes -}}
   {{- $type := .type | default "link" -}}
-  {{- if eq $type "build" -}}
+  {{- if or (eq $type "build") (eq $type "review") -}}
     {{- $review = . -}}
   {{- else if eq $type "links" -}}
     {{- $buildLinks = . -}}
@@ -26,6 +26,7 @@
   {{- end -}}
 {{- end -}}
 {{- $routeCount := add (len $links) (cond $buildLinks 1 0) -}}
+{{- $routeCount = add $routeCount (cond $review 1 0) -}}
 <section class="openms-lib-block openms-lib-block--developers" id="for-developers" aria-labelledby="{{ $sectionId }}">
   <div class="openms-lib-developers__layout">
     <header class="openms-lib-block__head openms-lib-developers__head">
@@ -100,6 +101,51 @@
           </div>
         </article>
         {{- end }}
+
+        {{- with $review }}
+        <article class="openms-lib-developers__card openms-lib-developers__card--links openms-lib-developers__card--review openms-lib-developers__route openms-lib-developers__route--review">
+          <div class="openms-lib-developers__route-top">
+            {{- with .icon }}
+            <span class="openms-lib-developers__route-icon" aria-hidden="true"><i class="{{ . }}"></i></span>
+            {{- else }}
+            <span class="openms-lib-developers__route-icon" aria-hidden="true"><i class="fas fa-code-branch"></i></span>
+            {{- end }}
+            {{- with .tag }}
+            <span class="openms-lib-developers__card-tag">{{ . }}</span>
+            {{- else }}
+            <span class="openms-lib-developers__card-tag">Review</span>
+            {{- end }}
+          </div>
+          <div class="openms-lib-developers__card-body">
+            <h3 class="openms-lib-developers__card-title">
+              <span>{{ .title }}</span>
+            </h3>
+            {{- with .text | default .subtitle }}
+            <p class="openms-lib-developers__card-text">{{ . }}</p>
+            {{- end }}
+            {{- with .badge }}
+            <a
+              class="openms-lib-developers__badge"
+              href="{{ .url }}"
+              {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+            >
+              <img src="{{ .src }}" alt="{{ .alt | default "Badge" }}" loading="lazy" />
+            </a>
+            {{- end }}
+            <div class="openms-lib-developers__platforms" role="group" aria-label="{{ .title }}">
+              {{- range .platforms }}
+              <a
+                class="openms-lib-btn openms-lib-btn--ghost openms-lib-developers__platform-btn"
+                href="{{ .url }}"
+                {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+              >
+                <span class="openms-lib-btn__label">{{ .name }}</span>
+              </a>
+              {{- end }}
+            </div>
+          </div>
+        </article>
+        {{- end }}
       </div>
 
       {{- if and $hasCite (not $citeSeparate) }}
@@ -107,45 +153,6 @@
       {{- end }}
     </div>
   </div>
-
-  {{- with $review }}
-  <article class="openms-lib-developers__card openms-lib-developers__card--build openms-lib-developers__review">
-    <div class="openms-lib-developers__card-body">
-      {{- with .tag }}
-      <span class="openms-lib-developers__card-tag">{{ . }}</span>
-      {{- end }}
-      <h3 class="openms-lib-developers__card-title">
-        <span>{{ .title }}</span>
-      </h3>
-      {{- with .badge }}
-      <a
-        class="openms-lib-developers__badge"
-        href="{{ .url }}"
-        {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
-      >
-        <img src="{{ .src }}" alt="{{ .alt | default "Badge" }}" loading="lazy" />
-      </a>
-      {{- end }}
-      {{- with .text }}
-      <p class="openms-lib-developers__card-text">{{ . }}</p>
-      {{- end }}
-      <div class="openms-lib-developers__platforms" role="group" aria-label="{{ .title }}">
-        {{- range .platforms }}
-        <a
-          class="openms-lib-btn openms-lib-btn--primary"
-          href="{{ .url }}"
-          {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
-        >
-          {{- with .icon }}
-          <i class="{{ . }}" aria-hidden="true"></i>
-          {{- end }}
-          <span class="openms-lib-btn__label">{{ .name }}</span>
-        </a>
-        {{- end }}
-      </div>
-    </div>
-  </article>
-  {{- end }}
 
 </section>
 {{- if and $hasCite $citeSeparate (not $omitSeparateCite) }}

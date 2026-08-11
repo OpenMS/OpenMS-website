@@ -179,7 +179,7 @@
   margin: var(--pro-stack-lead, var(--contribute-space-2)) 0 0;
   font-size: var(--openms-body-size-lg);
   line-height: 1.65;
-  color: rgba(var(--openms-navy-rgb), 0.68);
+  color: var(--openms-text-muted) !important;
 }
 
 .contribute-channels__strip {
@@ -210,7 +210,9 @@
 
 .contribute-channel:hover,
 .contribute-channel:focus-within {
-  background: rgba(var(--openms-blue-rgb), 0.03);
+  background: var(--openms-num-strip-hover-bg);
+  box-shadow: none;
+  transform: none;
 }
 
 /* Index typography comes from brand-palette shared step numbers */
@@ -295,7 +297,7 @@
   max-width: 42ch;
   font-size: var(--openms-body-size-lg);
   line-height: 1.65;
-  color: rgba(var(--openms-navy-rgb), 0.68);
+  color: var(--openms-text-muted) !important;
   text-wrap: pretty;
 }
 
@@ -489,7 +491,7 @@
   font-size: var(--openms-secondary-heading-size-lg) !important;
   font-weight: 800;
   letter-spacing: -0.02em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .contribute-track__text {
@@ -635,34 +637,44 @@
 }
 
 /* ═══════════════════════════════════════════
-   7. SUPPORT — slim horizontal CTA
+   7. SUPPORT — horizontal CTA band
    ═══════════════════════════════════════════ */
 .contribute-support {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  justify-items: start;
-  gap: 0.45rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.5rem) clamp(1.5rem, 4vw, 3rem);
   width: 100%;
   margin: 0;
-  padding: var(--contribute-section-y) var(--contribute-gutter);
+  padding: clamp(1.75rem, 3.5vw, 2.5rem) var(--contribute-gutter);
   box-sizing: border-box;
-  border-top: 1px solid var(--contribute-border);
-  border-bottom: 1px solid var(--contribute-border);
-  color: inherit;
+  border: none;
+  border-radius: 0;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--openms-blue) 7%, var(--openms-white)) 0%,
+      color-mix(in srgb, var(--olib-bg-soft, #f4f6f9) 80%, var(--openms-white)) 100%
+    );
+  color: var(--openms-navy);
   text-decoration: none !important;
-  transition: background-color var(--contribute-motion);
-}
-
-.contribute-support:hover,
-.contribute-support:focus-visible {
-  background: rgba(var(--openms-navy-rgb), 0.02);
-  outline: none;
 }
 
 .contribute-support__copy {
   display: grid;
-  gap: 0.3rem;
-  max-width: 42rem;
+  gap: 0.4rem;
+  max-width: 40rem;
+  justify-items: start;
+  text-align: left;
+}
+
+.contribute-support__kicker {
+  margin: 0;
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--openms-blue);
 }
 
 .contribute-support__title {
@@ -672,28 +684,21 @@
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  text-transform: uppercase;
-  color: var(--openms-navy);
+  text-transform: none;
+  color: var(--openms-navy) !important;
 }
 
 .contribute-support__text {
   margin: 0;
+  max-width: 42ch;
   font-size: var(--openms-body-size);
   line-height: 1.55;
-  color: rgba(var(--openms-navy-rgb), 0.68);
+  color: var(--openms-text-muted) !important;
 }
 
 .contribute-support__cta {
-  font-size: var(--openms-text-min);
-  font-weight: 700;
+  justify-self: end;
   white-space: nowrap;
-  color: var(--openms-blue);
-  transition: transform var(--contribute-motion);
-}
-
-.contribute-support:hover .contribute-support__cta,
-.contribute-support:focus-visible .contribute-support__cta {
-  transform: translateX(0.25rem);
 }
 
 /* ═══════════════════════════════════════════
@@ -735,7 +740,7 @@
   margin: 0;
   font-size: var(--openms-body-size-lg);
   line-height: 1.65;
-  color: rgba(var(--openms-navy-rgb), 0.68);
+  color: var(--openms-text-muted) !important;
 }
 
 .contribute-outreach__contact a {
@@ -895,6 +900,16 @@
     grid-column: 1 / -1;
   }
 
+  .contribute-support {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 1.25rem;
+  }
+
+  .contribute-support__cta {
+    justify-self: start;
+  }
+
   .contribute-outreach__inner {
     grid-template-columns: 1fr;
     justify-items: stretch;
@@ -958,8 +973,7 @@
   .contribute-track__item:hover,
   .contribute-track__item:focus-within,
   .contribute-outreach__social-link:hover,
-  .contribute-outreach__social-link:hover .contribute-outreach__social-arrow,
-  .contribute-support:hover .contribute-support__cta {
+  .contribute-outreach__social-link:hover .contribute-outreach__social-arrow {
     transform: none;
     padding-left: 0;
   }

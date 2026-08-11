@@ -21,7 +21,7 @@
   --pro-stack-lead:var(--pro-space-2);
   --pro-stack-actions:var(--pro-space-5);
   --pro-head-to-content:var(--pro-space-6);
-  --pro-measure:42ch;
+  --pro-measure:58ch;
   --pro-measure-wide:58ch;
   --pro-card-gap:clamp(1rem, 2vw, 1.5rem);
   --pro-card-pad:clamp(1rem, 2vw, 1.2rem);
@@ -64,7 +64,7 @@
   --pro-stack-lead:var(--pro-space-2);
   --pro-stack-actions:var(--pro-space-5);
   --pro-head-to-content:var(--pro-space-6);
-  --pro-measure:42ch;
+  --pro-measure:58ch;
   --pro-measure-wide:58ch;
   --pro-card-gap:clamp(1rem, 2vw, 1.5rem);
   --pro-card-pad:clamp(1rem, 2vw, 1.2rem);
@@ -835,11 +835,14 @@
 }
 @media(max-width:560px) {
   .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefits {
-    grid-template-columns:1fr
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    column-gap:clamp(0.85rem,4vw,1.35rem);
+    row-gap:clamp(0.85rem,3.5vw,1.25rem);
+    padding:clamp(1.05rem,4vw,1.35rem) clamp(0.85rem,3.5vw,1.15rem)
   }
   .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit {
-    align-items:center;
-    text-align:center;
+    align-items:flex-start;
+    text-align:left;
     gap:0.45rem
   }
 
@@ -979,7 +982,7 @@
 .openms-lib-page--openms-lib .openms-lib-topp-split__card:focus-within {
   border-color:var(--pro-line-strong);
   box-shadow:var(--pro-shadow-hover);
-  transform:translateY(-2px)
+  transform:none
 }
 .openms-lib-page--openms-lib .openms-lib-topp-split__card-icon {
   display:grid;
@@ -1029,7 +1032,6 @@
 }
 .openms-lib-page--openms-lib .openms-lib-topp-split__card-link:hover,
 .openms-lib-page--openms-lib .openms-lib-topp-split__card-link:focus-visible {
-  gap:.5rem;
   color:var(--pro-link, var(--openms-navy))!important;
   outline:none
 }
@@ -1163,7 +1165,10 @@
 .openms-lib-page .openms-lib-resources__explore-card:focus-visible {
   border-color:var(--pro-line-strong);
   box-shadow:var(--pro-shadow-hover);
-  transform:translateY(-2px);
+  transform:none;
+  min-height:0;
+  height:100%;
+  max-height:none;
   outline:none
 }
 .openms-lib-page .openms-lib-resources__explore-icon {
@@ -1217,7 +1222,7 @@
 }
 .openms-lib-page .openms-lib-resources__explore-card:hover .openms-lib-resources__explore-link,
 .openms-lib-page .openms-lib-resources__explore-card:focus-visible .openms-lib-resources__explore-link {
-  gap:.5rem
+  color:var(--pro-link, var(--openms-navy))
 }
 .openms-lib-page .openms-lib-resources__assist {
   display:flex;
@@ -1780,6 +1785,22 @@
   > * {
   grid-column: auto;
 }
+
+/* 7 cards → 2 rows (4 + 3), Reviewing PRs stays rightmost on row 2 */
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child) {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child)
+  > :nth-child(-n + 4) {
+  grid-column: span 3;
+}
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child)
+  > :nth-child(n + 5) {
+  grid-column: span 4;
+}
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__card--box,
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__card--review,
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__card--build-src {
@@ -1847,8 +1868,19 @@
   color: var(--pro-text-soft, rgba(var(--openms-dark-rgb), 0.55));
 }
 @media (max-width: 1100px) {
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) .openms-lib-developers__cards-grid {
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) .openms-lib-developers__cards-grid,
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child)
+    > :nth-child(-n + 4),
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child)
+    > :nth-child(n + 5) {
+    grid-column: auto / span 1;
   }
 }
 
@@ -2062,15 +2094,28 @@
   opacity:1;
   visibility:visible;
   pointer-events:auto;
-  gap:0.85rem
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:center;
+  justify-content:flex-start;
+  gap:0.3rem !important;
+  row-gap:0.3rem !important;
+  column-gap:0.3rem !important;
+  width:100%;
+  min-width:0
 }
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps)
   .openms-lib-developers--cards
   .openms-lib-developers__card--review
   .openms-lib-developers__platform-btn {
-  flex:1 1 calc(50% - 0.45rem);
-  min-width:min(100%,6.5rem);
-  justify-content:center
+  flex:0 1 auto;
+  width:fit-content;
+  min-width:0;
+  max-width:none;
+  justify-content:center;
+  white-space:nowrap;
+  padding:0.35rem 0.5rem;
+  font-size:0.78rem
 }
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps)
   .openms-lib-developers--cards
@@ -2136,6 +2181,7 @@
   .openms-lib-developers--cards
   .openms-lib-developers__card--review
   .openms-lib-developers__badge {
+  align-self:flex-start;
   margin-top:0.15rem
 }
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__card-body ,
@@ -2218,15 +2264,15 @@
   box-shadow: none;
 }
 
-/* Building from Source — hide platform btns until hover (desktop only) */
+/* Building from Source — hide platform btns until hover (desktop only; skip Review card) */
 @media (hover: hover) and (pointer: fine) and (min-width: 981px) {
   .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps)
     .openms-lib-developers--cards
-    .openms-lib-developers__card--build-src
+    .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review)
     .openms-lib-developers__platforms,
   .openms-lib-page--pyopenms-viz-pro
     .openms-lib-developers--cards
-    .openms-lib-developers__card--build-src
+    .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review)
     .openms-lib-developers__platforms {
     opacity: 0;
     visibility: hidden;
@@ -2240,25 +2286,58 @@
 
   .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps)
     .openms-lib-developers--cards
-    .openms-lib-developers__card--build-src:hover
+    .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review):hover
     .openms-lib-developers__platforms,
   .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps)
     .openms-lib-developers--cards
-    .openms-lib-developers__card--build-src:focus-within
+    .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review):focus-within
     .openms-lib-developers__platforms,
   .openms-lib-page--pyopenms-viz-pro
     .openms-lib-developers--cards
-    .openms-lib-developers__card--build-src:hover
+    .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review):hover
     .openms-lib-developers__platforms,
   .openms-lib-page--pyopenms-viz-pro
     .openms-lib-developers--cards
-    .openms-lib-developers__card--build-src:focus-within
+    .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review):focus-within
     .openms-lib-developers__platforms {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
     transform: translateY(0);
   }
+}
+
+/* Reviewing PRs — keep CTA buttons on one row, snug together */
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--review
+  .openms-lib-developers__platforms {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.3rem !important;
+  row-gap: 0.3rem !important;
+  column-gap: 0.3rem !important;
+  width: 100%;
+  min-width: 0;
+}
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--review
+  .openms-lib-developers__platform-btn {
+  flex: 0 1 auto;
+  width: fit-content;
+  min-width: 0;
+  max-width: none;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.78rem;
 }
 
 /* Building from Source — always show btns when responsive; avoid clipping */
@@ -3191,20 +3270,41 @@
   .openms-lib-page--openms-lib .openms-lib-developers__grid--routes>.openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(1),.openms-lib-page--openms-lib .openms-lib-developers__grid--routes>.openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(2),.openms-lib-page--openms-lib .openms-lib-developers__grid--routes>.openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(3),.openms-lib-page--openms-lib .openms-lib-developers__grid--routes>.openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(4),.openms-lib-page--openms-lib .openms-lib-developers__grid--routes>.openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(5) {
     grid-column:span 1
   }
-  .openms-lib-page--openms-lib .openms-lib-developers__grid--routes>.openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(1) {
+  .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro) .openms-lib-developers__grid--routes>.openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(1) {
     grid-column:1/-1;
     min-height:0
   }
-  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro .openms-lib-developers__grid--routes {
+  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-developers__grid--routes,
+  .openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-developers__grid--routes {
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  }
+  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-developers__grid--routes>.openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(n),
+  .openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-developers__grid--routes>.openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(n) {
+    grid-column:span 1;
+    min-height:0
+  }
+  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro .openms-lib-developers__grid--routes:not(.openms-lib-developers__grid--count-2) {
     grid-template-columns:1fr
   }
-  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro .openms-lib-developers__grid--routes>.openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(n) {
+  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro .openms-lib-developers__grid--routes:not(.openms-lib-developers__grid--count-2)>.openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(n) {
     grid-column:auto
+  }
+  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2,
+  .openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2 {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    max-width:100%
+  }
+  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2>.openms-lib-developers__route,
+  .openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2>.openms-lib-developers__route {
+    grid-column:span 1;
+    width:100%;
+    min-width:0
   }
 
 }
 @media(max-width:700px) {
-  .openms-lib-page--hub.openms-lib-page--openms-lib .openms-lib-developers__grid--routes,.openms-lib-page--openms-lib .openms-lib-developers__grid--routes {
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-developers__grid--routes,
+  .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-developers__grid--routes {
     grid-template-columns:1fr
   }
   .openms-lib-page--hub.openms-lib-page--openms-lib .openms-lib-developers__route--build,.openms-lib-page--openms-lib .openms-lib-developers__route--build {
@@ -3531,7 +3631,7 @@
 }
 .openms-lib-developers__badge {
   display:inline-flex;
-  align-self:center;
+  align-self:flex-start;
   margin:.15rem 0 0;
   line-height:0;
   border-radius:.3rem;
@@ -3867,10 +3967,18 @@
   padding-bottom: 0;
 }
 
-.openms-lib-page--webapps-pro #using-the-template .openms-lib-resources__inner,
 .openms-lib-page--webapps-pro #examples .openms-lib-resources__inner,
 .openms-lib-page--webapps-pro .openms-lib-resources__inner {
   padding-bottom: 0;
+}
+
+/* Using the template — extra space under cards before Examples */
+.openms-lib-page--webapps-pro .openms-lib-page__body > #using-the-template.openms-lib-page__anchor {
+  padding-bottom: calc(var(--pro-section-y) * 0.7);
+}
+
+.openms-lib-page--webapps-pro #using-the-template .openms-lib-resources__inner {
+  padding-bottom: clamp(0.75rem, 2vw, 1.5rem);
 }
 
 /* Examples band: full-bleed bg; extra air before For Developers / Contribute */
@@ -4115,8 +4223,19 @@
   display: block;
 }
 
-/* Using the template — always navy + white (no hover fill) */
-.openms-lib-page--webapps-pro .openms-lib-resources__grid > .openms-lib-resources__item {
+/* Using the template — always navy + white; shell height locked on hover */
+.openms-lib-page--webapps-pro #using-the-template .openms-lib-resources__grid > .openms-lib-resources__item,
+.openms-lib-page--webapps-pro #using-the-template .openms-lib-resources__grid > .openms-lib-resources__item:hover,
+.openms-lib-page--webapps-pro #using-the-template .openms-lib-resources__grid > .openms-lib-resources__item:focus-visible,
+.openms-lib-page--webapps-pro #using-the-template .openms-lib-resources__grid > .openms-lib-resources__item:focus-within,
+.openms-lib-page--webapps-pro .openms-lib-resources__grid > .openms-lib-resources__item,
+.openms-lib-page--webapps-pro .openms-lib-resources__grid > .openms-lib-resources__item:hover,
+.openms-lib-page--webapps-pro .openms-lib-resources__grid > .openms-lib-resources__item:focus-visible,
+.openms-lib-page--webapps-pro .openms-lib-resources__grid > .openms-lib-resources__item:focus-within {
+  box-sizing: border-box !important;
+  height: var(--openms-equal-card-min-h, 14.5rem) !important;
+  min-height: var(--openms-equal-card-min-h, 14.5rem) !important;
+  max-height: var(--openms-equal-card-min-h, 14.5rem) !important;
   background:
     linear-gradient(160deg, rgba(255, 255, 255, 0.18) 0%, transparent 42%),
     var(--openms-navy) !important;
@@ -4125,24 +4244,13 @@
   color: var(--openms-white) !important;
   transform: none !important;
   transition: none;
-}
-
-.openms-lib-page--webapps-pro .openms-lib-resources__grid > .openms-lib-resources__item:hover,
-.openms-lib-page--webapps-pro .openms-lib-resources__grid > .openms-lib-resources__item:focus-visible,
-.openms-lib-page--webapps-pro .openms-lib-resources__grid > .openms-lib-resources__item:focus-within {
-  background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.18) 0%, transparent 42%),
-    var(--openms-navy) !important;
-  border-color: transparent !important;
-  box-shadow: 0 0.85rem 1.85rem rgba(var(--openms-navy-rgb), 0.32) !important;
-  color: var(--openms-white) !important;
-  transform: none !important;
   outline: none;
+  overflow: hidden;
 }
 
 .openms-lib-page--webapps-pro .openms-lib-resources__grid > .openms-lib-resources__item:focus-visible {
   outline: 2px solid var(--openms-yellow, #f5c518);
-  outline-offset: 2px;
+  outline-offset: -3px;
 }
 
 .openms-lib-page--webapps-pro .openms-lib-resources__item-icon {
@@ -4176,13 +4284,52 @@
 
 .openms-lib-page--webapps-pro .openms-lib-resources__item-title,
 .openms-lib-page--webapps-pro .openms-lib-resources__item-text,
-.openms-lib-page--webapps-pro .openms-lib-resources__item-tag,
+.openms-lib-page--webapps-pro .openms-lib-resources__item-tag {
+  color: var(--openms-white) !important;
+}
+
+/* Match Contribute route-card link nudge on hover */
 .openms-lib-page--webapps-pro .openms-lib-resources__item-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--openms-white) !important;
+  transition: gap 0.2s ease;
+}
+
+.openms-lib-page--webapps-pro
+  .openms-lib-resources__grid
+  > .openms-lib-resources__item:hover
+  .openms-lib-resources__item-link,
+.openms-lib-page--webapps-pro
+  .openms-lib-resources__grid
+  > .openms-lib-resources__item:focus-visible
+  .openms-lib-resources__item-link,
+.openms-lib-page--webapps-pro
+  .openms-lib-resources__grid
+  > .openms-lib-resources__item:focus-within
+  .openms-lib-resources__item-link {
+  gap: 0.5rem;
   color: var(--openms-white) !important;
 }
 
 .openms-lib-page--webapps-pro .openms-lib-resources__item--static {
   cursor: default;
+}
+
+@media (max-width: 720px) {
+  .openms-lib-page--webapps-pro #using-the-template .openms-lib-resources__grid > .openms-lib-resources__item,
+  .openms-lib-page--webapps-pro #using-the-template .openms-lib-resources__grid > .openms-lib-resources__item:hover,
+  .openms-lib-page--webapps-pro #using-the-template .openms-lib-resources__grid > .openms-lib-resources__item:focus-visible,
+  .openms-lib-page--webapps-pro #using-the-template .openms-lib-resources__grid > .openms-lib-resources__item:focus-within,
+  .openms-lib-page--webapps-pro .openms-lib-resources__grid > .openms-lib-resources__item,
+  .openms-lib-page--webapps-pro .openms-lib-resources__grid > .openms-lib-resources__item:hover,
+  .openms-lib-page--webapps-pro .openms-lib-resources__grid > .openms-lib-resources__item:focus-visible,
+  .openms-lib-page--webapps-pro .openms-lib-resources__grid > .openms-lib-resources__item:focus-within {
+    height: var(--openms-equal-card-min-h-mobile, 16rem) !important;
+    min-height: var(--openms-equal-card-min-h-mobile, 16rem) !important;
+    max-height: var(--openms-equal-card-min-h-mobile, 16rem) !important;
+  }
 }
 
 /* Examples / Featured WebApps — split: copy + CTA | logo rail */
@@ -4618,6 +4765,7 @@
   font-weight: 700;
   white-space: nowrap;
   text-decoration: none !important;
+  transition: gap 0.2s ease;
 }
 
 /* Beat hub/openms-lib white hover so text stays readable */
@@ -4691,6 +4839,7 @@
 .openms-lib-page--webapps-pro .openms-lib-developers__route:focus-visible .openms-lib-developers__card-tag,
 .openms-lib-page--webapps-pro .openms-lib-developers__route:hover .openms-lib-developers__card-link,
 .openms-lib-page--webapps-pro .openms-lib-developers__route:focus-visible .openms-lib-developers__card-link {
+  gap: 0.5rem;
   color: #fff !important;
   background: transparent !important;
 }
@@ -4919,7 +5068,8 @@
   .webapps-project-detail-card--featured {
   display: flex;
   flex-direction: column;
-  min-height: 17.5rem;
+  height: 100%;
+  min-height: 0;
 }
 
 .openms-lib-page--featured.openms-lib-page--featured-pro
@@ -4956,18 +5106,19 @@
 .openms-lib-page--affiliated.openms-lib-page--featured-pro
   .webapps-project-detail-card--featured
   .webapps-project-detail-card__logo-wrap--wide {
-  width: 5rem;
-  height: 5rem;
-  min-width: 5rem;
-  min-height: 5rem;
-  padding: 0.55rem;
+  width: var(--webapps-logo-size, 6.5rem);
+  height: var(--webapps-logo-size, 6.5rem);
+  min-width: var(--webapps-logo-size, 6.5rem);
+  min-height: var(--webapps-logo-size, 6.5rem);
+  padding: 0.5rem;
   margin: 0;
-  border: 1px solid rgba(var(--openms-navy-rgb), 0.14);
-  border-radius: 0.85rem;
-  background: color-mix(in srgb, var(--pro-band-soft, #f4f7fb) 55%, var(--openms-white));
+  border: none;
+  border-radius: var(--pro-radius, 1rem);
+  background: var(--webapps-logo-bg);
   box-shadow: none;
   aspect-ratio: 1;
   align-self: start;
+  overflow: hidden;
 }
 
 .openms-lib-page--featured.openms-lib-page--featured-pro
@@ -5037,6 +5188,9 @@
   .webapps-project-detail-card--featured
   .webapps-project-detail-card__name {
   margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.3;
 }
 
 .openms-lib-page--featured.openms-lib-page--featured-pro
@@ -5069,8 +5223,6 @@
   align-items: stretch;
   gap: 0.5rem;
   margin-top: auto;
-  /* Reserve room for up to three action buttons (may wrap to two rows). */
-  min-height: calc((2.15rem * 2) + 0.5rem);
   padding-top: 0.35rem;
 }
 
@@ -5093,13 +5245,15 @@
   .webapps-featured__grid--detail
   .webapps-project-detail-card--logo-title
   .webapps-project-detail-card__logo-wrap {
-  width: 5rem;
-  height: 5rem;
-  min-height: 0;
-  padding: 0.55rem;
-  border: 1px solid rgba(var(--openms-navy-rgb), 0.14);
-  border-radius: 0.85rem;
-  background: color-mix(in srgb, var(--pro-band-soft, #f4f7fb) 55%, var(--openms-white));
+  width: var(--webapps-logo-size, 6.5rem);
+  height: var(--webapps-logo-size, 6.5rem);
+  min-width: var(--webapps-logo-size, 6.5rem);
+  min-height: var(--webapps-logo-size, 6.5rem);
+  padding: 0.5rem;
+  border: none;
+  border-radius: var(--pro-radius, 1rem);
+  background: var(--webapps-logo-bg);
+  overflow: hidden;
 }
 
 .openms-lib-page--featured-pro
@@ -5110,8 +5264,10 @@
   .webapps-featured__grid--detail
   .webapps-project-detail-card--logo-title
   .webapps-project-detail-card__logo-wrap--xlarge {
-  width: 5rem;
-  height: 5rem;
+  width: var(--webapps-logo-size, 6.5rem);
+  height: var(--webapps-logo-size, 6.5rem);
+  min-width: var(--webapps-logo-size, 6.5rem);
+  min-height: var(--webapps-logo-size, 6.5rem);
 }
 
 .openms-lib-page--featured-pro
@@ -5193,8 +5349,8 @@
   }
 
   .openms-lib-page--featured-pro .webapps-project-detail-card--affiliate .webapps-project-detail-card__logo-wrap {
-    width: 4.75rem;
-    height: 4.75rem;
+    width: 5.5rem;
+    height: 5.5rem;
     min-height: 0;
     margin-inline: 0;
     aspect-ratio: 1;
@@ -5203,7 +5359,7 @@
   .openms-lib-page--featured-pro .webapps-project-detail-card--affiliate .webapps-project-detail-card__logo {
     width: 100%;
     height: auto;
-    max-height: 3.5rem;
+    max-height: 4.25rem;
   }
 }
 /* Featured + Affiliated Apps — no frame around logos */
@@ -5248,8 +5404,8 @@
 
   .openms-lib-page--affiliated .webapps-affiliates .webapps-project-detail-card--affiliate .webapps-project-detail-card__logo-wrap,
   .openms-lib-page--affiliated .webapps-project-detail-card--affiliate .webapps-project-detail-card__logo-wrap {
-    width: 4.75rem;
-    height: 4.75rem;
+    width: 5.5rem;
+    height: 5.5rem;
     min-height: 0;
     margin-inline: 0;
     aspect-ratio: 1;
@@ -5443,15 +5599,12 @@
 .openms-lib-page--featured-pro .webapps-archived__projects-title {
   margin:var(--pro-stack-eyebrow)0 0;
   font-family:var(--openms-font-heading);
-  font-size:calc(var(--openms-heading-lg-size) * 1.15);
+  font-size:var(--openms-section-title-size, calc(var(--openms-heading-lg-size) * 1.15)) !important;
   font-weight:var(--openms-heading-lg-weight);
   line-height:1.3;
-  letter-spacing:normal;
+  letter-spacing:.015em;
   text-transform:uppercase;
   color:var(--openms-navy)
-}
-.openms-lib-page--featured-pro .webapps-archived__projects-title {
-  font-size:calc(var(--openms-heading-lg-size) * .95)
 }
 .openms-lib-page--featured-pro .webapps-archived__lead {
   margin:var(--pro-stack-lead)0 0;
@@ -5531,10 +5684,10 @@
 .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__projects-title {
   margin: 0;
   font-family: var(--openms-font-heading);
-  font-size: calc(var(--openms-heading-lg-size) * 0.95);
+  font-size: var(--openms-section-title-size, calc(var(--openms-heading-lg-size) * 1.15)) !important;
   font-weight: var(--openms-heading-lg-weight);
   line-height: 1.25;
-  letter-spacing: normal;
+  letter-spacing: 0.015em;
   text-transform: uppercase;
   color: var(--openms-navy);
   text-align: center;
@@ -5867,7 +6020,7 @@
 .openms-lib-page--hub.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__notice,
 .openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__notice {
   display: grid;
-  gap: clamp(0.75rem, 1.6vw, 1rem);
+  gap: clamp(1rem, 2vw, 1.35rem);
   width: 100%;
   max-width: none;
   margin: 0;
@@ -5877,7 +6030,7 @@
   background: transparent;
   box-shadow: none;
   align-content: start;
-  justify-items: center;
+  justify-items: stretch;
   box-sizing: border-box;
 }
 .openms-lib-page--hub.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--editorial .webapps-archived__notice,
@@ -5896,15 +6049,15 @@
 .openms-lib-page--archived .webapps-archived__notice-title {
   margin: 0;
   font-family: var(--openms-font-heading);
-  font-size: calc(var(--openms-heading-lg-size) * 0.85);
-  font-weight: var(--openms-heading-lg-weight);
+  font-size: var(--openms-eyebrow-size, 0.78rem);
+  font-weight: 700;
   line-height: 1.2;
-  letter-spacing: normal;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  text-align: center;
-  color: var(--openms-navy);
+  text-align: left;
+  color: var(--openms-blue);
 }
-/* Good to know — num-strip style two-item list */
+/* Good to know — open numbered strip (not a card) */
 .openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-list,
 .openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__notice-list {
   display: grid;
@@ -5914,26 +6067,32 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  border: 1px solid var(--openms-num-strip-border, var(--pro-line));
-  border-radius: var(--pro-radius, 0.85rem);
-  background: color-mix(in srgb, var(--pro-band-soft, #f4f7fb) 70%, var(--openms-white));
-  overflow: hidden;
+  border-top: 1px solid var(--pro-line);
+  border-bottom: 1px solid var(--pro-line);
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
 }
 .openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-item,
 .openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__notice-item {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.45rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem 1.1rem;
   align-items: start;
   align-content: start;
-  justify-items: center;
-  text-align: center;
+  justify-items: start;
+  text-align: left;
   min-height: 100%;
   margin: 0;
-  padding: clamp(1.15rem, 2.4vw, 1.5rem) clamp(1.1rem, 2.4vw, 1.5rem);
-  border-right: 1px solid var(--openms-num-strip-border, var(--pro-line));
+  padding: clamp(1.25rem, 2.8vw, 1.75rem) clamp(1rem, 2.4vw, 1.5rem);
+  border-right: 1px solid var(--pro-line);
   background: transparent;
+  transition: background-color 0.2s ease;
+}
+.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-item:hover,
+.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__notice-item:hover {
+  background: rgba(var(--openms-blue-rgb), 0.03);
 }
 .openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-item:last-child,
 .openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__notice-item:last-child {
@@ -5945,37 +6104,31 @@
 }
 .openms-lib-page--featured-pro .webapps-archived__notice-index,
 .openms-lib-page--archived .webapps-archived__notice-index {
-  display: block;
+  grid-row: 1 / span 2;
   margin: 0;
-  padding: 0;
-  border: none;
-  background: transparent;
-  font-family: var(--openms-font-heading);
-  font-size: var(--openms-step-num-size, clamp(1.75rem, 3vw, 2.25rem));
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  color: var(--openms-step-num-color, rgba(var(--openms-blue-rgb), 0.38));
+  /* Size/color from brand-palette shared step numbers */
 }
 .openms-lib-page--featured-pro .webapps-archived__notice-copy {
   margin: 0;
-  padding: 0;
+  padding: 0.35rem 0 0;
+  min-width: 0;
 }
 .openms-lib-page--featured-pro .webapps-archived__notice-text,
 .openms-lib-page--archived .webapps-archived__notice-text {
   min-width: 0;
-  max-width: 28ch;
-  margin: 0 auto;
+  max-width: 34ch;
+  margin: 0;
   padding: 0;
   font-family: var(--openms-font-body);
   font-size: var(--openms-body-size);
   font-weight: 400;
-  line-height: 1.5;
-  text-align: center;
-  color: rgba(var(--openms-dark-rgb), 0.72);
+  line-height: 1.55;
+  text-align: left;
+  color: rgba(var(--openms-navy-rgb), 0.72);
 }
-.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-index {
-  text-align: center;
+.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-item:hover .webapps-archived__notice-index,
+.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__notice-item:hover .webapps-archived__notice-index {
+  color: var(--openms-step-num-color-hover);
 }
 @media(max-width:700px) {
   .openms-lib-page--featured-pro .webapps-archived--editorial .webapps-archived-entry {
@@ -6020,7 +6173,7 @@
   .openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-item,
   .openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__notice-item {
     border-right: none;
-    border-bottom: 1px solid var(--openms-num-strip-border, var(--pro-line));
+    border-bottom: 1px solid var(--pro-line);
   }
   .openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-item:last-child,
   .openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__notice-item:last-child {
@@ -6206,10 +6359,16 @@
 }
 .openms-lib-page--calendar .openms-lib-page__body > .openms-lib-page__anchor > .openms-lib-block,
 .openms-lib-page--calendar .community-calendar-block {
-  padding-block:0
+  padding-block:0;
+  width:100%;
+  max-width:var(--calendar-max, 56rem);
+  margin-inline:auto
 }
 .openms-lib-page--calendar .community-events-page {
-  gap:var(--pro-section-y)
+  gap:var(--pro-section-y);
+  width:100%;
+  max-width:var(--calendar-max, 56rem);
+  margin-inline:auto
 }
 .openms-lib-page--calendar .community-events-page__section,
 .openms-lib-page--calendar .events-past-panel {
@@ -6237,13 +6396,22 @@
 .openms-lib-page--news .openms-lib-page__body > .openms-lib-page__anchor {
   padding-block:var(--pro-section-y) 0
 }
+.openms-lib-page--news {
+  --news-max: 56rem;
+}
 .openms-lib-page--news .openms-lib-page__body > .openms-lib-page__anchor > .openms-lib-block,
 .openms-lib-page--news .news-page-block {
-  padding-block:0
+  padding-block:0;
+  width:100%;
+  max-width:var(--news-max, 56rem);
+  margin-inline:auto
 }
 .openms-lib-page--news .news-body,
 .openms-lib-page--news .news-bibliography {
-  gap:var(--pro-head-to-content)
+  gap:var(--pro-head-to-content);
+  width:100%;
+  max-width:var(--news-max, 56rem);
+  margin-inline:auto
 }
 .openms-lib-page--news .news-bibliography {
   padding-top:0
@@ -7558,7 +7726,8 @@
 .openms-lib-page--publications .publications-featured .publications-cite-card {
   gap:.4rem;
   border:none;
-  box-shadow:none
+  box-shadow:none;
+  background:rgba(var(--openms-blue-rgb),.08)
 }
 .openms-lib-page--publications .publications-featured .publications-cite-card__title {
   font-size:clamp(1.05rem,1.9vw,1.25rem)
@@ -8149,12 +8318,15 @@
 .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn--ghost:hover,
 .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn--ghost:focus-visible,
 .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn--ghost:active {
-  border-color:var(--openms-white);
-  background:transparent;
+  /* Match navbar “Sponsor Us”: outline stays, scale + glow only */
+  border-color:rgba(var(--openms-white-rgb),.34) !important;
+  background:transparent !important;
+  background-color:transparent !important;
   color:var(--openms-white)!important;
   transform:scale(var(--openms-btn-hover-scale));
-  box-shadow:0 0 0 var(--openms-btn-glow-size) rgba(255,255,255,.22);
-  outline:none
+  box-shadow:0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow) !important;
+  outline:none;
+  text-decoration:none
 }
 @media(max-width:640px) {
   .openms-lib-page--contributors #join-community .webapps-archived__revival-actions {
@@ -8292,7 +8464,9 @@
   box-shadow:var(--pro-shadow-hover)
 }
 .openms-lib-page--contributors .member>.name {
-  display:block;
+  display:grid;
+  justify-items:center;
+  gap:.65rem;
   margin:0;
   font-family:var(--openms-font-heading);
   font-size:var(--openms-body-size-lg);
@@ -8306,7 +8480,21 @@
   color:var(--openms-blue);
   outline:none
 }
-.openms-lib-page--contributors .member .photo,
+.openms-lib-page--contributors .member .photo {
+  width:4.75rem;
+  height:4.75rem;
+  border-radius:50%;
+  overflow:hidden;
+  border:3px solid rgba(var(--openms-blue-rgb),.14);
+  background:rgba(var(--openms-navy-rgb),.04)
+}
+.openms-lib-page--contributors .member .photo img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top
+}
 .openms-lib-page--contributors .member .roles {
   display:none
 }
@@ -8547,10 +8735,19 @@
 .openms-lib-page--research-partnerships .openms-lib-resources__inner {
   max-width:var(--pro-max)
 }
-.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about,
-.openms-lib-page--research-partnerships #our-partners .openms-lib-resources,
-.openms-lib-page--research-partnerships #partnership-form .openms-lib-resources {
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about {
   padding-block:var(--pro-section-y)
+}
+.openms-lib-page--research-partnerships #partnership-form .openms-lib-resources {
+  padding-block:var(--pro-section-y);
+  padding-bottom:clamp(1.5rem,4vw,2.5rem)
+}
+.openms-lib-page--research-partnerships #our-partners.openms-lib-page__anchor {
+  padding-top:0
+}
+.openms-lib-page--research-partnerships #our-partners .openms-lib-resources {
+  padding-block:var(--pro-section-y);
+  padding-top:calc(var(--pro-section-y) * .5)
 }
 .openms-lib-page--research-partnerships .rp-include__grid {
   display:grid;
@@ -8674,7 +8871,7 @@
 .openms-lib-page--research-partnerships .rp-application__tally-iframe {
   display:block;
   width:100%;
-  min-height:48rem;
+  min-height:0 !important;
   border:0;
   overflow:visible;
   background:transparent
@@ -8902,7 +9099,7 @@
 .openms-lib-page--governance #related-pages.openms-lib-page__anchor,
 .openms-lib-page--our-sponsors #sponsor-cta.openms-lib-page__anchor,
 .openms-lib-page--sponsor-us #become-a-sponsor.openms-lib-page__anchor {
-  background: var(--openms-white);
+  background: var(--pro-band-soft, var(--olib-bg-soft, #f4f6f9));
   padding-inline: max(var(--olib-pad-x, clamp(1.25rem, 4vw, 2rem)), calc((100% - var(--pro-max)) / 2 + var(--olib-pad-x, clamp(1.25rem, 4vw, 2rem))));
   padding-block: var(--pro-section-y);
 }
@@ -8941,6 +9138,10 @@
 .openms-lib-page--sponsor-us .governance-cta-band__copy {
   flex: initial;
   max-width: 46ch;
+}
+
+.openms-lib-page--sponsor-us .governance-cta-band__copy {
+  max-width: min(62ch, 100%);
 }
 
 .openms-lib-page--governance .governance-cta-band__kicker,
@@ -9015,6 +9216,12 @@
   transition: var(--openms-btn-motion);
 }
 
+/* Become a sponsor — content-sized like navbar Sponsor Us */
+.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions .openms-lib-btn {
+  width: fit-content;
+  min-width: 0;
+}
+
 .openms-lib-page--governance .governance-cta-band__actions .openms-lib-btn--primary,
 .openms-lib-page--our-sponsors .governance-cta-band__actions .openms-lib-btn--primary,
 .openms-lib-page--sponsor-us .governance-cta-band__actions .openms-lib-btn--primary {
@@ -9066,6 +9273,10 @@
   .openms-lib-page--sponsor-us .governance-cta-band__actions .openms-lib-btn {
     width: 100%;
     min-width: 0;
+  }
+
+  .openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions .openms-lib-btn {
+    width: fit-content;
   }
 }
 
@@ -9349,6 +9560,21 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
+/* Core developers pillars — compact title cards (no forced equal height) */
+.openms-lib-page--governance #core-developers .governance-pillars-grid > .openms-lib-resources__item,
+.openms-lib-page--governance #core-developers .governance-pillars-grid > .openms-lib-resources__item--static,
+.openms-lib-page--governance #core-developers .governance-pillars-grid > .openms-lib-resources__item:hover,
+.openms-lib-page--governance #core-developers .governance-pillars-grid > .openms-lib-resources__item:focus-visible,
+.openms-lib-page--governance #core-developers .governance-pillars-grid > .openms-lib-resources__item:focus-within,
+.openms-lib-page--governance #core-developers .governance-pillars-grid > .openms-lib-resources__item--static:hover,
+.openms-lib-page--governance #core-developers .governance-pillars-grid > .openms-lib-resources__item--static:focus-within {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: clamp(0.85rem, 1.6vw, 1.1rem) clamp(0.9rem, 1.8vw, 1.15rem) !important;
+  gap: 0.55rem;
+}
+
 .openms-lib-page--governance .openms-lib-resources__item--static {
   cursor: default;
 }
@@ -9544,7 +9770,7 @@
   background:var(--openms-white)!important
 }
 .openms-lib-page--our-sponsors .openms-lib-page__outro .openms-lib-block--developers {
-  background:var(--openms-white);
+  background:transparent;
   padding-inline:0
 }
 /* Become a sponsor — full-bleed navy CTA band */
@@ -9885,20 +10111,25 @@
   margin:0;
   align-items:stretch
 }
-.openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier {
+.openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier,
+.openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier:hover,
+.openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier:focus-within {
   --tier-accent:var(--openms-blue);
   --tier-accent-rgb:var(--openms-blue-rgb);
   position:relative;
   display:flex;
   flex-direction:column;
   min-width:0;
-  min-height:100%;
+  /* Content-driven; equal height via grid stretch */
+  height:100%!important;
+  min-height:0!important;
+  max-height:none!important;
   padding:0;
   border:1px solid var(--pro-line);
   border-radius:1rem;
   background:var(--openms-white);
   box-shadow:var(--pro-shadow);
-  overflow:visible;
+  overflow:visible!important;
   transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier::before {
@@ -9956,12 +10187,12 @@
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__toggle {
   display:flex;
   flex-direction:column;
-  gap:.65rem;
+  gap:.75rem;
   flex:auto;
   width:100%;
   min-height:100%;
   height:100%;
-  padding:1rem .95rem .9rem;
+  padding:1.35rem 1.15rem 1.2rem;
   margin:0;
   text-align:left;
   cursor:pointer;
@@ -10222,8 +10453,8 @@
 .openms-lib-page--sponsor-us .sponsor-benefits__title {
   margin:0;
   font-family:var(--openms-font-heading);
-  font-size:calc(var(--openms-heading-lg-size) * .9);
-  font-weight:var(--openms-heading-lg-weight);
+  font-size:var(--openms-secondary-heading-size-lg);
+  font-weight:var(--openms-card-title-weight-strong,800);
   line-height:1.25;
   letter-spacing:normal;
   text-transform:none;
@@ -10506,8 +10737,13 @@
 .openms-lib-page--sponsor-us .sponsor-logos__more a:focus-visible {
   gap:.5rem
 }
+/* FAQ sits closer under tiers — no stacked anchor + full section top pad */
+.openms-lib-page--sponsor-us #faq.openms-lib-page__anchor {
+  padding-top: 0;
+}
 .openms-lib-page--sponsor-us .sponsor-faq-pro {
   padding-block: var(--pro-section-y);
+  padding-top: calc(var(--pro-section-y) * 0.5);
 }
 .openms-lib-page--sponsor-us .sponsor-faq-pro__inner {
   display:flex;
@@ -11017,7 +11253,7 @@
   .openms-lib-resources__explore-card {
   width: 100%;
   height: 100%;
-  min-height: 10.25rem;
+  min-height: 0;
   padding: 1.15rem 1.15rem 1.1rem;
   gap: 0.4rem;
   box-sizing: border-box;
@@ -11119,7 +11355,7 @@
   gap: 0.5rem;
   width: 100%;
   height: 100%;
-  min-height: 12.5rem;
+  min-height: 0;
   padding: 1.55rem 1.4rem 1.45rem;
   border: none;
   border-radius: 1.15rem;
@@ -11408,8 +11644,9 @@
 /* legacy compact card row — kept for non-split pages */
 .openms-lib-page--pyopenms-viz-pro .openms-lib-developers__cards-grid:has(> :nth-child(2):last-child) {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: min(100%, 52rem);
-  margin-inline: auto;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
 }
 
 .openms-lib-page--pyopenms-viz-pro .openms-lib-page__outro .openms-lib-block--developers:not(.openms-lib-developers--split) {
@@ -11477,8 +11714,10 @@
 }
 
 @media (max-width: 720px) {
-  .openms-lib-page--pyopenms-viz-pro .openms-lib-developers__cards-grid:has(> :nth-child(2):last-child) {
-    grid-template-columns: 1fr;
+  .openms-lib-page--pyopenms-viz-pro .openms-lib-developers__cards-grid:has(> :nth-child(2):last-child),
+  .openms-lib-page--pyopenms-viz-pro .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
     max-width: 100%;
   }
 }
@@ -12128,7 +12367,7 @@
   gap: 0.5rem;
   width: 100%;
   height: 100%;
-  min-height: 12.5rem;
+  min-height: 0;
   padding: 1.55rem 1.4rem 1.45rem;
   border: none;
   border-radius: 1.15rem;
@@ -12244,7 +12483,7 @@
 /* Try Online — most prominent card in the 4-up row */
 .openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
   .openms-lib-resources__explore-card--featured {
-  min-height: 14rem;
+  min-height: 0;
   padding: 1.75rem 1.55rem 1.55rem;
   background:
     linear-gradient(160deg, rgba(255, 255, 255, 0.18) 0%, transparent 42%),
@@ -12307,6 +12546,45 @@
   gap: var(--pro-head-to-content);
 }
 
+/* Contribute (2 cards) — fill the section rail; stay 2-up responsively */
+.openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro
+  .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2,
+.openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro
+  .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2,
+.openms-lib-page--hub.openms-lib-page--pyopenms-viz-pro
+  .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2,
+.openms-lib-page--pyopenms-viz-pro
+  .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2 {
+  --openms-equal-card-min-h: 14.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--pro-card-gap, clamp(0.85rem, 2vw, 1.25rem));
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro
+  .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2
+  > .openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(n),
+.openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro
+  .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2
+  > .openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(n),
+.openms-lib-page--hub.openms-lib-page--pyopenms-viz-pro
+  .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2
+  > .openms-lib-developers__route:nth-child(n),
+.openms-lib-page--pyopenms-viz-pro
+  .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2
+  > .openms-lib-developers__route:nth-child(n) {
+  grid-column: span 1;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  align-self: stretch;
+}
+
 .openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
   .openms-lib-page__outro
   .openms-lib-block--developers {
@@ -12323,28 +12601,50 @@
   max-width: min(100%, 52rem);
 }
 
-.openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro
+.openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
   .openms-lib-developers__grid--routes,
-.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro
+.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
   .openms-lib-developers__grid--routes {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Tall enough for Review (badge + 2 links) so both rows share one height */
+  --openms-equal-card-min-h: 20.25rem;
+  /* 6 tracks → 3 equal cards/row; 5 cards stay in 2 rows (3 + 2 centered) */
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: var(--pro-card-gap);
   align-items: stretch;
   max-width: var(--pro-cluster-max, min(100%, 68rem));
   margin-inline: auto;
 }
 
-.openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro
+.openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
   .openms-lib-developers__grid--routes
   > .openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(n),
-.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro
+.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
   .openms-lib-developers__grid--routes
   > .openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(n) {
-  grid-column: span 1;
+  grid-column: span 2;
   width: 100%;
   height: 100%;
   min-height: 0;
   align-self: stretch;
+}
+
+/* Center the second row when there are 5 cards (3 + 2). */
+.openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro
+  .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-5
+  > .openms-lib-developers__route:nth-child(4),
+.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro
+  .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-5
+  > .openms-lib-developers__route:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro
+  .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-5
+  > .openms-lib-developers__route:nth-child(5),
+.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro
+  .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-5
+  > .openms-lib-developers__route:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route,
@@ -12356,20 +12656,35 @@
   background: var(--openms-white);
   box-shadow: 0 0.35rem 1rem rgba(var(--openms-navy-rgb), 0.06);
   color: var(--openms-navy);
-  transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease, border-color 0.22s ease;
+  min-height: var(--openms-equal-card-min-h);
+  height: 100%;
+  transition: background 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route .openms-lib-developers__card-body,
+.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route .openms-lib-developers__card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route:hover,
 .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route:focus-visible,
+.openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route:focus-within,
 .openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route:hover,
-.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route:focus-visible {
+.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route:focus-visible,
+.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route:focus-within {
   background:
     linear-gradient(160deg, rgba(255, 255, 255, 0.18) 0%, transparent 42%),
     var(--openms-navy);
   border-color: transparent;
   box-shadow: 0 0.85rem 1.85rem rgba(var(--openms-navy-rgb), 0.32);
-  transform: translateY(-4px);
+  transform: none;
   outline: none;
+  min-height: var(--openms-equal-card-min-h);
+  height: 100%;
+  max-height: none;
 }
 
 .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro
@@ -12389,7 +12704,7 @@
     linear-gradient(160deg, rgba(255, 255, 255, 0.18) 0%, transparent 42%),
     var(--openms-navy);
   box-shadow: 0 0.85rem 1.85rem rgba(var(--openms-navy-rgb), 0.32);
-  transform: translateY(-4px);
+  transform: none;
 }
 
 .openms-lib-page--pyopenms-pro .openms-lib-developers__route-icon,
@@ -12400,6 +12715,7 @@
 .openms-lib-page--pyopenms-pro .openms-lib-developers__route .fa-puzzle-piece,
 .openms-lib-page--pyopenms-pro .openms-lib-developers__route .fa-book,
 .openms-lib-page--pyopenms-pro .openms-lib-developers__route .fa-code,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route .fa-code-branch,
 .openms-lib-page--pyopenms-pro .openms-lib-developers__route-icon .svg-inline--fa {
   color: rgba(var(--openms-blue-rgb), 0.28) !important;
 }
@@ -12509,19 +12825,129 @@
   color: #fff !important;
 }
 
-@media (max-width: 1100px) {
-  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro
+/* Review card — match white route cards (text links + shared navy hover) */
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review {
+  background: var(--openms-white);
+  color: var(--openms-navy);
+}
+
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review .openms-lib-developers__card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review .openms-lib-developers__badge {
+  align-self: flex-start;
+  margin: 0.1rem 0 0;
+}
+
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review .openms-lib-developers__platforms--text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0 !important;
+  row-gap: 0 !important;
+  column-gap: 0 !important;
+  margin-top: auto;
+}
+
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review .openms-lib-developers__platforms--text .openms-lib-developers__card-link {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1.35;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover,
+.openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within,
+.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover,
+.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within {
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.18) 0%, transparent 42%),
+    var(--openms-navy);
+  border-color: transparent;
+  box-shadow: 0 0.85rem 1.85rem rgba(var(--openms-navy-rgb), 0.32);
+  transform: none;
+  outline: none;
+  min-height: var(--openms-equal-card-min-h);
+  height: 100%;
+  max-height: none;
+}
+
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover .openms-lib-developers__card-title,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover .openms-lib-developers__card-title span,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover .openms-lib-developers__card-text,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover .openms-lib-developers__card-body,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover .openms-lib-developers__card-tag,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover .openms-lib-developers__card-link,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within .openms-lib-developers__card-title,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within .openms-lib-developers__card-title span,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within .openms-lib-developers__card-text,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within .openms-lib-developers__card-body,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within .openms-lib-developers__card-tag,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within .openms-lib-developers__card-link {
+  color: #fff !important;
+}
+
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover .openms-lib-developers__route-icon,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover .openms-lib-developers__route-icon .fas,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover .openms-lib-developers__route-icon .fab,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover .openms-lib-developers__route-icon .svg-inline--fa,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover .fa-code-branch,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within .openms-lib-developers__route-icon,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within .openms-lib-developers__route-icon .fas,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within .openms-lib-developers__route-icon .fab,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within .openms-lib-developers__route-icon .svg-inline--fa,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within .fa-code-branch {
+  color: #fff !important;
+}
+
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:hover .openms-lib-developers__badge,
+.openms-lib-page--pyopenms-pro .openms-lib-developers__route--review:focus-within .openms-lib-developers__badge {
+  filter: brightness(1.08);
+}
+
+@media (max-width: 780px) {
+  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
     .openms-lib-developers__grid--routes,
-  .openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro
+  .openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
     .openms-lib-developers__grid--routes {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
+    .openms-lib-developers__grid--routes
+    > .openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(n),
+  .openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
+    .openms-lib-developers__grid--routes
+    > .openms-lib-developers__route:not(.openms-lib-developers__route--build):nth-child(n),
+  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
+    .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-5
+    > .openms-lib-developers__route:nth-child(4),
+  .openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
+    .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-5
+    > .openms-lib-developers__route:nth-child(4),
+  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
+    .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-5
+    > .openms-lib-developers__route:nth-child(5),
+  .openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
+    .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-5
+    > .openms-lib-developers__route:nth-child(5) {
+    grid-column: auto / span 1;
   }
 }
 
 @media (max-width: 560px) {
-  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro
+  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
     .openms-lib-developers__grid--routes,
-  .openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro
+  .openms-lib-page--openms-lib.openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro)
     .openms-lib-developers__grid--routes {
     grid-template-columns: 1fr;
   }
@@ -12899,7 +13325,7 @@
 /* Explore — featured entry point (Read Documentation) */
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-card--featured {
-  min-height: 13.5rem;
+  min-height: 0;
   padding: 1.65rem 1.55rem 1.5rem;
   background:
     linear-gradient(160deg, rgba(255, 255, 255, 0.16) 0%, transparent 42%),
@@ -14096,10 +14522,9 @@
 .openms-lib-page--contributors .member {
   display: grid;
   justify-items: center;
-  align-content: center;
-  gap: 0;
+  gap: 0.55rem;
   margin: 0;
-  padding: 0.85rem 0.75rem;
+  padding: 0.75rem 0.55rem;
   border: 1px solid var(--pro-line);
   border-radius: var(--pro-radius);
   background: var(--openms-white);
@@ -14118,7 +14543,9 @@
 }
 
 .openms-lib-page--contributors .member > .name {
-  display: block;
+  display: grid;
+  justify-items: center;
+  gap: 0.65rem;
   margin: 0;
   font-family: var(--openms-font-heading);
   font-size: var(--openms-body-size-lg);
@@ -14134,7 +14561,23 @@
   outline: none;
 }
 
-.openms-lib-page--contributors .member .photo,
+.openms-lib-page--contributors .member .photo {
+  width: 4.75rem;
+  height: 4.75rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(var(--openms-blue-rgb), 0.14);
+  background: rgba(var(--openms-navy-rgb), 0.04);
+}
+
+.openms-lib-page--contributors .member .photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
 .openms-lib-page--contributors .member .roles {
   display: none;
 }
@@ -14458,10 +14901,22 @@
   max-width: var(--pro-max);
 }
 
-.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about,
-.openms-lib-page--research-partnerships #our-partners .openms-lib-resources,
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about {
+  padding-block: var(--pro-section-y);
+}
+
 .openms-lib-page--research-partnerships #partnership-form .openms-lib-resources {
   padding-block: var(--pro-section-y);
+  padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.openms-lib-page--research-partnerships #our-partners.openms-lib-page__anchor {
+  padding-top: 0;
+}
+
+.openms-lib-page--research-partnerships #our-partners .openms-lib-resources {
+  padding-block: var(--pro-section-y);
+  padding-top: calc(var(--pro-section-y) * 0.5);
 }
 
 .openms-lib-page--research-partnerships .rp-include__grid {
@@ -14595,7 +15050,7 @@
 .openms-lib-page--research-partnerships .rp-application__tally-iframe {
   display: block;
   width: 100%;
-  min-height: 48rem;
+  min-height: 0 !important;
   border: 0;
   overflow: visible;
   background: transparent;
@@ -15001,9 +15456,12 @@
   background: var(--openms-white) !important;
 }
 
-.openms-lib-page--our-sponsors #sponsor-cta,
+.openms-lib-page--our-sponsors #sponsor-cta {
+  background: var(--pro-band-soft, var(--olib-bg-soft, #f4f6f9));
+}
+
 .openms-lib-page--our-sponsors .openms-lib-page__outro .openms-lib-block--developers {
-  background: var(--openms-white);
+  background: transparent;
   padding-inline: 0;
 }
 
@@ -15328,13 +15786,15 @@
   flex-direction: column;
   gap: 0;
   min-width: 0;
-  min-height: 100%;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
   padding: 0;
   border: 1px solid var(--pro-line);
   border-radius: 1rem;
   background: var(--openms-white);
   box-shadow: var(--pro-shadow);
-  overflow: visible;
+  overflow: visible !important;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -15574,8 +16034,8 @@
 .openms-lib-page--sponsor-us .sponsor-benefits__title {
   margin: 0;
   font-family: var(--openms-font-heading);
-  font-size: calc(var(--openms-heading-lg-size) * 0.9);
-  font-weight: var(--openms-heading-lg-weight);
+  font-size: var(--openms-secondary-heading-size-lg);
+  font-weight: var(--openms-card-title-weight-strong, 800);
   line-height: 1.3;
   letter-spacing: normal;
   text-transform: none;
@@ -15926,9 +16386,14 @@
   gap: 0.5rem;
 }
 
-/* FAQ */
+/* FAQ — tighter under tiers (no stacked anchor + section top pad) */
+.openms-lib-page--sponsor-us #faq.openms-lib-page__anchor {
+  padding-top: 0;
+}
+
 .openms-lib-page--sponsor-us .sponsor-faq-pro {
   padding-block: var(--pro-section-y);
+  padding-top: calc(var(--pro-section-y) * 0.5);
 }
 
 .openms-lib-page--sponsor-us .sponsor-faq-pro__inner {
@@ -16486,11 +16951,15 @@
 .openms-lib-page--governance .governance-membership__icon .svg-inline--fa path {
   fill:currentColor!important
 }
-.openms-lib-page--governance .governance-membership__card {
+.openms-lib-page--governance .governance-membership__card,
+.openms-lib-page--governance .governance-membership__card:hover,
+.openms-lib-page--governance .governance-membership__card:focus-within {
   display:grid;
-  gap:.45rem;
-  min-height:100%;
-  padding:var(--pro-card-pad,clamp(1rem,2vw,1.25rem));
+  gap:.4rem;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  padding:clamp(.85rem,1.6vw,1.1rem) clamp(.95rem,1.8vw,1.2rem)!important;
   border:1px solid var(--pro-line);
   border-radius:var(--pro-radius);
   background:var(--openms-white);
@@ -16751,5 +17220,37 @@
   .openms-lib-page--our-sponsors .sponsors-showcase__item:hover,
   .openms-lib-page--our-sponsors .sponsors-showcase__item:focus-visible {
     transform: none;
+  }
+}
+
+/* pyopenms_viz Contribute — fill section rail; keep 2 columns on small screens */
+@media (max-width: 900px) {
+  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro
+    .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2,
+  .openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro
+    .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2,
+  .openms-lib-page--pyopenms-viz-pro
+    .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+    gap: var(--pro-card-gap, clamp(0.75rem, 2.5vw, 1.1rem)) !important;
+  }
+
+  .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro
+    .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2
+    > .openms-lib-developers__route,
+  .openms-lib-page--openms-lib.openms-lib-page--pyopenms-viz-pro
+    .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2
+    > .openms-lib-developers__route,
+  .openms-lib-page--pyopenms-viz-pro
+    .openms-lib-developers__grid--routes.openms-lib-developers__grid--count-2
+    > .openms-lib-developers__route {
+    grid-column: span 1 !important;
+    grid-area: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
   }
 }

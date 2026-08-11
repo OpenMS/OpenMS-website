@@ -859,6 +859,29 @@
   }
 }
 
+/* Sponsor Us outro — hug-content pills like navbar “Sponsor Us” */
+.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions,
+.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions:has(> :nth-child(2)),
+.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions:not(:has(> :nth-child(2))) {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  max-width: none;
+  margin-inline: 0;
+  gap: var(--openms-btn-gap) !important;
+}
+
+.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions .openms-lib-btn {
+  flex: 0 0 auto !important;
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  height: auto !important;
+  align-self: center;
+}
+
 /* ── Navy outro CTAs: airy space above, flush into footer ── */
 .openms-lib-page .openms-lib-page__outro:has(.contribute-coc-band, .governance-cta-band):not(:has(.openms-lib-page--code-of-conduct *)):not(:has(.openms-lib-page--publications *)):not(:has(.openms-lib-page--governance *)):not(:has(.openms-lib-page--our-sponsors *)):not(:has(.openms-lib-page--sponsor-us *)):not(:has(.openms-lib-page--contact *)),
 .openms-lib-page--privacy #privacy-help.openms-lib-page__anchor,
@@ -1108,7 +1131,18 @@
     calc((100% - var(--pro-max, 75rem)) / 2)
   ) !important;
   box-sizing: border-box;
-  background: var(--openms-white) !important;
+  background: var(--pro-band-soft, var(--olib-bg-soft, #f4f6f9)) !important;
+}
+
+/* Keep inner shell transparent so the full-bleed gray shows edge-to-edge */
+.openms-lib-page--our-sponsors #sponsor-cta .governance-cta-band,
+.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band,
+.openms-lib-page--sponsor-us #become-a-sponsor .openms-lib-block--developers {
+  background: transparent !important;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: 0 !important;
 }
 
 .openms-lib-page--governance .governance-cta-band,

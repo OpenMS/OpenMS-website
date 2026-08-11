@@ -73,24 +73,20 @@
 
 <div class="openms-lib-page__outro">
   <div id="sponsor-cta" class="openms-lib-page__anchor">
-    <section class="openms-lib-block openms-lib-block--developers" aria-labelledby="sponsor-cta-title">
-      <article class="openms-lib-developers__card openms-lib-developers__card--build openms-lib-developers__review">
-        <div class="openms-lib-developers__card-body">
-          <span class="openms-lib-developers__card-tag">Support OpenMS</span>
-          <h2 id="sponsor-cta-title" class="openms-lib-developers__card-title">
-            <span>Become a sponsor</span>
-          </h2>
-          <p class="openms-lib-developers__card-text">{{ $contactCta }}</p>
-          <div class="openms-lib-developers__platforms" role="group" aria-label="Sponsorship actions">
-            <a class="openms-lib-btn openms-lib-btn--primary" href="{{ $contactUrl }}">
-              <span class="openms-lib-btn__label">Contact us</span>
-            </a>
-            <a class="openms-lib-btn openms-lib-btn--primary" href="/sponsor-us/">
-              <span class="openms-lib-btn__label">View program</span>
-            </a>
-          </div>
+    <section class="governance-cta-band" aria-labelledby="sponsor-cta-title">
+      <div class="governance-cta-band__panel">
+        <div class="governance-cta-band__copy">
+          <p class="governance-cta-band__kicker">Support OpenMS</p>
+          <p class="governance-cta-band__text">
+            <strong id="sponsor-cta-title">Become a sponsor</strong>
+            <span class="governance-cta-band__note">{{ $contactCta }}</span>
+          </p>
         </div>
-      </article>
+        <div class="governance-cta-band__actions" role="group" aria-label="Sponsorship actions">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="{{ $contactUrl }}">Contact us</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/sponsor-us/">View program</a>
+        </div>
+      </div>
     </section>
   </div>
 </div>

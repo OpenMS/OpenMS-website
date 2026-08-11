@@ -1,9 +1,10 @@
 /* Homepage — Latest news + Upcoming events side-by-side (Galaxy-style) */
 
 .community-events-home--with-news {
-  --news-events-col-gap: clamp(1.25rem, 3vw, 2.25rem);
+  --news-events-col-gap: clamp(2.25rem, 5vw, 4rem);
   --news-events-item-gap: var(--pro-card-gap, clamp(1rem, 2vw, 1.5rem));
   --news-events-title-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  --events-grid-gap: var(--news-events-item-gap);
 }
 
 .community-events-home--with-news .community-events-home__header,
@@ -156,26 +157,72 @@
   min-width: 0;
 }
 
+/* Event CTAs hug their label; stay bottom-right on all breakpoints */
+.community-events-home--with-news .community-events-home__card-footer .events-past-card__cta,
+.community-events-home--with-news .community-events-home__card-footer .openms-step__cta,
+.community-events-home--with-news .community-events-home__card-footer .openms-btn-primary {
+  width: fit-content !important;
+  max-width: 100%;
+  margin-left: auto;
+  align-self: flex-end;
+  flex: 0 0 auto;
+}
+
 @media (min-width: 900px) {
-  .community-news-events__grid {
+  /* Subgrid: each news/events row shares one height (tallest content wins) */
+  .community-events-home--with-news .community-news-events__grid {
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-    align-items: start;
-    gap: var(--news-events-col-gap);
+    grid-template-rows: auto repeat(8, auto);
+    align-items: stretch;
+    /* Gutter comes from equal column paddings around the divider */
+    column-gap: 0;
+    row-gap: var(--news-events-item-gap);
+  }
+
+  .community-events-home--with-news .community-news-events__column {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 9;
+    gap: var(--news-events-item-gap);
+    align-content: stretch;
+  }
+
+  .community-events-home--with-news .community-news-events__column > .community-events-home__grid,
+  .community-events-home--with-news .community-news-events__column > .news-home__list {
+    display: contents;
+  }
+
+  .community-events-home--with-news .community-events-home__item {
+    display: flex;
+    min-width: 0;
+    height: auto;
+    align-self: stretch;
+  }
+
+  .community-events-home--with-news .community-events-home__card,
+  .community-events-home--with-news .community-events-home__card-link--split {
+    height: 100%;
+    min-height: 100%;
+    max-height: none;
   }
 
   .community-news-events__column--news {
-    padding-right: clamp(0.35rem, 1.2vw, 0.85rem);
+    padding-right: calc(var(--news-events-col-gap) / 2);
     border-right: 1px solid rgba(var(--openms-navy-rgb), 0.08);
   }
 
   .community-news-events__column--events {
-    padding-left: clamp(0.15rem, 0.8vw, 0.55rem);
+    padding-left: calc(var(--news-events-col-gap) / 2);
   }
 }
 
 @media (max-width: 899px) {
+  .community-events-home--with-news .community-news-events__grid {
+    gap: clamp(2.75rem, 6vw, 4rem);
+  }
+
   .community-news-events__column--news {
-    padding-bottom: clamp(1.5rem, 3vh, 2rem);
+    padding-bottom: clamp(2rem, 4vh, 2.75rem);
     border-bottom: 1px solid rgba(var(--openms-navy-rgb), 0.08);
   }
 }

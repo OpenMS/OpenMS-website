@@ -1,8 +1,24 @@
 /* Research partnerships — standard section rhythm */
-.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about,
-.openms-lib-page--research-partnerships #our-partners .openms-lib-resources,
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about {
+  padding-block: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
+  /* Soft gray band (hub anchors force transparent !important) */
+  background: var(--pro-band-soft, #f4f6f9);
+}
+
 .openms-lib-page--research-partnerships #partnership-form .openms-lib-resources {
   padding-block: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
+  /* Drop extra floor under the short Tally form */
+  padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* Our partners — closer under Partnerships include (no stacked anchor + full top pad) */
+.openms-lib-page--research-partnerships #our-partners.openms-lib-page__anchor {
+  padding-top: 0;
+}
+
+.openms-lib-page--research-partnerships #our-partners .openms-lib-resources {
+  padding-block: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
+  padding-top: calc(var(--pro-section-y, clamp(4rem, 9vw, 6.5rem)) * 0.5);
 }
 
 /* Research partnerships — section intros centered */

@@ -51,6 +51,7 @@
 .publications-featured .publications-cite-card {
   border: none;
   box-shadow: none;
+  background: rgba(var(--openms-blue-rgb), 0.08);
 }
 
 .publications-cite-card:hover {

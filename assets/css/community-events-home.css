@@ -87,7 +87,8 @@
 
 .community-events-home__lead {
   margin: 0.85rem 0 0;
-  max-width: 52ch;
+  max-width: min(100%, var(--pro-measure-wide, 58ch));
+  width: 100%;
   font-family: var(--openms-font-body);
   font-size: var(--openms-body-size-lg);
   line-height: 1.62;

@@ -26,7 +26,7 @@
   .openms-lib-page--calendar .openms-lib-hero__lead,
   .openms-lib-page--news .openms-lib-hero__lead,
   .openms-lib-page--contribute .openms-lib-hero__lead {
-    width: min(100%, 46ch) !important;
+    width: 100% !important;
     max-width: 100% !important;
     line-height: 1.55 !important;
     white-space: normal !important;

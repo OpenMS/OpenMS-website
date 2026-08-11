@@ -510,8 +510,7 @@ languages:
             suffix: "+"
             label: Citations
             description: Peer-reviewed research citing OpenMS tools and algorithms worldwide.
-          - label: Community
-            text: Trusted and used by scientists worldwide.
+        supportNote: Trusted and used by scientists worldwide.
 
       communitySection:
         eyebrow: Community
@@ -917,6 +916,20 @@ languages:
               text: Architecture and contribution workflows for pyOpenMS.
               url: https://pyopenms.readthedocs.io/en/latest/community/index.html
               linkText: Open docs
+            - title: Reviewing Pull Requests
+              type: review
+              tag: Review
+              icon: fas fa-code-branch
+              text: Help move contributions forward by reviewing open pull requests on GitHub.
+              badge:
+                src: https://img.shields.io/github/issues-pr/OpenMS/OpenMS?label=open%20PRs&color=1a56db&style=flat-square
+                alt: Number of open OpenMS pull requests
+                url: https://github.com/OpenMS/OpenMS/pulls
+              platforms:
+                - name: View open PRs
+                  url: https://github.com/OpenMS/OpenMS/pulls
+                - name: How to review PRs
+                  url: https://github.com/ParadiseSS13/Paradise/discussions/19410
 
       pyopenmsVizPage:
         gettingStarted:

@@ -193,7 +193,8 @@
 
 .sponsor-section__lead {
   margin: 0;
-  max-width: 52ch;
+  max-width: min(100%, var(--pro-measure-wide, 58ch));
+  width: 100%;
   font-size: var(--openms-body-size-lg);
   line-height: 1.6;
   color: var(--olib-text-muted);

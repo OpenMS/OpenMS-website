@@ -4,10 +4,12 @@
 {{- $url := $project.url }}
 {{- $isExternal := in $url "://" }}
 {{- $ariaLabel := $project.name }}
+{{- $logo := $project.logo | default "" }}
+{{- $useTextLogo := or (not $logo) (eq $project.logoKind "text") }}
 {{- if $isExternal }}
   {{- $ariaLabel = printf "%s (opens in new tab)" $ariaLabel }}
 {{- end }}
-<article class="webapps-project-card{{ if eq $embed "home" }} webapps-project-card--catalog{{ end }}">
+<article class="webapps-project-card{{ if eq $embed "home" }} webapps-project-card--catalog{{ end }}{{ if $useTextLogo }} webapps-project-card--text-logo{{ end }}">
   <a
     class="webapps-project-card__surface"
     href="{{ $url }}"
@@ -17,36 +19,18 @@
     rel="noopener noreferrer"
     {{- end }}
   >
-    {{- if eq $embed "home" }}
-    <div class="webapps-project-card__media">
-      <img
-        class="webapps-project-card__image{{ with $project.logoSize }} webapps-project-card__image--{{ . }}{{ end }}"
-        src="{{ $project.logo | relURL }}"
-        alt="{{ $project.name }}"
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
-    <div class="webapps-project-card__content">
-      {{- with $project.description }}
-      <p class="webapps-project-card__text">{{ . }}</p>
-      {{- end }}
-      <span class="webapps-project-card__cta">
-        <span class="webapps-project-card__cta-label">{{ $ctaText }}</span>
-        <span class="webapps-project-card__cta-icon" aria-hidden="true">→</span>
-      </span>
-    </div>
-    {{- else }}
-    <span class="webapps-project-card__accent" aria-hidden="true"></span>
-
-    <div class="webapps-project-card__logo-wrap">
+    <div class="webapps-project-card__logo-wrap{{ if $useTextLogo }} webapps-project-card__logo-wrap--text{{ end }}">
+      {{- if not $useTextLogo }}
       <img
         class="webapps-project-card__logo"
-        src="{{ $project.logo | relURL }}"
+        src="{{ $logo | relURL }}"
         alt=""
         loading="lazy"
         decoding="async"
       />
+      {{- else }}
+      <span class="webapps-project-card__logo-text" aria-hidden="true">{{ $project.name }}</span>
+      {{- end }}
     </div>
 
     <div class="webapps-project-card__body">
@@ -59,6 +43,5 @@
         <span class="webapps-project-card__cta-icon" aria-hidden="true">→</span>
       </span>
     </div>
-    {{- end }}
   </a>
 </article>

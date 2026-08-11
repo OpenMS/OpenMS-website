@@ -30,7 +30,7 @@
   z-index: 1;
   max-width: var(--news-banner-max);
   margin: 0 auto;
-  padding: 0.65rem var(--news-banner-pad-x);
+  padding: 0.4rem var(--news-banner-pad-x);
 }
 
 .news-banner__link,
@@ -39,9 +39,9 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem 0.75rem;
+  gap: 0.35rem 0.55rem;
   margin: 0;
-  min-height: 2rem;
+  min-height: 1.5rem;
   text-align: center;
 }
 
@@ -71,12 +71,12 @@ a.news-banner__link:focus-visible .news-banner__text {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  padding: 0.2rem 0.55rem;
+  padding: 0.12rem 0.4rem;
   font-family: var(--openms-font-body);
-  font-size: 0.6875rem;
+  font-size: 0.5625rem;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.06em;
+  line-height: 1.15;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--news-banner-label-color);
   background: var(--news-banner-label-bg);
@@ -89,9 +89,9 @@ a.news-banner__link:focus-visible .news-banner__text {
   min-width: 0;
   max-width: 60ch;
   font-family: var(--openms-font-body);
-  font-size: clamp(0.8rem, 1.2vw, 0.875rem);
+  font-size: clamp(0.7rem, 1vw, 0.78rem);
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.35;
   letter-spacing: 0.01em;
   color: var(--news-banner-text-color);
   text-wrap: pretty;
@@ -100,7 +100,7 @@ a.news-banner__link:focus-visible .news-banner__text {
 
 @media (min-width: 768px) {
   .news-banner__inner {
-    padding-block: 0.7rem;
+    padding-block: 0.45rem;
   }
 }
 

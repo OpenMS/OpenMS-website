@@ -98,7 +98,6 @@
 .contribute-conduct__title,
 .governance-membership__title,
 .contributors-exec-panel__title,
-.sponsor-benefits__title,
 .sponsor-logos__title,
 .publications-key__title,
 .about-section h2,
@@ -147,11 +146,8 @@
 .contact-home__card-title,
 .events-past-card__title,
 .keyfeatures-modern__topic-title,
-.webapps-project-card__name,
 .webapps-project-card__title,
-.webapps-project-detail-card__name,
 .webapps-archived-entry__name,
-.webapps-archived__notice-title,
 .webapps-contribute__action-title,
 .contact-page__form-title,
 .contact-page__path-title,
@@ -182,7 +178,8 @@
 .openms-lib-developers__card--build .openms-lib-developers__card-title,
 .contribute-ways__feature-title,
 .contribute-track__item--wide .contribute-track__title,
-.contribute-track__item--mid .contribute-track__title {
+.contribute-track__item--mid .contribute-track__title,
+.sponsor-benefits__title {
   font-weight: var(--openms-card-title-weight-strong, 800) !important;
 }
 
@@ -229,6 +226,7 @@
 .webapps-featured__eyebrow,
 .webapps-affiliates__eyebrow,
 .webapps-archived__eyebrow,
+.webapps-archived__notice-title,
 .webapps-contribute__eyebrow,
 .contribute-channels__eyebrow,
 .contribute-ways__eyebrow,
@@ -368,9 +366,12 @@
 .ecosystem-home__card-tag,
 .webapps-project-card__badge,
 .webapps-archived__notice-label,
-.openms-step__tag,
-.news-banner__label {
+.openms-step__tag {
   font-size: var(--openms-text-min) !important;
+  font-weight: var(--openms-label-weight, 600) !important;
+}
+
+.news-banner__label {
   font-weight: var(--openms-label-weight, 600) !important;
 }
 
@@ -419,4 +420,12 @@
 .text-error,
 .text-danger {
   color: var(--openms-text-error);
+}
+
+/* Featured / catalog app names — independent of logo artwork */
+.webapps-project-card__name,
+.webapps-project-detail-card__name {
+  font-size: 0.9375rem !important; /* 15px */
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
 }

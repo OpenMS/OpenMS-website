@@ -8,7 +8,7 @@
   --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
   --home-card-title-color: rgba(var(--openms-dark-rgb), 0.82);
   --home-body-color: var(--openms-text-muted);
-  --news-max: var(--pro-max, 75rem);
+  --news-max: 56rem;
   --news-gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem));
   --news-card-radius: 0.85rem;
   --news-card-border: rgba(var(--openms-navy-rgb), 0.12);

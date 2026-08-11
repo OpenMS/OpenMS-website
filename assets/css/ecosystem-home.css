@@ -3,6 +3,7 @@
 .ecosystem-home {
   --ecosystem-max: var(--pro-max, var(--home-max, 75rem));
   --ecosystem-card-radius: 1rem;
+  --ecosystem-card-h: 18rem;
   --ecosystem-ease: cubic-bezier(0.22, 1, 0.36, 1);
   max-width: none;
   width: 100%;
@@ -63,8 +64,11 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.7rem;
+  box-sizing: border-box;
   width: 100%;
-  min-height: clamp(15.5rem, 28vh, 17.5rem);
+  height: var(--ecosystem-card-h);
+  min-height: var(--ecosystem-card-h);
+  max-height: var(--ecosystem-card-h);
   padding: clamp(1.25rem, 2.4vw, 1.65rem);
   overflow: hidden;
   border: 1px solid rgba(var(--openms-navy-rgb), 0.45);
@@ -73,8 +77,8 @@
   color: var(--openms-white);
   text-decoration: none;
   box-shadow: 0 0.25rem 0.85rem rgba(var(--openms-navy-rgb), 0.28);
+  transform: none;
   transition:
-    transform 0.25s ease,
     box-shadow 0.25s ease,
     border-color 0.25s ease;
   -webkit-tap-highlight-color: transparent;
@@ -82,7 +86,10 @@
 
 .ecosystem-home__card:hover,
 .ecosystem-home__card:focus-visible {
-  transform: translateY(-3px);
+  height: var(--ecosystem-card-h);
+  min-height: var(--ecosystem-card-h);
+  max-height: var(--ecosystem-card-h);
+  transform: none;
   border-color: rgba(var(--openms-white-rgb), 0.28);
   background: var(--openms-navy);
   box-shadow: 0 0.75rem 1.65rem rgba(var(--openms-navy-rgb), 0.38);
@@ -194,7 +201,7 @@
   flex: 1 1 auto;
   margin: 0;
   width: 100%;
-  max-width: 42ch;
+  max-width: none;
   font-size: var(--openms-body-size);
   line-height: 1.58;
   color: rgba(var(--openms-white-rgb), 0.86);
@@ -280,6 +287,10 @@
 }
 
 @media (max-width: 768px) {
+  .ecosystem-home {
+    --ecosystem-card-h: 17rem;
+  }
+
   .home-page .home-page__block--ecosystem .ecosystem-home__header-main {
     max-width: 100%;
   }
@@ -292,6 +303,15 @@
 
   .ecosystem-home__grid {
     grid-template-columns: 1fr;
+  }
+
+  .ecosystem-home__card,
+  .ecosystem-home__card:hover,
+  .ecosystem-home__card:focus-visible {
+    height: var(--ecosystem-card-h);
+    min-height: var(--ecosystem-card-h);
+    max-height: var(--ecosystem-card-h);
+    transform: none;
   }
 
   .ecosystem-home__card-text {

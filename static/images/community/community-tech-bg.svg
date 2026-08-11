@@ -58,18 +58,18 @@
     <path d="M120 420 H320 V520"/>
   </g>
 
-  <g fill="#ffffff" fill-opacity="0.08">
+  <g fill="#0a1224" fill-opacity="0.72" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1">
     <rect x="220" y="180" width="200" height="100" rx="12"/>
-    <rect x="980" y="140" width="200" height="100" rx="12"/>
+    <rect x="980" y="140" width="220" height="100" rx="12"/>
     <rect x="1240" y="560" width="200" height="100" rx="12"/>
     <rect x="120" y="420" width="200" height="100" rx="12"/>
   </g>
 
-  <g font-family="ui-monospace, monospace" font-size="11" fill="#ffffff" fill-opacity="0.42">
-    <text x="240" y="212">mzML pipeline</text>
-    <text x="1000" y="172">feature detection</text>
-    <text x="1260" y="592">OpenMS TOPP</text>
-    <text x="140" y="452">workflow engine</text>
+  <g font-family="ui-monospace, monospace" font-size="12" fill="#ffffff" fill-opacity="0.92">
+    <text x="240" y="238">mzML pipeline</text>
+    <text x="1000" y="198">feature detection</text>
+    <text x="1260" y="618">OpenMS TOPP</text>
+    <text x="140" y="478">workflow engine</text>
   </g>
 
   <g stroke="#5280f0" stroke-opacity="0.22" stroke-width="1.5" fill="none">
@@ -101,11 +101,11 @@
   </g>
 
   <g transform="translate(1320 720)">
-    <rect width="220" height="120" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect width="220" height="120" rx="14" fill="#0a1224" fill-opacity="0.78" stroke="#ffffff" stroke-opacity="0.22"/>
     <path d="M28 78 L48 48 L68 62 L92 34 L116 58 L140 42 L164 72" fill="none" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
     <circle cx="48" cy="48" r="4" fill="#5280f0"/>
     <circle cx="92" cy="34" r="4" fill="#b503ff"/>
     <circle cx="140" cy="42" r="4" fill="#ff03cb"/>
-    <text x="28" y="28" font-family="ui-monospace, monospace" font-size="11" fill="#ffffff" fill-opacity="0.55">signal trace</text>
+    <text x="28" y="28" font-family="ui-monospace, monospace" font-size="12" fill="#ffffff" fill-opacity="0.92">signal trace</text>
   </g>
 </svg>
