@@ -47,9 +47,7 @@
 .contact-page__form-card,
 .contact-page__form-body,
 .contact-application__form,
-.fellowship-page__form-card,
 .fellowship-page__form-body,
-.fellowship-application__form-card,
 .services-page__form,
 .services-page__form-body,
 .services-support-application__form,
@@ -58,7 +56,6 @@
 .donate-page__embed,
 .openms-lib-page--contact .contact-application__form,
 .openms-lib-page--contact .contact-page__form-body,
-.openms-lib-page--fellowship .fellowship-application__form-card,
 .openms-lib-page--fellowship .fellowship-page__form-body,
 .openms-lib-page--services-support .services-support-application__form,
 .openms-lib-page--services-support .services-page__form-body,
@@ -66,6 +63,15 @@
 .openms-lib-page--donate .donate-application__form,
 .openms-lib-page--donate .donate-page__embed {
   overflow: visible !important;
+  max-height: none !important;
+  height: auto;
+}
+
+/* Fellowship — clip Tally chrome; keep body/iframe measurable */
+.openms-lib-page--fellowship .fellowship-application__form-card,
+.fellowship-application__form-card,
+.fellowship-page__form-card {
+  overflow: hidden !important;
   max-height: none !important;
   height: auto;
 }
@@ -98,13 +104,16 @@
 
 .contact-page__tally-iframe,
 .openms-lib-page--contact .contact-page__tally-iframe {
-  min-height: 50rem;
+  /* Soft floor until Tally dynamicHeight reports the real size */
+  min-height: 24rem;
+  height: auto;
 }
 
 .fellowship-page__tally-iframe,
 .openms-lib-page--fellowship .fellowship-page__tally-iframe {
-  /* No tall floor — Tally dynamicHeight sets the real height */
-  min-height: 0;
+  /* Soft floor until Tally dynamicHeight reports the real size */
+  min-height: 800px;
+  height: auto;
 }
 
 .services-page__tally-iframe,
@@ -127,6 +136,74 @@
   .donate-page__zeffy-iframe,
   .openms-lib-page--donate .donate-page__zeffy-iframe {
     min-height: 72rem;
+  }
+
+  /* Soft floor on phones; Tally dynamicHeight sets the real height. */
+  .contact-page__tally-iframe,
+  .openms-lib-page--contact .contact-page__tally-iframe {
+    min-height: 32rem !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Fellowship Apply form stacks on phones (~1424px content). */
+  .fellowship-page__tally-iframe,
+  .openms-lib-page--fellowship .fellowship-page__tally-iframe {
+    min-height: 900px !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Match Message + form to other mobile section width (no nested card pad) */
+  .openms-lib-page--contact #contact-form .openms-lib-resources__head,
+  .openms-lib-page--contact #contact-form .openms-lib-resources__lead,
+  .openms-lib-page--contact .contact-application__form,
+  .openms-lib-page--contact .contact-page__form-body,
+  .contact-page__form-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .openms-lib-page--contact .contact-application__form,
+  .openms-lib-page--contact .contact-page__form-body,
+  .contact-page__form-body {
+    padding: 0 !important;
+  }
+
+  .openms-lib-page--contact .contact-page__tally-iframe,
+  .contact-page__tally-iframe,
+  .openms-lib-page--fellowship .fellowship-page__tally-iframe,
+  .fellowship-page__tally-iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .openms-lib-page--fellowship #fellowship-application .fellowship-application__head,
+  .openms-lib-page--fellowship #fellowship-application .openms-lib-resources__lead,
+  .openms-lib-page--fellowship .fellowship-application__form-card,
+  .openms-lib-page--fellowship .fellowship-page__form-body,
+  .fellowship-page__form-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .openms-lib-page--fellowship .fellowship-page__form-body,
+  .fellowship-page__form-body {
+    padding: 0 !important;
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  .openms-lib-page--fellowship .fellowship-application__form-card {
+    padding: 0 !important;
+    overflow: hidden !important;
+    max-height: none !important;
   }
 
   .contact-page__tally-iframe,

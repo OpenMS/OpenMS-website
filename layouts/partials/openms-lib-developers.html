@@ -36,18 +36,20 @@
       <span class="openms-lib-developers__card-icon" aria-hidden="true"><i class="{{ . }}"></i></span>
       {{- end }}
       <div class="openms-lib-developers__card-body">
-        <h3 class="openms-lib-developers__card-title"><span>{{ .title }}</span></h3>
+        <div class="openms-lib-developers__card-title-row">
+          <h3 class="openms-lib-developers__card-title"><span>{{ .title }}</span></h3>
+          {{- with .badge }}
+          <a
+            class="openms-lib-developers__badge"
+            href="{{ .url }}"
+            {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+          >
+            <img src="{{ .src }}" alt="{{ .alt | default "Badge" }}" loading="lazy" />
+          </a>
+          {{- end }}
+        </div>
         {{- with $subtitle }}
         <p class="openms-lib-developers__card-subtitle">{{ . }}</p>
-        {{- end }}
-        {{- with .badge }}
-        <a
-          class="openms-lib-developers__badge"
-          href="{{ .url }}"
-          {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
-        >
-          <img src="{{ .src }}" alt="{{ .alt | default "Badge" }}" loading="lazy" />
-        </a>
         {{- end }}
         <div class="openms-lib-developers__card-cta openms-lib-developers__platforms" role="group" aria-label="{{ .title }}">
           {{- range .platforms }}

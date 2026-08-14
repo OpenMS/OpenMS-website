@@ -194,6 +194,8 @@ languages:
           listTitle: "Sponsors include:"
           contactCta: Interested in sponsoring us? Contact us for more information.
           contactUrl: /contact/
+          contactButtonText: Email Us
+          contactButtonUrl: mailto:fundraising@openms.de
           # groupByTier: true
         sponsors:
           - name: LiBiS
@@ -487,13 +489,13 @@ languages:
           of robust open-source algorithms. Join the OpenMS community.
         imageAlt: OpenMS peptide identification workflow preview
         buttontext: Get started
-        buttonlink: https://openms.readthedocs.io/en/latest/about/installation.html
+        buttonlink: https://deploy-preview-277--openms.netlify.app/contribute/
         secondaryButtonText: Explore the library
         secondaryButtonLink: /openms-lib/
         trustNote: Ready-to-use apps · Modular workflows · Built by the community
         microcopy: ""
         mockup:
-          label: Open data
+          label: Open science
           labelArrow: "→"
           labelAfter: clear results
           brand: OPENMS
@@ -510,7 +512,10 @@ languages:
             suffix: "+"
             label: Citations
             description: Peer-reviewed research citing OpenMS tools and algorithms worldwide.
-        supportNote: Trusted and used by scientists worldwide.
+          - value: 180
+            suffix: "+"
+            label: Contributors
+            description: Developers, researchers, and community members advancing OpenMS worldwide.
 
       communitySection:
         eyebrow: Community
@@ -523,8 +528,8 @@ languages:
         welcomeNote: >-
           We are committed to being open, inclusive, and welcoming — read the
           [Code of Conduct](/code-of-conduct) for how we work together.
-        image: /images/community/community-tech-bg.svg
-        imageAlt: Abstract mass spectrometry data visualization with spectral peaks and connected analysis workflows
+        image: /images/community/openms-20th-anniversary.jpg
+        imageAlt: OpenMS community at the 20th anniversary gathering
         ctaText: Get involved
         ctaUrl: /contribute/
 
@@ -654,26 +659,27 @@ languages:
           how we work together.
 
       openmsLibHighlights:
-        eyebrow: Overview
-        title: What is OpenMS?
+        eyebrow: ""
+        title: ""
         layout: benefits
-        lead: >-
-          A mature, high-performance C++ framework for proteomics and metabolomics
-          workflows—built for reproducibility, scale, and long-term research use.
         items:
           - title: Two decades of expertise
             text: 20+ years of development
           - title: Open by design
             text: Open source under the BSD-3 clause license
           - title: Global community
-            text: Backed by an active community of<br>researchers and developers
+            text: >-
+              Backed by an active community of
+              researchers and developers
           - title: Built for scale
             text: High performance and optimized for scale
 
       openmsLibTopp:
         eyebrow: TOPP Tools
         title: Ships with the TOPP command-line tools
-        lead: Modular tools covering the complete mass spectrometry pipeline—compose workflows, plug into engines, and scale your analysis.
+        lead: 150+ modular tools covering the complete mass spectrometry pipeline.
+        image: /images/content_images/topp-tool-list.png
+        imageAlt: Browse OpenMS TOPP tools such as MSFraggerAdapter, ProteinQuantifier, and OpenSwathWorkflow
         features:
           - title: Compose workflows
             icon: fas fa-project-diagram
@@ -776,22 +782,6 @@ languages:
             hoverText: Open a bug report, feature request, or discussion on the OpenMS GitHub tracker.
             url: https://github.com/OpenMS/OpenMS/issues/new/choose
             linkText: Open on GitHub
-          - title: Building OpenMS from Source
-            type: links
-            tag: Build
-            icon: fas fa-hammer
-            subtitle: Compile locally on your platform.
-            hoverText: Follow the platform guide for Linux, macOS, or Windows to build the C++ core and tools.
-            platforms:
-              - name: Linux
-                icon: fab fa-linux
-                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_linux.html
-              - name: macOS
-                icon: fab fa-apple
-                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_mac.html
-              - name: Windows
-                icon: fab fa-windows
-                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_win.html
           - title: Developer manual
             tag: Docs
             icon: fas fa-book
@@ -813,6 +803,22 @@ languages:
             hoverText: Follow the step-by-step guide to add a new tool to the TOPP command-line pipeline suite.
             url: https://openms.readthedocs.io/en/latest/manual/develop/adding-new-tool-to-topp.html
             linkText: Follow the guide
+          - title: Building OpenMS from Source
+            type: links
+            tag: Build
+            icon: fas fa-hammer
+            subtitle: Compile locally on your platform.
+            hoverText: Follow the platform guide for Linux, macOS, or Windows to build the C++ core and tools.
+            platforms:
+              - name: Linux
+                icon: fab fa-linux
+                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_linux.html
+              - name: macOS
+                icon: fab fa-apple
+                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_mac.html
+              - name: Windows
+                icon: fab fa-windows
+                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_win.html
           - title: Reviewing Pull Requests
             type: links
             tag: Review
@@ -833,11 +839,9 @@ languages:
 
       pyopenmsPage:
         highlights:
-          eyebrow: Overview
-          title: What is pyOpenMS?
-          lead: >-
-            Python bindings to the OpenMS-lib C++ framework — script, prototype,
-            and automate mass spectrometry analysis from Python.
+          eyebrow: ""
+          title: ""
+          layout: benefits
           items:
             - title: Native algorithms
               text: Run OpenMS-lib algorithms directly in Python
@@ -852,33 +856,56 @@ languages:
           eyebrow: Get started
           title: Explore pyOpenMS
           lead: Documentation and resources to start building with pyOpenMS.
-          featureKicker: Install
-          featureIcon: fab fa-python
           items:
+            - title: Read Documentation
+              tag: Docs
+              icon: fas fa-book-open
+              text: Tutorials and guides to help you get productive quickly.
+              url: https://pyopenms.readthedocs.io/
+              linkText: Open docs
+              featured: true
+            - title: Installation
+              tag: Install
+              icon: fab fa-python
+              text: Install pyOpenMS from PyPI and verify your environment.
+              url: https://pyopenms.readthedocs.io/en/latest/user_guide/installation.html
+              linkText: Install now
+            - title: API Reference
+              tag: API
+              icon: fas fa-code
+              text: Full class and method reference for the Python bindings.
+              url: https://pyopenms.readthedocs.io/en/latest/apidocs/index.html
+              linkText: View reference
+            - title: Visualization
+              tag: pyOpenMS viz
+              icon: fas fa-chart-line
+              text: Interactive plotting and exploration for OpenMS data structures.
+              url: /pyopenms-viz/
+              linkText: Explore viz
             # TODO (Josh): Get google colab updated link (Binder removed — no longer maintained)
             - title: Try Online
               tag: No install needed
               icon: fas fa-laptop-code
+              text: Run pyOpenMS in the browser without a local install.
               linkText: Open in Colab
-              featured: true
-            - title: Installation
-              icon: fab fa-python
-              url: https://pyopenms.readthedocs.io/en/latest/user_guide/installation.html
-              linkText: Install now
-            - title: Documentation
-              icon: fas fa-book-open
-              url: https://pyopenms.readthedocs.io/
-              linkText: Open docs
-            - title: API Reference
-              icon: fas fa-code
-              url: https://pyopenms.readthedocs.io/en/latest/apidocs/index.html
-              linkText: View reference
+            - title: Need help?
+              type: online
+              text: Chat with the community on Discord, or open a GitHub issue for bugs and feature requests.
+              links:
+                - name: Ask on Discord
+                  icon: fab fa-discord
+                  text: Quick questions and community chat
+                  url: https://discord.com/invite/v9tv5BxPch
+                - name: Report an issue
+                  icon: fab fa-github
+                  text: Bugs and feature requests
+                  url: https://github.com/OpenMS/OpenMS/issues/new/choose
 
         developers:
           eyebrow: For Developers
           title: Contribute
           lead: Any class in OpenMS-lib can be wrapped and used from Python — your contributions help researchers worldwide.
-          citeSeparate: true
+          citeSeparate: false
           citeText: Used pyOpenMS in your work? If so, please cite.
           citation:
             title: >-
@@ -895,41 +922,45 @@ languages:
             - title: Report an Issue
               tag: GitHub
               icon: fab fa-github
-              text: File bugs, request features, or discuss changes on the OpenMS tracker.
+              subtitle: File bugs or request new features.
               url: https://github.com/OpenMS/OpenMS/issues/new/choose
               linkText: Open on GitHub
             - title: Build from Source
               tag: Build
               icon: fas fa-hammer
-              text: Platform-specific guides for compiling pyOpenMS locally.
+              subtitle: Compile pyOpenMS locally on your platform.
               url: https://pyopenms.readthedocs.io/en/latest/community/build_from_source.html
               linkText: View build guide
             - title: Wrapping New Classes
               tag: Extend
               icon: fas fa-puzzle-piece
-              text: Step-by-step guide for exposing new OpenMS classes to Python.
+              subtitle: Expose new OpenMS classes to Python.
               url: https://pyopenms.readthedocs.io/en/latest/community/wrapping_workflows_new_classes.html
               linkText: Follow the guide
             - title: Developer manual
               tag: Docs
               icon: fas fa-book
-              text: Architecture and contribution workflows for pyOpenMS.
+              subtitle: Architecture and contribution workflows.
               url: https://pyopenms.readthedocs.io/en/latest/community/index.html
               linkText: Open docs
             - title: Reviewing Pull Requests
-              type: review
+              type: links
               tag: Review
               icon: fas fa-code-branch
-              text: Help move contributions forward by reviewing open pull requests on GitHub.
+              subtitle: Help move contributions forward by reviewing open pull requests on GitHub.
+              platformsAlwaysVisible: true
               badge:
                 src: https://img.shields.io/github/issues-pr/OpenMS/OpenMS?label=open%20PRs&color=1a56db&style=flat-square
                 alt: Number of open OpenMS pull requests
                 url: https://github.com/OpenMS/OpenMS/pulls
               platforms:
                 - name: View open PRs
+                  icon: fab fa-github
                   url: https://github.com/OpenMS/OpenMS/pulls
                 - name: How to review PRs
+                  icon: fas fa-book-open
                   url: https://github.com/ParadiseSS13/Paradise/discussions/19410
+
 
       pyopenmsVizPage:
         gettingStarted:
@@ -1038,6 +1069,8 @@ languages:
               title: Deploy as Windows Executable
               icon: fab fa-windows
               text: Package your WebApp as a standalone Windows executable.
+              linkText: Template Windows Installer
+              url: https://github.com/OpenMS/streamlit-template/releases/latest
 
         examples:
           eyebrow: Examples
@@ -1298,9 +1331,9 @@ languages:
               url: https://abi-services.cs.uni-tuebingen.de/mhcquant/
 
       ecosystemSection:
-        eyebrow: Ecosystem
-        title: Build your own pipelines using our ecosystem
-        titleHighlight: ecosystem
+        eyebrow: Developer tools
+        title: Ecosystem
+        description: Build your own pipelines using our ecosystem
         items:
           - name: OpenMS-lib
             url: /openms-lib/
@@ -1317,6 +1350,7 @@ languages:
             tag: Python
             accent: pyopenms
             size: standard
+            icon: /images/pyopenms-logo.png
             description: >-
               Python bindings to OpenMS-lib. Write custom analysis scripts and
               integrate OpenMS into Python workflows.
@@ -1325,6 +1359,7 @@ languages:
             tag: Web apps
             accent: webapps
             size: standard
+            icon: /images/logos/openms-webapps-logo.png
             description: >-
               Web interface template for OpenMS pipelines. Deploy custom analysis
               tools as interactive web apps without frontend development.
@@ -1333,6 +1368,7 @@ languages:
             tag: Visualization
             accent: viz
             size: wide
+            icon: /images/logos/pyopenms-viz-logo.png
             description: >-
               Visualization library for mass spectrometry data. Create interactive
               and static plots directly from Python dataframes.

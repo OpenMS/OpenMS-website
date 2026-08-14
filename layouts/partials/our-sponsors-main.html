@@ -12,6 +12,8 @@
 {{- $listTitle := index $section "listTitle" | default "Sponsors include:" -}}
 {{- $contactCta := index $section "contactCta" | default "Interested in sponsoring us? Contact us for more information." -}}
 {{- $contactUrl := index $section "contactUrl" | default "/contact/" -}}
+{{- $contactButtonText := index $section "contactButtonText" | default "Email Us" -}}
+{{- $contactButtonUrl := index $section "contactButtonUrl" | default "mailto:fundraising@openms.de" -}}
 {{- $groupByTier := index $section "groupByTier" | default false -}}
 {{- $tiers := .Site.Params.sponsorTiers.levels | default (slice) -}}
 <section class="openms-lib-layout">
@@ -83,7 +85,7 @@
           </p>
         </div>
         <div class="governance-cta-band__actions" role="group" aria-label="Sponsorship actions">
-          <a class="openms-lib-btn openms-lib-btn--primary" href="{{ $contactUrl }}">Contact us</a>
+          <a class="openms-lib-btn openms-lib-btn--primary" href="{{ $contactButtonUrl }}">{{ $contactButtonText }}</a>
           <a class="openms-lib-btn openms-lib-btn--ghost" href="/sponsor-us/">View program</a>
         </div>
       </div>

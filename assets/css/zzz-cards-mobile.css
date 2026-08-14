@@ -45,19 +45,16 @@
   align-items: stretch !important;
 }
 
-.ecosystem-home__card,
 .community-events-home__card-link:not(.community-events-home__card-link--split),
 .contact-page__support-card,
 .contact-page__path-item,
 .keyfeatures-modern__topic-card,
 .openms-lib-resources__item,
-.openms-lib-topp-split__card,
 .openms-lib-developers__card,
 .openms-lib-developers__route,
 .contribute-way,
 .contribute-ways__feature,
 .governance-card,
-.governance-membership__card,
 .sponsor-tier,
 .sponsor-why__card,
 .leadership-card,
@@ -69,13 +66,26 @@
 .trusted-by__home-card,
 .trusted-by__wall-card,
 .help-page__card--wide,
-.openms-lib-page .openms-lib-topp-split__card,
 .openms-lib-page .openms-lib-developers__card,
 .openms-lib-page--hub .openms-lib-developers__card {
   box-sizing: border-box !important;
   height: 100% !important;
   min-height: var(--openms-equal-card-min-h) !important;
   max-height: none;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* TOPP Tools: equal via grid stretch only — never lock a fixed shell that
+   differs between rest and hover (that was jumping card height on hover). */
+.openms-lib-topp-split__card,
+.openms-lib-page .openms-lib-topp-split__card,
+.openms-lib-page--openms-lib .openms-lib-topp-split__card,
+.openms-lib-page--hub .openms-lib-topp-split__card {
+  box-sizing: border-box !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
   display: flex !important;
   flex-direction: column !important;
 }
@@ -187,12 +197,39 @@
 .ecosystem-home__grid .ecosystem-home__card,
 .ecosystem-home__grid .ecosystem-home__card:hover,
 .ecosystem-home__grid .ecosystem-home__card:focus-visible {
-  --openms-equal-card-min-h: var(--ecosystem-card-h, 18rem);
-  min-height: var(--ecosystem-card-h, 18rem) !important;
-  height: var(--ecosystem-card-h, 18rem) !important;
-  max-height: var(--ecosystem-card-h, 18rem) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* OpenMS-lib For Developers — grow with CTAs; equalize via grid stretch */
+#for-developers .openms-lib-developers__cards-grid > .openms-lib-developers__card,
+.openms-lib-page--hub #for-developers .openms-lib-developers__cards-grid > .openms-lib-developers__card,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__cards-grid > .openms-lib-developers__card {
+  height: auto !important;
+  min-height: var(--openms-equal-card-min-h, 14.5rem) !important;
+  max-height: none !important;
+  overflow: visible !important;
+  align-self: stretch !important;
   transform: none !important;
-  overflow: hidden !important;
+}
+
+/* Match Explore card hover lift (navy + translateY) */
+#for-developers .openms-lib-developers__cards-grid > .openms-lib-developers__card:hover,
+#for-developers .openms-lib-developers__cards-grid > .openms-lib-developers__card:focus-visible,
+#for-developers .openms-lib-developers__cards-grid > .openms-lib-developers__card:focus-within,
+.openms-lib-page--hub #for-developers .openms-lib-developers__cards-grid > .openms-lib-developers__card:hover,
+.openms-lib-page--hub #for-developers .openms-lib-developers__cards-grid > .openms-lib-developers__card:focus-visible,
+.openms-lib-page--hub #for-developers .openms-lib-developers__cards-grid > .openms-lib-developers__card:focus-within,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__cards-grid > .openms-lib-developers__card:hover,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__cards-grid > .openms-lib-developers__card:focus-visible,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__cards-grid > .openms-lib-developers__card:focus-within {
+  height: auto !important;
+  min-height: var(--openms-equal-card-min-h, 14.5rem) !important;
+  max-height: none !important;
+  overflow: visible !important;
+  transform: translateY(-4px) !important;
 }
 
 /* Leadership bios / sponsorship tiers — grow with content; equal via grid stretch */
@@ -222,6 +259,40 @@
   max-height: none !important;
   overflow: visible !important;
   transform: none !important;
+}
+
+/* Governance Separation of Responsibilities — content height; equal via grid stretch */
+.governance-compare-grid .openms-lib-resources__item,
+.governance-compare-grid .openms-lib-resources__item:hover,
+.governance-compare-grid .openms-lib-resources__item:focus-within,
+.openms-lib-page--governance #responsibilities .governance-compare-grid .openms-lib-resources__item,
+.openms-lib-page--governance #responsibilities .governance-compare-grid .openms-lib-resources__item:hover,
+.openms-lib-page--governance #responsibilities .governance-compare-grid .openms-lib-resources__item:focus-within {
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Contact Ways to reach us — keep equal row height; hover must not shrink */
+.openms-lib-page--contact #contact-paths .contact-paths-grid > .openms-lib-resources__item,
+.openms-lib-page--contact #contact-paths .contact-paths-grid > .openms-lib-resources__item:hover,
+.openms-lib-page--contact #contact-paths .contact-paths-grid > .openms-lib-resources__item:focus-visible,
+.openms-lib-page--contact #contact-paths .contact-paths-grid > .openms-lib-resources__item:focus-within,
+.openms-lib-page--contact #contact-paths .contact-paths-grid > .contact-page__path-item,
+.openms-lib-page--contact #contact-paths .contact-paths-grid > .contact-page__path-item:hover,
+.openms-lib-page--contact #contact-paths .contact-paths-grid > .contact-page__path-item:focus-within {
+  height: 100% !important;
+  min-height: var(--openms-equal-card-min-h) !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.governance-compare-grid .openms-lib-resources__item-text,
+.openms-lib-page--governance #responsibilities .governance-compare-grid .openms-lib-resources__item-text {
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  overflow: visible !important;
 }
 
 .contact-home__grid .contact-home__card,
@@ -285,8 +356,6 @@
 }
 
 /* Hover/focus must not change card shell size */
-.ecosystem-home__card:hover,
-.ecosystem-home__card:focus-visible,
 .contact-home__card:hover,
 .contact-home__card:focus-visible,
 .contact-page__support-card:hover,
@@ -338,10 +407,10 @@
 .openms-lib-page--hub .openms-lib-developers__card:hover,
 .openms-lib-page--hub .openms-lib-developers__card:focus-visible,
 .openms-lib-page--hub .openms-lib-developers__card:focus-within {
+  /* Keep equal shell; allow card lift / navy hover (do not force transform:none) */
   min-height: var(--openms-equal-card-min-h) !important;
   height: 100% !important;
   max-height: none !important;
-  transform: none !important;
 }
 
 /* Featured Apps: keep content-driven equal shells; never grow/shrink on hover */
@@ -363,18 +432,29 @@
   transform: none !important;
 }
 
-/* TOPP Tools cards: keep stretched equal height; no lift/resize on hover */
+/* TOPP Tools cards: same shell on hover as rest (no height jump / lift) */
 .openms-lib-topp-split__card:hover,
 .openms-lib-topp-split__card:focus-within,
 .openms-lib-page .openms-lib-topp-split__card:hover,
 .openms-lib-page .openms-lib-topp-split__card:focus-within,
 .openms-lib-page--openms-lib .openms-lib-topp-split__card:hover,
-.openms-lib-page--openms-lib .openms-lib-topp-split__card:focus-within {
-  min-height: var(--openms-equal-card-min-h) !important;
+.openms-lib-page--openms-lib .openms-lib-topp-split__card:focus-within,
+.openms-lib-page--hub .openms-lib-topp-split__card:hover,
+.openms-lib-page--hub .openms-lib-topp-split__card:focus-within {
+  min-height: 0 !important;
   height: 100% !important;
   max-height: none !important;
-  transform: none !important;
   box-sizing: border-box !important;
+}
+
+/* Only cancel lift after scroll-reveal has finished — avoid fighting scale(0.94) */
+.openms-lib-topp-split__card.is-revealed:hover,
+.openms-lib-topp-split__card.is-revealed:focus-within,
+.openms-lib-page .openms-lib-topp-split__card.is-revealed:hover,
+.openms-lib-page .openms-lib-topp-split__card.is-revealed:focus-within,
+.openms-lib-page--openms-lib .openms-lib-topp-split__card.is-revealed:hover,
+.openms-lib-page--openms-lib .openms-lib-topp-split__card.is-revealed:focus-within {
+  transform: translate(0, 0) scale(1) !important;
 }
 
 /* Explore / Get started cards: content-driven equal shells; no lift/resize on hover */
@@ -528,17 +608,9 @@
     min-width: 0;
   }
 
-  /* Research Partnerships — keep five numbered tiles in one row */
-  .openms-lib-page--research-partnerships .rp-include__mosaic {
-    display: grid !important;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    gap: 0 !important;
-  }
-
-  /* WebApps Features — one column on phones (inherits mosaic stack above) */
+  /* Research Partnerships / WebApps Features — one column on phones */
+  .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic,
+  .openms-lib-page--research-partnerships .rp-include__mosaic,
   .openms-lib-page--webapps-pro .openms-lib-about__mosaic {
     display: grid !important;
     grid-template-columns: minmax(0, 1fr) !important;
@@ -601,26 +673,30 @@
     padding-inline: 0;
   }
 
-  /* Home variant pins each logo slot to a fixed width — let it fill its column */
+  /* Equal-height logos in the static mobile grid */
   .home-page__block--partners .uni-partners--home .uni-partners__static .uni-partners__item,
   .uni-partners--home .uni-partners__static .uni-partners__item {
     flex: 1 1 auto;
     width: 100%;
     min-width: 0;
     max-width: 100%;
-    height: 4.25rem;
-    min-height: 4.25rem;
-    max-height: 4.25rem;
-    padding: 0.5rem 0.75rem;
+    height: 3.25rem;
+    min-height: 3.25rem;
+    max-height: 3.25rem;
+    padding: 0.35rem 0.5rem;
   }
 
-  /* Greyscale exists for the marquee's hover reveal; touch has no hover */
+  /* Greyscale exists for the marquee's hover reveal; touch has no hover.
+     Lock height so wide and square logos read at the same size. */
   .home-page__block--partners .uni-partners--home .uni-partners__static .uni-partners__item img,
   .uni-partners--home .uni-partners__static .uni-partners__item img {
     width: auto;
+    height: 100%;
     max-width: 100%;
-    height: auto;
     max-height: 100%;
+    margin-inline: auto;
+    object-fit: contain;
+    object-position: center;
     opacity: 1;
     filter: none;
   }
@@ -641,11 +717,9 @@
   .contribute-ways__feature,
   .developer-retreat-highlights__card,
   .donate-impact-card,
-  .ecosystem-home__card,
   .events-past-card,
   .fellowship-project-card,
   .governance-card,
-  .governance-membership__card,
   .help-page__card--wide,
   .home-metrics__card,
   .keyfeatures-modern__topic-card,
@@ -654,7 +728,6 @@
   .openms-lib-developers__route,
   .openms-lib-resource-card,
   .openms-lib-resources__item,
-  .openms-lib-topp-split__card,
   .openms-lib-topp__cta-card,
   .sponsor-why__card,
   .trusted-by__card,
@@ -672,6 +745,19 @@
     overflow-wrap: break-word;
   }
 
+  /* For Developers Contribute — let multi-CTA cards expand on phones */
+  #for-developers .openms-lib-developers__card,
+  .openms-lib-page--hub #for-developers .openms-lib-developers__card,
+  .openms-lib-page--openms-lib #for-developers .openms-lib-developers__card,
+  #for-developers .openms-lib-developers__card:hover,
+  #for-developers .openms-lib-developers__card:focus-visible,
+  #for-developers .openms-lib-developers__card:focus-within {
+    height: auto !important;
+    min-height: var(--openms-equal-card-min-h-mobile) !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
   .webapps-archived-entry,
   .webapps-archived-entry:hover,
   .webapps-archived-entry:focus-within {
@@ -686,6 +772,41 @@
     overflow: visible !important;
     overflow-wrap: break-word;
     transform: none !important;
+  }
+
+  .governance-compare-grid .openms-lib-resources__item,
+  .governance-compare-grid .openms-lib-resources__item:hover,
+  .governance-compare-grid .openms-lib-resources__item:focus-within,
+  .openms-lib-page--governance #responsibilities .governance-compare-grid .openms-lib-resources__item {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin-inline: 0;
+    overflow: visible !important;
+    overflow-wrap: break-word;
+  }
+
+  .openms-lib-page--contact #contact-paths .contact-paths-grid > .openms-lib-resources__item,
+  .openms-lib-page--contact #contact-paths .contact-paths-grid > .openms-lib-resources__item:hover,
+  .openms-lib-page--contact #contact-paths .contact-paths-grid > .openms-lib-resources__item:focus-visible,
+  .openms-lib-page--contact #contact-paths .contact-paths-grid > .openms-lib-resources__item:focus-within,
+  .openms-lib-page--contact #contact-paths .contact-paths-grid > .contact-page__path-item,
+  .openms-lib-page--contact #contact-paths .contact-paths-grid > .contact-page__path-item:hover,
+  .openms-lib-page--contact #contact-paths .contact-paths-grid > .contact-page__path-item:focus-within {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin-inline: 0;
+    overflow: visible !important;
+    overflow-wrap: break-word;
   }
 
   /* Get started / Explore — content height, equal within a row */
@@ -776,10 +897,11 @@
   .ecosystem-home__grid .ecosystem-home__card,
   .ecosystem-home__grid .ecosystem-home__card:hover,
   .ecosystem-home__grid .ecosystem-home__card:focus-visible {
-    height: var(--ecosystem-card-h, 17rem) !important;
-    min-height: var(--ecosystem-card-h, 17rem) !important;
-    max-height: var(--ecosystem-card-h, 17rem) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
     transform: none !important;
+    overflow: visible !important;
   }
 
   .contact-home__card:hover,
@@ -804,6 +926,16 @@
     transform: none !important;
   }
 
+  /* For Developers — keep Explore-style hover lift on phones too */
+  #for-developers .openms-lib-developers__card:hover,
+  #for-developers .openms-lib-developers__card:focus-visible,
+  #for-developers .openms-lib-developers__card:focus-within {
+    height: auto !important;
+    min-height: var(--openms-equal-card-min-h-mobile) !important;
+    max-height: none !important;
+    transform: translateY(-4px) !important;
+  }
+
   .webapps-project-card:hover,
   .webapps-project-card:focus-within,
   .webapps-project-card__surface:hover,
@@ -816,22 +948,28 @@
     transform: none !important;
   }
 
-  /* TOPP Tools — keep the same fixed shell on hover (do not drop max-height) */
+  /* TOPP Tools — content-driven equal shells on mobile; identical rest/hover */
+  .openms-lib-topp-split__card,
+  .openms-lib-page .openms-lib-topp-split__card,
+  .openms-lib-page--openms-lib .openms-lib-topp-split__card,
   .openms-lib-topp-split__card:hover,
   .openms-lib-topp-split__card:focus-within,
   .openms-lib-page .openms-lib-topp-split__card:hover,
   .openms-lib-page .openms-lib-topp-split__card:focus-within,
   .openms-lib-page--openms-lib .openms-lib-topp-split__card:hover,
   .openms-lib-page--openms-lib .openms-lib-topp-split__card:focus-within {
-    height: var(--openms-equal-card-min-h-mobile) !important;
-    min-height: var(--openms-equal-card-min-h-mobile) !important;
-    max-height: var(--openms-equal-card-min-h-mobile) !important;
-    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
   }
 
-  /* Homepage Featured Apps — brand-mark panel on mobile */
+  /* Homepage Featured Apps — full-height image + blue copy on mobile */
   .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__surface {
-    grid-template-columns: 5.25rem minmax(0, 1fr) !important;
+    grid-template-columns: var(--webapps-logo-size, 6.5rem) minmax(0, 1fr) !important;
     align-items: stretch !important;
     gap: 0 !important;
     padding: 0 !important;
@@ -845,15 +983,30 @@
     min-height: 100% !important;
     max-height: none !important;
     margin: 0 !important;
-    padding: 0.75rem 0.55rem !important;
+    padding: 0.75rem !important;
+    border: 1px solid rgba(var(--openms-navy-rgb), 0.14) !important;
     align-self: stretch !important;
+  }
+
+  .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain !important;
+  }
+
+  .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__surface {
+    border: none !important;
+    box-shadow: none !important;
   }
 
   .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__body {
     flex: 1 1 auto !important;
     width: auto !important;
     min-width: 0 !important;
-    padding: 0.85rem 0.95rem !important;
+    padding: var(--webapps-card-pad, 0.9rem 1rem) !important;
+    background: transparent !important;
   }
 
   /* Grid/flex children must be allowed to shrink */
@@ -918,11 +1071,11 @@
   }
 }
 
-/* Homepage metrics: two numbered stats until phones, then one column */
+/* Homepage metrics: 3 across from md–xl+; stack on small phones */
 @media (min-width: 641px) {
   .home-metrics__grid {
     display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 }
 
@@ -930,5 +1083,63 @@
   .home-metrics__grid {
     display: grid !important;
     grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* Homepage — full card copy must fit; shells grow with content */
+.home-page .webapps-project-card--catalog .webapps-project-card__text,
+.home-page .ecosystem-home__card-text,
+.home-page .contact-home__card-text,
+.home-page .keyfeatures-modern__topic-text,
+.home-page .keyfeatures-modern__topic-card p,
+.home-page .news-home__card-summary,
+.home-page .community-events-home__card-summary,
+.home-page .home-metrics__description {
+  display: block !important;
+  -webkit-box-orient: unset !important;
+  -webkit-line-clamp: unset !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+}
+
+.home-page .webapps-project-card--catalog,
+.home-page .webapps-project-card--catalog .webapps-project-card__surface,
+.home-page .ecosystem-home__card,
+.home-page .contact-home__card,
+.home-page .contact-home__grid .contact-home__card,
+.home-page .keyfeatures-modern__topic-card,
+.home-page .keyfeatures-modern__topics .keyfeatures-modern__topic-card,
+.home-page .home-metrics__card,
+.home-page .news-home__card,
+.home-page .community-events-home__card {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.home-page .webapps-project-card--catalog,
+.home-page .ecosystem-home__card,
+.home-page .contact-home__card,
+.home-page .keyfeatures-modern__topic-card,
+.home-page .home-metrics__card,
+.home-page .news-home__card,
+.home-page .community-events-home__card {
+  min-height: 0 !important;
+}
+
+@media (max-width: 720px) {
+  .home-page .home-metrics__card,
+  .home-page .contact-home__card,
+  .home-page .keyfeatures-modern__topic-card,
+  .home-page .webapps-project-card--catalog,
+  .home-page .webapps-project-card--catalog .webapps-project-card__surface,
+  .home-page .ecosystem-home__card,
+  .home-page .news-home__card,
+  .home-page .community-events-home__card,
+  .home-page .community-events-home__card:not(:has(.community-events-home__card-link--split)) {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
   }
 }

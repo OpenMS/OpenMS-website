@@ -23,18 +23,27 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
 }
 
 .contact-home__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: var(--pro-max, var(--home-max, 75rem));
   margin: 0 auto;
+  text-align: center;
 }
 
 .contact-home__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: min(100%, 46rem);
-  margin-bottom: clamp(2rem, 4vh, 2.75rem);
+  margin: 0 auto clamp(1.35rem, 2.8vh, 1.85rem);
+  text-align: center;
 }
 
 .contact-home__eyebrow {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
   margin: 0 0 0.85rem;
   padding: 0.35rem 0.75rem;
@@ -64,11 +73,13 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
 .contact-home__title {
   margin: 0;
   font-family: var(--openms-font-heading);
-  font-size: clamp(2rem, 4.2vw, 3.15rem);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-  color: var(--openms-navy);
+  font-size: var(--home-section-head-title-size, var(--openms-section-title-size, calc(var(--openms-heading-lg-size) * 1.15)));
+  font-weight: var(--openms-heading-lg-weight, 700);
+  line-height: 1.3;
+  letter-spacing: normal;
+  color: var(--home-title-color, var(--openms-navy));
+  text-align: center;
+  text-transform: uppercase;
   text-wrap: balance;
 }
 
@@ -82,14 +93,35 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
 }
 
 .contact-home__description {
-  margin: 0.85rem 0 0;
+  margin: 0.85rem auto 0;
   max-width: min(100%, var(--pro-measure-wide, 58ch));
   width: 100%;
   font-family: var(--openms-font-body);
   font-size: var(--openms-body-size-lg);
   line-height: 1.62;
   color: var(--openms-text-muted);
+  text-align: center;
   text-wrap: pretty;
+}
+
+.contact-home__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1rem;
+  margin-top: 0;
+  width: 100%;
+}
+
+.contact-home__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem);
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) {
@@ -276,9 +308,6 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
 }
 
 @media (max-width: 640px) {
-  .contact-home__title {
-    font-size: clamp(1.75rem, 5vw, 2.35rem);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

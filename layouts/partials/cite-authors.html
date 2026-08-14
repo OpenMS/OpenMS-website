@@ -1,4 +1,4 @@
-{{- /* Show a few authors; if 20+ remain, show a 20+ chip, else +N. */ -}}
+{{- /* Show a few authors + always the last; if many remain, show a 10+ chip, else +N. */ -}}
 {{- $raw := . | string -}}
 {{- $parts := split $raw ";" -}}
 {{- $authors := slice -}}
@@ -13,11 +13,17 @@
 {{- if le $total $limit -}}
   {{- delimit $authors "; " -}}
 {{- else -}}
-  {{- $visible := first $limit $authors -}}
-  {{- $more := sub $total $limit -}}
-  {{- $label := printf "+%d" $more -}}
-  {{- if ge $more 20 -}}
-    {{- $label = "20+" -}}
+  {{- $last := index $authors (sub $total 1) -}}
+  {{- $rest := first (sub $total 1) $authors -}}
+  {{- if le (len $rest) $limit -}}
+    {{- delimit $authors "; " -}}
+  {{- else -}}
+    {{- $visible := first $limit $rest -}}
+    {{- $more := sub (len $rest) $limit -}}
+    {{- $label := printf "+%d" $more -}}
+    {{- if ge $more 10 -}}
+      {{- $label = "10+" -}}
+    {{- end -}}
+    {{- delimit $visible "; " }} <span class="publications-cite-card__authors-more" title="{{ $total }} authors total · {{ $more }} more not shown">{{ $label }}</span>; {{ $last -}}
   {{- end -}}
-  {{- delimit $visible "; " }} <span class="publications-cite-card__authors-more" title="{{ $total }} authors total · {{ $more }} more not shown">{{ $label }}</span>
 {{- end -}}

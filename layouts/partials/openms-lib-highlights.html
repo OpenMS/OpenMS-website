@@ -1,23 +1,28 @@
 {{- $cfg := .cfg | default site.Params.openmsLibHighlights | default dict -}}
 {{- $id := .id | default "openms-lib-about-title" -}}
 {{- $eyebrow := index $cfg "eyebrow" -}}
-{{- $title := index $cfg "title" | default "What is OpenMS?" -}}
+{{- $title := index $cfg "title" -}}
 {{- $lead := index $cfg "lead" -}}
 {{- $items := index $cfg "items" | default (slice) -}}
 {{- $layout := index $cfg "layout" | default "mosaic" -}}
-<section class="openms-lib-about openms-lib-about--{{ $layout }}" aria-labelledby="{{ $id }}">
+{{- $hasHead := or $eyebrow $title $lead -}}
+<section class="openms-lib-about openms-lib-about--{{ $layout }}" {{- with $title }} aria-labelledby="{{ $id }}"{{- else }} aria-label="{{ $eyebrow | default "Overview" }}"{{- end }}>
   <div class="openms-lib-about__inner">
+    {{- if $hasHead }}
     <header class="openms-lib-about__head openms-lib-hub__reveal openms-lib-hub__reveal--left">
       <div class="openms-lib-about__head-copy">
         {{- with $eyebrow }}
         <p class="openms-lib-about__eyebrow">{{ . }}</p>
         {{- end }}
-        <h2 id="{{ $id }}" class="openms-lib-about__title">{{ $title }}</h2>
+        {{- with $title }}
+        <h2 id="{{ $id }}" class="openms-lib-about__title">{{ . }}</h2>
+        {{- end }}
         {{- with $lead }}
         <p class="openms-lib-about__lead">{{ . | safeHTML }}</p>
         {{- end }}
       </div>
     </header>
+    {{- end }}
 
     {{- with $items }}
     {{- if eq $layout "benefits" }}
@@ -27,7 +32,11 @@
         class="openms-lib-about__benefit openms-lib-hub__reveal{{- if modBool $i 2 }} openms-lib-hub__reveal--right{{- else }} openms-lib-hub__reveal--scale{{- end }}"
         role="listitem"
       >
+        {{- with $item.stat }}
+        <span class="openms-lib-about__benefit-stat">{{ . }}</span>
+        {{- else }}
         <span class="openms-lib-about__benefit-num" aria-hidden="true">{{ add $i 1 | printf "%02d" }}</span>
+        {{- end }}
         {{- with $item.title }}
         <h3 class="openms-lib-about__benefit-title">{{ . }}</h3>
         {{- end }}

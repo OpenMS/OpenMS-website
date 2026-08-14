@@ -40,11 +40,6 @@
     <div class="webapps-archived__projects">
       <header class="webapps-archived__projects-head">
         <h2 class="webapps-archived__projects-title">Archived Projects</h2>
-        {{- if eq $projectCount 1 }}
-        <p class="webapps-archived__projects-lead">
-          Currently one project has been archived — this list will grow as the ecosystem evolves.
-        </p>
-        {{- end }}
       </header>
       <ul
         class="webapps-archived__grid{{ if eq $projectCount 1 }} webapps-archived__grid--solo{{ end }}"

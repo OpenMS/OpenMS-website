@@ -607,18 +607,20 @@
     justify-self: stretch;
   }
 
+  /* Keep location + CTA on one line (e.g. Remote | View details) */
   .community-events-upcoming-layout .community-events-home__card-footer {
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
-    align-items: stretch;
-    justify-content: flex-start;
-    gap: 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem 0.75rem;
   }
 
   .community-events-upcoming-layout .community-events-home__card-location {
-    width: 100%;
-    max-width: 100%;
-    flex: 0 1 auto;
+    width: auto;
+    max-width: none;
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .community-events-upcoming-layout .community-events-home__card-location > span:last-child {
@@ -631,9 +633,10 @@
   .community-events-upcoming-layout .community-events-home__card-footer .openms-step__cta,
   .community-events-upcoming-layout .community-events-home__card-footer .openms-btn-primary {
     width: fit-content !important;
-    max-width: 100%;
-    margin-left: auto;
-    align-self: flex-end;
+    max-width: none;
+    margin-left: 0;
+    align-self: center;
+    flex: 0 0 auto;
     justify-content: center;
   }
 

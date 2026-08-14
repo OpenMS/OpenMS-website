@@ -28,7 +28,14 @@
       <header class="webapps-featured__header webapps-featured__header--home">
         <div class="webapps-featured__header-main">
           {{- with $eyebrow }}
-          <p class="webapps-featured__eyebrow">{{ . }}</p>
+          <p class="webapps-featured__eyebrow">
+            <span class="webapps-featured__eyebrow-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14" focusable="false" aria-hidden="true">
+                <path fill="currentColor" d="M2.25 2.25h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 1 .75-.75zm7 0h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 1 .75-.75zm-7 7h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 1 .75-.75zm7 0h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 1 .75-.75z"/>
+              </svg>
+            </span>
+            {{ . }}
+          </p>
           {{- end }}
           <h2 id="webapps-featured-title" class="webapps-featured__title">
             {{- if and $titleHighlight (in $title $titleHighlight) }}
@@ -41,12 +48,27 @@
           <p class="webapps-featured__lead">{{ . }}</p>
           {{- end }}
         </div>
+        {{- with $showAll }}
+        <div class="webapps-featured__header-action">
+          <a
+            class="webapps-featured__show-all openms-btn-primary"
+            href="{{ .url }}"
+          >{{ .text }}</a>
+        </div>
+        {{- end }}
       </header>
       {{- else if not $isPage }}
       <header class="webapps-featured__header{{ with $embed }} webapps-featured__header--{{ . }}{{ end }}">
         <div class="webapps-featured__header-main">
           {{- with $eyebrow }}
-          <p class="webapps-featured__eyebrow">{{ . }}</p>
+          <p class="webapps-featured__eyebrow">
+            <span class="webapps-featured__eyebrow-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14" focusable="false" aria-hidden="true">
+                <path fill="currentColor" d="M2.25 2.25h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 1 .75-.75zm7 0h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 1 .75-.75zm-7 7h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 1 .75-.75zm7 0h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 1 .75-.75z"/>
+              </svg>
+            </span>
+            {{ . }}
+          </p>
           {{- end }}
           <h2 id="webapps-featured-title" class="webapps-featured__title">
             {{- if and $titleHighlight (in $title $titleHighlight) }}
@@ -84,7 +106,7 @@
         {{ replace . "Contact us" (printf `<a href="%s">Contact us</a>` $contactUrl) | safeHTML }}
       </p>
       {{- end }}
-      {{- else if or $extraLinks $showAll }}
+      {{- else if or $extraLinks (and $showAll (ne $embed "home")) }}
       <div class="webapps-featured__footer{{ if eq $embed "home" }} webapps-featured__footer--home{{ end }}">
         {{- if $extraLinks }}
         <div class="webapps-featured__extras" aria-label="Core OpenMS tools">
@@ -105,11 +127,11 @@
           {{- end }}
         </div>
         {{- end }}
-        {{- with $showAll }}
+        {{- if and $showAll (ne $embed "home") }}
         <a
-          class="webapps-featured__show-all openms-btn-primary{{ if ne $embed "home" }} openms-step__cta{{ end }}"
-          href="{{ .url }}"
-        >{{ .text }}</a>
+          class="webapps-featured__show-all openms-btn-primary openms-step__cta"
+          href="{{ $showAll.url }}"
+        >{{ $showAll.text }}</a>
         {{- end }}
       </div>
       {{- end }}

@@ -36,32 +36,11 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.openms-lib-page--governance #governance-bodies .openms-lib-about__mosaic,
 .openms-lib-page--sponsor-us .openms-lib-about__mosaic,
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-about__mosaic:not(.rp-include__mosaic) {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-/* Governance bodies — flush columns so hover fill has no left white gap */
-.openms-lib-page--governance #governance-bodies .openms-lib-about__mosaic {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 0 !important;
-}
-
-.openms-lib-page--governance #governance-bodies .openms-lib-about__tile {
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0 !important;
-  align-self: stretch !important;
-  justify-self: stretch !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  transform: none !important;
-}
-
-.openms-lib-page--governance #governance-bodies .openms-lib-about__tile:hover,
-.openms-lib-page--governance #governance-bodies .openms-lib-about__tile:focus-within,
 .contribute-channel:hover,
 .contribute-channel:focus-within {
   background: var(--openms-num-strip-hover-bg) !important;
@@ -73,8 +52,9 @@
   max-height: none !important;
 }
 
-/* Sponsor-us Impact strip — no top/bottom hairlines under Why sponsor OpenMS */
-.openms-lib-page--sponsor-us .openms-lib-about__mosaic {
+/* Sponsor-us / Governance Structure — card mosaics, no strip hairlines */
+.openms-lib-page--sponsor-us .openms-lib-about__mosaic,
+.openms-lib-page--governance #governance-bodies .openms-lib-about__mosaic {
   border-top: none;
   border-bottom: none;
 }
@@ -92,12 +72,25 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+/* OpenMS-lib Overview — vertical column lines only (no outer box / top-bottom strip) */
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-about--benefits
+  .openms-lib-about__benefits {
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
 .openms-lib-page--code-of-conduct .coc-overview__principles,
 .openms-lib-page--research-partnerships .rp-include__mosaic {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-/* Research Partnerships — always one row of five */
+/* Research Partnerships — five across on desktop; wraps below */
 .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic,
 .openms-lib-page--research-partnerships .rp-include__mosaic {
   display: grid !important;
@@ -204,13 +197,11 @@
 }
 
 /* Two-column strips — end-of-row + second-row rules */
-.openms-lib-page--governance #governance-bodies .openms-lib-about__tile:nth-child(2n),
 .openms-lib-page--sponsor-us .openms-lib-about__tile:nth-child(2n),
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-about__mosaic:not(.rp-include__mosaic) > .openms-lib-about__tile:nth-child(2n) {
   border-right: none;
 }
 
-.openms-lib-page--governance #governance-bodies .openms-lib-about__tile:nth-child(n + 3),
 .openms-lib-page--sponsor-us .openms-lib-about__tile:nth-child(n + 3),
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-about__mosaic:not(.rp-include__mosaic) > .openms-lib-about__tile:nth-child(n + 3) {
   border-top: 1px solid var(--openms-num-strip-border);
@@ -224,7 +215,6 @@
 .privacy-overview__item,
 .openms-lib-page--sponsor-us .openms-lib-about__tile,
 .openms-lib-page--research-partnerships .openms-lib-about__tile,
-.openms-lib-page--governance #governance-bodies .openms-lib-about__tile,
 .openms-lib-page--developer-retreat .openms-lib-about__tile,
 .openms-lib-page--webapps-pro .openms-lib-about__tile,
 .openms-lib-page--pyopenms-pro .openms-lib-about__tile,
@@ -283,8 +273,6 @@
 .openms-lib-page--sponsor-us .openms-lib-about__tile:focus-within,
 .openms-lib-page--research-partnerships .openms-lib-about__tile:hover,
 .openms-lib-page--research-partnerships .openms-lib-about__tile:focus-within,
-.openms-lib-page--governance #governance-bodies .openms-lib-about__tile:hover,
-.openms-lib-page--governance #governance-bodies .openms-lib-about__tile:focus-within,
 .openms-lib-page--developer-retreat .openms-lib-about__tile:hover,
 .openms-lib-page--developer-retreat .openms-lib-about__tile:focus-within,
 .openms-lib-page--webapps-pro .openms-lib-about__tile:hover,
@@ -415,9 +403,11 @@
 
 @media (max-width: 900px) {
   .contribute-channels__strip,
+  .openms-lib-page--developer-retreat #about-the-retreat .openms-lib-about__mosaic.retreat-highlights__mosaic,
+  .openms-lib-page--developer-retreat.openms-lib-page--openms-lib .retreat-highlights__mosaic,
   .openms-lib-page--developer-retreat .retreat-highlights__mosaic,
   .openms-lib-page--privacy .privacy-overview__list {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) !important;
   }
 
   .contribute-channel,
@@ -433,26 +423,36 @@
     border-bottom: none;
   }
 
-  /* WebApps Features — wrap to 3 + 2 before stacking */
-  .openms-lib-page--webapps-pro .openms-lib-about__mosaic {
+  /* WebApps Features / Research Partnerships — wrap to 3 + 2 before stacking */
+  .openms-lib-page--webapps-pro .openms-lib-about__mosaic,
+  .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic,
+  .openms-lib-page--research-partnerships .rp-include__mosaic {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 
-  .openms-lib-page--webapps-pro .openms-lib-about__tile {
+  .openms-lib-page--webapps-pro .openms-lib-about__tile,
+  .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic > .openms-lib-about__tile,
+  .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile {
     border-right: 1px solid var(--openms-num-strip-border) !important;
     border-bottom: none !important;
     padding: clamp(1rem, 2.5vw, 1.35rem) clamp(0.85rem, 2.2vw, 1.15rem);
   }
 
-  .openms-lib-page--webapps-pro .openms-lib-about__mosaic > .openms-lib-about__tile:nth-child(3n) {
+  .openms-lib-page--webapps-pro .openms-lib-about__mosaic > .openms-lib-about__tile:nth-child(3n),
+  .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic > .openms-lib-about__tile:nth-child(3n),
+  .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:nth-child(3n) {
     border-right: none !important;
   }
 
-  .openms-lib-page--webapps-pro .openms-lib-about__mosaic > .openms-lib-about__tile:nth-child(n + 4) {
+  .openms-lib-page--webapps-pro .openms-lib-about__mosaic > .openms-lib-about__tile:nth-child(n + 4),
+  .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic > .openms-lib-about__tile:nth-child(n + 4),
+  .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:nth-child(n + 4) {
     border-top: 1px solid var(--openms-num-strip-border);
   }
 
-  .openms-lib-page--webapps-pro .openms-lib-about__mosaic > .openms-lib-about__tile:last-child {
+  .openms-lib-page--webapps-pro .openms-lib-about__mosaic > .openms-lib-about__tile:last-child,
+  .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic > .openms-lib-about__tile:last-child,
+  .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:last-child {
     border-right: none !important;
   }
 
@@ -501,30 +501,16 @@
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
-  /* Research Partnerships — keep one 5-up row on phones */
+  /* WebApps Features / Research Partnerships — stack full-width on phones */
+  .openms-lib-page--webapps-pro .openms-lib-about__mosaic,
+  .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic,
   .openms-lib-page--research-partnerships .rp-include__mosaic {
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-  }
-
-  .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile {
-    border-right: 1px solid var(--openms-num-strip-border) !important;
-    border-bottom: none !important;
-    padding: 0.7rem 0.3rem;
-    background: transparent !important;
-    box-shadow: none !important;
-  }
-
-  .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:last-child {
-    border-right: none !important;
-    border-bottom: none !important;
-  }
-
-  /* WebApps Features — stack full-width on phones, compact vertical rhythm */
-  .openms-lib-page--webapps-pro .openms-lib-about__mosaic {
     grid-template-columns: 1fr !important;
   }
 
-  .openms-lib-page--webapps-pro .openms-lib-about__tile {
+  .openms-lib-page--webapps-pro .openms-lib-about__tile,
+  .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic > .openms-lib-about__tile,
+  .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile {
     border-right: none !important;
     border-bottom: 1px solid var(--openms-num-strip-border) !important;
     border-top: none !important;
@@ -537,11 +523,14 @@
     box-shadow: none !important;
   }
 
-  .openms-lib-page--webapps-pro .openms-lib-about__num {
+  .openms-lib-page--webapps-pro .openms-lib-about__num,
+  .openms-lib-page--research-partnerships .rp-include__mosaic .openms-lib-about__num {
     margin-bottom: 0.1rem !important;
   }
 
-  .openms-lib-page--webapps-pro .openms-lib-about__mosaic > .openms-lib-about__tile:last-child {
+  .openms-lib-page--webapps-pro .openms-lib-about__mosaic > .openms-lib-about__tile:last-child,
+  .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic > .openms-lib-about__tile:last-child,
+  .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:last-child {
     border-right: none !important;
     border-bottom: none !important;
   }

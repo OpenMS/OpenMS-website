@@ -1,24 +1,75 @@
-/* Research partnerships — standard section rhythm */
-.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about {
-  padding-block: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
-  /* Soft gray band (hub anchors force transparent !important) */
-  background: var(--pro-band-soft, #f4f6f9);
+/* Research partnerships — section rhythm matches Contributors */
+
+.openms-lib-page--research-partnerships .openms-lib-page__body > .openms-lib-page__anchor {
+  padding-block: 0;
 }
 
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about,
+.openms-lib-page--research-partnerships #our-partners .openms-lib-resources,
 .openms-lib-page--research-partnerships #partnership-form .openms-lib-resources {
   padding-block: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
-  /* Drop extra floor under the short Tally form */
+}
+
+/* Collaborate — full-bleed gray band; content uses page gutters */
+.openms-lib-page--research-partnerships #partnerships-include.openms-lib-page__anchor,
+.openms-lib-page--hub.openms-lib-page--research-partnerships #partnerships-include.openms-lib-page__anchor {
+  padding-inline: 0;
+}
+
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  background: var(--pro-band-soft, #f4f6f9);
+  padding-inline: var(--openms-page-inline);
+  box-sizing: border-box;
+}
+
+/* Drop extra floor under the short Tally form */
+.openms-lib-page--research-partnerships #partnership-form .openms-lib-resources {
   padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-/* Our partners — closer under Partnerships include (no stacked anchor + full top pad) */
-.openms-lib-page--research-partnerships #our-partners.openms-lib-page__anchor {
-  padding-top: 0;
+/* Collaborate — full-width section rail (no half-width 2-col head) */
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__inner {
+  width: 100%;
+  max-width: var(--pro-max);
+  margin-inline: auto;
+  padding-inline: 0;
+  box-sizing: border-box;
 }
 
-.openms-lib-page--research-partnerships #our-partners .openms-lib-resources {
-  padding-block: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
-  padding-top: calc(var(--pro-section-y, clamp(4rem, 9vw, 6.5rem)) * 0.5);
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__head,
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__head-copy {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__eyebrow {
+  justify-content: center;
+}
+
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__title,
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__lead {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__lead {
+  max-width: min(100%, 46rem) !important;
+  margin-top: var(--pro-stack-lead, 0.75rem);
+}
+
+.openms-lib-page--research-partnerships #partnerships-include .rp-include__mosaic {
+  width: 100%;
+  max-width: none;
 }
 
 /* Research partnerships — section intros centered */

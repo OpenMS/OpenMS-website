@@ -57,33 +57,32 @@
                 >{{ $secondaryText }}</a>
                 {{- end }}
               </div>
-              {{- with $trustNote }}
-              <p class="hero-home__note">
-                {{- range $i, $item := split . " · " }}
-                <span class="hero-home__note-item hero-home__note-item--{{ add $i 1 }}">
-                  <span class="hero-home__note-dot" aria-hidden="true"></span>
-                  {{ trim $item " " }}
-                </span>
-                {{- end }}
-              </p>
-              {{- end }}
             </div>
-
-            {{- with $microcopy }}
-            <ul class="hero-home__highlights" role="list" aria-label="Platform highlights">
-              {{- range $i, $item := split . " · " }}
-              <li class="hero-home__highlight hero-home__highlight--{{ add $i 1 }}">
-                <span class="hero-home__highlight-dot" aria-hidden="true"></span>
-                {{ trim $item " " }}
-              </li>
-              {{- end }}
-            </ul>
-            {{- end }}
           </div>
         </div>
 
         <div class="hero-home__visual">
           {{ partial "hero-workflow-mockup.html" . }}
+          {{- with $trustNote }}
+          <p class="hero-home__note hero-home__note--under-graphic">
+            {{- range $i, $item := split . " · " }}
+            <span class="hero-home__note-item hero-home__note-item--{{ add $i 1 }}">
+              <span class="hero-home__note-dot" aria-hidden="true"></span>
+              {{ trim $item " " }}
+            </span>
+            {{- end }}
+          </p>
+          {{- end }}
+          {{- with $microcopy }}
+          <ul class="hero-home__highlights" role="list" aria-label="Platform highlights">
+            {{- range $i, $item := split . " · " }}
+            <li class="hero-home__highlight hero-home__highlight--{{ add $i 1 }}">
+              <span class="hero-home__highlight-dot" aria-hidden="true"></span>
+              {{ trim $item " " }}
+            </li>
+            {{- end }}
+          </ul>
+          {{- end }}
         </div>
       </div>
     </div>

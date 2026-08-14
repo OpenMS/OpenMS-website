@@ -8,7 +8,7 @@
   --pro-shadow-hover:0 0.65rem 1.5rem rgba(var(--openms-navy-rgb), 0.1);
   --pro-shadow-feature:0 18px 40px -20px rgba(var(--openms-navy-rgb), 0.45);
   --pro-shadow-feature-hover:0 22px 44px -20px rgba(var(--openms-navy-rgb), 0.5);
-  --pro-band-soft:color-mix(in srgb, var(--olib-bg-soft) 70%, var(--openms-white));
+  --pro-band-soft:var(--olib-bg-soft, #f4f7fb);
   --pro-check:0.55rem;
   --pro-space-1:0.5rem;
   --pro-space-2:0.75rem;
@@ -52,7 +52,7 @@
   --pro-shadow-hover:0 0.65rem 1.5rem rgba(var(--openms-navy-rgb), 0.1);
   --pro-shadow-feature:0 18px 40px -20px rgba(var(--openms-navy-rgb), 0.45);
   --pro-shadow-feature-hover:0 22px 44px -20px rgba(var(--openms-navy-rgb), 0.5);
-  --pro-band-soft:color-mix(in srgb, var(--olib-bg-soft) 70%, var(--openms-white));
+  --pro-band-soft:var(--olib-bg-soft, #f4f7fb);
   --pro-space-1:0.5rem;
   --pro-space-2:0.75rem;
   --pro-space-3:1rem;
@@ -579,7 +579,7 @@
 .openms-lib-page--openms-lib .openms-lib-developers__lead {
   color:var(--pro-text-muted)
 }
-.openms-lib-page--openms-lib:not(.openms-lib-page--webapps-pro):not(.openms-lib-page--research-partnerships):not(.openms-lib-page--developer-retreat):not(.openms-lib-page--governance):not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-about__tile,
+.openms-lib-page--openms-lib:not(.openms-lib-page--webapps-pro):not(.openms-lib-page--research-partnerships):not(.openms-lib-page--developer-retreat):not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-about__tile,
 .openms-lib-page--openms-lib .openms-lib-topp-split__card,
 .openms-lib-page--openms-lib .openms-lib-resources__item,
 .openms-lib-page--openms-lib .openms-lib-developers__route,
@@ -751,7 +751,7 @@
   max-width:none;
   margin:0
 }
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--research-partnerships):not(.openms-lib-page--developer-retreat):not(.openms-lib-page--governance) .openms-lib-about__mosaic {
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--research-partnerships):not(.openms-lib-page--developer-retreat) .openms-lib-about__mosaic {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:var(--pro-card-gap);
@@ -759,37 +759,40 @@
 }
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__head {
   grid-template-columns:1fr;
-  justify-items:center;
-  text-align:center;
-  max-width:min(100%,40rem);
-  margin-inline:auto
+  justify-items:start;
+  text-align:left;
+  max-width:min(100%,42rem);
+  margin-inline:0
 }
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__inner {
   gap:var(--pro-head-to-content)
 }
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__head-copy {
-  justify-items:center
+  justify-items:start
 }
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__title,
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__lead {
-  text-align:center
+  text-align:left
 }
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__lead {
   margin-top:var(--pro-stack-lead);
   max-width:36rem
 }
+.openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__eyebrow {
+  justify-content:flex-start
+}
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefits {
   list-style:none;
   margin:0;
-  padding:clamp(1.5rem,3vw,2.15rem) clamp(1.25rem,3vw,2rem);
+  padding:0;
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
-  column-gap:clamp(1.5rem,3.5vw,2.75rem);
-  row-gap:clamp(1.25rem,3vw,2rem);
+  column-gap:0;
+  row-gap:0;
   width:100%;
-  border:1px solid var(--pro-line);
-  border-radius:var(--pro-radius);
-  background:var(--pro-band-soft);
+  border:none;
+  border-radius:0;
+  background:transparent;
   box-sizing:border-box
 }
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit {
@@ -816,19 +819,19 @@
 @media(max-width:960px) {
   .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefits {
     grid-template-columns:repeat(2,minmax(0,1fr));
-    padding:clamp(1.25rem,3vw,1.75rem) clamp(1rem,3vw,1.35rem)
+    padding:0
   }
   .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit {
-    align-items:center;
-    text-align:center
+    align-items:flex-start;
+    text-align:left
   }
   .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit:first-child {
-    padding-left:0
+    padding-left:var(--openms-num-strip-pad-x, 0.85rem)
   }
   .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit-num,
   .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit-title,
   .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit-text {
-    text-align:center;
+    text-align:left;
     width:100%
   }
 
@@ -836,9 +839,9 @@
 @media(max-width:560px) {
   .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefits {
     grid-template-columns:repeat(2,minmax(0,1fr));
-    column-gap:clamp(0.85rem,4vw,1.35rem);
-    row-gap:clamp(0.85rem,3.5vw,1.25rem);
-    padding:clamp(1.05rem,4vw,1.35rem) clamp(0.85rem,3.5vw,1.15rem)
+    column-gap:0;
+    row-gap:0;
+    padding:0
   }
   .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit {
     align-items:flex-start;
@@ -981,8 +984,12 @@
 .openms-lib-page--openms-lib .openms-lib-topp-split__card:hover,
 .openms-lib-page--openms-lib .openms-lib-topp-split__card:focus-within {
   border-color:var(--pro-line-strong);
-  box-shadow:var(--pro-shadow-hover);
-  transform:none
+  box-shadow:var(--pro-shadow-hover)
+}
+.openms-lib-page--openms-lib .openms-lib-topp-split__card.is-revealed:hover,
+.openms-lib-page--openms-lib .openms-lib-topp-split__card.is-revealed:focus-within {
+  /* Keep reveal end-state; do not lift or reflow height */
+  transform:translate(0,0) scale(1)
 }
 .openms-lib-page--openms-lib .openms-lib-topp-split__card-icon {
   display:grid;
@@ -1663,6 +1670,12 @@
 .openms-lib-page--openms-lib .openms-lib-page__outro .openms-lib-block--developers {
   padding:var(--pro-section-y) var(--openms-page-inline)
 }
+/* Anchor target clears sticky site header (news banner + navbar) */
+#for-developers,
+.openms-lib-page--hub #for-developers {
+  scroll-margin-top: calc(var(--openms-header-height, 4.25rem) + 0.75rem);
+}
+
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards ,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards {
   display:flex;
@@ -1810,7 +1823,7 @@
   min-height: 14.5rem;
   max-height: none;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: visible;
   align-self: stretch;
 }
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__card--interactive:hover,
@@ -1820,52 +1833,38 @@
   min-height: 14.5rem;
   max-height: none;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   z-index: 2;
 }
-/* Niche contribute items — lighter treatment (Add a TOPP tool, Reviewing PRs); keep same height as siblings */
+/* Niche contribute item — lighter treatment for Reviewing PRs only; link cards match Explore */
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child)
-  > :nth-child(6),
-.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-  .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child)
-  > :nth-child(7) {
+  > .openms-lib-developers__card--review {
   min-height: 14.5rem;
   padding: clamp(1rem, 2vw, 1.25rem) clamp(0.95rem, 2vw, 1.2rem);
-  background: color-mix(in srgb, var(--openms-white) 72%, var(--pro-band-soft));
-  box-shadow: none;
+  background: var(--openms-white);
+  box-shadow: var(--pro-shadow);
 }
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child)
-  > :nth-child(6)
-  .openms-lib-developers__card-icon,
-.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-  .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child)
-  > :nth-child(7)
+  > .openms-lib-developers__card--review
   .openms-lib-developers__card-icon {
   font-size: var(--openms-card-icon-size, clamp(2.5rem, 3.8vw, 3rem));
-  color: rgba(var(--openms-blue-rgb), 0.28);
+  color: rgba(var(--openms-blue-rgb), 0.42);
 }
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child)
-  > :nth-child(6)
-  .openms-lib-developers__card-title,
-.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-  .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child)
-  > :nth-child(7)
+  > .openms-lib-developers__card--review
   .openms-lib-developers__card-title {
   font-size: var(--openms-secondary-heading-size, 1.05rem);
+  color: var(--openms-navy, rgba(var(--openms-dark-rgb), 0.88));
 }
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child)
-  > :nth-child(6)
-  .openms-lib-developers__card-subtitle,
-.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-  .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child)
-  > :nth-child(7)
+  > .openms-lib-developers__card--review
   .openms-lib-developers__card-subtitle {
   font-size: 0.9rem;
-  color: var(--pro-text-soft, rgba(var(--openms-dark-rgb), 0.55));
+  color: var(--pro-text-muted, rgba(var(--openms-dark-rgb), 0.72));
 }
 @media (max-width: 1100px) {
   .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) .openms-lib-developers__cards-grid,
@@ -1887,10 +1886,10 @@
 @media (max-width: 640px) {
   .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) .openms-lib-developers__cards-grid {
     grid-template-columns: 1fr;
-    grid-auto-rows: 1fr;
+    grid-auto-rows: auto;
   }
 
-  /* Equal card height at rest and on hover (1-col cannot stretch across rows) */
+  /* Content-sized cards on phones so multi-CTA rows are not clipped */
   .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
     .openms-lib-developers--cards
     .openms-lib-developers__card--box,
@@ -1916,9 +1915,9 @@
     .openms-lib-developers--cards
     .openms-lib-developers__card--interactive:focus-within {
     min-height: 16rem;
-    height: 16rem;
-    max-height: 16rem;
-    overflow: hidden;
+    height: auto;
+    max-height: none;
+    overflow: visible;
   }
 
   .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
@@ -1926,9 +1925,9 @@
     .openms-lib-developers__card-subtitle {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     overflow: hidden;
-    min-height: calc(1.5em * 2);
+    min-height: 0;
   }
 
   .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
@@ -2068,7 +2067,7 @@
   gap:.35rem;
   font-size:var(--openms-text-min);
   font-weight:700;
-  color:var(--openms-white)
+  color:var(--openms-blue)
 }
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__badge ,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__badge {
@@ -2236,33 +2235,7 @@
   overflow: visible;
 }
 
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps)
-  .openms-lib-developers--cards
-  .openms-lib-developers__card--build-src
-  .openms-lib-developers__platform-btn:hover,
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps)
-  .openms-lib-developers--cards
-  .openms-lib-developers__card--build-src
-  .openms-lib-developers__platform-btn:focus-visible,
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps)
-  .openms-lib-developers--cards
-  .openms-lib-developers__card--build-src
-  .openms-lib-developers__platform-btn:active,
-.openms-lib-page--pyopenms-viz-pro
-  .openms-lib-developers--cards
-  .openms-lib-developers__card--build-src
-  .openms-lib-developers__platform-btn:hover,
-.openms-lib-page--pyopenms-viz-pro
-  .openms-lib-developers--cards
-  .openms-lib-developers__card--build-src
-  .openms-lib-developers__platform-btn:focus-visible,
-.openms-lib-page--pyopenms-viz-pro
-  .openms-lib-developers--cards
-  .openms-lib-developers__card--build-src
-  .openms-lib-developers__platform-btn:active {
-  transform: none;
-  box-shadow: none;
-}
+/* build-src platform btn hover handled with shared developers pill hover above */
 
 /* Building from Source — hide platform btns until hover (desktop only; skip Review card) */
 @media (hover: hover) and (pointer: fine) and (min-width: 981px) {
@@ -2579,19 +2552,50 @@
     min-height: 2.15rem;
   }
 }
+/* Platform pills — blue at rest on white cards */
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__platform-btn ,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__platform-btn {
-  border-color:rgba(var(--openms-white-rgb),.45)!important;
-  background:0 0!important;
-  color:var(--openms-white)!important
+  border:2px solid var(--openms-blue)!important;
+  background:var(--openms-blue)!important;
+  color:var(--openms-white)!important;
+  box-shadow:0 0 0 0 var(--openms-btn-glow);
+  transition:var(--openms-btn-motion, transform .35s cubic-bezier(.44,0,.56,1), box-shadow .35s cubic-bezier(.44,0,.56,1), background .2s ease, border-color .2s ease)
 }
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__platform-btn:hover,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__platform-btn:hover,
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__platform-btn:focus-visible ,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__platform-btn:focus-visible {
+  border-color:var(--openms-blue)!important;
+  background:var(--openms-blue)!important;
+  color:var(--openms-white)!important;
+  transform:scale(var(--openms-btn-hover-scale, 1.03));
+  box-shadow:0 0 0 var(--openms-btn-glow-size, .55rem) var(--openms-btn-glow);
+  outline:none
+}
+/* On navy card hover, flip pills to white ghost */
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__card--interactive:hover .openms-lib-developers__platform-btn,
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__platform-btn,
+.openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__card--interactive:hover .openms-lib-developers__platform-btn,
+.openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__platform-btn {
+  border-color:rgba(var(--openms-white-rgb),.55)!important;
+  background:transparent!important;
+  color:var(--openms-white)!important;
+  box-shadow:none;
+  transform:none
+}
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__card--interactive:hover .openms-lib-developers__platform-btn:hover,
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__platform-btn:hover,
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__card--interactive:hover .openms-lib-developers__platform-btn:focus-visible,
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__platform-btn:focus-visible,
+.openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__card--interactive:hover .openms-lib-developers__platform-btn:hover,
+.openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__platform-btn:hover,
+.openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__card--interactive:hover .openms-lib-developers__platform-btn:focus-visible,
+.openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__platform-btn:focus-visible {
   border-color:var(--openms-white)!important;
-  background:rgba(var(--openms-white-rgb),.14)!important;
-  color:var(--openms-white)!important
+  background:rgba(var(--openms-white-rgb),.16)!important;
+  color:var(--openms-white)!important;
+  transform:scale(var(--openms-btn-hover-scale, 1.03));
+  box-shadow:0 0 0 var(--openms-btn-glow-size, .45rem) rgba(255,255,255,.22)
 }
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__platform-btn .fa-linux,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__platform-btn .fa-linux,
@@ -2738,7 +2742,7 @@
   margin-bottom:0;
   padding-bottom:0;
   padding-inline:var(--openms-page-inline);
-  background:var(--pro-band-soft,#f4f7fb);
+  background:var(--openms-white);
   color:var(--openms-navy);
   box-sizing:border-box
 }
@@ -3162,7 +3166,6 @@
 .openms-lib-page--openms-lib .openms-lib-developers__route .openms-lib-developers__card-link::after {
   content:none
 }
-.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-developers__card--link:hover .openms-lib-developers__card-title,
 .openms-lib-page--openms-lib .openms-lib-developers__route:hover .openms-lib-developers__card-title,
 .openms-lib-page--openms-lib .openms-lib-developers__route:focus-visible .openms-lib-developers__card-title {
   color:var(--pro-card-title, rgba(var(--openms-dark-rgb), 0.82))
@@ -5942,18 +5945,26 @@
   color:var(--openms-navy)
 }
 .openms-lib-page--archived .webapps-archived-entry__actions {
-  margin-top:var(--pro-space-4);
-  padding:var(--pro-space-3)0 0;
-  border-top:1px solid var(--pro-line)
+  margin-top:0.35rem;
+  padding:0.35rem 0 0;
+  border-top:none
 }
 .openms-lib-page--archived .webapps-archived-entry .webapps-project-links {
   display:flex;
+  flex-direction:row;
   flex-wrap:wrap;
-  gap:var(--openms-btn-gap, 1.1rem);
+  align-items:center;
+  align-content:flex-start;
+  gap:var(--openms-btn-gap, 0.75rem);
   margin:0;
   padding:0;
   border:none;
   list-style:none
+}
+.openms-lib-page--archived .webapps-archived-entry .webapps-project-links__item {
+  flex:0 0 auto;
+  width:auto;
+  max-width:100%
 }
 .openms-lib-page--featured-pro .webapps-archived-entry .webapps-project-links__btn,
 .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn,
@@ -5990,8 +6001,9 @@
 .openms-lib-page--featured-pro .webapps-archived-entry--nfcore .webapps-project-links__btn--nfcore:focus-visible,
 .openms-lib-page--archived .webapps-archived-entry--nfcore .webapps-project-links__btn--nfcore:hover,
 .openms-lib-page--archived .webapps-archived-entry--nfcore .webapps-project-links__btn--nfcore:focus-visible {
-  background:var(--openms-blue-secondary)!important;
-  border-color:var(--openms-blue-secondary)!important;
+  /* Same hover as Featured / Affiliated app pills */
+  background:var(--openms-blue)!important;
+  border-color:var(--openms-blue)!important;
   color:var(--openms-white)!important;
   transform:scale(var(--openms-btn-hover-scale));
   box-shadow:0 0 0 var(--openms-btn-glow-size)var(--openms-btn-glow);
@@ -7239,16 +7251,29 @@
 }
 .openms-lib-page--fellowship .fellowship-application {
   padding-top: calc(var(--pro-section-y) * 0.5);
-  padding-bottom: clamp(1.25rem, 3vw, 2rem);
+  padding-bottom: 0;
+}
+
+.openms-lib-layout:has(.openms-lib-page--fellowship),
+.content-padding:has(.openms-lib-page--fellowship) {
+  padding-bottom: 0;
+}
+
+.openms-lib-layout:has(.openms-lib-page--fellowship) + #footer.footer-redesign,
+.content-padding:has(.openms-lib-page--fellowship) + #footer.footer-redesign {
+  margin-top: 0;
+  padding-top: 0;
 }
 .openms-lib-page--fellowship .fellowship-application__inner {
   display:flex;
   flex-direction:column;
-  gap:var(--pro-head-to-content);
+  gap:clamp(0.5rem, 1.25vw, 0.85rem);
   max-width:var(--pro-max);
   margin-inline:auto
 }
 .openms-lib-page--fellowship .fellowship-application__head {
+  position:relative;
+  z-index:1;
   display:grid;
   justify-items:center;
   max-width:40rem;
@@ -7266,9 +7291,21 @@
   margin-inline:auto;
   border:none;
   border-radius:var(--pro-radius);
-  background:var(--openms-white);
+  background:transparent;
   box-shadow:none;
-  overflow:visible
+  /* Clip Tally’s extra top/bottom chrome so the form hugs the lead + footer */
+  overflow:hidden;
+}
+
+/* Tally keeps empty padding above the first fields — pull iframe up without covering the lead */
+.openms-lib-page--fellowship .fellowship-page__form-body,
+.openms-lib-page--fellowship .fellowship-page__tally-iframe {
+  background:transparent;
+}
+
+.openms-lib-page--fellowship .fellowship-page__tally-iframe {
+  margin-top:-3.25rem;
+  margin-bottom:-1.25rem;
 }
 .openms-lib-page--developer-retreat #upcoming-retreat {
   background:var(--pro-band-soft)
@@ -7522,8 +7559,9 @@
     display:flex;
     justify-content:flex-start
   }
+  .openms-lib-page--developer-retreat #about-the-retreat .openms-lib-about__mosaic.retreat-highlights__mosaic,
   .openms-lib-page--developer-retreat .retreat-highlights__mosaic {
-    grid-template-columns:1fr
+    grid-template-columns:minmax(0,1fr) !important
   }
 
 }
@@ -7545,11 +7583,29 @@
   white-space:nowrap;
   margin-left:-1.25em
 }
-@media(max-width:640px) {
-  .openms-lib-page--developer-retreat .openms-lib-hero__title-line {
+@media(max-width:720px) {
+  .openms-lib-page--developer-retreat .openms-lib-hero__title {
+    max-width:100%;
+    width:100%;
+    margin-inline:0;
+    --openms-page-hero-title-size: clamp(1.4rem, 0.85rem + 3.4vw, 1.85rem);
+    font-size: var(--openms-page-hero-title-size) !important;
+    line-height:1.12;
+    text-align:center;
+    text-wrap:unset;
+    overflow-wrap:normal;
     white-space:normal
   }
-
+  .openms-lib-page--developer-retreat .openms-lib-hero__title br {
+    display:none
+  }
+  .openms-lib-page--developer-retreat .openms-lib-hero__title-line {
+    display:block;
+    white-space:normal;
+    margin-left:0;
+    max-width:100%;
+    text-wrap:balance
+  }
 }
 .openms-lib-page--services-support #quote {
   background:var(--pro-band-soft)
@@ -7593,10 +7649,13 @@
 .openms-lib-page--services-support .services-page__tally-iframe {
   min-height:48rem
 }
-.openms-lib-page--governance #governance-bodies,
-.openms-lib-page--governance #core-developers,
-.openms-lib-page--governance #responsibilities {
-  background: var(--pro-band-soft);
+/* Alternating chapter bands — beat hub anchor transparent !important */
+.openms-lib-page--governance #governance-bodies.openms-lib-page__anchor,
+.openms-lib-page--governance #core-developers.openms-lib-page__anchor {
+  background: var(--pro-band-soft, #f4f6f9) !important;
+}
+.openms-lib-page--governance #responsibilities.openms-lib-page__anchor {
+  background: var(--openms-white) !important;
 }
 .openms-lib-page--contributors #contributors,
 .openms-lib-page--publications #publications-list,
@@ -8328,19 +8387,24 @@
   outline:none;
   text-decoration:none
 }
-@media(max-width:640px) {
+@media(max-width:720px) {
   .openms-lib-page--contributors #join-community .webapps-archived__revival-actions {
-    flex-direction:row !important;
+    display:flex !important;
+    flex-direction:column !important;
     flex-wrap:nowrap;
-    gap:1rem
+    align-items:stretch;
+    justify-content:center;
+    gap:.75rem;
+    width:100%;
+    max-width:24rem;
+    margin-inline:auto;
+    grid-template-columns:none
   }
   .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn {
-    flex:1 1 0;
-    width:auto !important;
+    flex:0 0 auto;
+    width:100% !important;
     min-width:0;
-    padding:.55rem .75rem;
-    font-size:clamp(.78rem,.9vw + .65rem,.88rem);
-    white-space:nowrap
+    white-space:normal
   }
 }
 .openms-lib-page--contributors .contributors-exec-panel {
@@ -8524,230 +8588,20 @@
   }
 
 }
-.openms-lib-page--contact .contact-application {
-  padding-block:var(--pro-section-y);
-  padding-top:calc(var(--pro-section-y) * .5);
-  padding-bottom:calc(var(--pro-section-y) * .35)
-}
-.openms-lib-page--contact #contact-paths .openms-lib-resources {
-  padding-block:calc(var(--pro-section-y) * .45)0
-}
-.openms-lib-page--contact .contact-application__inner {
-  display:flex;
-  flex-direction:column;
-  gap:var(--pro-head-to-content);
-  max-width:var(--pro-max);
-  margin-inline:auto
-}
-.openms-lib-page--contact .contact-application__head {
-  display:grid;
-  justify-items:center;
-  gap:0;
-  max-width:min(52rem,100%);
-  margin-inline:auto;
-  text-align:center
-}
-.openms-lib-page--contact .contact-application__lead-intro {
-  margin:var(--pro-stack-lead)0 0;
-  max-width:36ch;
-  font-size:var(--openms-body-size-lg);
-  font-weight:600;
-  line-height:1.55;
-  color:var(--openms-navy);
-  text-align:center
-}
-.openms-lib-page--contact .contact-application__lead-columns {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:1.35rem 2.5rem;
-  width:100%;
-  margin-top:1.35rem;
-  padding-top:1.35rem;
-  border-top:1px solid var(--pro-line);
-  text-align:left
-}
-.openms-lib-page--contact .contact-application__lead-col {
-  display:grid;
-  gap:.45rem;
-  margin:0;
-  min-width:0
-}
-.openms-lib-page--contact .contact-application__lead-label {
-  font-size:var(--openms-text-min);
-  font-weight:700;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--openms-blue)
-}
-.openms-lib-page--contact .contact-application__lead-text {
-  font-size:var(--openms-body-size);
-  line-height:1.7;
-  color:var(--pro-text-muted)
-}
-@media(max-width:720px) {
-  .openms-lib-page--contact .contact-application__lead-columns {
-    grid-template-columns:1fr;
-    gap:1.1rem;
-    text-align:center
-  }
-  .openms-lib-page--contact .contact-application__lead-col {
-    justify-items:center
-  }
 
-}
-.openms-lib-page--contact .contact-application__form {
-  width:100%;
-  max-width:48rem;
-  margin-inline:auto;
-  padding:var(--pro-card-pad-lg);
-  border:none;
-  border-radius:0;
-  background:0 0;
-  box-shadow:none;
-  overflow:visible
-}
-.openms-lib-page--contact .contact-page__form-body,
-.openms-lib-page--contact .contact-page__tally-iframe {
-  display:block;
-  width:100%;
-  max-height:none;
-  overflow:visible;
-  border:0;
-  background:0 0
-}
-.openms-lib-page--contact .contact-page__tally-iframe {
-  min-height:50rem
-}
-.openms-lib-page--contact .contact-paths-grid {
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:var(--pro-card-gap)
-}
-.openms-lib-page--contact .openms-lib-resources__item-icon {
-  display:grid;
-  place-items:center;
-  width:auto;
-  height:auto;
-  margin:0;
-  padding:0;
-  border:none;
-  border-radius:0;
-  background:transparent;
-  box-shadow:none;
-  color:rgba(var(--openms-blue-rgb),.28);
-  font-size:clamp(2.5rem,3.8vw,3rem);
-  line-height:1
-}
-.openms-lib-page--contact .openms-lib-resources__item-icon .fab,
-.openms-lib-page--contact .openms-lib-resources__item-icon .fas,
-.openms-lib-page--contact .openms-lib-resources__item-icon .svg-inline--fa {
-  color:rgba(var(--openms-blue-rgb),.28)!important;
-  font-size:1em;
-  width:1em;
-  height:1em
-}
-.openms-lib-page--contact .openms-lib-resources__item-icon .svg-inline--fa path {
-  fill:currentColor!important
-}
-.openms-lib-page--contact .contact-paths-grid>.contact-page__path-item {
-  display:flex;
-  flex-direction:column;
-  gap:.45rem;
-  min-height:100%;
-  padding:var(--pro-card-pad-lg);
-  border:1px solid var(--pro-line);
-  border-radius:var(--pro-radius);
-  background:var(--openms-white);
-  box-shadow:var(--pro-shadow);
-  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease
-}
-.openms-lib-page--contact .contact-paths-grid>.contact-page__path-item:hover,
-.openms-lib-page--contact .contact-paths-grid>.contact-page__path-item:focus-within {
-  transform:var(--pro-lift-sm);
-  border-color:var(--pro-line-strong);
-  box-shadow:var(--pro-shadow-hover)
-}
-.openms-lib-page--contact .contact-page__path-icon {
-  display:grid;
-  place-items:center;
-  width:2.4rem;
-  height:2.4rem;
-  margin-bottom:.35rem;
-  border-radius:.65rem;
-  color:var(--openms-navy);
-  background:rgba(var(--openms-navy-rgb),.06)
-}
-.openms-lib-page--contact .contact-page__path-label {
-  margin:0;
-  font-size:.66rem;
-  font-weight:700;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--pro-text-soft)
-}
-.openms-lib-page--contact .contact-page__path-title {
-  margin:0;
-  font-family:var(--openms-font-heading);
-  font-size:clamp(1.05rem,1.5vw,1.2rem);
-  font-weight:700;
-  color:var(--openms-navy)
-}
-.openms-lib-page--contact .contact-page__path-desc {
-  margin:0;
-  flex:auto;
-  font-size:var(--openms-body-size);
-  line-height:1.55;
-  color:rgba(var(--openms-dark-rgb),.72)
-}
-.openms-lib-page--contact .contact-page__path-link {
-  display:inline-flex;
-  align-items:center;
-  gap:.3rem;
-  margin-top:auto;
-  padding-top:.85rem;
-  font-size:var(--openms-text-min);
-  font-weight:700;
-  color:var(--openms-navy)!important;
-  text-decoration:none!important
-}
-.openms-lib-page--contact .contact-page__path-link:hover,
-.openms-lib-page--contact .contact-page__path-link:focus-visible {
-  color:var(--openms-blue)!important;
-  outline:none
-}
-@media(max-width:900px) {
-  .openms-lib-page--contact .contact-paths-grid {
-    grid-template-columns:1fr
-  }
-
-}
-@media(max-width:640px) {
-  .openms-lib-page--contact .contact-application__form {
-    padding:.85rem
-  }
-
-}
-@media(prefers-reduced-motion:reduce) {
-  .openms-lib-page--contact .contact-paths-grid>.contact-page__path-item:hover,.openms-lib-page--contact .contact-paths-grid>.contact-page__path-item:focus-within {
-    transform:none
-  }
-
-}
 .openms-lib-page--research-partnerships .openms-lib-resources__inner {
   max-width:var(--pro-max)
 }
-.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about {
+.openms-lib-page--research-partnerships .openms-lib-page__body > .openms-lib-page__anchor {
+  padding-block:0
+}
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about,
+.openms-lib-page--research-partnerships #our-partners .openms-lib-resources,
+.openms-lib-page--research-partnerships #partnership-form .openms-lib-resources {
   padding-block:var(--pro-section-y)
 }
 .openms-lib-page--research-partnerships #partnership-form .openms-lib-resources {
-  padding-block:var(--pro-section-y);
   padding-bottom:clamp(1.5rem,4vw,2.5rem)
-}
-.openms-lib-page--research-partnerships #our-partners.openms-lib-page__anchor {
-  padding-top:0
-}
-.openms-lib-page--research-partnerships #our-partners .openms-lib-resources {
-  padding-block:var(--pro-section-y);
-  padding-top:calc(var(--pro-section-y) * .5)
 }
 .openms-lib-page--research-partnerships .rp-include__grid {
   display:grid;
@@ -9216,8 +9070,9 @@
   transition: var(--openms-btn-motion);
 }
 
-/* Become a sponsor — content-sized like navbar Sponsor Us */
-.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions .openms-lib-btn {
+/* Become a sponsor / View program — content-sized like navbar Sponsor Us */
+.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions .openms-lib-btn,
+.openms-lib-page--our-sponsors #sponsor-cta .governance-cta-band__actions .openms-lib-btn {
   width: fit-content;
   min-width: 0;
 }
@@ -9255,14 +9110,17 @@
 
 .openms-lib-page--our-sponsors .governance-cta-band__actions .openms-lib-btn--ghost:hover,
 .openms-lib-page--our-sponsors .governance-cta-band__actions .openms-lib-btn--ghost:focus-visible,
+.openms-lib-page--our-sponsors .governance-cta-band__actions .openms-lib-btn--ghost:active,
 .openms-lib-page--sponsor-us .governance-cta-band__actions .openms-lib-btn--ghost:hover,
-.openms-lib-page--sponsor-us .governance-cta-band__actions .openms-lib-btn--ghost:focus-visible {
-  /* Match navbar “Partner with OpenMS”: outline stays, scale + glow only */
-  border-color: rgba(var(--openms-white-rgb), 0.34);
-  background: transparent;
+.openms-lib-page--sponsor-us .governance-cta-band__actions .openms-lib-btn--ghost:focus-visible,
+.openms-lib-page--sponsor-us .governance-cta-band__actions .openms-lib-btn--ghost:active {
+  /* Match navbar “Sponsor Us”: outline stays, scale + glow only */
+  border-color: rgba(var(--openms-white-rgb), 0.34) !important;
+  background: transparent !important;
+  background-color: transparent !important;
   color: var(--openms-white) !important;
   transform: scale(var(--openms-btn-hover-scale));
-  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow);
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow) !important;
   outline: none;
   text-decoration: none;
 }
@@ -9275,7 +9133,8 @@
     min-width: 0;
   }
 
-  .openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions .openms-lib-btn {
+  .openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions .openms-lib-btn,
+  .openms-lib-page--our-sponsors #sponsor-cta .governance-cta-band__actions .openms-lib-btn {
     width: fit-content;
   }
 }
@@ -9287,7 +9146,12 @@
 }
 
 .openms-lib-page--governance .openms-lib-page__body > .openms-lib-page__anchor {
-  padding-block: var(--pro-section-y) 0;
+  padding-block: var(--pro-section-y) !important;
+  border-bottom: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+}
+
+.openms-lib-page--governance .openms-lib-page__body > .openms-lib-page__anchor:last-child {
+  border-bottom: none;
 }
 
 .openms-lib-page--governance .openms-lib-about,
@@ -9330,6 +9194,92 @@
   margin-inline: auto;
 }
 
+/* Structure overview — lightweight hierarchy above the 01/02 cards */
+.openms-lib-page--governance .governance-structure {
+  display: block;
+  width: 100%;
+  max-width: min(100%, 36rem);
+  margin: 0 auto;
+  padding: 0;
+}
+.openms-lib-page--governance .governance-structure__stack {
+  display: grid;
+  justify-items: center;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.openms-lib-page--governance .governance-structure__node {
+  display: grid;
+  gap: 0.2rem;
+  width: 100%;
+  max-width: 22rem;
+  margin: 0;
+  padding: 0.85rem 1.15rem;
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.14);
+  border-radius: var(--pro-radius, 0.75rem);
+  background: color-mix(in srgb, var(--pro-band-soft, #f4f6f9) 55%, var(--openms-white));
+  box-shadow: none;
+  text-align: center;
+}
+.openms-lib-page--governance .governance-structure__node--legal {
+  border-color: rgba(var(--openms-navy-rgb), 0.22);
+  background: color-mix(in srgb, var(--openms-navy) 6%, var(--openms-white));
+}
+.openms-lib-page--governance .governance-structure__node--tech {
+  border-color: rgba(var(--openms-blue-rgb), 0.28);
+  background: color-mix(in srgb, var(--openms-blue) 7%, var(--openms-white));
+}
+.openms-lib-page--governance .governance-structure__node--core {
+  border-color: rgba(var(--openms-navy-rgb), 0.12);
+  background: var(--openms-white);
+}
+.openms-lib-page--governance .governance-structure__role {
+  margin: 0;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pro-text-soft, rgba(var(--openms-dark-rgb), 0.55));
+}
+.openms-lib-page--governance .governance-structure__name {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-card-title-size, 1.05rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--openms-navy);
+}
+.openms-lib-page--governance .governance-structure__connector {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  height: 1.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.openms-lib-page--governance .governance-structure__line {
+  display: block;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(var(--openms-blue-rgb), 0.15),
+    rgba(var(--openms-blue-rgb), 0.5),
+    rgba(var(--openms-blue-rgb), 0.15)
+  );
+  border-radius: 999px;
+}
+@media (min-width: 900px) {
+  .openms-lib-page--governance .governance-structure {
+    max-width: min(100%, 42rem);
+  }
+}
+
 .openms-lib-page--governance .openms-lib-about__eyebrow {
   margin-bottom: var(--pro-stack-eyebrow);
 }
@@ -9365,9 +9315,22 @@
 .openms-lib-page--governance #responsibilities .governance-compare-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
   gap: var(--pro-card-gap, 1rem);
   width: 100%;
   margin: 0;
+}
+
+.openms-lib-page--governance #responsibilities .governance-compare-grid .openms-lib-resources__item {
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+}
+
+.openms-lib-page--governance #responsibilities .governance-compare-grid .openms-lib-resources__item-text {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
 }
 
 @media (max-width: 900px) {
@@ -9387,10 +9350,14 @@
   }
 }
 
-.openms-lib-page--governance #governance-bodies .governance-lead-line,
-.openms-lib-page--governance #core-developers .governance-lead-line {
+.openms-lib-page--governance #governance-bodies .governance-lead-line {
   display:block;
   white-space:nowrap
+}
+
+.openms-lib-page--governance #core-developers .governance-lead-line {
+  display: block;
+  white-space: normal;
 }
 
 .openms-lib-page--governance #responsibilities .governance-lead-line {
@@ -9399,8 +9366,7 @@
 }
 
 @media(max-width:900px) {
-  .openms-lib-page--governance #governance-bodies .governance-lead-line,
-  .openms-lib-page--governance #core-developers .governance-lead-line {
+  .openms-lib-page--governance #governance-bodies .governance-lead-line {
     white-space:normal
   }
 
@@ -9443,7 +9409,7 @@
   margin: 0;
 }
 
-/* Soft large blue numbers — match OpenMS-lib Overview */
+/* Large watermark numbers — shared step-num tokens (site-wide contrast) */
 .openms-lib-page--governance .openms-lib-about__num {
   display: block;
   width: auto;
@@ -9454,19 +9420,19 @@
   border-radius: 0;
   background: transparent;
   font-family: var(--openms-font-heading);
-  font-size: clamp(2.5rem, 4.8vw, 3.4rem);
+  font-size: var(--openms-step-num-size);
   font-weight: 800;
-  line-height: 0.88;
-  letter-spacing: -0.045em;
-  color: rgba(var(--openms-blue-rgb), 0.28);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--openms-step-num-color);
   transition: color 0.22s ease;
 }
 .openms-lib-page--governance .openms-lib-about__tile:hover .openms-lib-about__num,
 .openms-lib-page--governance .openms-lib-about__tile:focus-within .openms-lib-about__num {
-  color: var(--openms-blue);
+  color: var(--openms-step-num-color-hover);
 }
 
-/* Soft blue icons — match Contribute / hub icon treatment */
+/* Soft blue icons — same size as OpenMS-lib / hub card icons */
 .openms-lib-page--governance .openms-lib-resources__item-icon {
   display: grid;
   place-items: center;
@@ -9479,7 +9445,7 @@
   background: transparent;
   box-shadow: none;
   color: rgba(var(--openms-blue-rgb), 0.28);
-  font-size: 2rem;
+  font-size: var(--openms-card-icon-size, clamp(2.5rem, 3.8vw, 3rem));
   line-height: 1;
   transition: color 0.22s ease;
 }
@@ -9529,6 +9495,17 @@
   line-height: 1.5;
   color: var(--pro-text-muted);
 }
+/* Keep 01/02 CTAs aligned at the card foot despite unequal list lengths */
+.openms-lib-page--governance #governance-bodies .openms-lib-about__tile {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: stretch;
+}
+.openms-lib-page--governance #governance-bodies .governance-tile__list {
+  flex: 1 1 auto;
+  width: 100%;
+}
 .openms-lib-page--governance .openms-lib-about__tile-link {
   display: inline-flex;
   align-items: center;
@@ -9553,10 +9530,10 @@
 .openms-lib-page--governance .openms-lib-about__tile,
 .openms-lib-page--governance .openms-lib-resources__item,
 .openms-lib-page--governance .openms-lib-resources__item--static {
-  border: 1px solid var(--pro-line);
-  border-radius: var(--pro-radius);
-  background: var(--openms-white);
-  box-shadow: var(--pro-shadow);
+  border: 1px solid var(--pro-line) !important;
+  border-radius: var(--pro-radius) !important;
+  background: var(--openms-white) !important;
+  box-shadow: var(--pro-shadow) !important;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -9573,6 +9550,33 @@
   max-height: none !important;
   padding: clamp(0.85rem, 1.6vw, 1.1rem) clamp(0.9rem, 1.8vw, 1.15rem) !important;
   gap: 0.55rem;
+  border-color: transparent !important;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.14) 0%, transparent 42%),
+    var(--openms-navy) !important;
+  box-shadow: 0 0.85rem 1.85rem rgba(var(--openms-navy-rgb), 0.28) !important;
+  color: var(--openms-white) !important;
+}
+
+.openms-lib-page--governance #core-developers .governance-pillars-grid > .openms-lib-resources__item--static:hover,
+.openms-lib-page--governance #core-developers .governance-pillars-grid > .openms-lib-resources__item--static:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 0.95rem 2rem rgba(var(--openms-navy-rgb), 0.34) !important;
+}
+
+.openms-lib-page--governance #core-developers .governance-pillars-grid .openms-lib-resources__item-tag,
+.openms-lib-page--governance #core-developers .governance-pillars-grid .openms-lib-resources__item-title {
+  color: var(--openms-white) !important;
+}
+
+.openms-lib-page--governance #core-developers .governance-pillars-grid .openms-lib-resources__item-icon,
+.openms-lib-page--governance #core-developers .governance-pillars-grid .openms-lib-resources__item-icon .fas,
+.openms-lib-page--governance #core-developers .governance-pillars-grid .openms-lib-resources__item-icon .svg-inline--fa {
+  color: rgba(var(--openms-white-rgb), 0.9) !important;
+}
+
+.openms-lib-page--governance #core-developers .governance-pillars-grid .openms-lib-resources__item-icon .svg-inline--fa path {
+  fill: currentColor !important;
 }
 
 .openms-lib-page--governance .openms-lib-resources__item--static {
@@ -9586,20 +9590,6 @@
   transform: var(--pro-lift-sm);
   border-color: var(--pro-line-strong);
   box-shadow: var(--pro-shadow-hover);
-}
-
-/* Two layers of governance — borderless cards */
-.openms-lib-page--governance #governance-bodies .openms-lib-about__tile {
-  border: none;
-  box-shadow: none;
-  background: transparent;
-}
-
-.openms-lib-page--governance #governance-bodies .openms-lib-about__tile:hover,
-.openms-lib-page--governance #governance-bodies .openms-lib-about__tile:focus-within {
-  border: none;
-  box-shadow: none;
-  transform: none;
 }
 
 /* Separation of Responsibilities — navy hover fill */
@@ -9625,17 +9615,17 @@
 
 .openms-lib-page--governance #responsibilities .openms-lib-resources__item--static:hover .openms-lib-resources__item-tag,
 .openms-lib-page--governance #responsibilities .openms-lib-resources__item--static:focus-within .openms-lib-resources__item-tag {
-  color: rgba(var(--openms-white-rgb), 0.72);
+  color: var(--openms-white) !important;
 }
 
 .openms-lib-page--governance #responsibilities .openms-lib-resources__item--static:hover .openms-lib-resources__item-title,
 .openms-lib-page--governance #responsibilities .openms-lib-resources__item--static:focus-within .openms-lib-resources__item-title {
-  color: var(--openms-white);
+  color: var(--openms-white) !important;
 }
 
 .openms-lib-page--governance #responsibilities .openms-lib-resources__item--static:hover .openms-lib-resources__item-text,
 .openms-lib-page--governance #responsibilities .openms-lib-resources__item--static:focus-within .openms-lib-resources__item-text {
-  color: rgba(var(--openms-white-rgb), 0.88);
+  color: rgba(var(--openms-white-rgb), 0.88) !important;
 }
 
 .openms-lib-page--governance #responsibilities .openms-lib-resources__item--static:hover .openms-lib-resources__item-icon,
@@ -9711,11 +9701,11 @@
   display: block;
   margin: 0;
   font-family: var(--openms-font-heading);
-  font-size: clamp(2.5rem, 4.8vw, 3.4rem);
+  font-size: var(--openms-step-num-size);
   font-weight: 800;
-  line-height: 0.88;
-  letter-spacing: -0.045em;
-  color: rgba(var(--openms-blue-rgb), 0.28);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--openms-step-num-color);
 }
 .openms-lib-page--governance .governance-note__body {
   min-width: 0;
@@ -9748,11 +9738,39 @@
   color:var(--openms-navy);
   font-weight:600
 }
+.openms-lib-page--governance #core-developers .openms-lib-resources__inner {
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);
+  align-items:start;
+  column-gap:var(--pro-col-gap,clamp(2rem,5vw,4rem));
+  row-gap:var(--pro-head-to-content)
+}
 .openms-lib-page--governance #core-developers .openms-lib-resources__head {
-  max-width:none
+  max-width:min(100%,28rem);
+  margin:0
 }
 .openms-lib-page--governance #core-developers .openms-lib-resources__lead {
   max-width:none
+}
+.openms-lib-page--governance #core-developers .openms-lib-resources__toolkit {
+  min-width:0;
+  margin:0
+}
+.openms-lib-page--governance #core-developers .governance-membership {
+  grid-column:1 / -1;
+  margin-top:calc(var(--pro-section-y) * 0.45);
+  padding-top:var(--pro-section-y)
+}
+.openms-lib-page--governance #core-developers .governance-pillars-grid {
+  grid-template-columns:repeat(2,minmax(0,1fr))
+}
+@media(max-width:992px) {
+  .openms-lib-page--governance #core-developers .openms-lib-resources__inner {
+    grid-template-columns:1fr
+  }
+  .openms-lib-page--governance #core-developers .openms-lib-resources__head {
+    max-width:none
+  }
 }
 @media(max-width:960px) {
   .openms-lib-page--governance .governance-pillars-grid {
@@ -10035,31 +10053,26 @@
   padding:0
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__head {
-  display:grid;
-  grid-template-columns:minmax(0,.85fr)minmax(0,1.15fr);
-  align-items:start;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
   justify-items:start;
-  column-gap:var(--pro-col-gap,clamp(2rem,5vw,4rem));
-  row-gap:0;
+  gap:0;
   max-width:100%;
   margin-inline:0;
   margin-bottom:var(--pro-head-to-content,clamp(2.25rem, 4.5vw, 3.25rem));
   text-align:left
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-eyebrow {
-  grid-column:1;
-  grid-row:1;
   justify-self:start;
   margin-inline:0
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__head h2 {
-  grid-column:1;
-  grid-row:2
+  width:100%
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__lead {
-  grid-column:2;
-  grid-row:1/span 2;
-  align-self:center
+  width:100%;
+  align-self:stretch
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-eyebrow {
   display:inline-flex;
@@ -10088,9 +10101,13 @@
   color:var(--openms-navy)
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__lead {
-  display:block;
-  margin:0;
-  max-width:var(--pro-measure-wide,58ch);
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:var(--pro-col-gap,clamp(2rem,5vw,4rem));
+  row-gap:.85rem;
+  margin:var(--pro-stack-lead, .75rem) 0 0;
+  max-width:100% !important;
+  width:100% !important;
   overflow-wrap:break-word;
   font-size:var(--openms-body-size-lg);
   line-height:1.65;
@@ -10098,11 +10115,9 @@
   text-align:left
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-lead-col {
-  display:inline;
-  margin:0
-}
-.openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-lead-col + .sponsor-lead-col::before {
-  content:" "
+  display:block;
+  margin:0;
+  min-width:0
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tiers__grid {
   display:grid;
@@ -10214,7 +10229,7 @@
   line-height:1.2;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:var(--tier-accent)
+  color:var(--openms-card-title-color, var(--openms-navy))
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__contribution {
   display:flex;
@@ -10229,12 +10244,12 @@
   font-size:clamp(1.55rem,2.4vw,1.9rem);
   font-weight:800;
   letter-spacing:-.04em;
-  color:var(--tier-accent)
+  color:var(--openms-card-title-color, var(--openms-navy))
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__period {
   font-size:.8rem;
   font-weight:600;
-  color:var(--tier-accent)
+  color:var(--openms-card-title-color, var(--openms-navy))
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__motto {
   margin:0;
@@ -10242,7 +10257,7 @@
   font-weight:600;
   letter-spacing:.06em;
   text-transform:uppercase;
-  color:var(--tier-accent);
+  color:var(--openms-card-title-color, var(--openms-navy));
   opacity:.85
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__summary {
@@ -10291,34 +10306,34 @@
   min-height:2.85rem;
   margin-top:auto;
   padding:.75rem 1.35rem;
-  border:2px solid var(--openms-blue);
+  border:2px solid var(--openms-navy);
   border-radius:var(--openms-btn-pill-radius);
   background:transparent;
   font-size:var(--openms-body-size);
   font-weight:600;
   line-height:1.3;
-  color:var(--openms-blue)!important;
+  color:var(--openms-navy)!important;
   text-decoration:none;
-  box-shadow:0 0 0 0 var(--openms-btn-glow);
+  box-shadow:0 0 0 0 rgba(var(--openms-navy-rgb),.16);
   transition:var(--openms-btn-motion);
   pointer-events:auto
 }
 /* Hover only on Learn more — not the whole card */
 @media (hover:hover) and (pointer:fine) {
   .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__cta:hover {
-    border-color:var(--openms-blue);
-    background:var(--openms-blue);
+    border-color:var(--openms-navy);
+    background:var(--openms-navy);
     color:var(--openms-white)!important;
     transform:scale(var(--openms-btn-hover-scale));
-    box-shadow:0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow)
+    box-shadow:0 0 0 var(--openms-btn-glow-size) rgba(var(--openms-navy-rgb),.22)
   }
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__toggle:focus-visible .sponsor-tier__cta {
-  border-color:var(--openms-blue);
-  background:var(--openms-blue);
+  border-color:var(--openms-navy);
+  background:var(--openms-navy);
   color:var(--openms-white)!important;
   transform:scale(var(--openms-btn-hover-scale));
-  box-shadow:0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow)
+  box-shadow:0 0 0 var(--openms-btn-glow-size) rgba(var(--openms-navy-rgb),.22)
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__toggle:active .sponsor-tier__cta {
   transform:none;
@@ -10333,8 +10348,8 @@
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--active .sponsor-tier__cta,
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--featured .sponsor-tier__cta,
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--featured.sponsor-tier--active .sponsor-tier__cta {
-  border-color:var(--openms-blue);
-  background:var(--openms-blue);
+  border-color:var(--openms-navy);
+  background:var(--openms-navy);
   color:var(--openms-white)!important;
   box-shadow:none;
   transform:none
@@ -10343,7 +10358,7 @@
   .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--active .sponsor-tier__cta:hover,
   .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--featured .sponsor-tier__cta:hover {
     transform:scale(var(--openms-btn-hover-scale));
-    box-shadow:0 0 0 var(--openms-btn-glow-size) rgba(var(--openms-blue-rgb),.28)
+    box-shadow:0 0 0 var(--openms-btn-glow-size) rgba(var(--openms-navy-rgb),.28)
   }
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--featured.sponsor-tier--active {
@@ -10746,17 +10761,20 @@
   padding-top: calc(var(--pro-section-y) * 0.5);
 }
 .openms-lib-page--sponsor-us .sponsor-faq-pro__inner {
-  display:flex;
-  flex-direction:column;
-  gap:var(--pro-head-to-content,clamp(1.5rem,3vw,2.25rem));
-  max-width:min(64rem,100%);
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.35fr);
+  align-items:start;
+  column-gap:var(--pro-col-gap,clamp(2rem,5vw,4rem));
+  row-gap:var(--pro-head-to-content,clamp(1.5rem,3vw,2.25rem));
+  max-width:min(var(--hub-wide-max,72rem),100%);
   margin-inline:auto
 }
 .openms-lib-page--sponsor-us .sponsor-faq-pro__head {
-  display:grid;
-  justify-items:center;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
   gap:0;
-  text-align:center
+  text-align:left
 }
 .openms-lib-page--sponsor-us .sponsor-faq-pro__head .openms-lib-resources__eyebrow {
   margin:0 0 var(--pro-stack-eyebrow);
@@ -10765,7 +10783,7 @@
   letter-spacing:.14em;
   text-transform:uppercase;
   color:var(--openms-blue);
-  justify-content:center
+  justify-content:flex-start
 }
 .openms-lib-page--sponsor-us .sponsor-faq-pro__head .openms-lib-resources__title {
   margin:0;
@@ -10776,10 +10794,25 @@
   letter-spacing:normal;
   text-transform:uppercase;
   color:var(--openms-navy);
-  text-align:center
+  text-align:left
+}
+.openms-lib-page--sponsor-us .sponsor-faq-pro__lead {
+  margin:var(--pro-stack-lead,.75rem) 0 0;
+  max-width:36ch;
+  font-size:var(--openms-body-size-lg);
+  line-height:1.65;
+  color:var(--pro-text-muted);
+  text-wrap:pretty
+}
+.openms-lib-page--sponsor-us .sponsor-faq-pro__cta {
+  margin-top:1.25rem;
+  width:fit-content
 }
 .openms-lib-page--sponsor-us .sponsor-faq__list {
-  margin:0
+  display:grid;
+  gap:.75rem;
+  margin:0;
+  min-width:0
 }
 .openms-lib-page--sponsor-us .sponsor-faq__item {
   border:1px solid var(--pro-line);
@@ -10847,8 +10880,15 @@
     font-size:calc(var(--openms-heading-lg-size) * 1.05)
   }
   .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__lead {
-    max-width:60ch;
+    grid-template-columns:1fr;
+    max-width:100% !important;
     font-size:var(--openms-body-size)
+  }
+  .openms-lib-page--sponsor-us .sponsor-faq-pro__inner {
+    grid-template-columns:1fr
+  }
+  .openms-lib-page--sponsor-us .sponsor-faq-pro__lead {
+    max-width:none
   }
   .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tiers__grid {
     grid-template-columns:repeat(2,minmax(0,1fr));
@@ -11206,93 +11246,88 @@
   margin-inline: auto;
 }
 
-/* OpenMS-lib Explore: 2 + 3 grid; first card can be featured */
+/* OpenMS-lib Explore: left-aligned head + flat equal feature columns */
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #getting-started
+  .openms-lib-resources--explore
+  .openms-lib-resources__head {
+  justify-items: start;
+  max-width: min(100%, 42rem);
+  margin-inline: 0;
+  text-align: left;
+}
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #getting-started
+  .openms-lib-resources--explore
+  .openms-lib-resources__eyebrow {
+  justify-content: flex-start;
+}
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #getting-started
+  .openms-lib-resources--explore
+  .openms-lib-resources__title,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #getting-started
+  .openms-lib-resources--explore
+  .openms-lib-resources__lead {
+  text-align: left;
+}
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #getting-started
+  .openms-lib-resources--explore
+  .openms-lib-resources__lead {
+  max-width: 36rem;
+}
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #getting-started
+  .openms-lib-resources--explore
+  .openms-lib-resources__inner {
+  gap: clamp(2.75rem, 5.5vw, 4.25rem);
+}
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-grid,
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child) {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   width: 100%;
   max-width: var(--pro-max);
-  margin-inline: auto;
-  align-items: stretch;
+  margin-inline: 0;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  align-items: start;
 }
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-  > .openms-lib-resources__explore-item {
-  width: 100%;
-  min-width: 0;
-}
-/* Row 1: two equal cards */
-.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-  .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-  > .openms-lib-resources__explore-item:nth-child(1),
-.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-  .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-  > .openms-lib-resources__explore-item:nth-child(2) {
-  grid-column: span 3;
-}
-/* Row 2: three equal cards */
-.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-  .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-  > .openms-lib-resources__explore-item:nth-child(3),
-.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-  .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-  > .openms-lib-resources__explore-item:nth-child(4),
-.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-  .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-  > .openms-lib-resources__explore-item:nth-child(5) {
-  grid-column: span 2;
-}
+  > .openms-lib-resources__explore-item,
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-item {
   width: 100%;
   min-width: 0;
+  grid-column: auto;
 }
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-card {
   width: 100%;
-  height: 100%;
+  height: auto;
   min-height: 0;
-  padding: 1.15rem 1.15rem 1.1rem;
-  gap: 0.4rem;
+  padding: 0;
+  gap: 0.65rem;
   box-sizing: border-box;
 }
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-title {
-  font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+  font-size: clamp(1.05rem, 1.45vw, 1.2rem);
 }
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-text {
-  font-size: 0.92rem;
-  line-height: 1.45;
+  font-size: 0.95rem;
+  line-height: 1.55;
 }
 @media (max-width: 1100px) {
-  /* Tablet: keep 2 + 3 rhythm */
   .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
     .openms-lib-resources__explore-grid,
   .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
     .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child) {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-    > .openms-lib-resources__explore-item:nth-child(1),
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-    > .openms-lib-resources__explore-item:nth-child(2) {
-    grid-column: span 3;
-  }
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-    > .openms-lib-resources__explore-item:nth-child(3),
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-    > .openms-lib-resources__explore-item:nth-child(4),
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-    > .openms-lib-resources__explore-item:nth-child(5) {
-    grid-column: span 2;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 @media (max-width: 900px) {
@@ -11302,31 +11337,6 @@
     .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-    > .openms-lib-resources__explore-item,
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-    > .openms-lib-resources__explore-item:nth-child(1),
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-    > .openms-lib-resources__explore-item:nth-child(2),
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-    > .openms-lib-resources__explore-item:nth-child(3),
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-    > .openms-lib-resources__explore-item:nth-child(4),
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-    > .openms-lib-resources__explore-item:nth-child(5) {
-    grid-column: auto;
-  }
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-    > .openms-lib-resources__explore-item:nth-child(5) {
-    grid-column: span 2;
-  }
 }
 @media (max-width: 560px) {
   .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
@@ -11335,11 +11345,6 @@
     .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child) {
     grid-template-columns: 1fr;
   }
-  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child)
-    > .openms-lib-resources__explore-item:nth-child(5) {
-    grid-column: auto;
-  }
 }
 
 .openms-lib-page--pyopenms-viz-pro .openms-lib-resources__explore-grid,
@@ -11347,7 +11352,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-resources__explore-card,
+/* pyopenms_viz Explore — blue destination cards (OpenMS-lib hub uses flat columns below) */
 .openms-lib-page--pyopenms-viz-pro .openms-lib-resources__explore-card {
   display: flex;
   flex-direction: column;
@@ -11367,8 +11372,6 @@
   transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
 }
 
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-resources__explore-card:hover,
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-resources__explore-card:focus-visible,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-resources__explore-card:hover,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-resources__explore-card:focus-visible {
   background:
@@ -11379,7 +11382,6 @@
   outline: none;
 }
 
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-resources__explore-title,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-resources__explore-title {
   margin: 0;
   font-size: clamp(1.15rem, 1.7vw, 1.3rem);
@@ -11387,13 +11389,11 @@
   color: var(--openms-white);
 }
 
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-resources__explore-text,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-resources__explore-text {
   max-width: none;
   color: rgba(255, 255, 255, 0.82);
 }
 
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-resources__explore-link,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-resources__explore-link {
   margin-top: auto;
   padding-top: 0.35rem;
@@ -11403,8 +11403,6 @@
   transition: gap 0.2s ease, opacity 0.2s ease;
 }
 
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-resources__explore-card:hover .openms-lib-resources__explore-link,
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-resources__explore-card:focus-visible .openms-lib-resources__explore-link,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-resources__explore-card:hover .openms-lib-resources__explore-link,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-resources__explore-card:focus-visible .openms-lib-resources__explore-link {
   gap: 0.55rem;
@@ -12145,11 +12143,11 @@
   margin-top: 0;
 }
 
-/* Research impact — same soft band as OpenMS-lib cite */
-.openms-lib-page--hub.openms-lib-page--pyopenms-pro .openms-lib-page__cite,
-.openms-lib-page--pyopenms-pro .openms-lib-page__cite,
-.openms-lib-page--hub.openms-lib-page--pyopenms-viz-pro .openms-lib-page__cite,
-.openms-lib-page--pyopenms-viz-pro .openms-lib-page__cite {
+/* Research impact — solution pages own this band (see zzzz-openms-lib-solution.css) */
+.openms-lib-page--hub.openms-lib-page--pyopenms-pro:not(.openms-lib-page--solution) .openms-lib-page__cite,
+.openms-lib-page--pyopenms-pro:not(.openms-lib-page--solution) .openms-lib-page__cite,
+.openms-lib-page--hub.openms-lib-page--pyopenms-viz-pro:not(.openms-lib-page--solution) .openms-lib-page__cite,
+.openms-lib-page--pyopenms-viz-pro:not(.openms-lib-page--solution) .openms-lib-page__cite {
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -12974,7 +12972,7 @@
   overflow: visible;
 }
 
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps):not(.openms-lib-page--governance)
   .openms-lib-page__body
   > .openms-lib-page__anchor {
   padding-block: var(--pro-section-y) 0;
@@ -13024,8 +13022,6 @@
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   #what-is-openms,
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-  #topp-tools,
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   #getting-started {
   padding-bottom: 0;
 }
@@ -13033,6 +13029,8 @@
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   #topp-tools {
   padding-top: var(--pro-section-y);
+  /* Extra air after the tool cards before Get started */
+  padding-bottom: var(--pro-section-y);
 }
 
 /* Flush cite band against the footer (kill layout bottom gap) */
@@ -13178,26 +13176,27 @@
   align-content: center;
 }
 
+/* Hub TOPP uses divider strip (gap handled in hub cohesion block) */
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   #topp-tools
   .openms-lib-topp-split__cards {
-  gap: var(--pro-card-gap);
+  gap: 0;
 }
 
-/* Get started: nest “Need help?” as a supporting surface under explore cards */
+/* Get started: Need help? connects via top hairline (not a nested card box) */
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   #getting-started
   .openms-lib-resources__assist {
   width: 100%;
   max-width: var(--pro-max);
-  margin-top: clamp(1.25rem, 3vw, 2rem);
+  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
   margin-bottom: clamp(2.75rem, 6vw, 4.75rem);
   margin-inline: auto;
-  padding: clamp(1.35rem, 3vw, 1.85rem) clamp(1.25rem, 3.5vw, 2.25rem)
-    calc(clamp(1.35rem, 3vw, 1.85rem) + var(--openms-btn-glow-size, 6px));
-  border: 1px solid var(--pro-line);
-  border-radius: var(--pro-radius);
-  background: var(--pro-band-soft);
+  padding: clamp(1.5rem, 3vw, 2rem) 0 calc(var(--openms-btn-glow-size, 6px) + 0.5rem);
+  border: none;
+  border-top: 1px solid var(--openms-num-strip-border, var(--pro-line));
+  border-radius: 0;
+  background: transparent;
   box-sizing: border-box;
   overflow: visible;
 }
@@ -13234,8 +13233,8 @@
   .openms-lib-page__outro
   .openms-lib-developers__cards-grid:has(> :nth-child(7):last-child)
   > :nth-child(7) {
-  background: color-mix(in srgb, var(--openms-white) 70%, var(--pro-band-soft));
-  box-shadow: none;
+  background: var(--openms-white);
+  box-shadow: var(--pro-shadow);
 }
 
 /* --------------------------------------------------------------------------
@@ -13322,36 +13321,33 @@
   color: var(--openms-white) !important;
 }
 
-/* Explore — featured entry point (Read Documentation) */
+/* Explore — featured matches flat columns (no navy tile) */
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-card--featured {
   min-height: 0;
-  padding: 1.65rem 1.55rem 1.5rem;
-  background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.16) 0%, transparent 42%),
-    var(--openms-navy) !important;
-  box-shadow: 0 0.75rem 1.7rem rgba(var(--openms-navy-rgb), 0.3) !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-card--featured
   .openms-lib-resources__explore-title {
-  font-size: clamp(1.25rem, 2vw, 1.45rem);
+  font-size: clamp(1.05rem, 1.45vw, 1.2rem);
 }
 
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-card--featured
   .openms-lib-resources__explore-icon {
-  font-size: clamp(1.75rem, 2.6vw, 2.1rem);
+  font-size: clamp(1.55rem, 2.2vw, 1.85rem);
 }
 
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-card--featured:hover,
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-card--featured:focus-visible {
-  background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.2) 0%, transparent 42%),
-    var(--openms-blue) !important;
+  background: var(--openms-num-strip-hover-bg, rgba(var(--openms-blue-rgb), 0.06)) !important;
+  box-shadow: none !important;
+  transform: translateY(-2px) !important;
 }
 
 /* Citation card — roomier research-facing block */
@@ -13576,41 +13572,77 @@
   }
 }
 
-/* Reinforce Explore blue tiles + Contribute hover white text for openms-lib */
+/* OpenMS-lib Explore — flat feature columns (icon / title / text) */
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-card {
   border: none !important;
-  background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.14) 0%, transparent 42%),
-    var(--openms-blue) !important;
-  box-shadow: 0 0.55rem 1.4rem rgba(var(--openms-blue-rgb), 0.28) !important;
-  color: var(--openms-white) !important;
+  border-radius: 0.65rem !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  transform: none !important;
+  padding: 0.85rem 0.75rem !important;
+  margin: -0.85rem -0.75rem;
+  width: calc(100% + 1.5rem) !important;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    color 0.2s ease;
 }
 
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-card:hover,
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-card:focus-visible {
-  background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.18) 0%, transparent 42%),
-    var(--openms-navy) !important;
-  box-shadow: 0 0.85rem 1.85rem rgba(var(--openms-navy-rgb), 0.32) !important;
-  transform: translateY(-4px);
+  background: var(--openms-num-strip-hover-bg, rgba(var(--openms-blue-rgb), 0.06)) !important;
+  box-shadow: none !important;
+  transform: translateY(-2px) !important;
+  outline: none;
+  opacity: 1;
 }
 
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-resources__explore-card:hover
   .openms-lib-resources__explore-title,
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-  .openms-lib-resources__explore-link {
-  color: var(--openms-white) !important;
+  .openms-lib-resources__explore-card:focus-visible
+  .openms-lib-resources__explore-title {
+  color: var(--openms-blue) !important;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-resources__explore-card:hover
+  .openms-lib-resources__explore-icon,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-resources__explore-card:focus-visible
+  .openms-lib-resources__explore-icon {
+  color: var(--openms-navy) !important;
+  transform: translateY(-1px);
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-resources__explore-title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--openms-navy) !important;
+  transition: color 0.2s ease;
 }
 
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-text {
-  color: rgba(255, 255, 255, 0.82) !important;
+  margin: 0;
+  max-width: none;
+  color: var(--pro-text-muted) !important;
 }
 
-/* Tags stay quiet; icons restore scanability on blue destination cards */
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-resources__explore-link {
+  display: none !important;
+}
+
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-resources__explore-tag {
   display: none !important;
@@ -13622,10 +13654,11 @@
   place-items: center;
   width: 1em;
   height: 1em;
-  margin: 0 0 0.15rem;
-  color: rgba(255, 255, 255, 0.88) !important;
-  font-size: var(--openms-card-icon-size, clamp(2.5rem, 3.8vw, 3rem)) !important;
+  margin: 0 0 0.35rem;
+  color: var(--openms-blue) !important;
+  font-size: clamp(1.55rem, 2.2vw, 1.85rem) !important;
   line-height: 1;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
@@ -13650,6 +13683,344 @@
   fill: currentColor;
 }
 
+/* ==========================================================================
+   OpenMS-lib hub — separate but connected component system
+   Strip language (hairlines between items) for info rows;
+   bordered cards reserved for Contribute / Cite destinations.
+   ========================================================================== */
+
+/* Explore — vertical hairlines between columns */
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-resources__explore-grid,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child) {
+  gap: 0;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-resources__explore-item {
+  position: relative;
+  padding-inline: clamp(0.85rem, 2vw, 1.35rem);
+  border-right: 1px solid var(--openms-num-strip-border, rgba(var(--openms-navy-rgb), 0.1));
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-resources__explore-item:first-child {
+  padding-left: 0;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-resources__explore-item:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-resources__explore-card {
+  margin: 0 !important;
+  width: 100% !important;
+  padding: 0.35rem 0.15rem !important;
+  border-radius: 0.5rem !important;
+}
+
+/* Assist — connected footer of Get started (top hairline, no heavy box) */
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-resources__assist {
+  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  padding: clamp(1.5rem, 3vw, 2rem) 0 0;
+  border: none;
+  border-top: 1px solid var(--openms-num-strip-border, rgba(var(--openms-navy-rgb), 0.1));
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* TOPP — same strip language as Overview (icons + hairlines, no boxed cards) */
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #topp-tools
+  .openms-lib-topp-split__cards {
+  gap: 0 !important;
+  align-items: stretch;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #topp-tools
+  .openms-lib-topp-split__card {
+  border: none !important;
+  border-right: 1px solid var(--openms-num-strip-border, rgba(var(--openms-navy-rgb), 0.1)) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: var(--openms-num-strip-pad-y, 1.35rem) var(--openms-num-strip-pad-x, 0.85rem) !important;
+  transition: background-color 0.2s ease;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #topp-tools
+  .openms-lib-topp-split__card:last-child {
+  border-right: none !important;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #topp-tools
+  .openms-lib-topp-split__card:first-child {
+  padding-left: 0 !important;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #topp-tools
+  .openms-lib-topp-split__card:hover,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #topp-tools
+  .openms-lib-topp-split__card:focus-within {
+  background: var(--openms-num-strip-hover-bg, rgba(var(--openms-blue-rgb), 0.03)) !important;
+  border-color: transparent !important;
+  border-right-color: var(--openms-num-strip-border, rgba(var(--openms-navy-rgb), 0.1)) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #topp-tools
+  .openms-lib-topp-split__card:last-child:hover,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #topp-tools
+  .openms-lib-topp-split__card:last-child:focus-within {
+  border-right-color: transparent !important;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #topp-tools
+  .openms-lib-topp-split__card-icon,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #topp-tools
+  .openms-lib-topp-split__card-icon .fab,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #topp-tools
+  .openms-lib-topp-split__card-icon .fas,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #topp-tools
+  .openms-lib-topp-split__card-icon .svg-inline--fa {
+  color: var(--openms-blue) !important;
+  font-size: clamp(1.55rem, 2.2vw, 1.85rem);
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #topp-tools
+  .openms-lib-topp-split__card-title {
+  color: var(--openms-navy);
+}
+
+@media (max-width: 900px) {
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    #topp-tools
+    .openms-lib-topp-split__card {
+    border-right: none !important;
+    border-bottom: 1px solid var(--openms-num-strip-border, rgba(var(--openms-navy-rgb), 0.1)) !important;
+    padding-inline: 0 !important;
+  }
+
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    #topp-tools
+    .openms-lib-topp-split__card:last-child {
+    border-bottom: none !important;
+  }
+
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-resources__explore-grid,
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-resources__explore-item {
+    border-right: 1px solid var(--openms-num-strip-border, rgba(var(--openms-navy-rgb), 0.1));
+    border-bottom: 1px solid var(--openms-num-strip-border, rgba(var(--openms-navy-rgb), 0.1));
+    padding: clamp(0.85rem, 2.5vw, 1.15rem) !important;
+  }
+
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-resources__explore-item:nth-child(2n) {
+    border-right: none;
+  }
+
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-resources__explore-item:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-resources__explore-item:last-child:nth-child(odd) {
+    border-bottom: none;
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-resources__explore-grid,
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-resources__explore-grid:has(> :nth-child(5):last-child) {
+    grid-template-columns: 1fr;
+  }
+
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-resources__explore-item,
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-resources__explore-item:nth-child(2n),
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-resources__explore-item:last-child:nth-child(odd) {
+    border-right: none;
+    border-bottom: 1px solid var(--openms-num-strip-border, rgba(var(--openms-navy-rgb), 0.1));
+    grid-column: auto;
+    padding-inline: 0 !important;
+  }
+
+  .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+    .openms-lib-resources__explore-item:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Contribute titles — match page heading case language */
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__title {
+  text-transform: uppercase;
+  letter-spacing: normal;
+  font-size: calc(var(--openms-heading-lg-size) * 1.15);
+}
+
+/* For Developers link cards — white rest state (hover still navy) */
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link {
+  border: 1px solid var(--pro-line) !important;
+  border-radius: var(--pro-radius, 1.15rem) !important;
+  background: var(--openms-white) !important;
+  box-shadow: var(--pro-shadow) !important;
+  color: inherit !important;
+  gap: 0.5rem;
+  padding: 1.55rem 1.4rem 1.45rem !important;
+  transition: background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, color 0.22s ease, transform 0.22s ease;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link
+  .openms-lib-developers__card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  gap: 0.5rem;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link
+  .openms-lib-developers__card-icon {
+  color: rgba(var(--openms-blue-rgb), 0.42) !important;
+  margin: 0 0 0.15rem;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link
+  .openms-lib-developers__card-icon
+  .fab,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link
+  .openms-lib-developers__card-icon
+  .fas,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link
+  .openms-lib-developers__card-icon
+  .svg-inline--fa {
+  color: inherit !important;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link
+  .openms-lib-developers__card-icon
+  .svg-inline--fa
+  path {
+  fill: currentColor !important;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link
+  .openms-lib-developers__card-title,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link
+  .openms-lib-developers__card-title
+  span {
+  color: var(--openms-navy, rgba(var(--openms-dark-rgb), 0.88)) !important;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link
+  .openms-lib-developers__card-subtitle {
+  color: var(--pro-text-muted, rgba(var(--openms-dark-rgb), 0.72)) !important;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link
+  .openms-lib-developers__card-link {
+  margin-top: auto;
+  padding-top: 0.35rem;
+  color: var(--openms-blue) !important;
+}
+
+/* Match Get started / Explore destination-card hover (navy + lift) */
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link:hover,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link:focus-visible,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--interactive:hover,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--interactive:focus-visible,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--interactive:focus-within {
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.18) 0%, transparent 42%),
+    var(--openms-navy) !important;
+  border-color: transparent !important;
+  box-shadow: 0 0.85rem 1.85rem rgba(var(--openms-navy-rgb), 0.32) !important;
+  color: #ffffff !important;
+  transform: translateY(-4px);
+  outline: none;
+  transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link:hover
+  .openms-lib-developers__card-link,
+.openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-developers--cards
+  .openms-lib-developers__card--link:focus-visible
+  .openms-lib-developers__card-link {
+  gap: 0.55rem !important;
+  color: var(--openms-white) !important;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
     .openms-lib-developers--cards
@@ -13666,6 +14037,7 @@
     border-color: transparent !important;
     box-shadow: 0 0.85rem 1.85rem rgba(var(--openms-navy-rgb), 0.32) !important;
     color: #ffffff !important;
+    transform: translateY(-4px);
   }
 
   .openms-lib-page--hub.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
@@ -14169,8 +14541,9 @@
     grid-template-columns: 1fr;
   }
 
+  .openms-lib-page--developer-retreat #about-the-retreat .openms-lib-about__mosaic.retreat-highlights__mosaic,
   .openms-lib-page--developer-retreat .retreat-highlights__mosaic {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) !important;
   }
 }
 
@@ -14183,9 +14556,7 @@
 /* ============================================================= */
 /* About pages — shared pro shell                                */
 /* ============================================================= */
-.openms-lib-page--governance #governance-bodies,
-.openms-lib-page--governance #core-developers,
-.openms-lib-page--governance #responsibilities,
+/* Governance section bands are set earlier (alternating chapters). */
 .openms-lib-page--sponsor-us #why-sponsor,
 .openms-lib-page--contributors #contributors,
 .openms-lib-page--publications #publications-list,
@@ -14617,7 +14988,7 @@
 }
 
 .openms-lib-page--contact #contact-paths .openms-lib-resources {
-  padding-block: calc(var(--pro-section-y) * 0.45) 0;
+  padding-block: 0.35rem 0;
 }
 
 .openms-lib-page--contact .contact-application__inner {
@@ -14703,6 +15074,14 @@
   overflow: visible;
 }
 
+@media (max-width: 720px) {
+  .openms-lib-page--contact .contact-application__form {
+    max-width: 100%;
+    margin-inline: 0;
+    padding: 0;
+  }
+}
+
 .openms-lib-page--contact .contact-page__form-body,
 .openms-lib-page--contact .contact-page__tally-iframe {
   display: block;
@@ -14714,7 +15093,7 @@
 }
 
 .openms-lib-page--contact .contact-page__tally-iframe {
-  min-height: 50rem;
+  min-height: 24rem;
 }
 
 .openms-lib-page--contact .contact-paths-grid {
@@ -14885,7 +15264,8 @@
 
 @media (max-width: 640px) {
   .openms-lib-page--contact .contact-application__form {
-    padding: 0.85rem;
+    padding: 0;
+    max-width: 100%;
   }
 }
 
@@ -14901,22 +15281,18 @@
   max-width: var(--pro-max);
 }
 
-.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about {
+.openms-lib-page--research-partnerships .openms-lib-page__body > .openms-lib-page__anchor {
+  padding-block: 0;
+}
+
+.openms-lib-page--research-partnerships #partnerships-include .openms-lib-about,
+.openms-lib-page--research-partnerships #our-partners .openms-lib-resources,
+.openms-lib-page--research-partnerships #partnership-form .openms-lib-resources {
   padding-block: var(--pro-section-y);
 }
 
 .openms-lib-page--research-partnerships #partnership-form .openms-lib-resources {
-  padding-block: var(--pro-section-y);
   padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
-}
-
-.openms-lib-page--research-partnerships #our-partners.openms-lib-page__anchor {
-  padding-top: 0;
-}
-
-.openms-lib-page--research-partnerships #our-partners .openms-lib-resources {
-  padding-block: var(--pro-section-y);
-  padding-top: calc(var(--pro-section-y) * 0.5);
 }
 
 .openms-lib-page--research-partnerships .rp-include__grid {
@@ -15297,17 +15673,19 @@
   max-width: none;
 }
 
-.openms-lib-page--governance #governance-bodies .governance-lead-line,
-.openms-lib-page--governance #core-developers .governance-lead-line,
-.openms-lib-page--governance #responsibilities .governance-lead-line {
+.openms-lib-page--governance #governance-bodies .governance-lead-line {
   display: block;
   white-space: nowrap;
 }
 
+.openms-lib-page--governance #core-developers .governance-lead-line,
+.openms-lib-page--governance #responsibilities .governance-lead-line {
+  display: block;
+  white-space: normal;
+}
+
 @media (max-width: 900px) {
-  .openms-lib-page--governance #governance-bodies .governance-lead-line,
-  .openms-lib-page--governance #core-developers .governance-lead-line,
-  .openms-lib-page--governance #responsibilities .governance-lead-line {
+  .openms-lib-page--governance #governance-bodies .governance-lead-line {
     white-space: normal;
   }
 }
@@ -15431,12 +15809,46 @@
   font-weight: 600;
 }
 
+.openms-lib-page--governance #core-developers .openms-lib-resources__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
+  align-items: start;
+  column-gap: var(--pro-col-gap, clamp(2rem, 5vw, 4rem));
+  row-gap: var(--pro-head-to-content);
+}
+
 .openms-lib-page--governance #core-developers .openms-lib-resources__head {
-  max-width: none;
+  max-width: min(100%, 28rem);
+  margin: 0;
 }
 
 .openms-lib-page--governance #core-developers .openms-lib-resources__lead {
   max-width: none;
+}
+
+.openms-lib-page--governance #core-developers .openms-lib-resources__toolkit {
+  min-width: 0;
+  margin: 0;
+}
+
+.openms-lib-page--governance #core-developers .governance-membership {
+  grid-column: 1 / -1;
+  margin-top: calc(var(--pro-section-y) * 0.45);
+  padding-top: var(--pro-section-y);
+}
+
+.openms-lib-page--governance #core-developers .governance-pillars-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 992px) {
+  .openms-lib-page--governance #core-developers .openms-lib-resources__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .openms-lib-page--governance #core-developers .openms-lib-resources__head {
+    max-width: none;
+  }
 }
 
 @media (max-width: 960px) {
@@ -15695,12 +16107,11 @@
 }
 
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__head {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-items: start;
-  column-gap: var(--pro-col-gap, clamp(2rem, 5vw, 4rem));
-  row-gap: 0;
+  gap: 0;
   max-width: 100%;
   margin-inline: 0;
   margin-bottom: var(--pro-head-to-content, clamp(1.5rem, 3vw, 2.25rem));
@@ -15708,21 +16119,17 @@
 }
 
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-eyebrow {
-  grid-column: 1;
-  grid-row: 1;
   justify-self: start;
   margin-inline: 0;
 }
 
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__head h2 {
-  grid-column: 1;
-  grid-row: 2;
+  width: 100%;
 }
 
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__lead {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  align-self: center;
+  width: 100%;
+  align-self: stretch;
 }
 
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-eyebrow {
@@ -15755,9 +16162,12 @@
 
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__lead {
   display: grid;
-  gap: 0.85rem;
-  margin: 0;
-  max-width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--pro-col-gap, clamp(2rem, 5vw, 4rem));
+  row-gap: 0.85rem;
+  margin: var(--pro-stack-lead, 0.75rem) 0 0;
+  max-width: 100% !important;
+  width: 100% !important;
   overflow-wrap: break-word;
   font-size: var(--openms-body-size-lg);
   line-height: 1.65;
@@ -15768,6 +16178,7 @@
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-lead-col {
   display: block;
   margin: 0;
+  min-width: 0;
 }
 
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tiers__grid {
@@ -15877,6 +16288,31 @@
   color: inherit;
 }
 
+.openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__name {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--openms-card-title-color, var(--openms-navy));
+}
+
+.openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__amount {
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.55rem, 2.4vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--openms-card-title-color, var(--openms-navy));
+}
+
+.openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__period {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--openms-card-title-color, var(--openms-navy));
+}
+
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__motto {
   margin: 0;
   font-size: 0.68rem;
@@ -15884,7 +16320,7 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--tier-accent);
+  color: var(--openms-card-title-color, var(--openms-navy));
   opacity: 0.85;
 }
 
@@ -15906,34 +16342,34 @@
   min-height: 2.85rem;
   margin-top: auto;
   padding: 0.75rem 1.35rem;
-  border: 2px solid var(--openms-blue);
+  border: 2px solid var(--openms-navy);
   border-radius: var(--openms-btn-pill-radius);
   background: transparent;
   font-size: var(--openms-body-size);
   font-weight: 600;
   line-height: 1.3;
-  color: var(--openms-blue) !important;
+  color: var(--openms-navy) !important;
   text-decoration: none;
-  box-shadow: 0 0 0 0 var(--openms-btn-glow);
+  box-shadow: 0 0 0 0 rgba(var(--openms-navy-rgb), 0.16);
   transition: var(--openms-btn-motion);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__cta:hover {
-    background: var(--openms-blue);
-    border-color: var(--openms-blue);
+    background: var(--openms-navy);
+    border-color: var(--openms-navy);
     color: var(--openms-white) !important;
     transform: scale(var(--openms-btn-hover-scale));
-    box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow);
+    box-shadow: 0 0 0 var(--openms-btn-glow-size) rgba(var(--openms-navy-rgb), 0.22);
   }
 }
 
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__toggle:focus-visible .sponsor-tier__cta {
-  background: var(--openms-blue);
-  border-color: var(--openms-blue);
+  background: var(--openms-navy);
+  border-color: var(--openms-navy);
   color: var(--openms-white) !important;
   transform: scale(var(--openms-btn-hover-scale));
-  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow);
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) rgba(var(--openms-navy-rgb), 0.22);
 }
 
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__toggle:active .sponsor-tier__cta {
@@ -15943,8 +16379,8 @@
 
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--active .sponsor-tier__cta,
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--featured .sponsor-tier__cta {
-  border-color: var(--openms-blue);
-  background: var(--openms-blue);
+  border-color: var(--openms-navy);
+  background: var(--openms-navy);
   color: var(--openms-white) !important;
   transform: none;
   box-shadow: none;
@@ -16397,18 +16833,21 @@
 }
 
 .openms-lib-page--sponsor-us .sponsor-faq-pro__inner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--pro-head-to-content, clamp(1.5rem, 3vw, 2.25rem));
-  max-width: min(64rem, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr);
+  align-items: start;
+  column-gap: var(--pro-col-gap, clamp(2rem, 5vw, 4rem));
+  row-gap: var(--pro-head-to-content, clamp(1.5rem, 3vw, 2.25rem));
+  max-width: min(var(--hub-wide-max, 72rem), 100%);
   margin-inline: auto;
 }
 
 .openms-lib-page--sponsor-us .sponsor-faq-pro__head {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 0;
-  text-align: center;
+  text-align: left;
 }
 
 .openms-lib-page--sponsor-us .sponsor-faq-pro__head .openms-lib-resources__eyebrow {
@@ -16418,7 +16857,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--openms-blue);
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .openms-lib-page--sponsor-us .sponsor-faq-pro__head .openms-lib-resources__title {
@@ -16430,11 +16869,28 @@
   letter-spacing: normal;
   text-transform: uppercase;
   color: var(--openms-navy);
-  text-align: center;
+  text-align: left;
+}
+
+.openms-lib-page--sponsor-us .sponsor-faq-pro__lead {
+  margin: var(--pro-stack-lead, 0.75rem) 0 0;
+  max-width: 36ch;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.65;
+  color: var(--pro-text-muted);
+  text-wrap: pretty;
+}
+
+.openms-lib-page--sponsor-us .sponsor-faq-pro__cta {
+  margin-top: 1.25rem;
+  width: fit-content;
 }
 
 .openms-lib-page--sponsor-us .sponsor-faq__list {
+  display: grid;
+  gap: 0.75rem;
   margin: 0;
+  min-width: 0;
 }
 
 .openms-lib-page--sponsor-us .sponsor-faq__item {
@@ -16536,9 +16992,18 @@
   }
 
   .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__lead {
-    max-width: 60ch;
+    grid-template-columns: 1fr;
+    max-width: 100% !important;
     gap: 0.75rem;
     font-size: var(--openms-body-size);
+  }
+
+  .openms-lib-page--sponsor-us .sponsor-faq-pro__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .openms-lib-page--sponsor-us .sponsor-faq-pro__lead {
+    max-width: none;
   }
 
   .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tiers__grid {
@@ -16868,20 +17333,23 @@
 }
 
 /* --- recovered patches (post-replay) --- */
-/* Membership — two-step Joining → Leaving pathway */
+/* Membership — icons connected, detail cards beneath */
 .openms-lib-page--governance .governance-membership {
   display:grid;
   gap:var(--pro-head-to-content);
   width:100%;
   margin:0;
-  padding:var(--pro-head-to-content) 0 0;
-  border-top:1px solid var(--pro-line)
+  padding:var(--pro-section-y) 0 0;
+  border:none;
+  background:transparent
 }
 .openms-lib-page--governance .governance-membership__head {
   display:grid;
-  justify-items:start;
+  justify-items:center;
   gap:0;
-  max-width:min(100%,40rem)
+  max-width:min(100%,40rem);
+  margin-inline:auto;
+  text-align:center
 }
 .openms-lib-page--governance .governance-membership__eyebrow {
   display:inline-flex;
@@ -16900,34 +17368,32 @@
   line-height:1.3;
   letter-spacing:normal;
   text-transform:uppercase;
-  color:var(--openms-navy)
+  color:var(--openms-navy);
+  text-align:center
 }
 .openms-lib-page--governance .governance-membership__lead {
   margin:var(--pro-stack-lead,.75rem) 0 0;
   max-width:42ch;
   font-size:var(--openms-body-size-lg);
   line-height:1.6;
-  color:var(--pro-text-muted)
+  color:var(--pro-text-muted);
+  text-align:center
 }
 .openms-lib-page--governance .governance-membership__track {
   display:grid;
-  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
-  align-items:stretch;
-  gap:clamp(.85rem,2vw,1.35rem);
+  gap:clamp(.85rem,2vw,1.15rem);
   margin:0;
-  padding:0;
-  list-style:none
+  padding:0
 }
-.openms-lib-page--governance .governance-membership__step {
+.openms-lib-page--governance .governance-membership__pathway {
   display:grid;
-  grid-template-rows:auto 1fr;
-  gap:.85rem;
-  margin:0;
-  min-width:0
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  align-items:center;
+  gap:clamp(.75rem,2vw,1.25rem);
+  width:100%
 }
-.openms-lib-page--governance .governance-membership__marker {
-  display:flex;
-  justify-content:center
+.openms-lib-page--governance .governance-membership__pathway .governance-membership__icon {
+  justify-self:center
 }
 .openms-lib-page--governance .governance-membership__icon {
   display:grid;
@@ -16938,7 +17404,7 @@
   border-radius:0;
   background:transparent;
   color:rgba(var(--openms-blue-rgb),.28);
-  font-size:clamp(2.25rem,3.2vw,2.75rem);
+  font-size:var(--openms-card-icon-size, clamp(2.5rem, 3.8vw, 3rem));
   line-height:1
 }
 .openms-lib-page--governance .governance-membership__icon .fas,
@@ -16951,66 +17417,64 @@
 .openms-lib-page--governance .governance-membership__icon .svg-inline--fa path {
   fill:currentColor!important
 }
+.openms-lib-page--governance .governance-membership__connector {
+  width:clamp(2.75rem,8vw,5rem);
+  height:2px;
+  margin:0;
+  background:linear-gradient(90deg,rgba(var(--openms-blue-rgb),.18),rgba(var(--openms-blue-rgb),.5),rgba(var(--openms-blue-rgb),.18));
+  border-radius:999px
+}
+.openms-lib-page--governance .governance-membership__cards {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(.85rem,2vw,1.35rem);
+  margin:0;
+  padding:0;
+  list-style:none
+}
 .openms-lib-page--governance .governance-membership__card,
 .openms-lib-page--governance .governance-membership__card:hover,
 .openms-lib-page--governance .governance-membership__card:focus-within {
   display:grid;
+  justify-items:center;
   gap:.4rem;
   height:auto!important;
   min-height:0!important;
   max-height:none!important;
-  padding:clamp(.85rem,1.6vw,1.1rem) clamp(.95rem,1.8vw,1.2rem)!important;
-  border:1px solid var(--pro-line);
-  border-radius:var(--pro-radius);
-  background:var(--openms-white);
-  box-shadow:var(--pro-shadow)
+  padding:0!important;
+  border:none!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  transform:none!important;
+  text-align:center
 }
 .openms-lib-page--governance .governance-membership__tag {
   margin:0;
-  font-size:var(--openms-text-min);
-  font-weight:700;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--openms-blue)
+  text-align:center
 }
 .openms-lib-page--governance .governance-membership__text {
   margin:0;
+  max-width:36ch;
   font-family:var(--openms-font-body);
   font-size:var(--openms-body-size);
   line-height:1.6;
-  color:rgba(var(--openms-dark-rgb),.72)
-}
-.openms-lib-page--governance .governance-membership__connector {
-  align-self:center;
-  width:clamp(2.5rem,6vw,4rem);
-  height:2px;
-  margin-top:1.35rem;
-  background:linear-gradient(90deg,rgba(var(--openms-blue-rgb),.15),rgba(var(--openms-blue-rgb),.45),rgba(var(--openms-blue-rgb),.15));
-  border-radius:999px
+  color:rgba(var(--openms-dark-rgb),.72);
+  text-align:center
 }
 @media (max-width:700px) {
-  .openms-lib-page--governance .governance-membership__track {
+  .openms-lib-page--governance .governance-membership__pathway {
+    gap:.55rem
+  }
+  .openms-lib-page--governance .governance-membership__connector {
+    width:clamp(1.75rem,12vw,3rem)
+  }
+  .openms-lib-page--governance .governance-membership__cards {
     grid-template-columns:1fr;
     gap:.75rem
   }
-  .openms-lib-page--governance .governance-membership__connector {
-    width:2px;
-    height:1.5rem;
-    margin:0 auto;
-    background:linear-gradient(180deg,rgba(var(--openms-blue-rgb),.15),rgba(var(--openms-blue-rgb),.45),rgba(var(--openms-blue-rgb),.15))
-  }
-  .openms-lib-page--governance .governance-membership__step {
-    grid-template-columns:auto minmax(0,1fr);
-    grid-template-rows:auto;
-    align-items:start;
-    gap:.85rem
-  }
-  .openms-lib-page--governance .governance-membership__marker {
-    justify-content:flex-start;
-    padding-top:.85rem
-  }
   .openms-lib-page--governance .governance-membership__icon {
-    font-size:1.85rem
+    font-size:var(--openms-card-icon-size, clamp(2.5rem, 3.8vw, 3rem))
   }
 }
 

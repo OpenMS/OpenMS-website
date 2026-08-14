@@ -17,6 +17,7 @@
   padding: 0;
   background: var(--openms-chrome-bg) !important;
   border: none !important;
+  border-bottom: 1px solid var(--openms-chrome-border, rgba(var(--openms-white-rgb), 0.1)) !important;
   backdrop-filter: none;
 }
 
@@ -50,6 +51,40 @@
   transition:
     color 0.2s ease,
     background-color 0.2s ease;
+}
+
+@media (min-width: 1024px) {
+  .navbar.is-fresh .navbar-links > .navbar-item.has-dropdown > .navbar-link:hover,
+  .navbar.is-fresh .navbar-links > .navbar-item.has-dropdown > .navbar-link:focus-visible,
+  .navbar.is-fresh .navbar-links > .navbar-item.has-dropdown.is-hoverable:hover > .navbar-link,
+  .navbar.is-fresh .navbar-links > .navbar-item.has-dropdown.is-hoverable:focus-within > .navbar-link,
+  #navbar-clone.navbar.is-fresh .navbar-links > .navbar-item.has-dropdown > .navbar-link:hover,
+  #navbar-clone.navbar.is-fresh .navbar-links > .navbar-item.has-dropdown > .navbar-link:focus-visible,
+  #navbar-clone.navbar.is-fresh .navbar-links > .navbar-item.has-dropdown.is-hoverable:hover > .navbar-link,
+  #navbar-clone.navbar.is-fresh .navbar-links > .navbar-item.has-dropdown.is-hoverable:focus-within > .navbar-link {
+    color: var(--openms-navbar-link-hover-color);
+    background-color: var(--openms-navbar-link-hover-bg);
+  }
+
+  .navbar.is-fresh .navbar-links > .navbar-item.has-dropdown > .navbar-link:focus-visible,
+  #navbar-clone.navbar.is-fresh .navbar-links > .navbar-item.has-dropdown > .navbar-link:focus-visible {
+    outline: 2px solid rgba(var(--openms-white-rgb), 0.45);
+    outline-offset: 2px;
+  }
+
+  .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:hover,
+  .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:focus-visible,
+  #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:hover,
+  #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:focus-visible {
+    background: rgba(var(--openms-white-rgb), 0.08) !important;
+    border-color: rgba(var(--openms-white-rgb), 0.5) !important;
+  }
+
+  .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:focus-visible,
+  #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:focus-visible {
+    outline: 2px solid rgba(var(--openms-white-rgb), 0.45);
+    outline-offset: 2px;
+  }
 }
 
 .navbar-cta-item .navbar-cta-arrow {

@@ -9,21 +9,12 @@
 
 .home-metrics__grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(1rem, 2.5vw, 1.5rem);
   width: 100%;
 }
 
-.home-metrics__support {
-  margin: clamp(1rem, 2vw, 1.35rem) 0 0;
-  max-width: min(100%, 42rem);
-  font-family: var(--openms-font-body);
-  font-size: var(--openms-body-size-lg, 1.05rem);
-  font-weight: 600;
-  line-height: 1.45;
-  color: var(--openms-navy);
-  text-wrap: pretty;
-}
+/* Keep 3-up through md–xl; only stack below in the phone rule */
 
 .home-metrics__card {
   position: relative;
@@ -120,10 +111,6 @@
   .home-metrics__grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 0.85rem;
-  }
-
-  .home-metrics__support {
-    margin-top: 0.85rem;
   }
 
   .home-metrics__card {

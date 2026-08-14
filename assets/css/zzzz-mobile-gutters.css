@@ -200,21 +200,20 @@
     padding-inline: 0.35rem !important;
   }
 
-  /* Taller slots so the logos grow into the width they just gained */
   .home-page__block--partners .uni-partners--home .uni-partners__static .uni-partners__item {
-    height: 5rem;
-    min-height: 5rem;
-    max-height: 5rem;
-    padding: 0.55rem 0.7rem;
+    height: 3.25rem;
+    min-height: 3.25rem;
+    max-height: 3.25rem;
+    padding: 0.35rem 0.5rem;
   }
 
-  /* Intrinsic logo sizes vary wildly; contain-fitting the whole slot keeps them
-     optically even instead of leaving the small ones stranded */
+  /* Same rendered height for every logo; width follows aspect ratio */
   .home-page__block--partners .uni-partners--home .uni-partners__static .uni-partners__item img {
-    width: 100%;
+    width: auto;
     height: 100%;
     max-width: 100%;
     max-height: 100%;
+    margin-inline: auto;
     object-fit: contain;
   }
 

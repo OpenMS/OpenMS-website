@@ -376,7 +376,7 @@ html[data-navbar-layout="mobile"] #navbar-clone.navbar.is-fresh .navbar-menu.is-
   html[data-navbar-layout="mobile"] .site-header #nav.navbar.is-fresh .navbar-menu .navbar-mobile-ctas--menu,
 html[data-navbar-layout="mobile"] #navbar-clone.navbar.is-fresh .navbar-menu .navbar-mobile-ctas--menu {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     align-items: stretch;
     gap: 0.5rem;
     width: 100%;

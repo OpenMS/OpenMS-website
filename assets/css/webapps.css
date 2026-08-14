@@ -90,7 +90,9 @@ section.webapps-featured::after {
 }
 
 .webapps-featured__eyebrow {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   margin: 0 0 0.85rem;
   padding: 0.35rem 0.85rem;
   font-family: var(--openms-font-body);
@@ -102,6 +104,18 @@ section.webapps-featured::after {
   background: rgba(var(--openms-blue-rgb), 0.1);
   border: 1px solid rgba(var(--openms-blue-rgb), 0.2);
   border-radius: 999px;
+}
+
+.webapps-featured__eyebrow-icon {
+  display: inline-flex;
+  line-height: 0;
+  opacity: 0.9;
+}
+
+.webapps-featured__eyebrow-icon svg {
+  display: block;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .webapps-featured__title {
@@ -118,7 +132,7 @@ section.webapps-featured::after {
 
 .webapps-featured__title-accent {
   display: inline;
-  color: var(--openms-blue);
+  color: var(--home-title-color, var(--openms-navy));
 }
 
 .webapps-featured__lead {
@@ -1293,23 +1307,7 @@ section.webapps-featured::after {
   margin: 0.15rem 0 0;
 }
 
-.webapps-archived-entry--nfcore {
-  --nfcore-green: #24b064;
-  --nfcore-green-rgb: 36 176 100;
-}
-
-.webapps-archived-entry--nfcore .webapps-project-links__btn--nfcore {
-  border-color: rgba(var(--nfcore-green-rgb), 0.34);
-  background: rgba(var(--nfcore-green-rgb), 0.12);
-  color: color-mix(in srgb, var(--nfcore-green) 72%, var(--openms-navy));
-}
-
-.webapps-archived-entry--nfcore .webapps-project-links__btn--nfcore:hover,
-.webapps-archived-entry--nfcore .webapps-project-links__btn--nfcore:focus-visible {
-  border-color: rgba(var(--nfcore-green-rgb), 0.52);
-  background: rgba(var(--nfcore-green-rgb), 0.2);
-  color: var(--openms-navy);
-}
+/* NF-Core archived cards use the same blue app-link pills as Featured Apps */
 
 .webapps-archived__revival {
   display: flex;

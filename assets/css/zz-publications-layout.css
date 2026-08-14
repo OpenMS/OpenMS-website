@@ -29,6 +29,7 @@
 .openms-lib-page--publications .publications-bibliography__entries,
 .openms-lib-page--publications .publications-toolbar,
 .openms-lib-page--publications .publications-year,
+.openms-lib-page--publications .publications-more,
 .openms-lib-page--publications .contribute-coc-band__panel {
   width: 100%;
   max-width: none;

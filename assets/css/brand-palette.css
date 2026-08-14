@@ -20,10 +20,10 @@
   --openms-section-title-weight: var(--openms-heading-lg-weight);
   --openms-section-title-color: var(--openms-navy);
 
-  /* Shared step/overview numbers — match Contribute channels 01/02/03 */
+  /* Shared step/overview numbers — deliberate light watermark (site-wide) */
   --openms-step-num-size: clamp(2.5rem, 5vw, 3.5rem);
-  --openms-step-num-color: rgba(var(--openms-navy-rgb), 0.1);
-  --openms-step-num-color-hover: rgba(var(--openms-navy-rgb), 0.22);
+  --openms-step-num-color: rgba(var(--openms-navy-rgb), 0.18);
+  --openms-step-num-color-hover: rgba(var(--openms-navy-rgb), 0.32);
   --openms-num-strip-border: rgba(var(--openms-navy-rgb), 0.1);
   --openms-num-strip-hover-bg: rgba(var(--openms-blue-rgb), 0.03);
   --openms-num-strip-pad-y: clamp(1.35rem, 3vw, 2rem);
@@ -100,15 +100,16 @@
   --openms-navbar-dropdown-hover-text: var(--openms-navy);
   --openms-navbar-dropdown-hover-bg: rgba(var(--openms-navy-rgb), 0.06);
   --openms-navbar-dropdown-border: rgba(var(--openms-navy-rgb), 0.1);
-  --openms-navbar-container-pad-inline: clamp(1.25rem, 3vw, 2.25rem);
+  --openms-navbar-container-pad-inline: clamp(1.25rem, 3.5vw, 2.5rem);
   --openms-navbar-container-pad-inline-mobile: 1.15rem;
   --openms-navbar-brand-slot-width: 18.5rem;
-  --openms-navbar-logo-height: 76px;
-  --openms-header-bar-min-height: calc(var(--openms-navbar-logo-height) + 0.65rem);
-  --openms-navbar-desktop-gap: clamp(0.2rem, 0.65vw, 0.55rem);
-  --openms-navbar-desktop-pad-x: clamp(0.25rem, 0.55vw, 0.5rem);
+  /* Slightly tighter logo keeps the bar premium without feeling oversized */
+  --openms-navbar-logo-height: 64px;
+  --openms-header-bar-min-height: calc(var(--openms-navbar-logo-height) + 0.9rem);
+  --openms-navbar-desktop-gap: clamp(0.35rem, 0.9vw, 0.75rem);
+  --openms-navbar-desktop-pad-x: clamp(0.35rem, 0.7vw, 0.65rem);
   --openms-navbar-desktop-font-size: clamp(0.8125rem, 0.95vw, 15px);
-  --openms-navbar-actions-gap: var(--openms-btn-gap, 0.75rem);
+  --openms-navbar-actions-gap: clamp(0.65rem, 1.1vw, 0.95rem);
   /* Nav breakpoints: burger ≤1023px; horizontal bar from 1024px unless search overlaps links (JS) */
   --openms-nav-mobile-max: 1023px;
   --openms-nav-desktop-min: 1024px;
@@ -226,11 +227,11 @@
   --openms-mobile-menu-shadow: -0.35rem 0 1.5rem rgba(var(--openms-navy-rgb), 0.14);
   --openms-mobile-menu-bg: var(--openms-white);
   --openms-mobile-menu-header-bg: var(--openms-navy);
-  --openms-mobile-nav-item-size: 1rem;
+  --openms-mobile-nav-item-size: 1.125rem;
   --openms-mobile-nav-item-pad-y: 0.3rem;
   --openms-mobile-nav-item-pad-x: 0.9rem;
   --openms-mobile-nav-links-pad-top: 0;
-  --openms-mobile-nav-subitem-size: 0.9375rem;
+  --openms-mobile-nav-subitem-size: 1.0625rem;
   --openms-mobile-nav-divider: rgba(var(--openms-navy-rgb), 0.1);
   --openms-mobile-menu-footer-pad: 1rem;
   --openms-mobile-menu-footer-gap: 1.15rem;

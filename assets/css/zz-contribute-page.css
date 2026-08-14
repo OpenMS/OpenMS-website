@@ -317,11 +317,12 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto 1fr;
-  align-content: start;
-  align-items: start;
+  align-content: stretch;
+  align-items: stretch;
   justify-items: start;
   gap: var(--contribute-space-2, 0.75rem);
   min-width: 0;
+  height: 100%;
   min-height: 100%;
   padding: var(--pro-card-pad-lg, clamp(1.25rem, 2.5vw, 1.75rem));
   border: 1px solid var(--contribute-border);
@@ -338,12 +339,16 @@
 }
 
 .contribute-track__body {
-  display: grid;
-  grid-template-rows: auto;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  flex: 1 1 auto;
   gap: 0.4rem;
   min-width: 0;
   width: 100%;
+  height: 100%;
+  min-height: 0;
 }
 
 /* Soft blue icons — above title/body */
@@ -507,7 +512,8 @@
   align-items: center;
   gap: 0.35rem;
   width: fit-content;
-  margin-top: 0.15rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
   font-size: var(--openms-text-min);
   font-weight: 700;
   color: var(--openms-navy) !important;
@@ -515,17 +521,10 @@
   transition: gap var(--contribute-motion), color var(--contribute-motion);
 }
 
-/* Design / website — keep CTA tucked under the copy */
 .contribute-track__item--design .contribute-track__body,
 .contribute-track__item--web .contribute-track__body,
 .contribute-track__item--docs .contribute-track__body {
   gap: 0.35rem;
-}
-
-.contribute-track__item--design .contribute-track__cta,
-.contribute-track__item--web .contribute-track__cta,
-.contribute-track__item--docs .contribute-track__cta {
-  margin-top: 0.1rem;
 }
 
 .contribute-track__cta:hover,
@@ -539,12 +538,13 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--contribute-space-2);
-  margin: var(--contribute-space-3) 0 0;
+  margin-top: auto;
+  margin-bottom: 0;
   padding: var(--contribute-space-3) 0 0;
   list-style: none;
   width: 100%;
   max-width: none;
-  align-self: end;
+  align-self: stretch;
   border-top: 1px solid var(--contribute-border);
 }
 
@@ -597,8 +597,9 @@
   flex-wrap: wrap;
   gap: var(--contribute-space-2);
   justify-content: flex-start;
-  margin-top: var(--contribute-space-3);
-  align-self: end;
+  margin-top: auto;
+  padding-top: var(--contribute-space-3);
+  align-self: stretch;
 }
 
 .openms-lib-page--contribute .contribute-os-buttons .openms-lib-btn,
@@ -925,6 +926,61 @@
   .contribute-outreach__social-link {
     width: 100%;
     max-width: none;
+  }
+}
+
+@media (max-width: 720px) {
+  /* One shared content column: section owns the gutter; children fill it */
+  .openms-lib-page--contribute .contribute-ways {
+    padding-inline: var(--contribute-gutter);
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .openms-lib-page--contribute .contribute-ways__head,
+  .openms-lib-page--contribute .contribute-track,
+  .openms-lib-page--contribute .contribute-support,
+  .openms-lib-page--contribute .contribute-outreach {
+    padding-inline: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .openms-lib-page--contribute .contribute-channels__strip,
+  .openms-lib-page--contribute .contribute-channel,
+  .openms-lib-page--contribute .contribute-track,
+  .openms-lib-page--contribute .contribute-track__item,
+  .openms-lib-page--contribute .contribute-support,
+  .openms-lib-page--contribute .contribute-outreach__inner,
+  .openms-lib-page--contribute .contribute-outreach__social,
+  .openms-lib-page--contribute .contribute-outreach__social > li,
+  .openms-lib-page--contribute .contribute-outreach__social-link,
+  .openms-lib-page--contribute .contribute-coc-band,
+  .openms-lib-page--contribute .contribute-coc-band__panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .openms-lib-page--contribute .contribute-ways__lead,
+  .openms-lib-page--contribute .contribute-support__copy,
+  .openms-lib-page--contribute .contribute-support__text,
+  .openms-lib-page--contribute .contribute-outreach__copy,
+  .openms-lib-page--contribute .contribute-track__body {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Match channel-card interior inset on the CoC panel */
+  .openms-lib-page--contribute .contribute-coc-band__panel {
+    padding-inline: clamp(0.85rem, 3.4vw, 1.1rem) !important;
+  }
+
+  /* Support band: keep readable inset without shrinking the shell */
+  .openms-lib-page--contribute .contribute-support {
+    padding-block: clamp(1.25rem, 3vw, 1.75rem);
+    padding-inline: clamp(0.85rem, 3.4vw, 1.1rem) !important;
   }
 }
 

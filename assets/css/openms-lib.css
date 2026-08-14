@@ -1228,8 +1228,7 @@
   background: transparent;
   border-color: transparent;
   color: var(--openms-blue) !important;
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  text-decoration: none;
 }
 
 .openms-lib-btn--ghost:hover,

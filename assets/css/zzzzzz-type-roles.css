@@ -363,12 +363,24 @@
 .openms-lib-developers__card-tag,
 .openms-lib-developers__route .openms-lib-developers__card-tag,
 .contribute-channel__tag,
-.ecosystem-home__card-tag,
 .webapps-project-card__badge,
 .webapps-archived__notice-label,
-.openms-step__tag {
+.openms-step__tag,
+.governance-membership__tag,
+.governance-tile__tag {
   font-size: var(--openms-text-min) !important;
-  font-weight: var(--openms-label-weight, 600) !important;
+  font-weight: var(--openms-label-weight, 700) !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--pro-text-soft, var(--openms-text-soft)) !important;
+}
+
+.ecosystem-home__card-tag {
+  font-size: 0.625rem !important;
+  font-weight: var(--openms-label-weight, 700) !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--openms-navy) !important;
 }
 
 .news-banner__label {
@@ -428,4 +440,36 @@
   font-size: 0.9375rem !important; /* 15px */
   font-weight: 500 !important;
   line-height: 1.3 !important;
+}
+
+/* Mobile — text links a step larger for tap readability */
+@media (max-width: 720px) {
+  .openms-cta-link,
+  .webapps-project-card__cta,
+  .news-home__card-cta,
+  .contact-home__card-cta,
+  .community-events-home__card-cta,
+  .events-past-card__cta,
+  .contribute-channel__link,
+  .contribute-track__cta,
+  .contribute-way__link,
+  .openms-lib-about__tile-link,
+  .openms-lib-developers__card-link,
+  .coc-report__link,
+  .privacy-overview__note-link,
+  .contact-page__path-link,
+  .webapps-featured__extra-link,
+  .ecosystem-home__card-link,
+  .home-pathways__step-go,
+  .footer-link-group ul li a,
+  .footer-link-group ul li a.footer-link-contact-us,
+  .openms-content-link,
+  .openms-lib-layout :where(p, li, dd, td, .content) > a:not([class]):not(.openms-lib-btn),
+  .home-page :where(p, li, dd, td) > a:not([class]):not(.openms-lib-btn):not(.navbar-item),
+  .contribute-page-layout :where(p, li) > a:not([class]):not(.openms-lib-btn),
+  .news-page-layout :where(p, li) > a:not([class]):not(.openms-lib-btn),
+  .community-calendar-layout :where(p, li) > a:not([class]):not(.openms-lib-btn),
+  [class$="-page-layout"] :where(p, li) > a:not([class]):not(.openms-lib-btn) {
+    font-size: var(--openms-body-size) !important;
+  }
 }

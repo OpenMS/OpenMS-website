@@ -563,11 +563,12 @@
   color: rgba(255, 255, 255, 0.88);
 }
 
-/* ── Section 2: TOPP — editorial intro + feature rail ── */
-.openms-lib-page--hub #topp-tools {
+/* ── Section 2: TOPP — soft band between white Overview / Get started ──
+   Anchors force transparent !important; paint the section inside instead. */
+.openms-lib-page--hub.openms-lib-page--openms-lib #topp-tools > .openms-lib-topp-split {
   background:
-    radial-gradient(ellipse 70% 60% at 0% 50%, rgba(var(--openms-blue-rgb), 0.11), transparent 62%),
-    linear-gradient(180deg, color-mix(in srgb, var(--olib-bg-soft) 65%, var(--openms-white)) 0%, var(--openms-white) 100%);
+    radial-gradient(ellipse 70% 60% at 0% 50%, rgba(var(--openms-blue-rgb), 0.08), transparent 62%),
+    #f4f7fb;
 }
 
 .openms-lib-page--hub .openms-lib-topp__deck {

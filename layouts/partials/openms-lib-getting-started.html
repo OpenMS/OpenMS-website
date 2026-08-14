@@ -14,6 +14,7 @@
   {{- end -}}
 {{- end -}}
 <section class="openms-lib-resources openms-lib-resources--explore" aria-labelledby="{{ $id }}">
+  <div class="openms-lib-resources__dark">
   <div class="openms-lib-resources__inner">
     <header class="openms-lib-resources__head openms-lib-hub__reveal openms-lib-hub__reveal--left">
       {{- with $eyebrow }}
@@ -52,7 +53,7 @@
           </span>
         </a>
         {{- else }}
-        <div class="openms-lib-resources__explore-card openms-lib-resources__explore-card--pending{{- if .featured }} openms-lib-resources__explore-card--featured{{- end }}">
+        <div class="openms-lib-resources__explore-card openms-lib-resources__explore-card--pending">
           {{- with .icon }}
           <span class="openms-lib-resources__explore-icon" aria-hidden="true"><i class="{{ . }}"></i></span>
           {{- else }}
@@ -74,32 +75,33 @@
       {{- end }}
     </ul>
     {{- end }}
-
-    {{- with $support }}
-    <aside class="openms-lib-resources__assist openms-lib-hub__reveal" aria-label="{{ .title }}">
-      <div class="openms-lib-resources__assist-copy">
-        <h3 class="openms-lib-resources__assist-title">{{ .title }}</h3>
-        {{- with .text }}
-        <p class="openms-lib-resources__assist-text">{{ . }}</p>
-        {{- end }}
-      </div>
-      {{- with .links }}
-      <div class="openms-lib-resources__assist-actions">
-        {{- range $i, $link := . }}
-        <a
-          class="openms-lib-btn{{- if eq $i 0 }} openms-lib-btn--primary{{- else }} openms-lib-btn--ghost{{- end }} openms-lib-resources__assist-btn"
-          href="{{ $link.url }}"
-          {{- if in $link.url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
-        >
-          {{- with $link.icon }}
-          <i class="{{ . }}" aria-hidden="true"></i>
-          {{- end }}
-          <span class="openms-lib-btn__label">{{ $link.name }}</span>
-        </a>
-        {{- end }}
-      </div>
-      {{- end }}
-    </aside>
-    {{- end }}
   </div>
+  </div>
+
+  {{- with $support }}
+  <aside class="openms-lib-resources__assist openms-lib-hub__reveal" aria-label="{{ .title }}">
+    <div class="openms-lib-resources__assist-copy">
+      <h3 class="openms-lib-resources__assist-title">{{ .title }}</h3>
+      {{- with .text }}
+      <p class="openms-lib-resources__assist-text">{{ . }}</p>
+      {{- end }}
+    </div>
+    {{- with .links }}
+    <div class="openms-lib-resources__assist-actions">
+      {{- range $i, $link := . }}
+      <a
+        class="openms-lib-btn{{- if eq $i 0 }} openms-lib-btn--primary{{- else }} openms-lib-btn--ghost{{- end }} openms-lib-resources__assist-btn"
+        href="{{ $link.url }}"
+        {{- if in $link.url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+      >
+        {{- with $link.icon }}
+        <i class="{{ . }}" aria-hidden="true"></i>
+        {{- end }}
+        <span class="openms-lib-btn__label">{{ $link.name }}</span>
+      </a>
+      {{- end }}
+    </div>
+    {{- end }}
+  </aside>
+  {{- end }}
 </section>

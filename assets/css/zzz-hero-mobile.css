@@ -33,14 +33,39 @@
     text-wrap: pretty;
   }
 
-  /* Retreat hero fakes a hanging indent with a negative margin on one line —
-     it pushes text off-canvas once the line is allowed to wrap */
-  .openms-lib-page--developer-retreat .openms-lib-hero__title,
+  /* Retreat hero — drop hanging indent + forced <br>; keep title-line as its
+     own block so mobile reads as ~3 clean lines instead of a balanced scramble */
+  .openms-lib-page--developer-retreat .openms-lib-hero__title {
+    --openms-page-hero-title-size: clamp(1.4rem, 0.85rem + 3.4vw, 1.85rem) !important;
+    font-size: var(--openms-page-hero-title-size) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+    margin-left: 0 !important;
+    line-height: 1.12 !important;
+    letter-spacing: 0.01em !important;
+    text-align: center !important;
+    text-wrap: unset;
+    overflow-wrap: normal !important;
+    white-space: normal !important;
+  }
+
+  .openms-lib-page--developer-retreat .openms-lib-hero__title br {
+    display: none !important;
+  }
+
   .openms-lib-page--developer-retreat .openms-lib-hero__title-line {
+    display: block !important;
     margin-left: 0 !important;
     max-width: 100% !important;
     white-space: normal !important;
+    text-wrap: balance;
+  }
+
+  .openms-lib-page--developer-retreat .openms-lib-hero__eyebrow,
+  .openms-lib-page--developer-retreat .openms-lib-hero__lead {
     text-align: center !important;
+    max-width: 100% !important;
   }
 
   /* ── Homepage hero (.hero-home) ── */

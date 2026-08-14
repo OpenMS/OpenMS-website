@@ -37,6 +37,15 @@
           {{- with $item.text }}
           <p class="openms-lib-resources__item-text">{{ . }}</p>
           {{- end }}
+          {{- if and $item.url $item.linkText }}
+          <a
+            class="openms-lib-resources__item-link"
+            href="{{ $item.url }}"
+            {{- if in $item.url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+          >
+            {{ $item.linkText }}<span aria-hidden="true"> →</span>
+          </a>
+          {{- end }}
         </article>
         {{- else if eq $type "featured-apps" }}
         {{- $featuredId := printf "%s-featured" $id -}}

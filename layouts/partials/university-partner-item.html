@@ -16,7 +16,7 @@
 {{- end -}}
   {{- if $logo -}}
   <img
-    src="{{ $logo | relURL }}"
+    src="{{ printf "%s?v=trim1" ($logo | relURL) }}"
     alt="{{ if .duplicate }}{{ "" }}{{ else }}{{ $alt }}{{ end }}"
     loading="lazy"
     decoding="async"

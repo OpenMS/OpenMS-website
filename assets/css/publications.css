@@ -373,10 +373,46 @@
   overflow: visible;
 }
 
+.publications-more {
+  display: flex;
+  justify-content: center;
+  margin: 0.35rem 0 0;
+  padding-top: 0.35rem;
+}
+
+.publications-more[hidden] {
+  display: none;
+}
+
+.publications-more__btn {
+  min-width: 10rem;
+}
+
+.publication-entry[hidden] {
+  display: none;
+}
+
 /* Year blocks */
 .publications-year {
   margin: 0;
   padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.publications-year__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--openms-navy);
+}
+
+/* Year labels are for the full archive; hide when a single year is filtered. */
+.publications-page[data-active-year]:not([data-active-year="all"]) .publications-year__title {
+  display: none;
 }
 
 .publications-page:not(.publications-year-filter--ready) .publications-year {
@@ -461,10 +497,12 @@
 .publication-year::before {
   content: "·";
   margin-right: 0.45rem;
+  margin-left: 0.45rem;
   color: rgba(var(--openms-navy-rgb), 0.35);
+  font-weight: 500;
 }
 
-.publications-page[data-active-year] .publication-year {
+.publications-page[data-active-year]:not([data-active-year="all"]) .publication-year {
   display: none;
 }
 

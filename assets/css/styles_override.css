@@ -1256,7 +1256,7 @@
     min-height: 2rem;
     padding: 0.25rem 0;
     margin: 0;
-    font-size: var(--openms-text-min);
+    font-size: var(--openms-body-size);
     white-space: normal;
     overflow-wrap: anywhere;
     line-height: 1.35;

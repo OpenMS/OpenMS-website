@@ -1,7 +1,8 @@
 {{- $cfg := site.Params.ecosystemSection | default dict -}}
-{{- $eyebrow := index $cfg "eyebrow" | default "Ecosystem" -}}
-{{- $title := index $cfg "title" | default "Build your own pipelines using our ecosystem" -}}
-{{- $titleHighlight := index $cfg "titleHighlight" | default "ecosystem" -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "" -}}
+{{- $title := index $cfg "title" | default "Ecosystem" -}}
+{{- $titleHighlight := index $cfg "titleHighlight" | default "" -}}
+{{- $description := index $cfg "description" | default "" -}}
 {{- $items := index $cfg "items" | default (slice) -}}
 {{- if gt (len $items) 0 }}
 <section class="ecosystem-home" aria-labelledby="ecosystem-home-title">
@@ -9,7 +10,14 @@
     <header class="ecosystem-home__header">
       <div class="ecosystem-home__header-main">
         {{- with $eyebrow }}
-        <p class="ecosystem-home__eyebrow">{{ . }}</p>
+        <p class="ecosystem-home__eyebrow">
+          <span class="ecosystem-home__eyebrow-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="14" height="14" focusable="false" aria-hidden="true">
+              <path fill="currentColor" d="M4.72 3.22a.75.75 0 0 1 0 1.06L1.56 7.44l3.16 3.16a.75.75 0 1 1-1.06 1.06l-3.69-3.69a.75.75 0 0 1 0-1.06l3.69-3.69a.75.75 0 0 1 1.06 0zm6.56 0a.75.75 0 0 1 1.06 0l3.69 3.69a.75.75 0 0 1 0 1.06l-3.69 3.69a.75.75 0 1 1-1.06-1.06l3.16-3.16-3.16-3.16a.75.75 0 0 1 0-1.06z"/>
+            </svg>
+          </span>
+          {{ . }}
+        </p>
         {{- end }}
         <h2 id="ecosystem-home-title" class="ecosystem-home__title">
           {{- if and $titleHighlight (in $title $titleHighlight) }}
@@ -18,6 +26,9 @@
           {{ $title }}
           {{- end }}
         </h2>
+        {{- with $description }}
+        <p class="ecosystem-home__lead">{{ . }}</p>
+        {{- end }}
       </div>
     </header>
     <ul class="ecosystem-home__grid" role="list" aria-label="OpenMS ecosystem tools">

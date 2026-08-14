@@ -1,7 +1,2 @@
 {{- $cfg := site.Params.pyopenmsPage.developers | default dict -}}
-{{- $citeText := index $cfg "citeText" -}}
-{{- $citation := index $cfg "citation" | default dict -}}
-{{- $citeVariant := "primary" -}}
-{{- with index $citation "variant" -}}{{- $citeVariant = . -}}{{- end -}}
-{{- $citeLabel := index $cfg "citeLabel" | default "Cite OpenMS" -}}
-{{ partial "product-developers-cite.html" (dict "citeText" $citeText "citation" $citation "citeVariant" $citeVariant "citeLabel" $citeLabel "separate" true) }}
+{{ partial "openms-lib-cite.html" (dict "cfg" $cfg "id" "pyopenms-cite-title" "fallback" "Used pyOpenMS in your work? If so, please cite.") }}
