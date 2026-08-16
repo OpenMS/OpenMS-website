@@ -79,8 +79,7 @@
 
       {{- if gt (len $years) 0 }}
       {{- $defaultYear := index $years 0 -}}
-      <section class="community-events-page__section community-events-page__section--past community-events-upcoming-layout" aria-label="Past community events">
-        <div class="events-past-panel" data-events-year-filter>
+      <section class="community-events-page__section community-events-page__section--past community-events-upcoming-layout" aria-label="Past community events" data-events-year-filter>
           {{ partial "events-year-select.html" (dict "years" $years "defaultYear" $defaultYear) }}
           <div class="events-past-panel__entries">
             {{- range $index, $year := $years }}
@@ -105,7 +104,6 @@
             </section>
             {{- end }}
           </div>
-        </div>
       </section>
       {{- end }}
     </div>

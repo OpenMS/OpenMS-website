@@ -17,8 +17,8 @@
   --pro-space-5:1.75rem;
   --pro-space-6:clamp(2.25rem, 4.5vw, 3.25rem);
   --pro-col-gap:clamp(2rem, 5vw, 4rem);
-  --pro-stack-eyebrow:var(--openms-stack-eyebrow, 12px);
-  --pro-stack-lead:var(--openms-stack-lead, 20px);
+  --pro-stack-eyebrow:var(--pro-space-1);
+  --pro-stack-lead:var(--pro-space-2);
   --pro-stack-actions:var(--pro-space-5);
   --pro-head-to-content:var(--pro-space-6);
   --pro-measure:58ch;
@@ -60,8 +60,8 @@
   --pro-space-5:1.75rem;
   --pro-space-6:clamp(2.25rem, 4.5vw, 3.25rem);
   --pro-col-gap:clamp(2rem, 5vw, 4rem);
-  --pro-stack-eyebrow:var(--openms-stack-eyebrow, 12px);
-  --pro-stack-lead:var(--openms-stack-lead, 20px);
+  --pro-stack-eyebrow:var(--pro-space-1);
+  --pro-stack-lead:var(--pro-space-2);
   --pro-stack-actions:var(--pro-space-5);
   --pro-head-to-content:var(--pro-space-6);
   --pro-measure:58ch;
@@ -519,7 +519,7 @@
 .openms-lib-page--openms-lib .openms-lib-resources__item-text a:focus-visible,
 .openms-lib-page--openms-lib .openms-lib-list__text a:focus-visible {
   color:var(--openms-content-link-hover, var(--openms-blue));
-  text-decoration: none;
+  text-decoration:underline;
   outline:none
 }
 .openms-lib-page--openms-lib .openms-lib-hero__eyebrow,
@@ -1744,7 +1744,7 @@
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-block__eyebrow ,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-block__eyebrow {
   margin-bottom:var(--pro-stack-eyebrow);
-  color:rgba(var(--openms-blue-rgb), 0.72)
+  color:var(--openms-blue)
 }
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-block__eyebrow {
   justify-content:flex-start
@@ -4057,8 +4057,8 @@
 
 /* WebApps Features — intentional watermark nums + soft strip tint */
 .openms-lib-page--webapps-pro {
-  --openms-step-num-color: rgba(var(--openms-blue-rgb), 0.38);
-  --openms-step-num-color-hover: rgba(var(--openms-blue-rgb), 0.55);
+  --openms-step-num-color: rgba(var(--openms-navy-rgb), 0.18);
+  --openms-step-num-color-hover: rgba(var(--openms-navy-rgb), 0.3);
 }
 
 .openms-lib-page--webapps-pro .openms-lib-about__num {
@@ -7133,7 +7133,7 @@
 .openms-lib-page--contribute .openms-lib-resources__item-text a:hover,
 .openms-lib-page--contribute .openms-lib-resources__item-text a:focus-visible {
   color: var(--openms-content-link-hover, var(--openms-blue));
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .openms-lib-page--contribute .openms-lib-resources__item-text a:hover,
@@ -12317,8 +12317,8 @@
 
 /* Overview tiles — intentional watermark nums + soft strip tint */
 .openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro) {
-  --openms-step-num-color: rgba(var(--openms-blue-rgb), 0.38);
-  --openms-step-num-color-hover: rgba(var(--openms-blue-rgb), 0.55);
+  --openms-step-num-color: rgba(var(--openms-navy-rgb), 0.18);
+  --openms-step-num-color-hover: rgba(var(--openms-navy-rgb), 0.3);
 }
 
 .openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-about__mosaic {

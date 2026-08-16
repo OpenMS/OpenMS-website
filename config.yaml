@@ -132,7 +132,8 @@ languages:
         eyebrow: Annual Developer Retreat
         pageTitle: Annual Developer Retreat
         headline: >-
-          Shape the <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">future</span> of<br>
+          <span class="openms-lib-hero__title-line">Shape the</span>
+          <span class="openms-lib-hero__title-line"><span class="openms-lib-hero__accent openms-lib-hero__accent--warm">future</span> of</span>
           <span class="openms-lib-hero__title-line">computational mass spectrometry.</span>
         about: >-
           The annual OpenMS developers retreat brings together researchers

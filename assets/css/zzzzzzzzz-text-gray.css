@@ -30,7 +30,7 @@ html body :is(p, li, dd, dt, td, th, label, figcaption, blockquote, cite) {
 }
 
 /* Main big titles — gray */
-html body :is(h1, h2, h3, h4, .title),
+html body :is(h1, h2, h3, h4, .title):not(.home-page__hero *):not(.home-page__block--ecosystem *):not(.community-home *):not(.about-hero *):not(.governance-hero *),
 html body :is(
   .openms-lib-hero__title,
   .openms-lib-hero__accent,
@@ -47,11 +47,9 @@ html body :is(
   .hero-home__title,
   .hero-modern__title,
   .keyfeatures-modern__title,
-  .ecosystem-home__title,
   .contact-home__title,
   .contact-area__title,
   .news-home__title,
-  .community-home__title,
   .community-events-home__title,
   .openms-lib-about__tile-title,
   .openms-lib-developers__card-title,
@@ -87,19 +85,16 @@ html body :is(
   .openms-lib-cta-band__eyebrow,
   .openms-steps__eyebrow,
   .keyfeatures-modern__eyebrow,
-  .ecosystem-home__eyebrow,
   .contact-home__eyebrow,
   .contact-area__eyebrow,
   .contact-page__section-eyebrow,
   .news-home__eyebrow,
-  .community-home__eyebrow,
   .community-events-home__eyebrow,
   .trusted-by__eyebrow,
   .trusted-by__home-eyebrow,
   .home-pathways__eyebrow,
   .uni-partners__eyebrow,
   .hero-sponsors__label,
-  .hero-home__eyebrow,
   .about-hero__eyebrow,
   .governance-hero__eyebrow,
   .governance-card__eyebrow,
@@ -520,8 +515,9 @@ html body .openms-lib-page--governance .openms-lib-about__tile:hover .openms-lib
   box-shadow: none !important;
 }
 
-/* Clarity / Separation of Responsibilities — smaller top-right tags */
-html body .openms-lib-page--governance #responsibilities .openms-lib-resources__item-tag {
+/* Clarity / Core developers — smaller top-right tags */
+html body .openms-lib-page--governance #responsibilities .openms-lib-resources__item-tag,
+html body .openms-lib-page--governance #core-developers .openms-lib-resources__item-tag {
   font-size: 0.625rem !important;
   letter-spacing: 0.08em !important;
 }
@@ -587,30 +583,287 @@ html body .openms-lib-page--research-partnerships .rp-application__form {
 }
 
 /* Scientific & technical support — thin border around the quote form */
-html body .openms-lib-page--services-support .services-support-application__form {
+html body .openms-lib-page--services-support .services-support-application__form,
+html body .openms-lib-page--services-support .services-page__form-body {
   border: 1px solid rgba(var(--openms-navy-rgb), 0.16) !important;
   border-radius: 1rem !important;
-  padding: clamp(1rem, 2.4vw, 1.5rem) !important;
+  padding: 0.75rem 1rem 0.5rem !important;
   background: var(--openms-white, #fff) !important;
   box-sizing: border-box;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
 }
 
-/* Community events — keep cards white on hover */
+html body .openms-lib-page--services-support .services-page__form-body {
+  border: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+html body .openms-lib-page--services-support .services-page__tally-iframe {
+  display: block !important;
+  width: 100% !important;
+  min-height: 960px !important;
+  max-height: none !important;
+  overflow: visible !important;
+  margin: 0 !important;
+}
+
+/* Calendar — one white surface (inner link), wrappers stay clear */
+html body .openms-lib-page--calendar .community-events-home__item,
 html body .openms-lib-page--calendar .community-events-home__card,
 html body .openms-lib-page--calendar .community-events-home__card:hover,
 html body .openms-lib-page--calendar .community-events-home__card:focus-within,
 html body .openms-lib-page--calendar .community-news-events__press-card,
-html body .openms-lib-page--calendar .community-news-events__press-card:hover,
+html body .openms-lib-page--calendar .community-news-events__press-card:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+html body .openms-lib-page--calendar .events-past-toolbar__hint {
+  display: none !important;
+}
+
+html body .openms-lib-page--calendar .events-past-toolbar {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.75rem !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+html body .openms-lib-page--calendar .events-past-toolbar__intro {
+  display: flex !important;
+  align-items: center !important;
+  min-width: 0 !important;
+}
+
+html body .openms-lib-page--calendar .events-past-toolbar__select {
+  min-height: 0 !important;
+  height: 2rem !important;
+  padding: 0.2rem 1.75rem 0.2rem 0.65rem !important;
+  font-size: 0.8125rem !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+@media (min-width: 901px) {
+  html body .openms-lib-page--calendar .community-events-page {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-rows: auto 1fr !important;
+    align-items: start !important;
+    column-gap: clamp(1.5rem, 3vw, 2.75rem) !important;
+    row-gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem)) !important;
+  }
+
+  html body .openms-lib-page--calendar .community-events-page__section {
+    display: grid !important;
+    grid-template-rows: subgrid !important;
+    grid-row: 1 / span 2 !important;
+    gap: 0 !important;
+    align-items: start !important;
+  }
+
+  html body .openms-lib-page--calendar .community-events-page__header,
+  html body .openms-lib-page--calendar .events-past-toolbar {
+    grid-row: 1 !important;
+    align-self: end !important;
+    margin: 0 !important;
+  }
+
+  html body .openms-lib-page--calendar .community-events-page__grid,
+  html body .openms-lib-page--calendar .community-events-page__empty,
+  html body .openms-lib-page--calendar .events-past-panel__entries {
+    grid-row: 2 !important;
+  }
+}
+
 html body .openms-lib-page--calendar a.community-news-events__press-link,
 html body .openms-lib-page--calendar a.community-news-events__press-link:hover,
 html body .openms-lib-page--calendar a.community-news-events__press-link:focus-visible,
+html body .openms-lib-page--calendar a.community-news-events__press-link:focus-within,
+html body .openms-lib-page--calendar .community-news-events__press-link,
+html body .openms-lib-page--calendar .community-news-events__press-link--static,
+html body .openms-lib-page--calendar .community-news-events__press-link--static:hover,
 html body .openms-lib-page--calendar .community-events-home__card-link,
 html body .openms-lib-page--calendar .community-events-home__card-link:hover,
 html body .openms-lib-page--calendar .community-events-home__card-link:focus-visible,
+html body .openms-lib-page--calendar .community-events-home__card-link:focus-within,
+html body .openms-lib-page--calendar .community-events-upcoming-layout .community-events-home__card-link:hover,
+html body .openms-lib-page--calendar .community-events-upcoming-layout .community-events-home__card-link:focus-visible,
 html body .openms-lib-page--calendar .events-past-card,
-html body .openms-lib-page--calendar .events-past-card:hover {
+html body .openms-lib-page--calendar .events-past-card:hover,
+html body .openms-lib-page--calendar .events-past-card:focus-within {
   background: var(--openms-white) !important;
   background-color: var(--openms-white) !important;
+  transform: none !important;
+  box-shadow: 0 0.25rem 1rem rgba(var(--openms-navy-rgb), 0.06) !important;
+  border-color: rgba(var(--openms-navy-rgb), 0.1) !important;
+  border-radius: 1.25rem !important;
+}
+
+html body .openms-lib-page--calendar :is(
+  a.community-news-events__press-link,
+  .community-events-home__card-link,
+  .events-past-card
+):is(:hover, :focus-visible, :focus-within) :is(
+  .community-news-events__press-title,
+  .community-events-home__card-title,
+  .events-past-card__title,
+  .events-past-card__title-link
+) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+/* Calendar cards + headers match homepage Latest news */
+html body .openms-lib-page--calendar .community-events-page__header,
+html body .openms-lib-page--calendar .events-past-toolbar {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  gap: 1rem 1.25rem !important;
+  padding-bottom: 0.85rem !important;
+  border-bottom: 1px solid rgba(var(--openms-navy-rgb), 0.1) !important;
+  background: transparent !important;
+}
+
+html body .openms-lib-page--calendar .community-events-page__title,
+html body .openms-lib-page--calendar .events-past-toolbar__title {
+  margin: 0 !important;
+  font-size: var(--home-section-head-title-size, var(--openms-section-title-size, calc(var(--openms-heading-lg-size) * 1.15))) !important;
+  font-weight: var(--openms-heading-lg-weight, 800) !important;
+  line-height: 1.3 !important;
+  letter-spacing: normal !important;
+  text-transform: uppercase !important;
+}
+
+html body .openms-lib-page--calendar .community-events-home__grid {
+  gap: clamp(1.15rem, 2.2vw, 1.5rem) !important;
+}
+
+html body .openms-lib-page--calendar .community-news-events__press-link,
+html body .openms-lib-page--calendar .community-news-events__press-link--static,
+html body .openms-lib-page--calendar .community-events-home__card-link {
+  display: block !important;
+  padding: clamp(1.6rem, 2.8vw, 1.85rem) !important;
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.1) !important;
+  border-radius: 1.25rem !important;
+  overflow: hidden !important;
+  background: var(--openms-white) !important;
+  box-shadow: 0 0.25rem 1rem rgba(var(--openms-navy-rgb), 0.06) !important;
+  transform: none !important;
+}
+
+html body .openms-lib-page--calendar .community-events-upcoming-layout .community-events-home__card-link,
+html body .openms-lib-page--calendar .community-events-upcoming-layout .community-events-home__card-link--split {
+  display: block !important;
+  grid-template-columns: none !important;
+}
+
+html body .openms-lib-page--calendar .community-news-events__press-meta {
+  margin: 0 0 0.75rem !important;
+}
+
+html body .openms-lib-page--calendar .community-news-events__press-title {
+  margin: 0 0 0.75rem !important;
+  font-size: var(--openms-card-title-size, clamp(1rem, 1.4vw, 1.1rem)) !important;
+  font-weight: var(--openms-card-title-weight, 700) !important;
+  line-height: 1.3 !important;
+}
+
+html body .openms-lib-page--calendar .community-news-events__press-summary {
+  margin: 0 !important;
+}
+
+/* News listing — same card hover as /calendar/ */
+html body .openms-lib-page--news .community-events-home__card,
+html body .openms-lib-page--news .community-events-home__card:hover,
+html body .openms-lib-page--news .community-events-home__card:focus-within,
+html body .openms-lib-page--news .community-news-events__press-card,
+html body .openms-lib-page--news .community-news-events__press-card:hover,
+html body .openms-lib-page--news .news-entry:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+html body .openms-lib-page--news a.community-news-events__press-link,
+html body .openms-lib-page--news a.community-news-events__press-link:hover,
+html body .openms-lib-page--news a.community-news-events__press-link:focus-visible,
+html body .openms-lib-page--news a.community-news-events__press-link:focus-within,
+html body .openms-lib-page--news .community-news-events__press-link,
+html body .openms-lib-page--news .news-home__card-link,
+html body .openms-lib-page--news .news-home__card-link:hover,
+html body .openms-lib-page--news .news-home__card-link:focus-visible,
+html body .openms-lib-page--news .news-home__card-link:focus-within {
+  display: block !important;
+  padding: clamp(1.6rem, 2.8vw, 1.85rem) !important;
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.1) !important;
+  border-radius: 1.25rem !important;
+  overflow: hidden !important;
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  background-image: none !important;
+  box-shadow: 0 0.25rem 1rem rgba(var(--openms-navy-rgb), 0.06) !important;
+  border-color: rgba(var(--openms-navy-rgb), 0.1) !important;
+  transform: none !important;
+}
+
+html body .openms-lib-page--news :is(
+  a.community-news-events__press-link,
+  .news-home__card-link
+):is(:hover, :focus-visible, :focus-within) :is(
+  .community-news-events__press-title,
+  .news-home__card-title
+) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body .openms-lib-page--calendar .community-events-page__section {
+  gap: 2.25rem !important;
+}
+
+@media (min-width: 901px) {
+  html body .openms-lib-page--calendar .community-events-page__section {
+    gap: 0 !important;
+  }
+
+  html body .openms-lib-page--calendar .community-events-page__grid,
+  html body .openms-lib-page--calendar .community-events-page__empty,
+  html body .openms-lib-page--calendar .events-past-panel__entries {
+    padding-top: 2.25rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+}
+
+html body .openms-lib-page--calendar .community-events-page__grid,
+html body .openms-lib-page--calendar .community-events-page__empty,
+html body .openms-lib-page--calendar .events-past-panel__entries {
+  padding-bottom: 2.5rem !important;
+}
+
+html body .openms-lib-layout:has(.openms-lib-page--calendar),
+html body .content-padding:has(.openms-lib-page--calendar) {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-layout:has(.openms-lib-page--calendar) + #footer.footer-redesign,
+html body .content-padding:has(.openms-lib-page--calendar) + #footer.footer-redesign {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 /* Get involved / Ways to contribute — all copy white on card hover */
@@ -650,6 +903,31 @@ html body .openms-lib-page--contribute #ways-to-contribute .contribute-track__it
   box-shadow: none !important;
 }
 
+html body .openms-lib-page--contribute #ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon :is(
+  i,
+  .fas,
+  .svg-inline--fa,
+  .svg-inline--fa path,
+  svg,
+  svg path
+),
+html body .openms-lib-page--contribute #ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-buttons .openms-lib-btn :is(
+  i,
+  .fab,
+  .fas,
+  .fa-windows,
+  .fa-apple,
+  .fa-linux,
+  .svg-inline--fa,
+  .svg-inline--fa path,
+  svg,
+  svg path
+) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: var(--openms-white) !important;
+}
+
 /* Outreach / Community coordination — links gray; icons blue on hover */
 html body .openms-lib-page--contribute .contribute-outreach__contact a,
 html body .openms-lib-page--contribute .contribute-outreach__social-link,
@@ -660,10 +938,15 @@ html body .openms-lib-page--contribute .contribute-outreach__social-link :is(
   .contribute-outreach__social-icon,
   i,
   .fab,
-  .fas
+  .fas,
+  .fa-discord,
+  .fa-github,
+  .fa-linkedin-in,
+  .svg-inline--fa
 ) {
   color: rgba(var(--openms-dark-rgb), 0.72) !important;
   -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  fill: currentColor !important;
 }
 
 html body .openms-lib-page--contribute .contribute-outreach__social-link:hover .contribute-outreach__social-icon,
@@ -673,6 +956,129 @@ html body .openms-lib-page--contribute .contribute-outreach__social-link:focus-v
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
   fill: currentColor !important;
+}
+
+html body .openms-lib-page--contribute .contribute-channels__eyebrow,
+html body .openms-lib-page--contribute .contribute-ways__eyebrow,
+html body .openms-lib-page--contribute .contribute-support__kicker,
+html body .openms-lib-page--contribute .contribute-outreach__eyebrow,
+html body .openms-lib-page--contribute .contribute-coc-band__kicker,
+html body .openms-lib-page--contribute .openms-lib-hero__eyebrow {
+  font-size: var(--home-eyebrow-size, 0.75rem) !important;
+  font-weight: var(--home-eyebrow-weight, 650) !important;
+  letter-spacing: var(--home-eyebrow-tracking, 0.16em) !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+}
+
+html body .openms-lib-page--contribute .openms-lib-hero__title,
+html body .openms-lib-page--contribute .openms-lib-hero__title .openms-lib-hero__accent {
+  display: inline !important;
+  white-space: nowrap !important;
+  max-width: none !important;
+  text-wrap: nowrap !important;
+}
+
+@media (max-width: 520px) {
+  html body .openms-lib-page--contribute .openms-lib-hero__title,
+  html body .openms-lib-page--contribute .openms-lib-hero__title .openms-lib-hero__accent {
+    white-space: normal !important;
+    text-wrap: balance !important;
+  }
+}
+
+html body .openms-lib-page--contribute .contribute-channels__title,
+html body .openms-lib-page--contribute .contribute-ways__title,
+html body .openms-lib-page--contribute .contribute-support__title,
+html body .openms-lib-page--contribute .contribute-outreach__title,
+html body .openms-lib-page--contribute .contribute-coc-band__text strong {
+  font-size: var(--home-section-head-title-size, var(--openms-section-title-size, calc(var(--openms-heading-lg-size) * 1.15))) !important;
+  font-weight: var(--openms-heading-lg-weight, 800) !important;
+  line-height: 1.3 !important;
+  letter-spacing: normal !important;
+  text-transform: uppercase !important;
+}
+
+html body .openms-lib-page--contribute .contribute-channel__link,
+html body .openms-lib-page--contribute .contribute-channel__link:link,
+html body .openms-lib-page--contribute .contribute-channel__link:visited,
+html body .openms-lib-page--contribute .contribute-channel__link:hover,
+html body .openms-lib-page--contribute .contribute-channel__link:focus-visible,
+html body .openms-lib-page--contribute .contribute-channel__link:active,
+html body .openms-lib-page--contribute .contribute-channel:hover .contribute-channel__link,
+html body .openms-lib-page--contribute .contribute-channel:focus-within .contribute-channel__link,
+html body .openms-lib-page--contribute .contribute-channel__link span,
+html body .openms-lib-page--contribute .contribute-channel:hover .contribute-channel__link span,
+html body .openms-lib-page--contribute .contribute-channel:focus-within .contribute-channel__link span {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body .openms-lib-page--contribute .contribute-outreach__text,
+html body .openms-lib-page--contribute .contribute-outreach__contact,
+html body .openms-lib-page--contribute .contribute-support__text,
+html body .openms-lib-page--contribute .contribute-channels__lead {
+  font-size: var(--openms-body-size-lg) !important;
+  line-height: 1.65 !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support__copy,
+html body .openms-lib-page--contribute .contribute-support__text {
+  max-width: none !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support__text {
+  white-space: nowrap !important;
+  text-wrap: nowrap !important;
+}
+
+@media (max-width: 900px) {
+  html body .openms-lib-page--contribute .contribute-support__text {
+    white-space: normal !important;
+    text-wrap: pretty !important;
+  }
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute .contribute-track__icon,
+html body .openms-lib-page--contribute #ways-to-contribute .contribute-track__icon :is(.fab, .fas, .svg-inline--fa) {
+  font-size: clamp(1.65rem, 2.6vw, 2.05rem) !important;
+  width: 1em !important;
+  height: 1em !important;
+}
+
+/* pyOpenMS For Developers — cards hug their content */
+/* WebApps Examples — eyebrow + Browse all apps stay blue */
+html body .openms-lib-page--webapps-pro #examples .openms-lib-resources__eyebrow,
+html body .openms-lib-page--webapps-pro #examples .openms-lib-resources__eyebrow .section-eyebrow-icon,
+html body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-link,
+html body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-link span,
+html body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-link:hover,
+html body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-link:focus-visible,
+html body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-link:hover span,
+html body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-link:focus-visible span {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__cards-grid {
+  align-items: start !important;
+  grid-auto-rows: auto !important;
+}
+
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card,
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card--box,
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card--interactive,
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card--link,
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__cards-grid > .openms-lib-developers__card,
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card:hover,
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card:focus-visible,
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card:focus-within {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  align-self: start !important;
+  align-content: start !important;
+  grid-template-rows: auto !important;
 }
 
 /* For Developers — keep Linux / macOS / Windows pills visible on blue hover */
@@ -721,10 +1127,11 @@ html body .openms-lib-page--solution #for-developers .openms-lib-developers__car
 }
 
 /* Home hero — “Open-source · Free forever” on the dark band */
+html body .home-page .home-page__hero p.hero-home__eyebrow,
 html body .home-page .home-page__hero .hero-home__eyebrow,
 html body .home-page .hero-home__eyebrow {
-  color: rgba(var(--openms-white-rgb), 0.88) !important;
-  -webkit-text-fill-color: rgba(var(--openms-white-rgb), 0.88) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
 }
 
 /* Home Ecosystem — header + platform tags in white */
@@ -785,4 +1192,714 @@ html body .home-page .community-events-home--with-news .community-events-home__c
     margin-bottom: 0 !important;
     white-space: nowrap !important;
   }
+}
+
+/* Calendar — same content rail as other solution pages */
+html body .openms-lib-page--calendar {
+  --calendar-max: var(--pro-max, 75rem);
+}
+
+html body .openms-lib-page--calendar .openms-lib-page__body > .openms-lib-page__anchor > .openms-lib-block,
+html body .openms-lib-page--calendar .community-calendar-block,
+html body .openms-lib-page--calendar .community-events-page {
+  width: 100% !important;
+  max-width: var(--pro-max, 75rem) !important;
+}
+
+/* Scientific & technical support — white surfaces, readable copy, form hugs height */
+html body .openms-lib-page--services-support .openms-lib-page__intro,
+html body .openms-lib-page--services-support .openms-lib-hero,
+html body .openms-lib-page--services-support .openms-lib-hero--pro,
+html body .openms-lib-page--services-support .openms-lib-hero--solution,
+html body .openms-lib-page--services-support .openms-lib-hero__panel,
+html body .openms-lib-page--services-support #quote,
+html body .openms-lib-page--services-support .services-support-application {
+  background: var(--openms-white, #fff) !important;
+  background-color: var(--openms-white, #fff) !important;
+}
+
+html body .openms-lib-page--services-support .openms-lib-hero__title,
+html body .openms-lib-page--services-support .openms-lib-hero__accent,
+html body .openms-lib-page--services-support .openms-lib-hero__lead,
+html body .openms-lib-page--services-support .services-support-application__head .openms-lib-resources__title,
+html body .openms-lib-page--services-support .services-support-application__head .openms-lib-resources__lead {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+html body .openms-lib-page--services-support .openms-lib-hero__eyebrow,
+html body .openms-lib-page--services-support .openms-lib-hero__eyebrow .section-eyebrow-icon,
+html body .openms-lib-page--services-support .services-support-application__head .openms-lib-resources__eyebrow,
+html body .openms-lib-page--services-support .services-support-application__head .section-eyebrow-icon {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  fill: currentColor !important;
+}
+
+html body .openms-lib-page--services-support .services-page__tally-iframe {
+  display: block !important;
+  width: 100% !important;
+  min-height: 960px !important;
+  max-height: none !important;
+  overflow: visible !important;
+  margin: 0 !important;
+}
+
+/* Sponsor Us — “About OpenMS Inc.” stays blue */
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile-link,
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile-link span,
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile:hover .openms-lib-about__tile-link,
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile:hover .openms-lib-about__tile-link span,
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile-link:hover,
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile-link:focus-visible {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+/* Research partnerships — hero title on three lines */
+html body .openms-lib-page--research-partnerships .openms-lib-hero__title {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  white-space: normal !important;
+  text-wrap: unset !important;
+}
+
+html body .openms-lib-page--research-partnerships .openms-lib-hero__title-line {
+  display: block !important;
+  white-space: nowrap !important;
+}
+
+html body .openms-lib-page--research-partnerships .openms-lib-hero,
+html body .openms-lib-page--research-partnerships .openms-lib-hero__panel,
+html body .openms-lib-page--research-partnerships .openms-lib-hero__content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin-inline: auto !important;
+  width: 100% !important;
+}
+
+html body .openms-lib-page--research-partnerships .openms-lib-hero__eyebrow,
+html body .openms-lib-page--research-partnerships .openms-lib-hero__title,
+html body .openms-lib-page--research-partnerships .openms-lib-hero__title-line,
+html body .openms-lib-page--research-partnerships .openms-lib-hero__lead {
+  text-align: center !important;
+  margin-inline: auto !important;
+  justify-content: center !important;
+}
+
+html body .openms-lib-page--research-partnerships .openms-lib-hero__actions {
+  justify-content: center !important;
+  margin-inline: auto !important;
+}
+
+/* Governance — hero title on two lines */
+html body .openms-lib-page--governance .openms-lib-hero__title {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  white-space: normal !important;
+  text-wrap: unset !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+html body .openms-lib-page--governance .openms-lib-hero__title-line {
+  display: block !important;
+  width: auto !important;
+  white-space: nowrap !important;
+}
+
+html body .openms-lib-page--governance .openms-lib-hero__lead {
+  max-width: 52rem !important;
+}
+
+html body .openms-lib-page--governance .openms-lib-hero__lead-line {
+  display: block !important;
+}
+
+html body .openms-lib-page--governance .governance-membership__cards::before {
+  left: calc(32% + 0.75rem) !important;
+  right: calc(32% + 0.75rem) !important;
+}
+
+html body .openms-lib-page--governance #responsibilities .openms-lib-about__head,
+html body .openms-lib-page--governance #responsibilities .openms-lib-about__head-copy,
+html body .openms-lib-page--governance #responsibilities .openms-lib-about__lead {
+  max-width: min(48rem, 100%) !important;
+}
+
+html body .openms-lib-page--sponsor-us .openms-lib-hero__lead {
+  max-width: max-content !important;
+  width: 100% !important;
+  text-wrap: unset !important;
+}
+
+html body .openms-lib-page--sponsor-us .openms-lib-hero__lead-line {
+  display: block !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 720px) {
+  html body .openms-lib-page--sponsor-us .openms-lib-hero__lead-line {
+    white-space: normal !important;
+  }
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq-pro__lead {
+  max-width: min(48rem, 100%) !important;
+}
+
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__lead {
+  max-width: max-content !important;
+  text-wrap: unset !important;
+}
+
+html body .openms-lib-page--sponsor-us #why-sponsor .sponsor-lead-line {
+  display: block !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 720px) {
+  html body .openms-lib-page--sponsor-us #why-sponsor .sponsor-lead-line {
+    white-space: normal !important;
+  }
+}
+
+/* Governance — How Core Developers Fit In navy cards */
+html body .openms-lib-page--governance #core-developers .governance-pillars-grid .openms-lib-resources__item,
+html body .openms-lib-page--governance #core-developers .governance-pillars-grid .openms-lib-resources__item :is(
+  h3,
+  p,
+  span,
+  .openms-lib-resources__item-title,
+  .openms-lib-resources__item-tag,
+  .openms-lib-resources__item-icon,
+  i,
+  .fas,
+  .svg-inline--fa,
+  .svg-inline--fa path
+) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+/* Home Ecosystem — title and lead white on the navy band */
+html body .home-page .home-page__block--ecosystem h2.ecosystem-home__title,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__title,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__title-accent,
+html body .home-page .home-page__block--ecosystem p.ecosystem-home__lead,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__lead {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+/* Home Community — eyebrow and title white on the photo band */
+html body .home-page .community-home p.community-home__eyebrow,
+html body .home-page .community-home .community-home__eyebrow,
+html body .home-page .community-home .community-home__eyebrow-icon,
+html body .home-page .community-home h2.community-home__title,
+html body .home-page .community-home .community-home__title,
+html body .home-page .community-home .community-home__title-accent {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+/* Footer — all labels and links white on navy */
+html body #footer.footer-redesign,
+html body #footer.footer-redesign :is(
+  h1, h2, h3, h4, p, li, a, span, strong, small,
+  .footer-group-heading,
+  .footer-tagline,
+  .footer-title,
+  .footer-copyright,
+  .footer-nav a
+),
+html body #footer.footer-redesign a:visited,
+html body #footer.footer-redesign a:hover,
+html body #footer.footer-redesign a:focus-visible {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+/* Contribute — same section rhythm as /openms-lib/ */
+html body .openms-lib-page--contribute {
+  --contribute-section-y: var(--sol-section-y, clamp(3.5rem, 7vw, 5.25rem));
+}
+
+html body .openms-lib-page--contribute .openms-lib-page__body > .openms-lib-page__anchor,
+html body .openms-lib-page--contribute #communication-channels.openms-lib-page__anchor,
+html body .openms-lib-page--contribute #ways-to-contribute.openms-lib-page__anchor,
+html body .openms-lib-page--contribute #code-of-conduct.openms-lib-page__anchor,
+html body .openms-lib-page--contribute .openms-lib-page__outro > .openms-lib-page__anchor {
+  padding-block: var(--sol-section-y, clamp(3.5rem, 7vw, 5.25rem)) !important;
+}
+
+html body .openms-lib-page--contribute #communication-channels.openms-lib-page__anchor {
+  padding-top: clamp(5rem, 10vw, 7.5rem) !important;
+  padding-bottom: clamp(5rem, 10vw, 7.5rem) !important;
+}
+
+html body .openms-lib-page--contribute .contribute-ways {
+  padding-block: 0 !important;
+  gap: var(--sol-section-y, clamp(3.5rem, 7vw, 5.25rem)) !important;
+}
+
+html body .openms-lib-page--contribute .contribute-channels__head,
+html body .openms-lib-page--contribute .contribute-ways__head {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+html body .openms-lib-page--contribute .contribute-channels {
+  display: grid !important;
+  gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem)) !important;
+  padding-top: clamp(3.5rem, 7vw, 5.25rem) !important;
+  padding-bottom: clamp(3.5rem, 7vw, 5.25rem) !important;
+}
+
+html body .openms-lib-page--contribute .contribute-track {
+  padding-block: 0 !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support {
+  margin-top: 0 !important;
+}
+
+html body .openms-lib-page--contribute .contribute-outreach {
+  padding-block: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Code of Conduct — Overview cards: all copy gray */
+html body .openms-lib-page--code-of-conduct .coc-principle,
+html body .openms-lib-page--code-of-conduct .coc-principle :is(
+  h3,
+  p,
+  span,
+  .coc-principle__num,
+  .coc-principle__title,
+  .coc-principle__text
+),
+html body .openms-lib-page--code-of-conduct .coc-principle:is(:hover, :focus-within) :is(
+  h3,
+  p,
+  span,
+  .coc-principle__num,
+  .coc-principle__title,
+  .coc-principle__text
+) {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+/* Code of Conduct — Full policy: drop the index numbers */
+html body .openms-lib-page--code-of-conduct .coc-details__index {
+  display: none !important;
+}
+
+/* Developer retreat hero — center on the page */
+html body .openms-lib-page--developer-retreat .openms-lib-page__intro,
+html body .openms-lib-page--developer-retreat .openms-lib-hero,
+html body .openms-lib-page--developer-retreat .openms-lib-hero__panel,
+html body .openms-lib-page--developer-retreat .openms-lib-hero__content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin-inline: auto !important;
+  width: 100% !important;
+}
+
+html body .openms-lib-page--developer-retreat .openms-lib-hero__eyebrow,
+html body .openms-lib-page--developer-retreat .openms-lib-hero__title,
+html body .openms-lib-page--developer-retreat .openms-lib-hero__title-line,
+html body .openms-lib-page--developer-retreat .openms-lib-hero__lead {
+  text-align: center !important;
+  margin-inline: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html body .openms-lib-page--developer-retreat .openms-lib-hero__title {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+html body .openms-lib-page--developer-retreat .openms-lib-hero__title-line {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  white-space: nowrap !important;
+}
+
+html body .openms-lib-page--developer-retreat .openms-lib-hero__lead {
+  max-width: min(42rem, 100%) !important;
+}
+
+@media (min-width: 721px) {
+  html body .openms-lib-page--developer-retreat .openms-lib-hero__title-line {
+    display: block !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Contributors — Executive Committee stays 2 columns on phones */
+@media (max-width: 960px) {
+  html body .openms-lib-page--contributors #executive-committee .members,
+  html body .openms-lib-page--contributors .contributors-exec-gallery .members {
+    display: grid !important;
+    justify-items: center;
+    grid-template-columns: repeat(2, minmax(0px, 1fr)) !important;
+  }
+}
+
+/* Sponsor Us — About OpenMS Inc. text link stays blue */
+html body .openms-lib-page--sponsor-us a.openms-lib-about__tile-link,
+html body .openms-lib-page--sponsor-us a.openms-cta-link,
+html body .openms-lib-page--sponsor-us a.openms-lib-about__tile-link span,
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile:hover a.openms-lib-about__tile-link,
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile:hover a.openms-lib-about__tile-link span,
+html body .openms-lib-page--sponsor-us a.openms-lib-about__tile-link:visited {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body .home-page .home-page__hero p.hero-home__eyebrow,
+html body .home-page .home-page__hero .hero-home__eyebrow {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body .navbar.is-fresh .navbar-dropdown a.navbar-item:hover,
+html body .navbar.is-fresh .navbar-dropdown a.navbar-item:focus-visible,
+html body .navbar.is-fresh .navbar-dropdown a.navbar-item.is-nested:hover,
+html body .navbar.is-fresh .navbar-dropdown a.navbar-item.is-nested:focus-visible,
+html body #navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item:hover,
+html body #navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item:focus-visible,
+html body #navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item.is-nested:hover,
+html body #navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item.is-nested:focus-visible {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body .home-page .home-page__block--ecosystem p.ecosystem-home__eyebrow,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__eyebrow,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__eyebrow-icon,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__eyebrow-icon svg,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__eyebrow-icon svg path,
+html body .home-page .home-page__block--ecosystem h2.ecosystem-home__title,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__title,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__title-accent {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+html body .home-page .home-page__block--ecosystem .ecosystem-home {
+  padding-top: calc(var(--home-section-pad, var(--pro-section-y, 4rem)) - 1.25rem) !important;
+}
+
+html body .home-page .home-page__block--projects .webapps-featured--home {
+  padding-top: calc(var(--home-projects-pad-y, var(--pro-section-y, 4rem)) - 1.25rem) !important;
+}
+
+html body .home-page .community-home p.community-home__eyebrow,
+html body .home-page .community-home .community-home__eyebrow,
+html body .home-page .community-home .community-home__eyebrow-icon,
+html body .home-page .community-home .community-home__eyebrow-icon svg,
+html body .home-page .community-home .community-home__eyebrow-icon svg path,
+html body .home-page .community-home h2.community-home__title,
+html body .home-page .community-home .community-home__title,
+html body .home-page .community-home .community-home__title-accent {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+/* Narrow blue text/arrow links stay blue on hover (not filled buttons) */
+html body :is(
+  .openms-cta-link,
+  .webapps-project-card__cta,
+  .webapps-project-card__cta-label,
+  .webapps-project-card__cta-icon,
+  .news-home__card-cta,
+  .contact-home__card-cta,
+  .community-events-home__card-cta,
+  .community-events-home__card-cta-icon,
+  .contribute-channel__link,
+  .contribute-track__cta,
+  .contribute-way__link,
+  .contribute-project-link,
+  .contribute-project-link__name,
+  .openms-lib-about__tile-link,
+  .openms-lib-developers__card-link,
+  .openms-lib-developers__platform-link,
+  .openms-lib-resources__examples-link,
+  .openms-lib-resources__explore-link,
+  .openms-lib-list__link,
+  .openms-lib-topp__cta,
+  .openms-lib-topp-split__card-link,
+  .openms-lib-resources__item-link,
+  .coc-report__link,
+  .privacy-overview__note-link,
+  .contact-page__path-link,
+  .webapps-featured__extra-link,
+  .webapps-featured__show-all,
+  .webapps-featured__show-all-icon,
+  .ecosystem-home__card-link,
+  .ecosystem-home__card-link-icon,
+  .community-news-events__view-all,
+  .community-news-events__view-all-icon,
+  .community-events-home__view-all--inline,
+  .publications-cite-card__action,
+  .news-entry__action,
+  .trusted-by__wall-cta,
+  .home-pathways__step-go,
+  .events-past-card__title-link
+):is(:hover, :focus-visible, :visited),
+html body :is(
+  .webapps-project-card__surface,
+  .news-home__card,
+  .community-events-home__card,
+  .community-news-events__press-link,
+  .contribute-channel,
+  .contribute-track__item,
+  .openms-lib-about__tile,
+  .openms-lib-resources__item,
+  .ecosystem-home__card,
+  .trusted-by__wall-card,
+  .home-pathways__step
+):is(:hover, :focus-within) :is(
+  .openms-cta-link,
+  .webapps-project-card__cta,
+  .webapps-project-card__cta-label,
+  .webapps-project-card__cta-icon,
+  .news-home__card-cta,
+  .community-events-home__card-cta,
+  .community-events-home__card-cta-icon,
+  .contribute-channel__link,
+  .contribute-track__cta,
+  .contribute-project-link,
+  .contribute-project-link__name,
+  .openms-lib-about__tile-link,
+  .openms-lib-resources__item-link,
+  .openms-lib-list__link,
+  .openms-lib-topp__cta,
+  .webapps-featured__show-all,
+  .ecosystem-home__card-link,
+  .ecosystem-home__card-link-icon,
+  .community-news-events__view-all,
+  .trusted-by__wall-cta,
+  .home-pathways__step-go
+) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body :is(
+  .openms-lib-developers__card,
+  .openms-lib-developers__card--interactive,
+  .openms-lib-developers__card--box,
+  .contact-home__card
+):is(:hover, :focus-within) :is(
+  .openms-lib-developers__card-link,
+  .openms-lib-developers__platform-link,
+  .contact-home__card-cta
+) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body .openms-lib-page--contact #contact-paths .openms-lib-resources__item-link,
+html body .openms-lib-page--contact #contact-paths .openms-lib-resources__item:is(:hover, :focus-visible, :focus-within) .openms-lib-resources__item-link,
+html body .openms-lib-page--contact #contact-paths a.openms-lib-resources__item:is(:hover, :focus-visible) .openms-lib-resources__item-link {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__explore-card {
+  background: #1c3d78 !important;
+}
+
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__explore-card:hover,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__explore-card:focus-visible {
+  background: #2550a0 !important;
+}
+
+/* Partnerships include — numbered columns like OpenMS-lib Overview */
+html body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__inner {
+  gap: var(--pro-head-to-content, 3.25rem) !important;
+}
+
+html body .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic,
+html body .openms-lib-page--research-partnerships .rp-include__mosaic {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+html body .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic > .openms-lib-about__tile,
+html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.1rem !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding-block: 0.35rem !important;
+  padding-inline: clamp(0.75rem, 1.6vw, 1.25rem) !important;
+  border: none !important;
+  border-right: 1px solid var(--sol-line, rgba(18, 36, 72, 0.12)) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  grid-column: auto !important;
+}
+
+html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:first-child {
+  padding-left: 0 !important;
+}
+
+html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:last-child {
+  border-right: none !important;
+  padding-right: 0 !important;
+}
+
+html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:hover,
+html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:focus-within {
+  background: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 960px) {
+  html body .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic,
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile,
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:first-child,
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:nth-child(4n),
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:nth-child(n + 5),
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:last-child {
+    border-right: none !important;
+    border-bottom: 1px solid var(--sol-line, rgba(18, 36, 72, 0.12)) !important;
+    border-top: none !important;
+    padding-inline: 0.85rem !important;
+    padding-block: 1.15rem !important;
+  }
+
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:nth-child(odd) {
+    padding-left: 0 !important;
+    padding-right: 0.85rem !important;
+  }
+
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:nth-child(even) {
+    padding-right: 0 !important;
+    padding-left: 0.85rem !important;
+  }
+
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:nth-last-child(-n + 1) {
+    border-bottom: none !important;
+  }
+}
+
+@media (max-width: 700px) {
+  html body .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic,
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic {
+    grid-template-columns: 1fr !important;
+  }
+
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile,
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:nth-child(odd),
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:nth-child(even) {
+    border-right: none !important;
+    border-bottom: 1px solid var(--sol-line, rgba(18, 36, 72, 0.12)) !important;
+    padding-inline: 0 !important;
+    padding-block: 1.15rem !important;
+  }
+
+  html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:last-child {
+    border-bottom: none !important;
+  }
+}
+
+/* Contributors — Executive Committee sits flush to the footer */
+html body .openms-lib-page--contributors #executive-committee .openms-lib-resources {
+  padding-bottom: 0 !important;
+}
+
+html body .openms-lib-page--contributors .contributors-exec-note {
+  margin-bottom: 2.5rem !important;
+}
+
+html body .openms-lib-page--contributors .openms-lib-page__outro {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+html body .openms-lib-page--contributors #join-community.openms-lib-page__anchor {
+  display: none !important;
+}
+
+html body .openms-lib-layout:has(.openms-lib-page--contributors),
+html body .content-padding:has(.openms-lib-page--contributors) {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-layout:has(.openms-lib-page--contributors) + #footer.footer-redesign,
+html body .content-padding:has(.openms-lib-page--contributors) + #footer.footer-redesign {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+html body .openms-lib-page--calendar :is(
+  .community-events-home__item,
+  .community-events-home__card,
+  .community-news-events__press-card,
+  .community-news-events__press-link,
+  .community-news-events__press-link--static,
+  a.community-news-events__press-link,
+  .community-events-home__card-link,
+  .community-events-home__card-link--static,
+  .events-past-card
+):is(:hover, :focus-visible, :focus-within, :active) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  background-image: none !important;
+  border-radius: 1.25rem !important;
+}
+
+html body .openms-lib-page--news :is(
+  .community-events-home__card,
+  .community-news-events__press-card,
+  .community-news-events__press-link,
+  a.community-news-events__press-link,
+  .news-home__card-link
+):is(:hover, :focus-visible, :focus-within, :active) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  background-image: none !important;
+  border-radius: 1.25rem !important;
+  transform: none !important;
 }

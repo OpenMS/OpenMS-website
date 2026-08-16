@@ -66,7 +66,7 @@
   overflow: visible;
 }
 
-.openms-lib-page--contribute .openms-lib-hero__content {
+.openms-lib-page--contribute  {
   gap: 0;
 }
 
@@ -129,8 +129,7 @@
 }
 
 .openms-lib-page--contribute #communication-channels.openms-lib-page__anchor {
-  /* Clear the hero blue → white edge, then standard section rhythm */
-  padding-top: calc(var(--contribute-section-y) + var(--pro-space-6, 2.5rem));
+  padding-top: var(--contribute-section-y);
 }
 
 /* Shared kickers */
@@ -307,7 +306,7 @@
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--pro-card-gap, clamp(1rem, 2vw, 1.5rem));
   margin: 0;
-  padding: 0 var(--contribute-gutter) var(--contribute-section-y);
+  padding: 0 var(--contribute-gutter) 0;
   list-style: none;
   box-sizing: border-box;
   align-items: stretch;
@@ -706,7 +705,7 @@
    8. OUTREACH — copy + vertical social rail
    ═══════════════════════════════════════════ */
 .contribute-outreach {
-  padding: var(--contribute-section-y) var(--contribute-gutter) 0;
+  padding: var(--pro-head-to-content, var(--contribute-space-6)) var(--contribute-gutter) 0;
   background: transparent;
 }
 

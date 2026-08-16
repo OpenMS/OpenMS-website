@@ -320,7 +320,7 @@
   justify-items: center;
   align-items: center;
   width: 100%;
-  max-width: var(--pro-max, 72rem);
+
   margin-inline: auto;
   background: transparent !important;
   box-shadow: none !important;

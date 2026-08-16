@@ -1789,8 +1789,8 @@
   font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: none;
-  color: var(--olib-text-muted, rgba(var(--openms-navy-rgb), 0.68));
-  background: transparent;
+
+
   border: none;
   border-radius: 0;
   box-shadow: none;

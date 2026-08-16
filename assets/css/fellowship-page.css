@@ -28,7 +28,7 @@
 }
 
 /* Single-column hero with the "at a glance" chips side by side under the lead */
-.fellowship-page-layout .openms-lib-hero.fellowship-page-hero .openms-lib-hero__content {
+.fellowship-page-layout .openms-lib-hero.fellowship-page-hero  {
   grid-template-columns: minmax(0, 1fr);
   max-width: 46rem;
 }

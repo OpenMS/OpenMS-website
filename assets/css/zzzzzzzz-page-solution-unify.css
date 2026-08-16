@@ -833,7 +833,7 @@
 .openms-lib-page--contact .contact-application__form,
 .openms-lib-page--contact .contact-page__form-body {
   width: 100% !important;
-  max-width: 48rem !important;
+
   margin-inline: auto !important;
   padding: 0 !important;
   border: 0 !important;
@@ -1496,7 +1496,7 @@
 .openms-lib-page--fellowship .fellowship-application__form-card,
 .openms-lib-page--fellowship .fellowship-page__form-body {
   width: 100% !important;
-  max-width: min(100%, 56rem) !important;
+
   margin-inline: 0 !important;
   padding: clamp(1.15rem, 2.6vw, 1.75rem) !important;
   border: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.12)) !important;
@@ -1624,7 +1624,7 @@
 
 .openms-lib-page--fellowship .fellowship-application__form-card {
   width: 100% !important;
-  max-width: none !important;
+
   margin-inline: 0 !important;
   padding: clamp(1.15rem, 2.6vw, 1.75rem) !important;
   border: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.12)) !important;

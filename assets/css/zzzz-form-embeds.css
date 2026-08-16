@@ -12,19 +12,18 @@
 .openms-lib-page--services-support,
 .openms-lib-page--research-partnerships,
 .openms-lib-page--donate,
-.openms-lib-page--contact .openms-lib-page__intro,
+.openms-lib-page--contact,
 .openms-lib-page--contact .openms-lib-page__body,
 .openms-lib-page--contact .openms-lib-page__outro,
-.openms-lib-page--fellowship .openms-lib-page__intro,
+.openms-lib-page--fellowsh
 .openms-lib-page--fellowship .openms-lib-page__body,
 .openms-lib-page--fellowship .openms-lib-page__outro,
-.openms-lib-page--services-support .openms-lib-page__intro,
+.openms-lib-page--services-support 
 .openms-lib-page--services-support .openms-lib-page__body,
 .openms-lib-page--services-support .openms-lib-page__outro,
-.openms-lib-page--research-partnerships .openms-lib-page__intro,
+.openms-lib-page--research-partnerships 
 .openms-lib-page--research-partnerships .openms-lib-page__body,
 .openms-lib-page--research-partnerships .openms-lib-page__outro,
-.openms-lib-page--donate .openms-lib-page__intro,
 .openms-lib-page--donate .openms-lib-page__body,
 .openms-lib-page--donate .openms-lib-page__outro,
 .openms-lib-page--contact .openms-lib-page__body > .openms-lib-page__anchor,
@@ -68,8 +67,8 @@
 }
 
 /* Fellowship — clip Tally chrome; keep body/iframe measurable */
-.openms-lib-page--fellowship .fellowship-application__form-card,
-.fellowship-application__form-card,
+.openms-lib-page--fellowship
+
 .fellowship-page__form-card {
   overflow: hidden !important;
   max-height: none !important;
@@ -118,7 +117,8 @@
 
 .services-page__tally-iframe,
 .openms-lib-page--services-support .services-page__tally-iframe {
-  min-height: 48rem;
+  /* No tall floor — Tally dynamicHeight sets the real height */
+  min-height: 0 !important;
 }
 
 .rp-application__tally-iframe,
@@ -184,7 +184,7 @@
 
   .openms-lib-page--fellowship #fellowship-application .fellowship-application__head,
   .openms-lib-page--fellowship #fellowship-application .openms-lib-resources__lead,
-  .openms-lib-page--fellowship .fellowship-application__form-card,
+  .openms-lib-page--fellowship 
   .openms-lib-page--fellowship .fellowship-page__form-body,
   .fellowship-page__form-body {
     width: 100% !important;
@@ -200,7 +200,7 @@
     max-height: none !important;
   }
 
-  .openms-lib-page--fellowship .fellowship-application__form-card {
+  .openms-lib-page--fellowship  {
     padding: 0 !important;
     overflow: hidden !important;
     max-height: none !important;

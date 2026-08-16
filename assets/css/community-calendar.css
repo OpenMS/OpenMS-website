@@ -6,7 +6,7 @@
   --olib-bg-soft: #f4f6f9;
   --olib-text-muted: var(--openms-text-muted);
   --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
-  --calendar-max: 56rem;
+  --calendar-max: var(--pro-max, 75rem);
   --home-card-title-color: rgba(var(--openms-dark-rgb), 0.82);
   --home-body-color: var(--openms-text-muted);
 }

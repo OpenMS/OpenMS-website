@@ -43,23 +43,23 @@
 .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__head-copy {
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: center;
-  text-align: center;
+  justify-items: start;
+  text-align: left;
   width: 100%;
-  max-width: none;
+  max-width: min(100%, 42rem);
   margin: 0;
 }
 
 .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__eyebrow {
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__title,
 .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__lead {
   width: 100% !important;
   max-width: none !important;
-  margin-inline: auto;
-  text-align: center;
+  margin-inline: 0;
+  text-align: left;
 }
 
 .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__lead {

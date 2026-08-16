@@ -395,8 +395,8 @@
 
 .home-page .home-page__block--ecosystem .ecosystem-home__title,
 .home-page .home-page__block--ecosystem .ecosystem-home__title-accent {
-  color: var(--home-title-color, var(--openms-navy)) !important;
-  -webkit-text-fill-color: var(--home-title-color, var(--openms-navy));
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
 }
 
 .home-page--motion .home-page__block--ecosystem:not(.is-revealed) .ecosystem-home__header {

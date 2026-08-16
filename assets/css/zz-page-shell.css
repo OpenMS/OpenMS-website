@@ -36,11 +36,6 @@
   overflow: visible;
 }
 
-/* Governance hero — more breathing room under CTAs before Structure */
-.openms-lib-page--governance .openms-lib-hero--pro {
-  padding-bottom: calc(clamp(2.75rem, 5.5vw, 4.25rem) + var(--openms-btn-glow-size, 6px));
-}
-
 .openms-lib-page .openms-lib-page__body > .openms-lib-page__anchor:first-child,
 [class$="-page-layout"] .openms-lib-page__body > .openms-lib-page__anchor:first-child,
 .community-calendar-layout .openms-lib-page__body > .openms-lib-page__anchor:first-child {
@@ -148,7 +143,7 @@
 .home-page .ecosystem-home,
 .home-page .home-page__container,
 .home-page .community-home__inner,
-.home-page .home-page__block--partners .uni-partners--home,
+.home-page .home-page__block--partners .uni-partners--home .uni-partners__inner,
 .home-page .keyfeatures-modern,
 .home-page .contact-home__main,
 .home-page .community-events-home,
@@ -170,8 +165,7 @@
 .home-page .community-events-home__inner,
 .home-page .contact-home__inner,
 .home-page .contact-area__inner,
-.home-page .trusted-by__inner,
-.home-page .home-page__block--partners .uni-partners--home .uni-partners__inner {
+.home-page .trusted-by__inner {
   width: 100%;
   max-width: var(--pro-max);
   margin-inline: auto;
@@ -179,13 +173,10 @@
   box-sizing: border-box;
 }
 
-/* Partners logos sit on the same --pro-max rail as Featured Apps / Ecosystem */
-.home-page .home-page__block--partners .uni-partners--home .uni-partners__marquees,
-.home-page .home-page__block--partners .uni-partners--home .uni-partners__marquee,
-.home-page .home-page__block--partners .uni-partners--home .uni-partners__static {
-  margin-inline: 0;
-  width: 100%;
-  max-width: none;
+/* Partners marquee: bleed to the shared page gutter, not the old pad token */
+.home-page .home-page__block--partners .uni-partners--home .uni-partners__marquee {
+  margin-inline: calc(-1 * var(--openms-page-inline));
+  width: calc(100% + 2 * var(--openms-page-inline));
 }
 
 /* Generic shells that still used hardcoded rem caps */
