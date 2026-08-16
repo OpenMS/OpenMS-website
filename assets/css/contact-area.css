@@ -9,12 +9,26 @@
   padding: var(--home-section-pad, var(--home-section-space-y, var(--pro-section-y, clamp(4rem, 9vw, 6.5rem)))) var(--openms-page-inline);
 }
 
-main.home-page > section.home-page__cta:last-of-type .contact-home__main {
-  padding-bottom: var(--home-section-space-y, var(--pro-section-y, clamp(4rem, 9vw, 6.5rem)));
+/* Homepage Contact CTA — keep the block dead-center in the section/viewport */
+main.home-page > section.home-page__cta:last-of-type .contact-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  min-height: clamp(28rem, calc(100vh - 12rem), 42rem);
+  margin-bottom: 0;
 }
 
-main.home-page > section.home-page__cta:last-of-type .contact-home {
-  margin-bottom: 0;
+main.home-page > section.home-page__cta:last-of-type .contact-home__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: var(--home-section-space-y, var(--pro-section-y, clamp(4rem, 9vw, 6.5rem)));
+  padding-bottom: var(--home-section-space-y, var(--pro-section-y, clamp(4rem, 9vw, 6.5rem)));
 }
 
 main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redesign {
@@ -26,8 +40,10 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   max-width: var(--pro-max, var(--home-max, 75rem));
-  margin: 0 auto;
+  margin-inline: auto;
   text-align: center;
 }
 
@@ -45,7 +61,7 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  margin: 0 0 0.85rem;
+  margin: 0 0 var(--openms-stack-eyebrow, 12px);
   padding: 0.35rem 0.75rem;
   font-family: var(--openms-font-body);
   font-size: var(--openms-text-min);
@@ -93,7 +109,7 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
 }
 
 .contact-home__description {
-  margin: 0.85rem auto 0;
+  margin: var(--openms-stack-lead, 20px) auto 0;
   max-width: min(100%, var(--pro-measure-wide, 58ch));
   width: 100%;
   font-family: var(--openms-font-body);
@@ -410,7 +426,7 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
   justify-content: center;
   min-height: 2.75rem;
   padding: var(--openms-btn-padding, 0.7rem 1.25rem);
-  border: 2px solid rgba(var(--openms-navy-rgb), 0.2);
+  border: 2px solid rgba(var(--openms-navy), 0.4);
   border-radius: var(--openms-btn-pill-radius, 999px);
   background: transparent;
   color: var(--openms-navy);
@@ -460,7 +476,7 @@ main.home-page:has(> section.home-page__cta:last-of-type) + #footer.footer-redes
 .contact-area__line:hover,
 .contact-area__line:focus-visible {
   color: var(--openms-content-link-hover, var(--openms-blue));
-  text-decoration: underline;
+  text-decoration: none;
   outline: none;
 }
 

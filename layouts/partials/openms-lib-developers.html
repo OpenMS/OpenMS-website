@@ -18,7 +18,7 @@
 {{- $citeLabel := index $cfg "citeLabel" | default (printf "Cite %s" (index $citation "topic" | default "OpenMS")) -}}
 <section class="openms-lib-block openms-lib-block--developers openms-lib-developers--cards" id="for-developers" aria-labelledby="{{ $sectionId }}">
   <header class="openms-lib-developers__cards-head openms-lib-hub__reveal">
-    <p class="openms-lib-block__eyebrow">{{ $eyebrow }}</p>
+    <p class="openms-lib-block__eyebrow">{{ partial "section-eyebrow-icon.html" "people" }}{{ $eyebrow }}</p>
     <h2 id="{{ $sectionId }}" class="openms-lib-developers__title">{{ $title }}</h2>
     {{- with $lead }}
     <p class="openms-lib-developers__lead">{{ . }}</p>

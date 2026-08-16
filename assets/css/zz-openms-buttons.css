@@ -1481,3 +1481,237 @@
     font-size: 0.85rem !important;
   }
 }
+
+/* ── White-card soft pill CTAs (match Contact → Discord & GitHub) ── */
+:root {
+  --openms-card-soft-pill-bg: rgba(var(--openms-navy-rgb), 0.04);
+  --openms-card-soft-pill-border: rgba(var(--openms-navy-rgb), 0.12);
+  --openms-card-soft-pill-color: var(--openms-navy);
+  --openms-card-soft-pill-bg-hover: rgba(var(--openms-blue-rgb), 0.1);
+  --openms-card-soft-pill-border-hover: rgba(var(--openms-blue-rgb), 0.28);
+  --openms-card-soft-pill-color-hover: var(--openms-blue);
+}
+
+.openms-lib-resources__item-link,
+.contact-path-social,
+.openms-lib-about__tile-link,
+.openms-lib-resources__explore-link,
+.openms-lib-topp-split__card-link,
+.contribute-channel__link,
+.contribute-way__link,
+.contact-home__card-cta,
+.community-events-home__card-cta,
+.news-home__card-cta,
+.events-past-card__cta,
+.fellowship-project-card__cta,
+.donate-impact-card__cta,
+.sponsor-why__card-link,
+.sponsor-tier__cta,
+.governance-card__link,
+.keyfeatures-modern__topic-card .openms-btn-link,
+.help-page__card--wide .openms-btn-link,
+.openms-lib-page--openms-lib .openms-lib-resources__item-link {
+  box-sizing: border-box;
+  display: inline-flex !important;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.4rem !important;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 2.25rem;
+  margin-top: auto;
+  padding: 0.35rem 0.75rem !important;
+  border: 1px solid var(--openms-card-soft-pill-border) !important;
+  border-radius: var(--openms-btn-pill-radius, 999px) !important;
+  background: var(--openms-card-soft-pill-bg) !important;
+  color: var(--openms-card-soft-pill-color) !important;
+  font-family: var(--openms-font-body);
+  font-size: 0.875rem !important;
+  font-weight: 650 !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    gap 0.18s ease;
+}
+
+.openms-lib-resources__item:hover .openms-lib-resources__item-link,
+.openms-lib-resources__item:focus-visible .openms-lib-resources__item-link,
+.openms-lib-resources__item:focus-within .openms-lib-resources__item-link,
+.contact-path-social:hover,
+.contact-path-social:focus-visible,
+.openms-lib-about__tile:hover .openms-lib-about__tile-link,
+.openms-lib-about__tile:focus-within .openms-lib-about__tile-link,
+.openms-lib-about__tile-link:hover,
+.openms-lib-about__tile-link:focus-visible,
+.openms-lib-resources__explore-link:hover,
+.openms-lib-resources__explore-link:focus-visible,
+.openms-lib-topp-split__card:hover .openms-lib-topp-split__card-link,
+.openms-lib-topp-split__card:focus-within .openms-lib-topp-split__card-link,
+.contribute-channel:hover .contribute-channel__link,
+.contribute-channel:focus-within .contribute-channel__link,
+.contribute-channel__link:hover,
+.contribute-channel__link:focus-visible,
+.contribute-way:hover .contribute-way__link,
+.contribute-way:focus-within .contribute-way__link,
+.contribute-way__link:hover,
+.contribute-way__link:focus-visible,
+.contact-home__card:hover .contact-home__card-cta,
+.contact-home__card:focus-visible .contact-home__card-cta,
+.community-events-home__card-link:hover .community-events-home__card-cta,
+.community-events-home__card-link:focus-visible .community-events-home__card-cta,
+.news-home__card-link:hover .news-home__card-cta,
+.news-home__card-link:focus-visible .news-home__card-cta,
+.fellowship-project-card:hover .fellowship-project-card__cta,
+.fellowship-project-card:focus-within .fellowship-project-card__cta,
+.donate-impact-card:hover .donate-impact-card__cta,
+.donate-impact-card:focus-within .donate-impact-card__cta,
+.sponsor-why__card:hover .sponsor-why__card-link,
+.sponsor-why__card:focus-within .sponsor-why__card-link,
+.sponsor-tier:hover .sponsor-tier__cta,
+.sponsor-tier:focus-within .sponsor-tier__cta,
+.governance-card:hover .governance-card__link,
+.governance-card:focus-within .governance-card__link,
+.keyfeatures-modern__topic-card:hover .openms-btn-link,
+.keyfeatures-modern__topic-card:focus-visible .openms-btn-link,
+.help-page__card--wide:hover .openms-btn-link,
+.help-page__card--wide:focus-within .openms-btn-link,
+.openms-lib-page--openms-lib .openms-lib-resources__item:hover .openms-lib-resources__item-link,
+.openms-lib-page--openms-lib .openms-lib-resources__item:focus-visible .openms-lib-resources__item-link {
+  background: var(--openms-card-soft-pill-bg-hover) !important;
+  border-color: var(--openms-card-soft-pill-border-hover) !important;
+  color: var(--openms-card-soft-pill-color-hover) !important;
+  gap: 0.5rem !important;
+  outline: none;
+  text-decoration: none !important;
+}
+
+/* Navy card hover (contribute / developers): invert soft pill to outline-on-navy */
+@media (hover: hover) and (pointer: fine) {
+  .openms-lib-page--contribute
+    .openms-lib-resources__grid
+    > .openms-lib-resources__item:not(.openms-lib-resources__item--static):hover
+    .openms-lib-resources__item-link,
+  .openms-lib-page--contribute
+    .openms-lib-resources__grid
+    > .openms-lib-resources__item:not(.openms-lib-resources__item--static):focus-visible
+    .openms-lib-resources__item-link,
+  .openms-lib-page--openms-lib
+    .openms-lib-developers--cards
+    .openms-lib-developers__card--interactive:hover
+    .openms-lib-developers__card-link,
+  .openms-lib-page--openms-lib
+    .openms-lib-developers--cards
+    .openms-lib-developers__card--interactive:focus-visible
+    .openms-lib-developers__card-link {
+    color: var(--openms-white) !important;
+  }
+}
+
+/* For Developers / Contribute — CTAs are text links, not pills */
+#for-developers .openms-lib-developers__card-link,
+#for-developers .openms-lib-developers__platform-link,
+#for-developers .openms-lib-developers__platform-btn,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__card-link,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__platform-link,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__platform-btn,
+.openms-lib-page--openms-lib .openms-lib-developers--cards .openms-lib-developers__card-link,
+.openms-lib-page--openms-lib .openms-lib-developers--cards .openms-lib-developers__platform-link {
+  display: inline-flex !important;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.35rem !important;
+  width: fit-content !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin-top: auto;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: var(--openms-blue) !important;
+  font-size: var(--openms-text-min) !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  text-decoration: none !important;
+}
+
+#for-developers .openms-lib-developers__platforms,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__platforms,
+#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.55rem 1rem !important;
+  width: 100%;
+}
+
+#for-developers .openms-lib-developers__card-link:hover,
+#for-developers .openms-lib-developers__card-link:focus-visible,
+#for-developers .openms-lib-developers__platform-link:hover,
+#for-developers .openms-lib-developers__platform-link:focus-visible,
+#for-developers .openms-lib-developers__platform-btn:hover,
+#for-developers .openms-lib-developers__platform-btn:focus-visible,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__card-link:hover,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__card-link:focus-visible,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__platform-link:hover,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__platform-link:focus-visible,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__platform-btn:hover,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__platform-btn:focus-visible {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: var(--openms-blue) !important;
+  gap: 0.5rem !important;
+  text-decoration: none !important;
+  text-underline-offset: 0.18em;
+}
+
+#for-developers .openms-lib-developers__card--interactive:hover .openms-lib-developers__card-link,
+#for-developers .openms-lib-developers__card--interactive:focus-visible .openms-lib-developers__card-link,
+#for-developers .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__card-link,
+#for-developers .openms-lib-developers__card--interactive:hover .openms-lib-developers__platform-link,
+#for-developers .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__platform-link,
+#for-developers .openms-lib-developers__card--interactive:hover .openms-lib-developers__platform-btn,
+#for-developers .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__platform-btn,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__card--interactive:hover .openms-lib-developers__card-link,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__card--interactive:focus-visible .openms-lib-developers__card-link,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__card--interactive:hover .openms-lib-developers__platform-link,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__platform-link,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__card--interactive:hover .openms-lib-developers__platform-btn,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__platform-btn {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: var(--openms-white) !important;
+}
+
+#for-developers .openms-lib-developers__platform-link i,
+#for-developers .openms-lib-developers__platform-link .fab,
+#for-developers .openms-lib-developers__platform-link .fas,
+#for-developers .openms-lib-developers__platform-link .svg-inline--fa,
+#for-developers .openms-lib-developers__platform-btn i,
+#for-developers .openms-lib-developers__platform-btn .fab,
+#for-developers .openms-lib-developers__platform-btn .fas,
+#for-developers .openms-lib-developers__platform-btn .svg-inline--fa,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__platform-link i,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__platform-link .fab,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__platform-link .fas,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__platform-link .svg-inline--fa {
+  color: inherit !important;
+}
+
+#for-developers .openms-lib-developers__platform-link .svg-inline--fa path,
+#for-developers .openms-lib-developers__platform-btn .svg-inline--fa path,
+.openms-lib-page--openms-lib #for-developers .openms-lib-developers__platform-link .svg-inline--fa path {
+  fill: currentColor !important;
+}

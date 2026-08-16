@@ -14,9 +14,51 @@
 {{- $eventUrl := $event.news_url | default $event.url | default "" -}}
 {{- $isExternal := and $eventUrl (in $eventUrl "://") -}}
 {{- $category := $event.category | default "event" -}}
+{{- $categoryLabel := replace $category "-" " " -}}
+{{- $categoryLabel = title $categoryLabel -}}
+{{- if eq $category "developer-meeting" -}}
+  {{- $categoryLabel = "Event" -}}
+{{- else if eq $category "outreach" -}}
+  {{- $categoryLabel = "Outreach" -}}
+{{- else if eq $category "workshop" -}}
+  {{- $categoryLabel = "Workshop" -}}
+{{- end -}}
 <li class="community-events-home__item{{ if $featured }} community-events-home__item--featured{{ end }}" role="listitem">
-  <article class="community-events-home__card community-events-home__card--{{ $category }}{{ if $featured }} community-events-home__card--featured{{ end }}">
-    {{- if and $eventUrl (not $primaryCta) }}
+  <article class="community-events-home__card community-events-home__card--{{ $category }}{{ if $featured }} community-events-home__card--featured{{ end }}{{ if $primaryCta }} community-news-events__press-card{{ end }}">
+    {{- if $primaryCta }}
+    {{- if $eventUrl }}
+    <a
+      class="community-news-events__press-link"
+      href="{{ $eventUrl }}"
+      {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{- end }}
+    >
+    {{- else }}
+    <div class="community-news-events__press-link community-news-events__press-link--static">
+    {{- end }}
+      <p class="community-news-events__press-meta">
+        <span class="community-news-events__press-label">{{ $categoryLabel }}</span>
+        <span class="community-news-events__press-sep" aria-hidden="true">·</span>
+        <time
+          class="community-news-events__press-date"
+          datetime="{{ $event.start }}"
+          {{- if $hasRange }}
+          title="{{ $start.Format "Jan 2, 2006" }} – {{ $end.Format "Jan 2, 2006" }}"
+          {{- end }}
+        >{{ upper ($start.Format "2 Jan 2006") }}</time>
+      </p>
+      <h3 class="community-news-events__press-title">{{ $event.title }}</h3>
+      {{- with $event.summary }}
+      <p class="community-news-events__press-summary">{{ . }}</p>
+      {{- end }}
+      {{- with $event.location }}
+      <p class="community-news-events__press-location">{{ . }}</p>
+      {{- end }}
+    {{- if $eventUrl }}
+    </a>
+    {{- else }}
+    </div>
+    {{- end }}
+    {{- else if and $eventUrl (not $primaryCta) }}
     <a
       class="community-events-home__card-link"
       href="{{ $eventUrl }}"

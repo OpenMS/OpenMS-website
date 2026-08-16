@@ -619,7 +619,7 @@
 .contribute-way__text a:hover,
 .contribute-way__text a:focus-visible {
   color: var(--openms-content-link-hover, var(--openms-blue));
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .contribute-way__meta {

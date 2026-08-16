@@ -5,12 +5,12 @@
 {{- $scholarText := index $cfg "googleScholarText" | default "Follow us on Google Scholar" -}}
 {{- $scholarIcon := resources.Get "icons/google-scholar-color.svg" -}}
 <section class="openms-lib-layout">
-<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--publications">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--publications">
 <div class="openms-lib-page__intro">
-  <header class="openms-lib-hero openms-lib-hero--pro" aria-label="OpenMS publications">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="OpenMS publications">
     <div class="openms-lib-hero__panel">
       <div class="openms-lib-hero__content">
-        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "quote" }}{{ $eyebrow }}</p>
         <h1 class="openms-lib-hero__title">
           <span class="openms-lib-hero__accent">Publications</span>
         </h1>

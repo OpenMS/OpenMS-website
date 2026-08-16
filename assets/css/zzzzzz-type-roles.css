@@ -141,6 +141,7 @@
 .openms-step__title,
 .home-pathways__step-label,
 .ecosystem-home__card-title,
+.webapps-project-card--catalog .webapps-project-card__name,
 .community-events-home__card-title,
 .news-home__card-title,
 .contact-home__card-title,
@@ -350,8 +351,6 @@
 .community-events-home__category,
 .governance-hero__meta,
 .events-past-card__meta,
-.home-metrics__label,
-.home-metrics__description,
 .members .role {
   font-size: var(--openms-text-min) !important;
   font-weight: var(--openms-meta-weight, 600) !important;
@@ -380,7 +379,7 @@
   font-weight: var(--openms-label-weight, 700) !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
-  color: var(--openms-navy) !important;
+  color: var(--openms-white) !important;
 }
 
 .news-banner__label {
@@ -399,14 +398,271 @@
 .contribute-way__link,
 .openms-lib-about__tile-link,
 .openms-lib-developers__card-link,
+.openms-lib-developers__platform-link,
 .coc-report__link,
 .privacy-overview__note-link,
 .contact-page__path-link,
 .webapps-featured__extra-link,
 .ecosystem-home__card-link,
-.home-pathways__step-go {
+.home-pathways__step-go,
+.publications-cite-card__action {
   font-size: var(--openms-text-min) !important;
   font-weight: var(--openms-cta-link-weight, 700) !important;
+}
+
+/* Arrow nudge on hover — same motion for every text CTA */
+.openms-cta-link,
+.webapps-project-card__cta,
+.news-home__card-cta,
+.contact-home__card-cta,
+.community-events-home__card-cta,
+.events-past-card__cta,
+.contribute-channel__link,
+.contribute-track__cta,
+.contribute-way__link,
+.openms-lib-about__tile-link,
+.openms-lib-developers__card-link,
+.openms-lib-developers__platform-link,
+.openms-lib-resources__examples-link,
+.openms-lib-resources__explore-link,
+.openms-lib-list__link,
+.openms-lib-topp__cta,
+.coc-report__link,
+.privacy-overview__note-link,
+.contact-page__path-link,
+.webapps-featured__extra-link,
+.webapps-featured__show-all,
+.ecosystem-home__card-link,
+.community-news-events__view-all,
+.community-events-home__view-all--inline,
+.publications-cite-card__action,
+.news-entry__action,
+.trusted-by__wall-cta,
+.openms-lib-resources__item-link {
+  gap: 0.35rem;
+  transition: gap 0.2s ease;
+}
+
+.openms-cta-link span[aria-hidden="true"],
+.webapps-project-card__cta-icon,
+.news-home__card-cta span[aria-hidden="true"],
+.contact-home__card-cta span[aria-hidden="true"],
+.community-events-home__card-cta-icon,
+.events-past-card__cta span[aria-hidden="true"],
+.contribute-channel__link span[aria-hidden="true"],
+.contribute-track__cta span[aria-hidden="true"],
+.contribute-way__link span[aria-hidden="true"],
+.openms-lib-about__tile-link span[aria-hidden="true"],
+.openms-lib-developers__card-link span[aria-hidden="true"],
+.openms-lib-developers__platform-link span[aria-hidden="true"],
+.openms-lib-resources__examples-link span[aria-hidden="true"],
+.openms-lib-resources__explore-link span[aria-hidden="true"],
+.openms-lib-list__link span[aria-hidden="true"],
+.openms-lib-topp__cta span[aria-hidden="true"],
+.openms-step__cta-arrow,
+.coc-report__link span[aria-hidden="true"],
+.privacy-overview__note-link span[aria-hidden="true"],
+.contact-page__path-link span[aria-hidden="true"],
+.webapps-featured__extra-link span[aria-hidden="true"],
+.webapps-featured__show-all-icon,
+.ecosystem-home__card-link-icon,
+.community-news-events__view-all-icon,
+.publications-cite-card__action span[aria-hidden="true"],
+.news-entry__action span[aria-hidden="true"],
+.trusted-by__card-action-icon,
+.openms-lib-resources__item-link span[aria-hidden="true"],
+.home-pathways__step-go {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.openms-cta-link:hover,
+.openms-cta-link:focus-visible,
+.webapps-project-card__surface:hover .webapps-project-card__cta,
+.webapps-project-card__surface:focus-visible .webapps-project-card__cta,
+.news-home__card-link:hover .news-home__card-cta,
+.news-home__card-link:focus-visible .news-home__card-cta,
+.contact-home__card:hover .contact-home__card-cta,
+.contact-home__card:focus-visible .contact-home__card-cta,
+.community-events-home__card-link:hover .community-events-home__card-cta,
+.community-events-home__card-link:focus-visible .community-events-home__card-cta,
+.contribute-channel:hover .contribute-channel__link,
+.contribute-channel__link:hover,
+.contribute-channel__link:focus-visible,
+.contribute-track__cta:hover,
+.contribute-track__cta:focus-visible,
+.contribute-way:hover .contribute-way__link,
+.contribute-way__link:hover,
+.contribute-way__link:focus-visible,
+.openms-lib-about__tile:hover .openms-lib-about__tile-link,
+.openms-lib-about__tile-link:hover,
+.openms-lib-about__tile-link:focus-visible,
+.openms-lib-developers__card-link:hover,
+.openms-lib-developers__card-link:focus-visible,
+.openms-lib-developers__platform-link:hover,
+.openms-lib-developers__platform-link:focus-visible,
+.openms-lib-resources__examples-link:hover,
+.openms-lib-resources__examples-link:focus-visible,
+.openms-lib-resources__explore-item:hover .openms-lib-resources__explore-link,
+.openms-lib-resources__explore-link:hover,
+.openms-lib-list__link:hover,
+.openms-lib-list__link:focus-visible,
+.openms-lib-topp__cta:hover,
+.openms-lib-topp__cta:focus-visible,
+.coc-report__link:hover,
+.coc-report__link:focus-visible,
+.privacy-overview__note-link:hover,
+.privacy-overview__note-link:focus-visible,
+.contact-page__path-link:hover,
+.contact-page__path-link:focus-visible,
+.webapps-featured__extra-link:hover,
+.webapps-featured__extra-link:focus-visible,
+.webapps-featured__show-all:hover,
+.webapps-featured__show-all:focus-visible,
+.ecosystem-home__card:hover .ecosystem-home__card-link,
+.ecosystem-home__card-link:hover,
+.community-news-events__view-all:hover,
+.community-news-events__view-all:focus-visible,
+.community-events-home__view-all--inline:hover,
+.community-events-home__view-all--inline:focus-visible,
+.publications-cite-card__action:hover,
+.publications-cite-card__action:focus-visible,
+.news-entry__action:hover,
+.news-entry__action:focus-visible,
+.trusted-by__wall-card:hover .trusted-by__wall-cta,
+.openms-lib-resources__item:hover .openms-lib-resources__item-link {
+  gap: 0.5rem;
+}
+
+.openms-cta-link:hover span[aria-hidden="true"],
+.openms-cta-link:focus-visible span[aria-hidden="true"],
+.webapps-project-card__surface:hover .webapps-project-card__cta-icon,
+.webapps-project-card__surface:focus-visible .webapps-project-card__cta-icon,
+.news-home__card-link:hover .news-home__card-cta span[aria-hidden="true"],
+.contact-home__card:hover .contact-home__card-cta span[aria-hidden="true"],
+.community-events-home__card-link:hover .community-events-home__card-cta-icon,
+.contribute-channel:hover .contribute-channel__link span[aria-hidden="true"],
+.contribute-channel__link:hover span[aria-hidden="true"],
+.contribute-track__cta:hover span[aria-hidden="true"],
+.contribute-way:hover .contribute-way__link span[aria-hidden="true"],
+.contribute-way__link:hover span[aria-hidden="true"],
+.openms-lib-about__tile:hover .openms-lib-about__tile-link span[aria-hidden="true"],
+.openms-lib-about__tile-link:hover span[aria-hidden="true"],
+.openms-lib-developers__card-link:hover span[aria-hidden="true"],
+.openms-lib-developers__platform-link:hover span[aria-hidden="true"],
+.openms-lib-resources__examples-link:hover span[aria-hidden="true"],
+.openms-lib-resources__examples-link:focus-visible span[aria-hidden="true"],
+.openms-lib-resources__explore-item:hover .openms-lib-resources__explore-link span[aria-hidden="true"],
+.openms-lib-resources__explore-link:hover span[aria-hidden="true"],
+.openms-lib-list__link:hover span[aria-hidden="true"],
+.openms-lib-topp__cta:hover span[aria-hidden="true"],
+.openms-step__cta:hover .openms-step__cta-arrow,
+.openms-step__cta:focus-visible .openms-step__cta-arrow,
+.coc-report__link:hover span[aria-hidden="true"],
+.privacy-overview__note-link:hover span[aria-hidden="true"],
+.contact-page__path-link:hover span[aria-hidden="true"],
+.webapps-featured__extra-link:hover span[aria-hidden="true"],
+.webapps-featured__show-all:hover .webapps-featured__show-all-icon,
+.ecosystem-home__card:hover .ecosystem-home__card-link-icon,
+.community-news-events__view-all:hover .community-news-events__view-all-icon,
+.community-news-events__view-all:focus-visible .community-news-events__view-all-icon,
+.publications-cite-card__action:hover span[aria-hidden="true"],
+.news-entry__action:hover span[aria-hidden="true"],
+.trusted-by__wall-card:hover .trusted-by__card-action-icon,
+.openms-lib-resources__item:hover .openms-lib-resources__item-link span[aria-hidden="true"],
+.home-pathways__step:hover .home-pathways__step-go,
+.home-pathways__step:focus-within .home-pathways__step-go {
+  transform: translateX(2px);
+}
+
+/* One text-link colour everywhere (not buttons, nav, or dark-band copy) */
+.community-news-events__view-all,
+.community-events-home__view-all--inline,
+.openms-lib-resources__examples-link,
+.publications-cite-card__title a,
+.openms-lib-cite a:not(.openms-lib-btn),
+.openms-lib-block__lead a,
+.openms-lib-list__bullets a,
+.openms-lib-block__note a,
+.openms-lib-list__link,
+.keyfeatures-modern__note a,
+.keyfeatures:not(.keyfeatures-modern) a,
+.casestudies a,
+.governance-jump-links a,
+.infrastructure-card h2 a,
+.publication-title-link,
+.fellowship-project-card__title a,
+.news-article__toc a,
+.news-entry__action,
+.sponsor-faq__answer a,
+.contribute-way__text a,
+.contribute-outreach__contact a,
+.privacy-details__rich a,
+.webapps-catalog__contact a {
+  color: var(--openms-content-link, var(--openms-navy)) !important;
+  -webkit-text-fill-color: var(--openms-content-link, var(--openms-navy)) !important;
+}
+
+.community-news-events__view-all:hover,
+.community-news-events__view-all:focus-visible,
+.community-events-home__view-all--inline:hover,
+.community-events-home__view-all--inline:focus-visible,
+.openms-lib-resources__examples-link:hover,
+.openms-lib-resources__examples-link:focus-visible,
+.publications-cite-card__title a:hover,
+.publications-cite-card__title a:focus-visible,
+.openms-lib-cite a:not(.openms-lib-btn):hover,
+.openms-lib-cite a:not(.openms-lib-btn):focus-visible,
+.openms-lib-block__lead a:hover,
+.openms-lib-block__lead a:focus-visible,
+.openms-lib-list__bullets a:hover,
+.openms-lib-list__bullets a:focus-visible,
+.openms-lib-block__note a:hover,
+.openms-lib-block__note a:focus-visible,
+.openms-lib-list__link:hover,
+.openms-lib-list__link:focus-visible,
+.keyfeatures-modern__note a:hover,
+.keyfeatures-modern__note a:focus-visible,
+.keyfeatures:not(.keyfeatures-modern) a:hover,
+.casestudies a:hover,
+.governance-jump-links a:hover,
+.infrastructure-card h2 a:hover,
+.publication-title-link:hover,
+.fellowship-project-card__title a:hover,
+.news-article__toc a:hover,
+.news-entry__action:hover,
+.sponsor-faq__answer a:hover,
+.contribute-way__text a:hover,
+.contribute-outreach__contact a:hover,
+.privacy-details__rich a:hover,
+.webapps-catalog__contact a:hover,
+.openms-cta-link:hover,
+.openms-cta-link:focus-visible,
+.webapps-project-card__surface:hover .webapps-project-card__cta,
+.news-home__card-link:hover .news-home__card-cta,
+.contact-home__card:hover .contact-home__card-cta,
+.community-events-home__card-link:hover .community-events-home__card-cta,
+.contribute-channel__link:hover,
+.contribute-track__cta:hover,
+.contribute-way__link:hover,
+.openms-lib-about__tile-link:hover,
+.openms-lib-developers__card-link:hover,
+.openms-lib-developers__platform-link:hover,
+.coc-report__link:hover,
+.privacy-overview__note-link:hover,
+.contact-page__path-link:hover,
+.webapps-featured__extra-link:hover,
+.ecosystem-home__card:hover .ecosystem-home__card-link,
+.home-pathways__step:hover .home-pathways__step-go {
+  color: var(--openms-content-link-hover, var(--openms-blue)) !important;
+  -webkit-text-fill-color: var(--openms-content-link-hover, var(--openms-blue)) !important;
+}
+
+/* No underline on link hover — arrow nudge is the hover cue */
+a:hover,
+a:focus-visible,
+a:hover * {
+  text-decoration: none !important;
 }
 
 /* ── Disabled / status helpers ──────────────────────────────────────────── */
@@ -434,8 +690,8 @@
   color: var(--openms-text-error);
 }
 
-/* Featured / catalog app names — independent of logo artwork */
-.webapps-project-card__name,
+/* Non-catalog app names stay compact; homepage catalog matches Ecosystem titles */
+.webapps-project-card:not(.webapps-project-card--catalog) .webapps-project-card__name,
 .webapps-project-detail-card__name {
   font-size: 0.9375rem !important; /* 15px */
   font-weight: 500 !important;
@@ -455,6 +711,7 @@
   .contribute-way__link,
   .openms-lib-about__tile-link,
   .openms-lib-developers__card-link,
+  .openms-lib-developers__platform-link,
   .coc-report__link,
   .privacy-overview__note-link,
   .contact-page__path-link,
@@ -472,4 +729,114 @@
   [class$="-page-layout"] :where(p, li) > a:not([class]):not(.openms-lib-btn) {
     font-size: var(--openms-body-size) !important;
   }
+}
+
+/* For Developers / Contribute — text links, not pills */
+#for-developers .openms-lib-developers__card-link,
+#for-developers .openms-lib-developers__platform-link,
+#for-developers .openms-lib-developers__platform-btn,
+.openms-lib-page--solution #for-developers .openms-lib-developers__card-link,
+.openms-lib-page--solution #for-developers .openms-lib-developers__platform-link,
+.openms-lib-page--solution .openms-lib-developers--cards .openms-lib-developers__card-link,
+.openms-lib-page--solution .openms-lib-developers--cards .openms-lib-developers__platform-link {
+  display: inline-flex !important;
+  align-items: center;
+  align-self: flex-start;
+  flex: 0 0 auto !important;
+  gap: 0.35rem !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin-top: auto;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  color: var(--openms-cta-link, var(--openms-navy)) !important;
+  -webkit-text-fill-color: var(--openms-cta-link, var(--openms-navy)) !important;
+  font-size: var(--openms-text-min) !important;
+  font-weight: var(--openms-cta-link-weight, 700) !important;
+  line-height: 1.3 !important;
+  text-decoration: none !important;
+}
+
+#for-developers .openms-lib-developers__platforms {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.55rem 1rem !important;
+  width: 100%;
+}
+
+#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms {
+  flex-wrap: nowrap !important;
+  flex-direction: row !important;
+}
+
+#for-developers .openms-lib-developers__card--review .openms-lib-developers__platform-btn {
+  flex: 1 1 0 !important;
+  white-space: nowrap !important;
+}
+
+#for-developers .openms-lib-developers__card-link:hover,
+#for-developers .openms-lib-developers__card-link:focus-visible,
+#for-developers .openms-lib-developers__platform-link:hover,
+#for-developers .openms-lib-developers__platform-link:focus-visible,
+#for-developers .openms-lib-developers__platform-btn:hover,
+#for-developers .openms-lib-developers__platform-btn:focus-visible {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: var(--openms-cta-link-hover, var(--openms-blue)) !important;
+  gap: 0.5rem !important;
+  text-decoration: none !important;
+}
+
+#for-developers .openms-lib-developers__card--interactive:hover .openms-lib-developers__card-link,
+#for-developers .openms-lib-developers__card--interactive:focus-visible .openms-lib-developers__card-link,
+#for-developers .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__card-link,
+#for-developers .openms-lib-developers__card--interactive:hover .openms-lib-developers__platform-link,
+#for-developers .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__platform-link,
+#for-developers .openms-lib-developers__card--interactive:hover .openms-lib-developers__platform-btn,
+#for-developers .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__platform-btn,
+.openms-lib-page--solution #for-developers .openms-lib-developers__card--interactive:hover .openms-lib-developers__card-link,
+.openms-lib-page--solution #for-developers .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__card-link,
+.openms-lib-page--solution #for-developers .openms-lib-developers__card--interactive:hover .openms-lib-developers__platform-link,
+.openms-lib-page--solution #for-developers .openms-lib-developers__card--interactive:focus-within .openms-lib-developers__platform-link {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+#for-developers .openms-lib-developers__platform-link i,
+#for-developers .openms-lib-developers__platform-link .fab,
+#for-developers .openms-lib-developers__platform-link .fas,
+#for-developers .openms-lib-developers__platform-link .svg-inline--fa,
+#for-developers .openms-lib-developers__platform-btn i,
+#for-developers .openms-lib-developers__platform-btn .fab,
+#for-developers .openms-lib-developers__platform-btn .fas,
+#for-developers .openms-lib-developers__platform-btn .svg-inline--fa {
+  color: inherit !important;
+}
+
+#for-developers .openms-lib-developers__platform-link .svg-inline--fa path,
+#for-developers .openms-lib-developers__platform-btn .svg-inline--fa path {
+  fill: currentColor !important;
 }

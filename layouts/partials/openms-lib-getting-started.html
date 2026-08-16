@@ -18,7 +18,7 @@
   <div class="openms-lib-resources__inner">
     <header class="openms-lib-resources__head openms-lib-hub__reveal openms-lib-hub__reveal--left">
       {{- with $eyebrow }}
-      <p class="openms-lib-resources__eyebrow">{{ . }}</p>
+      <p class="openms-lib-resources__eyebrow">{{ partial "section-eyebrow-icon.html" "grid" }}{{ . }}</p>
       {{- end }}
       <h2 id="{{ $id }}" class="openms-lib-resources__title">{{ $title }}</h2>
       {{- with $lead }}

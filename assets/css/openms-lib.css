@@ -394,7 +394,7 @@
 }
 
 .openms-lib-block__lead a {
-  color: var(--openms-blue);
+  color: var(--openms-content-link, var(--openms-navy));
   font-weight: 600;
   text-decoration: none;
 }
@@ -402,7 +402,7 @@
 .openms-lib-block__lead a:hover,
 .openms-lib-block__lead a:focus-visible {
   color: var(--openms-navy);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* ── Shared list container ── */
@@ -594,14 +594,14 @@
 }
 
 .openms-lib-list__bullets a {
-  color: var(--openms-blue);
+  color: var(--openms-content-link, var(--openms-navy));
   font-weight: 600;
   text-decoration: none;
 }
 
 .openms-lib-list__bullets a:hover,
 .openms-lib-list__bullets a:focus-visible {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .openms-lib-list__link,
@@ -616,7 +616,7 @@
   width: auto;
   font-size: var(--openms-text-min);
   font-weight: 700;
-  color: var(--openms-blue) !important;
+  color: var(--openms-content-link, var(--openms-navy)) !important;
   background: none;
   border: none;
   border-radius: 0;
@@ -666,7 +666,7 @@
 
 .openms-lib-block__note a,
 .keyfeatures-modern--overview .keyfeatures-modern__note a {
-  color: var(--openms-blue);
+  color: var(--openms-content-link, var(--openms-navy));
   font-weight: 600;
   text-decoration: none;
 }
@@ -676,7 +676,7 @@
 .keyfeatures-modern--overview .keyfeatures-modern__note a:hover,
 .keyfeatures-modern--overview .keyfeatures-modern__note a:focus-visible {
   color: var(--openms-navy);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* ── Developer terminal row ── */
@@ -2226,7 +2226,7 @@
 .openms-lib-topp__feature-link:hover,
 .openms-lib-topp__feature-link:focus-visible {
   color: var(--openms-blue-secondary);
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 0.14em;
   outline: none;
 }
@@ -3250,7 +3250,7 @@
 .openms-lib-developers__cite-more:hover,
 .openms-lib-developers__cite-more:focus-visible {
   color: var(--openms-navy);
-  text-decoration: underline;
+  text-decoration: none;
   outline: none;
 }
 
@@ -4143,7 +4143,7 @@
 .openms-lib-resource-card__app-links a:hover,
 .openms-lib-resource-card__app-links a:focus-visible {
   color: var(--openms-navy);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 @media (max-width: 992px) {

@@ -15,15 +15,15 @@
   /* Shared page title design (heroes + section H2s) */
   --openms-page-hero-title-size: calc(var(--openms-heading-xl-size) * 1.25);
   --openms-page-hero-title-weight: var(--openms-heading-xl-weight);
-  --openms-page-hero-title-color: var(--openms-navy);
+  --openms-page-hero-title-color: rgba(var(--openms-dark-rgb), 0.72);
   --openms-section-title-size: calc(var(--openms-heading-lg-size) * 1.15);
   --openms-section-title-weight: var(--openms-heading-lg-weight);
-  --openms-section-title-color: var(--openms-navy);
+  --openms-section-title-color: rgba(var(--openms-dark-rgb), 0.72);
 
-  /* Shared step/overview numbers — deliberate light watermark (site-wide) */
+  /* Shared step/overview numbers — same light-blue watermark as /openms-lib/ */
   --openms-step-num-size: clamp(2.5rem, 5vw, 3.5rem);
-  --openms-step-num-color: rgba(var(--openms-navy-rgb), 0.18);
-  --openms-step-num-color-hover: rgba(var(--openms-navy-rgb), 0.32);
+  --openms-step-num-color: rgba(var(--openms-blue-rgb), 0.38);
+  --openms-step-num-color-hover: rgba(var(--openms-blue-rgb), 0.55);
   --openms-num-strip-border: rgba(var(--openms-navy-rgb), 0.1);
   --openms-num-strip-hover-bg: rgba(var(--openms-blue-rgb), 0.03);
   --openms-num-strip-pad-y: clamp(1.35rem, 3vw, 2rem);
@@ -58,8 +58,12 @@
   --pro-space-4: 1.25rem;
   --pro-space-5: 1.75rem;
   --pro-space-6: clamp(2.25rem, 4.5vw, 3.25rem);
-  --pro-stack-eyebrow: var(--pro-space-1);
-  --pro-stack-lead: var(--pro-space-2);
+  /* Site-wide title stack — fixed values, use everywhere */
+  --openms-stack-eyebrow: 12px;   /* top title → title */
+  --openms-stack-lead: 20px;      /* title → paragraph */
+  --openms-stack-paragraph: 16px; /* paragraph → paragraph */
+  --pro-stack-eyebrow: var(--openms-stack-eyebrow);
+  --pro-stack-lead: var(--openms-stack-lead);
   --pro-stack-actions: var(--pro-space-5);
   --pro-head-to-content: var(--pro-space-6);
   --pro-card-gap: clamp(1rem, 2vw, 1.5rem);
@@ -75,16 +79,16 @@
   --pro-cite-intro-max: 22ch;
   --pro-cluster-max: min(100%, var(--pro-max));
 
-  /* Shared text links (inline content) */
-  --openms-content-link: var(--openms-navy);
-  --openms-content-link-hover: var(--openms-blue);
+  /* Inline text links — gray like body copy; blue is reserved for arrow/icon CTAs */
+  --openms-content-link: rgba(var(--openms-dark-rgb), 0.72);
+  --openms-content-link-hover: rgba(var(--openms-dark-rgb), 0.72);
   --openms-content-link-weight: 600;
   --openms-content-link-underline-offset: 0.12em;
   --pro-link: var(--openms-content-link);
   --home-link-color: var(--openms-content-link);
 
-  /* Shared text CTA links (Read more →) */
-  --openms-cta-link: var(--openms-navy);
+  /* Shared text CTA links (Read more →) — same colour as the blue button */
+  --openms-cta-link: var(--openms-blue);
   --openms-cta-link-hover: var(--openms-blue);
   --openms-cta-link-weight: 700;
 
@@ -100,11 +104,12 @@
   --openms-navbar-dropdown-hover-text: var(--openms-navy);
   --openms-navbar-dropdown-hover-bg: rgba(var(--openms-navy-rgb), 0.06);
   --openms-navbar-dropdown-border: rgba(var(--openms-navy-rgb), 0.1);
+  --openms-navbar-dropdown-width: 18rem;
   --openms-navbar-container-pad-inline: clamp(1.25rem, 3.5vw, 2.5rem);
   --openms-navbar-container-pad-inline-mobile: 1.15rem;
   --openms-navbar-brand-slot-width: 18.5rem;
   /* Slightly tighter logo keeps the bar premium without feeling oversized */
-  --openms-navbar-logo-height: 64px;
+  --openms-navbar-logo-height: 76px;
   --openms-header-bar-min-height: calc(var(--openms-navbar-logo-height) + 0.9rem);
   --openms-navbar-desktop-gap: clamp(0.35rem, 0.9vw, 0.75rem);
   --openms-navbar-desktop-pad-x: clamp(0.35rem, 0.7vw, 0.65rem);
@@ -131,13 +136,13 @@
     Prefer these over one-off rgba(dark/navy, …) so primary / muted / soft
     stay consistent across home, product, and content pages.
   */
-  --openms-text: var(--openms-navy);
-  --openms-text-body: rgba(var(--openms-dark-rgb), 0.86);
+  --openms-text: rgba(var(--openms-dark-rgb), 0.72);
+  --openms-text-body: rgba(var(--openms-dark-rgb), 0.72);
   --openms-text-muted: rgba(var(--openms-dark-rgb), 0.72);
   --openms-text-soft: rgba(var(--openms-dark-rgb), 0.55);
   --openms-text-faint: rgba(var(--openms-dark-rgb), 0.42);
   --openms-text-disabled: rgba(var(--openms-dark-rgb), 0.38);
-  --openms-text-eyebrow: rgba(var(--openms-blue-rgb), 0.72);
+  --openms-text-eyebrow: rgba(var(--openms-dark-rgb), 0.55);
   /* Status — reuse brand hues; no separate green in the palette */
   --openms-text-success: var(--openms-blue);
   --openms-text-warning: var(--openms-orange);
@@ -193,29 +198,29 @@
 
   /* Site chrome — unified banner → nav → hero stack */
   --openms-chrome-bg: var(--openms-navy);
-  --openms-chrome-border: rgba(var(--openms-white-rgb), 0.1);
+  --openms-chrome-border: rgba(var(--openms-white-rgb), 0.08);
   --openms-chrome-border-strong: rgba(var(--openms-white-rgb), 0.16);
   --openms-chrome-text: rgba(var(--openms-white-rgb), 0.92);
   --openms-chrome-text-muted: rgba(var(--openms-white-rgb), 0.62);
   --openms-chrome-surface: rgba(var(--openms-white-rgb), 0.07);
   --openms-chrome-surface-hover: rgba(var(--openms-white-rgb), 0.12);
-  --openms-chrome-accent: var(--openms-pink);
+  --openms-chrome-accent: var(--openms-orange);
   --openms-chrome-accent-line: linear-gradient(
     90deg,
     var(--openms-blue) 0%,
-    var(--openms-purple) 55%,
-    var(--openms-pink) 100%
+    var(--openms-orange) 100%
   );
-  --openms-chrome-banner-bg: var(--openms-white);
+  /* Announcement bar — same navy as hero / nav chrome */
+  --openms-chrome-banner-bg: var(--openms-chrome-bg);
   --openms-chrome-banner-label: var(--openms-white);
-  --openms-chrome-banner-label-bg: var(--openms-orange);
-  --openms-chrome-banner-label-border: var(--openms-orange);
-  --openms-chrome-banner-text: rgba(var(--openms-navy-rgb), 0.88);
-  --openms-chrome-banner-border: rgba(var(--openms-navy-rgb), 0.1);
-  --openms-chrome-nav-surface: var(--openms-white);
-  --openms-chrome-nav-border: rgba(var(--openms-navy-rgb), 0.14);
-  --openms-chrome-nav-text: var(--openms-navy);
-  --openms-chrome-nav-text-muted: rgba(var(--openms-navy-rgb), 0.58);
+  --openms-chrome-banner-label-bg: rgba(var(--openms-white-rgb), 0.18);
+  --openms-chrome-banner-label-border: transparent;
+  --openms-chrome-banner-text: var(--openms-white);
+  --openms-chrome-banner-border: transparent;
+  --openms-chrome-nav-surface: var(--openms-navy);
+  --openms-chrome-nav-border: rgba(var(--openms-white-rgb), 0.08);
+  --openms-chrome-nav-text: var(--openms-white);
+  --openms-chrome-nav-text-muted: rgba(var(--openms-white-rgb), 0.62);
   --openms-chrome-nav-dropdown-bg: rgba(var(--openms-blue-rgb), 0.06);
   --openms-chrome-nav-dropdown-border: rgba(var(--openms-blue-rgb), 0.2);
   --openms-chrome-nav-backdrop: rgba(var(--openms-navy-rgb), 0.52);
@@ -249,7 +254,7 @@
   --colorSecondaryDark: var(--openms-dark);
   --colorSecondary: var(--openms-grey);
   --colorSecondaryLight: var(--openms-white);
-  --colorHeading: var(--openms-dark);
+  --colorHeading: rgba(var(--openms-dark-rgb), 0.72);
   --colorHighlight: var(--openms-yellow);
   --colorShadow: rgba(var(--openms-dark-rgb), 0.1);
   --colorContentLink: var(--openms-content-link);
@@ -281,7 +286,7 @@
   flex-shrink: 0;
   width: auto;
   height: auto;
-  margin: 0 0 0.2rem;
+  margin: 0 0 0.05rem;
   padding: 0;
   border: none;
   border-radius: 0;
@@ -292,8 +297,9 @@
   line-height: 1;
   letter-spacing: -0.04em;
   color: var(--openms-step-num-color);
+  -webkit-text-fill-color: var(--openms-step-num-color);
   box-sizing: border-box;
-  transition: color 0.22s ease;
+  transition: color 0.22s ease, -webkit-text-fill-color 0.22s ease;
 }
 
 .openms-lib-about__tile:hover .openms-lib-about__num,
@@ -306,6 +312,7 @@
 .coc-principle:focus-within .coc-principle__num,
 .privacy-overview__item:hover .privacy-overview__num {
   color: var(--openms-step-num-color-hover);
+  -webkit-text-fill-color: var(--openms-step-num-color-hover);
   background: transparent;
   border-color: transparent;
 }
@@ -324,7 +331,7 @@
   color: var(--openms-card-title-color);
 }
 
-/* Canonical inline content links — navy, weight 600, underline on hover */
+/* Canonical inline content links — navy, weight 600, no underline */
 .openms-lib-layout :where(p, li, dd, td, .content) > a:not([class]):not(.openms-lib-btn),
 .home-page :where(p, li, dd, td) > a:not([class]):not(.openms-lib-btn):not(.navbar-item),
 .contribute-page-layout :where(p, li) > a:not([class]):not(.openms-lib-btn),
@@ -353,7 +360,7 @@
 .openms-content-link:hover,
 .openms-content-link:focus-visible {
   color: var(--openms-content-link-hover);
-  text-decoration: underline;
+  text-decoration: none;
   outline: none;
 }
 

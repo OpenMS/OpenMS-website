@@ -2,12 +2,12 @@
 {{- $eyebrow := index $cfg "eyebrow" | default "OpenMS community" -}}
 {{- $subtitle := index $cfg "subtitle" | default "We are an international team on a mission to support scientific and research communities worldwide by building quality, open-source software." -}}
 <section class="openms-lib-layout">
-<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--contributors">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--contributors">
 <div class="openms-lib-page__intro">
-  <header class="openms-lib-hero openms-lib-hero--pro" aria-label="OpenMS contributors">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="OpenMS contributors">
     <div class="openms-lib-hero__panel">
       <div class="openms-lib-hero__content">
-        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "people" }}{{ $eyebrow }}</p>
         <h1 class="openms-lib-hero__title">
           The people behind <span class="openms-lib-hero__accent">OpenMS</span>.
         </h1>
@@ -42,20 +42,17 @@
   <div id="executive-committee" class="openms-lib-page__anchor">
     <section class="openms-lib-resources openms-lib-resources--no-feature" aria-labelledby="executive-committee-title">
       <div class="openms-lib-resources__inner">
-        {{ partial "contributors-exec.html" . }}
-      </div>
-    </section>
-  </div>
-
-  <div id="members" class="openms-lib-page__anchor">
-    <section class="openms-lib-resources openms-lib-resources--no-feature" aria-labelledby="members-title">
-      <div class="openms-lib-resources__inner contributors-members">
         <header class="openms-lib-resources__head">
-          <p class="openms-lib-resources__eyebrow">Community</p>
-          <h2 id="members-title" class="openms-lib-resources__title">Members</h2>
-          <p class="openms-lib-resources__lead"><span>Maintainers, docs contributors, and community managers</span><span>who keep OpenMS moving forward.</span></p>
+          <p class="openms-lib-resources__eyebrow">Project governance</p>
+          <h2 id="executive-committee-title" class="openms-lib-resources__title">Executive Committee</h2>
+          <p class="openms-lib-resources__lead">The Executive Committee leads development of the OpenMS project and sets technical priorities.</p>
         </header>
-        {{ readFile "static/gallery/members.html" | safeHTML }}
+        <div class="contributors-exec-gallery">
+          {{ readFile "static/gallery/members.html" | safeHTML }}
+        </div>
+        <p class="contributors-exec-note">
+          Learn how the committee works on our <a href="/governance/">Governance page</a>.
+        </p>
       </div>
     </section>
   </div>

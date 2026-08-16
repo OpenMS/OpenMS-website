@@ -229,7 +229,7 @@
 .news-archive .news-home__card-link:focus-visible .news-home__card-title,
 .news-bibliography--undated .news-home__card-link:hover .news-home__card-title,
 .news-bibliography--undated .news-home__card-link:focus-visible .news-home__card-title {
-  color: var(--openms-blue);
+  color: var(--openms-content-link, var(--openms-navy));
 }
 
 .news-archive .news-home__card-authors,
@@ -260,7 +260,7 @@
 .news-bibliography--undated .news-home__card-link:hover .news-home__card-cta,
 .news-bibliography--undated .news-home__card-link:focus-visible .news-home__card-cta {
   gap: 0.45rem;
-  color: var(--openms-blue);
+  color: var(--openms-content-link, var(--openms-navy));
 }
 
 .news-entry__summary {
@@ -289,8 +289,8 @@
 
 .news-entry__action:hover,
 .news-entry__action:focus-visible {
-  color: var(--openms-blue);
-  text-decoration: underline;
+  color: var(--openms-content-link, var(--openms-navy));
+  text-decoration: none;
   outline: none;
 }
 
@@ -443,7 +443,7 @@
 .news-article__content a:hover,
 .news-article__content a:focus-visible {
   color: var(--openms-content-link-hover, var(--openms-blue));
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .news-article__content a:focus-visible {
@@ -538,8 +538,8 @@
 }
 
 .news-article__toc a:hover {
-  color: var(--openms-blue);
-  text-decoration: underline;
+  color: var(--openms-content-link, var(--openms-navy));
+  text-decoration: none;
   text-underline-offset: 0.15em;
 }
 

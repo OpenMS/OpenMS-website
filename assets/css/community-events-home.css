@@ -40,7 +40,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  margin: 0 0 0.85rem;
+  margin: 0 0 var(--openms-stack-eyebrow, 12px);
   padding: 0.35rem 0.75rem;
   font-family: var(--openms-font-body);
   font-size: var(--openms-text-min);
@@ -86,7 +86,7 @@
 }
 
 .community-events-home__lead {
-  margin: 0.85rem 0 0;
+  margin: var(--openms-stack-lead, 20px) 0 0;
   max-width: min(100%, var(--pro-measure-wide, 58ch));
   width: 100%;
   font-family: var(--openms-font-body);

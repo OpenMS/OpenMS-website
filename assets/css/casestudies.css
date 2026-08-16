@@ -27,7 +27,7 @@
 }
 
 .casestudies a {
-    color: var(--openms-blue) !important;
+    color: var(--openms-content-link, var(--openms-navy)) !important;
 }
 
 .casestudies-box-title {

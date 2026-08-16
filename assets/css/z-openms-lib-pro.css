@@ -17,8 +17,8 @@
   --pro-space-5:1.75rem;
   --pro-space-6:clamp(2.25rem, 4.5vw, 3.25rem);
   --pro-col-gap:clamp(2rem, 5vw, 4rem);
-  --pro-stack-eyebrow:var(--pro-space-1);
-  --pro-stack-lead:var(--pro-space-2);
+  --pro-stack-eyebrow:var(--openms-stack-eyebrow, 12px);
+  --pro-stack-lead:var(--openms-stack-lead, 20px);
   --pro-stack-actions:var(--pro-space-5);
   --pro-head-to-content:var(--pro-space-6);
   --pro-measure:58ch;
@@ -60,8 +60,8 @@
   --pro-space-5:1.75rem;
   --pro-space-6:clamp(2.25rem, 4.5vw, 3.25rem);
   --pro-col-gap:clamp(2rem, 5vw, 4rem);
-  --pro-stack-eyebrow:var(--pro-space-1);
-  --pro-stack-lead:var(--pro-space-2);
+  --pro-stack-eyebrow:var(--openms-stack-eyebrow, 12px);
+  --pro-stack-lead:var(--openms-stack-lead, 20px);
   --pro-stack-actions:var(--pro-space-5);
   --pro-head-to-content:var(--pro-space-6);
   --pro-measure:58ch;
@@ -519,7 +519,7 @@
 .openms-lib-page--openms-lib .openms-lib-resources__item-text a:focus-visible,
 .openms-lib-page--openms-lib .openms-lib-list__text a:focus-visible {
   color:var(--openms-content-link-hover, var(--openms-blue));
-  text-decoration:underline;
+  text-decoration: none;
   outline:none
 }
 .openms-lib-page--openms-lib .openms-lib-hero__eyebrow,
@@ -1244,6 +1244,26 @@
   text-align:center;
   overflow:visible
 }
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #getting-started
+  .openms-lib-resources--explore {
+  padding-bottom:0
+}
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #getting-started {
+  padding-bottom:0
+}
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  #getting-started
+  .openms-lib-resources__assist {
+  box-sizing:border-box;
+  width:auto;
+  margin-top:clamp(1.75rem,3.5vw,2.5rem);
+  margin-inline:calc(-1 * var(--openms-page-inline));
+  padding:clamp(2.25rem,4.5vw,3.25rem) var(--openms-page-inline);
+  padding-bottom:calc(clamp(2.25rem,4.5vw,3.25rem) + var(--openms-btn-glow-size,6px));
+  background:var(--pro-band-soft)
+}
 .openms-lib-page .openms-lib-resources__assist-copy {
   display:grid;
   gap:.4rem;
@@ -1724,7 +1744,7 @@
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-block__eyebrow ,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-block__eyebrow {
   margin-bottom:var(--pro-stack-eyebrow);
-  color:var(--openms-blue)
+  color:rgba(var(--openms-blue-rgb), 0.72)
 }
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-block__eyebrow {
   justify-content:flex-start
@@ -2060,14 +2080,20 @@
   line-height:1.5;
   color:rgba(var(--openms-white-rgb),.9)
 }
-.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__card-link ,
-.openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__card-link {
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__card-link,
+.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__platform-link,
+.openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__card-link,
+.openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__platform-link {
   display:inline-flex;
   align-items:center;
   gap:.35rem;
   font-size:var(--openms-text-min);
   font-weight:700;
-  color:var(--openms-blue)
+  color:var(--openms-cta-link, var(--openms-navy));
+  background:transparent;
+  border:none;
+  padding:0;
+  min-height:0
 }
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers--cards .openms-lib-developers__badge ,
 .openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__badge {
@@ -4031,8 +4057,8 @@
 
 /* WebApps Features — intentional watermark nums + soft strip tint */
 .openms-lib-page--webapps-pro {
-  --openms-step-num-color: rgba(var(--openms-navy-rgb), 0.18);
-  --openms-step-num-color-hover: rgba(var(--openms-navy-rgb), 0.3);
+  --openms-step-num-color: rgba(var(--openms-blue-rgb), 0.38);
+  --openms-step-num-color-hover: rgba(var(--openms-blue-rgb), 0.55);
 }
 
 .openms-lib-page--webapps-pro .openms-lib-about__num {
@@ -7107,7 +7133,7 @@
 .openms-lib-page--contribute .openms-lib-resources__item-text a:hover,
 .openms-lib-page--contribute .openms-lib-resources__item-text a:focus-visible {
   color: var(--openms-content-link-hover, var(--openms-blue));
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .openms-lib-page--contribute .openms-lib-resources__item-text a:hover,
@@ -8052,8 +8078,7 @@
   padding-block:0
 }
 .openms-lib-page--contributors #leadership .openms-lib-resources,
-.openms-lib-page--contributors #executive-committee .openms-lib-resources,
-.openms-lib-page--contributors #members .openms-lib-resources {
+.openms-lib-page--contributors #executive-committee .openms-lib-resources {
   padding-block:var(--pro-section-y)
 }
 .openms-lib-page--contributors .contributors-body {
@@ -8064,110 +8089,28 @@
   margin:0;
   padding:0
 }
-.openms-lib-page--contributors #leadership .openms-lib-resources__head {
+.openms-lib-page--contributors #leadership .openms-lib-resources__head,
+.openms-lib-page--contributors #executive-committee .openms-lib-resources__head {
   display:grid;
   justify-items:center;
   max-width:min(100%,42rem);
   margin-inline:auto;
   text-align:center
 }
-.openms-lib-page--contributors #leadership .openms-lib-resources__eyebrow {
+.openms-lib-page--contributors #leadership .openms-lib-resources__eyebrow,
+.openms-lib-page--contributors #executive-committee .openms-lib-resources__eyebrow {
   justify-content:center
 }
 .openms-lib-page--contributors #leadership .openms-lib-resources__title,
-.openms-lib-page--contributors #leadership .openms-lib-resources__lead {
+.openms-lib-page--contributors #leadership .openms-lib-resources__lead,
+.openms-lib-page--contributors #executive-committee .openms-lib-resources__title,
+.openms-lib-page--contributors #executive-committee .openms-lib-resources__lead {
   text-align:center;
   margin-inline:auto
 }
-.openms-lib-page--contributors .contributors-members {
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:.75rem;
-  align-items:stretch
-}
-.openms-lib-page--contributors .contributors-members > .openms-lib-resources__head {
-  grid-column:1 / 3;
-  grid-row:1;
-  display:grid;
-  justify-items:start;
-  align-content:start;
-  gap:0;
-  min-width:0;
-  max-width:100%;
+.openms-lib-page--contributors .contributors-exec-gallery {
   width:100%;
-  margin:0;
-  padding:.15rem .75rem 1.5rem 0;
-  text-align:left;
-  align-self:stretch;
-  z-index:1;
-  box-sizing:border-box
-}
-.openms-lib-page--contributors .contributors-members > .openms-lib-resources__head .openms-lib-resources__eyebrow {
-  justify-content:flex-start
-}
-.openms-lib-page--contributors .contributors-members > .openms-lib-resources__head .openms-lib-resources__title,
-.openms-lib-page--contributors .contributors-members > .openms-lib-resources__head .openms-lib-resources__lead {
-  text-align:left;
-  margin-inline:0;
-  max-width:100%
-}
-.openms-lib-page--contributors .contributors-members > .openms-lib-resources__head .openms-lib-resources__lead {
-  display:grid;
-  gap:.15em;
-  width:100%;
-  min-width:0;
-  margin-bottom:.35rem
-}
-.openms-lib-page--contributors .contributors-members > .openms-lib-resources__head .openms-lib-resources__lead span {
-  display:block;
-  white-space:nowrap
-}
-.openms-lib-page--contributors .contributors-members > .team,
-.openms-lib-page--contributors .contributors-members .members {
-  display:contents
-}
-.openms-lib-page--contributors .contributors-members .member {
-  min-width:0;
-  width:100%;
-  min-height:0;
-  height:auto;
-  align-self:start;
-  box-sizing:border-box
-}
-@media(max-width:1100px) {
-  .openms-lib-page--contributors .contributors-members {
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:.75rem
-  }
-  .openms-lib-page--contributors .contributors-members > .openms-lib-resources__head {
-    grid-column:1 / -1;
-    grid-row:auto;
-    max-width:min(100%,40rem);
-    padding:0 0 1rem;
-    margin:0;
-    align-self:start
-  }
-  .openms-lib-page--contributors .contributors-members > .openms-lib-resources__head .openms-lib-resources__lead span {
-    white-space:nowrap
-  }
-}
-@media(max-width:720px) {
-  .openms-lib-page--contributors .contributors-members {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:.75rem
-  }
-  .openms-lib-page--contributors .contributors-members > .openms-lib-resources__head {
-    margin-bottom:.15rem
-  }
-  .openms-lib-page--contributors .contributors-members > .openms-lib-resources__head .openms-lib-resources__lead span {
-    white-space:normal
-  }
-}
-@media(max-width:480px) {
-  .openms-lib-page--contributors .contributors-members {
-    grid-template-columns:1fr;
-    gap:.75rem
-  }
+  margin-top:clamp(1.25rem,3vw,2rem)
 }
 .openms-lib-page--contributors .leadership-grid {
   display:grid;
@@ -9141,7 +9084,7 @@
 
 /* Governance — match Contribute equal section rhythm */
 .openms-lib-page--governance .openms-lib-hero--pro {
-  padding-bottom: calc(var(--openms-btn-glow-size, 6px) + 0.5rem);
+  padding-bottom: calc(clamp(2.75rem, 5.5vw, 4.25rem) + var(--openms-btn-glow-size, 6px));
   overflow: visible;
 }
 
@@ -9604,11 +9547,12 @@
 
 .openms-lib-page--governance #responsibilities .openms-lib-resources__item--static:hover,
 .openms-lib-page--governance #responsibilities .openms-lib-resources__item--static:focus-within {
-  border-color: transparent;
+  /* Beat the governance white card `background: … !important` so hover isn’t white-on-white */
+  border-color: transparent !important;
   background:
     linear-gradient(160deg, rgba(255, 255, 255, 0.14) 0%, transparent 42%),
-    var(--openms-navy);
-  box-shadow: 0 0.85rem 1.85rem rgba(var(--openms-navy-rgb), 0.32);
+    var(--openms-navy) !important;
+  box-shadow: 0 0.85rem 1.85rem rgba(var(--openms-navy-rgb), 0.32) !important;
   color: var(--openms-white);
   transform: translateY(-3px);
 }
@@ -10486,6 +10430,9 @@
   padding:0 1.15rem 1.15rem;
   border-top:1px solid var(--pro-line)
 }
+.openms-lib-page--sponsor-us .sponsor-benefits__switcher {
+  display:none
+}
 .openms-lib-page--sponsor-us .sponsor-benefits__scroller {
   width:100%;
   max-height:none;
@@ -10928,6 +10875,115 @@
     position:static;
     left:auto
   }
+  .openms-lib-page--sponsor-us .sponsor-benefits__switcher {
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:.35rem;
+    margin:0 0 .9rem;
+    padding:.3rem;
+    border:1px solid rgba(var(--openms-navy-rgb),.12);
+    border-radius:999px;
+    background:rgba(var(--openms-navy-rgb),.03)
+  }
+  .openms-lib-page--sponsor-us .sponsor-benefits__switcher-btn {
+    appearance:none;
+    margin:0;
+    padding:.55rem .35rem;
+    border:0;
+    border-radius:999px;
+    background:transparent;
+    color:rgba(var(--openms-dark-rgb),.72);
+    font-family:var(--openms-font-body);
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.02em;
+    line-height:1.2;
+    text-align:center;
+    cursor:pointer;
+    transition:background-color .18s ease,color .18s ease,box-shadow .18s ease
+  }
+  .openms-lib-page--sponsor-us .sponsor-benefits__switcher-btn.is-active,
+  .openms-lib-page--sponsor-us .sponsor-benefits__switcher-btn[aria-selected=true] {
+    background:var(--openms-navy);
+    color:var(--openms-white);
+    box-shadow:0 .2rem .55rem rgba(var(--openms-navy-rgb),.22)
+  }
+  .openms-lib-page--sponsor-us .sponsor-benefits__switcher-btn:focus-visible {
+    outline:2px solid var(--openms-blue);
+    outline-offset:2px
+  }
+
+  /* Active tier cells must stay visible; clear blue wash on mobile */
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier=bronze]
+    [data-sponsor-benefits=bronze],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier=silver]
+    [data-sponsor-benefits=silver],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier=gold]
+    [data-sponsor-benefits=gold],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier=platinum]
+    [data-sponsor-benefits=platinum] {
+    display:flex !important;
+    background:transparent !important;
+    box-shadow:none !important
+  }
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier=bronze]
+    .sponsor-benefits__matrix-row--head
+    [data-sponsor-benefits=bronze],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier=silver]
+    .sponsor-benefits__matrix-row--head
+    [data-sponsor-benefits=silver],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier=gold]
+    .sponsor-benefits__matrix-row--head
+    [data-sponsor-benefits=gold],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier=platinum]
+    .sponsor-benefits__matrix-row--head
+    [data-sponsor-benefits=platinum] {
+    background:var(--pro-band-soft) !important;
+    box-shadow:none !important
+  }
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier=bronze]
+    [data-sponsor-benefits=bronze]
+    .sponsor-benefits__col-name,
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier=silver]
+    [data-sponsor-benefits=silver]
+    .sponsor-benefits__col-name,
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier=gold]
+    [data-sponsor-benefits=gold]
+    .sponsor-benefits__col-name,
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier=platinum]
+    [data-sponsor-benefits=platinum]
+    .sponsor-benefits__col-name {
+    color:var(--openms-navy)
+  }
+  .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--bronze,
+  .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--silver,
+  .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--gold,
+  .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--platinum {
+    background:transparent !important
+  }
+  .openms-lib-page--sponsor-us .sponsor-benefits__lines,
+  .openms-lib-page--sponsor-us .sponsor-benefits__check,
+  .openms-lib-page--sponsor-us .sponsor-benefits__cross {
+    display:grid;
+    visibility:visible;
+    opacity:1
+  }
+  .openms-lib-page--sponsor-us .sponsor-benefits__check,
+  .openms-lib-page--sponsor-us .sponsor-benefits__cross {
+    display:inline-flex
+  }
 
 }
 @media(max-width:768px) {
@@ -11008,6 +11064,14 @@
   }
   .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__contribution {
     font-size:clamp(1.1rem,5vw,1.3rem)
+  }
+  .openms-lib-page--sponsor-us .sponsor-benefits__switcher {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    border-radius:1rem
+  }
+  .openms-lib-page--sponsor-us .sponsor-benefits__switcher-btn {
+    padding:.6rem .4rem;
+    font-size:.8rem
   }
 
 }
@@ -11188,7 +11252,9 @@
 
 /* Get started / Explore pyOpenMS — extra space under cards before next section */
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
-  #getting-started,
+  #getting-started {
+  padding-bottom: 0;
+}
 .openms-lib-page--pyopenms-pro
   #getting-started,
 .openms-lib-page--pyopenms-viz-pro
@@ -12251,8 +12317,8 @@
 
 /* Overview tiles — intentional watermark nums + soft strip tint */
 .openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro) {
-  --openms-step-num-color: rgba(var(--openms-navy-rgb), 0.18);
-  --openms-step-num-color-hover: rgba(var(--openms-navy-rgb), 0.3);
+  --openms-step-num-color: rgba(var(--openms-blue-rgb), 0.38);
+  --openms-step-num-color-hover: rgba(var(--openms-blue-rgb), 0.55);
 }
 
 .openms-lib-page--pyopenms-pro:not(.openms-lib-page--pyopenms-viz-pro) .openms-lib-about__mosaic {
@@ -12961,6 +13027,12 @@
 .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
   .openms-lib-hero--pro {
   padding-bottom: calc(var(--openms-btn-glow-size, 6px) + 0.5rem);
+  overflow: visible;
+}
+
+.openms-lib-page--governance.openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps)
+  .openms-lib-hero--pro {
+  padding-bottom: calc(clamp(2.75rem, 5.5vw, 4.25rem) + var(--openms-btn-glow-size, 6px));
   overflow: visible;
 }
 
@@ -14752,37 +14824,6 @@
   padding: 0;
 }
 
-.openms-lib-page--contributors #members .openms-lib-resources__head {
-  max-width: none;
-  justify-items: start;
-  text-align: left;
-  margin-inline: 0;
-}
-
-.openms-lib-page--contributors #members .openms-lib-resources__lead {
-  display: grid;
-  gap: 0.15em;
-  max-width: none;
-  width: max-content;
-  margin-inline: 0;
-  text-align: left;
-}
-
-.openms-lib-page--contributors #members .openms-lib-resources__lead span {
-  display: block;
-  white-space: nowrap;
-}
-
-@media (max-width: 640px) {
-  .openms-lib-page--contributors #members .openms-lib-resources__lead {
-    width: 100%;
-  }
-
-  .openms-lib-page--contributors #members .openms-lib-resources__lead span {
-    white-space: normal;
-  }
-}
-
 .openms-lib-page--contributors .leadership-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -14855,7 +14896,7 @@
 }
 
 .openms-lib-page--contributors .contributors-exec-note {
-  margin: 0 auto;
+  margin: clamp(1.75rem, 3.5vw, 2.5rem) auto 0;
   max-width: 42rem;
   text-align: center;
   font-size: var(--openms-body-size-lg);
@@ -14870,7 +14911,11 @@
   text-underline-offset: 0.15em;
 }
 
-/* Members gallery */
+.openms-lib-page--contributors .leadership-card__photo--joshua {
+  object-position: center 18%;
+}
+
+/* Executive Committee GitHub gallery */
 .openms-lib-page--contributors .team {
   margin: 0;
   padding: 0;
@@ -17041,6 +17086,14 @@
     .sponsor-benefits__matrix {
     grid-template-columns: minmax(8rem, 0.85fr) minmax(0, 1.4fr);
     min-width: 0;
+    width: 100%;
+  }
+
+  .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="bronze"] [data-sponsor-benefits]:not([data-sponsor-benefits="bronze"]),
+  .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="silver"] [data-sponsor-benefits]:not([data-sponsor-benefits="silver"]),
+  .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="gold"] [data-sponsor-benefits]:not([data-sponsor-benefits="gold"]),
+  .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="platinum"] [data-sponsor-benefits]:not([data-sponsor-benefits="platinum"]) {
+    display: none !important;
   }
 }
 
@@ -17080,11 +17133,87 @@
   }
 
   .openms-lib-page--sponsor-us .sponsor-benefits__matrix {
-    min-width: 40rem;
+    min-width: 0;
+    width: 100%;
   }
 
   .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell {
     padding: 0.75rem 0.85rem;
+  }
+
+  /* Mobile single-tier view — no blue selected-column wash */
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="bronze"]
+    [data-sponsor-benefits="bronze"],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="silver"]
+    [data-sponsor-benefits="silver"],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="gold"]
+    [data-sponsor-benefits="gold"],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="platinum"]
+    [data-sponsor-benefits="platinum"],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="bronze"]
+    .sponsor-benefits__matrix-row--head
+    [data-sponsor-benefits="bronze"],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="silver"]
+    .sponsor-benefits__matrix-row--head
+    [data-sponsor-benefits="silver"],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="gold"]
+    .sponsor-benefits__matrix-row--head
+    [data-sponsor-benefits="gold"],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="platinum"]
+    .sponsor-benefits__matrix-row--head
+    [data-sponsor-benefits="platinum"] {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="bronze"]
+    [data-sponsor-benefits="bronze"]
+    .sponsor-benefits__col-name,
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="silver"]
+    [data-sponsor-benefits="silver"]
+    .sponsor-benefits__col-name,
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="gold"]
+    [data-sponsor-benefits="gold"]
+    .sponsor-benefits__col-name,
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="platinum"]
+    [data-sponsor-benefits="platinum"]
+    .sponsor-benefits__col-name {
+    color: var(--openms-navy);
+  }
+
+  .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--bronze,
+  .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--silver,
+  .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--gold,
+  .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--platinum {
+    background: transparent !important;
+  }
+
+  /* Keep the active tier cells visible when switching */
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="bronze"]
+    [data-sponsor-benefits="bronze"],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="silver"]
+    [data-sponsor-benefits="silver"],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="gold"]
+    [data-sponsor-benefits="gold"],
+  .openms-lib-page--sponsor-us
+    .sponsor-benefits[data-active-tier="platinum"]
+    [data-sponsor-benefits="platinum"] {
+    display: flex !important;
   }
 
   .openms-lib-page--sponsor-us .sponsor-logos__rail {
@@ -17333,7 +17462,7 @@
 }
 
 /* --- recovered patches (post-replay) --- */
-/* Membership — icons connected, detail cards beneath */
+/* Membership — icon above each step; connected on desktop */
 .openms-lib-page--governance .governance-membership {
   display:grid;
   gap:var(--pro-head-to-content);
@@ -17381,25 +17510,58 @@
 }
 .openms-lib-page--governance .governance-membership__track {
   display:grid;
-  gap:clamp(.85rem,2vw,1.15rem);
+  gap:0;
   margin:0;
   padding:0
 }
-.openms-lib-page--governance .governance-membership__pathway {
+.openms-lib-page--governance .governance-membership__cards {
   display:grid;
-  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
-  align-items:center;
-  gap:clamp(.75rem,2vw,1.25rem);
-  width:100%
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:start;
+  gap:clamp(.85rem,2vw,1.35rem);
+  margin:0;
+  padding:0;
+  list-style:none;
+  position:relative
 }
-.openms-lib-page--governance .governance-membership__pathway .governance-membership__icon {
-  justify-self:center
+.openms-lib-page--governance .governance-membership__cards::before {
+  content:"";
+  position:absolute;
+  top:calc(var(--openms-card-icon-size, 2.75rem) / 2 - 1px);
+  left:calc(25% + .5rem);
+  right:calc(25% + .5rem);
+  height:2px;
+  background:linear-gradient(90deg,rgba(var(--openms-blue-rgb),.18),rgba(var(--openms-blue-rgb),.5),rgba(var(--openms-blue-rgb),.18));
+  border-radius:999px;
+  pointer-events:none;
+  z-index:0
+}
+.openms-lib-page--governance .governance-membership__card,
+.openms-lib-page--governance .governance-membership__card:hover,
+.openms-lib-page--governance .governance-membership__card:focus-within {
+  display:grid;
+  justify-items:center;
+  align-content:start;
+  gap:.4rem;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  padding:0!important;
+  border:none!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  transform:none!important;
+  text-align:center;
+  position:relative;
+  z-index:1
 }
 .openms-lib-page--governance .governance-membership__icon {
   display:grid;
   place-items:center;
   width:auto;
   height:auto;
+  margin:0 0 .15rem;
   border:none;
   border-radius:0;
   background:transparent;
@@ -17417,38 +17579,6 @@
 .openms-lib-page--governance .governance-membership__icon .svg-inline--fa path {
   fill:currentColor!important
 }
-.openms-lib-page--governance .governance-membership__connector {
-  width:clamp(2.75rem,8vw,5rem);
-  height:2px;
-  margin:0;
-  background:linear-gradient(90deg,rgba(var(--openms-blue-rgb),.18),rgba(var(--openms-blue-rgb),.5),rgba(var(--openms-blue-rgb),.18));
-  border-radius:999px
-}
-.openms-lib-page--governance .governance-membership__cards {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:clamp(.85rem,2vw,1.35rem);
-  margin:0;
-  padding:0;
-  list-style:none
-}
-.openms-lib-page--governance .governance-membership__card,
-.openms-lib-page--governance .governance-membership__card:hover,
-.openms-lib-page--governance .governance-membership__card:focus-within {
-  display:grid;
-  justify-items:center;
-  gap:.4rem;
-  height:auto!important;
-  min-height:0!important;
-  max-height:none!important;
-  padding:0!important;
-  border:none!important;
-  border-radius:0!important;
-  background:transparent!important;
-  box-shadow:none!important;
-  transform:none!important;
-  text-align:center
-}
 .openms-lib-page--governance .governance-membership__tag {
   margin:0;
   text-align:center
@@ -17463,18 +17593,16 @@
   text-align:center
 }
 @media (max-width:700px) {
-  .openms-lib-page--governance .governance-membership__pathway {
-    gap:.55rem
-  }
-  .openms-lib-page--governance .governance-membership__connector {
-    width:clamp(1.75rem,12vw,3rem)
-  }
   .openms-lib-page--governance .governance-membership__cards {
     grid-template-columns:1fr;
-    gap:.75rem
+    gap:1.15rem
+  }
+  .openms-lib-page--governance .governance-membership__cards::before {
+    display:none
   }
   .openms-lib-page--governance .governance-membership__icon {
-    font-size:var(--openms-card-icon-size, clamp(2.5rem, 3.8vw, 3rem))
+    font-size:var(--openms-card-icon-size, clamp(2.5rem, 3.8vw, 3rem));
+    margin-bottom:.25rem
   }
 }
 

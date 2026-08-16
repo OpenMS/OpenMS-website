@@ -2,12 +2,12 @@
 {{- $eyebrow := index $cfg "eyebrow" | default "Partner with OpenMS" -}}
 {{- $subtitle := index $cfg "subtitle" | default "We’re interested in hearing your idea for a partnership." -}}
 <section class="openms-lib-layout">
-<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--research-partnerships">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--research-partnerships">
 <div class="openms-lib-page__intro">
-  <header class="openms-lib-hero openms-lib-hero--pro" aria-label="Research partnerships with OpenMS">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="Research partnerships with OpenMS">
     <div class="openms-lib-hero__panel">
       <div class="openms-lib-hero__content">
-        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "people" }}{{ $eyebrow }}</p>
         <h1 class="openms-lib-hero__title">
           Research <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">partnerships</span> that scale with your science.
         </h1>

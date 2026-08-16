@@ -48,9 +48,12 @@
           {{- if $external }} target="_blank" rel="noopener noreferrer"{{- end }}
         >
           <div class="ecosystem-home__card-head">
-            {{- with $tag }}
-            <span class="ecosystem-home__card-tag">{{ . }}</span>
-            {{- end }}
+            <div class="ecosystem-home__card-intro">
+              {{- with $tag }}
+              <span class="ecosystem-home__card-tag">{{ . }}</span>
+              {{- end }}
+              <h3 class="ecosystem-home__card-title">{{ $item.name }}</h3>
+            </div>
             {{- with $item.icon }}
             <img
               class="ecosystem-home__card-icon"
@@ -61,7 +64,6 @@
             />
             {{- end }}
           </div>
-          <h3 class="ecosystem-home__card-title">{{ $item.name }}</h3>
           {{- with $item.description }}
           <p class="ecosystem-home__card-text">{{ . }}</p>
           {{- end }}

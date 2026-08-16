@@ -22,12 +22,12 @@
 {{- $highlightsEyebrow := index $cfg "highlightsEyebrow" | default "Community" -}}
 {{- $upcomingEyebrow := index $upcoming "eyebrow" | default "Save the date" -}}
 <section class="openms-lib-layout">
-<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--developer-retreat">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--developer-retreat">
 <div class="openms-lib-page__intro">
-  <header class="openms-lib-hero openms-lib-hero--pro" aria-label="{{ $pageTitle }}">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="{{ $pageTitle }}">
     <div class="openms-lib-hero__panel">
       <div class="openms-lib-hero__content">
-        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "calendar" }}{{ $eyebrow }}</p>
         <h1 class="openms-lib-hero__title">{{ $headline | safeHTML }}</h1>
         {{- if $about -}}
         <p class="openms-lib-hero__lead">{{ $about | safeHTML }}</p>

@@ -82,13 +82,15 @@
   .home-page__hero .hero-home__title-line,
   .hero-home__title-line {
     display: block !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
     white-space: normal !important;
     overflow-wrap: break-word !important;
   }
 
   .home-page__hero .hero-home__description,
   .hero-home__description {
-    width: var(--hero-lead-width, min(100%, 26rem)) !important;
+    width: 100% !important;
     max-width: 100% !important;
     line-height: 1.6 !important;
     text-wrap: pretty;
@@ -97,6 +99,16 @@
   .hero-home__visual-caption {
     font-size: var(--openms-text-min);
     line-height: 1.45;
+  }
+
+  /* Homepage hero: hide mockup labels + trust line on phones */
+  .home-page__hero .hero-mockup__labels,
+  .home-page__hero .hero-mockup__chrome-title,
+  .home-page__hero .hero-mockup__chrome-brand,
+  .home-page__hero .hero-home__note,
+  .home-page__hero .hero-home__note--under-graphic,
+  .home-page__hero .hero-home__highlights {
+    display: none !important;
   }
 
 }

@@ -270,7 +270,7 @@
 .openms-lib-page--privacy .privacy-details__rich a:hover,
 .openms-lib-page--privacy .privacy-details__rich a:focus-visible {
   color: var(--openms-content-link-hover, var(--openms-blue));
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .openms-lib-page--privacy .privacy-details__rich strong {

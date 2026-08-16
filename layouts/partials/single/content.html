@@ -1,34 +1,48 @@
-<section class="content-padding flex-row">
-    {{- $showShortcuts := not (.Params.hideShortcuts | default false) -}}
-    {{- if $showShortcuts }}
-    <div class="shortcuts-container">
-        <div class="shortcuts-title"><img src="/images/icons/list-bulleted.svg"/>On this page</div>
-        <div id="shortcuts"></div>
-    </div>
-    {{- end }}
-    <div class="content-container">
-        <div class="columns">
-            <div class="column is-centered-tablet-portrait">
-                {{- $showTitle := not (.Params.hidePageTitle | default false) -}}
-                {{- $subtitle := .Params.Subtitle -}}
-                {{- if $showTitle }}
-                <h1 class="title section-title">{{ .Title }}</h1>
-                {{- end }}
-                {{- with $subtitle }}
-                <h5 class="subtitle is-5 is-muted">{{ . }}</h5>
-                {{- end }}
-                {{- if or $showTitle $subtitle }}
-                <div class="divider"></div>
-                {{- end }}
-            </div>
+{{- $title := .Title -}}
+{{- $subtitle := .Params.Subtitle -}}
+{{- $eyebrow := .Params.eyebrow | default "OpenMS" -}}
+{{- $showTitle := and (not (.Params.hidePageTitle | default false)) $title -}}
+{{- $showIntro := or $showTitle $subtitle -}}
+{{- $showShortcuts := not (.Params.hideShortcuts | default false) -}}
+{{- $toc := .TableOfContents -}}
+{{- $hasToc := and $showShortcuts $toc (in (printf "%s" $toc) "<li") -}}
+{{- $tocInner := replaceRE `(?s)^\s*<nav[^>]*>(.*)</nav>\s*$` "$1" (printf "%s" $toc) | safeHTML -}}
+<section class="openms-lib-layout">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--doc">
+  {{- if $showIntro }}
+  <div class="openms-lib-page__intro">
+    <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="{{ $title | default "Page" }}">
+      <div class="openms-lib-hero__panel">
+        <div class="openms-lib-hero__content">
+          <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "code" }}{{ $eyebrow }}</p>
+          {{- if $showTitle }}
+          <h1 class="openms-lib-hero__title">{{ $title }}</h1>
+          {{- end }}
+          {{- with $subtitle }}
+          <p class="openms-lib-hero__lead">{{ . }}</p>
+          {{- end }}
         </div>
-        {{ with partial "post_meta.html" . -}}
-        <div class="post-meta">{{ . }}</div>
-        {{- end }}
+      </div>
+    </header>
+  </div>
+  {{- end }}
 
-        <div class="post-content">
-          {{ .Content }}
+  <div class="openms-lib-page__body" aria-label="{{ $title | default "Page content" }}">
+    <div class="openms-lib-page__anchor">
+      <section class="openms-lib-resources openms-lib-resources--no-feature openms-lib-prose-section">
+        <div class="openms-lib-resources__inner">
+          {{- if $hasToc }}
+          <nav class="openms-lib-prose__toc" aria-label="On this page">
+            <p class="openms-lib-prose__toc-title">On this page</p>
+            {{ $tocInner }}
+          </nav>
+          {{- end }}
+          <div class="openms-lib-prose post-content">
+            {{ .Content }}
+          </div>
         </div>
+      </section>
     </div>
   </div>
+</article>
 </section>

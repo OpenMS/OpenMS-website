@@ -175,6 +175,19 @@
       "--openms-news-banner-height",
       bannerHeight + "px"
     );
+    var nav = document.getElementById("nav");
+    var navHeight = nav ? nav.offsetHeight : Math.max(0, header.offsetHeight - bannerHeight);
+    document.documentElement.style.setProperty(
+      "--openms-nav-bar-height",
+      navHeight + "px"
+    );
+  }
+
+  function updateScrolledState() {
+    var scrolled = (window.scrollY || window.pageYOffset || 0) > 16;
+    document.body.classList.toggle("is-scrolled", scrolled);
+    var header = document.querySelector(".site-header");
+    if (header) header.classList.toggle("is-scrolled", scrolled);
   }
 
   function captureMenuOffset() {
@@ -433,7 +446,9 @@
     initDropdownPanels(nodes.clone);
     updateNavbarLayoutMode();
     updateHeaderHeight();
+    updateScrolledState();
 
+    window.addEventListener("scroll", updateScrolledState, { passive: true });
     window.addEventListener("resize", scheduleLayoutUpdate);
     window.addEventListener("orientationchange", scheduleLayoutUpdate);
 

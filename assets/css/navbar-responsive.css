@@ -243,8 +243,9 @@
     overflow: visible;
     display: none;
     box-sizing: border-box;
-    width: max-content;
-    min-width: 0;
+    width: var(--openms-navbar-dropdown-width, 18rem);
+    min-width: var(--openms-navbar-dropdown-width, 18rem);
+    max-width: var(--openms-navbar-dropdown-width, 18rem);
   }
 
   .navbar.is-fresh .navbar-links > .navbar-item.has-dropdown:nth-last-child(-n+3) .navbar-dropdown,
@@ -317,12 +318,18 @@
   }
 
   .navbar.is-fresh a.navbar-item.navbar-cta-item.openms-btn-primary,
-  .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate,
-  #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.openms-btn-primary,
-  #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate {
+  #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.openms-btn-primary {
     min-height: clamp(2.25rem, 3.5vw, 2.5rem);
     padding: clamp(0.4rem, 0.8vw, 0.55rem) clamp(0.75rem, 1.2vw, 1rem) !important;
     font-size: clamp(0.8125rem, 0.9vw, 0.9375rem);
+  }
+
+  /* Sponsor Us — match hero “Explore the library” ghost layout */
+  .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate,
+  #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate {
+    min-height: var(--openms-btn-min-height, 2.75rem) !important;
+    padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+    font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
   }
 }
 
@@ -1124,7 +1131,9 @@
 
   .site-header #nav.navbar.is-fresh .navbar-menu .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__label,
   #navbar-clone.navbar.is-fresh .navbar-menu .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__label {
-    flex: 0 1 auto;
+    flex: 0 0 auto;
+    min-width: auto;
+    max-width: 100%;
   }
 
   .site-header #nav.navbar.is-fresh .navbar-menu .navbar-dropdown a.navbar-item.has-external-icon svg.icon,

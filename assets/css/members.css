@@ -52,6 +52,10 @@
   border: 3px solid rgba(var(--openms-blue-rgb), 0.14);
 }
 
+.leadership-card__photo--joshua {
+  object-position: center 18%;
+}
+
 .leadership-card__who {
   min-width: 0;
   display: grid;

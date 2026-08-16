@@ -185,8 +185,8 @@
 
 .fellowship-project-card__title a:hover,
 .fellowship-project-card__title a:focus-visible {
-  color: var(--openms-blue);
-  text-decoration: underline;
+  color: var(--openms-content-link, var(--openms-navy));
+  text-decoration: none;
   text-underline-offset: 0.14em;
 }
 

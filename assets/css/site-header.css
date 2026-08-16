@@ -96,15 +96,27 @@ body.navbar-menu-open .site-header {
   #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate {
     color: var(--openms-white) !important;
     background: transparent !important;
-    border-color: rgba(var(--openms-white-rgb), 0.34) !important;
+    background-color: transparent !important;
+    border: 2px solid rgba(var(--openms-white-rgb), 0.72) !important;
+    border-color: rgba(var(--openms-white-rgb), 0.72) !important;
+    min-height: var(--openms-btn-min-height, 2.75rem) !important;
+    padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+    font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+    font-weight: 600 !important;
+    border-radius: var(--openms-btn-pill-radius, 999px) !important;
   }
 
   .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:hover,
   .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:focus-visible,
+  .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:active,
   #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:hover,
-  #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:focus-visible {
+  #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:focus-visible,
+  #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:active {
     color: var(--openms-white) !important;
     background: rgba(var(--openms-white-rgb), 0.08) !important;
-    border-color: rgba(var(--openms-white-rgb), 0.5) !important;
+    background-color: rgba(var(--openms-white-rgb), 0.08) !important;
+    border-color: rgba(var(--openms-white-rgb), 0.78) !important;
+    transform: scale(var(--openms-btn-hover-scale));
+    box-shadow: 0 0 0 var(--openms-btn-glow-size) rgba(var(--openms-white-rgb), 0.18) !important;
   }
 }

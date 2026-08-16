@@ -39,9 +39,9 @@
 
   var moreBtn = document.createElement("button");
   moreBtn.type = "button";
-  moreBtn.className = "openms-lib-btn openms-lib-btn--ghost publications-more__btn";
+  moreBtn.className = "openms-cta-link publications-more__btn";
   moreBtn.setAttribute("data-publications-show-more", "");
-  moreBtn.textContent = "Show more";
+  moreBtn.innerHTML = 'Show more<span aria-hidden="true"> →</span>';
   moreWrap.appendChild(moreBtn);
 
   if (entriesWrap && entriesWrap.parentNode) {

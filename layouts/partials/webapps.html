@@ -51,9 +51,9 @@
         {{- with $showAll }}
         <div class="webapps-featured__header-action">
           <a
-            class="webapps-featured__show-all openms-btn-primary"
+            class="webapps-featured__show-all"
             href="{{ .url }}"
-          >{{ .text }}</a>
+          >{{ .text }}<span class="webapps-featured__show-all-icon" aria-hidden="true">→</span></a>
         </div>
         {{- end }}
       </header>

@@ -192,7 +192,7 @@ languages:
           intro: >-
             OpenMS receives direct funding from organizations that sponsor the project.
           listTitle: "Sponsors include:"
-          contactCta: Interested in sponsoring us? Contact us for more information.
+          contactCta: Interested in sponsoring us? Email us for more information.
           contactUrl: /contact/
           contactButtonText: Email Us
           contactButtonUrl: mailto:fundraising@openms.de
@@ -484,12 +484,11 @@ languages:
         titleHighlight: "mass spectrometry"
         titleAfter: "."
         description: >-
-          Expert-crafted ecosystem of computational mass spectrometry tools.
-          Run scientifically vetted, cutting edge apps. Build custom tools on top
-          of robust open-source algorithms. Join the OpenMS community.
+          An expert-crafted ecosystem of computational mass spectrometry tools —
+          run vetted apps, build on open algorithms, and join the community.
         imageAlt: OpenMS peptide identification workflow preview
         buttontext: Get started
-        buttonlink: https://deploy-preview-277--openms.netlify.app/contribute/
+        buttonlink: /contribute/
         secondaryButtonText: Explore the library
         secondaryButtonLink: /openms-lib/
         trustNote: Ready-to-use apps · Modular workflows · Built by the community
@@ -963,6 +962,20 @@ languages:
 
 
       pyopenmsVizPage:
+        highlights:
+          eyebrow: ""
+          title: ""
+          layout: benefits
+          items:
+            - title: DataFrame-native
+              text: Plot directly from pandas with df.plot()
+            - title: Mass spec plots
+              text: Spectra, chromatograms, and peak maps
+            - title: Multiple backends
+              text: Matplotlib, Bokeh, and Plotly
+            - title: One-line API
+              text: Publication-ready figures from a single call
+
         gettingStarted:
           eyebrow: Get started
           title: Explore pyopenms_viz
@@ -974,6 +987,7 @@ languages:
               text: Browse example plots for spectra, chromatograms, and more.
               url: https://pyopenms-viz.readthedocs.io/en/latest/gallery/index.html
               linkText: Browse gallery
+              featured: true
             - title: Installation
               tag: Install
               icon: fab fa-python
@@ -986,15 +1000,39 @@ languages:
               text: Guides and tutorials to help you get productive quickly.
               url: https://pyopenms-viz.readthedocs.io/en/latest/
               linkText: Open docs
+            - title: API Reference
+              tag: API
+              icon: fas fa-code
+              text: Full class and method reference for plot types and customization.
+              url: https://pyopenms-viz.readthedocs.io/en/latest/API.html
+              linkText: View reference
+            - title: Python bindings
+              tag: pyOpenMS
+              icon: fab fa-python
+              text: Use OpenMS algorithms and data structures directly from Python.
+              url: /pyopenms/
+              linkText: Explore pyOpenMS
+            - title: Need help?
+              type: online
+              text: Chat with the community on Discord, or open a GitHub issue for bugs and feature requests.
+              links:
+                - name: Ask on Discord
+                  icon: fab fa-discord
+                  text: Quick questions and community chat
+                  url: https://discord.com/invite/v9tv5BxPch
+                - name: Report an issue
+                  icon: fab fa-github
+                  text: Bugs and feature requests
+                  url: https://github.com/OpenMS/pyopenms_viz/issues/new
 
         developers:
           eyebrow: For Developers
           title: Contribute
           lead: Help improve visualization for the OpenMS ecosystem — report issues, extend plot types, and share examples.
-          citeSeparate: true
+          citeSeparate: false
           citeText: Used pyopenms_viz in your work? If so, please cite.
           citation:
-            variant: secondary
+            variant: primary
             topic: pyOpenMS-viz
             title: >-
               pyOpenMS-viz: Streamlining Mass Spectrometry Data Visualization
@@ -1012,23 +1050,38 @@ languages:
             - title: Report an Issue
               tag: GitHub
               icon: fab fa-github
-              text: Report bugs or request new plot types on GitHub.
+              subtitle: Report bugs or request new plot types on GitHub.
               url: https://github.com/OpenMS/pyopenms_viz/issues/new
               linkText: Open on GitHub
-            - title: API Reference
-              tag: API
-              icon: fas fa-code
-              text: Explore the Python API for plot types and customization options.
-              url: https://pyopenms-viz.readthedocs.io/en/latest/API.html
-              linkText: View reference
+            - title: Contribute on GitHub
+              tag: Source
+              icon: fab fa-github
+              subtitle: Browse the source, open pull requests, and share examples.
+              url: https://github.com/OpenMS/pyopenms_viz
+              linkText: View repository
+            - title: Reviewing Pull Requests
+              type: links
+              tag: Review
+              icon: fas fa-code-branch
+              subtitle: Help move contributions forward by reviewing open pull requests on GitHub.
+              platformsAlwaysVisible: true
+              badge:
+                src: https://img.shields.io/github/issues-pr/OpenMS/pyopenms_viz?label=open%20PRs&color=1a56db&style=flat-square
+                alt: Number of open pyopenms_viz pull requests
+                url: https://github.com/OpenMS/pyopenms_viz/pulls
+              platforms:
+                - name: View open PRs
+                  icon: fab fa-github
+                  url: https://github.com/OpenMS/pyopenms_viz/pulls
+                - name: How to review PRs
+                  icon: fas fa-book-open
+                  url: https://github.com/ParadiseSS13/Paradise/discussions/19410
 
       webappsPage:
         highlights:
-          eyebrow: Overview
-          title: Features
-          lead: >-
-            <span class="openms-lib-about__lead-line">Build interactive Streamlit apps on top of OpenMS pipelines —</span>
-            <span class="openms-lib-about__lead-line">from local demos to shareable deployments.</span>
+          eyebrow: ""
+          title: ""
+          layout: benefits
           items:
             - title: Local or cloud
               text: Run locally or deploy with docker-compose
@@ -1051,26 +1104,38 @@ languages:
               icon: fas fa-book-open
               text: Guides for customizing and extending the Streamlit template.
               url: https://template.webapps.openms.org/documentation
-              linkText: Documentation
+              linkText: Open docs
+              featured: true
             - tag: Getting Started
               title: Getting Started
               icon: fas fa-rocket
               text: Fork and customize the template for your pipeline.
               url: https://github.com/OpenMS/streamlit-template/fork
-              linkText: Fork Template
+              linkText: Fork template
             - tag: Deploy
               title: streamlit-deployment
               icon: fab fa-docker
               text: Host multiple WebApps together with Docker Compose.
               url: https://github.com/OpenMS/streamlit-deployment
-              linkText: Deploy with docker compose
-            - type: static
-              tag: Windows
-              title: Deploy as Windows Executable
+              linkText: Deploy with Docker
+            - tag: Windows
+              title: Windows executable
               icon: fab fa-windows
               text: Package your WebApp as a standalone Windows executable.
-              linkText: Template Windows Installer
               url: https://github.com/OpenMS/streamlit-template/releases/latest
+              linkText: Download installer
+            - title: Need help?
+              type: online
+              text: Chat with the community on Discord, or open a GitHub issue for bugs and feature requests.
+              links:
+                - name: Ask on Discord
+                  icon: fab fa-discord
+                  text: Quick questions and community chat
+                  url: https://discord.com/invite/v9tv5BxPch
+                - name: Report an issue
+                  icon: fab fa-github
+                  text: Bugs and feature requests
+                  url: https://github.com/OpenMS/streamlit-template/issues/new
 
         examples:
           eyebrow: Examples
@@ -1087,41 +1152,55 @@ languages:
               url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
             - name: OpenDDA
               logo: /images/webapp/logo/openDDA.svg
+              logoSize: large
               url: http://opendda.webapps.openms.org/
 
         developers:
           eyebrow: For Developers
           title: Contribute
           lead: Help improve the WebApps template and deployment tooling for the OpenMS community.
-          citeSeparate: true
-          citeText: "Used OpenMS WebApps in your work? If so please cite:"
+          citeSeparate: false
+          citeText: Used OpenMS WebApps in your work? If so, please cite.
           citation:
-            variant: secondary
+            variant: primary
             topic: OpenMS WebApps
             title: "OpenMS WebApps: Building User-Friendly Solutions for MS Analysis"
-            journal: Box
+            journal: Journal of Proteome Research
             year: "2025"
             url: https://www.ncbi.nlm.nih.gov/pubmed/39881492
             actionText: View on PubMed
+            moreUrl: /publications/
+            moreText: More citations
           boxes:
-            - title: Open an Issue
+            - title: Report an Issue
               tag: GitHub
               icon: fab fa-github
-              text: Report bugs or suggest features for the Streamlit template.
+              subtitle: Report bugs or suggest features for the Streamlit template.
               url: https://github.com/OpenMS/streamlit-template/issues/new
-              linkText: File on GitHub
+              linkText: Open on GitHub
             - title: Template repository
               tag: Source
               icon: fas fa-code-branch
-              text: Explore the Streamlit template, fork it, and open a pull request.
+              subtitle: Explore the Streamlit template, fork it, and open a pull request.
               url: https://github.com/OpenMS/streamlit-template
-              linkText: View on GitHub
-            - title: Deploy apps
-              tag: Deploy
-              icon: fas fa-server
-              text: Add template-based apps to the shared docker-compose deployment.
-              url: https://github.com/OpenMS/streamlit-deployment
-              linkText: Open deployment repo
+              linkText: View repository
+            - title: Reviewing Pull Requests
+              type: links
+              tag: Review
+              icon: fas fa-code-branch
+              subtitle: Help move contributions forward by reviewing open pull requests on GitHub.
+              platformsAlwaysVisible: true
+              badge:
+                src: https://img.shields.io/github/issues-pr/OpenMS/streamlit-template?label=open%20PRs&color=1a56db&style=flat-square
+                alt: Number of open streamlit-template pull requests
+                url: https://github.com/OpenMS/streamlit-template/pulls
+              platforms:
+                - name: View open PRs
+                  icon: fab fa-github
+                  url: https://github.com/OpenMS/streamlit-template/pulls
+                - name: How to review PRs
+                  icon: fas fa-book-open
+                  url: https://github.com/ParadiseSS13/Paradise/discussions/19410
 
       webappsSection:
         eyebrow: Community tools

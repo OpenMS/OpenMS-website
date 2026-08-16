@@ -135,9 +135,9 @@
 @media (min-width: 1024px) {
   .navbar.is-fresh .navbar-item.has-dropdown .navbar-dropdown,
   #navbar-clone.navbar.is-fresh .navbar-item.has-dropdown .navbar-dropdown {
-    width: max-content;
-    min-width: 0;
-    max-width: min(92vw, max-content);
+    width: var(--openms-navbar-dropdown-width, 18rem);
+    min-width: var(--openms-navbar-dropdown-width, 18rem);
+    max-width: var(--openms-navbar-dropdown-width, 18rem);
     box-sizing: border-box;
     margin-top: 0;
     padding: 0.35rem;
@@ -158,7 +158,7 @@
   .navbar.is-fresh .navbar-dropdown-heading,
   #navbar-clone.navbar.is-fresh .navbar-dropdown .navbar-item,
   #navbar-clone.navbar.is-fresh .navbar-dropdown-heading {
-    white-space: nowrap;
+    white-space: normal;
     width: 100%;
     max-width: none;
     box-sizing: border-box;
@@ -269,7 +269,26 @@
 
 .navbar.is-fresh .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__label,
 #navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__label {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.navbar.is-fresh .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__ext,
+#navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__ext {
+  display: inline;
+  white-space: nowrap;
+}
+
+.navbar.is-fresh .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__label svg.icon,
+.navbar.is-fresh .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__label svg.launch-icon,
+.navbar.is-fresh .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__label svg.external-link-icon,
+#navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__label svg.icon,
+#navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__label svg.launch-icon,
+#navbar-clone.navbar.is-fresh .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__label svg.external-link-icon {
+  display: inline-block !important;
+  margin-left: 0.28em;
+  vertical-align: -0.12em;
 }
 
 .navbar.is-fresh .navbar-dropdown a.navbar-item svg.icon,

@@ -224,7 +224,7 @@
 .openms-lib-page--privacy .privacy-overview__item {
   position: relative;
   display: grid;
-  gap: var(--contribute-space-2, 0.65rem);
+  gap: 0.1rem;
   align-content: start;
   align-items: start;
   justify-items: start;
@@ -313,12 +313,16 @@
 .openms-lib-about__benefit-title,
 .coc-principle__title,
 .contribute-channel__title {
-  margin: 0;
+  margin: 0 0 0.5rem;
   font-family: var(--openms-font-heading);
   font-size: var(--openms-card-title-size) !important;
   font-weight: var(--openms-card-title-weight, 700);
   line-height: 1.3;
   color: var(--openms-card-title-color, var(--pro-card-title, rgba(var(--openms-dark-rgb), 0.82))) !important;
+}
+
+.coc-principle__title {
+  margin: 0;
 }
 
 .openms-lib-about__tile-text,
@@ -358,15 +362,25 @@
 .contribute-channel__index,
 .openms-lib-about__num,
 .openms-lib-about__benefit-num,
+.openms-lib-about__list-num,
 .coc-principle__num,
-.privacy-overview__num {
+.privacy-overview__num,
+.home-pathways__step-num,
+.openms-step__index,
+.openms-lib-list__index,
+.governance-note__index,
+.coc-summary__num,
+.webapps-archived__notice-index {
+  display: block !important;
   font-size: var(--openms-step-num-size) !important;
   font-weight: 800 !important;
   line-height: 1 !important;
   letter-spacing: -0.04em !important;
   color: var(--openms-step-num-color) !important;
+  -webkit-text-fill-color: var(--openms-step-num-color) !important;
   background: transparent !important;
   border: none !important;
+  margin: 0 0 -0.18em !important;
 }
 
 .contribute-channel:hover .contribute-channel__index,
@@ -379,8 +393,11 @@
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit:focus-within .openms-lib-about__benefit-num,
 .coc-principle:hover .coc-principle__num,
 .coc-principle:focus-within .coc-principle__num,
-.privacy-overview__item:hover .privacy-overview__num {
+.privacy-overview__item:hover .privacy-overview__num,
+.home-pathways__step:hover .home-pathways__step-num,
+.home-pathways__step:focus-within .home-pathways__step-num {
   color: var(--openms-step-num-color-hover) !important;
+  -webkit-text-fill-color: var(--openms-step-num-color-hover) !important;
 }
 
 /* ── Responsive: stack with horizontal rules ── */

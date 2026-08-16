@@ -533,7 +533,7 @@
 }
 
 .sponsor-tier__toggle:hover .sponsor-tier__cue {
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 0.15em;
 }
 
@@ -745,7 +745,7 @@
 .sponsor-faq__answer a:hover,
 .sponsor-faq__answer a:focus-visible {
   color: var(--openms-content-link-hover, var(--openms-blue));
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 @media (max-width: 640px) {

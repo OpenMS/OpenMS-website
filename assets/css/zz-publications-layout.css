@@ -52,21 +52,37 @@
   gap: var(--pro-head-to-content);
 }
 
+.openms-lib-page--publications .publications-bibliography {
+  gap: 0.75rem;
+}
+
+.openms-lib-page--publications .publications-bibliography > .openms-lib-resources__head {
+  margin-bottom: 0.35rem;
+}
+
 .openms-lib-page--publications .publications-featured__list,
 .openms-lib-page--publications .publication-list,
 .openms-lib-page--publications .publications-bibliography__entries {
   gap: var(--pro-card-gap);
 }
 
-/* Toolbar — sit cleanly under the section head */
+/* Toolbar — year filter only, right-aligned and tight to the cards */
 .openms-lib-page--publications .publications-toolbar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
   gap: 0.65rem 1rem;
-  margin: calc(var(--pro-head-to-content) * -0.35) 0 0;
+  margin: 0 0 0.45rem;
   padding: 0;
+}
+
+.openms-lib-page--publications .publications-year__title {
+  display: none !important;
+}
+
+.openms-lib-page--publications .publications-year {
+  gap: 0;
 }
 
 .openms-lib-page--publications .publications-toolbar__filter {

@@ -93,7 +93,7 @@ section.webapps-featured::after {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  margin: 0 0 0.85rem;
+  margin: 0 0 var(--openms-stack-eyebrow, 12px);
   padding: 0.35rem 0.85rem;
   font-family: var(--openms-font-body);
   font-size: var(--openms-text-min);
@@ -136,7 +136,7 @@ section.webapps-featured::after {
 }
 
 .webapps-featured__lead {
-  margin: 0.85rem auto 0;
+  margin: var(--openms-stack-lead, 20px) auto 0;
   max-width: min(100%, var(--pro-measure-wide, 58ch));
   width: 100%;
   font-family: var(--openms-font-body);
@@ -838,7 +838,7 @@ section.webapps-featured::after {
 .webapps-catalog__contact a:hover,
 .webapps-catalog__contact a:focus-visible {
   color: var(--openms-content-link-hover, var(--openms-blue));
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Affiliate projects */

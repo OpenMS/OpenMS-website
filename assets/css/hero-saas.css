@@ -691,38 +691,38 @@
   text-decoration: none;
 }
 
-.hero-home__btn--secondary.openms-btn-primary,
-.hero-home__btn--secondary.openms-btn-primary:visited {
+.hero-home__btn--secondary.about-cta-btn--donate,
+.hero-home__btn--secondary.about-cta-btn--donate:visited {
   color: var(--openms-white) !important;
-  background: var(--openms-blue);
-  background-color: var(--openms-blue);
-  border: 2px solid var(--openms-blue);
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 2px solid rgba(var(--openms-white-rgb), 0.72);
   border-radius: var(--openms-btn-pill-radius, 999px);
   box-shadow: 0 0 0 0 var(--openms-btn-glow, rgba(var(--openms-blue-rgb), 0.22));
   transition: var(--openms-btn-motion, transform 0.35s cubic-bezier(0.44, 0, 0.56, 1),
     box-shadow 0.35s cubic-bezier(0.44, 0, 0.56, 1));
 }
 
-.hero-home__btn--secondary.openms-btn-primary:hover,
-.hero-home__btn--secondary.openms-btn-primary:focus-visible,
-.hero-home__btn--secondary.openms-btn-primary:active {
-  background: var(--openms-blue);
-  background-color: var(--openms-blue);
-  border-color: var(--openms-blue);
+.hero-home__btn--secondary.about-cta-btn--donate:hover,
+.hero-home__btn--secondary.about-cta-btn--donate:focus-visible,
+.hero-home__btn--secondary.about-cta-btn--donate:active {
+  background: rgba(var(--openms-white-rgb), 0.08) !important;
+  background-color: rgba(var(--openms-white-rgb), 0.08) !important;
+  border-color: rgba(var(--openms-white-rgb), 0.78);
   color: var(--openms-white) !important;
   transform: scale(var(--openms-btn-hover-scale, 1.03));
   box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px)
-    var(--openms-btn-glow, rgba(var(--openms-blue-rgb), 0.22));
+    rgba(var(--openms-white-rgb), 0.18);
   outline: none;
   text-decoration: none;
 }
 
-.hero-home__btn--secondary.openms-btn-primary:focus-visible {
+.hero-home__btn--secondary.about-cta-btn--donate:focus-visible {
   box-shadow:
     0 0 0 3px var(--openms-navy),
-    0 0 0 5px var(--openms-blue),
+    0 0 0 5px rgba(var(--openms-white-rgb), 0.55),
     0 0 0 calc(5px + var(--openms-btn-glow-size, 6px))
-      var(--openms-btn-glow, rgba(var(--openms-blue-rgb), 0.22));
+      rgba(var(--openms-white-rgb), 0.18);
 }
 
 .hero-home__note {
@@ -839,9 +839,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-home__btn--secondary.openms-btn-primary:hover,
-  .hero-home__btn--secondary.openms-btn-primary:focus-visible,
-  .hero-home__btn--secondary.openms-btn-primary:active {
+  .hero-home__btn--secondary.about-cta-btn--donate:hover,
+  .hero-home__btn--secondary.about-cta-btn--donate:focus-visible,
+  .hero-home__btn--secondary.about-cta-btn--donate:active {
     transform: none;
   }
 }

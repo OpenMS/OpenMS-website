@@ -17,12 +17,12 @@
 {{- $groupByTier := index $section "groupByTier" | default false -}}
 {{- $tiers := .Site.Params.sponsorTiers.levels | default (slice) -}}
 <section class="openms-lib-layout">
-<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--our-sponsors">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--our-sponsors">
 <div class="openms-lib-page__intro">
-  <header class="openms-lib-hero openms-lib-hero--pro" aria-label="OpenMS sponsors">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="OpenMS sponsors">
     <div class="openms-lib-hero__panel">
       <div class="openms-lib-hero__content">
-        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "people" }}{{ $eyebrow }}</p>
         <h1 class="openms-lib-hero__title">
           Our <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">Sponsors</span>.
         </h1>
@@ -31,8 +31,8 @@
           <a class="openms-lib-btn openms-lib-btn--primary" href="/sponsor-us/">
             <span class="openms-lib-btn__label">Sponsorship program</span>
           </a>
-          <a class="openms-lib-btn openms-lib-btn--ghost" href="{{ $contactUrl }}">
-            <span class="openms-lib-btn__label">Contact us</span>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="{{ $contactButtonUrl }}">
+            <span class="openms-lib-btn__label">{{ $contactButtonText }}</span>
           </a>
         </div>
       </div>

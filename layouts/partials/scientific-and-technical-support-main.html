@@ -3,12 +3,12 @@
 {{- $subtitle := index $cfg "subtitle" | default "We're here to help develop scalable and reproducible computational mass spectrometry solutions catered to your needs." -}}
 {{- $formTitle := index $cfg "formTitle" | default "Get in touch with us for a quote." -}}
 <section class="openms-lib-layout">
-<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--services-support">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--services-support">
 <div class="openms-lib-page__intro">
-  <header class="openms-lib-hero openms-lib-hero--pro" aria-label="Scientific and technical support">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="Scientific and technical support">
     <div class="openms-lib-hero__panel">
       <div class="openms-lib-hero__content">
-        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "wrench" }}{{ $eyebrow }}</p>
         <h1 class="openms-lib-hero__title">
           Expert support for your <span class="openms-lib-hero__accent">analyses</span>.
         </h1>

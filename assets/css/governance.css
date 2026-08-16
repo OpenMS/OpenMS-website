@@ -151,7 +151,7 @@
   min-height: 2.1rem;
   padding: 0.35rem 0.8rem;
   border-radius: 999px;
-  color: var(--openms-blue);
+  color: var(--openms-content-link, var(--openms-navy));
   font-weight: 600;
   text-decoration: none;
   background: rgba(var(--openms-blue-rgb), 0.08);
@@ -186,8 +186,8 @@
 
 .infrastructure-card h2 a:hover,
 .infrastructure-card h2 a:focus-visible {
-  color: var(--openms-blue);
-  text-decoration: underline;
+  color: var(--openms-content-link, var(--openms-navy));
+  text-decoration: none;
   text-underline-offset: 0.12em;
 }
 

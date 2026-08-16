@@ -39,16 +39,35 @@
     {{- end }}
 
     {{- if and (not $staticOnly) (gt (len $partners) 0) }}
-    <div class="uni-partners__marquee" aria-hidden="true">
-      <div class="uni-partners__track">
-        <div class="uni-partners__row">
-          {{- range $partners }}
-          {{ partial "university-partner-item.html" . }}
+    {{- $rowA := slice -}}
+    {{- $rowB := slice -}}
+    {{- range $i, $p := $partners -}}
+      {{- if modBool $i 2 -}}
+        {{- $rowB = $rowB | append $p -}}
+      {{- else -}}
+        {{- $rowA = $rowA | append $p -}}
+      {{- end -}}
+    {{- end -}}
+    <div class="uni-partners__marquees" aria-hidden="true">
+      <div class="uni-partners__marquee uni-partners__marquee--forward">
+        <div class="uni-partners__track">
+          {{- range seq 3 }}
+          <div class="uni-partners__row"{{ if gt . 1 }} aria-hidden="true"{{ end }}>
+            {{- range $rowA }}
+            {{ partial "university-partner-item.html" (merge . (dict "duplicate" true)) }}
+            {{- end }}
+          </div>
           {{- end }}
         </div>
-        <div class="uni-partners__row" aria-hidden="true">
-          {{- range $partners }}
-          {{ partial "university-partner-item.html" (merge . (dict "duplicate" true)) }}
+      </div>
+      <div class="uni-partners__marquee uni-partners__marquee--reverse">
+        <div class="uni-partners__track">
+          {{- range seq 3 }}
+          <div class="uni-partners__row"{{ if gt . 1 }} aria-hidden="true"{{ end }}>
+            {{- range $rowB }}
+            {{ partial "university-partner-item.html" (merge . (dict "duplicate" true)) }}
+            {{- end }}
+          </div>
           {{- end }}
         </div>
       </div>

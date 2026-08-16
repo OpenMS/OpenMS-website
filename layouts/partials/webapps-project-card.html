@@ -6,10 +6,11 @@
 {{- $ariaLabel := $project.name }}
 {{- $logo := $project.logo | default "" }}
 {{- $useTextLogo := or (not $logo) (eq $project.logoKind "text") }}
+{{- $isHomeCatalog := eq $embed "home" }}
 {{- if $isExternal }}
   {{- $ariaLabel = printf "%s (opens in new tab)" $ariaLabel }}
 {{- end }}
-<article class="webapps-project-card{{ if eq $embed "home" }} webapps-project-card--catalog{{ end }}{{ if $useTextLogo }} webapps-project-card--text-logo{{ end }}">
+<article class="webapps-project-card{{ if $isHomeCatalog }} webapps-project-card--catalog{{ end }}{{ if $useTextLogo }} webapps-project-card--text-logo{{ end }}">
   <a
     class="webapps-project-card__surface"
     href="{{ $url }}"

@@ -309,8 +309,8 @@
   white-space: nowrap;
   background: transparent !important;
   background-color: transparent !important;
-  border: 2px solid rgba(var(--openms-white-rgb), 0.34) !important;
-  border-color: rgba(var(--openms-white-rgb), 0.34) !important;
+  border: 2px solid rgba(var(--openms-white-rgb), 0.72) !important;
+  border-color: rgba(var(--openms-white-rgb), 0.72) !important;
   color: var(--openms-white) !important;
   box-shadow: 0 0 0 0 var(--openms-btn-glow) !important;
   transform: none;
@@ -329,12 +329,12 @@
 .home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:hover,
 .home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:focus-visible,
 .home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:active {
-  background: transparent !important;
-  background-color: transparent !important;
-  border-color: rgba(var(--openms-white-rgb), 0.34) !important;
+  background: rgba(var(--openms-white-rgb), 0.08) !important;
+  background-color: rgba(var(--openms-white-rgb), 0.08) !important;
+  border-color: rgba(var(--openms-white-rgb), 0.78) !important;
   color: var(--openms-white) !important;
   transform: scale(var(--openms-btn-hover-scale));
-  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) rgba(var(--openms-white-rgb), 0.18) !important;
   outline: none;
   text-decoration: none;
 }

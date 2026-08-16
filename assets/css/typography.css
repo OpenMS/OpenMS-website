@@ -146,6 +146,17 @@ blockquote p {
   font-size: inherit;
 }
 
+/* Consecutive body paragraphs — 16px between them */
+.content-container p + p,
+.markdown p + p,
+article p + p,
+.openms-lib-page [class$="__lead"] + p,
+.openms-lib-page [class$="__lead"] + [class$="__lead"],
+.home-page [class$="__lead"] + p,
+.home-page [class$="__description"] + p {
+  margin-top: var(--openms-stack-paragraph, 16px);
+}
+
 /* Web minimum — nothing smaller than 11pt */
 .hero-modern__stat-label,
 .hero-modern__btn,

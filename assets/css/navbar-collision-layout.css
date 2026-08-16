@@ -753,7 +753,9 @@ html[data-navbar-layout="mobile"] #navbar-clone.navbar.is-fresh .navbar-menu .na
 
   html[data-navbar-layout="mobile"] .site-header #nav.navbar.is-fresh .navbar-menu .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__label,
 html[data-navbar-layout="mobile"] #navbar-clone.navbar.is-fresh .navbar-menu .navbar-dropdown a.navbar-item.has-external-icon .navbar-item__label {
-    flex: 0 1 auto;
+    flex: 0 0 auto;
+    min-width: auto;
+    max-width: 100%;
   }
 
   html[data-navbar-layout="mobile"] .site-header #nav.navbar.is-fresh .navbar-menu .navbar-dropdown a.navbar-item.has-external-icon svg.icon,

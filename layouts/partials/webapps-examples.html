@@ -8,23 +8,25 @@
 {{- $id := .id | default "webapps-examples-title" -}}
 <section class="openms-lib-resources openms-lib-resources--examples" aria-labelledby="{{ $id }}">
   <div class="openms-lib-resources__inner openms-lib-resources__examples-layout">
-    <header class="openms-lib-resources__head openms-lib-hub__reveal openms-lib-hub__reveal--left">
-      {{- with $eyebrow }}
-      <p class="openms-lib-resources__eyebrow">{{ . }}</p>
-      {{- end }}
-      <h2 id="{{ $id }}" class="openms-lib-resources__title">{{ $title }}</h2>
-      {{- with $lead }}
-      <p class="openms-lib-resources__lead">{{ . }}</p>
-      {{- end }}
-      {{- with $url }}
-      <div class="openms-lib-resources__examples-actions">
+    <header class="openms-lib-resources__head openms-lib-resources__examples-head openms-lib-hub__reveal openms-lib-hub__reveal--left">
+      <div class="openms-lib-resources__examples-copy">
+        {{- with $eyebrow }}
+        <p class="openms-lib-resources__eyebrow">{{ partial "section-eyebrow-icon.html" "grid" }}{{ . }}</p>
+        {{- end }}
+        <h2 id="{{ $id }}" class="openms-lib-resources__title">{{ $title }}</h2>
+      </div>
+      <div class="openms-lib-resources__examples-lead-row">
+        {{- with $lead }}
+        <p class="openms-lib-resources__lead">{{ . }}</p>
+        {{- end }}
+        {{- with $url }}
         <a
-          class="openms-lib-btn openms-lib-btn--primary"
+          class="openms-lib-resources__examples-link"
           href="{{ . }}"
           {{- if in . "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
-        ><span class="openms-lib-btn__label">{{ $linkText }}</span></a>
+        >{{ $linkText }}<span aria-hidden="true"> →</span></a>
+        {{- end }}
       </div>
-      {{- end }}
     </header>
 
     {{- with $apps }}

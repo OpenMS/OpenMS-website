@@ -746,13 +746,13 @@
 
 .contribute-outreach__contact a {
   font-weight: 700;
-  color: var(--openms-blue) !important;
+  color: var(--openms-content-link, var(--openms-navy)) !important;
   text-decoration: none !important;
 }
 
 .contribute-outreach__contact a:hover,
 .contribute-outreach__contact a:focus-visible {
-  text-decoration: underline !important;
+  text-decoration: none !important;
 }
 
 .contribute-outreach__social {

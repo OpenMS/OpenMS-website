@@ -1,0 +1,788 @@
+/* Gray body. Blue titles. Navy navbar. White on navy/blue fills and blue-hover cards. */
+
+:root,
+.openms-lib-page--solution,
+.home-page {
+  --openms-text: rgba(var(--openms-dark-rgb), 0.72);
+  --openms-text-body: rgba(var(--openms-dark-rgb), 0.72);
+  --openms-text-muted: rgba(var(--openms-dark-rgb), 0.72);
+  --openms-text-eyebrow: var(--openms-blue);
+  --openms-page-hero-title-color: rgba(var(--openms-dark-rgb), 0.72);
+  --openms-section-title-color: rgba(var(--openms-dark-rgb), 0.72);
+  --openms-card-title-color: rgba(var(--openms-dark-rgb), 0.72);
+  --openms-content-link: rgba(var(--openms-dark-rgb), 0.72);
+  --openms-content-link-hover: rgba(var(--openms-dark-rgb), 0.72);
+  --home-body-color: rgba(var(--openms-dark-rgb), 0.72);
+  --home-eyebrow-color: var(--openms-blue);
+  --home-title-color: rgba(var(--openms-dark-rgb), 0.72);
+  --home-card-title-color: rgba(var(--openms-dark-rgb), 0.72);
+  --pro-text: rgba(var(--openms-dark-rgb), 0.72);
+  --pro-eyebrow: var(--openms-blue);
+  --sol-ink: rgba(var(--openms-dark-rgb), 0.72);
+  --sol-title: rgba(var(--openms-dark-rgb), 0.72);
+  --sol-body: rgba(var(--openms-dark-rgb), 0.72);
+  --sol-eyebrow: var(--openms-blue);
+}
+
+html body,
+html body :is(p, li, dd, dt, td, th, label, figcaption, blockquote, cite) {
+  color: rgba(var(--openms-dark-rgb), 0.72);
+}
+
+/* Main big titles — gray */
+html body :is(h1, h2, h3, h4, .title),
+html body :is(
+  .openms-lib-hero__title,
+  .openms-lib-hero__accent,
+  .openms-lib-hero__accent--warm,
+  .openms-lib-block__title,
+  .openms-lib-topp-split__title,
+  .openms-lib-topp__title,
+  .openms-lib-cite__title,
+  .openms-lib-explore__title,
+  .openms-lib-resources__title,
+  .openms-lib-developers__title,
+  .openms-lib-cta-band__title,
+  .home-section-head__title,
+  .hero-home__title,
+  .hero-modern__title,
+  .keyfeatures-modern__title,
+  .ecosystem-home__title,
+  .contact-home__title,
+  .contact-area__title,
+  .news-home__title,
+  .community-home__title,
+  .community-events-home__title,
+  .openms-lib-about__tile-title,
+  .openms-lib-developers__card-title,
+  .openms-lib-resources__item-title,
+  .openms-lib-topp-split__card-title,
+  .openms-step__title,
+  .webapps-project-card__title,
+  .webapps-project-card__name,
+  .news-home__card-title,
+  .contact-home__card-title,
+  .ecosystem-home__card-title,
+  .community-events-home__card-title,
+  .contribute-channel__title,
+  .contribute-way__title,
+  .contribute-track__title
+):not(.home-page__hero *):not(.about-hero *):not(.governance-hero *) {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+}
+
+/* Top titles (eyebrows / kickers) — blue on every page */
+html body :is(
+  .openms-lib-hero__eyebrow,
+  .openms-lib-block__eyebrow,
+  .openms-lib-about__eyebrow,
+  .openms-lib-topp-split__eyebrow,
+  .openms-lib-resources__eyebrow,
+  .openms-lib-cite__eyebrow,
+  .openms-lib-developers__cite-kicker,
+  .openms-lib-cta-band__eyebrow,
+  .openms-steps__eyebrow,
+  .keyfeatures-modern__eyebrow,
+  .ecosystem-home__eyebrow,
+  .contact-home__eyebrow,
+  .contact-area__eyebrow,
+  .contact-page__section-eyebrow,
+  .news-home__eyebrow,
+  .community-home__eyebrow,
+  .community-events-home__eyebrow,
+  .trusted-by__eyebrow,
+  .trusted-by__home-eyebrow,
+  .home-pathways__eyebrow,
+  .uni-partners__eyebrow,
+  .hero-sponsors__label,
+  .hero-home__eyebrow,
+  .about-hero__eyebrow,
+  .governance-hero__eyebrow,
+  .governance-card__eyebrow,
+  .sponsor-eyebrow,
+  .sponsor-section-eyebrow,
+  .publications-key__eyebrow,
+  .webapps-featured__eyebrow,
+  .webapps-affiliates__eyebrow,
+  .webapps-archived__eyebrow,
+  .webapps-contribute__eyebrow,
+  .contribute-channels__eyebrow,
+  .contribute-ways__eyebrow,
+  .contribute-outreach__eyebrow,
+  .contribute-conduct__eyebrow,
+  .developer-retreat-highlights__eyebrow,
+  .developer-retreat-upcoming__eyebrow
+):not(.contribute-coc-band *):not(.governance-cta-band *):not(.webapps-archived__revival *) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body :is(
+  .openms-lib-hero__lead,
+  .openms-lib-block__lead,
+  .home-section-head__lead
+):not(.home-page__hero *):not(.about-hero *) {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+/* Inline links gray; arrow/icon CTAs blue */
+html body a:not([class*="btn"]):not(.navbar-item):not(.navbar-link):not(.openms-cta-link) {
+  color: rgba(var(--openms-dark-rgb), 0.72);
+}
+
+html body :is(
+  .openms-cta-link,
+  .webapps-project-card__cta,
+  .news-home__card-cta,
+  .contact-home__card-cta,
+  .community-events-home__card-cta,
+  .events-past-card__cta,
+  .contribute-channel__link,
+  .contribute-track__cta,
+  .contribute-way__link,
+  .openms-lib-about__tile-link,
+  .openms-lib-developers__card-link,
+  .openms-lib-developers__platform-link,
+  .openms-lib-resources__examples-link,
+  .openms-lib-resources__explore-link,
+  .openms-lib-list__link,
+  .openms-lib-topp__cta,
+  .openms-lib-resources__item-link,
+  .coc-report__link,
+  .privacy-overview__note-link,
+  .contact-page__path-link,
+  .webapps-featured__extra-link,
+  .webapps-featured__show-all,
+  .ecosystem-home__card-link,
+  .community-news-events__view-all,
+  .community-events-home__view-all--inline,
+  .publications-cite-card__action,
+  .news-entry__action,
+  .trusted-by__wall-cta,
+  .home-pathways__step-go
+) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body :is(
+  .section-eyebrow-icon,
+  .openms-lib-about__tile-icon,
+  .openms-lib-resources__item-icon,
+  .openms-lib-developers__card-icon,
+  .keyfeatures-modern__topic-icon,
+  .contact-home__card-icon,
+  .ecosystem-home__card-icon,
+  .home-pathways__step-icon,
+  .contribute-channel__icon,
+  .webapps-project-card__icon
+) {
+  color: var(--openms-blue) !important;
+}
+
+/* Navbar — navy links on the light bar */
+html body .navbar.is-fresh,
+html body .navbar.is-fresh .navbar-item,
+html body .navbar.is-fresh .navbar-link,
+html body .navbar.is-fresh .navbar-dropdown,
+html body .navbar.is-fresh .navbar-dropdown a,
+html body .navbar.is-fresh .navbar-dropdown .navbar-item,
+html body .navbar.is-fresh .navbar-cta-label {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+html body .navbar.is-fresh a.navbar-item.navbar-cta-item.openms-btn-primary,
+html body .navbar.is-fresh a.navbar-item.navbar-cta-item.openms-step__cta,
+html body .navbar.is-fresh a.navbar-item.navbar-cta-item.openms-btn-primary .navbar-cta-label,
+html body .navbar.is-fresh a.navbar-item.navbar-cta-item.openms-step__cta .navbar-cta-label {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate,
+html body .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate .navbar-cta-label {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+/* Navy / dark surfaces — white copy */
+html body :is(
+  .news-banner,
+  .news-banner *,
+  .footer-redesign,
+  .footer-redesign a,
+  .home-page__hero .hero-home__title,
+  .home-page__hero .hero-home__title-accent,
+  .home-page__hero .hero-home__description,
+  .about-hero__title,
+  .about-hero__description,
+  .governance-hero__title,
+  .keyfeatures-modern__panel--dark,
+  .keyfeatures-modern__topic-card,
+  .keyfeatures-modern__topic-title,
+  .keyfeatures-modern__topic-text,
+  .contact-home--navy,
+  .community-events-home__cta,
+  .contribute-coc-band,
+  .governance-cta-band,
+  .webapps-archived__revival,
+  .openms-lib-resources__explore-card
+),
+html body :is(
+  .contribute-coc-band,
+  .governance-cta-band,
+  .webapps-archived__revival,
+  .openms-lib-resources__explore-card,
+  .keyfeatures-modern__panel--dark,
+  .keyfeatures-modern__topic-card,
+  .contact-home--navy
+) :is(h1, h2, h3, h4, p, span, strong, a, .contribute-coc-band__kicker, .governance-cta-band__kicker):not(.openms-lib-btn):not(.openms-lib-btn__label) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+/* Filled blue / navy buttons stay readable */
+html body :is(
+  .openms-btn-primary,
+  .openms-step__cta,
+  .about-cta-btn--sponsor,
+  .footer-redesign .footer-sponsor-btn,
+  .openms-lib-btn--primary,
+  .openms-lib-btn--navy
+) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body :is(
+  .openms-btn-primary,
+  .openms-step__cta,
+  .openms-lib-btn--primary,
+  .openms-lib-btn--navy
+) :is(i, .fab, .fas, .far, svg, .svg-inline--fa, path, span, .openms-lib-btn__label, .openms-lib-btn__icon) {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+  fill: currentColor !important;
+}
+
+html body .about-cta-btn--donate,
+html body .openms-lib-btn--ghost,
+html body .openms-lib-btn--outline {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+html body :is(.about-cta-btn--donate, .openms-lib-btn--ghost, .openms-lib-btn--outline) :is(i, .fab, .fas, svg, .svg-inline--fa, path, span) {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+  fill: currentColor !important;
+}
+
+/* Featured / affiliated app cards — blue fill = white; outline = navy */
+html body :is(
+  .openms-lib-page--featured-pro,
+  .openms-lib-page--featured,
+  .openms-lib-page--affiliated
+) .webapps-project-links__item:first-child .webapps-project-links__btn,
+html body :is(
+  .openms-lib-page--featured-pro,
+  .openms-lib-page--featured,
+  .openms-lib-page--affiliated
+) .webapps-project-links__item:first-child .webapps-project-links__btn :is(i, .fab, .fas, span, svg, .svg-inline--fa) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+html body :is(
+  .openms-lib-page--featured-pro,
+  .openms-lib-page--featured,
+  .openms-lib-page--affiliated
+) .webapps-project-links__item:not(:first-child) .webapps-project-links__btn,
+html body :is(
+  .openms-lib-page--featured-pro,
+  .openms-lib-page--featured,
+  .openms-lib-page--affiliated
+) .webapps-project-links__item:not(:first-child) .webapps-project-links__btn :is(i, .fab, .fas, span, svg, .svg-inline--fa) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  fill: currentColor !important;
+}
+
+html body .home-page__hero .hero-home__btn--secondary,
+html body .home-page__hero .hero-home__btn--secondary.about-cta-btn--donate,
+html body .home-page__hero .hero-home__btn--secondary :is(i, svg, span),
+html body .home-page__hero .hero-home__btn--secondary.about-cta-btn--donate :is(i, svg, span) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+/* White cards that fill blue/navy on hover — all copy + buttons go white */
+html body :is(
+  .openms-lib-developers__card,
+  .openms-lib-developers__card--interactive,
+  .openms-lib-developers__card--box,
+  .openms-lib-developers__card--link,
+  .contact-home__card
+):is(:hover, :focus-within, :focus-visible) :is(
+  h1, h2, h3, h4, p, span, strong, a, i, small, em,
+  .openms-lib-developers__card-title,
+  .openms-lib-developers__card-subtitle,
+  .openms-lib-developers__card-link,
+  .openms-lib-developers__platform-link,
+  .openms-lib-developers__platform-btn,
+  .openms-lib-btn,
+  .openms-lib-btn__label,
+  .openms-lib-btn--ghost,
+  .openms-lib-btn--outline,
+  .openms-lib-btn--primary,
+  .openms-cta-link,
+  .contact-home__card-title,
+  .contact-home__card-text,
+  .contact-home__card-cta,
+  .openms-lib-about__tile-title,
+  .openms-lib-about__tile-text,
+  .openms-lib-about__tile-link
+) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+html body :is(
+  .openms-lib-developers__card,
+  .openms-lib-developers__card--interactive,
+  .openms-lib-developers__card--box,
+  .contact-home__card
+):is(:hover, :focus-within, :focus-visible) :is(
+  .openms-lib-btn,
+  .openms-lib-btn--ghost,
+  .openms-lib-btn--outline,
+  .openms-lib-btn--primary,
+  .openms-lib-developers__platform-btn,
+  .openms-lib-developers__platform-link,
+  .openms-lib-developers__card-link
+) {
+  background: transparent !important;
+  border-color: var(--openms-white) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+html body :is(
+  .openms-lib-developers__card,
+  .contact-home__card
+):is(:hover, :focus-within) :is(svg, .svg-inline--fa, path) {
+  color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+/* Get started / Explore OpenMS-lib — white on the navy band */
+html body .openms-lib-page--solution #getting-started .openms-lib-resources--explore .openms-lib-resources__eyebrow,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources--explore .openms-lib-resources__title,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources--explore .openms-lib-resources__lead,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__eyebrow,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__title,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__lead,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__head .section-eyebrow-icon,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__head svg {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+/* Need help? — gray copy on the light band */
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__assist-title,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__assist-text {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+/* How to cite / Key publications — arrow links match site CTAs */
+html body .openms-lib-page--publications #key-publications .publications-cite-card__action,
+html body .openms-lib-page--publications .publications-cite-card__action,
+html body .publications-cite-card__action,
+html body .publications-more__btn,
+html body .openms-lib-page--publications .publications-more__btn {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-size: var(--openms-text-min) !important;
+  font-weight: var(--openms-cta-link-weight, 700) !important;
+}
+
+html body .openms-lib-page--publications .publications-more__btn {
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Contact / Ways to reach us — smaller section + top-right card tags */
+html body .openms-lib-page--contact #contact-paths .openms-lib-resources__eyebrow {
+  font-size: 0.7rem !important;
+}
+
+html body .openms-lib-page--contact #contact-paths .openms-lib-resources__title {
+  font-size: calc(var(--openms-section-title-size) * 0.82) !important;
+}
+
+html body .openms-lib-page--contact #contact-paths .openms-lib-resources__item-tag,
+html body .openms-lib-page--contact .contact-paths-grid .openms-lib-resources__item-tag {
+  font-size: 0.625rem !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* Discord / GitHub — same outline pill as navbar Sponsor Us */
+html body .openms-lib-page--contact .contact-path-socials {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--openms-btn-gap, 0.75rem);
+}
+
+html body .openms-lib-page--contact a.contact-path-social,
+html body .openms-lib-page--contact a.openms-lib-btn.contact-path-social {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: fit-content !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+  border-radius: var(--openms-btn-pill-radius, 999px) !important;
+  border: 2px solid rgba(var(--openms-navy-rgb), 0.72) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: 0 0 0 0 var(--openms-btn-glow) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  font-family: var(--openms-font-body) !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  white-space: nowrap;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--contact a.contact-path-social :is(i, .fab, .fas, span, .openms-lib-btn__label) {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+html body .openms-lib-page--contact a.contact-path-social:hover,
+html body .openms-lib-page--contact a.contact-path-social:focus-visible {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  background: rgba(var(--openms-navy-rgb), 0.08) !important;
+  border-color: rgba(var(--openms-navy-rgb), 0.78) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03));
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(var(--openms-navy-rgb), 0.18) !important;
+}
+
+/* Governance Structure tiles — blue arrow links, more space from copy */
+html body .openms-lib-page--governance #governance-bodies .openms-lib-about__tile-link,
+html body .openms-lib-page--governance .openms-lib-about__tile-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.35rem !important;
+  width: fit-content !important;
+  min-height: 0 !important;
+  margin-top: auto !important;
+  padding: 1.5rem 0 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-size: var(--openms-text-min) !important;
+  font-weight: var(--openms-cta-link-weight, 700) !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--governance .openms-lib-about__tile-link:hover,
+html body .openms-lib-page--governance .openms-lib-about__tile-link:focus-visible,
+html body .openms-lib-page--governance .openms-lib-about__tile:hover .openms-lib-about__tile-link {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Clarity / Separation of Responsibilities — smaller top-right tags */
+html body .openms-lib-page--governance #responsibilities .openms-lib-resources__item-tag {
+  font-size: 0.625rem !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* Hover — all copy and icons go white */
+html body .openms-lib-page--governance #responsibilities .openms-lib-resources__item--static:is(:hover, :focus-within),
+html body .openms-lib-page--governance #responsibilities .openms-lib-resources__item--static:is(:hover, :focus-within) :is(
+  h3,
+  p,
+  span,
+  strong,
+  i,
+  .openms-lib-resources__item-tag,
+  .openms-lib-resources__item-title,
+  .openms-lib-resources__item-text,
+  .openms-lib-resources__item-icon,
+  .fab,
+  .fas,
+  .svg-inline--fa
+) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+/* Sponsor Us — About OpenMS Inc. arrow link: blue and lower */
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.35rem !important;
+  width: fit-content !important;
+  min-height: 0 !important;
+  margin-top: auto !important;
+  padding: 1.5rem 0 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-size: var(--openms-text-min) !important;
+  font-weight: var(--openms-cta-link-weight, 700) !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile-link:hover,
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile-link:focus-visible,
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile:hover .openms-lib-about__tile-link {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Research partnerships — thin border around the form */
+html body .openms-lib-page--research-partnerships .rp-application__form {
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.16) !important;
+  border-radius: 1rem !important;
+  padding: clamp(1rem, 2.4vw, 1.5rem) !important;
+  background: var(--openms-white, #fff) !important;
+  box-sizing: border-box;
+}
+
+/* Scientific & technical support — thin border around the quote form */
+html body .openms-lib-page--services-support .services-support-application__form {
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.16) !important;
+  border-radius: 1rem !important;
+  padding: clamp(1rem, 2.4vw, 1.5rem) !important;
+  background: var(--openms-white, #fff) !important;
+  box-sizing: border-box;
+}
+
+/* Community events — keep cards white on hover */
+html body .openms-lib-page--calendar .community-events-home__card,
+html body .openms-lib-page--calendar .community-events-home__card:hover,
+html body .openms-lib-page--calendar .community-events-home__card:focus-within,
+html body .openms-lib-page--calendar .community-news-events__press-card,
+html body .openms-lib-page--calendar .community-news-events__press-card:hover,
+html body .openms-lib-page--calendar a.community-news-events__press-link,
+html body .openms-lib-page--calendar a.community-news-events__press-link:hover,
+html body .openms-lib-page--calendar a.community-news-events__press-link:focus-visible,
+html body .openms-lib-page--calendar .community-events-home__card-link,
+html body .openms-lib-page--calendar .community-events-home__card-link:hover,
+html body .openms-lib-page--calendar .community-events-home__card-link:focus-visible,
+html body .openms-lib-page--calendar .events-past-card,
+html body .openms-lib-page--calendar .events-past-card:hover {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+}
+
+/* Get involved / Ways to contribute — all copy white on card hover */
+html body .openms-lib-page--contribute #ways-to-contribute .contribute-track__item:is(:hover, :focus-within),
+html body .openms-lib-page--contribute #ways-to-contribute .contribute-track__item:is(:hover, :focus-within) :is(
+  h3,
+  p,
+  span,
+  a,
+  i,
+  strong,
+  .contribute-track__title,
+  .contribute-track__text,
+  .contribute-track__cta,
+  .contribute-track__icon,
+  .contribute-project-link,
+  .contribute-project-link__name,
+  .openms-lib-btn,
+  .openms-lib-btn__label,
+  .fab,
+  .fas,
+  .svg-inline--fa
+) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute .contribute-track__item:is(:hover, :focus-within) :is(
+  .contribute-track__cta,
+  .contribute-project-link,
+  .openms-lib-btn,
+  .openms-lib-btn--ghost
+) {
+  background: transparent !important;
+  border-color: var(--openms-white) !important;
+  box-shadow: none !important;
+}
+
+/* Outreach / Community coordination — links gray; icons blue on hover */
+html body .openms-lib-page--contribute .contribute-outreach__contact a,
+html body .openms-lib-page--contribute .contribute-outreach__social-link,
+html body .openms-lib-page--contribute .contribute-outreach__social-link :is(
+  .contribute-outreach__social-label,
+  .contribute-outreach__social-hint,
+  .contribute-outreach__social-arrow,
+  .contribute-outreach__social-icon,
+  i,
+  .fab,
+  .fas
+) {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+html body .openms-lib-page--contribute .contribute-outreach__social-link:hover .contribute-outreach__social-icon,
+html body .openms-lib-page--contribute .contribute-outreach__social-link:focus-visible .contribute-outreach__social-icon,
+html body .openms-lib-page--contribute .contribute-outreach__social-link:hover .contribute-outreach__social-icon :is(i, .fab, .fas, .svg-inline--fa),
+html body .openms-lib-page--contribute .contribute-outreach__social-link:focus-visible .contribute-outreach__social-icon :is(i, .fab, .fas, .svg-inline--fa) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  fill: currentColor !important;
+}
+
+/* For Developers — keep Linux / macOS / Windows pills visible on blue hover */
+html body .openms-lib-page--solution #for-developers .openms-lib-developers__card--build-src:is(:hover, :focus-within) {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+html body .openms-lib-page--solution #for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms,
+html body .openms-lib-page--solution #for-developers .openms-lib-developers__card--build-src:is(:hover, :focus-within) .openms-lib-developers__platforms {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  transform: none !important;
+  max-height: none !important;
+}
+
+html body .openms-lib-page--solution #for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platform-btn,
+html body .openms-lib-page--solution #for-developers .openms-lib-developers__card--interactive:is(:hover, :focus-within) .openms-lib-developers__platform-btn,
+html body .openms-lib-page--solution #for-developers .openms-lib-developers__card--build-src:is(:hover, :focus-within) .openms-lib-developers__platform-btn {
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  background: var(--openms-white) !important;
+  border: 2px solid var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  padding: 0.45rem 0.85rem !important;
+  min-height: 2.25rem !important;
+  white-space: nowrap !important;
+}
+
+html body .openms-lib-page--solution #for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platform-btn :is(
+  i, .fab, .fas, .svg-inline--fa, .openms-lib-btn__label, span
+) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  fill: currentColor !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Home hero — “Open-source · Free forever” on the dark band */
+html body .home-page .home-page__hero .hero-home__eyebrow,
+html body .home-page .hero-home__eyebrow {
+  color: rgba(var(--openms-white-rgb), 0.88) !important;
+  -webkit-text-fill-color: rgba(var(--openms-white-rgb), 0.88) !important;
+}
+
+/* Home Ecosystem — header + platform tags in white */
+html body .home-page .home-page__block--ecosystem {
+  background: var(--openms-navy) !important;
+}
+
+html body .home-page .home-page__block--ecosystem .ecosystem-home__eyebrow,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__eyebrow-icon,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__title,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__title-accent,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__lead,
+html body .home-page .ecosystem-home__card-tag {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+/* Home Community — copy on the photo/navy band */
+html body .home-page .community-home .community-home__eyebrow,
+html body .home-page .community-home .community-home__eyebrow-icon,
+html body .home-page .community-home .community-home__title,
+html body .home-page .community-home .community-home__title-accent,
+html body .home-page .community-home .community-home__lead,
+html body .home-page .community-home .community-home__lead :is(p, a, strong, em, span),
+html body .home-page .community-home .community-home__note,
+html body .home-page .community-home .community-home__note :is(p, a, strong, em, span) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+/* Latest news + Upcoming events — same card-title size */
+html body .home-page .community-events-home--with-news .community-news-events__column-title,
+html body .home-page .community-events-home--with-news .community-news-events__column-title-accent {
+  font-size: var(--news-events-title-size, clamp(1.35rem, 2.4vw, 1.75rem)) !important;
+}
+
+html body .home-page .community-events-home--with-news .community-news-events__press-title,
+html body .home-page .community-events-home--with-news .news-home__card-title,
+html body .home-page .community-events-home--with-news .community-events-home__card-title {
+  font-size: var(--openms-card-title-size) !important;
+}
+
+@media (min-width: 900px) {
+  html body .home-page .community-events-home--with-news .community-news-events__column-header {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-end !important;
+    align-self: stretch !important;
+    min-height: 100% !important;
+  }
+
+  html body .home-page .community-events-home--with-news .community-news-events__view-all {
+    flex: 0 0 auto !important;
+    align-self: flex-end !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    white-space: nowrap !important;
+  }
+}

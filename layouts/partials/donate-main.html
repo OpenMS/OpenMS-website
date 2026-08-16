@@ -7,12 +7,12 @@
 {{- $hasZeffyEmbed := and $zeffyEmbed (hasPrefix $zeffyEmbed "https://www.zeffy.com/") -}}
 {{- $hasZeffyForm := and $zeffyForm (hasPrefix $zeffyForm "https://www.zeffy.com/") -}}
 <section class="openms-lib-layout">
-<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--donate">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--donate">
 <div class="openms-lib-page__intro">
-  <header class="openms-lib-hero openms-lib-hero--pro" aria-label="Donate to OpenMS">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="Donate to OpenMS">
     <div class="openms-lib-hero__panel">
       <div class="openms-lib-hero__content">
-        <p class="openms-lib-hero__eyebrow">{{ $eyebrow }}</p>
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "heart" }}{{ $eyebrow }}</p>
         <h1 class="openms-lib-hero__title">
           Support <span class="openms-lib-hero__accent">OpenMS</span> with a gift.
         </h1>
