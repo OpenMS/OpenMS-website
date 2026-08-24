@@ -10,9 +10,7 @@
   var benefits = root.querySelector("[data-sponsor-benefits-wrap]");
   if (!toggles.length || !benefits) return;
 
-  var switcherBtns = Array.prototype.slice.call(
-    root.querySelectorAll("[data-sponsor-benefits-select]")
-  );
+  var switcher = root.querySelector("[data-sponsor-benefits-select]");
 
   var featured = root.querySelector(".sponsor-tier--featured [data-sponsor-tier]");
   var initial =
@@ -29,12 +27,9 @@
         .closest(".sponsor-tier")
         .classList.toggle("sponsor-tier--active", match);
     });
-    switcherBtns.forEach(function (btn) {
-      var match = btn.getAttribute("data-sponsor-benefits-select") === tierId;
-      btn.classList.toggle("is-active", match);
-      btn.setAttribute("aria-selected", match ? "true" : "false");
-      btn.tabIndex = match ? 0 : -1;
-    });
+    if (switcher && switcher.value !== tierId) {
+      switcher.value = tierId;
+    }
     if (opts.open) {
       benefits.open = true;
     }
@@ -52,16 +47,14 @@
     });
   });
 
-  switcherBtns.forEach(function (btn) {
-    btn.addEventListener("click", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-      activate(btn.getAttribute("data-sponsor-benefits-select"), {
+  if (switcher) {
+    switcher.addEventListener("change", function () {
+      activate(switcher.value, {
         open: true,
         scroll: false
       });
     });
-  });
+  }
 
   activate(initial, { open: false, scroll: false });
 })();

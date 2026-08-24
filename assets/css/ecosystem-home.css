@@ -98,7 +98,7 @@
   .ecosystem-home__card-head {
     flex-direction: row;
     flex-wrap: nowrap;
-    align-items: flex-start;
+    align-items: center;
     min-height: var(--ecosystem-logo-box-h, 2.75rem);
   }
 
@@ -198,7 +198,7 @@
 .ecosystem-home__card-head {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 0.65rem 1rem;
   width: 100%;
@@ -243,7 +243,7 @@
 .ecosystem-home__card--viz .ecosystem-home__card-icon {
   display: block;
   box-sizing: border-box;
-  flex: 0 0 auto;
+  flex: 0 0 var(--ecosystem-logo-box, 7.5rem);
   width: var(--ecosystem-logo-box, 7.5rem);
   height: var(--ecosystem-logo-box-h, 3rem);
   max-width: var(--ecosystem-logo-box, 7.5rem);
@@ -253,30 +253,6 @@
   object-position: right center;
   filter: none;
   opacity: 0.96;
-}
-
-.ecosystem-home__card--webapps .ecosystem-home__card-head {
-  min-height: 4.5rem;
-  align-items: center;
-}
-
-.ecosystem-home__card--webapps .ecosystem-home__card-icon {
-  width: 10rem;
-  height: 4.5rem;
-  max-width: 10rem;
-  max-height: 4.5rem;
-}
-
-.ecosystem-home__card--viz .ecosystem-home__card-head {
-  min-height: 6.5rem;
-  align-items: center;
-}
-
-.ecosystem-home__card--viz .ecosystem-home__card-icon {
-  width: 8rem;
-  height: 6.5rem;
-  max-width: 8rem;
-  max-height: 6.5rem;
 }
 
 .ecosystem-home__card-title {

@@ -96,7 +96,7 @@
         {{- end }}
 
         {{- if $matrix }}
-        <span class="openms-lib-btn openms-lib-btn--ghost sponsor-tier__cta">
+        <span class="openms-lib-btn openms-lib-btn--primary sponsor-tier__cta">
           <span class="openms-lib-btn__label sponsor-tier__cta-label">Learn more</span>
         </span>
         {{- end }}
@@ -122,25 +122,18 @@
     </summary>
 
     <div class="sponsor-benefits__panel">
-      <div
-        class="sponsor-benefits__switcher"
-        data-sponsor-benefits-switcher
-        role="tablist"
-        aria-label="Choose sponsorship level to compare"
-      >
-        {{- range $levels }}
-        <button
-          type="button"
-          class="sponsor-benefits__switcher-btn{{ if eq .id $featuredId }} is-active{{ end }}"
-          role="tab"
-          id="sponsor-benefits-tab-{{ .id }}"
-          data-sponsor-benefits-select="{{ .id }}"
-          aria-selected="{{ cond (eq .id $featuredId) "true" "false" }}"
+      <div class="sponsor-benefits__switcher">
+        <label class="sponsor-benefits__switcher-label" for="sponsor-benefits-tier">Sponsorship level</label>
+        <select
+          id="sponsor-benefits-tier"
+          class="sponsor-benefits__switcher-select"
+          data-sponsor-benefits-select
           aria-controls="sponsor-benefits"
         >
-          {{ .name }}
-        </button>
-        {{- end }}
+          {{- range $levels }}
+          <option value="{{ .id }}"{{ if eq .id $featuredId }} selected{{ end }}>{{ .name }}</option>
+          {{- end }}
+        </select>
       </div>
       <div class="sponsor-benefits__scroller">
         <div

@@ -7,7 +7,7 @@
 .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about,
 .openms-lib-page--research-partnerships #our-partners .openms-lib-resources,
 .openms-lib-page--research-partnerships #partnership-form .openms-lib-resources {
-  padding-block: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
+  padding-block: var(--sol-section-y, var(--pro-section-y, clamp(3.5rem, 7vw, 5.25rem)));
 }
 
 /* Collaborate — full-bleed gray band; content uses page gutters */
@@ -23,11 +23,6 @@
   background: var(--pro-band-soft, #f4f6f9);
   padding-inline: var(--openms-page-inline);
   box-sizing: border-box;
-}
-
-/* Drop extra floor under the short Tally form */
-.openms-lib-page--research-partnerships #partnership-form .openms-lib-resources {
-  padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 /* Collaborate — full-width section rail (no half-width 2-col head) */

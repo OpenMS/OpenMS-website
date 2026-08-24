@@ -1,0 +1,42 @@
+<details class="gsoc-project">
+  <summary class="gsoc-project__summary">
+    <span class="gsoc-project__copy">
+      <span class="gsoc-project__title">{{ .Get "title" }}</span>
+      <span class="gsoc-project__summary-meta">
+        {{- with .Get "hours" }}<span>{{ . }}</span>{{ end }}
+        {{- with .Get "difficulty" }}<span class="gsoc-project__level">{{ . }}</span>{{ end }}
+      </span>
+    </span>
+  </summary>
+  <div class="gsoc-project__panel">
+    <dl class="gsoc-project__facts">
+      {{- with .Get "mentors" }}
+      <div class="gsoc-project__fact">
+        <dt>Mentors</dt>
+        <dd>{{ . }}</dd>
+      </div>
+      {{- end }}
+      {{- with .Get "skills" }}
+      <div class="gsoc-project__fact">
+        <dt>Skills</dt>
+        <dd>{{ . }}</dd>
+      </div>
+      {{- end }}
+      {{- with .Get "hours" }}
+      <div class="gsoc-project__fact">
+        <dt>Length</dt>
+        <dd>{{ . }}</dd>
+      </div>
+      {{- end }}
+      {{- with .Get "difficulty" }}
+      <div class="gsoc-project__fact gsoc-project__fact--level">
+        <dt>Difficulty</dt>
+        <dd><span class="gsoc-project__level">{{ . }}</span></dd>
+      </div>
+      {{- end }}
+    </dl>
+    <div class="gsoc-project__body">
+      {{ .Inner | markdownify }}
+    </div>
+  </div>
+</details>

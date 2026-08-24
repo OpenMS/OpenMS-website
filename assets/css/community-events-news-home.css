@@ -155,8 +155,8 @@
 .openms-lib-page--news .community-events-home__card,
 .openms-lib-page--calendar .community-news-events__press-card,
 .openms-lib-page--calendar .community-events-home__card {
-  height: auto;
-  min-height: 0;
+  height: fit-content;
+ 
   background: transparent;
   border: none;
   box-shadow: none;

@@ -1,5 +1,5 @@
 {{- $cfg := .Site.Params.newsSection | default dict }}
-{{- $eyebrow := index $cfg "eyebrow" | default "OpenMS" }}
+{{- $eyebrow := "News" }}
 {{- $backLabel := index $cfg "backToNewsLabel" | default "Back to news" }}
 {{- $newsUrl := "/news/" | relURL }}
 {{- $year := "" }}
@@ -10,75 +10,45 @@
   {{- $newsUrl = printf "%s?year=%s" $newsUrl $year }}
 {{- end }}
 {{- $toc := .TableOfContents }}
-{{- $hasToc := and $toc (in (printf "%s" $toc) "<li") }}
+{{- $tocItemCount := len (findRE "<li" (printf "%s" $toc)) }}
+{{- $hasToc := and $toc (ge $tocItemCount 2) (le $tocItemCount 8) }}
 {{- $tocInner := replaceRE `(?s)^\s*<nav[^>]*>(.*)</nav>\s*$` "$1" (printf "%s" $toc) | safeHTML }}
 <section class="openms-lib-layout">
-<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--news openms-lib-page--news-article">
-<div class="openms-lib-page__intro">
-  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution news-page-hero news-page-hero--article" aria-label="News article">
-    <div class="openms-lib-hero__panel">
-      <div class="openms-lib-hero__content">
-        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "news" }}{{ $eyebrow }} · News</p>
-        <h1 class="openms-lib-hero__title">{{ .Title }}</h1>
-        {{- with .Params.subtitle }}
-        <p class="openms-lib-hero__lead">{{ . }}</p>
-        {{- end }}
-        <div class="openms-lib-hero__actions" aria-label="Article navigation">
-          <a class="openms-lib-btn openms-lib-btn--primary" href="{{ $newsUrl }}">
-            <span class="openms-lib-btn__label">{{ $backLabel }}</span>
-          </a>
-        </div>
+<article class="openms-lib-page openms-lib-page--news openms-lib-page--news-article">
+  <div class="news-story">
+    <div class="news-story__inner">
+      <div class="news-story__toolbar">
+        <p class="news-story__kicker">{{ partial "section-eyebrow-icon.html" "news" }}{{ $eyebrow }}</p>
+        <a class="news-story__back openms-cta-link" href="{{ $newsUrl }}">{{ $backLabel }}<span aria-hidden="true"> →</span></a>
       </div>
-    </div>
-  </header>
-</div>
 
-<div class="openms-lib-page__body" aria-label="News article">
-  <div class="openms-lib-page__anchor">
-    <div class="openms-lib-resources openms-lib-resources--no-feature">
-      <div class="openms-lib-resources__inner">
-        <div class="news-page news-page--article{{ if $hasToc }} news-page--has-toc{{ end }}">
-          <div class="news-page__main">
-            <article class="news-article">
-              <header class="news-article__header">
-                {{ partial "news-date-badge.html" . }}
-                {{- with or .Params.authors .Params.Authors }}
-                <p class="news-article__meta">
-                  <span class="news-card__authors">
-                    {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end }}
-                  </span>
-                </p>
-                {{- end }}
-              </header>
-
-              {{- if $hasToc }}
-              <nav class="news-article__toc news-article__toc--inline openms-lib-prose__toc" aria-label="On this page">
-                <p class="news-article__toc-title openms-lib-prose__toc-title">On this page</p>
-                {{ $tocInner }}
-              </nav>
-              {{- end }}
-
-              <div class="news-article__content openms-lib-prose">
-                {{ .Content }}
-              </div>
-
-              <footer class="news-article__footer">
-                <a class="news-article__back-link" href="{{ $newsUrl }}">← {{ $backLabel }}</a>
-              </footer>
-            </article>
-          </div>
-          {{- if $hasToc }}
-          <aside class="news-page__aside" aria-label="Article outline">
-            <nav class="news-article__toc news-article__toc--sidebar openms-lib-prose__toc" aria-label="On this page">
-              <p class="news-article__toc-title openms-lib-prose__toc-title">On this page</p>
-              {{ $tocInner }}
-            </nav>
-          </aside>
+      <header class="news-story__header">
+        <h1 class="news-story__title">{{ .Title }}</h1>
+        {{- with .Params.subtitle }}
+        <p class="news-story__lead">{{ . }}</p>
+        {{- end }}
+        <p class="news-story__meta">
+          {{- if not .Date.IsZero }}
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
           {{- end }}
-        </div>
+          {{- with or .Params.authors .Params.Authors }}
+          {{- if not $.Date.IsZero }}<span class="news-story__meta-sep" aria-hidden="true">·</span>{{ end }}
+          <span class="news-story__authors">{{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end -}}</span>
+          {{- end }}
+        </p>
+      </header>
+
+      {{- if $hasToc }}
+      <nav class="news-story__toc" aria-label="On this page">
+        <p class="news-story__toc-title">On this page</p>
+        {{ $tocInner }}
+      </nav>
+      {{- end }}
+
+      <div class="news-story__body openms-lib-prose">
+        {{ .Content }}
       </div>
     </div>
   </div>
-</div>
 </article>
 </section>

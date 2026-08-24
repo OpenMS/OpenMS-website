@@ -1,7 +1,7 @@
 {{- $section := site.Params.affiliateSection | default dict -}}
 {{- $projects := site.Params.affiliateProjects | default (slice) -}}
 {{- if $projects }}
-<section class="webapps-affiliates" id="affiliated-apps" aria-label="Affiliated Apps">
+<section class="webapps-affiliates" aria-label="Affiliated Apps">
   <div class="webapps-affiliates__inner">
     <ul class="webapps-affiliates__grid" role="list" aria-label="Affiliated apps">
       {{- range $projects }}

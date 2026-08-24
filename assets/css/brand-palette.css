@@ -19,6 +19,9 @@
   --openms-section-title-size: calc(var(--openms-heading-lg-size) * 1.15);
   --openms-section-title-weight: var(--openms-heading-lg-weight);
   --openms-section-title-color: rgba(var(--openms-dark-rgb), 0.72);
+  --openms-title-transform: uppercase;
+  --openms-title-letter-spacing: 0.015em;
+  --openms-eyebrow-letter-spacing: 0.08em;
 
   /* Shared step/overview numbers — same light-blue watermark as /openms-lib/ */
   --openms-step-num-size: clamp(2.5rem, 5vw, 3.5rem);

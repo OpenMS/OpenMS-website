@@ -36,6 +36,7 @@
 
 {{- $themeCssFiles := resources.Match "theme-css/*.css" -}}
 {{- $userCssFiles := resources.Match "css/*.css" -}}
+{{- $lateCss := resources.Get "css/openms-overrides.css" -}}
 
 {{- range $themeCssFiles -}}
 {{- $cssFileName := path.Base .Name -}}
@@ -53,7 +54,20 @@
 
 {{- range $userCssFiles -}}
 {{- $cssFileName := path.Base .Name -}}
+{{- if and (not (strings.HasPrefix $cssFileName "z")) (ne $cssFileName "openms-overrides.css") -}}
 {{- $targetFile := printf "css/%s" $cssFileName -}}
+{{ if $inServerMode -}}
+{{ $custom_style := . | resources.ExecuteAsTemplate $targetFile $page -}}
+<link rel="stylesheet" href="{{ $custom_style.RelPermalink }}">
+{{ else }}
+{{ $custom_style := . | resources.ExecuteAsTemplate $targetFile $page | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $custom_style.RelPermalink }}" integrity="{{ $custom_style.Data.Integrity }}">
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+{{- with $lateCss -}}
+{{- $targetFile := "css/openms-overrides.css" -}}
 {{ if $inServerMode -}}
 {{ $custom_style := . | resources.ExecuteAsTemplate $targetFile $page -}}
 <link rel="stylesheet" href="{{ $custom_style.RelPermalink }}">

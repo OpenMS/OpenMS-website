@@ -29,7 +29,7 @@
             {{- $text = $point -}}
           {{- end -}}
           <li class="webapps-archived__notice-item" role="listitem">
-            <span class="webapps-archived__notice-mark" aria-hidden="true"></span>
+            <span class="webapps-archived__notice-index" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
             <div class="webapps-archived__notice-copy">
               {{- with $title }}
               <p class="webapps-archived__notice-heading">{{ . }}</p>

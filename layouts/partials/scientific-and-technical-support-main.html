@@ -28,13 +28,13 @@
           <p class="openms-lib-resources__lead">Tell us about your project and the support you need.</p>
         </header>
         <div class="services-support-application__form">
-          <div class="" aria-label="Service inquiry form">
+          <div class="services-page__form-body" aria-label="Service inquiry form">
             <iframe
-          
+              class="services-page__tally-iframe"
               data-tally-src="https://tally.so/embed/q4MMQ7?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-              loading="lazy"
+              loading="eager"
               width="100%"
-              height="fit-content"
+              height="560"
               frameborder="0"
               marginheight="0"
               marginwidth="0"
@@ -50,20 +50,56 @@
 <script async src="https://tally.so/widgets/embed.js"></script>
 <script>
 (function () {
+  var lastReported = 0;
+  var BUTTON_PAD = 96;
+  var MIN_HEIGHT = 560;
+
+  function applyHeight(iframe, reported) {
+    if (!iframe) return;
+    if (reported && reported > lastReported) lastReported = reported;
+    var next = lastReported ? lastReported + BUTTON_PAD : MIN_HEIGHT;
+    if (next < MIN_HEIGHT) next = MIN_HEIGHT;
+    iframe.style.minHeight = MIN_HEIGHT + "px";
+    iframe.style.height = next + "px";
+    iframe.setAttribute("height", String(next));
+  }
+
   function loadTallyEmbeds() {
     if (typeof window.Tally !== "undefined") {
       window.Tally.loadEmbeds();
-      return;
+    } else {
+      document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (iframe) {
+        iframe.src = iframe.dataset.tallySrc;
+      });
     }
-    document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (iframe) {
-      iframe.src = iframe.dataset.tallySrc;
+    document.querySelectorAll(".services-page__tally-iframe").forEach(function (iframe) {
+      applyHeight(iframe);
     });
   }
+
+  window.addEventListener("message", function (event) {
+    var reported = 0;
+    if (typeof event.data === "string" && event.data.indexOf("Tally.resizeForm") === 0) {
+      var parts = event.data.split(",");
+      reported = parseInt(parts[parts.length - 1], 10) || 0;
+    } else if (event.data && event.data.type === "tally.resizeForm") {
+      reported = parseInt(event.data.height, 10) || 0;
+    } else {
+      return;
+    }
+    document.querySelectorAll(".services-page__tally-iframe").forEach(function (iframe) {
+      window.requestAnimationFrame(function () {
+        applyHeight(iframe, reported);
+      });
+    });
+  });
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", loadTallyEmbeds);
   } else {
     loadTallyEmbeds();
   }
+  window.addEventListener("load", loadTallyEmbeds);
 })();
 </script>
 </article>

@@ -52,7 +52,7 @@
 .services-page__tally-iframe {
   display: block;
   width: 100%;
-  min-height: 0;
+  min-height: 560px;
   border: 0;
   background: transparent;
 }

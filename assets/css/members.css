@@ -76,8 +76,8 @@
   padding: 0.22rem 0.55rem;
   border-radius: 999px;
   background: rgba(var(--openms-navy-rgb), 0.06);
-  font-size: 0.68rem;
-  font-weight: 700;
+  font-size: 0.48rem;
+  font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgba(var(--openms-navy-rgb), 0.72);

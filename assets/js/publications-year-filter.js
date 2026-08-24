@@ -238,7 +238,6 @@
 
       var visible = rest.slice(0, LIMIT);
       var more = rest.length - LIMIT;
-      var label = more >= 10 ? "10+" : "+" + more;
 
       el.textContent = "";
       el.appendChild(document.createTextNode(visible.join(sep) + " "));
@@ -247,7 +246,7 @@
       chip.className = "publications-cite-card__authors-more";
       chip.title =
         authors.length + " authors total · " + more + " more not shown";
-      chip.textContent = label;
+      chip.textContent = "...";
       el.appendChild(chip);
       el.appendChild(document.createTextNode(sep + last));
       el.setAttribute("data-authors-truncated", "1");

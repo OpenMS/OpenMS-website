@@ -1,4 +1,4 @@
-{{- /* Show a few authors + always the last; if many remain, show a 10+ chip, else +N. */ -}}
+{{- /* Show a few authors, an ellipsis, then always the last author. */ -}}
 {{- $raw := . | string -}}
 {{- $parts := split $raw ";" -}}
 {{- $authors := slice -}}
@@ -20,10 +20,6 @@
   {{- else -}}
     {{- $visible := first $limit $rest -}}
     {{- $more := sub (len $rest) $limit -}}
-    {{- $label := printf "+%d" $more -}}
-    {{- if ge $more 10 -}}
-      {{- $label = "10+" -}}
-    {{- end -}}
-    {{- delimit $visible "; " }} <span class="publications-cite-card__authors-more" title="{{ $total }} authors total · {{ $more }} more not shown">{{ $label }}</span>; {{ $last -}}
+    {{- delimit $visible "; " }} <span class="publications-cite-card__authors-more" title="{{ $total }} authors total · {{ $more }} more not shown">...</span>; {{ $last -}}
   {{- end -}}
 {{- end -}}

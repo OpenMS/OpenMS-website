@@ -132,9 +132,9 @@ languages:
         eyebrow: Annual Developer Retreat
         pageTitle: Annual Developer Retreat
         headline: >-
-          <span class="openms-lib-hero__title-line">Shape the</span>
-          <span class="openms-lib-hero__title-line"><span class="openms-lib-hero__accent openms-lib-hero__accent--warm">future</span> of</span>
-          <span class="openms-lib-hero__title-line">computational mass spectrometry.</span>
+          <span class="openms-lib-hero__title-line">Shape the <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">future</span></span>
+          <span class="openms-lib-hero__title-line">of computational</span>
+          <span class="openms-lib-hero__title-line">mass spectrometry.</span>
         about: >-
           The annual OpenMS developers retreat brings together researchers
           from around the world for a week of talks, tutorials, and code
@@ -717,7 +717,7 @@ languages:
             tag: Apps
             icon: fas fa-window-maximize
             text: Web applications and workflows built on top of OpenMS-lib.
-            url: /webapps/#featured-webapps
+            url: https://deploy-preview-277--openms.netlify.app/featured-apps/
             linkText: See apps
           - title: Python bindings
             tag: pyOpenMS
@@ -934,7 +934,8 @@ languages:
             - title: Wrapping New Classes
               tag: Extend
               icon: fas fa-puzzle-piece
-              subtitle: Expose new OpenMS classes to Python.
+              subtitle: Expose new OpenMS-lib classes to Python.
+
               url: https://pyopenms.readthedocs.io/en/latest/community/wrapping_workflows_new_classes.html
               linkText: Follow the guide
             - title: Developer manual
@@ -1168,6 +1169,11 @@ languages:
             title: "OpenMS WebApps: Building User-Friendly Solutions for MS Analysis"
             journal: Journal of Proteome Research
             year: "2025"
+            authors: >-
+              Müller, Tom David; Siraj, Arslan; Walter, Axel; Kim, Jihyung; Wein,
+              Samuel; von Kleist, Johannes; Feroz, Ayesha; Pilz, Matteo; Jeong,
+              Kyowon; Sing, Justin Cyril; Charkow, Joshua; Röst, Hannes Luc;
+              Sachsenberg, Timo
             url: https://www.ncbi.nlm.nih.gov/pubmed/39881492
             actionText: View on PubMed
             moreUrl: /publications/
@@ -1220,7 +1226,7 @@ languages:
         ctaText: View app
         showAll:
           text: Show all apps
-          url: /webapps/#featured-webapps
+          url: https://deploy-preview-277--openms.netlify.app/featured-apps/
 
       affiliateSection:
         eyebrow: Partner ecosystem
@@ -1295,8 +1301,10 @@ languages:
         notice:
           label: Good to know
           points:
-            - You can still use them as-is for your analysis.
-            - Check for known limitations or compatibility issues before you start.
+            - title: Still usable
+              text: You can still use them as-is for your analysis.
+            - title: Check first
+              text: Check for known limitations or compatibility issues before you start.
         catalogTitle: Available references
         revivalPrompt: Interested in reviving one of these projects?
         revivalNote: Get in touch to discuss maintenance, funding, or community support.

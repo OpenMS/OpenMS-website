@@ -19,11 +19,22 @@
    Soft-pill look is shared sitewide in zz-openms-buttons.css */
 .openms-lib-page--contact .contact-path-socials {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-self: stretch;
+  width: 100%;
   gap: 0.65rem 0.85rem;
   margin-top: auto;
   padding-top: 0.35rem;
+  box-sizing: border-box;
+}
+
+.openms-lib-page--contact .contact-path-social {
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .openms-lib-page--contact .contact-path-social i {

@@ -35,7 +35,7 @@
   display: grid;
   gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem));
   width: 100%;
-  max-width: none;
+
   margin-inline: 0;
   padding-inline: var(--openms-page-inline);
   box-sizing: border-box;
