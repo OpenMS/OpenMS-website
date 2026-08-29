@@ -1,0 +1,43 @@
+/* Homepage hero — Explore the library: solid white fill on navy (must load last) */
+html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-btn.about-cta-btn--donate,
+html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-btn.about-cta-btn--donate:visited {
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.35) !important;
+  transition: var(--openms-btn-motion) !important;
+}
+
+html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-btn.about-cta-btn--donate:hover,
+html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-btn.about-cta-btn--donate:focus-visible,
+html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-btn.about-cta-btn--donate:active {
+  background: var(--openms-white) !important;
+  background-color: #ffffff !important;
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transform: scale(1.04) !important;
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.35) !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-btn.about-cta-btn--donate:hover :is(i, svg, span),
+html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-btn.about-cta-btn--donate:focus-visible :is(i, svg, span),
+html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-btn.about-cta-btn--donate:active :is(i, svg, span) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  fill: currentColor !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-btn.about-cta-btn--donate:hover,
+  html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-btn.about-cta-btn--donate:focus-visible,
+  html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-btn.about-cta-btn--donate:active {
+    transform: none !important;
+  }
+}

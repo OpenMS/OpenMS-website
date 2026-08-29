@@ -1,0 +1,84 @@
+{{- $section := site.Params.archivedSection | default dict -}}
+{{- $projects := site.Params.archivedProjects | default (slice) -}}
+{{- $projectCount := len $projects -}}
+{{- if $projects }}
+<section class="webapps-archived webapps-archived--catalog" aria-label="{{ index $section "catalogTitle" | default "Archived Projects" }}">
+  <div class="webapps-archived__inner">
+    <div class="webapps-archived__projects">
+      <ul
+        class="webapps-archived__grid{{ if eq $projectCount 1 }} webapps-archived__grid--solo{{ end }}"
+        role="list"
+        aria-label="Archived apps"
+      >
+        {{- range $projects }}
+        <li class="webapps-archived__item" role="listitem">
+          {{ partial "webapps-archived-project.html" . }}
+        </li>
+        {{- end }}
+      </ul>
+      {{- with index $section "notice" }}
+      {{- $notice := . -}}
+      {{- with .points }}
+      <aside class="webapps-archived__notice webapps-archived__notice--callout" role="note" aria-labelledby="archived-good-to-know-title">
+        <div class="webapps-archived__notice-head">
+          <span class="webapps-archived__notice-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="16" height="16" focusable="false">
+              <path fill="currentColor" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM8 14A6 6 0 1 1 8 2a6 6 0 0 1 0 12zm-.1-8.35a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zM7.25 7.4a.75.75 0 0 1 1.5 0v4.1a.75.75 0 0 1-1.5 0V7.4z"/>
+            </svg>
+          </span>
+          <h3 id="archived-good-to-know-title" class="webapps-archived__notice-title">{{ index $notice "label" | default "Good to know" }}</h3>
+        </div>
+        <ul class="webapps-archived__notice-list" role="list">
+          {{- range $point := . }}
+          {{- $isMap := reflect.IsMap $point -}}
+          {{- $title := "" -}}
+          {{- $text := "" -}}
+          {{- if $isMap -}}
+            {{- $title = index $point "title" | default "" -}}
+            {{- $text = index $point "text" | default (index $point "content" | default "") -}}
+          {{- else -}}
+            {{- $text = $point -}}
+          {{- end -}}
+          <li class="webapps-archived__notice-item" role="listitem">
+            <div class="webapps-archived__notice-copy">
+              {{- with $title }}
+              <p class="webapps-archived__notice-heading">{{ . }}</p>
+              {{- end }}
+              {{- with $text }}
+              <p class="webapps-archived__notice-text">{{ . }}</p>
+              {{- end }}
+            </div>
+          </li>
+          {{- end }}
+        </ul>
+      </aside>
+      {{- end }}
+      {{- end }}
+    </div>
+
+    {{- $revivalPrompt := index $section "revivalPrompt" -}}
+    {{- $revivalNote := index $section "revivalNote" -}}
+    {{- $contactText := index $section "contactText" | default "Contact Us" -}}
+    {{- $contactUrl := index $section "contactUrl" | default "/contact/" -}}
+    {{- $sponsorText := index $section "sponsorText" | default "Sponsor Us" -}}
+    {{- $sponsorUrl := index $section "sponsorUrl" | default "/sponsor-us/" -}}
+    {{- with $revivalPrompt }}
+    <div class="webapps-archived__revival">
+      <div class="webapps-archived__revival-copy">
+        <p class="webapps-archived__revival-kicker">Community opportunity</p>
+        <p class="webapps-archived__revival-text">
+          <strong>{{ . }}</strong>
+          {{- with $revivalNote }}
+          <span class="webapps-archived__revival-note">{{ . }}</span>
+          {{- end }}
+        </p>
+      </div>
+      <div class="webapps-archived__revival-actions" role="group" aria-label="Revive a project">
+        <a class="openms-lib-btn openms-lib-btn--ghost openms-lib-cta-band__btn-ghost" href="{{ $contactUrl }}">{{ $contactText }}</a>
+        <a class="openms-lib-btn openms-lib-btn--primary" href="{{ $sponsorUrl }}">{{ $sponsorText }}</a>
+      </div>
+    </div>
+    {{- end }}
+  </div>
+</section>
+{{- end }}

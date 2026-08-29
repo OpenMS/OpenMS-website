@@ -1,0 +1,14 @@
+{{- $cfg := .Site.Params.newsSection | default dict -}}
+{{- $yearFilterLabel := index $cfg "yearFilterLabel" | default "Filter news" -}}
+{{- $allLabel := index $cfg "allYearsLabel" | default "All years" -}}
+<div class="news-toolbar">
+  <label class="news-toolbar__filter" for="news-year-select">
+    <select
+      id="news-year-select"
+      class="news-toolbar__select"
+      data-news-year-select
+      data-all-label="{{ $allLabel }}"
+      aria-label="{{ $yearFilterLabel }}"
+    ></select>
+  </label>
+</div>

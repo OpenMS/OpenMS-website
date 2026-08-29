@@ -1,0 +1,118 @@
+/* Ecosystem Developer tools — logos always fit inside cards */
+
+html body .home-page .ecosystem-home {
+  --ecosystem-logo-box: clamp(5rem, 34%, 8.5rem);
+  --ecosystem-logo-box-h: clamp(2.75rem, 8vw, 4.5rem);
+}
+
+html body .home-page .ecosystem-home__card-head {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.65rem 0.85rem !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  overflow: hidden !important;
+}
+
+html body .home-page .ecosystem-home__card-intro {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+html body .home-page .ecosystem-home__card-icon,
+html body .home-page .ecosystem-home__card--openms-lib .ecosystem-home__card-icon,
+html body .home-page .ecosystem-home__card--webapps .ecosystem-home__card-icon,
+html body .home-page .ecosystem-home__card--pyopenms .ecosystem-home__card-icon,
+html body .home-page .ecosystem-home__card--viz .ecosystem-home__card-icon {
+  flex: 0 1 auto !important;
+  align-self: center !important;
+  box-sizing: border-box !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: min(100%, var(--ecosystem-logo-box, 8.5rem)) !important;
+  height: auto !important;
+  max-height: var(--ecosystem-logo-box-h, 4.5rem) !important;
+  margin: 0 0 0 auto !important;
+  object-fit: contain !important;
+  object-position: right center !important;
+}
+
+/* pyOpenMS / pyopenms_viz — same footprint in Ecosystem cards */
+html body .home-page .home-page__block--ecosystem .ecosystem-home__card--pyopenms .ecosystem-home__card-icon,
+html body .home-page .home-page__block--ecosystem .ecosystem-home__card--viz .ecosystem-home__card-icon,
+html body .home-page .ecosystem-home__card--pyopenms .ecosystem-home__card-icon,
+html body .home-page .ecosystem-home__card--viz .ecosystem-home__card-icon {
+  flex: 0 0 auto !important;
+  align-self: center !important;
+  width: 6.15rem !important;
+  height: 2.65rem !important;
+  max-width: min(100%, 6.15rem) !important;
+  max-height: 2.65rem !important;
+  min-width: 0 !important;
+  margin: 0 0 0 auto !important;
+  object-fit: contain !important;
+  object-position: right center !important;
+}
+
+/* Square viz mark: fill the same landscape frame as pyOpenMS */
+html body .home-page .home-page__block--ecosystem .ecosystem-home__card--viz .ecosystem-home__card-icon,
+html body .home-page .ecosystem-home__card--viz .ecosystem-home__card-icon {
+  object-fit: cover !important;
+  object-position: center 62% !important;
+}
+
+html body .home-page .home-page__block--ecosystem .ecosystem-home__card--viz .ecosystem-home__card-head,
+html body .home-page .ecosystem-home__card--viz .ecosystem-home__card-head {
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 800px) {
+  html body .home-page .home-page__block--ecosystem .ecosystem-home {
+    --ecosystem-logo-box: clamp(5.5rem, 32vw, 9rem);
+    --ecosystem-logo-box-h: clamp(2.75rem, 10vw, 4.75rem);
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card-head,
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--viz .ecosystem-home__card-head {
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: hidden !important;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card-icon,
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--openms-lib .ecosystem-home__card-icon,
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--webapps .ecosystem-home__card-icon,
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--pyopenms .ecosystem-home__card-icon,
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--viz .ecosystem-home__card-icon {
+    flex: 0 1 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: min(100%, var(--ecosystem-logo-box, 9rem)) !important;
+    height: auto !important;
+    max-height: var(--ecosystem-logo-box-h, 4.75rem) !important;
+    margin: 0 0 0 auto !important;
+    object-fit: contain !important;
+    object-position: right center !important;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--pyopenms .ecosystem-home__card-icon,
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--viz .ecosystem-home__card-icon {
+    flex: 0 0 auto !important;
+    width: 6.75rem !important;
+    height: 2.85rem !important;
+    max-width: min(100%, 6.75rem) !important;
+    max-height: 2.85rem !important;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--viz .ecosystem-home__card-icon {
+    object-fit: cover !important;
+    object-position: center 62% !important;
+  }
+}

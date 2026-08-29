@@ -1,0 +1,604 @@
+/* Homepage hero — professional responsive UX/UI
+   Loads last (z-*). Preserves brand colors, fonts, and copy.
+   Goals: clear hierarchy, consistent rhythm, diagram/trust aligned,
+   2-line lead, fluid type, comfortable CTAs at every breakpoint. */
+
+html body .home-page__hero {
+  --hero-copy-max: min(38rem, 48%);
+  --hero-diagram-max: min(36rem, 46%);
+  --hero-diagram-height: clamp(9.5rem, 5.5vw + 4rem, 12rem);
+  --hero-lead-width: min(100%, 48ch);
+  --hero-col-gap: clamp(2.5rem, 5vw, 6.5rem);
+  --hero-stack-gap: clamp(1.25rem, 2.8vh, 1.75rem);
+  --hero-copy-gap: clamp(1rem, 1.4vw, 1.35rem);
+  --hero-note-size: clamp(0.875rem, 2.9cqi, 1.0625rem);
+}
+
+/* ── Shared: diagram + trust one unit ─────────────────────────── */
+html body .home-page__hero .hero-home__diagram {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  width: min(100%, var(--hero-diagram-max)) !important;
+  max-width: var(--hero-diagram-max) !important;
+  min-width: 0 !important;
+  container-type: inline-size !important;
+  container-name: hero-diagram;
+}
+
+html body .home-page__hero .hero-home__diagram .hero-mockup,
+html body .home-page__hero .hero-home__diagram .hero-mockup__stage,
+html body .home-page__hero .hero-home__diagram .hero-mockup__chart,
+html body .home-page__hero .hero-home__diagram .hero-home__note {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+html body .home-page__hero .hero-mockup__chart,
+html body .home-page__hero .hero-home__diagram .hero-mockup__chart {
+  height: var(--hero-diagram-height) !important;
+  gap: 0.35rem !important;
+}
+
+/* ── Shared: type ─────────────────────────────────────────────── */
+html body .home-page__hero .hero-home__title,
+html body .home-page__hero .hero-home__title-accent {
+  font-size: clamp(1.95rem, 0.85rem + 3.2vw, 3.35rem) !important;
+  line-height: 1.08 !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body .home-page__hero .hero-home__title {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0 !important;
+  width: max-content !important;
+  max-width: 100% !important;
+}
+
+html body .home-page__hero .hero-home__title-line {
+  display: block !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+}
+
+html body .home-page__hero .hero-home__title-accent {
+  white-space: nowrap !important;
+}
+
+html body .home-page__hero .hero-home__eyebrow {
+  font-size: clamp(0.6875rem, 0.65rem + 0.15vw, 0.75rem) !important;
+}
+
+/* Lead: 2 lines — full mass spectrometry clause | rest */
+html body .home-page__hero .hero-home__description {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.05em !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  margin-top: 0.35rem !important;
+  font-size: clamp(1.05rem, 0.98rem + 0.28vw, 1.25rem) !important;
+  line-height: 1.5 !important;
+  text-wrap: unset !important;
+  overflow-wrap: normal !important;
+}
+
+html body .home-page__hero .hero-home__description-line {
+  display: block !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+}
+
+html body .home-page__hero .hero-home__description-line--1,
+html body .home-page__hero .hero-home__description-line--2,
+html body .home-page__hero .hero-home__description-line--3 {
+  display: block !important;
+  white-space: nowrap !important;
+  width: max-content !important;
+  max-width: 100% !important;
+}
+
+html body .home-page__hero .hero-home__description-seg--lead {
+  display: inline !important;
+  white-space: nowrap !important;
+}
+
+/* Trust labels under bars */
+html body .home-page__hero .hero-home__note,
+html body .home-page__hero .hero-home__note--under-graphic {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0.9rem 0 0 !important;
+  gap: clamp(0.4rem, 1.5cqi, 0.95rem) !important;
+  font-size: var(--hero-note-size) !important;
+  line-height: 1.35 !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+
+html body .home-page__hero .hero-home__note-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: clamp(0.32rem, 1cqi, 0.5rem) !important;
+  white-space: nowrap !important;
+}
+
+html body .home-page__hero .hero-home__note-dot {
+  width: clamp(0.35rem, 1cqi, 0.5rem) !important;
+  height: clamp(0.35rem, 1cqi, 0.5rem) !important;
+  flex-shrink: 0 !important;
+}
+
+html body .home-page__hero .hero-home__actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 0.65rem !important;
+}
+
+html body .home-page__hero .hero-home__actions .hero-home__btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 2.75rem !important;
+  white-space: nowrap !important;
+}
+
+html body .home-page__hero .hero-home__highlights {
+  display: none !important;
+}
+
+/* ── Two-column: fluid sides + steady gap until stack ─────────── */
+@media (min-width: 901px) {
+  html body .home-page__hero {
+    --hero-copy-max: min(38rem, 48%);
+    --hero-diagram-max: min(36rem, 46%);
+    --hero-diagram-height: clamp(9.5rem, 5.5vw + 4rem, 12rem);
+    --hero-col-gap: clamp(2.5rem, 5vw, 6.5rem);
+    --hero-copy-gap: clamp(1rem, 1.4vw, 1.35rem);
+    --hero-note-size: clamp(0.8125rem, 2.7cqi, 1.05rem);
+  }
+
+  html body .home-page__hero .hero-home {
+    min-height: clamp(28rem, 68svh, 42rem) !important;
+  }
+
+  html body .home-page__hero .hero-home__main {
+    padding-top: clamp(4.5rem, 8vh, 6.5rem) !important;
+    padding-bottom: clamp(2rem, 4.5vh, 3.25rem) !important;
+    padding-inline: var(--openms-page-inline, clamp(1rem, 3.5vw, 2.5rem)) !important;
+  }
+
+  html body .home-page__hero .hero-home__inner {
+    max-width: var(--pro-max, 75rem) !important;
+    width: 100% !important;
+  }
+
+  /* Text left, diagram right; gap holds the distance */
+  html body .home-page__hero .hero-home__hero-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    gap: var(--hero-col-gap) !important;
+    width: 100% !important;
+  }
+
+  html body .home-page__hero .hero-home__copy {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: flex-start !important;
+    flex: 1 1 0 !important;
+    gap: var(--hero-copy-gap) !important;
+    min-width: 0 !important;
+    max-width: var(--hero-copy-max) !important;
+    width: auto !important;
+    container-type: inline-size !important;
+    container-name: hero-copy;
+  }
+
+  html body .home-page__hero .hero-home__content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.7rem !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  html body .home-page__hero .hero-home__title,
+  html body .home-page__hero .hero-home__title-accent {
+    font-size: clamp(1.85rem, 0.9rem + 2.4vw, 3.35rem) !important;
+    max-width: 100% !important;
+  }
+
+  html body .home-page__hero .hero-home__description {
+    font-size: clamp(0.92rem, 0.7rem + 0.45vw, 1.2rem) !important;
+    line-height: 1.45 !important;
+    gap: 0.1em !important;
+    margin-top: 0.15rem !important;
+  }
+
+  @supports (font-size: 1cqi) {
+    html body .home-page__hero .hero-home__title,
+    html body .home-page__hero .hero-home__title-accent {
+      font-size: clamp(1.85rem, 0.7rem + 5.5cqi, 3.35rem) !important;
+    }
+
+    html body .home-page__hero .hero-home__description {
+      font-size: clamp(0.92rem, 0.55rem + 1.6cqi, 1.2rem) !important;
+    }
+  }
+
+  html body .home-page__hero .hero-home__description-line--1,
+  html body .home-page__hero .hero-home__description-line--2,
+  html body .home-page__hero .hero-home__description-line--3 {
+    display: block !important;
+    white-space: nowrap !important;
+    width: max-content !important;
+    max-width: 100% !important;
+  }
+
+  html body .home-page__hero .hero-home__footer,
+  html body .home-page__hero .hero-home__actions-block {
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    gap: 0 !important;
+  }
+
+  html body .home-page__hero .hero-home__actions {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 0.75rem !important;
+  }
+
+  html body .home-page__hero .hero-home__actions .hero-home__btn {
+    width: auto !important;
+    flex: 0 0 auto !important;
+  }
+
+  html body .home-page__hero .hero-home__visual {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    flex: 1 1 0 !important;
+    justify-content: flex-end !important;
+    align-self: flex-end !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: var(--hero-diagram-max) !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  html body .home-page__hero .hero-home__diagram {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline-start: auto !important;
+  }
+
+  html body .home-page__hero .hero-mockup__labels {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin: 0 0 0.55rem !important;
+  }
+
+  html body .home-page__hero .hero-mockup__chrome-title,
+  html body .home-page__hero .hero-mockup__chrome-brand {
+    display: inline-flex !important;
+    font-size: clamp(0.65rem, 0.55rem + 0.2vw, 0.75rem) !important;
+  }
+
+  html body .home-page__hero .hero-home__note,
+  html body .home-page__hero .hero-home__note--under-graphic {
+    margin-top: 0.85rem !important;
+  }
+}
+
+/* ── Stacked shell (≤900) ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  html body .home-page__hero {
+    --hero-diagram-max: min(100%, 36rem);
+    --hero-lead-width: 100%;
+    --hero-note-size: clamp(0.65rem, 2.2cqi, 0.8125rem);
+  }
+
+  html body .home-page__hero .hero-home {
+    min-height: 0 !important;
+  }
+
+  html body .home-page__hero .hero-home__main {
+    padding-top: clamp(4.35rem, 8vh, 5.75rem) !important;
+    padding-bottom: clamp(1.85rem, 4.5vh, 2.75rem) !important;
+    padding-inline: var(--openms-page-inline, clamp(1rem, 4vw, 1.75rem)) !important;
+  }
+
+  html body .home-page__hero .hero-home__hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--hero-stack-gap) !important;
+  }
+
+  html body .home-page__hero .hero-home__copy {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: var(--hero-copy-gap) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  html body .home-page__hero .hero-home__content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.6rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  html body .home-page__hero .hero-home__eyebrow {
+    margin-bottom: 0 !important;
+  }
+
+  html body .home-page__hero .hero-home__title,
+  html body .home-page__hero .hero-home__title-accent {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  html body .home-page__hero .hero-home__description {
+    display: block !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    font-size: clamp(0.95rem, 0.88rem + 0.3vw, 1.1rem) !important;
+  }
+
+  /* Sm: 2 lines — …mass | spectrometry tools — … community. */
+  html body .home-page__hero .hero-home__description-line--1 {
+    display: block !important;
+    white-space: nowrap !important;
+    width: max-content !important;
+    max-width: 100% !important;
+  }
+
+  html body .home-page__hero .hero-home__description-line--2,
+  html body .home-page__hero .hero-home__description-line--3 {
+    display: inline !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  html body .home-page__hero .hero-home__description-line--3::before {
+    content: " ";
+  }
+
+  html body .home-page__hero .hero-home__footer,
+  html body .home-page__hero .hero-home__actions-block {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    align-items: flex-start !important;
+  }
+
+  html body .home-page__hero .hero-home__actions .hero-home__btn {
+    width: auto !important;
+    flex: 0 1 auto !important;
+  }
+
+  html body .home-page__hero .hero-home__visual {
+    display: flex !important;
+    flex-direction: column !important;
+    width: min(100%, var(--hero-diagram-max)) !important;
+    max-width: var(--hero-diagram-max) !important;
+    margin: 0.15rem 0 0 !important;
+    overflow: visible !important;
+  }
+
+  html body .home-page__hero .hero-mockup__labels {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin: 0 0 0.5rem !important;
+  }
+
+  html body .home-page__hero .hero-mockup__chrome-title,
+  html body .home-page__hero .hero-mockup__chrome-brand {
+    display: inline-flex !important;
+  }
+}
+
+/* ── Tablet stacked: wider diagram + 3-line lead ──────────────── */
+@media (min-width: 641px) and (max-width: 900px) {
+  html body .home-page__hero {
+    --hero-diagram-max: min(100%, 46rem);
+    --hero-diagram-height: 11rem;
+    --hero-stack-gap: clamp(1.4rem, 3vh, 1.9rem);
+    --hero-note-size: clamp(0.68rem, 2.1cqi, 0.8125rem);
+  }
+
+  html body .home-page__hero .hero-home__main {
+    padding-top: clamp(4.6rem, 7.5vh, 5.85rem) !important;
+    padding-bottom: clamp(2.1rem, 4vh, 2.9rem) !important;
+  }
+
+  html body .home-page__hero .hero-home__description {
+    font-size: clamp(0.88rem, 0.8rem + 0.25vw, 1.05rem) !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 640px) {
+  html body .home-page__hero {
+    --hero-diagram-max: min(100%, 100%);
+    --hero-diagram-height: 10.25rem;
+    --hero-note-size: clamp(0.62rem, 2cqi, 0.75rem);
+  }
+
+  html body .home-page__hero .hero-home__visual {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  html body .home-page__hero .hero-mockup__labels {
+    display: flex !important;
+  }
+
+  html body .home-page__hero .hero-home__title,
+  html body .home-page__hero .hero-home__title-accent {
+    font-size: clamp(1.75rem, 4.2vw, 2.35rem) !important;
+  }
+
+  html body .home-page__hero .hero-home__description {
+    font-size: clamp(0.78rem, 1.85vw, 0.95rem) !important;
+  }
+}
+
+/* ── Phones ───────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  html body .home-page__hero {
+    --hero-diagram-max: 100%;
+    --hero-diagram-height: 9.25rem;
+    --hero-stack-gap: 1.2rem;
+    --hero-copy-gap: 0.9rem;
+    --hero-note-size: clamp(0.58rem, 2.4cqi, 0.72rem);
+  }
+
+  html body .home-page__hero .hero-home__main {
+    padding-top: clamp(4.1rem, 8.5vh, 5rem) !important;
+    padding-bottom: clamp(1.6rem, 4vh, 2.25rem) !important;
+  }
+
+  /* Keep 2 nowrap lead lines fitting on phones */
+  html body .home-page__hero .hero-home__title,
+  html body .home-page__hero .hero-home__title-accent {
+    font-size: clamp(1.55rem, 6.2vw, 2.15rem) !important;
+  }
+
+  html body .home-page__hero .hero-home__description {
+    font-size: clamp(0.62rem, 2.15vw, 0.82rem) !important;
+    line-height: 1.45 !important;
+  }
+
+  html body .home-page__hero .hero-mockup__labels,
+  html body .home-page__hero .hero-mockup__chrome-title,
+  html body .home-page__hero .hero-mockup__chrome-brand {
+    display: none !important;
+  }
+
+  html body .home-page__hero .hero-home__actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    max-width: min(100%, 23rem) !important;
+    gap: 0.55rem !important;
+  }
+
+  html body .home-page__hero .hero-home__actions .hero-home__btn {
+    width: 100% !important;
+    min-height: 2.75rem !important;
+    padding-inline: 0.75rem !important;
+  }
+
+  html body .home-page__hero .hero-home__visual,
+  html body .home-page__hero .hero-home__diagram {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Very narrow phones */
+@media (max-width: 360px) {
+  html body .home-page__hero .hero-home__title,
+  html body .home-page__hero .hero-home__title-accent {
+    font-size: clamp(1.35rem, 5.6vw, 1.85rem) !important;
+  }
+
+  html body .home-page__hero .hero-home__description {
+    font-size: clamp(0.56rem, 2vw, 0.72rem) !important;
+  }
+
+  html body .home-page__hero .hero-home__actions {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+  }
+
+  html body .home-page__hero .hero-home__note,
+  html body .home-page__hero .hero-home__note--under-graphic {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .home-page__hero .hero-mockup__chart,
+  html body .home-page__hero .hero-mockup__bar {
+    animation: none !important;
+  }
+}
+
+/* Explore the library — clear hover (was only an 8% white wash) */
+html body .home-page__hero .hero-home__btn--secondary,
+html body .home-page__hero .hero-home__btn--secondary.about-cta-btn--donate {
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  box-shadow: 0 0 0 0 var(--openms-btn-glow-white, rgba(255, 255, 255, 0.22)) !important;
+  transition: var(--openms-btn-motion) !important;
+}
+
+html body .home-page__hero .hero-home__btn--secondary:is(:hover, :focus-visible, :active),
+html body .home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:is(:hover, :focus-visible, :active) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) var(--openms-btn-glow-white, rgba(255, 255, 255, 0.22)) !important;
+  outline: none;
+  text-decoration: none !important;
+}
+
+html body .home-page__hero .hero-home__btn--secondary:is(:hover, :focus-visible, :active) :is(i, svg, span),
+html body .home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:is(:hover, :focus-visible, :active) :is(i, svg, span) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  fill: currentColor !important;
+}
+
+html body .home-page__hero .hero-home__btn--secondary:focus-visible,
+html body .home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:focus-visible {
+  box-shadow:
+    0 0 0 3px var(--openms-navy),
+    0 0 0 5px rgba(var(--openms-white-rgb), 0.55),
+    0 0 0 calc(5px + var(--openms-btn-glow-size, 6px)) var(--openms-btn-glow-white, rgba(255, 255, 255, 0.22)) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .home-page__hero .hero-home__btn--secondary:is(:hover, :focus-visible, :active),
+  html body .home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:is(:hover, :focus-visible, :active) {
+    transform: none !important;
+  }
+}
+

@@ -1,0 +1,119 @@
+{{- $hero := .Site.Params.hero }}
+{{- $eyebrow := index $hero "eyebrow" }}
+{{- $titleBefore := index $hero "titleBefore" | default "Open science." }}
+{{- $titleMid := index $hero "titleMid" | default "Clear results for" }}
+{{- $titleHighlight := index $hero "titleHighlight" | default "mass spectrometry" }}
+{{- $titleAfter := index $hero "titleAfter" | default "." }}
+{{- $description := index $hero "description" }}
+{{- $buttonText := index $hero "buttontext" }}
+{{- $buttonLink := index $hero "buttonlink" }}
+{{- $secondaryText := index $hero "secondaryButtonText" }}
+{{- $secondaryLink := index $hero "secondaryButtonLink" }}
+{{- $microcopy := index $hero "microcopy" }}
+{{- $trustNote := index $hero "trustNote" }}
+
+<div class="hero-home">
+  <section class="hero-home__main" aria-label="Homepage introduction">
+    <div class="hero-home__inner">
+      <div class="hero-home__hero-grid">
+        <div class="hero-home__copy">
+          <div class="hero-home__content">
+            {{- with $eyebrow }}
+            <p class="hero-home__eyebrow">
+              <span class="hero-home__eyebrow-dot" aria-hidden="true"></span>
+              {{ . }}
+            </p>
+            {{- end }}
+            <h1 class="hero-home__title">
+              <span class="hero-home__title-line">{{ $titleBefore }}</span>
+              <span class="hero-home__title-line">{{ $titleMid }}</span>
+              <span class="hero-home__title-line">
+                <span class="hero-home__title-accent">{{ $titleHighlight }}</span>{{ $titleAfter }}
+              </span>
+            </h1>
+            {{- with $description }}
+            <p class="hero-home__description">
+              {{- $leadParts := split . " — " -}}
+              {{- if gt (len $leadParts) 1 -}}
+              {{- $before := index $leadParts 0 -}}
+              {{- $after := trim (index $leadParts 1) " " -}}
+              {{- $massParts := split $before " spectrometry" -}}
+              {{- $runParts := split $after "run vetted apps, " -}}
+              {{- $tail := "" -}}
+              {{- if gt (len $runParts) 1 -}}
+              {{- $tail = index $runParts 1 -}}
+              {{- else -}}
+              {{- $tail = $after -}}
+              {{- end -}}
+              {{- if gt (len $massParts) 1 -}}
+              <span class="hero-home__description-line hero-home__description-line--1">{{ index $massParts 0 }}</span>
+              <span class="hero-home__description-line hero-home__description-line--2">spectrometry{{ index $massParts 1 }} —{{- if gt (len $runParts) 1 }} run vetted apps,{{- end -}}</span>
+              {{- else -}}
+              <span class="hero-home__description-line hero-home__description-line--1">{{ $before }} —</span>
+              {{- if gt (len $runParts) 1 -}}
+              <span class="hero-home__description-line hero-home__description-line--2">run vetted apps,</span>
+              {{- end -}}
+              {{- end -}}
+              <span class="hero-home__description-line hero-home__description-line--3">{{ $tail }}</span>
+              {{- else -}}
+              {{ . }}
+              {{- end -}}
+            </p>
+            {{- end }}
+          </div>
+
+          <div class="hero-home__footer">
+            <div class="hero-home__actions-block">
+              <div class="hero-home__actions" role="group" aria-label="Primary actions">
+                {{- if $buttonText }}
+                <a
+                  class="hero-home__btn hero-home__btn--primary openms-btn-primary"
+                  href="{{ $buttonLink }}"
+                  {{- if in $buttonLink "://" }}
+                  rel="noopener noreferrer"
+                  {{- end }}
+                >{{ $buttonText }}</a>
+                {{- end }}
+                {{- if and $secondaryText $secondaryLink }}
+                <a
+                  class="hero-home__btn hero-home__btn--secondary about-cta-btn about-cta-btn--donate"
+                  href="{{ $secondaryLink }}"
+                  {{- if in $secondaryLink "://" }}
+                  rel="noopener noreferrer"
+                  {{- end }}
+                >{{ $secondaryText }}</a>
+                {{- end }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-home__visual">
+          <div class="hero-home__diagram">
+            {{ partial "hero-workflow-mockup.html" . }}
+            {{- with $trustNote }}
+            <p class="hero-home__note hero-home__note--under-graphic">
+              {{- range $i, $item := split . " · " }}
+              <span class="hero-home__note-item hero-home__note-item--{{ add $i 1 }}">
+                <span class="hero-home__note-dot" aria-hidden="true"></span>
+                {{ trim $item " " }}
+              </span>
+              {{- end }}
+            </p>
+            {{- end }}
+          </div>
+          {{- with $microcopy }}
+          <ul class="hero-home__highlights" role="list" aria-label="Platform highlights">
+            {{- range $i, $item := split . " · " }}
+            <li class="hero-home__highlight hero-home__highlight--{{ add $i 1 }}">
+              <span class="hero-home__highlight-dot" aria-hidden="true"></span>
+              {{ trim $item " " }}
+            </li>
+            {{- end }}
+          </ul>
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

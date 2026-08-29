@@ -1,0 +1,162 @@
+/* Numbered cards — white cards with gaps (page/band shows between), site-wide
+   Matches Governance Structure: white fill on cards only, not a continuous strip. */
+
+html body :is(
+  .contribute-channels__strip,
+  .openms-lib-about__mosaic,
+  .openms-lib-about__benefits,
+  .coc-overview__principles,
+  .privacy-overview__list,
+  .rp-include__mosaic,
+  .retreat-highlights__mosaic,
+  .fellowship-facts
+),
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__mosaic,
+html body .openms-lib-page--developer-retreat .retreat-highlights__mosaic,
+html body .openms-lib-page--developer-retreat #about-the-retreat .openms-lib-about__mosaic.retreat-highlights__mosaic,
+html body .openms-lib-page--code-of-conduct .coc-overview__principles,
+html body .openms-lib-page--research-partnerships .rp-include__mosaic,
+html body .openms-lib-page--research-partnerships #partnerships-include .rp-include__mosaic,
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefits,
+html body .openms-lib-page--webapps-pro .openms-lib-about__mosaic,
+html body .openms-lib-page--pyopenms-pro .openms-lib-about__mosaic,
+html body .openms-lib-page--pyopenms-viz-pro .openms-lib-about__mosaic,
+html body .openms-lib-page--privacy .privacy-overview__list,
+html body .openms-lib-page--contribute .contribute-channels__strip,
+html body .openms-lib-page--governance #governance-bodies .openms-lib-about__mosaic,
+html body .openms-lib-page--fellowship .fellowship-facts {
+  gap: var(--pro-card-gap, clamp(1rem, 2vw, 1.5rem)) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: none !important;
+}
+
+/* Shared card chrome — same padding/margin on Sponsor Us, Partner with OpenMS, OpenMS-lib, etc. */
+html body {
+  --openms-num-card-pad: clamp(1.15rem, 2.5vw, 1.5rem);
+  --openms-num-card-gap: 0.45rem;
+}
+
+/* Cards themselves — white surfaces + unified pad */
+html body :is(
+  .contribute-channel,
+  .openms-lib-about__tile,
+  .openms-lib-about__benefit,
+  .coc-principle,
+  .privacy-overview__item,
+  .fellowship-facts__item
+),
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__tile,
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile,
+html body .openms-lib-page--developer-retreat .retreat-highlights__mosaic > .openms-lib-about__tile,
+html body .openms-lib-page--code-of-conduct .coc-principle,
+html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile,
+html body .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic > .openms-lib-about__tile,
+html body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__tile,
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit,
+html body .openms-lib-page--webapps-pro .openms-lib-about__tile,
+html body .openms-lib-page--pyopenms-pro .openms-lib-about__tile,
+html body .openms-lib-page--pyopenms-viz-pro .openms-lib-about__tile,
+html body .openms-lib-page--privacy .privacy-overview__item,
+html body .openms-lib-page--contribute .contribute-channel,
+html body .openms-lib-page--governance #governance-bodies .openms-lib-about__tile,
+html body .openms-lib-page--fellowship .fellowship-facts__item {
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: var(--openms-num-card-pad) !important;
+  gap: var(--openms-num-card-gap) !important;
+  background: var(--openms-white, #fff) !important;
+  background-color: var(--openms-white, #fff) !important;
+  border: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
+  border-radius: var(--pro-radius, 1rem) !important;
+  box-shadow: var(--pro-shadow, 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05)) !important;
+  transform: none !important;
+}
+
+/* Kill strip-era first/last column insets so every card matches */
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit:first-child,
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit:last-child,
+html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:first-child,
+html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:last-child,
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__tile:first-child,
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__tile:last-child {
+  padding: var(--openms-num-card-pad) !important;
+  padding-left: var(--openms-num-card-pad) !important;
+  padding-right: var(--openms-num-card-pad) !important;
+}
+
+/* Title spacing under numbers — same on Sponsor Us / Partner / OpenMS-lib */
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__tile-title,
+html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-about__tile-title,
+html body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__tile-title,
+html body .openms-lib-page--research-partnerships .rp-include__mosaic .openms-lib-about__tile-title,
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit-title {
+  margin: 0 0 0.35rem !important;
+}
+
+/* Hover — keep white card, slightly stronger edge */
+html body :is(
+  .contribute-channel,
+  .openms-lib-about__tile,
+  .openms-lib-about__benefit,
+  .coc-principle,
+  .privacy-overview__item,
+  .fellowship-facts__item
+):is(:hover, :focus-within),
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--developer-retreat .retreat-highlights__mosaic > .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--code-of-conduct .coc-principle:is(:hover, :focus-within),
+html body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--contribute .contribute-channel:is(:hover, :focus-within),
+html body .openms-lib-page--governance #governance-bodies .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit:is(:hover, :focus-within),
+html body .openms-lib-page--webapps-pro .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--pyopenms-pro .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--pyopenms-viz-pro .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--fellowship .fellowship-facts__item:is(:hover, :focus-within) {
+  background: var(--openms-white, #fff) !important;
+  background-color: var(--openms-white, #fff) !important;
+  border-color: var(--pro-line-strong, rgba(var(--openms-navy-rgb), 0.22)) !important;
+  box-shadow: var(--pro-shadow-hover, 0 0.65rem 1.5rem rgba(var(--openms-navy-rgb), 0.1)) !important;
+  transform: none !important;
+}
+
+/* Research Partnerships include — don’t force the whole band white (gaps need band color) */
+html body .openms-lib-page--research-partnerships #partnerships-include,
+html body .openms-lib-page--hub.openms-lib-page--research-partnerships #partnerships-include.openms-lib-page__anchor,
+html body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about {
+  background: var(--pro-band-soft, #f4f6f9) !important;
+  background-color: var(--pro-band-soft, #f4f6f9) !important;
+}
+
+/* Contribute channels — keep equal-height CTAs inside cards */
+html body .openms-lib-page--contribute .contribute-channel {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+html body .openms-lib-page--contribute .contribute-channel__link {
+  margin-top: auto !important;
+  padding-top: 0.85rem !important;
+}
+
+@media (max-width: 960px) {
+  html body .openms-lib-page--contribute .contribute-channel {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  html body .openms-lib-page--contribute .contribute-channel__link {
+    margin-top: 0.35rem !important;
+    padding-top: 0 !important;
+  }
+}

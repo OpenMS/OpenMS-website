@@ -1,0 +1,217 @@
+html body .openms-lib-page--contribute #contribute-build .contribute-os-buttons .openms-lib-btn,
+html body .openms-lib-page--contribute #contribute-build .contribute-os-buttons .openms-lib-btn--ghost,
+html body .openms-lib-page--contribute .contribute-track__item--mid .contribute-os-buttons .openms-lib-btn,
+html body .openms-lib-page--contribute .contribute-track__item--mid .contribute-os-buttons .openms-lib-btn--ghost {
+  border: 2px solid var(--openms-blue) !important;
+}
+
+html body .openms-lib-page--contribute #contribute-build:is(:hover, :focus-within) .contribute-os-buttons .openms-lib-btn,
+html body .openms-lib-page--contribute #contribute-build:is(:hover, :focus-within) .contribute-os-buttons .openms-lib-btn--ghost,
+html body .openms-lib-page--contribute .contribute-track__item--mid:is(:hover, :focus-within) .contribute-os-buttons .openms-lib-btn,
+html body .openms-lib-page--contribute .contribute-track__item--mid:is(:hover, :focus-within) .contribute-os-buttons .openms-lib-btn--ghost {
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  box-shadow: none !important;
+}
+
+html body .openms-lib-page--contribute #contribute-build .contribute-os-buttons .openms-lib-btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contribute #contribute-build .contribute-os-buttons .openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contribute .contribute-track__item--mid .contribute-os-buttons .openms-lib-btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contribute .contribute-track__item--mid .contribute-os-buttons .openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contribute #contribute-build:is(:hover, :focus-within) .contribute-os-buttons .openms-lib-btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contribute .contribute-track__item--mid:is(:hover, :focus-within) .contribute-os-buttons .openms-lib-btn:is(:hover, :focus-visible, :active) {
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+  background: rgba(var(--openms-white-rgb), 0.12) !important;
+  background-color: rgba(var(--openms-white-rgb), 0.12) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(var(--openms-white-rgb), 0.22) !important;
+}
+
+html body .openms-lib-page--contribute #contribute-build:is(:hover, :focus-within) .contribute-os-buttons .openms-lib-btn:is(:hover, :focus-visible, :active) :is(i, .fab, .fas, .svg-inline--fa, .openms-lib-btn__label, span),
+html body .openms-lib-page--contribute .contribute-track__item--mid:is(:hover, :focus-within) .contribute-os-buttons .openms-lib-btn:is(:hover, :focus-visible, :active) :is(i, .fab, .fas, .svg-inline--fa, .openms-lib-btn__label, span) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+html body .openms-lib-page--contribute #communication-channels.openms-lib-page__anchor {
+  padding-bottom: var(--sol-section-y, clamp(3.5rem, 7vw, 5.25rem)) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute.openms-lib-page__anchor {
+  padding-top: clamp(2rem, 4.25vw, 3.25rem) !important;
+}
+
+html body .openms-lib-page--contribute .contribute-outreach__contact a:is(:hover, :focus-visible),
+html body .openms-lib-page--contribute .contribute-outreach__social-link:is(:hover, :focus-visible),
+html body .openms-lib-page--contribute .contribute-outreach__social-link:is(:hover, :focus-visible) :is(
+  .contribute-outreach__social-label,
+  .contribute-outreach__social-hint,
+  .contribute-outreach__social-arrow,
+  .contribute-outreach__social-icon,
+  i,
+  .fab,
+  .fas,
+  .svg-inline--fa
+) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  fill: currentColor !important;
+}
+
+/* Ways — featured development full width; four equal cards below */
+html body .openms-lib-page--contribute .contribute-track__item--wide {
+  grid-column: 1 / -1 !important;
+  position: relative;
+}
+
+html body .openms-lib-page--contribute .contribute-track__item--mid,
+html body .openms-lib-page--contribute .contribute-track__item--docs,
+html body .openms-lib-page--contribute .contribute-track__item--design,
+html body .openms-lib-page--contribute .contribute-track__item--web {
+  grid-column: span 3 !important;
+}
+
+html body .openms-lib-page--contribute .contribute-track__badge {
+  position: absolute;
+  top: 0.95rem;
+  right: 0.95rem;
+  margin: 0;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(var(--openms-blue-rgb), 0.1);
+  color: var(--openms-blue);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+html body .openms-lib-page--contribute .contribute-track__item--wide:is(:hover, :focus-within) .contribute-track__badge {
+  background: rgba(var(--openms-white-rgb), 0.16);
+  color: var(--openms-white);
+}
+
+html body .openms-lib-page--contribute .contribute-track__item--mid .contribute-track__title,
+html body .openms-lib-page--contribute .contribute-track__item--docs .contribute-track__title,
+html body .openms-lib-page--contribute .contribute-track__item--design .contribute-track__title,
+html body .openms-lib-page--contribute .contribute-track__item--web .contribute-track__title {
+  font-size: var(--openms-card-title-size) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+}
+
+@media (max-width: 1100px) {
+  html body .openms-lib-page--contribute .contribute-track__item--mid,
+  html body .openms-lib-page--contribute .contribute-track__item--docs,
+  html body .openms-lib-page--contribute .contribute-track__item--design,
+  html body .openms-lib-page--contribute .contribute-track__item--web {
+    grid-column: span 6 !important;
+  }
+}
+
+@media (max-width: 720px) {
+  html body .openms-lib-page--contribute .contribute-track__item--mid,
+  html body .openms-lib-page--contribute .contribute-track__item--docs,
+  html body .openms-lib-page--contribute .contribute-track__item--design,
+  html body .openms-lib-page--contribute .contribute-track__item--web {
+    grid-column: 1 / -1 !important;
+  }
+
+  html body .openms-lib-page--contribute .contribute-track__badge {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
+/* Funding / Sponsor band — responsive stack */
+html body .openms-lib-page--contribute .contribute-support {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  column-gap: clamp(1.25rem, 3vw, 2.5rem) !important;
+  row-gap: 1rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support__copy {
+  display: grid !important;
+  grid-column: 1 !important;
+  gap: 0.35rem !important;
+  min-width: 0 !important;
+  max-width: none !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support__kicker,
+html body .openms-lib-page--contribute .contribute-support__title,
+html body .openms-lib-page--contribute .contribute-support__text {
+  grid-column: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support__title {
+  font-size: var(--openms-secondary-heading-size-lg, clamp(1.25rem, 2.4vw, 1.55rem)) !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none !important;
+  overflow-wrap: anywhere;
+}
+
+html body .openms-lib-page--contribute .contribute-support__text {
+  white-space: normal !important;
+  text-wrap: pretty !important;
+  overflow-wrap: break-word !important;
+  font-size: var(--openms-body-size, 1rem) !important;
+  line-height: 1.55 !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support__cta,
+html body .openms-lib-page--contribute .contribute-support__cta.openms-lib-btn {
+  grid-column: 2 !important;
+  grid-row: 1 / -1 !important;
+  justify-self: end !important;
+  align-self: center !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 900px) {
+  html body .openms-lib-page--contribute .contribute-support {
+    grid-template-columns: 1fr !important;
+    justify-items: start !important;
+  }
+
+  html body .openms-lib-page--contribute .contribute-support__copy {
+    grid-column: 1 !important;
+  }
+
+  html body .openms-lib-page--contribute .contribute-support__cta,
+  html body .openms-lib-page--contribute .contribute-support__cta.openms-lib-btn {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    justify-self: start !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 520px) {
+  html body .openms-lib-page--contribute .contribute-support__cta,
+  html body .openms-lib-page--contribute .contribute-support__cta.openms-lib-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

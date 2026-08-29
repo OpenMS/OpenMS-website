@@ -1,0 +1,8 @@
+/* Fellowship facts: closer under hero; card layout from z-zzz-num-strip-white.css */
+.openms-lib-page--fellowship .openms-lib-page__intro {
+  gap: clamp(0.65rem, 1.5vw, 1.1rem);
+}
+
+.openms-lib-page--fellowship.openms-lib-page--solution .openms-lib-hero--solution {
+  padding-bottom: clamp(0.75rem, 2vw, 1.25rem) !important;
+}

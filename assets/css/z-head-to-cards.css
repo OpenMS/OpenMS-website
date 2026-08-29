@@ -1,0 +1,76 @@
+/* Title block → cards: one site-wide distance */
+
+html body .openms-lib-page.openms-lib-page,
+html body .home-page.home-page,
+html body .openms-lib-page--news.openms-lib-page--news,
+html body .openms-lib-page--calendar.openms-lib-page--calendar {
+  --openms-stack-cards: clamp(1.2rem, 2.5vw, 1.75rem) !important;
+  --pro-head-to-content: clamp(1.2rem, 2.5vw, 1.75rem) !important;
+  --home-section-head-gap: clamp(1.2rem, 2.5vw, 1.75rem) !important;
+}
+
+html body .openms-lib-page .openms-lib-resources__inner,
+html body .openms-lib-page .openms-lib-resources--explore .openms-lib-resources__inner,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__inner,
+html body .openms-lib-page .openms-lib-about__inner,
+html body .openms-lib-page .openms-lib-developers--cards:not(.openms-lib-developers--split) {
+  gap: var(--pro-head-to-content) !important;
+}
+
+html body .openms-lib-page .openms-lib-resources__head,
+html body .openms-lib-page .openms-lib-resources--explore .openms-lib-resources__head,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__head,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources--explore .openms-lib-resources__head,
+html body .openms-lib-page .openms-lib-about__head {
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute .openms-lib-resources__inner {
+  gap: var(--pro-card-gap) clamp(1.5rem, 3vw, 2.5rem) !important;
+}
+
+html body .openms-lib-page--webapps-pro .openms-lib-resources--examples .openms-lib-resources__inner,
+html body .openms-lib-page--webapps-pro .openms-lib-resources__examples-layout {
+  gap: clamp(1.75rem, 4vw, 3.25rem) !important;
+}
+
+html body .openms-lib-page .openms-lib-developers__cards-head,
+html body .openms-lib-page--solution .openms-lib-developers--cards .openms-lib-developers__cards-head,
+html body .openms-lib-page--solution.openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__cards-head,
+html body .openms-lib-page--solution.openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards:not(.openms-lib-developers--split) .openms-lib-developers__cards-head,
+html body .openms-lib-page--solution.openms-lib-page--webapps-pro .openms-lib-developers--cards .openms-lib-developers__cards-head {
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__head {
+  margin-bottom: var(--pro-head-to-content) !important;
+}
+
+html body .webapps-featured__header,
+html body .openms-lib-page .webapps-featured__header,
+html body .openms-lib-page .webapps-affiliates__header,
+html body .openms-lib-page .webapps-archived__intro {
+  margin-bottom: var(--pro-head-to-content) !important;
+}
+
+html body .openms-lib-page--featured .webapps-featured__header,
+html body .openms-lib-page--affiliated .webapps-affiliates__header,
+html body .openms-lib-page--archived .webapps-archived__intro {
+  margin-bottom: 0 !important;
+}
+
+html body .community-news-events__column {
+  gap: var(--pro-head-to-content) !important;
+}
+
+@media (max-width: 900px) {
+  html body .openms-lib-page--contribute #ways-to-contribute .openms-lib-resources__inner {
+    gap: var(--pro-head-to-content) !important;
+  }
+}
+
+html body .openms-lib-page--publications .openms-lib-resources__head,
+html body .openms-lib-page--publications .publications-featured .openms-lib-resources__head,
+html body .openms-lib-page--publications .publications-bibliography > .openms-lib-resources__head {
+  margin-bottom: 0 !important;
+}

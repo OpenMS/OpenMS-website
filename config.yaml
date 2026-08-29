@@ -15,7 +15,36 @@ markup:
 # them to openms.de immediately.
 disableLanguages: []
 
+outputFormats:
+  SearchIndex:
+    mediaType: application/json
+    baseName: search-index
+    isPlainText: true
+    notAlternative: true
+
+outputs:
+  home:
+    - HTML
+    - SearchIndex
+
 params:
+  font:
+    name: Montserrat
+    sizes:
+      - 400
+      - 600
+      - 700
+      - 800
+  bodyFont:
+    name: Raleway
+    sizes:
+      - 400
+      - 500
+      - 600
+  monoFont:
+    name: JetBrains Mono
+    sizes:
+      - 100
   images:
     - /images/logo.svg
   navColor: blue
@@ -33,155 +62,1468 @@ languages:
     languageName: English
     params:
       description: Why OpenMS? Mass Spectrometry. Visualizations. Open source.
+      newsBanner:
+        enabled: true
+        label: News
+        text: Workshop at University of Helsinki on April 30th 2026.
+        link: /news/helsinki_workshop_2026/
+      contributePage:
+        eyebrow: Community
+        subtitle: >-
+          Code, docs, design, outreach, and more — pick a path that matches your skills.
+        links:
+          discord: https://discord.com/invite/v9tv5BxPch
+          githubDiscussions: https://github.com/OpenMS/OpenMS/discussions
+          githubIssues: https://github.com/openms/openms/issues/new/choose
+          governance: /governance/
+          websiteRepo: https://github.com/OpenMS/OpenMS-website
+          websiteIssues: https://github.com/OpenMS/OpenMS-website/issues
+          editContributePage: https://github.com/OpenMS/OpenMS-website/edit/main/content/en/contribute.md
+        social:
+          discord: https://discord.com/invite/v9tv5BxPch
+          linkedin: https://www.linkedin.com/company/openms-org
+          x: https://twitter.com/OpenMSTeam
+          bluesky: https://bsky.app/profile/openms.bsky.social
+        communityEmail: communitymanager@openms.de
+      fellowshipPage:
+        eyebrow: Community
+        headline: >-
+          Gain <span class="openms-lib-hero__accent">hands-on</span> experience
+          in open-source science.
+        blurb: >-
+          Work alongside researchers worldwide on the OpenMS ecosystem —<br>
+          develop algorithms, test software, and write tutorials for
+          computational mass spectrometry.
+        chips:
+          - icon: fas fa-globe
+            text: Fully remote & unpaid
+          - icon: fas fa-comments
+            text: Biweekly mentor meetings
+          - icon: fas fa-award
+            text: Certificate of completion
+        tallyFormId: 44qqqd
+        projectsTitle: Projects you can contribute to
+        projectsLead: >-
+          Fellows are matched with a mentor on one of these OpenMS ecosystem
+          projects. Browse each project to learn more and see how to contribute.
+        projects:
+          - title: OpenMS-lib
+            description: Core C++ library and TOPP tools for LC-MS data management and analysis.
+            url: /openms-lib/
+            contributeUrl: "/openms-lib/#for-developers"
+          - title: pyOpenMS
+            description: Python bindings for scripting, notebooks, and workflow integration.
+            url: /pyopenms/
+            contributeUrl: "/pyopenms/#for-developers"
+          - title: pyOpenMS Viz
+            description: Visualization library for spectra and chromatograms from pandas dataframes.
+            url: /pyopenms-viz/
+            contributeUrl: "/pyopenms-viz/#for-developers"
+          - title: OpenMS WebApps
+            description: Streamlit-based web applications built on OpenMS pipelines.
+            url: /webapps/
+            contributeUrl: "/webapps/#for-developers"
+          - title: Documentation
+            description: User guides, tutorials, and developer documentation for the OpenMS ecosystem.
+            url: https://github.com/OpenMS/OpenMS-docs
+            external: true
+            contributeUrl: https://github.com/OpenMS/OpenMS-docs/issues
+      developerRetreatPage:
+        eyebrow: Annual Developer Retreat
+        pageTitle: Annual Developer Retreat
+        headline: >-
+          <span class="openms-lib-hero__title-line">Shape the <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">future</span></span>
+          <span class="openms-lib-hero__title-line">of computational</span>
+          <span class="openms-lib-hero__title-line">mass spectrometry.</span>
+        about: >-
+          The annual OpenMS developers retreat brings together researchers
+          from around the world for a week of talks, tutorials, and code
+          sprints.
+        highlightsTitle: About the retreat
+        highlights:
+          - title: Who it's for
+            text: >-
+              Core developers, new developers, and potential future contributors
+              of OpenMS projects and apps — everyone is welcome.
+          - title: What happens
+            text: >-
+              Short talks, developer tutorials, and code sprints are intertwined
+              throughout the week.
+          - title: What you'll build
+            text: >-
+              Design custom tools and workflows together with instructors, and
+              get involved with the OpenMS community.
+        pastPhoto:
+          src: /images/dev_retreat_2026.jpeg
+          alt: OpenMS contributors at the 2026 developer retreat in Poland
+          caption: 2026 Developer retreat at the Piotrowice Nyskie Palace in Poland
+        upcoming:
+          title: Upcoming retreat
+          facts:
+            - icon: far fa-calendar
+              text: March 14–21, 2027
+            - icon: fas fa-map-marker-alt
+              text: Resort Natura, Algarve, Portugal
+            - icon: far fa-clock
+              text: Registration opens in August 2026
+          poster:
+            src: /images/dev_retreat_2027_poster.png
+            alt: OpenMS Developer Retreat 2027 — Algarve, Portugal
+        registration:
+          open: false
+          url: ""
+          label: Register here
+          closedHint: Registration will open August 2026
+      aboutPage:
+        eyebrow: About us
+        subtitle: >-
+          OpenMS Inc. is the corporate entity and fiscal home of the OpenMS project.
+          As a Pennsylvania-based 501(c)(3) public charity, it supports development,
+          governance, and long-term stewardship of the OpenMS ecosystem.
+        # ── Our Sponsors page (/our-sponsors/) ──────────────────────────────────
+        # To ADD A SPONSOR: append an entry to `sponsors:` below.
+        # Full instructions: docs/common-tasks/update-sponsors.md
+        #
+        # Tiers: keep `tier` commented out until there are enough sponsors to
+        # group by level. Then set `groupByTier: true` below and give each
+        # sponsor a tier id from sponsorTiers.levels (platinum/gold/silver/bronze).
+        # Only tiers that actually have sponsors are shown.
+        sponsorsSection:
+          eyebrow: About us
+          intro: >-
+            OpenMS receives direct funding from organizations that sponsor the project.
+          listTitle: "Sponsors include:"
+          contactCta: Interested in sponsoring us? Email us for more information.
+          contactUrl: /contact/
+          contactButtonText: Email Us
+          contactButtonUrl: mailto:fundraising@openms.de
+          # groupByTier: true
+        sponsors:
+          - name: LiBiS
+            url: https://libis.uni-heidelberg.de/
+            logo: /images/logos/LiBiS-Logo.svg
+            alt: LiBiS — Life Science Informatics
+            description: Life Science Informatics
+            # tier: gold
+          - name: ELIXIR
+            url: https://elixir-europe.org/platforms/data/core-data-resources
+            logo: /images/logos/Elixir.png
+            alt: ELIXIR Core Data Resource
+            description: Core Data Resource
+            # tier: platinum
+          - name: deNBI
+            url: https://www.denbi.de/
+            logo: /images/logos/denbi.jpeg
+            alt: deNBI — German Network for Bioinformatics Infrastructure
+            description: German Network for Bioinformatics Infrastructure
+            # tier: silver
+        sponsorshipProgram:
+          title: Our Sponsorship Program
+          headline: With Open Science, both industry and community profit
+          blurb: >-
+            OpenMS is building and maintaining a unified, trusted, and openly accessible
+            commons of knowledge, software, education, and research resources for the
+            mass spectrometry community.
+          enablesTitle: Your sponsorship enables
+          enables:
+            - Continued development and maintenance of OpenMS software and infrastructure
+            - Training programs, workshops, and educational materials
+            - Community outreach and researcher support
+            - Open standards, interoperability, and reproducible science
+            - Long-term stewardship of scientific software used worldwide
+          taxNote: >-
+            As a nonprofit organization, sponsorship contributions are tax-deductible
+            to the extent permitted by law.
+          contactCta: Interested in sponsoring us? Contact us for more information.
+          contactUrl: /contact/
+      governancePage:
+        eyebrow: OpenMS governance
+        subtitle: >-
+          OpenMS combines a nonprofit corporation for legal and financial stewardship
+          with an Executive Committee that leads technical direction and community governance.
+      publicationsPage:
+        googleScholarUrl: https://scholar.google.ca/citations?user=tQ26gxIAAAAJ&hl
+        googleScholarText: Follow us on Google Scholar
+      contactPage:
+        eyebrow: Contact
+        subtitle: >-
+          Whether you need help with pipelines, integrations, consulting, or joining the
+          community — reach out and we will point you to the right next step.
+      researchPartnershipsPage:
+        eyebrow: Partner with OpenMS
+        subtitle: We’re interested in hearing your idea for a partnership.
+      sponsorUsPage:
+        eyebrow: Support OpenMS
+        subtitle: >-
+          Sponsorship provides direct funding for software engineering, documentation,
+          community events, and the long-term sustainability of the OpenMS ecosystem.
+      helpPage:
+        eyebrow: Support
+        subtitle: >-
+          Find the right channel for user questions, development issues, documentation,
+          and community discussion — from Stack Overflow to the OpenMS mailing list.
+      servicesSupportPage:
+        eyebrow: Services
+        subtitle: >-
+          We're here to help develop scalable and reproducible computational mass
+          spectrometry solutions catered to your needs.
+        formTitle: Get in touch with us for a quote.
+      newsSection:
+        eyebrow: OpenMS
+        title: News
+        subtitle: Announcements, releases, workshops, and community updates from OpenMS.
+        yearFilterLabel: Filter news
+        allYearsLabel: All years
+        readMoreLabel: Read article
+        backToNewsLabel: Back to news
+        homeTitle: Latest news
+        homeTitleHighlight: news
+        homeViewAllText: View all
+        homeViewAllUrl: /news/
+        homeLimit: 4
+        homeEmptyMessage: No news articles yet. Check back soon for announcements and updates.
+        # defaultYear: "2026"
+        defaultToLatestYear: false
+        emptyMessage: No news items for the selected year.
+      calendarSection:
+        eyebrow: Community
+        title: Community events
+        titleHighlight: events
+        subtitle: Upcoming OpenMS meetings, workshops, and community outreach worldwide.
+        upcomingTitle: Upcoming events
+        pastTitle: Past events
+        yearFilterLabel: Filter events by year
+        emptyUpcoming: >-
+          No upcoming events scheduled right now. Check back soon or join the
+          community to hear about the next meetup.
+        pastHint: Browse events from previous years.
+        readMoreLabel: View details
+        developerRetreat:
+          text: Developer Retreat
+          url: /developer-retreat/
+      # Donate page (/donate/) — paste URLs from Zeffy: Donations → My forms → Share
+      donatePage:
+        eyebrow: Support OpenMS
+        subtitle: >-
+          Your gift helps sustain open-source mass spectrometry software,
+          documentation, and community programs.
+        taxNote: >-
+          OpenMS Inc. is a U.S. 501(c)(3) public charity. Donations may be
+          tax-deductible for U.S. donors where permitted by law.
+        # iframe src from Zeffy “Embed your form on your site” (recommended)
+        zeffyEmbedUrl: ""
+        # Full Zeffy form URL if you prefer a button instead of embed
+        zeffyFormUrl: ""
+      sponsorTiers:
+        eyebrow: Sponsorship levels
+        title: Foundation sponsorship levels
+        intro: >-
+          <span class="sponsor-lead-col">Foundation sponsorship is how organizations contribute substantially to OpenMS Inc.</span>
+          <span class="sponsor-lead-col">In return, sponsors receive public acknowledgment on this site and other channels appropriate to their level—similar to tiered programs used by foundations such as the Apache Software Foundation.</span>
+        note: >-
+          <span class="sponsor-note-line">Contribution levels are agreed individually.</span>
+          <span class="sponsor-note-line">OpenMS Inc. is a U.S. 501(c)(3) public charity; U.S.-based sponsors may be eligible for tax benefits where permitted by law.</span>
+        # Tier cards show: name, price, motto, and summary. Detailed benefits are
+        # configured in `benefitsMatrix` below and revealed when a card is clicked.
+        # Set `showInProgram: false` to hide a tier until ready.
+        # Optional `tier` on aboutPage.sponsors entries should match `id` below when grouping logos.
+        levels:
+          - id: bronze
+            name: Bronze
+            contribution: $5,000 / year
+            motto: Show your support
+            summary: >-
+              For organizations that want to demonstrate support for open science
+              and open-source software.
+            showInProgram: true
+          - id: silver
+            name: Silver
+            contribution: $10,000 / year
+            motto: Partner with the community
+            summary: >-
+              For organizations seeking a partnership with the scientific
+              open-source ecosystem.
+            showInProgram: true
+          - id: gold
+            name: Gold
+            contribution: $50,000 / year
+            motto: Prominent voice in the community
+            summary: >-
+              For organizations investing strategically in the future of mass
+              spectrometry software and education.
+            showInProgram: true
+          - id: platinum
+            name: Platinum
+            contribution: $250,000 / year
+            motto: Executive Partnership
+            summary: >-
+              For organizations committed to shaping the future of open scientific
+              infrastructure.
+            showInProgram: true
+        # ── Sponsorship Benefits comparison ──────────────────────────────────────
+        # Rendered as an interactive breakdown under the tier cards: visitors click a
+        # level (Bronze/Silver/Gold/Platinum) to reveal that tier's benefits below.
+        # Each row is one benefit category. Per-tier values are a list of lines:
+        #   • omit the key or use [] → shows an em dash (not included)
+        #   • use ["✓"]             → shows a check mark (included, no extra detail)
+        #   • otherwise             → each list item is shown as a line of text
+        # Tier keys must match the `id`s in `levels` above.
+        benefitsTitle: Benefit comparison
+        featuredLevel: gold
+        taxFootnote: "*where applicable by law"
+        benefitsMatrix:
+          - category: Annual Developer Retreat perks
+            bronze: []
+            silver:
+              - 1 discounted registration pass (20% off)
+            gold:
+              - 1 free registration pass
+              - Opportunity to host a technical session, workshop, or case study presentation
+            platinum:
+              - 3 free registration passes
+              - Opportunity to host a technical session, workshop, or case study presentation
+          - category: Logo placement
+            bronze:
+              - Website
+            silver:
+              - Website & presentations
+            gold:
+              - Website & presentations
+            platinum:
+              - Prominent placement on website, presentations & social media
+          - category: Named recognition
+            bronze:
+              - Sponsorship listings, community communications
+            silver:
+              - Sponsorship listings, community communications, annual reports
+            gold:
+              - Sponsorship listings, community communications, annual reports
+            platinum:
+              - Sponsorship listings, announcements & strategic partnership recognition on website & social media
+          - category: Dedicated engagement meeting
+            bronze: []
+            silver: []
+            gold: []
+            platinum: ["✓"]
+          - category: Sponsorship opportunity for roadmap and executive initiatives
+            bronze: []
+            silver: ["✓"]
+            gold: ["✓"]
+            platinum: ["✓"]
+          - category: Permission to display OpenMS supporter badge
+            bronze: ["✓"]
+            silver: ["✓"]
+            gold: ["✓"]
+            platinum: ["✓"]
+          - category: Tax-deductible*
+            bronze: ["✓"]
+            silver: ["✓"]
+            gold: ["✓"]
+            platinum: ["✓"]
+      universityPartners:
+        - name: University of Tübingen
+          logo: /images/logos/logo-uni-tuebingen.png
+          url: https://kohlbacherlab.org/
+        - name: FU Berlin
+          logo: /images/logos/fu-berlin.png
+          url: http://www.mi.fu-berlin.de/en/inf/groups/abi/index.html
+        - name: ETH Zürich
+          logo: /images/logos/zurich.jpeg
+          url: http://www.imsb.ethz.ch/research/aebersold.html
+        - name: Wellcome Sanger Institute
+          logo: /images/logos/logo-sanger.png
+          url: http://www.sanger.ac.uk/
+        - name: EMBL-EBI
+          logo: /images/logos/emblebi.png
+          url: https://www.ebi.ac.uk/
+        - name: University of Toronto
+          logo: /images/logos/toronto.jpeg
+          url: http://www.moleculargenetics.utoronto.ca/faculty/2017/7/19/hannes-rost
+        - name: DTU Biosustain
+          logo: /images/logos/DTU-logo.png
+          url: https://www.biosustain.dtu.dk/
+        - name: ZIB
+          logo: /images/logos/ziblogo.png
+          url: https://www.zib.de/
+        - name: Immatics
+          logo: /images/logos/immatics.png
+          url: https://immatics.com/
+        - name: FullSeeomics
+          logo: /images/logos/logo-fullseeomics.png
+          url: https://fullseeomics.com/
+        - name: Stockholm University
+          logo: /images/logos/logo-stockholm-university.png
+          url: https://www.su.se/english
+        - name: Compomics Group
+          logo: /images/logos/logo-compomics.png
+          url: https://www.compomics.com/
+        - name: Ghent University
+          logo: /images/logos/logo-vib-ghent.png
+          url: https://vib.be/en#/
+        - name: University of Cambridge
+          logo: /images/logos/logo-university-cambridge.png
+          url: https://www.cam.ac.uk/
+        - name: University of Groningen
+          logo: /images/logos/logo-university-groningen.png
+          url: https://www.rug.nl/?lang=en
+        - name: HUPO-PSI
+          logo: /images/logos/hupo-psi.png
+          url: https://www.psidev.info/
       navbarlogo:
-        image: OpenMS_transparent_blackFont.png
+        image: logos/OpenMS_transparent_blackFont.svg
         link: /
+        altText: OpenMS
+      navbarSearch:
+        enabled: true
+        placeholder: Search OpenMS…
+        minChars: 2
+        maxResults: 8
       hero:
-        # Main hero title
-        # title: OpenMS
-        # Hero subtitle (optional)
-        subtitle: The open-source framework for Mass Spectrometry
-        # Button text
-        buttontext: Install
-        # Where the main hero button links to
-        buttonlink: https://openms.readthedocs.io/en/latest/about/installation.html
-        # Hero image (from static/images/___)
-        image: OpenMS_transparent_blackFont.png
+        eyebrow: Open-source · Free forever
+        titleBefore: "Open science."
+        titleMid: "Clear results for"
+        titleHighlight: "mass spectrometry"
+        titleAfter: "."
+        description: >-
+          An expert-crafted ecosystem of computational mass spectrometry tools —
+          run vetted apps, build on open algorithms, and join the community.
+        imageAlt: OpenMS peptide identification workflow preview
+        buttontext: Get started
+        buttonlink: /contribute/
+        secondaryButtonText: Explore the library
+        secondaryButtonLink: /openms-lib/
+        trustNote: Ready-to-use apps · Modular workflows · Built by the community
+        microcopy: ""
+        mockup:
+          label: Open science
+          labelArrow: "→"
+          labelAfter: clear results
+          brand: OPENMS
+          bars: [38, 55, 82, 64, 47, 90, 70, 58, 75, 40]
+
+
+      homeMetrics:
+        stats:
+          - value: 20
+            suffix: "+"
+            label: Years active
+            description: Over two decades of open-source development for mass spectrometry workflows.
+          - value: 10000
+            suffix: "+"
+            label: Citations
+            description: Peer-reviewed research citing OpenMS tools and algorithms worldwide.
+          - value: 180
+            suffix: "+"
+            label: Contributors
+            description: Developers, researchers, and community members advancing OpenMS worldwide.
+
+      communitySection:
+        eyebrow: Community
+        title: Everyone is welcome
+        titleHighlight: welcome
+        lead: >-
+          OpenMS is built by a diverse group of contributors around the world.
+          Whether you are new to mass spectrometry or a seasoned developer, there
+          is a place for you in our community.
+        welcomeNote: >-
+          We are committed to being open, inclusive, and welcoming — read the
+          [Code of Conduct](/code-of-conduct) for how we work together.
+        image: /images/community/openms-20th-anniversary.jpg
+        imageAlt: OpenMS community at the 20th anniversary gathering
+        ctaText: Get involved
+        ctaUrl: /contribute/
+
+      eventsSection:
+        eyebrow: Events
+        title: Upcoming events
+        titleHighlight: events
+        lead: >-
+          Workshops, developer meetings, and community outreach around the world.
+        calendarText: View all
+        calendarUrl: /calendar/
+        readMoreLabel: View details
+        limit: 4
+        emptyEvents: >-
+          No upcoming events scheduled right now. Browse past events or join the
+          community to hear about the next meetup.
+
+      homePage:
+        pathwaysEyebrow: Get started
+        pathwaysTitle: Choose your entry point
+        pathways:
+          - title: Documentation
+            text: Installation, tutorials, and workflow guides on Read the Docs.
+            url: https://openms.readthedocs.io/en/latest/
+          - title: OpenMS library
+            text: Capabilities for users, developers, and what OpenMS includes.
+            url: /openms-lib/
+          - title: Featured Apps
+            text: Community web apps built on the OpenMS WebApps framework.
+            url: /webapps/#featured-webapps
+
+      homeSponsors:
+        enabled: false
+        label: Supported by
+        description: OpenMS receives direct funding from leading life-science organizations.
+        cta:
+          text: Our sponsors
+          url: /sponsor-us/
+        sponsors:
+          - name: deNBI
+            url: https://www.denbi.de
+            logo: /images/logos/denbi-logo-white.svg
+            alt: deNBI — German Network for Bioinformatics Infrastructure
+          - name: ELIXIR
+            url: https://elixir-europe.org/platforms/data/core-data-resources
+            logo: /images/logos/elixir-logo-white.png
+            alt: ELIXIR Core Data Resource
+          - name: LiBiS
+            url: https://libis.uni-heidelberg.de/
+            logo: /images/logos/libis-logo-white.svg
+            alt: LiBiS — Life Science Informatics
 
       heroGroup:
-        - title: "OpenMS allows users to:"
-          bgColor: ECF2F9
+        - title: "Three ways to use OpenMS"
+          variant: users
+          eyebrow: Capabilities
+          titleHighlight: "Three ways"
+          subtitle: Run ready-made workflows, build custom pipelines, or script with Python—choose the path that fits your lab.
+          bgColor: C2BABC
           heroItems:
             - title: Run existing workflows
-              subtitle: Run existing workflows for proteomics and metabolomics with OpenMS in KNIME.
+              tag: KNIME
+              subtitle: Use OpenMS workflows for proteomics and metabolomics in KNIME without writing code.
               leftAlign: true
               image: knime-analytics.png
-              buttonText: Get Started
+              buttonText: KNIME guide
               buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/knime-get-started.html"
             - title: Create your own workflows
-              subtitle: Modify and create your own OpenMS workflows in Galaxy, KNIME and Nextflow.
+              tag: Galaxy · KNIME · Nextflow
+              subtitle: Modify and compose OpenMS workflows across Galaxy, KNIME, and Nextflow.
               image: knime-edit.png
-              buttonText: Get Started
+              buttonText: Workflow guide
               buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/workflows.html"
             - title: Use OpenMS in Python
-              subtitle: Enhance workflows with pyOpenMS scripts or develop novel methods using pyOpenMS
+              tag: pyOpenMS
+              subtitle: Extend pipelines with pyOpenMS scripts or prototype new analysis methods in Python.
               leftAlign: true
               image: pyopenms-logo.png
               imgClass: img-fit
               bottomBorderRadius: true
-              buttonText: Get Started
+              buttonText: pyOpenMS docs
               buttonLink: "https://pyopenms.readthedocs.io/en/latest/"
-        - title: "Advanced users / developers can use OpenMS to:"
-          bgColor: FFF1E0
+        - title: "Scale OpenMS for advanced work"
+          variant: developers
+          eyebrow: For developers
+          titleHighlight: advanced
+          subtitle: Run large workflows on HPC clusters or extend OpenMS with high-performance C++ tools.
+          bgColor: FFCB4F
           heroItems:
             - title: Analyze large datasets
-              subtitle: Run workflows on very large datasets on powerful compute infrastructure
-              leftAlign: true
+              tag: Nextflow
+              subtitle: Run workflows on very large datasets on powerful compute infrastructure.
               imgClass: img-fit
               image: nf-core-logo.png
-              buttonText: Get Started
+              buttonText: Nextflow guide
               buttonLink: "https://openms.readthedocs.io/en/latest/getting-started/nextflow-get-started.html"
             - title: Create high-performance tools
-              subtitle: Develop high-performance tools or algorithms with the C++ OpenMS library
+              tag: C++ / OpenMS
+              subtitle: Develop high-performance tools or algorithms with the C++ OpenMS library.
               terminal: true
-              buttonText: Get Started
-              bottomBorderRadius: true
+              buttonText: C++ tutorial
               buttonLink: "https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/OpenMS_tutorial.html"
 
       keyfeatures:
-        title: What is OpenMS ?
-        subtitle: OpenMS offers an open-source C++ library (+ Python bindings) for LC/MS data management, analysis and visualization. It empowers rapid development of mass spectrometry related software. OpenMS is freely  available under the three clause BSD license and runs under Windows, macOS and Linux. The OpenMS members have a strong commitment to creating an open, inclusive, and positive community. Please read the OpenMS Code of Conduct for guidance on how to interact with others in a way that makes the community thrive.
+        eyebrow: What is OpenMS?
+        title: The open-source LC-MS library
+        titleHighlight: open-source
+        description: >-
+          A C++ core with Python bindings for LC/MS data management, analysis,
+          and visualization—built for rapid development of mass spectrometry software.
+        features:
+          - title: Open source
+            tag: BSD licensed
+            text: Core library and tools you can extend, share, and ship under a three-clause BSD license.
+          - title: C++ & Python
+            tag: C++ · Python
+            text: High-performance algorithms with pyOpenMS for scripting and workflows.
+          - title: Cross-platform
+            tag: Windows · macOS · Linux
+            text: Build and run on all major platforms with the same toolchain.
+          - title: TOPP pipeline
+            tag: 200+ tools
+            text: Ready-made command-line utilities for proteomics and metabolomics analysis.
+        note: >-
+          Our community is committed to being open, inclusive, and welcoming.
+          Read the [OpenMS Code of Conduct](/code-of-conduct) for guidance on
+          how we work together.
+
+      openmsLibHighlights:
+        eyebrow: ""
+        title: ""
+        layout: benefits
+        items:
+          - title: Two decades of expertise
+            text: 20+ years of development
+          - title: Open by design
+            text: Open source under the BSD-3 clause license
+          - title: Global community
+            text: >-
+              Backed by an active community of
+              researchers and developers
+          - title: Built for scale
+            text: High performance and optimized for scale
+
+      openmsLibTopp:
+        eyebrow: TOPP Tools
+        title: Ships with the TOPP command-line tools
+        lead: 150+ modular tools covering the complete mass spectrometry pipeline.
+        image: /images/content_images/topp-tool-list.png
+        imageAlt: Browse OpenMS TOPP tools such as MSFraggerAdapter, ProteinQuantifier, and OpenSwathWorkflow
+        features:
+          - title: Compose workflows
+            icon: fas fa-project-diagram
+            text: Chain TOPP tools together to build custom workflows tailored to your data.
+          - title: Engine integration
+            icon: fas fa-cogs
+            text: Integrates with common workflow engines like Nextflow and KNIME.
+            linkText: Learn more
+            linkUrl: https://openms.readthedocs.io/en/latest/getting-started/workflows.html
+          - title: Ongoing coverage
+            icon: fas fa-layer-group
+            text: 200+ modular tools for every stage of the mass spectrometry pipeline, with docs and community support.
+        ctaText: Explore TOPP tools
+        ctaUrl: https://archive.openms.de/openms/Documentation/release/latest/html/TOPP_documentation.html
+
+      openmsLibGettingStarted:
+        eyebrow: Get started
+        title: Explore OpenMS-lib
+        lead: Documentation, tools, and community resources to start building with OpenMS-lib.
+        items:
+          - title: Read Documentation
+            tag: Docs
+            icon: fas fa-book-open
+            text: Tutorials and guides to help you get productive quickly.
+            url: https://openms.readthedocs.io/en/latest/getting-started/introduction.html
+            linkText: Open docs
+            featured: true
+          - title: TOPP Tools
+            tag: Pipeline
+            icon: fas fa-terminal
+            text: Browse the full suite of processing and analysis tools in the TOPP pipeline.
+            url: https://archive.openms.de/openms/Documentation/release/latest/html/TOPP_documentation.html
+            linkText: Browse tools
+          - title: Featured Apps
+            tag: Apps
+            icon: fas fa-window-maximize
+            text: Web applications and workflows built on top of OpenMS-lib.
+            url: https://deploy-preview-277--openms.netlify.app/featured-apps/
+            linkText: See apps
+          - title: Python bindings
+            tag: pyOpenMS
+            icon: fab fa-python
+            text: Use OpenMS algorithms and data structures directly from Python.
+            url: /pyopenms/
+            linkText: Explore pyOpenMS
+          - title: API Reference
+            tag: API
+            icon: fas fa-code
+            text: Full C++ class and method reference for OpenMS-lib.
+            url: https://archive.openms.de/openms/Documentation/release/latest/
+            linkText: View reference
+          - title: Need help?
+            type: online
+            text: Chat with the community on Discord, or open a GitHub issue for bugs and feature requests.
+            links:
+              - name: Ask on Discord
+                icon: fab fa-discord
+                text: Quick questions and community chat
+                url: https://discord.com/invite/v9tv5BxPch
+              - name: Report an issue
+                icon: fab fa-github
+                text: Bugs and feature requests
+                url: https://github.com/OpenMS/OpenMS/issues/new/choose
+
+      openmsLibDevelopers:
+        eyebrow: For Developers
+        title: Contribute
+        lead: Your improvements help researchers worldwide.
+        citeSeparate: false
+        citeText: Used OpenMS-lib in your work? If so, please cite.
+        citation:
+          title: OpenMS 3 enables reproducible analysis of large-scale mass spectrometry data
+          url: https://www.ncbi.nlm.nih.gov/pubmed/38366242
+          journal: Nature Methods
+          year: "2024"
+          authors: >-
+            Pfeuffer, Julianus; Bielow, Chris; Wein, Samuel; Jeong, Kyowon; Netz,
+            Eugen; Walter, Axel; Alka, Oliver; Nilse, Lars; Colaianni, Pasquale
+            Domenico; McCloskey, Douglas; Kim, Jihyung; Rosenberger, George;
+            Bichmann, Leon; Walzer, Mathias; Veit, Johannes; Boudaud, Bertrand;
+            Bernt, Matthias; Patikas, Nikolaos; Pilz, Matteo; Startek, Michał Piotr;
+            Kutuzova, Svetlana; Heumos, Lukas; Charkow, Joshua; Sing, Justin Cyril;
+            Feroz, Ayesha; Siraj, Arslan; Weisser, Hendrik; Dijkstra, Tjeerd M. H.;
+            Perez-Riverol, Yasset; Röst, Hannes; Kohlbacher, Oliver; Sachsenberg, Timo
+          actionText: View on PubMed
+          moreUrl: /publications/
+          moreText: More citations
+        boxes:
+          - title: Contributing Guidelines
+            tag: Contribute
+            icon: fas fa-hands-helping
+            subtitle: How to propose changes and join the community.
+            hoverText: Learn how to open pull requests, follow our contribution workflow, and collaborate with OpenMS maintainers.
+            url: https://openms.readthedocs.io/en/latest/manual/develop.html#contribution-guidelines
+            linkText: Read guidelines
+          - title: Report an Issue
+            tag: GitHub
+            icon: fab fa-github
+            subtitle: File bugs or request new features.
+            hoverText: Open a bug report, feature request, or discussion on the OpenMS GitHub tracker.
+            url: https://github.com/OpenMS/OpenMS/issues/new/choose
+            linkText: Open on GitHub
+          - title: Developer manual
+            tag: Docs
+            icon: fas fa-book
+            subtitle: Architecture and coding standards.
+            hoverText: Dive into OpenMS-lib architecture, coding standards, and contribution workflows.
+            url: https://openms.readthedocs.io/en/latest/manual/develop.html
+            linkText: Open docs
+          - title: Developer FAQ
+            tag: Help
+            icon: fas fa-question-circle
+            subtitle: Common build and contribute answers.
+            hoverText: Find answers to frequent questions about building, testing, and contributing to OpenMS.
+            url: https://openms.readthedocs.io/en/latest/manual/develop/developer-faq.html
+            linkText: Browse FAQ
+          - title: Add a TOPP tool
+            tag: Extend
+            icon: fas fa-puzzle-piece
+            subtitle: Extend the TOPP pipeline suite.
+            hoverText: Follow the step-by-step guide to add a new tool to the TOPP command-line pipeline suite.
+            url: https://openms.readthedocs.io/en/latest/manual/develop/adding-new-tool-to-topp.html
+            linkText: Follow the guide
+          - title: Building OpenMS from Source
+            type: links
+            tag: Build
+            icon: fas fa-hammer
+            subtitle: Compile locally on your platform.
+            hoverText: Follow the platform guide for Linux, macOS, or Windows to build the C++ core and tools.
+            platforms:
+              - name: Linux
+                icon: fab fa-linux
+                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_linux.html
+              - name: macOS
+                icon: fab fa-apple
+                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_mac.html
+              - name: Windows
+                icon: fab fa-windows
+                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_win.html
+          - title: Reviewing Pull Requests
+            type: links
+            tag: Review
+            icon: fas fa-code-branch
+            subtitle: Help move contributions forward by reviewing open pull requests on GitHub.
+            platformsAlwaysVisible: true
+            badge:
+              src: https://img.shields.io/github/issues-pr/OpenMS/OpenMS?label=open%20PRs&color=1a56db&style=flat-square
+              alt: Number of open OpenMS pull requests
+              url: https://github.com/OpenMS/OpenMS/pulls
+            platforms:
+              - name: View open PRs
+                icon: fab fa-github
+                url: https://github.com/OpenMS/OpenMS/pulls
+              - name: How to review PRs
+                icon: fas fa-book-open
+                url: https://github.com/ParadiseSS13/Paradise/discussions/19410
+
+      pyopenmsPage:
+        highlights:
+          eyebrow: ""
+          title: ""
+          layout: benefits
+          items:
+            - title: Native algorithms
+              text: Run OpenMS-lib algorithms directly in Python
+            - title: DataFrame export
+              text: Pandas DataFrame export for common OpenMS data structures
+            - title: Scripts & notebooks
+              text: Run in scripts or Jupyter notebooks
+            - title: Scientific stack
+              text: Seamless integration with the scientific Python stack
+
+        gettingStarted:
+          eyebrow: Get started
+          title: Explore pyOpenMS
+          lead: Documentation and resources to start building with pyOpenMS.
+          items:
+            - title: Read Documentation
+              tag: Docs
+              icon: fas fa-book-open
+              text: Tutorials and guides to help you get productive quickly.
+              url: https://pyopenms.readthedocs.io/
+              linkText: Open docs
+              featured: true
+            - title: Installation
+              tag: Install
+              icon: fab fa-python
+              text: Install pyOpenMS from PyPI and verify your environment.
+              url: https://pyopenms.readthedocs.io/en/latest/user_guide/installation.html
+              linkText: Install now
+            - title: API Reference
+              tag: API
+              icon: fas fa-code
+              text: Full class and method reference for the Python bindings.
+              url: https://pyopenms.readthedocs.io/en/latest/apidocs/index.html
+              linkText: View reference
+            - title: Visualization
+              tag: pyOpenMS viz
+              icon: fas fa-chart-line
+              text: Interactive plotting and exploration for OpenMS data structures.
+              url: /pyopenms-viz/
+              linkText: Explore viz
+            # TODO (Josh): Get google colab updated link (Binder removed — no longer maintained)
+            - title: Try Online
+              tag: No install needed
+              icon: fas fa-laptop-code
+              text: Run pyOpenMS in the browser without a local install.
+              linkText: Open in Colab
+            - title: Need help?
+              type: online
+              text: Chat with the community on Discord, or open a GitHub issue for bugs and feature requests.
+              links:
+                - name: Ask on Discord
+                  icon: fab fa-discord
+                  text: Quick questions and community chat
+                  url: https://discord.com/invite/v9tv5BxPch
+                - name: Report an issue
+                  icon: fab fa-github
+                  text: Bugs and feature requests
+                  url: https://github.com/OpenMS/OpenMS/issues/new/choose
+
+        developers:
+          eyebrow: For Developers
+          title: Contribute
+          lead: Any class in OpenMS-lib can be wrapped and used from Python — your contributions help researchers worldwide.
+          citeSeparate: false
+          citeText: Used pyOpenMS in your work? If so, please cite.
+          citation:
+            title: >-
+              pyOpenMS: a Python-based interface to the OpenMS mass-spectrometry
+              algorithm library
+            url: https://pubmed.ncbi.nlm.nih.gov/24420968/
+            journal: Proteomics
+            year: "2014"
+            authors: Röst, Hannes L; Schmitt, Uwe; Aebersold, Ruedi; Malmström, Lars
+            actionText: View on PubMed
+            moreUrl: /publications/
+            moreText: More citations
+          boxes:
+            - title: Report an Issue
+              tag: GitHub
+              icon: fab fa-github
+              subtitle: File bugs or request new features.
+              url: https://github.com/OpenMS/OpenMS/issues/new/choose
+              linkText: Open on GitHub
+            - title: Build from Source
+              tag: Build
+              icon: fas fa-hammer
+              subtitle: Compile pyOpenMS locally on your platform.
+              url: https://pyopenms.readthedocs.io/en/latest/community/build_from_source.html
+              linkText: View build guide
+            - title: Wrapping New Classes
+              tag: Extend
+              icon: fas fa-puzzle-piece
+              subtitle: Expose new OpenMS-lib classes to Python.
+
+              url: https://pyopenms.readthedocs.io/en/latest/community/wrapping_workflows_new_classes.html
+              linkText: Follow the guide
+            - title: Developer manual
+              tag: Docs
+              icon: fas fa-book
+              subtitle: Architecture and contribution workflows.
+              url: https://pyopenms.readthedocs.io/en/latest/community/index.html
+              linkText: Open docs
+            - title: Reviewing Pull Requests
+              type: links
+              tag: Review
+              icon: fas fa-code-branch
+              subtitle: Help move contributions forward by reviewing open pull requests on GitHub.
+              platformsAlwaysVisible: true
+              badge:
+                src: https://img.shields.io/github/issues-pr/OpenMS/OpenMS?label=open%20PRs&color=1a56db&style=flat-square
+                alt: Number of open OpenMS pull requests
+                url: https://github.com/OpenMS/OpenMS/pulls
+              platforms:
+                - name: View open PRs
+                  icon: fab fa-github
+                  url: https://github.com/OpenMS/OpenMS/pulls
+                - name: How to review PRs
+                  icon: fas fa-book-open
+                  url: https://github.com/ParadiseSS13/Paradise/discussions/19410
+
+
+      pyopenmsVizPage:
+        highlights:
+          eyebrow: ""
+          title: ""
+          layout: benefits
+          items:
+            - title: DataFrame-native
+              text: Plot directly from pandas with df.plot()
+            - title: Mass spec plots
+              text: Spectra, chromatograms, and peak maps
+            - title: Multiple backends
+              text: Matplotlib, Bokeh, and Plotly
+            - title: One-line API
+              text: Publication-ready figures from a single call
+
+        gettingStarted:
+          eyebrow: Get started
+          title: Explore pyopenms_viz
+          lead: Documentation and resources to start plotting with pyopenms_viz.
+          items:
+            - title: Plotting Gallery
+              tag: Gallery
+              icon: fas fa-images
+              text: Browse example plots for spectra, chromatograms, and more.
+              url: https://pyopenms-viz.readthedocs.io/en/latest/gallery/index.html
+              linkText: Browse gallery
+              featured: true
+            - title: Installation
+              tag: Install
+              icon: fab fa-python
+              text: Install pyopenms_viz and start plotting from pandas DataFrames.
+              url: https://pyopenms-viz.readthedocs.io/en/latest/Installation.html
+              linkText: Install now
+            - title: Documentation
+              tag: Docs
+              icon: fas fa-book-open
+              text: Guides and tutorials to help you get productive quickly.
+              url: https://pyopenms-viz.readthedocs.io/en/latest/
+              linkText: Open docs
+            - title: API Reference
+              tag: API
+              icon: fas fa-code
+              text: Full class and method reference for plot types and customization.
+              url: https://pyopenms-viz.readthedocs.io/en/latest/API.html
+              linkText: View reference
+            - title: Python bindings
+              tag: pyOpenMS
+              icon: fab fa-python
+              text: Use OpenMS algorithms and data structures directly from Python.
+              url: /pyopenms/
+              linkText: Explore pyOpenMS
+            - title: Need help?
+              type: online
+              text: Chat with the community on Discord, or open a GitHub issue for bugs and feature requests.
+              links:
+                - name: Ask on Discord
+                  icon: fab fa-discord
+                  text: Quick questions and community chat
+                  url: https://discord.com/invite/v9tv5BxPch
+                - name: Report an issue
+                  icon: fab fa-github
+                  text: Bugs and feature requests
+                  url: https://github.com/OpenMS/pyopenms_viz/issues/new
+
+        developers:
+          eyebrow: For Developers
+          title: Contribute
+          lead: Help improve visualization for the OpenMS ecosystem — report issues, extend plot types, and share examples.
+          citeSeparate: false
+          citeText: Used pyopenms_viz in your work? If so, please cite.
+          citation:
+            variant: primary
+            topic: pyOpenMS-viz
+            title: >-
+              pyOpenMS-viz: Streamlining Mass Spectrometry Data Visualization
+              with pandas
+            url: https://pubmed.ncbi.nlm.nih.gov/40019346/
+            journal: Journal of Proteome Research
+            year: "2025"
+            authors: >-
+              Sing, Justin Cyril; Charkow, Joshua; Walter, Axel; Gao, Mingxuan;
+              Müller, Tom David; Bittremieux, Wout; Sachsenberg, Timo; Röst, Hannes Luc
+            actionText: View on PubMed
+            moreUrl: /publications/
+            moreText: More citations
+          boxes:
+            - title: Report an Issue
+              tag: GitHub
+              icon: fab fa-github
+              subtitle: Report bugs or request new plot types on GitHub.
+              url: https://github.com/OpenMS/pyopenms_viz/issues/new
+              linkText: Open on GitHub
+            - title: Contribute on GitHub
+              tag: Source
+              icon: fab fa-github
+              subtitle: Browse the source, open pull requests, and share examples.
+              url: https://github.com/OpenMS/pyopenms_viz
+              linkText: View repository
+            - title: Reviewing Pull Requests
+              type: links
+              tag: Review
+              icon: fas fa-code-branch
+              subtitle: Help move contributions forward by reviewing open pull requests on GitHub.
+              platformsAlwaysVisible: true
+              badge:
+                src: https://img.shields.io/github/issues-pr/OpenMS/pyopenms_viz?label=open%20PRs&color=1a56db&style=flat-square
+                alt: Number of open pyopenms_viz pull requests
+                url: https://github.com/OpenMS/pyopenms_viz/pulls
+              platforms:
+                - name: View open PRs
+                  icon: fab fa-github
+                  url: https://github.com/OpenMS/pyopenms_viz/pulls
+                - name: How to review PRs
+                  icon: fas fa-book-open
+                  url: https://github.com/ParadiseSS13/Paradise/discussions/19410
+
+      webappsPage:
+        highlights:
+          eyebrow: ""
+          title: ""
+          layout: benefits
+          items:
+            - title: Local or cloud
+              text: Run locally or deploy with docker-compose
+            - title: Python-first
+              text: Python-based pipeline creation and frontend development
+            - title: TOPP UI
+              text: Auto-generates UI for TOPP tools
+            - title: Custom visuals
+              text: Customizable visualizations and results display
+            - title: Shareable workspaces
+              text: Workspaces for user data with unique shareable IDs
+
+        usingTemplate:
+          eyebrow: Get started
+          title: Using the template
+          lead: Documentation, deployment options, and example apps built on the OpenMS WebApps framework.
+          items:
+            - tag: Docs
+              title: Documentation
+              icon: fas fa-book-open
+              text: Guides for customizing and extending the Streamlit template.
+              url: https://template.webapps.openms.org/documentation
+              linkText: Open docs
+              featured: true
+            - tag: Getting Started
+              title: Getting Started
+              icon: fas fa-rocket
+              text: Fork and customize the template for your pipeline.
+              url: https://github.com/OpenMS/streamlit-template/fork
+              linkText: Fork template
+            - tag: Deploy
+              title: streamlit-deployment
+              icon: fab fa-docker
+              text: Host multiple WebApps together with Docker Compose.
+              url: https://github.com/OpenMS/streamlit-deployment
+              linkText: Deploy with Docker
+            - tag: Windows
+              title: Windows executable
+              icon: fab fa-windows
+              text: Package your WebApp as a standalone Windows executable.
+              url: https://github.com/OpenMS/streamlit-template/releases/latest
+              linkText: Download installer
+            - title: Need help?
+              type: online
+              text: Chat with the community on Discord, or open a GitHub issue for bugs and feature requests.
+              links:
+                - name: Ask on Discord
+                  icon: fab fa-discord
+                  text: Quick questions and community chat
+                  url: https://discord.com/invite/v9tv5BxPch
+                - name: Report an issue
+                  icon: fab fa-github
+                  text: Bugs and feature requests
+                  url: https://github.com/OpenMS/streamlit-template/issues/new
+
+        examples:
+          eyebrow: Examples
+          title: Featured WebApps
+          lead: Community apps built on the OpenMS WebApps framework.
+          url: /featured-apps/
+          linkText: Browse all apps
+          apps:
+            - name: OpenDIAKiosk
+              logo: /images/webapp/logo/OpenDIAKiosk_logo_portrait.svg
+              url: http://opendia.webapps.openms.org/
+            - name: umetaflow
+              logo: /images/webapp/logo/umetaflow.png
+              url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
+            - name: OpenDDA
+              logo: /images/webapp/logo/openDDA.svg
+              logoSize: large
+              url: http://opendda.webapps.openms.org/
+
+        developers:
+          eyebrow: For Developers
+          title: Contribute
+          lead: Help improve the WebApps template and deployment tooling for the OpenMS community.
+          citeSeparate: false
+          citeText: Used OpenMS WebApps in your work? If so, please cite.
+          citation:
+            variant: primary
+            topic: OpenMS WebApps
+            title: "OpenMS WebApps: Building User-Friendly Solutions for MS Analysis"
+            journal: Journal of Proteome Research
+            year: "2025"
+            authors: >-
+              Müller, Tom David; Siraj, Arslan; Walter, Axel; Kim, Jihyung; Wein,
+              Samuel; von Kleist, Johannes; Feroz, Ayesha; Pilz, Matteo; Jeong,
+              Kyowon; Sing, Justin Cyril; Charkow, Joshua; Röst, Hannes Luc;
+              Sachsenberg, Timo
+            url: https://www.ncbi.nlm.nih.gov/pubmed/39881492
+            actionText: View on PubMed
+            moreUrl: /publications/
+            moreText: More citations
+          boxes:
+            - title: Report an Issue
+              tag: GitHub
+              icon: fab fa-github
+              subtitle: Report bugs or suggest features for the Streamlit template.
+              url: https://github.com/OpenMS/streamlit-template/issues/new
+              linkText: Open on GitHub
+            - title: Template repository
+              tag: Source
+              icon: fas fa-code-branch
+              subtitle: Explore the Streamlit template, fork it, and open a pull request.
+              url: https://github.com/OpenMS/streamlit-template
+              linkText: View repository
+            - title: Reviewing Pull Requests
+              type: links
+              tag: Review
+              icon: fas fa-code-branch
+              subtitle: Help move contributions forward by reviewing open pull requests on GitHub.
+              platformsAlwaysVisible: true
+              badge:
+                src: https://img.shields.io/github/issues-pr/OpenMS/streamlit-template?label=open%20PRs&color=1a56db&style=flat-square
+                alt: Number of open streamlit-template pull requests
+                url: https://github.com/OpenMS/streamlit-template/pulls
+              platforms:
+                - name: View open PRs
+                  icon: fab fa-github
+                  url: https://github.com/OpenMS/streamlit-template/pulls
+                - name: How to review PRs
+                  icon: fas fa-book-open
+                  url: https://github.com/ParadiseSS13/Paradise/discussions/19410
+
+      webappsSection:
+        eyebrow: Community tools
+        title: Featured Apps
+        titleHighlight: Apps
+        description: >-
+          Apps are scientifically validated end-to-end solutions for common
+          proteomics and metabolomics analysis. Test online, then download and
+          deploy locally.
+        pageTitle: Featured Apps
+        pageDescription: >-
+          GUI or Command Line Apps actively maintained by the OpenMS core
+          development team
+        contactNote: "Don't see your functionality tool? Contact us."
+        contactUrl: /contact/
+        ctaText: View app
+        showAll:
+          text: Show all apps
+          url: https://deploy-preview-277--openms.netlify.app/featured-apps/
+
+      affiliateSection:
+        eyebrow: Partner ecosystem
+        title: Affiliated Apps
+        description: >-
+          These projects are not directly maintained by the OpenMS team but are
+          dependent on OpenMS infrastructure or funding.
+        contactNote: "Don't see your functionality tool? Contact us."
+        contactUrl: /contact/
+
+      affiliateProjects:
+        - name: mzPeak
+          logo: /images/webapp/logo/affiliate/mzpeak.png
+          logoSize: wide
+          description: >-
+            Next generation file format for mass spectrometry run files, built
+            on top of Apache Parquet
+          maintainers: >-
+            Joshua Klein, Sam Wein, Tim Van Den Bossche, Peter Jones,
+            Oliver Kohlbacher
+          links:
+            - type: github
+              url: https://github.com/HUPO-PSI/mzPeak
+            - type: homepage
+              url: https://www.mzpeak.org/
+        - name: QuantMS
+          logo: /images/webapp/logo/affiliate/quantms.svg
+          logoSize: large
+          description: An open-source ecosystem for large-scale quantitative proteomics.
+          maintainers: >-
+            Yasset Perez-Riverol, Mingze Bai, Timo Sachsenberg, Chengxin Dai,
+            Julianus Pfeuffer
+          links:
+            - type: homepage
+              url: https://quantms.org/index.html
+            - type: github
+              url: https://github.com/bigbio/quantms
+        - name: Casanovo
+          logo: /images/webapp/logo/affiliate/casanovo.svg
+          description: >-
+            De Novo Mass Spectrometry Peptide Sequencing with a Transformer Model
+          maintainers: Wout Bittremieux, Bill Noble
+          links:
+            - type: github
+              url: https://github.com/Noble-Lab/casanovo
+            - type: pypi
+              url: https://pypi.org/project/casanovo/
+        - name: easypqp
+          logo: /images/webapp/logo/affiliate/easypqp.svg
+          description: Spectral library generation tool for DIA.
+          maintainers: Justin Sing
+          links:
+            - type: github
+              url: https://github.com/grosenberger/easypqp
+            - type: pypi
+              url: https://pypi.org/project/easypqp/
+        - name: Pyprophet
+          logo: /images/webapp/logo/affiliate/pyprophet.png
+          logoSize: large
+          description: Semi-supervised learning and scoring of OpenSWATH results
+          maintainers: Justin Sing
+          links:
+            - type: github
+              url: https://github.com/PyProphet/pyprophet
+            - type: pypi
+              url: https://pypi.org/project/pyprophet/
+
+      archivedSection:
+        eyebrow: Legacy
+        title: Archived Apps
+        lead: These projects are kept for reference. They still work, but are no longer updated or supported by the community.
+        notice:
+          label: Good to know
+          points:
+            - title: Still usable
+              text: You can still use them as-is for your analysis.
+            - title: Check first
+              text: Check for known limitations or compatibility issues before you start.
+        catalogTitle: Available references
+        revivalPrompt: Interested in reviving one of these projects?
+        revivalNote: Get in touch to discuss maintenance, funding, or community support.
+        contactText: Contact Us
+        contactUrl: /contact/
+        sponsorText: Sponsor Us
+        sponsorUrl: /sponsor-us/
+
+      archivedProjects:
+        - name: diaproteomics
+          displayName: diaProteomics
+          variant: nfcore-pipeline
+          tag: NF-Core pipeline
+          logo: /images/webapp/logo/nf-core.png
+          logoSize: wide
+          description: >-
+            A bioinformatics analysis pipeline used for quantitative processing
+            of data independent (DIA) proteomics data.
+          links:
+            - type: nfcore
+              label: NF Core
+              url: https://nf-co.re/diaproteomics/1.2.4/
+            - type: github
+              url: https://github.com/nf-core/diaproteomics
 
       webapps:
-        - index: 0
+        - name: FLASH App
           url: http://flashapp.webapps.openms.org/
           logo: /images/webapp/logo/flashapp.png
-          description: FLASHApp allows for interactive analysis and visualization of top-down proteomics data.
-        - index: 1
-          url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
-          logo: /images/webapp/logo/umetaflow.png
-          description: This app offers the powerful UmetaFlow pipeline for untargeted metabolomics in an accessible
-        - index: 2
+          logoSize: large
+          description: >-
+            Web-based analysis and visualization of top-down proteomics data
+          maintainers: Tom Muller, Kyowon Jeong
+          links:
+            - type: demo
+              url: http://flashapp.webapps.openms.org/
+            - type: install
+              label: Install (Windows)
+              url: https://github.com/OpenMS/FLASHApp/releases/latest
+            - type: github
+              url: https://github.com/OpenMS/FLASHApp/
+        - name: OpenDIAKiosk
           url: http://opendia.webapps.openms.org/
           logo: /images/webapp/logo/OpenDIAKiosk_logo_portrait.svg
-          description: OpenDIA is an interactive web app for Data-Independent Acquisition (DIA) analysis.
-        - index: 3
+          logoSize: large
+          description: Interactive DIA proteomics data analysis
+          maintainers: Justin Sing
+          links:
+            - type: demo
+              url: http://opendia.webapps.openms.org/
+            - type: install
+              label: Install (Windows)
+              url: https://github.com/OpenMS/OpenDIAKiosk/releases/latest
+            - type: github
+              url: https://github.com/openms/opendiakiosk
+        - name: umetaflow
+          url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
+          logo: /images/webapp/logo/umetaflow.png
+          logoSize: large
+          description: Web-based access to the umetaflow pipeline
+          links:
+            - type: demo
+              url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
+            - type: github
+              url: https://github.com/OpenMS/umetaflow
+        - name: OpenDDA
           url: http://opendda.webapps.openms.org/
           logo: /images/webapp/logo/openDDA.svg
-          description: OpenDDA is a browser-based tool to identify and quantify proteins from DDA mass spectrometry data.
-        - index: 4
+          logoSize: xlarge
+          description: Web-based workflow for DDA proteomics
+          maintainers: Tom Müller
+          links:
+            - type: demo
+              url: http://opendda.webapps.openms.org/
+            - type: github
+              url: https://github.com/OpenMS/quantms-web
+            - type: install
+              label: Install (Windows)
+              url: https://github.com/OpenMS/quantms-web/releases/tag/OpenDDA-1.0
+        - name: naseweis
+          url: https://abi-services.cs.uni-tuebingen.de/naseweis/
+          logo: /images/webapp/logo/naseweis.png
+          description: Web-based access to the nucleic acid search engine (NASE)
+          maintainers: Sam Wein
+          links:
+            - type: demo
+              url: https://abi-services.cs.uni-tuebingen.de/naseweis/?workspace=032ba1ba-578a-11f1-92ec-7e2f2bc7f0f7
+            - type: github
+              url: https://github.com/poshul/nase-weis/
+        - name: NuXL
           url: https://abi-services.cs.uni-tuebingen.de/nuxl/
           logo: /images/webapp/logo/nuxl.png
-          description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry).
-        - index: 5
+          logoSize: large
+          description: Web-based analysis pipeline for XL-MS data
+          maintainers: Arslan Siraj
+          links:
+            - type: demo
+              url: https://abi-services.cs.uni-tuebingen.de/nuxl/
+            - type: install
+              label: Install (Windows)
+              url: https://github.com/Arslan-Siraj/nuxl-app/releases/latest
+            - type: github
+              url: https://github.com/Arslan-Siraj/nuxl-app/
+        - name: MHCquant
           url: https://abi-services.cs.uni-tuebingen.de/mhcquant/
           logo: /images/webapp/logo/mhcquant.svg
-          description: MHCQuant is a web application for analysis of MHC-bound peptides in immunopeptidomics studies.
-        - index: 6
-          url: https://abi-services.cs.uni-tuebingen.de/toppview-lite/
-          logo: /images/webapp/logo/toppview-lite.svg
-          description: TOPPView Lite is a web-based viewer for interactive visualization and exploration of mass spectrometry data.
-        - index: 7
-          logo: /images/webapp/logo/naseweis.png
-          url: https://abi-services.cs.uni-tuebingen.de/naseweis/
-          description: NASEWEIS is a WebApp for the NucleicAcidSearch Engine. It allows for library searching of Oligonucleotides.
-        - index: 8
-          url: https://abi-services.cs.uni-tuebingen.de/streamsage/
-          logo: /images/webapp/logo/streamsage.png
-          description: StreamSage is a web application for performing proteomics database searching in your browser.
+          logoSize: xlarge
+          description: Web-based analysis pipeline for immunopeptidomics
+          maintainers: Jonas Scheid
+          links:
+            - type: demo
+              url: https://abi-services.cs.uni-tuebingen.de/mhcquant/
+
+      ecosystemSection:
+        eyebrow: Developer tools
+        title: Ecosystem
+        description: Build your own pipelines using our ecosystem
+        items:
+          - name: OpenMS-lib
+            url: /openms-lib/
+            tag: C++ library
+            accent: openms-lib
+            size: wide
+            icon: /images/logos/OpenMS_transparent_blackFont.svg
+            description: >-
+              Reusable C++ algorithms and data structures for mass spectrometry
+              software. Ships with The OpenMS Pipeline (TOPP) command line tools
+              for mass spectrometry analysis.
+          - name: pyOpenMS
+            url: /pyopenms/
+            tag: Python
+            accent: pyopenms
+            size: standard
+            icon: /images/pyopenms-logo.png
+            description: >-
+              Python bindings to OpenMS-lib. Write custom analysis scripts and
+              integrate OpenMS into Python workflows.
+          - name: OpenMS-Web apps
+            url: /webapps/
+            tag: Web apps
+            accent: webapps
+            size: standard
+            icon: /images/logos/openms-webapps-logo.png
+            description: >-
+              Web interface template for OpenMS pipelines. Deploy custom analysis
+              tools as interactive web apps without frontend development.
+          - name: pyopenms_viz
+            url: /pyopenms-viz/
+            tag: Visualization
+            accent: viz
+            size: wide
+            icon: /images/logos/pyopenms-viz-logo.png
+            description: >-
+              Visualization library for mass spectrometry data. Create interactive
+              and static plots directly from Python dataframes.
 
       section5: false
 
       footer:
         title: OpenMS
         deployedBy: /images/deployed-by-netlify.png
-        sponsorLogo1: /images/logos/denbi-logo-white.svg
-        sponsorLogo2: /images/logos/elixir-logo-white.png
-        sponsorLogo3: /images/logos/libis-logo-white.svg
         logo:
+          image: OpenMS_transparent_blackFont.png
+          link: /
+          altText: OpenMS
+        tagline: The open-source framework for mass spectrometry.
         socialmediatitle: ""
         socialmedia:
-          - link: https://discord.gg/v9tv5BxPch
+          - link: https://discord.com/invite/v9tv5BxPch
             icon: discord
+          - link: https://www.linkedin.com/company/openms-org
+            icon: linkedin
+          - link: https://github.com/openMS
+            icon: github
+          - link: https://scholar.google.ca/citations?user=tQ26gxIAAAAJ&hl
+            icon: google-scholar
         quicklinks:
           column1:
-            heading: RESOURCES
+            heading: SUPPORT
             links:
-              - text: Install
-                link: https://openms.readthedocs.io/en/latest/about/installation.html
-              - text: Documentation
-                link: https://openms.readthedocs.io/en/latest/
-              - text: Citing OpenMS
-                link: /citing-openms
+              - text: Donate
+                link: /donate/
+              - text: Sponsor Us
+                link: /sponsor-us/
           column2:
             heading: COMMUNITY
             links:
-              - text: Community
-                link: /communication
-              - text: Code of conduct
-                link: /code-of-conduct
-              - text: Contribute
+              - text: Calendar
+                link: /calendar/
+              - text: News
+                link: /news
+              - text: Getting Involved
                 link: /contribute
-              - text: Core Developers
-                link: /core_developers
+              - text: OpenMS Fellowship
+                link: /fellowship/
+              - text: Annual Developer Retreat
+                link: /developer-retreat/
+              - text: Code of Conduct
+                link: /code-of-conduct/
           column3:
             heading: ABOUT
             links:
-              - text: OpenMS Inc.
-                link: /about
-              - text: Executive committee
-                link: /exec_committee
               - text: Governance
                 link: /governance
-              - text: Jobs
-                link: /jobs
+              - text: Our Sponsors
+                link: /our-sponsors/
+              - text: Our Sponsorship Program
+                link: /sponsor-us/
+              - text: Research Partnerships
+                link: /research-partnerships/
+              - text: Publications
+                link: /publications
+              - text: Leadership
+                link: /contributors/
+              - text: Contact
+                link: /contact/
           column4:
             heading: LEGAL
             links:
-              - text: Help
-                link: /help
-              - text: Terms of use
-                link: /terms
               - text: Privacy
                 link: /privacy
               - text: Press kit
@@ -190,35 +1532,87 @@ languages:
                 link: /impressum
 
       navbar:
-        - title: News
-          url: /news
-        - title: Install
-          url: https://openms.readthedocs.io/en/latest/about/installation.html
-        - title: Documentation
-          url: https://openms.readthedocs.io/en/latest/index.html
-        - title: Community
+        - title: Projects
+          url: /openms-lib/
           sublinks:
-            - title: Communication
-              url: /communication
-            - title: Contribute
+            - title: OpenMS-lib
+              url: /openms-lib/
+            - title: pyOpenMS
+              url: /pyopenms/
+            - title: pyOpenMS Viz
+              url: /pyopenms-viz/
+            - title: OpenMS Web Apps
+              url: /webapps/
+        - title: Apps
+          url: /webapps/#featured-webapps
+          sublinks:
+            - title: Featured Apps
+              url: /featured-apps/
+            - title: Affiliated Apps
+              url: /affiliated-apps/
+            - title: Archived Apps
+              url: /archived-apps/
+        - title: Learn
+          sublinks:
+            - title: Liquid Chromatography
+              url: https://openms.readthedocs.io/en/latest/about/learning/lc-chromatography.html
+              is_external: true
+            - title: Mass Spectrometry
+              url: https://openms.readthedocs.io/en/latest/about/learning/mass-spectrometry.html
+              is_external: true
+            - title: Identification and Quantification
+              url: https://openms.readthedocs.io/en/latest/about/learning/id-and-quant.html
+              is_external: true
+            - title: Background
+              url: https://pyopenms.readthedocs.io/en/release-3.5.0/user_guide/background.html
+              is_external: true
+            - title: Glossary
+              url: https://openms.readthedocs.io/en/latest/manual/glossary.html
+              is_external: true
+            - title: Dave Tabb’s Tutorials
+              url: https://pickingupthetabb.wordpress.com/building-a-bioinformaticist/free-online-training-in-bioinformatics-and-biostatistics/
+              is_external: true
+        - title: Community
+          url: /calendar/
+          sublinks:
+            - title: Calendar
+              url: /calendar/
+            - title: News
+              url: /news
+            - title: Getting Involved
               url: /contribute
-            - title: Awards
-              url: /news/fellowship2024
-          url: /community
-        - title: About Us
+            - title: OpenMS Fellowship
+              url: /fellowship/
+            - title: Annual Developer Retreat
+              url: /developer-retreat/
+            - title: Code of Conduct
+              url: /code-of-conduct/
+        - title: Services
+          url: /scientific-and-technical-support/
+          sublinks:
+            - title: Scientific and Technical Support
+              url: /scientific-and-technical-support/
+        - title: About
           sublinks:
             - title: Governance
               url: /governance
-            - title: Contributors
-              url: /contributors
-          url: /about
-        - title: Use Cases
-          url: /publications
-          sublinks:
-            - title: Applications
-              url: /applications
+            - title: Our Sponsors
+              url: /our-sponsors/
+            - title: Our Sponsorship Program
+              url: /sponsor-us/
+            - title: Research Partnerships
+              url: /research-partnerships/
             - title: Publications
               url: /publications
-        - title: Help Request
-          url: /help-request
+            - title: Leadership
+              url: /contributors/
+            - title: Contact
+              url: /contact/
+        - title: Sponsor Us
+          url: /sponsor-us/
           button: true
+        - title: Partner with OpenMS
+          shortTitle: Partner
+          url: /research-partnerships/
+          button: true
+          buttonVariant: sponsor

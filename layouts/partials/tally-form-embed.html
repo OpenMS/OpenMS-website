@@ -1,0 +1,55 @@
+<div class="contact-page__form-body" aria-label="OpenMS contact form">
+  <iframe
+    class="contact-page__tally-iframe"
+    data-tally-src="https://tally.so/embed/pbV6Qq?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+    loading="eager"
+    width="100%"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    scrolling="no"
+    title="OpenMS contact form"
+  ></iframe>
+</div>
+<script>
+(function () {
+  var widgetSrc = "https://tally.so/widgets/embed.js";
+
+  function loadTallyEmbeds() {
+    if (typeof window.Tally !== "undefined") {
+      window.Tally.loadEmbeds();
+      return;
+    }
+    document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (iframe) {
+      iframe.src = iframe.dataset.tallySrc;
+    });
+  }
+
+  function ensureWidget() {
+    if (typeof window.Tally !== "undefined") {
+      loadTallyEmbeds();
+      return;
+    }
+    var existing = document.querySelector('script[src="' + widgetSrc + '"]');
+    if (existing) {
+      existing.addEventListener("load", loadTallyEmbeds);
+      /* Script may already be loaded without firing again */
+      setTimeout(loadTallyEmbeds, 50);
+      return;
+    }
+    var script = document.createElement("script");
+    script.src = widgetSrc;
+    script.async = true;
+    script.onload = loadTallyEmbeds;
+    script.onerror = loadTallyEmbeds;
+    document.body.appendChild(script);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", ensureWidget);
+  } else {
+    ensureWidget();
+  }
+  window.addEventListener("load", loadTallyEmbeds);
+})();
+</script>

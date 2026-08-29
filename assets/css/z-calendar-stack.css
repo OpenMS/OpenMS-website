@@ -1,0 +1,83 @@
+/* Calendar — Upcoming on top, Past below; full solution-page width */
+
+html body .openms-lib-page--calendar {
+  --calendar-max: var(--pro-max, 75rem) !important;
+}
+
+html body .openms-lib-page--calendar .openms-lib-page__body > .openms-lib-page__anchor > .openms-lib-block,
+html body .openms-lib-page--calendar .community-calendar-block,
+html body .openms-lib-page--calendar .community-events-page,
+html body .openms-lib-page--calendar .community-events-page__section,
+html body .openms-lib-page--calendar .community-events-page__section--upcoming,
+html body .openms-lib-page--calendar .community-events-page__section--past {
+  width: 100% !important;
+  max-width: var(--pro-max, 75rem) !important;
+}
+
+html body .openms-lib-page--calendar .community-events-page {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: var(--pro-section-y, clamp(3rem, 6vw, 4.5rem)) !important;
+}
+
+html body .openms-lib-page--calendar .community-events-page__section,
+html body .openms-lib-page--calendar .community-events-page__section--upcoming,
+html body .openms-lib-page--calendar .community-events-page__section--past {
+  display: grid !important;
+  grid-template-rows: none !important;
+  grid-row: auto !important;
+  gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem)) !important;
+}
+
+html body .openms-lib-page--calendar .community-events-page__header,
+html body .openms-lib-page--calendar .events-past-toolbar,
+html body .openms-lib-page--calendar .community-events-page__grid,
+html body .openms-lib-page--calendar .community-events-page__empty,
+html body .openms-lib-page--calendar .events-past-panel__entries {
+  grid-row: auto !important;
+  align-self: stretch !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Event cards fill the wider rail */
+html body .openms-lib-page--calendar .community-events-home__grid,
+html body .openms-lib-page--calendar .community-events-page__grid,
+html body .openms-lib-page--calendar .events-past-year .community-events-home__grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (min-width: 901px) {
+  html body .openms-lib-page--calendar .community-events-page {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
+
+  html body .openms-lib-page--calendar .community-events-page__section {
+    display: grid !important;
+    grid-template-rows: none !important;
+    grid-row: auto !important;
+  }
+
+  html body .openms-lib-page--calendar .community-events-home__grid,
+  html body .openms-lib-page--calendar .community-events-page__grid,
+  html body .openms-lib-page--calendar .events-past-year .community-events-home__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+    row-gap: clamp(1.15rem, 2.2vw, 1.5rem) !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  html body .openms-lib-page--calendar .community-events-home__grid,
+  html body .openms-lib-page--calendar .community-events-page__grid,
+  html body .openms-lib-page--calendar .events-past-year .community-events-home__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}

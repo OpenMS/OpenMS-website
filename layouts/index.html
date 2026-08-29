@@ -1,43 +1,59 @@
 {{ define "main" }}
-    {{ if .Site.Params.hero }}
+<main id="content" class="home-page" aria-label="OpenMS homepage">
+  {{- if .Site.Params.hero }}
+  <header class="home-page__hero is-revealed" aria-label="Introduction">
     {{ partial "hero.html" . }}
-    {{ end }}
+  </header>
+  {{- end }}
 
-    {{ if .Site.Params.panel }}
+  {{ partial "home-metrics.html" . }}
+
+  <section class="home-page__block home-page__block--projects" aria-labelledby="webapps-featured-title">
+    {{ partial "webapps.html" (dict "Page" . "embed" "home") }}
+  </section>
+
+  <section class="home-page__block home-page__block--partners" aria-labelledby="uni-partners-title">
+    {{ partial "university-partners.html" (dict "Site" .Site "showHeader" true "variant" "home") }}
+  </section>
+
+  {{- with .Site.Params.keyfeatures }}
+  <section class="home-page__block home-page__block--overview" aria-labelledby="keyfeatures-title">
+    {{ partial "keyfeatures.html" (dict "Page" . "embed" "home") }}
+  </section>
+  {{- end }}
+
+  <section class="home-page__block home-page__block--ecosystem" aria-labelledby="ecosystem-home-title">
+    {{ partial "ecosystem-home.html" . }}
+  </section>
+
+  <section class="home-page__block home-page__block--community" aria-labelledby="community-home-title">
+    {{ partial "community-home.html" . }}
+  </section>
+
+  <section class="home-page__block home-page__block--events" aria-labelledby="news-home-title community-events-home-title">
+    {{ partial "community-events-home.html" . }}
+  </section>
+
+  <section class="home-page__cta" aria-labelledby="contact-area-title">
+    {{ partial "contact-area.html" (dict "variant" "home") }}
+  </section>
+
+  {{- if .Site.Params.panel }}
+  <section class="home-page__block home-page__block--panel">
     {{ partial "panel.html" . }}
-    {{ end }}
+  </section>
+  {{- end }}
 
-    {{ if .Content }}
-    {{ partial "single/content.html" . }}
-    {{ end }}
-    
-    {{ if .Site.GetPage "/news" }}
-    {{ partial "news.html" . }}
-    {{ end }}
-    
-    {{ if .Site.Params.keyfeatures }}
-    {{ partial "keyfeatures.html" . }}
-    {{ end }}
+  {{- if .Content }}
+  <section class="home-page__block home-page__block--content">
+    <div class="home-page__container">
+      {{ partial "single/content.html" . }}
+    </div>
+  </section>
+  {{- end }}
 
-    {{partial "webapps.html" . }}
-    
-    {{ if .Site.Params.heroGroup }}
-    {{ partial "heroitems.html" . }}
-    {{ end }}
-    
-    {{ partial "quick-facts.html" . }}
-
-    {{ if .Site.Params.shell }}
-    {{ partial "shell.html" . }}
-    {{ end }}
-
-    {{ if .Site.Params.tabs }}
-    {{ partial "tabs.html" . }}
-    {{ end }}
-
-    {{ if .Site.Params.casestudies }}
-    {{ partial "casestudies.html" . }}
-    {{ end }}
-
+  <div class="home-page__widgets" hidden>
     {{ partial "tally.html" . }}
+  </div>
+</main>
 {{ end }}

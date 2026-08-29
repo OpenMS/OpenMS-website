@@ -1,0 +1,151 @@
+{{- $cfg := .Site.Params.developerRetreatPage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Community" -}}
+{{- $pageTitle := index $cfg "pageTitle" | default "Annual Developer Retreat" -}}
+{{- $headline := index $cfg "headline" | default "Take part in shaping the future of computational mass spectrometry." -}}
+{{- $about := index $cfg "about" | default "" -}}
+{{- $pastPhoto := index $cfg "pastPhoto" | default dict -}}
+{{- $upcoming := index $cfg "upcoming" | default dict -}}
+{{- $registration := index $cfg "registration" | default dict -}}
+{{- $regOpen := index $registration "open" | default false -}}
+{{- $regUrl := index $registration "url" | default "" -}}
+{{- $regLabel := index $registration "label" | default "Register here" -}}
+{{- $regClosedHint := index $registration "closedHint" | default "Registration is not open yet." -}}
+{{- $sponsorText := index $cfg "sponsorText" | default "Want to sponsor this event? Learn more on our" -}}
+{{- $sponsorLinkText := index $cfg "sponsorLinkText" | default "Sponsorship Page" -}}
+{{- $sponsorUrl := index $cfg "sponsorUrl" | default "/sponsor-us/" -}}
+{{- $upcomingTitle := index $upcoming "title" | default "Upcoming retreat" -}}
+{{- $bullets := index $upcoming "bullets" | default slice -}}
+{{- $facts := index $upcoming "facts" | default (slice) -}}
+{{- $poster := index $upcoming "poster" | default dict -}}
+{{- $highlightsTitle := index $cfg "highlightsTitle" | default "About the retreat" -}}
+{{- $highlights := index $cfg "highlights" | default (slice) -}}
+{{- $highlightsEyebrow := index $cfg "highlightsEyebrow" | default "Community" -}}
+{{- $upcomingEyebrow := index $upcoming "eyebrow" | default "Save the date" -}}
+<section class="openms-lib-layout">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--developer-retreat">
+<div class="openms-lib-page__intro">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="{{ $pageTitle }}">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "calendar" }}{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">{{ $headline | safeHTML }}</h1>
+        {{- if $about -}}
+        <p class="openms-lib-hero__lead">{{ $about | safeHTML }}</p>
+        {{- end -}}
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="openms-lib-page__body" aria-label="Developer retreat details">
+  <div id="upcoming-retreat" class="openms-lib-page__anchor">
+    <section class="openms-lib-about retreat-upcoming" aria-labelledby="upcoming-retreat-title">
+      <div class="openms-lib-about__inner retreat-upcoming__inner">
+        <header class="openms-lib-about__head retreat-upcoming__head">
+          <div class="openms-lib-about__head-copy">
+            <p class="openms-lib-about__eyebrow">{{ $upcomingEyebrow }}</p>
+            <h2 id="upcoming-retreat-title" class="openms-lib-about__title">{{ $upcomingTitle }}</h2>
+            {{- if $facts -}}
+            <ul class="retreat-upcoming__facts" role="list">
+              {{- range $facts -}}
+              <li>
+                <i class="{{ .icon }}" aria-hidden="true"></i>
+                <span>{{ .text }}</span>
+              </li>
+              {{- end -}}
+            </ul>
+            {{- else if $bullets -}}
+            <ul class="retreat-upcoming__list" role="list">
+              {{- range $bullets -}}
+              <li>{{ . }}</li>
+              {{- end -}}
+            </ul>
+            {{- end -}}
+
+            <div class="retreat-upcoming__actions">
+              {{- if and $regOpen $regUrl -}}
+              <a
+                class="openms-lib-btn openms-lib-btn--primary"
+                href="{{ $regUrl }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="openms-lib-btn__label">{{ $regLabel }}</span>
+              </a>
+              {{- else -}}
+              <span
+                class="openms-lib-btn openms-lib-btn--primary retreat-register--closed"
+                role="button"
+                aria-disabled="true"
+                tabindex="0"
+                data-tooltip="{{ $regClosedHint }}"
+              >
+                <span class="openms-lib-btn__label">{{ $regLabel }}</span>
+              </span>
+              {{- end -}}
+            </div>
+
+            <p class="retreat-upcoming__sponsor">
+              {{ $sponsorText }} <a href="{{ $sponsorUrl }}">{{ $sponsorLinkText }}</a>
+            </p>
+          </div>
+        </header>
+
+        {{- with $poster -}}
+        <figure class="retreat-upcoming__poster">
+          <img
+            src="{{ .src }}"
+            alt="{{ .alt | default "Upcoming developer retreat poster" }}"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        {{- end -}}
+      </div>
+    </section>
+  </div>
+
+  {{- if $highlights -}}
+  <div id="about-the-retreat" class="openms-lib-page__anchor">
+    <section class="openms-lib-about" aria-labelledby="developer-retreat-highlights-title">
+      <div class="openms-lib-about__inner">
+        <header class="openms-lib-about__head">
+          <div class="openms-lib-about__head-copy">
+            <p class="openms-lib-about__eyebrow">{{ $highlightsEyebrow }}</p>
+            <h2 id="developer-retreat-highlights-title" class="openms-lib-about__title">{{ $highlightsTitle }}</h2>
+          </div>
+        </header>
+
+        <div class="openms-lib-about__mosaic retreat-highlights__mosaic" role="list">
+          {{- range $i, $item := $highlights -}}
+          <article class="openms-lib-about__tile" role="listitem">
+            <span class="openms-lib-about__num" aria-hidden="true">{{ add $i 1 | printf "%02d" }}</span>
+            <h3 class="openms-lib-about__tile-title">{{ $item.title }}</h3>
+            <p class="openms-lib-about__tile-text">{{ $item.text }}</p>
+          </article>
+          {{- end -}}
+        </div>
+      </div>
+    </section>
+  </div>
+  {{- end -}}
+
+  {{- with $pastPhoto -}}
+  <div id="past-retreat" class="openms-lib-page__anchor">
+    <figure class="retreat-photo">
+      <img
+        class="retreat-photo__image"
+        src="{{ .src }}"
+        alt="{{ .alt | default "OpenMS developer retreat" }}"
+        loading="lazy"
+        decoding="async"
+      />
+      {{- with .caption -}}
+      <figcaption class="retreat-photo__caption">{{ . }}</figcaption>
+      {{- end -}}
+    </figure>
+  </div>
+  {{- end -}}
+</div>
+</article>
+</section>

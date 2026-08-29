@@ -1,0 +1,10 @@
+<details class="gsoc-callout"{{ with .Get "id" }} id="{{ . }}"{{ end }}>
+  <summary class="gsoc-callout__summary">
+    {{- with .Get "title" }}
+    <span class="gsoc-callout__title">{{ . }}</span>
+    {{- end }}
+  </summary>
+  <div class="gsoc-callout__body">
+    {{ .Inner | markdownify }}
+  </div>
+</details>

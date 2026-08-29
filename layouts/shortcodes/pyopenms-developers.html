@@ -1,0 +1,2 @@
+{{- $cfg := site.Params.pyopenmsPage.developers | default dict -}}
+{{ partial "openms-lib-developers.html" (dict "cfg" $cfg "id" "pyopenms-developers-title") }}

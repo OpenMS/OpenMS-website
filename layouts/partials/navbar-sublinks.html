@@ -1,0 +1,9 @@
+{{- range . }}
+{{- if .is_heading }}
+<span class="navbar-dropdown-heading" role="presentation">{{ .title }}</span>
+{{- else }}
+<a href="{{ .url }}" class="navbar-item{{ if .is_nested }} is-nested{{ end }}{{ if .is_external }} has-external-icon{{ end }}"{{ if .is_external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+  <span class="navbar-item__label">{{ .title }}{{ if .is_external }}<span class="navbar-item__ext">&#8288;{{ partial "svg-icon" "external-link" }}</span>{{ end }}</span>
+</a>
+{{- end }}
+{{- end }}

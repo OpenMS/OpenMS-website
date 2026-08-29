@@ -1,0 +1,23 @@
+{{- $section := site.Params.affiliateSection | default dict -}}
+{{- $projects := site.Params.affiliateProjects | default (slice) -}}
+{{- if $projects }}
+<section class="webapps-affiliates" aria-label="Affiliated Apps">
+  <div class="webapps-affiliates__inner">
+    <ul class="webapps-affiliates__grid" role="list" aria-label="Affiliated apps">
+      {{- range $projects }}
+      <li class="webapps-affiliates__item" role="listitem">
+        {{ partial "webapps-project-detail-card.html" (dict "project" . "class" "webapps-project-detail-card--featured") }}
+      </li>
+      {{- end }}
+    </ul>
+
+    {{- $contactNote := index $section "contactNote" -}}
+    {{- $contactUrl := index $section "contactUrl" | default "/contact/" -}}
+    {{- with $contactNote }}
+    <p class="webapps-catalog__contact">
+      {{ replace . "Contact us" (printf `<a href="%s">Contact us</a>` $contactUrl) | safeHTML }}
+    </p>
+    {{- end }}
+  </div>
+</section>
+{{- end }}

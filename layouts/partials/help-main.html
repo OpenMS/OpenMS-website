@@ -1,0 +1,41 @@
+{{- $cfg := .Site.Params.helpPage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Support" -}}
+{{- $subtitle := index $cfg "subtitle" | default "Find the right channel for user questions, development issues, documentation, and community discussion — from Stack Overflow to the OpenMS mailing list." -}}
+<section class="openms-lib-layout">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--help">
+<div class="openms-lib-page__intro">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="OpenMS help and support">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "help" }}{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          Scientific &amp; <span class="openms-lib-hero__accent">technical</span> help for OpenMS.
+        </h1>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/contact/">
+            <span class="openms-lib-btn__label">Contact us</span>
+          </a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/contribute/#communication-channels">
+            <span class="openms-lib-btn__label">Community channels</span>
+          </a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/contribute/">
+            <span class="openms-lib-btn__label">Contribute</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="openms-lib-page__body" aria-label="Help resources">
+  <div class="openms-lib-page__anchor">
+    <div class="openms-lib-resources openms-lib-resources--no-feature">
+      <div class="openms-lib-resources__inner help-page">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+</section>

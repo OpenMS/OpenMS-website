@@ -1,0 +1,199 @@
+{{- $cfg := .Site.Params.governancePage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "OpenMS governance" -}}
+{{- $subtitle := index $cfg "subtitle" | default "OpenMS combines a nonprofit corporation for legal and financial stewardship with an Executive Committee that leads technical direction and community governance." -}}
+<section class="openms-lib-layout">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--governance">
+<div class="openms-lib-page__intro">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="Governance overview">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "shield" }}{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          <span class="openms-lib-hero__title-line">Built for <span class="openms-lib-hero__accent">stability</span>,</span>
+          <span class="openms-lib-hero__title-line">guided by <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">community</span>.</span>
+        </h1>
+        <p class="openms-lib-hero__lead">
+          <span class="openms-lib-hero__lead-line">OpenMS combines a nonprofit corporation for legal and financial stewardship with an Executive Committee that leads technical direction and community governance.</span>
+        </p>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/exec_committee/">
+            <span class="openms-lib-btn__label">Executive committee</span>
+          </a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/contribute/">
+            <span class="openms-lib-btn__label">Contribute</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="openms-lib-page__body" aria-label="Governance details">
+  <div id="governance-bodies" class="openms-lib-page__anchor">
+    <section class="openms-lib-about" aria-labelledby="governance-bodies-title">
+      <div class="openms-lib-about__inner">
+        <header class="openms-lib-about__head">
+          <div class="openms-lib-about__head-copy">
+            <p class="openms-lib-about__eyebrow">Structure</p>
+            <h2 id="governance-bodies-title" class="openms-lib-about__title">Two layers of governance</h2>
+            <p class="openms-lib-about__lead">
+              <span class="governance-lead-line">A nonprofit corporation provides legal and financial stewardship,</span>
+              <span class="governance-lead-line">while the Executive Committee leads the software project.</span>
+            </p>
+          </div>
+        </header>
+
+        <div class="openms-lib-about__mosaic" role="list">
+          <article class="openms-lib-about__tile" role="listitem" id="openms-inc">
+            <span class="openms-lib-about__num" aria-hidden="true">01</span>
+            <h3 class="openms-lib-about__tile-title">OpenMS Inc.</h3>
+            <p class="openms-lib-about__tile-text">A U.S. 501(c)(3) nonprofit that holds the project’s legal entity, compliance, and financial continuity.</p>
+            <ul class="governance-tile__list" role="list">
+              <li>Board of Directors oversees fiduciary and legal duties</li>
+              <li>Supports fundraising, grants, and organizational continuity</li>
+            </ul>
+            <a class="openms-lib-about__tile-link" href="/contributors/#leadership">See board of directors<span aria-hidden="true"> →</span></a>
+          </article>
+
+          <article class="openms-lib-about__tile" role="listitem" id="executive-committee">
+            <span class="openms-lib-about__num" aria-hidden="true">02</span>
+            <h3 class="openms-lib-about__tile-title">Executive Committee</h3>
+            <p class="openms-lib-about__tile-text">Core developers who set the software roadmap, community policies, and day-to-day technical decisions.</p>
+            <ul class="governance-tile__list" role="list">
+              <li>Defines project direction and technical priorities</li>
+              <li>Maintains governance policies and core developer membership</li>
+              <li>Handles Code of Conduct escalations and process decisions</li>
+            </ul>
+            <a class="openms-lib-about__tile-link" href="/contributors/#executive-committee">See executive committee<span aria-hidden="true"> →</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="core-developers" class="openms-lib-page__anchor">
+    <section class="openms-lib-resources openms-lib-resources--no-feature" aria-labelledby="core-developers-title">
+      <div class="openms-lib-resources__inner">
+        <header class="openms-lib-resources__head">
+          <p class="openms-lib-resources__eyebrow">Community</p>
+          <h2 id="core-developers-title" class="openms-lib-resources__title">How Core Developers Fit In</h2>
+          <p class="openms-lib-resources__lead">
+            <span class="governance-lead-line"><a href="/core_developers/">Core developers</a> are trusted maintainers who review contributions, mentor contributors, and participate in project governance through the Executive Committee.</span>
+          </p>
+        </header>
+
+        <div class="openms-lib-resources__toolkit">
+          <div class="openms-lib-resources__grid governance-pillars-grid" role="list">
+            <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
+              <div class="openms-lib-resources__item-top">
+                <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-code-branch"></i></span>
+                <span class="openms-lib-resources__item-tag">Review</span>
+              </div>
+              <h3 class="openms-lib-resources__item-title">Review and approve contributions</h3>
+            </article>
+            <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
+              <div class="openms-lib-resources__item-top">
+                <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-compass"></i></span>
+                <span class="openms-lib-resources__item-tag">Direction</span>
+              </div>
+              <h3 class="openms-lib-resources__item-title">Guide technical direction</h3>
+            </article>
+            <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
+              <div class="openms-lib-resources__item-top">
+                <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></span>
+                <span class="openms-lib-resources__item-tag">Mentorship</span>
+              </div>
+              <h3 class="openms-lib-resources__item-title">Mentor new contributors</h3>
+            </article>
+            <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
+              <div class="openms-lib-resources__item-top">
+                <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-vote-yea"></i></span>
+                <span class="openms-lib-resources__item-tag">Votes</span>
+              </div>
+              <h3 class="openms-lib-resources__item-title">Participate in governance votes</h3>
+            </article>
+          </div>
+        </div>
+
+        <aside class="governance-membership" aria-labelledby="membership-title">
+          <header class="governance-membership__head">
+            <p class="governance-membership__eyebrow">Process</p>
+            <h3 id="membership-title" class="governance-membership__title">Membership</h3>
+            <p class="governance-membership__lead">How people join and leave the core developer group.</p>
+          </header>
+          <div class="governance-membership__track">
+            <div class="governance-membership__cards" role="list">
+              <article class="governance-membership__card" role="listitem">
+                <span class="governance-membership__icon" aria-hidden="true"><i class="fas fa-user-plus"></i></span>
+                <p class="governance-membership__tag">Joining</p>
+                <p class="governance-membership__text">New core developers are added by majority vote of the Executive Committee.</p>
+              </article>
+              <article class="governance-membership__card" role="listitem">
+                <span class="governance-membership__icon" aria-hidden="true"><i class="fas fa-user-minus"></i></span>
+                <p class="governance-membership__tag">Leaving</p>
+                <p class="governance-membership__text">Core developers may step down voluntarily or be removed for inactivity or Code of Conduct violations by a two-thirds vote.</p>
+              </article>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <div id="responsibilities" class="openms-lib-page__anchor">
+    <section class="openms-lib-about governance-compare-section" aria-labelledby="responsibilities-title">
+      <div class="openms-lib-about__inner">
+        <header class="openms-lib-about__head">
+          <div class="openms-lib-about__head-copy">
+            <p class="openms-lib-about__eyebrow">Clarity</p>
+            <h2 id="responsibilities-title" class="openms-lib-about__title">Separation of Responsibilities</h2>
+            <p class="openms-lib-about__lead">
+              <span class="governance-lead-line">This model gives OpenMS institutional stability</span>
+              <span class="governance-lead-line">while preserving independent technical governance by the active maintainer community.</span>
+            </p>
+          </div>
+        </header>
+
+        <div class="openms-lib-resources__grid governance-compare-grid" role="list">
+          <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
+            <div class="openms-lib-resources__item-top">
+              <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-landmark"></i></span>
+              <span class="openms-lib-resources__item-tag">Board of Directors</span>
+            </div>
+            <h3 class="openms-lib-resources__item-title">Corporate</h3>
+            <p class="openms-lib-resources__item-text">Legal entity, nonprofit compliance, and financial stewardship.</p>
+          </article>
+          <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
+            <div class="openms-lib-resources__item-top">
+              <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-code"></i></span>
+              <span class="openms-lib-resources__item-tag">Executive Committee</span>
+            </div>
+            <h3 class="openms-lib-resources__item-title">Project</h3>
+            <p class="openms-lib-resources__item-text">Software roadmap, contributor governance, and technical or community decisions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="openms-lib-page__outro">
+  <div id="related-pages" class="openms-lib-page__anchor">
+    <section class="governance-cta-band" aria-labelledby="related-pages-title">
+      <div class="governance-cta-band__panel">
+        <div class="governance-cta-band__copy">
+          <p class="governance-cta-band__kicker">See also</p>
+          <p class="governance-cta-band__text">
+            <strong id="related-pages-title">Ready to get involved?</strong>
+            <span class="governance-cta-band__note">For guidance on getting started as a contributor, see the Contributing Guide.</span>
+          </p>
+        </div>
+        <div class="governance-cta-band__actions" role="group" aria-label="Related pages">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/contribute/">Contributing Guide</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</article>
+</section>

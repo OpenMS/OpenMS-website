@@ -1,0 +1,42 @@
+{{- $item := .item | default . -}}
+{{- $afterRoutes := .afterRoutes | default false -}}
+{{- if $item.button }}
+<article class="openms-lib-explore__spotlight openms-lib-explore__spotlight--action{{ if $item.buttonOnly }} openms-lib-explore__spotlight--action-only{{ end }}{{ if $afterRoutes }} openms-lib-explore__spotlight--after-routes{{ end }} openms-lib-hub__reveal openms-lib-hub__reveal--scale">
+  <div class="openms-lib-explore__spotlight-main">
+    {{- if not $item.buttonOnly }}
+    <h3 class="openms-lib-explore__spotlight-title">{{ $item.title }}</h3>
+    {{- with $item.text }}
+    <p class="openms-lib-explore__spotlight-text">{{ . }}</p>
+    {{- end }}
+    {{- end }}
+    <a
+      class="openms-lib-btn openms-lib-btn--primary{{ if $item.buttonIcon }} openms-lib-btn--install{{ end }} openms-lib-explore__spotlight-btn"
+      href="{{ $item.url }}"
+      {{- if in $item.url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+    >
+      <span class="openms-lib-btn__label">{{ $item.linkText | default $item.title }}</span>
+      {{- with $item.buttonIcon }}
+      <span class="openms-lib-btn__platforms" aria-hidden="true">
+        <i class="{{ . }}"></i>
+      </span>
+      {{- end }}
+    </a>
+  </div>
+</article>
+{{- else }}
+<a
+  class="openms-lib-explore__spotlight openms-lib-explore__spotlight--topp{{ if $afterRoutes }} openms-lib-explore__spotlight--after-routes{{ end }} openms-lib-hub__reveal openms-lib-hub__reveal--scale"
+  href="{{ $item.url }}"
+  {{- if in $item.url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+>
+  <div class="openms-lib-explore__spotlight-main">
+    <h3 class="openms-lib-explore__spotlight-title">{{ $item.title }}</h3>
+    {{- with $item.text }}
+    <p class="openms-lib-explore__spotlight-text">{{ . }}</p>
+    {{- end }}
+    <span class="openms-lib-explore__spotlight-cta">
+      {{ $item.linkText | default "Learn more" }}
+    </span>
+  </div>
+</a>
+{{- end }}

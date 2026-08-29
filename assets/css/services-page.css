@@ -1,0 +1,116 @@
+.services-page-layout {
+  --olib-section-y: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
+  --olib-bg-soft: #f4f6f9;
+  --olib-text-muted: var(--openms-text-muted);
+  --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
+  --services-max: 48rem;
+
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 clamp(2.5rem, 5vh, 4rem);
+}
+
+.services-page-layout__content {
+  width: min(100%, var(--services-max));
+  max-width: var(--services-max);
+  margin-inline: auto;
+  padding-inline: var(--olib-pad-x);
+}
+
+.services-page-hero {
+  margin-bottom: var(--olib-section-y);
+}
+
+.services-page__form {
+  padding: clamp(1.5rem, 3.5vw, 2.25rem);
+  background: var(--openms-white);
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+  border-radius: 1.25rem;
+  box-shadow: 0 0.35rem 1.25rem rgba(var(--openms-navy-rgb), 0.05);
+}
+
+.services-page__form-head {
+  margin-bottom: 1.25rem;
+}
+
+.services-page__form-title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--openms-navy);
+  text-wrap: balance;
+}
+
+.services-page__form-body {
+  width: 100%;
+}
+
+.services-page__tally-iframe {
+  display: block;
+  width: 100%;
+  min-height: 560px;
+  border: 0;
+  background: transparent;
+}
+
+/* Scientific & technical support — centered Contact us intro + form */
+.openms-lib-page--services-support .services-support-application {
+  padding-block: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
+}
+
+.openms-lib-page--services-support .services-support-application__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--pro-head-to-content, clamp(1.25rem, 3vw, 1.75rem));
+  width: 100%;
+  max-width: var(--pro-max, 72rem);
+  margin-inline: auto;
+  padding-inline: var(--openms-page-inline, clamp(1.25rem, 4vw, 2.5rem));
+  box-sizing: border-box;
+}
+
+.openms-lib-page--services-support .services-support-application__head {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+  gap: 0;
+}
+
+.openms-lib-page--services-support .services-support-application__head .openms-lib-resources__eyebrow,
+.openms-lib-page--services-support .services-support-application__head .openms-lib-resources__title,
+.openms-lib-page--services-support .services-support-application__head .openms-lib-resources__lead {
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+  text-align: center;
+  justify-self: center;
+}
+
+.openms-lib-page--services-support .services-support-application__head .openms-lib-resources__eyebrow {
+  justify-content: center;
+}
+
+.openms-lib-page--services-support .services-support-application__head .openms-lib-resources__lead {
+  margin-top: var(--pro-stack-lead, 0.75rem);
+  color: var(--openms-text-muted, rgba(var(--openms-navy-rgb), 0.72));
+}
+
+.openms-lib-page--services-support .services-support-application__form {
+  width: 100%;
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+@media (max-width: 720px) {
+  .openms-lib-page--services-support .services-support-application__inner {
+    padding-inline: var(--openms-page-inline, var(--openms-page-gutter, 0.9rem));
+  }
+}

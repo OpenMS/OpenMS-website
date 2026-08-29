@@ -1,0 +1,261 @@
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__projects,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__projects {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 1.25rem 1.75rem !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__grid,
+html body .openms-lib-page--archived .webapps-archived__grid--solo,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__grid,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__grid--solo {
+  width: min(100%, 32rem) !important;
+  max-width: 32rem !important;
+  flex: 0 1 32rem !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice,
+html body .openms-lib-page--archived .webapps-archived__notice--callout,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice--callout {
+  width: min(100%, 20rem) !important;
+  max-width: 20rem !important;
+  flex: 0 1 20rem !important;
+  margin: 0 !important;
+  padding: 0.2rem 0 0 !important;
+  justify-items: start !important;
+  text-align: left !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-head,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-head {
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-list,
+html body .openms-lib-page--archived .webapps-archived__notice-item,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-list,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-item {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-list,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-list {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0.85rem !important;
+  padding: 0 !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-item,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-item {
+  padding: 0 !important;
+  justify-items: start !important;
+  text-align: left !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-copy,
+html body .openms-lib-page--archived .webapps-archived__notice-heading,
+html body .openms-lib-page--archived .webapps-archived__notice-text,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-copy,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-heading,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-text {
+  text-align: left !important;
+  justify-items: start !important;
+  margin: 0 !important;
+  max-width: none !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__inner,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__inner {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__heading .webapps-archived-entry__meta,
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__heading .webapps-archived-entry__name,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__heading .webapps-archived-entry__meta,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__heading .webapps-archived-entry__name {
+  grid-area: auto !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__heading,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__heading {
+  display: grid !important;
+  grid-area: heading !important;
+  gap: 0.12rem !important;
+  align-content: start !important;
+  align-self: start !important;
+  margin: 0 !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry {
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  grid-template-areas:
+    "heading logo"
+    "text text"
+    "maintainers maintainers"
+    "actions actions" !important;
+  row-gap: 0.3rem !important;
+  align-items: start !important;
+  padding-top: 0.7rem !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__media,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__media {
+  justify-self: end !important;
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+  align-self: start !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 0 !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__logo,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__logo {
+  object-position: right top !important;
+  height: auto !important;
+  max-height: 3.25rem !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__text,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__text {
+  margin-top: 0 !important;
+  align-self: start !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__meta,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__meta {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 0.3rem 0.5rem !important;
+  width: auto !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__type,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__type {
+  margin: 0 !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__badge,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__badge {
+  margin: 0 !important;
+  margin-left: 0 !important;
+  font-size: 0.5rem !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0.06em !important;
+  padding: 0.06rem 0.34rem !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__name,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__name {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival,
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__revival {
+  background: var(--openms-navy) !important;
+  background-color: var(--openms-navy) !important;
+  background-image: none !important;
+  color: var(--openms-white) !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival-kicker,
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__revival-kicker {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival :is(.webapps-archived__revival-text, .webapps-archived__revival-text strong, p, strong):not(.openms-lib-btn):not(.openms-lib-btn__label),
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__revival :is(.webapps-archived__revival-text, .webapps-archived__revival-text strong) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival-note,
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__revival-note {
+  color: rgba(var(--openms-white-rgb), 0.88) !important;
+  -webkit-text-fill-color: rgba(var(--openms-white-rgb), 0.88) !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival .webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn--ghost.openms-lib-cta-band__btn-ghost,
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival .webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn--ghost.openms-lib-cta-band__btn-ghost:visited {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 2px solid var(--openms-white) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn--primary,
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn--primary:is(:hover, :focus-visible, :active),
+html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn--primary,
+html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn--primary:is(:hover, :focus-visible, :active) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  border: 2px solid var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival .webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn--ghost.openms-lib-cta-band__btn-ghost :is(.openms-lib-btn__label, span),
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival .webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn--ghost.openms-lib-cta-band__btn-ghost:visited :is(.openms-lib-btn__label, span) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn--primary :is(.openms-lib-btn__label, span),
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn--primary:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span),
+html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn--primary :is(.openms-lib-btn__label, span),
+html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn--primary:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+@media (max-width: 47.99rem) {
+  html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__projects,
+  html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__projects {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+  }
+
+  html body .openms-lib-page--archived .webapps-archived__grid,
+  html body .openms-lib-page--archived .webapps-archived__grid--solo,
+  html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__grid,
+  html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__grid--solo {
+    width: min(100%, 32rem) !important;
+    max-width: 32rem !important;
+    flex: 1 1 16rem !important;
+  }
+
+  html body .openms-lib-page--archived .webapps-archived__notice,
+  html body .openms-lib-page--archived .webapps-archived__notice--callout,
+  html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice,
+  html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice--callout {
+    width: min(100%, 20rem) !important;
+    max-width: 20rem !important;
+    flex: 1 1 14rem !important;
+  }
+}

@@ -1,13 +1,122 @@
-{{- $keyfeatures := .Site.Params.keyfeatures }}
+{{- $page := .Page | default . -}}
+{{- $keyfeatures := $page.Site.Params.keyfeatures }}
+{{- $embed := .embed -}}
+{{- $isOverview := eq $embed "openms-lib" }}
 {{- $title := index $keyfeatures "title" }}
-{{- $subtitle := index $keyfeatures "subtitle" }}
+{{- $eyebrow := index $keyfeatures "eyebrow" }}
+{{- $titleHighlight := index $keyfeatures "titleHighlight" }}
+{{- $description := index $keyfeatures "description" | default (index $keyfeatures "subtitle") }}
+{{- $note := index $keyfeatures "note" }}
 {{- $features := index $keyfeatures "features" }}
-<section class="keyfeatures">
-    <div class="container">
-        <h1 class="keyfeatures-title">{{ $title }}</h1>
-        <p>{{ $subtitle }}</p>
-        <div class="keyfeatures-box-container">
+<section
+  class="keyfeatures keyfeatures-modern{{- with $embed }} keyfeatures-modern--{{ $embed }}{{- end }}{{- if $isOverview }} keyfeatures-modern--overview keyfeatures-modern--lib-tiles{{- end }}"
+  aria-labelledby="keyfeatures-title"
+>
+  <div class="keyfeatures-modern__inner{{- if $isOverview }} openms-lib-band__inner{{- end }}">
+    {{- if $isOverview }}
+    <header class="keyfeatures-modern__header openms-lib-block__head">
+      {{- with $eyebrow }}
+      <p class="keyfeatures-modern__eyebrow openms-lib-block__eyebrow">{{ . }}</p>
+      {{- end }}
+      <h2 id="keyfeatures-title" class="keyfeatures-modern__title openms-lib-block__title">
+        {{- if and $titleHighlight (in $title $titleHighlight) }}
+        {{ replace $title $titleHighlight (printf "<span class=\"keyfeatures-modern__title-accent\">%s</span>" $titleHighlight) | safeHTML }}
+        {{- else }}
+        {{ $title }}
+        {{- end }}
+      </h2>
+      {{- with $description }}
+      <div class="keyfeatures-modern__lead openms-lib-block__lead">
+        {{ . | markdownify }}
+      </div>
+      {{- end }}
+    </header>
 
+    {{- with $features }}
+    <ul class="keyfeatures-modern__topics openms-lib-list openms-lib-list--tiles" role="list" aria-label="OpenMS highlights">
+      {{- range $index, $feature := . }}
+      <li class="keyfeatures-modern__topic" role="listitem">
+        <article class="keyfeatures-modern__topic-card keyfeatures-modern__topic-card--overview openms-lib-list__row">
+          <div class="openms-lib-list__media openms-lib-feature-icon" aria-hidden="true">
+            <span class="openms-lib-list__mark">{{ substr $feature.title 0 1 }}</span>
+          </div>
+          <div class="keyfeatures-modern__topic-body openms-lib-list__body">
+            {{- with $feature.tag }}
+            <div class="keyfeatures-modern__topic-tags openms-lib-list__tags" aria-label="Category">
+              {{- range (split . " · ") }}
+              <span class="keyfeatures-modern__topic-tag openms-lib-list__tag">{{ . }}</span>
+              {{- end }}
+            </div>
+            {{- end }}
+            {{- with $feature.title }}
+            <h3 class="keyfeatures-modern__topic-title openms-lib-list__title">{{ . }}</h3>
+            {{- end }}
+            {{- with $feature.text }}
+            <p class="keyfeatures-modern__topic-text openms-lib-list__text">{{ . }}</p>
+            {{- end }}
+          </div>
+        </article>
+      </li>
+      {{- end }}
+    </ul>
+    {{- end }}
+
+    {{- with $note }}
+    <aside class="keyfeatures-modern__note openms-lib-block__note">
+      {{ . | markdownify }}
+    </aside>
+    {{- end }}
+    {{- else }}
+    <div class="keyfeatures-modern__layout">
+      <header class="keyfeatures-modern__header">
+        <div class="keyfeatures-modern__header-main">
+          {{- with $eyebrow }}
+          <p class="keyfeatures-modern__eyebrow">{{ . }}</p>
+          {{- end }}
+          <h2 id="keyfeatures-title" class="keyfeatures-modern__title">{{ replaceRE "(OpenMS)" "<span class=\"keyfeatures-modern__title-accent\">$1</span>" $title | safeHTML }}</h2>
         </div>
+        {{- with $description }}
+        <div class="keyfeatures-modern__lead">
+          {{ . | markdownify }}
+        </div>
+        {{- end }}
+      </header>
+
+      {{- with $features }}
+      <ul class="keyfeatures-modern__topics" role="list" aria-label="OpenMS highlights">
+        {{- range $index, $feature := . }}
+        <li class="keyfeatures-modern__topic" role="listitem">
+          <article class="keyfeatures-modern__topic-card">
+            <span class="keyfeatures-modern__topic-index" aria-hidden="true">{{ add $index 1 }}</span>
+            {{- with $feature.img }}
+            <div class="keyfeatures-modern__topic-icon" aria-hidden="true">
+              <img src="{{ . | relURL }}" alt="" loading="lazy" decoding="async" />
+            </div>
+            {{- else }}
+            <div class="keyfeatures-modern__topic-icon keyfeatures-modern__topic-icon--mark" aria-hidden="true">
+              <span>{{ substr $feature.title 0 1 }}</span>
+            </div>
+            {{- end }}
+            <div class="keyfeatures-modern__topic-body">
+              {{- with $feature.title }}
+              <h3 class="keyfeatures-modern__topic-title">{{ . }}</h3>
+              {{- end }}
+              {{- with $feature.text }}
+              <p class="keyfeatures-modern__topic-text">{{ . }}</p>
+              {{- end }}
+            </div>
+          </article>
+        </li>
+        {{- end }}
+      </ul>
+      {{- end }}
+
+      {{- with $note }}
+      <aside class="keyfeatures-modern__note">
+        {{ . | markdownify }}
+      </aside>
+      {{- end }}
     </div>
+    {{- end }}
+  </div>
 </section>

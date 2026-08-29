@@ -1,0 +1,78 @@
+{{- $variant := .variant | default "" -}}
+{{- $home := or (eq $variant "home") (eq $variant "saas") -}}
+{{- $contactPageUrl := "/contact/" -}}
+{{- if $home }}
+<div id="contact" class="contact-home">
+  <section class="contact-home__main" aria-labelledby="contact-area-title">
+    <div class="contact-home__inner">
+      <header class="contact-home__header">
+        <p class="contact-home__eyebrow">
+          <span class="contact-home__eyebrow-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="14" height="14" focusable="false" aria-hidden="true">
+              <path fill="currentColor" d="M2 3.25h12a1.25 1.25 0 0 1 1.25 1.25v7A1.25 1.25 0 0 1 14 12.75H2A1.25 1.25 0 0 1 .75 11.5v-7A1.25 1.25 0 0 1 2 3.25zm0 1.5 6.35 4.78L13.5 4.75V4.5H2v.25l6.35 4.78z"/>
+            </svg>
+          </span>
+          Contact
+        </p>
+        <h2 id="contact-area-title" class="contact-home__title">
+          Take control of your <span class="contact-home__title-accent">mass spec workflows</span> today
+        </h2>
+        <p class="contact-home__description">
+          Tell us about your pipeline, integrations, or tooling goals — we will point you to the fastest next step.
+        </p>
+      </header>
+
+      <div class="contact-home__actions">
+        <a
+          class="contact-home__cta openms-btn-primary openms-step__cta"
+          href="{{ $contactPageUrl }}"
+        >
+          Contact us
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+{{- else }}
+<section id="contact" class="contact-area" aria-labelledby="contact-area-title">
+  <div class="contact-area__inner">
+    <header class="contact-area__main">
+      <p class="contact-area__eyebrow">
+        <span class="contact-area__eyebrow-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="14" height="14" focusable="false" aria-hidden="true">
+            <path fill="currentColor" d="M2 3.25h12a1.25 1.25 0 0 1 1.25 1.25v7A1.25 1.25 0 0 1 14 12.75H2A1.25 1.25 0 0 1 .75 11.5v-7A1.25 1.25 0 0 1 2 3.25zm0 1.5 6.35 4.78L13.5 4.75V4.5H2v.25l6.35 4.78z"/>
+          </svg>
+        </span>
+        Contact
+      </p>
+      <h2 id="contact-area-title" class="contact-area__title">Let us build with you</h2>
+      <p class="contact-area__copy">
+        Tell us about your workflow, integrations, or tooling goals. We will point you to the
+        fastest next step.
+      </p>
+      <p class="contact-area__meta">Usually replies within 1-2 business days.</p>
+      <p class="contact-area__support-note">
+        We can offer paid consulting services. You can also support OpenMS as
+        <a href="/sponsor-us/">Sponsor</a> or <a href="/donate/">Donate</a>.
+      </p>
+    </header>
+    <div class="contact-area__details">
+      <div class="contact-area__actions">
+        <a
+          class="openms-step__cta openms-btn-primary contact-area__cta"
+          href="{{ $contactPageUrl }}"
+        >
+          Contact us
+        </a>
+        <a
+          class="contact-area__cta-secondary"
+          href="{{ $contactPageUrl }}#contact-form"
+        >
+          Send a message
+        </a>
+      </div>
+      <a class="contact-area__line" href="mailto:webmaster@openms.de">webmaster@openms.de</a>
+    </div>
+  </div>
+</section>
+{{- end }}

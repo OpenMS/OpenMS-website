@@ -1,0 +1,730 @@
+/* Community events page (/calendar/) */
+
+.community-calendar-layout,
+.openms-lib-page--calendar {
+  --olib-section-y: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
+  --olib-bg-soft: #f4f6f9;
+  --olib-text-muted: var(--openms-text-muted);
+  --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
+  --calendar-max: var(--pro-max, 75rem);
+  --home-card-title-color: rgba(var(--openms-dark-rgb), 0.82);
+  --home-body-color: var(--openms-text-muted);
+}
+
+.community-calendar-layout {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 clamp(2.5rem, 5vh, 4rem);
+}
+
+.community-calendar-layout__content {
+  width: min(100%, var(--calendar-max));
+  max-width: var(--calendar-max);
+  margin-inline: auto;
+  padding-inline: var(--olib-pad-x);
+}
+
+.calendar-page-hero {
+  margin-bottom: clamp(2rem, 4vh, 3rem);
+}
+
+.community-calendar-layout .openms-lib-hero.calendar-page-hero .openms-lib-hero__lead {
+  margin-top: 0.4rem;
+}
+
+.community-events-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pro-section-y, clamp(3rem, 6vw, 4.5rem));
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .community-events-page {
+    gap: var(--pro-section-y, clamp(3rem, 6vw, 4.5rem));
+  }
+}
+
+.community-events-page__section {
+  display: grid;
+  gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem));
+}
+
+.community-events-page__section--upcoming {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.community-events-page__header {
+  margin: 0;
+}
+
+.community-events-page__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-section-title-size, calc(var(--openms-heading-lg-size) * 1.15));
+  font-weight: var(--openms-section-title-weight, var(--openms-heading-lg-weight));
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--openms-section-title-color, var(--openms-navy));
+}
+
+.community-events-page__grid {
+  margin: 0;
+}
+
+.community-events-page .community-events-home__grid {
+  background: transparent;
+  padding: 0;
+}
+
+.community-events-page__empty {
+  margin: 0;
+  padding: clamp(1rem, 2vw, 1.25rem);
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.55;
+  color: rgba(var(--openms-navy-rgb), 0.72);
+  background: rgba(var(--openms-blue-rgb), 0.04);
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+  border-radius: 0.85rem;
+}
+
+.community-events-page__section--past {
+  padding-top: 0;
+  border-top: none;
+}
+
+/* —— Past events panel —— */
+.events-past-panel {
+  display: grid;
+  gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem));
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.events-past-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.events-past-toolbar__intro {
+  display: grid;
+  gap: 0.35rem;
+  max-width: min(100%, 36rem);
+}
+
+.events-past-toolbar__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-section-title-size, calc(var(--openms-heading-lg-size) * 1.15));
+  font-weight: var(--openms-section-title-weight, var(--openms-heading-lg-weight));
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--openms-section-title-color, var(--openms-navy));
+}
+
+.events-past-toolbar__hint {
+  margin: 0;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size);
+  line-height: 1.55;
+  color: var(--home-body-color, rgba(var(--openms-dark-rgb), 0.72));
+}
+
+.events-past-toolbar__filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: min(100%, 10rem);
+}
+
+.events-past-toolbar__filter-label {
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(var(--openms-navy-rgb), 0.62);
+}
+
+.events-past-toolbar__select {
+  min-height: 2.75rem;
+  min-width: 8rem;
+  padding: 0.45rem 2.25rem 0.45rem 0.85rem;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size);
+  font-weight: 700;
+  color: var(--openms-navy);
+  background-color: var(--openms-white);
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.14);
+  border-radius: 0.65rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%230c2171' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  box-shadow: 0 0.1rem 0.35rem rgba(var(--openms-navy-rgb), 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.events-past-toolbar__select:hover {
+  border-color: rgba(var(--openms-blue-rgb), 0.35);
+}
+
+.events-past-toolbar__select:focus {
+  outline: none;
+}
+
+.events-past-toolbar__select:focus-visible {
+  border-color: var(--openms-blue);
+  box-shadow: 0 0 0 3px rgba(var(--openms-blue-rgb), 0.18);
+}
+
+.events-past-panel__entries {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+[data-events-year-filter]:not(.events-year-filter--ready) .events-past-year[data-events-year]:not(.events-past-year--default) {
+  display: none;
+}
+
+.events-past-year[hidden] {
+  display: none;
+}
+
+.events-past-year__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  margin-bottom: clamp(0.85rem, 2vw, 1.1rem);
+}
+
+.events-past-year__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--openms-navy);
+}
+
+.events-past-year__count {
+  margin: 0;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  color: rgba(var(--openms-navy-rgb), 0.58);
+}
+
+.events-past-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.events-past-card {
+  --events-past-accent: var(--openms-blue);
+  --events-past-accent-soft: rgba(var(--openms-blue-rgb), 0.1);
+
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(0.65rem, 1.5vw, 0.85rem);
+  padding: clamp(0.75rem, 1.6vw, 0.95rem);
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+  border-radius: 0.85rem;
+  background: var(--openms-white);
+  box-shadow: 0 0.15rem 0.65rem rgba(var(--openms-navy-rgb), 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.events-past-card__date-block {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.events-past-card__body {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.events-past-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+
+.events-past-card__header .events-past-card__title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.events-past-card__header .events-past-card__category {
+  flex: 0 0 auto;
+}
+
+.events-past-card:hover {
+  border-color: color-mix(in srgb, var(--events-past-accent) 28%, rgba(var(--openms-navy-rgb), 0.1));
+  box-shadow: 0 0.45rem 1.25rem rgba(var(--openms-navy-rgb), 0.07);
+}
+
+.events-past-card--developer-meeting {
+  --events-past-accent: var(--openms-navy);
+  --events-past-accent-soft: rgba(var(--openms-navy-rgb), 0.08);
+}
+
+.events-past-card--workshop {
+  --events-past-accent: var(--openms-blue);
+  --events-past-accent-soft: rgba(var(--openms-blue-rgb), 0.1);
+}
+
+.events-past-card--outreach {
+  --events-past-accent: var(--openms-purple);
+  --events-past-accent-soft: rgba(var(--openms-purple-rgb), 0.12);
+}
+
+.events-past-card__category {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.24rem 0.58rem;
+  border-radius: 999px;
+  font-family: var(--openms-font-body);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--events-past-accent);
+  background: var(--events-past-accent-soft);
+  border: 1px solid color-mix(in srgb, var(--events-past-accent) 20%, transparent);
+}
+
+.events-past-card__when {
+  margin: 0;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  line-height: 1.45;
+  color: rgba(var(--openms-navy-rgb), 0.62);
+}
+
+.events-past-card__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--home-card-title-color, rgba(var(--openms-dark-rgb), 0.82));
+  text-wrap: pretty;
+}
+
+.events-past-card__title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.events-past-card__title-link:hover,
+.events-past-card__title-link:focus-visible {
+  color: var(--events-past-accent);
+  outline: none;
+}
+
+.events-past-card__summary {
+  margin: 0;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size);
+  line-height: 1.45;
+  color: var(--home-body-color, rgba(var(--openms-dark-rgb), 0.72));
+  text-wrap: pretty;
+}
+
+.events-past-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem 0.85rem;
+  margin-top: 0;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+}
+
+.events-past-card__location {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  line-height: 1.45;
+  color: var(--home-body-color, rgba(var(--openms-dark-rgb), 0.72));
+}
+
+.events-past-card__location > span:last-child {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow-wrap: break-word;
+}
+
+.events-past-card__location-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-top: 0.08rem;
+  color: var(--events-past-accent);
+}
+
+.events-past-card__cta {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  min-height: 2.75rem;
+  padding: var(--openms-btn-padding);
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Upcoming events — split card layout (homepage + calendar); match past card sizing */
+.community-events-upcoming-layout {
+  --events-grid-gap: clamp(0.75rem, 1.5vw, 1rem);
+  --events-accent: var(--openms-navy);
+  --events-accent-soft: rgba(var(--openms-navy-rgb), 0.06);
+  --events-date-bg: var(--openms-navy);
+  --events-date-border: rgba(var(--openms-white-rgb), 0.16);
+}
+
+.community-events-upcoming-layout .community-events-home__card--developer-meeting,
+.community-events-upcoming-layout .community-events-home__card--workshop,
+.community-events-upcoming-layout .community-events-home__card--outreach {
+  --events-accent: var(--openms-navy);
+  --events-accent-soft: rgba(var(--openms-navy-rgb), 0.06);
+}
+
+.community-events-upcoming-layout .community-events-home__card-link,
+.community-events-upcoming-layout .community-events-home__card-link--static {
+  gap: clamp(0.65rem, 1.5vw, 0.85rem);
+  padding: clamp(0.75rem, 1.6vw, 0.95rem);
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.1);
+  border-radius: 0.85rem;
+  box-shadow: 0 0.15rem 0.65rem rgba(var(--openms-navy-rgb), 0.04);
+}
+
+.community-events-upcoming-layout .community-events-home__card-link--split {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  justify-items: stretch;
+  gap: clamp(0.65rem, 1.5vw, 0.85rem);
+}
+
+.community-events-upcoming-layout .community-events-home__card-link--split .community-events-home__date-block {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  justify-self: start;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+}
+
+.community-events-upcoming-layout .community-events-home__card-main {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  gap: 0.35rem;
+  width: 100%;
+  min-width: 0;
+  justify-self: stretch;
+}
+
+.community-events-upcoming-layout .community-events-home__card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+
+.community-events-upcoming-layout .community-events-home__card-header .community-events-home__card-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: normal;
+  color: var(--home-card-title-color, rgba(var(--openms-dark-rgb), 0.82));
+}
+
+.community-events-upcoming-layout .community-events-home__card-header .community-events-home__category {
+  flex: 0 0 auto;
+  max-width: min(100%, 9rem);
+  padding: 0.24rem 0.58rem;
+  font-size: 0.625rem;
+}
+
+.community-events-upcoming-layout .community-events-home__card-summary {
+  line-height: 1.45;
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  color: var(--home-body-color, rgba(var(--openms-dark-rgb), 0.72));
+}
+
+.community-events-upcoming-layout .community-events-home__card-footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem 0.85rem;
+  margin-top: 0.35rem;
+  padding-top: 0;
+  border-top: none;
+}
+
+.community-events-upcoming-layout .community-events-home__card-location {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: var(--openms-text-min);
+  line-height: 1.45;
+  color: var(--home-body-color, rgba(var(--openms-dark-rgb), 0.72));
+}
+
+.community-events-upcoming-layout .community-events-home__card-footer .events-past-card__cta {
+  flex: 0 0 auto;
+  margin-left: auto;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.community-events-upcoming-layout .community-events-home__date {
+  background: var(--openms-navy);
+  border: 1px solid rgba(var(--openms-white-rgb), 0.2);
+  box-shadow: 0 0.15rem 0.45rem rgba(var(--openms-navy-rgb), 0.2);
+}
+
+.community-events-upcoming-layout .community-events-home__date-day {
+  color: var(--openms-white);
+}
+
+.community-events-upcoming-layout .community-events-home__date-month {
+  color: rgba(var(--openms-white-rgb), 0.9);
+}
+
+.community-events-upcoming-layout .community-events-home__date-year {
+  color: rgba(var(--openms-white-rgb), 0.72);
+}
+
+.community-events-upcoming-layout .community-events-home__card--developer-meeting .community-events-home__date,
+.community-events-upcoming-layout .community-events-home__card--workshop .community-events-home__date,
+.community-events-upcoming-layout .community-events-home__card--outreach .community-events-home__date {
+  background: var(--openms-navy);
+  border-color: rgba(var(--openms-white-rgb), 0.2);
+}
+
+.community-events-upcoming-layout .community-events-home__card--developer-meeting .community-events-home__date-day,
+.community-events-upcoming-layout .community-events-home__card--workshop .community-events-home__date-day,
+.community-events-upcoming-layout .community-events-home__card--outreach .community-events-home__date-day {
+  color: var(--openms-white);
+}
+
+.community-events-upcoming-layout .community-events-home__card--developer-meeting .community-events-home__date-month,
+.community-events-upcoming-layout .community-events-home__card--workshop .community-events-home__date-month,
+.community-events-upcoming-layout .community-events-home__card--outreach .community-events-home__date-month {
+  color: rgba(var(--openms-white-rgb), 0.9);
+}
+
+.community-events-upcoming-layout .community-events-home__card--developer-meeting .community-events-home__date-year,
+.community-events-upcoming-layout .community-events-home__card--workshop .community-events-home__date-year,
+.community-events-upcoming-layout .community-events-home__card--outreach .community-events-home__date-year {
+  color: rgba(var(--openms-white-rgb), 0.72);
+}
+
+.community-events-upcoming-layout .community-events-home__footer {
+  margin-top: clamp(2.25rem, 4.5vh, 3rem);
+}
+
+/* Upcoming cards: flat border (no accent top stripe) */
+.community-events-upcoming-layout .community-events-home__card-link,
+.community-events-upcoming-layout .community-events-home__card-link:hover,
+.community-events-upcoming-layout .community-events-home__card-link:focus-visible,
+.community-events-upcoming-layout .community-events-home__card-link--static,
+.community-events-upcoming-layout .community-events-home__card-link--static:hover,
+.community-events-upcoming-layout .community-events-home__card-link--static:focus-visible {
+  border-top-width: 1px;
+}
+
+.community-events-upcoming-layout .community-events-home__card-link:hover,
+.community-events-upcoming-layout .community-events-home__card-link:focus-visible {
+  background: var(--events-card-bg);
+  box-shadow: 0 0.45rem 1.25rem rgba(var(--openms-navy-rgb), 0.07);
+  transform: none;
+  border-color: color-mix(in srgb, var(--events-accent) 28%, rgba(var(--openms-navy-rgb), 0.1));
+}
+
+.community-events-upcoming-layout .community-events-home__card-title .events-past-card__title-link:hover,
+.community-events-upcoming-layout .community-events-home__card-title .events-past-card__title-link:focus-visible {
+  color: var(--openms-blue);
+}
+
+@media (max-width: 640px) {
+  /* Keep date | title side-by-side on news + calendar cards */
+  .community-events-upcoming-layout .community-events-home__card-link--split {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    justify-items: stretch;
+    gap: 0.65rem;
+  }
+
+  .community-events-upcoming-layout .community-events-home__card-link--split .community-events-home__date-block {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    justify-self: start;
+    width: fit-content;
+  }
+
+  .community-events-upcoming-layout .community-events-home__card-main {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    min-width: 0;
+    justify-self: stretch;
+  }
+
+  /* Keep location + CTA on one line (e.g. Remote | View details) */
+  .community-events-upcoming-layout .community-events-home__card-footer {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem 0.75rem;
+  }
+
+  .community-events-upcoming-layout .community-events-home__card-location {
+    width: auto;
+    max-width: none;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .community-events-upcoming-layout .community-events-home__card-location > span:last-child {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow-wrap: break-word;
+  }
+
+  .community-events-upcoming-layout .community-events-home__card-footer .events-past-card__cta,
+  .community-events-upcoming-layout .community-events-home__card-footer .openms-step__cta,
+  .community-events-upcoming-layout .community-events-home__card-footer .openms-btn-primary {
+    width: fit-content !important;
+    max-width: none;
+    margin-left: 0;
+    align-self: center;
+    flex: 0 0 auto;
+    justify-content: center;
+  }
+
+  .events-past-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .events-past-toolbar__filter,
+  .events-past-toolbar__select {
+    width: 100%;
+  }
+
+  .events-past-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .events-past-card__date-block {
+    grid-column: 1;
+    grid-row: 1;
+    width: fit-content;
+  }
+
+  .events-past-card__body {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+  }
+
+  .events-past-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .events-past-card__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.community-events-page__update p {
+  max-width: none;
+}
+
+.community-events-page__update a {
+  font-weight: 600;
+}
+
+/* Hero actions — match homepage Get started button layout */
+.community-calendar-layout .openms-lib-hero .openms-lib-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.65rem, 1.2vw, 0.85rem);
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: none;
+  margin: 1.5rem 0 0;
+}
+
+.community-calendar-layout .openms-lib-hero .openms-lib-hero__actions .openms-btn-primary,
+.community-calendar-layout .openms-lib-hero .openms-lib-hero__actions .about-cta-btn--donate {
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.community-calendar-layout .openms-lib-hero .openms-lib-hero__actions .openms-btn-primary {
+  min-width: clamp(8.5rem, 18vw, 10.5rem);
+}
+
+.community-calendar-layout .openms-lib-hero .openms-lib-hero__actions .community-calendar-hero__btn--news {
+  min-width: clamp(8.5rem, 18vw, 10.5rem);
+}
+
+@media (max-width: 720px) {
+  .community-calendar-layout .openms-lib-hero .openms-lib-hero__actions .openms-btn-primary,
+  .community-calendar-layout .openms-lib-hero .openms-lib-hero__actions .about-cta-btn--donate {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,61 @@
+{{- $site := .Site -}}
+{{- $cfg := $site.Params.navbarSearch -}}
+{{- if and $cfg (ne $cfg.enabled false) -}}
+{{- $id := .inputId | default "navbar-search-input" -}}
+{{- $variant := .variant | default "desktop" -}}
+<div
+  class="navbar-search navbar-search--{{ $variant }}"
+  data-search-index="{{ "search-index.json" | relURL }}"
+  data-min-chars="{{ default 2 $cfg.minChars }}"
+  data-max-results="{{ default 8 $cfg.maxResults }}"
+>
+  <button
+    type="button"
+    class="navbar-search__toggle"
+    aria-label="Open search"
+    aria-expanded="false"
+    aria-controls="{{ $id }}-panel"
+  >
+    <svg class="navbar-search__toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.15" />
+      <path d="M15.25 15.25L20 20" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" />
+    </svg>
+  </button>
+
+  <div id="{{ $id }}-panel" class="navbar-search__panel" role="search" hidden>
+    <div class="navbar-search__panel-inner">
+      <label class="navbar-search__label" for="{{ $id }}">Search OpenMS</label>
+      <div class="navbar-search__field">
+        <svg class="navbar-search__field-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.15" />
+          <path d="M15.25 15.25L20 20" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" />
+        </svg>
+        <input
+          type="search"
+          id="{{ $id }}"
+          class="navbar-search__input"
+          name="q"
+          placeholder="{{ default "Search OpenMS…" $cfg.placeholder }}"
+          autocomplete="off"
+          enterkeyhint="search"
+          aria-controls="{{ $id }}-results"
+          aria-expanded="false"
+          aria-autocomplete="list"
+        />
+        <button type="button" class="navbar-search__close" aria-label="Close search">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.75.75 0 1 1 1.06 1.06L9.06 8l3.22 3.22a.75.75 0 1 1-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06z"/>
+          </svg>
+        </button>
+      </div>
+      <div
+        id="{{ $id }}-results"
+        class="navbar-search__results"
+        role="listbox"
+        aria-label="Search results"
+        hidden
+      ></div>
+    </div>
+  </div>
+</div>
+{{- end -}}

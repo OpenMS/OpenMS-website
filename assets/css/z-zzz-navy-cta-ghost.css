@@ -1,0 +1,160 @@
+/* Navy CTA band outline (ghost) buttons — match Become a sponsor “Make a donation”
+   Rest: transparent + 2px white border. Hover: white fill, navy text, scale + white glow. */
+
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost,
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn--ghost,
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-cta-band__btn-ghost,
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-cta-band__btn-ghost:visited,
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-btn--ghost,
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-cta-band__btn-ghost,
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-cta-band__btn-ghost:visited,
+html body .openms-lib-page--contact #get-help a.openms-lib-btn--ghost,
+html body .openms-lib-page--contact #get-help a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--contact #get-help a.openms-lib-cta-band__btn-ghost,
+html body .openms-lib-page--contact #get-help a.openms-lib-cta-band__btn-ghost:visited,
+html body .openms-lib-page--publications #cite-openms a.openms-lib-btn--ghost,
+html body .openms-lib-page--publications #cite-openms a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--publications #cite-openms a.openms-lib-cta-band__btn-ghost,
+html body .openms-lib-page--publications #cite-openms a.openms-lib-cta-band__btn-ghost:visited,
+html body .openms-lib-page--contributors #join-community a.openms-lib-btn--ghost,
+html body .openms-lib-page--contributors #join-community a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--contributors #join-community a.openms-lib-cta-band__btn-ghost,
+html body .openms-lib-page--contributors #join-community a.openms-lib-cta-band__btn-ghost:visited,
+html body .openms-lib-page--contribute .contribute-coc-band__actions a.openms-lib-btn--ghost,
+html body .openms-lib-page--contribute .contribute-coc-band__actions a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-btn--ghost,
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-cta-band__btn-ghost,
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-cta-band__btn-ghost:visited {
+  display: inline-flex !important;
+  box-sizing: border-box;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  height: auto !important;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  white-space: nowrap !important;
+  box-shadow: 0 0 0 0 var(--openms-btn-glow-white, rgba(255, 255, 255, 0.22)) !important;
+  transition: var(--openms-btn-motion) !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost :is(.openms-lib-btn__label, span),
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost:visited :is(.openms-lib-btn__label, span) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  background: transparent !important;
+}
+
+/* Hover — same language as navy-band primary (Contact us): white fill + scale + white glow */
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contact #get-help a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contact #get-help a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--publications #cite-openms a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--publications #cite-openms a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contributors #join-community a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contributors #join-community a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contribute .contribute-coc-band__actions a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) var(--openms-btn-glow-white, rgba(255, 255, 255, 0.22)) !important;
+  outline: none;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(
+  .openms-lib-btn__label,
+  span,
+  i,
+  .fab,
+  .fas,
+  svg,
+  svg path,
+  .openms-lib-btn__icon,
+  .openms-lib-btn__icon svg,
+  .openms-lib-btn__icon svg path
+),
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span),
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span),
+html body .openms-lib-page--contact #get-help a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span),
+html body .openms-lib-page--publications #cite-openms a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span, .openms-lib-btn__icon, svg, svg path),
+html body .openms-lib-page--contributors #join-community a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span),
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span),
+html body .openms-lib-page :is(.contribute-coc-band, .governance-cta-band, .webapps-archived__revival) a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(
+  .openms-lib-btn__label,
+  span,
+  i,
+  .fab,
+  .fas,
+  svg,
+  svg path,
+  .openms-lib-btn__icon,
+  .openms-lib-btn__icon svg,
+  .openms-lib-btn__icon svg path
+) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  fill: var(--openms-navy) !important;
+  background: transparent !important;
+}
+
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost:focus-visible,
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn--ghost:focus-visible,
+html body .openms-lib-page--contact #get-help a.openms-lib-btn--ghost:focus-visible {
+  box-shadow:
+    0 0 0 3px var(--openms-navy),
+    0 0 0 5px rgba(var(--openms-white-rgb), 0.55),
+    0 0 0 calc(5px + var(--openms-btn-glow-size, 6px)) var(--openms-btn-glow-white, rgba(255, 255, 255, 0.22)) !important;
+}

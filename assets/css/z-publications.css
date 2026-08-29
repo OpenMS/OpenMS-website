@@ -1,0 +1,22 @@
+/* All years / year filters — compact label inside the same-size control */
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-toolbar__select,
+html body .openms-lib-page--publications .publications-toolbar__select,
+html body .openms-lib-page--publications .publications-year-nav__btn,
+html body .openms-lib-page--calendar .events-past-toolbar__select {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+}
+
+html body .openms-lib-page--publications .publications-featured {
+  gap: var(--pro-head-to-content) !important;
+}
+
+html body .openms-lib-page--publications .publications-featured .openms-lib-resources__head {
+  margin-bottom: 0 !important;
+}
+
+/* More space after Key publications cards before the next section */
+html body .openms-lib-page--publications #key-publications {
+  padding-bottom: clamp(2.75rem, 6vw, 4.5rem) !important;
+}

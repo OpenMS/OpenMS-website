@@ -1,0 +1,43 @@
+{{- $project := . -}}
+{{- $variant := $project.variant | default "default" -}}
+{{- $name := $project.displayName | default $project.name -}}
+<article class="webapps-archived-entry{{- if eq $variant "nfcore-pipeline" }} webapps-archived-entry--nfcore{{- end }}">
+  {{- with $project.logo }}
+  <div class="webapps-archived-entry__media" aria-hidden="true">
+    <img
+      class="webapps-archived-entry__logo"
+      src="{{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}{{ . }}{{ else }}{{ . | relURL }}{{ end }}"
+      alt=""
+      width="220"
+      height="88"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  {{- end }}
+  <div class="webapps-archived-entry__main">
+    <div class="webapps-archived-entry__body">
+      <div class="webapps-archived-entry__heading">
+        <div class="webapps-archived-entry__meta">
+          {{- with $project.tag }}
+          <p class="webapps-archived-entry__type">{{ . }}</p>
+          {{- end }}
+          <span class="webapps-archived-entry__badge">Reference only</span>
+        </div>
+        <h3 class="webapps-archived-entry__name">{{ $name }}</h3>
+      </div>
+      {{- with $project.description }}
+      <p class="webapps-archived-entry__text">{{ . }}</p>
+      {{- end }}
+      {{- with $project.maintainers }}
+      <p class="webapps-archived-entry__maintainers">
+        <span class="webapps-archived-entry__maintainers-label">Maintainers</span>
+        {{ . }}
+      </p>
+      {{- end }}
+    </div>
+    <footer class="webapps-archived-entry__actions">
+      {{ partial "webapps-project-links.html" (dict "links" $project.links) }}
+    </footer>
+  </div>
+</article>

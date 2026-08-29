@@ -1,0 +1,32 @@
+/* Scientific & technical support — hug Tally height; no empty band under submit */
+html body .openms-lib-page--services-support #quote,
+html body .openms-lib-page--services-support .services-support-application {
+  padding-bottom: clamp(1.75rem, 4vw, 3rem) !important;
+}
+
+html body .openms-lib-page--services-support .services-support-application__form,
+html body .openms-lib-page--services-support .services-page__form-body {
+  height: auto !important;
+  min-height: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+html body .openms-lib-page--services-support .services-page__tally-iframe,
+html body .openms-lib-page--services-support iframe.services-page__tally-iframe {
+  display: block !important;
+  width: 100% !important;
+  /* Do not force height — Tally sets inline height via dynamicHeight */
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+@media (max-width: 720px) {
+  html body .openms-lib-page--services-support .services-page__tally-iframe,
+  html body .openms-lib-page--services-support iframe.services-page__tally-iframe {
+    min-height: 0 !important;
+  }
+}

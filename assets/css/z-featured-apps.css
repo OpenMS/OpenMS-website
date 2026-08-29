@@ -1,0 +1,55 @@
+@media (max-width: 800px) {
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__item .webapps-project-detail-card,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__grid--detail .webapps-project-detail-card,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__item .webapps-project-detail-card,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__grid--detail .webapps-project-detail-card,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card--featured {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-areas:
+      "name logo"
+      "text logo"
+      "maintainers maintainers"
+      "actions actions" !important;
+    grid-template-rows: auto auto auto auto !important;
+  }
+
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap--large,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap--xlarge,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap--wide,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap {
+    grid-area: logo !important;
+    justify-self: end !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__body,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__body {
+    display: contents !important;
+  }
+
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__name,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__name {
+    grid-area: name !important;
+  }
+
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__text,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__text {
+    grid-area: text !important;
+  }
+
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__maintainers,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__maintainers {
+    grid-area: maintainers !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-self: stretch !important;
+  }
+
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__actions,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__actions {
+    grid-area: actions !important;
+  }
+}

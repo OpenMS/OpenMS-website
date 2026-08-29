@@ -1,0 +1,79 @@
+{{- $cfg := .Site.Params.contributorsPage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "OpenMS community" -}}
+{{- $subtitle := index $cfg "subtitle" | default "We are an international team on a mission to support scientific and research communities worldwide by building quality, open-source software." -}}
+<section class="openms-lib-layout">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--contributors">
+<div class="openms-lib-page__intro">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="OpenMS contributors">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "people" }}{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          The people behind <span class="openms-lib-hero__accent">OpenMS</span>.
+        </h1>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/contribute/">
+            <span class="openms-lib-btn__label">Contribute</span>
+          </a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/governance/">
+            <span class="openms-lib-btn__label">Governance</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="openms-lib-page__body" aria-label="OpenMS contributors">
+  <div id="leadership" class="openms-lib-page__anchor">
+    <section class="openms-lib-resources openms-lib-resources--no-feature" aria-labelledby="leadership-board-title">
+      <div class="openms-lib-resources__inner">
+        <header class="openms-lib-resources__head">
+          <p class="openms-lib-resources__eyebrow">Leadership</p>
+          <h2 id="leadership-board-title" class="openms-lib-resources__title">Board of directors</h2>
+          <p class="openms-lib-resources__lead">The board provides legal and financial stewardship for OpenMS Inc., our nonprofit organization.</p>
+        </header>
+        {{ partial "contributors-leadership.html" . }}
+      </div>
+    </section>
+  </div>
+
+  <div id="executive-committee" class="openms-lib-page__anchor">
+    <section class="openms-lib-resources openms-lib-resources--no-feature" aria-labelledby="executive-committee-title">
+      <div class="openms-lib-resources__inner">
+        <header class="openms-lib-resources__head">
+          <p class="openms-lib-resources__eyebrow">Project governance</p>
+          <h2 id="executive-committee-title" class="openms-lib-resources__title">Executive Committee</h2>
+          <p class="openms-lib-resources__lead">The Executive Committee leads development of the OpenMS project and sets technical priorities.</p>
+        </header>
+        <div class="contributors-exec-gallery">
+          {{ readFile "static/gallery/members.html" | safeHTML }}
+        </div>
+        <p class="contributors-exec-note">
+          Learn how the committee works on our <a href="/governance/">Governance page</a>.
+        </p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="openms-lib-page__outro">
+  <div id="join-community" class="openms-lib-page__anchor">
+    <section class="webapps-archived__revival" aria-labelledby="contributors-cta-title">
+      <div class="webapps-archived__revival-copy">
+        <p class="webapps-archived__revival-kicker">Get involved</p>
+        <p class="webapps-archived__revival-text">
+          <strong id="contributors-cta-title">Want to contribute?</strong>
+          <span class="webapps-archived__revival-note">OpenMS is built by a global community. Join us to improve tools, docs, and support for mass spectrometry research.</span>
+        </p>
+      </div>
+      <div class="webapps-archived__revival-actions" role="group" aria-label="Contributor actions">
+        <a class="openms-lib-btn openms-lib-btn--ghost openms-lib-cta-band__btn-ghost" href="/contact/">Contact us</a>
+        <a class="openms-lib-btn openms-lib-btn--primary" href="/contribute/">Contributing Guide</a>
+      </div>
+    </section>
+  </div>
+</div>
+</article>
+</section>

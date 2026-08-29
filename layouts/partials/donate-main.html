@@ -1,0 +1,118 @@
+{{- $cfg := .Site.Params.donatePage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Support OpenMS" -}}
+{{- $subtitle := index $cfg "subtitle" | default "Your gift helps sustain open-source mass spectrometry software, documentation, and community programs." -}}
+{{- $taxNote := index $cfg "taxNote" | default "OpenMS Inc. is a U.S. 501(c)(3) public charity. Donations may be tax-deductible for U.S. donors where permitted by law." -}}
+{{- $zeffyEmbed := strings.TrimSpace (index $cfg "zeffyEmbedUrl" | default "") -}}
+{{- $zeffyForm := strings.TrimSpace (index $cfg "zeffyFormUrl" | default "") -}}
+{{- $hasZeffyEmbed := and $zeffyEmbed (hasPrefix $zeffyEmbed "https://www.zeffy.com/") -}}
+{{- $hasZeffyForm := and $zeffyForm (hasPrefix $zeffyForm "https://www.zeffy.com/") -}}
+<section class="openms-lib-layout">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--donate">
+<div class="openms-lib-page__intro">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="Donate to OpenMS">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "heart" }}{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          Support <span class="openms-lib-hero__accent">OpenMS</span> with a gift.
+        </h1>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="openms-lib-page__body" aria-label="Donate to OpenMS">
+  <div id="donate-impact" class="openms-lib-page__anchor">
+    <section class="openms-lib-resources openms-lib-resources--no-feature" aria-labelledby="donate-impact-title">
+      <div class="openms-lib-resources__inner">
+        <header class="openms-lib-resources__head">
+          <p class="openms-lib-resources__eyebrow">Your impact</p>
+          <h2 id="donate-impact-title" class="openms-lib-resources__title">Where your gift goes</h2>
+          <p class="openms-lib-resources__lead">Every contribution directly supports the open-source tools the mass spectrometry community relies on.</p>
+        </header>
+        <ul class="donate-impact-grid" role="list">
+          <li class="donate-impact-card" role="listitem">
+            <span class="donate-impact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><path fill="currentColor" d="M9.4 16.6 4.8 12l1.4-1.4 3.2 3.2 8.4-8.4L19.2 6.8z"/></svg>
+            </span>
+            <h3 class="donate-impact-card__title">Software engineering</h3>
+            <p class="donate-impact-card__text">Development and maintenance of the OpenMS core library and TOPP tools.</p>
+          </li>
+          <li class="donate-impact-card" role="listitem">
+            <span class="donate-impact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5zM8 13h8v-2H8zm0 4h8v-2H8z"/></svg>
+            </span>
+            <h3 class="donate-impact-card__title">Documentation</h3>
+            <p class="donate-impact-card__text">Tutorials, guides, and reference material that help new users get started.</p>
+          </li>
+          <li class="donate-impact-card" role="listitem">
+            <span class="donate-impact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><path fill="currentColor" d="M16 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-8 0a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-2.7 0-8 1.3-8 4v3h9v-3c0-1 .4-1.9 1-2.6A13 13 0 0 0 8 13zm8 0a13 13 0 0 0-2 .1c1 .8 2 1.9 2 3.9v3h8v-3c0-2.7-5.3-4-8-4z"/></svg>
+            </span>
+            <h3 class="donate-impact-card__title">Community programs</h3>
+            <p class="donate-impact-card__text">Developer meetings, workshops, and events that grow the OpenMS community.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <div id="donate-form" class="openms-lib-page__anchor">
+    <section class="openms-lib-resources openms-lib-resources--no-feature donate-application" aria-labelledby="donate-form-title">
+      <div class="openms-lib-resources__inner donate-application__inner">
+        <header class="openms-lib-resources__head">
+          <p class="openms-lib-resources__eyebrow">Give</p>
+          <h2 id="donate-form-title" class="openms-lib-resources__title">Make a donation</h2>
+          <p class="openms-lib-resources__lead">If OpenMS has been useful in your research, teaching, or company work, please consider a gift commensurate with your resources.</p>
+        </header>
+
+        <div class="donate-application__note">
+          <p>
+            We process donations through
+            <a href="https://www.zeffy.com/" target="_blank" rel="noopener noreferrer">Zeffy</a>,
+            a zero-fee platform for registered nonprofits—so 100% of your contribution reaches OpenMS.
+          </p>
+          <p class="donate-page__tax-note">{{ $taxNote }}</p>
+        </div>
+
+        {{- if $hasZeffyEmbed -}}
+        <div class="donate-application__form donate-page__embed" aria-label="Zeffy donation form">
+          <iframe
+            class="donate-page__zeffy-iframe"
+            src="{{ $zeffyEmbed }}"
+            title="Donate to OpenMS via Zeffy"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allow="payment *"
+            scrolling="no"
+          ></iframe>
+        </div>
+        {{- else if $hasZeffyForm -}}
+        <div class="donate-application__actions" role="group" aria-label="Donation actions">
+          <a
+            class="openms-lib-btn openms-lib-btn--primary"
+            href="{{ $zeffyForm }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="openms-lib-btn__label">Donate on Zeffy</span>
+          </a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/governance/">
+            <span class="openms-lib-btn__label">Governance</span>
+          </a>
+        </div>
+        {{- else -}}
+        <div class="donate-page__pending" role="status">
+          <p>
+            The Zeffy donation form will be embedded on this page soon. Until then,
+            please <a href="/contact/">contact us</a> if you need another way to give.
+          </p>
+        </div>
+        {{- end -}}
+      </div>
+    </section>
+  </div>
+</div>
+</article>
+</section>
