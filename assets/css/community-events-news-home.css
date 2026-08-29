@@ -227,6 +227,16 @@ a.community-news-events__press-link:focus-visible {
   letter-spacing: 0.14em;
 }
 
+/* Upcoming events — dates match blue category labels (and Latest news dates) */
+.home-page .community-news-events__column--events .community-news-events__press-date,
+.home-page .community-news-events__column--events a.community-news-events__press-link:hover .community-news-events__press-date,
+.home-page .community-news-events__column--events a.community-news-events__press-link:focus-visible .community-news-events__press-date,
+.openms-lib-page--calendar .community-news-events__press-date,
+.openms-lib-page--calendar a.community-news-events__press-link:hover .community-news-events__press-date,
+.openms-lib-page--calendar a.community-news-events__press-link:focus-visible .community-news-events__press-date {
+  color: var(--openms-blue);
+}
+
 .community-news-events__press-title,
 .home-page .community-news-events__press-title,
 .home-page .community-news-events__press-link .news-home__card-title,

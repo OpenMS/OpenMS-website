@@ -1,0 +1,20 @@
+/* CoC Overview — report link alignment (card layout from z-zzz) */
+html body .openms-lib-page--code-of-conduct .coc-report {
+  align-items: end !important;
+}
+
+html body .openms-lib-page.openms-lib-page--code-of-conduct aside.coc-report a.coc-report__link,
+html body .openms-lib-page.openms-lib-page--code-of-conduct aside.coc-report a.coc-report__link:hover,
+html body .openms-lib-page.openms-lib-page--code-of-conduct aside.coc-report a.coc-report__link:focus-visible,
+html body .openms-lib-page.openms-lib-page--code-of-conduct aside.coc-report a.coc-report__link:visited,
+html body .openms-lib-page.openms-lib-page--code-of-conduct aside.coc-report a.coc-report__link span[aria-hidden="true"] {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  align-self: end !important;
+}
+
+@media (max-width: 720px) {
+  html body .openms-lib-page--code-of-conduct .coc-report {
+    align-items: start !important;
+  }
+}

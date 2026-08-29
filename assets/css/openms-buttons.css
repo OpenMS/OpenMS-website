@@ -334,19 +334,30 @@
 .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:active,
 #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:hover,
 #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:focus-visible,
-#navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:active,
-.home-page__hero .hero-home__btn--secondary:hover,
-.home-page__hero .hero-home__btn--secondary:focus-visible,
-.home-page__hero .hero-home__btn--secondary:active,
-.home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:hover,
-.home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:focus-visible,
-.home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:active {
+#navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:active {
   background: rgba(var(--openms-white-rgb), 0.08) !important;
   background-color: rgba(var(--openms-white-rgb), 0.08) !important;
   border-color: rgba(var(--openms-white-rgb), 0.78) !important;
   color: var(--openms-white) !important;
   transform: scale(var(--openms-btn-hover-scale));
   box-shadow: 0 0 0 var(--openms-btn-glow-size) rgba(var(--openms-white-rgb), 0.18) !important;
+  outline: none;
+  text-decoration: none;
+}
+
+/* Homepage hero “Explore the library” — white fill hover (clear on navy) */
+.home-page__hero .hero-home__btn--secondary:hover,
+.home-page__hero .hero-home__btn--secondary:focus-visible,
+.home-page__hero .hero-home__btn--secondary:active,
+.home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:hover,
+.home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:focus-visible,
+.home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:active {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale));
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow-white, rgba(255, 255, 255, 0.22)) !important;
   outline: none;
   text-decoration: none;
 }

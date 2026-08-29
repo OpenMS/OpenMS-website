@@ -65,10 +65,11 @@
   --openms-stack-eyebrow: 12px;   /* top title → title */
   --openms-stack-lead: 20px;      /* title → paragraph */
   --openms-stack-paragraph: 16px; /* paragraph → paragraph */
+  --openms-stack-cards: clamp(1.2rem, 2.5vw, 1.75rem); /* title block → cards */
   --pro-stack-eyebrow: var(--openms-stack-eyebrow);
   --pro-stack-lead: var(--openms-stack-lead);
   --pro-stack-actions: var(--pro-space-5);
-  --pro-head-to-content: var(--pro-space-6);
+  --pro-head-to-content: var(--openms-stack-cards);
   --pro-card-gap: clamp(1rem, 2vw, 1.5rem);
   --pro-card-pad: clamp(1rem, 2vw, 1.2rem);
   --pro-card-pad-lg: clamp(1rem, 2vw, 1.2rem);

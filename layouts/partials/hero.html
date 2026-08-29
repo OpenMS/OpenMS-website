@@ -1,7 +1,7 @@
 {{- $hero := .Site.Params.hero }}
 {{- $eyebrow := index $hero "eyebrow" }}
-{{- $titleBefore := index $hero "titleBefore" | default "Open science. " }}
-{{- $titleMid := index $hero "titleMid" | default "Clear results for " }}
+{{- $titleBefore := index $hero "titleBefore" | default "Open science." }}
+{{- $titleMid := index $hero "titleMid" | default "Clear results for" }}
 {{- $titleHighlight := index $hero "titleHighlight" | default "mass spectrometry" }}
 {{- $titleAfter := index $hero "titleAfter" | default "." }}
 {{- $description := index $hero "description" }}
@@ -26,12 +26,39 @@
             {{- end }}
             <h1 class="hero-home__title">
               <span class="hero-home__title-line">{{ $titleBefore }}</span>
+              <span class="hero-home__title-line">{{ $titleMid }}</span>
               <span class="hero-home__title-line">
-                {{ $titleMid }}<span class="hero-home__title-accent">{{ $titleHighlight }}</span>{{ $titleAfter }}
+                <span class="hero-home__title-accent">{{ $titleHighlight }}</span>{{ $titleAfter }}
               </span>
             </h1>
             {{- with $description }}
-            <p class="hero-home__description">{{ . }}</p>
+            <p class="hero-home__description">
+              {{- $leadParts := split . " — " -}}
+              {{- if gt (len $leadParts) 1 -}}
+              {{- $before := index $leadParts 0 -}}
+              {{- $after := trim (index $leadParts 1) " " -}}
+              {{- $massParts := split $before " spectrometry" -}}
+              {{- $runParts := split $after "run vetted apps, " -}}
+              {{- $tail := "" -}}
+              {{- if gt (len $runParts) 1 -}}
+              {{- $tail = index $runParts 1 -}}
+              {{- else -}}
+              {{- $tail = $after -}}
+              {{- end -}}
+              {{- if gt (len $massParts) 1 -}}
+              <span class="hero-home__description-line hero-home__description-line--1">{{ index $massParts 0 }}</span>
+              <span class="hero-home__description-line hero-home__description-line--2">spectrometry{{ index $massParts 1 }} —{{- if gt (len $runParts) 1 }} run vetted apps,{{- end -}}</span>
+              {{- else -}}
+              <span class="hero-home__description-line hero-home__description-line--1">{{ $before }} —</span>
+              {{- if gt (len $runParts) 1 -}}
+              <span class="hero-home__description-line hero-home__description-line--2">run vetted apps,</span>
+              {{- end -}}
+              {{- end -}}
+              <span class="hero-home__description-line hero-home__description-line--3">{{ $tail }}</span>
+              {{- else -}}
+              {{ . }}
+              {{- end -}}
+            </p>
             {{- end }}
           </div>
 
@@ -62,17 +89,19 @@
         </div>
 
         <div class="hero-home__visual">
-          {{ partial "hero-workflow-mockup.html" . }}
-          {{- with $trustNote }}
-          <p class="hero-home__note hero-home__note--under-graphic">
-            {{- range $i, $item := split . " · " }}
-            <span class="hero-home__note-item hero-home__note-item--{{ add $i 1 }}">
-              <span class="hero-home__note-dot" aria-hidden="true"></span>
-              {{ trim $item " " }}
-            </span>
+          <div class="hero-home__diagram">
+            {{ partial "hero-workflow-mockup.html" . }}
+            {{- with $trustNote }}
+            <p class="hero-home__note hero-home__note--under-graphic">
+              {{- range $i, $item := split . " · " }}
+              <span class="hero-home__note-item hero-home__note-item--{{ add $i 1 }}">
+                <span class="hero-home__note-dot" aria-hidden="true"></span>
+                {{ trim $item " " }}
+              </span>
+              {{- end }}
+            </p>
             {{- end }}
-          </p>
-          {{- end }}
+          </div>
           {{- with $microcopy }}
           <ul class="hero-home__highlights" role="list" aria-label="Platform highlights">
             {{- range $i, $item := split . " · " }}

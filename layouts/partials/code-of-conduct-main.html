@@ -69,9 +69,8 @@
                 All reports are reviewed confidentially.
               </p>
             </div>
-            <a class="coc-report__link" href="/report-handling-manual/">
-              Read the report handling manual
-              <span aria-hidden="true">→</span>
+            <a class="coc-report__link openms-cta-link" href="/report-handling-manual/">
+              Read the report handling manual<span aria-hidden="true"> →</span>
             </a>
           </aside>
         </div>
@@ -89,11 +88,6 @@
           </header>
 
           <div class="coc-details__body">
-          <div class="coc-details__toolbar" role="group" aria-label="Policy controls">
-            <button type="button" class="coc-details__tool-btn" data-coc-expand-all>Expand all</button>
-            <button type="button" class="coc-details__tool-btn" data-coc-collapse-all>Collapse all</button>
-          </div>
-
           <div class="coc-details__list" data-coc-topics>
             <details class="coc-details__item" id="coc-part-1">
               <summary class="coc-details__summary">
@@ -213,32 +207,12 @@
       </section>
     </div>
   </div>
-
-  <div class="openms-lib-page__outro">
-    <div id="about-this-document" class="openms-lib-page__anchor">
-      <section class="coc-attribution" aria-label="About this document">
-        <p class="coc-attribution__text">
-          Adapted from The Carpentries, based on Django, the Ada Initiative template, and PyCon 2013. Licensed CC BY 3.0.
-        </p>
-      </section>
-    </div>
-  </div>
 </article>
 </section>
 <script>
 (function () {
   var root = document.querySelector("[data-coc-topics]");
   if (!root) return;
-  var items = root.querySelectorAll("details.coc-details__item");
-  var expandBtn = document.querySelector("[data-coc-expand-all]");
-  var collapseBtn = document.querySelector("[data-coc-collapse-all]");
-
-  function setAll(open) {
-    items.forEach(function (el) { el.open = open; });
-  }
-
-  if (expandBtn) expandBtn.addEventListener("click", function () { setAll(true); });
-  if (collapseBtn) collapseBtn.addEventListener("click", function () { setAll(false); });
 
   function openFromHash() {
     var id = (location.hash || "").replace(/^#/, "");

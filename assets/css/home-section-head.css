@@ -2,7 +2,7 @@
 
 .home-page {
   --home-section-head-max: min(100%, 46rem);
-  --home-section-head-gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem));
+  --home-section-head-gap: var(--pro-head-to-content, var(--openms-stack-cards, clamp(1.2rem, 2.5vw, 1.75rem)));
   --home-section-head-title-size: var(--openms-section-title-size, calc(var(--openms-heading-lg-size) * 1.15));
   --home-section-head-eyebrow-gap: var(--openms-stack-eyebrow, 12px);
   --home-section-head-lead-gap: var(--openms-stack-lead, 20px);

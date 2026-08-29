@@ -5,6 +5,17 @@
 <section class="webapps-archived webapps-archived--catalog" aria-label="{{ index $section "catalogTitle" | default "Archived Projects" }}">
   <div class="webapps-archived__inner">
     <div class="webapps-archived__projects">
+      <ul
+        class="webapps-archived__grid{{ if eq $projectCount 1 }} webapps-archived__grid--solo{{ end }}"
+        role="list"
+        aria-label="Archived apps"
+      >
+        {{- range $projects }}
+        <li class="webapps-archived__item" role="listitem">
+          {{ partial "webapps-archived-project.html" . }}
+        </li>
+        {{- end }}
+      </ul>
       {{- with index $section "notice" }}
       {{- $notice := . -}}
       {{- with .points }}
@@ -18,7 +29,7 @@
           <h3 id="archived-good-to-know-title" class="webapps-archived__notice-title">{{ index $notice "label" | default "Good to know" }}</h3>
         </div>
         <ul class="webapps-archived__notice-list" role="list">
-          {{- range $i, $point := . }}
+          {{- range $point := . }}
           {{- $isMap := reflect.IsMap $point -}}
           {{- $title := "" -}}
           {{- $text := "" -}}
@@ -29,7 +40,6 @@
             {{- $text = $point -}}
           {{- end -}}
           <li class="webapps-archived__notice-item" role="listitem">
-            <span class="webapps-archived__notice-index" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
             <div class="webapps-archived__notice-copy">
               {{- with $title }}
               <p class="webapps-archived__notice-heading">{{ . }}</p>
@@ -44,17 +54,6 @@
       </aside>
       {{- end }}
       {{- end }}
-      <ul
-        class="webapps-archived__grid{{ if eq $projectCount 1 }} webapps-archived__grid--solo{{ end }}"
-        role="list"
-        aria-label="Archived apps"
-      >
-        {{- range $projects }}
-        <li class="webapps-archived__item" role="listitem">
-          {{ partial "webapps-archived-project.html" . }}
-        </li>
-        {{- end }}
-      </ul>
     </div>
 
     {{- $revivalPrompt := index $section "revivalPrompt" -}}
@@ -75,7 +74,7 @@
         </p>
       </div>
       <div class="webapps-archived__revival-actions" role="group" aria-label="Revive a project">
-        <a class="openms-lib-btn openms-lib-btn--ghost" href="{{ $contactUrl }}">{{ $contactText }}</a>
+        <a class="openms-lib-btn openms-lib-btn--ghost openms-lib-cta-band__btn-ghost" href="{{ $contactUrl }}">{{ $contactText }}</a>
         <a class="openms-lib-btn openms-lib-btn--primary" href="{{ $sponsorUrl }}">{{ $sponsorText }}</a>
       </div>
     </div>

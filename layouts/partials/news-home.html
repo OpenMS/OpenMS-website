@@ -52,12 +52,18 @@
       <article class="community-events-home__card news-home__card community-news-events__press-card">
         <a class="community-news-events__press-link news-home__card-link" href="{{ .RelPermalink }}">
           <p class="community-news-events__press-meta">
+            {{- if and $label (ne $label "News") }}
             <span class="community-news-events__press-label">{{ $label }}</span>
+            {{- if not .Date.IsZero }}
             <span class="community-news-events__press-sep" aria-hidden="true">·</span>
+            {{- end }}
+            {{- end }}
+            {{- if not .Date.IsZero }}
             <time
               class="community-news-events__press-date"
               datetime="{{ .Date.Format "2006-01-02" }}"
             >{{ upper (.Date.Format "2 Jan 2006") }}</time>
+            {{- end }}
           </p>
           <h3 class="community-news-events__press-title news-home__card-title">{{ .Title }}</h3>
           {{- with $summary -}}

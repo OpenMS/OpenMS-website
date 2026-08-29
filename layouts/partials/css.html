@@ -76,3 +76,17 @@
 <link rel="stylesheet" href="{{ $custom_style.RelPermalink }}" integrity="{{ $custom_style.Data.Integrity }}">
 {{- end -}}
 {{- end -}}
+
+{{- range $userCssFiles -}}
+{{- $cssFileName := path.Base .Name -}}
+{{- if strings.HasPrefix $cssFileName "z" -}}
+{{- $targetFile := printf "css/%s" $cssFileName -}}
+{{ if $inServerMode -}}
+{{ $custom_style := . | resources.ExecuteAsTemplate $targetFile $page -}}
+<link rel="stylesheet" href="{{ $custom_style.RelPermalink }}">
+{{ else }}
+{{ $custom_style := . | resources.ExecuteAsTemplate $targetFile $page | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $custom_style.RelPermalink }}" integrity="{{ $custom_style.Data.Integrity }}">
+{{- end -}}
+{{- end -}}
+{{- end -}}

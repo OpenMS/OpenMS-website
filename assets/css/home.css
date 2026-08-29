@@ -35,13 +35,16 @@
   --hero-space-lg: clamp(2rem, 4.5vh, 3.25rem);
   /* Breathing room between copy and graphic */
   --hero-col-gap: clamp(1.75rem, 3.5vw, 3.25rem);
-  /* Diagram stays a supporting visual, not a second full-width panel */
-  --hero-diagram-max: clamp(20rem, 34vw, 34rem);
+  /* Fixed diagram size at every viewport (shrinks only if the rail is narrower) */
+  --hero-diagram-max: 34rem;
+  --hero-diagram-height: 11.5rem;
   --hero-diagram-inset-right: clamp(1.25rem, 3.5vw, 2.75rem);
   /* Shared measure for the lead paragraph and everything under it */
   --hero-lead-width: min(100%, 48ch);
-  /* Hero lead a step above the site body-lg token */
+  /* Hero lead a step above the site body-lg token — fluid */
   --openms-body-size-lg: clamp(1.05rem, 0.98rem + 0.28vw, 1.25rem);
+  --openms-page-hero-title-size: clamp(1.95rem, 0.85rem + 3.2vw, 3.35rem);
+  --hero-home-title-size: var(--openms-page-hero-title-size);
   margin: 0;
   padding: 0;
   position: relative;
@@ -119,18 +122,18 @@
   .home-page__hero .hero-home__visual {
     grid-column: 2;
     grid-row: 1;
-    justify-self: stretch;
+    justify-self: start;
     align-self: end;
     box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
+    width: min(100%, var(--hero-diagram-max));
+    max-width: var(--hero-diagram-max);
     min-width: 0;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .home-page__hero .hero-mockup,
@@ -173,7 +176,7 @@
 
   .home-page__hero .hero-mockup__chart {
     width: 100%;
-    height: clamp(8rem, 15vw, 11.5rem);
+    height: var(--hero-diagram-height);
   }
 
   .home-page__hero .hero-home__highlights {
@@ -187,13 +190,13 @@
 
 @media (min-width: 901px) and (max-width: 1199px) {
   .home-page__hero {
-    /* Same 60/40 split as lg — slightly tighter gap on mid widths */
-    --hero-col-gap: clamp(1.25rem, 2.5vw, 2rem);
-    --hero-diagram-max: 100%;
+    --hero-col-gap: clamp(1rem, 2vw, 1.5rem);
+    --hero-diagram-max: 40rem;
+    --hero-lead-width: min(100%, 36ch);
   }
 
   .home-page__hero .hero-home__hero-grid {
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
     column-gap: var(--hero-col-gap);
   }
 
@@ -202,25 +205,22 @@
   }
 
   .home-page__hero .hero-home__title {
-    line-height: 1.12;
+    line-height: 1.1;
+    max-width: min(100%, 22rem);
   }
 
   .home-page__hero .hero-home__description {
-    width: 100%;
+    width: max-content;
     max-width: 100%;
     line-height: 1.55;
   }
 
   .home-page__hero .hero-home__visual {
     justify-self: stretch;
-    width: 100%;
-    max-width: 100%;
+    width: min(100%, var(--hero-diagram-max));
+    max-width: var(--hero-diagram-max);
     min-width: 0;
-    overflow: hidden;
-  }
-
-  .home-page__hero .hero-mockup__chart {
-    height: clamp(6.75rem, 16vw, 9.5rem);
+    overflow: visible;
   }
 
   .home-page__hero .hero-home__visual-shell {
@@ -244,22 +244,45 @@
 }
 
 @media (min-width: 1200px) {
-  .home-page__hero .hero-home__hero-grid {
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  .home-page__hero {
+    --hero-diagram-max: 34rem;
+    --hero-diagram-height: 11.5rem;
+    --hero-col-gap: 1.25rem;
   }
 
-  .home-page__hero {
-    --hero-diagram-max: 100%;
+  .home-page__hero .hero-home__hero-grid {
+    grid-template-columns: minmax(0, 36rem) var(--hero-diagram-max);
+    justify-content: start;
+    align-items: center;
+    column-gap: var(--hero-col-gap);
+  }
+
+  .home-page__hero .hero-home__visual {
+    justify-self: start;
+    align-self: center;
+    width: var(--hero-diagram-max);
+    max-width: var(--hero-diagram-max);
+    overflow: visible;
+  }
+
+  .home-page__hero .hero-home__copy {
+    max-width: 36rem;
   }
 }
 
 @media (min-width: 1440px) {
-  .home-page__hero .hero-home__hero-grid {
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  .home-page__hero {
+    --hero-diagram-max: 36rem;
+    --hero-diagram-height: 12rem;
+    --hero-col-gap: 1.5rem;
   }
 
-  .home-page__hero {
-    --hero-diagram-max: 100%;
+  .home-page__hero .hero-home__hero-grid {
+    grid-template-columns: minmax(0, 38rem) var(--hero-diagram-max);
+  }
+
+  .home-page__hero .hero-home__copy {
+    max-width: 38rem;
   }
 }
 
@@ -290,7 +313,7 @@
 
 .home-page__hero .hero-home__title,
 .home-page__hero .hero-home__title-accent {
-  color: var(--openms-dark);
+  color: var(--openms-white);
   font-family: var(--openms-font-heading);
   font-weight: var(--openms-page-hero-title-weight, var(--openms-heading-xl-weight));
   /* Size follows the copy column (cqi), with a vw fallback when unsupported */
@@ -322,6 +345,32 @@
   overflow: visible;
   padding-top: 0;
   min-width: 0;
+}
+
+.home-page__hero .hero-home__diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: min(100%, var(--hero-diagram-max));
+  max-width: var(--hero-diagram-max);
+  min-width: 0;
+  container-type: inline-size;
+  container-name: hero-diagram;
+}
+
+.home-page__hero .hero-home__diagram .hero-mockup__chart {
+  height: var(--hero-diagram-height);
+  gap: 0.35rem;
+}
+
+.home-page__hero .hero-home__diagram .hero-mockup,
+.home-page__hero .hero-home__diagram .hero-mockup__stage,
+.home-page__hero .hero-home__diagram .hero-mockup__chart,
+.home-page__hero .hero-home__diagram .hero-home__note {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .home-page__hero .hero-home__visual .hero-home__highlights {
@@ -357,14 +406,21 @@
 
 .home-page__hero .hero-home__description {
   color: rgba(var(--openms-white-rgb), 0.7);
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: max-content;
   max-width: 100%;
   margin: var(--openms-stack-lead, 20px) 0 0;
   text-align: left;
   font-size: var(--openms-body-size-lg);
-  line-height: 1.65;
-  text-wrap: pretty;
-  overflow-wrap: break-word;
+  line-height: 1.55;
+  overflow-wrap: normal;
+}
+
+.home-page__hero .hero-home__description-line {
+  display: block;
+  white-space: nowrap;
 }
 
 @media (min-width: 901px) {
@@ -419,15 +475,15 @@
   max-width: none;
   margin-inline: 0;
   min-width: 0;
-  /* Title/description scale to this column, not the full viewport */
+  /* Title/description scale to this column */
   container-type: inline-size;
   container-name: hero-copy;
-  --openms-page-hero-title-size: clamp(1.65rem, 1.05rem + 2.6vw, 3.25rem);
+  --openms-page-hero-title-size: clamp(1.95rem, 0.85rem + 3.2vw, 3.35rem);
 }
 
 @supports (font-size: 1cqi) {
   .home-page__hero .hero-home__copy {
-    --openms-page-hero-title-size: clamp(1.65rem, 9.5cqi, 3.25rem);
+    --openms-page-hero-title-size: clamp(1.95rem, 0.85rem + 3.2vw, 3.35rem);
   }
 }
 
@@ -497,26 +553,34 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: flex-start;
-  gap: 0.5rem 1rem;
-  width: max-content;
+  justify-content: space-between;
+  gap: clamp(0.35rem, 1.4cqi, 0.85rem);
+  width: 100%;
   max-width: 100%;
   margin: 0;
   color: var(--openms-white);
   text-align: left;
   white-space: nowrap;
+  font-size: clamp(0.875rem, 2.9cqi, 1.0625rem);
+  line-height: 1.35;
+  box-sizing: border-box;
 }
 
-.home-page__hero .hero-home__visual .hero-home__note--under-graphic {
-  flex-wrap: wrap;
+.home-page__hero .hero-home__visual .hero-home__note--under-graphic,
+.home-page__hero .hero-home__diagram .hero-home__note--under-graphic {
+  flex-wrap: nowrap;
   width: 100%;
   max-width: 100%;
-  margin: clamp(1.1rem, 2.2vh, 1.6rem) 0 0;
-  white-space: normal;
+  margin: clamp(0.85rem, 1.8vh, 1.25rem) 0 0;
+  white-space: nowrap;
 }
 
 .home-page__hero .hero-home__note-item {
-  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 1 auto;
+  gap: clamp(0.28rem, 0.9cqi, 0.45rem);
+  min-width: 0;
   white-space: nowrap;
 }
 
@@ -524,7 +588,7 @@
   background: none;
   -webkit-background-clip: unset;
   background-clip: unset;
-  color: var(--openms-orange);
+  color: var(--openms-white);
   -webkit-text-fill-color: currentColor;
 }
 
@@ -544,27 +608,25 @@
 
 @media (max-width: 900px) {
   .home-page__hero .hero-home {
-    min-height: clamp(30rem, 76vh, 40rem);
+    min-height: 0;
   }
 
   .home-page__hero .hero-home__hero-grid {
-    gap: clamp(1.25rem, 3vh, 1.75rem);
+    gap: clamp(1.35rem, 3.2vh, 1.85rem);
   }
 
-  /* Stacked: graphic under the copy; lead copy matches the graphic width */
+  /* Stacked: graphic under the copy; copy uses full content width */
   .home-page__hero {
-    --hero-diagram-max: min(100%, 26rem);
-    /* Paragraph, CTAs, and trust line share the graphic's width */
-    --hero-lead-width: var(--hero-diagram-max);
+    --hero-lead-width: 100%;
   }
 
   .home-page__hero .hero-home__visual {
     justify-content: flex-start;
     align-items: stretch;
-    width: 100%;
+    width: min(100%, var(--hero-diagram-max));
     max-width: var(--hero-diagram-max);
     margin-inline: 0;
-    margin-top: clamp(0.35rem, 1vh, 0.75rem);
+    margin-top: 0.15rem;
   }
 
   .home-page__hero .hero-home__visual-shell {
@@ -595,43 +657,22 @@
 
   .home-page__hero .hero-mockup__chart {
     width: 100%;
-    height: clamp(6.5rem, 42vw, 9rem);
+    height: var(--hero-diagram-height);
   }
 
   .home-page__hero .hero-home__visual .hero-home__highlights {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.5rem 0.55rem;
-    width: 100%;
-    margin-top: clamp(1rem, 2vh, 1.35rem);
-    padding: 0;
-  }
-
-  .home-page__hero .hero-home__highlight {
-    white-space: nowrap;
-    flex: 0 0 auto;
-    text-align: center;
-    padding: 0.45rem 0.8rem;
-  }
-
-  .home-page__hero .hero-home__note {
-    flex-wrap: nowrap;
-    gap: 0.4rem 0.75rem;
-    font-size: clamp(0.7rem, 2.6vw, var(--openms-text-min));
+    display: none;
   }
 
   .home-page__hero .hero-home__main {
-    padding: clamp(3.75rem, 8vh, 5.25rem) var(--home-pad-x)
-      clamp(2.25rem, 5vh, 3rem);
+    padding: clamp(4.5rem, 8vh, 5.75rem) var(--home-pad-x)
+      clamp(2rem, 4.5vh, 2.85rem);
   }
 
   .home-page__hero .hero-home__inner {
     gap: clamp(1.25rem, 3vh, 1.75rem);
   }
 
-  /* Stacked: description + CTAs match the graphic width; title keeps its lines */
   .home-page__hero .hero-home__description,
   .home-page__hero .hero-home__footer,
   .home-page__hero .hero-home__actions-block,
@@ -653,7 +694,7 @@
   }
 
   .home-page__hero .hero-home__description {
-    line-height: 1.6;
+    line-height: 1.55;
   }
 
   .home-page__hero .hero-home__copy {
@@ -672,12 +713,7 @@
 }
 
 @media (max-width: 720px) {
-  /* Hide mockup chrome labels + trust chips on phones */
-  .home-page__hero .hero-mockup__labels,
-  .home-page__hero .hero-mockup__chrome-title,
-  .home-page__hero .hero-mockup__chrome-brand,
-  .home-page__hero .hero-home__note,
-  .home-page__hero .hero-home__note--under-graphic,
+  /* Empty microcopy chips stay off; chrome/trust handled in z-hero-sm.css */
   .home-page__hero .hero-home__highlights {
     display: none !important;
   }
@@ -770,18 +806,13 @@
 }
 
 @media (min-width: 481px) and (max-width: 900px) {
-  .home-page__hero {
-    /* Tablet stack: a bit under full content width */
-    --hero-diagram-max: min(100%, 34rem);
-  }
-
   .home-page__hero .hero-home__main {
-    padding-top: clamp(3.75rem, 7vh, 5.5rem);
-    padding-bottom: clamp(1.5rem, 3.5vh, 2.25rem);
+    padding-top: clamp(4.75rem, 7.5vh, 6rem);
+    padding-bottom: clamp(2.25rem, 4vh, 3rem);
   }
 
   .home-page__hero .hero-home {
-    min-height: clamp(28rem, 68vh, 36rem);
+    min-height: 0;
   }
 
   .home-page__hero .hero-home__content {
@@ -796,12 +827,12 @@
 
   .home-page__hero .hero-home__description {
     width: 100%;
-    max-width: 100%;
+    max-width: min(100%, 46ch);
     text-wrap: pretty;
   }
 
   .home-page__hero .hero-home__visual {
-    margin-top: clamp(0.35rem, 1.2vh, 0.75rem);
+    margin-top: 0.15rem;
   }
 }
 
@@ -1905,7 +1936,7 @@
   color: var(--openms-navy);
   border: none;
   overflow: visible;
-  --projects-logo-height: clamp(4.75rem, 7.5vw, 6.5rem);
+  --projects-logo-height: 6.5rem;
   --projects-max: var(--pro-max, var(--home-max));
   --projects-grid-gap: clamp(2rem, 3.6vw, 3rem);
 }
@@ -2163,8 +2194,8 @@
   --webapps-card-pad: 0;
   --projects-card-inset-y: 1.05rem;
   --projects-card-inset-x: 1.1rem;
-  --projects-logo-height: clamp(4.75rem, 7.5vw, 6.5rem);
-  --projects-logo-slot: clamp(6.25rem, 9.5vw, 8.5rem);
+  --projects-logo-height: 6.5rem;
+  --projects-logo-slot: 8.25rem;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -2253,21 +2284,21 @@
 }
 
 .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="naseweis"] {
-  height: clamp(3rem, 4.8vw, 4rem);
+  height: 4.25rem;
   max-width: min(10rem, 100%);
-  max-height: clamp(3rem, 4.8vw, 4rem);
+  max-height: 4.25rem;
 }
 
 .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="openDDA"] {
-  height: clamp(6.25rem, 9.5vw, 8.5rem);
-  max-width: min(20rem, 100%);
-  max-height: clamp(6.25rem, 9.5vw, 8.5rem);
+  height: 8.25rem;
+  max-width: min(22rem, 100%);
+  max-height: 8.25rem;
 }
 
 .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant"] {
-  height: clamp(6.25rem, 9.5vw, 8.5rem);
-  max-width: min(20rem, 100%);
-  max-height: clamp(6.25rem, 9.5vw, 8.5rem);
+  height: 8.25rem;
+  max-width: min(22rem, 100%);
+  max-height: 8.25rem;
 }
 
 .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__surface:hover .webapps-project-card__logo,
@@ -2865,19 +2896,7 @@
 
   .home-page__block--projects .webapps-project-card--catalog {
     --webapps-card-pad: 0;
-    --projects-logo-height: clamp(4rem, 18vw, 5.5rem);
-  }
-}
-
-@media (max-width: 720px) {
-  .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="flashapp" i],
-  .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="OpenDIAKiosk" i],
-  .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="umetaflow" i],
-  .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="openDDA" i],
-  .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i] {
-    height: clamp(6.5rem, 32vw, 8.25rem);
-    max-height: clamp(6.5rem, 32vw, 8.25rem);
-    max-width: min(22rem, 100%);
+    --projects-logo-height: 6.5rem;
   }
 }
 
@@ -2961,8 +2980,14 @@
   z-index: 1;
 }
 
+@media (max-width: 900px) {
+  .home-page__hero .hero-home {
+    min-height: 0;
+  }
+}
+
 .home-page__hero .hero-home__title {
-  color: var(--openms-dark);
+  color: var(--openms-white);
 }
 
 .home-page__hero .hero-home__title-accent {
@@ -2970,7 +2995,7 @@
   background: none;
   -webkit-background-clip: unset;
   background-clip: unset;
-  color: var(--openms-dark);
+  color: var(--openms-white);
   -webkit-text-fill-color: currentColor;
 }
 

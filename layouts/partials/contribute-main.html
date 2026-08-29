@@ -1,7 +1,7 @@
 {{- $cfg := .Site.Params.contributePage | default dict -}}
 {{- $links := index $cfg "links" | default dict -}}
 {{- $eyebrow := index $cfg "eyebrow" | default "Community" -}}
-{{- $subtitle := index $cfg "subtitle" | default "Code, docs, design, outreach, and more — find a path that fits your skills." -}}
+{{- $subtitle := index $cfg "subtitle" | default "Code, docs, design, outreach, and more — pick a path that matches your skills." -}}
 {{- $discord := index $links "discord" | default "https://discord.com/invite/v9tv5BxPch" -}}
 {{- $githubDiscussions := index $links "githubDiscussions" | default "https://github.com/OpenMS/OpenMS/discussions" -}}
 {{- $githubIssues := index $links "githubIssues" | default "https://github.com/openms/openms/issues/new/choose" -}}
@@ -25,23 +25,17 @@
         </h1>
         <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
         <div class="openms-lib-hero__actions" aria-label="Get started">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="#ways-to-contribute">
+            <span class="openms-lib-btn__label">Explore ways to contribute</span>
+          </a>
           <a
-            class="openms-lib-btn openms-lib-btn--primary"
+            class="openms-lib-btn openms-lib-btn--ghost"
             href="{{ $discord }}"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i class="fab fa-discord" aria-hidden="true"></i>
             <span class="openms-lib-btn__label">Join Discord</span>
-          </a>
-          <a
-            class="openms-lib-btn openms-lib-btn--ghost"
-            href="{{ $githubDiscussions }}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fab fa-github" aria-hidden="true"></i>
-            <span class="openms-lib-btn__label">Discuss on GitHub</span>
           </a>
         </div>
       </div>
@@ -56,7 +50,7 @@
       <header class="contribute-channels__head">
         <p class="contribute-channels__eyebrow">Channels</p>
         <h2 id="communication-channels-title" class="contribute-channels__title">Stay in touch</h2>
-        <p class="contribute-channels__lead">Most project discussions take place on GitHub and Discord. Pick the channel that matches how you like to work.</p>
+        <p class="contribute-channels__lead">Use GitHub for lasting project work and Discord for quick questions. Governance explains how decisions are made.</p>
       </header>
 
       <div class="contribute-channels__strip" role="list">
@@ -64,7 +58,7 @@
           <span class="contribute-channel__index" aria-hidden="true">01</span>
           <span class="contribute-channel__icon" aria-hidden="true"><i class="fab fa-github"></i></span>
           <h3 class="contribute-channel__title">GitHub Issues &amp; PRs</h3>
-          <p class="contribute-channel__text">Best for lasting, searchable project work — bug reports, feature requests, and code review.</p>
+          <p class="contribute-channel__text">Bug reports, feature requests, and code review — searchable and durable.</p>
           <a class="contribute-channel__link" href="{{ $githubIssues }}" target="_blank" rel="noopener noreferrer">Open a new issue<span aria-hidden="true"> →</span></a>
         </article>
 
@@ -72,7 +66,7 @@
           <span class="contribute-channel__index" aria-hidden="true">02</span>
           <span class="contribute-channel__icon" aria-hidden="true"><i class="fab fa-discord"></i></span>
           <h3 class="contribute-channel__title">Discord</h3>
-          <p class="contribute-channel__text">Best for quick questions, early ideas, and connecting with contributors in real time.</p>
+          <p class="contribute-channel__text">Real-time help, early ideas, and day-to-day conversation with contributors.</p>
           <a class="contribute-channel__link" href="{{ $discord }}" target="_blank" rel="noopener noreferrer">Join Discord<span aria-hidden="true"> →</span></a>
         </article>
 
@@ -80,28 +74,29 @@
           <span class="contribute-channel__index" aria-hidden="true">03</span>
           <span class="contribute-channel__icon" aria-hidden="true"><i class="fas fa-sitemap"></i></span>
           <h3 class="contribute-channel__title">Governance</h3>
-          <p class="contribute-channel__text">Learn how the project is organized and how decisions are made.</p>
+          <p class="contribute-channel__text">How OpenMS is organized and how project decisions get made.</p>
           <a class="contribute-channel__link" href="{{ $governance }}">Read governance<span aria-hidden="true"> →</span></a>
         </article>
       </div>
     </section>
   </div>
 
-  {{/* 2 — Ways: intro + numbered contribution track */}}
+  {{/* 2 — Ways: featured development + equal contribution cards */}}
   <div id="ways-to-contribute" class="openms-lib-page__anchor">
     <section class="contribute-ways" aria-labelledby="ways-to-contribute-title">
       <header class="contribute-ways__head">
         <p class="contribute-ways__eyebrow">Get involved</p>
         <h2 id="ways-to-contribute-title" class="contribute-ways__title">Ways to contribute</h2>
-        <p class="contribute-ways__lead">Your choices aren’t limited to programming — there are many areas where we need your help.</p>
+        <p class="contribute-ways__lead">Programming is one option — docs, design, the website, and community work all move OpenMS forward.</p>
       </header>
 
       <ol class="contribute-track">
         <li class="contribute-track__item contribute-track__item--wide" id="contribute-code">
+          <span class="contribute-track__badge">Most common</span>
           <span class="contribute-track__icon" aria-hidden="true"><i class="fas fa-code"></i></span>
           <div class="contribute-track__body">
             <h3 class="contribute-track__title">Contribute to development</h3>
-            <p class="contribute-track__text">You do not need to understand the entire codebase to start — many people begin with docs, bug reports, or small fixes. Pick the project you want to contribute to:</p>
+            <p class="contribute-track__text">Start small — docs, bug reports, or focused fixes. You do not need the whole codebase. Choose a project:</p>
             <ul class="contribute-project-links" role="list">
               <li>
                 <a class="contribute-project-link" href="/openms-lib/#for-developers">
@@ -131,7 +126,7 @@
           <span class="contribute-track__icon" aria-hidden="true"><i class="fas fa-hammer"></i></span>
           <div class="contribute-track__body">
             <h3 class="contribute-track__title">Build from source</h3>
-            <p class="contribute-track__text">Compile the latest OpenMS with platform-specific guides for Windows, macOS, and Linux.</p>
+            <p class="contribute-track__text">Compile the latest OpenMS with platform guides for Windows, macOS, and Linux.</p>
             <div class="contribute-os-buttons" role="group" aria-label="Build platforms">
               <a class="openms-lib-btn openms-lib-btn--ghost openms-lib-developers__platform-btn" href="https://archive.openms.de/openms/Documentation/release/latest/html/install_win.html" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-windows" aria-hidden="true"></i>
@@ -167,8 +162,8 @@
           <span class="contribute-track__icon" aria-hidden="true"><i class="fas fa-palette"></i></span>
           <div class="contribute-track__body">
             <h3 class="contribute-track__title">Graphic design</h3>
-            <p class="contribute-track__text">Illustrations for docs, images for the site, and visual polish across the project.</p>
-            <a class="contribute-track__cta" href="mailto:{{ $communityEmail }}">Get in touch<span aria-hidden="true"> →</span></a>
+            <p class="contribute-track__text">Illustrations for docs, site imagery, and visual polish across the project.</p>
+            <a class="contribute-track__cta" href="mailto:{{ $communityEmail }}">Email the community team<span aria-hidden="true"> →</span></a>
           </div>
         </li>
 
@@ -187,15 +182,15 @@
         </li>
       </ol>
 
-      {{/* Support: horizontal CTA band */}}
+      {{/* Funding — separate from contribution paths */}}
       <aside class="contribute-support" id="contribute-support" aria-labelledby="contribute-support-title">
         <div class="contribute-support__copy">
-          <p class="contribute-support__kicker">Support</p>
-          <h3 id="contribute-support-title" class="contribute-support__title">Fundraising</h3>
-          <p class="contribute-support__text">Help secure grants and sponsorships that keep OpenMS stable and growing.</p>
+          <p class="contribute-support__kicker">Funding</p>
+          <h3 id="contribute-support-title" class="contribute-support__title">Sponsor OpenMS</h3>
+          <p class="contribute-support__text">Organizational sponsorships and grants keep OpenMS free, maintained, and growing.</p>
         </div>
         <a class="openms-lib-btn openms-lib-btn--primary contribute-support__cta" href="/sponsor-us/">
-          <span class="openms-lib-btn__label">Sponsorship program</span>
+          <span class="openms-lib-btn__label">View sponsorship program</span>
         </a>
       </aside>
 
@@ -206,8 +201,7 @@
             <p class="contribute-outreach__eyebrow">Outreach</p>
             <h3 id="contribute-outreach-title" class="contribute-outreach__title">Community coordination</h3>
             <p class="contribute-outreach__text">
-              Through community contact we share our work more widely and learn where we’re falling short.
-              Help with events, a newsletter, or a blog — or amplify OpenMS on social channels.
+              Help with events, newsletters, or blog posts — or amplify OpenMS on social channels so more researchers find the project.
             </p>
             <p class="contribute-outreach__contact">
               Reach out to
@@ -270,7 +264,7 @@
           <p class="contribute-coc-band__kicker">Community</p>
           <p class="contribute-coc-band__text">
             <strong id="code-of-conduct-title">Code of Conduct</strong>
-            <span class="contribute-coc-band__note">We aspire to treat everyone equally and value all contributions. Our Code of Conduct helps keep the community open and welcoming.</span>
+            <span class="contribute-coc-band__note">We treat everyone equally and value every contribution. The Code of Conduct keeps OpenMS open and welcoming.</span>
           </p>
         </div>
         <div class="contribute-coc-band__actions" role="group" aria-label="Code of Conduct">

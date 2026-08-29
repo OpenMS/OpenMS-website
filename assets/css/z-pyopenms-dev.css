@@ -1,0 +1,86 @@
+html body .openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) {
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+}
+
+html body .openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) > :nth-child(-n + 3) {
+  grid-column: span 4 !important;
+}
+
+html body .openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) > :nth-child(4) {
+  grid-column: span 5 !important;
+}
+
+html body .openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) > :nth-child(5) {
+  grid-column: span 7 !important;
+}
+
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__cards-grid > :last-child .openms-lib-developers__platforms {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+}
+
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__cards-grid > :last-child .openms-lib-developers__platforms .openms-lib-btn {
+  flex: 0 1 auto !important;
+  width: auto !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 700px) {
+  html body .openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body .openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) > * {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+html body .openms-lib-page--pyopenms-viz-pro #for-developers .openms-lib-developers__card-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  transform: none !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin-top: auto !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transition: gap 0.2s ease, color 0.2s ease !important;
+}
+
+html body .openms-lib-page--pyopenms-viz-pro #for-developers .openms-lib-developers__card-link:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--pyopenms-viz-pro #for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__card-link,
+html body .openms-lib-page--pyopenms-viz-pro #for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__card-link:is(:hover, :focus-visible, :active) {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+  transform: none !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin-top: auto !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .openms-lib-page--pyopenms-viz-pro #for-developers .openms-lib-developers__card-link span[aria-hidden="true"] {
+  display: inline-block !important;
+  transform: none !important;
+  transition: transform 0.2s ease !important;
+}
+
+html body .openms-lib-page--pyopenms-viz-pro #for-developers .openms-lib-developers__card-link:is(:hover, :focus-visible, :active) span[aria-hidden="true"],
+html body .openms-lib-page--pyopenms-viz-pro #for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__card-link span[aria-hidden="true"] {
+  transform: translateX(0.2rem) !important;
+}
+
+html body .openms-lib-page--pyopenms-viz-pro #for-developers a.openms-lib-btn.openms-lib-developers__platform-btn,
+html body .openms-lib-page--pyopenms-viz-pro #for-developers a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--pyopenms-viz-pro #for-developers .openms-lib-developers__card:is(:hover, :focus-within) a.openms-lib-btn.openms-lib-developers__platform-btn,
+html body .openms-lib-page--pyopenms-viz-pro #for-developers .openms-lib-developers__card:is(:hover, :focus-within) a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible, :active) {
+  transform: none !important;
+}

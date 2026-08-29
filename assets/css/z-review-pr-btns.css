@@ -1,0 +1,19 @@
+html body .openms-lib-page #for-developers .openms-lib-developers__card--review a.openms-lib-btn.openms-lib-developers__platform-btn,
+html body .openms-lib-page #for-developers .openms-lib-developers__card--review a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page #for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) a.openms-lib-btn.openms-lib-developers__platform-btn,
+html body .openms-lib-page #for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page .openms-lib-developers__route--review a.openms-lib-btn.openms-lib-developers__platform-btn,
+html body .openms-lib-page .openms-lib-developers__route--review a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page .openms-lib-developers__route--review:is(:hover, :focus-within) a.openms-lib-btn.openms-lib-developers__platform-btn {
+  transform: none !important;
+  flex: 0 0 auto !important;
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+  border-width: 2px !important;
+  white-space: nowrap !important;
+}

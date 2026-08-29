@@ -520,6 +520,62 @@
   }
 }
 
+html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-about__tile-title {
+  margin: 0 0 1.5rem !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__lead {
+  display: block !important;
+  grid-template-columns: none !important;
+  max-width: min(63.5rem, 100%) !important;
+  width: auto !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-lead-col {
+  display: block !important;
+}
+
+html body .openms-lib-page.openms-lib-page--sponsor-us .sponsor-faq__answer p a.openms-cta-link,
+html body .openms-lib-page.openms-lib-page--sponsor-us .sponsor-faq__answer p a.sponsor-faq__link,
+html body .openms-lib-page.openms-lib-page--sponsor-us .sponsor-faq__link {
+  display: inline-flex !important;
+  align-items: baseline;
+  gap: 0.28rem;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-weight: var(--openms-cta-link-weight, 700) !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__answer a.openms-cta-link span[aria-hidden="true"],
+html body .openms-lib-page--sponsor-us .sponsor-faq__link span[aria-hidden="true"] {
+  font-weight: 400 !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__answer a.openms-cta-link:hover,
+html body .openms-lib-page--sponsor-us .sponsor-faq__answer a.openms-cta-link:focus-visible,
+html body .openms-lib-page--sponsor-us .sponsor-faq__link:hover,
+html body .openms-lib-page--sponsor-us .sponsor-faq__link:focus-visible {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  gap: 0.42rem;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__question:hover,
+html body .openms-lib-page--sponsor-us .sponsor-faq__question:focus-visible {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  background: rgba(var(--openms-blue-rgb), 0.04) !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__item[open] .sponsor-faq__question:hover,
+html body .openms-lib-page--sponsor-us .sponsor-faq__item[open] .sponsor-faq__question:focus-visible {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  background: rgba(var(--openms-blue-rgb), 0.04) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .sponsor-us-page-layout .openms-lib-btn:hover,
   .sponsor-us-page-layout .openms-lib-btn:focus-visible,

@@ -103,11 +103,6 @@
           <p class="openms-lib-resources__lead">Scan the short summary, then open a topic only when you need the full wording.</p>
         </header>
 
-        <div class="privacy-pro__toolbar" role="group" aria-label="Topic controls">
-          <button type="button" class="privacy-pro__tool-btn" data-privacy-expand-all>Expand all</button>
-          <button type="button" class="privacy-pro__tool-btn" data-privacy-collapse-all>Collapse all</button>
-        </div>
-
         <div class="privacy-pro__list" data-privacy-topics>
           {{- range $i, $item := $items -}}
           <details class="privacy-pro__item" id="{{ $item.id }}">
@@ -161,16 +156,6 @@
 (function () {
   var root = document.querySelector("[data-privacy-topics]");
   if (!root) return;
-  var items = root.querySelectorAll("details.privacy-pro__item");
-  var expandBtn = document.querySelector("[data-privacy-expand-all]");
-  var collapseBtn = document.querySelector("[data-privacy-collapse-all]");
-
-  function setAll(open) {
-    items.forEach(function (el) { el.open = open; });
-  }
-
-  if (expandBtn) expandBtn.addEventListener("click", function () { setAll(true); });
-  if (collapseBtn) collapseBtn.addEventListener("click", function () { setAll(false); });
 
   function openFromHash() {
     var id = (location.hash || "").replace(/^#/, "");

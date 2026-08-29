@@ -8,7 +8,7 @@
   --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
   --home-card-title-color: rgba(var(--openms-dark-rgb), 0.82);
   --home-body-color: var(--openms-text-muted);
-  --news-max: 56rem;
+  --news-max: var(--pro-max, 75rem);
   --news-gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem));
   --news-card-radius: 0.85rem;
   --news-card-border: rgba(var(--openms-navy-rgb), 0.12);
@@ -230,7 +230,7 @@
 .news-archive .news-home__card-link:focus-visible .news-home__card-title,
 .news-bibliography--undated .news-home__card-link:hover .news-home__card-title,
 .news-bibliography--undated .news-home__card-link:focus-visible .news-home__card-title {
-  color: var(--openms-content-link, var(--openms-navy));
+  color: inherit;
 }
 
 .news-archive .news-home__card-authors,
@@ -307,13 +307,15 @@
 
 @media (max-width: 960px) {
   .news-toolbar {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   .news-toolbar__filter,
   .news-toolbar__select {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
   }
 }
 

@@ -70,7 +70,7 @@ languages:
       contributePage:
         eyebrow: Community
         subtitle: >-
-          Code, docs, design, outreach, and more — find a path that fits your skills.
+          Code, docs, design, outreach, and more — pick a path that matches your skills.
         links:
           discord: https://discord.com/invite/v9tv5BxPch
           githubDiscussions: https://github.com/OpenMS/OpenMS/discussions
@@ -480,8 +480,8 @@ languages:
         maxResults: 8
       hero:
         eyebrow: Open-source · Free forever
-        titleBefore: "Open science. "
-        titleMid: "Clear results for "
+        titleBefore: "Open science."
+        titleMid: "Clear results for"
         titleHighlight: "mass spectrometry"
         titleAfter: "."
         description: >-

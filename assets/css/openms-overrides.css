@@ -3469,10 +3469,10 @@
   --pro-space-5:1.75rem;
   --pro-space-6:clamp(2.25rem, 4.5vw, 3.25rem);
   --pro-col-gap:clamp(2rem, 5vw, 4rem);
-  --pro-stack-eyebrow:var(--pro-space-1);
-  --pro-stack-lead:var(--pro-space-2);
+  --pro-stack-eyebrow:var(--openms-stack-eyebrow, 12px);
+  --pro-stack-lead:var(--openms-stack-lead, 20px);
   --pro-stack-actions:var(--pro-space-5);
-  --pro-head-to-content:var(--pro-space-6);
+  --pro-head-to-content:var(--openms-stack-cards, clamp(1.2rem, 2.5vw, 1.75rem));
   --pro-measure:58ch;
   --pro-measure-wide:58ch;
   --pro-card-gap:clamp(1rem, 2vw, 1.5rem);
@@ -3512,10 +3512,10 @@
   --pro-space-5:1.75rem;
   --pro-space-6:clamp(2.25rem, 4.5vw, 3.25rem);
   --pro-col-gap:clamp(2rem, 5vw, 4rem);
-  --pro-stack-eyebrow:var(--pro-space-1);
-  --pro-stack-lead:var(--pro-space-2);
+  --pro-stack-eyebrow:var(--openms-stack-eyebrow, 12px);
+  --pro-stack-lead:var(--openms-stack-lead, 20px);
   --pro-stack-actions:var(--pro-space-5);
-  --pro-head-to-content:var(--pro-space-6);
+  --pro-head-to-content:var(--openms-stack-cards, clamp(1.2rem, 2.5vw, 1.75rem));
   --pro-measure:58ch;
   --pro-measure-wide:58ch;
   --pro-card-gap:clamp(1rem, 2vw, 1.5rem);
@@ -8333,10 +8333,10 @@
   .openms-lib-page--featured-pro .webapps-featured__grid--detail .webapps-project-detail-card--affiliate .webapps-project-detail-card__main,
   .openms-lib-page--featured-pro .webapps-project-detail-card--affiliate .webapps-project-detail-card__main {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
-      "logo name"
-      "logo text"
+      "name logo"
+      "text logo"
       "maintainers maintainers"
       "links links";
     justify-content: start;
@@ -8363,6 +8363,8 @@
     height: 5.5rem;
     min-height: 0;
     margin-inline: 0;
+    margin-left: auto;
+    justify-self: end;
     aspect-ratio: 1;
   }
 
@@ -8389,10 +8391,10 @@
   .openms-lib-page--affiliated .webapps-affiliates .webapps-project-detail-card--affiliate .webapps-project-detail-card__main,
   .openms-lib-page--affiliated .webapps-project-detail-card--affiliate .webapps-project-detail-card__main {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
-      "logo name"
-      "logo text"
+      "name logo"
+      "text logo"
       "maintainers maintainers"
       "links links";
     justify-items: start;
@@ -8418,6 +8420,8 @@
     height: 5.5rem;
     min-height: 0;
     margin-inline: 0;
+    margin-left: auto;
+    justify-self: end;
     aspect-ratio: 1;
   }
 
@@ -8675,12 +8679,14 @@
   width: 100%;
 }
 
-/* Stacked sections — notice, then projects (never side-by-side) */
+/* Card(s) left, Good to know right */
 .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__projects {
-  display: grid;
-  gap: var(--pro-head-to-content);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.15rem 1.75rem;
   width: 100%;
-  justify-items: stretch;
 }
 .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__projects-head {
   display: grid;
@@ -8715,12 +8721,14 @@
 .openms-lib-page--archived .webapps-archived__grid,
 .openms-lib-page--archived .webapps-archived__grid--solo {
   grid-template-columns: 1fr;
-  width: 100%;
+  width: min(100%, 32rem);
+  flex: 1 1 22rem;
+  max-width: 32rem;
   justify-items: center;
 }
 .openms-lib-page--archived .webapps-archived__grid--solo > .webapps-archived__item {
   width: 100%;
-  max-width: min(100%, 32rem);
+  max-width: none;
 }
 .openms-lib-page--archived .webapps-archived__grid:not(.webapps-archived__grid--solo) {
   justify-items: stretch;
@@ -8747,14 +8755,13 @@
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   grid-template-areas:
-    "logo meta"
-    "logo name"
+    "logo heading"
     "text text"
     "maintainers maintainers"
     "actions actions";
   align-items: start;
   column-gap: clamp(1rem, 2.5vw, 1.45rem);
-  row-gap: 0.35rem;
+  row-gap: 0.12rem;
   padding: var(--pro-card-pad, clamp(1.15rem, 2.4vw, 1.5rem));
   border: 1px solid var(--pro-line);
   border-radius: var(--pro-radius);
@@ -8772,18 +8779,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5rem;
-  min-width: 5rem;
-  max-width: 5rem;
-  height: 5rem;
-  min-height: 5rem;
-  padding: 0.55rem;
-  border: 1px solid rgba(var(--openms-navy-rgb), 0.14);
-  border-radius: 0.85rem;
-  background: color-mix(in srgb, var(--pro-band-soft, #f4f7fb) 55%, var(--openms-white));
+  width: 7.5rem;
+  min-width: 7.5rem;
+  max-width: 7.5rem;
+  height: 7.5rem;
+  min-height: 7.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
   place-items: center;
   align-self: start;
   box-sizing: border-box;
+}
+
+.openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__heading {
+  grid-area: heading;
+  display: grid;
+  gap: 0.15rem;
+  align-content: start;
+  align-self: start;
+  min-width: 0;
+}
+
+.openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__heading .webapps-archived-entry__meta,
+.openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__heading .webapps-archived-entry__name {
+  grid-area: auto;
 }
 
 .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__meta {
@@ -8916,13 +8939,13 @@
   z-index: auto;
   display:inline-flex;
   align-items:center;
-  padding:.16rem .55rem;
+  padding:.06rem .34rem;
   border:1px solid rgba(var(--openms-navy-rgb),.14);
   border-radius:999px;
   background: color-mix(in srgb, var(--pro-band-soft, #f4f7fb) 55%, var(--openms-white));
-  font-size:.64rem;
+  font-size:.5rem;
   font-weight:700;
-  letter-spacing:.03em;
+  letter-spacing:.06em;
   text-transform:none;
   color:var(--pro-text-muted);
   white-space: nowrap;
@@ -9174,16 +9197,18 @@
       "actions actions";
   }
   .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__media {
-    width: 4.75rem;
-    min-width: 4.75rem;
-    max-width: 4.75rem;
-    height: 4.75rem;
-    min-height: 4.75rem;
-    padding: 0.45rem;
+    width: 6.75rem;
+    min-width: 6.75rem;
+    max-width: 6.75rem;
+    height: 6.75rem;
+    min-height: 6.75rem;
+    padding: 0;
+    border: none;
+    background: transparent;
   }
   .openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__logo {
     max-width: 100%;
-    max-height: 3.5rem;
+    max-height: none;
   }
   .openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-list,
   .openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__notice-list {
@@ -9380,13 +9405,13 @@
 .openms-lib-page--calendar .community-calendar-block {
   padding-block:0;
   width:100%;
-  max-width:var(--calendar-max, 56rem);
+  max-width:var(--pro-max, 75rem);
   margin-inline:auto
 }
 .openms-lib-page--calendar .community-events-page {
   gap:var(--pro-section-y);
   width:100%;
-  max-width:var(--calendar-max, 56rem);
+  max-width:var(--pro-max, 75rem);
   margin-inline:auto
 }
 .openms-lib-page--calendar .community-events-page__section,
@@ -9416,20 +9441,20 @@
   padding-block:var(--pro-section-y) 0
 }
 .openms-lib-page--news {
-  --news-max: 56rem;
+  --news-max: var(--pro-max, 75rem);
 }
 .openms-lib-page--news .openms-lib-page__body > .openms-lib-page__anchor > .openms-lib-block,
 .openms-lib-page--news .news-page-block {
   padding-block:0;
   width:100%;
-  max-width:var(--news-max, 56rem);
+  max-width:var(--pro-max, 75rem);
   margin-inline:auto
 }
 .openms-lib-page--news .news-body,
 .openms-lib-page--news .news-bibliography {
   gap:var(--pro-head-to-content);
   width:100%;
-  max-width:var(--news-max, 56rem);
+  max-width:var(--pro-max, 75rem);
   margin-inline:auto
 }
 .openms-lib-page--news .news-bibliography {
@@ -11122,6 +11147,7 @@
   max-width:none;
   margin-inline:0;
   padding-block:var(--pro-section-y);
+  padding-inline:var(--openms-page-inline);
   box-sizing:border-box
 }
 .openms-lib-page--contributors #join-community .webapps-archived__revival {
@@ -11229,13 +11255,12 @@
 .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn--ghost:hover,
 .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn--ghost:focus-visible,
 .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn--ghost:active {
-  /* Match navbar “Sponsor Us”: outline stays, scale + glow only */
-  border-color:rgba(var(--openms-white-rgb),.34) !important;
+  border-color:var(--openms-white) !important;
   background:transparent !important;
   background-color:transparent !important;
   color:var(--openms-white)!important;
   transform:scale(var(--openms-btn-hover-scale));
-  box-shadow:0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow) !important;
+  box-shadow:0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow-white, rgba(255,255,255,.28)) !important;
   outline:none;
   text-decoration:none
 }
@@ -12615,6 +12640,9 @@
   padding:clamp(.85rem,1.6vw,1.05rem);
   overflow:hidden
 }
+html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-about__tile-title {
+  margin: 0 0 1.5rem !important;
+}
 .openms-lib-page--sponsor-us .openms-lib-about__tile>* {
   max-width:100%
 }
@@ -12751,13 +12779,10 @@
   color:var(--openms-navy)
 }
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__lead {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  column-gap:var(--pro-col-gap,clamp(2rem,5vw,4rem));
-  row-gap:.85rem;
+  display:block;
   margin:var(--pro-stack-lead, .75rem) 0 0;
-  max-width:100% !important;
-  width:100% !important;
+  max-width:max-content;
+  width:auto;
   overflow-wrap:break-word;
   font-size:var(--openms-body-size-lg);
   line-height:1.65;
@@ -17553,7 +17578,7 @@
   .openms-lib-page--contributors .members {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
+  }
 
 @media (max-width: 560px) {
   .openms-lib-page--contributors .leadership-card {
@@ -18008,7 +18033,7 @@
 .openms-lib-page--research-partnerships .rp-application__tally-iframe {
   display: block;
   width: 100%;
-  min-height: 0 !important;
+  min-height: 640px;
   border: 0;
   overflow: visible;
   background: transparent;
@@ -18740,13 +18765,10 @@
 }
 
 .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__lead {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: var(--pro-col-gap, clamp(2rem, 5vw, 4rem));
-  row-gap: 0.85rem;
+  display: block;
   margin: var(--pro-stack-lead, 0.75rem) 0 0;
-  max-width: 100% !important;
-  width: 100% !important;
+  max-width: min(63.5rem, 100%);
+  width: auto;
   overflow-wrap: break-word;
   font-size: var(--openms-body-size-lg);
   line-height: 1.65;
@@ -22513,8 +22535,8 @@
   text-decoration: none;
 }
 
-/* App link pills: on small screens keep hover feedback without scale, so
-   neighbors never collide when glow expands. */
+/* App link pills: on small screens keep outline hover without scale;
+   filled Demo / NF Core keep scale + glow like other primary blue CTAs. */
 @media (max-width: 720px) {
   .webapps-project-links {
     gap: var(--openms-btn-gap) !important;
@@ -22526,8 +22548,6 @@
   .webapps-project-links__btn:focus-visible,
   .openms-lib-page--featured-pro .webapps-project-links__btn:hover,
   .openms-lib-page--featured-pro .webapps-project-links__btn:focus-visible,
-  .openms-lib-page--featured-pro .webapps-project-links__btn--demo:hover,
-  .openms-lib-page--featured-pro .webapps-project-links__btn--demo:focus-visible,
   .openms-lib-page--featured-pro .webapps-project-links__btn--install:hover,
   .openms-lib-page--featured-pro .webapps-project-links__btn--install:focus-visible,
   .openms-lib-page--featured-pro .webapps-project-links__btn--github:hover,
@@ -22536,8 +22556,6 @@
   .openms-lib-page--featured-pro .webapps-project-links__btn--homepage:focus-visible,
   .openms-lib-page--featured-pro .webapps-project-links__btn--pypi:hover,
   .openms-lib-page--featured-pro .webapps-project-links__btn--pypi:focus-visible,
-  .openms-lib-page--featured-pro .webapps-project-links__btn--nfcore:hover,
-  .openms-lib-page--featured-pro .webapps-project-links__btn--nfcore:focus-visible,
   .openms-lib-page--featured-pro .webapps-project-links__btn--link:hover,
   .openms-lib-page--featured-pro .webapps-project-links__btn--link:focus-visible,
   .openms-lib-page--affiliated .webapps-project-links__btn:hover,
@@ -22551,6 +22569,20 @@
   .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn:focus-visible,
   .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn:active {
     transform: none !important;
+  }
+
+  .openms-lib-page--featured-pro .webapps-project-links__btn--demo:hover,
+  .openms-lib-page--featured-pro .webapps-project-links__btn--demo:focus-visible,
+  .openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn:hover,
+  .openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn:focus-visible,
+  .openms-lib-page--affiliated .webapps-project-links__btn--demo:hover,
+  .openms-lib-page--affiliated .webapps-project-links__btn--demo:focus-visible,
+  .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--demo:hover,
+  .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--demo:focus-visible,
+  .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--nfcore:hover,
+  .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--nfcore:focus-visible {
+    transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+    box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) var(--openms-btn-glow) !important;
   }
 }
 
@@ -25555,12 +25587,8 @@
     line-height: 1.45;
   }
 
-  /* Homepage hero: hide mockup labels + trust line on phones */
-  .home-page__hero .hero-mockup__labels,
-  .home-page__hero .hero-mockup__chrome-title,
-  .home-page__hero .hero-mockup__chrome-brand,
-  .home-page__hero .hero-home__note,
-  .home-page__hero .hero-home__note--under-graphic,
+  /* Homepage hero: empty highlight chips stay off on phones.
+     Chrome labels + trust line are managed in z-hero-sm.css. */
   .home-page__hero .hero-home__highlights {
     display: none !important;
   }
@@ -25590,11 +25618,75 @@
   margin-inline: 0 !important;
 }
 
+html body .home-page__hero {
+  --hero-diagram-max: 34rem;
+  --hero-diagram-height: 11.5rem;
+}
+
+html body .home-page__hero .hero-home__diagram {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  width: min(100%, var(--hero-diagram-max)) !important;
+  max-width: var(--hero-diagram-max) !important;
+  min-width: 0 !important;
+  container-type: inline-size !important;
+  container-name: hero-diagram;
+}
+
+html body .home-page__hero .hero-home__diagram .hero-mockup,
+html body .home-page__hero .hero-home__diagram .hero-mockup__stage,
+html body .home-page__hero .hero-home__diagram .hero-mockup__chart,
+html body .home-page__hero .hero-home__diagram .hero-home__note,
+html body .home-page__hero .hero-home__diagram .hero-home__note--under-graphic {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+html body .home-page__hero .hero-mockup__chart,
+html body .home-page__hero .hero-home__diagram .hero-mockup__chart {
+  height: var(--hero-diagram-height) !important;
+  gap: 0.35rem !important;
+}
+
+html body .home-page__hero .hero-home__note,
+html body .home-page__hero .hero-home__note--under-graphic {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: clamp(0.4rem, 1.5cqi, 0.95rem) !important;
+  font-size: clamp(0.875rem, 2.9cqi, 1.0625rem) !important;
+  line-height: 1.35 !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+
+html body .home-page__hero .hero-home__note-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  flex: 0 1 auto !important;
+  gap: clamp(0.28rem, 0.9cqi, 0.45rem) !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+}
+
+html body .home-page__hero .hero-home__note-dot {
+  width: clamp(0.35rem, 1cqi, 0.5rem) !important;
+  height: clamp(0.35rem, 1cqi, 0.5rem) !important;
+  flex-shrink: 0 !important;
+}
+
 .home-page__hero .hero-home__eyebrow,
 .home-page__hero .hero-home__actions,
-.home-page__hero .hero-home__note,
 .home-page__hero .hero-home__highlights {
   justify-content: flex-start !important;
+  margin-inline: 0 !important;
+}
+
+.home-page__hero .hero-home__note {
   margin-inline: 0 !important;
 }
 
@@ -26322,8 +26414,9 @@
 
 .rp-application__tally-iframe,
 .openms-lib-page--research-partnerships .rp-application__tally-iframe {
-  /* No tall floor — Tally dynamicHeight sets the real height */
-  min-height: 0 !important;
+  min-height: 640px !important;
+  max-height: none !important;
+  overflow: visible !important;
 }
 
 .donate-page__zeffy-iframe,
@@ -26358,6 +26451,14 @@
   .services-page__tally-iframe,
   .openms-lib-page--services-support .services-page__tally-iframe {
     min-height: 620px !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .rp-application__tally-iframe,
+  .openms-lib-page--research-partnerships .rp-application__tally-iframe {
+    min-height: 720px !important;
+    height: auto !important;
     max-height: none !important;
     overflow: visible !important;
   }
@@ -27776,6 +27877,23 @@
   min-width: 0;
 }
 
+/* pyOpenMS: last Contribute card (two buttons) is wider on the right */
+.openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) {
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+}
+
+.openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) > :nth-child(-n + 3) {
+  grid-column: span 4 !important;
+}
+
+.openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) > :nth-child(4) {
+  grid-column: span 5 !important;
+}
+
+.openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) > :nth-child(5) {
+  grid-column: span 7 !important;
+}
+
 /* pyopenms_viz (and similar): 3 equal cards */
 .openms-lib-page--solution .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(3):last-child),
 .openms-lib-page--solution.openms-lib-page--hub .openms-lib-developers__cards-grid:has(> :nth-child(3):last-child) {
@@ -28469,6 +28587,22 @@
   .openms-lib-page--solution.openms-lib-page--hub .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) > :nth-child(n + 4) {
     grid-column: span 3 !important;
   }
+
+  .openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) {
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  }
+
+  .openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) > :nth-child(-n + 3) {
+    grid-column: span 4 !important;
+  }
+
+  .openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) > :nth-child(4) {
+    grid-column: span 5 !important;
+  }
+
+  .openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) > :nth-child(5) {
+    grid-column: span 7 !important;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -28862,14 +28996,15 @@
 .openms-lib-page--solution.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__meta,
 .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__meta {
   display: flex !important;
-  justify-content: space-between !important;
+  justify-content: flex-start !important;
   align-items: center !important;
-  width: 100% !important;
+  width: auto !important;
+  gap: 0.3rem 0.5rem !important;
 }
 
 .openms-lib-page--solution.openms-lib-page--featured-pro .webapps-archived-entry__badge,
 .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__badge {
-  margin-left: auto !important;
+  margin-left: 0 !important;
 }
 
 .openms-lib-page--solution.openms-lib-page--featured-pro .webapps-archived__projects + .webapps-archived__revival,
@@ -28986,8 +29121,8 @@
   border-color: var(--openms-blue) !important;
   color: var(--openms-white) !important;
   -webkit-text-fill-color: var(--openms-white) !important;
-  transform: none !important;
-  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) var(--openms-btn-glow) !important;
 }
 
 .openms-lib-page--solution.openms-lib-page--featured-pro .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:hover,
@@ -28996,15 +29131,8 @@
   border-color: rgba(var(--openms-navy-rgb), 0.78) !important;
   color: var(--openms-navy) !important;
   -webkit-text-fill-color: var(--openms-navy) !important;
-  transform: none !important;
-  box-shadow: 0 0 0 var(--openms-btn-glow-size) rgba(var(--openms-navy-rgb), 0.18) !important;
-}
-
-.openms-lib-page--solution.openms-lib-page--featured-pro .webapps-project-links__btn:hover,
-.openms-lib-page--solution.openms-lib-page--featured-pro .webapps-project-links__btn:focus-visible,
-.openms-lib-page--solution.openms-lib-page--featured-pro a.webapps-project-links__btn:hover,
-.openms-lib-page--solution.openms-lib-page--featured-pro a.webapps-project-links__btn:focus-visible {
-  transform: none !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(var(--openms-navy-rgb), 0.18) !important;
 }
 
 .openms-lib-page--solution.openms-lib-page--openms-lib.openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn i,
@@ -29190,6 +29318,18 @@
   color: var(--openms-white) !important;
 }
 
+.openms-lib-page--archived.openms-lib-page--solution.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__revival {
+  width: 100% !important;
+  max-width: none !important;
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--pro-card-pad-lg, clamp(1.25rem, 3vw, 2rem)) !important;
+  border-radius: var(--pro-radius, 0.85rem) !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(var(--openms-blue-rgb), 0.28), transparent 42%),
+    var(--openms-navy) !important;
+  background-image: radial-gradient(circle at 100% 0%, rgba(var(--openms-blue-rgb), 0.28), transparent 42%) !important;
+  background-color: var(--openms-navy) !important;
+}
+
 .openms-lib-page--solution.openms-lib-page--featured-pro .webapps-archived__revival-kicker {
   color: var(--openms-text-soft-on-dark, rgba(var(--openms-white-rgb), 0.65)) !important;
   -webkit-text-fill-color: var(--openms-text-soft-on-dark, rgba(var(--openms-white-rgb), 0.65)) !important;
@@ -29262,12 +29402,14 @@
   display: grid !important;
   grid-template-columns: auto minmax(0, 1fr) !important;
   grid-template-areas:
-    "logo body"
-    "logo actions" !important;
-  grid-template-rows: 1fr auto !important;
-  align-items: stretch !important;
+    "logo name"
+    "logo text"
+    "maintainers maintainers"
+    "actions actions" !important;
+  grid-template-rows: auto auto auto auto !important;
+  align-items: start !important;
   column-gap: 1.25rem !important;
-  row-gap: 0.7rem !important;
+  row-gap: 0.55rem !important;
   flex: 1 1 auto !important;
   width: 100% !important;
   height: 100% !important;
@@ -29293,23 +29435,38 @@
   background-image: none !important;
 }
 
+.openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__body,
 .openms-lib-page--solution.openms-lib-page--featured-pro .webapps-project-detail-card__body {
-  grid-area: body;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-  gap: 0.3rem !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
-  height: auto !important;
+  display: contents !important;
 }
 
+.openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__name,
+.openms-lib-page--solution.openms-lib-page--featured-pro .webapps-project-detail-card__name {
+  grid-area: name !important;
+  align-self: start !important;
+  min-width: 0 !important;
+}
+
+.openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__text,
 .openms-lib-page--solution.openms-lib-page--featured-pro .webapps-project-detail-card__text {
+  grid-area: text !important;
   display: block !important;
   -webkit-line-clamp: unset !important;
   line-clamp: unset !important;
   overflow: visible !important;
-  max-width: 62ch;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
+.openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__maintainers,
+.openms-lib-page--solution.openms-lib-page--featured-pro .webapps-project-detail-card__maintainers {
+  grid-area: maintainers !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  justify-self: stretch !important;
+  margin-top: 0.15rem !important;
 }
 
 .openms-lib-page--solution.openms-lib-page--featured-pro .webapps-project-detail-card__actions {
@@ -29319,7 +29476,8 @@
   align-items: center;
   align-self: end;
   min-width: 0;
-  margin-top: auto;
+  width: 100%;
+  margin-top: 0.15rem;
 }
 
 .openms-lib-page--solution.openms-lib-page--featured-pro .webapps-project-detail-card__actions .webapps-project-links,
@@ -29371,9 +29529,11 @@
   .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__grid--detail .webapps-project-detail-card,
   .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-affiliates__item .webapps-project-detail-card,
   .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-affiliates__grid .webapps-project-detail-card {
-    grid-template-columns: auto minmax(0, 1fr) !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
     grid-template-areas:
-      "logo body"
+      "name logo"
+      "text logo"
+      "maintainers maintainers"
       "actions actions" !important;
     height: 100% !important;
     overflow: visible !important;
@@ -30290,7 +30450,7 @@
 .fellowship-project-card__title a,
 .news-article__toc a,
 .news-entry__action,
-.sponsor-faq__answer a,
+.sponsor-faq__answer a:not(.openms-cta-link):not(.sponsor-faq__link),
 .contribute-way__text a,
 .contribute-outreach__contact a,
 .privacy-details__rich a,
@@ -30327,7 +30487,7 @@
 .fellowship-project-card__title a:hover,
 .news-article__toc a:hover,
 .news-entry__action:hover,
-.sponsor-faq__answer a:hover,
+.sponsor-faq__answer a:not(.openms-cta-link):not(.sponsor-faq__link):hover,
 .contribute-way__text a:hover,
 .contribute-outreach__contact a:hover,
 .privacy-details__rich a:hover,
@@ -30917,7 +31077,7 @@ html body .openms-lib-page--news-article .openms-lib-prose__toc ul ul ul {
    Links + buttons — one color/layout language from /openms-lib/
    ============================================================================ */
 
-.openms-lib-page :is(p, li, dd, td, figcaption):not(.governance-card__link) a:not(.openms-lib-btn):not(.navbar-item):not(.community-news-events__press-link),
+.openms-lib-page :is(p, li, dd, td, figcaption):not(.governance-card__link) a:not(.openms-lib-btn):not(.navbar-item):not(.community-news-events__press-link):not(.openms-cta-link):not(.sponsor-faq__link),
 .openms-lib-page .openms-lib-prose :is(p, li, dd, td) a:not(.openms-lib-btn),
 .openms-lib-page .news-article__content :is(p, li) a:not(.openms-lib-btn),
 .openms-lib-page .privacy-pro__rich :is(p, li) a:not(.openms-lib-btn),
@@ -30967,8 +31127,8 @@ html body .openms-lib-page--news-article .openms-lib-prose__toc ul ul ul {
   font-weight: var(--openms-cta-link-weight, 700) !important;
 }
 
-.openms-lib-page :is(p, li):not(.governance-card__link) a:not(.openms-lib-btn):hover,
-.openms-lib-page :is(p, li):not(.governance-card__link) a:not(.openms-lib-btn):focus-visible,
+.openms-lib-page :is(p, li):not(.governance-card__link) a:not(.openms-lib-btn):not(.openms-cta-link):not(.sponsor-faq__link):hover,
+.openms-lib-page :is(p, li):not(.governance-card__link) a:not(.openms-lib-btn):not(.openms-cta-link):not(.sponsor-faq__link):focus-visible,
 .openms-lib-page .contribute-channel__link:hover,
 .openms-lib-page .contribute-channel:hover .contribute-channel__link,
 .openms-lib-page .contribute-way__link:hover,
@@ -32022,7 +32182,16 @@ html body .openms-lib-page--news-article .openms-lib-prose__toc ul ul ul {
 .home-page .community-news-events__press-label,
 .openms-lib-page--calendar a.community-news-events__press-link:hover .community-news-events__press-label,
 .openms-lib-page--news a.community-news-events__press-link:hover .community-news-events__press-label,
-.home-page a.community-news-events__press-link:hover .community-news-events__press-label {
+.home-page a.community-news-events__press-link:hover .community-news-events__press-label,
+.openms-lib-page--news .community-news-events__press-date,
+.openms-lib-page--news a.community-news-events__press-link:hover .community-news-events__press-date,
+.openms-lib-page--news a.community-news-events__press-link:focus-visible .community-news-events__press-date,
+.openms-lib-page--calendar .community-news-events__press-date,
+.openms-lib-page--calendar a.community-news-events__press-link:hover .community-news-events__press-date,
+.openms-lib-page--calendar a.community-news-events__press-link:focus-visible .community-news-events__press-date,
+.home-page .community-news-events__column--events .community-news-events__press-date,
+.home-page .community-news-events__column--events a.community-news-events__press-link:hover .community-news-events__press-date,
+.home-page .community-news-events__column--events a.community-news-events__press-link:focus-visible .community-news-events__press-date {
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
 }
@@ -32574,15 +32743,70 @@ html body .openms-lib-page--solution #getting-started .openms-lib-resources__ass
   -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
 }
 
+/* Need help? — copy + Discord/GitHub buttons in one row on OpenMS-lib */
+html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1.15rem !important;
+  text-align: center !important;
+}
+
+html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-copy {
+  justify-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: min(100%, 38rem) !important;
+}
+
+html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-title,
+html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-text {
+  text-align: center !important;
+}
+
+html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-actions {
+  justify-content: center !important;
+  margin-inline: auto !important;
+}
+
+@media (max-width: 800px) {
+  html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-copy {
+    justify-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-title,
+  html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-text {
+    text-align: center !important;
+  }
+
+  html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-actions {
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+}
+
 /* Need help? — Report an issue matches navbar Sponsor us */
 html body .openms-lib-page--solution #getting-started .openms-lib-resources__assist-actions {
   display: flex !important;
   flex-direction: row !important;
-  flex-wrap: wrap !important;
+  flex-wrap: nowrap !important;
   align-items: center !important;
   justify-content: flex-start !important;
   width: auto !important;
   max-width: 100% !important;
+  margin-inline: 0 !important;
   gap: var(--openms-btn-gap, 0.75rem) !important;
 }
 
@@ -32652,6 +32876,34 @@ html body .openms-lib-page--publications .publications-more {
   margin-bottom: clamp(2.75rem, 7vw, 4.5rem) !important;
 }
 
+html body .openms-lib-page--publications .publications-toolbar {
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+
+html body .openms-lib-page--publications .publications-toolbar__filter {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  margin-left: auto !important;
+}
+
+html body .openms-lib-page--publications .publications-toolbar__select {
+  width: auto !important;
+  min-width: 128px !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  height: 2rem !important;
+  padding: 0.2rem 1.75rem 0.2rem 0.65rem !important;
+  font-size: 0.8125rem !important;
+  line-height: 1.25 !important;
+  background-position: right 0.55rem center !important;
+  background-size: 0.625rem 0.4375rem !important;
+}
+
 html body .openms-lib-layout:has(> .openms-lib-page--news:not(.openms-lib-page--news-article)),
 html body .content-padding:has(.openms-lib-page--news:not(.openms-lib-page--news-article)) {
   padding-bottom: 0 !important;
@@ -32675,30 +32927,27 @@ html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-pager
   padding-bottom: 0 !important;
 }
 
-@media (max-width: 800px) {
-  html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-toolbar {
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-  }
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-toolbar {
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
 
-  html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-toolbar__filter {
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-  }
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-toolbar__filter {
+  width: auto !important;
+  min-width: min(100%, 9rem) !important;
+}
 
-  html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-toolbar__select {
-    width: max-content !important;
-    min-width: 7.25rem !important;
-    max-width: 100% !important;
-    min-height: 0 !important;
-    height: 2rem !important;
-    padding: 0.2rem 1.75rem 0.2rem 0.65rem !important;
-    font-size: 0.8125rem !important;
-    background-position: right 0.55rem center !important;
-    background-size: 0.625rem 0.4375rem !important;
-  }
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-toolbar__select {
+  width: auto !important;
+  min-width: 128px !important;
+  min-height: 40px !important;
+  height: 40px !important;
+  padding: 6px 32px 6px 14px !important;
+  font-size: 16px !important;
+  line-height: 1.25 !important;
+  background-position: right 12px center !important;
+  background-size: auto !important;
 }
 
 html body .openms-lib-page--news:not(.openms-lib-page--news-article) .openms-lib-page__body > .openms-lib-page__anchor:last-child {
@@ -32941,33 +33190,29 @@ html body .openms-lib-page--calendar .events-past-toolbar__select {
 
 @media (min-width: 901px) {
   html body .openms-lib-page--calendar .community-events-page {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-    grid-template-rows: auto 1fr !important;
-    align-items: start !important;
-    column-gap: clamp(1.5rem, 3vw, 2.75rem) !important;
-    row-gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem)) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--pro-section-y, clamp(3rem, 6vw, 4.5rem)) !important;
   }
 
   html body .openms-lib-page--calendar .community-events-page__section {
     display: grid !important;
-    grid-template-rows: subgrid !important;
-    grid-row: 1 / span 2 !important;
-    gap: 0 !important;
+    gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem)) !important;
     align-items: start !important;
+    width: 100% !important;
   }
 
   html body .openms-lib-page--calendar .community-events-page__header,
   html body .openms-lib-page--calendar .events-past-toolbar {
-    grid-row: 1 !important;
-    align-self: end !important;
+    align-self: stretch !important;
     margin: 0 !important;
   }
 
   html body .openms-lib-page--calendar .community-events-page__grid,
   html body .openms-lib-page--calendar .community-events-page__empty,
   html body .openms-lib-page--calendar .events-past-panel__entries {
-    grid-row: 2 !important;
+    width: 100% !important;
   }
 }
 
@@ -33092,6 +33337,9 @@ html body .openms-lib-page--news .news-home__card-link:hover,
 html body .openms-lib-page--news .news-home__card-link:focus-visible,
 html body .openms-lib-page--news .news-home__card-link:focus-within {
   display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
   padding: clamp(1.6rem, 2.8vw, 1.85rem) !important;
   border: 1px solid rgba(var(--openms-navy-rgb), 0.1) !important;
   border-radius: 1.25rem !important;
@@ -33104,6 +33352,49 @@ html body .openms-lib-page--news .news-home__card-link:focus-within {
   transform: none !important;
 }
 
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-entry,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-home__item,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-home__card,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .community-news-events__press-card {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) :is(
+  .community-news-events__press-title,
+  .news-home__card-title,
+  .community-news-events__press-summary,
+  .news-home__card-summary,
+  .community-news-events__press-location,
+  .news-home__card-authors
+) {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  text-wrap: wrap !important;
+  overflow-wrap: break-word !important;
+}
+
+html body .openms-lib-page--news .community-news-events__press-link .community-news-events__press-date,
+html body .openms-lib-page--news a.community-news-events__press-link:hover .community-news-events__press-date,
+html body .openms-lib-page--news a.community-news-events__press-link:focus-visible .community-news-events__press-date,
+html body .home-page .community-news-events__column--news .community-news-events__press-link .community-news-events__press-date,
+html body .home-page .community-news-events__column--news a.community-news-events__press-link:hover .community-news-events__press-date,
+html body .home-page .community-news-events__column--news a.community-news-events__press-link:focus-visible .community-news-events__press-date {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .community-news-events__press-meta {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  flex-wrap: wrap !important;
+}
+
 html body .openms-lib-page--news :is(
   a.community-news-events__press-link,
   .news-home__card-link
@@ -33111,8 +33402,8 @@ html body .openms-lib-page--news :is(
   .community-news-events__press-title,
   .news-home__card-title
 ) {
-  color: var(--openms-blue) !important;
-  -webkit-text-fill-color: var(--openms-blue) !important;
+  color: var(--sol-title, rgba(var(--openms-dark-rgb), 0.82)) !important;
+  -webkit-text-fill-color: var(--sol-title, rgba(var(--openms-dark-rgb), 0.82)) !important;
 }
 
 html body .openms-lib-page--calendar .community-events-page__section {
@@ -33213,7 +33504,7 @@ html body .openms-lib-page--contribute #ways-to-contribute .contribute-track__it
   fill: var(--openms-white) !important;
 }
 
-/* Outreach / Community coordination — links gray; icons blue on hover */
+/* Outreach / Community coordination — links gray; icons and text blue on hover */
 html body .openms-lib-page--contribute .contribute-outreach__contact a,
 html body .openms-lib-page--contribute .contribute-outreach__social-link,
 html body .openms-lib-page--contribute .contribute-outreach__social-link :is(
@@ -33234,10 +33525,18 @@ html body .openms-lib-page--contribute .contribute-outreach__social-link :is(
   fill: currentColor !important;
 }
 
-html body .openms-lib-page--contribute .contribute-outreach__social-link:hover .contribute-outreach__social-icon,
-html body .openms-lib-page--contribute .contribute-outreach__social-link:focus-visible .contribute-outreach__social-icon,
-html body .openms-lib-page--contribute .contribute-outreach__social-link:hover .contribute-outreach__social-icon :is(i, .fab, .fas, .svg-inline--fa),
-html body .openms-lib-page--contribute .contribute-outreach__social-link:focus-visible .contribute-outreach__social-icon :is(i, .fab, .fas, .svg-inline--fa) {
+html body .openms-lib-page--contribute .contribute-outreach__contact a:is(:hover, :focus-visible),
+html body .openms-lib-page--contribute .contribute-outreach__social-link:is(:hover, :focus-visible),
+html body .openms-lib-page--contribute .contribute-outreach__social-link:is(:hover, :focus-visible) :is(
+  .contribute-outreach__social-label,
+  .contribute-outreach__social-hint,
+  .contribute-outreach__social-arrow,
+  .contribute-outreach__social-icon,
+  i,
+  .fab,
+  .fas,
+  .svg-inline--fa
+) {
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
   fill: currentColor !important;
@@ -33515,10 +33814,56 @@ html body .home-page .community-events-home--with-news .community-news-events__c
   font-size: var(--news-events-title-size, clamp(1.35rem, 2.4vw, 1.75rem)) !important;
 }
 
+html body .home-page .community-events-home--with-news .community-news-events__column--news .community-news-events__column-title,
+html body .home-page .community-events-home--with-news .community-news-events__column--news .community-news-events__column-title-accent {
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  font-size: var(--news-events-title-size, clamp(1.35rem, 2.4vw, 1.75rem)) !important;
+}
+
+html body .home-page .community-events-home--with-news .community-news-events__column--news .news-home__item,
+html body .home-page .community-events-home--with-news .community-news-events__column--news .news-home__card,
+html body .home-page .community-events-home--with-news .community-news-events__column--news .community-news-events__press-card,
+html body .home-page .community-events-home--with-news .community-news-events__column--news .community-news-events__press-link {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+html body .home-page .community-events-home--with-news .community-news-events__column--news .community-news-events__press-title,
+html body .home-page .community-events-home--with-news .community-news-events__column--news .news-home__card-title {
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  font-size: clamp(0.95rem, 2.6vw, 1.1rem) !important;
+  line-height: 1.3 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  text-wrap: pretty !important;
+  hyphens: auto !important;
+}
+
 html body .home-page .community-events-home--with-news .community-news-events__press-title,
 html body .home-page .community-events-home--with-news .news-home__card-title,
 html body .home-page .community-events-home--with-news .community-events-home__card-title {
   font-size: var(--openms-card-title-size) !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+html body .home-page .community-events-home--with-news .community-news-events__press-summary,
+html body .home-page .community-events-home--with-news .news-home__card-summary {
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
 }
 
 @media (min-width: 900px) {
@@ -33798,7 +34143,11 @@ html body .openms-lib-page--contribute .openms-lib-page__outro > .openms-lib-pag
 
 html body .openms-lib-page--contribute #communication-channels.openms-lib-page__anchor {
   padding-top: clamp(5rem, 10vw, 7.5rem) !important;
-  padding-bottom: clamp(5rem, 10vw, 7.5rem) !important;
+  padding-bottom: var(--sol-section-y, clamp(3.5rem, 7vw, 5.25rem)) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute.openms-lib-page__anchor {
+  padding-top: clamp(2rem, 4.25vw, 3.25rem) !important;
 }
 
 html body .openms-lib-page--contribute .contribute-ways {
@@ -34241,6 +34590,20 @@ html body .openms-lib-page--contributors .openms-lib-page__outro {
   background: transparent !important;
 }
 
+html body .openms-lib-page--contributors #join-community.openms-lib-page__anchor {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  padding-inline: var(--openms-page-inline) !important;
+  box-sizing: border-box !important;
+}
+
+html body .openms-lib-page--contributors #join-community .webapps-archived__revival {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+}
+
 html body .openms-lib-page--contributors .openms-lib-page__body > #leadership.openms-lib-page__anchor,
 html body .openms-lib-page--contributors .openms-lib-page__body > #leadership.openms-lib-page__anchor:first-child,
 html body .openms-lib-page--hub.openms-lib-page--contributors .openms-lib-page__body > #leadership.openms-lib-page__anchor:first-child {
@@ -34383,10 +34746,17 @@ html body .openms-lib-page--sponsor-us .sponsor-faq__chevron {
 
 html body .openms-lib-page--sponsor-us .sponsor-faq__question:hover,
 html body .openms-lib-page--sponsor-us .sponsor-faq__question:focus-visible {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  background: rgba(var(--openms-blue-rgb), 0.04);
+  outline: none;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__item[open] .sponsor-faq__question:hover,
+html body .openms-lib-page--sponsor-us .sponsor-faq__item[open] .sponsor-faq__question:focus-visible {
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
   background: rgba(var(--openms-blue-rgb), 0.04);
-  outline: none;
 }
 
 html body .openms-lib-page--sponsor-us .sponsor-faq__item[open] .sponsor-faq__question {
@@ -34412,11 +34782,11 @@ html body .openms-lib-page--sponsor-us .sponsor-faq__answer a,
 html body .openms-lib-page--sponsor-us .sponsor-faq__link {
   display: inline-flex !important;
   align-items: baseline;
-  gap: 0.35rem;
+  gap: 0.28rem;
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
   font-weight: 700 !important;
-  text-decoration: underline !important;
+  text-decoration: none !important;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
   transition: gap 0.2s ease, color 0.15s ease;
@@ -34427,7 +34797,7 @@ html body .openms-lib-page--sponsor-us .sponsor-faq__link span[aria-hidden="true
   display: inline-block !important;
   color: inherit !important;
   -webkit-text-fill-color: inherit !important;
-  font-weight: 700 !important;
+  font-weight: 400 !important;
   text-decoration: none !important;
 }
 
@@ -34435,9 +34805,9 @@ html body .openms-lib-page--sponsor-us .sponsor-faq__answer a:hover,
 html body .openms-lib-page--sponsor-us .sponsor-faq__answer a:focus-visible,
 html body .openms-lib-page--sponsor-us .sponsor-faq__link:hover,
 html body .openms-lib-page--sponsor-us .sponsor-faq__link:focus-visible {
-  color: var(--openms-navy) !important;
-  -webkit-text-fill-color: var(--openms-navy) !important;
-  gap: 0.5rem;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  gap: 0.42rem;
   outline: none;
 }
 
@@ -34458,23 +34828,33 @@ html body .openms-lib-page--sponsor-us .sponsor-faq__link:focus-visible {
   }
 
   html body .openms-lib-page--sponsor-us .sponsor-faq-pro__cta {
-    width: 100% !important;
-    max-width: none !important;
+    width: fit-content !important;
+    max-width: 100% !important;
     justify-content: center !important;
+    align-self: flex-start !important;
   }
 
   html body .openms-lib-page--sponsor-us .sponsor-faq__answer a,
   html body .openms-lib-page--sponsor-us .sponsor-faq__link {
-    display: flex !important;
-    width: 100% !important;
-    max-width: none !important;
-    justify-content: space-between;
-    box-sizing: border-box !important;
-    margin-top: 0.65rem;
-    padding: 0.7rem 1.1rem !important;
-    border: 2px solid var(--openms-blue) !important;
-    border-radius: var(--openms-btn-pill-radius, 999px) !important;
-    text-decoration: none !important;
+    display: inline-flex !important;
+    width: auto !important;
+    max-width: 100% !important;
+    justify-content: flex-start !important;
+    align-items: baseline !important;
+    gap: 0.35rem !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: var(--openms-blue) !important;
+    -webkit-text-fill-color: var(--openms-blue) !important;
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 0.18em !important;
+    white-space: normal !important;
   }
 }
 
@@ -34548,17 +34928,17 @@ html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__toggle
   -webkit-text-fill-color: var(--openms-navy) !important;
 }
 
-/* Navy-outline pills — same hover as navbar “Sponsor Us” */
+/* Navy-outline pills — same hover as navbar “Sponsor Us”.
+   Omit .about-cta-btn--donate: hero “Explore” + navbar CTAs use their own hovers;
+   a :is()+many-:not() rule out-specs late hero white-fill. */
 html body :is(
   .openms-lib-btn--ghost,
   .openms-lib-btn--outline,
   .openms-lib-developers__platform-btn,
   .sponsor-tier__cta,
   a.contact-path-social,
-  .about-cta-btn--donate,
-  .contribute-os-buttons .openms-lib-btn,
   .webapps-project-links__btn
-):not(.openms-lib-btn--primary):not(.footer-donate-btn):not(.openms-lib-cta-band__btn-ghost):is(:hover, :focus-visible, :active),
+):not(.openms-lib-btn--primary):not(.footer-donate-btn):not(.openms-lib-cta-band__btn-ghost):not(.webapps-project-links__btn--demo):not(.webapps-project-links__btn--nfcore):not(.openms-lib-developers__platform-btn):is(:hover, :focus-visible, :active),
 html body .openms-lib-developers__card--interactive:is(:hover, :focus-within) .openms-lib-developers__platform-btn:is(:hover, :focus-visible),
 html body .openms-lib-page--contact a.contact-path-social:is(:hover, :focus-visible) {
   background: rgba(var(--openms-navy-rgb), 0.08) !important;
@@ -34578,15 +34958,47 @@ html body :is(
   .openms-lib-developers__platform-btn,
   .sponsor-tier__cta,
   a.contact-path-social,
-  .about-cta-btn--donate,
   .contribute-os-buttons .openms-lib-btn,
   .webapps-project-links__btn
-):not(.openms-lib-btn--primary):not(.openms-lib-cta-band__btn-ghost):is(:hover, :focus-visible, :active) :is(
+):not(.openms-lib-btn--primary):not(.openms-lib-cta-band__btn-ghost):not(.webapps-project-links__btn--demo):not(.webapps-project-links__btn--nfcore):is(:hover, :focus-visible, :active) :is(
   i, .fab, .fas, .svg-inline--fa, .openms-lib-btn__label, .sponsor-tier__cta-label, span, .navbar-cta-label
 ) {
   color: var(--openms-navy) !important;
   -webkit-text-fill-color: var(--openms-navy) !important;
   fill: currentColor !important;
+}
+
+/* Filled Demo / first pill: same hover as navbar “Partner with OpenMS” */
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--solution.openms-lib-page--affiliated .webapps-project-links__btn--demo:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--solution.openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--demo:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived-entry .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--solution.openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--nfcore:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--solution.openms-lib-page--archived .webapps-archived-entry--nfcore .webapps-project-links__btn--nfcore:is(:hover, :focus-visible, :active) {
+  background: var(--openms-blue) !important;
+  background-color: var(--openms-blue) !important;
+  border-color: var(--openms-blue) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) var(--openms-btn-glow) !important;
+  outline: none;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, .fa-play-circle, svg, .svg-inline--fa, path),
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, .fa-play-circle, svg, .svg-inline--fa, path),
+html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, svg, .svg-inline--fa, path),
+html body .openms-lib-page--solution.openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--nfcore:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, svg, .svg-inline--fa, path),
+html body .openms-lib-page--solution.openms-lib-page--archived .webapps-archived-entry--nfcore .webapps-project-links__btn--nfcore:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, svg, .svg-inline--fa, path),
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived-entry .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, svg, .svg-inline--fa, path),
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:is(:hover, :focus-visible) i::before,
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:is(:hover, :focus-visible) .fa-play-circle::before {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: var(--openms-white) !important;
 }
 
 /* Dark bands: keep white outline; only scale + glow like Sponsor Us motion */
@@ -34679,7 +35091,8 @@ html body .openms-lib-page--contribute .contribute-track__item:is(:hover, :focus
 html body .openms-lib-page--contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-buttons .openms-lib-btn:is(:hover, :focus-visible, :active) {
   background: transparent !important;
   background-color: transparent !important;
-  border-color: rgba(var(--openms-white-rgb), 0.92) !important;
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
   color: var(--openms-white) !important;
   -webkit-text-fill-color: var(--openms-white) !important;
 }
@@ -34826,18 +35239,44 @@ html body .openms-lib-page--publications .publications-featured .publications-ci
   }
 }
 
-/* Homepage projects — larger logos on mobile for compact wordmarks */
-@media (max-width: 720px) {
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="flashapp" i],
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="OpenDIAKiosk" i],
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="umetaflow" i],
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="openDDA" i],
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i] {
-    height: clamp(6.5rem, 32vw, 8.25rem) !important;
-    max-height: clamp(6.5rem, 32vw, 8.25rem) !important;
-    max-width: min(22rem, 100%) !important;
-  }
+/* Homepage projects — one logo size at every viewport */
+html body .home-page .home-page__block--projects .webapps-project-card--catalog {
+  --projects-logo-height: 104px;
+}
 
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo {
+  height: 104px !important;
+  max-height: 104px !important;
+  max-width: min(22rem, 100%) !important;
+}
+
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="naseweis" i] {
+  height: 68px !important;
+  max-height: 68px !important;
+}
+
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="openDDA" i],
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i],
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="nuxl" i] {
+  height: 132px !important;
+  max-height: 132px !important;
+  max-width: min(22rem, 100%) !important;
+}
+
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__cta,
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__cta-label {
+  font-family: var(--openms-font-body) !important;
+  font-size: var(--openms-body-size) !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
+
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__cta-icon {
+  font-size: 1.05em !important;
+  line-height: 1 !important;
+}
+
+@media (max-width: 720px) {
   html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="flashapp" i]) .webapps-project-card__name,
   html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="OpenDIAKiosk" i]) .webapps-project-card__name,
   html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="umetaflow" i]) .webapps-project-card__name,
@@ -34867,7 +35306,7 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
   display: block !important;
   margin-left: 0 !important;
   margin-right: auto !important;
-  max-width: min(20rem, 100%) !important;
+  max-width: min(22rem, 100%) !important;
   object-fit: contain !important;
   object-position: left center !important;
 }
@@ -34930,7 +35369,112 @@ html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-proj
   fill: var(--openms-white) !important;
 }
 
-html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:hover :is(i, .fab, .fas, .fa-play-circle, svg, .svg-inline--fa, path),
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links,
+html body .openms-lib-page--affiliated .webapps-project-links,
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links {
+  overflow: visible !important;
+  padding: var(--openms-btn-glow-size, 6px) !important;
+  margin: calc(var(--openms-btn-glow-size, 6px) * -1) !important;
+}
+
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card,
+html body .openms-lib-page--affiliated .webapps-project-detail-card,
+html body .openms-lib-page--archived .webapps-archived-entry,
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__item,
+html body .openms-lib-page--affiliated .webapps-affiliates__item,
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__grid--detail,
+html body .openms-lib-page--affiliated .webapps-affiliates__grid,
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured,
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured--page,
+html body .openms-lib-page--featured.openms-lib-page--featured-pro section.webapps-featured,
+html body .openms-lib-page--affiliated .webapps-affiliates,
+html body .openms-lib-page--archived .webapps-archived,
+html body .openms-lib-page--featured.openms-lib-page--featured-pro #featured-webapps,
+html body .openms-lib-page--affiliated #affiliated-apps,
+html body .openms-lib-page--archived #archived-apps,
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .openms-lib-page__anchor:has(.webapps-featured),
+html body .openms-lib-page--affiliated .openms-lib-page__anchor:has(.webapps-affiliates),
+html body .openms-lib-page--archived .openms-lib-page__anchor:has(.webapps-archived) {
+  overflow: visible !important;
+}
+
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo,
+html body .openms-lib-page--affiliated .webapps-project-links__btn--demo,
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--demo,
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--nfcore {
+  overflow: visible !important;
+  box-shadow: 0 0 0 0 var(--openms-btn-glow) !important;
+  transform: scale(1);
+  transition: var(--openms-btn-motion) !important;
+}
+
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:hover,
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:focus-visible,
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:active,
+html body .openms-lib-page--affiliated .webapps-project-links__btn--demo:hover,
+html body .openms-lib-page--affiliated .webapps-project-links__btn--demo:focus-visible,
+html body .openms-lib-page--affiliated .webapps-project-links__btn--demo:active,
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--demo:hover,
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--demo:focus-visible,
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--demo:active,
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--nfcore:hover,
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--nfcore:focus-visible,
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--nfcore:active {
+  background: var(--openms-blue) !important;
+  background-color: var(--openms-blue) !important;
+  border-color: var(--openms-blue) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) var(--openms-btn-glow, rgba(var(--openms-blue-rgb), 0.22)) !important;
+  outline: none;
+  text-decoration: none !important;
+  text-shadow: none;
+  z-index: 1;
+}
+
+/* Featured Apps blue Demo — match site primary blue CTA hover (scale + glow) */
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--featured.openms-lib-page--featured-pro a.webapps-project-links__btn--demo:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro a.webapps-project-links__btn--demo:is(:hover, :focus-visible, :active) {
+  background: var(--openms-blue) !important;
+  background-color: var(--openms-blue) !important;
+  border-color: var(--openms-blue) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) var(--openms-btn-glow) !important;
+  outline: none;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, .fa-play-circle, svg, .svg-inline--fa, path),
+html body .openms-lib-page--featured.openms-lib-page--featured-pro a.webapps-project-links__btn--demo:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, .fa-play-circle, svg, .svg-inline--fa, path),
+html body .openms-lib-page--featured.openms-lib-page--featured-pro a.webapps-project-links__btn--demo:is(:hover, :focus-visible, :active) i::before,
+html body .openms-lib-page--featured.openms-lib-page--featured-pro a.webapps-project-links__btn--demo:is(:hover, :focus-visible, :active) .fa-play-circle::before {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: var(--openms-white) !important;
+}
+
+@media (max-width: 720px) {
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:hover,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:focus-visible,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:active,
+  html body .openms-lib-page--affiliated .webapps-project-links__btn--demo:hover,
+  html body .openms-lib-page--affiliated .webapps-project-links__btn--demo:focus-visible,
+  html body .openms-lib-page--affiliated .webapps-project-links__btn--demo:active,
+  html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--demo:hover,
+  html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--demo:focus-visible,
+  html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--demo:active,
+  html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--nfcore:hover,
+  html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--nfcore:focus-visible,
+  html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--nfcore:active {
+    transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+    box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) var(--openms-btn-glow, rgba(var(--openms-blue-rgb), 0.22)) !important;
+  }
+}
 html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:focus-visible :is(i, .fab, .fas, .fa-play-circle, svg, .svg-inline--fa, path),
 html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:hover i::before,
 html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:hover i::after,
@@ -34938,9 +35482,9 @@ html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-proj
 html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:hover .fas::before,
 html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:focus-visible i::before,
 html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__btn--demo:focus-visible .fa-play-circle::before {
-  color: var(--openms-navy) !important;
-  -webkit-text-fill-color: var(--openms-navy) !important;
-  fill: var(--openms-navy) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: var(--openms-white) !important;
 }
 
 html body .openms-lib-page--affiliated .webapps-project-links__item:first-child .webapps-project-links__btn,
@@ -34965,13 +35509,17 @@ html body .openms-lib-page--affiliated .webapps-project-links__btn--demo:visited
 }
 
 html body .openms-lib-layout:has(.openms-lib-page--featured.openms-lib-page--featured-pro),
-html body .content-padding:has(.openms-lib-page--featured.openms-lib-page--featured-pro) {
+html body .content-padding:has(.openms-lib-page--featured.openms-lib-page--featured-pro),
+html body .openms-lib-layout:has(.openms-lib-page--archived.openms-lib-page--featured-pro),
+html body .content-padding:has(.openms-lib-page--archived.openms-lib-page--featured-pro) {
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
 }
 
 html body .openms-lib-layout:has(.openms-lib-page--featured.openms-lib-page--featured-pro) + #footer.footer-redesign,
-html body .content-padding:has(.openms-lib-page--featured.openms-lib-page--featured-pro) + #footer.footer-redesign {
+html body .content-padding:has(.openms-lib-page--featured.openms-lib-page--featured-pro) + #footer.footer-redesign,
+html body .openms-lib-layout:has(.openms-lib-page--archived.openms-lib-page--featured-pro) + #footer.footer-redesign,
+html body .content-padding:has(.openms-lib-page--archived.openms-lib-page--featured-pro) + #footer.footer-redesign {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
@@ -34982,6 +35530,19 @@ html body .openms-lib-page--featured.openms-lib-page--featured-pro #featured-web
 html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured--page,
 html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-modern-wrap--page {
   padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-page--archived.openms-lib-page--featured-pro .openms-lib-page__body,
+html body .openms-lib-page--archived.openms-lib-page--featured-pro .openms-lib-page__body > .openms-lib-page__anchor:last-child,
+html body .openms-lib-page--archived.openms-lib-page--featured-pro #archived-apps {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived,
+html body .openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog {
+  padding-bottom: clamp(3rem, 7vw, 5rem) !important;
   margin-bottom: 0 !important;
 }
 
@@ -35028,10 +35589,94 @@ html body .openms-lib-page--contribute #ways-to-contribute .contribute-os-button
   fill: var(--openms-white) !important;
 }
 
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__media,
+html body .openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__media {
+  width: 7.5rem !important;
+  min-width: 7.5rem !important;
+  max-width: 7.5rem !important;
+  height: 7.5rem !important;
+  min-height: 7.5rem !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry__logo,
+html body .openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__logo,
+html body .openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__logo {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  object-fit: contain !important;
+}
+
+html body .openms-lib-page .webapps-archived__revival a.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--archived .webapps-archived__revival a.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: rgba(var(--openms-white-rgb), 0.72) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  transform: scale(var(--openms-btn-hover-scale)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow) !important;
+}
+
+html body .openms-lib-page .webapps-archived__revival a.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(
+  i, .fab, .fas, .svg-inline--fa, .openms-lib-btn__label, .openms-lib-btn__icon, span
+),
+html body .openms-lib-page--archived .webapps-archived__revival a.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(
+  i, .fab, .fas, .svg-inline--fa, .openms-lib-btn__label, .openms-lib-btn__icon, span
+) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+  opacity: 1 !important;
+}
+
 @media (max-width: 800px) {
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__item .webapps-project-detail-card,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__grid--detail .webapps-project-detail-card,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__item .webapps-project-detail-card,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__grid--detail .webapps-project-detail-card,
+  html body .openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-affiliates__item .webapps-project-detail-card,
+  html body .openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-affiliates__grid .webapps-project-detail-card,
+  html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-affiliates__item .webapps-project-detail-card,
+  html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-affiliates__grid .webapps-project-detail-card {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-areas:
+      "name logo"
+      "text logo"
+      "maintainers maintainers"
+      "actions actions" !important;
+  }
+
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap--large,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap--xlarge,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap--wide,
+  html body .openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap,
+  html body .openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap--large,
+  html body .openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap--xlarge,
+  html body .openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap--wide {
+    grid-area: logo !important;
+    justify-self: end !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+
   html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__actions,
   html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__actions .webapps-project-links,
-  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links {
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links,
+  html body .openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-detail-card__actions,
+  html body .openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-detail-card__actions .webapps-project-links,
+  html body .openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-links {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: flex-start !important;
@@ -35043,7 +35688,8 @@ html body .openms-lib-page--contribute #ways-to-contribute .contribute-os-button
     text-align: left !important;
   }
 
-  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__item {
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__item,
+  html body .openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-links__item {
     flex: 0 0 auto !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -35058,7 +35704,16 @@ html body .openms-lib-page--contribute #ways-to-contribute .contribute-os-button
 }
 
 @media (max-width: 720px) {
-  html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps):not(.openms-lib-page--featured):not(.openms-lib-page--featured-pro) #getting-started .openms-lib-resources__assist-actions,
+  html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps):not(.openms-lib-page--featured):not(.openms-lib-page--featured-pro) #getting-started .openms-lib-resources__assist-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+
   html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-cite__actions,
   html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers__cite-actions {
     display: flex !important;
@@ -35068,7 +35723,15 @@ html body .openms-lib-page--contribute #ways-to-contribute .contribute-os-button
     width: 100% !important;
   }
 
-  html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps):not(.openms-lib-page--featured) #getting-started .openms-lib-resources__assist-actions .openms-lib-btn,
+  html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps):not(.openms-lib-page--featured) #getting-started .openms-lib-resources__assist-actions .openms-lib-btn {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    flex: 0 0 auto !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
   html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-cite__actions .openms-lib-btn,
   html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--webapps) .openms-lib-developers__cite-actions .openms-lib-btn {
     width: 100% !important;
@@ -35123,26 +35786,27 @@ html body .openms-lib-page--contribute #ways-to-contribute .contribute-os-button
     min-height: 0 !important;
     height: auto !important;
     aspect-ratio: 1 !important;
-    padding: 0.35rem !important;
+    padding: 0.2rem !important;
     box-sizing: border-box !important;
   }
 
   html body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-logo,
   html body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-logo--large {
-    width: min(4.75rem, 88%) !important;
-    max-width: min(4.75rem, 88%) !important;
+    width: 100% !important;
+    max-width: none !important;
     height: auto !important;
-    padding: 0.2rem !important;
+    aspect-ratio: 1 !important;
+    padding: 0.15rem !important;
     background: transparent !important;
   }
 
   html body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-logo img,
   html body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-logo--large img,
   html body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-logo img[src*="openDDA"] {
+    width: 100% !important;
+    height: 100% !important;
     max-width: 100% !important;
-    max-height: 3.65rem !important;
-    width: auto !important;
-    height: auto !important;
+    max-height: 100% !important;
     object-fit: contain !important;
   }
 
@@ -35164,6 +35828,38 @@ html body .openms-lib-page--contribute #ways-to-contribute .contribute-os-button
     justify-content: flex-start !important;
     text-align: left !important;
     white-space: nowrap !important;
+  }
+
+  html body .openms-lib-page--webapps .openms-lib-resources__item-link,
+  html body .openms-lib-page--webapps-pro .openms-lib-resources__item-link,
+  html body .openms-lib-page--webapps .openms-lib-resources__explore-link,
+  html body .openms-lib-page--webapps-pro .openms-lib-resources__explore-link,
+  html body .openms-lib-page--webapps .openms-lib-resources__examples-link,
+  html body .openms-lib-page--webapps-pro .openms-lib-resources__examples-link,
+  html body .openms-lib-page--webapps .openms-lib-resources__examples-link span[aria-hidden="true"],
+  html body .openms-lib-page--webapps-pro .openms-lib-resources__examples-link span[aria-hidden="true"],
+  html body .openms-lib-page--webapps .webapps-project-card__cta,
+  html body .openms-lib-page--webapps-pro .webapps-project-card__cta,
+  html body .openms-lib-page--webapps .webapps-featured__show-all,
+  html body .openms-lib-page--webapps-pro .webapps-featured__show-all,
+  html body .openms-lib-page--webapps .webapps-featured__extra-link,
+  html body .openms-lib-page--webapps-pro .webapps-featured__extra-link,
+  html body .openms-lib-page--webapps .webapps-contribute__action-cta,
+  html body .openms-lib-page--webapps-pro .webapps-contribute__action-cta,
+  html body .openms-lib-page--webapps .openms-lib-developers__card-link,
+  html body .openms-lib-page--webapps-pro .openms-lib-developers__card-link,
+  html body .openms-lib-page--webapps .openms-lib-topp__cta,
+  html body .openms-lib-page--webapps-pro .openms-lib-topp__cta {
+    font-size: var(--openms-body-size) !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+  }
+
+  html body .openms-lib-page--webapps .webapps-project-card__cta-icon,
+  html body .openms-lib-page--webapps-pro .webapps-project-card__cta-icon,
+  html body .openms-lib-page--webapps .webapps-featured__show-all-icon,
+  html body .openms-lib-page--webapps-pro .webapps-featured__show-all-icon {
+    font-size: 1.05em !important;
   }
 }
 
@@ -35198,16 +35894,120 @@ html body .openms-lib-page--affiliated .webapps-affiliates {
   margin-bottom: 0 !important;
 }
 
-html body .openms-lib-page--affiliated .webapps-catalog__contact {
-  margin-top: clamp(1.35rem, 3.5vw, 2rem) !important;
-  margin-bottom: 0 !important;
-  padding-bottom: clamp(2rem, 6vw, 3.25rem) !important;
+html body .openms-lib-page--affiliated .webapps-affiliates__item .webapps-project-detail-card,
+html body .openms-lib-page--affiliated .webapps-affiliates__grid .webapps-project-detail-card,
+html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-affiliates__item .webapps-project-detail-card,
+html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-affiliates__grid .webapps-project-detail-card {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) !important;
+  grid-template-areas:
+    "logo name"
+    "logo text"
+    "maintainers maintainers"
+    "actions actions" !important;
+  grid-template-rows: auto auto auto auto !important;
+  align-items: start !important;
+}
+
+html body .openms-lib-page--affiliated .webapps-project-detail-card__body,
+html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-detail-card__body {
+  display: contents !important;
+}
+
+html body .openms-lib-page--affiliated .webapps-project-detail-card__logo-wrap,
+html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap {
+  grid-area: logo !important;
+}
+
+html body .openms-lib-page--affiliated .webapps-project-detail-card__name,
+html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-detail-card__name {
+  grid-area: name !important;
+}
+
+html body .openms-lib-page--affiliated .webapps-project-detail-card__text,
+html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-detail-card__text {
+  grid-area: text !important;
+}
+
+html body .openms-lib-page--affiliated .webapps-project-detail-card__maintainers,
+html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-detail-card__maintainers {
+  grid-area: maintainers !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  justify-self: stretch !important;
+}
+
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__item .webapps-project-detail-card,
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__grid--detail .webapps-project-detail-card,
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__item .webapps-project-detail-card,
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__grid--detail .webapps-project-detail-card {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) !important;
+  grid-template-areas:
+    "logo name"
+    "logo text"
+    "maintainers maintainers"
+    "actions actions" !important;
+  grid-template-rows: auto auto auto auto !important;
+  align-items: start !important;
+}
+
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__body,
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__body {
+  display: contents !important;
+}
+
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap,
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap {
+  grid-area: logo !important;
+}
+
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__name,
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__name {
+  grid-area: name !important;
+}
+
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__text,
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__text {
+  grid-area: text !important;
+}
+
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__maintainers,
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__maintainers {
+  grid-area: maintainers !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  justify-self: stretch !important;
+}
+
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__actions,
+html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links,
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__actions,
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links {
+  grid-area: actions !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  justify-self: stretch !important;
+}
+
+html body .openms-lib-page--affiliated .webapps-project-detail-card__actions,
+html body .openms-lib-page--affiliated .webapps-project-links,
+html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-detail-card__actions,
+html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-links {
+  grid-area: actions !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  justify-self: stretch !important;
 }
 
 @media (max-width: 800px) {
   html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-affiliates,
   html body .openms-lib-page--affiliated .webapps-affiliates {
-    padding-inline: clamp(1.75rem, 8.5vw, 2.5rem) !important;
+    padding-inline: clamp(0.85rem, 4vw, 1.15rem) !important;
     padding-top: clamp(2.75rem, 8vw, 4rem) !important;
     padding-block-start: clamp(2.75rem, 8vw, 4rem) !important;
   }
@@ -35220,11 +36020,25 @@ html body .openms-lib-page--affiliated .webapps-catalog__contact {
 
   html body .openms-lib-page--affiliated .webapps-affiliates__grid {
     gap: 1.35rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  html body .openms-lib-page--affiliated .webapps-affiliates__item .webapps-project-detail-card,
+  html body .openms-lib-page--affiliated .webapps-affiliates__grid .webapps-project-detail-card,
+  html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-affiliates__item .webapps-project-detail-card,
+  html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-affiliates__grid .webapps-project-detail-card {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-areas:
+      "name logo"
+      "text logo"
+      "maintainers maintainers"
+      "actions actions" !important;
   }
 
   html body .openms-lib-page--affiliated .webapps-affiliates__item .webapps-project-detail-card,
   html body .openms-lib-page--affiliated .webapps-affiliates__grid .webapps-project-detail-card {
-    padding: 1.35rem 1.25rem !important;
+    padding: 1.15rem 1rem !important;
   }
 }
 
@@ -35243,12 +36057,35 @@ html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-feat
 
 @media (max-width: 800px) {
   html body .home-page .home-page__block--projects .webapps-featured .webapps-featured__grid--catalog {
-    gap: 1.35rem !important;
-    row-gap: 1.35rem !important;
+    gap: 1.75rem !important;
+    row-gap: 1.75rem !important;
   }
 
-  html body .home-page .home-page__block--projects .webapps-featured__item::before,
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog {
+    --projects-card-inset-y: 0.85rem;
+    --projects-card-inset-x: 0;
+  }
+
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface {
+    padding: 0.85rem 0 !important;
+    gap: 1.15rem !important;
+  }
+
   html body .home-page .home-page__block--projects .webapps-featured__item::after {
+    display: none !important;
+  }
+
+  html body .home-page .home-page__block--projects .webapps-featured__item::before {
+    display: block !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: calc(-1.75rem / 2) !important;
+    height: 1px !important;
+    width: auto !important;
+    background: rgba(var(--openms-navy-rgb), 0.1) !important;
+  }
+
+  html body .home-page .home-page__block--projects .webapps-featured__item:last-child::before {
     display: none !important;
   }
 
@@ -35384,6 +36221,12 @@ html body .openms-lib-page--sponsor-us .sponsor-benefits__switcher-select:focus-
   html body .openms-lib-page--sponsor-us .sponsor-benefits__switcher-select {
     width: 100% !important;
     max-width: none !important;
+  }
+}
+
+@media (max-width: 800px) {
+  html body .openms-lib-page--sponsor-us .sponsor-benefits__switcher {
+    margin-top: 1.25rem !important;
   }
 }
 
@@ -35946,23 +36789,201 @@ html body .openms-lib-page--archived .webapps-archived__notice-index {
   -webkit-text-fill-color: var(--openms-blue) !important;
 }
 
+html body .home-page .ecosystem-home {
+  --ecosystem-logo-box: 9.25rem;
+  --ecosystem-logo-box-h: 6.15rem;
+}
+
+html body .home-page .ecosystem-home__card {
+  display: grid !important;
+  grid-template-rows: auto 1fr auto !important;
+  align-items: stretch !important;
+  gap: 0.4rem !important;
+}
+
 html body .home-page .ecosystem-home__card-head {
-  align-items: center !important;
-  min-height: var(--ecosystem-logo-box-h, 3rem) !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  min-height: var(--ecosystem-logo-box-h, 7rem) !important;
+  height: var(--ecosystem-logo-box-h, 7rem) !important;
+  flex-wrap: nowrap !important;
+}
+
+html body .home-page .ecosystem-home__card-intro {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  flex: 1 1 auto !important;
+  min-width: 8.5rem !important;
+  width: auto !important;
+}
+
+html body .home-page .ecosystem-home__card-title {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  white-space: nowrap !important;
+}
+
+html body .home-page .ecosystem-home__card--webapps .ecosystem-home__card-title {
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  width: max-content !important;
+  max-width: 8.75rem !important;
+  line-height: 1.25 !important;
+}
+
+html body .home-page .ecosystem-home__card-text {
+  margin-top: -0.15rem !important;
+}
+
+html body .home-page .ecosystem-home__card-tag {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  flex: 0 0 auto !important;
+  width: max-content !important;
+  max-width: none !important;
 }
 
 html body .home-page .ecosystem-home__card-icon,
 html body .home-page .ecosystem-home__card--openms-lib .ecosystem-home__card-icon,
 html body .home-page .ecosystem-home__card--webapps .ecosystem-home__card-icon,
-html body .home-page .ecosystem-home__card--pyopenms .ecosystem-home__card-icon,
-html body .home-page .ecosystem-home__card--viz .ecosystem-home__card-icon {
-  flex: 0 0 var(--ecosystem-logo-box, 7.5rem) !important;
-  width: var(--ecosystem-logo-box, 7.5rem) !important;
-  height: var(--ecosystem-logo-box-h, 3rem) !important;
-  max-width: var(--ecosystem-logo-box, 7.5rem) !important;
-  max-height: var(--ecosystem-logo-box-h, 3rem) !important;
+html body .home-page .ecosystem-home__card--pyopenms .ecosystem-home__card-icon {
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+  width: auto !important;
+  max-width: var(--ecosystem-logo-box, 9.25rem) !important;
+  height: 5.35rem !important;
+  max-height: 5.35rem !important;
+  min-width: 3.5rem !important;
+  margin-top: 0 !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
   object-fit: contain !important;
-  object-position: right center !important;
+  object-position: right top !important;
+}
+
+html body .home-page .ecosystem-home__card--viz .ecosystem-home__card-head {
+  height: auto !important;
+  min-height: 7.25rem !important;
+  overflow: visible !important;
+}
+
+html body .home-page .ecosystem-home__card--viz .ecosystem-home__card-icon {
+  flex: 0 1 auto !important;
+  align-self: flex-start !important;
+  width: auto !important;
+  height: 7.25rem !important;
+  max-width: min(18.5rem, 70%) !important;
+  max-height: 7.25rem !important;
+  margin-top: -1.05rem !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  object-fit: contain !important;
+  object-position: right top !important;
+}
+
+@media (max-width: 800px) {
+  html body .home-page .home-page__block--ecosystem .ecosystem-home {
+    --ecosystem-logo-box: 11.5rem;
+    --ecosystem-logo-box-h: 5.5rem;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card {
+    gap: 0.15rem !important;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__header-main,
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__lead {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card,
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__item {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card-head,
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--viz .ecosystem-home__card-head {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: var(--ecosystem-logo-box-h, 6.15rem) !important;
+    height: auto !important;
+    gap: 0.55rem !important;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card-intro {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card-title,
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 auto !important;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--webapps .ecosystem-home__card-title {
+    width: max-content !important;
+    max-width: 8.75rem !important;
+    white-space: normal !important;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card-tag {
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+    word-break: keep-all !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card-text {
+    -webkit-line-clamp: unset !important;
+    display: block !important;
+    overflow: visible !important;
+    margin-top: -0.55rem !important;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card-icon,
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--openms-lib .ecosystem-home__card-icon,
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--webapps .ecosystem-home__card-icon,
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--pyopenms .ecosystem-home__card-icon {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    height: 5.35rem !important;
+    max-width: 9.25rem !important;
+    max-height: 5.35rem !important;
+    margin: 0 0 0 auto !important;
+    align-self: flex-start !important;
+    object-fit: contain !important;
+    object-position: right top !important;
+  }
+
+  html body .home-page .home-page__block--ecosystem .ecosystem-home__card--viz .ecosystem-home__card-icon {
+    width: auto !important;
+    height: 7.25rem !important;
+    max-width: min(14rem, 48%) !important;
+    max-height: 7.25rem !important;
+    margin-top: -1.05rem !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    object-position: right top !important;
+  }
 }
 
 /* For Developers — navy card hover: ghost pills with white label text */
@@ -36155,6 +37176,371 @@ html body .openms-lib-page--news-article .news-story__body p:has(> img:only-chil
 html body .openms-lib-page--news-article .news-story__body p:has(> a:only-child > img) {
   display: block !important;
 }
+
+html body .openms-lib-page--archived .webapps-archived-entry__badge,
+html body .openms-lib-page--solution.openms-lib-page--archived .webapps-archived-entry__badge,
+html body .openms-lib-page--solution.openms-lib-page--featured-pro .webapps-archived-entry__badge,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived-entry__badge {
+  font-size: 0.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1.15 !important;
+  padding: 0.06rem 0.34rem !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__projects,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__projects {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 1.15rem 1.75rem !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice,
+html body .openms-lib-page--archived .webapps-archived__notice--callout,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice {
+  justify-items: start !important;
+  text-align: left !important;
+  gap: 0.7rem !important;
+  width: min(100%, 20rem) !important;
+  flex: 1 1 16rem !important;
+  max-width: 22rem !important;
+  margin: 0 !important;
+  padding: 0.2rem 0 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice + .webapps-archived__grid,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice + .webapps-archived__grid {
+  margin-top: 1.15rem !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-head,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-head {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  gap: 0.3rem !important;
+  text-align: left !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-icon,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-icon {
+  width: 0.8rem !important;
+  height: 0.8rem !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-icon svg,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-icon svg {
+  width: 0.8rem !important;
+  height: 0.8rem !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-title,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-title {
+  text-align: center !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-index,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-index {
+  display: none !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-list,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-list {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  gap: 0.85rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  overflow: visible !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-item,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-item {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  justify-items: start !important;
+  text-align: left !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-item + .webapps-archived__notice-item,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-item + .webapps-archived__notice-item {
+  border: 0 !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-copy,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-copy {
+  justify-items: start !important;
+  text-align: left !important;
+  width: 100% !important;
+  gap: 0.28rem !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-heading,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-heading {
+  text-align: left !important;
+  margin: 0 !important;
+  padding-bottom: 0.28rem !important;
+  border-bottom: 1.5px solid var(--openms-blue) !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  font-size: 0.82rem !important;
+  line-height: 1.25 !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-text,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-text {
+  text-align: left !important;
+  margin: 0 !important;
+  max-width: none !important;
+  font-size: 0.8rem !important;
+  line-height: 1.4 !important;
+}
+
+@media (max-width: 700px) {
+  html body .openms-lib-page--archived .webapps-archived__notice-item + .webapps-archived__notice-item,
+  html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-item + .webapps-archived__notice-item {
+    border: 0 !important;
+  }
+}
+
+html body .openms-lib-page--archived .webapps-archived__revival,
+html body .openms-lib-page--archived .webapps-archived__revival-actions,
+html body .openms-lib-page--solution.openms-lib-page--archived .webapps-archived__revival,
+html body .openms-lib-page--solution.openms-lib-page--archived .webapps-archived__revival-actions {
+  overflow: visible !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__revival-actions .openms-lib-btn--ghost,
+html body .openms-lib-page--solution.openms-lib-page--archived .webapps-archived__revival-actions .openms-lib-btn--ghost {
+  overflow: visible !important;
+  box-shadow: 0 0 0 0 var(--openms-btn-glow-white, rgba(255, 255, 255, 0.28)) !important;
+  transform: scale(1);
+  transition: var(--openms-btn-motion) !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__revival-actions .openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival-actions .openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival a.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: var(--openms-white) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) var(--openms-btn-glow-white, rgba(255, 255, 255, 0.28)) !important;
+  outline: none;
+  text-decoration: none !important;
+  z-index: 1;
+}
+
+html body .openms-lib-page--archived .openms-lib-hero,
+html body .openms-lib-page--archived .openms-lib-hero--pro,
+html body .openms-lib-page--archived .openms-lib-hero--solution,
+html body .openms-lib-page--archived .openms-lib-hero__panel,
+html body .openms-lib-page--solution.openms-lib-page--archived .openms-lib-hero,
+html body .openms-lib-page--solution.openms-lib-page--archived .openms-lib-hero--pro,
+html body .openms-lib-page--solution.openms-lib-page--archived .openms-lib-hero--solution,
+html body .openms-lib-page--solution.openms-lib-page--archived .openms-lib-hero__panel {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+html body .openms-lib-page--archived .openms-lib-hero::before,
+html body .openms-lib-page--archived .openms-lib-hero::after,
+html body .openms-lib-page--archived .openms-lib-hero--pro::before,
+html body .openms-lib-page--archived .openms-lib-hero--pro::after,
+html body .openms-lib-page--archived .openms-lib-hero__panel::before,
+html body .openms-lib-page--archived .openms-lib-hero__panel::after,
+html body .openms-lib-page--solution.openms-lib-page--archived .openms-lib-hero::before,
+html body .openms-lib-page--solution.openms-lib-page--archived .openms-lib-hero::after,
+html body .openms-lib-page--solution.openms-lib-page--archived .openms-lib-hero--pro::before,
+html body .openms-lib-page--solution.openms-lib-page--archived .openms-lib-hero--pro::after,
+html body .openms-lib-page--solution.openms-lib-page--archived .openms-lib-hero__panel::before,
+html body .openms-lib-page--solution.openms-lib-page--archived .openms-lib-hero__panel::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-about__tile-title {
+  margin-bottom: 1.5rem !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__lead {
+  display: block !important;
+  grid-template-columns: none !important;
+  max-width: min(63.5rem, 100%) !important;
+  width: auto !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-lead-col {
+  display: block !important;
+}
+
+html body .openms-lib-page.openms-lib-page--sponsor-us .sponsor-faq__answer p a.openms-cta-link,
+html body .openms-lib-page.openms-lib-page--sponsor-us .sponsor-faq__answer p a.sponsor-faq__link,
+html body .openms-lib-page.openms-lib-page--sponsor-us .sponsor-faq__link {
+  display: inline-flex !important;
+  align-items: baseline;
+  gap: 0.28rem;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-weight: var(--openms-cta-link-weight, 700) !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page.openms-lib-page--sponsor-us .sponsor-faq__answer a.openms-cta-link span[aria-hidden="true"],
+html body .openms-lib-page.openms-lib-page--sponsor-us .sponsor-faq__link span[aria-hidden="true"] {
+  font-weight: 400 !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--contributors #join-community.openms-lib-page__anchor {
+  padding-inline: var(--openms-page-inline) !important;
+  box-sizing: border-box !important;
+}
+
+html body .openms-lib-page--contributors #join-community .webapps-archived__revival {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  overflow: visible !important;
+}
+
+html body .openms-lib-page--contributors #join-community .webapps-archived__revival-actions {
+  overflow: visible !important;
+}
+
+html body .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn--ghost,
+html body .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-cta-band__btn-ghost {
+  overflow: visible !important;
+  box-shadow: 0 0 0 0 var(--openms-btn-glow-white, rgba(255, 255, 255, 0.28)) !important;
+}
+
+html body .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: var(--openms-white) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) var(--openms-btn-glow-white, rgba(255, 255, 255, 0.28)) !important;
+  outline: none;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__inner,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived--catalog .webapps-archived__inner {
+  max-width: min(100%, 58rem) !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__projects,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__projects {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(13.25rem, 18.75rem) !important;
+  gap: 1rem 1.65rem !important;
+  align-items: start !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__grid,
+html body .openms-lib-page--archived .webapps-archived__grid--solo,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__grid,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__grid--solo {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  justify-self: stretch !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice,
+html body .openms-lib-page--archived .webapps-archived__notice--callout,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice--callout {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0.15rem 0 0 !important;
+  justify-items: start !important;
+  text-align: left !important;
+  gap: 0.7rem !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-head,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-head {
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-list,
+html body .openms-lib-page--archived .webapps-archived__notice-item,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-list,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-item {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-list,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-list {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 0.85rem !important;
+  padding: 0 !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-item,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-item {
+  padding: 0 !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived__notice-heading,
+html body .openms-lib-page--archived .webapps-archived__notice-text,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-heading,
+html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice-text {
+  text-align: left !important;
+}
+
+@media (max-width: 47.99rem) {
+  html body .openms-lib-page--archived .webapps-archived__projects,
+  html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__projects {
+    grid-template-columns: 1fr !important;
+    gap: 1.15rem !important;
+  }
+}
+
 
 
 

@@ -1,0 +1,149 @@
+/* Site-wide section head stack: eyebrow → title → lead
+   Canonical: 12px after top title, 20px after title before paragraph */
+html,
+body,
+.home-page,
+.openms-lib-page,
+.openms-lib-page--solution,
+.openms-lib-page--hub {
+  --openms-stack-eyebrow: 12px;
+  --openms-stack-lead: 20px;
+  --openms-stack-paragraph: 16px;
+  --pro-stack-eyebrow: var(--openms-stack-eyebrow);
+  --pro-stack-lead: var(--openms-stack-lead);
+  --sol-stack-eyebrow: var(--openms-stack-eyebrow);
+  --sol-stack-lead: var(--openms-stack-lead);
+  --home-section-head-eyebrow-gap: var(--openms-stack-eyebrow);
+  --home-section-head-lead-gap: var(--openms-stack-lead);
+}
+
+/* Eyebrow / top title → title */
+html body :is(
+  .openms-lib-hero__eyebrow,
+  .openms-lib-about__eyebrow,
+  .openms-lib-resources__eyebrow,
+  .openms-lib-block__eyebrow,
+  .openms-lib-topp-split__eyebrow,
+  .openms-lib-cite__eyebrow,
+  .openms-lib-developers__eyebrow,
+  .contribute-channels__eyebrow,
+  .contribute-ways__eyebrow,
+  .contribute-support__kicker,
+  .contribute-outreach__eyebrow,
+  .contribute-coc-band__kicker,
+  .sponsor-eyebrow,
+  .publications-key__eyebrow,
+  .coc-overview .openms-lib-about__eyebrow,
+  .governance-section .sponsor-eyebrow,
+  .hero-home__eyebrow,
+  .webapps-featured__eyebrow,
+  .ecosystem-home__eyebrow,
+  .community-events-home__eyebrow,
+  .community-home__eyebrow,
+  .contact-home__eyebrow,
+  .keyfeatures-modern__eyebrow,
+  .trusted-by__home-eyebrow,
+  .home-pathways__eyebrow,
+  .uni-partners__eyebrow,
+  .uni-partners__trust-eyebrow,
+  .news-section__eyebrow,
+  .privacy-overview__eyebrow,
+  .rp-application .openms-lib-resources__eyebrow,
+  .fellowship-application__head .openms-lib-resources__eyebrow,
+  .services-support-application__head .openms-lib-resources__eyebrow,
+  .contact-application__head .openms-lib-resources__eyebrow
+) {
+  margin-top: 0 !important;
+  margin-bottom: var(--openms-stack-eyebrow, 12px) !important;
+}
+
+/* Title sits flush under eyebrow (no extra top gap) */
+html body :is(
+  .openms-lib-hero__title,
+  .openms-lib-about__title,
+  .openms-lib-resources__title,
+  .openms-lib-block__title,
+  .openms-lib-topp-split__title,
+  .openms-lib-cite__title,
+  .openms-lib-developers__title,
+  .contribute-channels__title,
+  .contribute-ways__title,
+  .contribute-support__title,
+  .contribute-outreach__title,
+  .contribute-coc-band__text strong,
+  .publications-key__title,
+  .sponsor-section__head h2,
+  .webapps-featured__title,
+  .ecosystem-home__title,
+  .community-events-home__title,
+  .community-home__title,
+  .contact-home__title,
+  .keyfeatures-modern__title,
+  .home-pathways__title,
+  .uni-partners__title,
+  .uni-partners__trust-title,
+  .news-section__title
+) {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Title → paragraph / lead */
+html body :is(
+  .openms-lib-hero__lead,
+  .openms-lib-about__lead,
+  .openms-lib-resources__lead,
+  .openms-lib-block__lead,
+  .openms-lib-topp-split__lead,
+  .openms-lib-cite__lead,
+  .openms-lib-developers__lead,
+  .contribute-channels__lead,
+  .contribute-ways__lead,
+  .contribute-support__text,
+  .contribute-outreach__text,
+  .contribute-coc-band__note,
+  .sponsor-section__lead,
+  .sponsor-benefits__lead,
+  .webapps-featured__lead,
+  .ecosystem-home__lead,
+  .community-events-home__lead,
+  .community-home__lead,
+  .contact-home__description,
+  .keyfeatures-modern__lead,
+  .home-pathways__lead,
+  .uni-partners__lead,
+  .trusted-by__minimal-lead,
+  .hero-home__description,
+  .news-section__lead,
+  .publications-featured .openms-lib-resources__lead,
+  .openms-lib-resources__head .openms-lib-resources__lead
+) {
+  margin-top: var(--openms-stack-lead, 20px) !important;
+  margin-bottom: 0 !important;
+}
+
+/* Heads that use grid/flex gap — rely on margins instead */
+html body :is(
+  .openms-lib-hero__content,
+  .openms-lib-about__head,
+  .openms-lib-about__head-copy,
+  .openms-lib-resources__head,
+  .openms-lib-block__head,
+  .contribute-channels__head,
+  .contribute-ways__head,
+  .contribute-support__copy,
+  .contribute-outreach__copy,
+  .sponsor-section__head,
+  .fellowship-application__head,
+  .services-support-application__head,
+  .contact-application__head,
+  .rp-application .openms-lib-resources__head,
+  .webapps-featured__header-main,
+  .ecosystem-home__header-main,
+  .community-events-home__header-main,
+  .keyfeatures-modern__header-main,
+  .contact-home__header
+) {
+  gap: 0 !important;
+  row-gap: 0 !important;
+}

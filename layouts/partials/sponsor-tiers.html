@@ -113,6 +113,7 @@
     id="sponsor-benefits"
     data-sponsor-benefits-wrap
     data-active-tier="{{ $featuredId }}"
+    open
   >
     <summary class="sponsor-benefits__summary">
       <span class="sponsor-benefits__summary-copy">
@@ -147,13 +148,16 @@
               Benefit
             </div>
             {{- range $levels }}
-            <div
-              class="sponsor-benefits__matrix-cell sponsor-benefits__matrix-cell--tier sponsor-benefits__matrix-cell--{{ .id }}"
+            <button
+              type="button"
+              class="sponsor-benefits__matrix-cell sponsor-benefits__matrix-cell--tier sponsor-benefits__matrix-cell--head sponsor-benefits__matrix-cell--{{ .id }}"
               role="columnheader"
               data-sponsor-benefits="{{ .id }}"
+              data-sponsor-benefits-col
+              aria-pressed="{{ if eq .id $featuredId }}true{{ else }}false{{ end }}"
             >
               <span class="sponsor-benefits__col-name">{{ .name }}</span>
-            </div>
+            </button>
             {{- end }}
           </div>
 
