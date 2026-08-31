@@ -1,5 +1,5 @@
 ---
-title: "MS Analysis with OpenMS: Free Workshop at National University of Singapore"
+title: "MS Analysis with OpenMS: Free Workshop at The National University of Singapore"
 authors: ["Joshua Charkow"]
 date: 2026-08-31
 summary: We are teaching a two-day workshop on MS analysis with OpenMS at the National University of Singapore on September 26–27, 2026. Click the header above for more information.
