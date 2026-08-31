@@ -110,7 +110,7 @@ languages:
           logo: /images/webapp/logo/openDDA.svg
           description: OpenDDA is a browser-based tool to identify and quantify proteins from DDA mass spectrometry data.
         - index: 4
-          url: https://abi-services.cs.uni-tuebingen.de/nuxl/
+          url: https://nuxl.webapps.openms.org/
           logo: /images/webapp/logo/nuxl.png
           description: NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry).
         - index: 5

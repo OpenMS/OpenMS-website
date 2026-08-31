@@ -283,7 +283,7 @@ To export an image of the annotated spectrum, right-click on the spectrum and ch
 **Tip**: You can add annotations manually by right-clicking on a peak. You can choose to define a label or an annotation ('Add label', 'Add peak annotation') and/or to display the m/z value ('Add peak annotation mz').
 
 ## Run as Web-Application
-Please visit https://abi-services.cs.uni-tuebingen.de/nuxl/ to try out (or download) the experimental NuXL web app.
+Please visit https://nuxl.webapps.openms.org/ to try out (or download) the experimental NuXL web app.
 
 <center>{{< figure src="/images/content_images/applications/NuXL_webapp.jpg" >}}</center>
 
