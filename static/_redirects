@@ -152,10 +152,18 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 /opendiakiosk http://opendia.webapps.openms.org/ 301
 /OPENDIAKIOSK http://opendia.webapps.openms.org/ 301
 
+/NuXLWeb https://nuxl.webapps.openms.org/ 301
+/NuXLweb https://nuxl.webapps.openms.org/ 301
+/nuxlweb https://nuxl.webapps.openms.org/ 301
+/NUXLWEB https://nuxl.webapps.openms.org/ 301
+/NuXL-Web https://nuxl.webapps.openms.org/ 301
+/nuxl-web https://nuxl.webapps.openms.org/ 301
+
 /webapps/quantms-web http://opendda.webapps.openms.org/ 301
 /webapps/opendda http://opendda.webapps.openms.org/ 301
 /webapps/opendia http://opendia.webapps.openms.org/ 301
 /webapps/opendiakiosk http://opendia.webapps.openms.org/ 301
+/webapps/nuxl https://nuxl.webapps.openms.org/ 301
 
 # Redirects for WebApps
 /webapps/* https://abi-services.cs.uni-tuebingen.de/:splat 301
