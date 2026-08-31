@@ -1,13 +1,8 @@
 ---
-
-title: MS Analysis with OpenMS: Free Workshop at National University of Singapore
-
+title: MS Analysis with OpenMS Free Workshop at National University of Singapore
 authors: ["Joshua Charkow"]
-
 date: 2026-08-31
-
 summary: We are teaching a two-day workshop on MS analysis with OpenMS at the National University of Singapore on September 26–27, 2026. Click the header above for more information.
-
 ---
 
 This course provides a comprehensive overview of key technologies in mass spectrometry-based omics, combining theoretical lectures with hands-on exercises. Core topics include an introduction to LC-MS/MS and strategies for accurate identification and quantitation.
