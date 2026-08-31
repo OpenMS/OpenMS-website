@@ -9,19 +9,19 @@ This course provides a comprehensive overview of key technologies in mass spectr
 
 <br><br>
 
-\*\*Date:\*\* September 26–27, 2026 | 9:00–17:00
+**Date:** September 26–27, 2026 | 9:00–17:00
 
 <br>
 
-\*\*Location:\*\* National University of Singapore (venue TBA)
+**Location:** National University of Singapore (venue TBA)
 
 <br>
 
-\*\*Registration:\*\* https://forms.gle/S6gcDAJrLztCAGBL7
+**Registration:** https://forms.gle/S6gcDAJrLztCAGBL7
 
 <br><br>
 
-\*\*About the Workshop\*\*
+**About the Workshop**
 
 <br>
 
@@ -45,7 +45,7 @@ The exact schedule will be determined based on demand. Please indicate your pref
 
 <br><br>
 
-\*\*Bring Your Own Data\*\*
+**Bring Your Own Data**
 
 <br>
 
@@ -53,7 +53,7 @@ Bring your own data and discuss it directly with our mass spectrometry data anal
 
 <br><br>
 
-\*\*Prerequisites\*\*
+**Prerequisites**
 
 <br>
 
@@ -61,6 +61,6 @@ Participants should bring laptops to carry out the hands-on training.
 
 <br><br>
 
-\*\*Contact:\*\* Sam Wein: sam@openms.de | Tom David Müller: tom@openms.de
+**Contact:** Sam Wein: sam@openms.de | Tom David Müller: tom@openms.de
 
 <br><br>
