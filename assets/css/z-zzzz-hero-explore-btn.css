@@ -7,7 +7,7 @@ html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-
   background-color: transparent !important;
   color: var(--openms-white) !important;
   -webkit-text-fill-color: var(--openms-white) !important;
-  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 0 0 0 var(--openms-btn-glow-white, rgba(255, 255, 255, 0.22)) !important;
   transition: var(--openms-btn-motion) !important;
 }
 
@@ -20,8 +20,9 @@ html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-
   border-color: var(--openms-white) !important;
   color: var(--openms-navy) !important;
   -webkit-text-fill-color: var(--openms-navy) !important;
-  transform: scale(1.04) !important;
-  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.35) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px)
+    var(--openms-btn-glow-white, rgba(255, 255, 255, 0.22)) !important;
   outline: none !important;
   text-decoration: none !important;
 }

@@ -33692,16 +33692,13 @@ html body .openms-lib-page--solution #for-developers .openms-lib-developers__car
 html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card:is(:hover, :focus-within),
 html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card--box:is(:hover, :focus-within),
 html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card--interactive:is(:hover, :focus-within) {
-  padding: 1.5rem 1.35rem !important;
   border-width: 1px !important;
   transform: none !important;
   height: 100% !important;
 }
 
-html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms,
-html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__card-cta {
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms {
   flex-wrap: nowrap !important;
-  min-height: 2.75rem !important;
   max-height: none !important;
 }
 
@@ -34936,9 +34933,9 @@ html body :is(
   .openms-lib-btn--outline,
   .openms-lib-developers__platform-btn,
   .sponsor-tier__cta,
-  a.contact-path-social,
-  .webapps-project-links__btn
+  a.contact-path-social
 ):not(.openms-lib-btn--primary):not(.footer-donate-btn):not(.openms-lib-cta-band__btn-ghost):not(.webapps-project-links__btn--demo):not(.webapps-project-links__btn--nfcore):not(.openms-lib-developers__platform-btn):is(:hover, :focus-visible, :active),
+html body .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:not(.openms-btn-primary):is(:hover, :focus-visible, :active),
 html body .openms-lib-developers__card--interactive:is(:hover, :focus-within) .openms-lib-developers__platform-btn:is(:hover, :focus-visible),
 html body .openms-lib-page--contact a.contact-path-social:is(:hover, :focus-visible) {
   background: rgba(var(--openms-navy-rgb), 0.08) !important;
@@ -34958,10 +34955,12 @@ html body :is(
   .openms-lib-developers__platform-btn,
   .sponsor-tier__cta,
   a.contact-path-social,
-  .contribute-os-buttons .openms-lib-btn,
-  .webapps-project-links__btn
+  .contribute-os-buttons .openms-lib-btn
 ):not(.openms-lib-btn--primary):not(.openms-lib-cta-band__btn-ghost):not(.webapps-project-links__btn--demo):not(.webapps-project-links__btn--nfcore):is(:hover, :focus-visible, :active) :is(
   i, .fab, .fas, .svg-inline--fa, .openms-lib-btn__label, .sponsor-tier__cta-label, span, .navbar-cta-label
+),
+html body .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:is(:hover, :focus-visible, :active) :is(
+  i, .fab, .fas, .svg-inline--fa, span
 ) {
   color: var(--openms-navy) !important;
   -webkit-text-fill-color: var(--openms-navy) !important;
@@ -35433,11 +35432,13 @@ html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-li
   z-index: 1;
 }
 
-/* Featured Apps blue Demo — match site primary blue CTA hover (scale + glow) */
+/* Featured / Affiliated Apps blue pills — match site primary blue CTA hover (scale + glow) */
 html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active),
 html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active),
 html body .openms-lib-page--featured.openms-lib-page--featured-pro a.webapps-project-links__btn--demo:is(:hover, :focus-visible, :active),
-html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro a.webapps-project-links__btn--demo:is(:hover, :focus-visible, :active) {
+html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro a.webapps-project-links__btn--demo:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--affiliated .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--solution.openms-lib-page--affiliated.openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active) {
   background: var(--openms-blue) !important;
   background-color: var(--openms-blue) !important;
   border-color: var(--openms-blue) !important;
@@ -35452,7 +35453,8 @@ html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--
 html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, .fa-play-circle, svg, .svg-inline--fa, path),
 html body .openms-lib-page--featured.openms-lib-page--featured-pro a.webapps-project-links__btn--demo:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, .fa-play-circle, svg, .svg-inline--fa, path),
 html body .openms-lib-page--featured.openms-lib-page--featured-pro a.webapps-project-links__btn--demo:is(:hover, :focus-visible, :active) i::before,
-html body .openms-lib-page--featured.openms-lib-page--featured-pro a.webapps-project-links__btn--demo:is(:hover, :focus-visible, :active) .fa-play-circle::before {
+html body .openms-lib-page--featured.openms-lib-page--featured-pro a.webapps-project-links__btn--demo:is(:hover, :focus-visible, :active) .fa-play-circle::before,
+html body .openms-lib-page--affiliated .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, svg, .svg-inline--fa, path) {
   color: var(--openms-white) !important;
   -webkit-text-fill-color: var(--openms-white) !important;
   fill: var(--openms-white) !important;
@@ -37539,6 +37541,54 @@ html body .openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--
     grid-template-columns: 1fr !important;
     gap: 1.15rem !important;
   }
+}
+
+html body .openms-lib-page--exec-committee .exec-meetings .exec-meetings__steps .contribute-track__item:is(:hover, :focus-within) h3.contribute-track__title,
+html body .openms-lib-page--exec-committee .exec-meetings .exec-meetings__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__title,
+html body .openms-lib-page--exec-committee .exec-amendments .exec-amendments__steps .contribute-track__item:is(:hover, :focus-within) h3.contribute-track__title,
+html body .openms-lib-page--exec-committee .exec-amendments .exec-amendments__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__title {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute.openms-lib-page--solution .exec-composition .contribute-channels__head h2.contribute-channels__title,
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute.openms-lib-page--solution .exec-composition .contribute-channels__head .contribute-channels__title,
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute.openms-lib-page--solution .exec-composition .contribute-channels__head .contribute-channels__eyebrow,
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute.openms-lib-page--solution .exec-composition .contribute-channels__head .contribute-channels__lead {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+}
+
+html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) h3.openms-lib-about__tile-title,
+html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__tile-title,
+html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__tile-text,
+html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__num {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+}
+
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process:not(.rhm-process--handling) .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) h3.contribute-track__title,
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process:not(.rhm-process--handling) .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__title,
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process:not(.rhm-process--handling) .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__text,
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process:not(.rhm-process--handling) .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
 }
 
 

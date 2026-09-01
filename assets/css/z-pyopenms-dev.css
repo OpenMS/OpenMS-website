@@ -28,6 +28,19 @@ html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers_
   white-space: nowrap !important;
 }
 
+/* Keep For Developers text CTAs pinned — no hover lift / min-height jump */
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card-link,
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card-cta.openms-lib-developers__card-link,
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__card-link,
+html body .openms-lib-page--pyopenms-pro #for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__card-cta.openms-lib-developers__card-link {
+  margin-top: auto !important;
+  padding-top: 0.35rem !important;
+  min-height: 0 !important;
+  height: auto !important;
+  transform: none !important;
+  gap: 0.35rem !important;
+}
+
 @media (max-width: 700px) {
   html body .openms-lib-page--pyopenms-pro .openms-lib-developers--cards .openms-lib-developers__cards-grid:has(> :nth-child(5):last-child) {
     grid-template-columns: minmax(0, 1fr) !important;

@@ -1,0 +1,36 @@
+{{- $section := site.Params.archivedSection | default dict -}}
+{{- with index $section "notice" }}
+{{- $notice := . -}}
+{{- with .points }}
+<section class="contribute-channels" aria-labelledby="archived-good-to-know-title">
+  <header class="contribute-channels__head">
+    <p class="contribute-channels__eyebrow">{{ index $notice "label" | default "Good to know" }}</p>
+    <h2 id="archived-good-to-know-title" class="contribute-channels__title">{{ index $notice "title" | default "Good to know" }}</h2>
+    {{- with index $notice "lead" }}
+    <p class="contribute-channels__lead">{{ . }}</p>
+    {{- end }}
+  </header>
+  <div class="contribute-channels__strip" role="list">
+    {{- range $point := . }}
+    {{- $isMap := reflect.IsMap $point -}}
+    {{- $title := "" -}}
+    {{- $text := "" -}}
+    {{- if $isMap -}}
+      {{- $title = index $point "title" | default "" -}}
+      {{- $text = index $point "text" | default (index $point "content" | default "") -}}
+    {{- else -}}
+      {{- $text = $point -}}
+    {{- end -}}
+    <article class="contribute-channel" role="listitem">
+      {{- with $title }}
+      <h3 class="contribute-channel__title">{{ . }}</h3>
+      {{- end }}
+      {{- with $text }}
+      <p class="contribute-channel__text">{{ . }}</p>
+      {{- end }}
+    </article>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+{{- end }}

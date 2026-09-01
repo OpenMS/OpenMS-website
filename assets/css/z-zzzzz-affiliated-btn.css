@@ -1,0 +1,1099 @@
+/* Affiliated Apps — filled pills use the same hover as navbar “Partner with OpenMS” */
+
+html body .openms-lib-page--affiliated.openms-lib-page,
+html body .openms-lib-page--affiliated .openms-lib-page__body,
+html body .openms-lib-page--affiliated .openms-lib-page__anchor,
+html body .openms-lib-page--affiliated .webapps-affiliates,
+html body .openms-lib-page--affiliated .webapps-affiliates__item,
+html body .openms-lib-page--affiliated .webapps-project-detail-card,
+html body .openms-lib-page--affiliated .webapps-project-detail-card__main,
+html body .openms-lib-page--affiliated .webapps-project-detail-card__body,
+html body .openms-lib-page--affiliated .webapps-project-detail-card__actions,
+html body .openms-lib-page--affiliated .webapps-project-links {
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
+
+html body .openms-lib-page--affiliated .webapps-project-links__item:first-child .webapps-project-links__btn,
+html body .openms-lib-page--affiliated .webapps-project-links__btn.openms-btn-primary,
+html body .openms-lib-page--affiliated a.webapps-project-links__btn.openms-btn-primary {
+  position: relative !important;
+  z-index: 1 !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  height: auto !important;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+  border-radius: var(--openms-btn-pill-radius, 999px) !important;
+  background: var(--openms-blue) !important;
+  background-color: var(--openms-blue) !important;
+  border: var(--openms-btn-border-width, 2px) solid var(--openms-blue) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  box-shadow: 0 0 0 0 var(--openms-btn-glow) !important;
+  transform: scale(1) !important;
+  transition: var(--openms-btn-motion) !important;
+}
+
+html body .openms-lib-page--affiliated .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible, :active, :visited:hover),
+html body .openms-lib-page--affiliated .webapps-project-links__btn.openms-btn-primary:is(:hover, :focus-visible, :active, :visited:hover),
+html body .openms-lib-page--affiliated a.webapps-project-links__btn.openms-btn-primary:is(:hover, :focus-visible, :active, :visited:hover) {
+  background: var(--openms-blue) !important;
+  background-color: var(--openms-blue) !important;
+  border: 2px solid var(--openms-blue) !important;
+  border-color: var(--openms-blue) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  z-index: 3 !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(var(--openms-blue-rgb), 0.22) !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--affiliated .webapps-project-links__btn.openms-btn-primary :is(i, span, .fab, .fas, svg, .svg-inline--fa, path),
+html body .openms-lib-page--affiliated .webapps-project-links__btn.openms-btn-primary:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, svg, .svg-inline--fa, path) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived-entry,
+html body .openms-lib-page--archived .webapps-archived-entry__actions,
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links {
+  overflow: visible !important;
+}
+
+html body .openms-lib-page--affiliated .webapps-project-links__btn--github,
+html body .openms-lib-page--affiliated .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:not(.openms-btn-primary),
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--github,
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:not(.openms-btn-primary):not(.webapps-project-links__btn--nfcore) {
+  position: relative !important;
+  z-index: 1 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 2px solid rgba(var(--openms-navy-rgb), 0.72) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  box-shadow: 0 0 0 0 rgba(var(--openms-navy-rgb), 0.18) !important;
+  transform: scale(1) !important;
+  transition: var(--openms-btn-motion) !important;
+}
+
+html body .openms-lib-page--affiliated .webapps-project-links__btn--github:is(:hover, :focus-visible, :active, :visited:hover),
+html body .openms-lib-page--affiliated a.webapps-project-links__btn--github:is(:hover, :focus-visible, :active, :visited:hover),
+html body .openms-lib-page--affiliated .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:not(.openms-btn-primary):is(:hover, :focus-visible, :active, :visited:hover),
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--github:is(:hover, :focus-visible, :active, :visited:hover),
+html body .openms-lib-page--archived .webapps-archived-entry a.webapps-project-links__btn--github:is(:hover, :focus-visible, :active, :visited:hover),
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:not(.openms-btn-primary):not(.webapps-project-links__btn--nfcore):is(:hover, :focus-visible, :active, :visited:hover) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 2px solid var(--openms-navy) !important;
+  border-color: var(--openms-navy) !important;
+  border-style: solid !important;
+  border-width: 2px !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  z-index: 3 !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(var(--openms-navy-rgb), 0.18) !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--affiliated .webapps-project-links__btn--github :is(i, span, .fab, .fas, svg, .svg-inline--fa, path),
+html body .openms-lib-page--affiliated .webapps-project-links__btn--github:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, svg, .svg-inline--fa, path),
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--github :is(i, span, .fab, .fas, svg, .svg-inline--fa, path),
+html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--github:is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, svg, .svg-inline--fa, path) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  fill: currentColor !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .openms-lib-page--affiliated .webapps-project-links__btn.openms-btn-primary:is(:hover, :focus-visible, :active),
+  html body .openms-lib-page--affiliated .webapps-project-links__btn--github:is(:hover, :focus-visible, :active),
+  html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--github:is(:hover, :focus-visible, :active) {
+    transform: none !important;
+  }
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived-entry__meta,
+html body .openms-lib-page--archived .webapps-archived-entry__meta {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  flex-wrap: nowrap !important;
+  gap: 0.28rem !important;
+}
+
+html body .openms-lib-page--exec-committee .contribute-channels__strip--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute #responsibilities.openms-lib-page__anchor,
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-responsibilities {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-responsibilities {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem)) !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-responsibilities .contribute-channels__head {
+  text-align: left !important;
+  margin: 0 !important;
+  max-width: min(40rem, 100%) !important;
+  width: 100% !important;
+  justify-items: start !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-responsibilities .contribute-channels__title,
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-responsibilities .contribute-channels__lead {
+  text-align: left !important;
+  margin-inline: 0 !important;
+  max-width: none !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-responsibilities .contribute-channels__strip {
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  gap: 0.85rem !important;
+  width: 100% !important;
+  border: 0 !important;
+  border-top: 0 !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-responsibilities .contribute-channel {
+  grid-column: span 2 !important;
+  border: 1px solid var(--contribute-border, rgba(var(--openms-navy-rgb), 0.12)) !important;
+  border-right: 1px solid var(--contribute-border, rgba(var(--openms-navy-rgb), 0.12)) !important;
+  border-radius: var(--pro-radius, 1rem) !important;
+  background: var(--openms-white) !important;
+  padding-top: clamp(1.15rem, 2vw, 1.5rem) !important;
+  padding-bottom: clamp(1.15rem, 2vw, 1.5rem) !important;
+  padding-inline: clamp(1.1rem, 2vw, 1.4rem) !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-responsibilities .contribute-channel:nth-child(n + 4) {
+  grid-column: span 3 !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute #composition.openms-lib-page__anchor,
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-composition {
+  background: var(--openms-navy) !important;
+  background-color: var(--openms-navy) !important;
+  color: var(--openms-white) !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-composition {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  column-gap: clamp(1.5rem, 4vw, 3rem) !important;
+  row-gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem)) !important;
+  align-items: center !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-composition .contribute-channels__head {
+  text-align: left !important;
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  justify-items: start !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute.openms-lib-page--solution .exec-composition .contribute-channels__head .contribute-channels__eyebrow,
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute.openms-lib-page--solution .exec-composition .contribute-channels__head .contribute-channels__lead,
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute.openms-lib-page--solution .exec-composition .contribute-channels__head h2.contribute-channels__title,
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute.openms-lib-page--solution .exec-composition .contribute-channels__head .contribute-channels__title {
+  text-align: left !important;
+  margin-inline: 0 !important;
+  max-width: none !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-composition .contribute-channels__strip--two {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  width: 100% !important;
+  max-width: none !important;
+  justify-self: stretch !important;
+  gap: 0.85rem !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-composition .contribute-channel {
+  padding-top: clamp(1.15rem, 2vw, 1.5rem) !important;
+  padding-bottom: clamp(1.15rem, 2vw, 1.5rem) !important;
+  padding-inline: clamp(1.1rem, 2vw, 1.4rem) !important;
+  background: var(--openms-white) !important;
+  border-right: 0 !important;
+}
+
+@media (max-width: 47.99rem) {
+  html body .openms-lib-page--exec-committee .contribute-channels__strip--two {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-composition {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-responsibilities .contribute-channels__strip {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-responsibilities .contribute-channel,
+  html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-responsibilities .contribute-channel:nth-child(n + 4) {
+    grid-column: auto !important;
+  }
+}
+
+html body .openms-lib-page--archived.openms-lib-page--contribute .contribute-channels__strip {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+html body .openms-lib-page--archived.openms-lib-page--contribute .contribute-channel__index,
+html body .openms-lib-page--archived.openms-lib-page--contribute .contribute-channel::before {
+  display: none !important;
+  content: none !important;
+}
+
+html body .openms-lib-page--archived.openms-lib-page--contribute .contribute-ways .webapps-archived--catalog,
+html body .openms-lib-page--archived.openms-lib-page--contribute .contribute-ways .webapps-archived__inner,
+html body .openms-lib-page--archived.openms-lib-page--contribute .contribute-ways .webapps-archived__projects,
+html body .openms-lib-page--archived.openms-lib-page--contribute .contribute-ways .webapps-archived__grid {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+html body .openms-lib-page--archived .openms-lib-resources.openms-lib-resources--no-feature .openms-lib-resources__inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: var(--pro-head-to-content, clamp(1.5rem, 3vw, 2.25rem)) !important;
+}
+
+html body .openms-lib-page--archived .openms-lib-page__outro,
+html body .openms-lib-page--archived #archived-revival.openms-lib-page__anchor {
+  padding-inline: var(--openms-page-inline) !important;
+  box-sizing: border-box !important;
+}
+
+html body .openms-lib-page--archived #archived-revival .webapps-archived__revival {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+}
+
+html body .openms-lib-page--archived .openms-lib-resources__inner .webapps-archived--catalog,
+html body .openms-lib-page--archived .openms-lib-resources__inner .webapps-archived__inner,
+html body .openms-lib-page--archived .openms-lib-resources__inner .webapps-archived__projects,
+html body .openms-lib-page--archived .openms-lib-resources__inner .webapps-archived__grid,
+html body .openms-lib-page--archived .openms-lib-resources__inner .webapps-archived__item {
+  width: 100% !important;
+  max-width: none !important;
+  flex: none !important;
+}
+
+html body .openms-lib-page--archived .openms-lib-resources__inner .webapps-archived__projects {
+  display: block !important;
+  justify-content: flex-start !important;
+}
+
+/* Good to know — same panel language as On this page */
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice.webapps-archived__notice--panel,
+html body .openms-lib-page--archived .webapps-archived__notice.webapps-archived__notice--panel {
+  align-self: stretch !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 0 1.5rem !important;
+  padding: 1rem 1.25rem !important;
+  border: 1px solid var(--sol-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
+  border-radius: var(--sol-radius, 1rem) !important;
+  background: rgba(var(--openms-navy-rgb), 0.03) !important;
+  background-color: rgba(var(--openms-navy-rgb), 0.03) !important;
+  box-shadow: none !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice--panel .webapps-archived__notice-head,
+html body .openms-lib-page--archived .webapps-archived__notice--panel .webapps-archived__notice-head {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin: 0 0 0.7rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice--callout .webapps-archived__notice-icon,
+html body .openms-lib-page--archived .webapps-archived__notice--callout .webapps-archived__notice-icon {
+  display: none !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice--callout .webapps-archived__notice-title,
+html body .openms-lib-page--archived .webapps-archived__notice--callout .webapps-archived__notice-title {
+  margin: 0 !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-family: var(--openms-font-heading) !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice--panel .webapps-archived__notice-list,
+html body .openms-lib-page--archived .webapps-archived__notice--panel .webapps-archived__notice-list {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 0.85rem 1.35rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+@media (max-width: 40rem) {
+  html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice--panel .webapps-archived__notice-list,
+  html body .openms-lib-page--archived .webapps-archived__notice--panel .webapps-archived__notice-list {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice--callout .webapps-archived__notice-item,
+html body .openms-lib-page--archived .webapps-archived__notice--callout .webapps-archived__notice-item {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  counter-increment: none !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice--callout .webapps-archived__notice-item::before,
+html body .openms-lib-page--archived .webapps-archived__notice--callout .webapps-archived__notice-item::before {
+  display: none !important;
+  content: none !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice--callout .webapps-archived__notice-copy,
+html body .openms-lib-page--archived .webapps-archived__notice--callout .webapps-archived__notice-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.22rem !important;
+  min-width: 0 !important;
+  width: auto !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice--callout .webapps-archived__notice-heading,
+html body .openms-lib-page--archived .webapps-archived__notice--callout .webapps-archived__notice-heading {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-bottom: 0 !important;
+  width: auto !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  font-family: var(--openms-font-heading) !important;
+  font-size: 1.02rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.25 !important;
+}
+
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__notice--callout .webapps-archived__notice-text,
+html body .openms-lib-page--archived .webapps-archived__notice--callout .webapps-archived__notice-text {
+  margin: 0 !important;
+  color: var(--openms-grey) !important;
+  -webkit-text-fill-color: var(--openms-grey) !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .openms-lib-page__body {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .openms-lib-page__body > .openms-lib-page__anchor {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .openms-lib-page__body > .openms-lib-page__anchor:first-child {
+  padding-top: 0 !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .contribute-channels,
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .contribute-ways {
+  padding-top: clamp(3.25rem, 6.5vw, 5rem) !important;
+  padding-bottom: clamp(3.25rem, 6.5vw, 5rem) !important;
+  gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem)) !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .contribute-channel,
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-meetings__steps .contribute-track__item,
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .exec-amendments__steps .contribute-track__item {
+  padding-top: clamp(1.85rem, 3.4vw, 2.6rem) !important;
+  padding-bottom: clamp(1.85rem, 3.4vw, 2.6rem) !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .openms-lib-page__outro {
+  margin-top: 0 !important;
+}
+
+html body .openms-lib-page--exec-committee.openms-lib-page--contribute .openms-lib-page__outro > .openms-lib-page__anchor {
+  padding-block: clamp(3.25rem, 6.5vw, 5rem) !important;
+}
+
+html body .openms-lib-page--exec-committee .contribute-channels__head,
+html body .openms-lib-page--exec-committee .contribute-ways__head,
+html body .openms-lib-page--exec-committee .exec-meetings .contribute-ways__head,
+html body .openms-lib-page--exec-committee .exec-amendments .contribute-ways__head {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  padding-inline: 0 !important;
+}
+
+html body .openms-lib-page--exec-committee .contribute-track {
+  padding-block: 0 !important;
+}
+
+html body .openms-lib-page--exec-committee .contribute-support {
+  margin-top: 0 !important;
+}
+
+html body .openms-lib-page--exec-committee .exec-meetings__steps,
+html body .openms-lib-page--exec-committee .exec-amendments__steps {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: var(--pro-card-gap, clamp(1rem, 2vw, 1.5rem)) !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  padding-inline: 0 !important;
+  box-sizing: border-box !important;
+}
+
+html body .openms-lib-page--exec-committee .exec-meetings__steps .contribute-track__item,
+html body .openms-lib-page--exec-committee .exec-amendments__steps .contribute-track__item {
+  grid-column: auto !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
+html body .openms-lib-page--exec-committee .exec-meetings__steps .contribute-track__icon {
+  display: grid !important;
+  place-items: center !important;
+  width: auto !important;
+  height: auto !important;
+  color: rgba(var(--openms-blue-rgb), 0.28) !important;
+  -webkit-text-fill-color: rgba(var(--openms-blue-rgb), 0.28) !important;
+  font-size: clamp(1.65rem, 2.6vw, 2.05rem) !important;
+  line-height: 1 !important;
+}
+
+html body .openms-lib-page--exec-committee .exec-meetings__steps .contribute-track__icon :is(i, .fas, .svg-inline--fa) {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+  font-size: 1em !important;
+  width: 1em !important;
+  height: 1em !important;
+}
+
+html body .openms-lib-page--exec-committee .exec-meetings__steps .contribute-track__item:is(:hover, :focus-within),
+html body .openms-lib-page--exec-committee .exec-amendments__steps .contribute-track__item:is(:hover, :focus-within) {
+  background: var(--openms-navy) !important;
+  background-color: var(--openms-navy) !important;
+  border-color: var(--openms-navy) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body .openms-lib-page--exec-committee .exec-meetings__steps .contribute-track__item:is(:hover, :focus-within),
+html body .openms-lib-page--exec-committee .exec-meetings__steps .contribute-track__item:is(:hover, :focus-within) :is(
+  .contribute-track__title,
+  .contribute-track__text,
+  .contribute-track__body,
+  .contribute-track__icon,
+  i,
+  .fas,
+  .svg-inline--fa,
+  span,
+  p,
+  h3
+),
+html body .openms-lib-page--exec-committee .exec-amendments__steps .contribute-track__item:is(:hover, :focus-within),
+html body .openms-lib-page--exec-committee .exec-amendments__steps .contribute-track__item:is(:hover, :focus-within) :is(
+  .contribute-track__title,
+  .contribute-track__text,
+  .contribute-track__body,
+  span,
+  p,
+  h3
+) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: var(--openms-white) !important;
+}
+
+html body .openms-lib-page--exec-committee .exec-meetings .exec-meetings__steps .contribute-track__item:is(:hover, :focus-within) h3.contribute-track__title,
+html body .openms-lib-page--exec-committee .exec-meetings .exec-meetings__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__title,
+html body .openms-lib-page--exec-committee .exec-amendments .exec-amendments__steps .contribute-track__item:is(:hover, :focus-within) h3.contribute-track__title,
+html body .openms-lib-page--exec-committee .exec-amendments .exec-amendments__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__title {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+}
+
+html body .openms-lib-page--exec-committee .exec-meetings__steps .contribute-track__item::before,
+html body .openms-lib-page--exec-committee .exec-amendments__steps .contribute-track__item::before {
+  display: none !important;
+  content: none !important;
+}
+
+@media (max-width: 47.99rem) {
+  html body .openms-lib-page--exec-committee .exec-meetings__steps,
+  html body .openms-lib-page--exec-committee .exec-amendments__steps {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+html body .openms-lib-page--developer-retreat .retreat-highlights__mosaic > .openms-lib-about__tile:is(:hover, :focus-within) {
+  background: var(--openms-navy) !important;
+  background-color: var(--openms-navy) !important;
+  border-color: var(--openms-navy) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  box-shadow: 0 0.65rem 1.5rem rgba(var(--openms-navy-rgb), 0.22) !important;
+  transform: translateY(-3px) !important;
+}
+
+html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) h3.openms-lib-about__tile-title,
+html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__tile-title,
+html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__tile-text,
+html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__num {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-process__steps {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: var(--pro-card-gap, clamp(1rem, 2vw, 1.5rem)) !important;
+  width: 100% !important;
+  max-width: none !important;
+  padding-inline: 0 !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-process__steps--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-process__steps .contribute-track__item {
+  grid-column: auto !important;
+  width: 100% !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-process__steps .contribute-track__item::before {
+  display: none !important;
+  content: none !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-process__steps .contribute-track__icon {
+  color: rgba(var(--openms-blue-rgb), 0.28) !important;
+  -webkit-text-fill-color: rgba(var(--openms-blue-rgb), 0.28) !important;
+  font-size: clamp(1.65rem, 2.6vw, 2.05rem) !important;
+}
+
+html body .openms-lib-page--report-handling .contribute-channels__strip .contribute-channel:is(:hover, :focus-within) {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-process--handling .rhm-process__steps .contribute-track__icon,
+html body .openms-lib-page--report-handling .rhm-process--handling .rhm-process__steps .contribute-track__icon :is(i, .fas, .svg-inline--fa) {
+  color: rgba(var(--openms-blue-rgb), 0.28) !important;
+  -webkit-text-fill-color: rgba(var(--openms-blue-rgb), 0.28) !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-process--handling .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon,
+html body .openms-lib-page--report-handling .rhm-process--handling .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon :is(i, .fas, .svg-inline--fa) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-process--handling .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  border-color: var(--contribute-border, rgba(var(--openms-navy-rgb), 0.1)) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process--handling .rhm-process__steps h3.contribute-track__title,
+html body .openms-lib-page--report-handling .rhm-process--handling .rhm-process__steps .contribute-track__title,
+html body .openms-lib-page--report-handling .rhm-process--handling .rhm-process__steps .contribute-track__text {
+  color: rgba(var(--openms-navy-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-navy-rgb), 0.72) !important;
+  transition: color 0.2s ease, -webkit-text-fill-color 0.2s ease !important;
+}
+
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process--handling .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) h3.contribute-track__title,
+html body .openms-lib-page--report-handling .rhm-process--handling .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__title,
+html body .openms-lib-page--report-handling .rhm-process--handling .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__text {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-resolutions {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: var(--pro-head-to-content) !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-resolutions .contribute-ways__head {
+  max-width: none !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-resolutions__steps {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  column-gap: clamp(1.25rem, 3vw, 2rem) !important;
+  row-gap: clamp(0.85rem, 1.6vw, 1.15rem) !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-resolutions__steps .contribute-track__item,
+html body .openms-lib-page--report-handling .rhm-resolutions__steps .contribute-track__item:is(:hover, :focus-within) {
+  grid-column: auto !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: inherit !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-resolutions__steps .contribute-track__item::before {
+  display: none !important;
+  content: none !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-resolutions__steps .contribute-track__body {
+  gap: 0.2rem !important;
+}
+
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-resolutions .rhm-resolutions__steps h3.contribute-track__title,
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-resolutions .rhm-resolutions__steps .contribute-track__item:is(:hover, :focus-within) h3.contribute-track__title,
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-resolutions .rhm-resolutions__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__title,
+html body .openms-lib-page--report-handling .rhm-resolutions__steps .contribute-track__title {
+  margin: 0 !important;
+  font-size: var(--openms-card-title-size, 1.05rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-resolutions__steps .contribute-track__text,
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-resolutions .rhm-resolutions__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__text {
+  margin: 0 !important;
+  color: var(--openms-text-muted, rgba(var(--openms-navy-rgb), 0.68)) !important;
+  -webkit-text-fill-color: var(--openms-text-muted, rgba(var(--openms-navy-rgb), 0.68)) !important;
+}
+
+html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__panel,
+html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin-inline: auto !important;
+}
+
+html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__eyebrow {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__title,
+html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__lead {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin-inline: auto !important;
+}
+
+html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__title .openms-lib-hero__accent {
+  display: inline !important;
+  text-align: center !important;
+}
+
+html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__actions {
+  justify-content: center !important;
+  margin-inline: auto !important;
+}
+
+html body .openms-lib-page--report-handling .contribute-coc-band__actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  width: auto !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+}
+
+html body .openms-lib-page--report-handling .contribute-coc-band__actions .openms-lib-btn {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  flex: 0 0 auto !important;
+  height: auto !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  padding: var(--openms-btn-padding) !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  font-weight: var(--openms-btn-weight) !important;
+  line-height: var(--openms-btn-line-height) !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+}
+
+html body .openms-lib-page--report-handling .openms-lib-page__body {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+
+html body .openms-lib-page--report-handling .openms-lib-page__body > .openms-lib-page__anchor {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+html body .openms-lib-page--report-handling .contribute-channels,
+html body .openms-lib-page--report-handling .contribute-ways {
+  padding-top: var(--sol-section-y, clamp(3.5rem, 7vw, 5.25rem)) !important;
+  padding-bottom: 0 !important;
+  padding-inline: var(--contribute-gutter, var(--openms-page-inline)) !important;
+  gap: var(--pro-head-to-content) !important;
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
+
+html body .openms-lib-page--report-handling .contribute-channels {
+  padding-bottom: clamp(1.25rem, 2.75vw, 2rem) !important;
+}
+
+html body .openms-lib-page--report-handling .contribute-track {
+  padding-block: 0 !important;
+}
+
+html body .openms-lib-page--report-handling .contribute-support {
+  width: 100% !important;
+  max-width: none !important;
+  margin-top: 0 !important;
+  margin-inline: 0 !important;
+}
+
+html body .openms-lib-page--report-handling .openms-lib-page__outro {
+  margin-top: 0 !important;
+}
+
+html body .openms-lib-page--report-handling .openms-lib-page__outro > .openms-lib-page__anchor {
+  padding-block: var(--sol-section-y, clamp(3.5rem, 7vw, 5.25rem)) !important;
+  padding-inline: var(--contribute-gutter, var(--openms-page-inline)) !important;
+  box-sizing: border-box !important;
+}
+
+html body .openms-lib-page--report-handling .contribute-channels__head,
+html body .openms-lib-page--report-handling .contribute-ways__head {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  text-align: left !important;
+  justify-items: start !important;
+}
+
+html body .openms-lib-page--report-handling .contribute-channels__title,
+html body .openms-lib-page--report-handling .contribute-channels__lead,
+html body .openms-lib-page--report-handling .contribute-ways__title,
+html body .openms-lib-page--report-handling .contribute-ways__lead {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+html body .openms-lib-page--report-handling .contribute-channels__strip,
+html body .openms-lib-page--report-handling .contribute-track,
+html body .openms-lib-page--report-handling .contribute-coc-band,
+html body .openms-lib-page--report-handling .contribute-coc-band__panel {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  padding-inline: 0 !important;
+}
+
+html body .openms-lib-page--report-handling .rhm-process:not(.rhm-process--handling) .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) {
+  background: var(--openms-navy) !important;
+  background-color: var(--openms-navy) !important;
+  border-color: var(--openms-navy) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process:not(.rhm-process--handling) .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) h3.contribute-track__title,
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process:not(.rhm-process--handling) .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__title,
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process:not(.rhm-process--handling) .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__text,
+html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process:not(.rhm-process--handling) .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+}
+
+@media (max-width: 64rem) {
+  html body .openms-lib-page--report-handling .rhm-process__steps,
+  html body .openms-lib-page--report-handling .rhm-process__steps--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  html body .openms-lib-page--report-handling .rhm-process__steps,
+  html body .openms-lib-page--report-handling .rhm-process__steps--four,
+  html body .openms-lib-page--report-handling .rhm-resolutions__steps {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body .openms-lib-page--report-handling .contribute-channels__strip {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero,
+  html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero--pro,
+  html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero--solution {
+    padding-inline: var(--contribute-gutter, var(--openms-page-inline)) !important;
+    text-align: center !important;
+  }
+
+  html body .openms-lib-page--report-handling .rhm-resolutions__steps .contribute-track__item {
+    padding-inline: 0 !important;
+  }
+
+  html body .openms-lib-page--report-handling .contribute-channel {
+    padding-inline: var(--contribute-space-4, 1rem) !important;
+  }
+
+  html body .openms-lib-page--report-handling .rhm-process__steps .contribute-track__item {
+    padding: var(--pro-card-pad-lg, clamp(1.25rem, 2.5vw, 1.75rem)) !important;
+  }
+
+  html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__panel,
+  html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__content {
+    align-items: center !important;
+    justify-items: center !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__eyebrow {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__title {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+    white-space: normal !important;
+    text-wrap: wrap !important;
+  }
+
+  html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__title .openms-lib-hero__accent {
+    display: block !important;
+    width: 100% !important;
+    white-space: nowrap !important;
+    text-wrap: nowrap !important;
+  }
+
+  html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__lead {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+    justify-content: center !important;
+    white-space: normal !important;
+    text-wrap: wrap !important;
+  }
+
+  html body .openms-lib-page--report-handling .contribute-channels__head,
+  html body .openms-lib-page--report-handling .contribute-channels__title,
+  html body .openms-lib-page--report-handling .contribute-channels__lead,
+  html body .openms-lib-page--report-handling .contribute-ways__head,
+  html body .openms-lib-page--report-handling .contribute-ways__title {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+    text-align: left !important;
+    white-space: normal !important;
+  }
+
+  html body .openms-lib-page--report-handling .contribute-channels__title,
+  html body .openms-lib-page--report-handling .contribute-ways__title {
+    text-wrap: balance !important;
+  }
+
+  html body .openms-lib-page--report-handling .contribute-ways__lead,
+  html body .openms-lib-page--report-handling #mediation .contribute-ways__lead,
+  html body .openms-lib-page--report-handling #clear-and-severe-breach-actions .contribute-ways__lead,
+  html body .openms-lib-page--report-handling #report-handling .contribute-ways__lead,
+  html body .openms-lib-page--report-handling #resolutions .contribute-ways__lead {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-inline: 0 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    text-wrap: wrap !important;
+  }
+
+  html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-inline: 0 !important;
+    gap: 0.65rem !important;
+  }
+
+  html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__actions .openms-lib-btn {
+    flex: 1 1 auto !important;
+    width: auto !important;
+    min-width: min(100%, 11rem) !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+    min-height: var(--openms-btn-min-height, 2.75rem) !important;
+    padding: var(--openms-btn-padding) !important;
+    box-sizing: border-box !important;
+  }
+
+  html body .openms-lib-page--report-handling .contribute-coc-band__actions,
+  html body .openms-lib-page--report-handling .contribute-coc-band__actions:not(:has(> :nth-child(2))) {
+    display: flex !important;
+    grid-template-columns: none !important;
+    justify-content: flex-end !important;
+    justify-items: unset !important;
+    width: auto !important;
+    max-width: none !important;
+    margin-inline: 0 !important;
+  }
+
+  html body .openms-lib-page--report-handling .contribute-coc-band__actions .openms-lib-btn,
+  html body .openms-lib-page--report-handling .contribute-coc-band__actions:not(:has(> :nth-child(2))) .openms-lib-btn {
+    width: auto !important;
+    min-width: 0 !important;
+    flex: 0 0 auto !important;
+  }
+
+  html body .openms-lib-page--report-handling .contribute-support {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body .openms-lib-page--report-handling .contribute-coc-band__panel {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 32.5rem) {
+  html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  html body .openms-lib-page--report-handling.openms-lib-page--contribute .openms-lib-hero__actions .openms-lib-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+}
+
+html body #footer.footer-redesign .footer-link-group ul li a,
+html body #footer.footer-redesign .footer-nav .footer-link-group ul li a,
+html body #footer.footer-redesign .footer-nav .footer-link-group ul li a:visited {
+  color: rgba(var(--openms-white-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-white-rgb), 0.72) !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease, -webkit-text-fill-color 0.2s ease !important;
+}
+
+html body #footer.footer-redesign .footer-link-group ul li a:is(:hover, :focus-visible),
+html body #footer.footer-redesign .footer-nav .footer-link-group ul li a:is(:hover, :focus-visible),
+html body #footer.footer-redesign .footer-nav .footer-link-group ul li a:visited:is(:hover, :focus-visible) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  background: transparent !important;
+  text-decoration: none !important;
+}

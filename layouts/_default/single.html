@@ -15,6 +15,8 @@
 {{ partial "donate-main.html" . }}
 {{- else if eq .File.BaseFileName "contribute" -}}
 {{ partial "contribute-main.html" . }}
+{{- else if eq .File.BaseFileName "exec_committee" -}}
+{{ partial "exec-committee-main.html" . }}
 {{- else if eq .File.BaseFileName "our-sponsors" -}}
 {{ partial "our-sponsors-main.html" . }}
 {{- else if eq .File.BaseFileName "governance" -}}
@@ -35,6 +37,8 @@
 {{ partial "privacy-main.html" . }}
 {{- else if eq .File.BaseFileName "code-of-conduct" -}}
 {{ partial "code-of-conduct-main.html" . }}
+{{- else if eq .File.BaseFileName "report-handling-manual" -}}
+{{ partial "report-handling-main.html" . }}
 {{- else -}}
 {{ partial "single/content.html" . }}
 {{- end -}}

@@ -20,3 +20,8 @@ html body .openms-lib-page--publications .publications-featured .openms-lib-reso
 html body .openms-lib-page--publications #key-publications {
   padding-bottom: clamp(2.75rem, 6vw, 4.5rem) !important;
 }
+
+html body .openms-lib-page--publications #key-publications .publications-cite-card__action,
+html body .openms-lib-page--publications #key-publications .publications-cite-card:is(:hover, :focus-within) .publications-cite-card__action {
+  margin-top: 0.85rem !important;
+}

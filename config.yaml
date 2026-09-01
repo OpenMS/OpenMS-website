@@ -1300,6 +1300,8 @@ languages:
         lead: These projects are kept for reference. They still work, but are no longer updated or supported by the community.
         notice:
           label: Good to know
+          title: What to expect
+          lead: You can still run these apps, but review known limits before you start.
           points:
             - title: Still usable
               text: You can still use them as-is for your analysis.

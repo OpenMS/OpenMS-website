@@ -1,0 +1,24 @@
+{{- $section := site.Params.archivedSection | default dict -}}
+{{- $revivalPrompt := index $section "revivalPrompt" -}}
+{{- $revivalNote := index $section "revivalNote" -}}
+{{- $contactText := index $section "contactText" | default "Contact Us" -}}
+{{- $contactUrl := index $section "contactUrl" | default "/contact/" -}}
+{{- $sponsorText := index $section "sponsorText" | default "Sponsor Us" -}}
+{{- $sponsorUrl := index $section "sponsorUrl" | default "/sponsor-us/" -}}
+{{- with $revivalPrompt }}
+<section class="webapps-archived__revival" aria-labelledby="archived-revival-title">
+  <div class="webapps-archived__revival-copy">
+    <p class="webapps-archived__revival-kicker">Community opportunity</p>
+    <p class="webapps-archived__revival-text">
+      <strong id="archived-revival-title">{{ . }}</strong>
+      {{- with $revivalNote }}
+      <span class="webapps-archived__revival-note">{{ . }}</span>
+      {{- end }}
+    </p>
+  </div>
+  <div class="webapps-archived__revival-actions" role="group" aria-label="Revive a project">
+    <a class="openms-lib-btn openms-lib-btn--ghost openms-lib-cta-band__btn-ghost" href="{{ $contactUrl }}">{{ $contactText }}</a>
+    <a class="openms-lib-btn openms-lib-btn--primary" href="{{ $sponsorUrl }}">{{ $sponsorText }}</a>
+  </div>
+</section>
+{{- end }}

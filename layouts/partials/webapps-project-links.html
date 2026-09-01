@@ -47,7 +47,7 @@
   {{- end }}
   <li class="webapps-project-links__item" role="listitem">
     <a
-      class="webapps-project-links__btn webapps-project-links__btn--{{ $type }}"
+      class="webapps-project-links__btn webapps-project-links__btn--{{ $type }}{{ if or (eq $type "homepage") (eq $type "pypi") (eq $type "demo") }} openms-btn-primary{{ end }}"
       href="{{ .url }}"
       target="_blank"
       rel="noopener noreferrer"

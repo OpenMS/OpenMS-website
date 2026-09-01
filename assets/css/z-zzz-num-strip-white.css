@@ -113,7 +113,7 @@ html body .openms-lib-page--developer-retreat .retreat-highlights__mosaic > .ope
 html body .openms-lib-page--code-of-conduct .coc-principle:is(:hover, :focus-within),
 html body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__tile:is(:hover, :focus-within),
 html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:is(:hover, :focus-within),
-html body .openms-lib-page--contribute .contribute-channel:is(:hover, :focus-within),
+html body .openms-lib-page--contribute:not(.openms-lib-page--report-handling) .contribute-channel:is(:hover, :focus-within),
 html body .openms-lib-page--governance #governance-bodies .openms-lib-about__tile:is(:hover, :focus-within),
 html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit:is(:hover, :focus-within),
 html body .openms-lib-page--webapps-pro .openms-lib-about__tile:is(:hover, :focus-within),
