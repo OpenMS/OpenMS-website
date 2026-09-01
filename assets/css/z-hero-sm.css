@@ -316,7 +316,9 @@ html body .home-page__hero .hero-home__highlights {
   html body .home-page__hero {
     --hero-diagram-max: min(100%, 36rem);
     --hero-stack-gap: clamp(1.85rem, 4.2vh, 2.5rem);
-    --hero-note-size: clamp(0.8rem, 2.8cqi, 0.95rem);
+    --hero-note-size: clamp(0.9rem, 3.2cqi, 1.05rem);
+    --hero-lead-width: 100%;
+    --hero-chrome-size: 0.6875rem;
   }
 
   html body .home-page__hero .hero-home {
@@ -354,8 +356,14 @@ html body .home-page__hero .hero-home__highlights {
     max-width: 100% !important;
   }
 
-  html body .home-page__hero .hero-home__eyebrow {
+  html body .home-page__hero .hero-home__eyebrow,
+  html body .home-page__hero .hero-mockup__chrome-title,
+  html body .home-page__hero .hero-mockup__chrome-brand {
     margin-bottom: 0 !important;
+    font-size: var(--hero-chrome-size, 0.6875rem) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em !important;
+    line-height: 1.25 !important;
   }
 
   html body .home-page__hero .hero-home__title,
@@ -428,20 +436,10 @@ html body .home-page__hero .hero-home__highlights {
     overflow: visible !important;
   }
 
-  html body .home-page__hero .hero-mockup__labels {
-    display: flex !important;
-    justify-content: space-between !important;
-    margin: 0.35rem 0 0.65rem !important;
-  }
-
+  html body .home-page__hero .hero-mockup__labels,
   html body .home-page__hero .hero-mockup__chrome-title,
   html body .home-page__hero .hero-mockup__chrome-brand {
-    display: inline-flex !important;
-  }
-
-  html body .home-page__hero .hero-mockup__chrome-title,
-  html body .home-page__hero .hero-mockup__chrome-brand {
-    display: inline-flex !important;
+    display: none !important;
   }
 }
 
@@ -451,7 +449,7 @@ html body .home-page__hero .hero-home__highlights {
     --hero-diagram-max: min(100%, 46rem);
     --hero-diagram-height: 11rem;
     --hero-stack-gap: clamp(1.9rem, 4vh, 2.6rem);
-    --hero-note-size: clamp(0.82rem, 2.5cqi, 0.95rem);
+    --hero-note-size: clamp(0.92rem, 2.8cqi, 1.05rem);
   }
 
   html body .home-page__hero .hero-home__main {
@@ -468,7 +466,7 @@ html body .home-page__hero .hero-home__highlights {
   html body .home-page__hero {
     --hero-diagram-max: min(100%, 100%);
     --hero-diagram-height: 10.25rem;
-    --hero-note-size: clamp(0.78rem, 2.6cqi, 0.9rem);
+    --hero-note-size: clamp(0.88rem, 3cqi, 1rem);
   }
 
   html body .home-page__hero .hero-home__visual {
@@ -476,8 +474,10 @@ html body .home-page__hero .hero-home__highlights {
     max-width: 100% !important;
   }
 
-  html body .home-page__hero .hero-mockup__labels {
-    display: flex !important;
+  html body .home-page__hero .hero-mockup__labels,
+  html body .home-page__hero .hero-mockup__chrome-title,
+  html body .home-page__hero .hero-mockup__chrome-brand {
+    display: none !important;
   }
 
   html body .home-page__hero .hero-home__title,
@@ -497,7 +497,7 @@ html body .home-page__hero .hero-home__highlights {
     --hero-diagram-height: 9.25rem;
     --hero-stack-gap: 1.85rem;
     --hero-copy-gap: 0.9rem;
-    --hero-note-size: clamp(0.75rem, 3.2cqi, 0.88rem);
+    --hero-note-size: clamp(0.85rem, 3.6cqi, 0.98rem);
   }
 
   html body .home-page__hero .hero-home__main {
@@ -522,15 +522,10 @@ html body .home-page__hero .hero-home__highlights {
     margin-top: 0.1rem !important;
   }
 
-  html body .home-page__hero .hero-mockup__labels {
-    display: flex !important;
-    justify-content: space-between !important;
-    margin: 0.25rem 0 0.55rem !important;
-  }
-
+  html body .home-page__hero .hero-mockup__labels,
   html body .home-page__hero .hero-mockup__chrome-title,
   html body .home-page__hero .hero-mockup__chrome-brand {
-    display: inline-flex !important;
+    display: none !important;
   }
 
   html body .home-page__hero .hero-home__actions {
