@@ -357,3 +357,28 @@ html body .openms-lib-page--archived .webapps-archived__notice--callout .webapps
   font-weight: 500 !important;
   line-height: 1.5 !important;
 }
+
+/* Push the "Available references" heading down a bit from the notice above it */
+html body .openms-lib-page--archived #archived-apps .contribute-ways {
+  margin-top: clamp(2rem, 5vw, 3.5rem) !important;
+}
+
+/* Centre the "Community opportunity" revival band */
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__revival,
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival {
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__revival-copy,
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival-copy {
+  flex: 0 1 auto !important;
+  text-align: center !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__revival-actions,
+html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.openms-lib-page--featured-pro .webapps-archived__revival-actions {
+  justify-content: center !important;
+}

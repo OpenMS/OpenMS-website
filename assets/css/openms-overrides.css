@@ -13745,7 +13745,7 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
 .openms-lib-page--privacy .privacy-pro__list {
   display:grid;
   gap:.65rem;
-  max-width:min(56rem,100%)
+  max-width:100%
 }
 .openms-lib-page--privacy .privacy-pro__item {
   border:1px solid var(--pro-line);
@@ -29083,7 +29083,7 @@ html body .home-page__hero .hero-home__note-dot {
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  height: var(--openms-btn-min-height, 2.75rem) !important;
   padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
   border-radius: var(--openms-btn-pill-radius, 999px) !important;
   font-family: var(--openms-font-body) !important;
@@ -31127,8 +31127,8 @@ html body .openms-lib-page--news-article .openms-lib-prose__toc ul ul ul {
   font-weight: var(--openms-cta-link-weight, 700) !important;
 }
 
-.openms-lib-page :is(p, li):not(.governance-card__link) a:not(.openms-lib-btn):not(.openms-cta-link):not(.sponsor-faq__link):hover,
-.openms-lib-page :is(p, li):not(.governance-card__link) a:not(.openms-lib-btn):not(.openms-cta-link):not(.sponsor-faq__link):focus-visible,
+.openms-lib-page :is(p, li):not(.governance-card__link) a:not(.openms-lib-btn):not(.openms-cta-link):not(.sponsor-faq__link):not(.webapps-project-links__btn):hover,
+.openms-lib-page :is(p, li):not(.governance-card__link) a:not(.openms-lib-btn):not(.openms-cta-link):not(.sponsor-faq__link):not(.webapps-project-links__btn):focus-visible,
 .openms-lib-page .contribute-channel__link:hover,
 .openms-lib-page .contribute-channel:hover .contribute-channel__link,
 .openms-lib-page .contribute-way__link:hover,

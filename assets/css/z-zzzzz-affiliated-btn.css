@@ -76,7 +76,7 @@ html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-li
   -webkit-text-fill-color: var(--openms-navy) !important;
   box-shadow: 0 0 0 0 rgba(var(--openms-navy-rgb), 0.18) !important;
   transform: scale(1) !important;
-  transition: var(--openms-btn-motion) !important;
+  transition: var(--openms-btn-motion), border-color 0.2s ease, background-color 0.2s ease !important;
 }
 
 html body .openms-lib-page--affiliated .webapps-project-links__btn--github:is(:hover, :focus-visible, :active, :visited:hover),
@@ -85,8 +85,8 @@ html body .openms-lib-page--affiliated .webapps-project-links__item:not(:first-c
 html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__btn--github:is(:hover, :focus-visible, :active, :visited:hover),
 html body .openms-lib-page--archived .webapps-archived-entry a.webapps-project-links__btn--github:is(:hover, :focus-visible, :active, :visited:hover),
 html body .openms-lib-page--archived .webapps-archived-entry .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:not(.openms-btn-primary):not(.webapps-project-links__btn--nfcore):is(:hover, :focus-visible, :active, :visited:hover) {
-  background: transparent !important;
-  background-color: transparent !important;
+  background: rgba(var(--openms-navy-rgb), 0.08) !important;
+  background-color: rgba(var(--openms-navy-rgb), 0.08) !important;
   border: 2px solid var(--openms-navy) !important;
   border-color: var(--openms-navy) !important;
   border-style: solid !important;
@@ -1096,4 +1096,38 @@ html body #footer.footer-redesign .footer-nav .footer-link-group ul li a:visited
   -webkit-text-fill-color: var(--openms-white) !important;
   background: transparent !important;
   text-decoration: none !important;
+}
+
+/* Featured Apps — navy-outline pills (Install/GitHub) must keep a visible
+   navy border on hover/focus. The generic prose-link hover reset
+   (.openms-lib-page :is(p, li) a:hover) was winning on a specificity
+   tiebreak and zeroing border-color here; force it back with margin. */
+html body .openms-lib-page--featured-pro .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:not(.openms-btn-primary),
+html body .openms-lib-page--featured-pro .webapps-project-links__item:not(:first-child) a.webapps-project-links__btn:not(.openms-btn-primary),
+html body .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:not(.openms-btn-primary),
+html body .webapps-project-links__item:not(:first-child) a.webapps-project-links__btn:not(.openms-btn-primary) {
+  transition: border-color 0.2s ease, border-width 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+html body .openms-lib-page--featured-pro .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:not(.openms-btn-primary):is(:hover, :focus-visible, :active),
+html body .openms-lib-page--featured-pro .webapps-project-links__item:not(:first-child) a.webapps-project-links__btn:not(.openms-btn-primary):is(:hover, :focus-visible, :active),
+html body .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:not(.openms-btn-primary):is(:hover, :focus-visible, :active),
+html body .webapps-project-links__item:not(:first-child) a.webapps-project-links__btn:not(.openms-btn-primary):is(:hover, :focus-visible, :active) {
+  border: 2px solid var(--openms-navy) !important;
+  border-color: var(--openms-navy) !important;
+  background: rgba(var(--openms-navy-rgb), 0.08) !important;
+  background-color: rgba(var(--openms-navy-rgb), 0.08) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(var(--openms-navy-rgb), 0.18) !important;
+  outline: none !important;
+  text-decoration: none !important;
+  transition: border-color 0.2s ease, border-width 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+html body .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:not(.openms-btn-primary):is(:hover, :focus-visible, :active) :is(i, span, .fab, .fas, .svg-inline--fa) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  fill: currentColor !important;
 }
