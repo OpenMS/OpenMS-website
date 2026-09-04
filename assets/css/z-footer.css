@@ -1,43 +1,55 @@
-html body #footer.footer-redesign .footer-nav {
-  grid-template-columns: repeat(4, max-content) !important;
-  justify-content: end !important;
-  column-gap: clamp(2.5rem, 5.5vw, 4.75rem) !important;
-  row-gap: clamp(1.25rem, 3vw, 2.25rem) !important;
-}
+/* This file used to force the footer nav columns to `max-content` + `nowrap`
+   with its own breakpoints (64rem / 52rem / 30rem). That removed the
+   `minmax(0, ...)` safety net already built into `.footer-nav` in
+   styles_override.css, which caused real horizontal overflow around
+   768-1024px (columns wider than the available row). The base rules in
+   styles_override.css already produce the same right-aligned, content-hugging
+   layout on wide screens and degrade cleanly through 1100px/1024px/768px/480px
+   with flexible `1fr` columns and wrapping text, so no width override is
+   needed here.
 
-html body #footer.footer-redesign .footer-link-group ul {
-  display: grid !important;
-  row-gap: 0.35rem !important;
-}
+   The one thing added back below: at the 2-column breakpoints, the four
+   groups pair up as (Support, Community) then (About, Legal) in DOM order.
+   Support (2 links) sharing a row with Community (6 links) leaves a large
+   ragged gap under Support before the next row starts, since a grid row's
+   height follows its tallest cell. Reorder so the two long lists (Community,
+   About) share one row and the two short ones (Support, Legal) share the
+   other - only at the 2-column widths, so the desktop 4-column left-to-right
+   order (Support, Community, About, Legal) is unaffected.
 
-html body #footer.footer-redesign .footer-link-group ul li a {
-  white-space: nowrap !important;
-  overflow-wrap: normal !important;
-}
-
-@media (max-width: 64rem) {
-  html body #footer.footer-redesign .footer-nav {
-    grid-template-columns: repeat(4, max-content) !important;
-    column-gap: clamp(2rem, 4.5vw, 3.5rem) !important;
-  }
-}
-
-@media (max-width: 52rem) {
-  html body #footer.footer-redesign .footer-nav {
-    grid-template-columns: repeat(2, max-content) !important;
-    justify-content: start !important;
-    column-gap: clamp(2.75rem, 8vw, 5rem) !important;
-    row-gap: clamp(1.75rem, 5vw, 2.5rem) !important;
-  }
-}
-
-@media (max-width: 30rem) {
-  html body #footer.footer-redesign .footer-nav {
-    grid-template-columns: minmax(0, 1fr) !important;
-    column-gap: 0 !important;
+   This now spans max-width: 1024px (not just 768px) to match
+   styles_override.css, where the footer nav switched to 2 columns starting
+   at 1024px so the links can stay to the right of the logo instead of
+   stacking below it through the md-lg range. */
+@media (max-width: 1024px) {
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(1) {
+    order: 3; /* Support */
   }
 
-  html body #footer.footer-redesign .footer-link-group ul li a {
-    white-space: normal !important;
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(2) {
+    order: 1; /* Community */
+  }
+
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(3) {
+    order: 2; /* About */
+  }
+
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(4) {
+    order: 4; /* Legal */
+  }
+
+  /* A separate rule (openms-overrides.css) adds top margin to DOM children
+     3+ to space out what used to be the second row (About, Legal). That
+     margin stacked on top of the grid's own row-gap, making the space
+     between rows (49px) nearly double the space between columns (27px).
+     Zero it out on every group so the grid's row-gap - which already
+     equals its column-gap - is the only thing spacing the rows, matching
+     the column spacing everywhere. */
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(1),
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(2),
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(3),
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(4) {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 }

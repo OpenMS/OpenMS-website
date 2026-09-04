@@ -862,6 +862,8 @@
 }
 
 .footer-link-group ul {
+  display: grid;
+  row-gap: 0.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -874,7 +876,8 @@
   padding: 0.2rem 0.4rem;
   margin: 0 -0.4rem;
   border-radius: 0.375rem;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
   color: rgba(var(--openms-white-rgb), 0.72);
   font-size: var(--openms-text-min);
   line-height: 1.35;
@@ -1196,9 +1199,12 @@
 }
 
 @media (max-width: 1024px) {
+  /* Keep the links to the right of the logo through md-lg widths instead of
+     stacking - narrow the brand column and drop the nav to 2 columns
+     (instead of 4) so both sides still fit comfortably side by side. */
   .footer-top {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+    gap: clamp(1.25rem, 3vw, 2rem);
   }
 
   .footer-brand,
@@ -1215,7 +1221,7 @@
   }
 
   .footer-nav {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     justify-content: stretch;
     column-gap: clamp(0.85rem, 2vw, 1.35rem);
     row-gap: 1.25rem;
@@ -1226,6 +1232,16 @@
   .footer-links-area {
     gap: 1.25rem;
     padding-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Only genuinely small/mobile screens stack the logo above the links -
+     below this, a 14rem brand column leaves too little room for the nav
+     to stay readable next to it. */
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
