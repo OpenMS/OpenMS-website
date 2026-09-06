@@ -1506,6 +1506,10 @@ languages:
                 link: /developer-retreat/
               - text: Code of Conduct
                 link: /code-of-conduct/
+              - text: Executive Committee Charter
+                link: /exec_committee/
+              - text: Code of Conduct Enforcement Procedures
+                link: /report-handling-manual/
           column3:
             heading: ABOUT
             links:

@@ -820,7 +820,6 @@
   justify-content: end;
   column-gap: clamp(1.5rem, 3vw, 2.75rem);
   row-gap: clamp(0.75rem, 2.5vw, 2rem);
-  padding-top: clamp(1.25rem, 2.5vw, 2rem);
   padding-right: clamp(1.25rem, 4vw, 3rem);
   width: 100%;
   box-sizing: border-box;
@@ -1225,7 +1224,6 @@
     justify-content: stretch;
     column-gap: clamp(0.85rem, 2vw, 1.35rem);
     row-gap: 1.25rem;
-    padding-top: clamp(1rem, 2vw, 1.5rem);
     padding-right: 0;
   }
 
@@ -1273,7 +1271,6 @@
     justify-content: stretch;
     column-gap: clamp(1rem, 4vw, 1.75rem);
     row-gap: clamp(1.25rem, 4vw, 1.75rem);
-    padding-top: 0.25rem;
     padding-right: 0;
   }
 

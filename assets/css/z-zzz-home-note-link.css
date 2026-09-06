@@ -1,0 +1,9 @@
+/* The homepage "What is OpenMS?" note callout — a sitewide !important
+   rule in openms-overrides.css (targeting .keyfeatures-modern__note a
+   generally, via a high-specificity :is() selector) forces this link
+   back to the muted content-link color even after home.css sets the
+   whole note blue. Loading last with equal specificity + !important
+   wins the tie, without needing to touch the shared sitewide rule. */
+.home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note a:not(.__spec_a__):not(.__spec_b__) {
+  color: var(--openms-blue) !important;
+}

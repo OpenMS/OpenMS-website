@@ -146,7 +146,7 @@ html body .home-page__hero .hero-home__actions {
   flex-wrap: wrap !important;
   align-items: stretch !important;
   justify-content: flex-start !important;
-  gap: 0.65rem !important;
+  gap: calc(var(--openms-btn-glow-size, 6px) * 2 + 0.65rem) !important;
 }
 
 html body .home-page__hero .hero-home__actions .hero-home__btn {
@@ -265,7 +265,7 @@ html body .home-page__hero .hero-home__highlights {
   html body .home-page__hero .hero-home__actions {
     display: flex !important;
     flex-wrap: nowrap !important;
-    gap: 0.75rem !important;
+    gap: calc(var(--openms-btn-glow-size, 6px) * 2 + 0.75rem) !important;
   }
 
   html body .home-page__hero .hero-home__actions .hero-home__btn {

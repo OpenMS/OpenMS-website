@@ -12,22 +12,28 @@
   max-width: 42ch;
 }
 
-.openms-lib-page--privacy.openms-lib-page--openms-lib .openms-lib-page__body > .openms-lib-page__anchor,
-.openms-lib-page--privacy .openms-lib-page__body > .openms-lib-page__anchor,
-.openms-lib-page--privacy .openms-lib-page__outro {
-  padding-inline: 0;
-}
-
+/* Note: this file predates the current privacy-main.html markup, which
+   now uses the same generic .openms-lib-about / .openms-lib-resources
+   sections as governance/contributors (rather than page-specific
+   .privacy-overview / .privacy-details wrappers). The rules below that
+   still reference those old wrapper classes no longer match anything;
+   left in place rather than risk deleting styling this file's other
+   rules may still depend on. The padding-inline:0 this used to pair
+   with those wrappers has been removed since nothing here restores it
+   any more, which was leaving the page content flush against the
+   viewport edge. */
 .openms-lib-page--privacy .openms-lib-page__body > .openms-lib-page__anchor {
   padding-block: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem)) 0;
 }
 
 .openms-lib-page--privacy #who-we-are {
-  background: var(--pro-band-soft, #f4f6f9) !important;
+  background: var(--sol-canvas, #f8f8f9) !important;
+  padding-bottom: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
 }
 
 .openms-lib-page--privacy #privacy-topics {
   background: var(--openms-white) !important;
+  padding-bottom: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
 }
 
 .openms-lib-page--privacy .privacy-overview .openms-lib-resources__inner,

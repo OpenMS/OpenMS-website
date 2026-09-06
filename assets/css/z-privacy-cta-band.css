@@ -1,0 +1,22 @@
+/* Privacy page reuses the governance-cta-band component for its bottom
+   "Need help with your data?" CTA (structural rules extended in
+   openms-overrides.css). The primary-button white-on-navy treatment for
+   that band lives in several page-scoped duplicate blocks there
+   (governance/our-sponsors/sponsor-us) that weren't worth chasing down
+   one-by-one — this file gives privacy the same treatment directly. */
+.openms-lib-page--privacy .governance-cta-band__actions .openms-lib-btn--primary {
+  border: 2px solid var(--openms-white);
+  background: var(--openms-white);
+  color: var(--openms-navy) !important;
+}
+
+.openms-lib-page--privacy .governance-cta-band__actions .openms-lib-btn--primary:hover,
+.openms-lib-page--privacy .governance-cta-band__actions .openms-lib-btn--primary:focus-visible {
+  border-color: var(--openms-white);
+  background: var(--openms-white);
+  color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale));
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) rgba(255, 255, 255, 0.22);
+  outline: none;
+  text-decoration: none;
+}

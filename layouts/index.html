@@ -18,7 +18,7 @@
 
   {{- with .Site.Params.keyfeatures }}
   <section class="home-page__block home-page__block--overview" aria-labelledby="keyfeatures-title">
-    {{ partial "keyfeatures.html" (dict "Page" . "embed" "home") }}
+    {{ partial "keyfeatures.html" (dict "Page" $ "embed" "home") }}
   </section>
   {{- end }}
 

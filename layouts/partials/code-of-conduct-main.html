@@ -1,229 +1,34 @@
 {{- $committeeEmail := "conduct@openms.org" -}}
-{{- $encouraged := slice
-  (dict "title" "Welcoming language" "text" "Use welcoming and inclusive language.")
-  (dict "title" "Respect viewpoints" "text" "Be respectful of different viewpoints and experiences.")
-  (dict "title" "Accept feedback" "text" "Gracefully accept constructive criticism.")
-  (dict "title" "Community first" "text" "Focus on what is best for the community.")
-  (dict "title" "Courtesy" "text" "Show courtesy and respect towards other community members.")
--}}
 <section class="openms-lib-layout">
 <article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--code-of-conduct">
-  <div class="openms-lib-page__intro">
-    <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="OpenMS Code of Conduct">
-      <div class="openms-lib-hero__panel">
-        <div class="openms-lib-hero__content">
-          <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "people" }}Community</p>
-          <h1 class="openms-lib-hero__title">
-            OpenMS <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">Code of Conduct</span>
-          </h1>
-          <p class="openms-lib-hero__lead">
-            A welcoming, respectful community for everyone who learns, teaches, and contributes with OpenMS.
-          </p>
-          <div class="openms-lib-hero__actions" aria-label="Code of Conduct actions">
-            <a class="openms-lib-btn openms-lib-btn--primary" href="mailto:{{ $committeeEmail }}">
-              <span class="openms-lib-btn__label">Report an incident</span>
-            </a>
-            <a class="openms-lib-btn openms-lib-btn--ghost" href="/report-handling-manual/">
-              <span class="openms-lib-btn__label">Report handling manual</span>
-            </a>
-          </div>
+<div class="openms-lib-page__intro">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="OpenMS Code of Conduct">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "people" }}Community</p>
+        <h1 class="openms-lib-hero__title">{{ .Title }}</h1>
+        <p class="openms-lib-hero__lead">
+          <span class="openms-lib-hero__lead-line">A welcoming, respectful community for everyone who learns, teaches, and contributes with OpenMS.</span>
+        </p>
+        <div class="openms-lib-hero__actions" aria-label="Code of Conduct actions">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="mailto:{{ $committeeEmail }}">
+            <span class="openms-lib-btn__label">Report an incident</span>
+          </a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/report-handling-manual/">
+            <span class="openms-lib-btn__label">Report handling manual</span>
+          </a>
         </div>
       </div>
-    </header>
-  </div>
-
-  <div class="openms-lib-page__body" aria-label="Code of Conduct content">
-    <div id="summary" class="openms-lib-page__anchor">
-      <section class="openms-lib-about coc-overview" aria-labelledby="coc-summary-title">
-        <div class="openms-lib-about__inner coc-overview__inner">
-          <header class="openms-lib-about__head coc-overview__head">
-            <div class="openms-lib-about__head-copy">
-              <p class="openms-lib-about__eyebrow">Overview</p>
-              <h2 id="coc-summary-title" class="openms-lib-about__title">We encourage</h2>
-              <p class="openms-lib-about__lead">
-                <span class="coc-overview__lead-line">We are dedicated to a welcoming environment for all people.</span>
-                <span class="coc-overview__lead-line">By participating, you agree to this Code of Conduct and the procedures used to resolve incidents.</span>
-                <span class="coc-overview__lead-line">Any behaviour that excludes, intimidates, or causes discomfort is a violation.</span>
-              </p>
-            </div>
-          </header>
-
-          <div class="coc-overview__principles" role="list">
-            {{- range $i, $item := $encouraged }}
-            <article class="coc-principle" role="listitem">
-              <span class="coc-principle__num" aria-hidden="true">{{ add $i 1 | printf "%02d" }}</span>
-              <div class="coc-principle__body">
-                <h3 class="coc-principle__title">{{ $item.title }}</h3>
-                <p class="coc-principle__text">{{ $item.text }}</p>
-              </div>
-            </article>
-            {{- end }}
-          </div>
-
-          <aside class="coc-report" role="note" aria-label="How to report">
-            <div class="coc-report__copy">
-              <p class="coc-report__kicker">Need to report something?</p>
-              <p class="coc-report__text">
-                Contact the Code of Conduct Committee at
-                <a href="mailto:{{ $committeeEmail }}">{{ $committeeEmail }}</a>.
-                All reports are reviewed confidentially.
-              </p>
-            </div>
-            <a class="coc-report__link openms-cta-link" href="/report-handling-manual/">
-              Read the report handling manual<span aria-hidden="true"> →</span>
-            </a>
-          </aside>
-        </div>
-      </section>
     </div>
+  </header>
+</div>
 
-    <div id="detailed" class="openms-lib-page__anchor">
-      <section class="coc-details" aria-labelledby="coc-details-title">
-        <div class="coc-details__inner">
-          <header class="coc-details__head">
-            <div class="coc-details__head-copy">
-              <p class="openms-lib-resources__eyebrow">{{ partial "section-eyebrow-icon.html" "shield" }}Policy</p>
-              <h2 id="coc-details-title" class="openms-lib-resources__title">Full policy</h2>
-            </div>
-          </header>
-
-          <div class="coc-details__body">
-          <div class="coc-details__list" data-coc-topics>
-            <details class="coc-details__item" id="coc-part-1">
-              <summary class="coc-details__summary">
-                <span class="coc-details__index" aria-hidden="true">01</span>
-                <span class="coc-details__summary-copy">
-                  <h3 class="coc-details__question-title">1. Introduction</h3>
-                  <span class="coc-details__summary-text">Who this applies to, and who enforces it.</span>
-                </span>
-              </summary>
-              <div class="coc-details__answer">
-                <p>OpenMS is a community-led project. We value the involvement of everyone in the community. We are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our events and communications are expected to show respect and courtesy to others.</p>
-                <p>To make clear what is expected, everyone participating in OpenMS activities is required to conform to the Code of Conduct. This Code of Conduct applies to all spaces managed by OpenMS including, but not limited to, workshops, email lists, and online forums such as GitHub, Discord and LinkedIn. Workshop hosts are expected to assist with the enforcement of the Code of Conduct.</p>
-                <p>The OpenMS Code of Conduct Committee is responsible for enforcing the Code of Conduct. It can be contacted by emailing <a href="mailto:{{ $committeeEmail }}">{{ $committeeEmail }}</a>. All reports will be reviewed by the Code of Conduct Committee and will be kept confidential. See the <a href="/report-handling-manual/">report handling manual</a> for how reports are followed up.</p>
-              </div>
-            </details>
-
-            <details class="coc-details__item" id="coc-part-2">
-              <summary class="coc-details__summary">
-                <span class="coc-details__index" aria-hidden="true">02</span>
-                <span class="coc-details__summary-copy">
-                  <h3 class="coc-details__question-title">2. OpenMS Code of Conduct</h3>
-                  <span class="coc-details__summary-text">A welcoming environment; no discrimination or harassment.</span>
-                </span>
-              </summary>
-              <div class="coc-details__answer">
-                <p>OpenMS is dedicated to providing a welcoming and supportive environment for all people, regardless of background or identity. As such, we do not tolerate behaviour that is disrespectful to our teachers or learners or that excludes, intimidates, or causes discomfort to others. We do not tolerate discrimination or harassment based on characteristics that include, but are not limited to, gender identity and expression, sexual orientation, disability, physical appearance, body size, citizenship, nationality, ethnic or social origin, pregnancy, familial status, veteran status, genetic information, religion or belief (or lack thereof), membership of a national minority, property, age, education, socio-economic status, technical choices, and experience level.</p>
-                <p>Everyone who participates in OpenMS activities is required to conform to this Code of Conduct. It applies to all spaces managed by OpenMS including, but not limited to, workshops, email lists, and online forums such as GitHub, Discord and LinkedIn. Workshop hosts are expected to assist with the enforcement of the Code of Conduct. By participating, participants indicate their acceptance of the procedures by which OpenMS resolves any Code of Conduct incidents, which may include storage and processing of their personal information.</p>
-              </div>
-            </details>
-
-            <details class="coc-details__item" id="coc-part-2-1">
-              <summary class="coc-details__summary">
-                <span class="coc-details__index" aria-hidden="true">03</span>
-                <span class="coc-details__summary-copy">
-                  <h3 class="coc-details__question-title">2.1 Expected behaviour</h3>
-                  <span class="coc-details__summary-text">Respect, courtesy, and the behaviours we encourage.</span>
-                </span>
-              </summary>
-              <div class="coc-details__answer">
-                <p>All participants in our events and communications are expected to show respect and courtesy to others. All interactions should be professional regardless of platform: either online or in-person. In order to foster a positive and professional learning environment we encourage the following kinds of behaviours in all OpenMS events and platforms:</p>
-                <ul>
-                  <li>Use welcoming and inclusive language</li>
-                  <li>Be respectful of different viewpoints and experiences</li>
-                  <li>Gracefully accept constructive criticism</li>
-                  <li>Focus on what is best for the community</li>
-                  <li>Show courtesy and respect towards other community members</li>
-                </ul>
-                <p>Note: See the four <a href="https://www.recurse.com/manual#sub-sec-social-rules" target="_blank" rel="noopener noreferrer">social rules</a> for further recommendations.</p>
-              </div>
-            </details>
-
-            <details class="coc-details__item" id="coc-part-2-2">
-              <summary class="coc-details__summary">
-                <span class="coc-details__index" aria-hidden="true">04</span>
-                <span class="coc-details__summary-copy">
-                  <h3 class="coc-details__question-title">2.2 Unacceptable behaviour</h3>
-                  <span class="coc-details__summary-text">Examples of conduct that is not tolerated.</span>
-                </span>
-              </summary>
-              <div class="coc-details__answer">
-                <p>Examples of unacceptable behaviour by participants at any OpenMS event/platform include:</p>
-                <ul>
-                  <li>written or verbal comments which have the effect of excluding people on the basis of membership of any specific group</li>
-                  <li>causing someone to fear for their safety, such as through stalking, following, or intimidation</li>
-                  <li>violent threats or language directed against another person</li>
-                  <li>the display of sexual or violent images</li>
-                  <li>unwelcome sexual attention</li>
-                  <li>nonconsensual or unwelcome physical contact</li>
-                  <li>sustained disruption of talks, events or communications</li>
-                  <li>insults or put downs</li>
-                  <li>sexist, racist, homophobic, transphobic, ableist, or exclusionary jokes</li>
-                  <li>excessive swearing</li>
-                  <li>incitement to violence, suicide, or self-harm</li>
-                  <li>continuing to initiate interaction (including photography or recording) with someone after being asked to stop</li>
-                  <li>publication of private communication without consent</li>
-                </ul>
-              </div>
-            </details>
-
-            <details class="coc-details__item" id="coc-part-2-3">
-              <summary class="coc-details__summary">
-                <span class="coc-details__index" aria-hidden="true">05</span>
-                <span class="coc-details__summary-copy">
-                  <h3 class="coc-details__question-title">2.3 Consequences of unacceptable behaviour</h3>
-                  <span class="coc-details__summary-text">What happens if someone violates this code.</span>
-                </span>
-              </summary>
-              <div class="coc-details__answer">
-                <p>Participants who are asked to stop any inappropriate behaviour are expected to comply immediately. This applies to any OpenMS events and platforms, either online or in-person. If a participant engages in behaviour that violates this code of conduct, the organisers may warn the offender, ask them to leave the event or platform (without refund), or engage OpenMS Code of Conduct Committee to investigate the Code of Conduct violation and impose appropriate sanctions.</p>
-              </div>
-            </details>
-
-            <details class="coc-details__item" id="coc-part-incident">
-              <summary class="coc-details__summary">
-                <span class="coc-details__index" aria-hidden="true">06</span>
-                <span class="coc-details__summary-copy">
-                  <h3 class="coc-details__question-title">Incident reporting, resolution &amp; enforcement</h3>
-                  <span class="coc-details__summary-text">How reports are reviewed, mediated, and enforced.</span>
-                </span>
-              </summary>
-              <div class="coc-details__answer">
-                <p>We will investigate and respond to all complaints. The OpenMS Code of Conduct Committee and the OpenMS Executive Committee (if involved) will protect the identity of the reporter, and treat the content of complaints as confidential (unless the reporter agrees otherwise). More detail is in the <a href="/report-handling-manual/">report handling manual</a>.</p>
-                <p>In case of severe and obvious breaches, e.g. personal threat or violent, sexist or racist language, we will immediately disconnect the originator from OpenMS communication channels; please see the manual for details.</p>
-                <p>In cases not involving clear severe and obvious breaches of this Code of Conduct the process for acting on any received Code of Conduct violation report will be:</p>
-                <ul>
-                  <li>Acknowledge report is received</li>
-                  <li>Reasonable discussion/feedback</li>
-                  <li>Mediation (if feedback didn't help, and only if both reporter and reportee agree to this)</li>
-                  <li>Enforcement via transparent decision (see <a href="/report-handling-manual/#resolutions">Resolutions</a>) by the Code of Conduct Committee</li>
-                </ul>
-                <p>The Committee will respond to any report as soon as possible, and at most within 72 hours.</p>
-              </div>
-            </details>
-          </div>
-          </div>
-        </div>
-      </section>
+<div class="openms-lib-page__body">
+  <div class="openms-lib-page__anchor">
+    <div class="coc-charter__inner openms-lib-prose">
+      {{ .Content }}
     </div>
   </div>
+</div>
 </article>
 </section>
-<script>
-(function () {
-  var root = document.querySelector("[data-coc-topics]");
-  if (!root) return;
-
-  function openFromHash() {
-    var id = (location.hash || "").replace(/^#/, "");
-    if (!id) return;
-    var target = document.getElementById(id);
-    if (!target || !target.classList.contains("coc-details__item")) return;
-    target.open = true;
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  window.addEventListener("hashchange", openFromHash);
-  openFromHash();
-})();
-</script>

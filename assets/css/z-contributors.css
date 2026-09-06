@@ -86,3 +86,20 @@ html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--solution.openms
   border-color: rgba(var(--openms-white-rgb), 0.35) !important;
   box-shadow: 0 0 0 4px rgba(var(--openms-white-rgb), 0.08) !important;
 }
+
+html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--solution.openms-lib-page--contributors .member-tag {
+  margin: 0;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(var(--openms-blue-rgb), 0.1) !important;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--solution.openms-lib-page--contributors .member--chair {
+  border-color: rgba(var(--openms-blue-rgb), 0.35) !important;
+}

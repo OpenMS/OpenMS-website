@@ -13,6 +13,14 @@
 {{- $socialLinkedin := index $social "linkedin" | default "https://www.linkedin.com/company/openms-org" -}}
 {{- $socialBluesky := index $social "bluesky" | default "https://bsky.app/profile/openms.bsky.social" -}}
 {{- $socialX := index $social "x" | default "https://twitter.com/OpenMSTeam" -}}
+{{- $committeeEmail := "conduct@openms.org" -}}
+{{- $encouraged := slice
+  (dict "title" "Welcoming language" "text" "Use welcoming and inclusive language.")
+  (dict "title" "Respect viewpoints" "text" "Be respectful of different viewpoints and experiences.")
+  (dict "title" "Accept feedback" "text" "Gracefully accept constructive criticism.")
+  (dict "title" "Community first" "text" "Focus on what is best for the community.")
+  (dict "title" "Courtesy" "text" "Show courtesy and respect towards other community members.")
+-}}
 <section class="openms-lib-layout">
 <article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--contribute">
 <div class="openms-lib-page__intro">
@@ -257,19 +265,51 @@
 </div>
 
 <div class="openms-lib-page__outro">
-  <div id="code-of-conduct" class="openms-lib-page__anchor">
-    <section class="contribute-coc-band" aria-labelledby="code-of-conduct-title">
-      <div class="contribute-coc-band__panel">
-        <div class="contribute-coc-band__copy">
-          <p class="contribute-coc-band__kicker">Community</p>
-          <p class="contribute-coc-band__text">
-            <strong id="code-of-conduct-title">Code of Conduct</strong>
-            <span class="contribute-coc-band__note">We treat everyone equally and value every contribution. The Code of Conduct keeps OpenMS open and welcoming.</span>
-          </p>
+  <div id="code-of-conduct" class="openms-lib-page__anchor openms-lib-page--code-of-conduct">
+    <section class="openms-lib-about coc-overview" aria-labelledby="coc-summary-title">
+      <div class="openms-lib-about__inner coc-overview__inner">
+        <header class="openms-lib-about__head coc-overview__head">
+          <div class="openms-lib-about__head-copy">
+            <p class="openms-lib-about__eyebrow">Code of Conduct</p>
+            <h2 id="coc-summary-title" class="openms-lib-about__title">We encourage</h2>
+            <p class="openms-lib-about__lead">
+              <span class="coc-overview__lead-line">We are dedicated to a welcoming environment for all people.</span>
+              <span class="coc-overview__lead-line">By participating, you agree to this Code of Conduct and the procedures used to resolve incidents.</span>
+              <span class="coc-overview__lead-line">Any behaviour that excludes, intimidates, or causes discomfort is a violation.</span>
+            </p>
+          </div>
+        </header>
+
+        <div class="coc-overview__principles" role="list">
+          {{- range $i, $item := $encouraged }}
+          <article class="coc-principle" role="listitem">
+            <span class="coc-principle__num" aria-hidden="true">{{ add $i 1 | printf "%02d" }}</span>
+            <div class="coc-principle__body">
+              <h3 class="coc-principle__title">{{ $item.title }}</h3>
+              <p class="coc-principle__text">{{ $item.text }}</p>
+            </div>
+          </article>
+          {{- end }}
         </div>
-        <div class="contribute-coc-band__actions" role="group" aria-label="Code of Conduct">
-          <a class="openms-lib-btn openms-lib-btn--primary" href="/code-of-conduct/">Read the Code of Conduct</a>
-        </div>
+
+        <aside class="coc-report" role="note" aria-label="How to report">
+          <div class="coc-report__copy">
+            <p class="coc-report__kicker">Need to report something?</p>
+            <p class="coc-report__text">
+              Contact the Code of Conduct Committee at
+              <a href="mailto:{{ $committeeEmail }}">{{ $committeeEmail }}</a>.
+              All reports are reviewed confidentially.
+            </p>
+          </div>
+          <div class="coc-report__actions">
+            <a class="openms-lib-btn openms-lib-btn--primary" href="mailto:{{ $committeeEmail }}">
+              <span class="openms-lib-btn__label">Report an incident</span>
+            </a>
+            <a class="coc-report__link openms-cta-link" href="/report-handling-manual/">
+              Read the report handling manual<span aria-hidden="true"> →</span>
+            </a>
+          </div>
+        </aside>
       </div>
     </section>
   </div>

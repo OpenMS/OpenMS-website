@@ -39,6 +39,8 @@
 {{ partial "code-of-conduct-main.html" . }}
 {{- else if eq .File.BaseFileName "report-handling-manual" -}}
 {{ partial "report-handling-main.html" . }}
+{{- else if eq .File.BaseFileName "press-kit" -}}
+{{ partial "press-kit-main.html" . }}
 {{- else -}}
 {{ partial "single/content.html" . }}
 {{- end -}}

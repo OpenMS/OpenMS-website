@@ -1,0 +1,34 @@
+/* "Ways to contribute" cards — an earlier override (z-contribute-os.css)
+   forces every card to grid-column: 1 / -1 !important, stacking all five
+   full width in a single column at every viewport size. Replace that
+   with a uniform grid on desktop: all five cards the same size, 3-up.
+   (Below 960px the existing rules already fall back to 2-up then 1-up —
+   left alone here, since those are already an equal grid.) */
+@media (min-width: 961px) {
+  html body .openms-lib-page--contribute .contribute-track {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  html body .openms-lib-page--contribute .contribute-track__item--wide,
+  html body .openms-lib-page--contribute .contribute-track__item--mid,
+  html body .openms-lib-page--contribute .contribute-track__item--docs,
+  html body .openms-lib-page--contribute .contribute-track__item--design,
+  html body .openms-lib-page--contribute .contribute-track__item--web {
+    grid-column: span 1 !important;
+  }
+
+  /* Equal cards get equal title treatment — no more oversized heading
+     on the card that used to be full width. */
+  html body .openms-lib-page--contribute .contribute-track__item--wide .contribute-track__title {
+    font-size: var(--openms-card-title-size) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  /* The "Contribute to development" card is now a third of the row
+     instead of the full width — two columns of project links fit
+     better than four. */
+  html body .openms-lib-page--contribute .contribute-project-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
