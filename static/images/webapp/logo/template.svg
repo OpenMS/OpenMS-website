@@ -9,7 +9,7 @@
       <stop offset="1" stop-color="#3157e9"/>
     </linearGradient>
   </defs>
-  <rect x="1" y="1" width="358" height="358" rx="17" fill="#ffffff" stroke="#7891f1" stroke-width="2" stroke-dasharray="6 4"/>
+  <rect x="1" y="1" width="358" height="358" rx="17" fill="#ffffff"/>
   <rect x="128" y="97" width="14" height="68" rx="2" fill="none" stroke="#ff7501" stroke-width="2" stroke-dasharray="6 4"/>
   <rect x="157" y="56" width="16" height="110" rx="3" fill="url(#peak)"/>
   <rect x="188" y="117" width="14" height="48" rx="2" fill="none" stroke="#ff03cb" stroke-width="2" stroke-dasharray="6 4"/>
