@@ -36,13 +36,15 @@
 }
 
 .swiper-slide img {
-    width: 95%;
-    /* Keep clear of the card's 1px rounded border: a full-bleed image paints
-       over the corner arcs and the top edge disappears. */
-    margin-top: 10px;
-    max-height: calc(100% - 20px);
-    /* max-height clamps the box, so preserve the logo's aspect ratio inside it */
+    /* Fill the card, inset just enough to clear its 1px rounded border.
+       The height is the collapsed card's content box (250px) less that inset,
+       in px rather than % so the logo keeps its size when the card expands on
+       hover and the description takes the extra room. */
+    width: calc(100% - 12px);
+    height: 238px;
+    max-height: calc(100% - 12px);
     object-fit: contain;
+    margin-top: 6px;
 }
 
 .swiper-slide p {
@@ -54,75 +56,7 @@
     transition: display 2.5s ease;
     font-weight: 600;
     margin-bottom: 10px;
-}
-
-/* slide-0: WebApp Template */
-.swiper-slide.slide-0 img {
-    height: 230px;
-}
-.swiper-slide.slide-0 p {
-    margin-top: 10px;
-}
-
-/* slide-1: FLASHApp */
-.swiper-slide.slide-1 img {
-    height: 230px;
-    margin-top: 10px;
-}
-.swiper-slide.slide-1 p {
-    margin-top: 20px;
-}
-
-/* slide-2: UmetaFlow */
-.swiper-slide.slide-2 img {
-    height: 230px;
-}
-.swiper-slide.slide-2 p {
-    margin-top: 10px;
-}
-
-/* slide-3: OpenDIA */
-.swiper-slide.slide-3 img {
-    height: 150px;
-    margin-top: 60px;
-}
-.swiper-slide.slide-3 p {
-    margin-top: 50px;
-}
-
-/* slide-4: OpenDDA */
-.swiper-slide.slide-4 img {
-    height: 180px;
-    margin-top: 40px;
-}
-.swiper-slide.slide-4 p {
-    margin-top: 40px;
-}
-
-/* slide-5: NuXL */
-.swiper-slide.slide-5 img {
-    height: 180px;
-    margin-top: 40px;
-}
-.swiper-slide.slide-5 p {
-    margin-top: 40px;
-}
-
-/* slide-6: MHCQuant */
-.swiper-slide.slide-6 img {
-    height: 100px;
-    margin-top: 80px;
-}
-.swiper-slide.slide-6 p {
-    margin-top: 80px;
-}
-
-/* slide-7: TOPPView Lite */
-.swiper-slide.slide-7 img {
-    height: 230px;
-}
-.swiper-slide.slide-7 p {
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .swiper-button-prev,
