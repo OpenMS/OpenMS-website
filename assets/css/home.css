@@ -1803,15 +1803,47 @@
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note {
   grid-area: note;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
   max-width: none;
   color: var(--openms-blue);
-  background: rgba(var(--openms-yellow-rgb), 0.12);
-  border: 1px solid rgba(var(--openms-orange-rgb), 0.25);
-  border-left: 4px solid var(--openms-orange);
+  background: rgba(var(--openms-blue-rgb), 0.07);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.18);
+  border-radius: var(--pro-radius, 0.85rem);
+  box-shadow: 0 0.15rem 0.65rem rgba(var(--openms-navy-rgb), 0.04);
+}
+
+.home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: rgba(var(--openms-blue-rgb), 0.14);
+  color: var(--openms-blue);
+}
+
+.home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note-icon svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note-text {
+  min-width: 0;
+}
+
+.home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note-text p {
+  margin: 0;
+  line-height: 1.6;
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note a {
   color: var(--openms-blue);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 /* ═══════════════════════════════════════════

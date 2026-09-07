@@ -113,7 +113,10 @@
 
       {{- with $note }}
       <aside class="keyfeatures-modern__note">
-        {{ . | markdownify }}
+        <span class="keyfeatures-modern__note-icon" aria-hidden="true">{{ partial "section-eyebrow-icon.html" "people" }}</span>
+        <div class="keyfeatures-modern__note-text">
+          {{ . | markdownify }}
+        </div>
       </aside>
       {{- end }}
     </div>

@@ -4,6 +4,14 @@
    that band lives in several page-scoped duplicate blocks there
    (governance/our-sponsors/sponsor-us) that weren't worth chasing down
    one-by-one — this file gives privacy the same treatment directly. */
+/* A generic "full-bleed into footer" rule elsewhere rounds only the top
+   corners of this band, meant for pages where the band runs edge to
+   edge. Privacy's version is inset (has its own side padding), so it
+   reads as a floating card — round the bottom too to match. */
+html body .openms-lib-page--privacy .governance-cta-band__panel:not(.__unused__):not(.__unused2__):not(.__unused3__):not(.__unused4__) {
+  border-radius: var(--pro-radius, 0.85rem) !important;
+}
+
 .openms-lib-page--privacy .governance-cta-band__actions .openms-lib-btn--primary {
   border: 2px solid var(--openms-white);
   background: var(--openms-white);

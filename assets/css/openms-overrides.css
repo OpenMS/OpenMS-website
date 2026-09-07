@@ -23018,14 +23018,16 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
 }
 
 .openms-lib-page:not(.openms-lib-page--code-of-conduct):not(.openms-lib-page--contribute):not(.openms-lib-page--publications):not(.openms-lib-page--governance) .contribute-coc-band,
-.openms-lib-page:not(.openms-lib-page--governance):not(.openms-lib-page--sponsor-us):not(.openms-lib-page--our-sponsors) .governance-cta-band {
+.openms-lib-page:not(.openms-lib-page--governance):not(.openms-lib-page--sponsor-us):not(.openms-lib-page--our-sponsors):not(.openms-lib-page--privacy) .governance-cta-band {
   margin-bottom: 0 !important;
 }
 
-/* Full-bleed navy into footer — rounded top only (inset pages excluded) */
+/* Full-bleed navy into footer — rounded top only (inset pages excluded).
+   Privacy's band is inset (padding-inline via its #related-pages anchor,
+   same as governance/our-sponsors/sponsor-us), not full-bleed, so it's
+   excluded here too and keeps all four corners rounded. */
 .openms-lib-page:not(.openms-lib-page--code-of-conduct):not(.openms-lib-page--contribute):not(.openms-lib-page--publications):not(.openms-lib-page--contact) .contribute-coc-band__panel,
-.openms-lib-page:not(.openms-lib-page--governance):not(.openms-lib-page--our-sponsors):not(.openms-lib-page--sponsor-us) .governance-cta-band__panel,
-.openms-lib-page--privacy .contribute-coc-band__panel {
+.openms-lib-page:not(.openms-lib-page--governance):not(.openms-lib-page--our-sponsors):not(.openms-lib-page--sponsor-us):not(.openms-lib-page--privacy) .governance-cta-band__panel {
   border-radius: var(--pro-radius, 0.85rem) var(--pro-radius, 0.85rem) 0 0 !important;
   padding-inline: var(--openms-page-inline) !important;
 }
@@ -35312,7 +35314,10 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i],
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="nuxl" i] {
   display: block !important;
-  margin-left: 0 !important;
+  /* These three logo files carry built-in canvas whitespace around the
+     mark itself, so even flush-left placement (margin-left: 0) still
+     reads as offset from the card edge. Nudge left to compensate. */
+  margin-left: -0.75rem !important;
   margin-right: auto !important;
   max-width: min(22rem, 100%) !important;
   object-fit: contain !important;
