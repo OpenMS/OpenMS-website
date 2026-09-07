@@ -37,6 +37,12 @@
 
 .swiper-slide img {
     width: 95%;
+    /* Keep clear of the card's 1px rounded border: a full-bleed image paints
+       over the corner arcs and the top edge disappears. */
+    margin-top: 10px;
+    max-height: calc(100% - 20px);
+    /* max-height clamps the box, so preserve the logo's aspect ratio inside it */
+    object-fit: contain;
 }
 
 .swiper-slide p {
@@ -52,8 +58,7 @@
 
 /* slide-0: WebApp Template */
 .swiper-slide.slide-0 img {
-    width: 100%;
-    height: 250px;
+    height: 230px;
 }
 .swiper-slide.slide-0 p {
     margin-top: 10px;
@@ -70,8 +75,7 @@
 
 /* slide-2: UmetaFlow */
 .swiper-slide.slide-2 img {
-    width: 100%;
-    height: 250px;
+    height: 230px;
 }
 .swiper-slide.slide-2 p {
     margin-top: 10px;
@@ -115,8 +119,7 @@
 
 /* slide-7: TOPPView Lite */
 .swiper-slide.slide-7 img {
-    width: 100%;
-    height: 250px;
+    height: 230px;
 }
 .swiper-slide.slide-7 p {
     margin-top: 10px;
