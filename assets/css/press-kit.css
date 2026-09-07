@@ -153,6 +153,13 @@
   font-size: var(--openms-text-min);
 }
 
+/* This page has no outro/CTA band, so the sitewide .openms-lib-layout
+   bottom padding (meant to give room above a following band) just
+   stacks a second, dead gap after the note's own padding-bottom below. */
+.openms-lib-layout:has(.openms-lib-page--press-kit) {
+  padding-bottom: 0;
+}
+
 .press-kit-note {
   width: 100%;
   padding-block: clamp(2.5rem, 5vw, 3.5rem);

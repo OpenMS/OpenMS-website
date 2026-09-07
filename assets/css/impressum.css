@@ -1,0 +1,26 @@
+/* Impressum — short, centered address block. No outro/CTA band follows
+   it, so the sitewide .openms-lib-layout bottom padding (meant to give
+   room above a following band) just reads as dead whitespace here. */
+.impressum-layout.openms-lib-layout {
+  padding-bottom: 0;
+}
+
+.openms-lib-page--impressum .openms-lib-resources__inner {
+  text-align: center;
+}
+
+.openms-lib-page--impressum .openms-lib-prose {
+  margin-inline: auto;
+}
+
+.openms-lib-page--impressum .openms-lib-prose p {
+  margin: 0 0 0.35rem;
+}
+
+.openms-lib-page--impressum .openms-lib-prose p + p {
+  margin-top: 0;
+}
+
+.openms-lib-page--impressum .openms-lib-page__body > .openms-lib-page__anchor {
+  padding-bottom: clamp(1.5rem, 3vw, 2.25rem) !important;
+}

@@ -17,10 +17,19 @@
    rather than relying on the parent anchor. */
 .rhm-charter__inner.openms-lib-prose {
   box-sizing: border-box;
-  max-width: 46rem;
+  width: 100%;
+  max-width: var(--pro-max, 75rem);
   margin-inline: auto;
   padding-inline: var(--openms-page-inline, 1.5rem);
-  padding-bottom: clamp(3.5rem, 9vw, 6.5rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  overflow: hidden;
+}
+
+/* This page has no outro/CTA band, so the sitewide .openms-lib-layout
+   bottom padding (meant to give room above a following band) just
+   leaves a large dead gap before the footer here. */
+.openms-lib-layout:has(.openms-lib-page--report-handling) {
+  padding-bottom: 0;
 }
 
 /* A site-wide reset hides list markers by default; a plain document page

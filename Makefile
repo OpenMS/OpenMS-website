@@ -1,10 +1,11 @@
 # type `make help` to see all options 
 
-BASEURL ?= 
+BASEURL ?=
+PORT ?= 1313
 
 ifdef BASEURL
 	BASEURLARG=-b $(BASEURL)
-endif 
+endif
 
 .PHONY: help prepare teams-clean teams serve clean
 
@@ -35,7 +36,7 @@ teams-clean: prepare
 teams: | teams-clean $(patsubst %,$(TEAMS_DIR)/%.md,$(TEAMS)) ## generates openms.org team gallery pages
 
 serve: prepare ## serve the website
-	hugo $(BASEURLARG) --printI18nWarnings server -D
+	hugo $(BASEURLARG) --printI18nWarnings server -D --port $(PORT)
 
 html: prepare ## build the website in ./public
 	hugo $(BASEURLARG)

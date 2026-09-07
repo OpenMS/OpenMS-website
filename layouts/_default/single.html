@@ -41,6 +41,8 @@
 {{ partial "report-handling-main.html" . }}
 {{- else if eq .File.BaseFileName "press-kit" -}}
 {{ partial "press-kit-main.html" . }}
+{{- else if eq .File.BaseFileName "impressum" -}}
+{{ partial "impressum-main.html" . }}
 {{- else -}}
 {{ partial "single/content.html" . }}
 {{- end -}}

@@ -1,0 +1,17 @@
+/* The "01" card (openms-lib highlights strip) still had its left padding
+   zeroed by an older "strip-era" rule that a later redesign pass didn't
+   fully clean up, leaving its number/title flush against the card edge
+   while every other side (and every other card) got the standard
+   --openms-num-card-pad inset. Match it. */
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit.openms-lib-about__benefit.openms-lib-about__benefit:first-child {
+  padding-left: var(--openms-num-card-pad, clamp(1.15rem, 2.5vw, 1.5rem)) !important;
+}
+
+/* Same fix for the <=1100px 2-column layout, where a separate
+   #what-is-openms-scoped, odd/even-based rule (higher specificity from
+   the #id) zeroes card 1's left padding again. */
+@media (max-width: 1100px) {
+  html body .openms-lib-page--solution.openms-lib-page--openms-lib #what-is-openms .openms-lib-about--benefits .openms-lib-about__benefit.openms-lib-about__benefit:first-child {
+    padding-left: var(--openms-num-card-pad, clamp(1.15rem, 2.5vw, 1.5rem)) !important;
+  }
+}
