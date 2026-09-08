@@ -9,7 +9,10 @@
 {{- $retreat := index $cfg "developerRetreat" | default dict -}}
 {{- $retreatText := index $retreat "text" | default "Developer Retreat" -}}
 {{- $retreatUrl := index $retreat "url" | default "/developer-retreat/" -}}
-{{- $allEvents := index (.Site.Data.community_events | default dict) "events" | default (slice) -}}
+{{- $googleCalendarUrl := index $cfg "googleCalendarSubscribeUrl" | default "" -}}
+{{- $communityEventsData := .Site.Data.community_events | default dict -}}
+{{- $allEvents := index $communityEventsData "events" | default (slice) -}}
+{{- $lastSynced := index $communityEventsData "last_synced" | default "" -}}
 {{- $upcoming := slice -}}
 {{- $past := slice -}}
 {{- range $allEvents }}
@@ -51,6 +54,12 @@
           <a class="openms-lib-btn openms-lib-btn--primary" href="{{ . }}">{{ $retreatText }}</a>
           {{- end }}
           <a class="openms-lib-btn openms-lib-btn--ghost" href="/news/">News</a>
+          {{- with $googleCalendarUrl }}
+          <a class="openms-lib-btn openms-lib-btn--ghost calendar-gcal-btn" href="{{ . }}" target="_blank" rel="noopener noreferrer">
+            {{ partial "gcal-icon.html" }}
+            <span class="openms-lib-btn__label">Add to Google Calendar</span>
+          </a>
+          {{- end }}
         </div>
       </div>
     </div>
@@ -64,6 +73,15 @@
       <section class="community-events-page__section community-events-page__section--upcoming community-events-upcoming-layout" aria-labelledby="calendar-upcoming-title">
         <header class="community-events-page__header">
           <h2 id="calendar-upcoming-title" class="community-events-page__title">{{ $upcomingTitle }}</h2>
+          {{- with $lastSynced }}
+          {{- $syncedTime := time . }}
+          <p class="calendar-sync-badge">
+            {{ partial "gcal-icon.html" }}
+            <span class="calendar-sync-badge__label">Synced with Google Calendar</span>
+            <span class="calendar-sync-badge__sep" aria-hidden="true"></span>
+            <span class="calendar-sync-badge__time"><time datetime="{{ $syncedTime.Format "2006-01-02T15:04:05Z07:00" }}">Updated {{ partial "relative-time.html" $syncedTime }}</time></span>
+          </p>
+          {{- end }}
         </header>
 
         {{- if gt (len $upcoming) 0 }}

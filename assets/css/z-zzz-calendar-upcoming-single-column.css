@@ -1,0 +1,7 @@
+/* Upcoming events — one event per row at every width, unlike Past events
+   (which stays a multi-column grid via z-calendar-stack.css). Scoped to
+   .community-events-page__grid specifically, since only the Upcoming
+   events <ul> carries that class. */
+html body .openms-lib-page--calendar .community-events-page__grid {
+  grid-template-columns: minmax(0, 1fr) !important;
+}

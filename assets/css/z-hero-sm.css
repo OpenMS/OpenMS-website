@@ -497,7 +497,7 @@ html body .home-page__hero .hero-home__highlights {
     --hero-diagram-height: 9.25rem;
     --hero-stack-gap: 1.85rem;
     --hero-copy-gap: 0.9rem;
-    --hero-note-size: clamp(0.85rem, 3.6cqi, 0.98rem);
+    --hero-note-size: clamp(0.68rem, 3.2cqi, 0.98rem);
   }
 
   html body .home-page__hero .hero-home__main {
@@ -553,9 +553,9 @@ html body .home-page__hero .hero-home__highlights {
 
   html body .home-page__hero .hero-home__note,
   html body .home-page__hero .hero-home__note--under-graphic {
-    flex-wrap: wrap !important;
-    white-space: normal !important;
-    row-gap: 0.35rem !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    gap: clamp(0.65rem, 3cqi, 1.05rem) !important;
   }
 }
 

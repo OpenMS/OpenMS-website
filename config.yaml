@@ -301,6 +301,14 @@ languages:
         developerRetreat:
           text: Developer Retreat
           url: /developer-retreat/
+        # Public "Add to Google Calendar" subscribe link for site visitors
+        # (safe to be public — this is what viewers use to subscribe, not
+        # the sync feed). Leave blank to hide the button. Fill in once you
+        # have the calendar's public URL: Google Calendar → Settings →
+        # select your calendar → "Integrate calendar" → "Public URL to
+        # this calendar", then wrap it as:
+        # https://calendar.google.com/calendar/render?cid=<that URL, URL-encoded>
+        googleCalendarSubscribeUrl: ""
       # Donate page (/donate/) — paste URLs from Zeffy: Donations → My forms → Share
       donatePage:
         eyebrow: Support OpenMS

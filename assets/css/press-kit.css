@@ -170,7 +170,7 @@
 
 .press-kit-note__inner {
   width: 100%;
-  max-width: min(100%, 46rem);
+  max-width: var(--pro-max, 75rem);
   margin-inline: auto;
   padding: clamp(1.5rem, 3.5vw, 2.25rem);
   box-sizing: border-box;

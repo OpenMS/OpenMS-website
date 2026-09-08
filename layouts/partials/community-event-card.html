@@ -3,6 +3,7 @@
 {{- $hideDateLine := .hideDateLine | default false -}}
 {{- $primaryCta := .primaryCta | default false -}}
 {{- $readMore := .readMoreLabel | default "View details" -}}
+{{- $showAddToCalendar := .showAddToCalendar | default false -}}
 {{- if $event }}
 {{- $start := time $event.start -}}
 {{- $endStr := $event.end | default "" -}}
@@ -23,6 +24,10 @@
 {{- else if eq $category "workshop" -}}
   {{- $categoryLabel = "Workshop" -}}
 {{- end -}}
+{{- $gcalStart := $start.Format "20060102" -}}
+{{- $gcalEndDate := $end.AddDate 0 0 1 -}}
+{{- $gcalEnd := $gcalEndDate.Format "20060102" -}}
+{{- $gcalAddUrl := printf "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%s&dates=%s/%s&details=%s&location=%s" ($event.title | urlquery) $gcalStart $gcalEnd (($event.summary | default "") | urlquery) (($event.location | default "") | urlquery) -}}
 <li class="community-events-home__item{{ if $featured }} community-events-home__item--featured{{ end }}" role="listitem">
   <article class="community-events-home__card community-events-home__card--{{ $category }}{{ if $featured }} community-events-home__card--featured{{ end }}{{ if $primaryCta }} community-news-events__press-card{{ end }}">
     {{- if $primaryCta }}
@@ -57,6 +62,12 @@
     </a>
     {{- else }}
     </div>
+    {{- end }}
+    {{- if $showAddToCalendar }}
+    <a class="community-news-events__add-to-cal" href="{{ $gcalAddUrl }}" target="_blank" rel="noopener noreferrer">
+      {{ partial "gcal-icon.html" }}
+      <span>Add to my calendar</span>
+    </a>
     {{- end }}
     {{- else if and $eventUrl (not $primaryCta) }}
     <a
