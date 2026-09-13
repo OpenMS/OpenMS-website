@@ -24,6 +24,14 @@
 {{- else if eq $category "workshop" -}}
   {{- $categoryLabel = "Workshop" -}}
 {{- end -}}
+{{- $summaryHTML := "" -}}
+{{- with $event.summary -}}
+  {{- /* Synced calendar summaries are plain text with raw "Label: https://…"
+        links (see sync_google_calendar.py) — turn the label into an actual
+        link instead of showing the raw URL. Plain summaries with no URL
+        pass through unchanged. */ -}}
+  {{- $summaryHTML = replaceRE `(?i)([A-Za-z][A-Za-z ]*?):\s*(https?://\S+)` `<a href="$2" class="openms-cta-link" target="_blank" rel="noopener noreferrer">$1</a>` . -}}
+{{- end -}}
 {{- $gcalStart := $start.Format "20060102" -}}
 {{- $gcalEndDate := $end.AddDate 0 0 1 -}}
 {{- $gcalEnd := $gcalEndDate.Format "20060102" -}}
@@ -52,8 +60,8 @@
         >{{ upper ($start.Format "2 Jan 2006") }}</time>
       </p>
       <h3 class="community-news-events__press-title">{{ $event.title }}</h3>
-      {{- with $event.summary }}
-      <p class="community-news-events__press-summary">{{ . }}</p>
+      {{- with $summaryHTML }}
+      <p class="community-news-events__press-summary">{{ . | safeHTML }}</p>
       {{- end }}
       {{- with $event.location }}
       <p class="community-news-events__press-location">{{ . }}</p>
@@ -105,8 +113,8 @@
           {{- end -}}
         </p>
         {{- end }}
-        {{- with $event.summary }}
-        <p class="community-events-home__card-summary">{{ . }}</p>
+        {{- with $summaryHTML }}
+        <p class="community-events-home__card-summary">{{ . | safeHTML }}</p>
         {{- end }}
       </div>
 
@@ -158,8 +166,8 @@
           </h3>
         </div>
 
-        {{- with $event.summary }}
-        <p class="community-events-home__card-summary">{{ . }}</p>
+        {{- with $summaryHTML }}
+        <p class="community-events-home__card-summary">{{ . | safeHTML }}</p>
         {{- end }}
 
         <div class="community-events-home__card-footer">
