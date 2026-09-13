@@ -69,15 +69,14 @@ events:
   synced: true
   end: '2026-09-28'
   location: National University of Singapore
-  summary: 'Registration: <a href="https://forms.gle/S6gcDAJrLztCAGBL7">https://forms.gle/S6gcDAJrLztCAGBL7</a><br>More
-    Information: <a…'
+  summary: 'Registration: https://forms.gle/S6gcDAJrLztCAGBL7'
 - title: Developers Retreat
   start: '2027-03-14'
   category: event
   synced: true
   end: '2027-03-21'
   location: Resort Natura, 8100-266 Loulé, Portugal
-  summary: 'Registration and Info: <a href="https://tally.so/r/aQL8XW">https://tally.so/r/aQL8XW</a>'
+  summary: 'Registration and Info: https://tally.so/r/aQL8XW'
 - title: Google Summer of Code Ends
   start: '2026-11-02'
   category: outreach
