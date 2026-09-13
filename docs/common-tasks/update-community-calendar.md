@@ -14,6 +14,19 @@ To turn it on:
 
 Until the secret is set, the workflow runs as a no-op and the page shows no sync badge or button.
 
+### What to put in the Google Calendar event
+
+Each Google Calendar field maps to one of this site's event fields. Fill these in and the event will show up correctly on the next sync:
+
+| Google Calendar field | Becomes | Notes |
+|---|---|---|
+| Event title | `title` | Shown as the card heading — check spelling, it's copied verbatim. Include a word like "workshop", "developer meeting", or "summer of code" if you want the matching colored tag; anything else is tagged generic "Event". |
+| Date | `start` / `end` | For a multi-day event, use Google Calendar's normal **All day** toggle and pick the first and last day the event actually runs (e.g. Mon–Fri) — the sync handles Google's internal date format correctly. Past events (already finished) are skipped automatically. |
+| Location | `location` | Plain text, e.g. `University of Helsinki, Finland`. |
+| Description | `summary` | **Plain text only** — the site strips any formatting/links Google Calendar adds, so a pasted hyperlink shows as plain text anyway. Just type or paste the raw URL directly, e.g. `Registration: https://example.com/register`. Keep it short; it's cut to 160 characters. |
+
+Not supported via Google Calendar (add these by hand in `data/community_events.yaml` afterward if needed): `news_url` (link to a news post on this site) has no Google Calendar equivalent.
+
 ## Edit the event list
 
 1. Open **`data/community_events.yaml`** in the repository ([on GitHub](https://github.com/OpenMS/OpenMS-website/blob/main/data/community_events.yaml)).
