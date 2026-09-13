@@ -35314,14 +35314,19 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i],
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="nuxl" i] {
   display: block !important;
-  /* These three logo files carry built-in canvas whitespace around the
-     mark itself, so even flush-left placement (margin-left: 0) still
-     reads as offset from the card edge. Nudge left to compensate. */
-  margin-left: -0.75rem !important;
   margin-right: auto !important;
   max-width: min(22rem, 100%) !important;
   object-fit: contain !important;
   object-position: left center !important;
+}
+
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="openDDA" i],
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i] {
+  /* These two logo files still carry built-in canvas whitespace around
+     the mark itself, so even flush-left placement (margin-left: 0) still
+     reads as offset from the card edge. Nudge left to compensate.
+     nuxl.png was cropped to its content bounds, so it no longer needs this. */
+  margin-left: -0.75rem !important;
 }
 
 html body .openms-lib-layout:has(.openms-lib-page--developer-retreat),
