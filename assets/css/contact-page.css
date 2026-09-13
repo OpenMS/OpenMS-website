@@ -1,0 +1,62 @@
+/* Contact hub page — page-specific overrides only.
+   Shell / path cards live in z-openms-lib-pro.css. */
+
+.openms-lib-page--contact #contact-paths.openms-lib-page__anchor {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.openms-lib-page--contact #contact-paths .openms-lib-resources.openms-lib-resources--no-feature {
+  padding-block: var(--pro-section-y, clamp(3.5rem, 7vw, 5.5rem)) !important;
+  margin-top: 0 !important;
+}
+
+.openms-lib-page--contact #contact-paths .openms-lib-resources__head {
+  margin-top: 0 !important;
+}
+
+/* Community card: Discord + GitHub as direct icon links
+   Soft-pill look is shared sitewide in zz-openms-buttons.css */
+.openms-lib-page--contact .contact-path-socials {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-self: stretch;
+  width: 100%;
+  gap: 0.65rem 0.85rem;
+  margin-top: auto;
+  padding-top: 0.35rem;
+  box-sizing: border-box;
+}
+
+.openms-lib-page--contact .contact-path-social {
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.openms-lib-page--contact .contact-path-social i {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.openms-lib-page--contact .contact-path-card--community.openms-lib-resources__item--static {
+  cursor: default;
+}
+
+/* Keep other contact path CTAs pinned like Discord/GitHub pills */
+.openms-lib-page--contact .contact-paths-grid > .openms-lib-resources__item > .openms-lib-resources__item-link {
+  margin-top: auto;
+}
+
+@media (max-width: 720px) {
+  .openms-lib-page--contact #contact-paths.openms-lib-page__anchor {
+    padding-top: 0 !important;
+  }
+
+  .openms-lib-page--contact .contact-path-socials {
+    width: 100%;
+  }
+}

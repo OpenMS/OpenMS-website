@@ -1,0 +1,79 @@
+{{- $cfg := site.Params.ecosystemSection | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "" -}}
+{{- $title := index $cfg "title" | default "Ecosystem" -}}
+{{- $titleHighlight := index $cfg "titleHighlight" | default "" -}}
+{{- $description := index $cfg "description" | default "" -}}
+{{- $items := index $cfg "items" | default (slice) -}}
+{{- if gt (len $items) 0 }}
+<section class="ecosystem-home" aria-labelledby="ecosystem-home-title">
+  <div class="ecosystem-home__inner">
+    <header class="ecosystem-home__header">
+      <div class="ecosystem-home__header-main">
+        {{- with $eyebrow }}
+        <p class="ecosystem-home__eyebrow">
+          <span class="ecosystem-home__eyebrow-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="14" height="14" focusable="false" aria-hidden="true">
+              <path fill="currentColor" d="M4.72 3.22a.75.75 0 0 1 0 1.06L1.56 7.44l3.16 3.16a.75.75 0 1 1-1.06 1.06l-3.69-3.69a.75.75 0 0 1 0-1.06l3.69-3.69a.75.75 0 0 1 1.06 0zm6.56 0a.75.75 0 0 1 1.06 0l3.69 3.69a.75.75 0 0 1 0 1.06l-3.69 3.69a.75.75 0 1 1-1.06-1.06l3.16-3.16-3.16-3.16a.75.75 0 0 1 0-1.06z"/>
+            </svg>
+          </span>
+          {{ . }}
+        </p>
+        {{- end }}
+        <h2 id="ecosystem-home-title" class="ecosystem-home__title">
+          {{- if and $titleHighlight (in $title $titleHighlight) }}
+          {{ replace $title $titleHighlight (printf "<span class=\"ecosystem-home__title-accent\">%s</span>" $titleHighlight) | safeHTML }}
+          {{- else }}
+          {{ $title }}
+          {{- end }}
+        </h2>
+        {{- with $description }}
+        <p class="ecosystem-home__lead">{{ . }}</p>
+        {{- end }}
+      </div>
+    </header>
+    <ul class="ecosystem-home__grid" role="list" aria-label="OpenMS ecosystem tools">
+      {{- range $index, $item := $items }}
+      {{- $url := $item.url | default "#" -}}
+      {{- $external := and $url (in $url "://") -}}
+      {{- $accent := $item.accent | default "" -}}
+      {{- $tag := $item.tag | default "" -}}
+      <li
+        class="ecosystem-home__item{{ with $accent }} ecosystem-home__item--{{ . }}{{ end }}"
+        role="listitem"
+        style="--ecosystem-reveal-index: {{ $index }}"
+      >
+        <a
+          class="ecosystem-home__card{{ with $accent }} ecosystem-home__card--{{ . }}{{ end }}"
+          href="{{ $url }}"
+          {{- if $external }} target="_blank" rel="noopener noreferrer"{{- end }}
+        >
+          <div class="ecosystem-home__card-head">
+            <div class="ecosystem-home__card-intro">
+              {{- with $tag }}
+              <span class="ecosystem-home__card-tag">{{ . }}</span>
+              {{- end }}
+              <h3 class="ecosystem-home__card-title">{{ $item.name }}</h3>
+            </div>
+            {{- with $item.icon }}
+            <img
+              class="ecosystem-home__card-icon"
+              src="{{ . | relURL }}"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+            {{- end }}
+          </div>
+          {{- with $item.description }}
+          <p class="ecosystem-home__card-text">{{ . }}</p>
+          {{- end }}
+          <span class="ecosystem-home__card-link">
+            Learn more<span class="ecosystem-home__card-link-icon" aria-hidden="true">→</span>
+          </span>
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+</section>
+{{- end }}

@@ -1,0 +1,39 @@
+{{- $page := .page -}}
+{{- $summary := $page.Summary -}}
+{{- with $page.Params.summary -}}
+  {{- $summary = . -}}
+{{- end -}}
+{{- $label := $page.Params.category | default "News" -}}
+<li
+  class="news-entry community-events-home__item news-home__item"
+  role="listitem"
+  {{- if not $page.Date.IsZero }} data-news-year="{{ $page.Date.Format "2006" }}"{{ end -}}
+>
+  <article class="community-events-home__card news-home__card community-news-events__press-card">
+    <a class="community-news-events__press-link news-home__card-link" href="{{ $page.RelPermalink }}">
+      <p class="community-news-events__press-meta">
+        {{- if and $label (ne $label "News") }}
+        <span class="community-news-events__press-label">{{ $label }}</span>
+        {{- if not $page.Date.IsZero }}
+        <span class="community-news-events__press-sep" aria-hidden="true">·</span>
+        {{- end }}
+        {{- end }}
+        {{- if not $page.Date.IsZero }}
+        <time
+          class="community-news-events__press-date"
+          datetime="{{ $page.Date.Format "2006-01-02" }}"
+        >{{ upper ($page.Date.Format "2 Jan 2006") }}</time>
+        {{- end }}
+      </p>
+      <h3 class="community-news-events__press-title news-home__card-title">{{ $page.Title }}</h3>
+      {{- with $summary }}
+      <p class="community-news-events__press-summary news-home__card-summary">{{ . | plainify | truncate 240 }}</p>
+      {{- end }}
+      {{- with or $page.Params.authors $page.Params.Authors }}
+      <p class="community-news-events__press-location news-entry__authors news-home__card-authors">
+        {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end -}}
+      </p>
+      {{- end }}
+    </a>
+  </article>
+</li>

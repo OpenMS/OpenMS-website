@@ -1,0 +1,80 @@
+{{- $cfg := site.Params.openmsLibDevelopers | default dict -}}
+{{- $citeId := "openms-lib-cite-title" -}}
+{{- $citeFallback := "Used OpenMS-lib in your work? If so, please cite." -}}
+{{- if reflect.IsMap . -}}
+  {{- with index . "cfg" -}}{{- $cfg = . -}}{{- end -}}
+  {{- with index . "id" -}}{{- $citeId = . -}}{{- end -}}
+  {{- with index . "fallback" -}}{{- $citeFallback = . -}}{{- end -}}
+{{- end -}}
+{{- $citeText := index $cfg "citeText" -}}
+{{- $citation := index $cfg "citation" | default dict -}}
+{{- $citeVariant := index $citation "variant" | default "primary" -}}
+{{- if or $citeText $citation }}
+<section
+  class="openms-lib-cite openms-lib-hub__reveal"
+  id="research-impact"
+  aria-labelledby="{{ $citeId }}"
+>
+  <div class="openms-lib-cite__inner">
+    <header class="openms-lib-cite__head">
+      <p class="openms-lib-cite__eyebrow">{{ partial "section-eyebrow-icon.html" "quote" }}Research impact</p>
+      <h2 id="{{ $citeId }}" class="openms-lib-cite__title">
+        {{- with $citeText -}}
+          {{ . }}
+        {{- else -}}
+          {{ $citeFallback }}
+        {{- end -}}
+      </h2>
+    </header>
+
+    {{- with $citation }}
+    {{- $pubUrl := .url -}}
+    {{- $actionText := .actionText | default "View on PubMed" -}}
+    {{- $moreUrl := .moreUrl -}}
+    {{- $moreText := .moreText | default "More citations" -}}
+    <article class="publications-cite-card publications-cite-card--{{ $citeVariant }} openms-lib-cite__card">
+      {{- if or .badge .topic }}
+      <div class="publications-cite-card__top">
+        {{- with .badge }}
+        <span class="publications-cite-card__badge">{{ . }}</span>
+        {{- end }}
+        {{- with .topic }}
+        <span class="publications-cite-card__topic">{{ . }}</span>
+        {{- end }}
+      </div>
+      {{- end }}
+      {{- with .title }}
+      <h3 class="publications-cite-card__title">
+        {{- if $pubUrl }}
+        <a href="{{ $pubUrl }}" target="_blank" rel="noopener noreferrer">{{ . }}</a>
+        {{- else }}
+        {{ . }}
+        {{- end }}
+      </h3>
+      {{- end }}
+      {{- if or .journal .year }}
+      <p class="publications-cite-card__meta">
+        {{- with .journal }}
+        <span class="publications-cite-card__journal">{{ . }}</span>
+        {{- end }}
+        {{- with .year }}
+        <span class="publications-cite-card__year">{{ . }}</span>
+        {{- end }}
+      </p>
+      {{- end }}
+      {{- with .authors }}
+      <p class="publications-cite-card__authors">{{ partial "cite-authors.html" . }}</p>
+      {{- end }}
+      <div class="openms-lib-cite__actions">
+        {{- with $pubUrl }}
+        <a class="openms-lib-btn openms-lib-btn--primary" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $actionText }}</a>
+        {{- end }}
+        {{- with $moreUrl }}
+        <a class="openms-lib-btn openms-lib-btn--ghost" href="{{ . }}">{{ $moreText }}</a>
+        {{- end }}
+      </div>
+    </article>
+    {{- end }}
+  </div>
+</section>
+{{- end }}

@@ -1,0 +1,8 @@
+/* Contribute Channels — separated white cards (shared num-card pattern in z-zzz) */
+
+/* No number-to-number connector lines */
+html body .openms-lib-page--contribute .contribute-channel__index::before,
+html body .openms-lib-page--contribute .contribute-channel__index::after {
+  content: none !important;
+  display: none !important;
+}

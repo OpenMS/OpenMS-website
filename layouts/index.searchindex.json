@@ -1,0 +1,16 @@
+{{- $pages := slice -}}
+{{- range .Site.RegularPages -}}
+  {{- if not .Params.search_exclude -}}
+    {{- $summary := .Summary | plainify | truncate 200 -}}
+    {{- if eq $summary "" -}}
+      {{- $summary = .Plain | plainify | truncate 200 -}}
+    {{- end -}}
+    {{- $pages = $pages | append (dict
+      "title" .Title
+      "href" .RelPermalink
+      "section" (.Section | humanize)
+      "summary" $summary
+    ) -}}
+  {{- end -}}
+{{- end -}}
+{{- $pages | jsonify -}}

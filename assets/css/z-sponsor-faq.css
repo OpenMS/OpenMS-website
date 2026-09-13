@@ -1,0 +1,197 @@
+/* Why sponsor — title + lead stay inside the column at tablet/phone */
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__head,
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__head-copy,
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__title,
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__lead {
+  min-width: 0;
+  max-width: 100% !important;
+}
+
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__title {
+  overflow-wrap: break-word;
+}
+
+html body .openms-lib-page--sponsor-us #why-sponsor .sponsor-lead-line {
+  display: inline !important;
+  white-space: normal !important;
+  overflow-wrap: break-word;
+}
+
+html body .openms-lib-page--sponsor-us #why-sponsor .sponsor-lead-line + .sponsor-lead-line::before {
+  content: " ";
+}
+
+@media (min-width: 1120px) {
+  html body .openms-lib-page--sponsor-us #why-sponsor .sponsor-lead-line {
+    display: block !important;
+    white-space: nowrap !important;
+  }
+
+  html body .openms-lib-page--sponsor-us #why-sponsor .sponsor-lead-line + .sponsor-lead-line::before {
+    content: none;
+  }
+}
+
+/* FAQ + Become a sponsor — Contact us keeps desktop pill size on all screens */
+html body .openms-lib-page--sponsor-us a.openms-lib-btn.sponsor-faq-pro__cta,
+html body .openms-lib-page--sponsor-us a.openms-lib-btn.sponsor-faq-pro__cta:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn.openms-lib-btn--primary,
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn.openms-lib-btn--primary:is(:hover, :focus-visible, :active) {
+  display: inline-flex !important;
+  box-sizing: border-box;
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+  justify-self: start !important;
+  justify-content: center !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  height: auto !important;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  white-space: nowrap !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__question:hover,
+html body .openms-lib-page--sponsor-us .sponsor-faq__question:focus-visible {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  background: rgba(var(--openms-blue-rgb), 0.04) !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__item[open] .sponsor-faq__question:hover,
+html body .openms-lib-page--sponsor-us .sponsor-faq__item[open] .sponsor-faq__question:focus-visible {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  background: rgba(var(--openms-blue-rgb), 0.04) !important;
+}
+
+/* Benefit comparison — always expanded */
+html body .openms-lib-page--sponsor-us .sponsor-benefits__summary {
+  pointer-events: none;
+  cursor: default;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__summary::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Why sponsor / Impact — card layout from z-zzz-num-strip-white.css */
+
+/* Sponsorship levels — light card bg + slightly stronger on hover */
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier {
+  background: var(--pro-band-soft, #f4f6f9) !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier:hover,
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier:focus-within,
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--active,
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--featured:hover,
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--featured:focus-within {
+  background: color-mix(in srgb, var(--openms-blue) 6%, var(--pro-band-soft, #f4f6f9)) !important;
+}
+
+/* Benefit comparison — same column color; hover + selected highlight */
+html body .openms-lib-page--sponsor-us .sponsor-benefits {
+  --benefits-col-bg: color-mix(in srgb, var(--openms-blue) 4%, var(--openms-white, #fff));
+  --benefits-col-hover: color-mix(in srgb, var(--openms-blue) 9%, var(--openms-white, #fff));
+  --benefits-col-active: color-mix(in srgb, var(--openms-blue) 14%, var(--openms-white, #fff));
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--bronze,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--silver,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--gold,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--platinum,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--tier {
+  background: var(--benefits-col-bg) !important;
+  transition: background-color 0.18s ease;
+  cursor: pointer;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--label {
+  cursor: default;
+}
+
+/* Fit matrix in view — no inner scrollbars (button heads were content-box + pad overflow) */
+html body .openms-lib-page--sponsor-us .sponsor-benefits__scroller {
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  max-width: 100% !important;
+  -webkit-overflow-scrolling: auto;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix {
+  --label-col: minmax(0, 1.25fr);
+  --tier-col: minmax(0, 1fr);
+  grid-template-columns: var(--label-col) repeat(var(--tier-cols, 4), var(--tier-col)) !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--head {
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--head {
+  appearance: none;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  width: 100% !important;
+  text-align: center;
+  cursor: pointer;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__col-name,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__list,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell p,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell li {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--head:focus-visible {
+  outline: 2px solid var(--openms-blue);
+  outline-offset: -2px;
+  z-index: 2;
+}
+
+/* Hovered column */
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-hover-tier="bronze"] [data-sponsor-benefits="bronze"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-hover-tier="silver"] [data-sponsor-benefits="silver"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-hover-tier="gold"] [data-sponsor-benefits="gold"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-hover-tier="platinum"] [data-sponsor-benefits="platinum"] {
+  background: var(--benefits-col-hover) !important;
+}
+
+/* Selected / active column */
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="bronze"] [data-sponsor-benefits="bronze"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="silver"] [data-sponsor-benefits="silver"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="gold"] [data-sponsor-benefits="gold"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="platinum"] [data-sponsor-benefits="platinum"] {
+  background: var(--benefits-col-active) !important;
+}
+
+/* Selected wins over hover when both match; hover on a different col still shows */
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="bronze"][data-hover-tier="bronze"] [data-sponsor-benefits="bronze"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="silver"][data-hover-tier="silver"] [data-sponsor-benefits="silver"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="gold"][data-hover-tier="gold"] [data-sponsor-benefits="gold"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="platinum"][data-hover-tier="platinum"] [data-sponsor-benefits="platinum"] {
+  background: var(--benefits-col-active) !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--head[aria-pressed="true"] .sponsor-benefits__col-name {
+  color: var(--openms-blue) !important;
+}

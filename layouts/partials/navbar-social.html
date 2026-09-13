@@ -1,0 +1,14 @@
+{{- $socialMedia := index .Site.Params.footer "socialmedia" }}
+{{- if $socialMedia }}
+<div class="navbar-mobile-social" aria-label="Social media">
+  {{- range $socialMedia }}
+  <a href="{{ .link }}" aria-label="{{ .icon | humanize }}" target="_blank" rel="noopener noreferrer">
+    {{- if .icon -}}
+    {{- partial "svg-icon" .icon -}}
+    {{- else -}}
+    <span class="icon">ⓘ</span>
+    {{- end }}
+  </a>
+  {{- end }}
+</div>
+{{- end }}

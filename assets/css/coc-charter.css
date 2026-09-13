@@ -1,0 +1,39 @@
+/* Code of Conduct — governance-style hero header, then a plain, "wall of
+   text" body like a legal document (e.g.
+   apache.org/foundation/how-it-works/). Reuses the site's base
+   .openms-lib-prose typography for headings/paragraphs/lists. */
+
+/* The hero already ends with its own breathing room below the lead line,
+   so cancel the sitewide "first anchor after hero" top padding to avoid
+   stacking two gaps in a row. */
+.openms-lib-page--code-of-conduct .openms-lib-page__body > .openms-lib-page__anchor:first-child {
+  padding-top: clamp(1.5rem, 4vw, 2.5rem) !important;
+}
+
+/* Compound with .openms-lib-prose so this beats the sitewide
+   .openms-lib-prose { max-width: none } rule regardless of stylesheet
+   load order (equal-specificity single-class rules lose to whichever
+   loads last, which isn't always us). Padding-inline is set here too,
+   rather than relying on the parent anchor, since a page-specific
+   override elsewhere strips that padding for this page. */
+.coc-charter__inner.openms-lib-prose {
+  box-sizing: border-box;
+  max-width: 46rem;
+  margin-inline: auto;
+  padding-inline: var(--openms-page-inline, 1.5rem);
+  padding-bottom: clamp(3.5rem, 9vw, 6.5rem);
+}
+
+/* A site-wide reset hides list markers by default; a plain document page
+   needs visible bullets/numbers like any normal prose list. */
+.coc-charter__inner ul {
+  list-style: disc;
+}
+
+.coc-charter__inner ol {
+  list-style: decimal;
+}
+
+.coc-charter__inner li {
+  list-style: inherit;
+}

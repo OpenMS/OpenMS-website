@@ -1,0 +1,32 @@
+/* Research partnerships form — hug Tally height; modest space under submit */
+html body .openms-lib-page--research-partnerships #partnership-form,
+html body .openms-lib-page--research-partnerships .rp-application {
+  padding-bottom: clamp(1.75rem, 4vw, 3rem) !important;
+}
+
+html body .openms-lib-page--research-partnerships .rp-application__form {
+  height: auto !important;
+  min-height: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+html body .openms-lib-page--research-partnerships .rp-application__tally-iframe,
+html body .openms-lib-page--research-partnerships iframe.rp-application__tally-iframe {
+  display: block !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+@media (max-width: 720px) {
+  html body .openms-lib-page--research-partnerships .rp-application__tally-iframe,
+  html body .openms-lib-page--research-partnerships iframe.rp-application__tally-iframe {
+    min-height: 0 !important;
+  }
+}
+
+/* Partnerships include numbered cards — layout from z-zzz-num-strip-white.css */

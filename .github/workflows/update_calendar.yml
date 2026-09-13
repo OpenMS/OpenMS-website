@@ -1,0 +1,82 @@
+name: Sync Google Calendar
+
+on:
+  schedule:
+    # Every day at 07:00 UTC
+    - cron: '0 7 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-calendar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.OPENMS_GITHUB_APP_ID }}
+          private-key: ${{ secrets.OPENMS_GITHUB_APP_PRIVATE_KEY }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests pyyaml icalendar
+
+      - name: Run calendar sync script
+        env:
+          GOOGLE_CALENDAR_ICS_URL: ${{ secrets.GOOGLE_CALENDAR_ICS_URL }}
+        run: python sync_google_calendar.py
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          if git diff --quiet -- data/community_events.yaml; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create branch and commit
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config user.name "${{ steps.app-token.outputs.app-slug }}[bot]"
+          git config user.email "${{ vars.OPENMS_GITHUB_APP_ID }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com"
+          git checkout -b update-calendar-sync
+          git add data/community_events.yaml
+          git commit -m "Sync events from Google Calendar"
+          git push --force https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/${{ github.repository }} update-calendar-sync
+
+      - name: Create Pull Request
+        if: steps.git-check.outputs.changed == 'true'
+        id: pr
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          if gh pr view update-calendar-sync --json number -q .number >/dev/null 2>&1; then
+            echo "PR already exists, branch updated."
+          else
+            gh pr create \
+              --title "Automated Google Calendar sync" \
+              --body "Automated update of \`data/community_events.yaml\` from the Google Calendar feed." \
+              --head update-calendar-sync \
+              --base main \
+              --label automated,calendar
+          fi
+
+      - name: Auto-merge Pull Request
+        if: steps.git-check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: gh pr merge update-calendar-sync --squash --delete-branch

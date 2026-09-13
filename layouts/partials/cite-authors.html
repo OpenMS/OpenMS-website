@@ -1,0 +1,25 @@
+{{- /* Show a few authors, an ellipsis, then always the last author. */ -}}
+{{- $raw := . | string -}}
+{{- $parts := split $raw ";" -}}
+{{- $authors := slice -}}
+{{- range $parts -}}
+  {{- $name := strings.TrimSpace . -}}
+  {{- if $name -}}
+    {{- $authors = $authors | append $name -}}
+  {{- end -}}
+{{- end -}}
+{{- $limit := 7 -}}
+{{- $total := len $authors -}}
+{{- if le $total $limit -}}
+  {{- delimit $authors "; " -}}
+{{- else -}}
+  {{- $last := index $authors (sub $total 1) -}}
+  {{- $rest := first (sub $total 1) $authors -}}
+  {{- if le (len $rest) $limit -}}
+    {{- delimit $authors "; " -}}
+  {{- else -}}
+    {{- $visible := first $limit $rest -}}
+    {{- $more := sub (len $rest) $limit -}}
+    {{- delimit $visible "; " }} <span class="publications-cite-card__authors-more" title="{{ $total }} authors total · {{ $more }} more not shown">...</span>; {{ $last -}}
+  {{- end -}}
+{{- end -}}

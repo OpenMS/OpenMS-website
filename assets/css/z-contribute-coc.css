@@ -1,0 +1,28 @@
+/* Contribute page reuses the Code of Conduct "We encourage" section at
+   the bottom (scoped via .openms-lib-page--code-of-conduct on the
+   #code-of-conduct anchor). The report box there gains a second action —
+   a "Report an incident" button alongside the report-handling-manual
+   link — so lay both out as a stack instead of the single inline link
+   the Code of Conduct page uses. */
+.openms-lib-page--code-of-conduct .coc-report__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 720px) {
+  .openms-lib-page--code-of-conduct .coc-report__actions {
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-report__actions .openms-lib-btn {
+    width: 100%;
+  }
+
+  .openms-lib-page--code-of-conduct .coc-report__actions .coc-report__link {
+    justify-content: center;
+  }
+}

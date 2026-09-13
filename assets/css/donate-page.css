@@ -1,0 +1,17 @@
+/* Donate page styles live in z-openms-lib-pro.css
+   under .openms-lib-page--donate. Fallback embed sizing kept here. */
+
+.donate-page__zeffy-iframe {
+  display: block;
+  width: 100%;
+  min-height: 52rem;
+  border: 0;
+  background: transparent;
+}
+
+@media (max-width: 720px) {
+  .donate-page__zeffy-iframe {
+    /* Zeffy has no dynamicHeight — keep tall enough that the page scrolls, not the iframe */
+    min-height: 72rem;
+  }
+}

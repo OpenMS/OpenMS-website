@@ -1,0 +1,2 @@
+{{- $cfg := site.Params.webappsPage.developers | default dict -}}
+{{ partial "openms-lib-cite.html" (dict "cfg" $cfg "id" "webapps-cite-title" "fallback" "Used OpenMS WebApps in your work? If so, please cite.") }}

@@ -1,0 +1,31 @@
+.openms-lib-page--help {
+  --olib-text-muted: var(--openms-text-muted);
+}
+
+.help-page {
+  margin-top: 0;
+}
+
+.help-page__hint {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--openms-text-muted, #5a6474);
+}
+
+.openms-lib-page--help .help-page__resources {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.help-page__card--wide {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 860px) {
+  .openms-lib-page--help .help-page__resources {
+    grid-template-columns: 1fr;
+  }
+
+  .help-page__card--wide {
+    grid-column: auto;
+  }
+}

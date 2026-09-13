@@ -1,8 +1,9 @@
 ---
 title: OpenMS Code of Conduct
 sidebar: false
+hideShortcuts: true
 aliases:
-    - /conduct.html
+  - /conduct.html
 ---
 
 ### Code of Conduct (Summary View)
@@ -79,7 +80,7 @@ In cases not involving clear severe and obvious breaches of this Code of Conduct
 
 1. Acknowledge report is received,
 2. Reasonable discussion/feedback,
-3. Mediation (if feedback didn’t help, and only if both reporter and reportee agree to this),
+3. Mediation (if feedback didn't help, and only if both reporter and reportee agree to this),
 4. Enforcement via transparent decision (see [Resolutions](/report-handling-manual/#resolutions)) by the Code of Conduct Committee.
 
 The Committee will respond to any report as soon as possible, and at most within 72 hours.

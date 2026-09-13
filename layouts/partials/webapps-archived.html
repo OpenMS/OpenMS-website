@@ -1,0 +1,22 @@
+{{- $section := site.Params.archivedSection | default dict -}}
+{{- $projects := site.Params.archivedProjects | default (slice) -}}
+{{- $projectCount := len $projects -}}
+{{- if $projects }}
+<section class="webapps-archived webapps-archived--catalog" aria-label="{{ index $section "catalogTitle" | default "Archived Projects" }}">
+  <div class="webapps-archived__inner">
+    <div class="webapps-archived__projects">
+      <ul
+        class="webapps-archived__grid{{ if eq $projectCount 1 }} webapps-archived__grid--solo{{ end }}"
+        role="list"
+        aria-label="Archived apps"
+      >
+        {{- range $projects }}
+        <li class="webapps-archived__item" role="listitem">
+          {{ partial "webapps-archived-project.html" . }}
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+  </div>
+</section>
+{{- end }}

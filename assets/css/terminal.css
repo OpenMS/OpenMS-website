@@ -7,7 +7,7 @@ position: relative;
 }
 
 .terminal-window header {
-background: #E0E8F0;
+background: var(--openms-grey);
 height: 30px;
 border-radius: 8px 8px 0 0;
 padding-left: 10px;
@@ -23,22 +23,22 @@ padding: 0%;
 }
 
 .terminal-window header .button.green {
-background: #3BB662;
+background: var(--openms-yellow);
 }
 
 .terminal-window header .button.yellow {
-background: #E5C30F;
+background: var(--openms-orange);
 }
 
 .terminal-window header .button.red {
-background: #E75448;
+background: var(--openms-pink);
 }
 
 .terminal-window section.terminal {
-color: white;
+color: var(--openms-white);
 font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
 font-size: 11pt;
-background: #30353A;
+background: var(--openms-dark);
 padding: 10px;
 box-sizing: border-box;
 position: absolute;
@@ -71,5 +71,5 @@ overflow: auto;
 }
 
 .terminal-data { display: none; }
-.terminal-window .gray { color: gray; }
-.terminal-window .green { color: green;} 
+.terminal-window .gray { color: var(--openms-grey); }
+.terminal-window .green { color: var(--openms-purple); }

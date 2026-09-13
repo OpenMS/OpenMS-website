@@ -1,0 +1,62 @@
+{{- $cfg := site.Params.openmsLibTopp | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" -}}
+{{- $title := index $cfg "title" | default "Ships with the TOPP command-line tools" -}}
+{{- $lead := index $cfg "lead" -}}
+{{- $features := index $cfg "features" | default (slice) -}}
+{{- $ctaText := index $cfg "ctaText" | default "Explore TOPP tools" -}}
+{{- $ctaUrl := index $cfg "ctaUrl" -}}
+{{- $image := index $cfg "image" | default "/images/content_images/topp-tool-list.png" -}}
+{{- $imageAlt := index $cfg "imageAlt" | default "OpenMS TOPP tools list" -}}
+{{- $defaultIcons := slice "fas fa-project-diagram" "fas fa-cogs" "fas fa-layer-group" -}}
+<section class=" openms-lib-topp-split--cards openms-lib-topp-split--solution" aria-labelledby="openms-lib-topp-title">
+  <div class="openms-lib-topp-split__inner">
+    <aside class="openms-lib-topp-split__visual openms-lib-hub__reveal openms-lib-hub__reveal--scale">
+      <div class="openms-lib-topp-split__visual-card openms-lib-topp-split__visual-card--image">
+        <img
+          class="openms-lib-topp-split__visual-img"
+          src="{{ $image | relURL }}"
+          alt="{{ $imageAlt }}"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </aside>
+
+    <div class="openms-lib-topp-split__copy">
+      <header class="openms-lib-topp-split__intro openms-lib-hub__reveal openms-lib-hub__reveal--left">
+        {{- with $eyebrow }}
+        <p class="openms-lib-topp-split__eyebrow">{{ partial "section-eyebrow-icon.html" "terminal" }}{{ . }}</p>
+        {{- end }}
+        <h2 id="openms-lib-topp-title" class="openms-lib-topp-split__title">{{ $title }}</h2>
+        {{- with $lead }}
+        <p class="openms-lib-topp-split__lead">{{ . }}</p>
+        {{- end }}
+        {{- with $ctaUrl }}
+        <a
+          class="openms-lib-btn openms-lib-btn--primary openms-lib-topp-split__cta"
+          href="{{ . }}"
+          {{- if in . "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+        ><span class="openms-lib-btn__label">{{ $ctaText }}</span></a>
+        {{- end }}
+      </header>
+
+      {{- with $features }}
+      <ul class="openms-lib-topp-split__nested" role="list">
+        {{- range $i, $feature := . }}
+        {{- if lt $i 2 }}
+        {{- $icon := $feature.icon | default (index $defaultIcons $i) | default "fas fa-layer-group" -}}
+        <li class="openms-lib-topp-split__nested-item openms-lib-hub__reveal" role="listitem">
+          <span class="openms-lib-topp-split__nested-icon" aria-hidden="true"><i class="{{ $icon }}"></i></span>
+          {{- with $feature.title }}
+          <h3 class="openms-lib-topp-split__nested-title">{{ . }}</h3>
+          {{- end }}
+          <p class="openms-lib-topp-split__nested-text">{{ $feature.text }}</p>
+        </li>
+        {{- end }}
+        {{- end }}
+      </ul>
+      {{- end }}
+    </div>
+  </div>
+
+</section>

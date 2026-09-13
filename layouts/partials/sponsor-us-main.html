@@ -1,0 +1,168 @@
+{{- $cfg := .Site.Params.sponsorUsPage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Support OpenMS" -}}
+{{- $subtitle := index $cfg "subtitle" | default "Sponsorship provides direct funding for software engineering, documentation, community events, and the long-term sustainability of the OpenMS ecosystem." -}}
+<section class="openms-lib-layout">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--sponsor-us">
+<div class="openms-lib-page__intro">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="Sponsor OpenMS">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "heart" }}{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          Our <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">Sponsorship Program</span>.
+        </h1>
+        <p class="openms-lib-hero__lead">
+          <span class="openms-lib-hero__lead-line">Sponsorship provides direct funding for software engineering, documentation,</span>
+          <span class="openms-lib-hero__lead-line">community events, and the long-term sustainability of the OpenMS ecosystem.</span>
+        </p>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/contact/">
+            <span class="openms-lib-btn__label">Discuss sponsorship</span>
+          </a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/donate/">
+            <span class="openms-lib-btn__label">Make a donation</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="openms-lib-page__body" aria-label="Sponsorship program details">
+  <div id="why-sponsor" class="openms-lib-page__anchor">
+    <section class="openms-lib-about" aria-labelledby="why-sponsor-title">
+      <div class="openms-lib-about__inner">
+        <header class="openms-lib-about__head">
+          <div class="openms-lib-about__head-copy">
+            <p class="openms-lib-about__eyebrow">Impact</p>
+            <h2 id="why-sponsor-title" class="openms-lib-about__title">Why sponsor OpenMS</h2>
+            <p class="openms-lib-about__lead">
+              <span class="sponsor-lead-line">Your sponsorship helps OpenMS build and maintain a unified, trusted, and openly accessible commons of knowledge,</span>
+              <span class="sponsor-lead-line">software, education, and research resources for the mass spectrometry community.</span>
+            </p>
+          </div>
+        </header>
+
+        <div class="openms-lib-about__mosaic" role="list">
+          <article class="openms-lib-about__tile" role="listitem">
+            <span class="openms-lib-about__num" aria-hidden="true">01</span>
+            <h3 class="openms-lib-about__tile-title">Your sponsorship enables</h3>
+            <ul class="sponsor-tile__list" role="list">
+              <li>Continued development and maintenance of OpenMS software and infrastructure</li>
+              <li>Training programs, workshops, and educational materials</li>
+              <li>Community outreach and researcher support</li>
+              <li>Open standards, interoperability, and reproducible science</li>
+            </ul>
+          </article>
+          <article class="openms-lib-about__tile" role="listitem">
+            <span class="openms-lib-about__num" aria-hidden="true">02</span>
+            <h3 class="openms-lib-about__tile-title">How sponsorship works</h3>
+            <p class="openms-lib-about__tile-text">OpenMS Inc. is a U.S. 501(c)(3) public charity that stewards project finances and accepts sponsorships aligned with our nonprofit mission.</p>
+            <ul class="sponsor-tile__list" role="list">
+              <li>Organizational sponsorships and grants</li>
+              <li>In-kind support for infrastructure or services</li>
+              <li>Co-branded community initiatives where appropriate</li>
+            </ul>
+            <a class="openms-lib-about__tile-link openms-cta-link" href="/governance/">About OpenMS Inc.<span aria-hidden="true"> →</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="tiers" class="openms-lib-page__anchor">
+    <div class="sponsor-tiers-band">
+      {{ partial "sponsor-tiers.html" . }}
+    </div>
+  </div>
+
+  <div id="faq" class="openms-lib-page__anchor">
+    <section class="sponsor-faq-pro" aria-labelledby="sponsor-faq-title">
+      <div class="sponsor-faq-pro__inner">
+        <header class="sponsor-faq-pro__head">
+          <p class="openms-lib-resources__eyebrow">Questions</p>
+          <h2 id="sponsor-faq-title" class="openms-lib-resources__title">FAQ</h2>
+          <p class="sponsor-faq-pro__lead">
+            Still deciding on a sponsorship level, or need details we have not covered here? Tell us about your goals and we will help you find the right next step.
+          </p>
+          <a class="openms-lib-btn openms-lib-btn--primary sponsor-faq-pro__cta" href="/contact/">
+            <span class="openms-lib-btn__label">Contact us</span>
+          </a>
+        </header>
+        <div class="sponsor-faq__list">
+          <details class="sponsor-faq__item">
+            <summary class="sponsor-faq__question">
+              <span class="sponsor-faq__question-text">What is OpenMS&rsquo;s tax identification number?</span>
+              <span class="sponsor-faq__chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="sponsor-faq__answer">
+              <p>OpenMS&rsquo;s tax identification number is 93-3818533.</p>
+            </div>
+          </details>
+          <details class="sponsor-faq__item">
+            <summary class="sponsor-faq__question">
+              <span class="sponsor-faq__question-text">Can I just make a one-time donation?</span>
+              <span class="sponsor-faq__chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="sponsor-faq__answer">
+              <p>OpenMS appreciates donations of any size and, as we are a US registered 501(c)(3) corporation, your donation may be tax deductible. If you are interested in donating to OpenMS at a different level than sponsorship, see our <a class="openms-cta-link sponsor-faq__link" href="/donate/">donation page<span aria-hidden="true"> →</span></a>.</p>
+            </div>
+          </details>
+          <details class="sponsor-faq__item">
+            <summary class="sponsor-faq__question">
+              <span class="sponsor-faq__question-text">Who can I talk to about supporting OpenMS?</span>
+              <span class="sponsor-faq__chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="sponsor-faq__answer">
+              <p>If you would like more information about supporting OpenMS, please contact <a class="openms-cta-link sponsor-faq__link" href="mailto:ceo@openms.de">ceo@openms.de<span aria-hidden="true"> →</span></a>.</p>
+            </div>
+          </details>
+          <details class="sponsor-faq__item">
+            <summary class="sponsor-faq__question">
+              <span class="sponsor-faq__question-text">How do sponsorship renewals happen?</span>
+              <span class="sponsor-faq__chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="sponsor-faq__answer">
+              <p>Your sponsorship runs for one year after the date of receipt of payment. During this period, we display your logo on our <a class="openms-cta-link sponsor-faq__link" href="/our-sponsors/">Sponsors page<span aria-hidden="true"> →</span></a>. Two months before the end of your sponsorship, we will contact you requesting renewal. If renewal does not take place by the renewal date of the sponsorship, OpenMS may remove your logo from the thanks page.</p>
+            </div>
+          </details>
+          <details class="sponsor-faq__item">
+            <summary class="sponsor-faq__question">
+              <span class="sponsor-faq__question-text">How can I support OpenMS in other ways?</span>
+              <span class="sponsor-faq__chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="sponsor-faq__answer">
+              <p>You can support OpenMS without making a financial contribution. For more information see our <a class="openms-cta-link sponsor-faq__link" href="/contribute/">Getting Involved<span aria-hidden="true"> →</span></a> page.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="openms-lib-page__outro">
+  <div id="become-a-sponsor" class="openms-lib-page__anchor">
+    <section class="governance-cta-band" aria-labelledby="become-a-sponsor-title">
+      <div class="governance-cta-band__panel">
+        <div class="governance-cta-band__copy">
+          <p class="governance-cta-band__kicker">Get started</p>
+          <p class="governance-cta-band__text">
+            <strong id="become-a-sponsor-title">Become a sponsor</strong>
+            <span class="governance-cta-band__note">
+              <span class="sponsor-cta-note-line">Whether you represent a company, institute, or foundation,</span>
+              <span class="sponsor-cta-note-line">we would like to hear about your goals and how sponsorship can support</span>
+              <span class="sponsor-cta-note-line">OpenMS development and the broader community.</span>
+            </span>
+          </p>
+        </div>
+        <div class="contribute-coc-band__actions" role="group" aria-label="Sponsorship actions">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/contact/">Contact us</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost openms-lib-cta-band__btn-ghost" href="/donate/">Make a donation</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</article>
+</section>

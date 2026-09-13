@@ -1,0 +1,21 @@
+html body .openms-lib-page--webapps-pro #for-developers.openms-lib-developers--cards {
+  --hub-reveal-distance: 0px !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-page--webapps-pro .openms-lib-page__outro {
+  padding-bottom: var(--pro-head-to-content) !important;
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-page--webapps-pro #for-developers .openms-lib-developers__cards-head,
+html body .openms-lib-page--webapps-pro .openms-lib-developers--cards:not(.openms-lib-developers--split) .openms-lib-developers__cards-head {
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-page--webapps-pro #for-developers .openms-lib-hub__reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}

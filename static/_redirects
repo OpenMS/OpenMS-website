@@ -38,42 +38,58 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 /xml-stylesheet/* https://raw.githubusercontent.com/OpenMS/OpenMS/develop/share/OpenMS/XSL/:splat  200
 /xml-schema/* https://raw.githubusercontent.com/OpenMS/OpenMS/develop/share/OpenMS/SCHEMAS/:splat  200
 
+# About / OpenMS Inc. page retired — content lives on /governance/
+/about /governance/ 301
+/about/ /governance/ 301
+
+# Citing OpenMS page retired — citations live on /publications/
+/citing-openms /publications/ 301
+/citing-openms/ /publications/ 301
+
+# Community channels page retired — content lives on /contribute/
+/communication /contribute/ 301
+/communication/ /contribute/ 301
+
+# Applications section retired — apps live on /webapps/
+/applications /webapps/ 301
+/applications/* /webapps/ 301
+
 # publication related links go here
-/diametalyzer /applications/diametalyzer 200
-/DIAMetalzyer /applications/diametalyzer 200
+/diametalyzer /webapps/ 301
+/DIAMetalzyer /webapps/ 301
 
-/diaproteomics /applications/diaproteomics 200
-/DIAProteomics /applications/diaproteomics 200
+/diaproteomics /webapps/#archived-apps 301
+/DIAProteomics /webapps/#archived-apps 301
 
-/epifany /applications/epifany 200
+/epifany /webapps/ 301
 
-/FLASHDeconv /applications/flashdeconv 200
-/flashdeconv /applications/flashdeconv 200
-/FlashDeconv /applications/flashdeconv 200
+/FLASHDeconv /webapps/ 301
+/flashdeconv /webapps/ 301
+/FlashDeconv /webapps/ 301
 
-/FLASHQuant /applications/flashquant 200
-/flashquant /applications/flashquant 200
-/FlashQuant /applications/flashquant 200
+/FLASHQuant /webapps/ 301
+/flashquant /webapps/ 301
+/FlashQuant /webapps/ 301
 
-/metaprosip /applications/metaprosip 200
+/metaprosip /webapps/ 301
 
-/mhcquant /applications/mhcquant 200
-/MHCQuant /applications/mhcquant 200
+/mhcquant /webapps/#featured-webapps 301
+/MHCQuant /webapps/#featured-webapps 301
 
-/nase /applications/nase 200
-/NASE /applications/nase 200
+/nase /webapps/#featured-webapps 301
+/NASE /webapps/#featured-webapps 301
 
-/openpepxl /applications/openpepxl 200
-/OpenpepXL /applications/openpepxl 200
+/openpepxl /webapps/ 301
+/OpenpepXL /webapps/ 301
 
-/rnpxl /applications/nuxl 200
-/RNPxl /applications/nuxl 200
-/nuxl /applications/nuxl 200
-/NuXL /applications/nuxl 200
+/rnpxl /webapps/#featured-webapps 301
+/RNPxl /webapps/#featured-webapps 301
+/nuxl /webapps/#featured-webapps 301
+/NuXL /webapps/#featured-webapps 301
 
-/FLASHIda /applications/flashida 200
-/flashida /applications/flashida 200
-/FlashIda /applications/flashida 200
+/FLASHIda /webapps/ 301
+/flashida /webapps/ 301
+/FlashIda /webapps/ 301
 
 /NASEWEIS https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
 /naseweis https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
