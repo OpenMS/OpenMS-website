@@ -35356,6 +35356,22 @@ html body .home-page__block--partners .uni-partners--home {
   padding-bottom: calc(var(--home-section-space-y) + 2.5rem) !important;
 }
 
+/* What is OpenMS — widen the section and use narrower, more numerous
+   feature-card columns instead of two wide ones. */
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__inner {
+  max-width: min(96rem, 94vw) !important;
+}
+
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topics {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+@media (max-width: 900px) {
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topics {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
 html body .openms-lib-layout:has(.openms-lib-page--developer-retreat),
 html body .content-padding:has(.openms-lib-page--developer-retreat) {
   padding-bottom: 0 !important;
