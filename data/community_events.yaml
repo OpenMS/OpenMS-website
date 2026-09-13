@@ -63,4 +63,23 @@ events:
   category: developer-meeting
   summary: Developer meeting with tutorials and code sprints.
   news_url: /news/devmeeting2025/
-last_synced: '2026-09-13T14:06:15Z'
+- title: 'MS Analysis with OpenMS: Free Worshop'
+  start: '2026-09-26'
+  category: event
+  synced: true
+  end: '2026-09-28'
+  location: National University of Singapore
+  summary: 'Registration: https://forms.gle/S6gcDAJrLztCAGBL7'
+- title: Developers Retreat
+  start: '2027-03-14'
+  category: event
+  synced: true
+  end: '2027-03-21'
+  location: Resort Natura, 8100-266 Loulé, Portugal
+  summary: 'Registration and Info: https://tally.so/r/aQL8XW'
+- title: Google Summer of Code Ends
+  start: '2026-11-02'
+  category: outreach
+  synced: true
+  end: '2026-11-03'
+last_synced: '2026-09-13T19:27:13Z'

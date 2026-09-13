@@ -12,7 +12,9 @@ anything, so the scheduled workflow can run safely before the calendar URL
 is configured.
 """
 
+import html
 import os
+import re
 import sys
 from datetime import datetime, timezone
 
@@ -29,6 +31,8 @@ CATEGORY_KEYWORDS = {
     "outreach": ["outreach", "code clinic", "open house", "summer of code"],
 }
 
+_TAG_RE = re.compile(r"<[^>]+>")
+
 
 def guess_category(title):
     lowered = title.lower()
@@ -38,8 +42,17 @@ def guess_category(title):
     return "event"
 
 
+def strip_html(text):
+    # Google Calendar descriptions are often rich text (HTML). The event
+    # card template renders `summary` as plain text, so raw tags would show
+    # up verbatim — strip them down to plain text instead.
+    text = re.sub(r"(?i)<br\s*/?>", " ", text or "")
+    text = _TAG_RE.sub("", text)
+    return html.unescape(text)
+
+
 def truncate_summary(text):
-    text = " ".join((text or "").split())
+    text = " ".join(strip_html(text).split())
     if len(text) <= SUMMARY_MAX_LEN:
         return text
     return text[:SUMMARY_MAX_LEN].rsplit(" ", 1)[0] + "…"
