@@ -890,11 +890,11 @@ languages:
               text: Interactive plotting and exploration for OpenMS data structures.
               url: /pyopenms-viz/
               linkText: Explore viz
-            # TODO (Josh): Get google colab updated link (Binder removed — no longer maintained)
             - title: Try Online
               tag: No install needed
               icon: fas fa-laptop-code
               text: Run pyOpenMS in the browser without a local install.
+              url: https://colab.research.google.com/drive/1HLKzTaZQruJ23AaL1lP4lS9N1kxgRrwe?usp=sharing
               linkText: Open in Colab
             - title: Need help?
               type: online

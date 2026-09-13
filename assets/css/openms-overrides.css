@@ -4230,6 +4230,13 @@
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__head-copy {
   justify-items:start
 }
+/* This band's own left inset was ~5px tighter than the hero/other sections
+   above it (a slightly different padding formula) — align to the standard
+   page inline padding so the "Global community" card row (and its siblings)
+   lines up with the rest of the page. */
+.openms-lib-page--openms-lib .openms-lib-about--benefits {
+  padding-inline: 1.25rem !important;
+}
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__title,
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__lead {
   text-align:left
@@ -11264,25 +11271,26 @@
   outline:none;
   text-decoration:none
 }
-@media(max-width:720px) {
-  .openms-lib-page--contributors #join-community .webapps-archived__revival-actions {
-    display:flex !important;
-    flex-direction:column !important;
-    flex-wrap:nowrap;
-    align-items:stretch;
-    justify-content:center;
-    gap:.75rem;
-    width:100%;
-    max-width:24rem;
-    margin-inline:auto;
-    grid-template-columns:none
-  }
-  .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn {
-    flex:0 0 auto;
-    width:100% !important;
-    min-width:0;
-    white-space:normal
-  }
+/* Keep this pair side-by-side and equal-size at every width, matching the
+   other CTA-band button pairs sitewide (see the unified :has(> :nth-child(2))
+   rule further down) rather than stacking to full-width columns on phones. */
+.openms-lib-page--contributors #join-community .webapps-archived__revival-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+}
+
+.openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn {
+  flex: 1 1 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
 }
 .openms-lib-page--contributors .contributors-exec-panel {
   display:grid;
@@ -13504,10 +13512,11 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
     max-height:none
   }
   .openms-lib-page--sponsor-us .sponsor-benefits__matrix {
-    --label-col:minmax(0, 1.15fr);
-    --tier-col:minmax(0, 1fr);
-    grid-template-columns:var(--label-col) var(--tier-col);
-    min-width:0
+    --label-col:minmax(0, 1.15fr) !important;
+    --tier-col:minmax(0, 1fr) !important;
+    --tier-cols:1 !important;
+    grid-template-columns:var(--label-col) var(--tier-col) !important;
+    min-width:0 !important
   }
   .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier=bronze] [data-sponsor-benefits]:not([data-sponsor-benefits=bronze]),
   .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier=silver] [data-sponsor-benefits]:not([data-sponsor-benefits=silver]),
@@ -17499,7 +17508,7 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
 .openms-lib-page--contributors .members {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.85rem 0.4rem;
+  gap: 0.85rem 0.2rem;
   margin: 0 auto;
   padding: 0;
   max-width: 56rem;
@@ -17569,7 +17578,7 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
   display: none;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1440px) {
   .openms-lib-page--contributors .members {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -17584,6 +17593,7 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
 @media (max-width: 720px) {
   .openms-lib-page--contributors .members {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem 0.15rem;
   }
   }
 
@@ -22485,24 +22495,25 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
     justify-content: center;
   }
 
-  /* Lone CTA in a band: one full-width column under the centred copy */
+  /* Lone CTA in a band: hug its own text, centered, instead of stretching
+     into a full-width column. */
   .webapps-archived__revival-actions:not(:has(> :nth-child(2))),
   .governance-cta-band__actions:not(:has(> :nth-child(2))),
   .openms-lib-page--governance .governance-cta-band__actions:not(:has(> :nth-child(2))),
   .openms-lib-page--sponsor-us .governance-cta-band__actions:not(:has(> :nth-child(2))),
   .contribute-coc-band__actions:not(:has(> :nth-child(2))) {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    justify-items: stretch;
+    display: flex;
+    justify-content: center;
     width: 100%;
-    max-width: 24rem;
+    max-width: 100%;
     margin-inline: auto;
   }
 
   .webapps-archived__revival-actions:not(:has(> :nth-child(2))) .openms-lib-btn,
   .governance-cta-band__actions:not(:has(> :nth-child(2))) .openms-lib-btn,
   .contribute-coc-band__actions:not(:has(> :nth-child(2))) .openms-lib-btn {
-    width: 100% !important;
+    width: fit-content !important;
+    max-width: 100% !important;
     min-width: 0 !important;
     justify-content: center;
   }
@@ -22883,6 +22894,17 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
     justify-content: center;
   }
 
+  /* Lone CTA (single button, no sibling) — hug its text instead of
+     stretching full-width like the two-button bands above. */
+  .openms-lib-page .contribute-coc-band__actions:not(:has(> :nth-child(2))) .openms-lib-btn,
+  .openms-lib-page .governance-cta-band__actions:not(:has(> :nth-child(2))) .openms-lib-btn,
+  .openms-lib-page--governance .governance-cta-band__actions:not(:has(> :nth-child(2))) .openms-lib-btn,
+  .openms-lib-page--sponsor-us .governance-cta-band__actions:not(:has(> :nth-child(2))) .openms-lib-btn {
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+  }
+
   /* Keep publications long labels stacked full-width */
   .openms-lib-page--publications .contribute-coc-band__actions,
   .openms-lib-page--publications .contribute-coc-band__actions:has(> :nth-child(2)) {
@@ -22892,31 +22914,41 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
   }
 }
 
-/* Sponsor Us / Our Sponsors outro — hug-content pills like navbar “Sponsor Us” */
-.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions,
-.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions:has(> :nth-child(2)),
-.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions:not(:has(> :nth-child(2))),
-.openms-lib-page--our-sponsors #sponsor-cta .governance-cta-band__actions,
-.openms-lib-page--our-sponsors #sponsor-cta .governance-cta-band__actions:has(> :nth-child(2)),
-.openms-lib-page--our-sponsors #sponsor-cta .governance-cta-band__actions:not(:has(> :nth-child(2))) {
-  display: flex !important;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  max-width: none;
-  margin-inline: 0;
-  gap: var(--openms-btn-gap) !important;
+/* CTA-band action pairs (Sponsor Us, Our Sponsors, Contact, Publications,
+   Contributors, archived-app revival prompts, ...) — whenever a band has
+   exactly two buttons, center them as a group and make both the same size,
+   at every viewport width. Single-button bands (e.g. Governance / Privacy
+   "related pages") are untouched since :has(> :nth-child(2)) only matches
+   two-or-more-child groups. */
+html body :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+)[role="group"]:has(> :nth-child(2)) {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+  gap: 0.6rem !important;
 }
 
-.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions .openms-lib-btn,
-.openms-lib-page--our-sponsors #sponsor-cta .governance-cta-band__actions .openms-lib-btn {
-  flex: 0 0 auto !important;
-  width: fit-content !important;
+html body :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+)[role="group"]:has(> :nth-child(2)) > .openms-lib-btn {
+  flex: none !important;
+  width: 100% !important;
   min-width: 0 !important;
-  max-width: 100% !important;
-  height: auto !important;
-  align-self: center;
+  max-width: none !important;
+  height: 100% !important;
+  min-height: var(--openms-btn-min-height) !important;
+  justify-content: center !important;
+  align-self: stretch;
+  white-space: nowrap;
 }
 
 /* Become a sponsor “Make a donation” — identical to navbar “Sponsor Us” */
@@ -34287,8 +34319,8 @@ html body .openms-lib-page--developer-retreat .openms-lib-hero__lead {
   }
 }
 
-/* Contributors — Executive Committee: 3 across on md, 2 on phones */
-@media (max-width: 1100px) {
+/* Contributors — Executive Committee: 3 across on md through xl, 2 on phones */
+@media (max-width: 1440px) {
   html body .openms-lib-page--contributors #executive-committee .members,
   html body .openms-lib-page--contributors .contributors-exec-gallery .members {
     display: grid !important;
@@ -34301,6 +34333,7 @@ html body .openms-lib-page--developer-retreat .openms-lib-hero__lead {
   html body .openms-lib-page--contributors #executive-committee .members,
   html body .openms-lib-page--contributors .contributors-exec-gallery .members {
     grid-template-columns: repeat(2, minmax(0px, 1fr)) !important;
+    gap: 0.5rem 0.15rem !important;
   }
 }
 
@@ -35266,10 +35299,15 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
 }
 
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="openDDA" i],
-html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i],
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i] {
+  height: 152px !important;
+  max-height: 152px !important;
+  max-width: min(22rem, 100%) !important;
+}
+
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="nuxl" i] {
-  height: 132px !important;
-  max-height: 132px !important;
+  height: 104px !important;
+  max-height: 104px !important;
   max-width: min(22rem, 100%) !important;
 }
 
@@ -35320,16 +35358,19 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
   object-position: left center !important;
 }
 
-html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="openDDA" i],
-html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i] {
-  /* These two logo files still carry built-in canvas whitespace around
-     the mark itself, so even flush-left placement (margin-left: 0) still
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="openDDA" i] {
+  /* This logo file still carries built-in canvas whitespace around the
+     mark itself, so even flush-left placement (margin-left: 0) still
      reads as offset from the card edge. Nudge left to compensate. */
-  margin-left: -0.75rem !important;
+  margin-left: -1.55rem !important;
+}
+
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i] {
+  margin-left: -1.55rem !important;
 }
 
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="nuxl" i] {
-  margin-left: -1.6rem !important;
+  margin-left: 0.25rem !important;
 }
 
 /* Adopted by labs — compact/square marks (ZIB, HUPO-PSI, DTU) read smaller
@@ -35345,6 +35386,26 @@ html body .home-page__block--partners .uni-partners--home .uni-partners__item:ha
 html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="ziblogo" i],
 html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="hupo-psi" i],
 html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="DTU-logo" i] {
+  height: 5.5rem !important;
+  max-height: 5.5rem !important;
+  max-width: 20rem !important;
+}
+
+/* Adopted by labs — EMBL-EBI, University of Toronto, Comp Omics and
+   University of Groningen read smaller than their neighbors. Bump them up. */
+html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="emblebi" i]),
+html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="toronto" i]),
+html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="logo-compomics" i]),
+html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="logo-university-groningen" i]) {
+  height: 5.5rem !important;
+  min-height: 5.5rem !important;
+  max-height: 5.5rem !important;
+}
+
+html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="emblebi" i],
+html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="toronto" i],
+html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="logo-compomics" i],
+html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="logo-university-groningen" i] {
   height: 5.5rem !important;
   max-height: 5.5rem !important;
   max-width: 20rem !important;
