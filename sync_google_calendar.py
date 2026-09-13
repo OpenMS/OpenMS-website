@@ -16,7 +16,7 @@ import html
 import os
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import requests
 import yaml
@@ -77,7 +77,18 @@ def parse_events(ics_bytes):
 
         start = to_date(dtstart)
         dtend = component.get("DTEND")
-        end = to_date(dtend) if dtend else start
+        if dtend:
+            end = to_date(dtend)
+            # All-day multi-day events store DTEND as the day *after* the
+            # last day (iCal's exclusive-end convention — this is what
+            # Google Calendar sends for e.g. a Mon-Fri event). This site's
+            # `end` field is inclusive (the actual last day), so shift back
+            # one day. Timed events (DTEND is a datetime, not a date) don't
+            # use this convention and are left as-is.
+            if not isinstance(dtend.dt, datetime) and end != start:
+                end -= timedelta(days=1)
+        else:
+            end = start
 
         # Only keep events that haven't already finished.
         if end < today:
