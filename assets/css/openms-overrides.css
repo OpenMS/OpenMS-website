@@ -25404,7 +25404,7 @@ html body :is(
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  gap: 1.05rem !important;
+  gap: 0.5rem !important;
   padding: 0 !important;
   border: none !important;
   background: transparent !important;
@@ -25702,6 +25702,7 @@ html body .home-page__hero .hero-home__note--under-graphic {
   line-height: 1.35 !important;
   white-space: nowrap !important;
   overflow: visible !important;
+  margin-top: 0.65rem !important;
 }
 
 html body .home-page__hero .hero-home__note-item {
@@ -35288,9 +35289,11 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
 }
 
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo {
+  width: auto !important;
   height: 104px !important;
   max-height: 104px !important;
   max-width: min(22rem, 100%) !important;
+  aspect-ratio: auto !important;
 }
 
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="naseweis" i] {
@@ -37724,6 +37727,132 @@ html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-l
   background-clip: border-box !important;
 }
 
+/* Featured Apps (homepage) — logos vary in height (68-152px depending on
+   the mark), so give every card's logo area the same fixed height (the
+   tallest logo's) with the image centered inside it. Otherwise a card's
+   title/description start lower or higher than its neighbors depending on
+   which logo it has. */
+html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo-wrap {
+  height: 152px !important;
+  min-height: 152px !important;
+  max-height: 152px !important;
+}
+
+/* Featured Apps (homepage) — drop the blue top accent bar and top border */
+html body section.webapps-featured.webapps-featured--home::before {
+  content: none !important;
+  display: none !important;
+}
+
+html body section.webapps-featured.webapps-featured--home {
+  border-top: none !important;
+}
+
+/* Canonical text-CTA links (.openms-cta-link and friends) keep losing their
+   blue color to an ancestor's -webkit-text-fill-color (muted prose text,
+   card summaries, etc. often set both color+webkit-text-fill-color on a
+   parent, which browsers can paint child text with even when the child has
+   its own `color`). Re-assert here, last in the cascade, so it always wins
+   regardless of which component wraps the link. */
+html body :is(
+  .openms-cta-link,
+  .webapps-project-card__cta,
+  .news-home__card-cta,
+  .contact-home__card-cta,
+  .community-events-home__card-cta,
+  .events-past-card__cta,
+  .contribute-channel__link,
+  .contribute-track__cta,
+  .contribute-way__link,
+  .openms-lib-about__tile-link,
+  .openms-lib-developers__card-link,
+  .openms-lib-developers__platform-link,
+  .openms-lib-resources__examples-link,
+  .openms-lib-resources__explore-link,
+  .openms-lib-list__link,
+  .openms-lib-topp__cta,
+  .openms-lib-resources__item-link,
+  .coc-report__link,
+  .privacy-overview__note-link,
+  .contact-page__path-link,
+  .webapps-featured__extra-link,
+  .webapps-featured__show-all,
+  .ecosystem-home__card-link,
+  .community-news-events__view-all,
+  .community-events-home__view-all--inline,
+  .publications-cite-card__action,
+  .news-entry__action,
+  .trusted-by__wall-cta,
+  .home-pathways__step-go
+):not(:hover):not(:focus-visible) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-weight: var(--openms-cta-link-weight, 700) !important;
+}
+
+/* Inline "Label" links inside synced calendar-event summaries (see
+   community-event-card.html) must render blue everywhere, including on
+   the homepage's Upcoming Events widget — an ancestor rule sets
+   -webkit-text-fill-color on the whole summary paragraph for its own
+   (non-link) text, which browsers can end up painting with instead of
+   this link's own color unless it's pinned here too. */
+html body :is(
+  .community-news-events__press-summary,
+  .community-events-home__card-summary
+) a.openms-cta-link,
+html body .home-page .community-news-events__press-link .community-news-events__press-summary a.openms-cta-link,
+html body .home-page .community-events-home__card-link .community-events-home__card-summary a.openms-cta-link {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body :is(
+  .community-news-events__press-summary,
+  .community-events-home__card-summary
+) a.openms-cta-link:hover,
+html body :is(
+  .community-news-events__press-summary,
+  .community-events-home__card-summary
+) a.openms-cta-link:focus-visible {
+  color: var(--openms-cta-link-hover, var(--openms-navy)) !important;
+  -webkit-text-fill-color: var(--openms-cta-link-hover, var(--openms-navy)) !important;
+}
+
+/* Text-CTA links must stay bold on hover/focus too — some component-level
+   hover rules reset font-weight without meaning to. */
+html body :is(
+  .openms-cta-link,
+  .webapps-project-card__cta,
+  .news-home__card-cta,
+  .contact-home__card-cta,
+  .community-events-home__card-cta,
+  .events-past-card__cta,
+  .contribute-channel__link,
+  .contribute-track__cta,
+  .contribute-way__link,
+  .openms-lib-about__tile-link,
+  .openms-lib-developers__card-link,
+  .openms-lib-developers__platform-link,
+  .openms-lib-resources__examples-link,
+  .openms-lib-resources__explore-link,
+  .openms-lib-list__link,
+  .openms-lib-topp__cta,
+  .openms-lib-resources__item-link,
+  .coc-report__link,
+  .privacy-overview__note-link,
+  .contact-page__path-link,
+  .webapps-featured__extra-link,
+  .webapps-featured__show-all,
+  .ecosystem-home__card-link,
+  .community-news-events__view-all,
+  .community-events-home__view-all--inline,
+  .publications-cite-card__action,
+  .news-entry__action,
+  .trusted-by__wall-cta,
+  .home-pathways__step-go
+):is(:hover, :focus-visible) {
+  font-weight: var(--openms-cta-link-weight, 700) !important;
+}
 
 
 
