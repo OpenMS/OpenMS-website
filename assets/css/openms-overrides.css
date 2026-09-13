@@ -35332,6 +35332,30 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
   margin-left: -1.6rem !important;
 }
 
+/* Adopted by labs — compact/square marks (ZIB, HUPO-PSI, DTU) read smaller
+   than the wide wordmark logos at the same shared height. Bump them up. */
+html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="ziblogo" i]),
+html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="hupo-psi" i]),
+html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="DTU-logo" i]) {
+  height: 5.5rem !important;
+  min-height: 5.5rem !important;
+  max-height: 5.5rem !important;
+}
+
+html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="ziblogo" i],
+html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="hupo-psi" i],
+html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="DTU-logo" i] {
+  height: 5.5rem !important;
+  max-height: 5.5rem !important;
+  max-width: 20rem !important;
+}
+
+/* Adopted by labs — more breathing room before the title and after the logos */
+html body .home-page__block--partners .uni-partners--home {
+  padding-top: calc(var(--home-section-space-y) + 2.5rem) !important;
+  padding-bottom: calc(var(--home-section-space-y) + 2.5rem) !important;
+}
+
 html body .openms-lib-layout:has(.openms-lib-page--developer-retreat),
 html body .content-padding:has(.openms-lib-page--developer-retreat) {
   padding-bottom: 0 !important;
