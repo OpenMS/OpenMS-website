@@ -35364,12 +35364,22 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
 
 html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topics {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
 }
 
 @media (max-width: 900px) {
   html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topics {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
+}
+
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic {
+  height: 100% !important;
+}
+
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card {
+  height: 100% !important;
+  background: var(--openms-white) !important;
 }
 
 html body .openms-lib-layout:has(.openms-lib-page--developer-retreat),
