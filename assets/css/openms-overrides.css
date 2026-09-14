@@ -24822,7 +24822,7 @@ html body :is(
 
   .home-page__block--partners .uni-partners--home .uni-partners__static {
     display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
     width: 100%;
     max-width: 100%;
   }
@@ -26778,7 +26778,7 @@ html body .home-page__hero .hero-home__note-dot {
 
   .home-page__block--partners .uni-partners--home .uni-partners__static {
     display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
     width: 100% !important;
     max-width: 100% !important;
     margin-top: clamp(1.15rem, 2.5vh, 1.6rem) !important;
