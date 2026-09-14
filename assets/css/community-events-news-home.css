@@ -188,7 +188,7 @@
   cursor: default;
 }
 
-a.community-news-events__press-link:hover,
+.community-news-events__press-link:hover,
 a.community-news-events__press-link:focus-visible {
   border-color: rgba(var(--openms-blue-rgb), 0.35);
   background: var(--openms-white);

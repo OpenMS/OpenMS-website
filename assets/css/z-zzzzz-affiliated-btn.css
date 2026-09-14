@@ -1151,9 +1151,9 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
 }
 
 /* Same broad white-text utility also whited-out the new category tag pill
-   above each card title, making its light-blue text invisible on its own
+   in the card header row, making its light-blue text invisible on its own
    light-blue chip background. */
-html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card .keyfeatures-modern__topic-body .keyfeatures-modern__topic-tag {
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card .keyfeatures-modern__topic-head .keyfeatures-modern__topic-tag {
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
 }

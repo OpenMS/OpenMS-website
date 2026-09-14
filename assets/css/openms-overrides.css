@@ -35406,20 +35406,39 @@ html body .home-page__block--partners .uni-partners--home {
   padding-bottom: calc(var(--home-section-space-y) + 2.5rem) !important;
 }
 
-/* What is OpenMS — widen the section and use narrower, more numerous
-   feature-card columns instead of two wide ones. */
+/* What is OpenMS — widen the section; use two wide feature-card columns
+   (2x2) instead of four narrow ones so each card has room to breathe. */
 html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__inner {
   max-width: min(96rem, 94vw) !important;
 }
 
 html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topics {
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(1.1rem, 2vw, 1.5rem) !important;
   align-items: stretch !important;
 }
 
 @media (max-width: 900px) {
   html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topics {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.85rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-icon {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-icon--mark svg {
+    width: 1.15rem !important;
+    height: 1.15rem !important;
+  }
+
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-tag {
+    font-size: 0.62rem !important;
+    padding: 0.25rem 0.55rem !important;
   }
 }
 
