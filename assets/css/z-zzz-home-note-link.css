@@ -6,9 +6,9 @@
    a dark background). Loading last with equal specificity + !important
    wins the tie, without needing to touch the shared sitewide rule. */
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note a:not(.__spec_a__):not(.__spec_b__) {
-  color: var(--openms-yellow) !important;
+  color: var(--openms-white) !important;
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note a:not(.__spec_a__):not(.__spec_b__):is(:hover, :focus-visible) {
-  color: var(--openms-white) !important;
+  color: var(--openms-yellow) !important;
 }

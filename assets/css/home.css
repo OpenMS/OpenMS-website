@@ -1798,8 +1798,8 @@
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-tag {
   color: var(--openms-white);
-  background: var(--openms-blue);
-  border-color: var(--openms-blue);
+  background: var(--openms-navy);
+  border-color: var(--openms-navy);
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-title {
@@ -1849,7 +1849,7 @@
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note a {
-  color: var(--openms-yellow);
+  color: var(--openms-white);
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 0.15em;
@@ -1857,7 +1857,7 @@
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note a:hover,
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note a:focus-visible {
-  color: var(--openms-white);
+  color: var(--openms-yellow);
 }
 
 /* ═══════════════════════════════════════════
