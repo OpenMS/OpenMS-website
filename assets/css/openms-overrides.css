@@ -37842,5 +37842,24 @@ html body :is(
   font-weight: var(--openms-cta-link-weight, 700) !important;
 }
 
+/* Research Partnerships form (embedded Tally iframe) was rendering at the
+   browser's 150px default height on mobile instead of growing to fit the
+   form — the iframe has no intrinsic height of its own, so it needs an
+   explicit one regardless of Tally's own dynamicHeight resize script. */
+html body .openms-lib-page--research-partnerships .rp-application__tally-iframe,
+html body .rp-application__tally-iframe {
+  height: 1050px !important;
+  min-height: 1050px !important;
+  max-height: none !important;
+}
+
+@media (min-width: 640px) {
+  html body .openms-lib-page--research-partnerships .rp-application__tally-iframe,
+  html body .rp-application__tally-iframe {
+    height: 900px !important;
+    min-height: 900px !important;
+  }
+}
+
 
 
