@@ -1784,12 +1784,12 @@
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-icon {
-  background: rgba(var(--openms-blue-rgb), 0.1);
-  border-color: rgba(var(--openms-blue-rgb), 0.18);
+  background: var(--openms-blue);
+  border-color: var(--openms-blue);
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-icon--mark {
-  color: var(--openms-blue);
+  color: var(--openms-white);
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-icon img {

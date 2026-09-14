@@ -1132,15 +1132,11 @@ html body .webapps-project-links__item:not(:first-child) .webapps-project-links_
   fill: currentColor !important;
 }
 
-/* Homepage "What is OpenMS?" cards (light background) — a broad utility rule
-   (openms-overrides.css) forces white text on any span/h1-h4/p/a inside
-   .keyfeatures-modern__topic-card, intended for the dark-card variants of
-   this same component. It was also whiting-out the letter-mark fallback
-   icon here, making it invisible against its own light icon badge. */
-html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card .keyfeatures-modern__topic-icon.keyfeatures-modern__topic-icon--mark span {
-  color: var(--openms-navy) !important;
-  -webkit-text-fill-color: var(--openms-navy) !important;
-}
+/* The icon badge is now a solid blue tile with a white icon, so the broad
+   white-text utility rule above (which forces white on any span/h1-h4/p/a
+   inside .keyfeatures-modern__topic-card, intended for the dark-card
+   variants of this same component) already gives the icon the color it
+   needs — no override required here. */
 
 /* Same broad white-text utility also whited-out the card body copy
    (title-modern__topic-title had its own override already; topic-text
