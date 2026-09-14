@@ -1816,11 +1816,11 @@
   align-items: flex-start;
   gap: 0.85rem;
   max-width: none;
-  color: var(--openms-blue);
-  background: rgba(var(--openms-blue-rgb), 0.07);
-  border: 1px solid rgba(var(--openms-blue-rgb), 0.18);
+  color: rgba(var(--openms-white-rgb), 0.85);
+  background: var(--openms-navy);
+  border: 1px solid var(--openms-navy);
   border-radius: var(--pro-radius, 0.85rem);
-  box-shadow: 0 0.15rem 0.65rem rgba(var(--openms-navy-rgb), 0.04);
+  box-shadow: 0 0.35rem 1.1rem rgba(var(--openms-navy-rgb), 0.14);
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note-icon {
@@ -1830,8 +1830,8 @@
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
-  background: rgba(var(--openms-blue-rgb), 0.14);
-  color: var(--openms-blue);
+  background: rgba(var(--openms-yellow-rgb), 0.2);
+  color: var(--openms-yellow);
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note-icon svg {
@@ -1849,10 +1849,15 @@
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note a {
-  color: var(--openms-blue);
+  color: var(--openms-yellow);
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 0.15em;
+}
+
+.home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note a:hover,
+.home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note a:focus-visible {
+  color: var(--openms-white);
 }
 
 /* ═══════════════════════════════════════════
