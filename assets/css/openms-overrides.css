@@ -26501,8 +26501,6 @@ html body .home-page__hero .hero-home__note-dot {
 
   .rp-application__tally-iframe,
   .openms-lib-page--research-partnerships .rp-application__tally-iframe {
-    min-height: 720px !important;
-    height: auto !important;
     max-height: none !important;
     overflow: visible !important;
   }
@@ -37844,20 +37842,22 @@ html body :is(
 
 /* Research Partnerships form (embedded Tally iframe) was rendering at the
    browser's 150px default height on mobile instead of growing to fit the
-   form — the iframe has no intrinsic height of its own, so it needs an
-   explicit one regardless of Tally's own dynamicHeight resize script. */
+   form — the iframe has no intrinsic height of its own. Tally's own
+   dynamicHeight script resizes it via an inline style once the form loads
+   (postMessage → iframe.style.height), so this must NOT use !important —
+   that would pin the height and block the real content height from ever
+   applying, leaving blank space below the Submit button. This is only a
+   fallback for the instant before that script runs. */
 html body .openms-lib-page--research-partnerships .rp-application__tally-iframe,
 html body .rp-application__tally-iframe {
-  height: 1050px !important;
-  min-height: 1050px !important;
+  height: 1050px;
   max-height: none !important;
 }
 
 @media (min-width: 640px) {
   html body .openms-lib-page--research-partnerships .rp-application__tally-iframe,
   html body .rp-application__tally-iframe {
-    height: 900px !important;
-    min-height: 900px !important;
+    height: 900px;
   }
 }
 
