@@ -1816,7 +1816,7 @@
   align-items: flex-start;
   gap: 0.85rem;
   max-width: none;
-  color: rgba(var(--openms-white-rgb), 0.85);
+  color: var(--openms-white);
   background: var(--openms-navy);
   border: 1px solid var(--openms-navy);
   border-radius: var(--pro-radius, 0.85rem);
