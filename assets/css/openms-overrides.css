@@ -36194,7 +36194,7 @@ html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-feat
 
   html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface {
     padding: 0.85rem 0 !important;
-    gap: 1.15rem !important;
+    gap: 0 !important;
   }
 
   html body .home-page .home-page__block--projects .webapps-featured__item::after {
