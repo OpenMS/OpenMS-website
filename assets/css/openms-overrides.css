@@ -35327,18 +35327,6 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
   line-height: 1 !important;
 }
 
-@media (max-width: 720px) {
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="flashapp" i]) .webapps-project-card__name,
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="OpenDIAKiosk" i]) .webapps-project-card__name,
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="umetaflow" i]) .webapps-project-card__name,
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="openDDA" i]) .webapps-project-card__name,
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="mhcquant" i]) .webapps-project-card__name,
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="nuxl" i]) .webapps-project-card__name,
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="naseweis" i]) .webapps-project-card__name {
-    display: none !important;
-  }
-}
-
 /* Homepage projects — OpenDDA / MHCquant / NuXL: logos sit on the left */
 html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="openDDA" i]) .webapps-project-card__logo-wrap,
 html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="mhcquant" i]) .webapps-project-card__logo-wrap,
