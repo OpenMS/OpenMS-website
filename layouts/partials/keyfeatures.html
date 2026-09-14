@@ -82,22 +82,25 @@
         {{- end }}
       </header>
 
+      {{- $topicIcons := slice "shield" "terminal" "grid" "wrench" }}
       {{- with $features }}
       <ul class="keyfeatures-modern__topics" role="list" aria-label="OpenMS highlights">
         {{- range $index, $feature := . }}
         <li class="keyfeatures-modern__topic" role="listitem">
           <article class="keyfeatures-modern__topic-card">
-            <span class="keyfeatures-modern__topic-index" aria-hidden="true">{{ add $index 1 }}</span>
             {{- with $feature.img }}
             <div class="keyfeatures-modern__topic-icon" aria-hidden="true">
               <img src="{{ . | relURL }}" alt="" loading="lazy" decoding="async" />
             </div>
             {{- else }}
             <div class="keyfeatures-modern__topic-icon keyfeatures-modern__topic-icon--mark" aria-hidden="true">
-              <span>{{ substr $feature.title 0 1 }}</span>
+              {{ partial "section-eyebrow-icon.html" (index $topicIcons (mod $index (len $topicIcons))) }}
             </div>
             {{- end }}
             <div class="keyfeatures-modern__topic-body">
+              {{- with $feature.tag }}
+              <p class="keyfeatures-modern__topic-tag">{{ . }}</p>
+              {{- end }}
               {{- with $feature.title }}
               <h3 class="keyfeatures-modern__topic-title">{{ . }}</h3>
               {{- end }}
