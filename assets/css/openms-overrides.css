@@ -24822,7 +24822,7 @@ html body :is(
 
   .home-page__block--partners .uni-partners--home .uni-partners__static {
     display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     width: 100%;
     max-width: 100%;
   }
@@ -24851,7 +24851,7 @@ html body :is(
     height: 3.75rem !important;
     min-height: 3.75rem !important;
     max-height: 3.75rem !important;
-    padding: 0.35rem 0.4rem !important;
+    padding: 0.35rem 0 !important;
   }
 
   .home-page__block--partners .uni-partners--home .uni-partners__static .uni-partners__item img,
@@ -26778,7 +26778,7 @@ html body .home-page__hero .hero-home__note-dot {
 
   .home-page__block--partners .uni-partners--home .uni-partners__static {
     display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     width: 100% !important;
     max-width: 100% !important;
     margin-top: clamp(1.15rem, 2.5vh, 1.6rem) !important;
@@ -26790,7 +26790,7 @@ html body .home-page__hero .hero-home__note-dot {
     height: 3.75rem !important;
     min-height: 3.75rem !important;
     max-height: 3.75rem !important;
-    padding: 0.35rem 0.4rem !important;
+    padding: 0.35rem 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     justify-self: stretch;
@@ -37859,6 +37859,19 @@ html body .rp-application__tally-iframe {
   html body .rp-application__tally-iframe {
     height: 900px;
   }
+}
+
+/* Adopted-by partner marquee (normal/desktop widths) — the section itself
+   already has the standard page inline padding, but a generic "normalize
+   inner containers" rule was ALSO adding padding-inline to .uni-partners__inner,
+   doubling the inset and keeping the logo strip from reaching full width. */
+html body .home-page .home-page__block--partners .uni-partners--home {
+  padding-inline: 0 !important;
+}
+
+html body .home-page .home-page__block--partners .uni-partners--home .uni-partners__inner {
+  padding-inline: 0 !important;
+  max-width: none !important;
 }
 
 
