@@ -1743,8 +1743,11 @@
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__header {
   grid-area: header;
-  position: sticky;
-  top: 1.5rem;
+  /* Not sticky: with the bigger 2x2 card grid, the topics row is now
+     taller than the header's own content, so a sticky header would
+     ride along past the end of its grid row and sit on top of the
+     note band below instead of releasing before it. */
+  position: static;
   text-align: left;
   justify-items: start;
   padding-top: 0;

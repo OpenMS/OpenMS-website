@@ -194,11 +194,11 @@
 
 .keyfeatures-modern__topic-tag {
   margin: 0;
-  padding: 0.3rem 0.75rem;
+  padding: 0.22rem 0.6rem;
   font-family: var(--openms-font-body);
-  font-size: 0.75rem;
+  font-size: 0.62rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: rgba(var(--openms-white-rgb), 0.75);
   background: rgba(var(--openms-white-rgb), 0.08);
