@@ -1797,9 +1797,9 @@
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-tag {
-  color: var(--openms-blue);
-  background: rgba(var(--openms-blue-rgb), 0.09);
-  border-color: rgba(var(--openms-blue-rgb), 0.16);
+  color: var(--openms-white);
+  background: var(--openms-blue);
+  border-color: var(--openms-blue);
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-title {

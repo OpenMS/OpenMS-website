@@ -1150,10 +1150,7 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
   -webkit-text-fill-color: var(--home-body-color, rgba(var(--openms-dark-rgb), 0.72)) !important;
 }
 
-/* Same broad white-text utility also whited-out the new category tag pill
-   in the card header row, making its light-blue text invisible on its own
-   light-blue chip background. */
-html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card .keyfeatures-modern__topic-head .keyfeatures-modern__topic-tag {
-  color: var(--openms-blue) !important;
-  -webkit-text-fill-color: var(--openms-blue) !important;
-}
+/* The category tag pill is now a solid blue chip with white text, so the
+   broad white-text utility rule above (which forces white on any span/p
+   inside .keyfeatures-modern__topic-card) already gives it the color it
+   needs — no override required here. */
