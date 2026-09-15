@@ -16,6 +16,18 @@
 {{- $isExternal := and $eventUrl (in $eventUrl "://") -}}
 {{- $category := $event.category | default "event" -}}
 {{- $hasTime := in $event.start "T" -}}
+{{- $dateText := upper ($start.Format "2 Jan 2006") -}}
+{{- if $hasRange -}}
+  {{- if eq ($start.Format "2006") ($end.Format "2006") -}}
+    {{- $dateText = printf "%s – %s" (upper ($start.Format "2 Jan")) (upper ($end.Format "2 Jan 2006")) -}}
+  {{- else -}}
+    {{- $dateText = printf "%s – %s" (upper ($start.Format "2 Jan 2006")) (upper ($end.Format "2 Jan 2006")) -}}
+  {{- end -}}
+{{- end -}}
+{{- $timeText := "All day" -}}
+{{- if $hasTime -}}
+  {{- $timeText = $start.Format "3:04 PM" -}}
+{{- end -}}
 {{- $summaryHTML := "" -}}
 {{- with $event.summary -}}
   {{- /* Synced calendar summaries are plain text with raw "Label: https://…"
@@ -47,7 +59,7 @@
           {{- if $hasRange }}
           title="{{ $start.Format "Jan 2, 2006" }} – {{ $end.Format "Jan 2, 2006" }}"
           {{- end }}
-        >{{ if $hasRange }}{{ if eq ($start.Format "2006") ($end.Format "2006") }}{{ upper ($start.Format "2 Jan") }} – {{ upper ($end.Format "2 Jan 2006") }}{{ else }}{{ upper ($start.Format "2 Jan 2006") }} – {{ upper ($end.Format "2 Jan 2006") }}{{ end }}{{ else }}{{ upper ($start.Format "2 Jan 2006") }}{{ if $hasTime }} · {{ $start.Format "3:04 PM" }}{{ end }}{{ end }}</time>
+        >{{ $dateText }} · {{ $timeText }}</time>
       </p>
       <h3 class="community-news-events__press-title">{{ $event.title }}</h3>
       {{- with $summaryHTML }}
