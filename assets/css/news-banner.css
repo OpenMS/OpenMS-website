@@ -28,7 +28,7 @@
    a gap of scrolled page content above the sticky navbar. */
 .site-header.has-scrolled .news-banner {
   max-height: 0;
-  border-bottom-color: transparent;
+  border-bottom-width: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
