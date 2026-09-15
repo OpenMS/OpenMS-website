@@ -9,9 +9,14 @@ html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-a
 
 /* Same fix for the <=1100px 2-column layout, where a separate
    #what-is-openms-scoped, odd/even-based rule (higher specificity from
-   the #id) zeroes card 1's left padding again. */
+   the #id) zeroes the left column's left padding again. That rule
+   gives the right column (even children) a padding-left of its own
+   (the gutter next to the middle divider) but never restores it for
+   the left column (odd children) — only card 1 happened to be patched
+   here before, leaving every other left-column card (3, 5, ...) flush
+   against the outer edge. Fix the whole left column at once. */
 @media (max-width: 1100px) {
-  html body .openms-lib-page--solution.openms-lib-page--openms-lib #what-is-openms .openms-lib-about--benefits .openms-lib-about__benefit.openms-lib-about__benefit:first-child {
+  html body .openms-lib-page--solution.openms-lib-page--openms-lib #what-is-openms .openms-lib-about--benefits .openms-lib-about__benefit:nth-child(odd) {
     padding-left: var(--openms-num-card-pad, clamp(1.15rem, 2.5vw, 1.5rem)) !important;
   }
 }
