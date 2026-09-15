@@ -28852,7 +28852,10 @@ html body .home-page__hero .hero-home__note-dot {
   .openms-lib-page--solution.openms-lib-page--hub .openms-lib-hero--solution,
   .openms-lib-page--solution.openms-lib-page--openms-lib .openms-lib-hero--solution {
     padding-block: var(--sol-section-y) !important;
-    padding-inline: 1.25rem !important;
+    /* Match the sitewide gutter every other section on the page uses
+       instead of a hardcoded value, so the hero's content doesn't sit
+       narrower than everything below it. */
+    padding-inline: var(--openms-page-inline, 1.25rem) !important;
   }
 
   /* Fluid type: keep long uppercase titles readable on narrow screens.
