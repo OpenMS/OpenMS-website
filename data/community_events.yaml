@@ -12,12 +12,11 @@ events:
   start: '2027-03-14'
   category: event
   synced: true
-  end: '2027-03-21'
+  end: '2027-03-20'
   location: Resort Natura, 8100-266 Loulé, Portugal
   summary: 'Registration and Info: https://tally.so/r/aQL8XW'
 - title: Google Summer of Code Ends
   start: '2026-11-02'
   category: outreach
   synced: true
-  end: '2026-11-03'
 last_synced: '2026-09-13T19:27:13Z'
