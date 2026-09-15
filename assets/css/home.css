@@ -2598,7 +2598,7 @@
 .home-page__block--partners .uni-partners--home .uni-partners__marquees {
   display: flex;
   flex-direction: column;
-  gap: 1.15rem;
+  gap: 1.5rem;
   width: 100%;
   margin-top: clamp(1.25rem, 2.5vh, 1.75rem);
 }
@@ -2630,7 +2630,7 @@
 }
 
 .home-page__block--partners .uni-partners--home .uni-partners__track {
-  padding: 0.15rem 0;
+  padding: 0.4rem 0;
   animation-duration: 36s;
 }
 
@@ -2645,8 +2645,8 @@
 
 .home-page__block--partners .uni-partners--home {
   /* Equal visual height; width follows each logo’s aspect ratio (capped). */
-  --uni-home-logo-h: 3.75rem;
-  --uni-home-logo-max-w: 16rem;
+  --uni-home-logo-h: 4.75rem;
+  --uni-home-logo-max-w: 18rem;
 }
 
 .home-page__block--partners .uni-partners--home .uni-partners__item {
