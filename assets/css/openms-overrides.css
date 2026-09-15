@@ -368,9 +368,12 @@
 
 /* ── Ways (toolkit + polished contribution cards) ── */
 .contribute-ways {
-  padding:
-    var(--contribute-section-y)
-    var(--openms-page-inline);
+  /* No inline padding here: .contribute-ways__head and .contribute-track
+     (its direct children) already apply the shared page gutter
+     themselves. Padding it again here on top of theirs was doubling
+     the inset, making these cards sit narrower than every other
+     section's cards on the page. */
+  padding-block: var(--contribute-section-y);
   background: color-mix(in srgb, var(--olib-bg-soft) 55%, var(--openms-white));
 }
 
