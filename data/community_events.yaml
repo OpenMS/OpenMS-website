@@ -5,7 +5,7 @@ events:
   start: '2026-09-26'
   category: event
   synced: true
-  end: '2026-09-28'
+  end: '2026-09-27'
   location: National University of Singapore
   summary: 'Registration: https://forms.gle/S6gcDAJrLztCAGBL7'
 - title: Developers Retreat
