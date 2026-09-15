@@ -1405,14 +1405,14 @@ languages:
             - type: github
               url: https://github.com/poshul/nase-weis/
         - name: NuXL
-          url: https://abi-services.cs.uni-tuebingen.de/nuxl/
+          url: https://nuxl.webapps.openms.org/
           logo: /images/webapp/logo/nuxl.png
           logoSize: large
           description: Web-based analysis pipeline for XL-MS data
           maintainers: Arslan Siraj
           links:
             - type: demo
-              url: https://abi-services.cs.uni-tuebingen.de/nuxl/
+              url: https://nuxl.webapps.openms.org/
             - type: install
               label: Install (Windows)
               url: https://github.com/Arslan-Siraj/nuxl-app/releases/latest
