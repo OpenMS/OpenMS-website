@@ -15,3 +15,16 @@ html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-a
     padding-left: var(--openms-num-card-pad, clamp(1.15rem, 2.5vw, 1.5rem)) !important;
   }
 }
+
+/* At <=560px (single-column stack) that same #what-is-openms rule
+   drops to padding-inline:0 on EVERY card via odd/even selectors, not
+   just the first — leaving 02/03/04's number/title flush against the
+   left edge too. Match the same odd/even specificity so this wins on
+   source order, and restore the left inset for every card. */
+@media (max-width: 560px) {
+  html body .openms-lib-page--solution.openms-lib-page--openms-lib #what-is-openms .openms-lib-about--benefits .openms-lib-about__benefit,
+  html body .openms-lib-page--solution.openms-lib-page--openms-lib #what-is-openms .openms-lib-about--benefits .openms-lib-about__benefit:nth-child(odd),
+  html body .openms-lib-page--solution.openms-lib-page--openms-lib #what-is-openms .openms-lib-about--benefits .openms-lib-about__benefit:nth-child(even) {
+    padding-left: var(--openms-num-card-pad, clamp(1.15rem, 2.5vw, 1.5rem)) !important;
+  }
+}
