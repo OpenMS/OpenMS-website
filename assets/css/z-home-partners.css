@@ -1,4 +1,9 @@
-html body .home-page .uni-partners--home .uni-partners__trust-title-line {
-  display: block !important;
-  white-space: nowrap !important;
+@media (min-width: 640px) {
+  html body .home-page .uni-partners--home .uni-partners__trust-title-line {
+    display: inline !important;
+  }
+
+  html body .home-page .uni-partners--home .uni-partners__trust-title-main {
+    white-space: nowrap !important;
+  }
 }
