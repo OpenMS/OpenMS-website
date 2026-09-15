@@ -5,16 +5,23 @@
    (Below 960px the existing rules already fall back to 2-up then 1-up —
    left alone here, since those are already an equal grid.) */
 @media (min-width: 961px) {
+  /* Six tracks so a 1-of-3-width card is "span 2" — lets the last row's
+     two cards (design, web) go to "span 3" (half-width) each and fill
+     the row edge to edge instead of leaving a dangling one-column gap
+     where a 6th card would have gone. */
   html body .openms-lib-page--contribute .contribute-track {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   html body .openms-lib-page--contribute .contribute-track__item--wide,
   html body .openms-lib-page--contribute .contribute-track__item--mid,
-  html body .openms-lib-page--contribute .contribute-track__item--docs,
+  html body .openms-lib-page--contribute .contribute-track__item--docs {
+    grid-column: span 2 !important;
+  }
+
   html body .openms-lib-page--contribute .contribute-track__item--design,
   html body .openms-lib-page--contribute .contribute-track__item--web {
-    grid-column: span 1 !important;
+    grid-column: span 3 !important;
   }
 
   /* Equal cards get equal title treatment — no more oversized heading
