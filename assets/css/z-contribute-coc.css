@@ -2,19 +2,23 @@
    the bottom (scoped via .openms-lib-page--code-of-conduct on the
    #code-of-conduct anchor). The report box there gains a second action —
    a "Report an incident" button alongside the report-handling-manual
-   link — so lay both out as a stack instead of the single inline link
-   the Code of Conduct page uses. */
+   link — so lay both out side by side instead of the single inline
+   link the Code of Conduct page uses. (A stacked, right-aligned column
+   made the solid pill button and the plain text link below it look
+   like a mismatched, off-balance cluster.) */
 .openms-lib-page--code-of-conduct .coc-report__actions {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.65rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.35rem;
   flex-shrink: 0;
 }
 
 @media (max-width: 720px) {
   .openms-lib-page--code-of-conduct .coc-report__actions {
+    flex-direction: column;
     align-items: stretch;
+    gap: 0.65rem;
     width: 100%;
   }
 
