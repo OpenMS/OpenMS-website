@@ -62,11 +62,11 @@
         >{{ $dateText }} · {{ $timeText }}</time>
       </p>
       <h3 class="community-news-events__press-title">{{ $event.title }}</h3>
-      {{- with $summaryHTML }}
-      <p class="community-news-events__press-summary">{{ . | safeHTML }}</p>
-      {{- end }}
       {{- with $event.location }}
       <p class="community-news-events__press-location">{{ . }}</p>
+      {{- end }}
+      {{- with $summaryHTML }}
+      <p class="community-news-events__press-summary">{{ . | safeHTML }}</p>
       {{- end }}
       {{- if $eventUrl }}
       <span class="community-news-events__press-cta openms-cta-link">
