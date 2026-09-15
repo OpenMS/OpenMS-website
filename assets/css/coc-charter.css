@@ -48,3 +48,11 @@
 .coc-charter__inner li {
   list-style: inherit;
 }
+
+/* The "This section summarizes..." intro note reads muted gray like the
+   rest of the body copy — make it solid black so it reads as intentional
+   emphasis rather than de-emphasized text. */
+.coc-charter__inner em {
+  color: var(--openms-dark, #231f20) !important;
+  font-style: italic;
+}

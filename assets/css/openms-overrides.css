@@ -35373,17 +35373,17 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
 html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="ziblogo" i]),
 html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="hupo-psi" i]),
 html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="DTU-logo" i]) {
-  height: 5.5rem !important;
-  min-height: 5.5rem !important;
-  max-height: 5.5rem !important;
+  height: 2.7rem !important;
+  min-height: 2.7rem !important;
+  max-height: 2.7rem !important;
 }
 
 html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="ziblogo" i],
 html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="hupo-psi" i],
 html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="DTU-logo" i] {
-  height: 5.5rem !important;
-  max-height: 5.5rem !important;
-  max-width: 20rem !important;
+  height: 2.7rem !important;
+  max-height: 2.7rem !important;
+  max-width: 10.5rem !important;
 }
 
 /* Adopted by labs — EMBL-EBI, University of Toronto, Comp Omics and
@@ -35392,25 +35392,23 @@ html body .home-page__block--partners .uni-partners--home .uni-partners__item:ha
 html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="toronto" i]),
 html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="logo-compomics" i]),
 html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="logo-university-groningen" i]) {
-  height: 5.5rem !important;
-  min-height: 5.5rem !important;
-  max-height: 5.5rem !important;
+  height: 2.7rem !important;
+  min-height: 2.7rem !important;
+  max-height: 2.7rem !important;
 }
 
 html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="emblebi" i],
 html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="toronto" i],
 html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="logo-compomics" i],
 html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="logo-university-groningen" i] {
-  height: 5.5rem !important;
-  max-height: 5.5rem !important;
-  max-width: 20rem !important;
+  height: 2.7rem !important;
+  max-height: 2.7rem !important;
+  max-width: 10.5rem !important;
 }
 
-/* Adopted by labs — more breathing room before the title and after the logos */
-html body .home-page__block--partners .uni-partners--home {
-  padding-top: calc(var(--home-section-space-y) + 2.5rem) !important;
-  padding-bottom: calc(var(--home-section-space-y) + 2.5rem) !important;
-}
+/* Adopted by labs — now a compact strip right after the hero, not a full
+   section, so this no longer needs (or gets) extra padding on top of the
+   base rule in home.css. */
 
 /* What is OpenMS — widen the section; use two wide feature-card columns
    (2x2) instead of four narrow ones so each card has room to breathe. */
