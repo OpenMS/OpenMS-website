@@ -66,6 +66,11 @@
       {{- with $event.location }}
       <p class="community-news-events__press-location">{{ . }}</p>
       {{- end }}
+      {{- if $eventUrl }}
+      <span class="community-news-events__press-cta openms-cta-link">
+        Learn more<span aria-hidden="true"> →</span>
+      </span>
+      {{- end }}
     {{- if $eventUrl }}
     </a>
     {{- else }}
