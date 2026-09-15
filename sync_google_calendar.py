@@ -58,10 +58,11 @@ def truncate_summary(text):
     return text[:SUMMARY_MAX_LEN].rsplit(" ", 1)[0] + "…"
 
 
-def to_date(value):
-    # vDate -> date; vDatetime -> datetime. Normalize both to a plain date
-    # since this site's calendar only ever shows day-level dates.
-    return value.dt.date() if hasattr(value.dt, "date") and callable(value.dt.date) else value.dt
+def to_value(value):
+    # vDate -> date (all-day event); vDatetime -> datetime (has a real
+    # time-of-day). Keep whichever it is — datetimes keep their time and
+    # timezone offset so the site can show event times, not just dates.
+    return value.dt
 
 
 def parse_events(ics_bytes):
@@ -75,23 +76,25 @@ def parse_events(ics_bytes):
         if not title or not dtstart:
             continue
 
-        start = to_date(dtstart)
+        start = to_value(dtstart)
         dtend = component.get("DTEND")
         if dtend:
-            end = to_date(dtend)
+            end = to_value(dtend)
             # All-day multi-day events store DTEND as the day *after* the
             # last day (iCal's exclusive-end convention — this is what
             # Google Calendar sends for e.g. a Mon-Fri event). This site's
             # `end` field is inclusive (the actual last day), so shift back
             # one day. Timed events (DTEND is a datetime, not a date) don't
             # use this convention and are left as-is.
-            if not isinstance(dtend.dt, datetime) and end != start:
+            if not isinstance(end, datetime) and end != start:
                 end -= timedelta(days=1)
         else:
             end = start
 
-        # Only keep events that haven't already finished.
-        if end < today:
+        # Only keep events that haven't already finished. Compare by date
+        # only, since a datetime and a date can't be compared directly.
+        end_date = end.date() if isinstance(end, datetime) else end
+        if end_date < today:
             continue
 
         event = {
