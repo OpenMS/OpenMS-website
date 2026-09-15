@@ -2755,7 +2755,11 @@
     justify-items: center;
     gap: 0.85rem 1rem;
     width: 100%;
-    margin: clamp(1.15rem, 2.5vh, 1.6rem) 0 0;
+    /* Without a cap the two columns stretch to the viewport edges,
+       leaving a wide dead gap in the middle — pull them inward
+       instead so the logos cluster near the center. */
+    max-width: 28rem;
+    margin: clamp(1.15rem, 2.5vh, 1.6rem) auto 0;
     padding-inline: 0;
   }
 
