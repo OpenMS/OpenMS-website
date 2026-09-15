@@ -47,7 +47,7 @@
           {{- if $hasRange }}
           title="{{ $start.Format "Jan 2, 2006" }} – {{ $end.Format "Jan 2, 2006" }}"
           {{- end }}
-        >{{ upper ($start.Format "2 Jan 2006") }}{{ if $hasTime }} · {{ $start.Format "3:04 PM" }}{{ end }}</time>
+        >{{ if $hasRange }}{{ if eq ($start.Format "2006") ($end.Format "2006") }}{{ upper ($start.Format "2 Jan") }} – {{ upper ($end.Format "2 Jan 2006") }}{{ else }}{{ upper ($start.Format "2 Jan 2006") }} – {{ upper ($end.Format "2 Jan 2006") }}{{ end }}{{ else }}{{ upper ($start.Format "2 Jan 2006") }}{{ if $hasTime }} · {{ $start.Format "3:04 PM" }}{{ end }}{{ end }}</time>
       </p>
       <h3 class="community-news-events__press-title">{{ $event.title }}</h3>
       {{- with $summaryHTML }}
