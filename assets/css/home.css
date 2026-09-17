@@ -1777,6 +1777,7 @@
   border: 1px solid var(--home-line);
   box-shadow: none;
   gap: 0.15rem;
+  padding-top: 0.85rem;
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card:hover {
