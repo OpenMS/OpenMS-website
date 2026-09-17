@@ -2572,7 +2572,7 @@
   font-family: var(--openms-font-heading);
   /* Smaller than the standard section title — right after the hero,
      this reads as a compact trust strip, not a full section heading. */
-  font-size: clamp(0.85rem, 1.3vw, 1.05rem);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
   font-weight: var(--openms-heading-lg-weight);
   line-height: 1.3;
   letter-spacing: normal;
@@ -2643,7 +2643,7 @@
 }
 
 .home-page__block--partners .uni-partners--home .uni-partners__row {
-  gap: clamp(2rem, 4vw, 3rem);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
   padding: 0;
 }
 
