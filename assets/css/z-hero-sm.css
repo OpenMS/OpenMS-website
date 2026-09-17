@@ -121,7 +121,7 @@ html body .home-page__hero .hero-home__note--under-graphic {
   width: 100% !important;
   max-width: 100% !important;
   margin: 1.5rem 0 0 !important;
-  gap: clamp(0.4rem, 1.5cqi, 0.95rem) !important;
+  gap: clamp(0.9rem, 2.5vw, 1.5rem) !important;
   font-size: var(--hero-note-size) !important;
   line-height: 1.35 !important;
   white-space: nowrap !important;
