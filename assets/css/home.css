@@ -1802,6 +1802,10 @@
   border-color: var(--openms-navy);
 }
 
+.home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-head {
+  justify-content: flex-end;
+}
+
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-title {
   color: var(--home-card-title-color, rgba(var(--openms-dark-rgb), 0.82));
 }
