@@ -2608,7 +2608,7 @@
 .home-page__block--partners .uni-partners--home .uni-partners__marquees {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.5rem;
   width: 100%;
   margin-top: clamp(0.5rem, 1vh, 0.75rem);
 }
