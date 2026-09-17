@@ -25420,7 +25420,7 @@ html body :is(
 .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:hover,
 .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:focus-visible,
 .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:active {
-  border-color: var(--openms-navy) !important;
+  border-color: rgba(var(--openms-navy-rgb), 0.35) !important;
   box-shadow: 0 0.55rem 1.5rem rgba(var(--openms-navy-rgb), 0.1) !important;
   transform: translateY(-2px) !important;
 }

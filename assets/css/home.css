@@ -2271,7 +2271,7 @@
   height: 100%;
   min-height: 100%;
   max-height: none;
-  border-color: var(--openms-navy);
+  border-color: rgba(var(--openms-navy-rgb), 0.35);
   box-shadow: 0 0.55rem 1.5rem rgba(var(--openms-navy-rgb), 0.1);
   transform: translateY(-2px);
 }
