@@ -1790,7 +1790,7 @@
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card:hover {
-  border-color: var(--openms-navy);
+  border-color: rgba(var(--openms-navy-rgb), 0.35);
   box-shadow: 0 0.35rem 1rem rgba(var(--openms-blue-rgb), 0.1);
 }
 

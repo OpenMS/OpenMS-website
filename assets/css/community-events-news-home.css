@@ -190,7 +190,7 @@
 
 .community-news-events__press-link:hover,
 a.community-news-events__press-link:focus-visible {
-  border-color: var(--openms-navy);
+  border-color: rgba(var(--openms-navy-rgb), 0.35);
   background: var(--openms-white);
   box-shadow: 0 0.55rem 1.5rem rgba(var(--openms-navy-rgb), 0.1);
   outline: none;
