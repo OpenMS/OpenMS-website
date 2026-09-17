@@ -25407,13 +25407,34 @@ html body :is(
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  gap: 0.2rem !important;
-  padding: 0 !important;
-  border: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
+  gap: 1.05rem !important;
+  padding: var(--projects-card-inset-y, 1.05rem) var(--projects-card-inset-x, 1.1rem) !important;
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.1) !important;
+  background: var(--openms-white) !important;
+  box-shadow: 0 0.25rem 1rem rgba(var(--openms-navy-rgb), 0.06) !important;
   aspect-ratio: auto !important;
   overflow: visible !important;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease !important;
+}
+
+.home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:hover,
+.home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:focus-visible,
+.home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:active {
+  border-color: var(--openms-navy) !important;
+  box-shadow: 0 0.55rem 1.5rem rgba(var(--openms-navy-rgb), 0.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+.home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:focus-visible {
+  outline: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:hover,
+  .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:focus-visible,
+  .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:active {
+    transform: none !important;
+  }
 }
 
 .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo-wrap {
@@ -36207,13 +36228,13 @@ html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-feat
   }
 
   html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog {
-    --projects-card-inset-y: 0.85rem;
-    --projects-card-inset-x: 0;
+    --projects-card-inset-y: 1rem;
+    --projects-card-inset-x: 1rem;
   }
 
   html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface {
-    padding: 0.85rem 0 !important;
-    gap: 0 !important;
+    padding: 1rem !important;
+    gap: 0.85rem !important;
   }
 
   html body .home-page .home-page__block--projects .webapps-featured__item::after {
