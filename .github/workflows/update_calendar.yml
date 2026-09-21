@@ -57,8 +57,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if gh pr view update-calendar-sync --json number -q .number >/dev/null 2>&1; then
-            echo "PR already exists, branch updated."
+          # Only an *open* PR counts — `gh pr view` also finds the previous,
+          # already-merged one, which made every run after the first skip
+          # creating a PR and left the fresh sync stranded on the branch.
+          if [ "$(gh pr list --head update-calendar-sync --state open --json number -q length)" -gt 0 ]; then
+            echo "Open PR already exists, branch updated."
           else
             gh pr create \
               --title "Automated Google Calendar sync" \
