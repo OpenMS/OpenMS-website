@@ -56,7 +56,7 @@ Participants who are asked to stop any inappropriate behaviour are expected to c
 
 ## Incident reporting resolution & Code of Conduct enforcement
 
-_This section summarizes the most important points, more details can be found in_ [OpenMS Code of Conduct - How to follow up on a report](/report-handling-manual).
+This section summarizes the most important points, more details can be found in [OpenMS Code of Conduct - How to follow up on a report](/report-handling-manual).
 
 We will investigate and respond to all complaints. The OpenMS Code of Conduct Committee and the OpenMS Executive Committee (if involved) will protect the identity of the reporter, and treat the content of complaints as confidential (unless the reporter agrees otherwise).
 
