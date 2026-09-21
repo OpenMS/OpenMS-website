@@ -1,0 +1,24 @@
+/* Sponsor CTA bands (Our sponsors → "Become a sponsor", Sponsor us → "Get
+   started") — on phones put one button per line, both the same full width,
+   instead of two squeezed side by side. */
+@media (max-width: 560px) {
+  html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions,
+  html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-flow: row !important;
+    gap: 0.85rem !important;
+    width: min(100%, 22rem) !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+    justify-items: stretch !important;
+  }
+
+  html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+  html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+  }
+}
