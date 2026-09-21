@@ -86,3 +86,33 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr merge update-calendar-sync --squash --delete-branch
+
+      # The open PR branch (fork-main-update) keeps its own copy of the events
+      # file, so its Netlify deploy preview never sees `main` changes. Mirror the
+      # synced events into it after every run. Skipped when the branch does not
+      # exist (e.g. upstream), and a failure here never fails the sync.
+      - name: Mirror synced events into the PR branch
+        continue-on-error: true
+        run: |
+          BRANCH=fork-main-update
+          git fetch --no-tags origin "$BRANCH" || { echo "No $BRANCH branch; skipping."; exit 0; }
+          cp data/community_events.yaml /tmp/full_events.yaml
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -f -B "$BRANCH" "origin/$BRANCH"
+          python - <<'PY'
+          import re
+          text = open('/tmp/full_events.yaml').read()
+          head, _, rest = text.partition('events:\n')
+          body, tail = rest.rsplit('last_synced:', 1)
+          blocks = [b for b in re.split(r'(?m)^(?=- title:)', body) if b.strip()]
+          synced = [b if b.endswith('\n') else b + '\n' for b in blocks if 'synced: true' in b]
+          open('data/community_events.yaml', 'w').write(head + 'events:\n' + ''.join(synced) + 'last_synced:' + tail)
+          PY
+          if git diff --quiet -- data/community_events.yaml; then
+            echo "PR branch already up to date."
+          else
+            git add data/community_events.yaml
+            git commit -m "Calendar: mirror synced Google Calendar events into the PR branch"
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} "HEAD:$BRANCH"
+          fi
