@@ -50,3 +50,27 @@ html body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.
   padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
   box-sizing: border-box !important;
 }
+
+/* "Need help?" (Discord / GitHub issue) — on phones put one button per line,
+   both the same full width, instead of two squeezed side by side. */
+@media (max-width: 560px) {
+  html body .openms-lib-page .openms-lib-resources__assist .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions,
+  html body .openms-lib-page #getting-started#getting-started .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    gap: 0.85rem !important;
+    width: min(100%, 22rem) !important;
+    max-width: 100% !important;
+  }
+
+  html body .openms-lib-page #getting-started#getting-started .openms-lib-resources__assist-actions .openms-lib-resources__assist-btn.openms-lib-resources__assist-btn.openms-lib-btn {
+    width: 100% !important;
+    max-width: none !important;
+    flex: 0 0 auto !important;
+    justify-content: center !important;
+    padding-inline: 1.25rem !important;
+  }
+}
