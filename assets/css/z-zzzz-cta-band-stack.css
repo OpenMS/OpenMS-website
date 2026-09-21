@@ -40,7 +40,8 @@ html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__a
 
 @media (max-width: 560px) {
   html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions,
-  html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions {
+  html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions,
+  html body .openms-lib-page--contact #get-help .contribute-coc-band__actions.contribute-coc-band__actions {
     display: grid !important;
     grid-template-columns: minmax(0, 1fr) !important;
     grid-auto-flow: row !important;
@@ -52,7 +53,8 @@ html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__a
   }
 
   html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
-  html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn {
+  html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+  html body .openms-lib-page--contact #get-help .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
@@ -101,4 +103,23 @@ html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__a
    (it was ~5px, so the hover glow of one touched the other). */
 html body .openms-lib-page--contact #get-help .contribute-coc-band__actions.contribute-coc-band__actions {
   column-gap: 1rem !important;
+}
+
+/* Contact -> "Need a hand?": the Contribute button gets the same hover as the
+   other navy CTA bands (white fill, navy text, white glow). */
+:is(html, #contact-hover-specificity-boost) body .openms-lib-page--contact #get-help .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  border: 2px solid var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(255, 255, 255, 0.22) !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--contact #get-help .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
 }
