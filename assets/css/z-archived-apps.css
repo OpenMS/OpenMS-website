@@ -405,3 +405,13 @@ html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.o
     justify-content: center !important;
   }
 }
+
+/* Archived apps — the card sat ~150px below the intro text (section gap plus
+   the section's own top padding). Pull it up close to the intro. */
+html body .openms-lib-page--archived #archived-apps .contribute-ways.contribute-ways {
+  gap: clamp(1rem, 2.5vw, 1.75rem) !important;
+}
+
+html body .openms-lib-page--archived #archived-apps .contribute-ways.contribute-ways > section.webapps-archived.webapps-archived {
+  padding-top: 0 !important;
+}
