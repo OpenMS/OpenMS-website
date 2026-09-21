@@ -21,3 +21,23 @@
 :is(html, #view-all-specificity-boost) body .home-page :is(a.community-news-events__view-all, a.community-events-home__view-all--inline) {
   font-size: var(--openms-text-min, 0.8125rem) !important;
 }
+
+/* What is OpenMS? — medium screens (768–1023px): the tag pill (BSD LICENSED,
+   C++ · PYTHON, …) sits at the right of the card, level with the title. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :is(html, #md-pill-specificity-boost) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card.keyfeatures-modern__topic-card {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-rows: auto 1fr !important;
+    grid-template-areas:
+      "title badge"
+      "text text" !important;
+    column-gap: 0.75rem !important;
+  }
+
+  :is(html, #md-pill-specificity-boost) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-head.keyfeatures-modern__topic-head {
+    grid-area: badge !important;
+    justify-content: flex-end !important;
+    align-self: start !important;
+    margin: 0 !important;
+  }
+}
