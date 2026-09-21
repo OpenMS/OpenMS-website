@@ -415,3 +415,65 @@ html body .openms-lib-page--archived #archived-apps .contribute-ways.contribute-
 html body .openms-lib-page--archived #archived-apps .contribute-ways.contribute-ways > section.webapps-archived.webapps-archived {
   padding-top: 0 !important;
 }
+
+/* Archived app card — wider description and a bigger logo. */
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry .webapps-archived-entry__text.webapps-archived-entry__text {
+  max-width: min(100%, 48rem) !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry .webapps-archived-entry__media.webapps-archived-entry__media {
+  width: auto !important;
+  max-width: min(45vw, 13rem) !important;
+}
+
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry .webapps-archived-entry__logo.webapps-archived-entry__logo {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 5.5rem !important;
+}
+
+/* Phones: keep the logo from squeezing the title column. */
+@media (max-width: 560px) {
+  html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry .webapps-archived-entry__media.webapps-archived-entry__media {
+    max-width: 7rem !important;
+  }
+}
+
+/* "NF-CORE PIPELINE" label in a rounded outline. */
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry .webapps-archived-entry__type.webapps-archived-entry__type {
+  display: inline-block !important;
+  padding: 0.18rem 0.65rem !important;
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.35) !important;
+  border-radius: 999px !important;
+  line-height: 1.3 !important;
+}
+
+/* Smaller "NF-CORE PIPELINE" label. */
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry .webapps-archived-entry__type.webapps-archived-entry__type {
+  font-size: 0.625rem !important;
+  letter-spacing: 0.08em !important;
+  padding: 0.14rem 0.55rem !important;
+}
+
+/* Community opportunity band — keep the two buttons well apart so their
+   hover glow/lift never touches the neighbour. */
+@media (min-width: 561px) {
+  html body .openms-lib-page.openms-lib-page.openms-lib-page .webapps-archived__revival-actions.webapps-archived__revival-actions {
+    column-gap: 1.5rem !important;
+  }
+}
+
+/* Archived apps intro sentence: one line on tablet/desktop, scaling with the
+   screen; it wraps (balanced) only on phones. */
+html body .openms-lib-page--archived #archived-apps .contribute-ways__lead.contribute-ways__lead {
+  max-width: none !important;
+  text-wrap: balance;
+}
+
+@media (min-width: 601px) {
+  html body .openms-lib-page--archived #archived-apps .contribute-ways__lead.contribute-ways__lead {
+    white-space: nowrap !important;
+    font-size: clamp(0.75rem, 1.9vw, 1rem) !important;
+  }
+}
