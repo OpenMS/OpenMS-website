@@ -650,10 +650,10 @@ html body .home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:focu
 
 
 /* Hero buttons: one gap at every screen size (it used to be 9px on tablets,
-   12px on phones and 24px on desktop). Wide enough that the hover grow (3%)
-   and glow of one button never reaches the other. */
+   12px on phones and 24px on desktop). Close together, but still wider than
+   the 3% hover grow, so the buttons themselves never touch. */
 html body .home-page__hero .hero-home__actions:not(.__unused__) {
-  gap: 1.5rem !important;
+  gap: 1rem !important;
 }
 
 /* Phones: stack the two buttons — Get started on top, Explore the library
