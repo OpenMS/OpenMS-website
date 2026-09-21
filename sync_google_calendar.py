@@ -52,7 +52,10 @@ def strip_html(text):
     # Google Calendar descriptions are often rich text (HTML). The event
     # card template renders `summary` as plain text, so raw tags would show
     # up verbatim — strip them down to plain text instead.
-    text = re.sub(r"(?i)<br\s*/?>", " ", text or "")
+    # Line breaks are kept as newlines: on the site a link label has to sit on
+    # the same line as its URL, so "Description" / "Register: <url>" on two lines
+    # is not mistaken for one long label.
+    text = re.sub(r"(?i)<br\s*/?>|</(?:p|div|li|h[1-6])>", "\n", text or "")
     text = _TAG_RE.sub("", text)
     return html.unescape(text)
 
@@ -89,10 +92,12 @@ def truncate_summary(text):
     # Links are set aside first so a long description can't push them past
     # the length limit and cut them off; only the prose is truncated.
     text, links = extract_links(text)
-    text = " ".join(strip_html(text).split())
+    # One entry per non-empty line; words inside a line are single-spaced.
+    lines = [" ".join(line.split()) for line in strip_html(text).splitlines()]
+    text = "\n".join(line for line in lines if line)
     if len(text) > SUMMARY_MAX_LEN:
-        text = text[:SUMMARY_MAX_LEN].rsplit(" ", 1)[0] + "…"
-    return " ".join([text, *links]).strip()
+        text = text[:SUMMARY_MAX_LEN].rsplit(None, 1)[0] + "…"
+    return "\n".join(part for part in [text, *links] if part).strip()
 
 
 def to_value(value, zone=None):
