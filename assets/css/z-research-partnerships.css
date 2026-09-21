@@ -30,3 +30,22 @@ html body .openms-lib-page--research-partnerships iframe.rp-application__tally-i
 }
 
 /* Partnerships include numbered cards — layout from z-zzz-num-strip-white.css */
+
+/* Our partners (phones) — logos were spread out (107px-tall cells, ~120px row
+   pitch and ~40px of padding around the grid). Tighten the cells so the logos
+   sit closer together. */
+@media (max-width: 600px) {
+  html body .openms-lib-page--research-partnerships .uni-partners.uni-partners {
+    padding-block: 0.5rem !important;
+  }
+
+  html body .openms-lib-page--research-partnerships .uni-partners.uni-partners .uni-partners__static {
+    gap: 0.35rem 0.75rem !important;
+  }
+
+  html body .openms-lib-page--research-partnerships .uni-partners.uni-partners .uni-partners__item.uni-partners__item {
+    min-height: 0 !important;
+    height: auto !important;
+    padding-block: 0.4rem !important;
+  }
+}
