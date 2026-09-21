@@ -2526,7 +2526,7 @@
 .home-page__block--partners .uni-partners--home {
   /* Smaller than the standard section padding — a compact strip right
      after the hero, not a full section. */
-  padding: clamp(0.6rem, 1.3vh, 0.9rem) var(--openms-page-inline) clamp(1.1rem, 2.25vh, 1.5rem);
+  padding: clamp(1.75rem, 3.5vh, 2.5rem) var(--openms-page-inline) clamp(1.75rem, 3.5vh, 2.5rem);
   background: transparent;
   border: none;
 }
