@@ -509,6 +509,16 @@ html body .home-page .community-news-events__column--news .community-events-home
   -webkit-text-fill-color: var(--openms-cta-link, var(--openms-blue)) !important;
 }
 
+/* News page — same hover as Latest news on the homepage: title turns blue.
+   A global heading rule forces the grey with very high specificity, so the
+   selector is boosted with :is(html, #id): it still matches <html>, but counts
+   as an id. */
+:is(html, #id-specificity-boost) body .openms-lib-page--news .community-events-home__card.community-news-events__press-card a.community-news-events__press-link:hover .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title,
+:is(html, #id-specificity-boost) body .openms-lib-page--news .community-events-home__card.community-news-events__press-card a.community-news-events__press-link:focus-visible .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title {
+  color: var(--openms-cta-link, var(--openms-blue)) !important;
+  -webkit-text-fill-color: var(--openms-cta-link, var(--openms-blue)) !important;
+}
+
 /* Calendar page — the dates are blue like on the homepage. A global rule
    greyed them out (and outranked the earlier blue one), so out-rank it. */
 html body .openms-lib-page--calendar .community-events-home__item .community-events-home__card.community-news-events__press-card .community-news-events__press-date.community-news-events__press-date.community-news-events__press-date {
