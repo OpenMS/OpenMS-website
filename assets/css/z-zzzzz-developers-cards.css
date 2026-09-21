@@ -63,6 +63,7 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
 }
 
 /* ---------- card base ---------- */
+/* (icons are bare — no background tile — like the other card sections) */
 html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card.openms-lib-developers__card {
   display: flex !important;
   flex-direction: column !important;
@@ -92,22 +93,31 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   display: grid !important;
   place-items: center;
   flex: 0 0 auto;
-  width: 2.5rem !important;
-  height: 2.5rem !important;
+  width: auto !important;
+  height: auto !important;
   margin: 0 !important;
-  border-radius: 0.75rem;
-  background: rgba(var(--openms-blue-rgb), 0.1) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  background-color: transparent !important;
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
 }
 
 html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card-icon :is(i, svg) {
-  width: 1.1rem !important;
-  height: 1.1rem !important;
-  font-size: 1.05rem !important;
+  width: 1.85rem !important;
+  height: 1.85rem !important;
+  font-size: 1.75rem !important;
   line-height: 1;
   color: inherit !important;
   -webkit-text-fill-color: currentColor !important;
+  fill: currentColor !important;
+  opacity: 1 !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card-icon svg path {
+  color: inherit !important;
   fill: currentColor !important;
   opacity: 1 !important;
 }
@@ -181,7 +191,7 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
 }
 
 html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured .openms-lib-developers__card-icon.openms-lib-developers__card-icon {
-  background: rgba(255, 255, 255, 0.14) !important;
+  background: transparent !important;
   color: var(--openms-white) !important;
   -webkit-text-fill-color: var(--openms-white) !important;
 }
@@ -376,4 +386,15 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   flex: 0 1 auto !important;
   width: auto !important;
   max-width: 100%;
+}
+
+/* The → arrow must stay visible on hover: an older hover rule turned it white
+   (invisible on a white card). It inherits the link colour instead — blue on
+   the white cards, navy inside the white button on the featured card. */
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--link .openms-lib-developers__card-link span,
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--link:is(:hover, :focus-within, :focus-visible) .openms-lib-developers__card-link span {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
