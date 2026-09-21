@@ -96,3 +96,9 @@ html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__a
   color: var(--openms-navy) !important;
   -webkit-text-fill-color: var(--openms-navy) !important;
 }
+
+/* Contact → "Need a hand?" band — standard 1rem gap between the two buttons
+   (it was ~5px, so the hover glow of one touched the other). */
+html body .openms-lib-page--contact #get-help .contribute-coc-band__actions.contribute-coc-band__actions {
+  column-gap: 1rem !important;
+}
