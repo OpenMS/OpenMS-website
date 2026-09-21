@@ -26,7 +26,7 @@
   {{- end }}
 {{- end }}
 {{- $upcoming = sort $upcoming "start" -}}
-{{- $past = sort $past "start" | collections.Reverse -}}
+{{- $past = sort $past "start" -}}
 {{- $years := slice -}}
 {{- range $past }}
   {{- $y := (time .start).Format "2006" -}}
@@ -34,7 +34,7 @@
     {{- $years = $years | append $y -}}
   {{- end }}
 {{- end }}
-{{- $years = sort $years | collections.Reverse -}}
+{{- $years = sort $years -}}
 <section class="openms-lib-layout">
 <article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--calendar">
 <div class="openms-lib-page__intro">
@@ -88,32 +88,41 @@
       </section>
 
       {{- if gt (len $years) 0 }}
-      {{- $defaultYear := index $years 0 -}}
-      <section class="community-events-page__section community-events-page__section--past community-events-upcoming-layout" aria-label="Past community events" data-events-year-filter>
-          {{ partial "events-year-select.html" (dict "years" $years "defaultYear" $defaultYear) }}
-          <div class="events-past-panel__entries">
-            {{- range $index, $year := $years }}
-            {{- $yearEvents := slice -}}
-            {{- range $past }}
-              {{- if eq ((time .start).Format "2006") $year }}
-                {{- $yearEvents = $yearEvents | append . -}}
+      {{- /* Past events: hidden behind a button at the bottom of the page. Shown
+            oldest year first, and oldest event first within each year. */ -}}
+      <section class="community-events-page__section community-events-page__section--past" aria-label="Past community events" data-past-events>
+        <div class="community-events-past__bar">
+          <button
+            type="button"
+            class="openms-lib-btn openms-lib-btn--ghost community-events-past__toggle"
+            aria-expanded="false"
+            aria-controls="calendar-past-panel"
+            data-past-toggle
+            data-label-closed="{{ index $cfg "pastButtonLabel" | default "Last events" }}"
+            data-label-open="{{ index $cfg "pastButtonOpenLabel" | default "Hide last events" }}"
+          >
+            <span class="openms-lib-btn__label" data-past-toggle-label>{{ index $cfg "pastButtonLabel" | default "Last events" }}</span>
+            <span class="community-events-past__chevron" aria-hidden="true">↓</span>
+          </button>
+        </div>
+        <div class="community-events-past__panel" id="calendar-past-panel" hidden>
+          {{- range $year := $years }}
+          {{- $yearEvents := slice -}}
+          {{- range $past }}
+            {{- if eq ((time .start).Format "2006") $year }}
+              {{- $yearEvents = $yearEvents | append . -}}
+            {{- end }}
+          {{- end }}
+          <section class="events-past-year" id="events-year-{{ $year }}" aria-labelledby="events-year-{{ $year }}-title">
+            <h3 id="events-year-{{ $year }}-title" class="events-past-year__title">{{ $year }}</h3>
+            <ul class="community-events-home__grid" role="list">
+              {{- range $yearEvents }}
+              {{ partial "community-event-card.html" (dict "event" . "hideDateLine" true "primaryCta" true "readMoreLabel" $readMore) }}
               {{- end }}
-            {{- end }}
-            <section
-              class="events-past-year{{ if eq $index 0 }} events-past-year--default{{ end }}"
-              id="events-year-{{ $year }}"
-              data-events-year="{{ $year }}"
-              aria-label="{{ $year }} events"
-              {{- if ne $year $defaultYear }} hidden aria-hidden="true"{{- end }}
-            >
-              <ul class="community-events-home__grid" role="list">
-                {{- range $yearEvents }}
-                {{ partial "community-event-card.html" (dict "event" . "hideDateLine" true "primaryCta" true "readMoreLabel" $readMore) }}
-                {{- end }}
-              </ul>
-            </section>
-            {{- end }}
-          </div>
+            </ul>
+          </section>
+          {{- end }}
+        </div>
       </section>
       {{- end }}
     </div>
