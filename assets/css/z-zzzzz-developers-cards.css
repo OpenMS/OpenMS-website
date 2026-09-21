@@ -295,7 +295,7 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   outline: none !important;
 }
 
-html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__platform-btn :is(i, svg, span) {
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__platform-btn :is(i, svg, path, span) {
   color: inherit !important;
   -webkit-text-fill-color: currentColor !important;
   fill: currentColor;
@@ -415,5 +415,14 @@ html body #for-developers#for-developers#for-developers.openms-lib-developers--g
   color: var(--openms-white) !important;
   -webkit-text-fill-color: var(--openms-white) !important;
   fill: var(--openms-white) !important;
+  opacity: 1 !important;
+}
+
+/* Platform / action buttons: the icon (Linux, macOS, Windows, GitHub, book…)
+   stays navy — also on hover and focus. */
+html body #for-developers#for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__platform-btn :is(i, svg, path) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  fill: var(--openms-navy) !important;
   opacity: 1 !important;
 }
