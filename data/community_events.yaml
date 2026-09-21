@@ -1,6 +1,30 @@
 # Community calendar — edit this file to add or update events (see docs/common-tasks/update-community-calendar.md).
 # Entries marked `synced: true` are managed automatically by sync_google_calendar.py — edit the source calendar event instead of this file for those.
 events:
+- title: 20 Years of OpenMS Celebration
+  start: '2025-08-01'
+  category: event
+  synced: true
+  location: Sand, 72076 Tübingen, Germany
+  summary: 'More Information: https://openms.de/news/openms_20years/'
+- title: OpenMS Developers Meeting
+  start: '2026-03-23'
+  category: event
+  synced: true
+  end: '2026-03-27'
+  location: Otmuchów, Poland
+  summary: 'More information: https://openms.de/news/devmeeting2026/'
+- title: University of Helsinki Workshop
+  start: '2026-04-30'
+  category: workshop
+  synced: true
+  location: University of Helsinki, Fabianinkatu 33, 00100 Helsinki, Finland
+  summary: One-day workshop on MS analysis with OpenMS and OpenDIAKiosk. See https://openms.de/news/helsinki_workshop_2026/
+    for more information.
+- title: Google Summer of Code Begins
+  start: '2026-05-25'
+  category: outreach
+  synced: true
 - title: 'MS Analysis with OpenMS: Free Worshop'
   start: '2026-09-26'
   category: event
@@ -33,4 +57,4 @@ events:
   end: '2027-03-20'
   location: Resort Natura, 8100-266 Loulé, Portugal
   summary: 'Registration and Info: https://tally.so/r/aQL8XW'
-last_synced: '2026-09-21T18:34:04Z'
+last_synced: '2026-09-21T20:21:00Z'
