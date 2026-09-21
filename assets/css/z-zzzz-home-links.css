@@ -14,3 +14,10 @@
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
+
+/* Homepage Upcoming events / Latest news — "View all →" uses the same text size
+   as the other card links. */
+:is(html, #view-all-specificity-boost) body .home-page :is(a.community-news-events__view-all, a.community-events-home__view-all--inline).community-news-events__view-all,
+:is(html, #view-all-specificity-boost) body .home-page :is(a.community-news-events__view-all, a.community-events-home__view-all--inline) {
+  font-size: var(--openms-text-min, 0.8125rem) !important;
+}
