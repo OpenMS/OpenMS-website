@@ -1,4 +1,6 @@
-@media (min-width: 640px) {
+/* One line only where it fits (the title is ~530px wide at the md+ size);
+   below that the two spans stack, so it wraps instead of overflowing. */
+@media (min-width: 769px) {
   html body .home-page .uni-partners--home .uni-partners__trust-title-line {
     display: inline !important;
   }

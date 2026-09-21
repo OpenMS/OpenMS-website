@@ -2526,7 +2526,7 @@
 .home-page__block--partners .uni-partners--home {
   /* Smaller than the standard section padding — a compact strip right
      after the hero, not a full section. */
-  padding: clamp(1.1rem, 2.25vh, 1.5rem) var(--openms-page-inline);
+  padding: clamp(0.6rem, 1.3vh, 0.9rem) var(--openms-page-inline) clamp(1.1rem, 2.25vh, 1.5rem);
   background: transparent;
   border: none;
 }
@@ -2559,6 +2559,7 @@
 
 .home-page__block--partners .uni-partners--home .uni-partners__trust-title {
   margin: 0;
+  padding-top: 0;
   font-family: var(--openms-font-heading);
   /* Smaller than the standard section title — right after the hero,
      this reads as a compact trust strip, not a full section heading. */
