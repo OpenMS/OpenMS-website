@@ -7,11 +7,13 @@
 {{- if $event }}
 {{- $start := time $event.start -}}
 {{- $endStr := $event.end | default "" -}}
-{{- $hasRange := and $endStr (ne $endStr $event.start) -}}
 {{- $end := $start -}}
-{{- if $hasRange }}
+{{- if $endStr }}
   {{- $end = time $endStr -}}
 {{- end }}
+{{- /* Compare calendar days, not raw strings: a timed event that starts and
+      ends the same day has two different timestamps but is not a range. */ -}}
+{{- $hasRange := ne ($start.Format "2006-01-02") ($end.Format "2006-01-02") -}}
 {{- $eventUrl := $event.news_url | default $event.url | default "" -}}
 {{- $isExternal := and $eventUrl (in $eventUrl "://") -}}
 {{- $category := $event.category | default "event" -}}
@@ -27,6 +29,12 @@
 {{- $timeText := "All day" -}}
 {{- if $hasTime -}}
   {{- $timeText = $start.Format "3:04 PM" -}}
+  {{- if and $endStr (in $endStr "T") (ne $endStr $event.start) -}}
+    {{- $timeText = printf "%s – %s" $timeText ($end.Format "3:04 PM") -}}
+  {{- end -}}
+  {{- with $event.tz_label -}}
+    {{- $timeText = printf "%s %s" $timeText . -}}
+  {{- end -}}
 {{- end -}}
 {{- $summaryHTML := "" -}}
 {{- with $event.summary -}}

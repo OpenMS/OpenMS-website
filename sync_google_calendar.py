@@ -17,6 +17,7 @@ import os
 import re
 import sys
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 import requests
 import yaml
@@ -88,15 +89,31 @@ def truncate_summary(text):
     return " ".join([text, *links]).strip()
 
 
-def to_value(value):
+def to_value(value, zone=None):
     # vDate -> date (all-day event); vDatetime -> datetime (has a real
     # time-of-day). Keep whichever it is — datetimes keep their time and
     # timezone offset so the site can show event times, not just dates.
-    return value.dt
+    # Google exports timed events in UTC; convert to the calendar's own
+    # timezone so the site shows the same clock time the calendar does.
+    dt = value.dt
+    if zone and isinstance(dt, datetime) and dt.tzinfo is not None:
+        dt = dt.astimezone(zone)
+    return dt
+
+
+def calendar_timezone(calendar):
+    name = str(calendar.get("X-WR-TIMEZONE", "")).strip()
+    if not name:
+        return None
+    try:
+        return ZoneInfo(name)
+    except (ZoneInfoNotFoundError, ValueError):
+        return None
 
 
 def parse_events(ics_bytes):
     calendar = Calendar.from_ical(ics_bytes)
+    zone = calendar_timezone(calendar)
     today = datetime.now(timezone.utc).date()
     events = []
 
@@ -106,10 +123,10 @@ def parse_events(ics_bytes):
         if not title or not dtstart:
             continue
 
-        start = to_value(dtstart)
+        start = to_value(dtstart, zone)
         dtend = component.get("DTEND")
         if dtend:
-            end = to_value(dtend)
+            end = to_value(dtend, zone)
             # All-day multi-day events store DTEND as the day *after* the
             # last day (iCal's exclusive-end convention — this is what
             # Google Calendar sends for e.g. a Mon-Fri event). This site's
@@ -135,6 +152,8 @@ def parse_events(ics_bytes):
         }
         if end != start:
             event["end"] = end.isoformat()
+        if isinstance(start, datetime) and start.tzname():
+            event["tz_label"] = start.tzname()
         location = str(component.get("LOCATION", "")).strip()
         if location:
             event["location"] = location
