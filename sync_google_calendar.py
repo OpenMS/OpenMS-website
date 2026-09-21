@@ -17,6 +17,7 @@ import os
 import re
 import sys
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 import requests
 import yaml
@@ -42,6 +43,11 @@ def guess_category(title):
     return "event"
 
 
+_ANCHOR_RE = re.compile(
+    r"""(?is)<a\b[^>]*?href\s*=\s*["']([^"']+)["'][^>]*>(.*?)</a>"""
+)
+
+
 def strip_html(text):
     # Google Calendar descriptions are often rich text (HTML). The event
     # card template renders `summary` as plain text, so raw tags would show
@@ -51,21 +57,63 @@ def strip_html(text):
     return html.unescape(text)
 
 
+def extract_links(text):
+    # Pull hyperlinks out of the HTML before it's flattened to plain text
+    # (which would drop the href). Returns the text with the anchors
+    # removed, plus "Label: URL" strings — the shape the event card turns
+    # back into a real link. Labels are reduced to letters and spaces to
+    # match what the card's link pattern accepts.
+    links = []
+
+    def _collect(match):
+        url = html.unescape(match.group(1)).strip()
+        if not url.lower().startswith(("http://", "https://")):
+            return match.group(2)
+        label = re.sub(r"[^A-Za-z ]+", " ", strip_html(match.group(2)))
+        label = " ".join(label.split()) or "Link"
+        entry = f"{label}: {url}"
+        if entry not in links:
+            links.append(entry)
+        return " "
+
+    return _ANCHOR_RE.sub(_collect, text or ""), links
+
+
 def truncate_summary(text):
+    # Links are set aside first so a long description can't push them past
+    # the length limit and cut them off; only the prose is truncated.
+    text, links = extract_links(text)
     text = " ".join(strip_html(text).split())
-    if len(text) <= SUMMARY_MAX_LEN:
-        return text
-    return text[:SUMMARY_MAX_LEN].rsplit(" ", 1)[0] + "…"
+    if len(text) > SUMMARY_MAX_LEN:
+        text = text[:SUMMARY_MAX_LEN].rsplit(" ", 1)[0] + "…"
+    return " ".join([text, *links]).strip()
 
 
-def to_date(value):
-    # vDate -> date; vDatetime -> datetime. Normalize both to a plain date
-    # since this site's calendar only ever shows day-level dates.
-    return value.dt.date() if hasattr(value.dt, "date") and callable(value.dt.date) else value.dt
+def to_value(value, zone=None):
+    # vDate -> date (all-day event); vDatetime -> datetime (has a real
+    # time-of-day). Keep whichever it is — datetimes keep their time and
+    # timezone offset so the site can show event times, not just dates.
+    # Google exports timed events in UTC; convert to the calendar's own
+    # timezone so the site shows the same clock time the calendar does.
+    dt = value.dt
+    if zone and isinstance(dt, datetime) and dt.tzinfo is not None:
+        dt = dt.astimezone(zone)
+    return dt
+
+
+def calendar_timezone(calendar):
+    name = str(calendar.get("X-WR-TIMEZONE", "")).strip()
+    if not name:
+        return None
+    try:
+        return ZoneInfo(name)
+    except (ZoneInfoNotFoundError, ValueError):
+        return None
 
 
 def parse_events(ics_bytes):
     calendar = Calendar.from_ical(ics_bytes)
+    zone = calendar_timezone(calendar)
     today = datetime.now(timezone.utc).date()
     events = []
 
@@ -75,23 +123,25 @@ def parse_events(ics_bytes):
         if not title or not dtstart:
             continue
 
-        start = to_date(dtstart)
+        start = to_value(dtstart, zone)
         dtend = component.get("DTEND")
         if dtend:
-            end = to_date(dtend)
+            end = to_value(dtend, zone)
             # All-day multi-day events store DTEND as the day *after* the
             # last day (iCal's exclusive-end convention — this is what
             # Google Calendar sends for e.g. a Mon-Fri event). This site's
             # `end` field is inclusive (the actual last day), so shift back
             # one day. Timed events (DTEND is a datetime, not a date) don't
             # use this convention and are left as-is.
-            if not isinstance(dtend.dt, datetime) and end != start:
+            if not isinstance(end, datetime) and end != start:
                 end -= timedelta(days=1)
         else:
             end = start
 
-        # Only keep events that haven't already finished.
-        if end < today:
+        # Only keep events that haven't already finished. Compare by date
+        # only, since a datetime and a date can't be compared directly.
+        end_date = end.date() if isinstance(end, datetime) else end
+        if end_date < today:
             continue
 
         event = {
@@ -102,6 +152,8 @@ def parse_events(ics_bytes):
         }
         if end != start:
             event["end"] = end.isoformat()
+        if isinstance(start, datetime) and start.tzname():
+            event["tz_label"] = start.tzname()
         location = str(component.get("LOCATION", "")).strip()
         if location:
             event["location"] = location
