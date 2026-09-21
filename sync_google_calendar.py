@@ -191,6 +191,9 @@ def main():
     response = requests.get(ics_url, timeout=30)
     response.raise_for_status()
     synced_events = parse_events(response.content)
+    # Google returns events in a different order on each fetch; sort so an
+    # unchanged calendar produces an identical file (and no spurious diff).
+    synced_events.sort(key=lambda e: (e["start"], e["title"]))
     print(f"Fetched {len(synced_events)} upcoming event(s) from Google Calendar.")
 
     data = load_data()
