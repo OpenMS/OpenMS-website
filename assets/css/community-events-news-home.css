@@ -328,6 +328,25 @@ a.community-news-events__press-link:focus-visible .community-news-events__press-
   transition: none;
 }
 
+/* Calendar page (already blue via other rules; kept explicit). */
+html body .community-news-events__press-links a.openms-cta-link {
+  color: var(--openms-cta-link, var(--openms-blue)) !important;
+  -webkit-text-fill-color: var(--openms-cta-link, var(--openms-blue)) !important;
+}
+
+/* Links in the event cards are blue; a homepage rule that greys out all text
+   inside the cards had turned them the same grey as the description. */
+html body .home-page .community-events-home__item .community-news-events__press-links a.openms-cta-link.openms-cta-link {
+  color: var(--openms-cta-link, var(--openms-blue)) !important;
+  -webkit-text-fill-color: var(--openms-cta-link, var(--openms-blue)) !important;
+}
+
+html body .home-page .community-events-home__item .community-news-events__press-links a.openms-cta-link.openms-cta-link:hover,
+html body .home-page .community-events-home__item .community-news-events__press-links a.openms-cta-link.openms-cta-link:focus-visible {
+  color: var(--openms-cta-link-hover, var(--openms-blue)) !important;
+  -webkit-text-fill-color: var(--openms-cta-link-hover, var(--openms-blue)) !important;
+}
+
 .community-news-events__press-cta {
   display: inline-flex;
   align-items: center;
