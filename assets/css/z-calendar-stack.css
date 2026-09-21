@@ -81,3 +81,15 @@ html body .openms-lib-page--calendar .events-past-year .community-events-home__g
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 }
+
+/* Keep the upcoming events on screen when the page loads: a compact hero and
+   a shorter gap below it, so the first cards sit above the fold instead of
+   needing a scroll. */
+html body .openms-lib-page--calendar .openms-lib-hero.openms-lib-hero--pro.openms-lib-hero--solution {
+  padding-top: clamp(1.25rem, 3vw, 2rem) !important;
+  padding-bottom: clamp(1.25rem, 3vw, 2rem) !important;
+}
+
+html body .openms-lib-page--calendar .openms-lib-page__body > .openms-lib-page__anchor {
+  padding-top: clamp(1.25rem, 3vw, 2rem) !important;
+}

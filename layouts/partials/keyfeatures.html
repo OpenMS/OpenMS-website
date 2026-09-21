@@ -87,16 +87,11 @@
         {{- range $index, $feature := . }}
         <li class="keyfeatures-modern__topic" role="listitem">
           <article class="keyfeatures-modern__topic-card">
-            <span class="keyfeatures-modern__topic-index" aria-hidden="true">{{ add $index 1 }}</span>
-            {{- with $feature.img }}
-            <div class="keyfeatures-modern__topic-icon" aria-hidden="true">
-              <img src="{{ . | relURL }}" alt="" loading="lazy" decoding="async" />
+            <div class="keyfeatures-modern__topic-head">
+              {{- with $feature.tag }}
+              <p class="keyfeatures-modern__topic-tag">{{ . }}</p>
+              {{- end }}
             </div>
-            {{- else }}
-            <div class="keyfeatures-modern__topic-icon keyfeatures-modern__topic-icon--mark" aria-hidden="true">
-              <span>{{ substr $feature.title 0 1 }}</span>
-            </div>
-            {{- end }}
             <div class="keyfeatures-modern__topic-body">
               {{- with $feature.title }}
               <h3 class="keyfeatures-modern__topic-title">{{ . }}</h3>

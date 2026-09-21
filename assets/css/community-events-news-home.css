@@ -328,6 +328,25 @@ a.community-news-events__press-link:focus-visible .community-news-events__press-
   transition: none;
 }
 
+/* Calendar page (already blue via other rules; kept explicit). */
+html body .community-news-events__press-links a.openms-cta-link {
+  color: var(--openms-cta-link, var(--openms-blue)) !important;
+  -webkit-text-fill-color: var(--openms-cta-link, var(--openms-blue)) !important;
+}
+
+/* Links in the event cards are blue; a homepage rule that greys out all text
+   inside the cards had turned them the same grey as the description. */
+html body .home-page .community-events-home__item .community-news-events__press-links a.openms-cta-link.openms-cta-link {
+  color: var(--openms-cta-link, var(--openms-blue)) !important;
+  -webkit-text-fill-color: var(--openms-cta-link, var(--openms-blue)) !important;
+}
+
+html body .home-page .community-events-home__item .community-news-events__press-links a.openms-cta-link.openms-cta-link:hover,
+html body .home-page .community-events-home__item .community-news-events__press-links a.openms-cta-link.openms-cta-link:focus-visible {
+  color: var(--openms-cta-link-hover, var(--openms-blue)) !important;
+  -webkit-text-fill-color: var(--openms-cta-link-hover, var(--openms-blue)) !important;
+}
+
 .community-news-events__press-cta {
   display: inline-flex;
   align-items: center;
@@ -455,4 +474,31 @@ a.community-news-events__press-link:focus-visible .community-news-events__press-
   .community-news-events__view-all:focus-visible .community-news-events__view-all-icon {
     transform: none;
   }
+}
+
+/* Upcoming events — titles stay grey and turn blue only on hover/focus (like
+   Latest news). The grey is forced with !important by a global heading rule
+   whose many :not() parts give it a very high specificity, hence the repeated
+   classes below. */
+html body .home-page .community-news-events__column--events .community-events-home__item .community-events-home__card.community-news-events__press-card .community-news-events__press-link:hover .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title,
+html body .home-page .community-news-events__column--events .community-events-home__item .community-events-home__card.community-news-events__press-card a.community-news-events__press-link:focus-visible .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title,
+html body .openms-lib-page--calendar .community-events-page__section--upcoming .community-events-home__item .community-events-home__card.community-news-events__press-card .community-news-events__press-link:hover .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title,
+html body .openms-lib-page--calendar .community-events-page__section--upcoming .community-events-home__item .community-events-home__card.community-news-events__press-card a.community-news-events__press-link:focus-visible .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title {
+  color: var(--openms-cta-link, var(--openms-blue)) !important;
+  -webkit-text-fill-color: var(--openms-cta-link, var(--openms-blue)) !important;
+}
+
+/* Latest news — the card title turns blue on hover/focus (it was navy). Same
+   specificity trick as above: a global heading rule forces the colour. */
+html body .home-page .community-news-events__column--news .community-events-home__item .community-events-home__card.community-news-events__press-card a.community-news-events__press-link:hover .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title,
+html body .home-page .community-news-events__column--news .community-events-home__item .community-events-home__card.community-news-events__press-card a.community-news-events__press-link:focus-visible .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title {
+  color: var(--openms-cta-link, var(--openms-blue)) !important;
+  -webkit-text-fill-color: var(--openms-cta-link, var(--openms-blue)) !important;
+}
+
+/* Calendar page — the dates are blue like on the homepage. A global rule
+   greyed them out (and outranked the earlier blue one), so out-rank it. */
+html body .openms-lib-page--calendar .community-events-home__item .community-events-home__card.community-news-events__press-card .community-news-events__press-date.community-news-events__press-date.community-news-events__press-date {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
 }

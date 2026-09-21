@@ -12,7 +12,6 @@
 {{- $googleCalendarUrl := index $cfg "googleCalendarSubscribeUrl" | default "" -}}
 {{- $communityEventsData := .Site.Data.community_events | default dict -}}
 {{- $allEvents := index $communityEventsData "events" | default (slice) -}}
-{{- $lastSynced := index $communityEventsData "last_synced" | default "" -}}
 {{- $upcoming := slice -}}
 {{- $past := slice -}}
 {{- range $allEvents }}
@@ -75,15 +74,6 @@
       <section class="community-events-page__section community-events-page__section--upcoming community-events-upcoming-layout" aria-labelledby="calendar-upcoming-title">
         <header class="community-events-page__header">
           <h2 id="calendar-upcoming-title" class="community-events-page__title">{{ $upcomingTitle }}</h2>
-          {{- with $lastSynced }}
-          {{- $syncedTime := time . }}
-          <p class="calendar-sync-badge">
-            {{ partial "gcal-icon.html" }}
-            <span class="calendar-sync-badge__label">Synced with Google Calendar</span>
-            <span class="calendar-sync-badge__sep" aria-hidden="true"></span>
-            <span class="calendar-sync-badge__time"><time datetime="{{ $syncedTime.Format "2006-01-02T15:04:05Z07:00" }}">Updated {{ partial "relative-time.html" $syncedTime }}</time></span>
-          </p>
-          {{- end }}
         </header>
 
         {{- if gt (len $upcoming) 0 }}

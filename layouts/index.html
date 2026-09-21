@@ -6,15 +6,15 @@
   </header>
   {{- end }}
 
-  {{ partial "home-metrics.html" . }}
+  <section class="home-page__block home-page__block--partners" aria-labelledby="uni-partners-title">
+    {{ partial "university-partners.html" (dict "Site" .Site "showHeader" true "variant" "home") }}
+  </section>
 
   <section class="home-page__block home-page__block--projects" aria-labelledby="webapps-featured-title">
     {{ partial "webapps.html" (dict "Page" . "embed" "home") }}
   </section>
 
-  <section class="home-page__block home-page__block--partners" aria-labelledby="uni-partners-title">
-    {{ partial "university-partners.html" (dict "Site" .Site "showHeader" true "variant" "home") }}
-  </section>
+  {{ partial "home-metrics.html" . }}
 
   {{- with .Site.Params.keyfeatures }}
   <section class="home-page__block home-page__block--overview" aria-labelledby="keyfeatures-title">

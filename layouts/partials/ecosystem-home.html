@@ -36,7 +36,6 @@
       {{- $url := $item.url | default "#" -}}
       {{- $external := and $url (in $url "://") -}}
       {{- $accent := $item.accent | default "" -}}
-      {{- $tag := $item.tag | default "" -}}
       <li
         class="ecosystem-home__item{{ with $accent }} ecosystem-home__item--{{ . }}{{ end }}"
         role="listitem"
@@ -49,9 +48,6 @@
         >
           <div class="ecosystem-home__card-head">
             <div class="ecosystem-home__card-intro">
-              {{- with $tag }}
-              <span class="ecosystem-home__card-tag">{{ . }}</span>
-              {{- end }}
               <h3 class="ecosystem-home__card-title">{{ $item.name }}</h3>
             </div>
             {{- with $item.icon }}

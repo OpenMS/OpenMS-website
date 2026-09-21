@@ -10,7 +10,7 @@
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function formatValue(value, decimals) {
-    return decimals > 0 ? value.toFixed(decimals) : String(Math.round(value));
+    return decimals > 0 ? value.toFixed(decimals) : Math.round(value).toLocaleString("en-US");
   }
 
   function setFinal(counter) {

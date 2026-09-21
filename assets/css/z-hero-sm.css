@@ -648,3 +648,56 @@ html body .home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:focu
   }
 }
 
+
+/* Hero buttons: one gap at every screen size (it used to be 9px on tablets,
+   12px on phones and 24px on desktop). Close together, but still wider than
+   the 3% hover grow, so the buttons themselves never touch. */
+html body .home-page__hero .hero-home__actions:not(.__unused__) {
+  gap: 1rem !important;
+}
+
+/* Phones: stack the two buttons — Get started on top, Explore the library
+   below — instead of squeezing them side by side. */
+@media (max-width: 480px) {
+  html body .home-page__hero .hero-home__actions:not(.__unused__) {
+    grid-template-columns: 1fr !important;
+    grid-auto-flow: row !important;
+    max-width: 100% !important;
+  }
+}
+
+/* XL screens: `space-between` pushed the diagram to the far edge of the
+   container, leaving 200-530px between the title and the diagram. Keep them
+   together at a steady gap instead. */
+@media (min-width: 1280px) {
+  html body .home-page__hero .hero-home__hero-grid {
+    justify-content: flex-start !important;
+    gap: clamp(4rem, 5vw, 6rem) !important;
+  }
+
+  /* The copy column is a size container (its text is sized in cqi), so its
+     width sets both the text size and the room for it. The longest title
+     line ("MASS SPECTROMETRY.") is ~12.4x the font size wide, so the title is
+     sized at 7.7% of the column (~95% of its width) and never runs into the
+     diagram. */
+  html body .home-page__hero .hero-home__copy {
+    flex: 0 0 clamp(35rem, 46vw, 52rem) !important;
+    max-width: 52rem !important;
+  }
+
+  @supports (font-size: 1cqi) {
+    html body .home-page__hero .hero-home__title,
+    html body .home-page__hero .hero-home__title-accent {
+      font-size: clamp(1.85rem, 7.7cqi, 4.75rem) !important;
+    }
+
+    html body .home-page__hero .hero-home__description {
+      font-size: clamp(0.92rem, 3.2cqi, 1.6rem) !important;
+    }
+  }
+
+  html body .home-page__hero .hero-home__visual {
+    flex: 0 1 36rem !important;
+    min-width: 0 !important;
+  }
+}

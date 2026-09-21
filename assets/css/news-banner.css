@@ -13,8 +13,28 @@
   position: relative;
   z-index: 100;
   overflow: hidden;
+  max-height: 4rem;
   background-color: var(--news-banner-bg);
   border-bottom: 1px solid var(--news-banner-border);
+  transition: max-height 0.28s ease, border-color 0.2s ease;
+}
+
+/* Collapsed once the page scrolls past a small threshold (see
+   news-banner-scroll.js) — the navbar itself stays sticky/visible, only
+   the announcement strip above it hides, so more content fits above the
+   fold without losing the sticky nav. No opacity fade here: the banner
+   keeps its solid background until max-height reaches 0, otherwise it
+   would turn transparent while still occupying space and briefly expose
+   a gap of scrolled page content above the sticky navbar. */
+.site-header.has-scrolled .news-banner {
+  max-height: 0;
+  border-bottom-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-banner {
+    transition: none;
+  }
 }
 
 .news-banner::before {

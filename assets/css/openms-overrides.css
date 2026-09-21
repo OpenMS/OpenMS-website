@@ -368,9 +368,12 @@
 
 /* ── Ways (toolkit + polished contribution cards) ── */
 .contribute-ways {
-  padding:
-    var(--contribute-section-y)
-    var(--openms-page-inline);
+  /* No inline padding here: .contribute-ways__head and .contribute-track
+     (its direct children) already apply the shared page gutter
+     themselves. Padding it again here on top of theirs was doubling
+     the inset, making these cards sit narrower than every other
+     section's cards on the page. */
+  padding-block: var(--contribute-section-y);
   background: color-mix(in srgb, var(--olib-bg-soft) 55%, var(--openms-white));
 }
 
@@ -4229,6 +4232,13 @@
 }
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__head-copy {
   justify-items:start
+}
+/* This band's own left inset was ~5px tighter than the hero/other sections
+   above it (a slightly different padding formula) — align to the standard
+   page inline padding so the "Global community" card row (and its siblings)
+   lines up with the rest of the page. */
+.openms-lib-page--openms-lib .openms-lib-about--benefits {
+  padding-inline: 1.25rem !important;
 }
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__title,
 .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__lead {
@@ -11264,25 +11274,26 @@
   outline:none;
   text-decoration:none
 }
-@media(max-width:720px) {
-  .openms-lib-page--contributors #join-community .webapps-archived__revival-actions {
-    display:flex !important;
-    flex-direction:column !important;
-    flex-wrap:nowrap;
-    align-items:stretch;
-    justify-content:center;
-    gap:.75rem;
-    width:100%;
-    max-width:24rem;
-    margin-inline:auto;
-    grid-template-columns:none
-  }
-  .openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn {
-    flex:0 0 auto;
-    width:100% !important;
-    min-width:0;
-    white-space:normal
-  }
+/* Keep this pair side-by-side and equal-size at every width, matching the
+   other CTA-band button pairs sitewide (see the unified :has(> :nth-child(2))
+   rule further down) rather than stacking to full-width columns on phones. */
+.openms-lib-page--contributors #join-community .webapps-archived__revival-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+}
+
+.openms-lib-page--contributors #join-community .webapps-archived__revival-actions .openms-lib-btn {
+  flex: 1 1 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
 }
 .openms-lib-page--contributors .contributors-exec-panel {
   display:grid;
@@ -13504,10 +13515,11 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
     max-height:none
   }
   .openms-lib-page--sponsor-us .sponsor-benefits__matrix {
-    --label-col:minmax(0, 1.15fr);
-    --tier-col:minmax(0, 1fr);
-    grid-template-columns:var(--label-col) var(--tier-col);
-    min-width:0
+    --label-col:minmax(0, 1.15fr) !important;
+    --tier-col:minmax(0, 1fr) !important;
+    --tier-cols:1 !important;
+    grid-template-columns:var(--label-col) var(--tier-col) !important;
+    min-width:0 !important
   }
   .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier=bronze] [data-sponsor-benefits]:not([data-sponsor-benefits=bronze]),
   .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier=silver] [data-sponsor-benefits]:not([data-sponsor-benefits=silver]),
@@ -17499,7 +17511,7 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
 .openms-lib-page--contributors .members {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.85rem 0.4rem;
+  gap: 0.85rem 0.2rem;
   margin: 0 auto;
   padding: 0;
   max-width: 56rem;
@@ -17569,7 +17581,7 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
   display: none;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1440px) {
   .openms-lib-page--contributors .members {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -17584,6 +17596,7 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
 @media (max-width: 720px) {
   .openms-lib-page--contributors .members {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem 0.15rem;
   }
   }
 
@@ -22485,24 +22498,25 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
     justify-content: center;
   }
 
-  /* Lone CTA in a band: one full-width column under the centred copy */
+  /* Lone CTA in a band: hug its own text, centered, instead of stretching
+     into a full-width column. */
   .webapps-archived__revival-actions:not(:has(> :nth-child(2))),
   .governance-cta-band__actions:not(:has(> :nth-child(2))),
   .openms-lib-page--governance .governance-cta-band__actions:not(:has(> :nth-child(2))),
   .openms-lib-page--sponsor-us .governance-cta-band__actions:not(:has(> :nth-child(2))),
   .contribute-coc-band__actions:not(:has(> :nth-child(2))) {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    justify-items: stretch;
+    display: flex;
+    justify-content: center;
     width: 100%;
-    max-width: 24rem;
+    max-width: 100%;
     margin-inline: auto;
   }
 
   .webapps-archived__revival-actions:not(:has(> :nth-child(2))) .openms-lib-btn,
   .governance-cta-band__actions:not(:has(> :nth-child(2))) .openms-lib-btn,
   .contribute-coc-band__actions:not(:has(> :nth-child(2))) .openms-lib-btn {
-    width: 100% !important;
+    width: fit-content !important;
+    max-width: 100% !important;
     min-width: 0 !important;
     justify-content: center;
   }
@@ -22883,6 +22897,17 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
     justify-content: center;
   }
 
+  /* Lone CTA (single button, no sibling) — hug its text instead of
+     stretching full-width like the two-button bands above. */
+  .openms-lib-page .contribute-coc-band__actions:not(:has(> :nth-child(2))) .openms-lib-btn,
+  .openms-lib-page .governance-cta-band__actions:not(:has(> :nth-child(2))) .openms-lib-btn,
+  .openms-lib-page--governance .governance-cta-band__actions:not(:has(> :nth-child(2))) .openms-lib-btn,
+  .openms-lib-page--sponsor-us .governance-cta-band__actions:not(:has(> :nth-child(2))) .openms-lib-btn {
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+  }
+
   /* Keep publications long labels stacked full-width */
   .openms-lib-page--publications .contribute-coc-band__actions,
   .openms-lib-page--publications .contribute-coc-band__actions:has(> :nth-child(2)) {
@@ -22892,31 +22917,41 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
   }
 }
 
-/* Sponsor Us / Our Sponsors outro — hug-content pills like navbar “Sponsor Us” */
-.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions,
-.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions:has(> :nth-child(2)),
-.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions:not(:has(> :nth-child(2))),
-.openms-lib-page--our-sponsors #sponsor-cta .governance-cta-band__actions,
-.openms-lib-page--our-sponsors #sponsor-cta .governance-cta-band__actions:has(> :nth-child(2)),
-.openms-lib-page--our-sponsors #sponsor-cta .governance-cta-band__actions:not(:has(> :nth-child(2))) {
-  display: flex !important;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  max-width: none;
-  margin-inline: 0;
-  gap: var(--openms-btn-gap) !important;
+/* CTA-band action pairs (Sponsor Us, Our Sponsors, Contact, Publications,
+   Contributors, archived-app revival prompts, ...) — whenever a band has
+   exactly two buttons, center them as a group and make both the same size,
+   at every viewport width. Single-button bands (e.g. Governance / Privacy
+   "related pages") are untouched since :has(> :nth-child(2)) only matches
+   two-or-more-child groups. */
+html body :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+)[role="group"]:has(> :nth-child(2)) {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+  gap: 0.35rem !important;
 }
 
-.openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__actions .openms-lib-btn,
-.openms-lib-page--our-sponsors #sponsor-cta .governance-cta-band__actions .openms-lib-btn {
-  flex: 0 0 auto !important;
-  width: fit-content !important;
+html body :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+)[role="group"]:has(> :nth-child(2)) > .openms-lib-btn {
+  flex: none !important;
+  width: 100% !important;
   min-width: 0 !important;
-  max-width: 100% !important;
-  height: auto !important;
-  align-self: center;
+  max-width: none !important;
+  height: 100% !important;
+  min-height: var(--openms-btn-min-height) !important;
+  justify-content: center !important;
+  align-self: stretch;
+  white-space: nowrap;
 }
 
 /* Become a sponsor “Make a donation” — identical to navbar “Sponsor Us” */
@@ -24819,7 +24854,7 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
     height: 3.75rem !important;
     min-height: 3.75rem !important;
     max-height: 3.75rem !important;
-    padding: 0.35rem 0.4rem !important;
+    padding: 0.35rem 0 !important;
   }
 
   .home-page__block--partners .uni-partners--home .uni-partners__static .uni-partners__item img,
@@ -25372,18 +25407,42 @@ html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-abo
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  gap: 1.05rem !important;
-  padding: 0 !important;
-  border: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
+  gap: 0.7rem !important;
+  padding: var(--projects-card-inset-y, 1.05rem) var(--projects-card-inset-x, 1.1rem) !important;
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.1) !important;
+  background: var(--openms-white) !important;
+  box-shadow: 0 0.25rem 1rem rgba(var(--openms-navy-rgb), 0.06) !important;
   aspect-ratio: auto !important;
   overflow: visible !important;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease !important;
+}
+
+.home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:hover,
+.home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:focus-visible,
+.home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:active {
+  border-color: rgba(var(--openms-navy-rgb), 0.35) !important;
+  box-shadow: 0 0.55rem 1.5rem rgba(var(--openms-navy-rgb), 0.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+.home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:focus-visible {
+  outline: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:hover,
+  .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:focus-visible,
+  .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface:active {
+    transform: none !important;
+  }
 }
 
 .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo-wrap {
   display: flex !important;
-  align-items: center !important;
+  /* Sit on the bottom of the fixed-height logo slot, so every logo ends the
+     same short distance above the app name (centred, shorter logos floated
+     up to 59px away). */
+  align-items: flex-end !important;
   justify-content: flex-start !important;
   width: auto !important;
   height: auto !important;
@@ -25670,6 +25729,7 @@ html body .home-page__hero .hero-home__note--under-graphic {
   line-height: 1.35 !important;
   white-space: nowrap !important;
   overflow: visible !important;
+  margin-top: 0.65rem !important;
 }
 
 html body .home-page__hero .hero-home__note-item {
@@ -26468,8 +26528,6 @@ html body .home-page__hero .hero-home__note-dot {
 
   .rp-application__tally-iframe,
   .openms-lib-page--research-partnerships .rp-application__tally-iframe {
-    min-height: 720px !important;
-    height: auto !important;
     max-height: none !important;
     overflow: visible !important;
   }
@@ -26759,7 +26817,7 @@ html body .home-page__hero .hero-home__note-dot {
     height: 3.75rem !important;
     min-height: 3.75rem !important;
     max-height: 3.75rem !important;
-    padding: 0.35rem 0.4rem !important;
+    padding: 0.35rem 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     justify-self: stretch;
@@ -28821,7 +28879,10 @@ html body .home-page__hero .hero-home__note-dot {
   .openms-lib-page--solution.openms-lib-page--hub .openms-lib-hero--solution,
   .openms-lib-page--solution.openms-lib-page--openms-lib .openms-lib-hero--solution {
     padding-block: var(--sol-section-y) !important;
-    padding-inline: 1.25rem !important;
+    /* Match the sitewide gutter every other section on the page uses
+       instead of a hardcoded value, so the hero's content doesn't sit
+       narrower than everything below it. */
+    padding-inline: var(--openms-page-inline, 1.25rem) !important;
   }
 
   /* Fluid type: keep long uppercase titles readable on narrow screens.
@@ -29666,8 +29727,6 @@ html body .home-page__hero .hero-home__note-dot {
 .webapps-archived__projects-title,
 .webapps-contribute__title,
 .uni-partners__title,
-.uni-partners__trust-title,
-.uni-partners__trust-title-main,
 .trusted-by__title,
 .ecosystem-home__title,
 .community-home__title,
@@ -34287,8 +34346,8 @@ html body .openms-lib-page--developer-retreat .openms-lib-hero__lead {
   }
 }
 
-/* Contributors — Executive Committee: 3 across on md, 2 on phones */
-@media (max-width: 1100px) {
+/* Contributors — Executive Committee: 3 across on md through xl, 2 on phones */
+@media (max-width: 1440px) {
   html body .openms-lib-page--contributors #executive-committee .members,
   html body .openms-lib-page--contributors .contributors-exec-gallery .members {
     display: grid !important;
@@ -34301,6 +34360,7 @@ html body .openms-lib-page--developer-retreat .openms-lib-hero__lead {
   html body .openms-lib-page--contributors #executive-committee .members,
   html body .openms-lib-page--contributors .contributors-exec-gallery .members {
     grid-template-columns: repeat(2, minmax(0px, 1fr)) !important;
+    gap: 0.5rem 0.15rem !important;
   }
 }
 
@@ -35255,9 +35315,11 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
 }
 
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo {
+  width: auto !important;
   height: 104px !important;
   max-height: 104px !important;
   max-width: min(22rem, 100%) !important;
+  aspect-ratio: auto !important;
 }
 
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="naseweis" i] {
@@ -35266,10 +35328,15 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
 }
 
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="openDDA" i],
-html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i],
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i] {
+  height: 152px !important;
+  max-height: 152px !important;
+  max-width: min(22rem, 100%) !important;
+}
+
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="nuxl" i] {
-  height: 132px !important;
-  max-height: 132px !important;
+  height: 104px !important;
+  max-height: 104px !important;
   max-width: min(22rem, 100%) !important;
 }
 
@@ -35284,18 +35351,6 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__cta-icon {
   font-size: 1.05em !important;
   line-height: 1 !important;
-}
-
-@media (max-width: 720px) {
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="flashapp" i]) .webapps-project-card__name,
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="OpenDIAKiosk" i]) .webapps-project-card__name,
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="umetaflow" i]) .webapps-project-card__name,
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="openDDA" i]) .webapps-project-card__name,
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="mhcquant" i]) .webapps-project-card__name,
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="nuxl" i]) .webapps-project-card__name,
-  html body .home-page .home-page__block--projects .webapps-project-card--catalog:has(.webapps-project-card__logo[src*="naseweis" i]) .webapps-project-card__name {
-    display: none !important;
-  }
 }
 
 /* Homepage projects — OpenDDA / MHCquant / NuXL: logos sit on the left */
@@ -35320,16 +35375,19 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
   object-position: left center !important;
 }
 
-html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="openDDA" i],
-html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i] {
-  /* These two logo files still carry built-in canvas whitespace around
-     the mark itself, so even flush-left placement (margin-left: 0) still
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="openDDA" i] {
+  /* This logo file still carries built-in canvas whitespace around the
+     mark itself, so even flush-left placement (margin-left: 0) still
      reads as offset from the card edge. Nudge left to compensate. */
-  margin-left: -0.75rem !important;
+  margin-left: -1.55rem !important;
+}
+
+html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="mhcquant" i] {
+  margin-left: -1.55rem !important;
 }
 
 html body .home-page .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="nuxl" i] {
-  margin-left: -1.6rem !important;
+  margin-left: 0.25rem !important;
 }
 
 /* Adopted by labs — compact/square marks (ZIB, HUPO-PSI, DTU) read smaller
@@ -35337,39 +35395,76 @@ html body .home-page .home-page__block--projects .webapps-project-card--catalog 
 html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="ziblogo" i]),
 html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="hupo-psi" i]),
 html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="DTU-logo" i]) {
-  height: 5.5rem !important;
-  min-height: 5.5rem !important;
-  max-height: 5.5rem !important;
+  height: 2.7rem !important;
+  min-height: 2.7rem !important;
+  max-height: 2.7rem !important;
 }
 
 html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="ziblogo" i],
 html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="hupo-psi" i],
 html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="DTU-logo" i] {
-  height: 5.5rem !important;
-  max-height: 5.5rem !important;
-  max-width: 20rem !important;
+  height: 2.7rem !important;
+  max-height: 2.7rem !important;
+  max-width: 10.5rem !important;
 }
 
-/* Adopted by labs — more breathing room before the title and after the logos */
-html body .home-page__block--partners .uni-partners--home {
-  padding-top: calc(var(--home-section-space-y) + 2.5rem) !important;
-  padding-bottom: calc(var(--home-section-space-y) + 2.5rem) !important;
+/* Adopted by labs — EMBL-EBI, University of Toronto, Comp Omics and
+   University of Groningen read smaller than their neighbors. Bump them up. */
+html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="emblebi" i]),
+html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="toronto" i]),
+html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="logo-compomics" i]),
+html body .home-page__block--partners .uni-partners--home .uni-partners__item:has(img[src*="logo-university-groningen" i]) {
+  height: 2.7rem !important;
+  min-height: 2.7rem !important;
+  max-height: 2.7rem !important;
 }
 
-/* What is OpenMS — widen the section and use narrower, more numerous
-   feature-card columns instead of two wide ones. */
+html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="emblebi" i],
+html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="toronto" i],
+html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="logo-compomics" i],
+html body .home-page__block--partners .uni-partners--home .uni-partners__item img[src*="logo-university-groningen" i] {
+  height: 2.7rem !important;
+  max-height: 2.7rem !important;
+  max-width: 10.5rem !important;
+}
+
+/* Adopted by labs — now a compact strip right after the hero, not a full
+   section, so this no longer needs (or gets) extra padding on top of the
+   base rule in home.css. */
+
+/* What is OpenMS — widen the section; use two wide feature-card columns
+   (2x2) instead of four narrow ones so each card has room to breathe. */
 html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__inner {
   max-width: min(96rem, 94vw) !important;
 }
 
 html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topics {
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(1.1rem, 2vw, 1.5rem) !important;
   align-items: stretch !important;
 }
 
 @media (max-width: 900px) {
   html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topics {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.85rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-icon {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-icon--mark svg {
+    width: 1.15rem !important;
+    height: 1.15rem !important;
+  }
+
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-tag {
+    font-size: 0.62rem !important;
+    padding: 0.25rem 0.55rem !important;
   }
 }
 
@@ -36136,13 +36231,13 @@ html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-feat
   }
 
   html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog {
-    --projects-card-inset-y: 0.85rem;
-    --projects-card-inset-x: 0;
+    --projects-card-inset-y: 1rem;
+    --projects-card-inset-x: 1rem;
   }
 
   html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface {
-    padding: 0.85rem 0 !important;
-    gap: 1.15rem !important;
+    padding: 1rem !important;
+    gap: 0.7rem !important;
   }
 
   html body .home-page .home-page__block--projects .webapps-featured__item::after {
@@ -37663,6 +37758,359 @@ html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-l
   background-clip: border-box !important;
 }
 
+/* Featured Apps (homepage) — logos vary in height (68-152px depending on
+   the mark), so give every card's logo area the same fixed height (the
+   tallest logo's) with the image centered inside it. Otherwise a card's
+   title/description start lower or higher than its neighbors depending on
+   which logo it has. */
+html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo-wrap {
+  height: 112px !important;
+  min-height: 112px !important;
+  max-height: 112px !important;
+}
+
+/* The slot is sized to the standard logo (~104px); the two "xlarge" logos
+   (OpenDDA, MHCquant) used to be 152px and forced a tall empty band above
+   every other card's logo. Cap them to the slot. */
+html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo {
+  max-height: 112px !important;
+}
+
+/* Featured Apps (homepage) — drop the blue top accent bar and top border */
+html body section.webapps-featured.webapps-featured--home::before {
+  content: none !important;
+  display: none !important;
+}
+
+html body section.webapps-featured.webapps-featured--home {
+  border-top: none !important;
+}
+
+/* Canonical text-CTA links (.openms-cta-link and friends) keep losing their
+   blue color to an ancestor's -webkit-text-fill-color (muted prose text,
+   card summaries, etc. often set both color+webkit-text-fill-color on a
+   parent, which browsers can paint child text with even when the child has
+   its own `color`). Re-assert here, last in the cascade, so it always wins
+   regardless of which component wraps the link. */
+html body :is(
+  .openms-cta-link,
+  .webapps-project-card__cta,
+  .news-home__card-cta,
+  .contact-home__card-cta,
+  .community-events-home__card-cta,
+  .events-past-card__cta,
+  .contribute-channel__link,
+  .contribute-track__cta,
+  .contribute-way__link,
+  .openms-lib-about__tile-link,
+  .openms-lib-developers__card-link,
+  .openms-lib-developers__platform-link,
+  .openms-lib-resources__examples-link,
+  .openms-lib-resources__explore-link,
+  .openms-lib-list__link,
+  .openms-lib-topp__cta,
+  .openms-lib-resources__item-link,
+  .coc-report__link,
+  .privacy-overview__note-link,
+  .contact-page__path-link,
+  .webapps-featured__extra-link,
+  .webapps-featured__show-all,
+  .ecosystem-home__card-link,
+  .community-news-events__view-all,
+  .community-events-home__view-all--inline,
+  .publications-cite-card__action,
+  .news-entry__action,
+  .trusted-by__wall-cta,
+  .home-pathways__step-go
+):not(:hover):not(:focus-visible) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-weight: var(--openms-cta-link-weight, 700) !important;
+}
+
+/* Inline "Label" links inside synced calendar-event summaries (see
+   community-event-card.html) must render blue everywhere, including on
+   the homepage's Upcoming Events widget — an ancestor rule sets
+   -webkit-text-fill-color on the whole summary paragraph for its own
+   (non-link) text, which browsers can end up painting with instead of
+   this link's own color unless it's pinned here too. */
+html body :is(
+  .community-news-events__press-summary,
+  .community-events-home__card-summary
+) a.openms-cta-link,
+html body .home-page .community-news-events__press-link .community-news-events__press-summary a.openms-cta-link,
+html body .home-page .community-events-home__card-link .community-events-home__card-summary a.openms-cta-link {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body :is(
+  .community-news-events__press-summary,
+  .community-events-home__card-summary
+) a.openms-cta-link:hover,
+html body :is(
+  .community-news-events__press-summary,
+  .community-events-home__card-summary
+) a.openms-cta-link:focus-visible {
+  color: var(--openms-cta-link-hover, var(--openms-navy)) !important;
+  -webkit-text-fill-color: var(--openms-cta-link-hover, var(--openms-navy)) !important;
+}
+
+/* Text-CTA links must stay bold on hover/focus too — some component-level
+   hover rules reset font-weight without meaning to. */
+html body :is(
+  .openms-cta-link,
+  .webapps-project-card__cta,
+  .news-home__card-cta,
+  .contact-home__card-cta,
+  .community-events-home__card-cta,
+  .events-past-card__cta,
+  .contribute-channel__link,
+  .contribute-track__cta,
+  .contribute-way__link,
+  .openms-lib-about__tile-link,
+  .openms-lib-developers__card-link,
+  .openms-lib-developers__platform-link,
+  .openms-lib-resources__examples-link,
+  .openms-lib-resources__explore-link,
+  .openms-lib-list__link,
+  .openms-lib-topp__cta,
+  .openms-lib-resources__item-link,
+  .coc-report__link,
+  .privacy-overview__note-link,
+  .contact-page__path-link,
+  .webapps-featured__extra-link,
+  .webapps-featured__show-all,
+  .ecosystem-home__card-link,
+  .community-news-events__view-all,
+  .community-events-home__view-all--inline,
+  .publications-cite-card__action,
+  .news-entry__action,
+  .trusted-by__wall-cta,
+  .home-pathways__step-go
+):is(:hover, :focus-visible) {
+  font-weight: var(--openms-cta-link-weight, 700) !important;
+}
+
+/* Research Partnerships form (embedded Tally iframe) was rendering at the
+   browser's 150px default height on mobile instead of growing to fit the
+   form — the iframe has no intrinsic height of its own. Tally's own
+   dynamicHeight script resizes it via an inline style once the form loads
+   (postMessage → iframe.style.height), so this must NOT use !important —
+   that would pin the height and block the real content height from ever
+   applying, leaving blank space below the Submit button. This is only a
+   fallback for the instant before that script runs. */
+html body .openms-lib-page--research-partnerships .rp-application__tally-iframe,
+html body .rp-application__tally-iframe {
+  height: 1050px;
+  max-height: none !important;
+}
+
+@media (min-width: 640px) {
+  html body .openms-lib-page--research-partnerships .rp-application__tally-iframe,
+  html body .rp-application__tally-iframe {
+    height: 900px;
+  }
+}
+
+/* Adopted-by partner marquee (normal/desktop widths) — the section itself
+   already has the standard page inline padding, but a generic "normalize
+   inner containers" rule was ALSO adding padding-inline to .uni-partners__inner,
+   doubling the inset and keeping the logo strip from reaching full width. */
+html body .home-page .home-page__block--partners .uni-partners--home {
+  padding-inline: 0 !important;
+}
+
+html body .home-page .home-page__block--partners .uni-partners--home .uni-partners__inner {
+  padding-inline: 0 !important;
+  max-width: none !important;
+}
 
 
 
+
+/* Featured Apps (homepage) — every card in a grid row shares one logo row
+   whose height is the tallest logo in THAT row (CSS subgrid), so the names
+   and descriptions line up across the row without a fixed-height logo slot.
+   The slot used to be sized for the biggest logo, leaving a blank band above
+   every smaller one; now only rows that contain a big logo get the taller row. */
+@supports (grid-template-rows: subgrid) {
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog > .webapps-featured__item,
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog > .webapps-featured__item > .webapps-project-card--catalog,
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog > .webapps-featured__item > .webapps-project-card--catalog > .webapps-project-card__surface {
+    display: grid !important;
+    grid-row: span 2 !important;
+    grid-template-rows: subgrid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-flow: row !important;
+    row-gap: 0 !important;
+  }
+
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog > .webapps-featured__item > .webapps-project-card--catalog > .webapps-project-card__surface {
+    row-gap: 0.7rem !important;
+    align-content: start !important;
+  }
+
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo-wrap {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    align-self: start !important;
+  }
+
+  /* Logos hug the top of the card (no blank band above), and every logo is
+     the same 104px tall, so neighbours in a row have no gap above or below.
+     OpenDDA/MHCquant's SVGs are cropped to their artwork, so they can be
+     the standard size and still look bigger than before. */
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo {
+    height: 104px !important;
+    max-height: 104px !important;
+    object-position: left top !important;
+    /* Older rules nudged some logos sideways to hide their built-in margins
+       (OpenDDA, MHCquant, NuXL); the images are cropped now, so align all of
+       them with the card's text edge. */
+    margin-left: 0 !important;
+  }
+
+  /* naseweis is a wide 3:1 wordmark; at the standard 104px height it was
+     ~312px wide and dwarfed its neighbours. */
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo[src*="naseweis"] {
+    height: 68px !important;
+    max-height: 68px !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Featured Apps "View app →" was ~90% of the app name's size (its arrow ~94%),
+   so it read as a second title. Use the same small size as the other cards'
+   links (Learn more, Registration ...). */
+html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__cta {
+  font-size: var(--openms-text-min, 0.8125rem) !important;
+}
+
+html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__cta-label,
+html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__cta-icon {
+  font-size: inherit !important;
+}
+
+/* Ecosystem cards (homepage) — the logo heights differ (42-75px) and the title
+   was centred against the logo, so each card's title and description started
+   at a different height. Cards in a grid row now share three rows (heading +
+   logo, description, link) via subgrid, all top-aligned, so titles, logos,
+   descriptions and links sit on the same level across the row. */
+@supports (grid-template-rows: subgrid) {
+  html body .home-page .ecosystem-home__grid > .ecosystem-home__item,
+  html body .home-page .ecosystem-home__grid > .ecosystem-home__item > .ecosystem-home__card {
+    display: grid !important;
+    grid-row: span 3 !important;
+    grid-template-rows: subgrid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    row-gap: 0 !important;
+  }
+
+  html body .home-page .ecosystem-home__grid > .ecosystem-home__item > .ecosystem-home__card {
+    row-gap: 0.85rem !important;
+    align-content: start !important;
+  }
+
+  html body .home-page .ecosystem-home__card > .ecosystem-home__card-head {
+    align-self: start !important;
+    align-items: flex-start !important;
+    min-height: 0 !important;
+  }
+
+  html body .home-page .ecosystem-home__grid .ecosystem-home__item .ecosystem-home__card .ecosystem-home__card-head .ecosystem-home__card-icon.ecosystem-home__card-icon {
+    align-self: flex-start !important;
+    margin-top: 0 !important;
+  }
+
+  html body .home-page .ecosystem-home__card > .ecosystem-home__card-text,
+  html body .home-page .ecosystem-home__card > .ecosystem-home__card-link {
+    align-self: start !important;
+    margin: 0 !important;
+  }
+}
+
+/* Publications — "Cite OpenMS" band buttons. On phones (<=600px) the two
+   buttons were squeezed side by side (117-172px each) so their labels wrapped
+   onto 2-4 lines, and at every size only ~5px separated them. Two equal-width
+   buttons with a 1rem gap, one line each, stacked full-width on phones. */
+html body .openms-lib-page--publications #cite-openms .contribute-coc-band__actions {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+  width: min(100%, 34rem) !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+  justify-items: stretch !important;
+}
+
+html body .openms-lib-page--publications #cite-openms .contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  height: 2.875rem !important;
+  min-height: 2.875rem !important;
+  padding: 0 1.25rem !important;
+  font-size: var(--openms-btn-font-size, 0.9375rem) !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+}
+
+html body .openms-lib-page--publications #cite-openms .contribute-coc-band__actions .openms-lib-btn__label {
+  white-space: nowrap !important;
+}
+
+@media (max-width: 600px) {
+  html body .openms-lib-page--publications #cite-openms .contribute-coc-band__actions {
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: min(100%, 22rem) !important;
+  }
+
+  html body .openms-lib-page--publications #cite-openms .contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn {
+    white-space: normal !important;
+    height: auto !important;
+    padding-block: 0.6rem !important;
+  }
+}
+
+/* What is OpenMS? — cards at every screen size: title, text, then the tag pill
+   (BSD LICENSED, C++ · PYTHON, ...) pinned to the bottom of the card, so pills
+   line up across a row. Phones (<=639px) also drop the forced two-column grid
+   that left the cards ~160px wide. */
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card {
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: auto 1fr auto !important;
+  grid-template-areas:
+    "title"
+    "text"
+    "badge" !important;
+  row-gap: 0.55rem !important;
+}
+
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-head {
+  grid-area: badge !important;
+  justify-content: flex-start !important;
+  align-self: end !important;
+  margin-top: 0.35rem !important;
+}
+
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-title {
+  align-self: start !important;
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem) !important;
+  line-height: 1.25 !important;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 639px) {
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topics {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}

@@ -18,7 +18,7 @@
 .exec-charter__inner.openms-lib-prose {
   box-sizing: border-box;
   width: 100%;
-  max-width: 46rem;
+  max-width: var(--pro-max, 75rem);
   margin-inline: auto;
   padding-inline: var(--openms-page-inline, 1.5rem);
   padding-bottom: clamp(1.5rem, 3vw, 2.25rem);

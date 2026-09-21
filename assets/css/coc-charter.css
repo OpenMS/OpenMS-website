@@ -15,13 +15,24 @@
    load order (equal-specificity single-class rules lose to whichever
    loads last, which isn't always us). Padding-inline is set here too,
    rather than relying on the parent anchor, since a page-specific
-   override elsewhere strips that padding for this page. */
+   override elsewhere strips that padding for this page. Matches the
+   width used by the Report Handling Manual (.rhm-charter__inner),
+   the equivalent "wall of text" legal-document page. */
 .coc-charter__inner.openms-lib-prose {
   box-sizing: border-box;
-  max-width: 46rem;
+  width: 100%;
+  max-width: var(--pro-max, 75rem);
   margin-inline: auto;
   padding-inline: var(--openms-page-inline, 1.5rem);
-  padding-bottom: clamp(3.5rem, 9vw, 6.5rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  overflow: hidden;
+}
+
+/* This page has no outro/CTA band, so the sitewide .openms-lib-layout
+   bottom padding (meant to give room above a following band) just
+   leaves a large dead gap before the footer here. */
+.openms-lib-layout:has(.openms-lib-page--code-of-conduct) {
+  padding-bottom: 0;
 }
 
 /* A site-wide reset hides list markers by default; a plain document page
@@ -36,4 +47,12 @@
 
 .coc-charter__inner li {
   list-style: inherit;
+}
+
+/* The "This section summarizes..." intro note reads muted gray like the
+   rest of the body copy — make it solid black so it reads as intentional
+   emphasis rather than de-emphasized text. */
+.coc-charter__inner em {
+  color: var(--openms-dark, #231f20) !important;
+  font-style: italic;
 }
