@@ -1750,10 +1750,13 @@
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__layout {
   display: grid;
-  /* Full container width: the heading column takes whatever the cards
-     (at most 52rem, two ~400px cards) don't, so the section spans the same
-     edges as the other homepage sections. */
-  grid-template-columns: minmax(18rem, 1fr) minmax(0, 52rem);
+  /* The heading column is one fixed width (37.5rem = 600px, enough for the
+     title on a single line), and the cards take the rest of the standard
+     container. It only sits beside the cards from 1600px up (where the cards
+     keep ~400px and their titles stay on one line); below that the section
+     stacks (see the max-width: 1599px block). */
+  grid-template-columns: 37.5rem minmax(0, 52rem);
+  justify-content: space-between;
   grid-template-areas:
     "header topics"
     "note note";
@@ -2884,6 +2887,22 @@
 }
 
 /* ─── Responsive ─── */
+/* Below 1600px there isn't room for a 600px heading column plus two ~400px
+   cards side by side, so stack: heading on top, cards below (max 52rem). */
+@media (max-width: 1599px) {
+  .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "header"
+      "topics"
+      "note";
+  }
+
+  .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topics {
+    justify-self: start;
+  }
+}
+
 @media (max-width: 1024px) {
   .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__layout {
     grid-template-columns: 1fr;
