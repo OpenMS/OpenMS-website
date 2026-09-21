@@ -1,6 +1,12 @@
-/* One line only where it fits (the title is ~530px wide at the md+ size);
-   below that the two spans stack, so it wraps instead of overflowing. */
-@media (min-width: 769px) {
+/* Tablet (641-1024px): a smaller title (~18-19px) that fits on one line.
+   Phones (<=640px) keep the larger stacked two-line title. */
+@media (min-width: 641px) and (max-width: 1024px) {
+  html body .home-page .uni-partners--home .uni-partners__trust-title {
+    font-size: clamp(1.05rem, 2.3vw, 1.2rem) !important;
+  }
+}
+
+@media (min-width: 641px) {
   html body .home-page .uni-partners--home .uni-partners__trust-title-line {
     display: inline !important;
   }
