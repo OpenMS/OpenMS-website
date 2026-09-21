@@ -1,0 +1,5 @@
+/* Homepage Featured Apps — "Show all apps →" uses the same text size as the
+   other card links (View app →, Learn more →). */
+:is(html, #home-links-specificity-boost) body .home-page .home-page__block--projects a.webapps-featured__show-all.webapps-featured__show-all {
+  font-size: var(--openms-text-min, 0.8125rem) !important;
+}

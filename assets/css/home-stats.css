@@ -52,7 +52,7 @@
   height: 2.5rem;
   margin-bottom: 0.65rem;
   border-radius: 999px;
-  color: var(--openms-yellow, #ffcb4f);
+  color: var(--openms-white, #fff);
   background: rgba(var(--openms-white-rgb), 0.1);
 }
 
@@ -88,7 +88,7 @@
 .home-page .home-stats__prefix {
   margin-left: 0.04em;
   font: inherit;
-  color: var(--openms-yellow, #ffcb4f);
+  color: var(--openms-white, #fff);
 }
 
 .home-page .home-stats__prefix {
