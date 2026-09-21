@@ -9,3 +9,9 @@
     white-space: nowrap !important;
   }
 }
+
+/* Less empty blue under the hero's last line, so the partners strip below
+   it (and everything after) sits higher. */
+html body .home-page__hero .hero-home__main {
+  padding-bottom: clamp(0.75rem, 2vh, 1.25rem) !important;
+}
