@@ -514,14 +514,17 @@ languages:
         stats:
           - value: 20
             suffix: "+"
+            icon: calendar
             label: Years active
             description: Over two decades of open-source development for mass spectrometry workflows.
           - value: 10000
             suffix: "+"
+            icon: quote
             label: Citations
             description: Peer-reviewed research citing OpenMS tools and algorithms worldwide.
           - value: 180
             suffix: "+"
+            icon: people
             label: Contributors
             description: Developers, researchers, and community members advancing OpenMS worldwide.
 

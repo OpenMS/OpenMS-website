@@ -1,20 +1,23 @@
 {{- $stat := .stat -}}
-<article class="home-metrics__card">
-  <h3 class="home-metrics__label">{{ $stat.label }}</h3>
+<li class="home-stats__item">
+  {{- with $stat.icon }}
+  <span class="home-stats__icon" aria-hidden="true">{{ partial "section-eyebrow-icon.html" . }}</span>
+  {{- end }}
   {{- if $stat.text }}
-  <p class="home-metrics__value home-metrics__value--text">{{ $stat.text }}</p>
+  <p class="home-stats__value home-stats__value--text">{{ $stat.text }}</p>
   {{- else }}
-  <p class="home-metrics__value" aria-label="{{ $stat.label }}">
-    {{- with $stat.prefix }}<span class="home-metrics__prefix">{{ . }}</span>{{ end -}}
+  <p class="home-stats__value" aria-label="{{ $stat.prefix }}{{ $stat.value }}{{ $stat.suffix }}">
+    {{- with $stat.prefix }}<span class="home-stats__prefix">{{ . }}</span>{{ end -}}
     <span
       class="hero-modern__stat-number"
       data-count-value="{{ $stat.value }}"
       data-count-suffix=""
       data-count-decimals="{{ $stat.decimals | default 0 }}"
-    >0</span>{{- with $stat.suffix -}}<span class="home-metrics__suffix">{{ . }}</span>{{- end -}}
+    >{{ lang.FormatNumber ($stat.decimals | default 0) $stat.value }}</span>{{- with $stat.suffix -}}<span class="home-stats__suffix">{{ . }}</span>{{- end -}}
   </p>
   {{- end }}
+  <p class="home-stats__label">{{ $stat.label }}</p>
   {{- with $stat.description }}
-  <p class="home-metrics__description">{{ . }}</p>
+  <p class="home-stats__text">{{ . }}</p>
   {{- end }}
-</article>
+</li>
