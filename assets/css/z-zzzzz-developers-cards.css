@@ -398,3 +398,22 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+/* Icons keep their colour on hover (blue on the white cards, white on the
+   navy featured card). Older hover rules turned them white, which vanished on a
+   white card. Triple id so nothing out-ranks this. */
+html body #for-developers#for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within, :focus-visible) .openms-lib-developers__card-icon,
+html body #for-developers#for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within, :focus-visible) .openms-lib-developers__card-icon :is(i, svg, path) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  fill: var(--openms-blue) !important;
+  opacity: 1 !important;
+}
+
+html body #for-developers#for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured:is(:hover, :focus-within, :focus-visible) .openms-lib-developers__card-icon,
+html body #for-developers#for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured:is(:hover, :focus-within, :focus-visible) .openms-lib-developers__card-icon :is(i, svg, path) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: var(--openms-white) !important;
+  opacity: 1 !important;
+}
