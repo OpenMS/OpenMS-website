@@ -76,3 +76,23 @@ html body .openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__n
   margin-inline: auto !important;
   text-wrap: balance;
 }
+
+/* "Make a donation" hover — same as the other navy CTA bands (Cite OpenMS…):
+   white fill, navy text, slight scale and a white glow. Older page-scoped rules
+   forced a transparent, blue-glow hover here, so this out-ranks them. */
+:is(html, #cta-hover-specificity-boost) body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  border: 2px solid var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(255, 255, 255, 0.22) !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
