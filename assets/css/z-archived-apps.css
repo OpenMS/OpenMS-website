@@ -477,3 +477,25 @@ html body .openms-lib-page--archived #archived-apps .contribute-ways__lead.contr
     font-size: clamp(0.75rem, 1.9vw, 1rem) !important;
   }
 }
+
+/* Archived app card — with the bigger logo the heading row was as tall as the
+   logo, leaving a gap before the description. Take most of the logo's height
+   out of the row (it is still drawn in full and overlaps the empty space beside
+   the description) so the description sits right under the title. */
+@media (min-width: 561px) {
+  html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry .webapps-archived-entry__media.webapps-archived-entry__media {
+    margin-bottom: -6rem !important;
+  }
+}
+
+/* Keep the description clear of the logo that now sits beside it. */
+@media (min-width: 561px) {
+  html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry .webapps-archived-entry__text.webapps-archived-entry__text {
+    max-width: min(48rem, calc(100% - 14rem)) !important;
+  }
+}
+
+/* A bit more room between the label and the title. */
+html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry .webapps-archived-entry__heading.webapps-archived-entry__heading {
+  gap: 0.6rem !important;
+}
