@@ -26511,10 +26511,12 @@ html body .home-page__hero .hero-home__note-dot {
   }
 
   /* Fellowship Apply form stacks on phones (~1424px content). */
+  /* No `height: auto !important` here: it beat the inline height that Tally
+     (and the embed partial) set, collapsing the iframe to the 150px default
+     so only the first two fields showed. */
   .fellowship-page__tally-iframe,
   .openms-lib-page--fellowship .fellowship-page__tally-iframe {
     min-height: 900px !important;
-    height: auto !important;
     max-height: none !important;
     overflow: visible !important;
   }
