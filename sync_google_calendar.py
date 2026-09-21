@@ -25,6 +25,7 @@ from icalendar import Calendar
 
 DATA_FILE = "data/community_events.yaml"
 SUMMARY_MAX_LEN = 160
+KEEP_PAST_YEARS = 5  # how far back finished events are kept for the "Last events" list
 
 CATEGORY_KEYWORDS = {
     "developer-meeting": ["developer meeting", "dev meeting", "devmeeting"],
@@ -126,6 +127,7 @@ def parse_events(ics_bytes):
     calendar = Calendar.from_ical(ics_bytes)
     zone = calendar_timezone(calendar)
     today = datetime.now(timezone.utc).date()
+    oldest_kept = today - timedelta(days=365 * KEEP_PAST_YEARS)
     events = []
 
     for component in calendar.walk("VEVENT"):
@@ -149,10 +151,13 @@ def parse_events(ics_bytes):
         else:
             end = start
 
-        # Only keep events that haven't already finished. Compare by date
-        # only, since a datetime and a date can't be compared directly.
+        # Keep upcoming events AND recent past ones: the calendar page lists
+        # past events behind its "Last events" button, so a synced event must
+        # not vanish the moment it ends. Only events that finished more than
+        # KEEP_PAST_YEARS ago are dropped. Compare by date only, since a
+        # datetime and a date can't be compared directly.
         end_date = end.date() if isinstance(end, datetime) else end
-        if end_date < today:
+        if end_date < oldest_kept:
             continue
 
         event = {
@@ -199,7 +204,7 @@ def main():
     # Google returns events in a different order on each fetch; sort so an
     # unchanged calendar produces an identical file (and no spurious diff).
     synced_events.sort(key=lambda e: (e["start"], e["title"]))
-    print(f"Fetched {len(synced_events)} upcoming event(s) from Google Calendar.")
+    print(f"Fetched {len(synced_events)} event(s) (upcoming and recent past) from Google Calendar.")
 
     data = load_data()
     hand_written = [e for e in data.get("events", []) if not e.get("synced")]
