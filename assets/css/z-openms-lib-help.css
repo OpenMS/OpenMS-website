@@ -74,3 +74,25 @@ html body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.
     padding-inline: 1.25rem !important;
   }
 }
+
+/* Developer cards (Building OpenMS from Source, Reviewing Pull Requests, ...)
+   — on phones stack the platform / action buttons one per line at the full
+   card width instead of overflowing the card. */
+@media (max-width: 560px) {
+  html body .openms-lib-page #for-developers#for-developers .openms-lib-developers__platforms {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  html body .openms-lib-page #for-developers#for-developers a.openms-lib-btn.openms-lib-developers__platform-btn.openms-lib-developers__platform-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    justify-content: center !important;
+  }
+}
