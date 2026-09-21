@@ -1733,7 +1733,9 @@
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__layout {
   display: grid;
-  grid-template-columns: minmax(14rem, 20rem) minmax(0, 1fr);
+  /* Header column: was capped at 20rem (320px), which broke the title into
+     "THE OPEN- / SOURCE LC- / MS LIBRARY". Let it grow with the screen. */
+  grid-template-columns: minmax(14rem, clamp(20rem, 28vw, 32rem)) minmax(0, 1fr);
   grid-template-areas:
     "header topics"
     "note note";
