@@ -5,14 +5,14 @@
 
 .home-page .home-page__block--metrics.home-stats {
   background: var(--home-bg-base, #f8f8f9);
-  padding-block: clamp(0.5rem, 2vw, 1.25rem);
+  /* Same side padding as the other homepage sections, so the panel lines up
+     with the cards above and below it. */
+  padding: clamp(0.5rem, 2vw, 1.25rem) var(--openms-page-inline, 1.25rem);
 }
 
 .home-page .home-stats__inner {
   width: 100%;
-  max-width: var(--pro-max, 75rem);
   margin-inline: auto;
-  padding-inline: var(--openms-page-inline, 1.25rem);
   box-sizing: border-box;
 }
 

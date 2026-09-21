@@ -1726,16 +1726,34 @@
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__inner {
-  max-width: var(--home-max);
+  /* The section already has the standard side padding (--openms-page-inline),
+     which centres the content in the same 75rem/1664px container as the other
+     homepage sections; a max-width here made it narrower on wide screens. */
+  max-width: none;
   margin: 0 auto;
   padding: 0;
 }
 
+/* Same side padding as the other homepage sections (the section itself had a
+   fixed 40px, and its inner box a 1536px cap, so on screens wider than ~1600px
+   it was up to 64px narrower per side than Featured Apps and Ecosystem). */
+@media (min-width: 1024px) {
+  html body .home-page__block--overview .keyfeatures-modern--home {
+    padding-inline: var(--openms-page-inline, 1.25rem) !important;
+  }
+
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__inner {
+    max-width: none !important;
+    margin-inline: 0 !important;
+  }
+}
+
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__layout {
   display: grid;
-  /* Header column: was capped at 20rem (320px), which broke the title into
-     "THE OPEN- / SOURCE LC- / MS LIBRARY". Let it grow with the screen. */
-  grid-template-columns: minmax(14rem, clamp(20rem, 28vw, 32rem)) minmax(0, 1fr);
+  /* Full container width: the heading column takes whatever the cards
+     (at most 52rem, two ~400px cards) don't, so the section spans the same
+     edges as the other homepage sections. */
+  grid-template-columns: minmax(18rem, 1fr) minmax(0, 52rem);
   grid-template-areas:
     "header topics"
     "note note";
@@ -1763,6 +1781,7 @@
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__lead {
+  max-width: 36rem;
   text-align: left;
   color: var(--home-body-color, rgba(var(--openms-dark-rgb), 0.72));
 }
@@ -1776,7 +1795,7 @@
      screens. */
   width: 100%;
   max-width: 52rem;
-  justify-self: start;
+  justify-self: end;
 }
 
 .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card {
