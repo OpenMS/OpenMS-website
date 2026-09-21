@@ -1,0 +1,364 @@
+/* "For Developers → Contribute" cards (/openms-lib/#for-developers).
+
+   Layout: two labelled groups on a 12-column grid.
+     Get involved   — Contributing Guidelines (featured, navy) · Report an issue · Add a TOPP tool
+     Learn and build — Developer manual · Developer FAQ · Building from source · Reviewing PRs (wide)
+   Every card: blue icon tile, sentence-case title, short text, link pinned to
+   the bottom. Hover only changes the border/shadow (no lift, no colour flip).
+   Scoped to .openms-lib-developers--grouped, so other pages that share the
+   partial are unchanged. the doubled #for-developers id only adds specificity to beat the many
+   older !important card rules. */
+
+/* ---------- grid ---------- */
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__cards-grid.openms-lib-developers__cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  grid-auto-rows: auto !important;
+  grid-template-rows: none !important;
+  gap: 1rem !important;
+  align-items: stretch !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__group {
+  grid-column: 1 / -1 !important;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 1rem 0 0 !important;
+  font-family: var(--openms-font-body);
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__group:first-child {
+  margin-top: 0 !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__group::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: rgba(var(--openms-navy-rgb), 0.12);
+}
+
+/* column spans (desktop) */
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--link.openms-lib-developers__card {
+  grid-column: span 3 !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured.openms-lib-developers__card {
+  grid-column: span 6 !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--build-src.openms-lib-developers__card {
+  grid-column: span 6 !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--review.openms-lib-developers__card {
+  grid-column: 1 / -1 !important;
+}
+
+/* ---------- card base ---------- */
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card.openms-lib-developers__card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.9rem !important;
+  box-sizing: border-box;
+  min-height: 0 !important;
+  padding: 1.35rem 1.4rem !important;
+  background: var(--openms-white, #fff) !important;
+  background-color: var(--openms-white, #fff) !important;
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.1) !important;
+  border-radius: 1rem !important;
+  box-shadow: none !important;
+  transform: none !important;
+  text-decoration: none !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card.openms-lib-developers__card:hover,
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card.openms-lib-developers__card:focus-within {
+  border-color: rgba(var(--openms-navy-rgb), 0.35) !important;
+  box-shadow: 0 0.35rem 1rem rgba(var(--openms-blue-rgb), 0.1) !important;
+  transform: none !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card-icon.openms-lib-developers__card-icon {
+  display: grid !important;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  margin: 0 !important;
+  border-radius: 0.75rem;
+  background: rgba(var(--openms-blue-rgb), 0.1) !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card-icon :is(i, svg) {
+  width: 1.1rem !important;
+  height: 1.1rem !important;
+  font-size: 1.05rem !important;
+  line-height: 1;
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+  fill: currentColor !important;
+  opacity: 1 !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card-body.openms-lib-developers__card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto;
+  align-items: flex-start !important;
+  gap: 0.4rem !important;
+  width: 100%;
+  min-width: 0;
+  padding: 0 !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card-title.openms-lib-developers__card-title {
+  margin: 0 !important;
+  font-family: var(--openms-font-heading);
+  font-size: 1.0625rem !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: rgba(var(--openms-dark-rgb), 0.85) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.85) !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card-subtitle.openms-lib-developers__card-subtitle {
+  margin: 0 !important;
+  font-size: 0.9375rem !important;
+  line-height: 1.5 !important;
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+/* link pinned to the bottom of the card */
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--link .openms-lib-developers__card-link.openms-lib-developers__card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: auto !important;
+  padding-top: 0.6rem;
+  font-size: var(--openms-text-min, 0.8125rem) !important;
+  font-weight: 700 !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--link .openms-lib-developers__card-link span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--link:hover .openms-lib-developers__card-link span {
+  transform: translateX(3px);
+}
+
+/* ---------- featured card (navy, white text, white button) ---------- */
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured.openms-lib-developers__card {
+  justify-content: space-between;
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(var(--openms-blue-rgb), 0.35) 0%, rgba(var(--openms-blue-rgb), 0) 55%),
+    var(--openms-navy) !important;
+  border-color: var(--openms-navy) !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured.openms-lib-developers__card:hover,
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured.openms-lib-developers__card:focus-within {
+  border-color: var(--openms-navy) !important;
+  box-shadow: 0 0.6rem 1.5rem rgba(var(--openms-navy-rgb), 0.22) !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured .openms-lib-developers__card-icon.openms-lib-developers__card-icon {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured .openms-lib-developers__card-title.openms-lib-developers__card-title {
+  font-size: 1.3rem !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured .openms-lib-developers__card-subtitle.openms-lib-developers__card-subtitle {
+  font-size: 1rem !important;
+  color: rgba(255, 255, 255, 0.84) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.84) !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured .openms-lib-developers__card-link.openms-lib-developers__card-link {
+  padding: 0.6rem 1.15rem !important;
+  border: 2px solid var(--openms-white) !important;
+  border-radius: 999px !important;
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transition: box-shadow 0.2s ease;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured:hover .openms-lib-developers__card-link.openms-lib-developers__card-link {
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.22);
+}
+
+/* ---------- "links" cards: Building from source / Reviewing PRs ---------- */
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card-title-row {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start !important;
+  gap: 0.5rem 0.75rem;
+  width: 100%;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__badge {
+  display: inline-flex !important;
+  overflow: hidden;
+  border-radius: 999px;
+  line-height: 0;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__badge img {
+  display: block;
+  height: 1.35rem;
+  width: auto;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__platforms.openms-lib-developers__platforms {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.5rem !important;
+  margin-top: auto !important;
+  padding-top: 0.6rem;
+  width: auto;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__platform-btn.openms-lib-developers__platform-btn.openms-lib-btn {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.45rem;
+  width: auto !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0.4rem 0.95rem !important;
+  border: 1.5px solid rgba(var(--openms-navy-rgb), 0.4) !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__platform-btn.openms-lib-developers__platform-btn.openms-lib-btn:is(:hover, :focus-visible) {
+  background: var(--openms-blue) !important;
+  border-color: var(--openms-blue) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__platform-btn:is(:hover, :focus-visible) :is(i, span) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+/* Reviewing PRs: wide, copy on the left and the two buttons on the right */
+@media (min-width: 768px) {
+  html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--review.openms-lib-developers__card {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1.1rem !important;
+  }
+
+  html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--review .openms-lib-developers__card-body.openms-lib-developers__card-body {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "title cta"
+      "sub cta";
+    align-items: center !important;
+    column-gap: 1.5rem;
+    row-gap: 0.3rem;
+  }
+
+  html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--review .openms-lib-developers__card-title-row {
+    grid-area: title;
+  }
+
+  html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--review .openms-lib-developers__card-subtitle.openms-lib-developers__card-subtitle {
+    grid-area: sub;
+  }
+
+  html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--review .openms-lib-developers__platforms.openms-lib-developers__platforms {
+    grid-area: cta;
+    margin-top: 0 !important;
+    padding-top: 0;
+    justify-content: flex-end;
+  }
+}
+
+/* ---------- medium screens: 6 columns ---------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__cards-grid.openms-lib-developers__cards-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  }
+
+  html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured.openms-lib-developers__card,
+  html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--build-src.openms-lib-developers__card {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* ---------- phones: one column, buttons one per line ---------- */
+@media (max-width: 767px) {
+  html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__cards-grid.openms-lib-developers__cards-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card.openms-lib-developers__card {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (max-width: 560px) {
+  html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__platforms.openms-lib-developers__platforms {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__platform-btn.openms-lib-developers__platform-btn.openms-lib-btn {
+    width: 100% !important;
+    justify-content: center;
+  }
+}
+
+/* The title text sits in a <span> that older rules uppercase and recolour. */
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card-title span {
+  font: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: none !important;
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* Keep the open-PR badge right next to the title (the h3 was stretching). */
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card-title-row .openms-lib-developers__card-title.openms-lib-developers__card-title {
+  flex: 0 1 auto !important;
+  width: auto !important;
+  max-width: 100%;
+}

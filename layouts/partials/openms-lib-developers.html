@@ -16,7 +16,9 @@
 {{- $citeSeparate := index $cfg "citeSeparate" | default false -}}
 {{- $hasCite := and $citeSeparate (or $citeText $citation) -}}
 {{- $citeLabel := index $cfg "citeLabel" | default (printf "Cite %s" (index $citation "topic" | default "OpenMS")) -}}
-<section class="openms-lib-block openms-lib-block--developers openms-lib-developers--cards" id="for-developers" aria-labelledby="{{ $sectionId }}">
+{{- $grouped := false -}}
+{{- range $boxes }}{{ if .group }}{{ $grouped = true }}{{ end }}{{ end -}}
+<section class="openms-lib-block openms-lib-block--developers openms-lib-developers--cards{{ if $grouped }} openms-lib-developers--grouped{{ end }}" id="for-developers" aria-labelledby="{{ $sectionId }}">
   <header class="openms-lib-developers__cards-head openms-lib-hub__reveal">
     <p class="openms-lib-block__eyebrow">{{ partial "section-eyebrow-icon.html" "people" }}{{ $eyebrow }}</p>
     <h2 id="{{ $sectionId }}" class="openms-lib-developers__title">{{ $title }}</h2>
@@ -27,7 +29,11 @@
 
   {{- with $boxes }}
   <div class="openms-lib-developers__cards-grid openms-lib-hub__reveal" aria-label="Contributor resources">
+    {{- $prevGroup := "" -}}
     {{- range . }}
+    {{- with .group }}{{ if ne . $prevGroup }}
+    <p class="openms-lib-developers__group">{{ . }}</p>
+    {{- $prevGroup = . }}{{ end }}{{ end }}
     {{- $type := .type | default "link" -}}
     {{- $subtitle := .subtitle | default .text -}}
     {{- if eq $type "links" }}
@@ -69,7 +75,7 @@
     </article>
     {{- else }}
     <a
-      class="openms-lib-developers__card openms-lib-developers__card--box openms-lib-developers__card--interactive openms-lib-developers__card--link"
+      class="openms-lib-developers__card openms-lib-developers__card--box openms-lib-developers__card--interactive openms-lib-developers__card--link{{ if .featured }} openms-lib-developers__card--featured{{ end }}"
       href="{{ .url }}"
       {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
     >
