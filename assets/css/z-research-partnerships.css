@@ -49,3 +49,22 @@ html body .openms-lib-page--research-partnerships iframe.rp-application__tally-i
     padding-block: 0.4rem !important;
   }
 }
+
+/* Hero title on phones — scale with the screen so the widest line, "RESEARCH
+   PARTNERSHIPS" (~13.5em in capitals), always fits inside the page gutters with
+   a little slack, instead of filling the width edge to edge and breaking the
+   word mid-way ("PARTNERSHI / PS") when the font renders slightly wider. */
+@media (max-width: 767px) {
+  :is(html, #rp-title-boost) body .openms-lib-page--research-partnerships .openms-lib-hero__title.openms-lib-hero__title,
+  :is(html, #rp-title-boost) body .openms-lib-page--research-partnerships .openms-lib-hero__title .openms-lib-hero__accent.openms-lib-hero__accent {
+    font-size: clamp(1.05rem, calc((100vw - 2.5rem) / 14.8), 2.2rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  :is(html, #rp-title-boost) body .openms-lib-page--research-partnerships .openms-lib-hero__title .openms-lib-hero__title-line,
+  :is(html, #rp-title-boost) body .openms-lib-page--research-partnerships .openms-lib-hero__title .openms-lib-hero__accent {
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+    max-width: 100%;
+  }
+}
