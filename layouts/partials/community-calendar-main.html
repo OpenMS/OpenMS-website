@@ -114,6 +114,14 @@
           </button>
         </div>
         <div class="community-events-past__panel" id="calendar-past-panel" hidden>
+          {{- if gt (len $years) 1 }}
+          <div class="community-events-past__years" role="group" aria-label="Choose a year" data-past-years>
+            <button type="button" class="community-events-past__year-btn is-active" data-past-year="all" aria-pressed="true">All years</button>
+            {{- range $years }}
+            <button type="button" class="community-events-past__year-btn" data-past-year="{{ . }}" aria-pressed="false">{{ . }}</button>
+            {{- end }}
+          </div>
+          {{- end }}
           {{- range $year := $years }}
           {{- $yearEvents := slice -}}
           {{- range $past }}
@@ -121,7 +129,7 @@
               {{- $yearEvents = $yearEvents | append . -}}
             {{- end }}
           {{- end }}
-          <section class="events-past-year" id="events-year-{{ $year }}" aria-labelledby="events-year-{{ $year }}-title">
+          <section class="events-past-year" id="events-year-{{ $year }}" data-past-year-section="{{ $year }}" aria-labelledby="events-year-{{ $year }}-title">
             <h3 id="events-year-{{ $year }}-title" class="events-past-year__title">{{ $year }}</h3>
             <ul class="community-events-home__grid" role="list">
               {{- range $yearEvents }}
