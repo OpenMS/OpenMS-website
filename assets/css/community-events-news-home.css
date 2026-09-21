@@ -563,3 +563,20 @@ html body .community-events-home__card.community-news-events__press-card .commun
 html body .community-events-home__card.community-news-events__press-card .community-news-events__press-links a {
   white-space: nowrap;
 }
+
+/* Phones: a shared "equal card height" rule fixed every card at ~245px with
+   overflow hidden, which clipped the end of the news/event text (e.g. "…for more
+   information." was cut off). Let these cards grow to fit their content. */
+@media (max-width: 767px) {
+  :is(html, #press-card-fit-boost) body .community-events-home__card.community-events-home__card.community-news-events__press-card {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  :is(html, #press-card-fit-boost) body .community-events-home__card.community-news-events__press-card > .community-news-events__press-link {
+    overflow: visible !important;
+    height: auto !important;
+  }
+}
