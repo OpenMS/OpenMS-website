@@ -675,10 +675,25 @@ html body .home-page__hero .hero-home__actions:not(.__unused__) {
     gap: clamp(4rem, 5vw, 6rem) !important;
   }
 
-  /* The copy column is a size container, so it can't shrink-wrap its text;
-     give it a width equal to the text (~500px). */
+  /* The copy column is a size container (its text is sized in cqi), so its
+     width sets both the text size and the room for it. The longest title
+     line ("MASS SPECTROMETRY.") is ~12.4x the font size wide, so the title is
+     sized at 7.7% of the column (~95% of its width) and never runs into the
+     diagram. */
   html body .home-page__hero .hero-home__copy {
-    flex: 0 0 31rem !important;
+    flex: 0 0 clamp(35rem, 46vw, 52rem) !important;
+    max-width: 52rem !important;
+  }
+
+  @supports (font-size: 1cqi) {
+    html body .home-page__hero .hero-home__title,
+    html body .home-page__hero .hero-home__title-accent {
+      font-size: clamp(1.85rem, 7.7cqi, 4.75rem) !important;
+    }
+
+    html body .home-page__hero .hero-home__description {
+      font-size: clamp(0.92rem, 3.2cqi, 1.6rem) !important;
+    }
   }
 
   html body .home-page__hero .hero-home__visual {
