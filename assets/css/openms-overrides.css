@@ -37972,7 +37972,11 @@ html body .home-page .home-page__block--partners .uni-partners--home .uni-partne
     margin-left: 0 !important;
   }
 
+  /* naseweis is a wide 3:1 wordmark; at the standard 104px height it was
+     ~312px wide and dwarfed its neighbours. */
   html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo[src*="naseweis"] {
+    height: 68px !important;
+    max-height: 68px !important;
     max-width: 100% !important;
   }
 }
