@@ -780,6 +780,8 @@ languages:
           moreText: More citations
         boxes:
           - title: Contributing Guidelines
+            group: Get involved
+            featured: true
             tag: Contribute
             icon: fas fa-hands-helping
             subtitle: How to propose changes and join the community.
@@ -793,7 +795,15 @@ languages:
             hoverText: Open a bug report, feature request, or discussion on the OpenMS GitHub tracker.
             url: https://github.com/OpenMS/OpenMS/issues/new/choose
             linkText: Open on GitHub
+          - title: Add a TOPP tool
+            tag: Extend
+            icon: fas fa-puzzle-piece
+            subtitle: Extend the TOPP pipeline suite.
+            hoverText: Follow the step-by-step guide to add a new tool to the TOPP command-line pipeline suite.
+            url: https://openms.readthedocs.io/en/latest/manual/develop/adding-new-tool-to-topp.html
+            linkText: Follow the guide
           - title: Developer manual
+            group: Learn and build
             tag: Docs
             icon: fas fa-book
             subtitle: Architecture and coding standards.
@@ -807,13 +817,6 @@ languages:
             hoverText: Find answers to frequent questions about building, testing, and contributing to OpenMS.
             url: https://openms.readthedocs.io/en/latest/manual/develop/developer-faq.html
             linkText: Browse FAQ
-          - title: Add a TOPP tool
-            tag: Extend
-            icon: fas fa-puzzle-piece
-            subtitle: Extend the TOPP pipeline suite.
-            hoverText: Follow the step-by-step guide to add a new tool to the TOPP command-line pipeline suite.
-            url: https://openms.readthedocs.io/en/latest/manual/develop/adding-new-tool-to-topp.html
-            linkText: Follow the guide
           - title: Building OpenMS from Source
             type: links
             tag: Build
@@ -837,7 +840,7 @@ languages:
             subtitle: Help move contributions forward by reviewing open pull requests on GitHub.
             platformsAlwaysVisible: true
             badge:
-              src: https://img.shields.io/github/issues-pr/OpenMS/OpenMS?label=open%20PRs&color=1a56db&style=flat-square
+              src: https://img.shields.io/github/issues-pr/OpenMS/OpenMS?label=open%20PRs&labelColor=0c2171&color=3157e9&style=flat-square
               alt: Number of open OpenMS pull requests
               url: https://github.com/OpenMS/OpenMS/pulls
             platforms:

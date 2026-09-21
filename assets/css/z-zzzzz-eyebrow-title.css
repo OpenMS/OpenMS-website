@@ -1,0 +1,15 @@
+/* Section eyebrow → title spacing, sitewide.
+   The small label above a section title ("Developer tools", "Community", …)
+   sat 12–27px above it (12px margin, often plus 10–15px of title padding). Pull
+   every section title up under its eyebrow to ~6px, like the homepage
+   Ecosystem section. Hero eyebrows are pills with their own spacing and are left
+   alone. `:is(html, #id)` only adds specificity so this wins over the many older
+   !important spacing rules. */
+:is(html, #eyebrow-title-specificity-boost) body :is([class*="eyebrow"], [class*="kicker"]):not([class*="hero"]):not([class*="icon"]):has(+ :is(h2, h3)) {
+  margin-bottom: 0.35rem !important;
+}
+
+:is(html, #eyebrow-title-specificity-boost) body :is([class*="eyebrow"], [class*="kicker"]):not([class*="hero"]):not([class*="icon"]) + :is(h2, h3) {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}

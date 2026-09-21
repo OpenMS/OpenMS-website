@@ -577,26 +577,22 @@ html body .openms-lib-page--exec-committee .exec-amendments__steps .contribute-t
   }
 }
 
+/* Developer retreat "About the retreat" tiles — on hover only the number turns
+   blue; the card itself does not change at all (it used to flip to a navy card
+   with white text). */
 html body .openms-lib-page--developer-retreat .retreat-highlights__mosaic > .openms-lib-about__tile:is(:hover, :focus-within) {
-  background: var(--openms-navy) !important;
-  background-color: var(--openms-navy) !important;
-  border-color: var(--openms-navy) !important;
-  color: var(--openms-white) !important;
-  -webkit-text-fill-color: var(--openms-white) !important;
-  box-shadow: 0 0.65rem 1.5rem rgba(var(--openms-navy-rgb), 0.22) !important;
-  transform: translateY(-3px) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: rgba(var(--openms-navy-rgb), 0.1) !important;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
-html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) h3.openms-lib-about__tile-title,
-html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__tile-title,
-html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__tile-text,
 html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__num {
-  color: var(--openms-white) !important;
-  -webkit-text-fill-color: var(--openms-white) !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
   background: none !important;
   background-image: none !important;
-  -webkit-background-clip: border-box !important;
-  background-clip: border-box !important;
 }
 
 html body .openms-lib-page--report-handling .rhm-process__steps {

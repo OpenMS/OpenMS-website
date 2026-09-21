@@ -26511,10 +26511,12 @@ html body .home-page__hero .hero-home__note-dot {
   }
 
   /* Fellowship Apply form stacks on phones (~1424px content). */
+  /* No `height: auto !important` here: it beat the inline height that Tally
+     (and the embed partial) set, collapsing the iframe to the 150px default
+     so only the first two fields showed. */
   .fellowship-page__tally-iframe,
   .openms-lib-page--fellowship .fellowship-page__tally-iframe {
     min-height: 900px !important;
-    height: auto !important;
     max-height: none !important;
     overflow: visible !important;
   }
@@ -37734,17 +37736,7 @@ html body .openms-lib-page--exec-committee.openms-lib-page--contribute.openms-li
   background-clip: border-box !important;
 }
 
-html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) h3.openms-lib-about__tile-title,
-html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__tile-title,
-html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__tile-text,
-html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__num {
-  color: var(--openms-white) !important;
-  -webkit-text-fill-color: var(--openms-white) !important;
-  background: none !important;
-  background-image: none !important;
-  -webkit-background-clip: border-box !important;
-  background-clip: border-box !important;
-}
+/* Developer retreat tiles: hover styling lives in z-zzzzz-affiliated-btn.css (only the number turns blue). */
 
 html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process:not(.rhm-process--handling) .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) h3.contribute-track__title,
 html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process:not(.rhm-process--handling) .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__title,
@@ -38081,25 +38073,24 @@ html body .openms-lib-page--publications #cite-openms .contribute-coc-band__acti
   }
 }
 
-/* What is OpenMS? — cards at every screen size: title, text, then the tag pill
-   (BSD LICENSED, C++ · PYTHON, ...) pinned to the bottom of the card, so pills
-   line up across a row. Phones (<=639px) also drop the forced two-column grid
-   that left the cards ~160px wide. */
+/* What is OpenMS? — cards at every screen size: the tag pill (BSD LICENSED,
+   C++ · PYTHON, ...) sits above the title, then the text. Phones (<=639px)
+   also drop the forced two-column grid that left the cards ~160px wide. */
 html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card {
   grid-template-columns: minmax(0, 1fr) !important;
-  grid-template-rows: auto 1fr auto !important;
+  grid-template-rows: auto auto 1fr !important;
   grid-template-areas:
+    "badge"
     "title"
-    "text"
-    "badge" !important;
+    "text" !important;
   row-gap: 0.55rem !important;
 }
 
 html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-head {
   grid-area: badge !important;
   justify-content: flex-start !important;
-  align-self: end !important;
-  margin-top: 0.35rem !important;
+  align-self: start !important;
+  margin: 0 !important;
 }
 
 html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-title {
@@ -38112,5 +38103,19 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
 @media (max-width: 639px) {
   html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topics {
     grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* What is OpenMS? — when the section stacks (<1600px) let the cards and the
+   intro use the full standard page width, like the sections around it. */
+@media (max-width: 1599px) {
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topics {
+    max-width: none !important;
+    width: 100% !important;
+    justify-self: stretch !important;
+  }
+
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__lead {
+    max-width: min(100%, 56rem) !important;
   }
 }

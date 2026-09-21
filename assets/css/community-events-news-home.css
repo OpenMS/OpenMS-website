@@ -324,8 +324,21 @@ a.community-news-events__press-link:focus-visible .community-news-events__press-
 .community-news-events__press-links a.openms-cta-link,
 .community-news-events__press-links a.openms-cta-link:hover,
 .community-news-events__press-links a.openms-cta-link:focus-visible {
-  gap: 0.35rem;
+  gap: 0.25rem;
   transition: none;
+}
+
+/* On the homepage another rule turns these links into display:block, so the
+   label-to-arrow gap above never applied; make them flex like the calendar. */
+html body .home-page .community-events-home__item .community-news-events__press-links a.openms-cta-link.openms-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Homepage "Learn more →" gets the same wider arrow gap. */
+html body .home-page .community-events-home__item .community-news-events__press-cta {
+  gap: 0.25rem;
 }
 
 /* Calendar page (already blue via other rules; kept explicit). */
@@ -350,7 +363,7 @@ html body .home-page .community-events-home__item .community-news-events__press-
 .community-news-events__press-cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.25rem;
   margin-top: 0.85rem;
   font-size: var(--openms-text-min);
 }
@@ -496,9 +509,74 @@ html body .home-page .community-news-events__column--news .community-events-home
   -webkit-text-fill-color: var(--openms-cta-link, var(--openms-blue)) !important;
 }
 
+/* News page — same hover as Latest news on the homepage: title turns blue.
+   A global heading rule forces the grey with very high specificity, so the
+   selector is boosted with :is(html, #id): it still matches <html>, but counts
+   as an id. */
+:is(html, #id-specificity-boost) body .openms-lib-page--news .community-events-home__card.community-news-events__press-card a.community-news-events__press-link:hover .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title,
+:is(html, #id-specificity-boost) body .openms-lib-page--news .community-events-home__card.community-news-events__press-card a.community-news-events__press-link:focus-visible .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title {
+  color: var(--openms-cta-link, var(--openms-blue)) !important;
+  -webkit-text-fill-color: var(--openms-cta-link, var(--openms-blue)) !important;
+}
+
 /* Calendar page — the dates are blue like on the homepage. A global rule
    greyed them out (and outranked the earlier blue one), so out-rank it. */
 html body .openms-lib-page--calendar .community-events-home__item .community-events-home__card.community-news-events__press-card .community-news-events__press-date.community-news-events__press-date.community-news-events__press-date {
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+/* Event cards — the description is always plain grey text and the link row
+   (More Info →, Registration →, …) is pinned to the bottom of the card, so the
+   links line up across cards in a row whatever the description length. */
+.community-events-home__card.community-news-events__press-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.community-events-home__card.community-news-events__press-card > .community-news-events__press-link {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+html body .community-events-home__card.community-news-events__press-card .community-news-events__press-links {
+  margin-top: auto !important;
+  padding-top: 0.9rem;
+}
+
+html body .community-events-home__card.community-news-events__press-card .community-news-events__press-cta {
+  margin-top: auto !important;
+}
+
+html body .community-events-home__card.community-news-events__press-card .community-news-events__press-links + .community-news-events__press-cta {
+  margin-top: 0.85rem !important;
+}
+
+html body .community-events-home__card.community-news-events__press-card .community-news-events__press-summary {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+/* Each link (label + arrow) stays on one line; several links sit side by side
+   and only drop to a new row when the card is too narrow for both. */
+html body .community-events-home__card.community-news-events__press-card .community-news-events__press-links a {
+  white-space: nowrap;
+}
+
+/* Phones: a shared "equal card height" rule fixed every card at ~245px with
+   overflow hidden, which clipped the end of the news/event text (e.g. "…for more
+   information." was cut off). Let these cards grow to fit their content. */
+@media (max-width: 767px) {
+  :is(html, #press-card-fit-boost) body .community-events-home__card.community-events-home__card.community-news-events__press-card {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  :is(html, #press-card-fit-boost) body .community-events-home__card.community-news-events__press-card > .community-news-events__press-link {
+    overflow: visible !important;
+    height: auto !important;
+  }
 }

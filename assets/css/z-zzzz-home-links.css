@@ -1,0 +1,69 @@
+/* Homepage Featured Apps — "Show all apps →" uses the same text size as the
+   other card links (View app →, Learn more →). */
+:is(html, #home-links-specificity-boost) body .home-page .home-page__block--projects a.webapps-featured__show-all.webapps-featured__show-all {
+  font-size: var(--openms-text-min, 0.8125rem) !important;
+}
+
+/* Homepage Ecosystem — pull the "Ecosystem" title up under its "Developer
+   tools" eyebrow (they were ~27px apart: 12px margin plus 15px of title padding). */
+:is(html, #ecosystem-title-specificity-boost) body .home-page .ecosystem-home__header-main .ecosystem-home__eyebrow.ecosystem-home__eyebrow {
+  margin-bottom: 0.35rem !important;
+}
+
+:is(html, #ecosystem-title-specificity-boost) body .home-page .ecosystem-home__header-main .ecosystem-home__title.ecosystem-home__title {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Homepage Upcoming events / Latest news — "View all →" uses the same text size
+   as the other card links. */
+:is(html, #view-all-specificity-boost) body .home-page :is(a.community-news-events__view-all, a.community-events-home__view-all--inline).community-news-events__view-all,
+:is(html, #view-all-specificity-boost) body .home-page :is(a.community-news-events__view-all, a.community-events-home__view-all--inline) {
+  font-size: var(--openms-text-min, 0.8125rem) !important;
+}
+
+/* What is OpenMS? — medium screens (768–1023px): the tag pill (BSD LICENSED,
+   C++ · PYTHON, …) sits at the right of the card, level with the title. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :is(html, #md-pill-specificity-boost) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card.keyfeatures-modern__topic-card {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-rows: auto 1fr !important;
+    grid-template-areas:
+      "title badge"
+      "text text" !important;
+    column-gap: 0.75rem !important;
+  }
+
+  :is(html, #md-pill-specificity-boost) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-head.keyfeatures-modern__topic-head {
+    grid-area: badge !important;
+    justify-content: flex-end !important;
+    align-self: start !important;
+    margin: 0 !important;
+  }
+}
+
+/* Homepage Upcoming events / Latest news — on phones "View all →" stays at the
+   right of the title, on the same line. */
+@media (max-width: 767px) {
+  :is(html, #view-all-row-boost) body .home-page .community-news-events__column > .community-news-events__column-header {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: baseline !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
+  }
+
+  :is(html, #view-all-row-boost) body .home-page .community-news-events__column .community-news-events__column-title {
+    flex: 0 1 auto;
+    min-width: 0;
+    margin: 0 !important;
+  }
+
+  :is(html, #view-all-row-boost) body .home-page .community-news-events__column .community-news-events__column-header > a.community-news-events__view-all {
+    flex: 0 0 auto;
+    align-self: baseline !important;
+    margin: 0 !important;
+    white-space: nowrap;
+  }
+}

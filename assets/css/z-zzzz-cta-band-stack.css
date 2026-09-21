@@ -1,0 +1,142 @@
+/* Sponsor CTA bands (Our sponsors → "Become a sponsor", Sponsor us → "Get
+   started") — same button design as the other navy CTA bands (Cite OpenMS,
+   Community opportunity): two equal-width, equal-height pills with a 1rem gap;
+   on phones one per line at the full width. */
+html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions,
+html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+  width: min(100%, 26rem) !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+  justify-items: stretch !important;
+}
+
+html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  height: 2.875rem !important;
+  min-height: 2.875rem !important;
+  padding: 0 1.25rem !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+}
+
+/* The Sponsor us ghost button had a faint 34% white outline; use the same solid
+   white outline as the other navy CTA bands. */
+html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost,
+html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost {
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+}
+
+@media (max-width: 560px) {
+  html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions,
+  html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions,
+  html body .openms-lib-page--contact #get-help .contribute-coc-band__actions.contribute-coc-band__actions {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-flow: row !important;
+    gap: 0.85rem !important;
+    width: min(100%, 22rem) !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+    justify-items: stretch !important;
+  }
+
+  html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+  html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+  html body .openms-lib-page--contact #get-help .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+  }
+}
+
+/* Sponsor us → "Get started" note: one paragraph that wraps naturally at every
+   screen size (it was three fixed lines on desktop). */
+html body .openms-lib-page--sponsor-us #become-a-sponsor .sponsor-cta-note-line.sponsor-cta-note-line {
+  display: inline !important;
+  white-space: normal !important;
+}
+
+html body .openms-lib-page--sponsor-us #become-a-sponsor .sponsor-cta-note-line::after {
+  content: " ";
+}
+
+html body .openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__note.governance-cta-band__note {
+  max-width: 44rem !important;
+  margin-inline: auto !important;
+  text-wrap: balance;
+}
+
+/* "Make a donation" hover — same as the other navy CTA bands (Cite OpenMS…):
+   white fill, navy text, slight scale and a white glow. Older page-scoped rules
+   forced a transparent, blue-glow hover here, so this out-ranks them. */
+:is(html, #cta-hover-specificity-boost) body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  border: 2px solid var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(255, 255, 255, 0.22) !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+/* Contact → "Need a hand?" band — standard 1rem gap between the two buttons
+   (it was ~5px, so the hover glow of one touched the other). */
+html body .openms-lib-page--contact #get-help .contribute-coc-band__actions.contribute-coc-band__actions {
+  column-gap: 1rem !important;
+}
+
+/* Contact -> "Need a hand?": the Contribute button gets the same hover as the
+   other navy CTA bands (white fill, navy text, white glow). */
+:is(html, #contact-hover-specificity-boost) body .openms-lib-page--contact #get-help .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  border: 2px solid var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(255, 255, 255, 0.22) !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--contact #get-help .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+/* Contact → Community card (Discord & GitHub): on phones the two buttons sit
+   one above the other at the full width of the card. */
+@media (max-width: 560px) {
+  html body .openms-lib-page .contact-path-socials.contact-path-socials {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.85rem !important;
+  }
+
+  html body .openms-lib-page .contact-path-socials.contact-path-socials a.contact-path-social.contact-path-social {
+    width: 100% !important;
+    max-width: none !important;
+    justify-content: center !important;
+  }
+}

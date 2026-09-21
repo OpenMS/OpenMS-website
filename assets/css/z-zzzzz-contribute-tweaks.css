@@ -1,0 +1,29 @@
+/* Contribute page tweaks. */
+
+/* Code of Conduct principles (01 Welcoming language …): the title and text sit
+   below the number instead of beside it, like the other numbered cards. */
+html body #code-of-conduct#code-of-conduct .coc-principle.coc-principle {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.35rem !important;
+}
+
+html body #code-of-conduct#code-of-conduct .coc-principle .coc-principle__body.coc-principle__body {
+  display: block !important;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body #code-of-conduct#code-of-conduct .coc-principle .coc-principle__title.coc-principle__title,
+html body #code-of-conduct#code-of-conduct .coc-principle .coc-principle__text.coc-principle__text {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-align: left;
+}
+
+/* "Sponsor OpenMS" title in capitals like the other section titles. */
+html body .openms-lib-page--contribute .contribute-support__title.contribute-support__title {
+  text-transform: uppercase !important;
+}

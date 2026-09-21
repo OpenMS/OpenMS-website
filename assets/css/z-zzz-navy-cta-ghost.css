@@ -158,24 +158,3 @@ html body .openms-lib-page--contact #get-help a.openms-lib-btn--ghost:focus-visi
     0 0 0 5px rgba(var(--openms-white-rgb), 0.55),
     0 0 0 calc(5px + var(--openms-btn-glow-size, 6px)) var(--openms-btn-glow-white, rgba(255, 255, 255, 0.22)) !important;
 }
-
-/* Become a sponsor "Make a donation" / Get help: this button keeps an
-   outline-only hover (scale + glow, no white fill), so it must not pick up
-   the white-fill/navy-text treatment above even though it shares the
-   .governance-cta-band__actions / .contribute-coc-band__actions container. */
-html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
-html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active),
-html body .openms-lib-page--contact #get-help a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
-html body .openms-lib-page--contact #get-help a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active) {
-  background: transparent !important;
-  background-color: transparent !important;
-  color: var(--openms-white) !important;
-  -webkit-text-fill-color: var(--openms-white) !important;
-}
-
-html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span),
-html body .openms-lib-page--contact #get-help a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span) {
-  color: var(--openms-white) !important;
-  -webkit-text-fill-color: var(--openms-white) !important;
-  background: transparent !important;
-}

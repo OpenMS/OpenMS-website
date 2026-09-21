@@ -38,16 +38,35 @@
     iframe.setAttribute("height", String(next));
   }
 
+  var fallbackTimer = null;
+
   function loadTallyEmbeds() {
     if (typeof window.Tally !== "undefined") {
+      if (fallbackTimer) {
+        clearTimeout(fallbackTimer);
+        fallbackTimer = null;
+      }
       window.Tally.loadEmbeds();
-    } else {
-      document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (iframe) {
-        iframe.src = iframe.dataset.tallySrc;
-      });
+    } else if (!fallbackTimer) {
+      /* Tally's embed.js isn't ready yet. Setting the iframe src ourselves
+         would skip its resize handshake, so the iframe would stay at the
+         floor height and cut off the bottom of the form. Wait for the script;
+         only if it never arrives, load the plain iframe as a last resort. */
+      fallbackTimer = setTimeout(function () {
+        if (typeof window.Tally === "undefined") {
+          document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (iframe) {
+            iframe.src = iframe.dataset.tallySrc;
+          });
+        }
+      }, 6000);
     }
 
     document.querySelectorAll(".fellowship-page__tally-iframe").forEach(applyFloor);
+  }
+
+  var tallyScript = document.querySelector('script[src*="tally.so/widgets/embed.js"]');
+  if (tallyScript) {
+    tallyScript.addEventListener("load", loadTallyEmbeds);
   }
 
   window.addEventListener("message", function (event) {
