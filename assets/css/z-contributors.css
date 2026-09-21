@@ -123,9 +123,15 @@ html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--solution.openms
   }
 }
 
-/* Big screens: four cards across. */
-@media (min-width: 1200px) {
+/* Medium and big screens: four cards across. */
+@media (min-width: 768px) {
   html body .openms-lib-page--contributors #executive-committee .contributors-exec-gallery .members.members {
     grid-template-columns: repeat(4, minmax(0, 11rem)) !important;
+  }
+
+  /* Let the cards shrink with their column so the gap holds at ~768px. */
+  html body .openms-lib-page--contributors #executive-committee .contributors-exec-gallery .members.members > .member {
+    width: 100% !important;
+    max-width: 11rem !important;
   }
 }
