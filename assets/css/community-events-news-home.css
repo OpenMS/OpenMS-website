@@ -324,8 +324,21 @@ a.community-news-events__press-link:focus-visible .community-news-events__press-
 .community-news-events__press-links a.openms-cta-link,
 .community-news-events__press-links a.openms-cta-link:hover,
 .community-news-events__press-links a.openms-cta-link:focus-visible {
-  gap: 1.1rem;
+  gap: 0.35rem;
   transition: none;
+}
+
+/* On the homepage another rule turns these links into display:block, so the
+   label-to-arrow gap above never applied; make them flex like the calendar. */
+html body .home-page .community-events-home__item .community-news-events__press-links a.openms-cta-link.openms-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+/* Homepage "Learn more →" gets the same wider arrow gap. */
+html body .home-page .community-events-home__item .community-news-events__press-cta {
+  gap: 1.1rem;
 }
 
 /* Calendar page (already blue via other rules; kept explicit). */
@@ -350,7 +363,7 @@ html body .home-page .community-events-home__item .community-news-events__press-
 .community-news-events__press-cta {
   display: inline-flex;
   align-items: center;
-  gap: 1.1rem;
+  gap: 0.35rem;
   margin-top: 0.85rem;
   font-size: var(--openms-text-min);
 }
