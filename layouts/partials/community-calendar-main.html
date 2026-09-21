@@ -34,7 +34,7 @@
   {{- end }}
 {{- end }}
 {{- $upcoming = sort $upcoming "start" -}}
-{{- $past = sort $past "start" -}}
+{{- $past = sort $past "start" | collections.Reverse -}}
 {{- $years := slice -}}
 {{- range $past }}
   {{- $y := (time .start).Format "2006" -}}
@@ -42,7 +42,7 @@
     {{- $years = $years | append $y -}}
   {{- end }}
 {{- end }}
-{{- $years = sort $years -}}
+{{- $years = sort $years | collections.Reverse -}}
 <section class="openms-lib-layout">
 <article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--calendar">
 <div class="openms-lib-page__intro">
@@ -97,7 +97,7 @@
 
       {{- if gt (len $years) 0 }}
       {{- /* Past events: hidden behind a button at the bottom of the page. Shown
-            oldest year first, and oldest event first within each year. */ -}}
+            most recent year first, and the most recent event first within each year. */ -}}
       <section class="community-events-page__section community-events-page__section--past" aria-label="Past community events" data-past-events>
         <div class="community-events-past__bar">
           <button
