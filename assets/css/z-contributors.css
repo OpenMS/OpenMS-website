@@ -135,3 +135,11 @@ html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--solution.openms
     max-width: 11rem !important;
   }
 }
+
+/* "Want to contribute?" band — standard 1rem gap between the two buttons (the
+   shared Community-opportunity rule had squeezed them to ~0.65rem). */
+@media (min-width: 0px) {
+  html body .openms-lib-page.openms-lib-page.openms-lib-page--contributors #join-community .webapps-archived__revival-actions.webapps-archived__revival-actions {
+    column-gap: 1rem !important;
+  }
+}
