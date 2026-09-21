@@ -54,3 +54,48 @@ html body [data-past-events].is-open .community-events-past__chevron {
   height: 1px;
   background: rgba(var(--openms-navy-rgb), 0.12);
 }
+
+/* More room under the button (and under the opened list) before the footer. */
+html body .community-events-page__section--past.community-events-page__section--past {
+  padding-bottom: clamp(4rem, 10vw, 7rem);
+}
+
+/* Year chooser inside the Last events list. */
+.community-events-past__years {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+html body .community-events-past__year-btn {
+  appearance: none;
+  padding: 0.45rem 1.05rem;
+  border: 2px solid rgba(var(--openms-navy-rgb), 0.35);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--openms-navy);
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min, 0.875rem);
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+html body .community-events-past__year-btn:hover,
+html body .community-events-past__year-btn:focus-visible {
+  border-color: var(--openms-navy);
+  background: rgba(var(--openms-navy-rgb), 0.08);
+  outline: none;
+}
+
+html body .community-events-past__year-btn.is-active {
+  border-color: var(--openms-blue);
+  background: var(--openms-blue);
+  color: var(--openms-white);
+}
+
+.events-past-year[hidden] {
+  display: none;
+}
