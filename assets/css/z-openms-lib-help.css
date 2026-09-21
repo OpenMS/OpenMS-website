@@ -96,3 +96,17 @@ html body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.
     justify-content: center !important;
   }
 }
+
+/* "Need help?" buttons on phones: always centred in the band (on pyOpenMS the
+   stacked group sat ~5px left of centre because another rule zeroed the auto
+   margins). */
+@media (max-width: 560px) {
+  :is(html, #assist-center-boost) body .openms-lib-page .openms-lib-resources__assist .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions {
+    justify-self: center !important;
+    align-self: center !important;
+    margin-inline: auto !important;
+    box-sizing: border-box !important;
+    width: min(100%, 22rem) !important;
+    max-width: 100% !important;
+  }
+}
