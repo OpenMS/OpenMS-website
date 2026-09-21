@@ -92,6 +92,7 @@ jobs:
       # synced events into it after every run. Skipped when the branch does not
       # exist (e.g. upstream), and a failure here never fails the sync.
       - name: Mirror synced events into the PR branch
+        if: always()
         continue-on-error: true
         run: |
           BRANCH=fork-main-update
