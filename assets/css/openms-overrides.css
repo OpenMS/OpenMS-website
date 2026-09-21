@@ -37955,10 +37955,24 @@ html body .home-page .home-page__block--partners .uni-partners--home .uni-partne
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
-    align-self: end !important;
+    align-self: start !important;
   }
 
+  /* Logos hug the top of the card (no blank band above), and every logo is
+     the same 104px tall, so neighbours in a row have no gap above or below.
+     OpenDDA/MHCquant's SVGs are cropped to their artwork, so they can be
+     the standard size and still look bigger than before. */
   html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo {
-    max-height: 9.25rem !important;
+    height: 104px !important;
+    max-height: 104px !important;
+    object-position: left top !important;
+    /* Older rules nudged some logos sideways to hide their built-in margins
+       (OpenDDA, MHCquant, NuXL); the images are cropped now, so align all of
+       them with the card's text edge. */
+    margin-left: 0 !important;
+  }
+
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo[src*="naseweis"] {
+    max-width: 100% !important;
   }
 }
