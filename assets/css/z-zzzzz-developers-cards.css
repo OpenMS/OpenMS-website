@@ -3,7 +3,7 @@
    Layout: two labelled groups on a 12-column grid.
      Get involved   — Contributing Guidelines (featured, navy) · Report an issue · Add a TOPP tool
      Learn and build — Developer manual · Developer FAQ · Building from source · Reviewing PRs (wide)
-   Every card: blue icon tile, sentence-case title, short text, link pinned to
+   Every card: blue icon tile, capitalised title, short text, link pinned to
    the bottom. Hover only changes the border/shadow (no lift, no colour flip).
    Scoped to .openms-lib-developers--grouped, so other pages that share the
    partial are unchanged. the doubled #for-developers id only adds specificity to beat the many
@@ -139,8 +139,8 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   font-size: 1.0625rem !important;
   font-weight: 700 !important;
   line-height: 1.3 !important;
-  letter-spacing: 0 !important;
-  text-transform: none !important;
+  letter-spacing: 0.01em !important;
+  text-transform: uppercase !important;
   color: rgba(var(--openms-dark-rgb), 0.85) !important;
   -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.85) !important;
 }
@@ -376,7 +376,7 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
 html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card-title span {
   font: inherit !important;
   letter-spacing: inherit !important;
-  text-transform: none !important;
+  text-transform: uppercase !important;
   color: inherit !important;
   -webkit-text-fill-color: currentColor !important;
 }
@@ -425,4 +425,10 @@ html body #for-developers#for-developers#for-developers.openms-lib-developers--g
   -webkit-text-fill-color: var(--openms-navy) !important;
   fill: var(--openms-navy) !important;
   opacity: 1 !important;
+}
+
+/* Featured card: the "Read guidelines" button sits a bit lower, with more room
+   under the description. */
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured .openms-lib-developers__card-subtitle.openms-lib-developers__card-subtitle {
+  margin-bottom: 0.9rem !important;
 }
