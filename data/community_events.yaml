@@ -63,6 +63,15 @@ events:
   category: developer-meeting
   summary: Developer meeting with tutorials and code sprints.
   news_url: /news/devmeeting2025/
+- title: rapha test
+  start: '2026-09-21T20:30:00+02:00'
+  category: event
+  synced: true
+  end: '2026-09-21T21:30:00+02:00'
+  tz_label: CEST
+  summary: 'testing the description again
+
+    register here: https://chatgpt.com/uc/6ab171e7-d574-83ea-925d-451e361db6b6?utm_source=google&utm_medium=paid_search&gbraid=0AAAAA-I0E5dSZQYwaojqnsC-_xv7eOIsn&gclid=CjwKCAjwq8PVBhAKEiwA2i3SHXMOoUuYGU68VJvYBWYsIGwYv130H2ZKnX0b_K5eiyHCHIoDFZR17hoCn5YQAvD_BwE&c_crid=754784574388&c_agid=178867923534'
 - title: 'MS Analysis with OpenMS: Free Worshop'
   start: '2026-09-26'
   category: event
@@ -74,17 +83,6 @@ events:
     More Info: https://openms.de/news/hupo_workshop_26/
 
     Registration: https://forms.gle/S6gcDAJrLztCAGBL7'
-- title: Test Description 2
-  start: '2026-09-28T20:30:00+02:00'
-  category: event
-  synced: true
-  end: '2026-09-28T21:30:00+02:00'
-  tz_label: CEST
-  summary: 'Hi, thank you so much for your order! I’m so sorry, but unfortunately
-    I no longer have charm number 2 available. Would you be happy to choose another
-    charm…
-
-    LINK: https://www.etsy.com/your/orders/sold?ref=seller-platform-mcnav'
 - title: Google Summer of Code Ends
   start: '2026-11-02'
   category: outreach
@@ -106,4 +104,4 @@ events:
   end: '2027-03-20'
   location: Resort Natura, 8100-266 Loulé, Portugal
   summary: 'Registration and Info: https://tally.so/r/aQL8XW'
-last_synced: '2026-09-21T18:11:04Z'
+last_synced: '2026-09-21T18:19:08Z'
