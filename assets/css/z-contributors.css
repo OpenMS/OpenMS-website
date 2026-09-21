@@ -143,3 +143,23 @@ html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--solution.openms
     column-gap: 1rem !important;
   }
 }
+
+/* "Want to contribute?" band — Contact us gets the same hover as the other navy
+   CTA bands: white fill, navy text, white glow. Older rules forced a
+   transparent hover, so this out-ranks them. */
+:is(html, #contributors-hover-specificity-boost) body .openms-lib-page--contributors #join-community .webapps-archived__revival-actions.webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  border: 2px solid var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(255, 255, 255, 0.22) !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--contributors #join-community .webapps-archived__revival-actions.webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
