@@ -10,7 +10,7 @@ html body .home-page__hero {
   --hero-lead-width: min(100%, 48ch);
   --hero-col-gap: clamp(2.5rem, 5vw, 6.5rem);
   --hero-stack-gap: clamp(1.25rem, 2.8vh, 1.75rem);
-  --hero-copy-gap: clamp(1rem, 1.4vw, 1.35rem);
+  --hero-copy-gap: 1rem;
   --hero-note-size: clamp(0.875rem, 2.9cqi, 1.0625rem);
 }
 
@@ -168,7 +168,7 @@ html body .home-page__hero .hero-home__highlights {
     --hero-diagram-max: min(36rem, 46%);
     --hero-diagram-height: clamp(9.5rem, 5.5vw + 4rem, 12rem);
     --hero-col-gap: clamp(2.5rem, 5vw, 6.5rem);
-    --hero-copy-gap: clamp(1rem, 1.4vw, 1.35rem);
+    --hero-copy-gap: 1rem;
     --hero-note-size: clamp(0.8125rem, 2.7cqi, 1.05rem);
   }
 
