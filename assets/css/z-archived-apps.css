@@ -499,3 +499,21 @@ html body .openms-lib-page--archived #archived-apps .contribute-ways__lead.contr
 html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived-entry .webapps-archived-entry__heading.webapps-archived-entry__heading {
   gap: 0.6rem !important;
 }
+
+/* Phones — the project card and the Community opportunity band were inset a
+   second time (28px from the edge instead of the standard 14px). Remove the
+   extra side padding so they line up with the rest of the page. */
+@media (max-width: 600px) {
+  html body .openms-lib-page--archived #archived-apps .contribute-ways.contribute-ways > section.webapps-archived.webapps-archived {
+    padding-inline: 0 !important;
+  }
+
+  html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archived__grid.webapps-archived__grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body .openms-lib-page--archived .openms-lib-page__outro.openms-lib-page__outro,
+  html body .openms-lib-page--archived .openms-lib-page__outro .openms-lib-page__anchor.openms-lib-page__anchor {
+    padding-inline: 0 !important;
+  }
+}
