@@ -1,0 +1,19 @@
+/* Card titles are in capitals everywhere (news / event cards, "What is OpenMS?"
+   cards, tiles, principle cards, …). Some cards had sentence-case titles.
+   Only headings inside a card-like container are affected; the Contribute
+   developer cards are handled in z-zzzzz-developers-cards.css. */
+:is(html, #card-titles-upper-boost) body :is(
+  [class*="card"],
+  [class*="tile"],
+  [class*="principle"],
+  [class*="resources__item"],
+  [class*="leadership"]
+):not(.navbar, .navbar *, .footer-redesign *) :is(h3, h4, h3 > span, h4 > span) {
+  text-transform: uppercase;
+}
+
+:is(html, #card-titles-upper-boost) body .community-news-events__press-card .community-news-events__press-title,
+:is(html, #card-titles-upper-boost) body .keyfeatures-modern__topic-card .keyfeatures-modern__topic-title {
+  text-transform: uppercase !important;
+  letter-spacing: 0.01em;
+}
