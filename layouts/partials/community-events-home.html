@@ -11,6 +11,8 @@
 {{- range $allEvents }}
   {{- $endStr := .end | default .start -}}
   {{- $end := time $endStr -}}
+  {{- /* An all-day event (date only, no time) runs through the end of that day. */ -}}
+  {{- if not (in $endStr "T") }}{{- $end = $end.AddDate 0 0 1 -}}{{- end }}
   {{- if not ($end.Before now) }}
     {{- $upcoming = $upcoming | append . -}}
   {{- end }}
