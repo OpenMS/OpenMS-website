@@ -206,11 +206,15 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   background-color: var(--openms-white) !important;
   color: var(--openms-navy) !important;
   -webkit-text-fill-color: var(--openms-navy) !important;
-  transition: box-shadow 0.2s ease;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.22) !important;
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s !important;
 }
 
-html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured:hover .openms-lib-developers__card-link.openms-lib-developers__card-link {
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.22);
+/* Hover (card or button): same effect as the standard buttons — slight scale
+   and a glow ring (white here, as on the other navy bands). */
+html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--featured:is(:hover, :focus-within) .openms-lib-developers__card-link.openms-lib-developers__card-link {
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(255, 255, 255, 0.22) !important;
 }
 
 /* ---------- "links" cards: Building from source / Reviewing PRs ---------- */
