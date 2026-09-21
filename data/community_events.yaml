@@ -7,7 +7,10 @@ events:
   synced: true
   end: '2026-09-27'
   location: National University of Singapore
-  summary: 'Join us before HUPO for a workshop on MS Analysis. More Info: https://openms.de/news/hupo_workshop_26/
+  summary: 'Join us before HUPO for a workshop on MS Analysis.
+
+    More Info: https://openms.de/news/hupo_workshop_26/
+
     Registration: https://forms.gle/S6gcDAJrLztCAGBL7'
 - title: Test Description 2
   start: '2026-09-28T20:30:00+02:00'
@@ -17,7 +20,9 @@ events:
   tz_label: CEST
   summary: 'Hi, thank you so much for your order! I’m so sorry, but unfortunately
     I no longer have charm number 2 available. Would you be happy to choose another
-    charm… LINK: https://www.etsy.com/your/orders/sold?ref=seller-platform-mcnav'
+    charm…
+
+    LINK: https://www.etsy.com/your/orders/sold?ref=seller-platform-mcnav'
 - title: Google Summer of Code Ends
   start: '2026-11-02'
   category: outreach
@@ -29,7 +34,9 @@ events:
   end: '2026-11-28T13:00:00+01:00'
   tz_label: CET
   location: Test Location
-  summary: 'This is a second test event to verify the calendar. Link: https://example.com/test-event-2'
+  summary: 'This is a second test event to verify the calendar.
+
+    Link: https://example.com/test-event-2'
 - title: Developers Retreat
   start: '2027-03-14'
   category: event
@@ -37,4 +44,4 @@ events:
   end: '2027-03-20'
   location: Resort Natura, 8100-266 Loulé, Portugal
   summary: 'Registration and Info: https://tally.so/r/aQL8XW'
-last_synced: '2026-09-21T18:09:05Z'
+last_synced: '2026-09-21T18:09:43Z'
