@@ -44,6 +44,15 @@
         pass through unchanged. */ -}}
   {{- $summaryHTML = replaceRE `(?i)([A-Za-z][A-Za-z ]*?):\s*(https?://\S+)` `<a href="$2" class="openms-cta-link" target="_blank" rel="noopener noreferrer">$1</a>` . -}}
 {{- end -}}
+{{- /* Primary card: keep the prose in the summary and list the links
+      ("Label: URL" pairs) separately at the bottom of the card. */ -}}
+{{- $summaryText := "" -}}
+{{- $summaryLinks := slice -}}
+{{- with $event.summary -}}
+  {{- $linkRE := `(?i)([A-Za-z][A-Za-z ]*?):\s*(https?://\S+)` -}}
+  {{- $summaryLinks = findRESubmatch $linkRE . -}}
+  {{- $summaryText = trim (replaceRE $linkRE "" .) " " -}}
+{{- end -}}
 {{- $gcalStart := $start.Format "20060102" -}}
 {{- $gcalEndDate := $end.AddDate 0 0 1 -}}
 {{- $gcalEnd := $gcalEndDate.Format "20060102" -}}
@@ -67,14 +76,30 @@
           {{- if $hasRange }}
           title="{{ $start.Format "Jan 2, 2006" }} – {{ $end.Format "Jan 2, 2006" }}"
           {{- end }}
-        >{{ $dateText }} · {{ $timeText }}</time>
+        >{{ $dateText }}</time>
       </p>
       <h3 class="community-news-events__press-title">{{ $event.title }}</h3>
-      {{- with $event.location }}
-      <p class="community-news-events__press-location">{{ . }}</p>
+      <div class="community-news-events__press-details">
+        <p class="community-news-events__press-location community-news-events__press-time">
+          <svg class="community-news-events__press-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M8 1.75a6.25 6.25 0 1 0 0 12.5 6.25 6.25 0 0 0 0-12.5ZM8 4.5V8l2.25 1.5"/></svg>
+          <span>{{ $timeText }}</span>
+        </p>
+        {{- with $event.location }}
+        <p class="community-news-events__press-location">
+          <svg class="community-news-events__press-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 1.5a4.25 4.25 0 0 0-4.25 4.25c0 3.19 4.25 8.75 4.25 8.75s4.25-5.56 4.25-8.75A4.25 4.25 0 0 0 8 1.5Zm0 5.75a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/></svg>
+          <span>{{ . }}</span>
+        </p>
+        {{- end }}
+      </div>
+      {{- with $summaryText }}
+      <p class="community-news-events__press-summary">{{ . }}</p>
       {{- end }}
-      {{- with $summaryHTML }}
-      <p class="community-news-events__press-summary">{{ . | safeHTML }}</p>
+      {{- with $summaryLinks }}
+      <p class="community-news-events__press-links">
+        {{- range . }}
+        <a class="openms-cta-link" href="{{ index . 2 }}" target="_blank" rel="noopener noreferrer">{{ trim (index . 1) " " }}<span aria-hidden="true"> →</span></a>
+        {{- end }}
+      </p>
       {{- end }}
       {{- if $eventUrl }}
       <span class="community-news-events__press-cta openms-cta-link">
