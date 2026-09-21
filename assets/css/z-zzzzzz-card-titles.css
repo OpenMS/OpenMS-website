@@ -17,3 +17,8 @@
   text-transform: uppercase !important;
   letter-spacing: 0.01em;
 }
+
+/* Sponsor us — "Benefit comparison" heading in capitals. */
+:is(html, #benefit-title-upper-boost) body .sponsor-benefits__title.sponsor-benefits__title {
+  text-transform: uppercase !important;
+}
