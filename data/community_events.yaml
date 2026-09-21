@@ -63,6 +63,13 @@ events:
   category: developer-meeting
   summary: Developer meeting with tutorials and code sprints.
   news_url: /news/devmeeting2025/
+- title: Developers Retreat
+  start: '2027-03-14'
+  category: event
+  synced: true
+  end: '2027-03-20'
+  location: Resort Natura, 8100-266 Loulé, Portugal
+  summary: 'Registration and Info: https://tally.so/r/aQL8XW'
 - title: 'MS Analysis with OpenMS: Free Worshop'
   start: '2026-09-26'
   category: event
@@ -71,29 +78,6 @@ events:
   location: National University of Singapore
   summary: 'Join us before HUPO for a workshop on MS Analysis. More Info: https://openms.de/news/hupo_workshop_26/
     Registration: https://forms.gle/S6gcDAJrLztCAGBL7'
-- title: Test Event
-  start: '2026-09-25T18:00:00+02:00'
-  category: event
-  synced: true
-  end: '2026-09-25T19:00:00+02:00'
-  tz_label: CEST
-- title: Developers Retreat
-  start: '2027-03-14'
-  category: event
-  synced: true
-  end: '2027-03-20'
-  location: Resort Natura, 8100-266 Loulé, Portugal
-  summary: 'Registration and Info: https://tally.so/r/aQL8XW'
-- title: Test Event - Calendar Integration
-  start: '2026-10-28T12:00:00+01:00'
-  category: event
-  synced: true
-  end: '2026-10-28T15:00:00+01:00'
-  tz_label: CET
-  location: Test Location
-  summary: 'This is a test event to check that the calendar event is created correctly
-    and that the date, time, description, link and location are displayed as expected.
-    Link: https://example.com/test-event'
 - title: Test Event - Single Date
   start: '2026-11-28T12:00:00+01:00'
   category: event
@@ -106,4 +90,20 @@ events:
   start: '2026-11-02'
   category: outreach
   synced: true
-last_synced: '2026-09-21T07:51:08Z'
+- title: Test Event - Calendar Integration
+  start: '2026-10-28T12:00:00+01:00'
+  category: event
+  synced: true
+  end: '2026-10-28T15:00:00+01:00'
+  tz_label: CET
+  location: Test Location
+  summary: 'This is a test event to check that the calendar event is created correctly
+    and that the date, time, description, link and location are displayed as expected.
+    Link: https://example.com/test-event'
+- title: Test Event
+  start: '2026-09-25T18:00:00+02:00'
+  category: event
+  synced: true
+  end: '2026-09-25T19:00:00+02:00'
+  tz_label: CEST
+last_synced: '2026-09-21T07:59:34Z'
