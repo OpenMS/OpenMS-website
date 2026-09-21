@@ -163,3 +163,26 @@ html body .openms-lib-page--contributors #join-community .webapps-archived__revi
   color: var(--openms-navy) !important;
   -webkit-text-fill-color: var(--openms-navy) !important;
 }
+
+/* "Want to contribute?" band — on phones the two buttons sit one above the
+   other at the same width. */
+@media (max-width: 560px) {
+  html body .openms-lib-page.openms-lib-page.openms-lib-page--contributors #join-community .webapps-archived__revival-actions.webapps-archived__revival-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    row-gap: 0.85rem !important;
+    column-gap: 0 !important;
+    width: min(100%, 22rem) !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+  }
+
+  html body .openms-lib-page.openms-lib-page.openms-lib-page--contributors #join-community .webapps-archived__revival-actions.webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    justify-content: center !important;
+  }
+}
