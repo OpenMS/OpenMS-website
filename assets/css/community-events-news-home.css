@@ -525,3 +525,35 @@ html body .openms-lib-page--calendar .community-events-home__item .community-eve
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
 }
+
+/* Event cards — the description is always plain grey text and the link row
+   (More Info →, Registration →, …) is pinned to the bottom of the card, so the
+   links line up across cards in a row whatever the description length. */
+.community-events-home__card.community-news-events__press-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.community-events-home__card.community-news-events__press-card > .community-news-events__press-link {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+html body .community-events-home__card.community-news-events__press-card .community-news-events__press-links {
+  margin-top: auto !important;
+  padding-top: 0.9rem;
+}
+
+html body .community-events-home__card.community-news-events__press-card .community-news-events__press-cta {
+  margin-top: auto !important;
+}
+
+html body .community-events-home__card.community-news-events__press-card .community-news-events__press-links + .community-news-events__press-cta {
+  margin-top: 0.85rem !important;
+}
+
+html body .community-events-home__card.community-news-events__press-card .community-news-events__press-summary {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
