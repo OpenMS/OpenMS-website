@@ -1,0 +1,6 @@
+/* Mobile menu — the "Sponsor Us" outline button gets a navy border (it was the
+   brand blue). Text and hover are unchanged. */
+:is(html, #navbar-sponsor-specificity-boost) body .navbar-menu .navbar-mobile-ctas a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active),
+:is(html, #navbar-sponsor-specificity-boost) body .navbar-menu .navbar-mobile-ctas a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active):visited {
+  border-color: var(--openms-navy) !important;
+}
