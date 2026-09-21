@@ -1,0 +1,22 @@
+/* Homepage Ecosystem cards — every card logo gets the same box, whatever the
+   proportions of the source image (a wide pyOpenMS wordmark, a square viz
+   logo, ...). The image is contained and right-aligned inside it. */
+html body .home-page .ecosystem-home__grid .ecosystem-home__item .ecosystem-home__card .ecosystem-home__card-head .ecosystem-home__card-icon.ecosystem-home__card-icon.ecosystem-home__card-icon {
+  width: 7.5rem !important;
+  height: 4.5rem !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: right center !important;
+  margin-left: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* The viz PNG is a 500x500 canvas with the artwork in the middle band; cover
+   crops that empty margin so it appears as large as the other logos. */
+html body .home-page .ecosystem-home__grid .ecosystem-home__item .ecosystem-home__card--viz .ecosystem-home__card-head .ecosystem-home__card-icon.ecosystem-home__card-icon.ecosystem-home__card-icon {
+  object-fit: cover !important;
+  object-position: center !important;
+}
