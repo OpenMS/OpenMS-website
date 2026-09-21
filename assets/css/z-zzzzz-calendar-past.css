@@ -54,3 +54,8 @@ html body [data-past-events].is-open .community-events-past__chevron {
   height: 1px;
   background: rgba(var(--openms-navy-rgb), 0.12);
 }
+
+/* More room under the button (and under the opened list) before the footer. */
+html body .community-events-page__section--past.community-events-page__section--past {
+  padding-bottom: clamp(4rem, 10vw, 7rem);
+}
