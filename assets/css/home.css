@@ -1012,19 +1012,19 @@
   margin: 0;
 }
 
-/* Section rhythm — featured apps follows metrics; partners follows featured apps */
-.home-page__hero + .home-page__block--metrics {
+/* Section rhythm — partners, then featured apps, then the metrics band */
+.home-page__block--metrics {
   position: relative;
   z-index: 1;
   margin-top: 0;
   padding-block: clamp(3.25rem, 7vw, 5rem);
 }
 
-.home-page__block--metrics + .home-page__block--projects .webapps-featured--home {
+.home-page__block--partners + .home-page__block--projects .webapps-featured--home {
   padding-top: var(--home-projects-pad-y);
 }
 
-.home-page__block--projects:has(+ .home-page__block--partners) .webapps-featured--home {
+.home-page__block--projects:has(+ .home-page__block--metrics) .webapps-featured--home {
   padding-bottom: var(--home-projects-pad-y);
 }
 
