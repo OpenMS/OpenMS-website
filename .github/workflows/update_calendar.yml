@@ -85,7 +85,17 @@ jobs:
         if: steps.git-check.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr merge update-calendar-sync --squash --delete-branch
+        run: |
+          # GitHub computes a brand-new PR's mergeability lazily, so an immediate
+          # merge can fail with "cannot be cleanly created" — retry a few times.
+          for attempt in 1 2 3 4 5; do
+            if gh pr merge update-calendar-sync --squash --delete-branch; then
+              exit 0
+            fi
+            echo "Merge attempt $attempt failed; retrying in 10s..."
+            sleep 10
+          done
+          exit 1
 
       # The open PR branch (fork-main-update) keeps its own copy of the events
       # file, so its Netlify deploy preview never sees `main` changes. Mirror the
