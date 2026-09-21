@@ -59,3 +59,20 @@ html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__a
     justify-content: center !important;
   }
 }
+
+/* Sponsor us → "Get started" note: one paragraph that wraps naturally at every
+   screen size (it was three fixed lines on desktop). */
+html body .openms-lib-page--sponsor-us #become-a-sponsor .sponsor-cta-note-line.sponsor-cta-note-line {
+  display: inline !important;
+  white-space: normal !important;
+}
+
+html body .openms-lib-page--sponsor-us #become-a-sponsor .sponsor-cta-note-line::after {
+  content: " ";
+}
+
+html body .openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__note.governance-cta-band__note {
+  max-width: 44rem !important;
+  margin-inline: auto !important;
+  text-wrap: balance;
+}
