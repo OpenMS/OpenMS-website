@@ -25,6 +25,19 @@ events:
   start: '2026-05-25'
   category: outreach
   synced: true
+- title: Past events
+  start: '2026-09-14T11:00:00+02:00'
+  category: event
+  synced: true
+  end: '2026-09-14T20:30:00+02:00'
+  tz_label: CEST
+  location: London, ON, Canada
+- title: test title
+  start: '2026-09-22'
+  category: event
+  synced: true
+  location: United States
+  summary: 'Link: https://deploy-preview-283--openms.netlify.app/calendar/'
 - title: 'MS Analysis with OpenMS: Free Worshop'
   start: '2026-09-26'
   category: event
@@ -57,4 +70,4 @@ events:
   end: '2027-03-20'
   location: Resort Natura, 8100-266 Loulé, Portugal
   summary: 'Registration and Info: https://tally.so/r/aQL8XW'
-last_synced: '2026-09-21T20:21:00Z'
+last_synced: '2026-09-21T20:34:04Z'
