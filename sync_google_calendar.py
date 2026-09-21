@@ -158,6 +158,7 @@ def parse_events(ics_bytes):
         # datetime and a date can't be compared directly.
         end_date = end.date() if isinstance(end, datetime) else end
         if end_date < oldest_kept:
+            print(f"  skipped (finished before {oldest_kept}): {title} [{start}]")
             continue
 
         event = {
@@ -181,6 +182,7 @@ def parse_events(ics_bytes):
             event["url"] = str(url)
 
         events.append(event)
+        print(f"  kept: {title} [{start}]")
 
     return events
 
