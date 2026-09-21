@@ -7,7 +7,7 @@ events:
   synced: true
   end: '2026-09-27'
   location: National University of Singapore
-  summary: 'Registration: https://forms.gle/S6gcDAJrLztCAGBL7'
+  summary: Join us before HUPO for a workshop on MS Analysis. More Info Registration
 - title: Developers Retreat
   start: '2027-03-14'
   category: event
@@ -15,8 +15,25 @@ events:
   end: '2027-03-20'
   location: Resort Natura, 8100-266 Loulé, Portugal
   summary: 'Registration and Info: https://tally.so/r/aQL8XW'
+- title: Test Event - Single Date
+  start: '2026-11-28'
+  category: event
+  synced: true
+  location: Test Location
+  summary: This is a second test event to verify the calendar. Link
 - title: Google Summer of Code Ends
   start: '2026-11-02'
   category: outreach
   synced: true
-last_synced: '2026-09-13T19:27:13Z'
+- title: Test Event
+  start: '2026-09-25'
+  category: event
+  synced: true
+- title: Test Event - Calendar Integration
+  start: '2026-10-28'
+  category: event
+  synced: true
+  location: Test Location
+  summary: This is a test event to check that the calendar event is created correctly
+    and that the date, time, description, link and location are displayed as expected.…
+last_synced: '2026-09-21T07:18:40Z'
