@@ -38080,3 +38080,28 @@ html body .openms-lib-page--publications #cite-openms .contribute-coc-band__acti
     padding-block: 0.6rem !important;
   }
 }
+
+/* What is OpenMS? — small screens (<=639px). A forced two-column grid left
+   the cards ~160px wide on phones; use one column, and put the tag pill
+   (BSD LICENSED, C++ · PYTHON, ...) at the bottom of each card instead of
+   next to the title. */
+@media (max-width: 639px) {
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topics {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "title"
+      "text"
+      "badge" !important;
+    row-gap: 0.55rem !important;
+  }
+
+  html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-head {
+    grid-area: badge !important;
+    justify-content: flex-start !important;
+    margin-top: 0.35rem !important;
+  }
+}
