@@ -1,6 +1,43 @@
 /* Sponsor CTA bands (Our sponsors → "Become a sponsor", Sponsor us → "Get
-   started") — on phones put one button per line, both the same full width,
-   instead of two squeezed side by side. */
+   started") — same button design as the other navy CTA bands (Cite OpenMS,
+   Community opportunity): two equal-width, equal-height pills with a 1rem gap;
+   on phones one per line at the full width. */
+html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions,
+html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+  width: min(100%, 26rem) !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+  justify-items: stretch !important;
+}
+
+html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  height: 2.875rem !important;
+  min-height: 2.875rem !important;
+  padding: 0 1.25rem !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+}
+
+/* The Sponsor us ghost button had a faint 34% white outline; use the same solid
+   white outline as the other navy CTA bands. */
+html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost,
+html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost {
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+}
+
 @media (max-width: 560px) {
   html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions,
   html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions {
