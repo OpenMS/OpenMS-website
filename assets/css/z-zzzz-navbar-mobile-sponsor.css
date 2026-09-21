@@ -4,3 +4,15 @@
 :is(html, #navbar-sponsor-specificity-boost) body .navbar-menu .navbar-mobile-ctas a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active):visited {
   border-color: var(--openms-navy) !important;
 }
+
+/* Hover / focus — the standard outline-button effect, in navy: faint navy fill,
+   slight scale and a navy glow ring (it had the scale but a blue glow and no
+   fill). The border stays navy. */
+:is(html, #navbar-sponsor-specificity-boost):is(html, #navbar-sponsor-hover-boost) body .navbar-menu .navbar-mobile-ctas a.navbar-item.navbar-cta-item.about-cta-btn--donate:is(:hover, :focus-visible, :active) {
+  background: rgba(var(--openms-navy-rgb), 0.08) !important;
+  background-color: rgba(var(--openms-navy-rgb), 0.08) !important;
+  border-color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(var(--openms-navy-rgb), 0.18) !important;
+  outline: none !important;
+}
