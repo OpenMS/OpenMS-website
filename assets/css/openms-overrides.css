@@ -37764,9 +37764,16 @@ html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-l
    title/description start lower or higher than its neighbors depending on
    which logo it has. */
 html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo-wrap {
-  height: 152px !important;
-  min-height: 152px !important;
-  max-height: 152px !important;
+  height: 112px !important;
+  min-height: 112px !important;
+  max-height: 112px !important;
+}
+
+/* The slot is sized to the standard logo (~104px); the two "xlarge" logos
+   (OpenDDA, MHCquant) used to be 152px and forced a tall empty band above
+   every other card's logo. Cap them to the slot. */
+html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo {
+  max-height: 112px !important;
 }
 
 /* Featured Apps (homepage) — drop the blue top accent bar and top border */
