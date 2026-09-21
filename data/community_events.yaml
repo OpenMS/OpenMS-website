@@ -78,7 +78,7 @@ events:
   end: '2026-09-28T18:30:00+02:00'
   tz_label: CEST
   location: London, UK
-  summary: 'testing calendar REGISTER HERE: https://calendar.google.com/calendar/u/0/r?pli=1'
+  summary: 'testing calendar. kkkk REGISTER HERE: https://calendar.google.com/calendar/u/0/r?pli=1'
 - title: Google Summer of Code Ends
   start: '2026-11-02'
   category: outreach
@@ -98,4 +98,4 @@ events:
   end: '2027-03-20'
   location: Resort Natura, 8100-266 Loulé, Portugal
   summary: 'Registration and Info: https://tally.so/r/aQL8XW'
-last_synced: '2026-09-21T15:53:52Z'
+last_synced: '2026-09-21T16:26:04Z'
