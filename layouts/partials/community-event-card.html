@@ -42,8 +42,8 @@
         links (see sync_google_calendar.py) — turn the label into an actual
         link instead of showing the raw URL. Plain summaries with no URL
         pass through unchanged. */ -}}
-  {{- $htmlRE := `([A-Z][A-Za-z]*(?:\s+[A-Za-z&]+){0,3}?)\s*:\s*(https?://\S+)` -}}
-  {{- if not (findRE $htmlRE .) -}}{{- $htmlRE = `(?i)((?:[A-Za-z&]+\s+)?[A-Za-z&]+)\s*:\s*(https?://\S+)` -}}{{- end -}}
+  {{- $htmlRE := `([A-Z][A-Za-z]*(?:[^\S\n]+[A-Za-z&]+){0,3}?)[^\S\n]*:[^\S\n]*(https?://\S+)` -}}
+  {{- if not (findRE $htmlRE .) -}}{{- $htmlRE = `(?i)((?:[A-Za-z&]+[^\S\n]+)?[A-Za-z&]+)[^\S\n]*:[^\S\n]*(https?://\S+)` -}}{{- end -}}
   {{- $summaryHTML = replaceRE $htmlRE `<a href="$2" class="openms-cta-link" target="_blank" rel="noopener noreferrer">$1</a>` . -}}
 {{- end -}}
 {{- /* Primary card: keep the prose in the summary and list the links
@@ -56,8 +56,8 @@
         "testing calendar REGISTER HERE: url" links only "REGISTER HERE".
         When nothing is capitalised, the label is the last one or two words
         before the colon. */ -}}
-  {{- $linkRE := `([A-Z][A-Za-z]*(?:\s+[A-Za-z&]+){0,3}?)\s*:\s*(https?://\S+)` -}}
-  {{- if not (findRE $linkRE .) -}}{{- $linkRE = `(?i)((?:[A-Za-z&]+\s+)?[A-Za-z&]+)\s*:\s*(https?://\S+)` -}}{{- end -}}
+  {{- $linkRE := `([A-Z][A-Za-z]*(?:[^\S\n]+[A-Za-z&]+){0,3}?)[^\S\n]*:[^\S\n]*(https?://\S+)` -}}
+  {{- if not (findRE $linkRE .) -}}{{- $linkRE = `(?i)((?:[A-Za-z&]+[^\S\n]+)?[A-Za-z&]+)[^\S\n]*:[^\S\n]*(https?://\S+)` -}}{{- end -}}
   {{- $summaryLinks = findRESubmatch $linkRE . -}}
   {{- $summaryText = trim (replaceRE $linkRE "" .) " " -}}
   {{- /* Any bare URL left in the description (no "Label:" in front) is also
@@ -67,7 +67,8 @@
   {{- range findRE $bareRE $summaryText -}}
     {{- $summaryLinks = $summaryLinks | append (slice . "Link" .) -}}
   {{- end -}}
-  {{- $summaryText = trim (replaceRE $bareRE "" $summaryText) " " -}}
+  {{- $summaryText = trim (replaceRE $bareRE "" $summaryText) " \n" -}}
+  {{- $summaryText = replaceRE `\s*\n+\s*` " " $summaryText -}}
 {{- end -}}
 {{- $gcalStart := $start.Format "20060102" -}}
 {{- $gcalEndDate := $end.AddDate 0 0 1 -}}
