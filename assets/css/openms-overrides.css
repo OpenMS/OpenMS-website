@@ -25407,7 +25407,7 @@ html body :is(
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  gap: 1.05rem !important;
+  gap: 0.7rem !important;
   padding: var(--projects-card-inset-y, 1.05rem) var(--projects-card-inset-x, 1.1rem) !important;
   border: 1px solid rgba(var(--openms-navy-rgb), 0.1) !important;
   background: var(--openms-white) !important;
@@ -25439,7 +25439,10 @@ html body :is(
 
 .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo-wrap {
   display: flex !important;
-  align-items: center !important;
+  /* Sit on the bottom of the fixed-height logo slot, so every logo ends the
+     same short distance above the app name (centred, shorter logos floated
+     up to 59px away). */
+  align-items: flex-end !important;
   justify-content: flex-start !important;
   width: auto !important;
   height: auto !important;
@@ -36234,7 +36237,7 @@ html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-feat
 
   html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__surface {
     padding: 1rem !important;
-    gap: 0.85rem !important;
+    gap: 0.7rem !important;
   }
 
   html body .home-page .home-page__block--projects .webapps-featured__item::after {
