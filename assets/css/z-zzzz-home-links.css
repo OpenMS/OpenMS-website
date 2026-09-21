@@ -3,3 +3,14 @@
 :is(html, #home-links-specificity-boost) body .home-page .home-page__block--projects a.webapps-featured__show-all.webapps-featured__show-all {
   font-size: var(--openms-text-min, 0.8125rem) !important;
 }
+
+/* Homepage Ecosystem — pull the "Ecosystem" title up under its "Developer
+   tools" eyebrow (they were ~27px apart: 12px margin plus 15px of title padding). */
+:is(html, #ecosystem-title-specificity-boost) body .home-page .ecosystem-home__header-main .ecosystem-home__eyebrow.ecosystem-home__eyebrow {
+  margin-bottom: 0.35rem !important;
+}
+
+:is(html, #ecosystem-title-specificity-boost) body .home-page .ecosystem-home__header-main .ecosystem-home__title.ecosystem-home__title {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
