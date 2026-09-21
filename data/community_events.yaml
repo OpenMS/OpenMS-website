@@ -71,6 +71,14 @@ events:
   location: National University of Singapore
   summary: 'Join us before HUPO for a workshop on MS Analysis. More Info: https://openms.de/news/hupo_workshop_26/
     Registration: https://forms.gle/S6gcDAJrLztCAGBL7'
+- title: Rapha Test
+  start: '2026-09-28T17:30:00+02:00'
+  category: event
+  synced: true
+  end: '2026-09-28T18:30:00+02:00'
+  tz_label: CEST
+  location: London, UK
+  summary: 'testing calendar REGISTER HERE: https://calendar.google.com/calendar/u/0/r?pli=1'
 - title: Google Summer of Code Ends
   start: '2026-11-02'
   category: outreach
@@ -90,4 +98,4 @@ events:
   end: '2027-03-20'
   location: Resort Natura, 8100-266 Loulé, Portugal
   summary: 'Registration and Info: https://tally.so/r/aQL8XW'
-last_synced: '2026-09-21T15:04:43Z'
+last_synced: '2026-09-21T15:53:52Z'
