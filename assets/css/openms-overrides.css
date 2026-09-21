@@ -37928,3 +37928,37 @@ html body .home-page .home-page__block--partners .uni-partners--home .uni-partne
 
 
 
+
+/* Featured Apps (homepage) — every card in a grid row shares one logo row
+   whose height is the tallest logo in THAT row (CSS subgrid), so the names
+   and descriptions line up across the row without a fixed-height logo slot.
+   The slot used to be sized for the biggest logo, leaving a blank band above
+   every smaller one; now only rows that contain a big logo get the taller row. */
+@supports (grid-template-rows: subgrid) {
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog > .webapps-featured__item,
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog > .webapps-featured__item > .webapps-project-card--catalog,
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog > .webapps-featured__item > .webapps-project-card--catalog > .webapps-project-card__surface {
+    display: grid !important;
+    grid-row: span 2 !important;
+    grid-template-rows: subgrid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-flow: row !important;
+    row-gap: 0 !important;
+  }
+
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog > .webapps-featured__item > .webapps-project-card--catalog > .webapps-project-card__surface {
+    row-gap: 0.7rem !important;
+    align-content: start !important;
+  }
+
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo-wrap {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    align-self: end !important;
+  }
+
+  html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__logo {
+    max-height: 9.25rem !important;
+  }
+}
