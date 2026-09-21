@@ -37736,17 +37736,7 @@ html body .openms-lib-page--exec-committee.openms-lib-page--contribute.openms-li
   background-clip: border-box !important;
 }
 
-html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) h3.openms-lib-about__tile-title,
-html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__tile-title,
-html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__tile-text,
-html body .openms-lib-page--developer-retreat.openms-lib-page--solution .retreat-highlights__mosaic > article.openms-lib-about__tile:is(:hover, :focus-within) .openms-lib-about__num {
-  color: var(--openms-white) !important;
-  -webkit-text-fill-color: var(--openms-white) !important;
-  background: none !important;
-  background-image: none !important;
-  -webkit-background-clip: border-box !important;
-  background-clip: border-box !important;
-}
+/* Developer retreat tiles: hover styling lives in z-zzzzz-affiliated-btn.css (only the number turns blue). */
 
 html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process:not(.rhm-process--handling) .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) h3.contribute-track__title,
 html body .openms-lib-page--report-handling.openms-lib-page--contribute.openms-lib-page--solution .rhm-process:not(.rhm-process--handling) .rhm-process__steps .contribute-track__item:is(:hover, :focus-within) .contribute-track__title,
