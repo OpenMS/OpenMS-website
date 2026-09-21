@@ -14,6 +14,39 @@ To turn it on:
 
 Until the secret is set, the workflow runs as a no-op and the page shows no sync badge or button.
 
+### How quickly changes reach the site
+
+The workflow checks the calendar **every 15 minutes** and only commits (and so only redeploys the site) when an event actually changed. Google itself can take a while to refresh its public calendar feed, so a change may show up a little after the 15-minute mark.
+
+To make a change sync **immediately** instead of waiting for the next check, have Google Calendar notify GitHub when an event is created, edited or deleted, using a small Google Apps Script:
+
+1. On GitHub, create a fine-grained personal access token limited to this repository with **Contents: Read and write** (that permission is what allows triggering the workflow).
+2. Go to [script.google.com](https://script.google.com), create a project (signed in as the calendar owner), and add **Project Settings → Script properties → `GH_TOKEN`** with the token.
+3. Paste this in, replace the two placeholders, and run `setup` once (approve the permissions when asked):
+
+```js
+const REPO = 'OWNER/REPO';                    // e.g. OpenMS/OpenMS-website
+const CALENDAR_ID = 'CALENDAR_ID_OR_EMAIL';   // the calendar that feeds the site
+
+function notifyGitHub() {
+  UrlFetchApp.fetch('https://api.github.com/repos/' + REPO + '/dispatches', {
+    method: 'post',
+    contentType: 'application/json',
+    headers: {
+      Authorization: 'Bearer ' + PropertiesService.getScriptProperties().getProperty('GH_TOKEN'),
+      Accept: 'application/vnd.github+json',
+    },
+    payload: JSON.stringify({ event_type: 'calendar-updated' }),
+  });
+}
+
+function setup() {
+  ScriptApp.newTrigger('notifyGitHub').forUserCalendar(CALENDAR_ID).onEventUpdated().create();
+}
+```
+
+Every event change then triggers the "Sync Google Calendar" workflow within seconds. The token only lives in the script's private properties — never put it in this repository.
+
 ### What to put in the Google Calendar event
 
 Each Google Calendar field maps to one of this site's event fields. Fill these in and the event will show up correctly on the next sync:

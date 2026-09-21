@@ -2,9 +2,20 @@ name: Sync Google Calendar
 
 on:
   schedule:
-    # Every day at 07:00 UTC
-    - cron: '0 7 * * *'
+    # Every 15 minutes. The script only writes (and so only opens a PR /
+    # redeploys) when the calendar actually changed.
+    - cron: '*/15 * * * *'
+  # Lets an external trigger (e.g. a Google Apps Script calendar trigger)
+  # sync immediately on an event change: POST /repos/<repo>/dispatches with
+  # {"event_type": "calendar-updated"}. See docs/common-tasks/update-community-calendar.md.
+  repository_dispatch:
+    types: [calendar-updated]
   workflow_dispatch: {}
+
+# Never run two syncs at once — they share the update-calendar-sync branch.
+concurrency:
+  group: calendar-sync
+  cancel-in-progress: false
 
 permissions:
   contents: write

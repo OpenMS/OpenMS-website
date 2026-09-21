@@ -195,7 +195,13 @@ def main():
 
     data = load_data()
     hand_written = [e for e in data.get("events", []) if not e.get("synced")]
-    data["events"] = hand_written + synced_events
+    new_events = hand_written + synced_events
+    if new_events == data.get("events", []):
+        # The workflow runs every few minutes; rewriting last_synced each
+        # time would commit and redeploy the site on every run for nothing.
+        print("No changes — leaving the data file untouched.")
+        return
+    data["events"] = new_events
     data["last_synced"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     with open(DATA_FILE, "w") as f:
