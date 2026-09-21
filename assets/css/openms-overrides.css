@@ -37992,3 +37992,41 @@ html body .home-page .home-page__block--projects .webapps-featured__grid--catalo
 html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__cta-icon {
   font-size: inherit !important;
 }
+
+/* Ecosystem cards (homepage) — the logo heights differ (42-75px) and the title
+   was centred against the logo, so each card's title and description started
+   at a different height. Cards in a grid row now share three rows (heading +
+   logo, description, link) via subgrid, all top-aligned, so titles, logos,
+   descriptions and links sit on the same level across the row. */
+@supports (grid-template-rows: subgrid) {
+  html body .home-page .ecosystem-home__grid > .ecosystem-home__item,
+  html body .home-page .ecosystem-home__grid > .ecosystem-home__item > .ecosystem-home__card {
+    display: grid !important;
+    grid-row: span 3 !important;
+    grid-template-rows: subgrid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    row-gap: 0 !important;
+  }
+
+  html body .home-page .ecosystem-home__grid > .ecosystem-home__item > .ecosystem-home__card {
+    row-gap: 0.85rem !important;
+    align-content: start !important;
+  }
+
+  html body .home-page .ecosystem-home__card > .ecosystem-home__card-head {
+    align-self: start !important;
+    align-items: flex-start !important;
+    min-height: 0 !important;
+  }
+
+  html body .home-page .ecosystem-home__grid .ecosystem-home__item .ecosystem-home__card .ecosystem-home__card-head .ecosystem-home__card-icon.ecosystem-home__card-icon {
+    align-self: flex-start !important;
+    margin-top: 0 !important;
+  }
+
+  html body .home-page .ecosystem-home__card > .ecosystem-home__card-text,
+  html body .home-page .ecosystem-home__card > .ecosystem-home__card-link {
+    align-self: start !important;
+    margin: 0 !important;
+  }
+}
