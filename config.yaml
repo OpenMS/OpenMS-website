@@ -437,16 +437,16 @@ languages:
           url: http://www.mi.fu-berlin.de/en/inf/groups/abi/index.html
         - name: ETH Zürich
           logo: /images/logos/zurich.jpeg
-          url: http://www.imsb.ethz.ch/research/aebersold.html
+          url: https://imsb.ethz.ch/
         - name: Wellcome Sanger Institute
           logo: /images/logos/logo-sanger.png
-          url: http://www.sanger.ac.uk/
+          url: https://www.sanger.ac.uk/
         - name: EMBL-EBI
           logo: /images/logos/emblebi.png
           url: https://www.ebi.ac.uk/
         - name: University of Toronto
           logo: /images/logos/toronto.jpeg
-          url: http://www.moleculargenetics.utoronto.ca/faculty/2017/7/19/hannes-rost
+          url: https://moleculargenetics.utoronto.ca/faculty/hannes-rost
         - name: DTU Biosustain
           logo: /images/logos/DTU-logo.png
           url: https://www.biosustain.dtu.dk/
@@ -464,7 +464,7 @@ languages:
           url: https://www.su.se/english
         - name: Compomics Group
           logo: /images/logos/logo-compomics.png
-          url: https://www.compomics.com/
+          url: https://compomics.com/
         - name: Ghent University
           logo: /images/logos/logo-vib-ghent.png
           url: https://vib.be/en#/
@@ -725,7 +725,7 @@ languages:
             tag: Apps
             icon: fas fa-window-maximize
             text: Web applications and workflows built on top of OpenMS-lib.
-            url: https://deploy-preview-277--openms.netlify.app/featured-apps/
+            url: /featured-apps/
             linkText: See apps
           - title: Python bindings
             tag: pyOpenMS
@@ -1234,7 +1234,7 @@ languages:
         ctaText: View app
         showAll:
           text: Show all apps
-          url: https://deploy-preview-277--openms.netlify.app/featured-apps/
+          url: /featured-apps/
 
       affiliateSection:
         eyebrow: Partner ecosystem

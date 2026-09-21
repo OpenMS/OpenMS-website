@@ -37976,3 +37976,15 @@ html body .home-page .home-page__block--partners .uni-partners--home .uni-partne
     max-width: 100% !important;
   }
 }
+
+/* Featured Apps "View app →" was ~90% of the app name's size (its arrow ~94%),
+   so it read as a second title. Use the same small size as the other cards'
+   links (Learn more, Registration ...). */
+html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__cta {
+  font-size: var(--openms-text-min, 0.8125rem) !important;
+}
+
+html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__cta-label,
+html body .home-page .home-page__block--projects .webapps-featured__grid--catalog .webapps-project-card--catalog .webapps-project-card__cta-icon {
+  font-size: inherit !important;
+}
