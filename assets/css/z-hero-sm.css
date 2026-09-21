@@ -648,3 +648,20 @@ html body .home-page__hero .hero-home__btn--secondary.about-cta-btn--donate:focu
   }
 }
 
+
+/* Hero buttons: one gap at every screen size (it used to be 9px on tablets,
+   12px on phones and 24px on desktop). Wide enough that the hover grow (3%)
+   and glow of one button never reaches the other. */
+html body .home-page__hero .hero-home__actions:not(.__unused__) {
+  gap: 1.5rem !important;
+}
+
+/* Phones: stack the two buttons — Get started on top, Explore the library
+   below — instead of squeezing them side by side. */
+@media (max-width: 480px) {
+  html body .home-page__hero .hero-home__actions:not(.__unused__) {
+    grid-template-columns: 1fr !important;
+    grid-auto-flow: row !important;
+    max-width: 100% !important;
+  }
+}
