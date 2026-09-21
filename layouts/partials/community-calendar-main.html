@@ -14,7 +14,15 @@
 {{- $allEvents := index $communityEventsData "events" | default (slice) -}}
 {{- $upcoming := slice -}}
 {{- $past := slice -}}
+{{- /* A synced (Google Calendar) event is skipped when a hand-written event
+      already covers the same start date, so an event that exists in both places
+      is listed once — the hand-written entry is the more detailed one. */ -}}
+{{- $handDates := slice -}}
 {{- range $allEvents }}
+  {{- if not .synced }}{{- $handDates = $handDates | append (substr .start 0 10) -}}{{- end }}
+{{- end }}
+{{- range $allEvents }}
+  {{- if and .synced (in $handDates (substr .start 0 10)) }}{{- continue -}}{{- end }}
   {{- $endStr := .end | default .start -}}
   {{- $end := time $endStr -}}
   {{- /* An all-day event (date only, no time) runs through the end of that day. */ -}}
