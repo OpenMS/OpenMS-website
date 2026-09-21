@@ -578,13 +578,13 @@ html body .openms-lib-page--exec-committee .exec-amendments__steps .contribute-t
 }
 
 /* Developer retreat "About the retreat" tiles — on hover only the number turns
-   blue; the card keeps its white background and dark text (it used to flip to
-   a navy card with white text). */
+   blue; the card itself does not change at all (it used to flip to a navy card
+   with white text). */
 html body .openms-lib-page--developer-retreat .retreat-highlights__mosaic > .openms-lib-about__tile:is(:hover, :focus-within) {
-  background: var(--openms-white, #fff) !important;
-  background-color: var(--openms-white, #fff) !important;
-  border-color: rgba(var(--openms-navy-rgb), 0.35) !important;
-  box-shadow: 0 0.35rem 1rem rgba(var(--openms-blue-rgb), 0.1) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: rgba(var(--openms-navy-rgb), 0.1) !important;
+  box-shadow: none !important;
   transform: none !important;
 }
 
