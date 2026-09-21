@@ -38030,3 +38030,53 @@ html body .home-page .home-page__block--projects .webapps-featured__grid--catalo
     margin: 0 !important;
   }
 }
+
+/* Publications — "Cite OpenMS" band buttons. On phones (<=600px) the two
+   buttons were squeezed side by side (117-172px each) so their labels wrapped
+   onto 2-4 lines, and at every size only ~5px separated them. Two equal-width
+   buttons with a 1rem gap, one line each, stacked full-width on phones. */
+html body .openms-lib-page--publications #cite-openms .contribute-coc-band__actions {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+  width: min(100%, 34rem) !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+  justify-items: stretch !important;
+}
+
+html body .openms-lib-page--publications #cite-openms .contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  height: 2.875rem !important;
+  min-height: 2.875rem !important;
+  padding: 0 1.25rem !important;
+  font-size: var(--openms-btn-font-size, 0.9375rem) !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+}
+
+html body .openms-lib-page--publications #cite-openms .contribute-coc-band__actions .openms-lib-btn__label {
+  white-space: nowrap !important;
+}
+
+@media (max-width: 600px) {
+  html body .openms-lib-page--publications #cite-openms .contribute-coc-band__actions {
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: min(100%, 22rem) !important;
+  }
+
+  html body .openms-lib-page--publications #cite-openms .contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn {
+    white-space: normal !important;
+    height: auto !important;
+    padding-block: 0.6rem !important;
+  }
+}
