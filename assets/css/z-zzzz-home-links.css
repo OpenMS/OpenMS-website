@@ -42,30 +42,28 @@
   }
 }
 
-/* Homepage Upcoming events / Latest news — on phones the "View all →" link
-   moves from the header to the bottom of its list. The header is flattened
-   (display: contents) so the title, the list and the link can be re-ordered. */
+/* Homepage Upcoming events / Latest news — on phones "View all →" stays at the
+   right of the title, on the same line. */
 @media (max-width: 767px) {
-  :is(html, #view-all-bottom-boost) body .home-page .community-news-events__column.community-news-events__column {
+  :is(html, #view-all-row-boost) body .home-page .community-news-events__column > .community-news-events__column-header {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: baseline !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
   }
 
-  :is(html, #view-all-bottom-boost) body .home-page .community-news-events__column > .community-news-events__column-header {
-    display: contents !important;
+  :is(html, #view-all-row-boost) body .home-page .community-news-events__column .community-news-events__column-title {
+    flex: 0 1 auto;
+    min-width: 0;
+    margin: 0 !important;
   }
 
-  :is(html, #view-all-bottom-boost) body .home-page .community-news-events__column .community-news-events__column-title {
-    order: 0;
-  }
-
-  :is(html, #view-all-bottom-boost) body .home-page .community-news-events__column > :is(ul, .community-events-home__grid) {
-    order: 1;
-  }
-
-  :is(html, #view-all-bottom-boost) body .home-page .community-news-events__column .community-news-events__column-header > a.community-news-events__view-all {
-    order: 2;
-    align-self: flex-start;
-    margin-top: 1rem !important;
+  :is(html, #view-all-row-boost) body .home-page .community-news-events__column .community-news-events__column-header > a.community-news-events__view-all {
+    flex: 0 0 auto;
+    align-self: baseline !important;
+    margin: 0 !important;
+    white-space: nowrap;
   }
 }
