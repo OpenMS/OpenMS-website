@@ -476,22 +476,16 @@ html body .home-page .community-events-home__item .community-news-events__press-
   }
 }
 
-/* Upcoming events — titles are blue like the links in the cards. (Past events
-   and Latest news keep the dark title.) The dark colour is forced with
-   !important by a global heading rule whose many :not() parts give it a very
-   high specificity, hence the repeated classes below. */
-html body .home-page .community-news-events__column--events .community-events-home__item .community-events-home__card.community-news-events__press-card .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title,
-html body .openms-lib-page--calendar .community-events-page__section--upcoming .community-events-home__item .community-events-home__card.community-news-events__press-card .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title {
+/* Upcoming events — titles stay grey and turn blue only on hover/focus (like
+   Latest news). The grey is forced with !important by a global heading rule
+   whose many :not() parts give it a very high specificity, hence the repeated
+   classes below. */
+html body .home-page .community-news-events__column--events .community-events-home__item .community-events-home__card.community-news-events__press-card .community-news-events__press-link:hover .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title,
+html body .home-page .community-news-events__column--events .community-events-home__item .community-events-home__card.community-news-events__press-card a.community-news-events__press-link:focus-visible .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title,
+html body .openms-lib-page--calendar .community-events-page__section--upcoming .community-events-home__item .community-events-home__card.community-news-events__press-card .community-news-events__press-link:hover .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title,
+html body .openms-lib-page--calendar .community-events-page__section--upcoming .community-events-home__item .community-events-home__card.community-news-events__press-card a.community-news-events__press-link:focus-visible .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title {
   color: var(--openms-cta-link, var(--openms-blue)) !important;
   -webkit-text-fill-color: var(--openms-cta-link, var(--openms-blue)) !important;
-}
-
-html body .home-page .community-news-events__column--events a.community-news-events__press-link:hover .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title,
-html body .home-page .community-news-events__column--events a.community-news-events__press-link:focus-visible .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title,
-html body .openms-lib-page--calendar .community-events-page__section--upcoming a.community-news-events__press-link:hover .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title,
-html body .openms-lib-page--calendar .community-events-page__section--upcoming a.community-news-events__press-link:focus-visible .community-news-events__press-title.community-news-events__press-title.community-news-events__press-title {
-  color: var(--openms-navy) !important;
-  -webkit-text-fill-color: var(--openms-navy) !important;
 }
 
 /* Latest news — the card title turns blue on hover/focus (it was navy). Same
