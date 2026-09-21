@@ -557,3 +557,9 @@ html body .community-events-home__card.community-news-events__press-card .commun
   color: rgba(var(--openms-dark-rgb), 0.72) !important;
   -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
 }
+
+/* Each link (label + arrow) stays on one line; several links sit side by side
+   and only drop to a new row when the card is too narrow for both. */
+html body .community-events-home__card.community-news-events__press-card .community-news-events__press-links a {
+  white-space: nowrap;
+}
