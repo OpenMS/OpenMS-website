@@ -665,3 +665,24 @@ html body .home-page__hero .hero-home__actions:not(.__unused__) {
     max-width: 100% !important;
   }
 }
+
+/* XL screens: `space-between` pushed the diagram to the far edge of the
+   container, leaving 200-530px between the title and the diagram. Keep them
+   together at a steady gap instead. */
+@media (min-width: 1280px) {
+  html body .home-page__hero .hero-home__hero-grid {
+    justify-content: flex-start !important;
+    gap: clamp(4rem, 5vw, 6rem) !important;
+  }
+
+  /* The copy column is a size container, so it can't shrink-wrap its text;
+     give it a width equal to the text (~500px). */
+  html body .home-page__hero .hero-home__copy {
+    flex: 0 0 31rem !important;
+  }
+
+  html body .home-page__hero .hero-home__visual {
+    flex: 0 1 36rem !important;
+    min-width: 0 !important;
+  }
+}
