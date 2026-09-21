@@ -69,7 +69,13 @@ def extract_links(text):
         url = html.unescape(match.group(1)).strip()
         if not url.lower().startswith(("http://", "https://")):
             return match.group(2)
-        label = re.sub(r"[^A-Za-z ]+", " ", strip_html(match.group(2)))
+        visible = strip_html(match.group(2)).strip()
+        if visible.lower().startswith(("http://", "https://")):
+            # A bare URL that Google auto-linked: the text before it
+            # ("Registration: ") is already the label, so leave the URL
+            # in place instead of inventing a label from the URL itself.
+            return f" {url} "
+        label = re.sub(r"[^A-Za-z ]+", " ", visible)
         label = " ".join(label.split()) or "Link"
         entry = f"{label}: {url}"
         if entry not in links:
