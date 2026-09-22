@@ -304,6 +304,11 @@ section.webapps-featured::after {
 .webapps-project-card__text {
   margin: 0;
   flex: 1;
+  /* -webkit-line-clamp only truncates long text — a shorter description
+     still sizes its box to its own line count, so it doesn't reserve the
+     same space as a 3-line one. Reserve the full 3 lines' height so the
+     "View app" link below sits at the same level on every card in a row. */
+  min-height: calc(var(--webapps-card-text-lines) * 1.52em);
   font-family: var(--openms-font-body);
   font-size: var(--openms-body-size);
   line-height: 1.52;
