@@ -4,10 +4,14 @@
    started, Contact → Need a hand, Publications → Cite OpenMS, Archived apps →
    Community opportunity, Contributors → Want to contribute, Governance/Privacy
    → related pages):
-     - side by side, same small pill size, as long as both buttons fit at a
-       readable width (each at least 8.5rem) — `auto-fit`/`minmax` below drops
-       the second button onto its own full-width row only once the screen is
-       too narrow for both to sit comfortably side by side
+     - the site's standard button size (--openms-btn-*), matching every other
+       button on the same page (hero buttons, sponsorship tier "Learn more",
+       other "Contact us" instances) instead of a smaller custom pill
+     - side by side, as long as both buttons fit at a readable width (each at
+       least 9rem, enough for labels like "Make a donation" at the larger
+       standard size) — `auto-fit`/`minmax` below drops the second button
+       onto its own full-width row only once the screen is too narrow for
+       both to sit comfortably side by side
      - within a two-button band, both buttons are exactly the same width
    These bands had each grown their own size/breakpoint over time (button
    heights from 39–46px, widths from 117–309px, breakpoints at 560/561/600/
@@ -25,7 +29,7 @@
 :is(html, #navy-cta-boost) body #join-community .webapps-archived__revival-actions.webapps-archived__revival-actions,
 :is(html, #navy-cta-boost) body .openms-lib-page--archived .webapps-archived__revival-actions.webapps-archived__revival-actions {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)) !important;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)) !important;
   gap: 0.65rem !important;
   width: min(100%, 28rem) !important;
   max-width: 100% !important;
@@ -51,10 +55,10 @@
   white-space: normal !important;
   text-align: center !important;
   height: auto !important;
-  min-height: 2.35rem !important;
-  padding: 0.55rem 0.85rem !important;
-  font-size: 0.85rem !important;
-  font-weight: 600 !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 0.9rem !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  font-weight: var(--openms-btn-weight, 600) !important;
 }
 
 /* ---------- single-button bands: hug their own text ---------- */

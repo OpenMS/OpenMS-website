@@ -1,0 +1,9 @@
+/* "What is OpenMS?" cards (BSD Licensed, C++ · Python, ...) on the homepage —
+   the tag pill sits in the top-right corner of the card instead of the
+   top-left, at every screen size. Everything else (badge above the title,
+   then the text, all left-aligned) is unchanged; only the badge's own
+   alignment within its row flips from flex-start to flex-end. Loads after
+   openms-overrides.css, so it wins the (otherwise tied) cascade. */
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-head {
+  justify-content: flex-end !important;
+}
