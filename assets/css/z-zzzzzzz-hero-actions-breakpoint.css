@@ -6,6 +6,9 @@
    ~560-576px on "Sponsorship program" / "Email Us", a different point on
    "Discuss a partnership" / "Our partners", and 480px on the homepage's
    "Get started" / "Explore the library" — instead of at one fixed point.
+   Stacked buttons stay flush with the hero text above them (full width, no
+   centering) rather than a centered max-22rem column, which is what the navy
+   CTA bands use but doesn't suit a left-aligned hero.
    `:is(html, #id)` only adds specificity to beat a sitewide two-button
    width:100% rule (built on :has()/:not(), which alone out-specifies a plain
    class selector) and the homepage hero's own older breakpoint rule; html
@@ -20,9 +23,9 @@
     flex-direction: column !important;
     flex-wrap: nowrap !important;
     align-items: stretch !important;
-    width: min(100%, 22rem) !important;
+    width: 100% !important;
     max-width: 100% !important;
-    margin-inline: auto !important;
+    margin-inline: 0 !important;
   }
 
   :is(html, #hero-actions-boost) .openms-lib-hero__actions .openms-lib-btn,
