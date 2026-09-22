@@ -19,3 +19,11 @@ html body .openms-lib-page--governance #related-pages .governance-cta-band__acti
     margin-inline: auto !important;
   }
 }
+
+/* Wider on phones — more side padding, still hugging its own text (not
+   stretched to fill the band). */
+@media (max-width: 767px) {
+  html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
+    padding-inline: 2.5rem !important;
+  }
+}
