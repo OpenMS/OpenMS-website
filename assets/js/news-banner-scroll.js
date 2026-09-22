@@ -11,6 +11,13 @@
   var collapseAt = 64;
   var expandAt = 8;
   var update = function () {
+    // While the mobile menu is open, navbar.js locks body scroll by setting
+    // position:fixed with a negative top offset — the page's real scroll
+    // position doesn't change, but window.scrollY reads back as 0 while
+    // that's in effect. Without this guard, opening the burger menu after
+    // scrolling down would read y=0 and incorrectly re-expand an already
+    // (correctly) hidden banner.
+    if (document.body.classList.contains("navbar-menu-open")) return;
     var y = window.scrollY;
     if (y > collapseAt) {
       header.classList.add("has-scrolled");
