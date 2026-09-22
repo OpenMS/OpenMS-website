@@ -1,0 +1,67 @@
+/* ============================================================================
+   Hero action buttons — one consistent breakpoint (640px) across every hero
+   on the site, matching the navy CTA bands (z-zzzzzz-navy-cta-standard.css).
+   Before this, each hero's two buttons stacked wherever their own particular
+   labels happened to run out of horizontal room via natural flex-wrap — e.g.
+   ~560-576px on "Sponsorship program" / "Email Us", a different point on
+   "Discuss a partnership" / "Our partners", and 480px on the homepage's
+   "Get started" / "Explore the library" — instead of at one fixed point.
+   `:is(html, #id)` only adds specificity to beat a sitewide two-button
+   width:100% rule (built on :has()/:not(), which alone out-specifies a plain
+   class selector) and the homepage hero's own older breakpoint rule; html
+   always matches, so it changes nothing about which pages/elements this file
+   targets.
+   ============================================================================ */
+
+@media (max-width: 639px) {
+  :is(html, #hero-actions-boost) .openms-lib-hero__actions,
+  :is(html, #hero-actions-boost) .home-page .hero-home__actions {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    width: min(100%, 22rem) !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+  }
+
+  :is(html, #hero-actions-boost) .openms-lib-hero__actions .openms-lib-btn,
+  :is(html, #hero-actions-boost) .home-page .hero-home__actions .hero-home__btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 0 0 auto !important;
+  }
+}
+
+@media (min-width: 640px) {
+  :is(html, #hero-actions-boost) .openms-lib-hero__actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    justify-self: stretch !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  :is(html, #hero-actions-boost) .openms-lib-hero__actions .openms-lib-btn {
+    width: auto !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+  }
+
+  :is(html, #hero-actions-boost) .home-page .hero-home__actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+
+  :is(html, #hero-actions-boost) .home-page .hero-home__actions .hero-home__btn {
+    width: auto !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+  }
+}
