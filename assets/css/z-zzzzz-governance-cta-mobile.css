@@ -1,32 +1,21 @@
-/* Governance "See also — Ready to get involved?" band: on phones, size the
-   lone "Contributing Guide" button like the standard site button (same
-   min-height/padding/font-size tokens as the other CTA bands), full width of
-   the band instead of hugging its text. */
+/* Governance "See also — Ready to get involved?" band: the lone "Contributing
+   Guide" button hugs its own text (standard button padding/font-size), at
+   every screen size, instead of being stretched to a fixed/full width. */
+html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  font-weight: var(--openms-btn-weight, 600) !important;
+  margin-inline: auto !important;
+}
+
 @media (max-width: 767px) {
   html body .openms-lib-page--governance #related-pages .governance-cta-band__actions.governance-cta-band__actions {
     width: min(100%, 22rem) !important;
     max-width: 100% !important;
     margin-inline: auto !important;
-  }
-
-  html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    min-height: var(--openms-btn-min-height, 2.75rem) !important;
-    padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
-    font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
-    font-weight: var(--openms-btn-weight, 600) !important;
-  }
-}
-
-/* Same band on large screens — the button was capped at the standard bands'
-   widest size (14rem / ~224px, 45px tall). Make it a bit smaller here. */
-@media (min-width: 1024px) {
-  html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
-    min-width: 9rem !important;
-    min-height: 2.35rem !important;
-    padding: 0.55rem 1.1rem !important;
-    font-size: 0.85rem !important;
   }
 }
