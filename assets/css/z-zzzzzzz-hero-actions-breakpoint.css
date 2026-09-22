@@ -1,9 +1,16 @@
 /* ============================================================================
    Hero action buttons — side by side, one consistent button size, matching
    the navy CTA bands in z-zzzzzz-navy-cta-standard.css, as long as every
-   button fits at a readable width (each at least 10rem). `auto-fit` drops
-   whichever buttons don't fit onto their own full-width row(s) once the
-   screen is too narrow, instead of squeezing or overflowing.
+   button fits at a readable width (each at least 11rem, tuned to labels like
+   "Sponsorship program" / "Executive committee" / "Discuss a partnership" so
+   they stay on one line). `auto-fit` drops whichever buttons don't fit onto
+   their own full-width row(s) once the screen is too narrow, instead of
+   squeezing, wrapping the label onto two lines, or overflowing. A couple of
+   pages with an even longer label ("Explore ways to contribute", "Report
+   handling manual") can still wrap in a narrow in-between range — going wide
+   enough to prevent that everywhere would make every hero stack much sooner
+   on phones, undoing "side by side on phones" for the shorter labels that
+   are the common case.
    `:is(html, #id)` only adds specificity to beat a sitewide two-button
    width:100% rule (built on :has()/:not(), which alone out-specifies a plain
    class selector) and the homepage hero's own older breakpoint rule; html
@@ -14,7 +21,7 @@
 :is(html, #hero-actions-boost) .openms-lib-hero__actions,
 :is(html, #hero-actions-boost) .home-page .hero-home__actions {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)) !important;
   justify-content: center !important;
   align-items: stretch !important;
   justify-self: stretch !important;
