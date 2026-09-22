@@ -51,13 +51,14 @@ html body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.
   box-sizing: border-box !important;
 }
 
-/* "Need help?" (Discord / GitHub issue) — side by side at every screen size,
-   both the same size, matching the navy CTA bands / hero buttons standard. */
+/* "Need help?" (Discord / GitHub issue) — side by side, same size, matching
+   the navy CTA bands / hero buttons standard, as long as both fit at a
+   readable width (each at least 9.5rem); `auto-fit` drops the second button
+   onto its own full-width row once the screen is too narrow for both. */
 html body .openms-lib-page .openms-lib-resources__assist .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions,
 html body .openms-lib-page #getting-started#getting-started .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions {
   display: grid !important;
-  grid-auto-flow: column !important;
-  grid-auto-columns: minmax(0, 1fr) !important;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)) !important;
   align-items: stretch !important;
   justify-content: center !important;
   gap: 0.65rem !important;

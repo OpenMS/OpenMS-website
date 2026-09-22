@@ -1,9 +1,9 @@
 /* ============================================================================
-   Hero action buttons — side by side at every screen size, including phones,
-   with one consistent button size throughout (matching the navy CTA bands in
-   z-zzzzzz-navy-cta-standard.css). Neither button ever drops to its own row;
-   on narrow screens each button shares the row equally (flex: 1 1 0) and its
-   label wraps onto a second line rather than overflowing.
+   Hero action buttons — side by side, one consistent button size, matching
+   the navy CTA bands in z-zzzzzz-navy-cta-standard.css, as long as every
+   button fits at a readable width (each at least 10rem). `auto-fit` drops
+   whichever buttons don't fit onto their own full-width row(s) once the
+   screen is too narrow, instead of squeezing or overflowing.
    `:is(html, #id)` only adds specificity to beat a sitewide two-button
    width:100% rule (built on :has()/:not(), which alone out-specifies a plain
    class selector) and the homepage hero's own older breakpoint rule; html
@@ -13,9 +13,8 @@
 
 :is(html, #hero-actions-boost) .openms-lib-hero__actions,
 :is(html, #hero-actions-boost) .home-page .hero-home__actions {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
   justify-content: center !important;
   align-items: stretch !important;
   justify-self: stretch !important;
@@ -28,8 +27,7 @@
 
 :is(html, #hero-actions-boost) .openms-lib-hero__actions .openms-lib-btn,
 :is(html, #hero-actions-boost) .home-page .hero-home__actions .hero-home__btn {
-  flex: 1 1 0 !important;
-  width: auto !important;
+  width: 100% !important;
   max-width: none !important;
   min-width: 0 !important;
   white-space: normal !important;

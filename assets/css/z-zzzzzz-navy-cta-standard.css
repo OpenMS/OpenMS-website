@@ -4,8 +4,10 @@
    started, Contact → Need a hand, Publications → Cite OpenMS, Archived apps →
    Community opportunity, Contributors → Want to contribute, Governance/Privacy
    → related pages):
-     - side by side, never stacked, at every screen size (including phones)
-     - the same small pill size at every screen size
+     - side by side, same small pill size, as long as both buttons fit at a
+       readable width (each at least 8.5rem) — `auto-fit`/`minmax` below drops
+       the second button onto its own full-width row only once the screen is
+       too narrow for both to sit comfortably side by side
      - within a two-button band, both buttons are exactly the same width
    These bands had each grown their own size/breakpoint over time (button
    heights from 39–46px, widths from 117–309px, breakpoints at 560/561/600/
@@ -15,7 +17,7 @@
    about which pages/elements this file targets.
    ============================================================================ */
 
-/* ---------- two-button bands: equal-width grid, every screen size ---------- */
+/* ---------- two-button bands: equal-width grid, breaks down if it doesn't fit ---------- */
 :is(html, #navy-cta-boost) body #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions,
 :is(html, #navy-cta-boost) body #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions,
 :is(html, #navy-cta-boost) body #get-help .contribute-coc-band__actions.contribute-coc-band__actions,
@@ -23,7 +25,7 @@
 :is(html, #navy-cta-boost) body #join-community .webapps-archived__revival-actions.webapps-archived__revival-actions,
 :is(html, #navy-cta-boost) body .openms-lib-page--archived .webapps-archived__revival-actions.webapps-archived__revival-actions {
   display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)) !important;
   gap: 0.65rem !important;
   width: min(100%, 28rem) !important;
   max-width: 100% !important;
