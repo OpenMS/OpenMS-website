@@ -65,8 +65,8 @@ languages:
       newsBanner:
         enabled: true
         label: News
-        text: Workshop at University of Helsinki on April 30th 2026.
-        link: /news/helsinki_workshop_2026/
+        text: 'MS Analysis with OpenMS: Free Workshop at The National University of Singapore.'
+        link: /news/hupo_workshop_26/
       contributePage:
         eyebrow: Community
         subtitle: >-
