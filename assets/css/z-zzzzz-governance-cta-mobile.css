@@ -1,22 +1,18 @@
 /* Governance "See also — Ready to get involved?" band. */
 
-/* Desktop / tablet: the lone "Contributing Guide" button hugs its own text
-   (standard button padding/font-size) instead of a fixed/full width. */
+/* Base: the lone "Contributing Guide" button hugs its own text (standard
+   button padding/font-size) instead of a fixed/full width. Phones override
+   this below to match the other single-button CTA bands. */
 html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
   width: fit-content !important;
   min-width: 0 !important;
   max-width: 100% !important;
-  min-height: var(--openms-btn-min-height, 2.75rem) !important;
-  padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
-  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
-  font-weight: var(--openms-btn-weight, 600) !important;
   margin-inline: auto !important;
 }
 
-/* Phones: same size as the other single-button CTA bands (Support OpenMS →
-   Become a sponsor's Email Us / View program, etc.) — full width of a
-   min(100%, 22rem) column, ~44px tall. */
-@media (max-width: 767px) {
+/* Phones only: full width to match the other single-button CTA bands
+   (Support OpenMS → Become a sponsor's Email Us / View program, etc.). */
+@media (max-width: 639px) {
   html body .openms-lib-page--governance #related-pages .governance-cta-band__actions.governance-cta-band__actions {
     width: min(100%, 22rem) !important;
     max-width: 100% !important;
@@ -28,24 +24,19 @@ html body .openms-lib-page--governance #related-pages .governance-cta-band__acti
     max-width: 100% !important;
     min-width: 0 !important;
     justify-content: center !important;
-    padding-inline: 1.25rem !important;
+    min-height: var(--openms-btn-min-height, 2.75rem) !important;
+    padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+    font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+    font-weight: var(--openms-btn-weight, 600) !important;
   }
 }
 
-/* Tablet and up (md–xl): smaller, still hugging its own text exactly. */
-@media (min-width: 768px) {
+/* sm through xl (640px and up): one consistent, smaller-than-default size. */
+@media (min-width: 640px) {
   html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
     min-height: 2.35rem !important;
     padding: 0.55rem 1.1rem !important;
     font-size: 0.85rem !important;
-  }
-}
-
-/* Medium screens only (tablet, 768–1023px) — a bit less wide than the
-   tablet/desktop size above. */
-@media (min-width: 768px) and (max-width: 1023px) {
-  html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
-    padding-inline: 0.85rem !important;
-    font-size: 0.8rem !important;
+    font-weight: var(--openms-btn-weight, 600) !important;
   }
 }
