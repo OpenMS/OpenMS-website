@@ -40,3 +40,12 @@ html body .openms-lib-page--governance #related-pages .governance-cta-band__acti
     font-size: 0.85rem !important;
   }
 }
+
+/* Medium screens only (tablet, 768–1023px) — a bit less wide than the
+   tablet/desktop size above. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
+    padding-inline: 0.85rem !important;
+    font-size: 0.8rem !important;
+  }
+}
