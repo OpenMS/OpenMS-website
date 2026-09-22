@@ -19,3 +19,14 @@
     font-weight: var(--openms-btn-weight, 600) !important;
   }
 }
+
+/* Same band on large screens — the button was capped at the standard bands'
+   widest size (14rem / ~224px, 45px tall). Make it a bit smaller here. */
+@media (min-width: 1024px) {
+  html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
+    min-width: 9rem !important;
+    min-height: 2.35rem !important;
+    padding: 0.55rem 1.1rem !important;
+    font-size: 0.85rem !important;
+  }
+}
