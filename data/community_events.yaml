@@ -87,6 +87,17 @@ events:
   start: '2026-05-25'
   category: outreach
   synced: true
+- title: TEST
+  start: '2026-09-23T19:30:00+02:00'
+  category: event
+  synced: true
+  end: '2026-09-23T20:30:00+02:00'
+  tz_label: CEST
+  location: Brasília - Brasilia, Brasília - Federal District, Brazil
+  summary: 'OpenMS has announced a major expansion of its open-source mass spectrometry
+    ecosystem, introducing new tools, improved workflows, and expanded documentation…
+
+    test: https://chatgpt.com/c/6ab2b7cc-f038-83ed-b7a4-7c7a187fb8a3'
 - title: 'MS Analysis with OpenMS: Free Worshop'
   start: '2026-09-26'
   category: event
@@ -119,4 +130,4 @@ events:
   end: '2027-03-20'
   location: Resort Natura, 8100-266 Loulé, Portugal
   summary: 'Registration and Info: https://tally.so/r/aQL8XW'
-last_synced: '2026-09-21T20:39:04Z'
+last_synced: '2026-09-22T17:24:07Z'
