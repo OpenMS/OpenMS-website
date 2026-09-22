@@ -67,19 +67,6 @@ html body .openms-lib-page--contact #get-help .contribute-coc-band__actions.cont
   -webkit-text-fill-color: var(--openms-navy) !important;
 }
 
-/* Contact → Community card (Discord & GitHub): on phones the two buttons sit
-   one above the other at the full width of the card. */
-@media (max-width: 560px) {
-  html body .openms-lib-page .contact-path-socials.contact-path-socials {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 0.85rem !important;
-  }
-
-  html body .openms-lib-page .contact-path-socials.contact-path-socials a.contact-path-social.contact-path-social {
-    width: 100% !important;
-    max-width: none !important;
-    justify-content: center !important;
-  }
-}
+/* Contact → Community card (Discord & GitHub): side by side at every screen
+   size — the base flex:1 1 0 row in contact-page.css already keeps both
+   buttons equal width, so no stacking override is needed here any more. */
