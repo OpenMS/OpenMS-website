@@ -1,11 +1,21 @@
-/* Governance "See also — Ready to get involved?" band: on phones the lone
-   "Contributing Guide" button hugs its text (a shared rule sizes single-button
-   CTA bands that way) and comes out small. Make it bigger here specifically. */
+/* Governance "See also — Ready to get involved?" band: on phones, size the
+   lone "Contributing Guide" button like the standard site button (same
+   min-height/padding/font-size tokens as the other CTA bands), full width of
+   the band instead of hugging its text. */
 @media (max-width: 767px) {
+  html body .openms-lib-page--governance #related-pages .governance-cta-band__actions.governance-cta-band__actions {
+    width: min(100%, 22rem) !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+  }
+
   html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
-    min-width: min(100%, 18rem) !important;
-    min-height: 3.25rem !important;
-    padding: 1rem 1.85rem !important;
-    font-size: 1.05rem !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: var(--openms-btn-min-height, 2.75rem) !important;
+    padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+    font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+    font-weight: var(--openms-btn-weight, 600) !important;
   }
 }
