@@ -19,12 +19,3 @@ html body .openms-lib-page--governance #related-pages .governance-cta-band__acti
     margin-inline: auto !important;
   }
 }
-
-/* Bigger on phones, still hugging its own text (not stretched full width). */
-@media (max-width: 767px) {
-  html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
-    min-height: 3.1rem !important;
-    padding: 0.95rem 1.75rem !important;
-    font-size: 1rem !important;
-  }
-}
