@@ -1,16 +1,18 @@
 /* ============================================================================
-   Hero action buttons — side by side, one consistent button size, matching
-   the navy CTA bands in z-zzzzzz-navy-cta-standard.css, as long as every
-   button fits at a readable width (each at least 11rem, tuned to labels like
-   "Sponsorship program" / "Executive committee" / "Discuss a partnership" so
-   they stay on one line). `auto-fit` drops whichever buttons don't fit onto
-   their own full-width row(s) once the screen is too narrow, instead of
-   squeezing, wrapping the label onto two lines, or overflowing. A couple of
-   pages with an even longer label ("Explore ways to contribute", "Report
-   handling manual") can still wrap in a narrow in-between range — going wide
-   enough to prevent that everywhere would make every hero stack much sooner
-   on phones, undoing "side by side on phones" for the shorter labels that
-   are the common case.
+   Hero action buttons — side by side, one consistent button size (the site's
+   standard button size, --openms-btn-*, matching every other button on the
+   page — e.g. the homepage's "Get involved"/"Contact us"/nav CTAs — so hero
+   buttons aren't a visibly different height from everything below them), as
+   long as every button fits at a readable width (each at least 12.5rem,
+   tuned to labels like "Sponsorship program" / "Executive committee" /
+   "Discuss a partnership" so they stay on one line at this larger size).
+   `auto-fit` drops whichever buttons don't fit onto their own full-width
+   row(s) once the screen is too narrow, instead of squeezing, wrapping the
+   label onto two lines, or overflowing. A couple of pages with an even
+   longer label ("Explore ways to contribute", "Report handling manual") can
+   still wrap in a narrow in-between range — going wide enough to prevent
+   that everywhere would make every hero stack much sooner on phones, undoing
+   "side by side on phones" for the shorter labels that are the common case.
    `:is(html, #id)` only adds specificity to beat a sitewide two-button
    width:100% rule (built on :has()/:not(), which alone out-specifies a plain
    class selector) and the homepage hero's own older breakpoint rule; html
@@ -40,8 +42,8 @@
   white-space: normal !important;
   text-align: center !important;
   height: auto !important;
-  min-height: 2.35rem !important;
-  padding: 0.55rem 0.85rem !important;
-  font-size: 0.85rem !important;
-  font-weight: 600 !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 0.9rem !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  font-weight: var(--openms-btn-weight, 600) !important;
 }
