@@ -383,28 +383,9 @@ html body .openms-lib-page.openms-lib-page--solution.openms-lib-page--archived.o
   justify-content: center !important;
 }
 
-/* "Community opportunity" band (Contact Us / Sponsor Us) — on phones one
-   button per line, both the same full width. */
-@media (max-width: 560px) {
-  html body .openms-lib-page.openms-lib-page.openms-lib-page .webapps-archived__revival-actions.webapps-archived__revival-actions {
-    display: flex !important;
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
-    align-items: stretch !important;
-    justify-content: center !important;
-    gap: 0.85rem !important;
-    width: min(100%, 22rem) !important;
-    max-width: 100% !important;
-    margin-inline: auto !important;
-  }
-
-  html body .openms-lib-page.openms-lib-page.openms-lib-page .webapps-archived__revival-actions.webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 auto !important;
-    justify-content: center !important;
-  }
-}
+/* "Community opportunity" band sizing/breakpoint now lives in
+   z-zzzzzz-navy-cta-standard.css (one standard shared by every navy CTA band
+   on the site). */
 
 /* Archived apps — the card sat ~150px below the intro text (section gap plus
    the section's own top padding). Pull it up close to the intro. */
@@ -454,14 +435,6 @@ html body .openms-lib-page--archived .webapps-archived--catalog .webapps-archive
   font-size: 0.625rem !important;
   letter-spacing: 0.08em !important;
   padding: 0.14rem 0.55rem !important;
-}
-
-/* Community opportunity band — keep the standard 1rem button gap so the
-   hover glow/lift never touches the neighbour. */
-@media (min-width: 561px) {
-  html body .openms-lib-page.openms-lib-page.openms-lib-page .webapps-archived__revival-actions.webapps-archived__revival-actions {
-    column-gap: 0.65rem !important;
-  }
 }
 
 /* Archived apps intro sentence: one line on tablet/desktop, scaling with the
