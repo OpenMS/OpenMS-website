@@ -109,6 +109,14 @@ events:
     More Info: https://openms.de/news/hupo_workshop_26/
 
     Registration: https://forms.gle/S6gcDAJrLztCAGBL7'
+- title: Josh's Test Event
+  start: '2026-10-01T10:00:00+02:00'
+  category: event
+  synced: true
+  end: '2026-10-01T10:30:00+02:00'
+  tz_label: CEST
+  location: Toronto, ON, Canada
+  summary: This is the description.
 - title: Google Summer of Code Ends
   start: '2026-11-02'
   category: outreach
@@ -130,4 +138,4 @@ events:
   end: '2027-03-20'
   location: Resort Natura, 8100-266 Loulé, Portugal
   summary: 'Registration and Info: https://tally.so/r/aQL8XW'
-last_synced: '2026-09-22T17:24:07Z'
+last_synced: '2026-09-22T19:39:07Z'
