@@ -1,6 +1,7 @@
-/* Governance "See also — Ready to get involved?" band: the lone "Contributing
-   Guide" button hugs its own text (standard button padding/font-size), at
-   every screen size, instead of being stretched to a fixed/full width. */
+/* Governance "See also — Ready to get involved?" band. */
+
+/* Desktop / tablet: the lone "Contributing Guide" button hugs its own text
+   (standard button padding/font-size) instead of a fixed/full width. */
 html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
   width: fit-content !important;
   min-width: 0 !important;
@@ -12,18 +13,21 @@ html body .openms-lib-page--governance #related-pages .governance-cta-band__acti
   margin-inline: auto !important;
 }
 
+/* Phones: same size as the other single-button CTA bands (Support OpenMS →
+   Become a sponsor's Email Us / View program, etc.) — full width of a
+   min(100%, 22rem) column, ~44px tall. */
 @media (max-width: 767px) {
   html body .openms-lib-page--governance #related-pages .governance-cta-band__actions.governance-cta-band__actions {
     width: min(100%, 22rem) !important;
     max-width: 100% !important;
     margin-inline: auto !important;
   }
-}
 
-/* Wider on phones — more side padding, still hugging its own text (not
-   stretched to fill the band). */
-@media (max-width: 767px) {
   html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
-    padding-inline: 3.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+    padding-inline: 1.25rem !important;
   }
 }
