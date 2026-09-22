@@ -31,3 +31,12 @@ html body .openms-lib-page--governance #related-pages .governance-cta-band__acti
     padding-inline: 1.25rem !important;
   }
 }
+
+/* Tablet and up (md–xl): smaller, still hugging its own text exactly. */
+@media (min-width: 768px) {
+  html body .openms-lib-page--governance #related-pages .governance-cta-band__actions .openms-lib-btn.openms-lib-btn {
+    min-height: 2.35rem !important;
+    padding: 0.55rem 1.1rem !important;
+    font-size: 0.85rem !important;
+  }
+}
