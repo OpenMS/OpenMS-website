@@ -287,3 +287,21 @@ html body .openms-lib-page--contribute #communication-channels#communication-cha
     color: var(--openms-blue) !important;
   }
 }
+
+/* Funding panel: the button sits under the text instead of beside it. */
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support {
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 1.25rem !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support__copy {
+  flex: 0 0 auto;
+  max-width: 44rem;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support .contribute-support__cta.openms-lib-btn {
+  align-self: flex-start !important;
+}

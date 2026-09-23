@@ -111,7 +111,8 @@ html body .openms-lib-page--contribute .coc-value__text {
 
 /* ---------- agreement note ---------- */
 html body .openms-lib-page--contribute .coc-agreement {
-  max-width: 52rem;
+  max-width: none;
+  width: 100%;
   margin: clamp(1.25rem, 2.5vw, 1.75rem) 0 0;
   padding-left: 1rem;
   border-left: 3px solid rgba(var(--openms-blue-rgb), 0.35);
@@ -165,7 +166,7 @@ html body .openms-lib-page--contribute .coc-callout__kicker {
 html body .openms-lib-page--contribute .coc-callout__email {
   margin: 0;
   font-family: var(--openms-font-heading);
-  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
   font-weight: 700;
   overflow-wrap: anywhere;
 }
@@ -217,4 +218,17 @@ html body .openms-lib-page--contribute .coc-callout__actions {
     width: 100%;
     justify-content: center;
   }
+}
+
+/* ---------- spacing between "Stay in touch" and the Code of Conduct ----------
+   The channels anchor's own bottom padding (a grey stripe) plus the CoC
+   anchor's top padding stacked on top of the white sections' padding,
+   leaving a ~240px gap. Keep one section gap between the two white bands. */
+html body .openms-lib-page--contribute #communication-channels#communication-channels {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-page--contribute #code-of-conduct#code-of-conduct {
+  padding-top: 0 !important;
 }

@@ -138,3 +138,96 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
   width: 1em !important;
   height: 1em !important;
 }
+
+/* ============================================================================
+   Hover: the cards stay white. Older rules turned some of them navy on hover
+   (white text) while the standard frame keeps the white background — so the
+   text vanished. Hover is now: subtle lift/shadow, icon turns blue, link
+   turns darker blue; text keeps its normal colours.
+   ============================================================================ */
+:is(html, #card-hover-boost) body .openms-lib-page .contribute-track__item:is(:hover, :focus-within),
+:is(html, #card-hover-boost) body .openms-lib-page .contribute-channel:is(:hover, :focus-within),
+:is(html, #card-hover-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  border-color: rgba(var(--openms-blue-rgb), 0.35) !important;
+  box-shadow: var(--pro-shadow-hover, 0 0.5rem 1.25rem rgba(var(--openms-navy-rgb), 0.1)) !important;
+  transform: translateY(-2px) !important;
+}
+
+:is(html, #card-hover-boost) body .openms-lib-page :is(.contribute-track__item, .contribute-channel, .openms-lib-developers__card:not(.openms-lib-developers__card--featured)):is(:hover, :focus-within) :is(h3, h4, .contribute-track__title, .contribute-channel__title, .openms-lib-developers__card-title) {
+  color: rgba(var(--openms-dark-rgb), 0.85) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.85) !important;
+}
+
+:is(html, #card-hover-boost) body .openms-lib-page :is(.contribute-track__item, .contribute-channel, .openms-lib-developers__card:not(.openms-lib-developers__card--featured)):is(:hover, :focus-within) :is(p, .contribute-track__text, .contribute-channel__text, .openms-lib-developers__card-text, .openms-lib-developers__card-subtitle) {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+:is(html, #card-hover-boost) body .openms-lib-page :is(.contribute-track__item, .contribute-channel, .openms-lib-developers__card:not(.openms-lib-developers__card--featured)):is(:hover, :focus-within) :is(.contribute-track__cta, .contribute-channel__link, .openms-lib-developers__card-link, .contribute-os-links a) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+/* project chips inside the featured development card */
+:is(html, #card-hover-boost) body .openms-lib-page--contribute .contribute-track__item:is(:hover, :focus-within) .contribute-project-link,
+:is(html, #card-hover-boost) body .openms-lib-page--contribute .contribute-track__item:is(:hover, :focus-within) .contribute-project-link .contribute-project-link__name {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  background: rgba(var(--openms-blue-rgb), 0.05);
+}
+
+/* ghost platform buttons on hovered developer cards (were white on white) */
+:is(html, #card-hover-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__platform-btn,
+:is(html, #card-hover-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__platform-btn :is(.openms-lib-btn__label, i, svg) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  border-color: var(--openms-navy) !important;
+  background: transparent !important;
+}
+
+/* Contribute tracks: an id-scoped rule (#ways-to-contribute) painted every
+   descendant white on hover; match its ids so the hover state stays readable. */
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__title {
+  color: rgba(var(--openms-dark-rgb), 0.85) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.85) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__text {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__cta,
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a,
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-project-link,
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-project-link__name {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon,
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__badge {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+/* descendants (svg paths, arrow spans) were still painted white on hover */
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) :is(.contribute-track__icon, .contribute-track__cta, .contribute-os-links a, .contribute-project-link, .contribute-track__badge) * {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  fill: currentColor !important;
+}
