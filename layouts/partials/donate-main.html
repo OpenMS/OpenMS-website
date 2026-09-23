@@ -79,6 +79,12 @@
 
         <div class="donate-application__note">
           <p class="donate-page__tax-note">{{ $taxNote }}</p>
+          {{- if not (or $hasZeffyEmbed $hasZeffyForm) }}
+          <p class="donate-page__pending-note" role="status">
+            The online donation link is not working yet. In the meantime,
+            please <a href="/contact/">contact us</a> and we will help you make your donation.
+          </p>
+          {{- end }}
         </div>
 
         {{- if $hasZeffyEmbed -}}
@@ -106,13 +112,6 @@
           <a class="openms-lib-btn openms-lib-btn--ghost" href="/governance/">
             <span class="openms-lib-btn__label">Governance</span>
           </a>
-        </div>
-        {{- else -}}
-        <div class="donate-page__pending" role="status">
-          <p>
-            The online donation link is not working yet. In the meantime,
-            please <a href="/contact/">contact us</a> and we will help you make your donation.
-          </p>
         </div>
         {{- end -}}
       </div>
