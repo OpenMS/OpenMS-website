@@ -15,11 +15,11 @@
 {{- $socialX := index $social "x" | default "https://twitter.com/OpenMSTeam" -}}
 {{- $committeeEmail := "conduct@openms.org" -}}
 {{- $encouraged := slice
-  (dict "title" "Welcoming language" "text" "Use welcoming and inclusive language.")
-  (dict "title" "Respect viewpoints" "text" "Be respectful of different viewpoints and experiences.")
-  (dict "title" "Accept feedback" "text" "Gracefully accept constructive criticism.")
-  (dict "title" "Community first" "text" "Focus on what is best for the community.")
-  (dict "title" "Courtesy" "text" "Show courtesy and respect towards other community members.")
+  (dict "title" "Welcoming language" "text" "Use welcoming and inclusive language." "icon" "fa-comment-dots")
+  (dict "title" "Respect viewpoints" "text" "Be respectful of different viewpoints and experiences." "icon" "fa-balance-scale")
+  (dict "title" "Accept feedback" "text" "Gracefully accept constructive criticism." "icon" "fa-handshake")
+  (dict "title" "Community first" "text" "Focus on what is best for the community." "icon" "fa-users")
+  (dict "title" "Courtesy" "text" "Show courtesy and respect towards other community members." "icon" "fa-heart")
 -}}
 <section class="openms-lib-layout">
 <article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--contribute">
@@ -260,41 +260,40 @@
           <div class="openms-lib-about__head-copy">
             <p class="openms-lib-about__eyebrow">Code of Conduct</p>
             <h2 id="coc-summary-title" class="openms-lib-about__title">We encourage</h2>
-            <p class="openms-lib-about__lead">
-              <span class="coc-overview__lead-line">We are dedicated to a welcoming environment for all people.</span>
-              <span class="coc-overview__lead-line">By participating, you agree to this Code of Conduct and the procedures used to resolve incidents.</span>
-              <span class="coc-overview__lead-line">Any behaviour that excludes, intimidates, or causes discomfort is a violation.</span>
-            </p>
+            <p class="openms-lib-about__lead coc-overview__lead-main">We are dedicated to a welcoming environment for all people.</p>
           </div>
         </header>
 
-        <div class="coc-overview__principles" role="list">
-          {{- range $i, $item := $encouraged }}
-          <article class="coc-principle" role="listitem">
-            <span class="coc-principle__num" aria-hidden="true">{{ add $i 1 | printf "%02d" }}</span>
-            <div class="coc-principle__body">
-              <h3 class="coc-principle__title">{{ $item.title }}</h3>
-              <p class="coc-principle__text">{{ $item.text }}</p>
+        <ul class="coc-values" role="list">
+          {{- range $encouraged }}
+          <li class="coc-value" role="listitem">
+            <span class="coc-value__icon" aria-hidden="true"><i class="fas {{ .icon }}"></i></span>
+            <div class="coc-value__body">
+              <h3 class="coc-value__title">{{ .title }}</h3>
+              <p class="coc-value__text">{{ .text }}</p>
             </div>
-          </article>
+          </li>
           {{- end }}
-        </div>
+        </ul>
 
-        <aside class="coc-report" role="note" aria-label="How to report">
-          <div class="coc-report__copy">
-            <p class="coc-report__kicker">Need to report something?</p>
-            <p class="coc-report__text">
-              Contact the Code of Conduct Committee at
-              <a href="mailto:{{ $committeeEmail }}">{{ $committeeEmail }}</a>.
-              All reports are reviewed confidentially.
-            </p>
-            <a class="coc-report__link openms-cta-link" href="/report-handling-manual/">
-              Read the report handling manual<span aria-hidden="true"> →</span>
-            </a>
+        <p class="coc-agreement">
+          By participating, you agree to this Code of Conduct and the procedures used to resolve incidents.
+          Any behaviour that excludes, intimidates, or causes discomfort is a violation.
+        </p>
+
+        <aside class="coc-callout" role="note" aria-label="How to report">
+          <span class="coc-callout__icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></span>
+          <div class="coc-callout__copy">
+            <p class="coc-callout__kicker">Need to report something?</p>
+            <p class="coc-callout__email"><a href="mailto:{{ $committeeEmail }}">{{ $committeeEmail }}</a></p>
+            <p class="coc-callout__text">Contact the Code of Conduct Committee. All reports are reviewed confidentially.</p>
           </div>
-          <div class="coc-report__actions">
+          <div class="coc-callout__actions">
             <a class="openms-lib-btn openms-lib-btn--primary" href="mailto:{{ $committeeEmail }}">
               <span class="openms-lib-btn__label">Report an incident</span>
+            </a>
+            <a class="openms-lib-btn openms-lib-btn--ghost" href="/report-handling-manual/">
+              <span class="openms-lib-btn__label">Read the report handling manual</span>
             </a>
           </div>
         </aside>

@@ -1,0 +1,220 @@
+/* Code of Conduct block (Contribute page): icon values instead of five
+   numbered narrow cards, a clear agreement note, and a calm report callout. */
+
+html body .openms-lib-page--contribute #code-of-conduct .coc-overview__lead-main {
+  max-width: 44rem;
+  margin: 0;
+}
+
+/* ---------- values: 3 + 2 ---------- */
+html body .openms-lib-page--contribute .coc-values {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--pro-card-gap, 1.25rem);
+  margin: clamp(1.5rem, 3vw, 2.25rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+html body .openms-lib-page--contribute .coc-value {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+  padding: var(--pro-card-pad-lg, 1.2rem);
+  border: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1));
+  border-radius: var(--pro-radius, 1rem);
+  background: var(--openms-white);
+  box-shadow: var(--pro-shadow, 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05));
+}
+
+html body .openms-lib-page--contribute .coc-value:nth-child(n + 4) {
+  grid-column: span 3;
+}
+
+html body .openms-lib-page--contribute .coc-value__icon {
+  display: grid;
+  place-items: center;
+  font-size: var(--card-std-icon-size, clamp(2.5rem, 3.8vw, 3rem));
+  line-height: 1;
+  color: var(--card-std-icon-color, rgba(var(--openms-blue-rgb), 0.28));
+  transition: color 0.2s ease;
+}
+
+html body .openms-lib-page--contribute .coc-value__icon i {
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+  color: inherit !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html body .openms-lib-page--contribute .coc-value:hover .coc-value__icon {
+    color: var(--openms-blue);
+  }
+}
+
+html body .openms-lib-page--contribute .coc-value__body {
+  display: grid;
+  gap: 0.35rem;
+}
+
+html body .openms-lib-page--contribute .coc-value__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-card-title-size, 1.1rem);
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--openms-dark, inherit);
+}
+
+html body .openms-lib-page--contribute .coc-value__text {
+  margin: 0;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size);
+  line-height: 1.55;
+  color: rgba(var(--openms-dark-rgb), 0.72);
+}
+
+@media (max-width: 900px) {
+  html body .openms-lib-page--contribute .coc-values {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  html body .openms-lib-page--contribute .coc-value,
+  html body .openms-lib-page--contribute .coc-value:nth-child(n + 4) {
+    grid-column: span 1;
+  }
+  html body .openms-lib-page--contribute .coc-value:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  html body .openms-lib-page--contribute .coc-values {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  html body .openms-lib-page--contribute .coc-value,
+  html body .openms-lib-page--contribute .coc-value:nth-child(n + 4),
+  html body .openms-lib-page--contribute .coc-value:last-child {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+  html body .openms-lib-page--contribute .coc-value__icon {
+    font-size: 2rem;
+    padding-top: 0.1rem;
+  }
+}
+
+/* ---------- agreement note ---------- */
+html body .openms-lib-page--contribute .coc-agreement {
+  max-width: 52rem;
+  margin: clamp(1.25rem, 2.5vw, 1.75rem) 0 0;
+  padding-left: 1rem;
+  border-left: 3px solid rgba(var(--openms-blue-rgb), 0.35);
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size);
+  line-height: 1.6;
+  color: rgba(var(--openms-dark-rgb), 0.72);
+}
+
+/* ---------- report callout ---------- */
+html body .openms-lib-page--contribute .coc-callout {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem clamp(1rem, 2.5vw, 1.75rem);
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem) clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.22);
+  border-radius: var(--pro-radius, 1rem);
+  background: rgba(var(--openms-blue-rgb), 0.05);
+}
+
+html body .openms-lib-page--contribute .coc-callout__icon {
+  font-size: clamp(2.25rem, 3.4vw, 2.75rem);
+  line-height: 1;
+  color: var(--openms-blue);
+}
+
+html body .openms-lib-page--contribute .coc-callout__icon i {
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+}
+
+html body .openms-lib-page--contribute .coc-callout__copy {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+html body .openms-lib-page--contribute .coc-callout__kicker {
+  margin: 0;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--openms-blue);
+}
+
+html body .openms-lib-page--contribute .coc-callout__email {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+html body .openms-lib-page--contribute .coc-callout__email a {
+  color: var(--openms-navy);
+  text-decoration: none;
+}
+
+html body .openms-lib-page--contribute .coc-callout__email a:hover {
+  color: var(--openms-blue);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+html body .openms-lib-page--contribute .coc-callout__text {
+  margin: 0;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size);
+  color: rgba(var(--openms-dark-rgb), 0.72);
+}
+
+html body .openms-lib-page--contribute .coc-callout__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: flex-end;
+}
+
+@media (max-width: 900px) {
+  html body .openms-lib-page--contribute .coc-callout {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  html body .openms-lib-page--contribute .coc-callout__actions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  html body .openms-lib-page--contribute .coc-callout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  html body .openms-lib-page--contribute .coc-callout__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  html body .openms-lib-page--contribute .coc-callout__actions .openms-lib-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
