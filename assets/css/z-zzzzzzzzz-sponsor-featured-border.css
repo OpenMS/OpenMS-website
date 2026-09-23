@@ -37,3 +37,17 @@ html body .openms-lib-page--sponsor-us .sponsor-faq__question-text {
   flex: 1 1 auto;
   min-width: 0;
 }
+
+/* FAQ list: a bit narrower than the full right-hand column. */
+html body .openms-lib-page--sponsor-us .sponsor-faq__list {
+  width: 100%;
+  max-width: 34rem;
+  justify-self: end;
+}
+
+@media (max-width: 900px) {
+  html body .openms-lib-page--sponsor-us .sponsor-faq__list {
+    max-width: none;
+    justify-self: stretch;
+  }
+}
