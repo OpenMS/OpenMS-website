@@ -80,28 +80,6 @@ html body .openms-lib-page #getting-started#getting-started .openms-lib-resource
   font-weight: 600 !important;
 }
 
-/* Developer cards (Building OpenMS from Source, Reviewing Pull Requests, ...)
-   — same 640px breakpoint: on phones stack the platform / action buttons one
-   per line at the full card width instead of overflowing the card. */
-@media (max-width: 639px) {
-  html body .openms-lib-page #for-developers#for-developers .openms-lib-developers__platforms {
-    display: flex !important;
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
-    align-items: stretch !important;
-    gap: 0.75rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  html body .openms-lib-page #for-developers#for-developers a.openms-lib-btn.openms-lib-developers__platform-btn.openms-lib-developers__platform-btn {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 auto !important;
-    justify-content: center !important;
-  }
-}
-
 /* "Need help?" buttons: always centred in the band (on pyOpenMS the group sat
    ~5px left of centre because another rule zeroed the auto margins). */
 :is(html, #assist-center-boost) body .openms-lib-page .openms-lib-resources__assist .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions {
@@ -111,4 +89,37 @@ html body .openms-lib-page #getting-started#getting-started .openms-lib-resource
   box-sizing: border-box !important;
   width: min(100%, 24rem) !important;
   max-width: 100% !important;
+}
+
+/* Developer cards (Building OpenMS from Source, Reviewing Pull Requests, ...)
+   — the platform / action buttons sit side by side at the same width as long
+   as each fits at a readable width, and only once they don't fit the card do
+   they drop to full-width rows (all the same width). `auto-fit` does that
+   from the card's own width, so there's no viewport breakpoint. The 2-button
+   "Reviewing Pull Requests" card has longer labels, so it gets a larger
+   minimum than the 3-button platform row. */
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__platforms {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)) !important;
+  flex-direction: unset !important;
+  align-items: stretch !important;
+  gap: 0.65rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms {
+  grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr)) !important;
+}
+
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  flex: none !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  white-space: normal !important;
+  text-align: center !important;
 }
