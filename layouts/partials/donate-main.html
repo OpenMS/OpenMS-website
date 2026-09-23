@@ -17,6 +17,14 @@
           Support <span class="openms-lib-hero__accent">OpenMS</span> with a gift.
         </h1>
         <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <div class="openms-lib-hero__actions" aria-label="Donation actions">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="#donate-form">
+            <span class="openms-lib-btn__label">Make a donation</span>
+          </a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/sponsor-us/">
+            <span class="openms-lib-btn__label">Become a sponsor</span>
+          </a>
+        </div>
       </div>
     </div>
   </header>
@@ -31,29 +39,34 @@
           <h2 id="donate-impact-title" class="openms-lib-resources__title">Where your gift goes</h2>
           <p class="openms-lib-resources__lead">Every contribution directly supports the open-source tools the mass spectrometry community relies on.</p>
         </header>
-        <ul class="donate-impact-grid" role="list">
-          <li class="donate-impact-card" role="listitem">
-            <span class="donate-impact-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><path fill="currentColor" d="M9.4 16.6 4.8 12l1.4-1.4 3.2 3.2 8.4-8.4L19.2 6.8z"/></svg>
-            </span>
-            <h3 class="donate-impact-card__title">Software engineering</h3>
-            <p class="donate-impact-card__text">Development and maintenance of the OpenMS core library and TOPP tools.</p>
-          </li>
-          <li class="donate-impact-card" role="listitem">
-            <span class="donate-impact-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5zM8 13h8v-2H8zm0 4h8v-2H8z"/></svg>
-            </span>
-            <h3 class="donate-impact-card__title">Documentation</h3>
-            <p class="donate-impact-card__text">Tutorials, guides, and reference material that help new users get started.</p>
-          </li>
-          <li class="donate-impact-card" role="listitem">
-            <span class="donate-impact-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><path fill="currentColor" d="M16 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-8 0a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-2.7 0-8 1.3-8 4v3h9v-3c0-1 .4-1.9 1-2.6A13 13 0 0 0 8 13zm8 0a13 13 0 0 0-2 .1c1 .8 2 1.9 2 3.9v3h8v-3c0-2.7-5.3-4-8-4z"/></svg>
-            </span>
-            <h3 class="donate-impact-card__title">Community programs</h3>
-            <p class="donate-impact-card__text">Developer meetings, workshops, and events that grow the OpenMS community.</p>
-          </li>
-        </ul>
+        <div class="openms-lib-resources__toolkit">
+          <div class="openms-lib-resources__grid donate-impact-grid" role="list">
+            <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
+              <div class="openms-lib-resources__item-top">
+                <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-code"></i></span>
+                <span class="openms-lib-resources__item-tag">Engineering</span>
+              </div>
+              <h3 class="openms-lib-resources__item-title">Software engineering</h3>
+              <p class="openms-lib-resources__item-text">Development and maintenance of the OpenMS core library and TOPP tools.</p>
+            </article>
+            <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
+              <div class="openms-lib-resources__item-top">
+                <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-book-open"></i></span>
+                <span class="openms-lib-resources__item-tag">Docs</span>
+              </div>
+              <h3 class="openms-lib-resources__item-title">Documentation</h3>
+              <p class="openms-lib-resources__item-text">Tutorials, guides, and reference material that help new users get started.</p>
+            </article>
+            <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
+              <div class="openms-lib-resources__item-top">
+                <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-users"></i></span>
+                <span class="openms-lib-resources__item-tag">Community</span>
+              </div>
+              <h3 class="openms-lib-resources__item-title">Community programs</h3>
+              <p class="openms-lib-resources__item-text">Developer meetings, workshops, and events that grow the OpenMS community.</p>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -110,6 +123,26 @@
           </p>
         </div>
         {{- end -}}
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="openms-lib-page__outro">
+  <div id="donate-cta" class="openms-lib-page__anchor">
+    <section class="contribute-coc-band" aria-labelledby="donate-cta-title">
+      <div class="contribute-coc-band__panel">
+        <div class="contribute-coc-band__copy">
+          <p class="contribute-coc-band__kicker">More ways to help</p>
+          <p class="contribute-coc-band__text">
+            <strong id="donate-cta-title">Give your time, or partner with us</strong>
+            <span class="contribute-coc-band__note">Contribute code, docs, or outreach, or get in touch about sponsorship and partnerships.</span>
+          </p>
+        </div>
+        <div class="contribute-coc-band__actions" role="group" aria-label="More ways to help">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/contribute/">Get involved</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost openms-lib-cta-band__btn-ghost" href="/contact/">Contact us</a>
+        </div>
       </div>
     </section>
   </div>
