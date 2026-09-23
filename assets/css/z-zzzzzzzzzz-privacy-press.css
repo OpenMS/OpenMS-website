@@ -118,3 +118,33 @@ html body .openms-lib-page--press-kit .press-kit-item__top {
 html body .openms-lib-page--press-kit #usage .openms-lib-resources__lead + .openms-lib-resources__lead {
   margin-top: 0.6rem;
 }
+
+/* Usage section: use the full container width (the head/lead were capped at
+   ~42rem), stacked on small screens and the two paragraphs side by side once
+   there is room. */
+html body .openms-lib-page--press-kit #usage .openms-lib-resources__head {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  max-width: none !important;
+  width: 100% !important;
+  margin-inline: 0 !important;
+  gap: 0.6rem;
+}
+
+html body .openms-lib-page--press-kit #usage .openms-lib-resources__lead {
+  max-width: none !important;
+  width: 100%;
+  margin: 0;
+}
+
+@media (min-width: 900px) {
+  html body .openms-lib-page--press-kit #usage .openms-lib-resources__head {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  html body .openms-lib-page--press-kit #usage .openms-lib-resources__eyebrow,
+  html body .openms-lib-page--press-kit #usage .openms-lib-resources__title {
+    grid-column: 1 / -1;
+  }
+}
