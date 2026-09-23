@@ -80,3 +80,9 @@ html body .openms-lib-page--donate #donate-impact .openms-lib-resources__inner {
 :is(html, #donate-hover-boost) body .openms-lib-page--donate #donate-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost {
   border: 2px solid var(--openms-white) !important;
 }
+
+/* Tax-deductibility line: fine print under the main notice. */
+html body .openms-lib-page--donate .donate-application__note .donate-page__tax-note {
+  font-size: 0.78rem;
+  line-height: 1.5;
+}

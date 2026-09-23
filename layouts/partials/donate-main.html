@@ -78,13 +78,13 @@
         </header>
 
         <div class="donate-application__note">
-          <p class="donate-page__tax-note">{{ $taxNote }}</p>
           {{- if not (or $hasZeffyEmbed $hasZeffyForm) }}
           <p class="donate-page__pending-note" role="status">
             The online donation link is not working yet. In the meantime,
             please <a href="/contact/">contact us</a> and we will help you make your donation.
           </p>
           {{- end }}
+          <p class="donate-page__tax-note">{{ $taxNote }}</p>
         </div>
 
         {{- if $hasZeffyEmbed -}}
