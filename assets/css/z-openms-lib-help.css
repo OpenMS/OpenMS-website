@@ -123,3 +123,22 @@ html body .openms-lib-page #getting-started#getting-started .openms-lib-resource
   white-space: normal !important;
   text-align: center !important;
 }
+
+/* "Reviewing Pull Requests": the buttons fit their own text (not equal
+   width), side by side while they fit the card and wrapping onto the next
+   line when they don't. */
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  grid-template-columns: none !important;
+}
+
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+}
