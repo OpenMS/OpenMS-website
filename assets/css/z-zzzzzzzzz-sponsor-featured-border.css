@@ -7,3 +7,33 @@
   border-color: var(--openms-blue) !important;
   box-shadow: 0 0 0 1px var(--openms-blue), 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05) !important;
 }
+
+/* FAQ questions: a visible ">" arrow on the right — points right when
+   closed, turns down when the question is open. */
+html body .openms-lib-page--sponsor-us .sponsor-faq__chevron {
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-top: 0;
+  border-right: 2.5px solid var(--openms-blue);
+  border-bottom: 2.5px solid var(--openms-blue);
+  transform: rotate(-45deg);
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__item[open] .sponsor-faq__chevron {
+  transform: rotate(45deg);
+  margin-top: -0.2rem;
+}
+
+/* The question row was wider than its card (the text couldn't shrink), so the
+   arrow was pushed outside and clipped. Let the text shrink/wrap and keep the
+   arrow inside the row. */
+html body .openms-lib-page--sponsor-us .sponsor-faq__question {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__question-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
