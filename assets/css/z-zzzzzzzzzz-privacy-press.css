@@ -1,0 +1,120 @@
+/* Privacy — follow the standard hub-page design. */
+
+/* "Who we are": standard stacked head (eyebrow, title, lead, left-aligned)
+   like the other sections, instead of the lead floating off to the right. */
+html body .openms-lib-page--privacy #who-we-are .openms-lib-about__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.9rem;
+  justify-items: start;
+  text-align: left;
+}
+
+html body .openms-lib-page--privacy #who-we-are .openms-lib-about__lead {
+  max-width: 44rem;
+  margin: 0;
+  text-align: left;
+}
+
+/* Topic rows: a fixed-width number column so every title starts at the same
+   x, and the same thin navy arrow as the FAQ rows. */
+html body .openms-lib-page--privacy .privacy-pro__summary {
+  grid-template-columns: 4rem minmax(0, 1fr) auto;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-index {
+  width: 4rem;
+  text-align: left;
+}
+
+/* ───────────── Press kit — standard hub-page sections and cards ───────────── */
+html body .openms-lib-page--press-kit #logos,
+html body .openms-lib-page--press-kit #usage {
+  background: var(--pro-band-soft, #f8f8f9) !important;
+}
+
+html body .openms-lib-page--press-kit #templates {
+  background: var(--openms-white, #fff) !important;
+}
+
+html body .openms-lib-page--press-kit .openms-lib-resources.openms-lib-resources {
+  padding-block: var(--sol-section-y, var(--pro-section-y, clamp(3.5rem, 7vw, 5.25rem))) !important;
+}
+
+html body .openms-lib-page--press-kit .press-kit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--pro-card-gap);
+  align-items: stretch;
+}
+
+@media (max-width: 720px) {
+  html body .openms-lib-page--press-kit .press-kit-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+html body .openms-lib-page--press-kit .press-kit-grid > .openms-lib-resources__item {
+  height: 100%;
+}
+
+/* Soft, big file-type icon top-left (same as Contact / Donate cards). */
+html body .openms-lib-page--press-kit .openms-lib-resources__item-icon {
+  display: grid;
+  place-items: center;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: rgba(var(--openms-blue-rgb), 0.28);
+  font-size: clamp(2.5rem, 3.8vw, 3rem);
+  line-height: 1;
+}
+
+html body .openms-lib-page--press-kit .openms-lib-resources__item-icon .fas,
+html body .openms-lib-page--press-kit .openms-lib-resources__item-icon .svg-inline--fa {
+  color: rgba(var(--openms-blue-rgb), 0.28) !important;
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+}
+
+html body .openms-lib-page--press-kit .openms-lib-resources__item-icon .svg-inline--fa path {
+  fill: currentColor !important;
+}
+
+/* Logo cards: the logo preview tile sits above the title row. */
+html body .openms-lib-page--press-kit .press-kit-item__preview {
+  display: grid;
+  place-items: center;
+  min-height: 7rem;
+  padding: 1.25rem;
+  border-radius: 0.65rem;
+  background: var(--pro-band-soft, #f4f6fb);
+}
+
+html body .openms-lib-page--press-kit .press-kit-item__preview--dark {
+  background: var(--openms-navy);
+}
+
+html body .openms-lib-page--press-kit .press-kit-item__preview img {
+  display: block;
+  width: auto;
+  max-width: min(11rem, 100%);
+  height: auto;
+  max-height: 4rem;
+}
+
+html body .openms-lib-page--press-kit .press-kit-item__top {
+  margin-top: 0.15rem;
+  align-items: center;
+}
+
+/* Usage section: two short paragraphs, left-aligned like other heads. */
+html body .openms-lib-page--press-kit #usage .openms-lib-resources__lead + .openms-lib-resources__lead {
+  margin-top: 0.6rem;
+}
