@@ -210,13 +210,10 @@ html body .openms-lib-page--contribute .coc-callout__actions {
   html body .openms-lib-page--contribute .coc-callout {
     grid-template-columns: minmax(0, 1fr);
   }
+  /* buttons keep their natural size at every screen size (they wrap onto
+     the next line instead of stretching to full width) */
   html body .openms-lib-page--contribute .coc-callout__actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  html body .openms-lib-page--contribute .coc-callout__actions .openms-lib-btn {
-    width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 
@@ -231,4 +228,10 @@ html body .openms-lib-page--contribute #communication-channels#communication-cha
 
 html body .openms-lib-page--contribute #code-of-conduct#code-of-conduct {
   padding-top: 0 !important;
+}
+
+html body .openms-lib-page--contribute .coc-callout__actions .openms-lib-btn {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: 100%;
 }
