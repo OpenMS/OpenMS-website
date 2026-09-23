@@ -63,26 +63,32 @@ html body .openms-lib-page--donate #donate-impact .openms-lib-resources__inner {
   align-items: stretch;
 }
 
-/* Navy band ghost button hover — same white fill / navy text as the other
-   navy CTA bands. */
-:is(html, #donate-hover-boost) body .openms-lib-page--donate #donate-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) {
-  background: var(--openms-white) !important;
-  background-color: var(--openms-white) !important;
-  border: 2px solid var(--openms-white) !important;
-  color: var(--openms-navy) !important;
-  -webkit-text-fill-color: var(--openms-navy) !important;
-  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
-  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(255, 255, 255, 0.22) !important;
-  outline: none !important;
-  text-decoration: none !important;
-}
-
-:is(html, #donate-hover-boost) body .openms-lib-page--donate #donate-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost {
-  border: 2px solid var(--openms-white) !important;
-}
-
 /* Tax-deductibility line: fine print under the main notice. */
 html body .openms-lib-page--donate .donate-application__note .donate-page__tax-note {
   font-size: 0.78rem;
   line-height: 1.5;
+}
+
+/* Stacked (single-column) cards: size to their content instead of the tall
+   equal-card minimum height the shared resource card carries. */
+@media (max-width: 900px) {
+  :is(html, #donate-card-boost) body .openms-lib-page--donate .donate-impact-grid {
+    grid-template-rows: none !important;
+    grid-auto-rows: auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  :is(html, #donate-card-boost) body .openms-lib-page--donate .donate-impact-grid > .openms-lib-resources__item {
+    min-height: 0 !important;
+    max-height: none !important;
+    height: auto !important;
+    gap: 0.45rem;
+  }
+
+  :is(html, #donate-card-boost) body .openms-lib-page--donate .donate-impact-grid > .openms-lib-resources__item .openms-lib-resources__item-text {
+    flex: 0 0 auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
 }

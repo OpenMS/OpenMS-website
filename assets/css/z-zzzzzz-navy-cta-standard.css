@@ -25,7 +25,6 @@
 :is(html, #navy-cta-boost) body #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions,
 :is(html, #navy-cta-boost) body #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions,
 :is(html, #navy-cta-boost) body #get-help .contribute-coc-band__actions.contribute-coc-band__actions,
-:is(html, #navy-cta-boost) body #donate-cta .contribute-coc-band__actions.contribute-coc-band__actions,
 :is(html, #navy-cta-boost) body #cite-openms .contribute-coc-band__actions.contribute-coc-band__actions,
 :is(html, #navy-cta-boost) body #join-community .webapps-archived__revival-actions.webapps-archived__revival-actions,
 :is(html, #navy-cta-boost) body .openms-lib-page--archived .webapps-archived__revival-actions.webapps-archived__revival-actions {
@@ -41,7 +40,6 @@
 :is(html, #navy-cta-boost) body #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
 :is(html, #navy-cta-boost) body #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
 :is(html, #navy-cta-boost) body #get-help .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
-:is(html, #navy-cta-boost) body #donate-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
 :is(html, #navy-cta-boost) body #cite-openms .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
 :is(html, #navy-cta-boost) body #join-community .webapps-archived__revival-actions.webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn,
 :is(html, #navy-cta-boost) body .openms-lib-page--archived .webapps-archived__revival-actions.webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn,
