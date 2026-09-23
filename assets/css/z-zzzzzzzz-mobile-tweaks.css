@@ -72,3 +72,52 @@ html body .home-page .community-news-events__column-header {
   max-width: 100% !important;
   white-space: nowrap !important;
 }
+
+/* News pager (← Newer / Older →): the standard primary button; only the
+   disabled state (first/last page) is faded. */
+html body .news-pager .openms-lib-btn.news-pager__btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Navbar "Sponsor Us": text (and its label spans) in the same navy as the
+   button's border, in every navbar variant (drawer, desktop, sticky clone). */
+:is(html, #sponsor-nav-boost) body .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active),
+:is(html, #sponsor-nav-boost) body .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active) .navbar-cta-label,
+:is(html, #sponsor-nav-boost) body #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active),
+:is(html, #sponsor-nav-boost) body #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active) .navbar-cta-label {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  border-color: var(--openms-navy) !important;
+}
+
+/* Contribute → "Sponsor OpenMS": the button keeps its natural size at every
+   screen size instead of stretching to full width on phones. */
+:is(html, #support-cta-boost) body .openms-lib-page--contribute .contribute-support__cta.contribute-support__cta {
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  align-self: flex-start !important;
+  justify-self: start !important;
+}
+
+:is(html, #pager-disabled-boost) body .news-pager .openms-lib-btn.news-pager__btn:disabled {
+  opacity: 0.4 !important;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Buttons that keep their natural (desktop) size at every screen size instead
+   of stretching to full width on phones: Developer retreat "Register here",
+   Code of Conduct "Report an incident". */
+:is(html, #keep-size-boost) body .openms-lib-page .retreat-register--closed.openms-lib-btn,
+:is(html, #keep-size-boost) body .openms-lib-page--code-of-conduct .coc-report__actions .openms-lib-btn,
+:is(html, #keep-size-boost) body .openms-lib-page--code-of-conduct .coc-report__actions {
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+  justify-self: start !important;
+}

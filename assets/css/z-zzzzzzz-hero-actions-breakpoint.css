@@ -57,3 +57,11 @@
   width: 100% !important;
   max-width: 100% !important;
 }
+
+/* Pages with a long hero label ("Explore ways to contribute", "Report handling
+   manual"): a wider minimum column so the label never wraps to two lines —
+   the pair drops to stacked rows instead once it can't fit side by side. */
+:is(html, #hero-actions-boost) .openms-lib-page--contribute .openms-lib-hero__actions,
+:is(html, #hero-actions-boost) .openms-lib-page--code-of-conduct .openms-lib-hero__actions {
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)) !important;
+}
