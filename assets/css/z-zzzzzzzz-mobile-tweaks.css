@@ -1,0 +1,16 @@
+/* Phones: slightly smaller navbar logo (the header height follows it, since
+   every navbar min-height is derived from this variable). */
+@media (max-width: 767px) {
+  :root {
+    --openms-navbar-logo-height: 58px;
+  }
+}
+
+/* Homepage "Show all apps →": nudge it in a little from the right edge on
+   stacked (<900px) layouts. */
+@media (max-width: 899px) {
+  html body .home-page .home-page__block--projects .webapps-featured__header-action {
+    padding-right: 1.1rem;
+    box-sizing: border-box;
+  }
+}
