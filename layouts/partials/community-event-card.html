@@ -1,0 +1,254 @@
+{{- $event := .event -}}
+{{- $featured := .featured | default false -}}
+{{- $hideDateLine := .hideDateLine | default false -}}
+{{- $primaryCta := .primaryCta | default false -}}
+{{- $readMore := .readMoreLabel | default "View details" -}}
+{{- $showAddToCalendar := .showAddToCalendar | default false -}}
+{{- if $event }}
+{{- $start := time $event.start -}}
+{{- $endStr := $event.end | default "" -}}
+{{- $end := $start -}}
+{{- if $endStr }}
+  {{- $end = time $endStr -}}
+{{- end }}
+{{- /* Compare calendar days, not raw strings: a timed event that starts and
+      ends the same day has two different timestamps but is not a range. */ -}}
+{{- $hasRange := ne ($start.Format "2006-01-02") ($end.Format "2006-01-02") -}}
+{{- $eventUrl := $event.news_url | default $event.url | default "" -}}
+{{- $isExternal := and $eventUrl (in $eventUrl "://") -}}
+{{- $category := $event.category | default "event" -}}
+{{- $hasTime := in $event.start "T" -}}
+{{- $dateText := upper ($start.Format "2 Jan 2006") -}}
+{{- if $hasRange -}}
+  {{- if eq ($start.Format "2006") ($end.Format "2006") -}}
+    {{- $dateText = printf "%s – %s" (upper ($start.Format "2 Jan")) (upper ($end.Format "2 Jan 2006")) -}}
+  {{- else -}}
+    {{- $dateText = printf "%s – %s" (upper ($start.Format "2 Jan 2006")) (upper ($end.Format "2 Jan 2006")) -}}
+  {{- end -}}
+{{- end -}}
+{{- $timeText := "All day" -}}
+{{- if $hasTime -}}
+  {{- $timeText = $start.Format "3:04 PM" -}}
+  {{- if and $endStr (in $endStr "T") (ne $endStr $event.start) -}}
+    {{- $timeText = printf "%s – %s" $timeText ($end.Format "3:04 PM") -}}
+  {{- end -}}
+  {{- with $event.tz_label -}}
+    {{- $timeText = printf "%s %s" $timeText . -}}
+  {{- end -}}
+{{- end -}}
+{{- $summaryHTML := "" -}}
+{{- with $event.summary -}}
+  {{- /* Synced calendar summaries are plain text with raw "Label: https://…"
+        links (see sync_google_calendar.py) — turn the label into an actual
+        link instead of showing the raw URL. Plain summaries with no URL
+        pass through unchanged. */ -}}
+  {{- $htmlRE := `([A-Z][A-Za-z]*(?:[^\S\n]+[A-Za-z&]+){0,3}?)[^\S\n]*:[^\S\n]*(https?://\S+)` -}}
+  {{- if not (findRE $htmlRE .) -}}{{- $htmlRE = `(?i)((?:[A-Za-z&]+[^\S\n]+)?[A-Za-z&]+)[^\S\n]*:[^\S\n]*(https?://\S+)` -}}{{- end -}}
+  {{- $summaryHTML = replaceRE $htmlRE `<a href="$2" class="openms-cta-link" target="_blank" rel="noopener noreferrer">$1</a>` . -}}
+{{- end -}}
+{{- /* Primary card: keep the prose in the summary and list the links
+      ("Label: URL" pairs) separately at the bottom of the card. */ -}}
+{{- $summaryText := "" -}}
+{{- $summaryLinks := slice -}}
+{{- with $event.summary -}}
+  {{- /* The label is the run of words starting at the first capitalised word
+        (up to 4 words) right before the colon — so a description like
+        "testing calendar REGISTER HERE: url" links only "REGISTER HERE".
+        When nothing is capitalised, the label is the last one or two words
+        before the colon. */ -}}
+  {{- $linkRE := `([A-Z][A-Za-z]*(?:[^\S\n]+[A-Za-z&]+){0,3}?)[^\S\n]*:[^\S\n]*(https?://\S+)` -}}
+  {{- if not (findRE $linkRE .) -}}{{- $linkRE = `(?i)((?:[A-Za-z&]+[^\S\n]+)?[A-Za-z&]+)[^\S\n]*:[^\S\n]*(https?://\S+)` -}}{{- end -}}
+  {{- $summaryLinks = findRESubmatch $linkRE . -}}
+  {{- $summaryText = trim (replaceRE $linkRE "" .) " " -}}
+  {{- /* Any bare URL left in the description (no "Label:" in front) is also
+        moved out of the text into the links row, labelled "Link", so the
+        description stays plain grey text and every link sits at the bottom. */ -}}
+  {{- $bareRE := `https?://[^\s<>"')]+` -}}
+  {{- range findRE $bareRE $summaryText -}}
+    {{- $summaryLinks = $summaryLinks | append (slice . "Link" .) -}}
+  {{- end -}}
+  {{- $summaryText = trim (replaceRE $bareRE "" $summaryText) " \n" -}}
+  {{- $summaryText = replaceRE `\s*\n+\s*` " " $summaryText -}}
+{{- end -}}
+{{- $gcalStart := $start.Format "20060102" -}}
+{{- $gcalEndDate := $end.AddDate 0 0 1 -}}
+{{- $gcalEnd := $gcalEndDate.Format "20060102" -}}
+{{- $gcalAddUrl := printf "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%s&dates=%s/%s&details=%s&location=%s" ($event.title | urlquery) $gcalStart $gcalEnd (($event.summary | default "") | urlquery) (($event.location | default "") | urlquery) -}}
+<li class="community-events-home__item{{ if $featured }} community-events-home__item--featured{{ end }}" role="listitem">
+  <article class="community-events-home__card community-events-home__card--{{ $category }}{{ if $featured }} community-events-home__card--featured{{ end }}{{ if $primaryCta }} community-news-events__press-card{{ end }}">
+    {{- if $primaryCta }}
+    {{- if $eventUrl }}
+    <a
+      class="community-news-events__press-link"
+      href="{{ $eventUrl }}"
+      {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{- end }}
+    >
+    {{- else }}
+    <div class="community-news-events__press-link community-news-events__press-link--static">
+    {{- end }}
+      <p class="community-news-events__press-meta">
+        <time
+          class="community-news-events__press-date"
+          datetime="{{ $event.start }}"
+          {{- if $hasRange }}
+          title="{{ $start.Format "Jan 2, 2006" }} – {{ $end.Format "Jan 2, 2006" }}"
+          {{- end }}
+        >{{ $dateText }}</time>
+      </p>
+      <h3 class="community-news-events__press-title">{{ $event.title }}</h3>
+      <div class="community-news-events__press-details">
+        <p class="community-news-events__press-location community-news-events__press-time">
+          <svg class="community-news-events__press-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M8 1.75a6.25 6.25 0 1 0 0 12.5 6.25 6.25 0 0 0 0-12.5ZM8 4.5V8l2.25 1.5"/></svg>
+          <span>{{ $timeText }}</span>
+        </p>
+        {{- with $event.location }}
+        <p class="community-news-events__press-location">
+          <svg class="community-news-events__press-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 1.5a4.25 4.25 0 0 0-4.25 4.25c0 3.19 4.25 8.75 4.25 8.75s4.25-5.56 4.25-8.75A4.25 4.25 0 0 0 8 1.5Zm0 5.75a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/></svg>
+          <span>{{ . }}</span>
+        </p>
+        {{- end }}
+      </div>
+      {{- with $summaryText }}
+      <p class="community-news-events__press-summary">{{ . }}</p>
+      {{- end }}
+      {{- with $summaryLinks }}
+      <p class="community-news-events__press-links">
+        {{- range . }}
+        <a class="openms-cta-link" href="{{ index . 2 }}" target="_blank" rel="noopener noreferrer">{{ trim (index . 1) " " }}<span aria-hidden="true"> →</span></a>
+        {{- end }}
+      </p>
+      {{- end }}
+      {{- if $eventUrl }}
+      <span class="community-news-events__press-cta openms-cta-link">
+        Learn more<span aria-hidden="true"> →</span>
+      </span>
+      {{- end }}
+    {{- if $eventUrl }}
+    </a>
+    {{- else }}
+    </div>
+    {{- end }}
+    {{- if $showAddToCalendar }}
+    <a class="community-news-events__add-to-cal" href="{{ $gcalAddUrl }}" target="_blank" rel="noopener noreferrer">
+      {{ partial "gcal-icon.html" }}
+      <span>Add to my calendar</span>
+    </a>
+    {{- end }}
+    {{- else if and $eventUrl (not $primaryCta) }}
+    <a
+      class="community-events-home__card-link"
+      href="{{ $eventUrl }}"
+      {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{- end }}
+    >
+      <div class="community-events-home__card-top">
+        <div class="community-events-home__date-block">
+          <time
+            class="community-events-home__date"
+            datetime="{{ $event.start }}"
+            {{- if $hasRange }}
+            title="{{ $start.Format "Jan 2, 2006" }} – {{ $end.Format "Jan 2, 2006" }}"
+            {{- end }}
+          >
+            <span class="community-events-home__date-day">{{ $start.Format "2" }}</span>
+            <span class="community-events-home__date-month">{{ $start.Format "Jan" | upper }}</span>
+            <span class="community-events-home__date-year">{{ $start.Format "2006" }}</span>
+          </time>
+        </div>
+
+      <div class="community-events-home__card-body">
+        <h3 class="community-events-home__card-title">{{ $event.title }}</h3>
+        {{- if not $hideDateLine }}
+        <p class="community-events-home__card-dates">
+          {{- if $hasRange -}}
+          {{- if eq ($start.Format "2006") ($end.Format "2006") -}}
+          {{ $start.Format "Jan 2" }} – {{ $end.Format "Jan 2, 2006" }}
+          {{- else -}}
+          {{ $start.Format "Jan 2, 2006" }} – {{ $end.Format "Jan 2, 2006" }}
+          {{- end -}}
+          {{- else -}}
+          {{ $start.Format "Monday, Jan 2, 2006" }}
+          {{- end -}}
+        </p>
+        {{- end }}
+        {{- with $summaryHTML }}
+        <p class="community-events-home__card-summary">{{ . | safeHTML }}</p>
+        {{- end }}
+      </div>
+
+      <div class="community-events-home__card-footer">
+        {{- with $event.location }}
+        <p class="community-events-home__card-location">
+          <span class="community-events-home__card-location-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="14" height="14" focusable="false" aria-hidden="true">
+              <path fill="currentColor" d="M8 1.5a4.25 4.25 0 0 0-4.25 4.25c0 3.19 4.25 8.75 4.25 8.75s4.25-5.56 4.25-8.75A4.25 4.25 0 0 0 8 1.5Zm0 5.75a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/>
+            </svg>
+          </span>
+          <span>{{ . }}</span>
+        </p>
+        {{- end }}
+        <span class="community-events-home__card-cta">
+          View details
+          <span class="community-events-home__card-cta-icon" aria-hidden="true">→</span>
+        </span>
+      </div>
+    </a>
+    {{- else }}
+    <div class="community-events-home__card-link community-events-home__card-link--static community-events-home__card-link--split">
+      <div class="community-events-home__date-block">
+        <time
+          class="community-events-home__date"
+          datetime="{{ $event.start }}"
+          {{- if $hasRange }}
+          title="{{ $start.Format "Jan 2, 2006" }} – {{ $end.Format "Jan 2, 2006" }}"
+          {{- end }}
+        >
+          <span class="community-events-home__date-day">{{ $start.Format "2" }}</span>
+          <span class="community-events-home__date-month">{{ $start.Format "Jan" | upper }}</span>
+          <span class="community-events-home__date-year">{{ $start.Format "2006" }}</span>
+        </time>
+      </div>
+
+      <div class="community-events-home__card-main">
+        <div class="community-events-home__card-header">
+          <h3 class="community-events-home__card-title">
+            {{- if $eventUrl }}
+            <a
+              class="events-past-card__title-link"
+              href="{{ $eventUrl }}"
+              {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{- end }}
+            >{{ $event.title }}</a>
+            {{- else }}
+            {{ $event.title }}
+            {{- end }}
+          </h3>
+        </div>
+
+        {{- with $summaryHTML }}
+        <p class="community-events-home__card-summary">{{ . | safeHTML }}</p>
+        {{- end }}
+
+        <div class="community-events-home__card-footer">
+          {{- with $event.location }}
+          <p class="community-events-home__card-location">
+            <span class="community-events-home__card-location-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14" focusable="false" aria-hidden="true">
+                <path fill="currentColor" d="M8 1.5a4.25 4.25 0 0 0-4.25 4.25c0 3.19 4.25 8.75 4.25 8.75s4.25-5.56 4.25-8.75A4.25 4.25 0 0 0 8 1.5Zm0 5.75a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/>
+              </svg>
+            </span>
+            <span>{{ . }}</span>
+          </p>
+          {{- end }}
+          {{- if $eventUrl }}
+          <a
+            class="events-past-card__cta openms-btn-primary openms-step__cta"
+            href="{{ $eventUrl }}"
+            {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{- end }}
+          >{{ $readMore }}</a>
+          {{- end }}
+        </div>
+      </div>
+    </div>
+    {{- end }}
+  </article>
+</li>
+{{- end }}

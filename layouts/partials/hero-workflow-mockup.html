@@ -1,0 +1,45 @@
+{{- $hero := .Site.Params.hero }}
+{{- $mockup := index $hero "mockup" | default dict }}
+{{- $label := index $mockup "label" | default "Open science" }}
+{{- $labelArrow := index $mockup "labelArrow" | default "→" }}
+{{- $labelAfter := index $mockup "labelAfter" | default "clear results" }}
+{{- $brand := index $mockup "brand" | default "OPENMS" }}
+{{- $bars := index $mockup "bars" | default (slice 38 55 82 64 47 90 70 58 75 40) }}
+{{- $metrics := index $mockup "metrics" }}
+
+<aside class="hero-mockup" aria-label="{{ index $hero "imageAlt" | default "OpenMS workflow preview" }}">
+  <div class="hero-mockup__stage">
+    <div class="hero-mockup__labels" aria-hidden="true">
+      <p class="hero-mockup__chrome-title">
+        <span class="hero-mockup__chrome-title-lead">{{ $label }}</span>
+        <span class="hero-mockup__chrome-title-arrow">{{ $labelArrow }}</span>
+        <span class="hero-mockup__chrome-title-result">{{ $labelAfter }}</span>
+      </p>
+      <span class="hero-mockup__chrome-brand">{{ $brand }}</span>
+    </div>
+
+    <div class="hero-mockup__body">
+      <div class="hero-mockup__chart" aria-hidden="true">
+        {{- range $i, $h := $bars }}
+        <span class="hero-mockup__bar" style="--bar-h: {{ $h }}%"></span>
+        {{- end }}
+      </div>
+
+      {{- with $metrics }}
+      <div class="hero-mockup__metrics">
+        {{- range . }}
+        <div class="hero-mockup__metric">
+          <p class="hero-mockup__metric-label">{{ .label }}</p>
+          <p class="hero-mockup__metric-value">
+            {{ .value }}
+            {{- with .delta }}
+            <span class="hero-mockup__metric-delta">{{ . }}</span>
+            {{- end }}
+          </p>
+        </div>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</aside>

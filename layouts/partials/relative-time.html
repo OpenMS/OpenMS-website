@@ -1,0 +1,16 @@
+{{- /* Renders a short "time ago" string for the given time.Time value. */ -}}
+{{- $t := . -}}
+{{- $seconds := int (now.Sub $t).Seconds -}}
+{{- if lt $seconds 90 -}}
+  just now
+{{- else if lt $seconds 3600 -}}
+  {{ div $seconds 60 }} minutes ago
+{{- else if lt $seconds 86400 -}}
+  {{ div $seconds 3600 }} hours ago
+{{- else if lt $seconds 172800 -}}
+  yesterday
+{{- else if lt $seconds 2592000 -}}
+  {{ div $seconds 86400 }} days ago
+{{- else -}}
+  on {{ $t.Format "Jan 2, 2006" }}
+{{- end -}}

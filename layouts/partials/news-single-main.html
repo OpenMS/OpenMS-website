@@ -1,0 +1,54 @@
+{{- $cfg := .Site.Params.newsSection | default dict }}
+{{- $eyebrow := "News" }}
+{{- $backLabel := index $cfg "backToNewsLabel" | default "Back to news" }}
+{{- $newsUrl := "/news/" | relURL }}
+{{- $year := "" }}
+{{- if not .Date.IsZero }}
+  {{- $year = .Date.Format "2006" }}
+{{- end }}
+{{- if $year }}
+  {{- $newsUrl = printf "%s?year=%s" $newsUrl $year }}
+{{- end }}
+{{- $toc := .TableOfContents }}
+{{- $tocItemCount := len (findRE "<li" (printf "%s" $toc)) }}
+{{- $hasToc := and $toc (ge $tocItemCount 2) (le $tocItemCount 8) }}
+{{- $tocInner := replaceRE `(?s)^\s*<nav[^>]*>(.*)</nav>\s*$` "$1" (printf "%s" $toc) | safeHTML }}
+<section class="openms-lib-layout">
+<article class="openms-lib-page openms-lib-page--news openms-lib-page--news-article">
+  <div class="news-story">
+    <div class="news-story__inner">
+      <div class="news-story__toolbar">
+        <p class="news-story__kicker">{{ partial "section-eyebrow-icon.html" "news" }}{{ $eyebrow }}</p>
+        <a class="news-story__back openms-cta-link" href="{{ $newsUrl }}">{{ $backLabel }}<span aria-hidden="true"> →</span></a>
+      </div>
+
+      <header class="news-story__header">
+        <h1 class="news-story__title">{{ .Title }}</h1>
+        {{- with .Params.subtitle }}
+        <p class="news-story__lead">{{ . }}</p>
+        {{- end }}
+        <p class="news-story__meta">
+          {{- if not .Date.IsZero }}
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+          {{- end }}
+          {{- with or .Params.authors .Params.Authors }}
+          {{- if not $.Date.IsZero }}<span class="news-story__meta-sep" aria-hidden="true">·</span>{{ end }}
+          <span class="news-story__authors">{{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end -}}</span>
+          {{- end }}
+        </p>
+      </header>
+
+      {{- if $hasToc }}
+      <nav class="news-story__toc" aria-label="On this page">
+        <p class="news-story__toc-title">On this page</p>
+        {{ $tocInner }}
+      </nav>
+      {{- end }}
+
+      <div class="news-story__body openms-lib-prose">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</article>
+</section>

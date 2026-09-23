@@ -1,0 +1,327 @@
+{{- $site := .Site | default site -}}
+{{- $variant := .variant | default "" -}}
+{{- $home := eq $variant "home" -}}
+{{- $ribbon := eq $variant "ribbon" -}}
+{{- $wall := eq $variant "wall" -}}
+{{- $strip := eq $variant "strip" -}}
+{{- $compact := or (eq $variant "compact") $strip -}}
+{{- $section := $site.Params.trustedBySection | default dict -}}
+{{- $items := $site.Params.trustedBy | default (slice) -}}
+{{- if gt (len $items) 0 -}}
+{{- $eyebrow := index $section "eyebrow" | default "Trusted by" -}}
+{{- $title := index $section "title" | default "As used by leading teams" -}}
+{{- $titleHighlight := index $section "titleHighlight" -}}
+{{- $subtitle := index $section "subtitle" | default "" -}}
+{{- $linkLabel := index $section "linkLabel" | default "Visit website" -}}
+<section
+  class="trusted-by{{ if $home }} trusted-by--home{{ else if $ribbon }} trusted-by--ribbon{{ else if $wall }} trusted-by--wall{{ else if $strip }} trusted-by--strip{{ else if $compact }} trusted-by--compact{{ end }}"
+  aria-labelledby="trusted-by-title"
+>
+  <div class="trusted-by__shell">
+    {{- if $home }}
+    <div class="trusted-by__home">
+      <header class="trusted-by__home-header trusted-by__home-header--center">
+        <p class="trusted-by__home-eyebrow">
+          <span class="trusted-by__home-eyebrow-icon" aria-hidden="true">✦</span>
+          {{ $eyebrow }}
+        </p>
+        <h2 id="trusted-by-title" class="trusted-by__home-title">
+          {{- if and $titleHighlight (in $title $titleHighlight) -}}
+          {{ replace $title $titleHighlight (printf "<span class=\"trusted-by__home-title-accent\">%s</span>" $titleHighlight) | safeHTML }}
+          {{- else -}}
+          {{ $title }}
+          {{- end -}}
+        </h2>
+        {{- with $subtitle }}
+        <p class="trusted-by__home-lead">{{ . }}</p>
+        {{- end }}
+      </header>
+
+      <ul class="trusted-by__home-grid trusted-by__home-grid--row" role="list" aria-label="Trusted by organizations">
+        {{- range $items }}
+        {{- $name := .name | default "Organization" -}}
+        {{- $url := .url | default "" -}}
+        {{- $logo := .logo | default "" -}}
+        {{- $logoSize := .logoSize | default "" -}}
+        {{- $abbr := .abbr | default (substr $name 0 1) -}}
+        {{- $isExternal := and $url (in $url "://") -}}
+        {{- $hasLogo := ne $logo "" -}}
+        <li class="trusted-by__home-item" role="listitem">
+          {{- if $url }}
+          <a
+            class="trusted-by__home-card{{ with $logoSize }} trusted-by__home-card--logo-{{ . }}{{ end }}"
+            href="{{ $url }}"
+            {{- if $isExternal }}target="_blank" rel="noopener noreferrer"{{- end }}
+            aria-label="{{ $name }}{{ if $isExternal }} (opens in new tab){{ end }}"
+          >
+          {{- else }}
+          <div
+            class="trusted-by__home-card trusted-by__home-card--static{{ with $logoSize }} trusted-by__home-card--logo-{{ . }}{{ end }}"
+            aria-label="{{ $name }}"
+          >
+          {{- end }}
+            {{- if $hasLogo }}
+            <img
+              class="trusted-by__home-logo{{ with $logoSize }} trusted-by__home-logo--{{ . }}{{ end }}"
+              src="{{ $logo | relURL }}"
+              alt="{{ $name }}"
+              loading="lazy"
+              decoding="async"
+            />
+            {{- else }}
+            <span class="trusted-by__home-monogram" aria-hidden="true">{{ $abbr }}</span>
+            {{- end }}
+          {{- if $url }}</a>{{ else }}</div>{{ end }}
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+    {{- else if $ribbon }}
+    <div class="trusted-by__ribbon trusted-by__ribbon--minimal">
+      <div class="trusted-by__minimal-top">
+        <p class="trusted-by__minimal-label">{{ $eyebrow }}</p>
+        <h2 id="trusted-by-title" class="trusted-by__minimal-title">{{ $title }}</h2>
+      </div>
+      {{- with $subtitle }}
+      <p class="trusted-by__minimal-lead">{{ . }}</p>
+      {{- end }}
+      <ul class="trusted-by__minimal-logos" role="list" aria-label="Trusted by organizations">
+        {{- range $items }}
+        {{- $name := .name | default "Organization" -}}
+        {{- $url := .url | default "" -}}
+        {{- $logo := .logo | default "" -}}
+        {{- $logoSize := .logoSize | default "" -}}
+        {{- $abbr := .abbr | default (substr $name 0 1) -}}
+        {{- $isExternal := and $url (in $url "://") -}}
+        <li class="trusted-by__minimal-item" role="listitem">
+          {{- if $url }}
+          <a
+            class="trusted-by__minimal-link{{ with $logoSize }} trusted-by__minimal-link--{{ . }}{{ end }}"
+            href="{{ $url }}"
+            {{- if $isExternal }}target="_blank" rel="noopener noreferrer"{{- end }}
+            aria-label="{{ $name }}{{ if $isExternal }} (opens in new tab){{ end }}"
+          >
+          {{- else }}
+          <div class="trusted-by__minimal-link trusted-by__minimal-link--static{{ with $logoSize }} trusted-by__minimal-link--{{ . }}{{ end }}" aria-label="{{ $name }}">
+          {{- end }}
+            {{- if $logo }}
+            <img
+              class="trusted-by__minimal-img{{ with $logoSize }} trusted-by__minimal-img--{{ . }}{{ end }}"
+              src="{{ $logo | relURL }}"
+              alt="{{ $name }}"
+              loading="lazy"
+              decoding="async"
+            />
+            {{- else }}
+            <span class="trusted-by__minimal-text">{{ $abbr }}</span>
+            {{- end }}
+          {{- if $url }}</a>{{ else }}</div>{{ end }}
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+    {{- else if $wall }}
+    <div class="trusted-by__wall">
+      <header class="trusted-by__wall-head">
+        <p class="trusted-by__wall-eyebrow">{{ $eyebrow }}</p>
+        <h2 id="trusted-by-title" class="trusted-by__wall-title">
+          {{- if and $titleHighlight (in $title $titleHighlight) -}}
+          {{ replace $title $titleHighlight (printf "<span class=\"trusted-by__wall-title-accent\">%s</span>" $titleHighlight) | safeHTML }}
+          {{- else -}}
+          {{ $title }}
+          {{- end -}}
+        </h2>
+        {{- with $subtitle }}
+        <p class="trusted-by__wall-lead">{{ . }}</p>
+        {{- end }}
+      </header>
+      <ul class="trusted-by__wall-grid" role="list" aria-label="Trusted by organizations">
+        {{- range $items }}
+        {{- $name := .name | default "Organization" -}}
+        {{- $url := .url | default "" -}}
+        {{- $logo := .logo | default "" -}}
+        {{- $logoSize := .logoSize | default "" -}}
+        {{- $abbr := .abbr | default (substr $name 0 1) -}}
+        {{- $isExternal := and $url (in $url "://") -}}
+        <li class="trusted-by__wall-item" role="listitem">
+          {{- $hasLogo := ne $logo "" -}}
+          {{- if $url }}
+          <a
+            class="trusted-by__wall-card{{ if $hasLogo }} trusted-by__wall-card--has-logo{{ end }}{{ with $logoSize }} trusted-by__wall-card--logo-{{ . }}{{ end }}"
+            href="{{ $url }}"
+            {{- if $isExternal }}target="_blank" rel="noopener noreferrer"{{- end }}
+            aria-label="{{ $name }}{{ if $isExternal }} (opens in new tab){{ end }}"
+          >
+          {{- else }}
+          <div
+            class="trusted-by__wall-card trusted-by__wall-card--static{{ if $hasLogo }} trusted-by__wall-card--has-logo{{ end }}{{ with $logoSize }} trusted-by__wall-card--logo-{{ . }}{{ end }}"
+            aria-label="{{ $name }}"
+          >
+          {{- end }}
+            <div class="trusted-by__wall-media">
+              {{- if $hasLogo }}
+              <img
+                class="trusted-by__wall-logo{{ with $logoSize }} trusted-by__wall-logo--{{ . }}{{ end }}"
+                src="{{ $logo | relURL }}"
+                alt="{{ $name }}"
+                loading="lazy"
+                decoding="async"
+              />
+              {{- else }}
+              <span class="trusted-by__wall-monogram" aria-hidden="true">{{ $abbr }}</span>
+              {{- end }}
+            </div>
+            <div class="trusted-by__wall-footer">
+              <span class="trusted-by__wall-name">{{ $name }}</span>
+              {{- if $url }}
+              <span class="trusted-by__wall-cta">{{ $linkLabel }}</span>
+              {{- end }}
+            </div>
+          {{- if $url }}</a>{{ else }}</div>{{ end }}
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+    {{- else if $strip }}
+    <div class="trusted-by__strip">
+      <p id="trusted-by-title" class="trusted-by__strip-label">{{ $eyebrow }}</p>
+      <ul class="trusted-by__strip-logos" role="list" aria-label="Trusted by organizations">
+      {{- range $items }}
+      {{- $name := .name | default "Organization" -}}
+      {{- $url := .url | default "" -}}
+      {{- $logo := .logo | default "" -}}
+      {{- $logoSize := .logoSize | default "" -}}
+      {{- $abbr := .abbr | default (substr $name 0 1) -}}
+      {{- $isExternal := and $url (in $url "://") -}}
+      <li class="trusted-by__strip-item" role="listitem">
+        {{- if $url }}
+        <a
+          class="trusted-by__strip-link"
+          href="{{ $url }}"
+          {{- if $isExternal }}target="_blank" rel="noopener noreferrer"{{- end }}
+          aria-label="{{ $name }}"
+        >
+        {{- else }}
+        <span class="trusted-by__strip-link trusted-by__strip-link--static" aria-label="{{ $name }}">
+        {{- end }}
+          {{- if $logo }}
+          <img
+            class="trusted-by__strip-logo{{ with $logoSize }} trusted-by__strip-logo--{{ . }}{{ end }}"
+            src="{{ $logo | relURL }}"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+          {{- else }}
+          <span class="trusted-by__strip-monogram" aria-hidden="true">{{ $abbr }}</span>
+          {{- end }}
+        {{- if $url }}</a>{{ else }}</span>{{ end }}
+      </li>
+      {{- end }}
+      </ul>
+    </div>
+    {{- else if $compact }}
+    <p id="trusted-by-title" class="trusted-by__compact-label">{{ $eyebrow }}</p>
+    <ul class="trusted-by__compact-logos" role="list" aria-label="Trusted by organizations">
+      {{- range $items }}
+      {{- $name := .name | default "Organization" -}}
+      {{- $url := .url | default "" -}}
+      {{- $logo := .logo | default "" -}}
+      {{- $logoSize := .logoSize | default "" -}}
+      {{- $abbr := .abbr | default (substr $name 0 1) -}}
+      {{- $isExternal := and $url (in $url "://") -}}
+      <li class="trusted-by__compact-item" role="listitem">
+        {{- if $url }}
+        <a
+          class="trusted-by__compact-link"
+          href="{{ $url }}"
+          {{- if $isExternal }}target="_blank" rel="noopener noreferrer"{{- end }}
+          aria-label="{{ $name }}"
+        >
+        {{- else }}
+        <span class="trusted-by__compact-link trusted-by__compact-link--static" aria-label="{{ $name }}">
+        {{- end }}
+          {{- if $logo }}
+          <img
+            class="trusted-by__compact-logo{{ with $logoSize }} trusted-by__compact-logo--{{ . }}{{ end }}"
+            src="{{ $logo | relURL }}"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+          {{- else }}
+          <span class="trusted-by__compact-monogram" aria-hidden="true">{{ $abbr }}</span>
+          {{- end }}
+        {{- if $url }}</a>{{ else }}</span>{{ end }}
+      </li>
+      {{- end }}
+    </ul>
+    {{- else }}
+    <header class="trusted-by__intro">
+      <p class="trusted-by__eyebrow">{{ $eyebrow }}</p>
+      <h2 id="trusted-by-title" class="trusted-by__title">
+        {{- if and $titleHighlight (in $title $titleHighlight) -}}
+        {{ replace $title $titleHighlight (printf "<span class=\"trusted-by__title-accent\">%s</span>" $titleHighlight) | safeHTML }}
+        {{- else -}}
+        {{ $title }}
+        {{- end -}}
+      </h2>
+      {{- with $subtitle }}
+      <p class="trusted-by__subtitle">{{ . }}</p>
+      {{- end }}
+    </header>
+
+    <ul class="trusted-by__showcase" role="list" aria-label="Trusted by organizations">
+      {{- range $items }}
+      {{- $name := .name | default "Organization" -}}
+      {{- $url := .url | default "" -}}
+      {{- $logo := .logo | default "" -}}
+      {{- $logoSize := .logoSize | default "" -}}
+      {{- $abbr := .abbr | default (substr $name 0 1) -}}
+      {{- $isExternal := and $url (in $url "://") -}}
+      {{- $hasLogo := ne $logo "" -}}
+      <li class="trusted-by__item" role="listitem">
+        {{- if $url }}
+        <a
+          class="trusted-by__card trusted-by__card--link{{ if $hasLogo }} trusted-by__card--logo{{ else }} trusted-by__card--text{{ end }}{{ with $logoSize }} trusted-by__card--logo-{{ . }}{{ end }}"
+          href="{{ $url }}"
+          {{- if $isExternal }}target="_blank" rel="noopener noreferrer"{{- end }}
+          aria-label="{{ $name }}{{ if $isExternal }} (opens in new tab){{ end }}"
+        >
+        {{- else }}
+        <div
+          class="trusted-by__card trusted-by__card--static{{ if $hasLogo }} trusted-by__card--logo{{ else }} trusted-by__card--text{{ end }}{{ with $logoSize }} trusted-by__card--logo-{{ . }}{{ end }}"
+          aria-label="{{ $name }}"
+        >
+        {{- end }}
+          <span class="trusted-by__card-accent" aria-hidden="true"></span>
+          <div class="trusted-by__card-media">
+            {{- if $hasLogo }}
+            <img
+              class="trusted-by__logo{{ with $logoSize }} trusted-by__logo--{{ . }}{{ end }}"
+              src="{{ $logo | relURL }}"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+            {{- else }}
+            <span class="trusted-by__monogram" aria-hidden="true">{{ $abbr }}</span>
+            {{- end }}
+          </div>
+          <div class="trusted-by__card-footer">
+            <span class="trusted-by__card-name">{{ $name }}</span>
+            {{- if $url }}
+            <span class="trusted-by__card-action">
+              <span class="trusted-by__card-action-label">{{ $linkLabel }}</span>
+              <span class="trusted-by__card-action-icon" aria-hidden="true">→</span>
+            </span>
+            {{- end }}
+          </div>
+        {{- if $url }}</a>{{ else }}</div>{{ end }}
+      </li>
+      {{- end }}
+    </ul>
+    {{- end }}
+  </div>
+</section>
+{{- end -}}

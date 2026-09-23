@@ -1,0 +1,51 @@
+{{- $cfg := .cfg | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" -}}
+{{- $title := index $cfg "title" | default "Ships with the TOPP command-line tools" -}}
+{{- $lead := index $cfg "lead" -}}
+{{- $features := index $cfg "features" | default (slice) -}}
+{{- $ctaText := index $cfg "ctaText" | default "Explore the tools" -}}
+{{- $ctaUrl := index $cfg "ctaUrl" -}}
+{{- $id := .id | default "openms-lib-topp-title" -}}
+<section class="openms-lib-block openms-lib-block--topp" aria-labelledby="{{ $id }}">
+  <div class="openms-lib-topp__inner openms-lib-band__inner">
+    <div class="openms-lib-topp__deck">
+      <header class="openms-lib-topp__intro">
+        {{- with $eyebrow }}
+        <p class="openms-lib-block__eyebrow openms-lib-topp__eyebrow">{{ . }}</p>
+        {{- end }}
+        <h2 id="{{ $id }}" class="openms-lib-block__title openms-lib-topp__title">{{ $title }}</h2>
+        {{- with $lead }}
+        <p class="openms-lib-block__lead openms-lib-topp__lead">{{ . }}</p>
+        {{- end }}
+        {{- with $ctaUrl }}
+        <a
+          class="openms-lib-topp__cta"
+          href="{{ . }}"
+          {{- if in . "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+        >{{ $ctaText }}<span aria-hidden="true"> →</span></a>
+        {{- end }}
+      </header>
+
+      {{- with $features }}
+      <ul class="openms-lib-topp__features" role="list">
+        {{- range . }}
+        {{- $feature := . }}
+        <li class="openms-lib-topp__feature" role="listitem">
+          <span class="openms-lib-highlights__check" aria-hidden="true"></span>
+          <div class="openms-lib-topp__feature-body">
+            <p class="openms-lib-topp__feature-text">{{ $feature.text }}</p>
+            {{- with $feature.linkUrl }}
+            <a
+              class="openms-lib-topp__cta"
+              href="{{ . }}"
+              {{- if in . "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+            >{{ $feature.linkText | default "Learn more" }}<span aria-hidden="true"> →</span></a>
+            {{- end }}
+          </div>
+        </li>
+        {{- end }}
+      </ul>
+      {{- end }}
+    </div>
+  </div>
+</section>

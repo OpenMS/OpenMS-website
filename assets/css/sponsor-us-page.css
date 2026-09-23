@@ -1,0 +1,595 @@
+.sponsor-us-page-layout {
+  --olib-section-y: var(--pro-section-y, clamp(4rem, 9vw, 6.5rem));
+  --olib-bg-soft: #f4f6f9;
+  --olib-text-muted: var(--openms-text-muted);
+  --olib-hero-bg-top: color-mix(in srgb, var(--openms-blue) 10%, var(--olib-bg-soft));
+  --sponsor-us-max: 80rem;
+
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 clamp(2.5rem, 5vh, 4rem);
+}
+
+.sponsor-us-page-layout__content {
+  width: min(100%, var(--sponsor-us-max));
+  max-width: var(--sponsor-us-max);
+  margin-inline: auto;
+  padding-inline: var(--olib-pad-x);
+}
+
+.sponsor-us-page-hero {
+  margin-bottom: var(--olib-section-y);
+}
+
+.sponsor-us-page.governance-page {
+  gap: clamp(2.75rem, 6vw, 4rem);
+}
+
+.about-donate-actions.sponsor-us-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.75rem;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.about-donate-actions.sponsor-us-page__actions > a {
+  box-sizing: border-box;
+  flex: 1 1 12.25rem;
+  min-width: 12.25rem;
+  min-height: var(--openms-btn-min-height, 2.75rem);
+  height: auto;
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Navbar-style CTA motion (sponsor us page) */
+.sponsor-us-page-layout .openms-lib-btn,
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > a,
+.sponsor-us-page-layout .governance-card__link a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: fit-content;
+  min-height: var(--openms-btn-min-height, 2.75rem);
+  padding: var(--openms-btn-padding);
+  border-radius: var(--openms-btn-pill-radius);
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-btn-font-size, var(--openms-text-min));
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 0 0 0 var(--openms-btn-glow);
+  transition: var(--openms-btn-motion);
+}
+
+.sponsor-us-page-layout .openms-lib-btn--primary {
+  border: 2px solid var(--openms-blue);
+  background: var(--openms-blue);
+  color: var(--openms-white) !important;
+}
+
+.sponsor-us-page-layout .openms-lib-btn--ghost,
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > .about-cta-btn--donate,
+.sponsor-us-page-layout .governance-card__link a {
+  border: 2px solid var(--openms-blue);
+  background: transparent;
+  background-color: transparent;
+  color: var(--openms-blue) !important;
+}
+
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > .openms-btn-primary {
+  border: 2px solid var(--openms-blue);
+  background: var(--openms-blue);
+  color: var(--openms-white) !important;
+}
+
+.sponsor-us-page-layout .governance-card__link a {
+  margin-top: 0;
+}
+
+.sponsor-us-page-layout .openms-lib-btn--primary:hover,
+.sponsor-us-page-layout .openms-lib-btn--primary:focus-visible,
+.sponsor-us-page-layout .openms-lib-btn--primary:active,
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > .openms-btn-primary:hover,
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > .openms-btn-primary:focus-visible,
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > .openms-btn-primary:active {
+  transform: scale(var(--openms-btn-hover-scale));
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow);
+  outline: none;
+  text-decoration: none;
+}
+
+.sponsor-us-page-layout .openms-lib-btn--primary:hover,
+.sponsor-us-page-layout .openms-lib-btn--primary:focus-visible,
+.sponsor-us-page-layout .openms-lib-btn--primary:active {
+  background: var(--openms-blue);
+  border-color: var(--openms-blue);
+  color: var(--openms-white) !important;
+}
+
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > .openms-btn-primary:hover,
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > .openms-btn-primary:focus-visible,
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > .openms-btn-primary:active {
+  background: var(--openms-blue);
+  border-color: var(--openms-blue);
+  color: var(--openms-white) !important;
+}
+
+.sponsor-us-page-layout .openms-lib-btn--ghost:hover,
+.sponsor-us-page-layout .openms-lib-btn--ghost:focus-visible,
+.sponsor-us-page-layout .openms-lib-btn--ghost:active,
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > .about-cta-btn--donate:hover,
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > .about-cta-btn--donate:focus-visible,
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > .about-cta-btn--donate:active,
+.sponsor-us-page-layout .governance-card__link a:hover,
+.sponsor-us-page-layout .governance-card__link a:focus-visible,
+.sponsor-us-page-layout .governance-card__link a:active {
+  background: transparent;
+  background-color: transparent;
+  border-color: var(--openms-blue);
+  color: var(--openms-blue) !important;
+  transform: scale(var(--openms-btn-hover-scale));
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow);
+  outline: none;
+  text-decoration: none;
+}
+
+.sponsor-us-page-layout .openms-lib-btn--primary:focus-visible,
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > .openms-btn-primary:focus-visible {
+  box-shadow: 0 0 0 3px var(--openms-navy), 0 0 0 5px var(--openms-blue),
+    0 0 0 calc(5px + var(--openms-btn-glow-size)) var(--openms-btn-glow);
+}
+
+.sponsor-us-page-layout .openms-lib-btn--ghost:focus-visible,
+.sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > .about-cta-btn--donate:focus-visible,
+.sponsor-us-page-layout .governance-card__link a:focus-visible {
+  box-shadow: var(--openms-hero-focus-ring, 0 0 0 3px var(--openms-navy), 0 0 0 5px var(--openms-yellow)),
+    0 0 0 calc(5px + var(--openms-btn-glow-size)) var(--openms-btn-glow);
+}
+
+/* ── Centered section heads (same pattern as contribute / retreat) ── */
+.sponsor-section__head {
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+  text-align: center;
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.sponsor-section__head h2 {
+  margin: 0;
+  padding: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-section-title-size, calc(var(--openms-heading-lg-size) * 1.15));
+  font-weight: var(--openms-section-title-weight, var(--openms-heading-lg-weight));
+  line-height: 1.3;
+  color: var(--openms-section-title-color, var(--openms-navy));
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+.sponsor-eyebrow,
+.sponsor-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0;
+  padding: clamp(0.28rem, 1.2vw, 0.35rem) clamp(0.62rem, 2.5vw, 0.75rem);
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.18);
+  border-radius: 999px;
+  background: rgba(var(--openms-blue-rgb), 0.1);
+  font-size: clamp(0.68rem, 0.52rem + 0.65vw, 0.78rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--openms-blue);
+}
+
+.sponsor-section__lead {
+  margin: 0;
+  max-width: min(100%, var(--pro-measure-wide, 58ch));
+  width: 100%;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.6;
+  color: var(--olib-text-muted);
+}
+
+/* ── Why sponsor cards ── */
+.sponsor-why {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.sponsor-why__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.1rem);
+}
+
+.sponsor-why__card {
+  display: grid;
+  gap: 0.65rem;
+  align-content: start;
+  padding: clamp(1.15rem, 2.8vw, 1.5rem);
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+  border-radius: 1.25rem;
+  background: var(--openms-white);
+  box-shadow: 0 2px 12px rgba(var(--openms-navy-rgb), 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sponsor-why__card::before {
+  content: "";
+  width: 2.5rem;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--openms-blue), var(--openms-purple, var(--openms-blue)));
+}
+
+.sponsor-why__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(var(--openms-navy-rgb), 0.1);
+}
+
+.sponsor-why__card h3 {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-secondary-heading-size);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--openms-navy);
+}
+
+.sponsor-why__card p,
+.sponsor-why__card li {
+  margin: 0;
+  font-size: var(--openms-body-size);
+  line-height: 1.6;
+  color: rgba(var(--openms-dark-rgb), 0.86);
+}
+
+.sponsor-why__card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.sponsor-why__card li + li {
+  margin-top: 0.35rem;
+}
+
+.sponsor-why__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+  font-weight: var(--openms-cta-link-weight, 700);
+  color: var(--openms-cta-link, var(--openms-navy));
+  text-decoration: none;
+}
+
+.sponsor-why__link:hover,
+.sponsor-why__link:focus-visible {
+  color: var(--openms-cta-link-hover, var(--openms-blue));
+  text-decoration: none;
+}
+
+/* ── Sponsorship tiers ── */
+.sponsor-us-page .sponsor-tiers__grid,
+.openms-lib-page--sponsor-us .sponsor-tiers__grid {
+  margin-top: 0;
+}
+
+.sponsor-us-page .sponsor-tier,
+.openms-lib-page--sponsor-us .sponsor-tier {
+  border-radius: 1.25rem;
+  border-color: rgba(var(--openms-navy-rgb), 0.08);
+  box-shadow: 0 2px 12px rgba(var(--openms-navy-rgb), 0.04);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover only on the Learn more CTA — not the whole card */
+.sponsor-us-page .sponsor-tier__cta,
+.openms-lib-page--sponsor-us .sponsor-tier__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: 0.35rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.28);
+  background: rgba(var(--openms-navy-rgb), 0.06);
+  color: var(--openms-navy);
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  line-height: 1.2;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sponsor-us-page .sponsor-tier__cta:hover,
+  .openms-lib-page--sponsor-us .sponsor-tier__cta:hover {
+    background: var(--openms-navy);
+    border-color: var(--openms-navy);
+    color: var(--openms-white);
+    transform: translateY(-1px);
+    box-shadow: 0 0.35rem 0.9rem rgba(var(--openms-navy-rgb), 0.28);
+  }
+}
+
+.sponsor-us-page .sponsor-tier__toggle:focus-visible .sponsor-tier__cta,
+.openms-lib-page--sponsor-us .sponsor-tier__toggle:focus-visible .sponsor-tier__cta {
+  background: var(--openms-navy);
+  border-color: var(--openms-navy);
+  color: var(--openms-white);
+  transform: translateY(-1px);
+  box-shadow: 0 0.35rem 0.9rem rgba(var(--openms-navy-rgb), 0.28);
+}
+
+.sponsor-us-page .sponsor-tier__toggle:active .sponsor-tier__cta,
+.openms-lib-page--sponsor-us .sponsor-tier__toggle:active .sponsor-tier__cta {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.sponsor-us-page .sponsor-tiers__intro,
+.openms-lib-page--sponsor-us .sponsor-tiers__intro {
+  display: none; /* replaced by sponsor-section__lead */
+}
+
+/* ── Current sponsors panel ── */
+.sponsor-us-page .governance-section--contrast {
+  margin-top: 0;
+  padding: clamp(1.75rem, 4vw, 2.75rem) clamp(1.25rem, 3.5vw, 2.5rem);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--openms-blue) 8%, var(--openms-white)) 0%,
+    color-mix(in srgb, var(--openms-blue) 3%, var(--openms-white)) 55%,
+    var(--openms-white) 100%
+  );
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.08);
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(var(--openms-navy-rgb), 0.04);
+}
+
+.sponsor-us-page .governance-section--contrast .sponsor-section__head {
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* ── Become a sponsor: navy CTA band ── */
+.sponsor-us-page .sponsor-cta {
+  display: grid;
+  justify-items: center;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  padding: clamp(2.25rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 3rem);
+  text-align: center;
+  color: var(--openms-chrome-text, rgba(var(--openms-white-rgb), 0.92));
+  background:
+    radial-gradient(
+      120% 140% at 100% 0%,
+      rgba(var(--openms-blue-rgb), 0.28) 0%,
+      rgba(var(--openms-blue-rgb), 0) 58%
+    ),
+    var(--openms-navy);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 44px rgba(var(--openms-navy-rgb), 0.22);
+  overflow: hidden;
+}
+
+.sponsor-us-page .sponsor-cta .sponsor-section__head {
+  margin-bottom: 0;
+}
+
+.sponsor-us-page .sponsor-cta .sponsor-section__head h2 {
+  color: var(--openms-white);
+}
+
+.sponsor-us-page .sponsor-cta .sponsor-section__lead {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.sponsor-eyebrow--inverse,
+.sponsor-section-eyebrow--inverse {
+  color: var(--openms-white);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.sponsor-us-page .sponsor-cta .about-donate-actions.sponsor-us-page__actions {
+  margin-inline: auto;
+  justify-content: center;
+}
+
+.sponsor-us-page-layout .sponsor-cta .about-donate-actions.sponsor-us-page__actions > .openms-btn-primary {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--openms-white) !important;
+}
+
+.sponsor-us-page-layout .sponsor-cta .about-donate-actions.sponsor-us-page__actions > .openms-btn-primary:hover,
+.sponsor-us-page-layout .sponsor-cta .about-donate-actions.sponsor-us-page__actions > .openms-btn-primary:focus-visible,
+.sponsor-us-page-layout .sponsor-cta .about-donate-actions.sponsor-us-page__actions > .openms-btn-primary:active {
+  border-color: var(--openms-white);
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--openms-white) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(var(--openms-white-rgb), 0.16);
+}
+
+/* ── Donations: navy banner matching Code of Conduct on contribute ── */
+.sponsor-us-page .sponsor-donations {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding: clamp(1.5rem, 3.5vw, 2.25rem);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(
+      120% 140% at 100% 0%,
+      rgba(var(--openms-blue-rgb), 0.28) 0%,
+      rgba(var(--openms-blue-rgb), 0) 58%
+    ),
+    var(--openms-navy);
+  box-shadow: 0 18px 44px rgba(var(--openms-navy-rgb), 0.22);
+}
+
+.sponsor-donations__body {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.sponsor-us-page .sponsor-donations h2 {
+  margin: 0;
+  padding: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1.35rem, 1rem + 1.2vw, 1.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--openms-white);
+  letter-spacing: -0.01em;
+}
+
+.sponsor-us-page .sponsor-donations p {
+  margin: 0;
+  max-width: 52ch;
+  font-size: var(--openms-body-size);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sponsor-us-page-layout .sponsor-donations__btn {
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--openms-white) !important;
+}
+
+.sponsor-us-page-layout .sponsor-donations__btn:hover,
+.sponsor-us-page-layout .sponsor-donations__btn:focus-visible {
+  border-color: var(--openms-white);
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--openms-white) !important;
+  transform: scale(var(--openms-btn-hover-scale));
+  box-shadow: 0 0 0 var(--openms-btn-glow-size) var(--openms-btn-glow);
+  outline: none;
+  text-decoration: none;
+}
+
+/* ── FAQ ── */
+.sponsor-us-page .sponsor-faq__list {
+  margin-top: 0;
+}
+
+.sponsor-us-page .sponsor-faq__item {
+  border-radius: 1rem;
+  border-color: rgba(var(--openms-navy-rgb), 0.08);
+  box-shadow: 0 2px 12px rgba(var(--openms-navy-rgb), 0.04);
+}
+
+@media (max-width: 720px) {
+  .sponsor-why__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor-us-page .sponsor-donations {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start;
+  }
+
+  .about-donate-actions.sponsor-us-page__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .about-donate-actions.sponsor-us-page__actions > a {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-about__tile-title {
+  margin: 0 0 1.5rem !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__lead {
+  display: block !important;
+  grid-template-columns: none !important;
+  max-width: min(63.5rem, 100%) !important;
+  width: auto !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-lead-col {
+  display: block !important;
+}
+
+html body .openms-lib-page.openms-lib-page--sponsor-us .sponsor-faq__answer p a.openms-cta-link,
+html body .openms-lib-page.openms-lib-page--sponsor-us .sponsor-faq__answer p a.sponsor-faq__link,
+html body .openms-lib-page.openms-lib-page--sponsor-us .sponsor-faq__link {
+  display: inline-flex !important;
+  align-items: baseline;
+  gap: 0.28rem;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-weight: var(--openms-cta-link-weight, 700) !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__answer a.openms-cta-link span[aria-hidden="true"],
+html body .openms-lib-page--sponsor-us .sponsor-faq__link span[aria-hidden="true"] {
+  font-weight: 400 !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__answer a.openms-cta-link:hover,
+html body .openms-lib-page--sponsor-us .sponsor-faq__answer a.openms-cta-link:focus-visible,
+html body .openms-lib-page--sponsor-us .sponsor-faq__link:hover,
+html body .openms-lib-page--sponsor-us .sponsor-faq__link:focus-visible {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  gap: 0.42rem;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__question:hover,
+html body .openms-lib-page--sponsor-us .sponsor-faq__question:focus-visible {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  background: rgba(var(--openms-blue-rgb), 0.04) !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__item[open] .sponsor-faq__question:hover,
+html body .openms-lib-page--sponsor-us .sponsor-faq__item[open] .sponsor-faq__question:focus-visible {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  background: rgba(var(--openms-blue-rgb), 0.04) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sponsor-us-page-layout .openms-lib-btn:hover,
+  .sponsor-us-page-layout .openms-lib-btn:focus-visible,
+  .sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > a:hover,
+  .sponsor-us-page-layout .about-donate-actions.sponsor-us-page__actions > a:focus-visible,
+  .sponsor-us-page-layout .governance-card__link a:hover,
+  .sponsor-us-page-layout .governance-card__link a:focus-visible,
+  .sponsor-why__card:hover,
+  .sponsor-us-page .sponsor-tier__cta:hover,
+  .sponsor-us-page .sponsor-tier__toggle:focus-visible .sponsor-tier__cta,
+  .sponsor-us-page .sponsor-tier__toggle:active .sponsor-tier__cta,
+  .openms-lib-page--sponsor-us .sponsor-tier__cta:hover,
+  .openms-lib-page--sponsor-us .sponsor-tier__toggle:focus-visible .sponsor-tier__cta,
+  .openms-lib-page--sponsor-us .sponsor-tier__toggle:active .sponsor-tier__cta {
+    transform: none;
+  }
+}

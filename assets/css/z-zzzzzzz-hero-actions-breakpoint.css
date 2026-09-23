@@ -1,0 +1,67 @@
+/* ============================================================================
+   Hero action buttons — side by side, one consistent button size (the site's
+   standard button size, --openms-btn-*, matching every other button on the
+   page — e.g. the homepage's "Get involved"/"Contact us"/nav CTAs — so hero
+   buttons aren't a visibly different height from everything below them), as
+   long as every button fits at a readable width (each at least 12.5rem,
+   tuned to labels like "Sponsorship program" / "Executive committee" /
+   "Discuss a partnership" so they stay on one line at this larger size).
+   `auto-fit` drops whichever buttons don't fit onto their own full-width
+   row(s) once the screen is too narrow, instead of squeezing, wrapping the
+   label onto two lines, or overflowing. A couple of pages with an even
+   longer label ("Explore ways to contribute", "Report handling manual") can
+   still wrap in a narrow in-between range — going wide enough to prevent
+   that everywhere would make every hero stack much sooner on phones, undoing
+   "side by side on phones" for the shorter labels that are the common case.
+   `:is(html, #id)` only adds specificity to beat a sitewide two-button
+   width:100% rule (built on :has()/:not(), which alone out-specifies a plain
+   class selector) and the homepage hero's own older breakpoint rule; html
+   always matches, so it changes nothing about which pages/elements this file
+   targets.
+   ============================================================================ */
+
+:is(html, #hero-actions-boost) .openms-lib-hero__actions,
+:is(html, #hero-actions-boost) .home-page .hero-home__actions {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(10.9rem, 1fr)) !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  justify-self: stretch !important;
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-inline: 0 !important;
+  gap: 0.75rem !important;
+}
+
+:is(html, #hero-actions-boost) .openms-lib-hero__actions .openms-lib-btn,
+:is(html, #hero-actions-boost) .home-page .hero-home__actions .hero-home__btn {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  white-space: normal !important;
+  text-align: center !important;
+  height: auto !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 0.9rem !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  font-weight: var(--openms-btn-weight, 600) !important;
+}
+
+/* Homepage hero only: buttons hug their text (still at least 11rem, and they
+   still drop to stacked rows when they don't fit) instead of stretching across
+   the whole hero column — same height as every other button. */
+:is(html, #hero-actions-boost) .home-page .hero-home__actions {
+  grid-template-columns: repeat(auto-fit, minmax(10rem, max-content)) !important;
+  justify-content: start !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Pages with a long hero label ("Explore ways to contribute", "Report handling
+   manual"): a wider minimum column so the label never wraps to two lines —
+   the pair drops to stacked rows instead once it can't fit side by side. */
+:is(html, #hero-actions-boost) .openms-lib-page--contribute .openms-lib-hero__actions,
+:is(html, #hero-actions-boost) .openms-lib-page--code-of-conduct .openms-lib-hero__actions {
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)) !important;
+}

@@ -1,0 +1,206 @@
+/* Press Kit — logo and template download cards, plus a plain usage note.
+   Self-contained: this is a new page, so nothing here needs to fight an
+   existing page-scoped ruleset. Reuses the sitewide --pro-* tokens that
+   .openms-lib-page--hub.openms-lib-page--openms-lib defines. */
+
+.press-kit-assets {
+  width: 100%;
+  /* Smaller than the shared --pro-section-y (which other hub pages rely
+     on) — these are compact download cards, not a page section that
+     needs the usual generous breathing room, and shrinking it cuts
+     down on scrolling. */
+  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+  background: var(--openms-white);
+}
+
+/* The first anchor after the hero already gets pro-section-y of top
+   padding from the sitewide anchor rule (the way .openms-lib-about /
+   .openms-lib-resources / .openms-lib-block sections do) — don't stack
+   a second dose of it here. */
+.openms-lib-page--press-kit .openms-lib-page__body > .openms-lib-page__anchor:first-child > .press-kit-assets {
+  padding-top: 0;
+}
+
+.press-kit-assets--soft {
+  background: var(--pro-band-soft, #f4f7fb);
+}
+
+.press-kit-assets__inner {
+  width: 100%;
+  max-width: var(--pro-max);
+  margin-inline: auto;
+  padding-inline: var(--openms-page-inline);
+  box-sizing: border-box;
+}
+
+.press-kit-assets__head {
+  display: grid;
+  gap: 0.5rem;
+  max-width: min(100%, 46rem);
+  margin-bottom: clamp(1rem, 2vw, 1.4rem);
+}
+
+.press-kit-assets__eyebrow {
+  margin: 0;
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pro-eyebrow, rgba(var(--openms-blue-rgb), 0.72));
+}
+
+.press-kit-assets__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-section-title-size, calc(var(--openms-heading-lg-size) * 1.15));
+  font-weight: var(--openms-section-title-weight, var(--openms-heading-lg-weight));
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--openms-section-title-color, var(--openms-navy));
+}
+
+.press-kit-assets__lead {
+  margin: 0;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.6;
+  color: rgba(var(--openms-dark-rgb), 0.72);
+}
+
+.press-kit-assets__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--pro-card-gap);
+}
+
+.press-kit-asset {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 0.65rem;
+  padding: clamp(0.85rem, 1.6vw, 1rem);
+  border: 1px solid var(--pro-line);
+  border-radius: var(--pro-radius);
+  background: var(--openms-white);
+  box-shadow: var(--pro-shadow);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  /* The whole card is a download link now — reset link defaults so it
+     reads the same as the plain <article> version did. */
+  color: inherit;
+  text-decoration: none;
+}
+
+.press-kit-asset:hover,
+.press-kit-asset:focus-within {
+  border-color: var(--pro-line-strong);
+  box-shadow: var(--pro-shadow-hover);
+  transform: var(--pro-lift-sm, translateY(-2px));
+}
+
+.press-kit-asset:hover .press-kit-asset__cta,
+.press-kit-asset:focus-visible .press-kit-asset__cta {
+  color: var(--openms-cta-link-hover);
+}
+
+.press-kit-asset__preview {
+  display: grid;
+  place-items: center;
+  height: 5.5rem;
+  padding: 0.75rem;
+  border-radius: calc(var(--pro-radius) - 0.35rem);
+  box-sizing: border-box;
+}
+
+.press-kit-asset__preview--light {
+  background: var(--pro-band-soft, #f4f7fb);
+}
+
+.press-kit-asset__preview--dark {
+  background: var(--openms-navy);
+}
+
+.press-kit-asset__preview img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: calc(100% - 2rem);
+  max-height: 4rem;
+}
+
+.press-kit-asset__icon {
+  display: grid;
+  place-items: center;
+  height: 5.5rem;
+  border-radius: calc(var(--pro-radius) - 0.35rem);
+  background: var(--pro-band-soft, #f4f7fb);
+  color: var(--openms-blue);
+  font-size: 2.25rem;
+}
+
+.press-kit-asset__body {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.press-kit-asset__title {
+  margin: 0;
+  font-family: var(--openms-font-heading);
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  font-weight: 700;
+  color: var(--openms-navy);
+}
+
+.press-kit-asset__meta {
+  margin: 0;
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(var(--openms-dark-rgb), 0.5);
+}
+
+.press-kit-asset__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: end;
+  width: fit-content;
+  font-size: var(--openms-text-min);
+}
+
+/* This page has no outro/CTA band, so the sitewide .openms-lib-layout
+   bottom padding (meant to give room above a following band) just
+   stacks a second, dead gap after the note's own padding-bottom below. */
+.openms-lib-layout:has(.openms-lib-page--press-kit) {
+  padding-bottom: 0;
+}
+
+.press-kit-note {
+  width: 100%;
+  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+  padding-inline: var(--openms-page-inline, 1.5rem);
+  box-sizing: border-box;
+  background: var(--pro-band-soft, #f4f7fb);
+}
+
+.press-kit-note__inner {
+  width: 100%;
+  max-width: var(--pro-max, 75rem);
+  margin-inline: auto;
+  padding: clamp(1.5rem, 3.5vw, 2.25rem);
+  box-sizing: border-box;
+  display: grid;
+  gap: 0.75rem;
+  font-size: var(--openms-body-size);
+  line-height: 1.6;
+  color: rgba(var(--openms-dark-rgb), 0.72);
+  background: var(--openms-white);
+  border: 1px solid var(--pro-line);
+  border-radius: var(--pro-radius);
+  box-shadow: var(--pro-shadow);
+}
+
+@media (max-width: 720px) {
+  .press-kit-assets__grid {
+    grid-template-columns: 1fr;
+  }
+}

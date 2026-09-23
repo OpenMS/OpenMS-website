@@ -1,0 +1,13 @@
+<details class="gsoc-theme"{{ with .Get "id" }} id="{{ . }}"{{ end }}>
+  <summary class="gsoc-theme__summary">
+    <span class="gsoc-theme__copy">
+      {{- with .Get "label" }}
+      <span class="gsoc-theme__label">{{ . }}</span>
+      {{- end }}
+      <span class="gsoc-theme__title">{{ .Get "title" }}</span>
+    </span>
+  </summary>
+  <div class="gsoc-theme__projects">
+    {{ .Inner }}
+  </div>
+</details>

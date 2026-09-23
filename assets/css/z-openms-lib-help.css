@@ -1,0 +1,144 @@
+html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1.15rem !important;
+  text-align: center !important;
+}
+
+html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-copy {
+  justify-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: min(100%, 38rem) !important;
+}
+
+html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-title,
+html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-text {
+  text-align: center !important;
+}
+
+html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: center !important;
+  margin-inline: auto !important;
+}
+
+html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers.openms-lib-developers--cards {
+  gap: var(--pro-head-to-content) !important;
+}
+
+html body .openms-lib-page--hub.openms-lib-page--openms-lib.openms-lib-page--solution:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers .openms-lib-developers__cards-head {
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers a.openms-lib-btn.openms-lib-developers__platform-btn,
+html body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers .openms-lib-developers__card:is(:hover, :focus-within) a.openms-lib-btn.openms-lib-developers__platform-btn,
+html body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers .openms-lib-developers__card:is(:hover, :focus-within) a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible, :active) {
+  transform: none !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  height: auto !important;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+  box-sizing: border-box !important;
+}
+
+/* "Need help?" (Discord / GitHub issue) — side by side, same size, matching
+   the navy CTA bands / hero buttons standard, as long as both fit at a
+   readable width (each at least 9.5rem); `auto-fit` drops the second button
+   onto its own full-width row once the screen is too narrow for both. */
+html body .openms-lib-page .openms-lib-resources__assist .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions,
+html body .openms-lib-page #getting-started#getting-started .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)) !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  gap: 0.9rem !important;
+  width: min(100%, 24rem) !important;
+  max-width: 100% !important;
+}
+
+html body .openms-lib-page #getting-started#getting-started .openms-lib-resources__assist-actions .openms-lib-resources__assist-btn.openms-lib-resources__assist-btn.openms-lib-btn {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  justify-content: center !important;
+  white-space: normal !important;
+  height: auto !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 0.9rem !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  font-weight: var(--openms-btn-weight, 600) !important;
+}
+
+/* "Need help?" buttons: always centred in the band (on pyOpenMS the group sat
+   ~5px left of centre because another rule zeroed the auto margins). */
+:is(html, #assist-center-boost) body .openms-lib-page .openms-lib-resources__assist .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions {
+  justify-self: center !important;
+  align-self: center !important;
+  margin-inline: auto !important;
+  box-sizing: border-box !important;
+  width: min(100%, 24rem) !important;
+  max-width: 100% !important;
+}
+
+/* Developer cards (Building OpenMS from Source, Reviewing Pull Requests, ...)
+   — the platform / action buttons sit side by side at the same width as long
+   as each fits at a readable width, and only once they don't fit the card do
+   they drop to full-width rows (all the same width). `auto-fit` does that
+   from the card's own width, so there's no viewport breakpoint. The 2-button
+   "Reviewing Pull Requests" card has longer labels, so it gets a larger
+   minimum than the 3-button platform row. */
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__platforms {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)) !important;
+  flex-direction: unset !important;
+  align-items: stretch !important;
+  gap: 0.9rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms {
+  grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr)) !important;
+}
+
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  flex: none !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  white-space: normal !important;
+  text-align: center !important;
+}
+
+/* "Reviewing Pull Requests": the buttons fit their own text (not equal
+   width), side by side while they fit the card and wrapping onto the next
+   line when they don't. */
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  grid-template-columns: none !important;
+}
+
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #dev-platforms-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+}

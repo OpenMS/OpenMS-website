@@ -1,0 +1,17 @@
+{{- $metrics := .Site.Params.homeMetrics | default dict -}}
+{{- $stats := $metrics.stats | default (index .Site.Params.hero "stats") -}}
+{{- $supportNote := $metrics.supportNote -}}
+{{- with $stats }}
+<section class="home-page__block home-page__block--metrics home-stats" aria-label="OpenMS at a glance">
+  <div class="home-stats__inner">
+    <ul class="home-stats__panel" role="list">
+      {{- range . }}
+      {{ partial "home-metric-card.html" (dict "stat" .) }}
+      {{- end }}
+    </ul>
+    {{- with $supportNote }}
+    <p class="home-stats__support">{{ . }}</p>
+    {{- end }}
+  </div>
+</section>
+{{- end }}

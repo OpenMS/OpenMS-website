@@ -1,0 +1,43 @@
+/* News index — full solution-page width; cards stacked one under the other */
+
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) {
+  --news-max: var(--pro-max, 75rem) !important;
+}
+
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .openms-lib-page__body > .openms-lib-page__anchor > .openms-lib-block,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-page-block,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-page,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-body,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-bibliography,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-bibliography__entries {
+  width: 100% !important;
+  max-width: var(--pro-max, 75rem) !important;
+}
+
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-bibliography,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-body {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem)) !important;
+}
+
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .events-past-toolbar,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-year-toolbar,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-bibliography__entries,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-list,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-home__list,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .community-events-home__grid {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Stack cards one under the other */
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-list,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-home__list,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .community-events-home__grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  column-gap: 0 !important;
+  row-gap: clamp(1.15rem, 2.2vw, 1.5rem) !important;
+}

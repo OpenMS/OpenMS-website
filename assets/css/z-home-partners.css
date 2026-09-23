@@ -1,0 +1,54 @@
+/* Tablet (641-1024px): a smaller title (~18-19px) that fits on one line.
+   Phones (<=640px) keep the larger stacked two-line title. */
+@media (min-width: 641px) and (max-width: 1024px) {
+  html body .home-page .uni-partners--home .uni-partners__trust-title {
+    font-size: clamp(1.05rem, 2.3vw, 1.2rem) !important;
+  }
+}
+
+@media (min-width: 641px) {
+  html body .home-page .uni-partners--home .uni-partners__trust-title-line {
+    display: inline !important;
+  }
+
+  html body .home-page .uni-partners--home .uni-partners__trust-title-main {
+    white-space: nowrap !important;
+  }
+}
+
+/* Less empty blue under the hero's last line, so the partners strip below
+   it (and everything after) sits higher. */
+html body .home-page__hero .hero-home__main {
+  padding-bottom: clamp(0.75rem, 2vh, 1.25rem) !important;
+}
+
+/* Small screens: the logos wrap. Lay them out as centred, evenly spaced
+   rows (a 2-column grid left narrow logos floating in wide cells, with
+   15-137px gaps and the first column touching the screen edge). */
+@media (max-width: 768px) {
+  html body .home-page__block--partners .uni-partners--home .uni-partners__static {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.15rem 1.6rem !important;
+    width: 100% !important;
+    max-width: 34rem !important;
+    margin-inline: auto !important;
+    padding-inline: var(--openms-page-inline, 1.25rem) !important;
+    grid-template-columns: none !important;
+  }
+
+  html body .home-page__block--partners .uni-partners--home .uni-partners__static > [role="listitem"] {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: calc(50% - 0.8rem) !important;
+    min-width: 0 !important;
+  }
+
+  html body .home-page__block--partners .uni-partners--home .uni-partners__static .uni-partners__item {
+    width: auto !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+  }
+}

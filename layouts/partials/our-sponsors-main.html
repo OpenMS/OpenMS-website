@@ -1,0 +1,96 @@
+{{- /*
+  Our Sponsors page (/our-sponsors/).
+
+  Config: params.aboutPage.sponsorsSection + params.aboutPage.sponsors
+  See docs/common-tasks/update-sponsors.md
+*/ -}}
+{{- $about := .Site.Params.aboutPage | default dict -}}
+{{- $section := index $about "sponsorsSection" | default dict -}}
+{{- $sponsors := index $about "sponsors" | default (slice) -}}
+{{- $eyebrow := index $section "eyebrow" | default "About us" -}}
+{{- $intro := index $section "intro" | default "OpenMS receives direct funding from organizations that sponsor the project." -}}
+{{- $listTitle := index $section "listTitle" | default "Sponsors include:" -}}
+{{- $contactCta := index $section "contactCta" | default "Interested in sponsoring us? Contact us for more information." -}}
+{{- $contactUrl := index $section "contactUrl" | default "/contact/" -}}
+{{- $contactButtonText := index $section "contactButtonText" | default "Email Us" -}}
+{{- $contactButtonUrl := index $section "contactButtonUrl" | default "mailto:fundraising@openms.de" -}}
+{{- $groupByTier := index $section "groupByTier" | default false -}}
+{{- $tiers := .Site.Params.sponsorTiers.levels | default (slice) -}}
+<section class="openms-lib-layout">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--our-sponsors">
+<div class="openms-lib-page__intro">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="OpenMS sponsors">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "people" }}{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          Our <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">Sponsors</span>.
+        </h1>
+        <p class="openms-lib-hero__lead">{{ $intro }}</p>
+        <div class="openms-lib-hero__actions" aria-label="Related resources">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="/sponsor-us/">
+            <span class="openms-lib-btn__label">Sponsorship program</span>
+          </a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="{{ $contactButtonUrl }}">
+            <span class="openms-lib-btn__label">{{ $contactButtonText }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="openms-lib-page__body" aria-label="OpenMS sponsors">
+  <div id="our-sponsors" class="openms-lib-page__anchor">
+    <section class="openms-lib-resources openms-lib-resources--no-feature" aria-label="{{ strings.TrimSuffix ":" $listTitle }}">
+      <div class="openms-lib-resources__inner">
+        {{- if $groupByTier -}}
+        <div class="sponsors-tiers" role="list">
+          {{- range $tiers -}}
+          {{- $tierId := .id -}}
+          {{- $tierSponsors := where $sponsors "tier" $tierId -}}
+          {{- if gt (len $tierSponsors) 0 -}}
+          <section class="sponsors-tier" role="listitem" aria-label="{{ .name }} sponsors">
+            <h3 class="sponsors-tier__title">{{ .name }}</h3>
+            <div class="about-sponsors-logos sponsors-logo-grid" role="list">
+              {{- range $tierSponsors -}}
+              {{ partial "about-sponsor-logo.html" . }}
+              {{- end -}}
+            </div>
+          </section>
+          {{- end -}}
+          {{- end -}}
+        </div>
+        {{- else -}}
+        <div class="about-sponsors-logos sponsors-logo-grid" role="list" aria-label="OpenMS sponsors">
+          {{- range $sponsors -}}
+          {{ partial "about-sponsor-logo.html" . }}
+          {{- end -}}
+        </div>
+        {{- end -}}
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="openms-lib-page__outro">
+  <div id="sponsor-cta" class="openms-lib-page__anchor">
+    <section class="governance-cta-band" aria-labelledby="sponsor-cta-title">
+      <div class="governance-cta-band__panel">
+        <div class="governance-cta-band__copy">
+          <p class="governance-cta-band__kicker">Support OpenMS</p>
+          <p class="governance-cta-band__text">
+            <strong id="sponsor-cta-title">Become a sponsor</strong>
+            <span class="governance-cta-band__note">{{ $contactCta }}</span>
+          </p>
+        </div>
+        <div class="contribute-coc-band__actions" role="group" aria-label="Sponsorship actions">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="{{ $contactButtonUrl }}">{{ $contactButtonText }}</a>
+          <a class="openms-lib-btn openms-lib-btn--ghost openms-lib-cta-band__btn-ghost" href="/sponsor-us/">View program</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</article>
+</section>

@@ -1,0 +1,147 @@
+{{- $cfg := .Site.Params.researchPartnershipsPage | default dict -}}
+{{- $eyebrow := index $cfg "eyebrow" | default "Partner with OpenMS" -}}
+{{- $subtitle := index $cfg "subtitle" | default "We’re interested in hearing your idea for a partnership." -}}
+<section class="openms-lib-layout">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--research-partnerships">
+<div class="openms-lib-page__intro">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="Research partnerships with OpenMS">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "people" }}{{ $eyebrow }}</p>
+        <h1 class="openms-lib-hero__title">
+          <span class="openms-lib-hero__title-line">Research <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">partnerships</span></span>
+          <span class="openms-lib-hero__title-line">that scale with <br> your science.</span>
+        </h1>
+        <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
+        <div class="openms-lib-hero__actions" aria-label="Partnership actions">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="#partnership-form">
+            <span class="openms-lib-btn__label">Discuss a partnership</span>
+          </a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="#our-partners">
+            <span class="openms-lib-btn__label">Our partners</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="openms-lib-page__body" aria-label="Research partnerships">
+  <div id="partnerships-include" class="openms-lib-page__anchor">
+    <section class="openms-lib-about" aria-labelledby="partnerships-include-title">
+      <div class="openms-lib-about__inner">
+        <header class="openms-lib-about__head">
+          <div class="openms-lib-about__head-copy">
+            <p class="openms-lib-about__eyebrow">Collaborate</p>
+            <h2 id="partnerships-include-title" class="openms-lib-about__title">Partnerships include</h2>
+            <p class="openms-lib-about__lead">Ways research groups and organizations work with OpenMS on science, software, and infrastructure.</p>
+          </div>
+        </header>
+
+        <div class="openms-lib-about__mosaic rp-include__mosaic" role="list">
+          <article class="openms-lib-about__tile" role="listitem">
+            <span class="openms-lib-about__num" aria-hidden="true">01</span>
+            <h3 class="openms-lib-about__tile-title">Joint grant proposals</h3>
+          </article>
+          <article class="openms-lib-about__tile" role="listitem">
+            <span class="openms-lib-about__num" aria-hidden="true">02</span>
+            <h3 class="openms-lib-about__tile-title">Consortium &amp; collaborative projects</h3>
+          </article>
+          <article class="openms-lib-about__tile" role="listitem">
+            <span class="openms-lib-about__num" aria-hidden="true">03</span>
+            <h3 class="openms-lib-about__tile-title">Workflow &amp; algorithm development</h3>
+          </article>
+          <article class="openms-lib-about__tile" role="listitem">
+            <span class="openms-lib-about__num" aria-hidden="true">04</span>
+            <h3 class="openms-lib-about__tile-title">Benchmarking studies</h3>
+          </article>
+          <article class="openms-lib-about__tile" role="listitem">
+            <span class="openms-lib-about__num" aria-hidden="true">05</span>
+            <h3 class="openms-lib-about__tile-title">Infrastructure &amp; sustainability initiatives</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="our-partners" class="openms-lib-page__anchor">
+    <section class="openms-lib-resources openms-lib-resources--no-feature" aria-labelledby="our-partners-title">
+      <div class="openms-lib-resources__inner">
+        <header class="openms-lib-resources__head">
+          <p class="openms-lib-resources__eyebrow">Community</p>
+          <h2 id="our-partners-title" class="openms-lib-resources__title">Our partners</h2>
+          <p class="openms-lib-resources__lead">OpenMS partners with academic research groups, core facilities, national infrastructure, nonprofits, and industry.</p>
+        </header>
+        {{ partial "university-partners.html" (dict "Site" .Site "showHeader" false "staticOnly" true) }}
+      </div>
+    </section>
+  </div>
+
+  <div id="partnership-form" class="openms-lib-page__anchor">
+    <section class="openms-lib-resources openms-lib-resources--no-feature rp-application" aria-labelledby="partnership-form-title">
+      <div class="openms-lib-resources__inner rp-application__inner">
+        <header class="openms-lib-resources__head">
+          <p class="openms-lib-resources__eyebrow">Get in touch</p>
+          <h2 id="partnership-form-title" class="openms-lib-resources__title">Tell us about your idea</h2>
+          <p class="openms-lib-resources__lead">Share a short note about your partnership idea and we will follow up with next steps.</p>
+        </header>
+        <div class="rp-application__form" aria-label="Partnership inquiry form">
+          <iframe
+            class="rp-application__tally-iframe"
+            data-tally-src="https://tally.so/embed/gD1o0M?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="eager"
+            width="100%"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            scrolling="no"
+            title="Partnership Inquiry"
+          ></iframe>
+        </div>
+        <script>
+        (function () {
+          var widgetSrc = "https://tally.so/widgets/embed.js";
+
+          function loadTallyEmbeds() {
+            if (typeof window.Tally !== "undefined") {
+              window.Tally.loadEmbeds();
+              return;
+            }
+            document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (iframe) {
+              iframe.src = iframe.dataset.tallySrc;
+            });
+          }
+
+          function ensureWidget() {
+            if (typeof window.Tally !== "undefined") {
+              loadTallyEmbeds();
+              return;
+            }
+            var existing = document.querySelector('script[src="' + widgetSrc + '"]');
+            if (existing) {
+              existing.addEventListener("load", loadTallyEmbeds);
+              setTimeout(loadTallyEmbeds, 50);
+              return;
+            }
+            var script = document.createElement("script");
+            script.src = widgetSrc;
+            script.async = true;
+            script.onload = loadTallyEmbeds;
+            script.onerror = loadTallyEmbeds;
+            document.body.appendChild(script);
+          }
+
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", ensureWidget);
+          } else {
+            ensureWidget();
+          }
+          window.addEventListener("load", loadTallyEmbeds);
+        })();
+        </script>
+      </div>
+    </section>
+  </div>
+</div>
+</article>
+</section>

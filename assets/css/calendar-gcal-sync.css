@@ -1,0 +1,79 @@
+/* Google Calendar sync UI on the community calendar page: the "synced"
+   status badge next to the Upcoming events heading, the per-event
+   "Add to my calendar" link, and the hero's subscribe button's icon. */
+
+.community-events-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+}
+
+.calendar-sync-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(52, 168, 83, 0.08);
+  border: 1px solid rgba(52, 168, 83, 0.25);
+  font-family: var(--openms-font-body);
+  font-size: 0.8125rem;
+}
+
+.calendar-sync-badge .gcal-icon {
+  flex-shrink: 0;
+}
+
+.calendar-sync-badge__label {
+  font-weight: 700;
+  color: var(--openms-navy);
+}
+
+.calendar-sync-badge__sep {
+  width: 1px;
+  height: 0.75rem;
+  background: rgba(var(--openms-navy-rgb), 0.15);
+}
+
+.calendar-sync-badge__time {
+  font-weight: 500;
+  color: rgba(var(--openms-navy-rgb), 0.55);
+}
+
+/* The press-card is a plain flex row by default (fine when it holds only
+   the one big link); adding the "Add to my calendar" link as a second
+   child needs it to stack instead. */
+.community-news-events__press-card:has(.community-news-events__add-to-cal) {
+  flex-direction: column;
+}
+
+.community-news-events__add-to-cal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  font-family: var(--openms-font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(var(--openms-navy-rgb), 0.55);
+  text-decoration: none;
+}
+
+.community-news-events__add-to-cal:hover,
+.community-news-events__add-to-cal:focus-visible {
+  color: var(--openms-blue);
+  outline: none;
+}
+
+.community-news-events__add-to-cal .gcal-icon {
+  flex-shrink: 0;
+}
+
+@media (max-width: 560px) {
+  .calendar-sync-badge__time {
+    display: none;
+  }
+}

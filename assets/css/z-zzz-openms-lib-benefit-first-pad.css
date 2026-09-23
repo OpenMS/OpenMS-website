@@ -1,0 +1,35 @@
+/* The "01" card (openms-lib highlights strip) still had its left padding
+   zeroed by an older "strip-era" rule that a later redesign pass didn't
+   fully clean up, leaving its number/title flush against the card edge
+   while every other side (and every other card) got the standard
+   --openms-num-card-pad inset. Match it. */
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit.openms-lib-about__benefit.openms-lib-about__benefit:first-child {
+  padding-left: var(--openms-num-card-pad, clamp(1.15rem, 2.5vw, 1.5rem)) !important;
+}
+
+/* Same fix for the <=1100px 2-column layout, where a separate
+   #what-is-openms-scoped, odd/even-based rule (higher specificity from
+   the #id) zeroes the left column's left padding again. That rule
+   gives the right column (even children) a padding-left of its own
+   (the gutter next to the middle divider) but never restores it for
+   the left column (odd children) — only card 1 happened to be patched
+   here before, leaving every other left-column card (3, 5, ...) flush
+   against the outer edge. Fix the whole left column at once. */
+@media (max-width: 1100px) {
+  html body .openms-lib-page--solution.openms-lib-page--openms-lib #what-is-openms .openms-lib-about--benefits .openms-lib-about__benefit:nth-child(odd) {
+    padding-left: var(--openms-num-card-pad, clamp(1.15rem, 2.5vw, 1.5rem)) !important;
+  }
+}
+
+/* At <=560px (single-column stack) that same #what-is-openms rule
+   drops to padding-inline:0 on EVERY card via odd/even selectors, not
+   just the first — leaving 02/03/04's number/title flush against the
+   left edge too. Match the same odd/even specificity so this wins on
+   source order, and restore the left inset for every card. */
+@media (max-width: 560px) {
+  html body .openms-lib-page--solution.openms-lib-page--openms-lib #what-is-openms .openms-lib-about--benefits .openms-lib-about__benefit,
+  html body .openms-lib-page--solution.openms-lib-page--openms-lib #what-is-openms .openms-lib-about--benefits .openms-lib-about__benefit:nth-child(odd),
+  html body .openms-lib-page--solution.openms-lib-page--openms-lib #what-is-openms .openms-lib-about--benefits .openms-lib-about__benefit:nth-child(even) {
+    padding-left: var(--openms-num-card-pad, clamp(1.15rem, 2.5vw, 1.5rem)) !important;
+  }
+}

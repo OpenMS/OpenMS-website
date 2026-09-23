@@ -1,0 +1,35 @@
+/* Card titles are in capitals everywhere (news / event cards, "What is OpenMS?"
+   cards, tiles, principle cards, …). Some cards had sentence-case titles.
+   Only headings inside a card-like container are affected; the Contribute
+   developer cards are handled in z-zzzzz-developers-cards.css. */
+:is(html, #card-titles-upper-boost) body :is(
+  [class*="card"],
+  [class*="tile"],
+  [class*="principle"],
+  [class*="resources__item"],
+  [class*="leadership"]
+):not(.navbar, .navbar *, .footer-redesign *) :is(h3, h4, h3 > span, h4 > span) {
+  text-transform: uppercase;
+}
+
+:is(html, #card-titles-upper-boost) body .community-news-events__press-card .community-news-events__press-title,
+:is(html, #card-titles-upper-boost) body .keyfeatures-modern__topic-card .keyfeatures-modern__topic-title {
+  text-transform: uppercase !important;
+  letter-spacing: 0.01em;
+}
+
+/* Sponsor us — "Benefit comparison" heading in capitals. */
+:is(html, #benefit-title-upper-boost) body .sponsor-benefits__title.sponsor-benefits__title {
+  text-transform: uppercase !important;
+}
+
+/* One card-title standard: capitals, the shared --openms-card-title-size,
+   weight 700. These cards had drifted (19px / 800 / 16px). The featured
+   Contribute card keeps its deliberately larger white title. */
+:is(html, #card-title-std-boost) body .keyfeatures-modern__topic-card .keyfeatures-modern__topic-title.keyfeatures-modern__topic-title,
+:is(html, #card-title-std-boost) body .openms-lib-resources__item .openms-lib-resources__item-title.openms-lib-resources__item-title,
+:is(html, #card-title-std-boost) body .community-news-events__press-card .community-news-events__press-title.community-news-events__press-title,
+:is(html, #card-title-std-boost) body .contribute-support__title.contribute-support__title {
+  font-size: var(--openms-card-title-size) !important;
+  font-weight: var(--openms-card-title-weight, 700) !important;
+}

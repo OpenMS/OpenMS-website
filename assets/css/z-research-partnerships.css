@@ -1,0 +1,70 @@
+/* Research partnerships form — hug Tally height; modest space under submit */
+html body .openms-lib-page--research-partnerships #partnership-form,
+html body .openms-lib-page--research-partnerships .rp-application {
+  padding-bottom: clamp(1.75rem, 4vw, 3rem) !important;
+}
+
+html body .openms-lib-page--research-partnerships .rp-application__form {
+  height: auto !important;
+  min-height: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+html body .openms-lib-page--research-partnerships .rp-application__tally-iframe,
+html body .openms-lib-page--research-partnerships iframe.rp-application__tally-iframe {
+  display: block !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+@media (max-width: 720px) {
+  html body .openms-lib-page--research-partnerships .rp-application__tally-iframe,
+  html body .openms-lib-page--research-partnerships iframe.rp-application__tally-iframe {
+    min-height: 0 !important;
+  }
+}
+
+/* Partnerships include numbered cards — layout from z-zzz-num-strip-white.css */
+
+/* Our partners (phones) — logos were spread out (107px-tall cells, ~120px row
+   pitch and ~40px of padding around the grid). Tighten the cells so the logos
+   sit closer together. */
+@media (max-width: 600px) {
+  html body .openms-lib-page--research-partnerships .uni-partners.uni-partners {
+    padding-block: 0.5rem !important;
+  }
+
+  html body .openms-lib-page--research-partnerships .uni-partners.uni-partners .uni-partners__static {
+    gap: 0.35rem 0.75rem !important;
+  }
+
+  html body .openms-lib-page--research-partnerships .uni-partners.uni-partners .uni-partners__item.uni-partners__item {
+    min-height: 0 !important;
+    height: auto !important;
+    padding-block: 0.4rem !important;
+  }
+}
+
+/* Hero title on phones — scale with the screen so the widest line, "RESEARCH
+   PARTNERSHIPS" (~13.5em in capitals), always fits inside the page gutters with
+   a little slack, instead of filling the width edge to edge and breaking the
+   word mid-way ("PARTNERSHI / PS") when the font renders slightly wider. */
+@media (max-width: 767px) {
+  :is(html, #rp-title-boost) body .openms-lib-page--research-partnerships .openms-lib-hero__title.openms-lib-hero__title,
+  :is(html, #rp-title-boost) body .openms-lib-page--research-partnerships .openms-lib-hero__title .openms-lib-hero__accent.openms-lib-hero__accent {
+    font-size: clamp(1.05rem, calc((100vw - 2.5rem) / 14.8), 2.2rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  :is(html, #rp-title-boost) body .openms-lib-page--research-partnerships .openms-lib-hero__title .openms-lib-hero__title-line,
+  :is(html, #rp-title-boost) body .openms-lib-page--research-partnerships .openms-lib-hero__title .openms-lib-hero__accent {
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+    max-width: 100%;
+  }
+}

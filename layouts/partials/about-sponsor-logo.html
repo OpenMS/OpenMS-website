@@ -1,0 +1,18 @@
+{{- $name := .name | default "Sponsor" -}}
+{{- $url := .url | default "#" -}}
+{{- $logo := .logo | default "" -}}
+{{- $alt := .alt | default $name -}}
+{{- $onDark := .logoOnDark | default false -}}
+<a
+  class="about-sponsors-logos__item{{ if $onDark }} about-sponsors-logos__item--dark{{ end }}"
+  role="listitem"
+  href="{{ $url }}"
+  target="_blank"
+  rel="noopener noreferrer sponsored"
+>
+  {{- if $logo -}}
+  <img class="about-sponsors-logos__logo" src="{{ $logo }}" alt="{{ $alt }}" loading="lazy" decoding="async" />
+  {{- else -}}
+  <span class="about-sponsors-logos__name">{{ $name }}</span>
+  {{- end -}}
+</a>

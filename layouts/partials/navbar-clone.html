@@ -1,0 +1,83 @@
+{{- $title          := .Site.Params.title }}
+{{- $navbar         := .Site.Params.navbar }}
+{{- $navbarLogo     := .Site.Params.navbarlogo }}
+<nav id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation">
+  <div class="container is-max-widescreen">
+    <div class="navbar-brand">
+      {{- if $navbarLogo }}
+      {{- $logoLight := "logos/OpenMS_transparent_whiteFont.svg" -}}
+      {{- $logoDark := "logos/OpenMS_transparent_blackFont.svg" -}}
+      <a class="navbar-item navbar-brand-link" href="{{ $navbarLogo.link }}">
+        <img class="navbar-logo navbar-logo--on-dark" src="{{ printf "/images/%s" $logoLight | relURL }}" alt="{{ default (printf "%s logo" $title) $navbarLogo.altText }}">
+        <img class="navbar-logo navbar-logo--on-light" src="{{ printf "/images/%s" $logoDark | relURL }}" alt="" aria-hidden="true">
+        {{- with $navbarLogo.text }}
+        <span class="navbar-logo-text">{{ . }}</span>
+        {{- end }}
+      </a>
+      {{- end }}
+
+      <div class="navbar-brand-actions">
+        <div class="navbar-mobile-toolbar navbar-mobile-ctas-end" aria-label="Search and menu">
+        {{ partial "navbar-search.html" (dict "Site" .Site "variant" "mobile" "inputId" "navbar-search-input-clone-mobile") }}
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="cloned-navbar-menu" class="navbar-menu is-fixed">
+      <div class="navbar-menu__panel">
+        {{ partial "navbar-menu-header.html" . }}
+        <div class="navbar-menu__nav" aria-label="Site navigation">
+          <div class="navbar-end">
+            <div class="navbar-links">
+        {{- range $navbar }}
+        {{- if .sublinks }}
+        <div class="navbar-item has-dropdown is-hoverable{{ if .is_emphasized }} is-emphasized{{ end }}" data-nav="{{ .title | urlize }}">
+          <a href="{{ .url | default "#" }}" class="navbar-link" role="button" aria-expanded="false" aria-haspopup="true">
+            <span class="navbar-link__label">{{ .title }}</span>
+            {{ if .is_external }}{{ partial "svg-icon" "launch" }}{{ end }}
+            <span class="navbar-dropdown-chevron" aria-hidden="true"></span>
+          </a>
+
+          <div class="navbar-dropdown" aria-hidden="true">
+            {{ partial "navbar-sublinks.html" .sublinks }}
+          </div>
+        </div>
+        {{- else if not .button }}
+        <a href="{{ .url }}" class="navbar-item is-secondary">
+          {{ .title }}
+          {{ if .is_external }}{{ partial "svg-icon" "launch" }}{{ end }}
+        </a>
+        {{- end }}
+        {{- end }}
+
+        {{- if .IsTranslated }}
+        {{ partial "translation.html" . }}
+        {{- end }}
+            </div>
+
+            {{ partial "navbar-social.html" . }}
+
+            <div class="navbar-actions">
+            {{ partial "navbar-search.html" (dict "Site" .Site "variant" "desktop" "inputId" "navbar-search-input-clone") }}
+            {{- range $navbar }}
+            {{- if .button }}
+            <span class="navbar-desktop-cta">{{ partial "navbar-cta.html" . }}</span>
+            {{- end }}
+            {{- end }}
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-menu__footer">
+          {{ partial "navbar-mobile-ctas.html" (dict "Site" .Site "placement" "menu") }}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

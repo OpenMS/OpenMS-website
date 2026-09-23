@@ -1,0 +1,58 @@
+/* Code of Conduct — governance-style hero header, then a plain, "wall of
+   text" body like a legal document (e.g.
+   apache.org/foundation/how-it-works/). Reuses the site's base
+   .openms-lib-prose typography for headings/paragraphs/lists. */
+
+/* The hero already ends with its own breathing room below the lead line,
+   so cancel the sitewide "first anchor after hero" top padding to avoid
+   stacking two gaps in a row. */
+.openms-lib-page--code-of-conduct .openms-lib-page__body > .openms-lib-page__anchor:first-child {
+  padding-top: clamp(1.5rem, 4vw, 2.5rem) !important;
+}
+
+/* Compound with .openms-lib-prose so this beats the sitewide
+   .openms-lib-prose { max-width: none } rule regardless of stylesheet
+   load order (equal-specificity single-class rules lose to whichever
+   loads last, which isn't always us). Padding-inline is set here too,
+   rather than relying on the parent anchor, since a page-specific
+   override elsewhere strips that padding for this page. Matches the
+   width used by the Report Handling Manual (.rhm-charter__inner),
+   the equivalent "wall of text" legal-document page. */
+.coc-charter__inner.openms-lib-prose {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--pro-max, 75rem);
+  margin-inline: auto;
+  padding-inline: var(--openms-page-inline, 1.5rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  overflow: hidden;
+}
+
+/* This page has no outro/CTA band, so the sitewide .openms-lib-layout
+   bottom padding (meant to give room above a following band) just
+   leaves a large dead gap before the footer here. */
+.openms-lib-layout:has(.openms-lib-page--code-of-conduct) {
+  padding-bottom: 0;
+}
+
+/* A site-wide reset hides list markers by default; a plain document page
+   needs visible bullets/numbers like any normal prose list. */
+.coc-charter__inner ul {
+  list-style: disc;
+}
+
+.coc-charter__inner ol {
+  list-style: decimal;
+}
+
+.coc-charter__inner li {
+  list-style: inherit;
+}
+
+/* The "This section summarizes..." intro note reads muted gray like the
+   rest of the body copy — make it solid black so it reads as intentional
+   emphasis rather than de-emphasized text. */
+.coc-charter__inner em {
+  color: var(--openms-dark, #231f20) !important;
+  font-style: italic;
+}

@@ -1,8 +1,6 @@
 ---
-title: "Executive Committee"
+title: "Executive Committee Charter"
 ---
-
-# OpenMS Executive Committee
 
 The **Executive Committee** is the primary governance body of the OpenMS project. It is responsible for guiding the technical direction, long-term sustainability, and community governance of OpenMS.
 
@@ -26,14 +24,14 @@ The Executive Committee provides leadership for the OpenMS project by:
 
 The Executive Committee is responsible for:
 
-- Determining the **mission, direction, and vision** of the OpenMS project  
-- Planning for the **long-term continuity** of the project  
-- Directing **development resources** in line with the project vision  
-- Maintaining and updating the **project bylaws**  
-- Enhancing the **public image and reputation** of OpenMS  
-- Forming additional committees as needed  
-- Electing the **Executive Chairperson**  
-- Managing the **list of core developers**  
+- Determining the **mission, direction, and vision** of the OpenMS project
+- Planning for the **long-term continuity** of the project
+- Directing **development resources** in line with the project vision
+- Maintaining and updating the **project bylaws**
+- Enhancing the **public image and reputation** of OpenMS
+- Forming additional committees as needed
+- Electing the **Executive Chairperson**
+- Managing the **list of core developers**
 - Addressing **Code of Conduct issues**
 
 ---
@@ -78,7 +76,7 @@ Meeting rules:
 - Meetings are scheduled by the **Executive Chairperson**, or by any committee member if the position is vacant
 - Members must receive **at least 48 hours notice** of meetings
 - A **quorum of five members** is required for votes
-- Proceedings follow **Robert’s Rules of Order Newly Revised** if requested by any committee member
+- Proceedings follow **Robert's Rules of Order Newly Revised** if requested by any committee member
 
 ---
 
@@ -102,9 +100,3 @@ In keeping with the principles of open science and open-source collaboration:
 - Meeting minutes are made publicly available unless the committee votes otherwise
 
 This commitment ensures transparency and accountability in the governance of the OpenMS project.
-
----
-
-## See Also
-
-For guidance on getting started as a contributor, see the [Contributing Guide]({{< relref "/contribute" >}}).

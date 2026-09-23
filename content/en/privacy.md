@@ -1,6 +1,8 @@
 ---
 title: Privacy Policy
 sidebar: false
+hidePageTitle: true
+hideShortcuts: true
 ---
 
 ### WHO WE ARE

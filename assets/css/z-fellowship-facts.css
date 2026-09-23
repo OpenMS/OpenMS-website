@@ -1,0 +1,22 @@
+/* Fellowship facts: closer under hero; card layout from z-zzz-num-strip-white.css */
+.openms-lib-page--fellowship .openms-lib-page__intro {
+  gap: clamp(0.65rem, 1.5vw, 1.1rem);
+}
+
+.openms-lib-page--fellowship.openms-lib-page--solution .openms-lib-hero--solution {
+  padding-bottom: clamp(0.75rem, 2vw, 1.25rem) !important;
+}
+
+/* Phones — give the application form the full page width. It was inset three
+   times (section, inner wrapper and card padding), leaving the Tally form only
+   ~260px wide on a 375px screen. Keep just the standard 14px page gutter and a
+   slim card padding. */
+@media (max-width: 720px) {
+  html body .openms-lib-page--fellowship .fellowship-application .fellowship-application__inner.fellowship-application__inner {
+    padding-inline: 0 !important;
+  }
+
+  html body .openms-lib-page--fellowship .fellowship-application .fellowship-application__form-card.fellowship-application__form-card {
+    padding: 0.35rem !important;
+  }
+}

@@ -1,0 +1,34 @@
+{{- $committeeEmail := "conduct@openms.org" -}}
+<section class="openms-lib-layout">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--report-handling">
+<div class="openms-lib-page__intro">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="Code of Conduct Enforcement Procedures">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "people" }}Community</p>
+        <h1 class="openms-lib-hero__title">{{ .Title }}</h1>
+        <p class="openms-lib-hero__lead">
+          <span class="openms-lib-hero__lead-line">How the OpenMS Code of Conduct Committee follows up on reports — so responses stay consistent, fair, and focused on community health.</span>
+        </p>
+        <div class="openms-lib-hero__actions" aria-label="Report handling actions">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="mailto:{{ $committeeEmail }}">
+            <span class="openms-lib-btn__label">Report an incident</span>
+          </a>
+          <a class="openms-lib-btn openms-lib-btn--ghost" href="/code-of-conduct/">
+            <span class="openms-lib-btn__label">Code of Conduct</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="openms-lib-page__body">
+  <div class="openms-lib-page__anchor">
+    <div class="rhm-charter__inner openms-lib-prose">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+</article>
+</section>
