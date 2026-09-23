@@ -14,3 +14,28 @@
     box-sizing: border-box;
   }
 }
+
+/* Homepage "View all →" (News and Events headers): nudge it in a little from
+   the right edge. */
+html body .home-page .community-news-events__column-header {
+  padding-right: 1.1rem;
+  box-sizing: border-box;
+}
+
+/* Featured Apps cards on phones (one card per row): the "View app →" link
+   sits right under the description — the 3-line reserve that lines links up
+   across a row on wider screens isn't needed when each card is on its own. */
+@media (max-width: 767px) {
+  html body .home-page .webapps-project-card__text {
+    min-height: 0;
+    flex: 0 0 auto;
+  }
+
+  html body .home-page .webapps-project-card__body {
+    gap: 0.6rem;
+  }
+
+  html body .home-page .webapps-project-card__cta {
+    margin-top: 0;
+  }
+}
