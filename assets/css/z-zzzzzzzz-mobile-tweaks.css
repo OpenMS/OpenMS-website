@@ -39,3 +39,14 @@ html body .home-page .community-news-events__column-header {
     margin-top: 0;
   }
 }
+
+/* Developers "Contribute" lead ("Your improvements help researchers
+   worldwide."): fill the full width on phones instead of being balanced into
+   two short, equal lines. */
+@media (max-width: 767px) {
+  html body .openms-lib-developers__lead {
+    text-wrap: wrap !important;
+    max-width: 100% !important;
+    width: 100%;
+  }
+}
