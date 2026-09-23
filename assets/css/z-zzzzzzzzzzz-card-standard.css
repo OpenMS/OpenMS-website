@@ -1,0 +1,140 @@
+/* ============================================================================
+   White cards with a blue icon — one standard.
+   Reference: the resource cards on Contact / Donate / Press kit / Governance
+   (.openms-lib-resources__item): 16px radius, soft border + shadow, standard
+   padding, a big soft-blue icon top-left that turns full blue on hover,
+   uppercase 17.7px Montserrat title, 16px Raleway text, 14px blue link.
+   The Contribute track cards, Contribute channel cards and the developer
+   cards (OpenMS-lib / pyOpenMS / ...) had drifted (icons 13–30px and solid
+   or soft, no shadow, different padding/gap). The navy "featured" developer
+   card keeps its dark design.
+   ============================================================================ */
+
+:root {
+  --card-std-icon-size: clamp(2.5rem, 3.8vw, 3rem);
+  --card-std-icon-color: rgba(var(--openms-blue-rgb), 0.28);
+}
+
+/* ---------- shared card frame ---------- */
+:is(html, #card-std-boost) body .openms-lib-page .contribute-track__item,
+:is(html, #card-std-boost) body .openms-lib-page .contribute-channel,
+:is(html, #card-std-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured) {
+  border-radius: var(--pro-radius, 1rem) !important;
+  border: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
+  background: var(--openms-white) !important;
+  box-shadow: var(--pro-shadow, 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05)) !important;
+  padding: var(--pro-card-pad-lg, 1.2rem) !important;
+  gap: 0.45rem !important;
+}
+
+/* ---------- icons: big, soft blue, full blue on hover ---------- */
+:is(html, #card-std-boost) body .openms-lib-page .contribute-track__icon,
+:is(html, #card-std-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured) .openms-lib-developers__card-icon {
+  display: grid;
+  place-items: center;
+  width: auto !important;
+  height: auto !important;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none;
+  font-size: var(--card-std-icon-size) !important;
+  line-height: 1;
+  color: var(--card-std-icon-color) !important;
+  transition: color 0.2s ease;
+}
+
+:is(html, #card-std-boost) body .openms-lib-page .contribute-track__icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa),
+:is(html, #card-std-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured) .openms-lib-developers__card-icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa) {
+  color: var(--card-std-icon-color) !important;
+  font-size: 1em !important;
+  width: 1em !important;
+  height: 1em !important;
+}
+
+:is(html, #card-std-boost) body .openms-lib-page .contribute-track__icon svg path,
+:is(html, #card-std-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured) .openms-lib-developers__card-icon svg path {
+  fill: currentColor !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :is(html, #card-std-boost) body .openms-lib-page .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon,
+  :is(html, #card-std-boost) body .openms-lib-page .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa),
+  :is(html, #card-std-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-icon,
+  :is(html, #card-std-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa) {
+    color: var(--openms-blue) !important;
+  }
+}
+
+/* ---------- text: same fonts / sizes / colours ---------- */
+:is(html, #card-std-boost) body .openms-lib-page :is(.contribute-track__item, .contribute-channel, .openms-lib-developers__card:not(.openms-lib-developers__card--featured)) :is(h3, h4) {
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-card-title-size, 1.1rem);
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+:is(html, #card-std-boost) body .openms-lib-page :is(.contribute-track__item, .contribute-channel, .openms-lib-developers__card:not(.openms-lib-developers__card--featured)) p:not(.openms-lib-developers__card-tag):not(.contribute-track__badge) {
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size);
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(var(--openms-dark-rgb), 0.72);
+}
+
+:is(html, #card-std-boost) body .openms-lib-page :is(.contribute-track__item, .contribute-channel, .openms-lib-developers__card:not(.openms-lib-developers__card--featured)) :is(.contribute-track__cta, .contribute-channel__link, .openms-lib-developers__card-link) {
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  color: var(--openms-blue);
+}
+
+/* ---------- developer cards: the #for-developers rules are id-scoped, so
+   match them with the same ids ---------- */
+html body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured) {
+  border-radius: var(--pro-radius, 1rem) !important;
+  border: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
+  box-shadow: var(--pro-shadow, 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05)) !important;
+  padding: var(--pro-card-pad-lg, 1.2rem) !important;
+  gap: 0.45rem !important;
+}
+
+html body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured) .openms-lib-developers__card-icon {
+  font-size: var(--card-std-icon-size) !important;
+  width: auto !important;
+  height: auto !important;
+  color: var(--card-std-icon-color) !important;
+}
+
+html body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured) .openms-lib-developers__card-icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa) {
+  color: var(--card-std-icon-color) !important;
+  font-size: 1em !important;
+  width: 1em !important;
+  height: 1em !important;
+}
+
+html body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured) .openms-lib-developers__card-icon svg path {
+  fill: currentColor !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-icon,
+  html body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa) {
+    color: var(--openms-blue) !important;
+  }
+}
+
+/* ---------- contribute tracks: the section-id rule made these icons
+   smaller than every other card; match it ---------- */
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__icon {
+  font-size: var(--card-std-icon-size) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa) {
+  font-size: 1em !important;
+  width: 1em !important;
+  height: 1em !important;
+}
