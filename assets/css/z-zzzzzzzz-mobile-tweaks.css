@@ -50,3 +50,25 @@ html body .home-page .community-news-events__column-header {
     width: 100%;
   }
 }
+
+/* Citation cards (OpenMS 3 / pyOpenMS-viz / ... — "View on PubMed", "More
+   citations"): buttons fit their own text instead of stretching to full
+   width, side by side while they fit and wrapping when they don't. */
+:is(html, #cite-actions-boost) body .openms-lib-cite__actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.9rem !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+:is(html, #cite-actions-boost) body .openms-lib-cite__actions > a.openms-lib-btn,
+:is(html, #cite-actions-boost) body .openms-lib-cite__actions > .openms-lib-btn {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+}
