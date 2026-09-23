@@ -1,0 +1,289 @@
+/* ============================================================================
+   Contribute page — clearer path and calmer, more consistent cards.
+   1. "Ways to contribute" comes first (reordered in the template).
+   2. Ways cards: one structure, equal heights; development is the wide
+      featured card, "Build from source" uses compact platform links.
+   3. Channels: icons instead of 01/02/03 (no order is implied).
+   4. Outreach: real X / Bluesky logos, bigger brand icons.
+   5. Funding: a proper navy call-to-action panel.
+   ============================================================================ */
+
+/* ---------- 2. ways grid ---------- */
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-auto-rows: auto !important;
+  gap: var(--pro-card-gap, 1.25rem) !important;
+  align-items: stretch !important;
+  list-style: none;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item {
+  grid-column: span 1 !important;
+  grid-row: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  height: 100%;
+  min-height: 0 !important;
+  max-height: none !important;
+  width: auto !important;
+  position: relative;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item--wide {
+  grid-column: span 2 !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+  gap: 0.45rem;
+}
+
+/* the link / link row always sits at the bottom of its card */
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__cta,
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-os-links,
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-project-links {
+  margin-top: auto;
+}
+
+/* "Most common" badge: pinned top-right of the featured card */
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* development projects as chips */
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-project-links {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-inline: 0;
+  padding: 0.75rem 0 0;
+  border-top: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1));
+  list-style: none;
+  width: 100%;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-project-links li {
+  margin: 0;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-project-link {
+  display: inline-flex !important;
+  align-items: center;
+  padding: 0.3rem 0.8rem !important;
+  border: 1px solid rgba(var(--openms-blue-rgb), 0.3) !important;
+  border-radius: 999px !important;
+  background: rgba(var(--openms-blue-rgb), 0.05) !important;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-project-link:hover {
+  background: rgba(var(--openms-blue-rgb), 0.12);
+  border-color: var(--openms-blue);
+}
+
+/* build from source: compact platform text links */
+html body .openms-lib-page--contribute .contribute-os-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  margin: 0;
+  padding: 0.75rem 0 0;
+  border-top: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1));
+  list-style: none;
+  width: 100%;
+}
+
+html body .openms-lib-page--contribute .contribute-os-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  color: var(--openms-blue);
+  text-decoration: none;
+}
+
+html body .openms-lib-page--contribute .contribute-os-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 900px) {
+  html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item--wide {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (max-width: 620px) {
+  html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* ---------- 3. channels: icon in place of the number ---------- */
+html body .openms-lib-page--contribute .contribute-channel__icon {
+  display: grid;
+  place-items: center;
+  width: auto;
+  height: auto;
+  margin: 0 0 0.15rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  font-size: var(--card-std-icon-size, clamp(2.5rem, 3.8vw, 3rem));
+  line-height: 1;
+  color: var(--card-std-icon-color, rgba(var(--openms-blue-rgb), 0.28));
+  transition: color 0.2s ease;
+}
+
+html body .openms-lib-page--contribute .contribute-channel__icon :is(i, svg, .fab, .fas, .svg-inline--fa) {
+  font-size: 1em !important;
+  width: 1em !important;
+  height: 1em !important;
+  color: inherit !important;
+}
+
+html body .openms-lib-page--contribute .contribute-channel__icon svg path {
+  fill: currentColor !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html body .openms-lib-page--contribute .contribute-channel:is(:hover, :focus-within) .contribute-channel__icon {
+    color: var(--openms-blue);
+  }
+}
+
+/* ---------- 4. outreach: bigger brand icons ---------- */
+html body .openms-lib-page--contribute .contribute-outreach__social-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.35rem;
+  color: rgba(var(--openms-blue-rgb), 0.45);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+html body .openms-lib-page--contribute .contribute-outreach__social-icon :is(i, svg) {
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+}
+
+html body .openms-lib-page--contribute .contribute-outreach__social-link:hover .contribute-outreach__social-icon,
+html body .openms-lib-page--contribute .contribute-outreach__social-link:focus-visible .contribute-outreach__social-icon {
+  color: var(--openms-blue);
+  transform: scale(1.08);
+}
+
+/* ---------- 5. funding: navy call-to-action panel ---------- */
+html body .openms-lib-page--contribute .contribute-support {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1.25rem 2rem !important;
+  margin-block: clamp(2rem, 4vw, 3rem) !important;
+  padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.25rem, 3.5vw, 2.5rem) !important;
+  border: none !important;
+  border-radius: var(--pro-radius, 1rem) !important;
+  background: linear-gradient(120deg, var(--openms-navy) 0%, #14308f 100%) !important;
+  color: var(--openms-white);
+  box-shadow: 0 0.8rem 1.8rem rgba(var(--openms-navy-rgb), 0.18);
+}
+
+html body .openms-lib-page--contribute .contribute-support__copy {
+  display: grid;
+  gap: 0.35rem;
+  flex: 1 1 22rem;
+  max-width: 44rem;
+  text-align: left;
+}
+
+html body .openms-lib-page--contribute .contribute-support__kicker {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support__title {
+  margin: 0;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+}
+
+html body .openms-lib-page--contribute .contribute-support__text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support .contribute-support__cta.openms-lib-btn {
+  flex: 0 0 auto;
+  background: var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support .contribute-support__cta.openms-lib-btn .openms-lib-btn__label {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+/* ---------- id-boosted fixes (older id-scoped rules were winning) ---------- */
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1.25rem 2rem !important;
+  margin-inline: var(--openms-page-inline, 2rem) !important;
+  width: auto !important;
+  max-width: calc(100% - 2 * var(--openms-page-inline, 2rem)) !important;
+  box-sizing: border-box;
+  background: linear-gradient(120deg, var(--openms-navy) 0%, #14308f 100%) !important;
+  border: none !important;
+  border-radius: var(--pro-radius, 1rem) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support__kicker {
+  color: rgba(255, 255, 255, 0.7) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support__title {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support__text {
+  color: rgba(255, 255, 255, 0.85) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+html body .openms-lib-page--contribute #communication-channels#communication-channels .contribute-channel__icon,
+html body .openms-lib-page--contribute #communication-channels#communication-channels .contribute-channel__icon :is(i, svg, .fab, .fas, .svg-inline--fa) {
+  color: var(--card-std-icon-color, rgba(var(--openms-blue-rgb), 0.28)) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html body .openms-lib-page--contribute #communication-channels#communication-channels .contribute-channel:is(:hover, :focus-within) .contribute-channel__icon,
+  html body .openms-lib-page--contribute #communication-channels#communication-channels .contribute-channel:is(:hover, :focus-within) .contribute-channel__icon :is(i, svg, .fab, .fas, .svg-inline--fa) {
+    color: var(--openms-blue) !important;
+  }
+}
