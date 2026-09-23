@@ -1,0 +1,9 @@
+/* Sponsorship levels → "Most popular" card: keep the border blue (it was
+   gold) in every state — resting, hover, focus, and when selected. */
+:is(html, #sponsor-featured-border-boost) body .openms-lib-page--sponsor-us .sponsor-tier.sponsor-tier--featured,
+:is(html, #sponsor-featured-border-boost) body .openms-lib-page--sponsor-us .sponsor-tier.sponsor-tier--featured:is(:hover, :focus-within, :focus-visible, :active),
+:is(html, #sponsor-featured-border-boost) body .openms-lib-page--sponsor-us .sponsor-tier.sponsor-tier--featured.is-active,
+:is(html, #sponsor-featured-border-boost) body .openms-lib-page--sponsor-us .sponsor-tier.sponsor-tier--featured[aria-pressed="true"] {
+  border-color: var(--openms-blue) !important;
+  box-shadow: 0 0 0 1px var(--openms-blue), 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05) !important;
+}
