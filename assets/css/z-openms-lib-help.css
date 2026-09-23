@@ -61,7 +61,7 @@ html body .openms-lib-page #getting-started#getting-started .openms-lib-resource
   grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)) !important;
   align-items: stretch !important;
   justify-content: center !important;
-  gap: 0.65rem !important;
+  gap: 0.9rem !important;
   width: min(100%, 24rem) !important;
   max-width: 100% !important;
 }
@@ -74,10 +74,10 @@ html body .openms-lib-page #getting-started#getting-started .openms-lib-resource
   justify-content: center !important;
   white-space: normal !important;
   height: auto !important;
-  min-height: 2.35rem !important;
-  padding: 0.55rem 0.85rem !important;
-  font-size: 0.85rem !important;
-  font-weight: 600 !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 0.9rem !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  font-weight: var(--openms-btn-weight, 600) !important;
 }
 
 /* "Need help?" buttons: always centred in the band (on pyOpenMS the group sat
@@ -103,7 +103,7 @@ html body .openms-lib-page #getting-started#getting-started .openms-lib-resource
   grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)) !important;
   flex-direction: unset !important;
   align-items: stretch !important;
-  gap: 0.65rem !important;
+  gap: 0.9rem !important;
   width: 100% !important;
   max-width: 100% !important;
 }

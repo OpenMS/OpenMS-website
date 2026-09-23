@@ -31,7 +31,7 @@
   width: 100% !important;
   max-width: 100% !important;
   margin-inline: 0 !important;
-  gap: 0.65rem !important;
+  gap: 0.9rem !important;
 }
 
 :is(html, #hero-actions-boost) .openms-lib-hero__actions .openms-lib-btn,

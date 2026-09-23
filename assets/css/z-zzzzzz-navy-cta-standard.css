@@ -30,7 +30,7 @@
 :is(html, #navy-cta-boost) body .openms-lib-page--archived .webapps-archived__revival-actions.webapps-archived__revival-actions {
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)) !important;
-  gap: 0.65rem !important;
+  gap: 0.9rem !important;
   width: min(100%, 28rem) !important;
   max-width: 100% !important;
   margin-inline: auto !important;
