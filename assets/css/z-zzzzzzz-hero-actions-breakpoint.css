@@ -23,7 +23,7 @@
 :is(html, #hero-actions-boost) .openms-lib-hero__actions,
 :is(html, #hero-actions-boost) .home-page .hero-home__actions {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)) !important;
+  grid-template-columns: repeat(auto-fit, minmax(10.9rem, 1fr)) !important;
   justify-content: center !important;
   align-items: stretch !important;
   justify-self: stretch !important;
@@ -31,7 +31,7 @@
   width: 100% !important;
   max-width: 100% !important;
   margin-inline: 0 !important;
-  gap: 0.9rem !important;
+  gap: 0.75rem !important;
 }
 
 :is(html, #hero-actions-boost) .openms-lib-hero__actions .openms-lib-btn,
@@ -46,4 +46,14 @@
   padding: var(--openms-btn-padding-y, 0.7rem) 0.9rem !important;
   font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
   font-weight: var(--openms-btn-weight, 600) !important;
+}
+
+/* Homepage hero only: buttons hug their text (still at least 11rem, and they
+   still drop to stacked rows when they don't fit) instead of stretching across
+   the whole hero column — same height as every other button. */
+:is(html, #hero-actions-boost) .home-page .hero-home__actions {
+  grid-template-columns: repeat(auto-fit, minmax(10rem, max-content)) !important;
+  justify-content: start !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
