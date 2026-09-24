@@ -620,7 +620,7 @@ html body .openms-lib-page--report-handling :is([id="overview"], [id="clear-and-
      Responsibilities ... heading left / two-column checklist
      Composition ........ stacked head, two cards
      Executive Chairperson ... heading left / text right
-     Meetings ........... stacked head, rules as accent-bar rows
+     Meetings ........... stacked head, rules as highlight cards
      Amendments ......... heading left / three step cards
      Transparency ....... centred statement
    ============================================================================ */
@@ -713,25 +713,78 @@ html body .openms-lib-page--exec-committee [id="purpose"] .coc-doc__body > ul > 
   }
 }
 
-/* meetings: rules as accent-bar rows */
+/* meetings: rules as cards with the key fact highlighted */
 html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul {
-  gap: 0.85rem;
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--pro-card-gap, 1rem);
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 700px) {
+  html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul > li {
+  display: block;
   box-sizing: border-box;
-  padding: 0.95rem 1.25rem 0.95rem 1.5rem;
-  border-left: 4px solid var(--openms-blue);
-  border-radius: 0 var(--pro-radius, 1rem) var(--pro-radius, 1rem) 0;
-  background: var(--pro-band-soft, #f8f8f9);
-}
-
-html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__band--soft .coc-doc__body > ul > li {
+  padding: 1.35rem 1.35rem 1.35rem;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  border: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1));
+  border-top: 4px solid var(--openms-blue);
+  border-radius: var(--pro-radius, 1rem);
   background: var(--openms-white, #fff);
+  box-shadow: var(--pro-shadow, 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05));
+  color: rgba(var(--openms-dark-rgb), 0.72);
 }
 
 html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul > li::before {
   content: none;
   display: none;
+}
+
+html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul > li > strong {
+  padding: 0.05em 0.35em;
+  border-radius: 0.35em;
+  background: rgba(var(--openms-blue-rgb), 0.1);
+  color: var(--openms-navy) !important;
+  font-weight: 700;
+}
+
+/* Executive Committee: no numbers on the amendment step cards */
+html body .openms-lib-page--exec-committee .coc-doc__band--steps .coc-doc__body ol > li::before {
+  content: none;
+  display: none;
+}
+
+/* Executive Committee "Transparency": left-aligned */
+@media (min-width: 1100px) {
+  :is(html, #exec-transp-left-boost) body .openms-lib-page--exec-committee [id="transparency"] .openms-lib-resources__inner:has(> .openms-lib-resources__head) {
+    text-align: left !important;
+  }
+
+  :is(html, #exec-transp-left-boost) body .openms-lib-page--exec-committee [id="transparency"] .openms-lib-resources__head,
+  :is(html, #exec-transp-left-boost) body .openms-lib-page--exec-committee [id="transparency"] .openms-lib-resources__head > * {
+    text-align: left !important;
+    justify-items: start !important;
+    justify-content: flex-start !important;
+    margin-inline: 0 !important;
+  }
+
+  :is(html, #exec-transp-left-boost) body .openms-lib-page--exec-committee [id="transparency"] .coc-doc__body {
+    text-align: left !important;
+  }
+
+  :is(html, #exec-transp-left-boost) body .openms-lib-page--exec-committee [id="transparency"] .coc-doc__body > ul {
+    justify-content: flex-start !important;
+  }
 }

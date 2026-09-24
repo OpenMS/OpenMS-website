@@ -757,3 +757,20 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
 :is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) {
   text-decoration: none !important;
 }
+
+/* ---------- Footer: four equal-width link columns; long links wrap ---------- */
+@media (min-width: 1101px) {
+  html body #footer.footer-redesign .footer-nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-content: stretch;
+    width: 100%;
+    max-width: 60rem;
+    margin-left: auto;
+  }
+
+  html body #footer.footer-redesign .footer-nav .footer-link-group ul li a {
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+  }
+}
