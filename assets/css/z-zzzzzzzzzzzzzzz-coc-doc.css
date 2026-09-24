@@ -212,8 +212,9 @@ html body .openms-lib-page--code-of-conduct .coc-doc > .openms-lib-page__anchor:
 html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee, .openms-lib-page--report-handling) .coc-doc__band > .openms-lib-resources__inner {
   box-sizing: border-box;
   width: 100%;
-  max-width: var(--pro-max, 75rem);
-  margin-inline: auto;
+  max-width: none;
+  margin-inline: 0;
+  /* --openms-page-inline already centres the content column on wide screens */
   padding-inline: var(--openms-page-inline, 1.5rem);
 }
 
@@ -274,4 +275,46 @@ html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committe
   width: 0.4rem;
   height: 0.4rem;
   background: var(--coc-accent, var(--openms-blue));
+}
+
+/* ============================================================================
+   Large screens: heading on the left, content on the right, so wide displays
+   use the page width instead of a narrow text column on the far left.
+   ============================================================================ */
+@media (min-width: 1100px) {
+  html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee, .openms-lib-page--report-handling) .coc-doc__band > .openms-lib-resources__inner:has(> .openms-lib-resources__head) {
+    display: grid;
+    grid-template-columns: minmax(15rem, 22rem) minmax(0, 1fr);
+    column-gap: clamp(2.5rem, 5vw, 5rem) !important;
+    row-gap: 0 !important;
+    align-items: start;
+  }
+
+  html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee, .openms-lib-page--report-handling) .coc-doc__band > .openms-lib-resources__inner > .openms-lib-resources__head {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    position: sticky;
+    top: 7rem;
+    margin-bottom: 0;
+  }
+
+  html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee, .openms-lib-page--report-handling) .coc-doc__band > .openms-lib-resources__inner > :is(.coc-doc__body, .coc-doc__cards) {
+    grid-column: 2;
+  }
+
+  html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee, .openms-lib-page--report-handling) .coc-doc__band > .openms-lib-resources__inner > .coc-doc__cards {
+    margin-top: 1.5rem;
+  }
+
+  html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee, .openms-lib-page--report-handling) .coc-doc__body > :is(p, ul) {
+    max-width: 52rem;
+  }
+}
+
+/* the section title stays on one to three lines in the narrow left column */
+@media (min-width: 1100px) {
+  html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee, .openms-lib-page--report-handling) .coc-doc__band .openms-lib-resources__head .openms-lib-resources__title {
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
 }
