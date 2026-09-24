@@ -829,3 +829,35 @@ html body .openms-lib-page--report-handling [id="clear-and-severe-breach-actions
   content: "\2192";
   font-size: 0.85rem;
 }
+
+/* Report Handling: no check icons anywhere — dots (values, report handling), arrows (mediation) */
+html body .openms-lib-page--report-handling [id="overview"] .coc-doc__body > ul > li {
+  padding-left: 2.25rem;
+}
+
+html body .openms-lib-page--report-handling [id="overview"] .coc-doc__body > ul > li::before {
+  content: "";
+  left: 1.1rem;
+  top: 1.55rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--openms-blue);
+}
+
+html body .openms-lib-page--report-handling [id="report-handling"] .coc-doc__body > ul > li {
+  padding-left: 1.5rem;
+}
+
+html body .openms-lib-page--report-handling [id="report-handling"] .coc-doc__body > ul > li::before {
+  content: "";
+  left: 0.2rem;
+  top: 0.75em;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--openms-blue);
+}
+
+html body .openms-lib-page--report-handling [id="mediation"] .coc-doc__body > ul > li::before {
+  content: "\2192";
+  font-size: 0.85rem;
+}
