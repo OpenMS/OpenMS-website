@@ -809,3 +809,23 @@ html body .openms-lib-page--exec-committee [id="responsibilities"] .coc-doc__bod
 :is(html, #exec-meet-border-boost) body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul > li {
   border-top: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
 }
+
+/* Report Handling "Resolutions": dots instead of check icons */
+html body .openms-lib-page--report-handling [id="resolutions"] .coc-doc__body > ul > li {
+  padding-left: 2.25rem;
+}
+
+html body .openms-lib-page--report-handling [id="resolutions"] .coc-doc__body > ul > li::before {
+  content: "";
+  left: 1.1rem;
+  top: 1.55rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--openms-blue);
+}
+
+/* Report Handling "Clear and severe breach actions": arrows instead of check icons */
+html body .openms-lib-page--report-handling [id="clear-and-severe-breach-actions"] .coc-doc__body > ul > li::before {
+  content: "\2192";
+  font-size: 0.85rem;
+}
