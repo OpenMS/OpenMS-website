@@ -199,39 +199,14 @@ html:is(html, #eyebrow-std-boost2) body :is(.openms-lib-page--contact .openms-li
   font-size: 0.875rem !important;
 }
 
-/* ---------- Homepage hero: "Open-source · Free forever" at the hero title's size ----------
-   Mirrors the title's per-breakpoint sizes from z-hero-sm.css. */
-html:is(html, #hero-eyebrow-title-boost) body .home-page__hero p.hero-home__eyebrow {
-  font-size: clamp(1.65rem, 7.2vw, 2.2rem) !important;
-  letter-spacing: 0.02em !important;
-  line-height: 1.1 !important;
-  white-space: normal !important;
-}
-
-@media (min-width: 481px) and (max-width: 640px) {
-  html:is(html, #hero-eyebrow-title-boost) body .home-page__hero p.hero-home__eyebrow {
-    font-size: clamp(2.15rem, 5.6vw, 2.75rem) !important;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 900px) {
-  html:is(html, #hero-eyebrow-title-boost) body .home-page__hero p.hero-home__eyebrow {
-    font-size: clamp(2.1rem, 5.2vw, 2.9rem) !important;
-  }
+/* ---------- Homepage hero: "Open-source · Free forever" at the same size as the
+   "Open science → Clear results" / "OpenMS" chips in the hero graphic ---------- */
+html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebrow {
+  font-size: 0.6875rem !important;
 }
 
 @media (min-width: 901px) {
-  @supports (font-size: 1cqi) {
-    html:is(html, #hero-eyebrow-title-boost) body .home-page__hero p.hero-home__eyebrow {
-      font-size: clamp(1.85rem, 5.5cqi + 0.7rem, 3.35rem) !important;
-    }
-  }
-}
-
-@media (min-width: 1280px) {
-  @supports (font-size: 1cqi) {
-    html:is(html, #hero-eyebrow-title-boost) body .home-page__hero p.hero-home__eyebrow {
-      font-size: clamp(1.85rem, 7.7cqi, 4.75rem) !important;
-    }
+  html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebrow {
+    font-size: clamp(0.65rem, 0.55rem + 0.2vw, 0.75rem) !important;
   }
 }
