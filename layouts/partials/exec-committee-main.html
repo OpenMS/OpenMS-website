@@ -14,52 +14,6 @@
   </header>
 </div>
 
-<div class="openms-lib-page__body coc-doc">
-  {{- $parts := split .Content "<h2" -}}
-  {{- $band := 0 -}}
-  {{- range $i, $part := $parts -}}
-    {{- $band = add $band 1 -}}
-    {{- $soft := eq (mod $band 2) 0 -}}
-    {{- $id := "overview" -}}
-    {{- $heading := "Overview" -}}
-    {{- $eyebrow := "Charter" -}}
-    {{- $body := $part -}}
-    {{- if gt $i 0 -}}
-      {{- $raw := printf "<h2%s" $part -}}
-      {{- with findRE `id="[^"]+"` $raw 1 -}}{{- $id = replaceRE `id="([^"]+)"` "$1" (index . 0) -}}{{- end -}}
-      {{- with findRE `>[^<]*</h2>` $raw 1 -}}{{- $heading = replaceRE `^>|</h2>$` "" (index . 0) | htmlUnescape -}}{{- end -}}
-      {{- $body = replaceRE `(?s)^<h2[^>]*>[^<]*</h2>` "" $raw -}}
-      {{- $eyebrow = printf "Section %d" $i -}}
-    {{- end -}}
-    {{- $body = replaceRE `<hr\s*/?>` "" $body -}}
-    {{- $hasSteps := findRE `<ol` $body 1 -}}
-    {{- $subs := split $body "<h3" -}}
-  <div class="openms-lib-page__anchor" id="{{ $id }}">
-    <section class="openms-lib-resources openms-lib-resources--no-feature coc-doc__band {{ if $soft }}coc-doc__band--soft{{ else }}coc-doc__band--white{{ end }}{{ if $hasSteps }} coc-doc__band--steps{{ end }}" aria-labelledby="{{ $id }}-title">
-      <div class="openms-lib-resources__inner">
-        <header class="openms-lib-resources__head">
-          <p class="openms-lib-resources__eyebrow">{{ $eyebrow }}</p>
-          <h2 id="{{ $id }}-title" class="openms-lib-resources__title">{{ $heading }}</h2>
-        </header>
-        <div class="coc-doc__body openms-lib-prose">{{ index $subs 0 | safeHTML }}</div>
-        {{- if gt (len $subs) 1 }}
-        <div class="coc-doc__cards">
-          {{- range after 1 $subs }}
-          {{- $sraw := printf "<h3%s" . -}}
-          {{- $stitle := "" -}}
-          {{- with findRE `>[^<]*</h3>` $sraw 1 -}}{{- $stitle = replaceRE `^>|</h3>$` "" (index . 0) | htmlUnescape -}}{{- end -}}
-          {{- $sbody := replaceRE `(?s)^<h3[^>]*>[^<]*</h3>` "" $sraw }}
-          <article class="coc-doc__card">
-            <h3 class="coc-doc__card-title">{{ $stitle }}</h3>
-            <div class="coc-doc__body openms-lib-prose">{{ $sbody | safeHTML }}</div>
-          </article>
-          {{- end }}
-        </div>
-        {{- end }}
-      </div>
-    </section>
-  </div>
-  {{- end }}
-</div>
+{{ partial "charter-sections.html" (dict "content" .Content "introEyebrow" "Charter" "introTitle" "Overview" "sectionLabel" "Section") }}
 </article>
 </section>
