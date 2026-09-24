@@ -346,3 +346,160 @@ html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committe
     max-width: none;
   }
 }
+
+/* ============================================================================
+   Code of Conduct: each part gets its own look instead of one repeated
+   "heading left / text right" pattern.
+     Introduction .... heading on top, lead paragraph, then two columns
+     Part 2 .......... heading left / text right
+     Behaviour ....... two cards
+     Consequences .... centred statement on a navy band
+     Reporting ....... heading on top, four step cards, callout
+     About ........... quiet, centred footnote
+   ============================================================================ */
+@media (min-width: 1100px) {
+  /* --- Introduction: stacked head, lead paragraph, two text columns --- */
+  html body .openms-lib-page--code-of-conduct [id="part-1---introduction"] .openms-lib-resources__inner:has(> .openms-lib-resources__head) {
+    display: block !important;
+  }
+
+  html body .openms-lib-page--code-of-conduct [id="part-1---introduction"] .openms-lib-resources__head {
+    position: static !important;
+    grid-row: auto !important;
+    grid-column: auto !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  html body .openms-lib-page--code-of-conduct [id="part-1---introduction"] .coc-doc__body {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(2rem, 5vw, 5rem);
+    row-gap: 0;
+  }
+
+  html body .openms-lib-page--code-of-conduct [id="part-1---introduction"] .coc-doc__body > p {
+    max-width: none;
+  }
+
+  html body .openms-lib-page--code-of-conduct [id="part-1---introduction"] .coc-doc__body > p:first-child {
+    grid-column: 1 / -1;
+    max-width: 62rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--openms-dark, #231f20);
+  }
+
+  /* --- Consequences: centred statement on a navy band --- */
+  html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__inner:has(> .openms-lib-resources__head) {
+    display: block !important;
+    text-align: center;
+  }
+
+  html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__head {
+    position: static !important;
+    grid-row: auto !important;
+    grid-column: auto !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .coc-doc__body {
+    max-width: 52rem;
+    margin-inline: auto;
+  }
+
+  html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .coc-doc__body > p {
+    max-width: none;
+    margin-inline: auto;
+    font-size: 1.125rem;
+  }
+
+  /* --- Reporting: stacked head over the step cards --- */
+  html body .openms-lib-page--code-of-conduct [id="incident-reporting-resolution--code-of-conduct-enforcement"] .openms-lib-resources__inner:has(> .openms-lib-resources__head) {
+    display: block !important;
+  }
+
+  html body .openms-lib-page--code-of-conduct [id="incident-reporting-resolution--code-of-conduct-enforcement"] .openms-lib-resources__head {
+    position: static !important;
+    grid-row: auto !important;
+    grid-column: auto !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  /* --- About: quiet centred footnote --- */
+  html body .openms-lib-page--code-of-conduct [id="about-this-document"] .openms-lib-resources__inner:has(> .openms-lib-resources__head) {
+    display: block !important;
+    text-align: center;
+  }
+
+  html body .openms-lib-page--code-of-conduct [id="about-this-document"] .openms-lib-resources__head {
+    position: static !important;
+    grid-row: auto !important;
+    grid-column: auto !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  html body .openms-lib-page--code-of-conduct [id="about-this-document"] .coc-doc__body {
+    max-width: 48rem;
+    margin-inline: auto;
+  }
+
+  html body .openms-lib-page--code-of-conduct [id="about-this-document"] .coc-doc__body > p {
+    max-width: none;
+  }
+}
+
+/* Consequences band: navy, white text (every screen size) */
+html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] > .coc-doc__band {
+  background: linear-gradient(135deg, var(--openms-navy) 0%, #14308f 100%) !important;
+}
+
+html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__eyebrow {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__title,
+html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .coc-doc__body,
+html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .coc-doc__body strong,
+html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .coc-doc__body a {
+  color: var(--openms-white, #fff) !important;
+  -webkit-text-fill-color: var(--openms-white, #fff) !important;
+}
+
+/* About band: smaller, muted */
+html body .openms-lib-page--code-of-conduct [id="about-this-document"] > .coc-doc__band {
+  padding-block: clamp(2rem, 4vw, 3rem) !important;
+}
+
+html body .openms-lib-page--code-of-conduct [id="about-this-document"] .openms-lib-resources__title {
+  font-size: var(--openms-card-title-size) !important;
+}
+
+/* navy "Consequences" band: white text, centred head (boosted over older title colours) */
+:is(html, #coc-navy-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__title,
+:is(html, #coc-navy-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__eyebrow {
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:is(html, #coc-navy-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__title {
+  color: var(--openms-white, #fff) !important;
+}
+
+:is(html, #coc-navy-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__eyebrow {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+@media (min-width: 1100px) {
+  :is(html, #coc-navy-boost) body .openms-lib-page--code-of-conduct :is([id="part-23-consequences-of-unacceptable-behaviour"], [id="about-this-document"]) .openms-lib-resources__head {
+    text-align: center !important;
+    justify-items: center !important;
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+
+  :is(html, #coc-navy-boost) body .openms-lib-page--code-of-conduct :is([id="part-23-consequences-of-unacceptable-behaviour"], [id="about-this-document"]) .openms-lib-resources__head > * {
+    text-align: center !important;
+    margin-inline: auto !important;
+    justify-content: center !important;
+  }
+}
