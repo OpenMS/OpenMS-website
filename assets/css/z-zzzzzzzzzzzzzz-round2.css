@@ -515,3 +515,26 @@ html:is(html, #privacy-who-left-boost) body .openms-lib-page--privacy #who-we-ar
   margin-left: 0 !important;
   margin-right: auto !important;
 }
+
+/* ---------- Privacy topics: number on top, title + description below it ---------- */
+html body .openms-lib-page--privacy .privacy-pro__summary {
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  grid-template-areas:
+    "index arrow"
+    "copy copy" !important;
+  row-gap: 0.4rem !important;
+  align-items: start !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-index {
+  grid-area: index !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-copy {
+  grid-area: copy !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary::after {
+  grid-area: arrow !important;
+  align-self: center;
+}
