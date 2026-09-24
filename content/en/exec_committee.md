@@ -1,21 +1,5 @@
 ---
 title: "Executive Committee Charter"
-glance:
-  - label: Meetings
-    value: Monthly
-    note: At least once per calendar month
-  - label: Quorum
-    value: 5 members
-    note: Required for votes
-  - label: Notice
-    value: 48 hours
-    note: Minimum notice of meetings
-  - label: Chair term
-    value: 1 year
-    note: Elected from among the members
-  - label: Bylaw changes
-    value: Two-thirds
-    note: Majority of the quorum
 ---
 
 The **Executive Committee** is the primary governance body of the OpenMS project. It is responsible for guiding the technical direction, long-term sustainability, and community governance of OpenMS.
