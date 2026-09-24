@@ -329,8 +329,7 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
 }
 
 :is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) {
-  text-decoration: underline !important;
-  text-underline-offset: 0.2em !important;
+  text-decoration: none !important;
   background: transparent !important;
   color: var(--openms-navy) !important;
   -webkit-text-fill-color: var(--openms-navy) !important;
@@ -756,6 +755,5 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
 }
 
 :is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) {
-  text-decoration: underline !important;
-  text-underline-offset: 0.2em !important;
+  text-decoration: none !important;
 }
