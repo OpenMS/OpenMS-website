@@ -436,3 +436,12 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
     transition: none;
   }
 }
+
+/* Card links: text and icon turn blue while the link is hovered / focused */
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card.openms-lib-developers__card .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible),
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card.openms-lib-developers__card .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) :is(svg, path, i, .openms-lib-btn__label) {
+  color: var(--openms-blue) !important;
+  fill: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  text-decoration: none !important;
+}
