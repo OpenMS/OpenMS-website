@@ -612,3 +612,126 @@ html body .openms-lib-page--report-handling :is([id="overview"], [id="clear-and-
 :is(html, #coc-full-head-boost) body .openms-lib-page--code-of-conduct .coc-doc__band .openms-lib-resources__head {
   width: 100%;
 }
+
+/* ============================================================================
+   Executive Committee charter: each section gets its own look.
+     Overview ........... stacked head, two text columns
+     Purpose ............ stacked head, goals as a card grid
+     Responsibilities ... heading left / two-column checklist
+     Composition ........ stacked head, two cards
+     Executive Chairperson ... heading left / text right
+     Meetings ........... stacked head, rules as accent-bar rows
+     Amendments ......... heading left / three step cards
+     Transparency ....... centred statement
+   ============================================================================ */
+:is(html, #exec-full-boost) body .openms-lib-page--exec-committee .coc-doc__band .coc-doc__body,
+:is(html, #exec-full-boost) body .openms-lib-page--exec-committee .coc-doc__band .coc-doc__body > :is(p, ul, ol),
+:is(html, #exec-full-boost) body .openms-lib-page--exec-committee .coc-doc__band .openms-lib-resources__head,
+:is(html, #exec-full-boost) body .openms-lib-page--exec-committee .coc-doc__band .openms-lib-resources__head > * {
+  max-width: none !important;
+}
+
+@media (min-width: 1100px) {
+  /* stacked heads */
+  html body .openms-lib-page--exec-committee :is([id="overview"], [id="purpose"], [id="composition"], [id="meetings"]) .openms-lib-resources__inner:has(> .openms-lib-resources__head) {
+    display: block !important;
+  }
+
+  html body .openms-lib-page--exec-committee :is([id="overview"], [id="purpose"], [id="composition"], [id="meetings"], [id="transparency"]) .openms-lib-resources__head {
+    position: static !important;
+    grid-row: auto !important;
+    grid-column: auto !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  /* overview: two text columns */
+  html body .openms-lib-page--exec-committee [id="overview"] .coc-doc__body {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(2rem, 5vw, 5rem);
+    font-size: 1.125rem;
+  }
+
+  /* transparency: centred statement */
+  html body .openms-lib-page--exec-committee [id="transparency"] .openms-lib-resources__inner:has(> .openms-lib-resources__head) {
+    display: block !important;
+    text-align: center;
+  }
+
+  html body .openms-lib-page--exec-committee [id="transparency"] .openms-lib-resources__head,
+  html body .openms-lib-page--exec-committee [id="transparency"] .openms-lib-resources__head > * {
+    text-align: center !important;
+    justify-items: center !important;
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+
+  html body .openms-lib-page--exec-committee [id="transparency"] .coc-doc__body {
+    text-align: center;
+  }
+
+  html body .openms-lib-page--exec-committee [id="transparency"] .coc-doc__body > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-block: 1.25rem;
+  }
+
+  html body .openms-lib-page--exec-committee [id="transparency"] .coc-doc__body > ul > li {
+    text-align: left;
+  }
+}
+
+/* purpose: goals as a card grid */
+html body .openms-lib-page--exec-committee [id="purpose"] .coc-doc__body > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--pro-card-gap, 1rem);
+  margin-top: 1.5rem;
+}
+
+html body .openms-lib-page--exec-committee [id="purpose"] .coc-doc__body > ul > li {
+  box-sizing: border-box;
+  padding: 1.15rem 1.25rem 1.15rem 3.25rem;
+  border: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1));
+  border-radius: var(--pro-radius, 1rem);
+  background: var(--openms-white, #fff);
+  box-shadow: var(--pro-shadow, 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05));
+}
+
+html body .openms-lib-page--exec-committee [id="purpose"] .coc-doc__body > ul > li::before {
+  left: 1.15rem;
+  top: 1.3rem;
+}
+
+/* responsibilities: two-column checklist */
+@media (min-width: 900px) {
+  html body .openms-lib-page--exec-committee [id="responsibilities"] .coc-doc__body > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2.5rem;
+  }
+}
+
+/* meetings: rules as accent-bar rows */
+html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul {
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul > li {
+  box-sizing: border-box;
+  padding: 0.95rem 1.25rem 0.95rem 1.5rem;
+  border-left: 4px solid var(--openms-blue);
+  border-radius: 0 var(--pro-radius, 1rem) var(--pro-radius, 1rem) 0;
+  background: var(--pro-band-soft, #f8f8f9);
+}
+
+html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__band--soft .coc-doc__body > ul > li {
+  background: var(--openms-white, #fff);
+}
+
+html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul > li::before {
+  content: none;
+  display: none;
+}
