@@ -494,3 +494,14 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
   font-weight: inherit !important;
   font-size: inherit !important;
 }
+
+/* ---------- Privacy topics: title and description sit right after the number ---------- */
+html body .openms-lib-page--privacy .privacy-pro__summary {
+  grid-template-columns: auto minmax(0, 1fr) auto !important;
+  column-gap: 0.75rem !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-index {
+  width: auto !important;
+  font-variant-numeric: tabular-nums;
+}
