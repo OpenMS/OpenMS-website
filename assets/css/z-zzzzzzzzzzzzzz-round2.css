@@ -632,3 +632,19 @@ html body .openms-lib-page--privacy .privacy-pro__summary::after {
 html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summary::after {
   margin-top: 0 !important;
 }
+
+/* ---------- Governance "Separation of Responsibilities": left-aligned head on mobile ---------- */
+@media (max-width: 899px) {
+  html:is(html, #gov-resp-left-boost) body .openms-lib-page #responsibilities :is(.openms-lib-about__head, .openms-lib-about__head-copy, .openms-lib-about__eyebrow, .openms-lib-about__title, .openms-lib-about__lead, .governance-lead-line) {
+    text-align: left !important;
+    justify-content: flex-start !important;
+    justify-items: start !important;
+    align-items: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  html:is(html, #gov-resp-left-boost) body .openms-lib-page #responsibilities .governance-lead-line {
+    display: inline !important;
+  }
+}
