@@ -774,3 +774,27 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
     text-wrap: balance;
   }
 }
+
+/* ---------- OpenMS-lib "Explore" band: cards size to their content, never touch the bottom ---------- */
+:is(html, #lib-explore-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__dark {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  padding-bottom: clamp(3rem, 6vw, 5.25rem) !important;
+}
+
+:is(html, #lib-explore-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__explore-grid {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  grid-auto-rows: auto !important;
+  align-items: stretch !important;
+  margin-bottom: 0 !important;
+}
+
+:is(html, #lib-explore-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__explore-grid > * {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
