@@ -318,11 +318,11 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
   background: transparent !important;
   background-color: transparent !important;
   box-shadow: none !important;
-  color: var(--openms-blue) !important;
-  -webkit-text-fill-color: var(--openms-blue) !important;
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
   font-family: var(--openms-font-body) !important;
   font-size: var(--openms-text-min) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-decoration: none !important;
   transform: none !important;
 }
@@ -331,18 +331,27 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
   text-decoration: underline !important;
   text-underline-offset: 0.2em !important;
   background: transparent !important;
-  color: var(--openms-blue) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
 }
 
-:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__platforms a.openms-lib-developers__platform-btn :is(i, .fab, .fas, span, .openms-lib-btn__label) {
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__platforms a.openms-lib-developers__platform-btn .openms-lib-btn__label {
   color: inherit !important;
   -webkit-text-fill-color: inherit !important;
 }
+
+/* brand-coloured platform icons, like /contribute/ */
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__platforms .fa-windows { color: #0078d4 !important; }
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__platforms .fa-apple { color: #555 !important; }
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__platforms .fa-linux { color: #fcc624 !important; }
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__platforms .fa-github { color: #181717 !important; }
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__platforms .fa-book-open { color: var(--openms-blue) !important; }
 
 /* arrows on the PR links (the platform links have none, like /contribute/) */
 :is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platform-btn::after {
   content: "\2192";
   font-weight: 700;
+  color: var(--openms-blue);
 }
 
 /* featured (navy) card: plain white link */
