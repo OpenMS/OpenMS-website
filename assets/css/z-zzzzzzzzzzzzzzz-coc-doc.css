@@ -587,3 +587,23 @@ html body .openms-lib-page--report-handling :is([id="overview"], [id="clear-and-
     margin-inline: 0 !important;
   }
 }
+
+/* Introduction lead paragraph: full container width */
+:is(html, #coc-intro-full-boost) body .openms-lib-page--code-of-conduct [id="part-1---introduction"] .coc-doc__body > p:first-child {
+  max-width: none !important;
+  width: 100%;
+}
+
+/* Consequences paragraph: full container width */
+:is(html, #coc-conseq-full-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .coc-doc__body,
+:is(html, #coc-conseq-full-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .coc-doc__body > p {
+  max-width: none !important;
+  width: 100%;
+}
+
+/* Code of Conduct: text always runs the full width of its column / container */
+:is(html, #coc-full-text-boost) body .openms-lib-page--code-of-conduct .coc-doc__band .coc-doc__body,
+:is(html, #coc-full-text-boost) body .openms-lib-page--code-of-conduct .coc-doc__band .coc-doc__body > :is(p, ul, ol),
+:is(html, #coc-full-text-boost) body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body > p:last-child {
+  max-width: none !important;
+}
