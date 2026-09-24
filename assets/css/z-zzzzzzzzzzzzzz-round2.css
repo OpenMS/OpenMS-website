@@ -199,14 +199,14 @@ html:is(html, #eyebrow-std-boost2) body :is(.openms-lib-page--contact .openms-li
   font-size: 0.875rem !important;
 }
 
-/* ---------- Homepage hero: "Open-source · Free forever" at the same size as the
+/* ---------- Homepage hero: "Open-source · Free forever" 1px smaller than the
    "Open science → Clear results" / "OpenMS" chips in the hero graphic ---------- */
 html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebrow {
-  font-size: 0.6875rem !important;
+  font-size: calc(0.6875rem - 1px) !important;
 }
 
 @media (min-width: 901px) {
   html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebrow {
-    font-size: clamp(0.65rem, 0.55rem + 0.2vw, 0.75rem) !important;
+    font-size: calc(clamp(0.65rem, 0.55rem + 0.2vw, 0.75rem) - 1px) !important;
   }
 }
