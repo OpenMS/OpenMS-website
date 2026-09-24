@@ -804,3 +804,8 @@ html body .openms-lib-page--exec-committee [id="responsibilities"] .coc-doc__bod
   height: 0.5rem;
   background: var(--openms-blue);
 }
+
+/* Executive Committee "Meetings" cards: no coloured top border */
+:is(html, #exec-meet-border-boost) body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul > li {
+  border-top: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
+}
