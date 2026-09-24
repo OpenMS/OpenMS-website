@@ -620,7 +620,7 @@ html body .openms-lib-page--report-handling :is([id="overview"], [id="clear-and-
      Responsibilities ... heading left / two-column checklist
      Composition ........ stacked head, two cards
      Executive Chairperson ... heading left / text right
-     Meetings ........... stacked head, rules as highlight cards
+     Meetings ........... stacked head, rules as cards
      Amendments ......... heading left / three step cards
      Transparency ....... centred statement
    ============================================================================ */
@@ -713,7 +713,7 @@ html body .openms-lib-page--exec-committee [id="purpose"] .coc-doc__body > ul > 
   }
 }
 
-/* meetings: rules as cards with the key fact highlighted */
+/* meetings: rules as cards with the key fact in bold */
 html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -753,10 +753,7 @@ html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul >
 }
 
 html body .openms-lib-page--exec-committee [id="meetings"] .coc-doc__body > ul > li > strong {
-  padding: 0.05em 0.35em;
-  border-radius: 0.35em;
-  background: rgba(var(--openms-blue-rgb), 0.1);
-  color: var(--openms-navy) !important;
+  color: var(--openms-dark, #231f20) !important;
   font-weight: 700;
 }
 
@@ -787,4 +784,9 @@ html body .openms-lib-page--exec-committee .coc-doc__band--steps .coc-doc__body 
   :is(html, #exec-transp-left-boost) body .openms-lib-page--exec-committee [id="transparency"] .coc-doc__body > ul {
     justify-content: flex-start !important;
   }
+}
+
+/* Executive Committee "Composition" cards: no coloured top border */
+:is(html, #exec-card-border-boost) body .openms-lib-page--exec-committee .coc-doc__card {
+  border-top: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
 }
