@@ -412,3 +412,27 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
   font-weight: 700;
   color: var(--openms-blue);
 }
+
+/* Reviewing Pull Requests: blue links whose arrow slides right on hover */
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  text-decoration: none !important;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platform-btn::after {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platform-btn:is(:hover, :focus-visible)::after {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platform-btn::after {
+    transition: none;
+  }
+}
