@@ -353,7 +353,7 @@ html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committe
      Introduction .... heading on top, lead paragraph, then two columns
      Part 2 .......... heading left / text right
      Behaviour ....... two cards
-     Consequences .... centred statement on a navy band
+     Consequences .... centred statement
      Reporting ....... heading on top, four step cards, callout
      About ........... quiet, centred footnote
    ============================================================================ */
@@ -390,7 +390,7 @@ html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committe
     color: var(--openms-dark, #231f20);
   }
 
-  /* --- Consequences: centred statement on a navy band --- */
+  /* --- Consequences: centred statement --- */
   html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__inner:has(> .openms-lib-resources__head) {
     display: block !important;
     text-align: center;
@@ -449,23 +449,6 @@ html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committe
   }
 }
 
-/* Consequences band: navy, white text (every screen size) */
-html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] > .coc-doc__band {
-  background: linear-gradient(135deg, var(--openms-navy) 0%, #14308f 100%) !important;
-}
-
-html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__eyebrow {
-  color: rgba(255, 255, 255, 0.72) !important;
-}
-
-html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__title,
-html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .coc-doc__body,
-html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .coc-doc__body strong,
-html body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .coc-doc__body a {
-  color: var(--openms-white, #fff) !important;
-  -webkit-text-fill-color: var(--openms-white, #fff) !important;
-}
-
 /* About band: smaller, muted */
 html body .openms-lib-page--code-of-conduct [id="about-this-document"] > .coc-doc__band {
   padding-block: clamp(2rem, 4vw, 3rem) !important;
@@ -475,20 +458,7 @@ html body .openms-lib-page--code-of-conduct [id="about-this-document"] .openms-l
   font-size: var(--openms-card-title-size) !important;
 }
 
-/* navy "Consequences" band: white text, centred head (boosted over older title colours) */
-:is(html, #coc-navy-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__title,
-:is(html, #coc-navy-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__eyebrow {
-  -webkit-text-fill-color: currentColor !important;
-}
-
-:is(html, #coc-navy-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__title {
-  color: var(--openms-white, #fff) !important;
-}
-
-:is(html, #coc-navy-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__eyebrow {
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-
+/* centred heads for the Consequences statement and the About footnote */
 @media (min-width: 1100px) {
   :is(html, #coc-navy-boost) body .openms-lib-page--code-of-conduct :is([id="part-23-consequences-of-unacceptable-behaviour"], [id="about-this-document"]) .openms-lib-resources__head {
     text-align: center !important;
