@@ -445,3 +445,52 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
   -webkit-text-fill-color: var(--openms-blue) !important;
   text-decoration: none !important;
 }
+
+/* ---------- Sponsorship levels: "Learn more" as a text link, not a button ---------- */
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta.sponsor-tier__cta,
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier:is(:hover, :focus-within, .sponsor-tier--active, .sponsor-tier--featured) .sponsor-tier__cta.sponsor-tier__cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  align-self: flex-start !important;
+  gap: 0.3rem !important;
+  width: auto !important;
+  min-height: 0 !important;
+  margin-top: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-size: var(--openms-body-size) !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta.sponsor-tier__cta::after {
+  content: "\2192";
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__toggle:is(:hover, :focus-visible) .sponsor-tier__cta.sponsor-tier__cta::after,
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta.sponsor-tier__cta:hover::after {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta.sponsor-tier__cta::after {
+    transition: none;
+  }
+}
+
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta .sponsor-tier__cta-label {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+}
