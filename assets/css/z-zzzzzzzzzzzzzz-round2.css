@@ -595,3 +595,40 @@ html body .openms-lib-page--privacy .privacy-pro__rich {
 html body .openms-lib-page--privacy #privacy-topics .openms-lib-resources__lead {
   max-width: 44rem !important;
 }
+
+/* ---------- Privacy topics: title beside the number, description below ---------- */
+html body .openms-lib-page--privacy .privacy-pro__summary {
+  grid-template-columns: auto minmax(0, 1fr) auto !important;
+  grid-template-areas:
+    "index title arrow"
+    "text text text" !important;
+  column-gap: 0.85rem !important;
+  row-gap: 0.4rem !important;
+  align-items: center !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-copy {
+  display: contents !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-title {
+  grid-area: title !important;
+  margin: 0 !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-text {
+  grid-area: text !important;
+  margin: 0 !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-index {
+  margin: 0 !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary::after {
+  margin-top: 0 !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summary::after {
+  margin-top: 0 !important;
+}
