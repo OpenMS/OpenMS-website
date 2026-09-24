@@ -97,7 +97,8 @@ html body .openms-lib-page--contribute .coc-callout__actions {
 
 @media (max-width: 900px) {
   html body .openms-lib-page--contribute .coc-callout__actions {
-    justify-content: flex-end !important;
+    justify-content: flex-start !important;
+    margin-left: 0;
   }
 }
 
