@@ -739,3 +739,23 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
 @media (prefers-reduced-motion: reduce) {
   :is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn::after { transition: none; }
 }
+
+/* ---------- Reviewing Pull Requests: white links while the card is navy (hovered) ---------- */
+:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms {
+  border-top-color: rgba(255, 255, 255, 0.28) !important;
+}
+
+:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible),
+:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn .openms-lib-btn__label,
+:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn::after,
+:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn :is(svg, i, path) {
+  color: var(--openms-white, #fff) !important;
+  fill: var(--openms-white, #fff) !important;
+  -webkit-text-fill-color: var(--openms-white, #fff) !important;
+}
+
+:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) {
+  text-decoration: underline !important;
+  text-underline-offset: 0.2em !important;
+}
