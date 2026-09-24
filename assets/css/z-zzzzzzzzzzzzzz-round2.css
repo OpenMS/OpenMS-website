@@ -278,3 +278,11 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
     justify-content: center !important;
   }
 }
+
+/* ---------- OpenMS-lib page: citation heading in sentence case, smaller ---------- */
+:is(html, #lib-cite-title-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) .openms-lib-cite__title {
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.75rem) !important;
+  line-height: 1.25 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
