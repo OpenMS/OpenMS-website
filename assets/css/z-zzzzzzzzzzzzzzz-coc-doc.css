@@ -203,11 +203,6 @@ html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committe
   font-weight: 600;
 }
 
-/* ---------- about this document: quieter ---------- */
-html body .openms-lib-page--code-of-conduct .coc-doc > .openms-lib-page__anchor:last-child .coc-doc__body {
-  font-size: var(--openms-text-min);
-}
-
 /* same page gutters and max width as every other section */
 html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee, .openms-lib-page--report-handling) .coc-doc__band > .openms-lib-resources__inner {
   box-sizing: border-box;
