@@ -341,30 +341,74 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
   -webkit-text-fill-color: inherit !important;
 }
 
-/* brand-coloured platform icons, like /contribute/ */
-:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__platforms .fa-windows { color: #0078d4 !important; }
-:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__platforms .fa-apple { color: #555 !important; }
-:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__platforms .fa-linux { color: #fcc624 !important; }
-:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__platforms .fa-github { color: #181717 !important; }
-:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__platforms .fa-book-open { color: var(--openms-blue) !important; }
+/* brand-coloured platform icons, like /contribute/ — also while the card or
+   link is hovered / focused, and on the SVG path itself */
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-windows,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-windows path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-windows,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-windows path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-windows,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-windows path {
+  color: #0078d4 !important;
+  fill: #0078d4 !important;
+  -webkit-text-fill-color: #0078d4 !important;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-apple,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-apple path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-apple,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-apple path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-apple,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-apple path {
+  color: #1d1d1f !important;
+  fill: #1d1d1f !important;
+  -webkit-text-fill-color: #1d1d1f !important;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-linux,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-linux path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-linux,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-linux path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-linux,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-linux path {
+  color: #e5a100 !important;
+  fill: #e5a100 !important;
+  -webkit-text-fill-color: #e5a100 !important;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-github,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-github path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-github,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-github path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-github,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-github path {
+  color: #181717 !important;
+  fill: #181717 !important;
+  -webkit-text-fill-color: #181717 !important;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-book-open,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-book-open path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-book-open,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-book-open path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-book-open,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-book-open path {
+  color: var(--openms-blue) !important;
+  fill: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+/* platform / link icons a little larger so their colours read clearly */
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__platforms a.openms-lib-developers__platform-btn :is(svg, i) {
+  font-size: 1.25rem !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  flex: 0 0 auto;
+}
 
 /* arrows on the PR links (the platform links have none, like /contribute/) */
 :is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platform-btn::after {
   content: "\2192";
   font-weight: 700;
   color: var(--openms-blue);
-}
-
-/* featured (navy) card: plain white link */
-:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--featured .openms-lib-developers__card-link {
-  padding: 0 !important;
-  min-height: 0 !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  color: var(--openms-white, #fff) !important;
-  -webkit-text-fill-color: var(--openms-white, #fff) !important;
-  font-weight: 700 !important;
 }
