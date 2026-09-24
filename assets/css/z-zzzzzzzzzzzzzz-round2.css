@@ -648,3 +648,10 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
     display: inline !important;
   }
 }
+
+/* ---------- Contribute hero: "Join Discord" first on mobile ---------- */
+@media (max-width: 639px) {
+  html:is(html, #contribute-hero-order-boost) body .openms-lib-page--contribute:not(.openms-lib-page--report-handling) .openms-lib-hero__actions > a[href*="discord"] {
+    order: -1;
+  }
+}
