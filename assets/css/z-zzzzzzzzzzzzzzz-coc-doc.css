@@ -454,9 +454,6 @@ html body .openms-lib-page--code-of-conduct [id="about-this-document"] > .coc-do
   padding-block: clamp(2rem, 4vw, 3rem) !important;
 }
 
-html body .openms-lib-page--code-of-conduct [id="about-this-document"] .openms-lib-resources__title {
-  font-size: var(--openms-card-title-size) !important;
-}
 
 /* centred heads for the Consequences statement and the About footnote */
 @media (min-width: 1100px) {
