@@ -23,12 +23,74 @@
   </header>
 </div>
 
-<div class="openms-lib-page__body">
-  <div class="openms-lib-page__anchor">
-    <div class="coc-charter__inner openms-lib-prose">
-      {{ .Content }}
-    </div>
+<div class="openms-lib-page__body coc-doc">
+  {{- $parts := split .Content "<h2" -}}
+  {{- $band := 0 -}}
+  {{- $prevSoft := false -}}
+  {{- range $i, $part := $parts -}}
+    {{- if gt $i 0 -}}
+      {{- $raw := printf "<h2%s" $part -}}
+      {{- $id := "" -}}
+      {{- with findRE `id="[^"]+"` $raw 1 -}}{{- $id = replaceRE `id="([^"]+)"` "$1" (index . 0) -}}{{- end -}}
+      {{- $title := "" -}}
+      {{- with findRE `>[^<]*</h2>` $raw 1 -}}{{- $title = replaceRE `^>|</h2>$` "" (index . 0) | htmlUnescape -}}{{- end -}}
+      {{- $body := replaceRE `(?s)^<h2[^>]*>[^<]*</h2>` "" $raw -}}
+      {{- $eyebrow := "Code of Conduct" -}}
+      {{- $heading := $title -}}
+      {{- if hasPrefix (lower $title) "part " -}}
+        {{- $bits := split $title " - " -}}
+        {{- if gt (len $bits) 1 -}}
+          {{- $eyebrow = index $bits 0 -}}
+          {{- $heading = delimit (after 1 $bits) " - " -}}
+        {{- else -}}
+          {{- $m := findRE `^Part [0-9.]+` $title 1 -}}
+          {{- with $m -}}{{- $eyebrow = index . 0 -}}{{- $heading = strings.TrimPrefix (index . 0) $title | strings.TrimSpace -}}{{- end -}}
+        {{- end -}}
+      {{- else if findRE `(?i)^incident` $title -}}
+        {{- $eyebrow = "Reporting" -}}
+      {{- else if findRE `(?i)^about` $title -}}
+        {{- $eyebrow = "About" -}}
+      {{- end -}}
+      {{- $isExpected := findRE `(?i)^part [0-9.]+ *-? *expected behaviour$` $title -}}
+      {{- $isUnacceptable := findRE `(?i)^part [0-9.]+ *-? *unacceptable behaviour$` $title -}}
+      {{- $isSteps := findRE `(?i)^incident` $title -}}
+      {{- if or $isExpected $isUnacceptable -}}
+        {{- if $isExpected -}}
+        {{- $prevSoft = true -}}
+  <div class="openms-lib-page__anchor" id="behaviour">
+    <section class="openms-lib-resources openms-lib-resources--no-feature coc-doc__band coc-doc__band--soft" aria-label="Expected and unacceptable behaviour">
+      <div class="openms-lib-resources__inner">
+        <div class="coc-doc__cards">
+        {{- end }}
+          <article class="coc-doc__card coc-doc__card--{{ if $isExpected }}expected{{ else }}unacceptable{{ end }}" id="{{ $id }}">
+            <p class="openms-lib-resources__eyebrow">{{ $eyebrow }}</p>
+            <h2 class="openms-lib-resources__title">{{ $heading }}</h2>
+            <div class="coc-doc__body openms-lib-prose">{{ $body | safeHTML }}</div>
+          </article>
+        {{- if $isUnacceptable }}
+        </div>
+      </div>
+    </section>
   </div>
+        {{- end -}}
+      {{- else -}}
+        {{- $band = add $band 1 -}}
+        {{- $soft := and (not $prevSoft) (gt $band 2) -}}
+        {{- $prevSoft = $soft -}}
+  <div class="openms-lib-page__anchor" id="{{ $id }}">
+    <section class="openms-lib-resources openms-lib-resources--no-feature coc-doc__band {{ if $soft }}coc-doc__band--soft{{ else }}coc-doc__band--white{{ end }}{{ if $isSteps }} coc-doc__band--steps{{ end }}" aria-labelledby="{{ $id }}-title">
+      <div class="openms-lib-resources__inner">
+        <header class="openms-lib-resources__head">
+          <p class="openms-lib-resources__eyebrow">{{ $eyebrow }}</p>
+          <h2 id="{{ $id }}-title" class="openms-lib-resources__title">{{ $heading }}</h2>
+        </header>
+        <div class="coc-doc__body openms-lib-prose">{{ $body | safeHTML }}</div>
+      </div>
+    </section>
+  </div>
+      {{- end -}}
+    {{- end -}}
+  {{- end }}
 </div>
 </article>
 </section>
