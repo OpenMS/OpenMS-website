@@ -466,7 +466,7 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
   transform: none !important;
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
-  font-size: var(--openms-body-size) !important;
+  font-size: var(--openms-text-min) !important;
   font-weight: 700 !important;
   text-decoration: none !important;
 }
