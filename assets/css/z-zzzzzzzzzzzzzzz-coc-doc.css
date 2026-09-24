@@ -5,36 +5,36 @@
    numbered cards with the response-time promise as a callout.
    ============================================================================ */
 
-:is(html, #coc-doc-boost) body .openms-lib-page--code-of-conduct .coc-doc > .openms-lib-page__anchor.openms-lib-page__anchor {
+:is(html, #coc-doc-boost) body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc > .openms-lib-page__anchor.openms-lib-page__anchor {
   padding: 0 !important;
   margin: 0 !important;
   background: transparent !important;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__band {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__band {
   box-sizing: border-box;
   padding-block: var(--sol-section-y, var(--pro-section-y, clamp(3rem, 6vw, 4.5rem))) !important;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__band--white {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__band--white {
   background: var(--openms-white, #fff) !important;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__band--soft {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__band--soft {
   background: var(--pro-band-soft, #f8f8f9) !important;
 }
 
 /* consecutive white bands (Part 1 → Part 2) read as one flowing section */
-html body .openms-lib-page--code-of-conduct .coc-doc__band--white + .coc-doc__band--white {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__band--white + .coc-doc__band--white {
   padding-top: 0 !important;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__band .openms-lib-resources__head {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__band .openms-lib-resources__head {
   margin-bottom: var(--pro-head-to-content, 1.5rem);
 }
 
 /* ---------- prose: readable line length ---------- */
-html body .openms-lib-page--code-of-conduct .coc-doc__body {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__body {
   width: 100%;
   max-width: none;
   padding: 0 !important;
@@ -43,35 +43,35 @@ html body .openms-lib-page--code-of-conduct .coc-doc__body {
   color: rgba(var(--openms-dark-rgb), 0.78);
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__body > :is(p, ul) {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__body > :is(p, ul) {
   max-width: 46rem;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__body p {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__body p {
   margin: 0 0 1rem;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__body > :last-child {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__body > :last-child {
   margin-bottom: 0;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__body a {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__body a {
   color: var(--openms-blue);
   font-weight: 600;
   text-decoration: none;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__body a:hover {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__body a:hover {
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__body strong {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__body strong {
   color: var(--openms-dark, #231f20);
 }
 
 /* ---------- behaviour cards ---------- */
-html body .openms-lib-page--code-of-conduct .coc-doc__cards {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--pro-card-gap, clamp(1rem, 2vw, 1.5rem));
@@ -79,12 +79,12 @@ html body .openms-lib-page--code-of-conduct .coc-doc__cards {
 }
 
 @media (max-width: 899px) {
-  html body .openms-lib-page--code-of-conduct .coc-doc__cards {
+  html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__cards {
     grid-template-columns: minmax(0, 1fr);
   }
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__card {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__card {
   box-sizing: border-box;
   padding: var(--pro-card-pad-lg, clamp(1.25rem, 3vw, 2rem));
   background: var(--openms-white, #fff);
@@ -94,24 +94,24 @@ html body .openms-lib-page--code-of-conduct .coc-doc__card {
   box-shadow: var(--pro-shadow, 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05));
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__card--expected {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__card--expected {
   --coc-accent: #1f9d63;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__card--unacceptable {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__card--unacceptable {
   --coc-accent: #c8433a;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__card .openms-lib-resources__title {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__card .openms-lib-resources__title {
   margin-bottom: 1rem;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__card .coc-doc__body > :is(p, ul) {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__card .coc-doc__body > :is(p, ul) {
   max-width: none;
 }
 
 /* lists: icon markers instead of bullets */
-html body .openms-lib-page--code-of-conduct .coc-doc__body ul {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__body ul {
   margin: 0 0 1rem;
   padding: 0;
   list-style: none;
@@ -119,14 +119,14 @@ html body .openms-lib-page--code-of-conduct .coc-doc__body ul {
   gap: 0.6rem;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__body ul > li {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__body ul > li {
   position: relative;
   margin: 0;
   padding-left: 2rem;
   list-style: none;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__body ul > li::before {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__body ul > li::before {
   content: "\2713";
   position: absolute;
   left: 0;
@@ -144,12 +144,12 @@ html body .openms-lib-page--code-of-conduct .coc-doc__body ul > li::before {
   line-height: 1;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__card--unacceptable .coc-doc__body ul > li::before {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__card--unacceptable .coc-doc__body ul > li::before {
   content: "\2715";
 }
 
 /* the "Note: …" line under the expected list */
-html body .openms-lib-page--code-of-conduct .coc-doc__card--expected .coc-doc__body > p:last-child {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__card--expected .coc-doc__body > p:last-child {
   margin-top: 1.25rem;
   padding-top: 1rem;
   border-top: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1));
@@ -157,7 +157,7 @@ html body .openms-lib-page--code-of-conduct .coc-doc__card--expected .coc-doc__b
 }
 
 /* ---------- reporting steps as numbered cards ---------- */
-html body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body ol {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__band--steps .coc-doc__body ol {
   counter-reset: coc-step;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -167,7 +167,7 @@ html body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body
   list-style: none;
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body ol > li {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__band--steps .coc-doc__body ol > li {
   counter-increment: coc-step;
   box-sizing: border-box;
   margin: 0;
@@ -180,7 +180,7 @@ html body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body
   color: rgba(var(--openms-dark-rgb), 0.78);
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body ol > li::before {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__band--steps .coc-doc__body ol > li::before {
   content: counter(coc-step, decimal-leading-zero);
   display: block;
   margin-bottom: 0.45rem;
@@ -193,7 +193,7 @@ html body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body
 }
 
 /* the response-time promise as a callout */
-html body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body > p:last-child {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__band--steps .coc-doc__body > p:last-child {
   max-width: 46rem;
   padding: 1rem 1.25rem;
   border-left: 4px solid var(--openms-blue);
@@ -204,12 +204,12 @@ html body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body
 }
 
 /* ---------- about this document: quieter ---------- */
-html body .openms-lib-page--code-of-conduct .coc-doc__band--white:last-child .coc-doc__body {
+html body .openms-lib-page--code-of-conduct .coc-doc > .openms-lib-page__anchor:last-child .coc-doc__body {
   font-size: var(--openms-text-min);
 }
 
 /* same page gutters and max width as every other section */
-html body .openms-lib-page--code-of-conduct .coc-doc__band > .openms-lib-resources__inner {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__band > .openms-lib-resources__inner {
   box-sizing: border-box;
   width: 100%;
   max-width: var(--pro-max, 75rem);
@@ -218,23 +218,41 @@ html body .openms-lib-page--code-of-conduct .coc-doc__band > .openms-lib-resourc
 }
 
 /* consecutive white bands (Part 1 → Part 2) flow as one section */
-html body .openms-lib-page--code-of-conduct .coc-doc > .openms-lib-page__anchor:has(> .coc-doc__band--white) + .openms-lib-page__anchor > .coc-doc__band--white {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc > .openms-lib-page__anchor:has(> .coc-doc__band--white) + .openms-lib-page__anchor > .coc-doc__band--white {
   padding-top: 0 !important;
 }
 
 /* steps: 4 across on desktop, 2 x 2 on tablets, stacked on phones */
 @media (min-width: 560px) {
-  html body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body ol {
+  html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__band--steps .coc-doc__body ol {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1000px) {
-  html body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body ol {
+  html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__band--steps .coc-doc__body ol {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
-html body .openms-lib-page--code-of-conduct .coc-doc__card .openms-lib-resources__title {
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__card .openms-lib-resources__title {
   margin-bottom: 1rem !important;
+}
+
+/* card titles for sub-sections (h3) */
+html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__card-title {
+  margin: 0 0 0.75rem;
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-card-title-size);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: rgba(var(--openms-dark-rgb), 0.72);
+}
+
+/* three steps span the row instead of leaving an empty fourth column */
+@media (min-width: 1000px) {
+  html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee) .coc-doc__band--steps .coc-doc__body ol:has(> li:nth-child(3):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
