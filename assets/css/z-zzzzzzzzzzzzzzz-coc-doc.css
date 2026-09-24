@@ -790,3 +790,17 @@ html body .openms-lib-page--exec-committee .coc-doc__band--steps .coc-doc__body 
 :is(html, #exec-card-border-boost) body .openms-lib-page--exec-committee .coc-doc__card {
   border-top: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
 }
+
+/* Executive Committee "Responsibilities": dots instead of check icons */
+html body .openms-lib-page--exec-committee [id="responsibilities"] .coc-doc__body > ul > li {
+  padding-left: 1.5rem;
+}
+
+html body .openms-lib-page--exec-committee [id="responsibilities"] .coc-doc__body > ul > li::before {
+  content: "";
+  left: 0.2rem;
+  top: 0.75em;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--openms-blue);
+}
