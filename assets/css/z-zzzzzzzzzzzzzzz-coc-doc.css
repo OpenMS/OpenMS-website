@@ -476,3 +476,89 @@ html body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body
   content: none;
   display: none;
 }
+
+/* ============================================================================
+   Report Handling Manual: each section gets its own look.
+     Our values ............ stacked head, values as two-column cards
+     Mediation ............. heading left / text right
+     How the Committee responds ... centred statement
+     Clear and severe breach ... stacked head, actions as cards
+     Report handling ....... heading left / text right
+     Resolutions ........... stacked head, possible responses as cards
+     Conflicts of Interest . quiet centred note
+   ============================================================================ */
+@media (min-width: 1100px) {
+  /* stacked heads */
+  html body .openms-lib-page--report-handling :is([id="overview"], [id="clear-and-severe-breach-actions"], [id="resolutions"]) .openms-lib-resources__inner:has(> .openms-lib-resources__head) {
+    display: block !important;
+  }
+
+  html body .openms-lib-page--report-handling :is([id="overview"], [id="clear-and-severe-breach-actions"], [id="resolutions"], [id="how-the-committee-will-respond-to-reports"], [id="conflicts-of-interest"]) .openms-lib-resources__head {
+    position: static !important;
+    grid-row: auto !important;
+    grid-column: auto !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  html body .openms-lib-page--report-handling :is([id="overview"], [id="clear-and-severe-breach-actions"], [id="resolutions"]) .coc-doc__body > p {
+    max-width: 62rem;
+  }
+
+  /* centred statement / note */
+  html body .openms-lib-page--report-handling :is([id="how-the-committee-will-respond-to-reports"], [id="conflicts-of-interest"]) .openms-lib-resources__inner:has(> .openms-lib-resources__head) {
+    display: block !important;
+    text-align: center;
+  }
+
+  html body .openms-lib-page--report-handling :is([id="how-the-committee-will-respond-to-reports"], [id="conflicts-of-interest"]) .openms-lib-resources__head,
+  html body .openms-lib-page--report-handling :is([id="how-the-committee-will-respond-to-reports"], [id="conflicts-of-interest"]) .openms-lib-resources__head > * {
+    text-align: center !important;
+    justify-items: center !important;
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+
+  html body .openms-lib-page--report-handling :is([id="how-the-committee-will-respond-to-reports"], [id="conflicts-of-interest"]) .coc-doc__body {
+    max-width: 52rem;
+    margin-inline: auto;
+  }
+
+  html body .openms-lib-page--report-handling :is([id="how-the-committee-will-respond-to-reports"], [id="conflicts-of-interest"]) .coc-doc__body > p {
+    max-width: none;
+    font-size: 1.125rem;
+  }
+}
+
+/* lists as cards (two columns from 900px) */
+html body .openms-lib-page--report-handling :is([id="overview"], [id="clear-and-severe-breach-actions"], [id="resolutions"]) .coc-doc__body > ul {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--pro-card-gap, 1rem);
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  html body .openms-lib-page--report-handling :is([id="overview"], [id="clear-and-severe-breach-actions"], [id="resolutions"]) .coc-doc__body > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+}
+
+html body .openms-lib-page--report-handling :is([id="overview"], [id="clear-and-severe-breach-actions"], [id="resolutions"]) .coc-doc__body > ul > li {
+  box-sizing: border-box;
+  padding: 1.15rem 1.25rem 1.15rem 3.25rem;
+  border: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1));
+  border-radius: var(--pro-radius, 1rem);
+  background: var(--pro-band-soft, #f8f8f9);
+}
+
+html body .openms-lib-page--report-handling :is([id="clear-and-severe-breach-actions"], [id="resolutions"]) .coc-doc__body > ul > li {
+  background: var(--openms-white, #fff);
+  box-shadow: var(--pro-shadow, 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05));
+}
+
+html body .openms-lib-page--report-handling :is([id="overview"], [id="clear-and-severe-breach-actions"], [id="resolutions"]) .coc-doc__body > ul > li::before {
+  left: 1.15rem;
+  top: 1.3rem;
+}
