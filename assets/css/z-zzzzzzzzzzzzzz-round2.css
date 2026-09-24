@@ -655,3 +655,16 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
     order: -1;
   }
 }
+
+/* ---------- "For Developers / Contribute" cards: icons on the left on mobile ---------- */
+@media (max-width: 767px) {
+  html:is(html, #dev-icons-left-boost) body .openms-lib-page #for-developers .openms-lib-developers__card-icon {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-self: flex-start !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+  }
+}
