@@ -602,3 +602,13 @@ html body .openms-lib-page--report-handling :is([id="overview"], [id="clear-and-
 :is(html, #coc-full-text-boost) body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body > p:last-child {
   max-width: none !important;
 }
+
+/* Code of Conduct: section heads use the full width too (titles no longer wrap at 640px) */
+:is(html, #coc-full-head-boost) body .openms-lib-page--code-of-conduct .coc-doc__band .openms-lib-resources__head,
+:is(html, #coc-full-head-boost) body .openms-lib-page--code-of-conduct .coc-doc__band .openms-lib-resources__head > * {
+  max-width: none !important;
+}
+
+:is(html, #coc-full-head-boost) body .openms-lib-page--code-of-conduct .coc-doc__band .openms-lib-resources__head {
+  width: 100%;
+}
