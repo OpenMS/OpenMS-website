@@ -1,0 +1,201 @@
+/* ============================================================================
+   UI polish round 2 — navbar logo, typography standard, buttons that hug
+   their text, and a handful of spacing / card fixes.
+   ============================================================================ */
+
+/* ---------- navbar logo: one size from sm up to xl, smaller on phones ---------- */
+:root {
+  --openms-navbar-logo-height: 60px;
+}
+
+@media (max-width: 639px) {
+  :root {
+    --openms-navbar-logo-height: 46px;
+  }
+}
+
+/* the compact-desktop rule scaled the logo between 1024 and 1439px */
+html body .site-header #nav.navbar.is-fresh .navbar-brand img.navbar-logo,
+html body #navbar-clone.navbar.is-fresh .navbar-brand img.navbar-logo {
+  height: var(--openms-navbar-logo-height) !important;
+  max-height: var(--openms-navbar-logo-height) !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  html body .site-header #nav.navbar.is-fresh .container,
+  html body #navbar-clone.navbar.is-fresh .container {
+    min-height: calc(var(--openms-navbar-logo-height) + 0.65rem);
+  }
+}
+
+/* ---------- typography standard: top title (eyebrow), title, description ---------- */
+html:is(html, #eyebrow-std-boost) body :is(
+  .openms-lib-hero__eyebrow,
+  .openms-lib-about__eyebrow,
+  .openms-lib-resources__eyebrow,
+  .openms-lib-block__eyebrow,
+  .openms-lib-topp-split__eyebrow,
+  .openms-lib-cite__eyebrow,
+  .openms-lib-developers__eyebrow,
+  .contribute-channels__eyebrow,
+  .contribute-ways__eyebrow,
+  .contribute-outreach__eyebrow,
+  .contribute-support__kicker,
+  .contribute-coc-band__kicker,
+  .sponsor-eyebrow,
+  .publications-key__eyebrow,
+  .privacy-overview__eyebrow,
+  .hero-home__eyebrow,
+  .webapps-featured__eyebrow,
+  .ecosystem-home__eyebrow,
+  .community-events-home__eyebrow,
+  .community-home__eyebrow,
+  .contact-home__eyebrow,
+  .keyfeatures-modern__eyebrow,
+  .trusted-by__home-eyebrow,
+  .home-pathways__eyebrow,
+  .uni-partners__eyebrow,
+  .news-section__eyebrow
+) {
+  font-size: 0.875rem !important;
+  line-height: 1.3 !important;
+}
+
+/* Contact page: section title / eyebrow at the standard size */
+html body .openms-lib-page--contact #contact-paths .openms-lib-resources__title {
+  font-size: var(--openms-section-title-size) !important;
+}
+
+/* Developer retreat hero title: same as every other hero */
+html body .openms-lib-page--developer-retreat .openms-lib-hero__title {
+  font-size: clamp(1.65rem, 1.05rem + 2.6vw, 3.25rem) !important;
+}
+
+html body .openms-lib-page--developer-retreat .openms-lib-hero__title-line {
+  font-size: inherit !important;
+}
+
+/* ---------- Code of Conduct callout ---------- */
+html body .openms-lib-page--contribute .coc-callout__email,
+html body .openms-lib-page--contribute .coc-callout__email a,
+html body .openms-lib-page--contribute .coc-callout__text {
+  font-family: var(--openms-font-body) !important;
+  font-size: var(--openms-body-size) !important;
+  font-weight: 400 !important;
+  line-height: 1.55;
+}
+
+html body .openms-lib-page--contribute .coc-callout__email a {
+  font-weight: 700 !important;
+}
+
+html body .openms-lib-page--contribute .coc-callout__actions {
+  justify-content: flex-end !important;
+  margin-left: auto;
+}
+
+@media (max-width: 900px) {
+  html body .openms-lib-page--contribute .coc-callout__actions {
+    justify-content: flex-end !important;
+  }
+}
+
+/* ---------- Cite OpenMS band: buttons fit their text ---------- */
+:is(html, #cite-hug-boost) body #cite-openms .contribute-coc-band__actions.contribute-coc-band__actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: auto !important;
+  max-width: 100% !important;
+  gap: 0.9rem !important;
+}
+
+:is(html, #cite-hug-boost) body #cite-openms .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn {
+  width: auto !important;
+  align-self: auto !important;
+  flex: 0 0 auto !important;
+  max-width: 100% !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 1.25rem !important;
+}
+
+/* ---------- Contributors: Executive Committee closer to the board ---------- */
+html body .openms-lib-page--contributors #executive-committee#executive-committee {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+html body .openms-lib-page--contributors #executive-committee#executive-committee .openms-lib-resources {
+  padding-top: 0 !important;
+}
+
+/* ---------- Contact: Discord / GitHub as text links (like the other cards) ---------- */
+html body .openms-lib-page--contact .contact-path-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  margin-top: auto;
+}
+
+/* ---------- Privacy topic rows: same number / title style as other cards ---------- */
+html body .openms-lib-page--privacy .privacy-pro__summary-index {
+  font-family: var(--openms-font-heading) !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-title {
+  font-size: var(--openms-card-title-size) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+/* ---------- Press kit: more space between the two usage paragraphs ---------- */
+html body .openms-lib-page--press-kit #usage .openms-lib-resources__head {
+  row-gap: 1.25rem !important;
+}
+
+@media (min-width: 900px) {
+  html body .openms-lib-page--press-kit #usage .openms-lib-resources__head {
+    column-gap: clamp(2.5rem, 6vw, 5rem) !important;
+  }
+}
+
+html body .openms-lib-page--press-kit #usage .openms-lib-resources__head {
+  align-items: start !important;
+}
+
+html body .openms-lib-page--press-kit #usage .openms-lib-resources__head .openms-lib-resources__lead {
+  margin-top: 0 !important;
+}
+
+/* ---------- Contribute funding panel: centred on mobile / sm ---------- */
+@media (max-width: 767px) {
+  html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support__copy {
+    text-align: center !important;
+    justify-items: center;
+  }
+
+  html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support .contribute-support__cta.openms-lib-btn {
+    align-self: center !important;
+  }
+}
+
+/* ---------- Developer retreat "About the retreat": cards closer on mobile ---------- */
+@media (max-width: 767px) {
+  html body .openms-lib-page--developer-retreat #about-the-retreat .openms-lib-about__mosaic.retreat-highlights__mosaic {
+    gap: 0.6rem !important;
+  }
+}
+
+/* Contact "Contact" eyebrow and Governance "Process" eyebrow at the standard size */
+html:is(html, #eyebrow-std-boost2) body :is(.openms-lib-page--contact .openms-lib-resources__eyebrow, .governance-membership__eyebrow) {
+  font-size: 0.875rem !important;
+}
