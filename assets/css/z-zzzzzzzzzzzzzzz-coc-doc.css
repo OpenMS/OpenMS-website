@@ -318,3 +318,19 @@ html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committe
     hyphens: auto;
   }
 }
+
+/* Very large screens: a wider left column, larger text and a wider measure,
+   so the content column fills the page instead of leaving a gap on the right. */
+@media (min-width: 1500px) {
+  html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee, .openms-lib-page--report-handling) .coc-doc__band > .openms-lib-resources__inner:has(> .openms-lib-resources__head) {
+    grid-template-columns: minmax(18rem, 26rem) minmax(0, 1fr);
+  }
+
+  html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee, .openms-lib-page--report-handling) .coc-doc__body {
+    font-size: 1.125rem;
+  }
+
+  html body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--exec-committee, .openms-lib-page--report-handling) .coc-doc__body > :is(p, ul) {
+    max-width: 68rem;
+  }
+}
