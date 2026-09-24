@@ -470,3 +470,9 @@ html body .openms-lib-page--code-of-conduct [id="about-this-document"] > .coc-do
     justify-content: center !important;
   }
 }
+
+/* Code of Conduct reporting steps: no numbers on the cards */
+html body .openms-lib-page--code-of-conduct .coc-doc__band--steps .coc-doc__body ol > li::before {
+  content: none;
+  display: none;
+}
