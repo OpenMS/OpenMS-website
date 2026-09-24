@@ -505,3 +505,13 @@ html body .openms-lib-page--privacy .privacy-pro__summary-index {
   width: auto !important;
   font-variant-numeric: tabular-nums;
 }
+
+/* ---------- Privacy "Who we are": always left-aligned, at every screen size ---------- */
+html:is(html, #privacy-who-left-boost) body .openms-lib-page--privacy #who-we-are :is(.openms-lib-about__head, .openms-lib-about__head-copy, .openms-lib-about__eyebrow, .openms-lib-about__title, .openms-lib-about__lead) {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  justify-items: start !important;
+  align-items: flex-start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
