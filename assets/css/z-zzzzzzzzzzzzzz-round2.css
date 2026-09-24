@@ -540,19 +540,10 @@ html body .openms-lib-page--privacy .privacy-pro__summary::after {
 }
 
 /* ---------- Privacy topics: cleaner, easier-to-scan cards ---------- */
-/* two columns on wider screens (rows keep their own height when opened) */
-@media (min-width: 900px) {
-  html body .openms-lib-page--privacy .privacy-pro__list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: start;
-    gap: var(--pro-card-gap, 1.25rem);
-  }
-}
-
-@media (max-width: 899px) {
-  html body .openms-lib-page--privacy .privacy-pro__list {
-    gap: 0.75rem;
-  }
+/* one card per line at every screen size */
+html body .openms-lib-page--privacy .privacy-pro__list {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
 }
 
 /* card frame: soft hover, blue accent while open */
