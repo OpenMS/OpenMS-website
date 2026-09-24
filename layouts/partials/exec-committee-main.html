@@ -14,6 +14,56 @@
   </header>
 </div>
 
+{{- with .Params.glance }}
+<div class="exec-glance" aria-label="Charter at a glance">
+  <div class="exec-glance__inner">
+    <p class="exec-glance__title">Charter at a glance</p>
+    <dl class="exec-glance__grid">
+      {{- range . }}
+      <div class="exec-glance__item">
+        <dt class="exec-glance__label">{{ .label }}</dt>
+        <dd class="exec-glance__value">{{ .value }}</dd>
+        <dd class="exec-glance__note">{{ .note }}</dd>
+      </div>
+      {{- end }}
+    </dl>
+  </div>
+</div>
+{{- end }}
+
+<nav class="exec-toc" aria-label="On this page">
+  <div class="exec-toc__inner">
+    <ul class="exec-toc__list">
+      <li><a href="#overview" data-toc="overview">Overview</a></li>
+      {{- range findRE `<h2 id="[^"]+">[^<]*</h2>` .Content }}
+      {{- $id := replaceRE `<h2 id="([^"]+)">.*` "$1" . }}
+      {{- $t := replaceRE `<h2 id="[^"]+">([^<]*)</h2>` "$1" . | htmlUnescape }}
+      <li><a href="#{{ $id }}" data-toc="{{ $id }}">{{ $t }}</a></li>
+      {{- end }}
+    </ul>
+  </div>
+</nav>
+<script>
+  (function () {
+    var links = document.querySelectorAll('.exec-toc a[data-toc]');
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('data-toc')] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && map[e.target.id]) {
+          links.forEach(function (a) { a.removeAttribute('aria-current'); });
+          map[e.target.id].setAttribute('aria-current', 'true');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    Object.keys(map).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+  })();
+</script>
+
 {{ partial "charter-sections.html" (dict "content" .Content "introEyebrow" "Charter" "introTitle" "Overview" "sectionLabel" "Section") }}
 </article>
 </section>
