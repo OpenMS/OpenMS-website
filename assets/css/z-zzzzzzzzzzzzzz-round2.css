@@ -538,3 +538,69 @@ html body .openms-lib-page--privacy .privacy-pro__summary::after {
   grid-area: arrow !important;
   align-self: center;
 }
+
+/* ---------- Privacy topics: cleaner, easier-to-scan cards ---------- */
+/* two columns on wider screens (rows keep their own height when opened) */
+@media (min-width: 900px) {
+  html body .openms-lib-page--privacy .privacy-pro__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: var(--pro-card-gap, 1.25rem);
+  }
+}
+
+@media (max-width: 899px) {
+  html body .openms-lib-page--privacy .privacy-pro__list {
+    gap: 0.75rem;
+  }
+}
+
+/* card frame: soft hover, blue accent while open */
+html body .openms-lib-page--privacy .privacy-pro__item {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__item:hover {
+  border-color: var(--pro-line-strong, rgba(var(--openms-navy-rgb), 0.22));
+  box-shadow: var(--pro-shadow-hover, 0 0.5rem 1.25rem rgba(var(--openms-navy-rgb), 0.08));
+}
+
+html body .openms-lib-page--privacy .privacy-pro__item[open] {
+  border-color: rgba(var(--openms-blue-rgb), 0.45);
+  box-shadow: 0 0 0 1px rgba(var(--openms-blue-rgb), 0.18), var(--pro-shadow);
+}
+
+html body .openms-lib-page--privacy .privacy-pro__item[open] > .privacy-pro__summary {
+  background: rgba(var(--openms-blue-rgb), 0.04);
+}
+
+/* padding and a slightly smaller number so the collapsed cards stay compact */
+html body .openms-lib-page--privacy .privacy-pro__summary {
+  padding: 1.15rem 1.35rem !important;
+  row-gap: 0.35rem !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-index {
+  font-size: clamp(2.25rem, 4vw, 2.75rem) !important;
+  letter-spacing: -0.04em !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary:focus-visible {
+  outline: 2px solid var(--openms-blue);
+  outline-offset: -2px;
+}
+
+/* opened text: comfortable reading width and spacing */
+html body .openms-lib-page--privacy .privacy-pro__answer {
+  padding: 1.25rem 1.35rem 1.4rem !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__rich {
+  max-width: 46rem;
+  line-height: 1.7;
+}
+
+/* intro sentence: use a readable line length instead of a narrow column */
+html body .openms-lib-page--privacy #privacy-topics .openms-lib-resources__lead {
+  max-width: 44rem !important;
+}
