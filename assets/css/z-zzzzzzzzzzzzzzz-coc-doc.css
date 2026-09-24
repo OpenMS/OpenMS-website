@@ -562,3 +562,28 @@ html body .openms-lib-page--report-handling :is([id="overview"], [id="clear-and-
   left: 1.15rem;
   top: 1.3rem;
 }
+
+/* Code of Conduct "Consequences": left-aligned like the other sections */
+@media (min-width: 1100px) {
+  :is(html, #coc-conseq-left-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__inner:has(> .openms-lib-resources__head) {
+    text-align: left !important;
+  }
+
+  :is(html, #coc-conseq-left-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__head,
+  :is(html, #coc-conseq-left-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .openms-lib-resources__head > * {
+    text-align: left !important;
+    justify-items: start !important;
+    justify-content: flex-start !important;
+    margin-inline: 0 !important;
+  }
+
+  :is(html, #coc-conseq-left-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .coc-doc__body {
+    margin-inline: 0 !important;
+    max-width: 62rem;
+  }
+
+  :is(html, #coc-conseq-left-boost) body .openms-lib-page--code-of-conduct [id="part-23-consequences-of-unacceptable-behaviour"] .coc-doc__body > p {
+    text-align: left !important;
+    margin-inline: 0 !important;
+  }
+}
