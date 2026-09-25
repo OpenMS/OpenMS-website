@@ -1086,3 +1086,24 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
 :is(html, #pubs-more-right-boost) body .openms-lib-page--publications .publications-more {
   justify-content: flex-end !important;
 }
+
+/* ---------- Publications "Show more": a little in from the right edge, with an arrow that slides on hover ---------- */
+:is(html, #pubs-more-arrow-boost) body .openms-lib-page--publications .publications-more {
+  padding-right: clamp(1rem, 3vw, 2.5rem) !important;
+}
+
+:is(html, #pubs-more-arrow-boost) body .openms-lib-page--publications .publications-more__btn .publications-more__arrow {
+  display: inline-block;
+  margin-left: 0.4rem;
+  transition: transform 0.2s ease;
+}
+
+:is(html, #pubs-more-arrow-boost) body .openms-lib-page--publications .publications-more__btn:is(:hover, :focus-visible) .publications-more__arrow {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(html, #pubs-more-arrow-boost) body .openms-lib-page--publications .publications-more__btn .publications-more__arrow {
+    transition: none;
+  }
+}
