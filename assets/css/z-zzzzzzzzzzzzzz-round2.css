@@ -826,3 +826,18 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
     max-width: 100%;
   }
 }
+
+/* ---------- Homepage hero (mobile): graphic and its legend sit closer to the buttons / chart ---------- */
+@media (max-width: 767px) {
+  html:is(html, #hero-note-up-boost) body .home-page__hero .hero-home__visual {
+    margin-top: 0.25rem !important;
+  }
+
+  html:is(html, #hero-note-up-boost) body .home-page__hero .hero-home__note.hero-home__note--under-graphic {
+    margin-top: 0.4rem !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    row-gap: 0.15rem !important;
+    max-width: 100% !important;
+  }
+}
