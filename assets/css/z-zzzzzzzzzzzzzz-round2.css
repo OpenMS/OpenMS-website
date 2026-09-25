@@ -212,41 +212,40 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
   }
 }
 
-/* ---------- OpenMS-lib page: "Need help?" as a compact white strip ----------
-   Text on the left, both buttons on the right (stacked & centred on small
-   screens), so it separates the navy "Explore" band from the grey
-   "Contribute" section instead of adding another tall grey block. */
+/* ---------- OpenMS-lib page: "Need help?" as a compact, centred strip
+   (same background as the next section) ---------- */
 :is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist {
   display: flex !important;
-  flex-direction: row !important;
+  flex-direction: column !important;
   align-items: center !important;
-  justify-content: space-between !important;
-  gap: 1.5rem 2.5rem !important;
-  padding: 1.75rem var(--openms-page-inline, 2rem) !important;
-  background: var(--openms-white, #fff) !important;
-  border-bottom: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1));
-  text-align: left !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+  padding: 2rem var(--openms-page-inline, 2rem) !important;
+  background: #f2f3f5 !important;
+  background-color: #f2f3f5 !important;
+  border-bottom: 0;
+  text-align: center !important;
 }
 
 :is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-copy {
-  justify-items: start !important;
-  text-align: left !important;
-  width: auto !important;
-  max-width: 36rem !important;
-  flex: 1 1 18rem;
+  justify-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 38rem !important;
+  flex: 0 0 auto !important;
 }
 
 :is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist :is(.openms-lib-resources__assist-title, .openms-lib-resources__assist-text) {
-  text-align: left !important;
+  text-align: center !important;
 }
 
 :is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions {
   display: flex !important;
   flex-wrap: wrap !important;
-  justify-content: flex-end !important;
+  justify-content: center !important;
   width: auto !important;
   max-width: 100% !important;
-  margin: 0 !important;
+  margin: 0 auto !important;
   gap: 0.75rem !important;
 }
 
@@ -255,29 +254,6 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
   flex: 0 0 auto !important;
   white-space: nowrap !important;
   padding: var(--openms-btn-padding-y, 0.7rem) 1.25rem !important;
-}
-
-@media (max-width: 767px) {
-  :is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 1rem !important;
-    text-align: center !important;
-  }
-
-  :is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-copy {
-    flex: 0 0 auto !important;
-    justify-items: center !important;
-    text-align: center !important;
-  }
-
-  :is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist :is(.openms-lib-resources__assist-title, .openms-lib-resources__assist-text) {
-    text-align: center !important;
-  }
-
-  :is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions {
-    justify-content: center !important;
-  }
 }
 
 /* ---------- OpenMS-lib page: citation heading in sentence case, smaller ---------- */
