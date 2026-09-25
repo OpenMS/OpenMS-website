@@ -375,3 +375,15 @@
     font-size: 1.1rem !important;
   }
 }
+
+/* ---- Mobile: cards are as tall as their content (no forced minimum height that leaves a blank band) ---- */
+@media (max-width: 767px) {
+  :is(html, #m-cards-nominh) body .openms-lib-page :is(
+    .openms-lib-resources__item.openms-lib-resources__item,
+    .governance-card.governance-card,
+    .press-kit-grid > .openms-lib-resources__item
+  ) {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+}
