@@ -325,3 +325,26 @@
   min-height: 0 !important;
   height: auto !important;
 }
+
+@media (max-width: 767px) {
+  /* ---- cards without an icon (e.g. Archived apps "Still usable" / "Check first"): the text uses the whole card ---- */
+  :is(html, #m-cards-noicon) body .contribute-channel:not(:has(> .contribute-channel__icon)) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-items: normal !important;
+  }
+
+  :is(html, #m-cards-noicon) body .contribute-channel:not(:has(> .contribute-channel__icon)) > * {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+  }
+
+  /* and the two cards stack so each text line is a comfortable width */
+  :is(html, #m-cards-noicon) body .contribute-channels__strip:not(:has(.contribute-channel__icon)) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
