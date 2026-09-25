@@ -946,3 +946,12 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
     padding-top: 0.75rem !important;
   }
 }
+
+/* ---------- Contribute "Need to report something?": the email comes after the description ---------- */
+html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-callout__copy > .coc-callout__email {
+  order: 3;
+}
+
+html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-callout__copy > .coc-callout__text {
+  order: 2;
+}
