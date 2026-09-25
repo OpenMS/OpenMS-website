@@ -272,3 +272,35 @@
     padding-top: 0.9rem !important;
   }
 }
+
+/* ---- "For Developers / Contribute" cards from sm up: icon on the left, text on the right (same as phones) ---- */
+@media (min-width: 768px) {
+  :is(html, #dev-cards-side) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    text-align: left !important;
+  }
+
+  :is(html, #dev-cards-side) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card > .openms-lib-developers__card-icon {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    margin: 0 !important;
+    align-self: flex-start !important;
+    justify-content: flex-start !important;
+  }
+
+  :is(html, #dev-cards-side) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card > .openms-lib-developers__card-body {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    align-self: stretch !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  :is(html, #dev-cards-side) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card-body :is(.openms-lib-developers__card-title-row, .openms-lib-developers__card-title, .openms-lib-developers__card-subtitle) {
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+}
