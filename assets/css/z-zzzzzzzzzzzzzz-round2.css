@@ -941,3 +941,25 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
 html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-callout__copy > .coc-callout__text {
   order: 2;
 }
+
+/* ---------- Contribute funding panel: from sm up the button sits to the right of the text ---------- */
+@media (min-width: 768px) {
+  :is(html, #funding-btn-right-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1.5rem 2.5rem !important;
+  }
+
+  :is(html, #funding-btn-right-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support__copy {
+    flex: 1 1 auto !important;
+    max-width: 44rem !important;
+  }
+
+  :is(html, #funding-btn-right-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support .contribute-support__cta.openms-lib-btn {
+    flex: 0 0 auto !important;
+    align-self: center !important;
+    margin-left: auto !important;
+  }
+}

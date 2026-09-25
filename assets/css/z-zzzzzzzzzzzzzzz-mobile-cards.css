@@ -387,3 +387,41 @@
     height: auto !important;
   }
 }
+
+/* ---- Contribute "Stay in touch" channel cards from sm up: icon on the left, text on the right ---- */
+@media (min-width: 768px) {
+  :is(html, #channel-side) body .openms-lib-page--contribute .contribute-channel:has(> .contribute-channel__icon) {
+    display: grid !important;
+    grid-template-columns: 3rem minmax(0, 1fr) !important;
+    grid-template-rows: repeat(6, auto) !important;
+    column-gap: 1rem !important;
+    row-gap: 0 !important;
+    align-items: start !important;
+    justify-items: start !important;
+    text-align: left !important;
+  }
+
+  :is(html, #channel-side) body .openms-lib-page--contribute .contribute-channel > .contribute-channel__icon {
+    grid-column: 1 !important;
+    grid-row: 1 / span 6 !important;
+    margin: 0 !important;
+    align-self: start !important;
+  }
+
+  :is(html, #channel-side) body .openms-lib-page--contribute .contribute-channel:has(> .contribute-channel__icon) > :not(.contribute-channel__icon) {
+    grid-column: 2 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    min-width: 0;
+    text-align: left !important;
+  }
+
+  :is(html, #channel-side) body .openms-lib-page--contribute .contribute-channel:has(> .contribute-channel__icon) > .contribute-channel__title {
+    margin-top: -0.3rem !important;
+    line-height: 1.3 !important;
+  }
+
+  :is(html, #channel-side) body .openms-lib-page--contribute .contribute-channel:has(> .contribute-channel__icon) > .contribute-channel__title ~ * {
+    margin-top: 0.4rem !important;
+  }
+}
