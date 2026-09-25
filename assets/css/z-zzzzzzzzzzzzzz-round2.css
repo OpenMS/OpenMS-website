@@ -998,3 +998,52 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
 :is(html, #coc-value-side-boost) body .openms-lib-page--contribute .coc-value__title {
   margin-top: -0.2rem !important;
 }
+
+/* ---------- Sponsor Us FAQ: the accordion sits right next to the heading text (no wide empty gap on big screens) ---------- */
+@media (min-width: 900px) {
+  :is(html, #faq-close-boost) body .openms-lib-page--sponsor-us .sponsor-faq-pro__inner {
+    grid-template-columns: minmax(0, 26rem) minmax(0, 46rem) !important;
+    justify-content: start !important;
+    column-gap: clamp(2rem, 4vw, 4rem) !important;
+  }
+
+  :is(html, #faq-close-boost) body .openms-lib-page--sponsor-us .sponsor-faq__list {
+    max-width: none !important;
+    width: 100% !important;
+    justify-self: start !important;
+  }
+}
+
+/* ---------- Contribute outreach card: the social links sit close to the text ---------- */
+@media (min-width: 1024px) {
+  :is(html, #outreach-close-boost) body .openms-lib-page--contribute .contribute-outreach__inner {
+    grid-template-columns: minmax(0, 40rem) minmax(0, 30rem) !important;
+    justify-content: start !important;
+    column-gap: clamp(2rem, 4vw, 4rem) !important;
+  }
+}
+
+/* ---------- Contribute "Build from source": links turn blue only when the link itself is hovered ---------- */
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible),
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) span {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) .fa-windows,
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) .fa-windows path {
+  color: #0078d4 !important;
+  fill: #0078d4 !important;
+}
+
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) .fa-apple,
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) .fa-apple path {
+  color: #555 !important;
+  fill: #555 !important;
+}
+
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) .fa-linux,
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) .fa-linux path {
+  color: #fcc624 !important;
+  fill: #fcc624 !important;
+}
