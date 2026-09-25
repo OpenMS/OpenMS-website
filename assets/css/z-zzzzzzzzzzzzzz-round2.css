@@ -68,7 +68,7 @@ html body .openms-lib-page--contact #contact-paths .openms-lib-resources__title 
 }
 
 /* Developer retreat hero title: same as every other hero */
-html body .openms-lib-page--developer-retreat .openms-lib-hero__title {
+:is(html, #retreat-h1-boost) body .openms-lib-page--developer-retreat .openms-lib-hero__title.openms-lib-hero__title {
   font-size: clamp(1.65rem, 1.05rem + 2.6vw, 3.25rem) !important;
 }
 
@@ -848,5 +848,47 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
     white-space: nowrap !important;
     font-size: inherit !important;
     gap: 0.25rem !important;
+  }
+}
+
+/* Mobile: the top title (eyebrow) stays a small label — smaller than the description below it */
+@media (max-width: 767px) {
+  html:is(html, #eyebrow-mobile-boost) body :is(
+  .openms-lib-hero__eyebrow,
+  .openms-lib-about__eyebrow,
+  .openms-lib-resources__eyebrow,
+  .openms-lib-block__eyebrow,
+  .openms-lib-topp-split__eyebrow,
+  .openms-lib-cite__eyebrow,
+  .openms-lib-developers__eyebrow,
+  .contribute-channels__eyebrow,
+  .contribute-ways__eyebrow,
+  .contribute-outreach__eyebrow,
+  .contribute-support__kicker,
+  .contribute-coc-band__kicker,
+  .sponsor-eyebrow,
+  .publications-key__eyebrow,
+  .privacy-overview__eyebrow,
+  .webapps-featured__eyebrow,
+  .ecosystem-home__eyebrow,
+  .community-events-home__eyebrow,
+  .community-home__eyebrow,
+  .contact-home__eyebrow,
+  .keyfeatures-modern__eyebrow,
+  .trusted-by__home-eyebrow,
+  .home-pathways__eyebrow,
+  .uni-partners__eyebrow,
+  .news-section__eyebrow
+) {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.12em !important;
+    line-height: 1.3 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html:is(html, #eyebrow-mobile-boost2) body :is(.openms-lib-page--contact .openms-lib-resources__eyebrow, .governance-membership__eyebrow) {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.12em !important;
   }
 }
