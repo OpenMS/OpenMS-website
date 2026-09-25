@@ -1056,3 +1056,33 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
     width: 100% !important;
   }
 }
+
+/* ---------- Publications "Key publications": heading text runs the full page width ---------- */
+:is(html, #pubs-lead-full-boost) body .publications-featured .openms-lib-resources__head {
+  max-width: none !important;
+  width: 100% !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+:is(html, #pubs-lead-full-boost) body .publications-featured .openms-lib-resources__lead {
+  max-width: none !important;
+  width: 100% !important;
+  justify-self: stretch !important;
+}
+
+/* ---------- Publications: "All publications" heading text full width; "Show more" on the right ---------- */
+:is(html, #pubs-archive-lead-full-boost) body .publications-bibliography .openms-lib-resources__head {
+  max-width: none !important;
+  width: 100% !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+:is(html, #pubs-archive-lead-full-boost) body .publications-bibliography .openms-lib-resources__lead {
+  max-width: none !important;
+  width: 100% !important;
+  justify-self: stretch !important;
+}
+
+:is(html, #pubs-more-right-boost) body .openms-lib-page--publications .publications-more {
+  justify-content: flex-end !important;
+}
