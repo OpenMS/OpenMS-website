@@ -835,9 +835,17 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
 
   html:is(html, #hero-note-up-boost) body .home-page__hero .hero-home__note.hero-home__note--under-graphic {
     margin-top: 0.4rem !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
     justify-content: flex-start !important;
-    row-gap: 0.15rem !important;
+    column-gap: 0.45rem !important;
     max-width: 100% !important;
+    /* scales with the screen so all three labels always fit on one line */
+    font-size: clamp(0.5rem, 2.7vw, 0.6875rem) !important;
+  }
+
+  html:is(html, #hero-note-up-boost) body .home-page__hero .hero-home__note.hero-home__note--under-graphic .hero-home__note-item {
+    white-space: nowrap !important;
+    font-size: inherit !important;
   }
 }
