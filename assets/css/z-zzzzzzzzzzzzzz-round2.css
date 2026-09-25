@@ -798,3 +798,31 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
   min-height: 0 !important;
   max-height: none !important;
 }
+
+/* ---------- Homepage "Adopted by labs and institutions worldwide": the same two
+   scrolling logo rows on small screens as on large ones (instead of the static grid) ---------- */
+@media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
+  :is(html, #home-partners-marquee-boost) body .home-page__block--partners .uni-partners--home .uni-partners__marquees {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    margin-top: 0.75rem !important;
+  }
+
+  :is(html, #home-partners-marquee-boost) body .home-page__block--partners .uni-partners--home .uni-partners__marquee {
+    display: block !important;
+  }
+
+  :is(html, #home-partners-marquee-boost) body .home-page__block--partners .uni-partners--home .uni-partners__static {
+    display: none !important;
+  }
+
+  /* the scrolling rows are wider than the screen: clip them so the page never widens */
+  :is(html, #home-partners-marquee-boost) body .home-page__block--partners .uni-partners--home,
+  :is(html, #home-partners-marquee-boost) body .home-page__block--partners .uni-partners--home .uni-partners__marquees,
+  :is(html, #home-partners-marquee-boost) body .home-page__block--partners .uni-partners--home .uni-partners__marquee {
+    overflow-x: clip !important;
+    max-width: 100%;
+  }
+}
