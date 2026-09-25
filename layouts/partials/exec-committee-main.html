@@ -14,6 +14,12 @@
   </header>
 </div>
 
-{{ partial "charter-sections.html" (dict "content" .Content "introEyebrow" "Charter" "introTitle" "Overview" "sectionLabel" "Section") }}
+<div class="openms-lib-page__body">
+  <div class="openms-lib-page__anchor">
+    <div class="exec-charter__inner openms-lib-prose">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
 </article>
 </section>
