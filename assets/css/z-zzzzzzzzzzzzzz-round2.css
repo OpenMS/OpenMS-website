@@ -939,3 +939,10 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
 }
+
+/* ---------- News page (mobile): the "All years" filter sits closer to the hero ---------- */
+@media (max-width: 767px) {
+  :is(html, #news-filter-up-boost) body .openms-lib-page__anchor:has(> .news-page-block) {
+    padding-top: 0.75rem !important;
+  }
+}
