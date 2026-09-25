@@ -348,3 +348,17 @@
     grid-template-columns: minmax(0, 1fr) !important;
   }
 }
+
+@media (max-width: 767px) {
+  /* numbered tiles fit their content: no extra row gaps from empty grid rows (beats id-scoped page rules) */
+  :is(html, #m-cards-tile-fit) body .openms-lib-page .openms-lib-about__tile.openms-lib-about__tile {
+    row-gap: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    align-content: start !important;
+  }
+
+  :is(html, #m-cards-tile-fit) body .openms-lib-page .openms-lib-about__tile.openms-lib-about__tile > .openms-lib-about__tile-title {
+    margin-bottom: 0 !important;
+  }
+}
