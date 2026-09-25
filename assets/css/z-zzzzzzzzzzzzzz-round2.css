@@ -963,3 +963,38 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
     margin-left: auto !important;
   }
 }
+
+/* ---------- Contribute "Ways to contribute" heading: wider on large screens ---------- */
+@media (min-width: 1200px) {
+  :is(html, #ways-head-wide-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute :is(.openms-lib-resources__head, .contribute-ways__head) {
+    max-width: none !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  :is(html, #ways-head-wide-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute :is(.openms-lib-resources__lead, .contribute-ways__lead) {
+    max-width: min(100%, 72rem) !important;
+    width: 100% !important;
+    justify-self: start !important;
+  }
+}
+
+/* ---------- Contribute Code of Conduct values ("We encourage"…): text to the right of the icon ---------- */
+:is(html, #coc-value-side-boost) body .openms-lib-page--contribute .coc-value {
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+}
+
+:is(html, #coc-value-side-boost) body .openms-lib-page--contribute .coc-value > .coc-value__icon {
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+}
+
+:is(html, #coc-value-side-boost) body .openms-lib-page--contribute .coc-value > .coc-value__body {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+}
+
+:is(html, #coc-value-side-boost) body .openms-lib-page--contribute .coc-value__title {
+  margin-top: -0.2rem !important;
+}
