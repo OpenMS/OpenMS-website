@@ -264,3 +264,11 @@
     align-self: flex-start !important;
   }
 }
+
+@media (max-width: 767px) {
+  /* "Reviewing Pull Requests": the links row sits lower, with clear space under the description */
+  :is(html, #m-cards-review-links) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__card-body > .openms-lib-developers__platforms {
+    margin-top: 1rem !important;
+    padding-top: 0.9rem !important;
+  }
+}
