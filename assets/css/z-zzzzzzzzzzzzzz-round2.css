@@ -838,14 +838,15 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
     flex-wrap: nowrap !important;
     white-space: nowrap !important;
     justify-content: flex-start !important;
-    column-gap: 0.45rem !important;
+    column-gap: 0.3rem !important;
     max-width: 100% !important;
     /* scales with the screen so all three labels always fit on one line */
-    font-size: clamp(0.5rem, 2.7vw, 0.6875rem) !important;
+    font-size: clamp(0.5rem, calc((100vw - 1.9rem) / 32.5), 0.75rem) !important;
   }
 
   html:is(html, #hero-note-up-boost) body .home-page__hero .hero-home__note.hero-home__note--under-graphic .hero-home__note-item {
     white-space: nowrap !important;
     font-size: inherit !important;
+    gap: 0.25rem !important;
   }
 }
