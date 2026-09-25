@@ -739,25 +739,6 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
   :is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn::after { transition: none; }
 }
 
-/* ---------- Reviewing Pull Requests: white links while the card is navy (hovered) ---------- */
-:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms {
-  border-top-color: rgba(255, 255, 255, 0.28) !important;
-}
-
-:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
-:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible),
-:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn .openms-lib-btn__label,
-:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn::after,
-:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn :is(svg, i, path) {
-  color: var(--openms-white, #fff) !important;
-  fill: var(--openms-white, #fff) !important;
-  -webkit-text-fill-color: var(--openms-white, #fff) !important;
-}
-
-:is(html, #dev-review-white-boost) body .openms-lib-page:is(.openms-lib-page--pyopenms-pro, .openms-lib-page--pyopenms-viz-pro, .openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) {
-  text-decoration: none !important;
-}
-
 /* ---------- Footer: four equal-width link columns; long links wrap ---------- */
 @media (min-width: 1101px) {
   html body #footer.footer-redesign .footer-nav {
@@ -927,4 +908,34 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
     hyphens: manual !important;
     -webkit-hyphens: manual !important;
   }
+}
+
+/* ---------- pyOpenMS / pyOpenMS Viz / WebApps developer cards: a hovered card stays white, so its
+   icon, title, text and links stay readable (some older rules turned the text white on a white card) ---------- */
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) {
+  background: var(--openms-white, #fff) !important;
+  background-color: var(--openms-white, #fff) !important;
+  border-color: var(--pro-line-strong, rgba(var(--openms-navy-rgb), 0.22)) !important;
+}
+
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-title,
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-title span {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-subtitle {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-icon,
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-icon :is(i, svg, path) {
+  color: var(--openms-blue) !important;
+  fill: currentColor;
+}
+
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-link {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
 }
