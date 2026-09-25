@@ -731,8 +731,9 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
     grid-template-columns: repeat(4, minmax(0, 1fr));
     justify-content: stretch;
     width: 100%;
-    max-width: 60rem;
+    max-width: 56rem;
     margin-left: auto;
+    padding-right: 0;
   }
 
   html body #footer.footer-redesign .footer-nav .footer-link-group ul li a {
@@ -1002,7 +1003,7 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
 /* ---------- Sponsor Us FAQ: the accordion sits right next to the heading text (no wide empty gap on big screens) ---------- */
 @media (min-width: 900px) {
   :is(html, #faq-close-boost) body .openms-lib-page--sponsor-us .sponsor-faq-pro__inner {
-    grid-template-columns: minmax(0, 26rem) minmax(0, 46rem) !important;
+    grid-template-columns: minmax(0, clamp(20rem, 35vw, 42rem)) minmax(0, 52rem) !important;
     justify-content: start !important;
     column-gap: clamp(2rem, 4vw, 4rem) !important;
   }
@@ -1046,4 +1047,12 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
 :is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) .fa-linux path {
   color: #fcc624 !important;
   fill: #fcc624 !important;
+}
+
+@media (min-width: 900px) {
+  :is(html, #faq-head-wide-boost) body .openms-lib-page--sponsor-us .sponsor-faq-pro__head,
+  :is(html, #faq-head-wide-boost) body .openms-lib-page--sponsor-us .sponsor-faq-pro__lead {
+    max-width: none !important;
+    width: 100% !important;
+  }
 }
