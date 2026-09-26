@@ -1215,3 +1215,15 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
     margin-top: 3.25rem !important;
   }
 }
+
+/* ---------- Featured developer card ("Contributing Guidelines"): the link is centred inside its white button on phones ---------- */
+@media (max-width: 767px) {
+  :is(html, #feat-cta-center-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--featured .openms-lib-developers__card-body > .openms-lib-developers__card-cta.openms-lib-developers__card-cta {
+    align-items: center !important;
+    justify-content: center !important;
+    padding-top: 0.55rem !important;
+    padding-bottom: 0.55rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+}
