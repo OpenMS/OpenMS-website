@@ -1338,3 +1338,22 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
   text-decoration: underline !important;
   text-underline-offset: 0.2em;
 }
+
+/* ---------- Footer copyright line: a bit smaller ---------- */
+html:is(html, #footer-copy-small-boost) body .footer-copyright {
+  font-size: 0.875rem !important;
+}
+
+@media (max-width: 767px) {
+  html:is(html, #footer-copy-small-boost) body .footer-copyright {
+    font-size: clamp(0.75rem, 3.3vw, 0.875rem) !important;
+  }
+}
+
+/* ---------- Footer "Deployed by Netlify" badge: a bit bigger (32px -> 44px tall) ---------- */
+:is(html, #footer-deploy-big-boost) body .footer-deploy img {
+  width: auto !important;
+  height: 2.75rem !important;
+  max-height: 2.75rem !important;
+  max-width: 100% !important;
+}
