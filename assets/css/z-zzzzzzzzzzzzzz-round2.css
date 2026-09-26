@@ -1144,3 +1144,8 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
     grid-column: auto !important;
   }
 }
+
+/* ---------- Press kit "Logo files": the section starts closer to the hero (its top padding was applied twice) ---------- */
+:is(html, #press-logos-up-boost) body .openms-lib-page--press-kit #logos#logos {
+  padding-top: 0 !important;
+}
