@@ -1227,3 +1227,12 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
     text-align: center !important;
   }
 }
+
+/* ---------- Governance "Membership" (Joining / Leaving): the labels are centred over their text on phones ---------- */
+@media (max-width: 767px) {
+  html:is(html, #gov-membership-center-boost) body .governance-membership__card > .governance-membership__tag.governance-membership__tag {
+    justify-self: stretch !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
