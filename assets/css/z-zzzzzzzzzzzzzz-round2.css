@@ -1228,11 +1228,87 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
   }
 }
 
-/* ---------- Governance "Membership" (Joining / Leaving): the labels are centred over their text on phones ---------- */
+/* ---------- Governance (phones): Membership left-aligned; icon / number on the same line as the label / title, text full width below ---------- */
 @media (max-width: 767px) {
-  html:is(html, #gov-membership-center-boost) body .governance-membership__card > .governance-membership__tag.governance-membership__tag {
+  html:is(html, #gov-membership-row-boost) body .openms-lib-page--governance .governance-membership__head {
+    justify-items: start !important;
+    margin-inline: 0 !important;
+    text-align: left !important;
+  }
+
+  html:is(html, #gov-membership-row-boost) body .openms-lib-page--governance .governance-membership__head > * {
+    text-align: left !important;
+    margin-inline: 0 !important;
+    max-width: 100% !important;
+  }
+
+  html:is(html, #gov-membership-row-boost) body .openms-lib-page--governance .governance-membership__card.governance-membership__card {
+    grid-template-columns: auto minmax(0, 1fr) !important;
+    column-gap: 0.75rem !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+
+  html:is(html, #gov-membership-row-boost) body .openms-lib-page--governance .governance-membership__card.governance-membership__card > .governance-membership__icon {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: center !important;
+  }
+
+  html:is(html, #gov-membership-row-boost) body .openms-lib-page--governance .governance-membership__card.governance-membership__card > .governance-membership__tag.governance-membership__tag {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    margin: 0 !important;
+    justify-self: start !important;
+    width: auto !important;
+    text-align: left !important;
+    align-self: center !important;
+  }
+
+  html:is(html, #gov-membership-row-boost) body .openms-lib-page--governance .governance-membership__card.governance-membership__card > .governance-membership__text.governance-membership__text {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    margin-top: 0.5rem !important;
     justify-self: stretch !important;
-    width: 100% !important;
-    text-align: center !important;
+    text-align: left !important;
+  }
+
+  /* "Two layers of governance" tiles: number and title share the first line, the rest sits below */
+  html:is(html, #gov-tiles-below-boost) body .openms-lib-page--governance .openms-lib-page__anchor#governance-bodies .openms-lib-about__tile.openms-lib-about__tile {
+    grid-template-columns: auto minmax(0, 1fr) !important;
+    column-gap: 0.85rem !important;
+    align-items: center !important;
+  }
+
+  html:is(html, #gov-tiles-below-boost) body .openms-lib-page--governance .openms-lib-page__anchor#governance-bodies .openms-lib-about__tile.openms-lib-about__tile > .openms-lib-about__num {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: center !important;
+  }
+
+  html:is(html, #gov-tiles-below-boost) body .openms-lib-page--governance .openms-lib-page__anchor#governance-bodies .openms-lib-about__tile.openms-lib-about__tile > .openms-lib-about__tile-title {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    margin: 0 !important;
+    align-self: center !important;
+  }
+
+  html:is(html, #gov-tiles-below-boost) body .openms-lib-page--governance .openms-lib-page__anchor#governance-bodies .openms-lib-about__tile.openms-lib-about__tile > .openms-lib-about__tile-text {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    margin-top: 0.7rem !important;
+  }
+
+  html:is(html, #gov-tiles-below-boost) body .openms-lib-page--governance .openms-lib-page__anchor#governance-bodies .openms-lib-about__tile.openms-lib-about__tile > .governance-tile__list {
+    grid-column: 1 / -1 !important;
+    grid-row: 3 !important;
+    margin-top: 0.6rem !important;
+  }
+
+  html:is(html, #gov-tiles-below-boost) body .openms-lib-page--governance .openms-lib-page__anchor#governance-bodies .openms-lib-about__tile.openms-lib-about__tile > .openms-lib-about__tile-link {
+    grid-column: 1 / -1 !important;
+    grid-row: 4 !important;
+    margin-top: 0.8rem !important;
+    justify-self: start !important;
   }
 }
