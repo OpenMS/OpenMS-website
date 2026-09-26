@@ -806,10 +806,10 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
     flex-wrap: nowrap !important;
     white-space: nowrap !important;
     justify-content: flex-start !important;
-    column-gap: 0.3rem !important;
+    column-gap: clamp(0.3rem, 1.6vw, 1rem) !important;
     max-width: 100% !important;
     /* scales with the screen so all three labels always fit on one line */
-    font-size: clamp(0.5rem, calc((100vw - 1.9rem) / 32.5), 0.75rem) !important;
+    font-size: clamp(0.5rem, calc((100vw - 1.9rem) / 32.5), 0.9375rem) !important;
   }
 
   html:is(html, #hero-note-up-boost) body .home-page__hero .hero-home__note.hero-home__note--under-graphic .hero-home__note-item {
@@ -1105,5 +1105,42 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
 @media (prefers-reduced-motion: reduce) {
   :is(html, #pubs-more-arrow-boost) body .openms-lib-page--publications .publications-more__btn .publications-more__arrow {
     transition: none;
+  }
+}
+
+/* ---------- Contribute report callout (smaller screens): the email sits on the same line as "Need to report something?" ---------- */
+@media (max-width: 900px) {
+  html:is(html, #coc-email-inline-boost) body .openms-lib-page--contribute .coc-callout__copy {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: baseline !important;
+    column-gap: 1rem !important;
+    row-gap: 0.25rem !important;
+  }
+
+  html:is(html, #coc-email-inline-boost) body .openms-lib-page--contribute .coc-callout__copy > .coc-callout__kicker {
+    order: 1;
+  }
+
+  html:is(html, #coc-email-inline-boost) body .openms-lib-page--contribute .coc-callout__copy > .coc-callout__email {
+    order: 2;
+    margin: 0 !important;
+  }
+
+  html:is(html, #coc-email-inline-boost) body .openms-lib-page--contribute .coc-callout__copy > .coc-callout__text {
+    order: 3;
+    flex: 0 0 100%;
+  }
+}
+
+/* ---------- Press kit "Using the OpenMS identity": the two paragraphs in one column ---------- */
+@media (min-width: 900px) {
+  html:is(html, #press-usage-one-col-boost) body .openms-lib-page--press-kit #usage .openms-lib-resources__head {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html:is(html, #press-usage-one-col-boost) body .openms-lib-page--press-kit #usage .openms-lib-resources__eyebrow,
+  html:is(html, #press-usage-one-col-boost) body .openms-lib-page--press-kit #usage .openms-lib-resources__title {
+    grid-column: auto !important;
   }
 }
