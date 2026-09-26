@@ -22,10 +22,11 @@
 
 :is(html, #hero-actions-boost) .openms-lib-hero__actions,
 :is(html, #hero-actions-boost) .home-page .hero-home__actions {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(10.9rem, 1fr)) !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
   justify-content: center !important;
-  align-items: stretch !important;
+  align-items: center !important;
   justify-self: stretch !important;
   grid-column: 1 / -1 !important;
   width: 100% !important;
@@ -34,34 +35,26 @@
   gap: 0.75rem !important;
 }
 
+/* Buttons always fit their own text (never stretched to a shared column
+   width); they sit side by side while they fit and wrap onto the next row
+   when they don't. */
 :is(html, #hero-actions-boost) .openms-lib-hero__actions .openms-lib-btn,
 :is(html, #hero-actions-boost) .home-page .hero-home__actions .hero-home__btn {
-  width: 100% !important;
-  max-width: none !important;
+  width: auto !important;
+  align-self: auto !important;
+  flex: 0 0 auto !important;
+  max-width: 100% !important;
   min-width: 0 !important;
-  white-space: normal !important;
+  white-space: nowrap !important;
   text-align: center !important;
   height: auto !important;
   min-height: var(--openms-btn-min-height, 2.75rem) !important;
-  padding: var(--openms-btn-padding-y, 0.7rem) 0.9rem !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 1.25rem !important;
   font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
   font-weight: var(--openms-btn-weight, 600) !important;
 }
 
-/* Homepage hero only: buttons hug their text (still at least 11rem, and they
-   still drop to stacked rows when they don't fit) instead of stretching across
-   the whole hero column — same height as every other button. */
+/* Homepage hero: left aligned. */
 :is(html, #hero-actions-boost) .home-page .hero-home__actions {
-  grid-template-columns: repeat(auto-fit, minmax(10rem, max-content)) !important;
-  justify-content: start !important;
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-/* Pages with a long hero label ("Explore ways to contribute", "Report handling
-   manual"): a wider minimum column so the label never wraps to two lines —
-   the pair drops to stacked rows instead once it can't fit side by side. */
-:is(html, #hero-actions-boost) .openms-lib-page--contribute .openms-lib-hero__actions,
-:is(html, #hero-actions-boost) .openms-lib-page--code-of-conduct .openms-lib-hero__actions {
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)) !important;
+  justify-content: flex-start !important;
 }
