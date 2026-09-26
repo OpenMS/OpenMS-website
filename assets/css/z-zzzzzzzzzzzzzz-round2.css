@@ -1149,3 +1149,24 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
 :is(html, #press-logos-up-boost) body .openms-lib-page--press-kit #logos#logos {
   padding-top: 0 !important;
 }
+
+/* ---------- Resource cards (Press kit, Contact, Governance, Donate…): the link reacts only when the link itself is hovered ---------- */
+:is(html, #item-link-only-boost) body .openms-lib-page .openms-lib-resources__item:is(:hover, :focus-within) .openms-lib-resources__item-link:not(:hover):not(:focus-visible) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  gap: 0.35rem !important;
+  text-decoration: none !important;
+  text-underline-offset: 0.2em;
+}
+
+:is(html, #item-link-only-boost) body .openms-lib-page .openms-lib-resources__item .openms-lib-resources__item-link:is(:hover, :focus-visible) {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  gap: 0.6rem !important;
+  text-decoration: none !important;
+}
