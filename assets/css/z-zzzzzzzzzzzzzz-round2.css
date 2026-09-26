@@ -1143,6 +1143,12 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
   html:is(html, #press-usage-one-col-boost) body .openms-lib-page--press-kit #usage .openms-lib-resources__title {
     grid-column: auto !important;
   }
+
+  /* the two paragraphs take half of the page width */
+  html:is(html, #press-usage-half-boost) body .openms-lib-page--press-kit #usage .openms-lib-resources__head > p {
+    max-width: 50vw !important;
+    width: auto !important;
+  }
 }
 
 /* ---------- Press kit "Logo files": the section starts closer to the hero (its top padding was applied twice) ---------- */
@@ -1157,9 +1163,8 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
   border-color: transparent !important;
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
-  gap: 0.35rem !important;
+  gap: 0.4rem !important;
   text-decoration: none !important;
-  text-underline-offset: 0.2em;
 }
 
 :is(html, #item-link-only-boost) body .openms-lib-page .openms-lib-resources__item .openms-lib-resources__item-link:is(:hover, :focus-visible) {
@@ -1170,3 +1175,15 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
   gap: 0.6rem !important;
   text-decoration: none !important;
 }
+
+/* the arrow stays put while the card is hovered; it only slides when the link itself is hovered */
+:is(html, #item-link-only-boost) body .openms-lib-page .openms-lib-resources__item:is(:hover, :focus-within) .openms-lib-resources__item-link:not(:hover):not(:focus-visible) > * {
+  transform: none !important;
+  margin-left: 0 !important;
+}
+
+:is(html, #item-link-only-boost) body .openms-lib-page .openms-lib-resources__item .openms-lib-resources__item-link:is(:hover, :focus-visible) > * {
+  transform: translateX(3px) !important;
+  transition: transform 0.2s ease;
+}
+
