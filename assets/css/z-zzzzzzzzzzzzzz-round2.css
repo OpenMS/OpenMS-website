@@ -1312,3 +1312,9 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
     justify-self: start !important;
   }
 }
+
+/* ---------- Publications list: the paper titles are in uppercase, like the other titles on the page ---------- */
+:is(html, #pub-title-upper-boost) body .publications-page .publication-entry .publication-title,
+:is(html, #pub-title-upper-boost) body .publications-page .publication-entry .publication-title .publication-title-link {
+  text-transform: uppercase !important;
+}
