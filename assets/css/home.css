@@ -2092,7 +2092,8 @@
 .home-page__block--projects .webapps-featured__header-action {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 @media (min-width: 900px) {
@@ -2356,6 +2357,10 @@
   height: 4.25rem;
   max-width: min(10rem, 100%);
   max-height: 4.25rem;
+  /* The source image's wave graphic runs almost edge-to-edge top-to-bottom
+     with no built-in headroom, so bottom-anchoring it like the other logos
+     left it crowding the top of the slot — nudge it down a bit. */
+  margin-top: 0.6rem;
 }
 
 .home-page__block--projects .webapps-project-card--catalog .webapps-project-card__logo[src*="openDDA"] {
@@ -2497,7 +2502,7 @@
 
 @media (max-width: 768px) {
   .home-page__block--projects .webapps-featured__header-action {
-    justify-content: flex-start;
+    justify-content: flex-end;
     width: 100%;
   }
 
@@ -2508,7 +2513,7 @@
     min-height: 0;
     height: auto;
     margin-inline: 0;
-    margin-right: auto;
+    margin-left: auto;
     padding: 0;
     white-space: nowrap;
   }
@@ -2931,6 +2936,29 @@
     margin-inline: auto;
   }
 
+}
+
+/* Tighten the gap between the lead paragraph and "Show all apps" further on
+   phones — comes after the ≤1024px `gap: 1.25rem` rule above so it wins. */
+@media (max-width: 768px) {
+  .home-page__block--projects .webapps-featured__header--home {
+    row-gap: 0.5rem;
+  }
+}
+
+/* "What is OpenMS?" — bring the cards up closer to the title/lead on
+   phones. The header's own margin-bottom (--home-section-head-gap, shared
+   with other homepage sections) and the stacked layout's row-gap were both
+   applying between the header and the cards, doubling up the space; zero
+   the header's margin here and let the row-gap alone control it. */
+@media (max-width: 768px) {
+  .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__layout {
+    row-gap: 1.25rem;
+  }
+
+  .home-page .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__header {
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 768px) {

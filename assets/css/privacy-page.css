@@ -391,14 +391,9 @@
 }
 
 @media (max-width: 720px) {
-  .openms-lib-page--privacy .openms-lib-hero__actions {
-    width: 100%;
-  }
-
-  .openms-lib-page--privacy .openms-lib-hero__actions .openms-lib-btn {
-    width: 100%;
-    justify-content: center;
-  }
+  /* Hero action buttons: breakpoint/sizing now lives in
+     z-zzzzzzz-hero-actions-breakpoint.css (the 640px standard shared by every
+     hero on the site), which out-ranks this block. */
 
   .openms-lib-page--privacy .privacy-details__question {
     padding: 0.9rem 0.95rem;

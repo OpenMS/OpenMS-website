@@ -16,21 +16,23 @@
 }
 
 /* Community card: Discord + GitHub as direct icon links
-   Soft-pill look is shared sitewide in zz-openms-buttons.css */
+   Soft-pill look is shared sitewide in zz-openms-buttons.css. Side by side as
+   long as both fit at a readable width (each at least 7rem); `auto-fit` drops
+   the second button onto its own full-width row once the card is too narrow
+   for both (instead of squeezing or overflowing). */
 .openms-lib-page--contact .contact-path-socials {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
   align-items: stretch;
   align-self: stretch;
   width: 100%;
-  gap: 0.65rem 0.85rem;
+  gap: 0.9rem;
   margin-top: auto;
   padding-top: 0.35rem;
   box-sizing: border-box;
 }
 
 .openms-lib-page--contact .contact-path-social {
-  flex: 1 1 0;
   width: 100%;
   min-width: 0;
   justify-content: center;

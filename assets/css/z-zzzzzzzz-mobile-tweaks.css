@@ -1,0 +1,115 @@
+/* Homepage "Show all apps →": nudge it in a little from the right edge on
+   stacked (<900px) layouts. */
+@media (max-width: 899px) {
+  html body .home-page .home-page__block--projects .webapps-featured__header-action {
+    padding-right: 1.1rem;
+    box-sizing: border-box;
+  }
+}
+
+/* Homepage "View all →" (News and Events headers): nudge it in a little from
+   the right edge. */
+html body .home-page .community-news-events__column-header {
+  padding-right: 1.1rem;
+  box-sizing: border-box;
+}
+
+/* Featured Apps cards on phones (one card per row): the "View app →" link
+   sits right under the description — the 3-line reserve that lines links up
+   across a row on wider screens isn't needed when each card is on its own. */
+@media (max-width: 767px) {
+  html body .home-page .webapps-project-card__text {
+    min-height: 0;
+    flex: 0 0 auto;
+  }
+
+  html body .home-page .webapps-project-card__body {
+    gap: 0.6rem;
+  }
+
+  html body .home-page .webapps-project-card__cta {
+    margin-top: 0;
+  }
+}
+
+/* Developers "Contribute" lead ("Your improvements help researchers
+   worldwide."): fill the full width on phones instead of being balanced into
+   two short, equal lines. */
+@media (max-width: 767px) {
+  html body .openms-lib-developers__lead {
+    text-wrap: wrap !important;
+    max-width: 100% !important;
+    width: 100%;
+  }
+}
+
+/* Citation cards (OpenMS 3 / pyOpenMS-viz / ... — "View on PubMed", "More
+   citations"): buttons fit their own text instead of stretching to full
+   width, side by side while they fit and wrapping when they don't. */
+:is(html, #cite-actions-boost) body .openms-lib-cite__actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.9rem !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+:is(html, #cite-actions-boost) body .openms-lib-cite__actions > a.openms-lib-btn,
+:is(html, #cite-actions-boost) body .openms-lib-cite__actions > .openms-lib-btn {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+}
+
+/* News pager (← Newer / Older →): the standard primary button; only the
+   disabled state (first/last page) is faded. */
+html body .news-pager .openms-lib-btn.news-pager__btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Navbar "Sponsor Us": text (and its label spans) in the same navy as the
+   button's border, in every navbar variant (drawer, desktop, sticky clone). */
+:is(html, #sponsor-nav-boost) body .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active),
+:is(html, #sponsor-nav-boost) body .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active) .navbar-cta-label,
+:is(html, #sponsor-nav-boost) body #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active),
+:is(html, #sponsor-nav-boost) body #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active) .navbar-cta-label {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  border-color: var(--openms-navy) !important;
+}
+
+/* Contribute → "Sponsor OpenMS": the button keeps its natural size at every
+   screen size instead of stretching to full width on phones. */
+:is(html, #support-cta-boost) body .openms-lib-page--contribute .contribute-support__cta.contribute-support__cta {
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  align-self: flex-start !important;
+  justify-self: start !important;
+}
+
+:is(html, #pager-disabled-boost) body .news-pager .openms-lib-btn.news-pager__btn:disabled {
+  opacity: 0.4 !important;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Buttons that keep their natural (desktop) size at every screen size instead
+   of stretching to full width on phones: Developer retreat "Register here",
+   Code of Conduct "Report an incident". */
+:is(html, #keep-size-boost) body .openms-lib-page .retreat-register--closed.openms-lib-btn,
+:is(html, #keep-size-boost) body .openms-lib-page--code-of-conduct .coc-report__actions .openms-lib-btn,
+:is(html, #keep-size-boost) body .openms-lib-page--code-of-conduct .coc-report__actions {
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+  justify-self: start !important;
+}

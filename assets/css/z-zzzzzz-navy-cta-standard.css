@@ -1,0 +1,76 @@
+/* ============================================================================
+   Navy CTA bands — one consistent standard for every "bottom of page" navy
+   band on the site (Support OpenMS → Become a sponsor, Sponsor us → Get
+   started, Contact → Need a hand, Publications → Cite OpenMS, Archived apps →
+   Community opportunity, Contributors → Want to contribute, Governance/Privacy
+   → related pages):
+     - the site's standard button size (--openms-btn-*), matching every other
+       button on the same page (hero buttons, sponsorship tier "Learn more",
+       other "Contact us" instances) instead of a smaller custom pill
+     - side by side, as long as both buttons fit at a readable width (each at
+       least 9rem, enough for labels like "Make a donation" at the larger
+       standard size) — `auto-fit`/`minmax` below drops the second button
+       onto its own full-width row only once the screen is too narrow for
+       both to sit comfortably side by side
+     - within a two-button band, both buttons are exactly the same width
+   These bands had each grown their own size/breakpoint over time (button
+   heights from 39–46px, widths from 117–309px, breakpoints at 560/561/600/
+   639/720px, and two bands — Contact and Archived apps — had unequal-width
+   button pairs). `:is(html, #id)` only adds specificity to beat those older
+   page-scoped !important rules; `html` always matches, so it changes nothing
+   about which pages/elements this file targets.
+   ============================================================================ */
+
+/* ---------- two-button bands: equal-width grid, breaks down if it doesn't fit ---------- */
+:is(html, #navy-cta-boost) body #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions,
+:is(html, #navy-cta-boost) body #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions,
+:is(html, #navy-cta-boost) body #get-help .contribute-coc-band__actions.contribute-coc-band__actions,
+:is(html, #navy-cta-boost) body #cite-openms .contribute-coc-band__actions.contribute-coc-band__actions,
+:is(html, #navy-cta-boost) body #join-community .webapps-archived__revival-actions.webapps-archived__revival-actions,
+:is(html, #navy-cta-boost) body .openms-lib-page--archived .webapps-archived__revival-actions.webapps-archived__revival-actions {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)) !important;
+  gap: 0.9rem !important;
+  width: min(100%, 28rem) !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+  justify-items: stretch !important;
+}
+
+:is(html, #navy-cta-boost) body #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+:is(html, #navy-cta-boost) body #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+:is(html, #navy-cta-boost) body #get-help .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+:is(html, #navy-cta-boost) body #cite-openms .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+:is(html, #navy-cta-boost) body #join-community .webapps-archived__revival-actions.webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn,
+:is(html, #navy-cta-boost) body .openms-lib-page--archived .webapps-archived__revival-actions.webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn,
+:is(html, #navy-cta-boost) body #related-pages .governance-cta-band__actions.governance-cta-band__actions a.openms-lib-btn.openms-lib-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  white-space: normal !important;
+  text-align: center !important;
+  height: auto !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 0.9rem !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  font-weight: var(--openms-btn-weight, 600) !important;
+}
+
+/* ---------- single-button bands: hug their own text ---------- */
+:is(html, #navy-cta-boost) body #related-pages .governance-cta-band__actions.governance-cta-band__actions {
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+}
+
+:is(html, #navy-cta-boost) body #related-pages .governance-cta-band__actions.governance-cta-band__actions a.openms-lib-btn.openms-lib-btn {
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+}

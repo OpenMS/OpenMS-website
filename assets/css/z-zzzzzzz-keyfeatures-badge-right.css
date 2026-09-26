@@ -1,0 +1,42 @@
+/* "What is OpenMS?" cards (Open source / BSD licensed, C++ & Python / C++ ·
+   Python, ...) on the homepage — the tag pill sits at the top-right of the
+   card on the SAME row as the title (title left, tag right), then the text
+   below, at every screen size. Loads after openms-overrides.css, which had
+   stacked the tag above the title; this restores the two-column title row. */
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card {
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  grid-template-rows: auto 1fr !important;
+  grid-template-areas:
+    "title badge"
+    "text text" !important;
+  column-gap: 0.75rem !important;
+  row-gap: 0.55rem !important;
+  align-items: start;
+}
+
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-head {
+  grid-area: badge !important;
+  justify-content: flex-end !important;
+  align-self: start !important;
+}
+
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-title {
+  grid-area: title !important;
+  align-self: start !important;
+}
+
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-text {
+  grid-area: text !important;
+}
+
+/* Code-of-conduct note under the cards: navy icon. */
+:is(html, #kf-note-icon-boost) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note-icon,
+:is(html, #kf-note-icon-boost) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note-icon svg,
+:is(html, #kf-note-icon-boost) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note-icon path {
+  color: var(--openms-navy) !important;
+}
+
+:is(html, #kf-note-icon-boost) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note-icon svg,
+:is(html, #kf-note-icon-boost) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__note-icon path {
+  fill: var(--openms-navy) !important;
+}

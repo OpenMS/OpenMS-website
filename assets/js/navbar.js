@@ -10,6 +10,11 @@
   var COLLISION_EXIT_PX = 18;
   var menuScrollY = 0;
   var collisionMobile = false;
+  // Mobile browsers fire `resize` when the address bar shows/hides (and when the
+  // body is locked for the open drawer) without the width changing. Only a real
+  // width change should close the drawer, otherwise the first tap on the burger
+  // opens the menu and an immediate resize closes it again.
+  var lastLayoutWidth = window.innerWidth;
 
   function isViewportMobile() {
     return window.matchMedia("(max-width: " + MOBILE_MAX + "px)").matches;
@@ -396,11 +401,16 @@
 
   function onLayoutChange() {
     var nodes = getNavElements();
+    var widthChanged = window.innerWidth !== lastLayoutWidth;
+    lastLayoutWidth = window.innerWidth;
+
     updateNavbarLayoutMode();
     updateHeaderHeight();
 
-    closeMobileMenu(nodes.nav);
-    closeMobileMenu(nodes.clone);
+    if (widthChanged) {
+      closeMobileMenu(nodes.nav);
+      closeMobileMenu(nodes.clone);
+    }
 
     syncMenuAccessibility(
       nodes.nav,

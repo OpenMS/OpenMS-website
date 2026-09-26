@@ -65,8 +65,8 @@ languages:
       newsBanner:
         enabled: true
         label: News
-        text: Workshop at University of Helsinki on April 30th 2026.
-        link: /news/helsinki_workshop_2026/
+        text: 'MS Analysis with OpenMS: Free Workshop at The National University of Singapore.'
+        link: /news/hupo_workshop_26/
       contributePage:
         eyebrow: Community
         subtitle: >-
@@ -1128,6 +1128,12 @@ languages:
               text: Fork and customize the template for your pipeline.
               url: https://github.com/OpenMS/streamlit-template/fork
               linkText: Fork template
+            - tag: AI
+              title: Jupyter Notebook → WebApp
+              icon: fas fa-robot
+              text: Transform your Jupyter notebook into a WebApp with a single prompt.
+              url: https://template.webapps.openms.org/
+              linkText: Try it now
             - tag: Deploy
               title: streamlit-deployment
               icon: fab fa-docker
@@ -1463,7 +1469,7 @@ languages:
             tag: Web apps
             accent: webapps
             size: standard
-            icon: /images/logos/openms-webapps-logo.png
+            icon: /images/webapp/logo/template.svg
             description: >-
               Web interface template for OpenMS pipelines. Deploy custom analysis
               tools as interactive web apps without frontend development.

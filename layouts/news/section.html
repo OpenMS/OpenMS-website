@@ -53,9 +53,9 @@
               </ul>
             </div>
             <nav class="news-pager" data-news-pager aria-label="News pages" hidden>
-              <button type="button" class="news-pager__btn" data-news-prev>&larr; {{ index $cfg "newerLabel" | default "Newer" }}</button>
+              <button type="button" class="openms-lib-btn openms-lib-btn--primary news-pager__btn" data-news-prev>&larr; {{ index $cfg "newerLabel" | default "Newer" }}</button>
               <p class="news-pager__status" data-news-status aria-live="polite"></p>
-              <button type="button" class="news-pager__btn" data-news-next>{{ index $cfg "olderLabel" | default "Older" }} &rarr;</button>
+              <button type="button" class="openms-lib-btn openms-lib-btn--primary news-pager__btn" data-news-next>{{ index $cfg "olderLabel" | default "Older" }} &rarr;</button>
             </nav>
           </section>
           {{- end }}

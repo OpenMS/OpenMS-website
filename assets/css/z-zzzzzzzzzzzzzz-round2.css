@@ -1,0 +1,1320 @@
+/* ============================================================================
+   UI polish round 2 — navbar logo, typography standard, buttons that hug
+   their text, and a handful of spacing / card fixes.
+   ============================================================================ */
+
+/* ---------- navbar logo: one size from sm up to xl, smaller on phones ---------- */
+:root {
+  --openms-navbar-logo-height: 60px;
+}
+
+@media (max-width: 639px) {
+  :root {
+    --openms-navbar-logo-height: 52px;
+  }
+}
+
+/* the compact-desktop rule scaled the logo between 1024 and 1439px */
+html body .site-header #nav.navbar.is-fresh .navbar-brand img.navbar-logo,
+html body #navbar-clone.navbar.is-fresh .navbar-brand img.navbar-logo {
+  height: var(--openms-navbar-logo-height) !important;
+  max-height: var(--openms-navbar-logo-height) !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  html body .site-header #nav.navbar.is-fresh .container,
+  html body #navbar-clone.navbar.is-fresh .container {
+    min-height: calc(var(--openms-navbar-logo-height) + 0.65rem);
+  }
+}
+
+/* ---------- typography standard: top title (eyebrow), title, description ---------- */
+html:is(html, #eyebrow-std-boost) body :is(
+  .openms-lib-hero__eyebrow,
+  .openms-lib-about__eyebrow,
+  .openms-lib-resources__eyebrow,
+  .openms-lib-block__eyebrow,
+  .openms-lib-topp-split__eyebrow,
+  .openms-lib-cite__eyebrow,
+  .openms-lib-developers__eyebrow,
+  .contribute-channels__eyebrow,
+  .contribute-ways__eyebrow,
+  .contribute-outreach__eyebrow,
+  .contribute-support__kicker,
+  .contribute-coc-band__kicker,
+  .sponsor-eyebrow,
+  .publications-key__eyebrow,
+  .privacy-overview__eyebrow,
+  .webapps-featured__eyebrow,
+  .ecosystem-home__eyebrow,
+  .community-events-home__eyebrow,
+  .community-home__eyebrow,
+  .contact-home__eyebrow,
+  .keyfeatures-modern__eyebrow,
+  .trusted-by__home-eyebrow,
+  .home-pathways__eyebrow,
+  .uni-partners__eyebrow,
+  .news-section__eyebrow
+) {
+  font-size: 0.875rem !important;
+  line-height: 1.3 !important;
+}
+
+/* Contact page: section title / eyebrow at the standard size */
+html body .openms-lib-page--contact #contact-paths .openms-lib-resources__title {
+  font-size: var(--openms-section-title-size) !important;
+}
+
+/* Developer retreat hero title: same as every other hero */
+:is(html, #retreat-h1-boost) body .openms-lib-page--developer-retreat .openms-lib-hero__title.openms-lib-hero__title {
+  font-size: clamp(1.65rem, 1.05rem + 2.6vw, 3.25rem) !important;
+}
+
+html body .openms-lib-page--developer-retreat .openms-lib-hero__title-line {
+  font-size: inherit !important;
+}
+
+/* ---------- Code of Conduct callout ---------- */
+html body .openms-lib-page--contribute .coc-callout__email,
+html body .openms-lib-page--contribute .coc-callout__email a,
+html body .openms-lib-page--contribute .coc-callout__text {
+  font-family: var(--openms-font-body) !important;
+  font-size: var(--openms-body-size) !important;
+  font-weight: 400 !important;
+  line-height: 1.55;
+}
+
+html body .openms-lib-page--contribute .coc-callout__email a {
+  font-weight: 700 !important;
+}
+
+html body .openms-lib-page--contribute .coc-callout__actions {
+  justify-content: flex-end !important;
+  margin-left: auto;
+}
+
+@media (max-width: 900px) {
+  html body .openms-lib-page--contribute .coc-callout__actions {
+    justify-content: flex-start !important;
+    margin-left: 0;
+  }
+}
+
+/* ---------- Cite OpenMS band: buttons fit their text ---------- */
+:is(html, #cite-hug-boost) body #cite-openms .contribute-coc-band__actions.contribute-coc-band__actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: auto !important;
+  max-width: 100% !important;
+  gap: 0.9rem !important;
+}
+
+:is(html, #cite-hug-boost) body #cite-openms .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn {
+  width: auto !important;
+  align-self: auto !important;
+  flex: 0 0 auto !important;
+  max-width: 100% !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 1.25rem !important;
+}
+
+/* ---------- Contributors: Executive Committee closer to the board ---------- */
+html body .openms-lib-page--contributors #executive-committee#executive-committee {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+html body .openms-lib-page--contributors #executive-committee#executive-committee .openms-lib-resources {
+  padding-top: 0 !important;
+}
+
+/* ---------- Contact: Discord / GitHub as text links (like the other cards) ---------- */
+html body .openms-lib-page--contact .contact-path-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  margin-top: auto;
+}
+
+/* ---------- Privacy topic rows: same number / title style as other cards ---------- */
+html body .openms-lib-page--privacy .privacy-pro__summary-index {
+  font-family: var(--openms-font-heading) !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-title {
+  font-size: var(--openms-card-title-size) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+/* ---------- Press kit: more space between the two usage paragraphs ---------- */
+html body .openms-lib-page--press-kit #usage .openms-lib-resources__head {
+  row-gap: 1.25rem !important;
+}
+
+@media (min-width: 900px) {
+  html body .openms-lib-page--press-kit #usage .openms-lib-resources__head {
+    column-gap: clamp(2.5rem, 6vw, 5rem) !important;
+  }
+}
+
+html body .openms-lib-page--press-kit #usage .openms-lib-resources__head {
+  align-items: start !important;
+}
+
+html body .openms-lib-page--press-kit #usage .openms-lib-resources__head .openms-lib-resources__lead {
+  margin-top: 0 !important;
+}
+
+/* ---------- Contribute funding panel: centred on mobile / sm ---------- */
+@media (max-width: 767px) {
+  html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support__copy {
+    text-align: center !important;
+    justify-items: center;
+  }
+
+  html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support .contribute-support__cta.openms-lib-btn {
+    align-self: center !important;
+  }
+}
+
+/* ---------- Developer retreat "About the retreat": cards closer on mobile ---------- */
+@media (max-width: 767px) {
+  html body .openms-lib-page--developer-retreat #about-the-retreat .openms-lib-about__mosaic.retreat-highlights__mosaic {
+    gap: 0.6rem !important;
+  }
+}
+
+/* Contact "Contact" eyebrow and Governance "Process" eyebrow at the standard size */
+html:is(html, #eyebrow-std-boost2) body :is(.openms-lib-page--contact .openms-lib-resources__eyebrow, .governance-membership__eyebrow) {
+  font-size: 0.875rem !important;
+}
+
+/* ---------- Homepage hero: "Open-source · Free forever" 1px smaller than the
+   "Open science → Clear results" / "OpenMS" chips in the hero graphic ---------- */
+html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebrow {
+  font-size: calc(0.6875rem - 1px) !important;
+}
+
+@media (min-width: 901px) {
+  html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebrow {
+    font-size: calc(clamp(0.65rem, 0.55rem + 0.2vw, 0.75rem) - 1px) !important;
+  }
+}
+
+/* ---------- OpenMS-lib page: "Need help?" as a compact, centred strip
+   (same background as the next section) ---------- */
+:is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+  padding: 2rem var(--openms-page-inline, 2rem) !important;
+  background: #f2f3f5 !important;
+  background-color: #f2f3f5 !important;
+  border-bottom: 0;
+  text-align: center !important;
+}
+
+:is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-copy {
+  justify-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 38rem !important;
+  flex: 0 0 auto !important;
+}
+
+:is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist :is(.openms-lib-resources__assist-title, .openms-lib-resources__assist-text) {
+  text-align: center !important;
+}
+
+:is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  width: auto !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  gap: 0.75rem !important;
+}
+
+:is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started#getting-started .openms-lib-resources__assist-actions .openms-lib-resources__assist-btn.openms-lib-resources__assist-btn.openms-lib-btn {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 1.25rem !important;
+}
+
+/* ---------- OpenMS-lib page: citation heading in sentence case, smaller ---------- */
+:is(html, #lib-cite-title-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) .openms-lib-cite__title {
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.75rem) !important;
+  line-height: 1.25 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+/* ---------- OpenMS-lib "Contribute" cards: text links instead of buttons ----------
+   Same treatment as the cards on /contribute/: a hairline above the row, then
+   plain bold blue links (platform names with icons; arrows on the PR links),
+   and the featured navy card's "Read guidelines →" as a plain white link. */
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__platforms {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.4rem 1.1rem !important;
+  margin-top: auto !important;
+  padding-top: 0.75rem !important;
+  border-top: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  font-family: var(--openms-font-body) !important;
+  font-size: var(--openms-text-min) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transform: none !important;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) {
+  text-decoration: none !important;
+  background: transparent !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__platforms a.openms-lib-developers__platform-btn .openms-lib-btn__label {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+/* brand-coloured platform icons, like /contribute/ — also while the card or
+   link is hovered / focused, and on the SVG path itself */
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-windows,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-windows path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-windows,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-windows path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-windows,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-windows path {
+  color: #0078d4 !important;
+  fill: #0078d4 !important;
+  -webkit-text-fill-color: #0078d4 !important;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-apple,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-apple path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-apple,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-apple path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-apple,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-apple path {
+  color: #1d1d1f !important;
+  fill: #1d1d1f !important;
+  -webkit-text-fill-color: #1d1d1f !important;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-linux,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-linux path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-linux,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-linux path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-linux,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-linux path {
+  color: #e5a100 !important;
+  fill: #e5a100 !important;
+  -webkit-text-fill-color: #e5a100 !important;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-github,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-github path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-github,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-github path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-github,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-github path {
+  color: #181717 !important;
+  fill: #181717 !important;
+  -webkit-text-fill-color: #181717 !important;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-book-open,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms .fa-book-open path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-book-open,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms .fa-book-open path,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-book-open,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__platforms a:is(:hover, :focus-visible) .fa-book-open path {
+  color: var(--openms-blue) !important;
+  fill: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+/* platform / link icons a little larger so their colours read clearly */
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__platforms a.openms-lib-developers__platform-btn :is(svg, i) {
+  font-size: 1.25rem !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  flex: 0 0 auto;
+}
+
+/* arrows on the PR links (the platform links have none, like /contribute/) */
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platform-btn::after {
+  content: "\2192";
+  font-weight: 700;
+  color: var(--openms-blue);
+}
+
+/* Reviewing Pull Requests: blue links whose arrow slides right on hover */
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  text-decoration: none !important;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platform-btn::after {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platform-btn:is(:hover, :focus-visible)::after {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platform-btn::after {
+    transition: none;
+  }
+}
+
+/* Card links: text and icon turn blue while the link is hovered / focused */
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card.openms-lib-developers__card .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible),
+:is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card.openms-lib-developers__card .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) :is(svg, path, i, .openms-lib-btn__label) {
+  color: var(--openms-blue) !important;
+  fill: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  text-decoration: none !important;
+}
+
+/* ---------- Sponsorship levels: "Learn more" as a text link, not a button ---------- */
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta.sponsor-tier__cta,
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier:is(:hover, :focus-within, .sponsor-tier--active, .sponsor-tier--featured) .sponsor-tier__cta.sponsor-tier__cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  align-self: flex-start !important;
+  gap: 0.3rem !important;
+  width: auto !important;
+  min-height: 0 !important;
+  margin-top: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-size: var(--openms-text-min) !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta.sponsor-tier__cta::after {
+  content: "\2192";
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__toggle:is(:hover, :focus-visible) .sponsor-tier__cta.sponsor-tier__cta::after,
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta.sponsor-tier__cta:hover::after {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta.sponsor-tier__cta::after {
+    transition: none;
+  }
+}
+
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta .sponsor-tier__cta-label {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+}
+
+/* ---------- Privacy topics: title and description sit right after the number ---------- */
+html body .openms-lib-page--privacy .privacy-pro__summary {
+  grid-template-columns: auto minmax(0, 1fr) auto !important;
+  column-gap: 0.75rem !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-index {
+  width: auto !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Privacy "Who we are": always left-aligned, at every screen size ---------- */
+html:is(html, #privacy-who-left-boost) body .openms-lib-page--privacy #who-we-are :is(.openms-lib-about__head, .openms-lib-about__head-copy, .openms-lib-about__eyebrow, .openms-lib-about__title, .openms-lib-about__lead) {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  justify-items: start !important;
+  align-items: flex-start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* ---------- Privacy topics: number on top, title + description below it ---------- */
+html body .openms-lib-page--privacy .privacy-pro__summary {
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  grid-template-areas:
+    "index arrow"
+    "copy copy" !important;
+  row-gap: 0.4rem !important;
+  align-items: start !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-index {
+  grid-area: index !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-copy {
+  grid-area: copy !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary::after {
+  grid-area: arrow !important;
+  align-self: center;
+}
+
+/* ---------- Privacy topics: cleaner, easier-to-scan cards ---------- */
+/* one card per line at every screen size */
+html body .openms-lib-page--privacy .privacy-pro__list {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+/* card frame: soft hover, blue accent while open */
+html body .openms-lib-page--privacy .privacy-pro__item {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__item:hover {
+  border-color: var(--pro-line-strong, rgba(var(--openms-navy-rgb), 0.22));
+  box-shadow: var(--pro-shadow-hover, 0 0.5rem 1.25rem rgba(var(--openms-navy-rgb), 0.08));
+}
+
+html body .openms-lib-page--privacy .privacy-pro__item[open] {
+  border-color: rgba(var(--openms-blue-rgb), 0.45);
+  box-shadow: 0 0 0 1px rgba(var(--openms-blue-rgb), 0.18), var(--pro-shadow);
+}
+
+html body .openms-lib-page--privacy .privacy-pro__item[open] > .privacy-pro__summary {
+  background: rgba(var(--openms-blue-rgb), 0.04);
+}
+
+/* padding and a slightly smaller number so the collapsed cards stay compact */
+html body .openms-lib-page--privacy .privacy-pro__summary {
+  padding: 1.15rem 1.35rem !important;
+  row-gap: 0.35rem !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-index {
+  font-size: clamp(2.25rem, 4vw, 2.75rem) !important;
+  letter-spacing: -0.04em !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary:focus-visible {
+  outline: 2px solid var(--openms-blue);
+  outline-offset: -2px;
+}
+
+/* opened text: comfortable reading width and spacing */
+html body .openms-lib-page--privacy .privacy-pro__answer {
+  padding: 1.25rem 1.35rem 1.4rem !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__rich {
+  max-width: 46rem;
+  line-height: 1.7;
+}
+
+/* intro sentence: use a readable line length instead of a narrow column */
+html body .openms-lib-page--privacy #privacy-topics .openms-lib-resources__lead {
+  max-width: 44rem !important;
+}
+
+/* ---------- Privacy topics: title beside the number, description below ---------- */
+html body .openms-lib-page--privacy .privacy-pro__summary {
+  grid-template-columns: auto minmax(0, 1fr) auto !important;
+  grid-template-areas:
+    "index title arrow"
+    "index text text" !important;
+  column-gap: 0.85rem !important;
+  row-gap: 0.4rem !important;
+  align-items: start !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-copy {
+  display: contents !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-title {
+  grid-area: title !important;
+  margin: 0 !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-text {
+  grid-area: text !important;
+  margin: 0 !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-index {
+  margin: 0 !important;
+  align-self: start !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary-title {
+  margin-top: -0.3rem !important;
+  line-height: 1.3 !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary::after {
+  align-self: start !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__summary::after {
+  margin-top: 0 !important;
+}
+
+html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summary::after {
+  margin-top: 0 !important;
+}
+
+/* ---------- Governance "Separation of Responsibilities": left-aligned head on mobile ---------- */
+@media (max-width: 899px) {
+  html:is(html, #gov-resp-left-boost) body .openms-lib-page #responsibilities :is(.openms-lib-about__head, .openms-lib-about__head-copy, .openms-lib-about__eyebrow, .openms-lib-about__title, .openms-lib-about__lead, .governance-lead-line) {
+    text-align: left !important;
+    justify-content: flex-start !important;
+    justify-items: start !important;
+    align-items: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  html:is(html, #gov-resp-left-boost) body .openms-lib-page #responsibilities .governance-lead-line {
+    display: inline !important;
+  }
+}
+
+/* ---------- Contribute hero: "Join Discord" first on mobile ---------- */
+@media (max-width: 639px) {
+  html:is(html, #contribute-hero-order-boost) body .openms-lib-page--contribute:not(.openms-lib-page--report-handling) .openms-lib-hero__actions > a[href*="discord"] {
+    order: -1;
+  }
+}
+
+/* ---------- "For Developers / Contribute" cards: icons on the left on mobile ---------- */
+@media (max-width: 767px) {
+  html:is(html, #dev-icons-left-boost) body .openms-lib-page #for-developers .openms-lib-developers__card-icon {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-self: flex-start !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+  }
+}
+
+/* ---------- "Reviewing Pull Requests" on every page: links, not buttons ---------- */
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.4rem 1.1rem !important;
+  margin-top: auto !important;
+  padding-top: 0.75rem !important;
+  border-top: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
+  grid-template-columns: none !important;
+}
+
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-family: var(--openms-font-body) !important;
+  font-size: var(--openms-text-min) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn .openms-lib-btn__label {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn :is(svg, i) {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  font-size: 1.25rem !important;
+  flex: 0 0 auto;
+}
+
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn .fa-github, :is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn .fa-github path { color: #181717 !important; fill: #181717 !important; }
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn .fa-book-open, :is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn .fa-book-open path { color: var(--openms-blue) !important; fill: var(--openms-blue) !important; }
+
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn::after {
+  content: "\2192";
+  display: inline-block;
+  font-weight: 700;
+  color: var(--openms-blue);
+  transition: transform 0.2s ease;
+}
+
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible)::after {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn::after { transition: none; }
+}
+
+/* ---------- Footer: four equal-width link columns; long links wrap ---------- */
+@media (min-width: 1101px) {
+  html body #footer.footer-redesign .footer-nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-content: stretch;
+    width: 100%;
+    max-width: 56rem;
+    margin-left: auto;
+    padding-right: 0;
+  }
+
+  html body #footer.footer-redesign .footer-nav .footer-link-group ul li a {
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+  }
+}
+
+/* ---------- OpenMS-lib "Explore" band: cards size to their content, never touch the bottom ---------- */
+:is(html, #lib-explore-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__dark {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  padding-bottom: clamp(3rem, 6vw, 5.25rem) !important;
+}
+
+:is(html, #lib-explore-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__explore-grid {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  grid-auto-rows: auto !important;
+  align-items: stretch !important;
+  margin-bottom: 0 !important;
+}
+
+:is(html, #lib-explore-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__explore-grid > * {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+/* ---------- Homepage "Adopted by labs and institutions worldwide": the same two
+   scrolling logo rows on small screens as on large ones (instead of the static grid) ---------- */
+@media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
+  :is(html, #home-partners-marquee-boost) body .home-page__block--partners .uni-partners--home .uni-partners__marquees {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    margin-top: 0.75rem !important;
+  }
+
+  :is(html, #home-partners-marquee-boost) body .home-page__block--partners .uni-partners--home .uni-partners__marquee {
+    display: block !important;
+  }
+
+  :is(html, #home-partners-marquee-boost) body .home-page__block--partners .uni-partners--home .uni-partners__static {
+    display: none !important;
+  }
+
+  /* the scrolling rows are wider than the screen: clip them so the page never widens */
+  :is(html, #home-partners-marquee-boost) body .home-page__block--partners .uni-partners--home,
+  :is(html, #home-partners-marquee-boost) body .home-page__block--partners .uni-partners--home .uni-partners__marquees,
+  :is(html, #home-partners-marquee-boost) body .home-page__block--partners .uni-partners--home .uni-partners__marquee {
+    overflow-x: clip !important;
+    max-width: 100%;
+  }
+}
+
+/* ---------- Homepage hero (mobile): graphic and its legend sit closer to the buttons / chart ---------- */
+@media (max-width: 767px) {
+  html:is(html, #hero-note-up-boost) body .home-page__hero .hero-home__visual {
+    margin-top: 0.25rem !important;
+  }
+
+  html:is(html, #hero-note-up-boost) body .home-page__hero .hero-home__note.hero-home__note--under-graphic {
+    margin-top: 0.4rem !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    justify-content: space-between !important;
+    column-gap: clamp(0.3rem, 1.6vw, 1rem) !important;
+    max-width: 100% !important;
+    /* scales with the screen so all three labels always fit on one line */
+    font-size: clamp(0.5rem, calc((100vw - 1.9rem) / 32.5), 0.9375rem) !important;
+  }
+
+  html:is(html, #hero-note-up-boost) body .home-page__hero .hero-home__note.hero-home__note--under-graphic .hero-home__note-item {
+    white-space: nowrap !important;
+    font-size: inherit !important;
+    gap: 0.25rem !important;
+  }
+}
+
+/* Mobile: the top title (eyebrow) stays a small label — smaller than the description below it */
+@media (max-width: 767px) {
+  html:is(html, #eyebrow-mobile-boost) body :is(
+  .openms-lib-hero__eyebrow,
+  .openms-lib-about__eyebrow,
+  .openms-lib-resources__eyebrow,
+  .openms-lib-block__eyebrow,
+  .openms-lib-topp-split__eyebrow,
+  .openms-lib-cite__eyebrow,
+  .openms-lib-developers__eyebrow,
+  .contribute-channels__eyebrow,
+  .contribute-ways__eyebrow,
+  .contribute-outreach__eyebrow,
+  .contribute-support__kicker,
+  .contribute-coc-band__kicker,
+  .sponsor-eyebrow,
+  .publications-key__eyebrow,
+  .privacy-overview__eyebrow,
+  .webapps-featured__eyebrow,
+  .ecosystem-home__eyebrow,
+  .community-events-home__eyebrow,
+  .community-home__eyebrow,
+  .contact-home__eyebrow,
+  .keyfeatures-modern__eyebrow,
+  .trusted-by__home-eyebrow,
+  .home-pathways__eyebrow,
+  .uni-partners__eyebrow,
+  .news-section__eyebrow
+) {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.12em !important;
+    line-height: 1.3 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html:is(html, #eyebrow-mobile-boost2) body :is(.openms-lib-page--contact .openms-lib-resources__eyebrow, .governance-membership__eyebrow) {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.12em !important;
+  }
+}
+
+/* ---------- OpenMS-lib "What is OpenMS?" cards on mobile: number on the left, title and text to its right ---------- */
+@media (max-width: 767px) {
+  :is(html, #lib-benefit-side-boost) body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit {
+    display: grid !important;
+    grid-template-columns: 3.6rem minmax(0, 1fr) !important;
+    grid-template-areas:
+      "num title"
+      "num text" !important;
+    column-gap: 1rem !important;
+    row-gap: 0.3rem !important;
+    align-items: start !important;
+  }
+
+  :is(html, #lib-benefit-side-boost) body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit-num {
+    grid-area: num !important;
+    align-self: start;
+    margin: 0 !important;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  :is(html, #lib-benefit-side-boost) body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit-title {
+    grid-area: title !important;
+    align-self: start !important;
+    margin: -0.5rem 0 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  :is(html, #lib-benefit-side-boost) body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit-text {
+    grid-area: text !important;
+    margin: 0 !important;
+    hyphens: manual !important;
+    -webkit-hyphens: manual !important;
+  }
+}
+
+/* ---------- pyOpenMS / pyOpenMS Viz / WebApps developer cards: a hovered card stays white, so its
+   icon, title, text and links stay readable (some older rules turned the text white on a white card) ---------- */
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) {
+  background: var(--openms-white, #fff) !important;
+  background-color: var(--openms-white, #fff) !important;
+  border-color: var(--pro-line-strong, rgba(var(--openms-navy-rgb), 0.22)) !important;
+}
+
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-title,
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-title span {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-subtitle {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-icon,
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-icon :is(i, svg, path) {
+  color: var(--openms-blue) !important;
+  fill: currentColor;
+}
+
+:is(html, #dev-hover-white-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-link {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+/* ---------- News page (mobile): the "All years" filter sits closer to the hero ---------- */
+@media (max-width: 767px) {
+  :is(html, #news-filter-up-boost) body .openms-lib-page__anchor:has(> .news-page-block) {
+    padding-top: 0.75rem !important;
+  }
+}
+
+/* ---------- Contribute "Need to report something?": the email comes after the description ---------- */
+html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-callout__copy > .coc-callout__email {
+  order: 3;
+}
+
+html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-callout__copy > .coc-callout__text {
+  order: 2;
+}
+
+/* ---------- Contribute funding panel: from sm up the button sits to the right of the text ---------- */
+@media (min-width: 768px) {
+  :is(html, #funding-btn-right-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1.5rem 2.5rem !important;
+  }
+
+  :is(html, #funding-btn-right-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support__copy {
+    flex: 1 1 auto !important;
+    max-width: 44rem !important;
+  }
+
+  :is(html, #funding-btn-right-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support .contribute-support__cta.openms-lib-btn {
+    flex: 0 0 auto !important;
+    align-self: center !important;
+    margin-left: auto !important;
+  }
+}
+
+/* ---------- Contribute "Ways to contribute" heading: wider on large screens ---------- */
+@media (min-width: 1200px) {
+  :is(html, #ways-head-wide-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute :is(.openms-lib-resources__head, .contribute-ways__head) {
+    max-width: none !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  :is(html, #ways-head-wide-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute :is(.openms-lib-resources__lead, .contribute-ways__lead) {
+    max-width: min(100%, 72rem) !important;
+    width: 100% !important;
+    justify-self: start !important;
+  }
+}
+
+/* ---------- Contribute Code of Conduct values ("We encourage"…): text to the right of the icon ---------- */
+:is(html, #coc-value-side-boost) body .openms-lib-page--contribute .coc-value {
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+}
+
+:is(html, #coc-value-side-boost) body .openms-lib-page--contribute .coc-value > .coc-value__icon {
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+}
+
+:is(html, #coc-value-side-boost) body .openms-lib-page--contribute .coc-value > .coc-value__body {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+}
+
+:is(html, #coc-value-side-boost) body .openms-lib-page--contribute .coc-value__title {
+  margin-top: -0.2rem !important;
+}
+
+/* ---------- Sponsor Us FAQ: the accordion sits right next to the heading text (no wide empty gap on big screens) ---------- */
+@media (min-width: 900px) {
+  :is(html, #faq-close-boost) body .openms-lib-page--sponsor-us .sponsor-faq-pro__inner {
+    grid-template-columns: minmax(0, clamp(20rem, 35vw, 42rem)) minmax(0, 52rem) !important;
+    justify-content: start !important;
+    column-gap: clamp(2rem, 4vw, 4rem) !important;
+  }
+
+  :is(html, #faq-close-boost) body .openms-lib-page--sponsor-us .sponsor-faq__list {
+    max-width: none !important;
+    width: 100% !important;
+    justify-self: start !important;
+  }
+}
+
+/* ---------- Contribute outreach card: the social links sit close to the text ---------- */
+@media (min-width: 1024px) {
+  :is(html, #outreach-close-boost) body .openms-lib-page--contribute .contribute-outreach__inner {
+    grid-template-columns: minmax(0, 40rem) minmax(0, 30rem) !important;
+    justify-content: start !important;
+    column-gap: clamp(2rem, 4vw, 4rem) !important;
+  }
+}
+
+/* ---------- Contribute "Build from source": links turn blue only when the link itself is hovered ---------- */
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible),
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) span {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) .fa-windows,
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) .fa-windows path {
+  color: #0078d4 !important;
+  fill: #0078d4 !important;
+}
+
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) .fa-apple,
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) .fa-apple path {
+  color: #555 !important;
+  fill: #555 !important;
+}
+
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) .fa-linux,
+:is(html, #os-links-hover-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a:not(:hover):not(:focus-visible) .fa-linux path {
+  color: #fcc624 !important;
+  fill: #fcc624 !important;
+}
+
+@media (min-width: 900px) {
+  :is(html, #faq-head-wide-boost) body .openms-lib-page--sponsor-us .sponsor-faq-pro__head,
+  :is(html, #faq-head-wide-boost) body .openms-lib-page--sponsor-us .sponsor-faq-pro__lead {
+    max-width: none !important;
+    width: 100% !important;
+  }
+}
+
+/* ---------- Publications "Key publications": heading text runs the full page width ---------- */
+:is(html, #pubs-lead-full-boost) body .publications-featured .openms-lib-resources__head {
+  max-width: none !important;
+  width: 100% !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+:is(html, #pubs-lead-full-boost) body .publications-featured .openms-lib-resources__lead {
+  max-width: none !important;
+  width: 100% !important;
+  justify-self: stretch !important;
+}
+
+/* ---------- Publications: "All publications" heading text full width; "Show more" on the right ---------- */
+:is(html, #pubs-archive-lead-full-boost) body .publications-bibliography .openms-lib-resources__head {
+  max-width: none !important;
+  width: 100% !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+:is(html, #pubs-archive-lead-full-boost) body .publications-bibliography .openms-lib-resources__lead {
+  max-width: none !important;
+  width: 100% !important;
+  justify-self: stretch !important;
+}
+
+:is(html, #pubs-more-right-boost) body .openms-lib-page--publications .publications-more {
+  justify-content: flex-end !important;
+}
+
+/* ---------- Publications "Show more": a little in from the right edge, with an arrow that slides on hover ---------- */
+:is(html, #pubs-more-arrow-boost) body .openms-lib-page--publications .publications-more {
+  padding-right: clamp(1rem, 3vw, 2.5rem) !important;
+}
+
+:is(html, #pubs-more-arrow-boost) body .openms-lib-page--publications .publications-more__btn .publications-more__arrow {
+  display: inline-block;
+  margin-left: 0.4rem;
+  transition: transform 0.2s ease;
+}
+
+:is(html, #pubs-more-arrow-boost) body .openms-lib-page--publications .publications-more__btn:is(:hover, :focus-visible) .publications-more__arrow {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(html, #pubs-more-arrow-boost) body .openms-lib-page--publications .publications-more__btn .publications-more__arrow {
+    transition: none;
+  }
+}
+
+/* ---------- Contribute report callout (smaller screens): the email sits on the same line as "Need to report something?" ---------- */
+@media (max-width: 900px) {
+  html:is(html, #coc-email-inline-boost) body .openms-lib-page--contribute .coc-callout__copy {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: baseline !important;
+    column-gap: 1rem !important;
+    row-gap: 0.25rem !important;
+  }
+
+  html:is(html, #coc-email-inline-boost) body .openms-lib-page--contribute .coc-callout__copy > .coc-callout__kicker {
+    order: 1;
+  }
+
+  html:is(html, #coc-email-inline-boost) body .openms-lib-page--contribute .coc-callout__copy > .coc-callout__email {
+    order: 2;
+    margin: 0 !important;
+  }
+
+  html:is(html, #coc-email-inline-boost) body .openms-lib-page--contribute .coc-callout__copy > .coc-callout__text {
+    order: 3;
+    flex: 0 0 100%;
+  }
+}
+
+/* ---------- Press kit "Using the OpenMS identity": the two paragraphs in one column ---------- */
+@media (min-width: 900px) {
+  html:is(html, #press-usage-one-col-boost) body .openms-lib-page--press-kit #usage .openms-lib-resources__head {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html:is(html, #press-usage-one-col-boost) body .openms-lib-page--press-kit #usage .openms-lib-resources__eyebrow,
+  html:is(html, #press-usage-one-col-boost) body .openms-lib-page--press-kit #usage .openms-lib-resources__title {
+    grid-column: auto !important;
+  }
+
+  /* the two paragraphs take half of the page width */
+  html:is(html, #press-usage-half-boost) body .openms-lib-page--press-kit #usage .openms-lib-resources__head > p {
+    max-width: 50vw !important;
+    width: auto !important;
+  }
+}
+
+/* ---------- Press kit "Logo files": the section starts closer to the hero (its top padding was applied twice) ---------- */
+:is(html, #press-logos-up-boost) body .openms-lib-page--press-kit #logos#logos {
+  padding-top: 0 !important;
+}
+
+/* ---------- Resource cards (Press kit, Contact, Governance, Donate…): the link reacts only when the link itself is hovered ---------- */
+:is(html, #item-link-only-boost) body .openms-lib-page .openms-lib-resources__item:is(:hover, :focus-within) .openms-lib-resources__item-link:not(:hover):not(:focus-visible) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  gap: 0.4rem !important;
+  text-decoration: none !important;
+}
+
+:is(html, #item-link-only-boost) body .openms-lib-page .openms-lib-resources__item .openms-lib-resources__item-link:is(:hover, :focus-visible) {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  gap: 0.6rem !important;
+  text-decoration: none !important;
+}
+
+/* the arrow stays put while the card is hovered; it only slides when the link itself is hovered */
+:is(html, #item-link-only-boost) body .openms-lib-page .openms-lib-resources__item:is(:hover, :focus-within) .openms-lib-resources__item-link:not(:hover):not(:focus-visible) > * {
+  transform: none !important;
+  margin-left: 0 !important;
+}
+
+:is(html, #item-link-only-boost) body .openms-lib-page .openms-lib-resources__item .openms-lib-resources__item-link:is(:hover, :focus-visible) > * {
+  transform: translateX(3px) !important;
+  transition: transform 0.2s ease;
+}
+
+
+/* ---------- Sponsor us "Sponsorship levels": heading and description use half of the page width (desktop) ---------- */
+@media (min-width: 900px) {
+  html:is(html, #sponsor-levels-half-boost) body .openms-lib-page--sponsor-us #sponsorship-levels .sponsor-section__head > :is(h2, p, .sponsor-section__lead) {
+    max-width: 50vw !important;
+    width: auto !important;
+  }
+}
+
+/* ---------- Sponsor us "Why sponsor OpenMS": the lead uses half of the page width (desktop), text wraps naturally ---------- */
+@media (min-width: 900px) {
+  html:is(html, #sponsor-why-half-boost) body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__lead {
+    max-width: 50vw !important;
+    width: auto !important;
+  }
+
+  html:is(html, #sponsor-why-half-boost) body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__lead .sponsor-lead-line {
+    display: inline !important;
+    white-space: normal !important;
+  }
+}
+
+/* ---------- Sponsor us "Benefit comparison": the table sits a bit lower, away from the heading line (large screens) ---------- */
+@media (min-width: 1024px) {
+  html:is(html, #sponsor-benefits-gap-boost) body .openms-lib-page--sponsor-us #sponsor-benefits .sponsor-benefits__panel {
+    margin-top: 3.25rem !important;
+  }
+}
+
+/* ---------- Featured developer card ("Contributing Guidelines"): the link is centred inside its white button on phones ---------- */
+@media (max-width: 767px) {
+  :is(html, #feat-cta-center-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--featured .openms-lib-developers__card-body > .openms-lib-developers__card-cta.openms-lib-developers__card-cta {
+    align-items: center !important;
+    justify-content: center !important;
+    padding-top: 0.55rem !important;
+    padding-bottom: 0.55rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+}
+
+/* ---------- Governance (phones): Membership left-aligned; icon / number on the same line as the label / title, text full width below ---------- */
+@media (max-width: 767px) {
+  html:is(html, #gov-membership-row-boost) body .openms-lib-page--governance .governance-membership__head {
+    justify-items: start !important;
+    margin-inline: 0 !important;
+    text-align: left !important;
+  }
+
+  html:is(html, #gov-membership-row-boost) body .openms-lib-page--governance .governance-membership__head > * {
+    text-align: left !important;
+    margin-inline: 0 !important;
+    max-width: 100% !important;
+  }
+
+  html:is(html, #gov-membership-row-boost) body .openms-lib-page--governance .governance-membership__card.governance-membership__card {
+    grid-template-columns: auto minmax(0, 1fr) !important;
+    column-gap: 0.75rem !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+
+  html:is(html, #gov-membership-row-boost) body .openms-lib-page--governance .governance-membership__card.governance-membership__card > .governance-membership__icon {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: center !important;
+  }
+
+  html:is(html, #gov-membership-row-boost) body .openms-lib-page--governance .governance-membership__card.governance-membership__card > .governance-membership__tag.governance-membership__tag {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    margin: 0 !important;
+    justify-self: start !important;
+    width: auto !important;
+    text-align: left !important;
+    align-self: center !important;
+  }
+
+  html:is(html, #gov-membership-row-boost) body .openms-lib-page--governance .governance-membership__card.governance-membership__card > .governance-membership__text.governance-membership__text {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    margin-top: 0.5rem !important;
+    justify-self: stretch !important;
+    text-align: left !important;
+  }
+
+  /* "Two layers of governance" tiles: number and title share the first line, the rest sits below */
+  html:is(html, #gov-tiles-below-boost) body .openms-lib-page--governance .openms-lib-page__anchor#governance-bodies .openms-lib-about__tile.openms-lib-about__tile {
+    grid-template-columns: auto minmax(0, 1fr) !important;
+    column-gap: 0.85rem !important;
+    align-items: center !important;
+  }
+
+  html:is(html, #gov-tiles-below-boost) body .openms-lib-page--governance .openms-lib-page__anchor#governance-bodies .openms-lib-about__tile.openms-lib-about__tile > .openms-lib-about__num {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: center !important;
+  }
+
+  html:is(html, #gov-tiles-below-boost) body .openms-lib-page--governance .openms-lib-page__anchor#governance-bodies .openms-lib-about__tile.openms-lib-about__tile > .openms-lib-about__tile-title {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    margin: 0 !important;
+    align-self: center !important;
+  }
+
+  html:is(html, #gov-tiles-below-boost) body .openms-lib-page--governance .openms-lib-page__anchor#governance-bodies .openms-lib-about__tile.openms-lib-about__tile > .openms-lib-about__tile-text {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    margin-top: 0.7rem !important;
+  }
+
+  html:is(html, #gov-tiles-below-boost) body .openms-lib-page--governance .openms-lib-page__anchor#governance-bodies .openms-lib-about__tile.openms-lib-about__tile > .governance-tile__list {
+    grid-column: 1 / -1 !important;
+    grid-row: 3 !important;
+    margin-top: 0.6rem !important;
+  }
+
+  html:is(html, #gov-tiles-below-boost) body .openms-lib-page--governance .openms-lib-page__anchor#governance-bodies .openms-lib-about__tile.openms-lib-about__tile > .openms-lib-about__tile-link {
+    grid-column: 1 / -1 !important;
+    grid-row: 4 !important;
+    margin-top: 0.8rem !important;
+    justify-self: start !important;
+  }
+}
+
+/* ---------- Publications list: the paper titles are in uppercase, like the other titles on the page ---------- */
+:is(html, #pub-title-upper-boost) body .publications-page .publication-entry .publication-title,
+:is(html, #pub-title-upper-boost) body .publications-page .publication-entry .publication-title .publication-title-link {
+  text-transform: uppercase !important;
+}

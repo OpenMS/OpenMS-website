@@ -1,0 +1,94 @@
+/* Donate page — same look as the other hub pages (Contact, Contribute):
+   full-width left-aligned section head, three equal-height cards with a big
+   soft icon top-left and a tag top-right, then the standard navy CTA band. */
+html body .openms-lib-page--donate #donate-impact .openms-lib-resources__inner {
+  max-width: none;
+}
+
+html body .openms-lib-page--donate .donate-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--pro-card-gap);
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  html body .openms-lib-page--donate .donate-impact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+html body .openms-lib-page--donate .donate-impact-grid > .openms-lib-resources__item {
+  height: 100%;
+}
+
+html body .openms-lib-page--donate .openms-lib-resources__item-icon {
+  display: grid;
+  place-items: center;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: rgba(var(--openms-blue-rgb), 0.28);
+  font-size: clamp(2.5rem, 3.8vw, 3rem);
+  line-height: 1;
+}
+
+html body .openms-lib-page--donate .openms-lib-resources__item-icon .fas,
+html body .openms-lib-page--donate .openms-lib-resources__item-icon .svg-inline--fa {
+  color: rgba(var(--openms-blue-rgb), 0.28) !important;
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+}
+
+html body .openms-lib-page--donate .openms-lib-resources__item-icon .svg-inline--fa path {
+  fill: currentColor !important;
+}
+
+/* "Make a donation" is a form section, which on every page (Research
+   partnerships, Fellowship, Contact) has a centred head — the eyebrow was
+   the only piece left-aligned, sitting off to the side of the centred title. */
+html body .openms-lib-page--donate #donate-form .openms-lib-resources__eyebrow {
+  text-align: center;
+  justify-self: center;
+  justify-content: center;
+}
+
+html body .openms-lib-page--donate #donate-impact .openms-lib-resources__inner {
+  align-items: stretch;
+}
+
+/* Tax-deductibility line: fine print under the main notice. */
+html body .openms-lib-page--donate .donate-application__note .donate-page__tax-note {
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+/* Stacked (single-column) cards: size to their content instead of the tall
+   equal-card minimum height the shared resource card carries. */
+@media (max-width: 900px) {
+  :is(html, #donate-card-boost) body .openms-lib-page--donate .donate-impact-grid {
+    grid-template-rows: none !important;
+    grid-auto-rows: auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  :is(html, #donate-card-boost) body .openms-lib-page--donate .donate-impact-grid > .openms-lib-resources__item {
+    min-height: 0 !important;
+    max-height: none !important;
+    height: auto !important;
+    gap: 0.45rem;
+  }
+
+  :is(html, #donate-card-boost) body .openms-lib-page--donate .donate-impact-grid > .openms-lib-resources__item .openms-lib-resources__item-text {
+    flex: 0 0 auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+}
