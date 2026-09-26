@@ -1318,3 +1318,23 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
 :is(html, #pub-title-upper-boost) body .publications-page .publication-entry .publication-title .publication-title-link {
   text-transform: uppercase !important;
 }
+
+/* ---------- Footer credit ("Developed by Raphaela Gil"): same colour as the copyright, link underlined on hover ---------- */
+:is(html, #footer-credit-boost) body .footer-copyright .footer-credit {
+  white-space: nowrap;
+}
+
+:is(html, #footer-credit-boost) body .footer-copyright .footer-credit__sep {
+  margin-inline: 0.15rem;
+}
+
+:is(html, #footer-credit-boost) body .footer-copyright .footer-credit a {
+  color: inherit !important;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+:is(html, #footer-credit-boost) body .footer-copyright .footer-credit a:is(:hover, :focus-visible) {
+  text-decoration: underline !important;
+  text-underline-offset: 0.2em;
+}
