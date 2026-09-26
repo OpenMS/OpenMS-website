@@ -9,7 +9,7 @@ This course provides a comprehensive overview of key technologies in mass spectr
 <br><br>
 **Date:** September 26–27, 2026 | 9:00–17:00
 <br>
-**Location:** National University of Singapore (venue TBA)
+**Location:** Pinnacle Room (Level 16), Create tower, 1 Create way, Singapore 138602
 <br>
 **Registration:** https://forms.gle/S6gcDAJrLztCAGBL7
 <br><br>
