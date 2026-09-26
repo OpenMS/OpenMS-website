@@ -41,7 +41,7 @@
   moreBtn.type = "button";
   moreBtn.className = "openms-cta-link publications-more__btn";
   moreBtn.setAttribute("data-publications-show-more", "");
-  moreBtn.innerHTML = 'Show more<span aria-hidden="true"> →</span>';
+  moreBtn.innerHTML = 'Show more<span class="publications-more__arrow" aria-hidden="true">\u2192</span>';
   moreWrap.appendChild(moreBtn);
 
   if (entriesWrap && entriesWrap.parentNode) {
@@ -120,8 +120,9 @@
 
     moreWrap.hidden = remaining <= 0;
     if (remaining > 0) {
-      moreBtn.textContent =
-        remaining === 1 ? "Show 1 more" : "Show more";
+      moreBtn.innerHTML =
+        (remaining === 1 ? "Show 1 more" : "Show more") +
+        '<span class="publications-more__arrow" aria-hidden="true">\u2192</span>';
       moreBtn.setAttribute(
         "aria-label",
         "Show more publications (" + remaining + " remaining)"
