@@ -1212,6 +1212,6 @@ html:is(html, #coc-email-after-boost) body .openms-lib-page--contribute .coc-cal
 /* ---------- Sponsor us "Benefit comparison": the table sits a bit lower, away from the heading line (large screens) ---------- */
 @media (min-width: 1024px) {
   html:is(html, #sponsor-benefits-gap-boost) body .openms-lib-page--sponsor-us #sponsor-benefits .sponsor-benefits__panel {
-    margin-top: 1.75rem !important;
+    margin-top: 3.25rem !important;
   }
 }
