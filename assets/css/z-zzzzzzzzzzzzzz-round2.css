@@ -805,7 +805,7 @@ html body .openms-lib-page--privacy .privacy-pro__item[open] .privacy-pro__summa
     margin-top: 0.4rem !important;
     flex-wrap: nowrap !important;
     white-space: nowrap !important;
-    justify-content: flex-start !important;
+    justify-content: space-between !important;
     column-gap: clamp(0.3rem, 1.6vw, 1rem) !important;
     max-width: 100% !important;
     /* scales with the screen so all three labels always fit on one line */
