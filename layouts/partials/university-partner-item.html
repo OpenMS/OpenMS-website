@@ -18,7 +18,7 @@
   <img
     src="{{ printf "%s?v=trim1" ($logo | relURL) }}"
     alt="{{ if .duplicate }}{{ "" }}{{ else }}{{ $alt }}{{ end }}"
-    loading="lazy"
+    loading="eager"
     decoding="async"
   />
   {{- else -}}
