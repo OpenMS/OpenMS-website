@@ -5,7 +5,7 @@ sidebar: false
 
 ## SOURCE CODE
 
-The source code of the OpenMS library as well as the TOPP tools and TOPPView are hosted on [GitHub](https://github.com/OpenMS). The most important repositories for starting developers will be [OpenMS](https://github.com/OpenMS/OpenMS) itself and its [contrib](https://github.com/OpenMS/contrib) (i.e. its dependencies). The source code is released under a three-clause BSD license.
+The source code of the OpenMS library as well as the TOPP tools and TOPPView are hosted on [GitHub](https://github.com/OpenMS). The most important repository for starting developers is [OpenMS](https://github.com/OpenMS/OpenMS) itself. Its third-party dependencies are built with [vcpkg](https://vcpkg.io), which the CMake presets in the repository set up; see [Building OpenMS](https://github.com/OpenMS/OpenMS#building-openms). The source code is released under a three-clause BSD license.
 
 ## DOCUMENTATION
 
