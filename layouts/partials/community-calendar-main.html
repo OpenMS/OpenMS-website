@@ -14,9 +14,6 @@
 {{- $allEvents := index $communityEventsData "events" | default (slice) -}}
 {{- $upcoming := slice -}}
 {{- $past := slice -}}
-{{- /* "Last events" only ever shows the last 2 years, regardless of how far
-      back the data file keeps events. */ -}}
-{{- $pastCutoff := now.AddDate -2 0 0 -}}
 {{- /* A synced (Google Calendar) event is skipped when a hand-written event
       already covers the same start date, so an event that exists in both places
       is listed once — the hand-written entry is the more detailed one. */ -}}
@@ -31,15 +28,13 @@
   {{- /* An all-day event (date only, no time) runs through the end of that day. */ -}}
   {{- if not (in $endStr "T") }}{{- $end = $end.AddDate 0 0 1 -}}{{- end }}
   {{- if $end.Before now }}
-    {{- if (time .start).After $pastCutoff }}
-      {{- $past = $past | append . -}}
-    {{- end }}
+    {{- $past = $past | append . -}}
   {{- else }}
     {{- $upcoming = $upcoming | append . -}}
   {{- end }}
 {{- end }}
 {{- $upcoming = sort $upcoming "start" -}}
-{{- $past = sort $past "start" | collections.Reverse -}}
+{{- $past = sort $past "start" -}}
 {{- $years := slice -}}
 {{- range $past }}
   {{- $y := (time .start).Format "2006" -}}
@@ -47,7 +42,7 @@
     {{- $years = $years | append $y -}}
   {{- end }}
 {{- end }}
-{{- $years = sort $years | collections.Reverse -}}
+{{- $years = sort $years -}}
 <section class="openms-lib-layout">
 <article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--calendar">
 <div class="openms-lib-page__intro">
@@ -102,7 +97,7 @@
 
       {{- if gt (len $years) 0 }}
       {{- /* Past events: hidden behind a button at the bottom of the page. Shown
-            most recent year first, and the most recent event first within each year. */ -}}
+            oldest year first, and oldest event first within each year. */ -}}
       <section class="community-events-page__section community-events-page__section--past" aria-label="Past community events" data-past-events>
         <div class="community-events-past__bar">
           <button

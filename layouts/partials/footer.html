@@ -75,7 +75,9 @@
   </div>
 
   <div class="footer-bottom">
-    <p class="footer-copyright">&copy; {{ now.Year }} OpenMS Inc. All rights reserved.</p>
+    <p class="footer-copyright">&copy; {{ now.Year }} OpenMS Inc. All rights reserved.
+      <span class="footer-credit"><span class="footer-credit__sep" aria-hidden="true">·</span> Developed by <a href="https://raphagil.github.io/RaphaelaPortfolio/" target="_blank" rel="noopener noreferrer">Raphaela Gil</a></span>
+    </p>
     {{- with $deployedBy }}
     <a
       class="footer-deploy"

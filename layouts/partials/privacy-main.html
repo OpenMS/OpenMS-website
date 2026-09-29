@@ -65,7 +65,7 @@
         </h1>
         <p class="openms-lib-hero__lead">{{ $subtitle }}</p>
         <div class="openms-lib-hero__actions" aria-label="Related pages">
-          <a class="openms-lib-btn openms-lib-btn--primary" href="#privacy-topics">
+          <a class="openms-lib-btn openms-lib-btn--primary" href="#privacy-details">
             <span class="openms-lib-btn__label">Browse topics</span>
           </a>
           <a class="openms-lib-btn openms-lib-btn--ghost" href="/contact/">
@@ -78,51 +78,16 @@
 </div>
 
 <div class="openms-lib-page__body" aria-label="Privacy Policy content">
-  <div id="who-we-are" class="openms-lib-page__anchor">
-    <section class="openms-lib-about" aria-labelledby="who-we-are-title">
-      <div class="openms-lib-about__inner">
-        <header class="openms-lib-about__head">
-          <div class="openms-lib-about__head-copy">
-            <p class="openms-lib-about__eyebrow">Overview</p>
-            <h2 id="who-we-are-title" class="openms-lib-about__title">Who we are</h2>
-          </div>
-          <p class="openms-lib-about__lead">
-            This policy applies to the OpenMS website at <strong>www.openms.de</strong>.
-          </p>
-        </header>
-      </div>
-    </section>
-  </div>
-
-  <div id="privacy-topics" class="openms-lib-page__anchor">
-    <section class="openms-lib-resources openms-lib-resources--no-feature" aria-labelledby="privacy-topics-title">
-      <div class="openms-lib-resources__inner">
-        <header class="openms-lib-resources__head">
-          <p class="openms-lib-resources__eyebrow">Details</p>
-          <h2 id="privacy-topics-title" class="openms-lib-resources__title">Privacy topics</h2>
-          <p class="openms-lib-resources__lead">Scan the short summary, then open a topic only when you need the full wording.</p>
-        </header>
-
-        <div class="privacy-pro__list" data-privacy-topics>
-          {{- range $i, $item := $items -}}
-          <details class="privacy-pro__item" id="{{ $item.id }}">
-            <summary class="privacy-pro__summary">
-              <span class="privacy-pro__summary-index" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
-              <span class="privacy-pro__summary-copy">
-                <span class="privacy-pro__summary-title">{{ $item.title }}</span>
-                {{- with $item.summary -}}
-                <span class="privacy-pro__summary-text">{{ . }}</span>
-                {{- end -}}
-              </span>
-            </summary>
-            <div class="privacy-pro__answer privacy-pro__rich post-content">
-              {{ $item.body | markdownify }}
-            </div>
-          </details>
-          {{- end -}}
-        </div>
-      </div>
-    </section>
+  <div class="openms-lib-page__anchor">
+    <div class="exec-charter__inner openms-lib-prose">
+      <h2 id="who-we-are">Who we are</h2>
+      <p>This policy applies to the OpenMS website at <strong>www.openms.de</strong>.</p>
+      {{- range $i, $item := $items }}
+      <hr />
+      <h2 id="{{ if eq $i 0 }}privacy-details{{ else }}{{ $item.id }}{{ end }}">{{ $item.title }}</h2>
+      {{ $item.body | markdownify }}
+      {{- end }}
+    </div>
   </div>
 </div>
 
@@ -146,21 +111,3 @@
 </div>
 </article>
 </section>
-<script>
-(function () {
-  var root = document.querySelector("[data-privacy-topics]");
-  if (!root) return;
-
-  function openFromHash() {
-    var id = (location.hash || "").replace(/^#/, "");
-    if (!id) return;
-    var target = document.getElementById(id);
-    if (!target || !target.classList.contains("privacy-pro__item")) return;
-    target.open = true;
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  window.addEventListener("hashchange", openFromHash);
-  openFromHash();
-})();
-</script>
