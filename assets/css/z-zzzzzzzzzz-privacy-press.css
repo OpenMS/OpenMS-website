@@ -2,7 +2,7 @@
 
 /* "Who we are": standard stacked head (eyebrow, title, lead, left-aligned)
    like the other sections, instead of the lead floating off to the right. */
-html body .openms-lib-page--privacy #who-we-are .openms-lib-about__head {
+html body .openms-lib-page--privacy #privacy-who-we-are .openms-lib-about__head {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 0.9rem;
@@ -10,7 +10,7 @@ html body .openms-lib-page--privacy #who-we-are .openms-lib-about__head {
   text-align: left;
 }
 
-html body .openms-lib-page--privacy #who-we-are .openms-lib-about__lead {
+html body .openms-lib-page--privacy #privacy-who-we-are .openms-lib-about__lead {
   max-width: 44rem;
   margin: 0;
   text-align: left;
