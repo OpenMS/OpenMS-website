@@ -1357,3 +1357,8 @@ html:is(html, #footer-copy-small-boost) body .footer-copyright {
   max-height: 2.75rem !important;
   max-width: 100% !important;
 }
+
+/* ---------- Privacy: "Who we are" heading sits closer to its paragraph ---------- */
+:is(html, #privacy-who-tight-boost) body .openms-lib-page--privacy #who-we-are {
+  margin-bottom: 0.25rem !important;
+}
