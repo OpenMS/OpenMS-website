@@ -1,14 +1,20 @@
+---
+title: "OpenMS 3.6.0 Released"
+authors: ["OpenMS Team"]
+date: 2026-09-30
+summary: "We are proud to announce the release of OpenMS 3.6.0, a substantial release adding ion mobility (FAIMS and PASEF) support, arrow and parquet storage, and new nanobind-based pyOpenMS bindings."
+type: news
+---
+
 Dear OpenMS-Users,
 
 We are proud to announce the release of OpenMS 3.6.0. 
 
-Grab it <a href="https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/3.6.0">here</a>
+Grab it <a href="https://github.com/OpenMS/OpenMS/releases/tag/v3.6.0">here</a>
 
-In the following you find all important changes to the previous version:
 
 OpenMS 3.6.0 is a substantial release and an important step toward our next major version. It addresses many feature requests, 
-including extended support for ion mobility (FAIMS and PASEF), arrow and parquet support, and new nanobind-based pyOpenMS bindings that enable more Pythonic and faster code. 
-A restructured build system now supports building OpenMS with vcpkg, replacing the deprecated contrib repository. 
+including extended support for ion mobility (FAIMS and PASEF), arrow and parquet support, and new nanobind-based pyOpenMS bindings that enable more Pythonic and faster code. A restructured build system now supports building OpenMS with vcpkg, replacing the deprecated contrib repository. 
 These are just a few of the many improvements in this release.
 
 General:
@@ -1563,5 +1569,6 @@ Known issues:
 
 
 Best regards,
+
 The OpenMS-Developers
 
