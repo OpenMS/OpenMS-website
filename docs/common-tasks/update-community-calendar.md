@@ -4,48 +4,14 @@ Community events on **/calendar/** come from a single data file—no layout or J
 
 ## Google Calendar sync
 
-`sync_google_calendar.py`, run daily by `.github/workflows/update_calendar.yml`, can pull events from a public Google Calendar into this file automatically. It only touches entries it previously added (marked `synced: true` in the yaml) — anything you add by hand is left alone on every run.
+Syncing the calendar involves 3 scripts
+1. `sync_google_calendar.py` - a python script for updating the calendar
+2. `.github/workflows/update_calendar.yml` - a github action which invokes the python script
+3. `calendar-notify-github` a google script present on the openmsuser google account. This account also holds the calendar
 
-To turn it on:
-
-1. In Google Calendar, make the calendar public (or use its "Secret address in iCal format") and copy the ICS feed URL — Settings → select the calendar → **Integrate calendar**.
-2. Add it as the `GOOGLE_CALENDAR_ICS_URL` repository secret.
-3. Optionally set `googleCalendarSubscribeUrl` under `params.calendarSection` in `config.yaml` to show an "Add to Google Calendar" button in the hero — see the comment above that key for the URL format. This is separate from the ICS feed secret and is safe to be public.
+Other elements required for the calendar sync to word include setting the  `GOOGLE_CALENDAR_ICS_URL` repository secret. This can be found in google calendar settings under the  "Secret address in iCal format". 
 
 Until the secret is set, the workflow runs as a no-op and the page shows no sync badge or button.
-
-### How quickly changes reach the site
-
-The workflow checks the calendar **every 15 minutes** and only commits (and so only redeploys the site) when an event actually changed. Google itself can take a while to refresh its public calendar feed, so a change may show up a little after the 15-minute mark.
-
-To make a change sync **immediately** instead of waiting for the next check, have Google Calendar notify GitHub when an event is created, edited or deleted, using a small Google Apps Script:
-
-1. On GitHub, create a fine-grained personal access token limited to this repository with **Contents: Read and write** (that permission is what allows triggering the workflow).
-2. Go to [script.google.com](https://script.google.com), create a project (signed in as the calendar owner), and add **Project Settings → Script properties → `GH_TOKEN`** with the token.
-3. Paste this in, replace the two placeholders, and run `setup` once (approve the permissions when asked):
-
-```js
-const REPO = 'OWNER/REPO';                    // e.g. OpenMS/OpenMS-website
-const CALENDAR_ID = 'CALENDAR_ID_OR_EMAIL';   // the calendar that feeds the site
-
-function notifyGitHub() {
-  UrlFetchApp.fetch('https://api.github.com/repos/' + REPO + '/dispatches', {
-    method: 'post',
-    contentType: 'application/json',
-    headers: {
-      Authorization: 'Bearer ' + PropertiesService.getScriptProperties().getProperty('GH_TOKEN'),
-      Accept: 'application/vnd.github+json',
-    },
-    payload: JSON.stringify({ event_type: 'calendar-updated' }),
-  });
-}
-
-function setup() {
-  ScriptApp.newTrigger('notifyGitHub').forUserCalendar(CALENDAR_ID).onEventUpdated().create();
-}
-```
-
-Every event change then triggers the "Sync Google Calendar" workflow within seconds. The token only lives in the script's private properties — never put it in this repository.
 
 ### What to put in the Google Calendar event
 
