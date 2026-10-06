@@ -99,23 +99,6 @@ events:
     More Info: https://openms.de/news/hupo_workshop_26/
 
     Registration: https://forms.gle/S6gcDAJrLztCAGBL7'
-- title: A test event
-  start: '2026-10-06'
-  category: event
-  synced: true
-  end: '2026-10-08'
-- title: Another Test Event
-  start: '2026-10-13'
-  category: event
-  synced: true
-  end: '2026-10-15'
-  location: Remote
-  summary: A brief description.
-- title: Another test event
-  start: '2026-10-20'
-  category: event
-  synced: true
-  end: '2026-10-22'
 - title: Google Summer of Code Ends
   start: '2026-11-02'
   category: outreach
@@ -127,4 +110,4 @@ events:
   end: '2027-03-20'
   location: Resort Natura, 8100-266 Loulé, Portugal
   summary: 'Registration and Info: https://tally.so/r/aQL8XW'
-last_synced: '2026-10-06T18:55:27Z'
+last_synced: '2026-10-06T18:57:01Z'
