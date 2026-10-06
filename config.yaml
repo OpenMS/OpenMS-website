@@ -65,8 +65,8 @@ languages:
       newsBanner:
         enabled: true
         label: News
-        text: 'MS Analysis with OpenMS: Free Workshop at The National University of Singapore.'
-        link: /news/hupo_workshop_26/
+        text: 'OpenMS 3.6.0 is now available — see the release announcement.'
+        link: /news/release3.6.0/
       contributePage:
         eyebrow: Community
         subtitle: >-
