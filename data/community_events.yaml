@@ -115,8 +115,8 @@ events:
   category: event
   synced: true
   end: '2027-04-09'
-  location: Building HvL - Hof van Liere - UAntwerp, Prinsstraat 13a, 2000 Antwerpen,
-    Belgium
-  summary: Yearly HUPO-PSI Meeting. See https://www.psidev.info/spring-meeting-2027
-    for more info.
-last_synced: '2026-10-08T14:15:42Z'
+  location: Antwerp, Belgium
+  summary: 'Yearly HUPO-PSI Meeting.
+
+    https://www.psidev.info/spring-meeting-2027'
+last_synced: '2026-10-08T14:18:54Z'
