@@ -224,6 +224,30 @@ Above the rule.
 
 Below the rule.
 
+## Collapsible text
+
+<details>
+<summary>Click to expand this section (visible)</summary>
+
+This content is hidden by default. It can contain **Markdown**, `inline code`, and more:
+
+- A bullet list
+- A [link](https://www.openms.org)
+- A code block:
+
+```python
+print("Inside the collapsible section")
+```
+
+</details>
+
+<details>
+<summary>Another collapsible section</summary>
+
+More hidden content that only appears when expanded.
+
+</details>
+
 ## Images
 
 ![OpenMS logo](/images/logos/OpenMS_transparent_blackFont.svg)
