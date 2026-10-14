@@ -1297,7 +1297,7 @@ languages:
         - name: easypqp
           logo: /images/webapp/logo/affiliate/easypqp.svg
           description: Spectral library generation tool for DIA.
-          maintainers: Justin Sing
+          maintainers: Justin Sing, Jonas Scheid
           links:
             - type: github
               url: https://github.com/grosenberger/easypqp
