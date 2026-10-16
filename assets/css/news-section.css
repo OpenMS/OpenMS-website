@@ -560,6 +560,39 @@
   margin-bottom: 0;
 }
 
+/* A site-wide reset (Bulma's `ul { list-style: none }`) hides list markers;
+   news articles are prose, so bullets and numbers must show. */
+.news-story__body ul,
+.news-story__body ol {
+  margin: 0 0 1.05rem;
+  padding-left: 1.5rem;
+}
+
+.news-story__body ul {
+  list-style: disc outside;
+}
+
+.news-story__body ol {
+  list-style: decimal outside;
+}
+
+.news-story__body li {
+  list-style: inherit;
+  margin: 0 0 0.35rem;
+}
+
+.news-story__body li > :is(ul, ol) {
+  margin: 0.35rem 0 0;
+}
+
+.news-story__body ul ul {
+  list-style-type: circle;
+}
+
+.news-story__body ul ul ul {
+  list-style-type: square;
+}
+
 .news-story__body :is(h2, h3, h4) {
   margin: 1.75rem 0 0.7rem;
   font-family: var(--openms-font-heading);
