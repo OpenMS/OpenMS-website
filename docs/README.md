@@ -36,7 +36,7 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | **Governance** | [Intro text](common-tasks/governance/edit-intro-text.md) |
 | **Our Sponsors** | [Add, change or remove a sponsor logo](common-tasks/our-sponsors/update-sponsors.md) |
 | **Our Sponsorship Program** | [Levels and benefits](common-tasks/sponsorship-program/update-levels.md) |
-| **Research Partnerships** | [Intro and partner logos](common-tasks/research-partnerships/edit-partners.md) |
+| **Research Partnerships** | [Intro text](common-tasks/research-partnerships/edit-partners.md) · [Partner logos](common-tasks/research-partnerships/update-partner-logos.md) |
 | **Publications** | [Add or remove a paper](common-tasks/publications/add-or-remove-paper.md) · [Google Scholar link](common-tasks/publications/edit-google-scholar-link.md) |
 | **Leadership** | [Board of directors](common-tasks/leadership/update-board-of-directors.md) · [Executive Committee](common-tasks/leadership/update-executive-committee.md) |
 | **Contact** | [Intro text](common-tasks/contact/edit-intro-text.md) |

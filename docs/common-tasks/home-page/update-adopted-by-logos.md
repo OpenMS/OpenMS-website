@@ -2,6 +2,8 @@
 
 On the **home page**, just under the top banner, two rows of logos slowly move sideways. These are the labs, universities and companies that use OpenMS. Each logo is **one small block** in `config.yaml`, and each logo is a link to that organisation's website.
 
+> The **same list** is shown on the **Research Partnerships** page, in the block "Our partners". A change here changes both. See [Add, change or remove a partner logo](../research-partnerships/update-partner-logos.md).
+
 **You will change:** one block in `config.yaml` and upload one picture  ·  **Time:** about 15 minutes  ·  **Skills needed:** none
 
 ## What you will change
