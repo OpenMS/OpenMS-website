@@ -68,7 +68,7 @@ The footer's columns, links and social icons are **`config.yaml` → `footer`** 
 - The intro text and links are in `config.yaml` under `contributePage`.
 - The look is in `assets/css/overrides/contribute.css`.
 
-Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/` (linked from Governance), `/help/` (linked from Contact), `/help-request/` (an embedded Google form, not linked from the site) and `/getting-started/develop-your-own-openms-tools/` (not linked from the site). `content/en/jobs.md` is a draft and is not published. `content/en/keyfeatures/` holds blocks for the home page, not pages of their own. The home page is `layouts/index.html` with its text in `config.yaml` (see [Edit the home page](../common-tasks/home-page/README.md)).
+Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/` (linked from Governance), and `/help/` (linked from Contact). The unused pages `/help-request/`, `/jobs/`, `/getting-started/develop-your-own-openms-tools/` and `/keyfeatures/…` are removed by PR #51; their addresses redirect to other pages. Folders and pictures the site does not use are listed in [Archive folders](archive-folders.md). The home page is `layouts/index.html` with its text in `config.yaml` (see [Edit the home page](../common-tasks/home-page/README.md)).
 
 ## Content (Markdown)
 

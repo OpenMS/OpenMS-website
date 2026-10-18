@@ -20,7 +20,7 @@ The website's files are all stored in one place on GitHub, called the **reposito
 | 8 | **`.github/`** | Robots that run by themselves (the calendar sync, the publications update). | Ask the web team |
 | 7 | **`docs/`** | **These guides.** | Yes |
 
-Other folders and files you may see (you don't need to touch them): `themes/` (the base design the site is built on), `archetypes/` (a starting template for new news posts), `demo_nbs/` (a demo notebook), `images/` (extra pictures; the website itself uses `static/images/`), `netlify.toml` and `Makefile` (how the site is built), `README.md`, `LICENSE`, and a few `.py` scripts used by the robots.
+Other folders and files you may see (you don't need to touch them): `themes/` (the base design the site is built on), `archetypes/` (a starting template for new news posts), `demo_nbs/` (a demo notebook), `images/` (an archive of extra pictures, not used by the website: see [Archive folders](../reference/archive-folders.md)), `netlify.toml` and `Makefile` (how the site is built), `README.md`, `LICENSE`, and a few `.py` scripts used by the robots.
 
 ## I want to change… where do I look?
 

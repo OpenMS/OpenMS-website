@@ -59,6 +59,7 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | Open a pull request | [Pull requests](workflow/pull-requests.md) |
 | Understand what happens when we merge | [Deployment](workflow/deployment.md) |
 | Find who can approve or help | [Who to ask](workflow/who-to-ask.md) |
+| Which folders and pictures are **not used** by the site (archive) | [Archive folders](reference/archive-folders.md) |
 
 ## What you can change safely
 
@@ -95,7 +96,8 @@ docs/
 │   ├── content-front-matter.md
 │   ├── config-yaml-guide.md
 │   ├── shortcodes.md
-│   └── file-locations.md
+│   ├── file-locations.md
+│   └── archive-folders.md    ← folders and pictures the site does not use
 ├── workflow/
 │   ├── pull-requests.md
 │   ├── deployment.md
