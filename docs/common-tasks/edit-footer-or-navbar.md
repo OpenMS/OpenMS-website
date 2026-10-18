@@ -90,6 +90,10 @@ Search for `socialmedia:`. Each icon is two lines: `link:` (the address) and `ic
 
 ---
 
+## Where is the page behind a link?
+
+For every item of the menu and footer, which files hold its page, design, words and styling: see [Everything in the navbar and the footer](../reference/file-locations.md#everything-in-the-navbar-and-the-footer-where-is-each-page).
+
 ## Check the result
 
 Open the **Deploy Preview**. Look at the **home page** and **one inner page** (menus are on all pages). Click each link you changed.

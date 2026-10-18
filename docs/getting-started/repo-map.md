@@ -39,6 +39,8 @@ Other folders and files you may see (you don't need to touch them): `themes/` (t
 | Colours, spacing, fonts, how a button looks | `assets/css/` | Web team (see below) |
 | The layout of a page (what comes first, how cards are arranged) | `layouts/` | Web team (see below) |
 
+> **Looking for one specific page from the menu or footer?** The full list (page file, design, words and styling for each link) is in [Everything in the navbar and the footer](../reference/file-locations.md#everything-in-the-navbar-and-the-footer-where-is-each-page).
+
 ## Where is the styling?
 
 Everything about **how things look** is in **`assets/css/`**. The folder holds many small files, each named after what it styles. Open it on GitHub to see them all:
