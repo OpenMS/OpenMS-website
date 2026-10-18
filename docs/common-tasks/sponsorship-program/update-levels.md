@@ -59,11 +59,13 @@ Each row of the table is one `category`, with one entry per level:
 
 | You write | The table shows |
 |-----------|-----------------|
-| `[]` | a dash: not included |
+| `[]` | a cross: not included |
 | `["✓"]` | a tick: included |
 | lines starting with `- ` | each line as text |
 
 To **add a row**, copy a whole `- category:` block and change it. To **remove a row**, delete its whole block.
+
+The full guide for the benefits, with pictures: [Change the benefits of the sponsorship levels](update-benefits.md).
 
 ## Step by step
 
@@ -75,5 +77,6 @@ To **add a row**, copy a whole `- category:` block and change it. To **remove a 
 
 ## Related guides
 
+- [Change the benefits of the sponsorship levels](update-benefits.md)
 - [Add, change or remove a sponsor logo](../our-sponsors/update-sponsors.md)
 - Back to the [list of all tasks](../README.md)
