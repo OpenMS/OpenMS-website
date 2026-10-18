@@ -61,7 +61,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 | **Our Sponsorship Program** (`/sponsor-us/`, also the **Sponsor Us** button) | `sponsorship-program/` | [Change the levels and benefits](sponsorship-program/update-levels.md) |
 | **Research Partnerships** (`/research-partnerships/`, also the **Partner with OpenMS** button) | `research-partnerships/` | [Change the intro and the partner logos](research-partnerships/edit-partners.md) |
 | **Publications** (`/publications/`) | `publications/` | [Add or remove a paper](publications/add-or-remove-paper.md) · [Google Scholar link](publications/edit-google-scholar-link.md) |
-| **Leadership** (`/contributors/`) | `leadership/` | [Replace a photo, add a person](leadership/update-people.md) |
+| **Leadership** (`/contributors/`) | `leadership/` | [Update the board of directors](leadership/update-board-of-directors.md) · [Update the Executive Committee](leadership/update-executive-committee.md) |
 | **Contact** (`/contact/`) | `contact/` | [Change the intro text](contact/edit-intro-text.md) |
 
 ## Footer only

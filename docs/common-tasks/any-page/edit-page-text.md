@@ -42,7 +42,8 @@ Words on a page can be in **one of three places**:
 | Top menu and footer links | `config.yaml` | [Top menu](../navbar/edit-menu-items.md) · [Footer](../footer/edit-footer-links.md) |
 | Getting Involved, Fellowship, Governance, Contact, Research Partnerships, Sponsorship Program, Services | the **intro** is in `config.yaml`; most **other words** are part of the design (layout) | [Getting Involved](../getting-involved/edit-intro-and-links.md) · [Fellowship](../fellowship/update-fellowship.md) · [Governance](../governance/edit-intro-text.md) · [Contact](../contact/edit-intro-text.md) · [Research Partnerships](../research-partnerships/edit-partners.md) · [Sponsorship Program](../sponsorship-program/update-levels.md) · [Services](../scientific-and-technical-support/edit-intro-text.md) |
 | OpenMS-lib, pyOpenMS, pyOpenMS Viz, OpenMS Web Apps | `config.yaml` (the big title is part of the design) | [OpenMS-lib](../openms-lib/edit-page-blocks.md) · [pyOpenMS](../pyopenms/edit-page-blocks.md) · [pyOpenMS Viz](../pyopenms-viz/edit-page-blocks.md) · [Web Apps](../openms-web-apps/edit-page-blocks.md) |
-| Leadership | the layout (photos in `static/images/leadership_photos/`) | [Leadership](../leadership/update-people.md) |
+| Leadership: board of directors | `layouts/partials/contributors-leadership.html` (photos in `static/images/leadership_photos/`) | [Board of directors](../leadership/update-board-of-directors.md) |
+| Leadership: Executive Committee | `static/gallery/members.html` | [Executive Committee](../leadership/update-executive-committee.md) |
 | Press kit | the layout (downloads in `static/press-kit/`) | [Press kit](../press-kit/replace-a-download.md) |
 
 ## Step 2 – Edit a page file (type A)

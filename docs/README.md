@@ -38,7 +38,7 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | **Our Sponsorship Program** | [Levels and benefits](common-tasks/sponsorship-program/update-levels.md) |
 | **Research Partnerships** | [Intro and partner logos](common-tasks/research-partnerships/edit-partners.md) |
 | **Publications** | [Add or remove a paper](common-tasks/publications/add-or-remove-paper.md) · [Google Scholar link](common-tasks/publications/edit-google-scholar-link.md) |
-| **Leadership** | [Replace a photo, add a person](common-tasks/leadership/update-people.md) |
+| **Leadership** | [Board of directors](common-tasks/leadership/update-board-of-directors.md) · [Executive Committee](common-tasks/leadership/update-executive-committee.md) |
 | **Contact** | [Intro text](common-tasks/contact/edit-intro-text.md) |
 | **Donate** | [Connect to Zeffy](common-tasks/donate/connect-zeffy.md) · [Intro text](common-tasks/donate/edit-intro-text.md) |
 | **Executive Committee Charter** | [Change the text](common-tasks/executive-committee-charter/edit-text.md) |
