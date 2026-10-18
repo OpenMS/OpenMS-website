@@ -2,7 +2,7 @@
 
 Every page of the website has **its own folder** here. The folders follow the **top menu** and the **footer** of the website. Find the page you want to change, then pick the task.
 
-> New to editing? Start with [How to make a change](../getting-started/edit-via-github.md).
+> New to editing? Start with [How to make a change](../getting-started/edit-via-github.md). Not sure what *hero*, *eyebrow* or *banner* mean? See [Words we use](../getting-started/words-we-use.md).
 
 ## Home page, top menu and footer
 

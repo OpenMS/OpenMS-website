@@ -22,7 +22,7 @@ and one card is one **block of lines** in `config.yaml`:
 | 2 | `name:` | The project's name. |
 | 3 | `description:` | One sentence about the project. |
 | 4 | `maintainers:` | The people who look after it. Optional. |
-| 5 | `links:` | The buttons. Each is a `- type:` line plus a `url:` line. `type` can be `github`, `homepage` or `pypi`. |
+| 5 | `links:` | The buttons. Each is a `- type:` line plus a `url:` line. `type` can be `github`, `homepage` or `pypi` (all types: [below](#how-many-buttons-links-can-a-project-have)). |
 
 ## Change an existing project
 
@@ -65,6 +65,29 @@ Change the name, logo file name, description, maintainers and the web addresses.
 ### Step 5 – Check the preview
 
 Open the **Deploy Preview**, add **/affiliated-apps/** to the address and check that the logo and buttons work.
+
+## How many buttons (links) can a project have?
+
+There is **no fixed limit**: every `- type:` line under `links:` becomes one button. But the card has little room, so **use 2 at most**.
+
+Affiliated cards are narrower: **2 buttons** fit side by side on a large screen. On a laptop screen the second one already goes onto a new line. Today every Affiliated App has 2 buttons.
+
+- Extra buttons go onto a **new line**. That works, but the card becomes taller than the others next to it.
+- On a **phone**, the buttons often go under each other. That is normal.
+- The buttons are shown **in the order you write them**, except **GitHub**, which is always last.
+
+| `type:` | Button text | Look |
+|---------|-------------|------|
+| `demo` | Demo | filled blue, play icon |
+| `homepage` | Homepage | filled blue, house icon |
+| `pypi` | PyPI | filled blue, Python icon |
+| `install` | Install | outlined, Windows icon |
+| `github` | GitHub | outlined, GitHub icon. **Always shown last.** |
+| `nfcore` | NF Core | outlined |
+| anything else | Link | outlined |
+
+To change the button text, add a line `label:` (for example `label: Install (Windows)`).
+
 
 ## Remove a project
 

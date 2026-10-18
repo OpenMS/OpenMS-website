@@ -2,7 +2,7 @@
 
 This guide is for **non–front-end contributors** who update [openms.de](https://openms.de) content: news, text pages, homepage copy, and configuration. You do not need to know React, Vue, or JavaScript for most tasks.
 
-> **New here, and not a developer?** Start with **[How to make a change](getting-started/edit-via-github.md)**. It explains, with pictures, how to edit the website using only your web browser. Then find the page you want to change in the list below. Every guide shows **where** on the site and **in which file** the change happens.
+> **New here, and not a developer?** Start with **[How to make a change](getting-started/edit-via-github.md)**. It explains, with pictures, how to edit the website using only your web browser. Then find the page you want to change in the list below. Every guide shows **where** on the site and **in which file** the change happens. Not sure what *hero*, *eyebrow* or *banner* mean? See **[Words we use](getting-started/words-we-use.md)**, with labelled pictures.
 
 ## How the site works (30 seconds)
 
@@ -53,6 +53,7 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | Task | Guide |
 |------|--------|
 | **Start here:** edit without installing anything | [How to make a change](getting-started/edit-via-github.md) |
+| What do *hero*, *eyebrow*, *banner*, *card*… mean? | [Words we use](getting-started/words-we-use.md) |
 | **Find out where things are** (pages, styling, pictures) in the website's files | [Map of the repository](getting-started/repo-map.md) |
 | Preview the site on my computer | [Preview locally](getting-started/preview-locally.md) |
 | Open a pull request | [Pull requests](workflow/pull-requests.md) |
@@ -76,6 +77,7 @@ docs/
 ├── getting-started/
 │   ├── edit-via-github.md
 │   ├── repo-map.md
+│   ├── words-we-use.md       ← hero, eyebrow, banner… explained with pictures
 │   └── preview-locally.md
 ├── common-tasks/             ← one folder per page of the website
 │   ├── README.md             ← list of all tasks, in menu order

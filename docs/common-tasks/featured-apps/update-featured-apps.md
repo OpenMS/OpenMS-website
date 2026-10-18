@@ -25,7 +25,7 @@ And one card is one **block of lines** in `config.yaml`:
 | 2 | `name:` | The app's name. |
 | 3 | `description:` | One sentence about the app. |
 | 4 | `maintainers:` | Who looks after the app. Optional. |
-| 5 | `links:` | The buttons: **Demo**, **Install**, **GitHub**. Each button is two or three lines (see below). |
+| 5 | `links:` | The buttons: **Demo**, **Install**, **GitHub**. Each button is two or three lines. How many: [see below](#how-many-buttons-links-can-an-app-have). |
 
 The `url:` line (just under `name:`) is the app's main web address.
 
@@ -83,6 +83,29 @@ Open the **Deploy Preview** and look at **/featured-apps/** and at the home page
 
 - [ ] The logo shows and is not tiny or blurry.
 - [ ] Each button opens the right page.
+
+## How many buttons (links) can an app have?
+
+There is **no fixed limit**: every `- type:` line under `links:` becomes one button. But the card has little room, so **use 3 at most**.
+
+On a laptop screen, **3 buttons** fit on one line (on a large screen, 4). Today every Featured App has 1 to 3 buttons.
+
+- Extra buttons go onto a **new line**. That works, but the card becomes taller than the others next to it.
+- On a **phone**, the buttons often go under each other. That is normal.
+- The buttons are shown **in the order you write them**, except **GitHub**, which is always last.
+
+| `type:` | Button text | Look |
+|---------|-------------|------|
+| `demo` | Demo | filled blue, play icon |
+| `homepage` | Homepage | filled blue, house icon |
+| `pypi` | PyPI | filled blue, Python icon |
+| `install` | Install | outlined, Windows icon |
+| `github` | GitHub | outlined, GitHub icon. **Always shown last.** |
+| `nfcore` | NF Core | outlined |
+| anything else | Link | outlined |
+
+To change the button text, add a line `label:` (for example `label: Install (Windows)`).
+
 
 ## Remove an app
 
