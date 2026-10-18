@@ -6,7 +6,7 @@ The dark blue strip at the very top of **every page** is called the **news banne
 
 ## What you will change
 
-![The news banner at the top of the website, with two parts marked](../images/news-banner/1-banner-on-site.png)
+![The news banner at the top of the website, with two parts marked](../images/update-announcement-bar/1-banner-on-site.png)
 
 1. **The small label** on the left (for example `News`).
 2. **The message** next to it.
@@ -29,7 +29,7 @@ newsBanner
 
 You will find a small group of lines that looks like this:
 
-![The newsBanner lines inside config.yaml, with the parts you can change marked](../images/news-banner/2-config-lines.png)
+![The newsBanner lines inside config.yaml, with the parts you can change marked](../images/update-announcement-bar/2-config-lines.png)
 
 | Number | Line | What it does |
 |:--:|------|--------------|

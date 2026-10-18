@@ -82,5 +82,5 @@ Delete its **three lines** (`- name:`, `logo:`, `url:`). The rows rearrange them
 ## Related guides
 
 - [Add images](add-images.md)
-- [Edit the text on the home page](edit-homepage-hero.md)
+- [Edit the text on the home page](edit-homepage-text.md)
 - Back to the [list of all guides](../README.md)

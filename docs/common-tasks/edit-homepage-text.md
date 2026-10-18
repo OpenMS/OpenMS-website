@@ -6,7 +6,7 @@ The home page (**https://openms.de/**) is built from **blocks**, one under the o
 
 ## Which block do I want?
 
-![The home page with each block numbered](../images/edit-homepage/1-homepage-map.png)
+![The home page with each block numbered](../images/edit-homepage-text/1-homepage-map.png)
 
 | Number | Block on the page | Search for this word in `config.yaml` | Guide |
 |:--:|-------------------|--------------------------------------|-------|
@@ -36,9 +36,9 @@ The same steps work for every block. Only the key word you search for is differe
 
 ## 1. The top banner (`hero:`)
 
-![The top banner with the parts you can change numbered](../images/edit-homepage/2-hero-on-site.png)
+![The top banner with the parts you can change numbered](../images/edit-homepage-text/2-hero-on-site.png)
 
-![The matching lines in config.yaml](../images/edit-homepage/3-hero-config.png)
+![The matching lines in config.yaml](../images/edit-homepage-text/3-hero-config.png)
 
 | Number | Line(s) | What it is |
 |:--:|---------|-----------|
@@ -84,11 +84,11 @@ universityPartners:
 
 ## 4. The three big numbers
 
-> Full guide: **[Change the three big numbers](update-home-metrics.md)**.
+> Full guide: **[Change the three big numbers](update-homepage-numbers.md)**.
 
-![The first number block on the page](../images/edit-homepage/4-metrics-on-site.png)
+![The first number block on the page](../images/edit-homepage-text/4-metrics-on-site.png)
 
-![The matching lines in config.yaml](../images/edit-homepage/5-metrics-config.png)
+![The matching lines in config.yaml](../images/edit-homepage-text/5-metrics-config.png)
 
 | Number | Line | What it is |
 |:--:|------|-----------|
@@ -98,9 +98,9 @@ universityPartners:
 
 ## 5. "What is OpenMS?" (the four boxes)
 
-![The block with the parts numbered](../images/edit-homepage/8-key-features-on-site.png)
+![The block with the parts numbered](../images/edit-homepage-text/8-key-features-on-site.png)
 
-![The matching lines in config.yaml](../images/edit-homepage/9-key-features-config.png)
+![The matching lines in config.yaml](../images/edit-homepage-text/9-key-features-config.png)
 
 | Number | Line | What it is |
 |:--:|------|-----------|
@@ -113,9 +113,9 @@ universityPartners:
 
 ## 7. "Everyone is welcome"
 
-![The block with the parts numbered](../images/edit-homepage/6-community-on-site.png)
+![The block with the parts numbered](../images/edit-homepage-text/6-community-on-site.png)
 
-![The matching lines in config.yaml](../images/edit-homepage/7-community-config.png)
+![The matching lines in config.yaml](../images/edit-homepage-text/7-community-config.png)
 
 | Number | Line | What it is |
 |:--:|------|-----------|
@@ -149,6 +149,6 @@ The **order** of the blocks and their **colours and spacing** are not in `config
 ## Related guides
 
 - [Update Featured Apps](update-featured-apps.md)
-- [Change the announcement bar](update-news-banner.md)
+- [Change the announcement bar](update-announcement-bar.md)
 - [Add images](add-images.md)
 - Back to the [list of all guides](../README.md)

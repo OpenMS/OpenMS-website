@@ -18,18 +18,18 @@ This guide is for **non–front-end contributors** who update [openms.de](https:
 |------|--------|
 | Add a news article | [Add a news article](common-tasks/add-news-post.md) |
 | Add or change an event on the calendar | [Add or change an event](common-tasks/update-community-calendar.md) |
-| Change the announcement bar at the very top of every page | [Change the announcement bar](common-tasks/update-news-banner.md) |
-| Change the text on the home page (headline, numbers, “What is OpenMS?”…) | [Edit the text on the home page](common-tasks/edit-homepage-hero.md) |
+| Change the announcement bar at the very top of every page | [Change the announcement bar](common-tasks/update-announcement-bar.md) |
+| Change the text on the home page (headline, numbers, “What is OpenMS?”…) | [Edit the text on the home page](common-tasks/edit-homepage-text.md) |
 | Update the Annual Developer Retreat page | [Update the Developer Retreat page](common-tasks/update-developer-retreat.md) |
 | Add or remove a paper on the Publications page | [Publications](common-tasks/update-publications.md) |
 | Add, change or remove a Featured App | [Featured Apps](common-tasks/update-featured-apps.md) |
 | Add, change or remove an Affiliated App | [Affiliated Apps](common-tasks/update-affiliated-apps.md) |
-| Change the top menu, footer links or social icons | [Menu and footer](common-tasks/edit-footer-or-navbar.md) |
+| Change the top menu, footer links or social icons | [Menu and footer](common-tasks/edit-menu-or-footer.md) |
 | Add, change or remove a logo in “Adopted by labs and institutions” | [Adopted-by logos](common-tasks/update-adopted-by-logos.md) |
-| Change the three big numbers on the home page | [Home page numbers](common-tasks/update-home-metrics.md) |
+| Change the three big numbers on the home page | [Home page numbers](common-tasks/update-homepage-numbers.md) |
 | Add or remove a sponsor logo | [Sponsors](common-tasks/update-sponsors.md) |
 | Connect the Donate page to Zeffy | [Donate page (Zeffy)](common-tasks/configure-donate-zeffy.md) |
-| Change the words on any other page (Code of Conduct, Impressum, …) | [Change the text of a page](common-tasks/edit-a-page.md) |
+| Change the words on any other page (Code of Conduct, Impressum, …) | [Change the text of a page](common-tasks/edit-page-text.md) |
 | Add a picture or logo | [Add images](common-tasks/add-images.md) |
 | Preview the site on my computer | [Preview locally](getting-started/preview-locally.md) |
 | **Find out where things are** (pages, styling, pictures) in the website's files | [Map of the repository](getting-started/repo-map.md) |
@@ -60,17 +60,17 @@ docs/
 │   ├── add-news-post.md
 │   ├── update-community-calendar.md
 │   ├── update-adopted-by-logos.md
-│   ├── update-home-metrics.md
-│   ├── update-news-banner.md
-│   ├── edit-homepage-hero.md
+│   ├── update-homepage-numbers.md
+│   ├── update-announcement-bar.md
+│   ├── edit-homepage-text.md
 │   ├── update-developer-retreat.md
 │   ├── update-publications.md
 │   ├── update-featured-apps.md
 │   ├── update-affiliated-apps.md
-│   ├── add-webapp-to-homepage.md
-│   ├── edit-footer-or-navbar.md
+│   ├── add-app-to-homepage.md
+│   ├── edit-menu-or-footer.md
 │   ├── update-sponsors.md
-│   ├── edit-a-page.md
+│   ├── edit-page-text.md
 │   └── add-images.md
 ├── reference/
 │   ├── content-front-matter.md

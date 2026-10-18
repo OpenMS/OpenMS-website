@@ -46,7 +46,7 @@ The menu itself (labels, order, links) is **`config.yaml` → `navbar`**. Its de
 
 ### The footer
 
-The footer's columns, links and social icons are **`config.yaml` → `footer`** (see [Menu and footer](../common-tasks/edit-footer-or-navbar.md)). Its design is `layouts/partials/footer.html`, and its styling is `overrides/navbar-footer.css`. The copyright line is written in `footer.html`; the year updates itself when the site is rebuilt.
+The footer's columns, links and social icons are **`config.yaml` → `footer`** (see [Menu and footer](../common-tasks/edit-menu-or-footer.md)). Its design is `layouts/partials/footer.html`, and its styling is `overrides/navbar-footer.css`. The copyright line is written in `footer.html`; the year updates itself when the site is rebuilt.
 
 | Column | Link | Address | Page file | Design | Words | Styling |
 |--------|------|---------|-----------|--------|-------|---------|
@@ -68,7 +68,7 @@ The footer's columns, links and social icons are **`config.yaml` → `footer`** 
 - The intro text and links are in `config.yaml` under `contributePage`.
 - The look is in `assets/css/overrides/contribute.css`.
 
-Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/` (linked from Governance), `/help/` (linked from Contact), `/help-request/` (an embedded Google form, not linked from the site) and `/getting-started/develop-your-own-openms-tools/` (not linked from the site). `content/en/jobs.md` is a draft and is not published. `content/en/keyfeatures/` holds blocks for the home page, not pages of their own. The home page is `layouts/index.html` with its text in `config.yaml` (see [Edit the home page](../common-tasks/edit-homepage-hero.md)).
+Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/` (linked from Governance), `/help/` (linked from Contact), `/help-request/` (an embedded Google form, not linked from the site) and `/getting-started/develop-your-own-openms-tools/` (not linked from the site). `content/en/jobs.md` is a draft and is not published. `content/en/keyfeatures/` holds blocks for the home page, not pages of their own. The home page is `layouts/index.html` with its text in `config.yaml` (see [Edit the home page](../common-tasks/edit-homepage-text.md)).
 
 ## Content (Markdown)
 

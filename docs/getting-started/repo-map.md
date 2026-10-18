@@ -26,13 +26,13 @@ Other folders and files you may see (you don't need to touch them): `themes/` (t
 
 | I want to change… | Look here | Guide |
 |-------------------|-----------|-------|
-| The words of a page like Impressum or the Code of Conduct | `content/en/<page-name>.md` | [Change the text of a page](../common-tasks/edit-a-page.md) |
+| The words of a page like Impressum or the Code of Conduct | `content/en/<page-name>.md` | [Change the text of a page](../common-tasks/edit-page-text.md) |
 | A news article | `content/en/news/` | [Add a news article](../common-tasks/add-news-post.md) |
-| The words on the home page | `config.yaml` | [Edit the home page](../common-tasks/edit-homepage-hero.md) |
-| The top banner strip | `config.yaml` → `newsBanner` | [Announcement bar](../common-tasks/update-news-banner.md) |
-| The three big numbers | `config.yaml` → `homeMetrics` | [Home page numbers](../common-tasks/update-home-metrics.md) |
+| The words on the home page | `config.yaml` | [Edit the home page](../common-tasks/edit-homepage-text.md) |
+| The top banner strip | `config.yaml` → `newsBanner` | [Announcement bar](../common-tasks/update-announcement-bar.md) |
+| The three big numbers | `config.yaml` → `homeMetrics` | [Home page numbers](../common-tasks/update-homepage-numbers.md) |
 | The "Adopted by" logos | `config.yaml` → `universityPartners` | [Logos](../common-tasks/update-adopted-by-logos.md) |
-| Menu and footer | `config.yaml` → `navbar`, `footer` | [Menu and footer](../common-tasks/edit-footer-or-navbar.md) |
+| Menu and footer | `config.yaml` → `navbar`, `footer` | [Menu and footer](../common-tasks/edit-menu-or-footer.md) |
 | Calendar events | `data/community_events.yaml` | [Calendar](../common-tasks/update-community-calendar.md) |
 | Sponsors, apps, retreat, Zeffy | `config.yaml` | See the [list of guides](../README.md) |
 | A picture or logo | `static/images/…` | [Add images](../common-tasks/add-images.md) |
@@ -70,7 +70,7 @@ Each page has **three parts**, in three places:
 
 The page that decides **which design a page uses** is `layouts/_default/single.html`. It looks at the file name (`donate`, `calendar`, `governance`…) and picks the matching `…-main.html`. The **home page** design is `layouts/index.html`, which lists the blocks from top to bottom.
 
-If you need to find the words of a page and don't know which part holds them, use [the search trick in "Change the text of a page"](../common-tasks/edit-a-page.md#step-1--find-where-the-words-live).
+If you need to find the words of a page and don't know which part holds them, use [the search trick in "Change the text of a page"](../common-tasks/edit-page-text.md#step-1--find-where-the-words-live).
 
 ## What happens after a change is approved?
 

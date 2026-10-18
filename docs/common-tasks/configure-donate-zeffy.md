@@ -72,5 +72,5 @@ Please **do not make a real test donation**. Just check that the form loads.
 
 ## Related guides
 
-- [Edit the footer links](edit-footer-or-navbar.md) (the footer *Donate* link goes to this page)
+- [Edit the footer links](edit-menu-or-footer.md) (the footer *Donate* link goes to this page)
 - Back to the [list of all guides](../README.md)

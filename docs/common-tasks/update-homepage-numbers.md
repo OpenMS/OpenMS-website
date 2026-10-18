@@ -6,7 +6,7 @@ On the home page, in a dark blue panel, there are three big numbers: **20+ Years
 
 ## What you will change
 
-![The three numbers on the home page, with the first one's parts marked](../images/edit-homepage/4-metrics-on-site.png)
+![The three numbers on the home page, with the first one's parts marked](../images/edit-homepage-text/4-metrics-on-site.png)
 
 1. The **number** (and what comes after it, like `+`).
 2. The **label** under the number.
@@ -14,7 +14,7 @@ On the home page, in a dark blue panel, there are three big numbers: **20+ Years
 
 And the same block in `config.yaml`:
 
-![The first number block in config.yaml](../images/edit-homepage/5-metrics-config.png)
+![The first number block in config.yaml](../images/edit-homepage-text/5-metrics-config.png)
 
 | Number | Line | What it is |
 |:--:|------|-----------|
@@ -69,5 +69,5 @@ And the same block in `config.yaml`:
 
 ## Related guides
 
-- [Edit the text on the home page](edit-homepage-hero.md)
+- [Edit the text on the home page](edit-homepage-text.md)
 - Back to the [list of all guides](../README.md)

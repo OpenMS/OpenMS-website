@@ -32,14 +32,14 @@ Words on a page can be in **one of three places**:
 | Privacy Policy | `content/en/privacy.md` | This guide, but keep the `###` and `####` heading lines exactly: the page is built from them. |
 | Help | `content/en/help.md` | This guide. It contains some formatting symbols (`<p>`, `<strong>`): change only the words between them. |
 | News articles | `content/en/news/…` | [Add a news article](add-news-post.md) |
-| Home page | `config.yaml` | [Edit the home page](edit-homepage-hero.md) |
+| Home page | `config.yaml` | [Edit the home page](edit-homepage-text.md) |
 | Community calendar | `data/community_events.yaml` | [Calendar](update-community-calendar.md) |
 | Featured / Affiliated Apps | `config.yaml` | [Featured](update-featured-apps.md) · [Affiliated](update-affiliated-apps.md) |
 | Our Sponsors | `config.yaml` | [Sponsors](update-sponsors.md) |
 | Developer Retreat | `config.yaml` | [Retreat](update-developer-retreat.md) |
 | Publications | `pmids.txt` | [Publications](update-publications.md) |
 | Donate | `config.yaml` | [Donate](configure-donate-zeffy.md) |
-| Top menu and footer links | `config.yaml` | [Menu and footer](edit-footer-or-navbar.md) |
+| Top menu and footer links | `config.yaml` | [Menu and footer](edit-menu-or-footer.md) |
 | Contribute, Fellowship, Governance, Contact, Research Partnerships, Sponsor Us, Services, OpenMS-lib, pyOpenMS, pyOpenMS-viz, Web apps | the **intro sentence** is in `config.yaml` (look for the page name followed by `Page`, for example `contactPage`); most **other words** are part of the design (layout) | Intro sentence: edit `config.yaml` like in the guides above. Other words: ask the web team. |
 | Press kit | the layout | Ask the web team. |
 
@@ -49,11 +49,11 @@ Here is the Code of Conduct page next to the file it comes from.
 
 **On the website**
 
-![The Code of Conduct page with title, heading and text numbered](../images/edit-a-page/1-page.png)
+![The Code of Conduct page with title, heading and text numbered](../images/edit-page-text/1-page.png)
 
 **In the file** (`content/en/code-of-conduct.md`)
 
-![The beginning of the file with matching numbers](../images/edit-a-page/2-markdown.png)
+![The beginning of the file with matching numbers](../images/edit-page-text/2-markdown.png)
 
 | Number | In the file | On the page |
 |:--:|-------------|-------------|
