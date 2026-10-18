@@ -46,7 +46,7 @@ The menu itself (labels, order, links) is **`config.yaml` → `navbar`**. Its de
 
 ### The footer
 
-The footer's columns, links and social icons are **`config.yaml` → `footer`** (see [Change the footer links](../common-tasks/footer/edit-footer-links.md)). Its design is `layouts/partials/footer.html`, and its styling is `overrides/navbar-footer.css`. The copyright line is written in `footer.html`; the year updates itself when the site is rebuilt.
+The footer's columns, links and social icons are **`config.yaml` → `footer`** (see [Change the footer links](../common-tasks/footer/edit-footer-links.md)). Its design is `layouts/partials/footer.html`, and its styling is `overrides/navbar-footer.css`. The copyright line is written in `footer.html`. Its year is set by a small script from the visitor's clock, so it changes by itself on 1 January (the year of the last build is shown when JavaScript is off).
 
 | Column | Link | Address | Page file | Design | Words | Styling |
 |--------|------|---------|-----------|--------|-------|---------|
