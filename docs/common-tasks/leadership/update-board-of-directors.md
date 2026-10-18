@@ -6,11 +6,11 @@ The page **Leadership** has the address **https://openms.de/contributors/** (top
 
 **On the website**
 
-![A board card: 1 the photo, 2 the name, 3 the role, 4 the bio](../../images/leadership/1-board-card-on-site.png)
+![A board card: 1 the photo, 2 the name, 3 the role, 4 the bio](../../common-tasks-screenshot-images/leadership/1-board-card-on-site.png)
 
 **In the file**
 
-![The same card in contributors-leadership.html, with matching numbers](../../images/leadership/2-board-card-file.png)
+![The same card in contributors-leadership.html, with matching numbers](../../common-tasks-screenshot-images/leadership/2-board-card-file.png)
 
 | Number | In the file | What it is |
 |:--:|-------------|-----------|

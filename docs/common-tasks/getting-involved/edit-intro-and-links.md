@@ -6,11 +6,11 @@ The page **Getting Involved** has the address **https://openms.de/contribute/** 
 
 **On the website**
 
-![The top of the Getting Involved page with the small word and the intro numbered](../../images/getting-involved/1-intro-on-site.png)
+![The top of the Getting Involved page with the small word and the intro numbered](../../common-tasks-screenshot-images/getting-involved/1-intro-on-site.png)
 
 **In `config.yaml`**
 
-![The contributePage lines in config.yaml, numbered](../../images/getting-involved/2-config.png)
+![The contributePage lines in config.yaml, numbered](../../common-tasks-screenshot-images/getting-involved/2-config.png)
 
 The numbers match: the part marked **1** on the website is the line marked **1** in the file. Lines **3** to **5** are addresses used by the buttons and links further down the page.
 

@@ -6,14 +6,14 @@ Sponsors are shown on **https://openms.de/our-sponsors/**. Each sponsor is **one
 
 ## What you will change
 
-![The Our Sponsors page with the intro text and the logos numbered](../../images/update-sponsors/1-sponsors-page.png)
+![The Our Sponsors page with the intro text and the logos numbered](../../common-tasks-screenshot-images/update-sponsors/1-sponsors-page.png)
 
 1. **The introduction** sentence. This is the `intro:` line under `sponsorsSection:`.
 2. **One sponsor logo.** Each logo is one block under `sponsors:`.
 
 And this is the block for **one** sponsor in `config.yaml`:
 
-![One sponsor in config.yaml, with the lines marked](../../images/update-sponsors/2-sponsor-config.png)
+![One sponsor in config.yaml, with the lines marked](../../common-tasks-screenshot-images/update-sponsors/2-sponsor-config.png)
 
 | Number | Line | What it is |
 |:--:|------|-----------|

@@ -8,11 +8,11 @@ The questions are written in a **design file** (HTML): `layouts/partials/sponsor
 
 **On the website**
 
-![The FAQ with one question opened: 1 the question, 2 the answer](../../images/sponsorship-program/9-faq-on-site.png)
+![The FAQ with one question opened: 1 the question, 2 the answer](../../common-tasks-screenshot-images/sponsorship-program/9-faq-on-site.png)
 
 **In the file**
 
-![The same question in sponsor-us-main.html, with matching numbers](../../images/sponsorship-program/10-faq-file.png)
+![The same question in sponsor-us-main.html, with matching numbers](../../common-tasks-screenshot-images/sponsorship-program/10-faq-file.png)
 
 | Number | In the file | What it is |
 |:--:|-------------|-----------|

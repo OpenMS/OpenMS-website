@@ -4,9 +4,9 @@ The big banner at the top of the home page: headline, short text and two buttons
 
 **You will change:** a few lines in `config.yaml` (search for `hero:`)  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
-![The top banner with the parts you can change numbered](../../images/edit-homepage-text/2-hero-on-site.png)
+![The top banner with the parts you can change numbered](../../common-tasks-screenshot-images/edit-homepage-text/2-hero-on-site.png)
 
-![The matching lines in config.yaml](../../images/edit-homepage-text/3-hero-config.png)
+![The matching lines in config.yaml](../../common-tasks-screenshot-images/edit-homepage-text/3-hero-config.png)
 
 | Number | Line(s) | What it is |
 |:--:|---------|-----------|

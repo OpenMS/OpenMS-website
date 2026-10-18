@@ -6,11 +6,11 @@ The **Learn** menu in the top menu has six links (Liquid Chromatography, Mass Sp
 
 **On the website**
 
-![The Learn menu opened, two links numbered](../../images/edit-menu-or-footer/8-learn-menu.png)
+![The Learn menu opened, two links numbered](../../common-tasks-screenshot-images/edit-menu-or-footer/8-learn-menu.png)
 
 **In `config.yaml`**
 
-![The Learn part of the navbar in config.yaml with matching numbers](../../images/edit-menu-or-footer/9-learn-config.png)
+![The Learn part of the navbar in config.yaml with matching numbers](../../common-tasks-screenshot-images/edit-menu-or-footer/9-learn-config.png)
 
 The numbers match: the part marked **1** on the website is the line marked **1** in the file.
 

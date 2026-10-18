@@ -4,9 +4,9 @@ The block with the community photo, two short paragraphs and a button.
 
 **You will change:** a few lines in `config.yaml` (search for `communitySection`)  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
-![The block with the parts numbered](../../images/edit-homepage-text/6-community-on-site.png)
+![The block with the parts numbered](../../common-tasks-screenshot-images/edit-homepage-text/6-community-on-site.png)
 
-![The matching lines in config.yaml](../../images/edit-homepage-text/7-community-config.png)
+![The matching lines in config.yaml](../../common-tasks-screenshot-images/edit-homepage-text/7-community-config.png)
 
 | Number | Line | What it is |
 |:--:|------|-----------|

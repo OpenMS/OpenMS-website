@@ -6,11 +6,11 @@ The page **https://openms.de/scientific-and-technical-support/** (top menu → *
 
 **On the website**
 
-![The Services page with the small word, the intro and the form heading numbered](../../images/scientific-and-technical-support/1-intro-on-site.png)
+![The Services page with the small word, the intro and the form heading numbered](../../common-tasks-screenshot-images/scientific-and-technical-support/1-intro-on-site.png)
 
 **In `config.yaml`**
 
-![The servicesSupportPage lines in config.yaml with matching numbers](../../images/scientific-and-technical-support/2-config.png)
+![The servicesSupportPage lines in config.yaml with matching numbers](../../common-tasks-screenshot-images/scientific-and-technical-support/2-config.png)
 
 The numbers match: the part marked **1** on the website is the line marked **1** in the file.
 

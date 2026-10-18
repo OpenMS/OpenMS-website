@@ -52,11 +52,11 @@ Here is the Code of Conduct page next to the file it comes from.
 
 **On the website**
 
-![The Code of Conduct page with title, heading and text numbered](../../images/edit-page-text/1-page.png)
+![The Code of Conduct page with title, heading and text numbered](../../common-tasks-screenshot-images/edit-page-text/1-page.png)
 
 **In the file** (`content/en/code-of-conduct.md`)
 
-![The beginning of the file with matching numbers](../../images/edit-page-text/2-markdown.png)
+![The beginning of the file with matching numbers](../../common-tasks-screenshot-images/edit-page-text/2-markdown.png)
 
 | Number | In the file | On the page |
 |:--:|-------------|-------------|

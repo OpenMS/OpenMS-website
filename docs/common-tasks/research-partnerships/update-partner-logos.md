@@ -8,11 +8,11 @@ The page **Research Partnerships** (**https://openms.de/research-partnerships/**
 
 **On the website**
 
-![The Our partners block: 1 one logo](../../images/research-partnerships/3-logos-on-site.png)
+![The Our partners block: 1 one logo](../../common-tasks-screenshot-images/research-partnerships/3-logos-on-site.png)
 
 **In `config.yaml`**
 
-![The universityPartners list: 1 one logo, with its name, picture and website](../../images/research-partnerships/4-logos-config.png)
+![The universityPartners list: 1 one logo, with its name, picture and website](../../common-tasks-screenshot-images/research-partnerships/4-logos-config.png)
 
 | Line | What it is |
 |------|-----------|

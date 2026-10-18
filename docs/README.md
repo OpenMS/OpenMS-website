@@ -92,6 +92,7 @@ docs/
 │   ├── donate/  executive-committee-charter/  code-of-conduct-enforcement-procedures/
 │   ├── privacy/  press-kit/  impressum/
 │   └── any-page/             ← help for any page: find text, add images
+├── common-tasks-screenshot-images/ ← the screenshots used in the guides
 ├── reference/
 │   ├── content-front-matter.md
 │   ├── config-yaml-guide.md

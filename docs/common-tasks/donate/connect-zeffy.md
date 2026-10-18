@@ -6,7 +6,7 @@ The **Donate** page (**https://openms.de/donate/**) collects gifts through **Zef
 
 ## What it looks like now (before the address is added)
 
-![The Make a donation block, which currently says the link is not working yet](../../images/configure-donate-zeffy/1-form-block.png)
+![The Make a donation block, which currently says the link is not working yet](../../common-tasks-screenshot-images/configure-donate-zeffy/1-form-block.png)
 
 1. This message is shown **until** a Zeffy address is added. After you add it, it is replaced by the donation form.
 
@@ -28,7 +28,7 @@ The **Donate** page (**https://openms.de/donate/**) collects gifts through **Zef
 2. Click inside the text box, press **Ctrl + F** (Windows) or **Cmd + F** (Mac) and search for `zeffyEmbedUrl`.
 3. Paste the address **between the two quote marks**:
 
-![The two Zeffy lines in config.yaml](../../images/configure-donate-zeffy/2-config.png)
+![The two Zeffy lines in config.yaml](../../common-tasks-screenshot-images/configure-donate-zeffy/2-config.png)
 
 | Number | Line | What to do |
 |:--:|------|-----------|

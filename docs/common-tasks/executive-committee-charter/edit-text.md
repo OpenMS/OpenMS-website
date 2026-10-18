@@ -6,11 +6,11 @@ The page **https://openms.de/exec_committee/** (footer → **COMMUNITY**) has **
 
 **On the website**
 
-![The Executive Committee Charter page with title, heading and text numbered](../../images/executive-committee-charter/1-page.png)
+![The Executive Committee Charter page with title, heading and text numbered](../../common-tasks-screenshot-images/executive-committee-charter/1-page.png)
 
 **In the page file**
 
-![The beginning of exec_committee.md with matching numbers](../../images/executive-committee-charter/2-page-file.png)
+![The beginning of exec_committee.md with matching numbers](../../common-tasks-screenshot-images/executive-committee-charter/2-page-file.png)
 
 The numbers match: the part marked **1** on the website is the line marked **1** in the file.
 

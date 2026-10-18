@@ -9,15 +9,15 @@ The page **Our Sponsorship Program** (**https://openms.de/sponsor-us/**) shows w
 
 **On the website**
 
-![The Benefit comparison table: 1 a benefit, 2 a cross, 3 text, 4 a tick](../../images/sponsorship-program/5-benefits-table-on-site.png)
+![The Benefit comparison table: 1 a benefit, 2 a cross, 3 text, 4 a tick](../../common-tasks-screenshot-images/sponsorship-program/5-benefits-table-on-site.png)
 
-![The Silver card: 5 its first three benefits](../../images/sponsorship-program/6-benefits-on-card.png)
+![The Silver card: 5 its first three benefits](../../common-tasks-screenshot-images/sponsorship-program/6-benefits-on-card.png)
 
 **In `config.yaml`**
 
-![One benefit in benefitsMatrix with matching numbers](../../images/sponsorship-program/7-benefit-row-config.png)
+![One benefit in benefitsMatrix with matching numbers](../../common-tasks-screenshot-images/sponsorship-program/7-benefit-row-config.png)
 
-![A benefit that every level has, written with ticks](../../images/sponsorship-program/8-tick-row-config.png)
+![A benefit that every level has, written with ticks](../../common-tasks-screenshot-images/sponsorship-program/8-tick-row-config.png)
 
 ## How one benefit is written
 

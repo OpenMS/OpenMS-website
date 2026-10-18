@@ -6,11 +6,11 @@ The page **Leadership** (**https://openms.de/contributors/**) has a second part,
 
 **On the website**
 
-![The Executive Committee: 1 the chair, 2 one member, with picture and name](../../images/leadership/3-committee-on-site.png)
+![The Executive Committee: 1 the chair, 2 one member, with picture and name](../../common-tasks-screenshot-images/leadership/3-committee-on-site.png)
 
 **In the file**
 
-![The chair (1) and one member (2) in members.html](../../images/leadership/4-committee-file.png)
+![The chair (1) and one member (2) in members.html](../../common-tasks-screenshot-images/leadership/4-committee-file.png)
 
 | Line in the file | What it is |
 |------------------|-----------|

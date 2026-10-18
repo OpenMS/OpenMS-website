@@ -4,7 +4,7 @@ The guides and `config.yaml` use a few words for the parts of a page. Here is wh
 
 ## The parts of every page
 
-![A page with the announcement bar, the top menu and the hero numbered](../images/glossary/1-page-parts.png)
+![A page with the announcement bar, the top menu and the hero numbered](../common-tasks-screenshot-images/glossary/1-page-parts.png)
 
 | Number | Word | What it is | Where it is written |
 |:--:|------|-----------|---------------------|
@@ -15,7 +15,7 @@ The guides and `config.yaml` use a few words for the parts of a page. Here is wh
 
 ## The parts of a hero (and of most blocks)
 
-![A hero with the eyebrow, title, highlighted word, intro and buttons numbered](../images/glossary/2-hero-parts.png)
+![A hero with the eyebrow, title, highlighted word, intro and buttons numbered](../common-tasks-screenshot-images/glossary/2-hero-parts.png)
 
 | Number | Word | What it is | Usual name in `config.yaml` |
 |:--:|------|-----------|-----------------------------|
@@ -29,7 +29,7 @@ Most blocks on the website follow the same pattern: an eyebrow, a title (sometim
 
 ## The parts of a card
 
-![A Featured App card with its parts numbered](../images/glossary/3-card-parts.png)
+![A Featured App card with its parts numbered](../common-tasks-screenshot-images/glossary/3-card-parts.png)
 
 | Number | Word | What it is | Usual name in `config.yaml` |
 |:--:|------|-----------|-----------------------------|

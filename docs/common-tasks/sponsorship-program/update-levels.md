@@ -6,15 +6,15 @@ The page **Our Sponsorship Program** (**https://openms.de/sponsor-us/**) shows f
 
 **On the website**
 
-![The Bronze level card with name, price and motto numbered](../../images/sponsorship-program/1-level-on-site.png)
+![The Bronze level card with name, price and motto numbered](../../common-tasks-screenshot-images/sponsorship-program/1-level-on-site.png)
 
-![The Benefit comparison table with its heading and one row numbered](../../images/sponsorship-program/3-benefits-on-site.png)
+![The Benefit comparison table with its heading and one row numbered](../../common-tasks-screenshot-images/sponsorship-program/3-benefits-on-site.png)
 
 **In `config.yaml`**
 
-![One level in config.yaml with matching numbers](../../images/sponsorship-program/2-level-config.png)
+![One level in config.yaml with matching numbers](../../common-tasks-screenshot-images/sponsorship-program/2-level-config.png)
 
-![One row of the benefit table in config.yaml, numbered 5](../../images/sponsorship-program/4-benefits-config.png)
+![One row of the benefit table in config.yaml, numbered 5](../../common-tasks-screenshot-images/sponsorship-program/4-benefits-config.png)
 
 The numbers match: the part marked **1** on the website is the line marked **1** in the file.
 

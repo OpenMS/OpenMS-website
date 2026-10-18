@@ -13,11 +13,11 @@
 
 One app is one **card**:
 
-![An app card on the Featured Apps page, with each part numbered](../../images/update-featured-apps/1-app-card.png)
+![An app card on the Featured Apps page, with each part numbered](../../common-tasks-screenshot-images/update-featured-apps/1-app-card.png)
 
 And one card is one **block of lines** in `config.yaml`:
 
-![The same app in config.yaml, with matching numbers](../../images/update-featured-apps/2-app-config.png)
+![The same app in config.yaml, with matching numbers](../../common-tasks-screenshot-images/update-featured-apps/2-app-config.png)
 
 | Number | Line | What it is |
 |:--:|------|-----------|

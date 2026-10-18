@@ -4,9 +4,9 @@ The block with a title, a short text and **four boxes** (Open source, C++ & Pyth
 
 **You will change:** a few lines in `config.yaml` (search for `keyfeatures`)  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
-![The block with the parts numbered](../../images/edit-homepage-text/8-key-features-on-site.png)
+![The block with the parts numbered](../../common-tasks-screenshot-images/edit-homepage-text/8-key-features-on-site.png)
 
-![The matching lines in config.yaml](../../images/edit-homepage-text/9-key-features-config.png)
+![The matching lines in config.yaml](../../common-tasks-screenshot-images/edit-homepage-text/9-key-features-config.png)
 
 | Number | Line | What it is |
 |:--:|------|-----------|

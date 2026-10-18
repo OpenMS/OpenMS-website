@@ -11,7 +11,7 @@ The page **https://openms.de/publications/** has two parts:
 
 Every paper in the archive looks like this:
 
-![One paper in the All publications list](../../images/update-publications/1-entry.png)
+![One paper in the All publications list](../../common-tasks-screenshot-images/update-publications/1-entry.png)
 
 | Number | What it shows |
 |:--:|---------------|
@@ -35,7 +35,7 @@ No PubMed entry? Then the paper cannot be added with this method. Ask the web te
 1. Open **https://github.com/OpenMS/OpenMS-website/blob/main/pmids.txt** and click the **pencil icon**. ([Need help?](../../getting-started/edit-via-github.md#step-1--open-the-file))
 2. The file is just numbers, one per line:
 
-   ![The pmids.txt file](../../images/update-publications/2-pmids.png)
+   ![The pmids.txt file](../../common-tasks-screenshot-images/update-publications/2-pmids.png)
 
 3. Click at the **very end of the last line**, press **Enter**, and type or paste your number on the new line. Nothing else, no spaces and no text.
 4. Save and send for review: [How to make a change, steps 3 to 6](../../getting-started/edit-via-github.md#step-3--save-commit-changes). A good note is *Add paper PMID 38366242*.

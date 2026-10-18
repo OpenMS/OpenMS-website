@@ -8,7 +8,7 @@ The **Community events** page (**https://openms.de/calendar/**) lists upcoming a
 
 ## What an event looks like
 
-![An event card on the calendar page, with date, title, place and link marked](../../images/update-community-calendar/1-event-card.png)
+![An event card on the calendar page, with date, title, place and link marked](../../common-tasks-screenshot-images/update-community-calendar/1-event-card.png)
 
 | Number | What it shows | Google Calendar field |
 |:--:|---------------|-----------------------|

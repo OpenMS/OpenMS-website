@@ -66,7 +66,7 @@ When you change a `config.yaml` key, a layout's editable text, or where somethin
 
 - Audience: non-developers editing on GitHub in the browser. Plain language, short sentences, no jargon (or explain it: see `docs/getting-started/words-we-use.md`).
 - Structure: `docs/common-tasks/<page>/` has **one folder per page** of the navbar and footer, one task file per thing you can change. `docs/common-tasks/README.md` lists them in menu order; `docs/README.md` has the same table. Add new guides to both.
-- Every task guide has a numbered screenshot of the page next to a numbered picture of the matching `config.yaml` / file lines (red boxes and badges, same numbers in both). Images go in `docs/images/<folder>/`.
+- Every task guide has a numbered screenshot of the page next to a numbered picture of the matching `config.yaml` / file lines (red boxes and badges, same numbers in both). Images go in `docs/common-tasks-screenshot-images/<folder>/`.
 - Say clearly what is **not** editable without the web team (text hard-coded in `layouts/`).
 - Before committing docs, check that every relative link and `#anchor` in `docs/` resolves (GitHub heading slugs: lower case, spaces → `-`, punctuation dropped).
 

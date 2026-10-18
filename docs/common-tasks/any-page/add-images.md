@@ -40,7 +40,7 @@ Open the folder on GitHub. For example, for sponsor logos:
 
 Click **Add file** (top right), then **Upload files**.
 
-![The Add file button and the Upload files entry](../../images/github/6-add-file-upload.png)
+![The Add file button and the Upload files entry](../../common-tasks-screenshot-images/github/6-add-file-upload.png)
 
 | Number | What to do |
 |:--:|------------|
@@ -49,7 +49,7 @@ Click **Add file** (top right), then **Upload files**.
 
 ### Step 3 – Drop the picture in and save
 
-![The upload page](../../images/github/7-upload-page.png)
+![The upload page](../../common-tasks-screenshot-images/github/7-upload-page.png)
 
 | Number | What to do |
 |:--:|------------|

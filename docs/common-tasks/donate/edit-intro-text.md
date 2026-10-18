@@ -6,13 +6,13 @@ The page **https://openms.de/donate/** (footer → **SUPPORT** → **Donate**) s
 
 **On the website**
 
-![The top of the Donate page with the small word and the intro numbered](../../images/donate/1-intro-on-site.png)
+![The top of the Donate page with the small word and the intro numbered](../../common-tasks-screenshot-images/donate/1-intro-on-site.png)
 
-![The tax note under the donation block, numbered 3](../../images/donate/3-tax-note-on-site.png)
+![The tax note under the donation block, numbered 3](../../common-tasks-screenshot-images/donate/3-tax-note-on-site.png)
 
 **In `config.yaml`**
 
-![The donatePage lines in config.yaml with matching numbers](../../images/donate/2-config.png)
+![The donatePage lines in config.yaml with matching numbers](../../common-tasks-screenshot-images/donate/2-config.png)
 
 The numbers match: the part marked **1** on the website is the line marked **1** in the file.
 

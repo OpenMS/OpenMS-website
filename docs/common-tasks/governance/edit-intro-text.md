@@ -6,11 +6,11 @@ The page **https://openms.de/governance/** (top menu → **About** → **Governa
 
 **On the website**
 
-![The top of the Governance page with the small word and the intro numbered](../../images/governance/1-intro-on-site.png)
+![The top of the Governance page with the small word and the intro numbered](../../common-tasks-screenshot-images/governance/1-intro-on-site.png)
 
 **In `config.yaml`**
 
-![The governancePage lines in config.yaml with matching numbers](../../images/governance/2-config.png)
+![The governancePage lines in config.yaml with matching numbers](../../common-tasks-screenshot-images/governance/2-config.png)
 
 The numbers match: the part marked **1** on the website is the line marked **1** in the file.
 

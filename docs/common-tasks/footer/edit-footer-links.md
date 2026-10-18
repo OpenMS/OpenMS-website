@@ -4,13 +4,13 @@ The **block at the bottom** of every page, with links in four columns, is called
 
 **You will change:** a few lines in `config.yaml`  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
-![The footer with the parts numbered](../../images/edit-menu-or-footer/2-footer.png)
+![The footer with the parts numbered](../../common-tasks-screenshot-images/edit-menu-or-footer/2-footer.png)
 
 1. The **short sentence** under the logo (`tagline:`).
 2. The **title of a column** (`heading:`).
 3. **One link** in a column.
 
-![The first footer column in config.yaml](../../images/edit-menu-or-footer/4-footer-links-config.png)
+![The first footer column in config.yaml](../../common-tasks-screenshot-images/edit-menu-or-footer/4-footer-links-config.png)
 
 | Number | Lines | What it is |
 |:--:|-------|-----------|

@@ -6,11 +6,11 @@ The small icons in the footer (Discord, LinkedIn, GitHub, Google Scholar). The s
 
 **On the website**
 
-![The social icons in the footer, LinkedIn and GitHub numbered](../../images/edit-menu-or-footer/6-social-icons.png)
+![The social icons in the footer, LinkedIn and GitHub numbered](../../common-tasks-screenshot-images/edit-menu-or-footer/6-social-icons.png)
 
 **In `config.yaml`**
 
-![The socialmedia lines in config.yaml with matching numbers](../../images/edit-menu-or-footer/7-social-config.png)
+![The socialmedia lines in config.yaml with matching numbers](../../common-tasks-screenshot-images/edit-menu-or-footer/7-social-config.png)
 
 The numbers match: the part marked **1** on the website is the line marked **1** in the file.
 

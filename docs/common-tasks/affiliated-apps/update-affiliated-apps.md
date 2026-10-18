@@ -10,11 +10,11 @@
 
 One project is one **card**:
 
-![A project card on the Affiliated Apps page, with each part numbered](../../images/update-affiliated-apps/1-card.png)
+![A project card on the Affiliated Apps page, with each part numbered](../../common-tasks-screenshot-images/update-affiliated-apps/1-card.png)
 
 and one card is one **block of lines** in `config.yaml`:
 
-![The same project in config.yaml, with matching numbers](../../images/update-affiliated-apps/2-config.png)
+![The same project in config.yaml, with matching numbers](../../common-tasks-screenshot-images/update-affiliated-apps/2-config.png)
 
 | Number | Line | What it is |
 |:--:|------|-----------|

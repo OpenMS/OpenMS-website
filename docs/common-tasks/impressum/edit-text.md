@@ -6,11 +6,11 @@ The page **https://openms.de/impressum/** (footer → **LEGAL**) has **all its w
 
 **On the website**
 
-![The Impressum page with title and address lines numbered](../../images/impressum/1-page.png)
+![The Impressum page with title and address lines numbered](../../common-tasks-screenshot-images/impressum/1-page.png)
 
 **In the page file**
 
-![The impressum.md file with matching numbers](../../images/impressum/2-page-file.png)
+![The impressum.md file with matching numbers](../../common-tasks-screenshot-images/impressum/2-page-file.png)
 
 The numbers match: the part marked **1** on the website is the line marked **1** in the file.
 

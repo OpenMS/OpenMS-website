@@ -6,11 +6,11 @@ The page **https://openms.de/fellowship/** presents the fellowship and shows the
 
 **On the website**
 
-![The top of the Fellowship page with the small word, the headline and a label numbered](../../images/fellowship/1-top-on-site.png)
+![The top of the Fellowship page with the small word, the headline and a label numbered](../../common-tasks-screenshot-images/fellowship/1-top-on-site.png)
 
 **In `config.yaml`**
 
-![The fellowshipPage lines in config.yaml with matching numbers](../../images/fellowship/2-config.png)
+![The fellowshipPage lines in config.yaml with matching numbers](../../common-tasks-screenshot-images/fellowship/2-config.png)
 
 The numbers match: the part marked **1** on the website is the line marked **1** in the file.
 

@@ -4,7 +4,7 @@ The **menu at the top** of every page (Projects, Apps, Learn, Community…) is c
 
 **You will change:** a few lines in `config.yaml`  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
-![The Community menu opened, with the parts numbered](../../images/edit-menu-or-footer/1-navbar.png)
+![The Community menu opened, with the parts numbered](../../common-tasks-screenshot-images/edit-menu-or-footer/1-navbar.png)
 
 1. A **top-level item** (clicking it opens the list below).
 2. One **line inside the drop-down list**.
@@ -12,7 +12,7 @@ The **menu at the top** of every page (Projects, Apps, Learn, Community…) is c
 
 The same menu in `config.yaml`:
 
-![The Community part of the navbar in config.yaml](../../images/edit-menu-or-footer/5-navbar-config.png)
+![The Community part of the navbar in config.yaml](../../common-tasks-screenshot-images/edit-menu-or-footer/5-navbar-config.png)
 
 | Number | Lines | What it is |
 |:--:|-------|-----------|

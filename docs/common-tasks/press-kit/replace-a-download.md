@@ -4,7 +4,7 @@ The page **https://openms.de/press-kit/** (footer → **LEGAL** → **Press kit*
 
 **You will change:** one file in `static/press-kit/`  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
-![The Press kit page: 1 a logo download, 2 a template download](../../images/press-kit/1-downloads-on-site.png)
+![The Press kit page: 1 a logo download, 2 a template download](../../common-tasks-screenshot-images/press-kit/1-downloads-on-site.png)
 
 ## The files
 

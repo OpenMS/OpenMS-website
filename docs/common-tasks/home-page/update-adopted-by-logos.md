@@ -8,14 +8,14 @@ On the **home page**, just under the top banner, two rows of logos slowly move s
 
 ## What you will change
 
-![The Adopted by labs strip on the home page](../../images/update-adopted-by-logos/1-logo-strip.png)
+![The Adopted by labs strip on the home page](../../common-tasks-screenshot-images/update-adopted-by-logos/1-logo-strip.png)
 
 1. The heading. It is fixed text, you cannot change it here.
 2. **One logo.** Click it and the visitor goes to that organisation's website.
 
 The same logo in `config.yaml`:
 
-![One logo block in config.yaml](../../images/update-adopted-by-logos/2-config.png)
+![One logo block in config.yaml](../../common-tasks-screenshot-images/update-adopted-by-logos/2-config.png)
 
 | Number | Line | What it is |
 |:--:|------|-----------|

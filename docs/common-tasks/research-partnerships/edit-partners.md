@@ -6,11 +6,11 @@ The page **https://openms.de/research-partnerships/** explains how research grou
 
 **On the website**
 
-![The top of the Research Partnerships page with the small word and the intro numbered](../../images/research-partnerships/1-intro-on-site.png)
+![The top of the Research Partnerships page with the small word and the intro numbered](../../common-tasks-screenshot-images/research-partnerships/1-intro-on-site.png)
 
 **In `config.yaml`**
 
-![The researchPartnershipsPage lines in config.yaml with matching numbers](../../images/research-partnerships/2-config.png)
+![The researchPartnershipsPage lines in config.yaml with matching numbers](../../common-tasks-screenshot-images/research-partnerships/2-config.png)
 
 The numbers match: the part marked **1** on the website is the line marked **1** in the file.
 

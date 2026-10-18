@@ -8,15 +8,15 @@ The page **https://openms.de/developer-retreat/** tells people about the next re
 
 **The "Upcoming retreat" block**
 
-![The Upcoming retreat block with parts numbered](../../images/update-developer-retreat/1-upcoming.png)
+![The Upcoming retreat block with parts numbered](../../common-tasks-screenshot-images/update-developer-retreat/1-upcoming.png)
 
 **The photo of the last retreat** (further down the same page)
 
-![The past photo with its caption](../../images/update-developer-retreat/2-past-photo.png)
+![The past photo with its caption](../../common-tasks-screenshot-images/update-developer-retreat/2-past-photo.png)
 
 **And the matching lines in `config.yaml`** (the numbers are the same):
 
-![The retreat lines in config.yaml](../../images/update-developer-retreat/3-config.png)
+![The retreat lines in config.yaml](../../common-tasks-screenshot-images/update-developer-retreat/3-config.png)
 
 | Number | Lines | What it is |
 |:--:|-------|-----------|
@@ -97,7 +97,7 @@ Good to know:
 
 ## Update the "Register here" link
 
-![What the button looks like when registration is open](../../images/update-developer-retreat/4-register-open.png)
+![What the button looks like when registration is open](../../common-tasks-screenshot-images/update-developer-retreat/4-register-open.png)
 
 1. The **Register here** button. When registration is **open** it is a normal blue button that opens your sign-up form in a new tab. When it is **closed** the button does nothing when clicked, and the `closedHint:` text appears in a small pop-up when you point at it.
 

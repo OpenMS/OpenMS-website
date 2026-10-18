@@ -6,7 +6,7 @@ The website's files are all stored in one place on GitHub, called the **reposito
 
 ## The big picture
 
-![The main folders and files of the repository on GitHub, numbered](../images/repo-map/1-github-folders.png)
+![The main folders and files of the repository on GitHub, numbered](../common-tasks-screenshot-images/repo-map/1-github-folders.png)
 
 | Number | Folder or file | What is inside | Can I edit it? |
 |:--:|---------------|----------------|----------------|

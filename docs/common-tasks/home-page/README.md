@@ -4,7 +4,7 @@ The home page (**https://openms.de/**) is built from **blocks**, one under the o
 
 ## Which block do I want?
 
-![The home page with each block numbered](../../images/edit-homepage-text/1-homepage-map.png)
+![The home page with each block numbered](../../common-tasks-screenshot-images/edit-homepage-text/1-homepage-map.png)
 
 | Number | Block on the page | Search for this word in `config.yaml` | Guide |
 |:--:|-------------------|--------------------------------------|-------|

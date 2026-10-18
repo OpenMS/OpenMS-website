@@ -6,11 +6,11 @@ The page **https://openms.de/code-of-conduct/** (top menu → **Community** → 
 
 **On the website**
 
-![The Code of Conduct page with title, heading and text numbered](../../images/edit-page-text/1-page.png)
+![The Code of Conduct page with title, heading and text numbered](../../common-tasks-screenshot-images/edit-page-text/1-page.png)
 
 **In the page file**
 
-![The beginning of code-of-conduct.md with matching numbers](../../images/edit-page-text/2-markdown.png)
+![The beginning of code-of-conduct.md with matching numbers](../../common-tasks-screenshot-images/edit-page-text/2-markdown.png)
 
 ## What you will change
 

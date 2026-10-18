@@ -6,11 +6,11 @@ The page **https://openms.de/pyopenms-viz/** (top menu → **Projects** → **py
 
 **On the website**
 
-![The first Highlights box of the page, numbered](../../images/pyopenms-viz/1-highlights-on-site.png)
+![The first Highlights box of the page, numbered](../../common-tasks-screenshot-images/pyopenms-viz/1-highlights-on-site.png)
 
 **In `config.yaml`**
 
-![The highlights lines in config.yaml, the first box numbered](../../images/pyopenms-viz/2-highlights-config.png)
+![The highlights lines in config.yaml, the first box numbered](../../common-tasks-screenshot-images/pyopenms-viz/2-highlights-config.png)
 
 The numbers match: the part marked **1** on the website is the line marked **1** in the file.
 

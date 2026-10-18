@@ -10,11 +10,11 @@ Every article shows up in **two places**. The same four pieces of information co
 
 **1. In the news list** (`/news/`)
 
-![A news card in the list, with title, date, summary and author marked](../../images/add-news-post/1-news-card.png)
+![A news card in the list, with title, date, summary and author marked](../../common-tasks-screenshot-images/add-news-post/1-news-card.png)
 
 **2. On the article page** (when someone clicks the title)
 
-![The article page, with title, date and author marked](../../images/add-news-post/2-article-page.png)
+![The article page, with title, date and author marked](../../common-tasks-screenshot-images/add-news-post/2-article-page.png)
 
 | Number | What it is | Where you type it |
 |:--:|------------|-------------------|
@@ -47,7 +47,7 @@ The file name becomes the web address of your article. Use:
 
 3. In the box **"Name your file…"**, type your file name from Step 1.
 
-![The new file page: 1 file name, 2 text area, 3 save button](../../images/github/9-new-file.png)
+![The new file page: 1 file name, 2 text area, 3 save button](../../common-tasks-screenshot-images/github/9-new-file.png)
 
 | Number | What to do |
 |:--:|------------|
@@ -59,7 +59,7 @@ The file name becomes the web address of your article. Use:
 
 The top part (between the two lines of `---`) holds the details. Below it you write the article.
 
-![The top part of a real news file, with the lines you change marked](../../images/add-news-post/3-front-matter.png)
+![The top part of a real news file, with the lines you change marked](../../common-tasks-screenshot-images/add-news-post/3-front-matter.png)
 
 Copy this, then **replace the text in the quotes**:
 
