@@ -8,7 +8,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 
 | Page | Folder | Tasks |
 |------|--------|-------|
-| **Home page** ([openms.de](https://openms.de/)) | `home-page/` | [All the blocks of the home page](home-page/README.md) (start here) · [Top banner](home-page/edit-top-banner.md) · ["Adopted by" logos](home-page/update-adopted-by-logos.md) · [Three big numbers](home-page/update-big-numbers.md) · ["What is OpenMS?"](home-page/edit-what-is-openms.md) · [Ecosystem](home-page/edit-ecosystem.md) · ["Everyone is welcome"](home-page/edit-everyone-is-welcome.md) · [News and events blocks](home-page/edit-news-and-events-blocks.md) · Featured Apps block: see [Featured Apps](featured-apps/update-featured-apps.md) |
+| **Home page** ([openms.de](https://openms.de/)) | `home-page/` | [All the blocks of the home page](home-page/README.md) (start here) · [What is not shown](home-page/README.md#what-is-in-the-files-but-not-shown) · [Top banner](home-page/edit-top-banner.md) · ["Adopted by" logos](home-page/update-adopted-by-logos.md) · [Three big numbers](home-page/update-big-numbers.md) · ["What is OpenMS?"](home-page/edit-what-is-openms.md) · [Ecosystem](home-page/edit-ecosystem.md) · ["Everyone is welcome"](home-page/edit-everyone-is-welcome.md) · [News and events blocks](home-page/edit-news-and-events-blocks.md) · Featured Apps block: see [Featured Apps](featured-apps/update-featured-apps.md) |
 | **Top menu** (every page) | `navbar/` | [Announcement bar](navbar/update-announcement-bar.md) · [Menu items, buttons, search box](navbar/edit-menu-items.md) |
 | **Footer** (every page) | `footer/` | [Footer links](footer/edit-footer-links.md) · [Social media icons](footer/edit-social-icons.md) |
 

@@ -32,6 +32,19 @@ The same steps work for every block. Only the key word you search for is differe
 
 > **Tip:** the search often finds the key word in several places. Use the one that **starts at the left** (a line like `hero:` with nothing before it except spaces) and is followed by indented lines.
 
+## What is in the files but not shown
+
+`config.yaml` also has text for blocks that **do not appear** on the home page. Changing them has **no effect**. This list tells you which ones, so you do not spend time on them.
+
+| Block | Search for in `config.yaml` | Why you don't see it | To show it again |
+|-------|-----------------------------|----------------------|------------------|
+| **"Supported by"**: the sponsor logos deNBI, ELIXIR, LiBiS, with a link "Our sponsors" | `homeSponsors` | It has `enabled: false`, **and** no design file uses it any more. Setting `enabled: true` changes nothing. The sponsors are shown on the [Our Sponsors](../our-sponsors/update-sponsors.md) page instead. | Ask the web team: the block has to be built again. |
+| **"Choose your entry point"**: three steps (Documentation, OpenMS library, Featured Apps) | `homePage` → `pathways` | The design for it exists (`layouts/partials/home-pathways.html`) but is not placed on the home page. | Ask the web team to add it to `layouts/index.html`. |
+| **"Three ways to use OpenMS"** and **"Scale OpenMS for advanced work"** | `heroGroup` | It is only shown by a building block (`heroitems`) that no page uses. | Ask the web team. |
+| **Small highlights under the banner buttons** | `hero` → `microcopy` | The line is empty, **and** the design hides this part. Filling it in shows nothing. | Ask the web team. |
+| **Panel** | `panel` | There is no `panel` in `config.yaml`, and its design file is missing. **Do not add it**: the page would fail to build. | Ask the web team. |
+| **Feedback pop-up** (Tally form `pbV6Qq`) | not in `config.yaml`: `layouts/partials/tally.html` | It sits in a hidden part of the page, but its script still loads and is set to open once when a visitor scrolls. In a test in October 2026 it did not open. | Ask the web team whether to keep or remove it. |
+
 ## Common mistakes
 
 | What went wrong | How to fix it |
