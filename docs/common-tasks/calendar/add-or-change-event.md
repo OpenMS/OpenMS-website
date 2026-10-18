@@ -1,121 +1,68 @@
 # Add or change an event on the Community calendar
 
-The **Community events** page (**https://openms.de/calendar/**) lists upcoming and past meetings, workshops and outreach events.
+The **Community events** page (**https://openms.de/calendar/**) lists upcoming and past meetings, workshops and outreach events. The **Upcoming events** on the home page come from the same list.
 
-There are **two ways** to get an event on that page:
+**The only way to add, change or remove an event is the OpenMS Google Calendar.** A robot copies the Google Calendar to the website every 15 minutes. Do **not** edit `data/community_events.yaml` on GitHub: the robot rewrites that file and your change would be lost.
 
-| | Way | Best for |
-|--|-----|----------|
-| **A** | Type the event into the **shared Google Calendar** (if your team uses it) | People who already use Google Calendar. |
-| **B** | Add the event **by hand** in one text file on GitHub | Everyone else. No Google needed. |
-
-**Time:** about 10 minutes  ·  **Skills needed:** none
+**You need:** access to the OpenMS Google Calendar (ask the web team: [Who to ask](../../workflow/who-to-ask.md))  ·  **Time:** about 5 minutes  ·  **Skills needed:** none
 
 ## What an event looks like
 
 ![An event card on the calendar page, with date, title, place and link marked](../../images/update-community-calendar/1-event-card.png)
 
-| Number | What it shows | Comes from |
-|:--:|---------------|-----------|
-| 1 | The date (or date range) | `start:` and `end:` |
-| 2 | The event name | `title:` |
-| 3 | The place | `location:` |
-| 4 | A link (for example to sign up) | a web address inside `summary:` |
+| Number | What it shows | Google Calendar field |
+|:--:|---------------|-----------------------|
+| 1 | The date (or date range) | The event's date, or first and last day |
+| 2 | The event name | Event title |
+| 3 | The place | Location |
+| 4 | A link (for example to sign up) | A line in the description such as `Registration: https://…` |
 
-## Way B – Add an event by hand (on GitHub)
+## Add an event
 
-### Step 1 – Open the events file
+1. Open the **OpenMS Google Calendar** and create the event.
+2. Fill in the fields (see the table below).
+3. Save it. **Wait up to 15 minutes**: the robot copies it to the website, and the site is rebuilt.
+4. Open **https://openms.de/calendar/** and check the event. If it is not there after 30 minutes, ask the web team.
 
-Open **https://github.com/OpenMS/OpenMS-website/blob/main/data/community_events.yaml** and click the **pencil icon** at the top right. (Not sure which one? See [How to make a change](../../getting-started/edit-via-github.md#step-1--open-the-file).)
+| Google Calendar field | On the website | Tips |
+|-----------------------|----------------|------|
+| **Event title** | The card heading | Copied exactly, so check the spelling. Titles containing *workshop*, *developer meeting* (or *dev meeting*), *outreach*, *code clinic*, *open house* or *summer of code* get a matching coloured tag. |
+| **Date** | The date | For an event of several days, tick **All day** and choose the first and the last day. A timed event also shows its time and time zone. |
+| **Location** | The place | Plain text, for example `Helsinki, Finland` or `Online`. |
+| **Description** | The short text under the title | Keep it short: it is cut after **160 characters**. To add a link, write it on **its own line** as `Label: https://…`, for example `Registration: https://example.org/register` or `News: https://openms.de/news/my-article/`. The label (one or two words, letters only) becomes the link text. |
 
-### Step 2 – Look at how one event is written
+## Change or remove an event
 
-Every event is a small block. Here is a real one:
-
-![One event in community_events.yaml, with the lines you fill in marked](../../images/update-community-calendar/2-yaml-entry.png)
-
-| Number | Line | What to type |
-|:--:|------|--------------|
-| 1 | `start:` and `end:` | Dates as `'2027-03-14'` (year-month-day, inside single quotes). `end:` is **only** for events lasting several days. |
-| 2 | `title:` | The event name. |
-| 3 | `location:` | Place, for example `Helsinki, Finland`. Optional. |
-| 4 | `summary:` | One short sentence. If you paste a web address in it, it turns into a link. Optional. |
-
-### Step 3 – Add your event at the end of the list
-
-Scroll to the **last event** in the file. Put your cursor at the very end of that block, press **Enter**, and paste the template below.
-
-> **Careful:** if you see a line starting with `last_synced:` at the very bottom (not indented), paste your event **above** it, not below. It is fine to leave `synced: true` lines of other events alone.
-
-```yaml
-- title: My workshop
-  start: '2026-11-15'
-  end: '2026-11-16'
-  location: Berlin, Germany
-  category: workshop
-  summary: Hands-on OpenMS training. Registration: https://example.org/register
-```
-
-Then change the text to your event.
-
-- The first line starts with a **dash and a space** (`- `) at the very start of the line. The lines under it start with **two spaces**. Copy that exactly. See [Spaces matter](../../getting-started/edit-via-github.md#spaces-matter-in-configyaml).
-- **Do not** add a line `synced: true`. The robot adds that for events it copies from Google.
-- `category:` is optional. It picks the colour of the tag. Choose one of: `workshop`, `developer-meeting`, `outreach`, `event`.
-- Only one day? Leave out the `end:` line.
-- You can leave out `location:` and `summary:` if you do not need them.
-- Want the card to link to a news article on this site? Add the line `news_url: /news/my-article/`.
-
-The order of events in the file does not matter. The page sorts them by date.
-
-### Step 4 – Save and send for review
-
-Follow steps 3 to 6 in **[How to make a change](../../getting-started/edit-via-github.md#step-3--save-commit-changes)**.
-
-### Step 5 – Check the preview
-
-Open the **Deploy Preview** link on your pull request and add `/calendar/` at the end of the address. Your event should be in the **Upcoming events** list. Events whose date has already passed appear under **Past events** instead.
-
-## Way A – Use the shared Google Calendar
-
-If the web team has connected a Google Calendar to the website, you do **not** need GitHub:
-
-1. Create the event in that Google Calendar (ask the web team for access if you don't have it).
-2. Wait up to **15 minutes**. A robot copies the event to the website by itself.
-
-Fill in the Google fields like this:
-
-| Google Calendar field | Appears on the website as | Tip |
-|----|----|----|
-| Event title | The card heading | Spelling is copied exactly. Titles containing "workshop", "developer meeting" or "summer of code" get a matching coloured tag. |
-| Date | The date | For several days, use **All day** and pick the first and the last day. |
-| Location | The place | Plain text. |
-| Description | The short text | Plain text only. Paste the raw web address if you want a link. It is cut after 160 characters. |
-
-Past events are skipped. If you correct something, **change it in Google Calendar**, not in the file. Events the robot added are overwritten at the next check.
-
-Not sure whether the connection is active? Ask the web team.
+- **Change:** edit the event in the Google Calendar. The website follows within 15 minutes.
+- **Remove:** delete the event in the Google Calendar. It disappears from the website at the next copy.
+- **Past events** stay on the website, under **Past events**, for 5 years after they ended.
 
 ## Common mistakes
 
 | What went wrong | How to fix it |
 |-----------------|---------------|
-| The preview says **Failed** | Check the spaces at the start of each line and the single quotes around the dates. Compare with the real event above your new one. |
-| My event is not in the **Upcoming** list | The date is in the past, or has a typo. It must look like `'2026-11-15'`. |
-| My change to an event was undone | That event has `synced: true`, so it comes from Google Calendar. Change it there instead. |
-| The link in the card doesn't work | Check that the web address in `summary:` starts with `https://`. |
+| My event does not appear | Wait 15 minutes, then reload the page. Check that you added it to the **OpenMS** calendar, not your own. |
+| My change in `community_events.yaml` was undone | That file is written by the robot. Make the change in the Google Calendar. |
+| The link is not clickable | Put it on its own line in the description, as `Label: https://…`, with the full address starting with `https://`. |
+| A multi-day event shows one day too many or too few | Use **All day** and choose the real last day as the end. |
+| The text is cut off | The description is cut after 160 characters. Shorten it. Links on their own line are kept. |
 
 ## For the web team (advanced)
 
 These parts are not needed for normal event updates.
 
-### Turn on the Google Calendar connection
+### How the copy works
 
-`sync_google_calendar.py`, started by `.github/workflows/update_calendar.yml`, copies events from a Google Calendar into `data/community_events.yaml`. It only changes entries marked `synced: true`. It opens and merges a pull request automatically when something changed.
+`sync_google_calendar.py`, started by `.github/workflows/update_calendar.yml` every 15 minutes, reads the Google Calendar and **replaces all events** in `data/community_events.yaml` with it. Every event there has `synced: true`. The workflow opens and merges a pull request automatically when something changed. If nothing changed, it leaves the file alone.
+
+### Turn on the Google Calendar connection
 
 1. In Google Calendar, open **Settings → the calendar → Integrate calendar** and copy **Secret address in iCal format**.
 2. Add it on GitHub as the repository secret `GOOGLE_CALENDAR_ICS_URL` (**Settings → Secrets and variables → Actions**).
 3. **Treat that address like a password.** It gives read access to the whole calendar. Never paste it into a file, an issue or a pull request.
 4. Optional: in `config.yaml` under `calendarSection`, fill in `googleCalendarSubscribeUrl` to show an "Add to Google Calendar" button. The comment above that key explains the format. This public link is different from the secret above.
+
+If the secret is missing, the robot does nothing and the website keeps the last copied events.
 
 ### Faster updates (optional)
 
@@ -152,5 +99,6 @@ Never put the token in this repository.
 
 ## Related guides
 
-- [Add a news article](../news/add-news-post.md), to link an event to an article with `news_url`
-- Back to the [list of all guides](../../README.md)
+- [Edit the news and events blocks on the home page](../home-page/edit-news-and-events-blocks.md)
+- [Add a news article](../news/add-news-post.md), then link it from the event's description with `News: https://openms.de/news/…`
+- Back to the [list of all tasks](../README.md)

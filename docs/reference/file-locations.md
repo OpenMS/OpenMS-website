@@ -27,7 +27,7 @@ The menu itself (labels, order, links) is **`config.yaml` → `navbar`**. Its de
 | Apps → Affiliated Apps | `/affiliated-apps/` | `content/en/affiliated-apps.md` | `openms-lib-main.html`; the list comes from the `webapps-affiliate-catalog` block, which uses `webapps-affiliates.html` | the big title: the page file; the list: `config.yaml` → `affiliateProjects` and `affiliateSection` | `overrides/affiliated-apps.css` |
 | Apps → Archived Apps | `/archived-apps/` | `content/en/archived-apps.md` | `openms-lib-main.html`; the blocks `webapps-archived-notice`, `webapps-archived-catalog` and `webapps-archived-revival` use the `webapps-archived*.html` designs | the big title and the "Available references" heading: the page file; the list: `config.yaml` → `archivedProjects` and `archivedSection` | `overrides/archived-apps.css` |
 | **Learn** → six links (Liquid Chromatography, Mass Spectrometry, Identification and Quantification, Background, Glossary, Dave Tabb's Tutorials) | external websites | *no page on this site* | – | `config.yaml` → `navbar` (only the label and address) | – |
-| **Community** → Calendar | `/calendar/` | `content/en/calendar.md` | `community-calendar-main.html` | `data/community_events.yaml` (events), `config.yaml` → `calendarSection` | `overrides/calendar.css` |
+| **Community** → Calendar | `/calendar/` | `content/en/calendar.md` | `community-calendar-main.html` | the OpenMS Google Calendar (events, copied into `data/community_events.yaml` by a robot), `config.yaml` → `calendarSection` | `overrides/calendar.css` |
 | Community → News | `/news/` | `content/en/news/_index.md` (the list) and one file per article in `content/en/news/` | `layouts/news/section.html` and `news-single-main.html` | each article's file; `config.yaml` → `newsSection` | `overrides/news.css` |
 | Community → **Getting Involved** | `/contribute/` | `content/en/contribute.md` | `contribute-main.html` | `config.yaml` → `contributePage` (intro and links); the rest is written in the design file | `overrides/contribute.css` |
 | Community → OpenMS Fellowship | `/fellowship/` | `content/en/fellowship.md` | `fellowship-main.html` (form: `fellowship-form-embed.html`) | `config.yaml` → `fellowshipPage` | `overrides/fellowship.css` |
@@ -94,7 +94,7 @@ Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/
 | Sponsors (`/our-sponsors/`) | `config.yaml` → `params.aboutPage.sponsors` |
 | Developer Retreat page | `config.yaml` → `params.developerRetreatPage` |
 | Publications list | `pmids.txt` |
-| Community calendar events | `data/community_events.yaml` |
+| Community calendar events | the OpenMS Google Calendar (copied into `data/community_events.yaml` by a robot; do not edit that file) |
 | Community calendar page | `content/en/calendar.md`, `layouts/partials/community-calendar-main.html` |
 | Donate page (Zeffy) | `content/en/donate.md`, `layouts/partials/donate-main.html`, `config.yaml` → `params.donatePage` |
 | Navbar & footer | `config.yaml` → `params.navbar`, `params.footer` |

@@ -12,7 +12,7 @@ The website's files are all stored in one place on GitHub, called the **reposito
 |:--:|---------------|----------------|----------------|
 | 1 | **`content/en/`** | **The pages.** One text file per page (`impressum.md`, `code-of-conduct.md`…) and the news articles in `news/`. | **Yes** |
 | 6 | **`config.yaml`** | **Most of the website's words and lists:** home page text, menu, footer, sponsors, apps, logos, retreat. | **Yes** |
-| 5 | **`data/`** | Lists kept as data. Today: the calendar events (`community_events.yaml`). | **Yes** |
+| 5 | **`data/`** | Lists kept as data. Today: the calendar events (`community_events.yaml`), copied from the Google Calendar by a robot. | **No**: change events in the Google Calendar |
 | 4 | **`static/`** | **Pictures and downloadable files.** What is in `static/images/…` is on the website at `/images/…`. | **Yes**, to add pictures |
 | 9 | **`pmids.txt`** | The list of paper numbers for the Publications page. | **Yes** |
 | 2 | **`layouts/`** | **The design of every page:** how the words in `content/` and `config.yaml` are arranged. | Ask the web team |
@@ -33,7 +33,7 @@ Other folders and files you may see (you don't need to touch them): `themes/` (t
 | The three big numbers | `config.yaml` → `homeMetrics` | [Home page numbers](../common-tasks/home-page/update-big-numbers.md) |
 | The "Adopted by" logos | `config.yaml` → `universityPartners` | [Logos](../common-tasks/home-page/update-adopted-by-logos.md) |
 | Menu and footer | `config.yaml` → `navbar`, `footer` | [Top menu](../common-tasks/navbar/edit-menu-items.md) · [Footer](../common-tasks/footer/edit-footer-links.md) |
-| Calendar events | `data/community_events.yaml` | [Calendar](../common-tasks/calendar/add-or-change-event.md) |
+| Calendar events | the OpenMS **Google Calendar** (a robot copies it into `data/community_events.yaml`; do not edit that file) | [Calendar](../common-tasks/calendar/add-or-change-event.md) |
 | Sponsors, apps, retreat, Zeffy | `config.yaml` | See the [list of guides](../README.md) |
 | A picture or logo | `static/images/…` | [Add images](../common-tasks/any-page/add-images.md) |
 | Colours, spacing, fonts, how a button looks | `assets/css/` | Web team (see below) |

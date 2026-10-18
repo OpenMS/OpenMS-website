@@ -33,7 +33,7 @@ Words on a page can be in **one of three places**:
 | Help | `content/en/help.md` | This guide. It contains some formatting symbols (`<p>`, `<strong>`): change only the words between them. |
 | News articles | `content/en/news/…` | [Add a news article](../news/add-news-post.md) |
 | Home page | `config.yaml` | [Edit the home page](../home-page/README.md) |
-| Community calendar | `data/community_events.yaml` | [Calendar](../calendar/add-or-change-event.md) |
+| Community calendar | the OpenMS **Google Calendar** (copied into `data/community_events.yaml` by a robot: do not edit that file) | [Calendar](../calendar/add-or-change-event.md) |
 | Featured / Affiliated Apps | `config.yaml` | [Featured](../featured-apps/update-featured-apps.md) · [Affiliated](../affiliated-apps/update-affiliated-apps.md) |
 | Our Sponsors | `config.yaml` | [Sponsors](../our-sponsors/update-sponsors.md) |
 | Developer Retreat | `config.yaml` | [Retreat](../developer-retreat/update-retreat.md) |
