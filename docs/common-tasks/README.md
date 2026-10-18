@@ -58,7 +58,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 |------|--------|-------|
 | **Governance** (`/governance/`) | `governance/` | [Change the intro text](governance/edit-intro-text.md) |
 | **Our Sponsors** (`/our-sponsors/`) | `our-sponsors/` | [Add, change or remove a sponsor logo](our-sponsors/update-sponsors.md) |
-| **Our Sponsorship Program** (`/sponsor-us/`, also the **Sponsor Us** button) | `sponsorship-program/` | [Change the levels](sponsorship-program/update-levels.md) · [Change the benefits](sponsorship-program/update-benefits.md) |
+| **Our Sponsorship Program** (`/sponsor-us/`, also the **Sponsor Us** button) | `sponsorship-program/` | [Change the levels](sponsorship-program/update-levels.md) · [Change the benefits](sponsorship-program/update-benefits.md) · [Add or change an FAQ question](sponsorship-program/update-faq.md) |
 | **Research Partnerships** (`/research-partnerships/`, also the **Partner with OpenMS** button) | `research-partnerships/` | [Change the intro](research-partnerships/edit-partners.md) · [Add, change or remove a partner logo](research-partnerships/update-partner-logos.md) |
 | **Publications** (`/publications/`) | `publications/` | [Add or remove a paper](publications/add-or-remove-paper.md) · [Google Scholar link](publications/edit-google-scholar-link.md) |
 | **Leadership** (`/contributors/`) | `leadership/` | [Update the board of directors](leadership/update-board-of-directors.md) · [Update the Executive Committee](leadership/update-executive-committee.md) |

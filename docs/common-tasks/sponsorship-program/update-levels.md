@@ -27,7 +27,8 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 | One level (name, price, motto, text) | `levels:` | `name`, `contribution`, `motto`, `summary` |
 | The level that is highlighted | `featuredLevel:` | The `id` of a level, for example `gold` |
 | The **Benefit comparison** table | `benefitsMatrix:` | One row per `category` (see below) |
-| "Why sponsor OpenMS", "How sponsorship works", FAQ | — | These are part of the design. Ask the web team ([Who to ask](../../workflow/who-to-ask.md)). |
+| The **FAQ** questions and answers | — | See [Add or change a question in the sponsorship FAQ](update-faq.md). |
+| "Why sponsor OpenMS", "How sponsorship works" | — | These are part of the design. Ask the web team ([Who to ask](../../workflow/who-to-ask.md)). |
 
 ## Change a level
 
@@ -77,6 +78,7 @@ The full guide for the benefits, with pictures: [Change the benefits of the spon
 
 ## Related guides
 
+- [Add or change a question in the sponsorship FAQ](update-faq.md)
 - [Change the benefits of the sponsorship levels](update-benefits.md)
 - [Add, change or remove a sponsor logo](../our-sponsors/update-sponsors.md)
 - Back to the [list of all tasks](../README.md)

@@ -95,6 +95,7 @@ The sentence under the table heading ("Compare acknowledgment and engagement ben
 
 ## Related guides
 
+- [Add or change a question in the sponsorship FAQ](update-faq.md)
 - [Change the sponsorship levels](update-levels.md) (name, price, motto, text of each level)
 - [Add, change or remove a sponsor logo](../our-sponsors/update-sponsors.md)
 - Back to the [list of all tasks](../README.md)
