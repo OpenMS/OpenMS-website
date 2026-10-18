@@ -121,7 +121,7 @@ Something wrong? Open the **Files changed** tab of your pull request, edit the f
 
 ## Optional: show your article in the banner at the top of the site
 
-See [Change the announcement bar](update-news-banner.md). Use `link: /news/my-workshop-2026/`.
+See [Change the announcement bar](update-announcement-bar.md). Use `link: /news/my-workshop-2026/`.
 
 ## Common mistakes
 
@@ -136,5 +136,5 @@ See [Change the announcement bar](update-news-banner.md). Use `link: /news/my-wo
 ## Related guides
 
 - [Add images](add-images.md)
-- [Change the announcement bar](update-news-banner.md)
+- [Change the announcement bar](update-announcement-bar.md)
 - Back to the [list of all guides](../README.md)

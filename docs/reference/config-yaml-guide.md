@@ -19,7 +19,7 @@ Site-wide settings and most homepage content live in **`config.yaml`** at the re
 
 ### newsBanner
 
-Homepage announcement strip. See [Update the news banner](../common-tasks/update-news-banner.md).
+Homepage announcement strip. See [Change the announcement bar](../common-tasks/update-announcement-bar.md).
 
 ### newsSection
 
@@ -77,7 +77,7 @@ Two large sections (users / developers) with `heroItems` cards.
 
 ### webappsSection + webapps
 
-Homepage projects carousel. See [Add a webapp](../common-tasks/add-webapp-to-homepage.md).
+Homepage projects carousel. See [Add an app to the home page](../common-tasks/add-app-to-homepage.md).
 
 ### footer
 
@@ -85,7 +85,7 @@ Tagline, quick link columns, social links, sponsor footer logos.
 
 ### navbar
 
-Top navigation menu and dropdowns. See [Edit footer or navbar](../common-tasks/edit-footer-or-navbar.md).
+Top navigation menu and dropdowns. See [Menu and footer](../common-tasks/edit-menu-or-footer.md).
 
 ## Analytics (do not remove without discussion)
 

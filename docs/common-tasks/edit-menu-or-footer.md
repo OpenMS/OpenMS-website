@@ -13,7 +13,7 @@ Both are written in `config.yaml`. Because they appear everywhere, changes here 
 
 ## The top menu (navbar)
 
-![The Community menu opened, with the parts numbered](../images/edit-footer-or-navbar/1-navbar.png)
+![The Community menu opened, with the parts numbered](../images/edit-menu-or-footer/1-navbar.png)
 
 1. A **top-level item** (clicking it opens the list below).
 2. One **line inside the drop-down list**.
@@ -21,7 +21,7 @@ Both are written in `config.yaml`. Because they appear everywhere, changes here 
 
 The same menu in `config.yaml`:
 
-![The Community part of the navbar in config.yaml](../images/edit-footer-or-navbar/5-navbar-config.png)
+![The Community part of the navbar in config.yaml](../images/edit-menu-or-footer/5-navbar-config.png)
 
 | Number | Lines | What it is |
 |:--:|-------|-----------|
@@ -62,13 +62,13 @@ Delete its two lines (`- title:` and `url:`).
 
 ## The footer
 
-![The footer with the parts numbered](../images/edit-footer-or-navbar/2-footer.png)
+![The footer with the parts numbered](../images/edit-menu-or-footer/2-footer.png)
 
 1. The **short sentence** under the logo (`tagline:`).
 2. The **title of a column** (`heading:`).
 3. **One link** in a column.
 
-![The first footer column in config.yaml](../images/edit-footer-or-navbar/4-footer-links-config.png)
+![The first footer column in config.yaml](../images/edit-menu-or-footer/4-footer-links-config.png)
 
 | Number | Lines | What it is |
 |:--:|-------|-----------|
@@ -90,6 +90,10 @@ Search for `socialmedia:`. Each icon is two lines: `link:` (the address) and `ic
 
 ---
 
+## Where is the page behind a link?
+
+For every item of the menu and footer, which files hold its page, design, words and styling: see [Everything in the navbar and the footer](../reference/file-locations.md#everything-in-the-navbar-and-the-footer-where-is-each-page).
+
 ## Check the result
 
 Open the **Deploy Preview**. Look at the **home page** and **one inner page** (menus are on all pages). Click each link you changed.
@@ -108,5 +112,5 @@ The **logo** pictures, the **colours**, the **order of the footer columns' layou
 
 ## Related guides
 
-- [Edit the text on the home page](edit-homepage-hero.md)
+- [Edit the text on the home page](edit-homepage-text.md)
 - Back to the [list of all guides](../README.md)

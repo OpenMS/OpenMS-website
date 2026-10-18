@@ -4,4 +4,4 @@ The home page block **"Featured Apps"** shows **the same list** as the page **/f
 
 - To add, change or remove an app that the OpenMS team maintains: **[Featured Apps](update-featured-apps.md)**
 - For community and partner projects: **[Affiliated Apps](update-affiliated-apps.md)**
-- To change the other text on the home page: **[Edit the text on the home page](edit-homepage-hero.md)**
+- To change the other text on the home page: **[Edit the text on the home page](edit-homepage-text.md)**
