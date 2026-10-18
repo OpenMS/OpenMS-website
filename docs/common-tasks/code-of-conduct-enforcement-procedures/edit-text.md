@@ -1,6 +1,6 @@
-# Change the text of the Code of Conduct Enforcement Procedures page
+# Change the text of the Report Handling Manual (Code of Conduct Enforcement Procedures)
 
-The page **https://openms.de/report-handling-manual/** (footer → **COMMUNITY**) has **all its words in one page file**: `content/en/report-handling-manual.md`.
+The **Report Handling Manual** is the Code of Conduct Committee's guide for handling reports. On the website it is the page **Code of Conduct Enforcement Procedures**, **https://openms.de/report-handling-manual/** (footer → **COMMUNITY**, and the button on the Code of Conduct page). It has **all its words in one page file**: `content/en/report-handling-manual.md`.
 
 **You will change:** a few words in one file  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
@@ -37,5 +37,6 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 
 ## Related guides
 
+- [Change the text of the Code of Conduct](../code-of-conduct/edit-text.md)
 - [Change the text of a page](../any-page/edit-page-text.md): a picture of a page next to its file, and the writing symbols you can use (bold, links, lists…)
 - Back to the [list of all tasks](../README.md)

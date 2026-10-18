@@ -44,7 +44,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 | **Getting Involved** (`/contribute/`) | `getting-involved/` | [Change the intro and links](getting-involved/edit-intro-and-links.md) |
 | **OpenMS Fellowship** (`/fellowship/`) | `fellowship/` | [Change the text and labels](fellowship/update-fellowship.md) |
 | **Annual Developer Retreat** (`/developer-retreat/`) | `developer-retreat/` | [Update the page (once a year)](developer-retreat/update-retreat.md) |
-| **Code of Conduct** (`/code-of-conduct/`) | `code-of-conduct/` | [Change the text](code-of-conduct/edit-text.md) |
+| **Code of Conduct** (`/code-of-conduct/`) | `code-of-conduct/` | [Change the text](code-of-conduct/edit-text.md) · its [Report Handling Manual](code-of-conduct-enforcement-procedures/edit-text.md) |
 
 ## Top menu → Services
 
@@ -70,7 +70,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 |--------|------|--------|-------|
 | SUPPORT | **Donate** (`/donate/`) | `donate/` | [Connect the donation form to Zeffy](donate/connect-zeffy.md) · [Change the intro text](donate/edit-intro-text.md) |
 | COMMUNITY | **Executive Committee Charter** (`/exec_committee/`) | `executive-committee-charter/` | [Change the text](executive-committee-charter/edit-text.md) |
-| COMMUNITY | **Code of Conduct Enforcement Procedures** (`/report-handling-manual/`) | `code-of-conduct-enforcement-procedures/` | [Change the text](code-of-conduct-enforcement-procedures/edit-text.md) |
+| COMMUNITY | **Code of Conduct Enforcement Procedures** (Report Handling Manual, `/report-handling-manual/`) | `code-of-conduct-enforcement-procedures/` | [Change the text](code-of-conduct-enforcement-procedures/edit-text.md) |
 | LEGAL | **Privacy** (`/privacy/`) | `privacy/` | [Change the text](privacy/edit-text.md) |
 | LEGAL | **Press kit** (`/press-kit/`) | `press-kit/` | [Replace a download](press-kit/replace-a-download.md) |
 | LEGAL | **Impressum** (`/impressum/`) | `impressum/` | [Change the text](impressum/edit-text.md) |

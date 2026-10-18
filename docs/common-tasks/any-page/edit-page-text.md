@@ -24,9 +24,9 @@ Words on a page can be in **one of three places**:
 
 | Page | Words are in | How to change |
 |------|--------------|---------------|
-| Code of Conduct | `content/en/code-of-conduct.md` | This guide, or [Code of Conduct](../code-of-conduct/edit-text.md) |
+| Code of Conduct (`/code-of-conduct/`) | `content/en/code-of-conduct.md` | This guide, or [Code of Conduct](../code-of-conduct/edit-text.md) |
+| Code of Conduct **Report Handling Manual** (the page *Code of Conduct Enforcement Procedures*, `/report-handling-manual/`) | `content/en/report-handling-manual.md` | This guide, or [Report Handling Manual](../code-of-conduct-enforcement-procedures/edit-text.md) |
 | Executive Committee Charter (`/exec_committee/`) | `content/en/exec_committee.md` | This guide, or [Executive Committee Charter](../executive-committee-charter/edit-text.md) |
-| Code of Conduct Enforcement Procedures (`/report-handling-manual/`) | `content/en/report-handling-manual.md` | This guide, or [Enforcement Procedures](../code-of-conduct-enforcement-procedures/edit-text.md) |
 | Impressum | `content/en/impressum.md` | This guide, or [Impressum](../impressum/edit-text.md) |
 | Core Developers | `content/en/core_developers.md` | This guide |
 | Privacy Policy | `content/en/privacy.md` | [Privacy](../privacy/edit-text.md): keep the `###` and `####` heading lines exactly, the page is built from them. |

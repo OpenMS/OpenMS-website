@@ -35,5 +35,6 @@ The page **https://openms.de/code-of-conduct/** (top menu → **Community** → 
 
 ## Related guides
 
+- [Change the text of the Report Handling Manual](../code-of-conduct-enforcement-procedures/edit-text.md): the Code of Conduct Committee's procedures, a separate page (`/report-handling-manual/`)
 - [Change the text of a page](../any-page/edit-page-text.md): a picture of a page next to its file, and the writing symbols you can use (bold, links, lists…)
 - Back to the [list of all tasks](../README.md)

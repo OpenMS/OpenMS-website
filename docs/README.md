@@ -31,7 +31,7 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | **Getting Involved** | [Intro and links](common-tasks/getting-involved/edit-intro-and-links.md) |
 | **OpenMS Fellowship** | [Text and labels](common-tasks/fellowship/update-fellowship.md) |
 | **Annual Developer Retreat** | [Update the page (once a year)](common-tasks/developer-retreat/update-retreat.md) |
-| **Code of Conduct** | [Change the text](common-tasks/code-of-conduct/edit-text.md) |
+| **Code of Conduct** | [Change the text](common-tasks/code-of-conduct/edit-text.md) · [Report Handling Manual](common-tasks/code-of-conduct-enforcement-procedures/edit-text.md) |
 | **Scientific and Technical Support** | [Intro text](common-tasks/scientific-and-technical-support/edit-intro-text.md) |
 | **Governance** | [Intro text](common-tasks/governance/edit-intro-text.md) |
 | **Our Sponsors** | [Add, change or remove a sponsor logo](common-tasks/our-sponsors/update-sponsors.md) |
@@ -42,7 +42,7 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | **Contact** | [Intro text](common-tasks/contact/edit-intro-text.md) |
 | **Donate** | [Connect to Zeffy](common-tasks/donate/connect-zeffy.md) · [Intro text](common-tasks/donate/edit-intro-text.md) |
 | **Executive Committee Charter** | [Change the text](common-tasks/executive-committee-charter/edit-text.md) |
-| **Code of Conduct Enforcement Procedures** | [Change the text](common-tasks/code-of-conduct-enforcement-procedures/edit-text.md) |
+| **Code of Conduct Enforcement Procedures** (Report Handling Manual) | [Change the text](common-tasks/code-of-conduct-enforcement-procedures/edit-text.md) |
 | **Privacy** | [Change the text](common-tasks/privacy/edit-text.md) |
 | **Press kit** | [Replace a download](common-tasks/press-kit/replace-a-download.md) |
 | **Impressum** | [Change the text](common-tasks/impressum/edit-text.md) |
