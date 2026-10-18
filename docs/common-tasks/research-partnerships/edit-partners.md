@@ -4,6 +4,16 @@ The page **https://openms.de/research-partnerships/** explains how research grou
 
 **You will change:** a few lines in `config.yaml`  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![The top of the Research Partnerships page with the small word and the intro numbered](../../images/research-partnerships/1-intro-on-site.png)
+
+**In `config.yaml`**
+
+![The researchPartnershipsPage lines in config.yaml with matching numbers](../../images/research-partnerships/2-config.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file.
+
 ## What you will change
 
 | Part of the page | Search for | Lines |

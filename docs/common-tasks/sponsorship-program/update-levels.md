@@ -4,6 +4,20 @@ The page **Our Sponsorship Program** (**https://openms.de/sponsor-us/**) shows f
 
 **You will change:** a few lines in `config.yaml`  ·  **Time:** about 15 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![The Bronze level card with name, price and motto numbered](../../images/sponsorship-program/1-level-on-site.png)
+
+![The Benefit comparison table with its heading and one row numbered](../../images/sponsorship-program/3-benefits-on-site.png)
+
+**In `config.yaml`**
+
+![One level in config.yaml with matching numbers](../../images/sponsorship-program/2-level-config.png)
+
+![One row of the benefit table in config.yaml, numbered 5](../../images/sponsorship-program/4-benefits-config.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file.
+
 ## What you will change
 
 | Part of the page | Search for | Lines |

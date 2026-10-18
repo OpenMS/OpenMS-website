@@ -1,8 +1,18 @@
 # Update the OpenMS Fellowship page
 
-The page **https://openms.de/fellowship/** presents the fellowship, lists the projects fellows can work on, and shows the application form.
+The page **https://openms.de/fellowship/** presents the fellowship and shows the application form.
 
 **You will change:** a few lines in `config.yaml` (search for `fellowshipPage:`)  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
+
+**On the website**
+
+![The top of the Fellowship page with the small word, the headline and a label numbered](../../images/fellowship/1-top-on-site.png)
+
+**In `config.yaml`**
+
+![The fellowshipPage lines in config.yaml with matching numbers](../../images/fellowship/2-config.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file.
 
 ## What you will change
 
@@ -11,21 +21,9 @@ The page **https://openms.de/fellowship/** presents the fellowship, lists the pr
 | The small word above the title | `eyebrow` |
 | The headline and the text under it | `headline`, `blurb` |
 | The three small labels ("Fully remote & unpaid"…) | `chips`: each has `icon` and `text`. Change only `text`. |
-| "Projects you can contribute to" | `projectsTitle`, `projectsLead` |
-| One project card | `projects`: each has `title`, `description`, `url` (the project page) and `contributeUrl` (where to start contributing) |
 | The application form | `tallyFormId`. Ask the web team before changing it ([Who to ask](../../workflow/who-to-ask.md)). |
 
-## Add or remove a project
-
-```yaml
-          - title: pyOpenMS
-            description: Python bindings for scripting, notebooks, and workflow integration.
-            url: /pyopenms/
-            contributeUrl: "/pyopenms/#for-developers"
-```
-
-- **Add:** copy a whole project (four lines), paste it under the last one, change the words. For a project on another website, add the line `external: true`.
-- **Remove:** delete its lines.
+> `fellowshipPage` also has the lines `projectsTitle`, `projectsLead` and `projects`. **The page does not show them at the moment**, so changing them has no effect. Ask the web team if you want a projects list on the page.
 
 ## Step by step
 

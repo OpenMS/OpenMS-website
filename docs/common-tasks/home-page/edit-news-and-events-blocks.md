@@ -4,6 +4,16 @@ Near the bottom of the home page, two columns show the **latest news** and the *
 
 **You will change:** a few lines in `config.yaml`  ·  **Time:** about 5 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![The Latest news and Upcoming events headings on the home page, numbered](../../images/edit-homepage-text/12-news-events-on-site.png)
+
+**In `config.yaml`**
+
+![The home lines of newsSection, numbered 1](../../images/edit-homepage-text/13-news-config.png)
+
+![The eventsSection lines, numbered 2](../../images/edit-homepage-text/14-events-config.png)
+
 ## Latest news
 
 - **The articles** are the newest ones from the News page. To add one, see [Add a news article](../news/add-news-post.md).

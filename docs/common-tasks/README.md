@@ -42,7 +42,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 | **Calendar** (`/calendar/`) | `calendar/` | [Add or change an event](calendar/add-or-change-event.md) |
 | **News** (`/news/`) | `news/` | [Add a news article](news/add-news-post.md) |
 | **Getting Involved** (`/contribute/`) | `getting-involved/` | [Change the intro and links](getting-involved/edit-intro-and-links.md) |
-| **OpenMS Fellowship** (`/fellowship/`) | `fellowship/` | [Change the text, labels and projects](fellowship/update-fellowship.md) |
+| **OpenMS Fellowship** (`/fellowship/`) | `fellowship/` | [Change the text and labels](fellowship/update-fellowship.md) |
 | **Annual Developer Retreat** (`/developer-retreat/`) | `developer-retreat/` | [Update the page (once a year)](developer-retreat/update-retreat.md) |
 | **Code of Conduct** (`/code-of-conduct/`) | `code-of-conduct/` | [Change the text](code-of-conduct/edit-text.md) |
 

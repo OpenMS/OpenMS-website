@@ -4,6 +4,14 @@ The page **https://openms.de/code-of-conduct/** (top menu → **Community** → 
 
 **You will change:** a few words in one file  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![The Code of Conduct page with title, heading and text numbered](../../images/edit-page-text/1-page.png)
+
+**In the page file**
+
+![The beginning of code-of-conduct.md with matching numbers](../../images/edit-page-text/2-markdown.png)
+
 ## What you will change
 
 | In the file | On the page |

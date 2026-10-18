@@ -4,6 +4,16 @@ The page **https://openms.de/report-handling-manual/** (footer → **COMMUNITY**
 
 **You will change:** a few words in one file  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![The Enforcement Procedures page with title and first paragraph numbered](../../images/code-of-conduct-enforcement-procedures/1-page.png)
+
+**In the page file**
+
+![The beginning of report-handling-manual.md with matching numbers](../../images/code-of-conduct-enforcement-procedures/2-page-file.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file.
+
 ## What you will change
 
 | In the file | On the page |

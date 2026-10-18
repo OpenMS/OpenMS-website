@@ -4,6 +4,16 @@ The page **https://openms.de/contact/** (top menu → **About** → **Contact**)
 
 **You will change:** one or two lines in `config.yaml`  ·  **Time:** about 5 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![The top of the Contact page with the small word and the intro numbered](../../images/contact/1-intro-on-site.png)
+
+**In `config.yaml`**
+
+![The contactPage lines in config.yaml with matching numbers](../../images/contact/2-config.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file.
+
 ## What you will change
 
 | Part of the page | Line in `contactPage` |

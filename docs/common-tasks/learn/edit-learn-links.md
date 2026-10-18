@@ -4,6 +4,16 @@ The **Learn** menu in the top menu has six links (Liquid Chromatography, Mass Sp
 
 **You will change:** a few lines in `config.yaml`  ·  **Time:** about 5 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![The Learn menu opened, two links numbered](../../images/edit-menu-or-footer/8-learn-menu.png)
+
+**In `config.yaml`**
+
+![The Learn part of the navbar in config.yaml with matching numbers](../../images/edit-menu-or-footer/9-learn-config.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file.
+
 ## Step by step
 
 1. Open **https://github.com/OpenMS/OpenMS-website/blob/main/config.yaml** and click the **pencil icon**. ([Need help?](../../getting-started/edit-via-github.md#step-1--open-the-file))

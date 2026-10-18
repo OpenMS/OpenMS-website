@@ -4,6 +4,16 @@ The page **https://openms.de/impressum/** (footer → **LEGAL**) has **all its w
 
 **You will change:** a few words in one file  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![The Impressum page with title and address lines numbered](../../images/impressum/1-page.png)
+
+**In the page file**
+
+![The impressum.md file with matching numbers](../../images/impressum/2-page-file.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file.
+
 ## What you will change
 
 | In the file | On the page |

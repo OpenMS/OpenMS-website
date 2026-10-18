@@ -4,6 +4,16 @@ The page **https://openms.de/privacy/** (footer → **LEGAL**) has **all its wor
 
 **You will change:** a few words in one file  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![The Privacy page with a section and a topic numbered](../../images/privacy/1-page.png)
+
+**In the page file**
+
+![The beginning of privacy.md: a ### section and a #### topic with matching numbers](../../images/privacy/2-page-file.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file.
+
 ## What you will change
 
 | In the file | On the page |

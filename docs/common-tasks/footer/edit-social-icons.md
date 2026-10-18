@@ -4,6 +4,16 @@ The small icons in the footer (Discord, LinkedIn, GitHub, Google Scholar). The s
 
 **You will change:** two lines in `config.yaml` per icon  ·  **Time:** about 5 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![The social icons in the footer, LinkedIn and GitHub numbered](../../images/edit-menu-or-footer/6-social-icons.png)
+
+**In `config.yaml`**
+
+![The socialmedia lines in config.yaml with matching numbers](../../images/edit-menu-or-footer/7-social-config.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file.
+
 ## Step by step
 
 1. Open **https://github.com/OpenMS/OpenMS-website/blob/main/config.yaml** and click the **pencil icon**. ([Need help?](../../getting-started/edit-via-github.md#step-1--open-the-file))

@@ -4,6 +4,16 @@ The block **Ecosystem** shows cards for OpenMS-lib, pyOpenMS and the other tools
 
 **You will change:** a few lines in `config.yaml` (search for `ecosystemSection`)  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![The Ecosystem block with its text and one card numbered](../../images/edit-homepage-text/10-ecosystem-on-site.png)
+
+**In `config.yaml`**
+
+![The ecosystemSection lines in config.yaml with matching numbers](../../images/edit-homepage-text/11-ecosystem-config.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file.
+
 | Line | What it is |
 |------|-----------|
 | `eyebrow:` | Small label above the title. |

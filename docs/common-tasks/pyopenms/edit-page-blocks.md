@@ -4,6 +4,16 @@ The page **https://openms.de/pyopenms/** (top menu → **Projects** → **pyOpen
 
 **You will change:** a few lines in `config.yaml`  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![The first Highlights box of the page, numbered](../../images/pyopenms/1-highlights-on-site.png)
+
+**In `config.yaml`**
+
+![The highlights lines in config.yaml, the first box numbered](../../images/pyopenms/2-highlights-config.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file.
+
 ## What you will change
 
 | Block on the page | Search for | Lines you can change |

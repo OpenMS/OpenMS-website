@@ -4,6 +4,10 @@ The page **Leadership** has the address **https://openms.de/contributors/** (top
 
 **You will change:** a photo in `static/images/leadership_photos/`  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
+![A Leadership card: 1 the photo, 2 the name, 3 the role](../../images/leadership/1-card-on-site.png)
+
+Only the **photo** (1) is a file you can replace yourself. The name (2), the role (3) and the short text are part of the design.
+
 ## What you will change
 
 | Part of the page | Where it is | Who changes it |

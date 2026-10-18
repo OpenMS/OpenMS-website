@@ -4,6 +4,16 @@ The page **https://openms.de/publications/** has a link "Follow us on Google Sch
 
 **You will change:** one or two lines in `config.yaml`  ·  **Time:** about 5 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![The Follow us on Google Scholar button, numbered](../../images/publications/3-google-scholar-on-site.png)
+
+**In `config.yaml`**
+
+![The publicationsPage lines in config.yaml with matching numbers](../../images/publications/4-google-scholar-config.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file.
+
 | Part of the page | Line in `publicationsPage` |
 |---|---|
 | The words of the link | `googleScholarText` |

@@ -4,6 +4,16 @@
 
 **You will change:** one block in `config.yaml`  ·  **Time:** about 15 minutes  ·  **Skills needed:** none
 
+**On the website**
+
+![One Archived App card with its name, label and text numbered](../../images/archived-apps/1-card-on-site.png)
+
+**In `config.yaml`**
+
+![One archived project in config.yaml with matching numbers](../../images/archived-apps/2-config.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file.
+
 ## What you will change
 
 | Part of the page | Search for | Lines |
