@@ -16,6 +16,8 @@ This guide is for **non–front-end contributors** who update [openms.de](https:
 
 Find the page you want to change, then pick the guide.
 
+> **Every page has its own guide** listing each part of the page, what you can change there and in which file: see [Change a page: one guide per page](common-tasks/pages/README.md). It covers the home page, the top menu, the footer and every page they link to.
+
 ### Home page ([openms.de](https://openms.de/))
 
 - The top banner (headline, short text, buttons), "What is OpenMS?" (the four boxes), "Everyone is welcome", ecosystem, news and events: [Edit the text on the home page](common-tasks/edit-homepage-text.md)
@@ -101,6 +103,7 @@ docs/
 │   ├── repo-map.md
 │   └── preview-locally.md
 ├── common-tasks/
+│   ├── pages/                ← one guide per page (home, menu, footer, every page)
 │   ├── add-news-post.md
 │   ├── update-community-calendar.md
 │   ├── update-adopted-by-logos.md

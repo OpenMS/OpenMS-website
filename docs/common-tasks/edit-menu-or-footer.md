@@ -92,6 +92,8 @@ Search for `socialmedia:`. Each icon is two lines: `link:` (the address) and `ic
 
 ## Where is the page behind a link?
 
+Each page in the menu and footer has its own guide listing what you can change on it: see [one guide per page](pages/README.md).
+
 For every item of the menu and footer, which files hold its page, design, words and styling: see [Everything in the navbar and the footer](../reference/file-locations.md#everything-in-the-navbar-and-the-footer-where-is-each-page).
 
 ## Check the result
