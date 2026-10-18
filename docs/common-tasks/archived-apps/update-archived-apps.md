@@ -1,0 +1,58 @@
+# Add, change or remove an Archived App
+
+**Archived Apps** are old projects that still work but are no longer updated. They appear on **https://openms.de/archived-apps/**.
+
+**You will change:** one block in `config.yaml`  ·  **Time:** about 15 minutes  ·  **Skills needed:** none
+
+## What you will change
+
+| Part of the page | Search for | Lines |
+|------------------|-----------|-------|
+| The list of projects | `archivedProjects:` | One block per project (see below). |
+| "Good to know" box | `archivedSection:` | `notice:` → `title`, `lead`, and the `points` (each has `title` and `text`). |
+| "Interested in reviving one of these projects?" | `archivedSection:` | `revivalPrompt`, `revivalNote`, and the two buttons `contactText` / `contactUrl`, `sponsorText` / `sponsorUrl`. |
+| Big title, short text and the buttons at the top | — | These are in the page file `content/en/archived-apps.md`. See [Change the text of a page](../any-page/edit-page-text.md). |
+
+One project looks like this:
+
+```yaml
+        - name: diaproteomics
+          displayName: diaProteomics
+          variant: nfcore-pipeline
+          tag: NF-Core pipeline
+          logo: /images/webapp/logo/nf-core.png
+          logoSize: wide
+          description: >-
+            A bioinformatics analysis pipeline used for quantitative processing
+            of data independent (DIA) proteomics data.
+          links:
+            - type: github
+              url: https://github.com/nf-core/diaproteomics
+```
+
+| Line | What it is |
+|------|-----------|
+| `displayName:` | The name people see. |
+| `tag:` | The small label on the card. |
+| `logo:` | The logo picture. Upload it first: see [Add images](../any-page/add-images.md). |
+| `description:` | The text on the card. Keep its lines indented. |
+| `links:` | The buttons on the card. Each has a `type` and a `url`. |
+
+Leave `name:`, `variant:` and `logoSize:` as they are in the block you copy.
+
+## Step by step
+
+1. Open **https://github.com/OpenMS/OpenMS-website/blob/main/config.yaml** and click the **pencil icon**. ([Need help?](../../getting-started/edit-via-github.md#step-1--open-the-file))
+2. Click inside the text box, press **Ctrl + F** (Windows) or **Cmd + F** (Mac) and search for `archivedProjects:`.
+3. **Add a project:** copy a whole block (from `- name:` to the line before the next `- name:`), paste it at the end of the list and change the words. **Remove a project:** delete its whole block. **Change a project:** change the words after the colon.
+4. Save and send for review: [How to make a change, steps 3 to 6](../../getting-started/edit-via-github.md#step-3--save-commit-changes).
+5. Open the **Deploy Preview** and check **/archived-apps/**.
+
+## Moving an app to the archive
+
+To move an app from **Featured** or **Affiliated** to **Archived**, remove its block there (see [Featured Apps](../featured-apps/update-featured-apps.md) or [Affiliated Apps](../affiliated-apps/update-affiliated-apps.md)) and add a new block here.
+
+## Related guides
+
+- [Affiliated Apps](../affiliated-apps/update-affiliated-apps.md)
+- Back to the [list of all tasks](../README.md)

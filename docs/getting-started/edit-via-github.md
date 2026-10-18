@@ -2,7 +2,7 @@
 
 You can update most of the website **using only your web browser**. Nothing you do goes live straight away: every change is **checked by the web team first**, so you cannot break the site by accident.
 
-> **This page is the "saving" part that every guide in [common tasks](../common-tasks/) points to.** Each guide tells you *what* to change. This page shows you *how to save it and send it for review*.
+> **This page is the "saving" part that every guide in [common tasks](../common-tasks) points to.** Each guide tells you *what* to change. This page shows you *how to save it and send it for review*.
 
 ## Before you start
 
