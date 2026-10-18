@@ -64,7 +64,7 @@ Each row of the table is one `category`, with one entry per level:
 | `["✓"]` | a tick: included |
 | lines starting with `- ` | each line as text |
 
-To **add a row**, copy a whole `- category:` block and change it. To **remove a row**, delete its whole block.
+To **add a row**, copy a whole `- category:` block and change it. To **remove a row**, delete its whole block. Every row needs one line per level, even if it is only `[]`: a missing line makes the build fail. **If you add a level**, add its line to every row.
 
 The full guide for the benefits, with pictures: [Change the benefits of the sponsorship levels](update-benefits.md).
 
