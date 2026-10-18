@@ -2,7 +2,7 @@
 
 This guide is for **non–front-end contributors** who update [openms.de](https://openms.de) content: news, text pages, homepage copy, and configuration. You do not need to know React, Vue, or JavaScript for most tasks.
 
-> **New here, and not a developer?** Start with **[How to make a change](getting-started/edit-via-github.md)**. It explains, with pictures, how to edit the website using only your web browser. Then pick the task you need from the table below. Every guide shows **where** on the site and **in which file** the change happens.
+> **New here, and not a developer?** Start with **[How to make a change](getting-started/edit-via-github.md)**. It explains, with pictures, how to edit the website using only your web browser. Then find the page you want to change in the list below. Every guide shows **where** on the site and **in which file** the change happens.
 
 ## How the site works (30 seconds)
 
@@ -12,28 +12,72 @@ This guide is for **non–front-end contributors** who update [openms.de](https:
 - **Layout and styling** live in `layouts/` and `assets/css/` — only change these if you are doing design or structure work (ask the web team first).
 - Changes are merged on GitHub; **Netlify** builds and deploys the live site.
 
-## I want to…
+## What can I change, page by page?
+
+Find the page you want to change, then pick the guide.
+
+### Home page ([openms.de](https://openms.de/))
+
+- The top banner (headline, short text, buttons), "What is OpenMS?" (the four boxes), "Everyone is welcome", ecosystem, news and events: [Edit the text on the home page](common-tasks/edit-homepage-text.md)
+- The moving logos "Adopted by labs and institutions worldwide": [Adopted-by logos](common-tasks/update-adopted-by-logos.md)
+- The three big numbers (years, citations, contributors): [Home page numbers](common-tasks/update-homepage-numbers.md)
+- The "Featured Apps" block: it shows the same list as the Featured Apps page, see [Featured Apps](common-tasks/update-featured-apps.md)
+
+### On every page
+
+- The announcement bar at the very top: [Change the announcement bar](common-tasks/update-announcement-bar.md)
+- The top menu (Projects, Apps, Learn, Community…): [Menu and footer](common-tasks/edit-menu-or-footer.md#the-top-menu-navbar)
+- The footer links and social media icons: [Menu and footer](common-tasks/edit-menu-or-footer.md#the-footer)
+
+### News ([/news/](https://openms.de/news/))
+
+- Add a news article: [Add a news article](common-tasks/add-news-post.md)
+- Show an article in the announcement bar: [Change the announcement bar](common-tasks/update-announcement-bar.md)
+
+### Community calendar ([/calendar/](https://openms.de/calendar/))
+
+- Add or change an event: [Add or change an event](common-tasks/update-community-calendar.md)
+
+### Annual Developer Retreat ([/developer-retreat/](https://openms.de/developer-retreat/))
+
+- The next retreat, last year's retreat, photos and the "Register here" link (once a year): [Update the Developer Retreat page](common-tasks/update-developer-retreat.md)
+
+### Featured Apps ([/featured-apps/](https://openms.de/featured-apps/))
+
+- Add, change or remove an app, or the heading text (this also changes the home page block): [Featured Apps](common-tasks/update-featured-apps.md)
+
+### Affiliated Apps ([/affiliated-apps/](https://openms.de/affiliated-apps/))
+
+- Add, change or remove a project, or the heading and introduction: [Affiliated Apps](common-tasks/update-affiliated-apps.md)
+
+### Publications ([/publications/](https://openms.de/publications/))
+
+- Add or remove a paper: [Publications](common-tasks/update-publications.md)
+
+### Our Sponsors ([/our-sponsors/](https://openms.de/our-sponsors/))
+
+- Add, change or remove a sponsor logo, or the text on the page: [Sponsors](common-tasks/update-sponsors.md)
+
+### Donate ([/donate/](https://openms.de/donate/))
+
+- Connect the donation form to Zeffy: [Donate page (Zeffy)](common-tasks/configure-donate-zeffy.md)
+
+### Any other page (Code of Conduct, Impressum, Governance, Contact…)
+
+- Change the words: [Change the text of a page](common-tasks/edit-page-text.md)
+- Not sure which files are behind a page? See [Everything in the navbar and the footer](reference/file-locations.md#everything-in-the-navbar-and-the-footer-where-is-each-page)
+
+### Pictures, on any page
+
+- Add or replace a picture or logo: [Add images](common-tasks/add-images.md)
+
+## Working on the site
 
 | Task | Guide |
 |------|--------|
-| Add a news article | [Add a news article](common-tasks/add-news-post.md) |
-| Add or change an event on the calendar | [Add or change an event](common-tasks/update-community-calendar.md) |
-| Change the announcement bar at the very top of every page | [Change the announcement bar](common-tasks/update-announcement-bar.md) |
-| Change the text on the home page (headline, numbers, “What is OpenMS?”…) | [Edit the text on the home page](common-tasks/edit-homepage-text.md) |
-| Update the Annual Developer Retreat page | [Update the Developer Retreat page](common-tasks/update-developer-retreat.md) |
-| Add or remove a paper on the Publications page | [Publications](common-tasks/update-publications.md) |
-| Add, change or remove a Featured App | [Featured Apps](common-tasks/update-featured-apps.md) |
-| Add, change or remove an Affiliated App | [Affiliated Apps](common-tasks/update-affiliated-apps.md) |
-| Change the top menu, footer links or social icons | [Menu and footer](common-tasks/edit-menu-or-footer.md) |
-| Add, change or remove a logo in “Adopted by labs and institutions” | [Adopted-by logos](common-tasks/update-adopted-by-logos.md) |
-| Change the three big numbers on the home page | [Home page numbers](common-tasks/update-homepage-numbers.md) |
-| Add or remove a sponsor logo | [Sponsors](common-tasks/update-sponsors.md) |
-| Connect the Donate page to Zeffy | [Donate page (Zeffy)](common-tasks/configure-donate-zeffy.md) |
-| Change the words on any other page (Code of Conduct, Impressum, …) | [Change the text of a page](common-tasks/edit-page-text.md) |
-| Add a picture or logo | [Add images](common-tasks/add-images.md) |
-| Preview the site on my computer | [Preview locally](getting-started/preview-locally.md) |
-| **Find out where things are** (pages, styling, pictures) in the website's files | [Map of the repository](getting-started/repo-map.md) |
 | **Start here:** edit without installing anything | [How to make a change](getting-started/edit-via-github.md) |
+| **Find out where things are** (pages, styling, pictures) in the website's files | [Map of the repository](getting-started/repo-map.md) |
+| Preview the site on my computer | [Preview locally](getting-started/preview-locally.md) |
 | Open a pull request | [Pull requests](workflow/pull-requests.md) |
 | Understand what happens when we merge | [Deployment](workflow/deployment.md) |
 | Find who can approve or help | [Who to ask](workflow/who-to-ask.md) |
