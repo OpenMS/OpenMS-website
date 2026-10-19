@@ -108,6 +108,11 @@ events:
   category: event
   synced: true
   end: '2026-11-27'
+- title: EuPA Annual Congress
+  start: '2026-11-29'
+  category: event
+  synced: true
+  location: Würzburg, Germany
 - title: Developers Retreat
   start: '2027-03-14'
   category: event
@@ -124,4 +129,4 @@ events:
   summary: 'Yearly HUPO-PSI Meeting.
 
     https://www.psidev.info/spring-meeting-2027'
-last_synced: '2026-10-19T13:46:31Z'
+last_synced: '2026-10-19T13:49:30Z'
