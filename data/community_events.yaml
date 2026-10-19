@@ -103,6 +103,11 @@ events:
   start: '2026-11-02'
   category: outreach
   synced: true
+- title: de.NBI All Hands
+  start: '2026-11-25'
+  category: event
+  synced: true
+  end: '2026-11-27'
 - title: Developers Retreat
   start: '2027-03-14'
   category: event
@@ -119,4 +124,4 @@ events:
   summary: 'Yearly HUPO-PSI Meeting.
 
     https://www.psidev.info/spring-meeting-2027'
-last_synced: '2026-10-08T14:18:54Z'
+last_synced: '2026-10-19T13:46:31Z'
