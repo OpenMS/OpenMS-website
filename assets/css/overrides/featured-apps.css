@@ -53,3 +53,16 @@
     grid-area: actions !important;
   }
 }
+
+/* Only the first button of a card is filled; the others are outlined. Older
+   rules always paint the Demo icon white, assuming Demo is the first, filled
+   button. When Demo comes later (for example after Homepage), colour it like
+   the other outlined buttons so its play icon stays visible. */
+html body :is(.openms-lib-page--featured, .openms-lib-page--featured-pro) .webapps-project-links__item:not(:first-child) .webapps-project-links__btn--demo,
+html body :is(.openms-lib-page--featured, .openms-lib-page--featured-pro) .webapps-project-links__item:not(:first-child) .webapps-project-links__btn--demo :is(i, .fab, .fas, .fa-play-circle, svg, .svg-inline--fa, path, span),
+html body :is(.openms-lib-page--featured, .openms-lib-page--featured-pro) .webapps-project-links__item:not(:first-child) .webapps-project-links__btn--demo:is(:hover, :focus-visible),
+html body :is(.openms-lib-page--featured, .openms-lib-page--featured-pro) .webapps-project-links__item:not(:first-child) .webapps-project-links__btn--demo:is(:hover, :focus-visible) :is(i, .fab, .fas, .fa-play-circle, svg, .svg-inline--fa, path, span) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  fill: currentColor !important;
+}
