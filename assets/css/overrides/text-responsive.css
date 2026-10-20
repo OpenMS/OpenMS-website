@@ -1,0 +1,41 @@
+/* ---------- Page text fits every screen ----------
+   In page files and news articles, long words that cannot break (web
+   addresses, code names, file names) and wide tables made the page scroll
+   sideways on phones. Inside these text areas:
+   - long words, links and code break onto the next line when needed
+     (except in tables);
+   - a wide table scrolls sideways inside its own box, not the whole page;
+   - pictures and code blocks are never wider than the text. */
+:is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) :is(p, li, dd, dt, blockquote, figcaption, h1, h2, h3, h4, h5, h6, a, code) {
+  overflow-wrap: anywhere;
+}
+
+/* In tables, keep words whole (breaking them would squeeze every column to a
+   letter); a wide table scrolls inside its box instead (below). */
+:is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) table :is(td, th, a, code) {
+  overflow-wrap: normal;
+}
+
+:is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+:is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) :is(img, video, iframe) {
+  max-width: 100%;
+  height: auto;
+}
+
+:is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Safety net: nothing inside these text areas may make the page scroll
+   sideways (clip hides it without creating a scrollbar; tables and code
+   blocks above already scroll inside their own box). */
+:is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) {
+  overflow-x: clip;
+}
