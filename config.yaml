@@ -1164,9 +1164,9 @@ languages:
           url: /featured-apps/
           linkText: Browse all apps
           apps:
-            - name: OpenDIAKiosk
-              logo: /images/webapp/logo/OpenDIAKiosk_logo_portrait.svg
-              url: http://opendia.webapps.openms.org/
+            - name: FLASH App
+              logo: /images/webapp/logo/flashapp.png
+              url: http://flashapp.webapps.openms.org/
             - name: umetaflow
               logo: /images/webapp/logo/umetaflow.png
               url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
