@@ -1,32 +1,34 @@
 /* ---------- Text links on every page ----------
    Every link written inside the text of a page (page files, news articles,
-   and texts from config.yaml) is blue and ends with an arrow (→). On hover
-   and keyboard focus the arrow slides a little to the right. It moves with a
+   and texts from config.yaml) is blue. Links inside a card also end with an
+   arrow (→) that slides a little to the right on hover and keyboard focus;
+   links in the middle of a paragraph have no arrow. The arrow moves with a
    transform, so the words around the link never shift.
 
    "Text link" = an <a> with no class, inside a paragraph, list, table,
-   caption or quote. Links the design styles itself (buttons, cards, menu,
-   footer) always have a class (and the site header and footer are excluded), so they keep their own look. Links in
-   headings and links around a picture are left alone too. The ID in :is()
-   makes these rules outrank older page-specific link colours. */
+   caption or quote. Links the design styles itself (buttons, card links,
+   menu, footer) always have a class, so they keep their own look; the site
+   header and footer are excluded too. Links in headings and links around a
+   picture are left alone. "Card" = any element whose class contains "card".
+   The ID in :is() makes these rules outrank older page-specific colours. */
 :is(html, #text-links) body :is(p, li, dd, td, th, figcaption, blockquote) a:not([class]):not(:has(img, svg, picture)):not(:is(h1, h2, h3, h4, h5, h6, .site-header, nav, #footer, .navbar) a) {
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
 }
 
-:is(html, #text-links) body :is(p, li, dd, td, th, figcaption, blockquote) a:not([class]):not(:has(img, svg, picture)):not(:is(h1, h2, h3, h4, h5, h6, .site-header, nav, #footer, .navbar) a)::after {
+:is(html, #text-links) body [class*="card"] :is(p, li, dd, td, th, figcaption, blockquote) a:not([class]):not(:has(img, svg, picture)):not(:is(h1, h2, h3, h4, h5, h6, .site-header, nav, #footer, .navbar) a)::after {
   content: "\2192";
   display: inline-block;
   margin-left: 0.3em;
   transition: transform 0.18s ease;
 }
 
-:is(html, #text-links) body :is(p, li, dd, td, th, figcaption, blockquote) a:not([class]):not(:has(img, svg, picture)):not(:is(h1, h2, h3, h4, h5, h6, .site-header, nav, #footer, .navbar) a):is(:hover, :focus-visible)::after {
+:is(html, #text-links) body [class*="card"] :is(p, li, dd, td, th, figcaption, blockquote) a:not([class]):not(:has(img, svg, picture)):not(:is(h1, h2, h3, h4, h5, h6, .site-header, nav, #footer, .navbar) a):is(:hover, :focus-visible)::after {
   transform: translateX(0.2em);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :is(html, #text-links) body :is(p, li, dd, td, th, figcaption, blockquote) a:not([class]):not(:has(img, svg, picture)):not(:is(h1, h2, h3, h4, h5, h6, .site-header, nav, #footer, .navbar) a)::after {
+  :is(html, #text-links) body [class*="card"] :is(p, li, dd, td, th, figcaption, blockquote) a:not([class]):not(:has(img, svg, picture)):not(:is(h1, h2, h3, h4, h5, h6, .site-header, nav, #footer, .navbar) a)::after {
     transition: none;
   }
 }
