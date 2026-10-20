@@ -164,16 +164,14 @@ languages:
               text: March 14–21, 2027
             - icon: fas fa-map-marker-alt
               text: Resort Natura, Algarve, Portugal
-            - icon: far fa-clock
-              text: Registration opens in August 2026
           poster:
             src: /images/dev_retreat_2027_poster.png
             alt: OpenMS Developer Retreat 2027 — Algarve, Portugal
         registration:
-          open: false
-          url: ""
+          open: true
+          url: https://tally.so/r/aQL8XW
           label: Register here
-          closedHint: Registration will open August 2026
+          closedHint: Click here to register 
       aboutPage:
         eyebrow: About us
         subtitle: >-
