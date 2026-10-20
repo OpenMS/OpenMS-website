@@ -136,6 +136,50 @@ html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--solution.openms
   }
 }
 
+/* Keep every row centred, including an incomplete last row (17 members in
+   rows of 4 left the last one alone on the left). A grid cannot centre a
+   partial row, so lay the cards out as a wrapping, centred flex row with the
+   same card width and the same number of cards per row as the grid above:
+   4 from 768px, 3 from 721px, 2 on phones. */
+html body .openms-lib-page--contributors #executive-committee .contributors-exec-gallery .members.members {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  margin-inline: auto !important;
+}
+
+@media (min-width: 721px) {
+  html body .openms-lib-page--contributors #executive-committee .contributors-exec-gallery .members.members {
+    max-width: calc(3 * 11rem + 2 * 1rem) !important;
+  }
+
+  /* Up to 11rem wide, narrower if 3 do not fit, like the grid columns did. */
+  html body .openms-lib-page--contributors #executive-committee .contributors-exec-gallery .members.members > .member {
+    flex: 0 0 min(11rem, calc((100% - 2 * 1rem) / 3)) !important;
+    width: min(11rem, calc((100% - 2 * 1rem) / 3)) !important;
+    max-width: 11rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  html body .openms-lib-page--contributors #executive-committee .contributors-exec-gallery .members.members {
+    max-width: calc(4 * 11rem + 3 * 1rem) !important;
+  }
+
+  html body .openms-lib-page--contributors #executive-committee .contributors-exec-gallery .members.members > .member {
+    flex: 0 0 min(11rem, calc((100% - 3 * 1rem) / 4)) !important;
+    width: min(11rem, calc((100% - 3 * 1rem) / 4)) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  html body .openms-lib-page--contributors #executive-committee .contributors-exec-gallery .members.members > .member {
+    flex: 0 0 min(11rem, calc(50% - 0.25rem)) !important;
+    width: min(11rem, calc(50% - 0.25rem)) !important;
+    max-width: 11rem !important;
+  }
+}
+
 /* "Want to contribute?" band sizing/breakpoint now lives in
    z-zzzzzz-navy-cta-standard.css (one standard shared by every navy CTA band
    on the site). */
