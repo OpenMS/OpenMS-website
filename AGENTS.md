@@ -53,7 +53,7 @@ GitHub Actions open their own pull requests for these. Do not hand-edit the outp
 ## Pitfalls found the hard way
 
 - **`sponsorTiers.benefitsMatrix`**: every row must have a key for **every** level `id` (use `[]` for "not included"). A missing key fails the build (`len $cell` on nil in `sponsor-tiers.html`). Level cards show only the **first 3** benefits of each level, in row order.
-- **App card buttons** (`layouts/partials/webapps-project-links.html`): no limit, but they wrap. Featured cards fit 3 per line at laptop width, Affiliated cards 2. `github` links are always moved last; all buttons open in a new tab.
+- **App card buttons** (`layouts/partials/webapps-project-links.html`): no limit, but they wrap. Featured cards fit 3 per line at laptop width, Affiliated cards 2. `github` links are always moved last; all buttons open in a new tab. Only the **first** button of a card is filled, the others are outlined; rules that colour a button by its type (for example the white Demo icon) must also work when it is not first.
 - **Dead config**: `homeSponsors`, `homePage.pathways`, `heroGroup` and `hero.microcopy` are not rendered anywhere. `index.html` references `partial "panel.html"`, which does **not exist**: never set `params.panel`. `fellowshipPage.projects*` is not rendered. `layouts/partials/contributors-exec.html` is unused.
 - **`universityPartners`** feeds both the home page logo strip and the Research Partnerships "Our partners" grid. A change shows in both.
 - **The footer year** is `{{ now.Year }}`, set at build time unless a script updates it client-side.

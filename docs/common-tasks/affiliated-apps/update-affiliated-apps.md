@@ -76,15 +76,17 @@ Affiliated cards are narrower: **2 buttons** fit side by side on a large screen.
 - On a **phone**, the buttons often go under each other. That is normal.
 - The buttons are shown **in the order you write them**, except **GitHub**, which is always last.
 
-| `type:` | Button text | Look |
+| `type:` | Button text | Icon |
 |---------|-------------|------|
-| `demo` | Demo | filled blue, play icon |
-| `homepage` | Homepage | filled blue, house icon |
-| `pypi` | PyPI | filled blue, Python icon |
-| `install` | Install | outlined, Windows icon |
-| `github` | GitHub | outlined, GitHub icon. **Always shown last.** |
-| `nfcore` | NF Core | outlined |
-| anything else | Link | outlined |
+| `demo` | Demo | play |
+| `homepage` | Homepage | house |
+| `pypi` | PyPI | Python |
+| `install` | Install | Windows |
+| `github` | GitHub | GitHub cat. **Always shown last.** |
+| `nfcore` | NF Core | diagram |
+| anything else | Link | arrow |
+
+**The first button of a card is filled (blue), the others are outlined**, whatever their type. So put the most important button first: usually `demo`, or `homepage` when there is no demo. For example MHCquant: Homepage (filled), Demo, GitHub (outlined).
 
 To change the button text, add a line `label:` (for example `label: Install (Windows)`).
 
