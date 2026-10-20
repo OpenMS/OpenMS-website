@@ -29,19 +29,20 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  /* Black wash + left-weighted veil — photo stays visible, copy stays legible */
+  /* Navy wash + left-weighted veil — photo stays visible, copy stays legible.
+     Navy, not black: the site uses no black backgrounds. */
   background:
     linear-gradient(
       105deg,
-      rgba(0, 0, 0, 0.82) 0%,
-      rgba(0, 0, 0, 0.58) 36%,
-      rgba(0, 0, 0, 0.28) 66%,
-      rgba(0, 0, 0, 0.14) 100%
+      rgba(var(--openms-navy-rgb), 0.82) 0%,
+      rgba(var(--openms-navy-rgb), 0.58) 36%,
+      rgba(var(--openms-navy-rgb), 0.28) 66%,
+      rgba(var(--openms-navy-rgb), 0.14) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.1) 0%,
-      rgba(0, 0, 0, 0.22) 100%
+      rgba(var(--openms-navy-rgb), 0.1) 0%,
+      rgba(var(--openms-navy-rgb), 0.22) 100%
     );
 }
 
@@ -201,11 +202,11 @@
     background:
       linear-gradient(
         180deg,
-        rgba(0, 0, 0, 0.78) 0%,
-        rgba(0, 0, 0, 0.58) 55%,
-        rgba(0, 0, 0, 0.42) 100%
+        rgba(var(--openms-navy-rgb), 0.78) 0%,
+        rgba(var(--openms-navy-rgb), 0.58) 55%,
+        rgba(var(--openms-navy-rgb), 0.42) 100%
       ),
-      linear-gradient(180deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.26));
+      linear-gradient(180deg, rgba(var(--openms-navy-rgb), 0.14), rgba(var(--openms-navy-rgb), 0.26));
   }
 
   .community-home__inner {
