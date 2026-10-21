@@ -1437,8 +1437,12 @@ languages:
           description: Web-based analysis pipeline for immunopeptidomics
           maintainers: Jonas Scheid
           links:
+            - type: homepage
+              url: https://nf-co.re/mhcquant/latest
             - type: demo
               url: https://abi-services.cs.uni-tuebingen.de/mhcquant/
+            - type: github
+              url: https://github.com/nf-core/mhcquant
 
       ecosystemSection:
         eyebrow: Developer tools
