@@ -1091,3 +1091,40 @@ html body .home-page .community-news-events__column-header {
     letter-spacing: 0.12em !important;
   }
 }
+
+/* Partner logo strip ("Adopted by labs and institutions worldwide."):
+   every logo gets a slot of the same width, with the logo centred and
+   scaled to fit, and the same gap between all slots. Before, each slot was
+   as wide as its picture (60-190px), so the space between the visible logos
+   varied, and the end of one copy of a row touched the start of the next
+   (HUPO-PSI next to Freie Universität, Groningen next to Tübingen). The
+   end gap on each row makes the seam look like every other gap; the loop
+   still moves by exactly one row. */
+html body .home-page__block--partners .uni-partners--home {
+  --uni-home-slot: 9rem;
+  --uni-home-gap: clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+html body .home-page__block--partners .uni-partners--home .uni-partners__marquee .uni-partners__row {
+  gap: var(--uni-home-gap) !important;
+  padding-inline: 0 var(--uni-home-gap) !important;
+}
+
+html body .home-page__block--partners .uni-partners--home .uni-partners__marquee .uni-partners__item {
+  flex: 0 0 var(--uni-home-slot) !important;
+  width: var(--uni-home-slot) !important;
+  max-width: var(--uni-home-slot) !important;
+  justify-content: center !important;
+}
+
+html body .home-page__block--partners .uni-partners--home .uni-partners__marquee .uni-partners__item img {
+  max-width: 100% !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 768px) {
+  html body .home-page__block--partners .uni-partners--home {
+    --uni-home-slot: 7.5rem;
+    --uni-home-gap: 1.5rem;
+  }
+}
