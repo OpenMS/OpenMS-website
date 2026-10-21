@@ -27,7 +27,7 @@ The menu itself (labels, order, links) is **`config.yaml` → `navbar`**. Its de
 | Apps → Affiliated Apps | `/affiliated-apps/` | `content/en/affiliated-apps.md` | `openms-lib-main.html`; the list comes from the `webapps-affiliate-catalog` block, which uses `webapps-affiliates.html` | the big title: the page file; the list: `config.yaml` → `affiliateProjects` and `affiliateSection` | `overrides/affiliated-apps.css` |
 | Apps → Archived Apps | `/archived-apps/` | `content/en/archived-apps.md` | `openms-lib-main.html`; the blocks `webapps-archived-notice`, `webapps-archived-catalog` and `webapps-archived-revival` use the `webapps-archived*.html` designs | the big title and the "Available references" heading: the page file; the list: `config.yaml` → `archivedProjects` and `archivedSection` | `overrides/archived-apps.css` |
 | **Learn** → six links (Liquid Chromatography, Mass Spectrometry, Identification and Quantification, Background, Glossary, Dave Tabb's Tutorials) | external websites | *no page on this site* | – | `config.yaml` → `navbar` (only the label and address) | – |
-| **Community** → Calendar | `/calendar/` | `content/en/calendar.md` | `community-calendar-main.html` | `data/community_events.yaml` (events), `config.yaml` → `calendarSection` | `overrides/calendar.css` |
+| **Community** → Calendar | `/calendar/` | `content/en/calendar.md` | `community-calendar-main.html` | the OpenMS Google Calendar (events, copied into `data/community_events.yaml` by a robot), `config.yaml` → `calendarSection` | `overrides/calendar.css` |
 | Community → News | `/news/` | `content/en/news/_index.md` (the list) and one file per article in `content/en/news/` | `layouts/news/section.html` and `news-single-main.html` | each article's file; `config.yaml` → `newsSection` | `overrides/news.css` |
 | Community → **Getting Involved** | `/contribute/` | `content/en/contribute.md` | `contribute-main.html` | `config.yaml` → `contributePage` (intro and links); the rest is written in the design file | `overrides/contribute.css` |
 | Community → OpenMS Fellowship | `/fellowship/` | `content/en/fellowship.md` | `fellowship-main.html` (form: `fellowship-form-embed.html`) | `config.yaml` → `fellowshipPage` | `overrides/fellowship.css` |
@@ -36,17 +36,17 @@ The menu itself (labels, order, links) is **`config.yaml` → `navbar`**. Its de
 | **Services** → Scientific and Technical Support | `/scientific-and-technical-support/` | `content/en/scientific-and-technical-support.md` | `scientific-and-technical-support-main.html` | `config.yaml` → `servicesSupportPage` (intro); the rest in the design file | `overrides/scientific-and-technical-support.css` |
 | **About** → Governance | `/governance/` | `content/en/governance.md` | `governance-main.html` | `config.yaml` → `governancePage` (intro only); almost all text is written in the design file | `overrides/governance.css` |
 | About → Our Sponsors | `/our-sponsors/` | `content/en/our-sponsors.md` | `our-sponsors-main.html` | `config.yaml` → `aboutPage` (`sponsorsSection` and `sponsors`) | `openms-overrides.css` |
-| About → Our Sponsorship Program | `/sponsor-us/` | `content/en/sponsor-us.md` | `sponsor-us-main.html` and `sponsor-tiers.html` | `config.yaml` → `sponsorUsPage`, `sponsorTiers`, `sponsorshipProgram` | `overrides/sponsor-us.css` |
+| About → Our Sponsorship Program | `/sponsor-us/` | `content/en/sponsor-us.md` | `sponsor-us-main.html` and `sponsor-tiers.html` | `config.yaml` → `sponsorUsPage` (intro), `sponsorTiers` (levels and benefit table); the FAQ and the rest in `sponsor-us-main.html` (see [the FAQ guide](../common-tasks/sponsorship-program/update-faq.md)) | `overrides/sponsor-us.css` |
 | About → Research Partnerships | `/research-partnerships/` | `content/en/research-partnerships.md` | `research-partnerships-main.html` | `config.yaml` → `researchPartnershipsPage` (and `universityPartners` for the logos) | `overrides/research-partnerships.css` |
 | About → Publications | `/publications/` | `content/en/publications.md` (**generated, don't edit**) | `publications-main.html` | the list: `pmids.txt`; the two "Key publications": `publications-key.html`; `config.yaml` → `publicationsPage` | `overrides/publications.css` |
-| About → **Leadership** | `/contributors/` | `content/en/contributors.md` | `contributors-main.html`, `contributors-leadership.html`, `contributors-exec.html` | names and bios are written in those design files; photos in `static/images/leadership_photos/` | `overrides/contributors.css` |
+| About → **Leadership** | `/contributors/` | `content/en/contributors.md` | `contributors-main.html`, `contributors-leadership.html` | board of directors: names, roles and bios in `contributors-leadership.html`, photos in `static/images/leadership_photos/`; Executive Committee: `static/gallery/members.html` (see [Board of directors](../common-tasks/leadership/update-board-of-directors.md) and [Executive Committee](../common-tasks/leadership/update-executive-committee.md)) | `overrides/contributors.css` |
 | About → Contact | `/contact/` | `content/en/contact.md` | `contact-main.html`, `contact-email-aside.html`, `contact-alternatives.html` | `config.yaml` → `contactPage` (intro); the rest in the design files | `overrides/contact.css` |
 | **Sponsor Us** (button) | `/sponsor-us/` | see *Our Sponsorship Program* | | | |
 | **Partner with OpenMS** (button) | `/research-partnerships/` | see *Research Partnerships* | | | |
 
 ### The footer
 
-The footer's columns, links and social icons are **`config.yaml` → `footer`** (see [Menu and footer](../common-tasks/edit-menu-or-footer.md)). Its design is `layouts/partials/footer.html`, and its styling is `overrides/navbar-footer.css`. The copyright line is written in `footer.html`; the year updates itself when the site is rebuilt.
+The footer's columns, links and social icons are **`config.yaml` → `footer`** (see [Change the footer links](../common-tasks/footer/edit-footer-links.md)). Its design is `layouts/partials/footer.html`, and its styling is `overrides/navbar-footer.css`. The copyright line is written in `footer.html`. Its year is set by a small script from the visitor's clock, so it changes by itself on 1 January (the year of the last build is shown when JavaScript is off).
 
 | Column | Link | Address | Page file | Design | Words | Styling |
 |--------|------|---------|-----------|--------|-------|---------|
@@ -68,7 +68,7 @@ The footer's columns, links and social icons are **`config.yaml` → `footer`** 
 - The intro text and links are in `config.yaml` under `contributePage`.
 - The look is in `assets/css/overrides/contribute.css`.
 
-Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/` (linked from Governance), `/help/` (linked from Contact), `/help-request/` (an embedded Google form, not linked from the site) and `/getting-started/develop-your-own-openms-tools/` (not linked from the site). `content/en/jobs.md` is a draft and is not published. `content/en/keyfeatures/` holds blocks for the home page, not pages of their own. The home page is `layouts/index.html` with its text in `config.yaml` (see [Edit the home page](../common-tasks/edit-homepage-text.md)).
+Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/` (linked from Governance), and `/help/` (linked from Contact). The unused pages `/help-request/`, `/jobs/`, `/getting-started/develop-your-own-openms-tools/` and `/keyfeatures/…` are removed by PR #51; their addresses redirect to other pages. Folders and pictures the site does not use are listed in [Archive folders](archive-folders.md). The home page is `layouts/index.html` with its text in `config.yaml` (see [Edit the home page](../common-tasks/home-page/README.md)).
 
 ## Content (Markdown)
 
@@ -94,7 +94,7 @@ Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/
 | Sponsors (`/our-sponsors/`) | `config.yaml` → `params.aboutPage.sponsors` |
 | Developer Retreat page | `config.yaml` → `params.developerRetreatPage` |
 | Publications list | `pmids.txt` |
-| Community calendar events | `data/community_events.yaml` |
+| Community calendar events | the OpenMS Google Calendar (copied into `data/community_events.yaml` by a robot; do not edit that file) |
 | Community calendar page | `content/en/calendar.md`, `layouts/partials/community-calendar-main.html` |
 | Donate page (Zeffy) | `content/en/donate.md`, `layouts/partials/donate-main.html`, `config.yaml` → `params.donatePage` |
 | Navbar & footer | `config.yaml` → `params.navbar`, `params.footer` |

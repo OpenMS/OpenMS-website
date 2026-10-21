@@ -2,7 +2,7 @@
 
 You can update most of the website **using only your web browser**. Nothing you do goes live straight away: every change is **checked by the web team first**, so you cannot break the site by accident.
 
-> **This page is the "saving" part that every guide in [common tasks](../common-tasks/) points to.** Each guide tells you *what* to change. This page shows you *how to save it and send it for review*.
+> **This page is the "saving" part that every guide in [common tasks](../common-tasks) points to.** Each guide tells you *what* to change. This page shows you *how to save it and send it for review*.
 
 ## Before you start
 
@@ -27,7 +27,7 @@ You can update most of the website **using only your web browser**. Nothing you 
 
 Each guide tells you which file to open (for example `config.yaml`). Open the file on GitHub, then click the **pencil icon** at the top right of the file.
 
-![The pencil icon on a GitHub file page](../images/github/1-open-file-pencil.png)
+![The pencil icon on a GitHub file page](../common-tasks-screenshot-images/github/1-open-file-pencil.png)
 
 1. The **pencil** you click to start editing.
 
@@ -45,13 +45,13 @@ The file opens in a text box. Click where you want to change something and type,
 
 Click the green **Commit changes…** button (top right).
 
-![The green Commit changes button](../images/github/2-editor-commit-button.png)
+![The green Commit changes button](../common-tasks-screenshot-images/github/2-editor-commit-button.png)
 
 1. The green button you press when you have finished typing.
 
 A small window opens. Do these three things:
 
-![The commit window](../images/github/3-commit-dialog.png)
+![The commit window](../common-tasks-screenshot-images/github/3-commit-dialog.png)
 
 1. Write a **short note** about what you changed, e.g. *Update news banner*.
 2. Choose **Create a new branch for this commit and start a pull request**. ⚠️ Do **not** choose "Commit directly to the main branch".
@@ -61,7 +61,7 @@ A small window opens. Do these three things:
 
 GitHub now shows a page called **Open a pull request**. Press the green **Create pull request** button.
 
-![The Create pull request button](../images/github/4-create-pull-request.png)
+![The Create pull request button](../common-tasks-screenshot-images/github/4-create-pull-request.png)
 
 1. The green button that sends your change to the web team.
 
@@ -69,7 +69,7 @@ GitHub now shows a page called **Open a pull request**. Press the green **Create
 
 After 2–5 minutes, a robot called **netlify** writes a message on your pull request. Click the link next to **Deploy Preview**. It opens a copy of the website that includes your change.
 
-![The Deploy Preview link on a pull request](../images/github/5-netlify-preview.png)
+![The Deploy Preview link on a pull request](../common-tasks-screenshot-images/github/5-netlify-preview.png)
 
 1. Click this link to see your change.
 
@@ -85,7 +85,7 @@ Someone from the web team will check your pull request and **merge** it. After a
 
 `config.yaml` uses **spaces at the start of a line** to group things together. If the spaces are wrong, the website cannot be built.
 
-![Right and wrong spaces](../images/github/8-yaml-spaces.png)
+![Right and wrong spaces](../common-tasks-screenshot-images/github/8-yaml-spaces.png)
 
 Simple rules:
 
