@@ -986,3 +986,12 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
     text-align: center !important;
   }
 }
+
+/* "For Developers" cards: the link stays blue when the card is hovered, but an
+   older rule still painted its arrow (→) white, so it vanished on the white
+   card (pyOpenMS, pyOpenMS Viz, OpenMS Web Apps). The arrow now always takes
+   the colour of its link text. */
+:is(html, #dev-arrow-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__card-link > span[aria-hidden="true"] {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
