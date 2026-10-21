@@ -61,8 +61,11 @@ html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--solution.openms
   color: var(--openms-white) !important;
 }
 
+/* No divider line between the name and role and the bio, and no padding
+   that only made room for it. */
 html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--solution.openms-lib-page--contributors .leadership-card__identity {
-  border-bottom-color: rgba(var(--openms-white-rgb), 0.18) !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
 }
 
 html body .openms-lib-page.openms-lib-page--hub.openms-lib-page--solution.openms-lib-page--contributors .leadership-card__name {
