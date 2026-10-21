@@ -2,7 +2,7 @@
 
 The **Community events** page (**https://openms.de/calendar/**) lists upcoming and past meetings, workshops and outreach events. The **Upcoming events** on the home page come from the same list.
 
-**The only way to add, change or remove an event is the OpenMS Google Calendar.** A robot copies the Google Calendar to the website every 15 minutes. Do **not** edit `data/community_events.yaml` on GitHub: the robot rewrites that file and your change would be lost.
+**The only way to add, change or remove an event is the OpenMS Google Calendar.** Whenever the calendar changes, a robot copies it to the website, usually within a few minutes. Do **not** edit `data/community_events.yaml` on GitHub: the robot rewrites that file and your change would be lost.
 
 **You need:** access to the OpenMS Google Calendar (ask the web team: [Who to ask](../../workflow/who-to-ask.md))  ·  **Time:** about 5 minutes  ·  **Skills needed:** none
 
@@ -21,7 +21,7 @@ The **Community events** page (**https://openms.de/calendar/**) lists upcoming a
 
 1. Open the **OpenMS Google Calendar** and create the event.
 2. Fill in the fields (see the table below).
-3. Save it. **Wait up to 15 minutes**: the robot copies it to the website, and the site is rebuilt.
+3. Save it. **Wait a few minutes**: the robot copies it to the website, and the site is rebuilt.
 4. Open **https://openms.de/calendar/** and check the event. If it is not there after 30 minutes, ask the web team.
 
 | Google Calendar field | On the website | Tips |
@@ -33,7 +33,7 @@ The **Community events** page (**https://openms.de/calendar/**) lists upcoming a
 
 ## Change or remove an event
 
-- **Change:** edit the event in the Google Calendar. The website follows within 15 minutes.
+- **Change:** edit the event in the Google Calendar. The website follows within a few minutes.
 - **Remove:** delete the event in the Google Calendar. It disappears from the website at the next copy.
 - **Past events** stay on the website, under **Past events**, for 5 years after they ended.
 
@@ -41,7 +41,7 @@ The **Community events** page (**https://openms.de/calendar/**) lists upcoming a
 
 | What went wrong | How to fix it |
 |-----------------|---------------|
-| My event does not appear | Wait 15 minutes, then reload the page. Check that you added it to the **OpenMS** calendar, not your own. |
+| My event does not appear | Wait a few minutes, then reload the page. Check that you added it to the **OpenMS** calendar, not your own. |
 | My change in `community_events.yaml` was undone | That file is written by the robot. Make the change in the Google Calendar. |
 | The link is not clickable | Put it on its own line in the description, as `Label: https://…`, with the full address starting with `https://`. |
 | A multi-day event shows one day too many or too few | Use **All day** and choose the real last day as the end. |
@@ -53,7 +53,11 @@ These parts are not needed for normal event updates.
 
 ### How the copy works
 
-`sync_google_calendar.py`, started by `.github/workflows/update_calendar.yml` every 15 minutes, reads the Google Calendar and **replaces all events** in `data/community_events.yaml` with it. Every event there has `synced: true`. The workflow opens and merges a pull request automatically when something changed. If nothing changed, it leaves the file alone.
+Three pieces work together:
+
+1. **`calendar-notify-github`**, a Google Apps Script on the **openmsuser** Google account (the account that also holds the calendar). When an event is created, changed or deleted, it tells GitHub (a `calendar-updated` event).
+2. **`.github/workflows/update_calendar.yml`**, the GitHub workflow "Sync Google Calendar". It starts on that signal. It can also be started by hand: **Actions → Sync Google Calendar → Run workflow**.
+3. **`sync_google_calendar.py`**, which reads the calendar and writes its events into `data/community_events.yaml` (each marked `synced: true`). The workflow commits the file straight to `main` with the OpenMS GitHub App, and Netlify rebuilds the site. If nothing changed, nothing is committed.
 
 ### Turn on the Google Calendar connection
 
@@ -64,12 +68,12 @@ These parts are not needed for normal event updates.
 
 If the secret is missing, the robot does nothing and the website keeps the last copied events.
 
-### Faster updates (optional)
+### If the Apps Script needs to be set up again
 
-The workflow checks every 15 minutes. To sync within seconds, a Google Apps Script can notify GitHub when an event changes (event type `calendar-updated`). It needs a GitHub token with **Contents: Read and write** stored in the script's private properties.
+`calendar-notify-github` sends GitHub a `calendar-updated` event. It needs a GitHub token with **Contents: Read and write** on this repository, stored in the script's **Project Settings → Script properties** as `GH_TOKEN`. Its code looks like this; run `setup` once after pasting it:
 
 ```js
-const REPO = 'OWNER/REPO';                    // e.g. OpenMS/OpenMS-website
+const REPO = 'OpenMS/OpenMS-website';
 const CALENDAR_ID = 'CALENDAR_ID_OR_EMAIL';   // the calendar that feeds the site
 
 function notifyGitHub() {

@@ -42,12 +42,12 @@ The full map of every navbar and footer link to its page file, layout, words and
 
 ## Files owned by robots
 
-GitHub Actions open their own pull requests for these. Do not hand-edit the outputs:
+GitHub Actions write these files (the publications and KPI robots open pull requests; the calendar robot commits to `main`). Do not hand-edit the outputs:
 
 | Workflow | Script | Writes |
 |----------|--------|--------|
 | `update_publications.yml` (weekly, and on push of `pmids.txt`) | `generate_bib.py` | `content/en/publications.md`. To add a paper, edit `pmids.txt`. |
-| `update_calendar.yml` (every 15 min) | `sync_google_calendar.py` | `data/community_events.yaml` |
+| `update_calendar.yml` (when the Google Calendar changes: the `calendar-notify-github` Apps Script sends a `calendar-updated` event) | `sync_google_calendar.py` | `data/community_events.yaml`, committed straight to `main` |
 | `update_kpis.yml` (weekly) | `get_total_citations.py` | `KPI.csv` |
 
 ## Pitfalls found the hard way
