@@ -1301,7 +1301,7 @@ languages:
               url: https://github.com/grosenberger/easypqp
             - type: pypi
               url: https://pypi.org/project/easypqp/
-        - name: TEST
+        - name: Pyprophet
           logo: /images/webapp/logo/affiliate/pyprophet.png
           logoSize: large
           description: Semi-supervised learning and scoring of OpenSWATH results
@@ -1311,22 +1311,6 @@ languages:
               url: https://github.com/PyProphet/pyprophet
             - type: pypi
               url: https://pypi.org/project/pyprophet/
-           - name: mzPeak
-          logo: /images/webapp/logo/affiliate/mzpeak.png
-          logoSize: wide
-          description: >-
-            Next generation file format for mass spectrometry run files, built
-            on top of Apache Parquet
-          maintainers: >-
-            Joshua Klein, Sam Wein, Tim Van Den Bossche, Peter Jones,
-            Oliver Kohlbacher
-          links:
-            - type: github
-              url: https://github.com/HUPO-PSI/mzPeak
-            - type: homepage
-              url: https://www.mzpeak.org/
-            - type: homepage
-              url: https://www.mzpeak.org/
 
       archivedSection:
         eyebrow: Legacy
