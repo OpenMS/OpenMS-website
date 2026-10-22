@@ -1,0 +1,182 @@
+/* This file used to force the footer nav columns to `max-content` + `nowrap`
+   with its own breakpoints (64rem / 52rem / 30rem). That removed the
+   `minmax(0, ...)` safety net already built into `.footer-nav` in
+   styles_override.css, which caused real horizontal overflow around
+   768-1024px (columns wider than the available row). The base rules in
+   styles_override.css already produce the same right-aligned, content-hugging
+   layout on wide screens and degrade cleanly through 1100px/1024px/768px/480px
+   with flexible `1fr` columns and wrapping text, so no width override is
+   needed here.
+
+   The one thing added back below: at the 2-column breakpoints, the four
+   groups pair up as (Support, Community) then (About, Legal) in DOM order.
+   Support (2 links) sharing a row with Community (6 links) leaves a large
+   ragged gap under Support before the next row starts, since a grid row's
+   height follows its tallest cell. Reorder so the two long lists (Community,
+   About) share one row and the two short ones (Support, Legal) share the
+   other - only at the 2-column widths, so the desktop 4-column left-to-right
+   order (Support, Community, About, Legal) is unaffected.
+
+   This now spans max-width: 1024px (not just 768px) to match
+   styles_override.css, where the footer nav switched to 2 columns starting
+   at 1024px so the links can stay to the right of the logo instead of
+   stacking below it through the md-lg range. */
+@media (max-width: 1024px) {
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(1) {
+    order: 3; /* Support */
+  }
+
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(2) {
+    order: 1; /* Community */
+  }
+
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(3) {
+    order: 2; /* About */
+  }
+
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(4) {
+    order: 4; /* Legal */
+  }
+
+  /* A separate rule (openms-overrides.css) adds top margin to DOM children
+     3+ to space out what used to be the second row (About, Legal). That
+     margin stacked on top of the grid's own row-gap, making the space
+     between rows (49px) nearly double the space between columns (27px).
+     Zero it out on every group so the grid's row-gap - which already
+     equals its column-gap - is the only thing spacing the rows, matching
+     the column spacing everywhere. */
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(1),
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(2),
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(3),
+  html body #footer.footer-redesign .footer-nav .footer-link-group:nth-child(4) {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* Mobile menu — the "Sponsor Us" outline button gets a navy border (it was the
+   brand blue). Text and hover are unchanged. */
+:is(html, #navbar-sponsor-specificity-boost) body .navbar-menu .navbar-mobile-ctas a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active),
+:is(html, #navbar-sponsor-specificity-boost) body .navbar-menu .navbar-mobile-ctas a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active):visited {
+  border-color: var(--openms-navy) !important;
+}
+
+/* Hover / focus — the standard outline-button effect, in navy: faint navy fill,
+   slight scale and a navy glow ring (it had the scale but a blue glow and no
+   fill). The border stays navy. */
+:is(html, #navbar-sponsor-specificity-boost):is(html, #navbar-sponsor-hover-boost) body .navbar-menu .navbar-mobile-ctas a.navbar-item.navbar-cta-item.about-cta-btn--donate:is(:hover, :focus-visible, :active) {
+  background: rgba(var(--openms-navy-rgb), 0.08) !important;
+  background-color: rgba(var(--openms-navy-rgb), 0.08) !important;
+  border-color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(var(--openms-navy-rgb), 0.18) !important;
+  outline: none !important;
+}
+
+/* Navbar "Sponsor Us": text (and its label spans) in the same navy as the
+   button's border, in every navbar variant (drawer, desktop, sticky clone). */
+:is(html, #sponsor-nav-boost) body .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active),
+:is(html, #sponsor-nav-boost) body .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active) .navbar-cta-label,
+:is(html, #sponsor-nav-boost) body #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active),
+:is(html, #sponsor-nav-boost) body #navbar-clone.navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate:not(:hover):not(:focus-visible):not(:active) .navbar-cta-label {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  border-color: var(--openms-navy) !important;
+}
+
+/* ---------- navbar logo: one size from sm up to xl, smaller on phones ---------- */
+:root {
+  --openms-navbar-logo-height: 60px;
+}
+
+@media (max-width: 639px) {
+  :root {
+    --openms-navbar-logo-height: 52px;
+  }
+}
+
+/* the compact-desktop rule scaled the logo between 1024 and 1439px */
+html body .site-header #nav.navbar.is-fresh .navbar-brand img.navbar-logo,
+html body #navbar-clone.navbar.is-fresh .navbar-brand img.navbar-logo {
+  height: var(--openms-navbar-logo-height) !important;
+  max-height: var(--openms-navbar-logo-height) !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  html body .site-header #nav.navbar.is-fresh .container,
+  html body #navbar-clone.navbar.is-fresh .container {
+    min-height: calc(var(--openms-navbar-logo-height) + 0.65rem);
+  }
+}
+/* Contact page: section title / eyebrow at the standard size */
+html body .openms-lib-page--contact #contact-paths .openms-lib-resources__title {
+  font-size: var(--openms-section-title-size) !important;
+}
+
+/* Developer retreat hero title: same as every other hero */
+:is(html, #retreat-h1-boost) body .openms-lib-page--developer-retreat .openms-lib-hero__title.openms-lib-hero__title {
+  font-size: clamp(1.65rem, 1.05rem + 2.6vw, 3.25rem) !important;
+}
+
+html body .openms-lib-page--developer-retreat .openms-lib-hero__title-line {
+  font-size: inherit !important;
+}
+
+/* ---------- Footer: four equal-width link columns; long links wrap ---------- */
+@media (min-width: 1101px) {
+  html body #footer.footer-redesign .footer-nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-content: stretch;
+    width: 100%;
+    max-width: 56rem;
+    margin-left: auto;
+    padding-right: 0;
+  }
+
+  html body #footer.footer-redesign .footer-nav .footer-link-group ul li a {
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+  }
+}
+
+/* ---------- Footer credit ("Developed by Raphaela Gil"): same colour as the copyright, link underlined on hover ---------- */
+:is(html, #footer-credit-boost) body .footer-copyright .footer-credit {
+  white-space: nowrap;
+}
+
+:is(html, #footer-credit-boost) body .footer-copyright .footer-credit__sep {
+  margin-inline: 0.15rem;
+}
+
+:is(html, #footer-credit-boost) body .footer-copyright .footer-credit a {
+  color: inherit !important;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+:is(html, #footer-credit-boost) body .footer-copyright .footer-credit a:is(:hover, :focus-visible) {
+  text-decoration: underline !important;
+  text-underline-offset: 0.2em;
+}
+
+/* ---------- Footer copyright line: a bit smaller ---------- */
+html:is(html, #footer-copy-small-boost) body .footer-copyright {
+  font-size: 0.875rem !important;
+}
+
+@media (max-width: 767px) {
+  html:is(html, #footer-copy-small-boost) body .footer-copyright {
+    font-size: clamp(0.75rem, 3.3vw, 0.875rem) !important;
+  }
+}
+
+/* ---------- Footer "Deployed by Netlify" badge: a bit bigger (32px -> 44px tall) ---------- */
+:is(html, #footer-deploy-big-boost) body .footer-deploy img {
+  width: auto !important;
+  height: 2.75rem !important;
+  max-height: 2.75rem !important;
+  max-width: 100% !important;
+}

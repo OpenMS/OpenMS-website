@@ -29,33 +29,6 @@
   border-left-color: var(--openms-blue);
   background: rgba(var(--openms-blue-rgb), 0.08);
 }
-
-.shortcuts-H2,
-.shortcuts-H3,
-.shortcuts-H4 {
-  border-radius: 0 0.45rem 0.45rem 0;
-}
-
-.shortcuts-H2:hover,
-.shortcuts-H3:hover,
-.shortcuts-H4:hover {
-  background: rgba(var(--openms-blue-rgb), 0.08);
-}
-
-/* Governance page: use top jump links only (hide left TOC) */
-.content-padding:has(.governance-page) .shortcuts-container,
-.governance-page-layout .shortcuts-container {
-  display: none;
-}
-
-/* About page: hide left TOC */
-.content-padding:has(.about-page) .shortcuts-container,
-.about-page-layout .shortcuts-container,
-.research-partnerships-page-layout .shortcuts-container,
-.sponsor-us-page-layout .shortcuts-container {
-  display: none;
-}
-
 /* Contact page: hide left TOC */
 .content-padding:has(.contact-page) .shortcuts-container,
 .contact-page-layout .shortcuts-container {
@@ -75,19 +48,6 @@
 .openms-lib-page--news .shortcuts-container {
   display: none;
 }
-
-/* Donate page: hide left TOC */
-.content-padding:has(.donate-page-layout) .shortcuts-container,
-.donate-page-layout .shortcuts-container {
-  display: none;
-}
-
-/* Community calendar: hide left TOC */
-.content-padding:has(.community-calendar-layout) .shortcuts-container,
-.community-calendar-layout .shortcuts-container {
-  display: none;
-}
-
 /* Contribute page: hide left TOC */
 .content-padding:has(.openms-lib-page--contribute) .shortcuts-container,
 .openms-lib-page--contribute .shortcuts-container {

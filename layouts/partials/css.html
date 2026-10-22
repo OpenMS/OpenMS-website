@@ -37,6 +37,14 @@
 {{- $themeCssFiles := resources.Match "theme-css/*.css" -}}
 {{- $userCssFiles := resources.Match "css/*.css" -}}
 {{- $lateCss := resources.Get "css/openms-overrides.css" -}}
+{{- /* Files in css/overrides/ load last (after openms-overrides.css), so a
+      page-specific tweak can win over the base styles above without
+      needing a special filename — previously this was done by naming the
+      file "z-something.css" and matching that prefix. shared-components.css
+      loads before the other override files, since a few of its rules are
+      meant to be a base that page-specific overrides can still refine. */ -}}
+{{- $overrideCssFiles := resources.Match "css/overrides/*.css" -}}
+{{- $sharedOverrideFile := "shared-components.css" -}}
 
 {{- range $themeCssFiles -}}
 {{- $cssFileName := path.Base .Name -}}
@@ -54,7 +62,7 @@
 
 {{- range $userCssFiles -}}
 {{- $cssFileName := path.Base .Name -}}
-{{- if and (not (strings.HasPrefix $cssFileName "z")) (ne $cssFileName "openms-overrides.css") -}}
+{{- if ne $cssFileName "openms-overrides.css" -}}
 {{- $targetFile := printf "css/%s" $cssFileName -}}
 {{ if $inServerMode -}}
 {{ $custom_style := . | resources.ExecuteAsTemplate $targetFile $page -}}
@@ -77,10 +85,21 @@
 {{- end -}}
 {{- end -}}
 
-{{- range $userCssFiles -}}
+{{- with resources.Get (printf "css/overrides/%s" $sharedOverrideFile) -}}
+{{- $targetFile := printf "css/overrides/%s" $sharedOverrideFile -}}
+{{ if $inServerMode -}}
+{{ $custom_style := . | resources.ExecuteAsTemplate $targetFile $page -}}
+<link rel="stylesheet" href="{{ $custom_style.RelPermalink }}">
+{{ else }}
+{{ $custom_style := . | resources.ExecuteAsTemplate $targetFile $page | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $custom_style.RelPermalink }}" integrity="{{ $custom_style.Data.Integrity }}">
+{{- end -}}
+{{- end -}}
+
+{{- range $overrideCssFiles -}}
 {{- $cssFileName := path.Base .Name -}}
-{{- if strings.HasPrefix $cssFileName "z" -}}
-{{- $targetFile := printf "css/%s" $cssFileName -}}
+{{- if ne $cssFileName $sharedOverrideFile -}}
+{{- $targetFile := printf "css/overrides/%s" $cssFileName -}}
 {{ if $inServerMode -}}
 {{ $custom_style := . | resources.ExecuteAsTemplate $targetFile $page -}}
 <link rel="stylesheet" href="{{ $custom_style.RelPermalink }}">
