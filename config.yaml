@@ -1313,6 +1313,18 @@ languages:
               url: https://github.com/PyProphet/pyprophet
             - type: pypi
               url: https://pypi.org/project/pyprophet/
+        - name: Test
+          logo: /images/webapp/logo/affiliate/pyprophet.png
+          logoSize: large
+          description: Semi-supervised learning and scoring of OpenSWATH results
+          maintainers: Justin Sing
+          links:
+            - type: github
+              url: https://github.com/PyProphet/pyprophet
+            - type: pypi
+              url: https://pypi.org/project/pyprophet/
+            - type: pypi
+              url: https://pypi.org/project/pyprophet/
 
       archivedSection:
         eyebrow: Legacy
