@@ -1323,7 +1323,7 @@ languages:
               url: https://pypi.org/project/pyprophet/
             - type: pypi
               url: https://pypi.org/project/pyprophet/
-                - type: pypi
+            - type: pypi
               url: https://pypi.org/project/pyprophet/
       archivedSection:
         eyebrow: Legacy
