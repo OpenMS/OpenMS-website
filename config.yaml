@@ -1311,7 +1311,20 @@ languages:
               url: https://github.com/PyProphet/pyprophet
             - type: pypi
               url: https://pypi.org/project/pyprophet/
-
+        - name: TEST Pyprophet
+          logo: /images/webapp/logo/affiliate/pyprophet.png
+          logoSize: large
+          description: Semi-supervised learning and scoring of OpenSWATH results
+          maintainers: Justin Sing
+          links:
+            - type: github
+              url: https://github.com/PyProphet/pyprophet
+            - type: pypi
+              url: https://pypi.org/project/pyprophet/
+            - type: pypi
+              url: https://pypi.org/project/pyprophet/
+            - type: pypi
+              url: https://pypi.org/project/pyprophet/
       archivedSection:
         eyebrow: Legacy
         title: Archived Apps
@@ -1435,8 +1448,12 @@ languages:
           description: Web-based analysis pipeline for immunopeptidomics
           maintainers: Jonas Scheid
           links:
+            - type: homepage
+              url: https://nf-co.re/mhcquant/latest
             - type: demo
               url: https://abi-services.cs.uni-tuebingen.de/mhcquant/
+            - type: github
+              url: https://github.com/nf-core/mhcquant
 
       ecosystemSection:
         eyebrow: Developer tools

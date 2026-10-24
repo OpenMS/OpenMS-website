@@ -1,0 +1,343 @@
+/* Why sponsor — title + lead stay inside the column at tablet/phone */
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__head,
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__head-copy,
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__title,
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__lead {
+  min-width: 0;
+  max-width: 100% !important;
+}
+
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__title {
+  overflow-wrap: break-word;
+}
+
+html body .openms-lib-page--sponsor-us #why-sponsor .sponsor-lead-line {
+  display: inline !important;
+  white-space: normal !important;
+  overflow-wrap: break-word;
+}
+
+html body .openms-lib-page--sponsor-us #why-sponsor .sponsor-lead-line + .sponsor-lead-line::before {
+  content: " ";
+}
+
+@media (min-width: 1120px) {
+  html body .openms-lib-page--sponsor-us #why-sponsor .sponsor-lead-line {
+    display: block !important;
+    white-space: nowrap !important;
+  }
+
+  html body .openms-lib-page--sponsor-us #why-sponsor .sponsor-lead-line + .sponsor-lead-line::before {
+    content: none;
+  }
+}
+
+/* FAQ + Become a sponsor — Contact us keeps desktop pill size on all screens */
+html body .openms-lib-page--sponsor-us a.openms-lib-btn.sponsor-faq-pro__cta,
+html body .openms-lib-page--sponsor-us a.openms-lib-btn.sponsor-faq-pro__cta:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn.openms-lib-btn--primary,
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn.openms-lib-btn--primary:is(:hover, :focus-visible, :active) {
+  display: inline-flex !important;
+  box-sizing: border-box;
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+  justify-self: start !important;
+  justify-content: center !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  height: auto !important;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  white-space: nowrap !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__question:hover,
+html body .openms-lib-page--sponsor-us .sponsor-faq__question:focus-visible {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  background: rgba(var(--openms-blue-rgb), 0.04) !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__item[open] .sponsor-faq__question:hover,
+html body .openms-lib-page--sponsor-us .sponsor-faq__item[open] .sponsor-faq__question:focus-visible {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  background: rgba(var(--openms-blue-rgb), 0.04) !important;
+}
+
+/* Benefit comparison — always expanded */
+html body .openms-lib-page--sponsor-us .sponsor-benefits__summary {
+  pointer-events: none;
+  cursor: default;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__summary::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Why sponsor / Impact — card layout from z-zzz-num-strip-white.css */
+
+/* Sponsorship levels — light card bg + slightly stronger on hover */
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier {
+  background: var(--pro-band-soft, #f4f6f9) !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier:hover,
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier:focus-within,
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--active,
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--featured:hover,
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier--featured:focus-within {
+  background: color-mix(in srgb, var(--openms-blue) 6%, var(--pro-band-soft, #f4f6f9)) !important;
+}
+
+/* Benefit comparison — same column color; hover + selected highlight */
+html body .openms-lib-page--sponsor-us .sponsor-benefits {
+  --benefits-col-bg: color-mix(in srgb, var(--openms-blue) 4%, var(--openms-white, #fff));
+  --benefits-col-hover: color-mix(in srgb, var(--openms-blue) 9%, var(--openms-white, #fff));
+  --benefits-col-active: color-mix(in srgb, var(--openms-blue) 14%, var(--openms-white, #fff));
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--bronze,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--silver,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--gold,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--platinum,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--tier {
+  background: var(--benefits-col-bg) !important;
+  transition: background-color 0.18s ease;
+  cursor: pointer;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--label {
+  cursor: default;
+}
+
+/* Fit matrix in view — no inner scrollbars (button heads were content-box + pad overflow) */
+html body .openms-lib-page--sponsor-us .sponsor-benefits__scroller {
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  max-width: 100% !important;
+  -webkit-overflow-scrolling: auto;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix {
+  --label-col: minmax(0, 1.25fr);
+  --tier-col: minmax(0, 1fr);
+  grid-template-columns: var(--label-col) repeat(var(--tier-cols, 4), var(--tier-col)) !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--head {
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--head {
+  appearance: none;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  width: 100% !important;
+  text-align: center;
+  cursor: pointer;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__col-name,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__list,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell p,
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell li {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--head:focus-visible {
+  outline: 2px solid var(--openms-blue);
+  outline-offset: -2px;
+  z-index: 2;
+}
+
+/* Hovered column */
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-hover-tier="bronze"] [data-sponsor-benefits="bronze"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-hover-tier="silver"] [data-sponsor-benefits="silver"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-hover-tier="gold"] [data-sponsor-benefits="gold"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-hover-tier="platinum"] [data-sponsor-benefits="platinum"] {
+  background: var(--benefits-col-hover) !important;
+}
+
+/* Selected / active column */
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="bronze"] [data-sponsor-benefits="bronze"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="silver"] [data-sponsor-benefits="silver"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="gold"] [data-sponsor-benefits="gold"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="platinum"] [data-sponsor-benefits="platinum"] {
+  background: var(--benefits-col-active) !important;
+}
+
+/* Selected wins over hover when both match; hover on a different col still shows */
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="bronze"][data-hover-tier="bronze"] [data-sponsor-benefits="bronze"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="silver"][data-hover-tier="silver"] [data-sponsor-benefits="silver"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="gold"][data-hover-tier="gold"] [data-sponsor-benefits="gold"],
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier="platinum"][data-hover-tier="platinum"] [data-sponsor-benefits="platinum"] {
+  background: var(--benefits-col-active) !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits__matrix-cell--head[aria-pressed="true"] .sponsor-benefits__col-name {
+  color: var(--openms-blue) !important;
+}
+
+/* Sponsorship levels → "Most popular" card: keep the border blue (it was
+   gold) in every state — resting, hover, focus, and when selected. */
+:is(html, #sponsor-featured-border-boost) body .openms-lib-page--sponsor-us .sponsor-tier.sponsor-tier--featured,
+:is(html, #sponsor-featured-border-boost) body .openms-lib-page--sponsor-us .sponsor-tier.sponsor-tier--featured:is(:hover, :focus-within, :focus-visible, :active),
+:is(html, #sponsor-featured-border-boost) body .openms-lib-page--sponsor-us .sponsor-tier.sponsor-tier--featured.is-active,
+:is(html, #sponsor-featured-border-boost) body .openms-lib-page--sponsor-us .sponsor-tier.sponsor-tier--featured[aria-pressed="true"] {
+  border-color: var(--openms-blue) !important;
+  box-shadow: 0 0 0 1px var(--openms-blue), 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05) !important;
+}
+
+/* FAQ questions: a thin navy arrow on the right — points down when closed,
+   flips up when the question is open. */
+html body .openms-lib-page--sponsor-us .sponsor-faq__chevron {
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-top: -0.2rem;
+  border-right: 1.5px solid var(--openms-navy);
+  border-bottom: 1.5px solid var(--openms-navy);
+  transform: rotate(45deg);
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__item[open] .sponsor-faq__chevron {
+  transform: rotate(225deg);
+  margin-top: 0.15rem;
+}
+
+/* The question row was wider than its card (the text couldn't shrink), so the
+   arrow was pushed outside and clipped. Let the text shrink/wrap and keep the
+   arrow inside the row. */
+html body .openms-lib-page--sponsor-us .sponsor-faq__question {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-faq__question-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* FAQ list: a bit narrower than the full right-hand column. */
+html body .openms-lib-page--sponsor-us .sponsor-faq__list {
+  width: 100%;
+  max-width: 34rem;
+  justify-self: end;
+}
+
+@media (max-width: 900px) {
+  html body .openms-lib-page--sponsor-us .sponsor-faq__list {
+    max-width: none;
+    justify-self: stretch;
+  }
+}
+
+/* ---------- Sponsorship levels: "Learn more" as a text link, not a button ---------- */
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta.sponsor-tier__cta,
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier:is(:hover, :focus-within, .sponsor-tier--active, .sponsor-tier--featured) .sponsor-tier__cta.sponsor-tier__cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  align-self: flex-start !important;
+  gap: 0.3rem !important;
+  width: auto !important;
+  min-height: 0 !important;
+  margin-top: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-size: var(--openms-text-min) !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta.sponsor-tier__cta::after {
+  content: "\2192";
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier__toggle:is(:hover, :focus-visible) .sponsor-tier__cta.sponsor-tier__cta::after,
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta.sponsor-tier__cta:hover::after {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta.sponsor-tier__cta::after {
+    transition: none;
+  }
+}
+
+:is(html, #tier-link-boost) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tier .sponsor-tier__cta .sponsor-tier__cta-label {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+}
+
+/* ---------- Sponsor Us FAQ: the accordion sits right next to the heading text (no wide empty gap on big screens) ---------- */
+@media (min-width: 900px) {
+  :is(html, #faq-close-boost) body .openms-lib-page--sponsor-us .sponsor-faq-pro__inner {
+    grid-template-columns: minmax(0, clamp(20rem, 35vw, 42rem)) minmax(0, 52rem) !important;
+    justify-content: start !important;
+    column-gap: clamp(2rem, 4vw, 4rem) !important;
+  }
+
+  :is(html, #faq-close-boost) body .openms-lib-page--sponsor-us .sponsor-faq__list {
+    max-width: none !important;
+    width: 100% !important;
+    justify-self: start !important;
+  }
+}
+
+/* ---------- Sponsor us "Sponsorship levels": heading and description use half of the page width (desktop) ---------- */
+@media (min-width: 900px) {
+  html:is(html, #sponsor-levels-half-boost) body .openms-lib-page--sponsor-us #sponsorship-levels .sponsor-section__head > :is(h2, p, .sponsor-section__lead) {
+    max-width: 50vw !important;
+    width: auto !important;
+  }
+}
+
+/* ---------- Sponsor us "Why sponsor OpenMS": the lead uses half of the page width (desktop), text wraps naturally ---------- */
+@media (min-width: 900px) {
+  html:is(html, #sponsor-why-half-boost) body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__lead {
+    max-width: 50vw !important;
+    width: auto !important;
+  }
+
+  html:is(html, #sponsor-why-half-boost) body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__lead .sponsor-lead-line {
+    display: inline !important;
+    white-space: normal !important;
+  }
+}
+
+/* ---------- Sponsor us "Benefit comparison": the table sits a bit lower, away from the heading line (large screens) ---------- */
+@media (min-width: 1024px) {
+  html:is(html, #sponsor-benefits-gap-boost) body .openms-lib-page--sponsor-us #sponsor-benefits .sponsor-benefits__panel {
+    margin-top: 3.25rem !important;
+  }
+}

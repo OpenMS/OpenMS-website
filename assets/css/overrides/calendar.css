@@ -1,0 +1,375 @@
+/* Calendar — Upcoming on top, Past below; full solution-page width */
+
+html body .openms-lib-page--calendar {
+  --calendar-max: var(--pro-max, 75rem) !important;
+}
+
+html body .openms-lib-page--calendar .openms-lib-page__body > .openms-lib-page__anchor > .openms-lib-block,
+html body .openms-lib-page--calendar .community-calendar-block,
+html body .openms-lib-page--calendar .community-events-page,
+html body .openms-lib-page--calendar .community-events-page__section,
+html body .openms-lib-page--calendar .community-events-page__section--upcoming,
+html body .openms-lib-page--calendar .community-events-page__section--past {
+  width: 100% !important;
+  max-width: var(--pro-max, 75rem) !important;
+}
+
+html body .openms-lib-page--calendar .community-events-page {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: var(--pro-section-y, clamp(3rem, 6vw, 4.5rem)) !important;
+}
+
+html body .openms-lib-page--calendar .community-events-page__section,
+html body .openms-lib-page--calendar .community-events-page__section--upcoming,
+html body .openms-lib-page--calendar .community-events-page__section--past {
+  display: grid !important;
+  grid-template-rows: none !important;
+  grid-row: auto !important;
+  gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem)) !important;
+}
+
+html body .openms-lib-page--calendar .community-events-page__header,
+html body .openms-lib-page--calendar .events-past-toolbar,
+html body .openms-lib-page--calendar .community-events-page__grid,
+html body .openms-lib-page--calendar .community-events-page__empty,
+html body .openms-lib-page--calendar .events-past-panel__entries {
+  grid-row: auto !important;
+  align-self: stretch !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Event cards fill the wider rail */
+html body .openms-lib-page--calendar .community-events-home__grid,
+html body .openms-lib-page--calendar .community-events-page__grid,
+html body .openms-lib-page--calendar .events-past-year .community-events-home__grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (min-width: 901px) {
+  html body .openms-lib-page--calendar .community-events-page {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
+
+  html body .openms-lib-page--calendar .community-events-page__section {
+    display: grid !important;
+    grid-template-rows: none !important;
+    grid-row: auto !important;
+  }
+
+  html body .openms-lib-page--calendar .community-events-home__grid,
+  html body .openms-lib-page--calendar .community-events-page__grid,
+  html body .openms-lib-page--calendar .events-past-year .community-events-home__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+    row-gap: clamp(1.15rem, 2.2vw, 1.5rem) !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  html body .openms-lib-page--calendar .community-events-home__grid,
+  html body .openms-lib-page--calendar .community-events-page__grid,
+  html body .openms-lib-page--calendar .events-past-year .community-events-home__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Keep the upcoming events on screen when the page loads: a compact hero and
+   a shorter gap below it, so the first cards sit above the fold instead of
+   needing a scroll. */
+html body .openms-lib-page--calendar .openms-lib-hero.openms-lib-hero--pro.openms-lib-hero--solution {
+  padding-top: clamp(1.25rem, 3vw, 2rem) !important;
+  padding-bottom: clamp(1.25rem, 3vw, 2rem) !important;
+}
+
+html body .openms-lib-page--calendar .openms-lib-page__body > .openms-lib-page__anchor {
+  padding-top: clamp(1.25rem, 3vw, 2rem) !important;
+}
+html body .openms-lib-page--contribute #communication-channels.openms-lib-page__anchor {
+  padding-bottom: var(--sol-section-y, clamp(3.5rem, 7vw, 5.25rem)) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute.openms-lib-page__anchor {
+  padding-top: clamp(2rem, 4.25vw, 3.25rem) !important;
+}
+
+html body .openms-lib-page--contribute .contribute-outreach__contact a:is(:hover, :focus-visible),
+html body .openms-lib-page--contribute .contribute-outreach__social-link:is(:hover, :focus-visible),
+html body .openms-lib-page--contribute .contribute-outreach__social-link:is(:hover, :focus-visible) :is(
+  .contribute-outreach__social-label,
+  .contribute-outreach__social-hint,
+  .contribute-outreach__social-arrow,
+  .contribute-outreach__social-icon,
+  i,
+  .fab,
+  .fas,
+  .svg-inline--fa
+) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  fill: currentColor !important;
+}
+
+/* Ways — featured development full width; four equal cards below */
+html body .openms-lib-page--contribute .contribute-track__item--wide {
+  grid-column: 1 / -1 !important;
+  position: relative;
+}
+
+html body .openms-lib-page--contribute .contribute-track__item--mid,
+html body .openms-lib-page--contribute .contribute-track__item--docs,
+html body .openms-lib-page--contribute .contribute-track__item--design,
+html body .openms-lib-page--contribute .contribute-track__item--web {
+  grid-column: 1 / -1 !important;
+}
+
+html body .openms-lib-page--contribute .contribute-track__badge {
+  position: absolute;
+  top: 0.95rem;
+  right: 0.95rem;
+  margin: 0;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(var(--openms-blue-rgb), 0.1);
+  color: var(--openms-blue);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+html body .openms-lib-page--contribute .contribute-track__item--wide:is(:hover, :focus-within) .contribute-track__badge {
+  background: rgba(var(--openms-white-rgb), 0.16);
+  color: var(--openms-white);
+}
+
+html body .openms-lib-page--contribute .contribute-track__item--mid .contribute-track__title,
+html body .openms-lib-page--contribute .contribute-track__item--docs .contribute-track__title,
+html body .openms-lib-page--contribute .contribute-track__item--design .contribute-track__title,
+html body .openms-lib-page--contribute .contribute-track__item--web .contribute-track__title {
+  font-size: var(--openms-card-title-size) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+}
+
+@media (max-width: 720px) {
+  html body .openms-lib-page--contribute .contribute-track__item--mid,
+  html body .openms-lib-page--contribute .contribute-track__item--docs,
+  html body .openms-lib-page--contribute .contribute-track__item--design,
+  html body .openms-lib-page--contribute .contribute-track__item--web {
+    grid-column: 1 / -1 !important;
+  }
+
+  html body .openms-lib-page--contribute .contribute-track__badge {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
+/* Funding / Sponsor band — responsive stack */
+html body .openms-lib-page--contribute .contribute-support {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  column-gap: clamp(1.25rem, 3vw, 2.5rem) !important;
+  row-gap: 1rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support__copy {
+  display: grid !important;
+  grid-column: 1 !important;
+  gap: 0.35rem !important;
+  min-width: 0 !important;
+  max-width: none !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support__kicker,
+html body .openms-lib-page--contribute .contribute-support__title,
+html body .openms-lib-page--contribute .contribute-support__text {
+  grid-column: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support__title {
+  font-size: var(--openms-secondary-heading-size-lg, clamp(1.25rem, 2.4vw, 1.55rem)) !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none !important;
+  overflow-wrap: anywhere;
+}
+
+html body .openms-lib-page--contribute .contribute-support__text {
+  white-space: normal !important;
+  text-wrap: pretty !important;
+  overflow-wrap: break-word !important;
+  font-size: var(--openms-body-size, 1rem) !important;
+  line-height: 1.55 !important;
+}
+
+html body .openms-lib-page--contribute .contribute-support__cta,
+html body .openms-lib-page--contribute .contribute-support__cta.openms-lib-btn {
+  grid-column: 2 !important;
+  grid-row: 1 / -1 !important;
+  justify-self: end !important;
+  align-self: center !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 900px) {
+  html body .openms-lib-page--contribute .contribute-support {
+    grid-template-columns: 1fr !important;
+    justify-items: start !important;
+  }
+
+  html body .openms-lib-page--contribute .contribute-support__copy {
+    grid-column: 1 !important;
+  }
+
+  html body .openms-lib-page--contribute .contribute-support__cta,
+  html body .openms-lib-page--contribute .contribute-support__cta.openms-lib-btn {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    justify-self: start !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 520px) {
+  html body .openms-lib-page--contribute .contribute-support__cta,
+  html body .openms-lib-page--contribute .contribute-support__cta.openms-lib-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Upcoming events — one event per row at every width, unlike Past events
+   (which stays a multi-column grid via z-calendar-stack.css). Scoped to
+   .community-events-page__grid specifically, since only the Upcoming
+   events <ul> carries that class. */
+html body .openms-lib-page--calendar .community-events-page__grid {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+/* Calendar — "Last events" button at the bottom of the page. It reveals every
+   past event, oldest year first (each year has its own heading) and oldest
+   event first within a year. */
+.community-events-page__section--past {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.community-events-past__bar {
+  display: flex;
+  justify-content: center;
+}
+
+html body .community-events-past__toggle.community-events-past__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+html body .community-events-past__toggle .community-events-past__chevron {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+html body [data-past-events].is-open .community-events-past__chevron {
+  transform: rotate(180deg);
+}
+
+.community-events-past__panel {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.5rem);
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+}
+
+.community-events-past__panel[hidden] {
+  display: none;
+}
+
+.events-past-year__title {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0 0 1rem;
+  font-family: var(--openms-font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(var(--openms-dark-rgb), 0.72);
+}
+
+.events-past-year__title::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: rgba(var(--openms-navy-rgb), 0.12);
+}
+
+/* More room under the button (and under the opened list) before the footer. */
+html body .community-events-page__section--past.community-events-page__section--past {
+  padding-bottom: clamp(4rem, 10vw, 7rem);
+}
+
+/* Year chooser inside the Last events list. */
+.community-events-past__years {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+html body .community-events-past__year-btn {
+  appearance: none;
+  padding: 0.45rem 1.05rem;
+  border: 2px solid rgba(var(--openms-navy-rgb), 0.35);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--openms-navy);
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min, 0.875rem);
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+html body .community-events-past__year-btn:hover,
+html body .community-events-past__year-btn:focus-visible {
+  border-color: var(--openms-navy);
+  background: rgba(var(--openms-navy-rgb), 0.08);
+  outline: none;
+}
+
+html body .community-events-past__year-btn.is-active {
+  border-color: var(--openms-blue);
+  background: var(--openms-blue);
+  color: var(--openms-white);
+}
+
+.events-past-year[hidden] {
+  display: none;
+}
+/* "Sponsor OpenMS" title in capitals like the other section titles. */
+html body .openms-lib-page--contribute .contribute-support__title.contribute-support__title {
+  text-transform: uppercase !important;
+}

@@ -1,0 +1,69 @@
+/* About the retreat — card layout handled in z-03-cta-and-misc-fixes.css */
+
+/* ---------- Developer retreat "About the retreat": cards closer on mobile ---------- */
+@media (max-width: 767px) {
+  html body .openms-lib-page--developer-retreat #about-the-retreat .openms-lib-about__mosaic.retreat-highlights__mosaic {
+    gap: 0.6rem !important;
+  }
+}
+
+/* Contact "Contact" eyebrow and Governance "Process" eyebrow at the standard size */
+html:is(html, #eyebrow-std-boost2) body :is(.openms-lib-page--contact .openms-lib-resources__eyebrow, .governance-membership__eyebrow) {
+  font-size: 0.875rem !important;
+}
+
+/* ---------- Homepage hero: "Open-source · Free forever" 1px smaller than the
+   "Open science → Clear results" / "OpenMS" chips in the hero graphic ---------- */
+html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebrow {
+  font-size: calc(0.6875rem - 1px) !important;
+}
+
+@media (min-width: 901px) {
+  html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebrow {
+    font-size: calc(clamp(0.65rem, 0.55rem + 0.2vw, 0.75rem) - 1px) !important;
+  }
+}
+
+/* ---------- OpenMS-lib page: "Need help?" as a compact, centred strip
+   (same background as the next section) ---------- */
+:is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+  padding: 2rem var(--openms-page-inline, 2rem) !important;
+  background: #f2f3f5 !important;
+  background-color: #f2f3f5 !important;
+  border-bottom: 0;
+  text-align: center !important;
+}
+
+:is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist-copy {
+  justify-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 38rem !important;
+  flex: 0 0 auto !important;
+}
+
+:is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist :is(.openms-lib-resources__assist-title, .openms-lib-resources__assist-text) {
+  text-align: center !important;
+}
+
+:is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started .openms-lib-resources__assist .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  width: auto !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  gap: 0.75rem !important;
+}
+
+:is(html, #lib-help-strip-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #getting-started#getting-started .openms-lib-resources__assist-actions .openms-lib-resources__assist-btn.openms-lib-resources__assist-btn.openms-lib-btn {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 1.25rem !important;
+}
