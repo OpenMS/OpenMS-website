@@ -79,7 +79,7 @@ Write your article here. Leave an empty line between paragraphs.
 | 1 | `title:` | The headline. |
 | 2 | `authors:` | Your name, **inside quotes and square brackets**. For several people: `["Anna Smith", "Ben Jones"]`. |
 | 3 | `date:` | Year-month-day, like `2026-10-05`. **No quotes.** |
-| 4 | `summary:` | A short teaser (1–2 sentences). |
+| 4 | `summary:` | A short teaser (1–2 sentences). A longer one is cut with "…" on the list. Without a `summary:` line, the list shows the first sentences of the article. |
 
 Rules that avoid problems:
 
@@ -97,10 +97,22 @@ Under the second `---`, write normally. A few helpful symbols:
 |----------|----------|
 | A new paragraph | an empty line between two paragraphs |
 | **Bold** text | `**bold text**` |
+| *Italic* text | `*italic text*` |
 | A link | `[text people see](https://example.org)` |
 | A section title | `## Section title` |
-| A bullet list | start each line with `- ` |
+| A bullet list | start each line with `- ` (add two spaces before `- ` for a point inside a point) |
+| A numbered list | start each line with `1. `, `2. `, `3. ` |
+| A quote | start the line with `> ` |
+| A table | see the example below |
 | An image | `![short description](/images/my-picture.png)` – see [Add images](../any-page/add-images.md) |
+
+A table: one line per row, cells separated by `|`, and a line of dashes under the header row.
+
+```text
+| Day | Topic | Room |
+|-----|-------|------|
+| Monday | Introduction | Room 101 |
+```
 
 ### Step 5 – Save and send for review
 
