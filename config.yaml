@@ -971,6 +971,10 @@ languages:
               text: Run in scripts or Jupyter notebooks
             - title: Scientific stack
               text: Seamless integration with the scientific Python stack
+            - title: TEST Highlight A
+              text: TEST extra highlight
+            - title: TEST Highlight B with a longer title
+              text: TEST second extra highlight with a longer text to see the wrap
 
         gettingStarted:
           eyebrow: Get started
@@ -1020,6 +1024,24 @@ languages:
                   icon: fab fa-github
                   text: Bugs and feature requests
                   url: https://github.com/OpenMS/OpenMS/issues/new/choose
+            - title: TEST Card A
+              tag: TEST
+              icon: fas fa-flask
+              text: TEST card to check one more card in the grid.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Card B with a much longer title
+              tag: TEST
+              icon: fas fa-vial
+              text: TEST card with a much longer text than the others, to check the cards in a row keep the same height and nothing overflows.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Card C
+              tag: TEST
+              icon: fas fa-cube
+              text: TEST third extra card.
+              url: https://openms.de/
+              linkText: TEST link
 
         developers:
           eyebrow: For Developers
@@ -1081,6 +1103,33 @@ languages:
                 - name: How to review PRs
                   icon: fas fa-book-open
                   url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
+            - title: TEST Box A
+              tag: TEST
+              icon: fas fa-flask
+              subtitle: TEST plain box with a short subtitle.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Box B with a much longer title than the rest
+              tag: TEST
+              icon: fas fa-vial
+              subtitle: TEST box with a much longer subtitle, to check the boxes keep the same height and nothing overflows.
+              url: https://openms.de/
+              linkText: TEST link with longer text
+            - title: TEST Links Box
+              type: links
+              tag: TEST
+              icon: fas fa-link
+              subtitle: TEST box with three links.
+              platforms:
+                - name: TEST One
+                  icon: fab fa-github
+                  url: https://github.com/OpenMS/OpenMS
+                - name: TEST Two
+                  icon: fas fa-book
+                  url: https://openms.de/
+                - name: TEST Three with longer name
+                  icon: fas fa-envelope
+                  url: https://openms.de/contact/
 
 
       pyopenmsVizPage:
@@ -1097,6 +1146,10 @@ languages:
               text: Matplotlib, Bokeh, and Plotly
             - title: One-line API
               text: Publication-ready figures from a single call
+            - title: TEST Highlight A
+              text: TEST extra highlight
+            - title: TEST Highlight B with a longer title
+              text: TEST second extra highlight with a longer text to see the wrap
 
         gettingStarted:
           eyebrow: Get started
@@ -1146,6 +1199,24 @@ languages:
                   icon: fab fa-github
                   text: Bugs and feature requests
                   url: https://github.com/OpenMS/pyopenms_viz/issues/new
+            - title: TEST Card A
+              tag: TEST
+              icon: fas fa-flask
+              text: TEST card to check one more card in the grid.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Card B with a much longer title
+              tag: TEST
+              icon: fas fa-vial
+              text: TEST card with a much longer text than the others, to check the cards in a row keep the same height and nothing overflows.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Card C
+              tag: TEST
+              icon: fas fa-cube
+              text: TEST third extra card.
+              url: https://openms.de/
+              linkText: TEST link
 
         developers:
           eyebrow: For Developers
@@ -1198,6 +1269,33 @@ languages:
                 - name: How to review PRs
                   icon: fas fa-book-open
                   url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
+            - title: TEST Box A
+              tag: TEST
+              icon: fas fa-flask
+              subtitle: TEST plain box with a short subtitle.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Box B with a much longer title than the rest
+              tag: TEST
+              icon: fas fa-vial
+              subtitle: TEST box with a much longer subtitle, to check the boxes keep the same height and nothing overflows.
+              url: https://openms.de/
+              linkText: TEST link with longer text
+            - title: TEST Links Box
+              type: links
+              tag: TEST
+              icon: fas fa-link
+              subtitle: TEST box with three links.
+              platforms:
+                - name: TEST One
+                  icon: fab fa-github
+                  url: https://github.com/OpenMS/OpenMS
+                - name: TEST Two
+                  icon: fas fa-book
+                  url: https://openms.de/
+                - name: TEST Three with longer name
+                  icon: fas fa-envelope
+                  url: https://openms.de/contact/
 
       webappsPage:
         highlights:
@@ -1215,6 +1313,10 @@ languages:
               text: Customizable visualizations and results display
             - title: Shareable workspaces
               text: Workspaces for user data with unique shareable IDs
+            - title: TEST Highlight A
+              text: TEST extra highlight
+            - title: TEST Highlight B with a longer title
+              text: TEST second extra highlight with a longer text to see the wrap
 
         usingTemplate:
           eyebrow: Get started
@@ -1264,6 +1366,24 @@ languages:
                   icon: fab fa-github
                   text: Bugs and feature requests
                   url: https://github.com/OpenMS/streamlit-template/issues/new
+            - title: TEST Card A
+              tag: TEST
+              icon: fas fa-flask
+              text: TEST card to check one more card in the grid.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Card B with a much longer title
+              tag: TEST
+              icon: fas fa-vial
+              text: TEST card with a much longer text than the others, to check the cards in a row keep the same height and nothing overflows.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Card C
+              tag: TEST
+              icon: fas fa-cube
+              text: TEST third extra card.
+              url: https://openms.de/
+              linkText: TEST link
 
         examples:
           eyebrow: Examples
@@ -1282,6 +1402,12 @@ languages:
               logo: /images/webapp/logo/openDDA.svg
               logoSize: large
               url: http://opendda.webapps.openms.org/
+            - name: TEST App A
+              logo: /images/webapp/logo/nuxl.png
+              url: https://openms.de/
+            - name: TEST App B
+              logo: /images/webapp/logo/mhcquant.svg
+              url: https://openms.de/
 
         developers:
           eyebrow: For Developers
@@ -1334,6 +1460,33 @@ languages:
                 - name: How to review PRs
                   icon: fas fa-book-open
                   url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
+            - title: TEST Box A
+              tag: TEST
+              icon: fas fa-flask
+              subtitle: TEST plain box with a short subtitle.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Box B with a much longer title than the rest
+              tag: TEST
+              icon: fas fa-vial
+              subtitle: TEST box with a much longer subtitle, to check the boxes keep the same height and nothing overflows.
+              url: https://openms.de/
+              linkText: TEST link with longer text
+            - title: TEST Links Box
+              type: links
+              tag: TEST
+              icon: fas fa-link
+              subtitle: TEST box with three links.
+              platforms:
+                - name: TEST One
+                  icon: fab fa-github
+                  url: https://github.com/OpenMS/OpenMS
+                - name: TEST Two
+                  icon: fas fa-book
+                  url: https://openms.de/
+                - name: TEST Three with longer name
+                  icon: fas fa-envelope
+                  url: https://openms.de/contact/
 
       webappsSection:
         eyebrow: Community tools
