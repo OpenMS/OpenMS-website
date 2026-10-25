@@ -1001,3 +1001,13 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
 :is(html, #topp-feature-link) body .openms-lib-topp-split__nested-item > .openms-lib-topp-split__nested-link {
   margin: 0.5rem 0 0 !important;
 }
+
+/* Contribute boxes with several links (type: links in config.yaml, such as
+   "Building OpenMS from Source"): the links are blue like every other link,
+   not navy. Brand icons (Linux, Apple, Windows...) keep their own colours
+   from the rules above; other icons follow the text. */
+:is(html, #platform-links-blue) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card.openms-lib-developers__card .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn.openms-lib-developers__platform-btn,
+:is(html, #platform-links-blue) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card.openms-lib-developers__card .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn.openms-lib-developers__platform-btn .openms-lib-btn__label {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
