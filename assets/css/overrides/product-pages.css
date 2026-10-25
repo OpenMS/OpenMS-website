@@ -1101,3 +1101,25 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   margin-top: auto !important;
   padding-top: 0.5rem;
 }
+
+/* Contribute boxes: link icons keep their colour when the card or the link
+   is hovered. Older hover rules turned them blue (OpenMS-lib) or white
+   (pyOpenMS, pyopenms-viz, WebApps: invisible on the white card). One colour
+   per icon, in every state: brand logos in their own colour, the "How to
+   review PRs" book in blue, every other icon navy. The repeated ID makes
+   these rules outrank the hover rules. */
+:is(html, #dev-icons-fixed) body .openms-lib-page #for-developers#for-developers#for-developers .openms-lib-developers__platforms a :is(svg, i) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:is(html, #dev-icons-fixed) body .openms-lib-page #for-developers#for-developers#for-developers .openms-lib-developers__platforms a :is(svg, i) path {
+  color: inherit !important;
+  fill: currentColor !important;
+}
+
+:is(html, #dev-icons-fixed) body .openms-lib-page #for-developers#for-developers#for-developers .openms-lib-developers__platforms a :is(svg, i):is(.fa-github) { color: #181717 !important; }
+:is(html, #dev-icons-fixed) body .openms-lib-page #for-developers#for-developers#for-developers .openms-lib-developers__platforms a :is(svg, i):is(.fa-linux) { color: #e5a100 !important; }
+:is(html, #dev-icons-fixed) body .openms-lib-page #for-developers#for-developers#for-developers .openms-lib-developers__platforms a :is(svg, i):is(.fa-apple) { color: #1d1d1f !important; }
+:is(html, #dev-icons-fixed) body .openms-lib-page #for-developers#for-developers#for-developers .openms-lib-developers__platforms a :is(svg, i):is(.fa-windows) { color: #0078d4 !important; }
+:is(html, #dev-icons-fixed) body .openms-lib-page #for-developers#for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a :is(svg, i):is(.fa-book-open) { color: var(--openms-blue) !important; }
