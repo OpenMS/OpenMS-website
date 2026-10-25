@@ -906,7 +906,7 @@ languages:
                 url: https://github.com/OpenMS/OpenMS/pulls
               - name: How to review PRs
                 icon: fas fa-book-open
-                url: https://github.com/ParadiseSS13/Paradise/discussions/19410
+                url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
           - title: TEST Box One
             tag: TEST
             icon: fas fa-flask
@@ -1080,7 +1080,7 @@ languages:
                   url: https://github.com/OpenMS/OpenMS/pulls
                 - name: How to review PRs
                   icon: fas fa-book-open
-                  url: https://github.com/ParadiseSS13/Paradise/discussions/19410
+                  url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
 
 
       pyopenmsVizPage:
@@ -1197,7 +1197,7 @@ languages:
                   url: https://github.com/OpenMS/pyopenms_viz/pulls
                 - name: How to review PRs
                   icon: fas fa-book-open
-                  url: https://github.com/ParadiseSS13/Paradise/discussions/19410
+                  url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
 
       webappsPage:
         highlights:
@@ -1333,7 +1333,7 @@ languages:
                   url: https://github.com/OpenMS/streamlit-template/pulls
                 - name: How to review PRs
                   icon: fas fa-book-open
-                  url: https://github.com/ParadiseSS13/Paradise/discussions/19410
+                  url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
 
       webappsSection:
         eyebrow: Community tools
