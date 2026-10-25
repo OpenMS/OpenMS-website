@@ -19,7 +19,7 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 | Block on the page | Search for | Lines you can change |
 |---|---|---|
 | Highlights (the boxes under the title) | `openmsLibHighlights` | `items`: each box has `title` and `text` |
-| TOPP tools | `openmsLibTopp` | `title`, `lead`, the `features` list, the button `ctaText` / `ctaUrl` |
+| TOPP tools | `openmsLibTopp` | `title`, `lead`, the `features` list (every item shows, two per row; add `linkText` and `linkUrl` to an item for a link under its text), the button `ctaText` / `ctaUrl` |
 | Explore OpenMS-lib (getting started) | `openmsLibGettingStarted` | `title`, `lead`, and the cards under `items` (`title`, `tag`, `text`, `url`, `linkText`) |
 | For developers / Contribute, and the citation | `openmsLibDevelopers` | `title`, `lead`, `citeText`, the paper under `citation`, and the cards under `boxes` |
 
