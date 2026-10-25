@@ -99,7 +99,7 @@ Under the second `---`, write normally. A few helpful symbols:
 | **Bold** text | `**bold text**` |
 | *Italic* text | `*italic text*` |
 | A link | `[text people see](https://example.org)` |
-| A section title | `## Section title` |
+| A section title | `## Section title` (`###` for a smaller one, down to `######`; each extra `#` is smaller) |
 | A bullet list | start each line with `- ` (add two spaces before `- ` for a point inside a point) |
 | A numbered list | start each line with `1. `, `2. `, `3. ` |
 | A quote | start the line with `> ` |

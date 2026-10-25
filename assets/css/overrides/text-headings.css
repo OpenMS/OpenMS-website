@@ -22,3 +22,12 @@
 :is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h4 { font-size: 1.1em !important; }
 :is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h5 { font-size: 1em !important; }
 :is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h6 { font-size: 0.875em !important; }
+
+/* Phones: a slightly flatter scale, so a Heading 1 in the text never comes
+   out bigger than the page's own title (about 25px on a phone). The six
+   levels still get smaller step by step. */
+@media (max-width: 767px) {
+  :is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h1 { font-size: 1.5em !important; }
+  :is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h2 { font-size: 1.35em !important; }
+  :is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h3 { font-size: 1.2em !important; }
+}

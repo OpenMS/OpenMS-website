@@ -1179,3 +1179,13 @@ html body .home-page__block--partners .uni-partners--home .uni-partners__marquee
   object-fit: contain !important;
   object-position: right center !important;
 }
+
+/* Very small phones (under 370px): the hero title shrinks so "MASS
+   SPECTROMETRY." fits on one line (21px at 320px), which left it smaller
+   than the section titles (23px). The section titles come down to ~20px
+   there: still well above the card titles (15.5px), below the hero title. */
+@media (max-width: 369px) {
+  :is(html, #home-small-h2) body .home-page :is(.webapps-featured__title, .keyfeatures-modern__title, .ecosystem-home__title, .community-home__title, .contact-home__title) {
+    font-size: 1.3rem !important;
+  }
+}
