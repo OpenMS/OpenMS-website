@@ -68,3 +68,15 @@ html body .openms-lib-page--research-partnerships iframe.rp-application__tally-i
     max-width: 100%;
   }
 }
+
+/* Section titles (h2) on phones stay smaller than the page title. The page
+   title shrinks with the screen so "PARTNERSHIPS" fits on one line (rule
+   above), which left it smaller than the section titles below 430px (21.7px
+   against 22.9px at 375px). The section titles now shrink at a slightly
+   lower rate: always below the page title and above the card titles (h3). */
+@media (max-width: 767px) {
+  :is(html, #rp-title-boost) body .openms-lib-page--research-partnerships :is(.openms-lib-about__title, .openms-lib-resources__title).openms-lib-about__title,
+  :is(html, #rp-title-boost) body .openms-lib-page--research-partnerships :is(.openms-lib-about__title, .openms-lib-resources__title).openms-lib-resources__title {
+    font-size: clamp(1.12rem, calc((100vw - 2.5rem) / 17), 1.7rem) !important;
+  }
+}

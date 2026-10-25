@@ -79,7 +79,7 @@ Page files are written in **Markdown**, which is plain text with a few symbols.
 | You want | You type |
 |----------|----------|
 | A new paragraph | Leave an **empty line** between the two paragraphs. |
-| A section heading | `## Heading` (a space after the hashes). Use `###` for a smaller one. |
+| A section heading | `## Heading` (a space after the hashes). Use `###` for a smaller one, and so on down to `######`: each extra `#` is a smaller size. Avoid a single `#`: the page title already uses that level. |
 | **Bold** | `**bold words**` |
 | *Italic* | `*italic words*` |
 | A bullet list | Start each line with `- ` |
