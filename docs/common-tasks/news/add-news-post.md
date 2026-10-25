@@ -95,7 +95,7 @@ Under the second `---`, write normally. A few helpful symbols:
 
 | You want | You type |
 |----------|----------|
-| A new paragraph | an empty line between two paragraphs |
+| A new paragraph | an empty line between two paragraphs (do not end the article with `<br>`: it adds empty space above the footer) |
 | **Bold** text | `**bold text**` |
 | *Italic* text | `*italic text*` |
 | A link | `[text people see](https://example.org)` |
