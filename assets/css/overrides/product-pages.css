@@ -1068,9 +1068,25 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   gap: 0.4rem !important;
 }
 
-:is(html, #dev-links-as-links) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) .openms-lib-btn__label {
-  text-decoration: underline !important;
-  text-underline-offset: 0.2em;
+/* Each link ends with an arrow (→) that slides right on hover, like the
+   "Reviewing Pull Requests" links and every other card link. */
+:is(html, #dev-links-as-links) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn::after {
+  content: "\2192" !important;
+  display: inline-block !important;
+  font-weight: 700;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  transition: transform 0.2s ease;
+}
+
+:is(html, #dev-links-as-links) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible)::after {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(html, #dev-links-as-links) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn::after {
+    transition: none;
+  }
 }
 
 /* Contribute boxes: a long subtitle is cut after 3 lines with "…". The
