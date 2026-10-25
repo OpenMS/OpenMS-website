@@ -1128,3 +1128,54 @@ html body .home-page__block--partners .uni-partners--home .uni-partners__marquee
     --uni-home-gap: 1.5rem;
   }
 }
+
+/* ---------- Home page: blocks stay tidy when editors add items ----------
+   Found by adding test entries to each home page list in config.yaml. */
+
+/* Numbers block (homeMetrics.stats): the grid had 3 fixed columns, so a 4th
+   stat sat alone on a second row. With 4 or more stats: two per row on
+   tablets (a row of 4 is too tight for "10,000+"), all in one row from
+   1200px. 3 stats keep their layout; phones keep the stacked one from
+   home-stats.css. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  html body .home-page .home-stats__panel.home-stats__panel:has(> :nth-child(4)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  html body .home-page .home-stats__panel:has(> :nth-child(4)) > .home-stats__item:nth-child(odd) {
+    border-left: none !important;
+  }
+
+  html body .home-page .home-stats__panel:has(> :nth-child(4)) > .home-stats__item:nth-child(n + 3) {
+    border-top: 1px solid rgba(var(--openms-white-rgb), 0.16) !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  html body .home-page .home-stats__panel.home-stats__panel {
+    grid-template-columns: none !important;
+    grid-auto-flow: column !important;
+    grid-auto-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* Featured apps cards: the text block fills the card, so "View app" sits at
+   the bottom of every card in a row, even when one description is longer. */
+:is(html, #home-app-cards) body .home-page .webapps-featured--home .webapps-project-card__body {
+  align-self: stretch !important;
+}
+
+/* Ecosystem cards: the title never gets narrower than its longest word, so
+   a one-word name such as "pyopenms_viz" no longer runs into the logo; the
+   logo shrinks instead. */
+:is(html, #home-ecosystem) body .home-page .ecosystem-home__card-intro {
+  flex: 1 1 auto !important;
+  min-width: min-content !important;
+}
+
+:is(html, #home-ecosystem) body .home-page .ecosystem-home__card-icon {
+  flex: 0 1 auto !important;
+  min-width: 0 !important;
+  object-fit: contain !important;
+  object-position: right center !important;
+}

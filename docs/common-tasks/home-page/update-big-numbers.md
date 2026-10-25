@@ -55,8 +55,8 @@ And the same block in `config.yaml`:
 
 - **A decimal number** (like a version `3.5`): write `value: 3.5` and add a line `decimals: 1`.
 - **Something in front of the number** (like `$`): add `prefix: "$"`.
-- **Add a fourth number or remove one:** copy or delete a whole block of five lines (it starts with `- value:`). The panel was designed for **three**, so check the preview carefully.
-- Descriptions should stay **short** (about 12 to 15 words) so the three cards stay the same height.
+- **Add a fourth number or remove one:** copy or delete a whole block of five lines (it starts with `- value:`). The panel adjusts by itself: with **3** numbers they sit in one row; with **4 or more**, they sit in one row on big screens and in rows of two on tablets. On phones they are always stacked. Check the preview at laptop and phone width.
+- Descriptions should stay **short** (about 12 to 15 words) so the cards stay the same height. Keep numbers short too (for example `10000` with suffix `+`): with 4 in a row there is just enough room for "10,000+".
 
 ## Common mistakes
 
