@@ -120,3 +120,24 @@ html body .news-pager .openms-lib-btn.news-pager__btn:disabled {
   -webkit-text-fill-color: var(--openms-navy) !important;
   background: transparent !important;
 }
+
+/* ---------- Space above the footer ----------
+   The news pages ended at different distances from the footer: 68px under
+   the pager (42px on phones), 0px when a year is selected (no pager, so the
+   last card touched the footer), and 118px under an article. Every news page
+   now ends 2rem above the footer. */
+:is(html, #news-bottom) body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-pager {
+  margin-bottom: 0 !important;
+}
+
+:is(html, #news-bottom) body .openms-lib-page--news:not(.openms-lib-page--news-article) .openms-lib-page__body {
+  padding-bottom: 2rem !important;
+}
+
+:is(html, #news-bottom) body .openms-lib-page--news-article .news-story {
+  padding-bottom: 2rem !important;
+}
+
+:is(html, #news-bottom) body .openms-lib-page--news-article .news-story__body > :last-child {
+  margin-bottom: 0 !important;
+}
