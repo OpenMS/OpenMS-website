@@ -1362,6 +1362,32 @@ languages:
               url: https://nf-co.re/diaproteomics/1.2.4/
             - type: github
               url: https://github.com/nf-core/diaproteomics
+        - name: test-archived-one
+          displayName: TEST Archived One
+          tag: Web app
+          logo: /images/webapp/logo/template.svg
+          logoSize: large
+          description: >-
+            TEST card with a single link, to check that one button shows
+            filled in blue.
+          links:
+            - type: github
+              url: https://github.com/OpenMS/OpenMS
+        - name: test-archived-two
+          displayName: TEST Archived Two
+          tag: Web app
+          logo: /images/webapp/logo/flashapp.png
+          logoSize: large
+          description: >-
+            TEST card with three links. GitHub is listed first here, but it
+            should still show last; the first button is blue, the others outlined.
+          links:
+            - type: github
+              url: https://github.com/OpenMS/OpenMS
+            - type: homepage
+              url: https://openms.de/
+            - type: demo
+              url: https://openms.de/featured-apps/
 
       webapps:
         - name: FLASH App
