@@ -1030,3 +1030,58 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   grid-row: auto !important;
   min-width: 0 !important;
 }
+
+/* Contribute boxes with several links (type: links), on every product page:
+   plain links in a wrapping row (icon + blue text), not outlined buttons.
+   OpenMS-lib already showed them this way; pyOpenMS, pyopenms-viz and
+   WebApps stacked them as pill buttons. "Reviewing Pull Requests" (a box
+   with a badge) keeps its own layout. */
+:is(html, #dev-links-as-links) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review) .openms-lib-developers__platforms.openms-lib-developers__platforms {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 0.4rem 1.1rem !important;
+  grid-template-columns: none !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+:is(html, #dev-links-as-links) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #dev-links-as-links) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible, :active),
+:is(html, #dev-links-as-links) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review):is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #dev-links-as-links) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review):is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible, :active) {
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  white-space: normal !important;
+  gap: 0.4rem !important;
+}
+
+:is(html, #dev-links-as-links) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--build-src:not(.openms-lib-developers__card--review) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) .openms-lib-btn__label {
+  text-decoration: underline !important;
+  text-underline-offset: 0.2em;
+}
+
+/* Contribute boxes: a long subtitle is cut after 3 lines with "…". The
+   subtitle used to stretch to fill the box (to push the link down), so the
+   text after the "…" still showed half a line below it. Now the subtitle is
+   at most 3 lines tall and the link is pushed to the bottom on its own. */
+:is(html, #dev-subtitle-clamp) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__card-subtitle {
+  max-height: calc(3 * 1lh) !important;
+}
+
+:is(html, #dev-subtitle-clamp) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__card-subtitle ~ .openms-lib-developers__card-cta {
+  margin-top: auto !important;
+  padding-top: 0.5rem;
+}
