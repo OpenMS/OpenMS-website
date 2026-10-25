@@ -1011,3 +1011,22 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   color: var(--openms-blue) !important;
   -webkit-text-fill-color: var(--openms-blue) !important;
 }
+
+/* Contribute boxes (pyOpenMS, pyopenms-viz, WebApps): the layouts are
+   designed for exactly 2, 3, 5 or 7 boxes. With any other number (an editor
+   adds or removes one), the base 10-column grid squeezed every box into
+   one thin column. For those numbers: equal columns of at least ~15rem
+   (3 per row on a laptop, 1 on a phone). The designed numbers, and the
+   grouped boxes on OpenMS-lib, are unchanged. */
+:is(html, #dev-cards-any-count) body .openms-lib-page .openms-lib-developers--cards:not(.openms-lib-developers--grouped) .openms-lib-developers__cards-grid:not(:has(> :nth-child(2):last-child, > :nth-child(3):last-child, > :nth-child(5):last-child, > :nth-child(7):last-child)) {
+  grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr)) !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+:is(html, #dev-cards-any-count) body .openms-lib-page .openms-lib-developers--cards:not(.openms-lib-developers--grouped) .openms-lib-developers__cards-grid:not(:has(> :nth-child(2):last-child, > :nth-child(3):last-child, > :nth-child(5):last-child, > :nth-child(7):last-child)) > * {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  min-width: 0 !important;
+}
