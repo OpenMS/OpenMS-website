@@ -20,7 +20,7 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 |---|---|---|
 | Highlights | `pyopenmsVizPage` → `highlights` | `items`: each box has `title` and `text` |
 | Getting started | `pyopenmsVizPage` → `gettingStarted` | `title`, `lead`, and the cards under `items` |
-| For developers, and the citation | `pyopenmsVizPage` → `developers` | `title`, `lead`, `citeText`, the paper under `citation`, and the cards under `boxes` |
+| For developers, and the citation | `pyopenmsVizPage` → `developers` | `title`, `lead`, `citeText`, the paper under `citation`, and the cards under `boxes`. Any number of boxes works: the usual numbers have their own layout, others sit in equal columns (3 or 4 per row on a laptop, 1 on a phone). A box with `type: links` shows its `platforms` as stacked buttons. |
 
 The **big title at the top** is part of the design (`layouts/partials/pyopenms-viz-hero.html`). To change it, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
 
