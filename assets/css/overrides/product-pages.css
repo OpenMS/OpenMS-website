@@ -995,3 +995,9 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   color: inherit !important;
   -webkit-text-fill-color: inherit !important;
 }
+
+/* OpenMS-lib "TOPP Tools" features: the optional link (linkText / linkUrl
+   in config.yaml) sits close under its text. */
+:is(html, #topp-feature-link) body .openms-lib-topp-split__nested-item > .openms-lib-topp-split__nested-link {
+  margin: 0.5rem 0 0 !important;
+}
