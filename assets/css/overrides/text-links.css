@@ -32,3 +32,13 @@
     transition: none;
   }
 }
+
+/* ---------- Italic text on every page ----------
+   *Italic* (em, i) written in page text is italic in the text font. The site
+   typography sets em and i in the code font; news articles were fixed in
+   news.css, this covers page files and the charters (Code of Conduct…).
+   Icons (<i class="fa…">) are left alone. */
+:is(html, #text-italic) body :is(.openms-lib-prose, .news-story__body, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) :is(em, i:not([class])) {
+  font-family: inherit !important;
+  font-style: italic !important;
+}
