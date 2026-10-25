@@ -9,10 +9,6 @@
 {{- if $year }}
   {{- $newsUrl = printf "%s?year=%s" $newsUrl $year }}
 {{- end }}
-{{- $toc := .TableOfContents }}
-{{- $tocItemCount := len (findRE "<li" (printf "%s" $toc)) }}
-{{- $hasToc := and $toc (ge $tocItemCount 2) (le $tocItemCount 8) }}
-{{- $tocInner := replaceRE `(?s)^\s*<nav[^>]*>(.*)</nav>\s*$` "$1" (printf "%s" $toc) | safeHTML }}
 <section class="openms-lib-layout">
 <article class="openms-lib-page openms-lib-page--news openms-lib-page--news-article">
   <div class="news-story">
@@ -37,13 +33,6 @@
           {{- end }}
         </p>
       </header>
-
-      {{- if $hasToc }}
-      <nav class="news-story__toc" aria-label="On this page">
-        <p class="news-story__toc-title">On this page</p>
-        {{ $tocInner }}
-      </nav>
-      {{- end }}
 
       <div class="news-story__body openms-lib-prose">
         {{ .Content }}
