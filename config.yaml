@@ -65,7 +65,7 @@ languages:
       newsBanner:
         enabled: true
         label: News
-        text: 'MS Analysis with OpenMS: Free Workshop at The National University of Singapore.'
+        text: 'TEST long banner: MS Analysis with OpenMS, a free three-day hands-on workshop at The National University of Singapore, with talks, tutorials and a poster session.'
         link: /news/hupo_workshop_26/
       contributePage:
         eyebrow: Community
@@ -427,6 +427,9 @@ languages:
             gold: ["✓"]
             platinum: ["✓"]
       universityPartners:
+        - name: TEST Partner
+          logo: /images/logos/fu-berlin.png
+          url: https://openms.de/
         - name: University of Tübingen
           logo: /images/logos/logo-uni-tuebingen.png
           url: https://kohlbacherlab.org/
@@ -525,6 +528,11 @@ languages:
             icon: people
             label: Contributors
             description: Developers, researchers, and community members advancing OpenMS worldwide.
+          - value: 200
+            suffix: "+"
+            icon: calendar
+            label: TEST Tools
+            description: TEST stat card with a longer description, to check that four stats still line up and wrap nicely on phones.
 
       communitySection:
         eyebrow: Community
@@ -662,6 +670,12 @@ languages:
           - title: TOPP pipeline
             tag: 200+ tools
             text: Ready-made command-line utilities for proteomics and metabolomics analysis.
+          - title: TEST Feature Five
+            tag: TEST · Tag
+            text: TEST card. A fifth feature to check how the grid handles an odd number of cards.
+          - title: TEST Feature Six with a much longer title
+            tag: Long tag · Two · Three
+            text: TEST card with a much longer text than the others, to check that the cards stay the same height and the text wraps without overflowing the card on small screens.
         note: >-
           Our community is committed to being open, inclusive, and welcoming.
           Read the [OpenMS Code of Conduct](/code-of-conduct) for guidance on
@@ -1390,6 +1404,21 @@ languages:
               url: https://openms.de/featured-apps/
 
       webapps:
+        - name: TEST WebApp
+          url: https://openms.de/
+          logo: /images/webapp/logo/template.svg
+          logoSize: large
+          description: >-
+            TEST app card with a long description, to check that the home page
+            app cards keep the same height and the buttons line up at the bottom.
+          maintainers: Test Person, Another Person
+          links:
+            - type: github
+              url: https://github.com/OpenMS/OpenMS
+            - type: homepage
+              url: https://openms.de/
+            - type: demo
+              url: https://openms.de/webapps/
         - name: FLASH App
           url: http://flashapp.webapps.openms.org/
           logo: /images/webapp/logo/flashapp.png
@@ -1523,6 +1552,15 @@ languages:
             description: >-
               Visualization library for mass spectrometry data. Create interactive
               and static plots directly from Python dataframes.
+          - name: TEST Ecosystem Tool
+            url: /webapps/
+            tag: TEST
+            accent: webapps
+            size: standard
+            icon: /images/webapp/logo/template.svg
+            description: >-
+              TEST card added to the Ecosystem list, to check the grid with five
+              items and a standard size.
 
       section5: false
 
