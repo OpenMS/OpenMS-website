@@ -70,7 +70,7 @@ languages:
       contributePage:
         eyebrow: Community
         subtitle: >-
-          Code, docs, design, outreach, and more — pick a path that matches your skills.
+          TEST longer intro. Code, docs, design, outreach, and more — pick a path that matches your skills. This sentence is added to check how a two or three line intro looks under the page title on laptops and phones.
         links:
           discord: https://discord.com/invite/v9tv5BxPch
           githubDiscussions: https://github.com/OpenMS/OpenMS/discussions
@@ -153,6 +153,15 @@ languages:
             text: >-
               Design custom tools and workflows together with instructors, and
               get involved with the OpenMS community.
+          - title: TEST Highlight Four
+            text: >-
+              TEST fourth highlight, to check how the row handles more than
+              three cards.
+          - title: TEST Highlight Five with a much longer title
+            text: >-
+              TEST fifth highlight with a much longer text than the others, to
+              check that the cards keep the same height and the text wraps
+              nicely on small screens.
         pastPhoto:
           src: /images/dev_retreat_2026.jpeg
           alt: OpenMS contributors at the 2026 developer retreat in Poland
@@ -164,6 +173,10 @@ languages:
               text: March 14–21, 2027
             - icon: fas fa-map-marker-alt
               text: Resort Natura, Algarve, Portugal
+            - icon: fas fa-users
+              text: TEST about 40 participants, from new contributors to core developers
+            - icon: fas fa-euro-sign
+              text: TEST fee covers food and accommodation
           poster:
             src: /images/dev_retreat_2027_poster.png
             alt: OpenMS Developer Retreat 2027 — Algarve, Portugal
@@ -215,6 +228,21 @@ languages:
             alt: deNBI — German Network for Bioinformatics Infrastructure
             description: German Network for Bioinformatics Infrastructure
             # tier: silver
+          - name: TEST Sponsor With A Very Long Organisation Name
+            url: https://openms.de/
+            logo: /images/logos/fu-berlin.png
+            alt: TEST sponsor logo
+            description: TEST description that is much longer than the others, to check the card
+          - name: TEST Sponsor Two
+            url: https://openms.de/
+            logo: /images/logos/logo-sanger.png
+            alt: TEST sponsor two
+            description: TEST short
+          - name: TEST Sponsor Three
+            url: https://openms.de/
+            logo: /images/logos/zurich.jpeg
+            alt: TEST sponsor three
+            description: TEST third sponsor
         sponsorshipProgram:
           title: Our Sponsorship Program
           headline: With Open Science, both industry and community profit
@@ -238,7 +266,7 @@ languages:
         eyebrow: OpenMS governance
         subtitle: >-
           OpenMS combines a nonprofit corporation for legal and financial stewardship
-          with an Executive Committee that leads technical direction and community governance.
+          with an Executive Committee that leads technical direction and community governance. TEST extra sentence to check how a longer intro wraps under the page title, on laptops and on phones.
       publicationsPage:
         googleScholarUrl: https://scholar.google.ca/citations?user=tQ26gxIAAAAJ&hl
         googleScholarText: Follow us on Google Scholar
