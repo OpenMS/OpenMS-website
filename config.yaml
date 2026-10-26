@@ -371,15 +371,15 @@ languages:
         eyebrow: Contact
         subtitle: >-
           Whether you need help with pipelines, integrations, consulting, or joining the
-          community — reach out and we will point you to the right next step.
+          community — reach out and we will point you to the right next step. TEST extra sentence to check a longer intro on phones.
       researchPartnershipsPage:
         eyebrow: Partner with OpenMS
-        subtitle: We’re interested in hearing your idea for a partnership.
+        subtitle: We’re interested in hearing your idea for a partnership. TEST extra sentence to check how a longer intro wraps under the title.
       sponsorUsPage:
         eyebrow: Support OpenMS
         subtitle: >-
           Sponsorship provides direct funding for software engineering, documentation,
-          community events, and the long-term sustainability of the OpenMS ecosystem.
+          community events, and the long-term sustainability of the OpenMS ecosystem. TEST extra sentence to check a longer intro.
       helpPage:
         eyebrow: Support
         subtitle: >-
@@ -491,6 +491,14 @@ languages:
               For organizations committed to shaping the future of open scientific
               infrastructure.
             showInProgram: true
+          - id: diamond
+            name: TEST Diamond
+            contribution: $500,000 / year
+            motto: TEST fifth level added by an editor
+            summary: >-
+              TEST level with a longer summary, to check how five level cards
+              sit in a row and wrap on smaller screens.
+            showInProgram: true
         # ── Sponsorship Benefits comparison ──────────────────────────────────────
         # Rendered as an interactive breakdown under the tier cards: visitors click a
         # level (Bronze/Silver/Gold/Platinum) to reveal that tier's benefits below.
@@ -513,6 +521,8 @@ languages:
             platinum:
               - 3 free registration passes
               - Opportunity to host a technical session, workshop, or case study presentation
+            diamond:
+              - TEST included, with a longer line of text
           - category: Logo placement
             bronze:
               - Website
@@ -522,6 +532,8 @@ languages:
               - Website & presentations
             platinum:
               - Prominent placement on website, presentations & social media
+            diamond:
+              - TEST included, with a longer line of text
           - category: Named recognition
             bronze:
               - Sponsorship listings, community communications
@@ -531,27 +543,51 @@ languages:
               - Sponsorship listings, community communications, annual reports
             platinum:
               - Sponsorship listings, announcements & strategic partnership recognition on website & social media
+            diamond:
+              - TEST included, with a longer line of text
           - category: Dedicated engagement meeting
             bronze: []
             silver: []
             gold: []
             platinum: ["✓"]
+            diamond:
+              - TEST included, with a longer line of text
           - category: Sponsorship opportunity for roadmap and executive initiatives
             bronze: []
             silver: ["✓"]
             gold: ["✓"]
             platinum: ["✓"]
+            diamond:
+              - TEST included, with a longer line of text
           - category: Permission to display OpenMS supporter badge
             bronze: ["✓"]
             silver: ["✓"]
             gold: ["✓"]
             platinum: ["✓"]
+            diamond:
+              - TEST included, with a longer line of text
           - category: Tax-deductible*
             bronze: ["✓"]
             silver: ["✓"]
             gold: ["✓"]
             platinum: ["✓"]
+            diamond:
+              - TEST included, with a longer line of text
+          - category: TEST New benefit row with a longer name than the others
+            bronze: []
+            silver: []
+            gold: ["✓"]
+            platinum: ["✓"]
+            diamond:
+              - TEST first line
+              - TEST second line
       universityPartners:
+        - name: TEST Partner Two
+          logo: /images/logos/emblebi.png
+          url: https://openms.de/
+        - name: TEST Partner Three
+          logo: /images/logos/toronto.jpeg
+          url: https://openms.de/
         - name: TEST Partner
           logo: /images/logos/fu-berlin.png
           url: https://openms.de/
