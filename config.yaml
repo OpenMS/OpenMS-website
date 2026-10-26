@@ -293,6 +293,19 @@ languages:
               - Support a healthy and welcoming open-source community
             linkText: Learn more
             linkUrl: /exec_committee/
+          - title: TEST Third Layer
+            text: >-
+              TEST card added by an editor, with a longer description to check
+              that three cards in a row keep the same height.
+            points:
+              - TEST first point
+              - TEST second point that is longer than the others to check wrapping
+              - TEST third point
+              - TEST fourth point
+            linkText: TEST link
+            linkUrl: /contribute/
+          - title: TEST Fourth Layer without link or points
+            text: TEST card with only a title and a text.
         # "How Core Developers Fit In": the blue cards.
         coreRoles:
           - icon: fas fa-code-branch
@@ -307,6 +320,16 @@ languages:
           - icon: fas fa-vote-yea
             tag: Votes
             title: Participate in governance votes
+          - icon: fas fa-book
+            tag: Docs
+            title: TEST Write and review documentation
+          - icon: fas fa-bug
+            tag: Triage
+            title: TEST Triage bug reports with a much longer title than the others
+            text: TEST optional text under the title.
+          - icon: fas fa-users
+            tag: Events
+            title: TEST Organise events
         # "Membership": how people join and leave.
         membership:
           - icon: fas fa-user-plus
@@ -317,6 +340,12 @@ languages:
             text: >-
               Core developers may step down voluntarily or be removed for inactivity
               or Code of Conduct violations by a two-thirds vote.
+          - icon: fas fa-pause-circle
+            tag: TEST Pausing
+            text: TEST third membership card, to check how three cards sit on the track.
+          - icon: fas fa-redo
+            tag: TEST Returning
+            text: TEST fourth card with a longer text than the others, to check that it wraps and the cards keep a similar height on phones.
         # "Separation of Responsibilities".
         responsibilities:
           - icon: fas fa-landmark
@@ -327,6 +356,14 @@ languages:
             tag: Executive Committee
             title: Project
             text: Software roadmap, contributor governance, and technical or community decisions.
+          - icon: fas fa-users
+            tag: Core developers
+            title: TEST Community
+            text: TEST third responsibility card added by an editor.
+          - icon: fas fa-hands-helping
+            tag: TEST Volunteers with a long tag
+            title: TEST Outreach
+            text: TEST fourth card with a longer text than the others, to check the grid with four cards.
       publicationsPage:
         googleScholarUrl: https://scholar.google.ca/citations?user=tQ26gxIAAAAJ&hl
         googleScholarText: Follow us on Google Scholar
