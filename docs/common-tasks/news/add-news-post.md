@@ -79,7 +79,7 @@ Write your article here. Leave an empty line between paragraphs.
 | 1 | `title:` | The headline. |
 | 2 | `authors:` | Your name, **inside quotes and square brackets**. For several people: `["Anna Smith", "Ben Jones"]`. |
 | 3 | `date:` | Year-month-day, like `2026-10-05`. **No quotes.** |
-| 4 | `summary:` | A short teaser (1–2 sentences). A longer one is cut with "…" on the list. Without a `summary:` line, the list shows the first sentences of the article. |
+| 4 | `summary:` | A short teaser (1–2 sentences). A longer one is cut with "…" on the list. Without a `summary:` line, the list shows the first sentences of the article. A link is allowed: `[text people see](https://example.org)`; it shows in blue and opens that address. |
 
 Rules that avoid problems:
 
