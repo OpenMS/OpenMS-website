@@ -1180,3 +1180,22 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
 :is(html, #explore-last-card) body .openms-lib-page .openms-lib-resources__explore-grid > .openms-lib-resources__explore-item:last-child {
   grid-column: auto !important;
 }
+
+/* "Explore …" cards, 701–767px (OpenMS-lib, pyOpenMS, pyopenms-viz, WebApps):
+   the grid still has 3 columns here, but the phone layout (icon to the left
+   of the text, from 767px down) already applied, so titles did not fit
+   ("READ DOCUMENTATION" ran out of its ~200px card). In this range the cards
+   keep the icon-above-title layout used from 768px. */
+@media (min-width: 701px) and (max-width: 767px) {
+  :is(html, #explore-tablet) body .openms-lib-page .openms-lib-resources__explore-card.openms-lib-resources__explore-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: none !important;
+    row-gap: 0.75rem !important;
+  }
+
+  :is(html, #explore-tablet) body .openms-lib-page .openms-lib-resources__explore-card.openms-lib-resources__explore-card > * {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    margin-top: 0 !important;
+  }
+}
