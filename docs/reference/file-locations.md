@@ -34,7 +34,7 @@ The menu itself (labels, order, links) is **`config.yaml` → `navbar`**. Its de
 | Community → Annual Developer Retreat | `/developer-retreat/` | `content/en/developer-retreat.md` | `developer-retreat-main.html` | `config.yaml` → `developerRetreatPage` | `overrides/developer-retreat.css` |
 | Community → Code of Conduct | `/code-of-conduct/` | `content/en/code-of-conduct.md` | `code-of-conduct-main.html` | the page file | `overrides/code-of-conduct.css` and `coc-charter.css` |
 | **Services** → Scientific and Technical Support | `/scientific-and-technical-support/` | `content/en/scientific-and-technical-support.md` | `scientific-and-technical-support-main.html` | `config.yaml` → `servicesSupportPage` (intro); the rest in the design file | `overrides/scientific-and-technical-support.css` |
-| **About** → Governance | `/governance/` | `content/en/governance.md` | `governance-main.html` | `config.yaml` → `governancePage` (intro only); almost all text is written in the design file | `overrides/governance.css` |
+| **About** → Governance | `/governance/` | `content/en/governance.md` | `governance-main.html` | `config.yaml` → `governancePage` (intro and the cards: `layers`, `coreRoles`, `membership`, `responsibilities`); section titles are written in the design file | `overrides/governance.css` |
 | About → Our Sponsors | `/our-sponsors/` | `content/en/our-sponsors.md` | `our-sponsors-main.html` | `config.yaml` → `aboutPage` (`sponsorsSection` and `sponsors`) | `openms-overrides.css` |
 | About → Our Sponsorship Program | `/sponsor-us/` | `content/en/sponsor-us.md` | `sponsor-us-main.html` and `sponsor-tiers.html` | `config.yaml` → `sponsorUsPage` (intro), `sponsorTiers` (levels and benefit table); the FAQ and the rest in `sponsor-us-main.html` (see [the FAQ guide](../common-tasks/sponsorship-program/update-faq.md)) | `overrides/sponsor-us.css` |
 | About → Research Partnerships | `/research-partnerships/` | `content/en/research-partnerships.md` | `research-partnerships-main.html` | `config.yaml` → `researchPartnershipsPage` (and `universityPartners` for the logos) | `overrides/research-partnerships.css` |
@@ -136,6 +136,6 @@ Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/
 |------|--------|
 | Sponsor logos on About (`{{< sponsors >}}`) | `layouts/shortcodes/sponsors.html` |
 | The Contact block at the bottom of the home page | `layouts/partials/contact-area.html` |
-| Most governance / press-kit page wording | `layouts/partials/governance-main.html`, `press-kit-main.html` |
+| Governance section titles, most press-kit page wording | `layouts/partials/governance-main.html`, `press-kit-main.html` |
 
 For a plain-language tour, see the [map of the repository](../getting-started/repo-map.md).

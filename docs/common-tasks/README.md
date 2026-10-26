@@ -56,7 +56,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 
 | Page | Folder | Tasks |
 |------|--------|-------|
-| **Governance** (`/governance/`) | `governance/` | [Change the intro text](governance/edit-intro-text.md) |
+| **Governance** (`/governance/`) | `governance/` | [Change the intro text](governance/edit-intro-text.md) · [Add or change the cards](governance/edit-cards.md) |
 | **Our Sponsors** (`/our-sponsors/`) | `our-sponsors/` | [Add, change or remove a sponsor logo](our-sponsors/update-sponsors.md) |
 | **Our Sponsorship Program** (`/sponsor-us/`, also the **Sponsor Us** button) | `sponsorship-program/` | [Change the levels](sponsorship-program/update-levels.md) · [Change the benefits](sponsorship-program/update-benefits.md) · [Add or change an FAQ question](sponsorship-program/update-faq.md) |
 | **Research Partnerships** (`/research-partnerships/`, also the **Partner with OpenMS** button) | `research-partnerships/` | [Change the intro](research-partnerships/edit-partners.md) · [Add, change or remove a partner logo](research-partnerships/update-partner-logos.md) |
