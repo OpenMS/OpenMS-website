@@ -64,3 +64,13 @@
   hyphens: manual !important;
   -webkit-hyphens: manual !important;
 }
+
+/* Title lines set never to wrap (Research Partnerships, Governance,
+   Developer Retreat) ran past their box where the line was wider than the
+   page, e.g. "RESEARCH PARTNERSHIPS" at 729px (505px in a 473px box). A
+   title line now wraps at a space when it does not fit (balanced); where it
+   fits it stays on one line, as designed. Words are not split (see above). */
+:is(html, #title-wrap) body .openms-lib-hero__title .openms-lib-hero__title-line.openms-lib-hero__title-line {
+  white-space: normal !important;
+  text-wrap: balance;
+}

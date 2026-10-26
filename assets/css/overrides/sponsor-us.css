@@ -341,3 +341,18 @@ html body .openms-lib-page--sponsor-us .sponsor-faq__list {
     margin-top: 3.25rem !important;
   }
 }
+
+/* FAQ answers: a site-wide reset hides list markers, so a bullet list in an
+   answer showed as plain lines. Bullets and numbers show in answers. */
+:is(html, #faq-lists) body .sponsor-faq__answer :is(ul, ol) {
+  margin: 0.4rem 0 0.6rem !important;
+  padding-left: 1.4rem !important;
+}
+
+:is(html, #faq-lists) body .sponsor-faq__answer ul { list-style: disc outside !important; }
+:is(html, #faq-lists) body .sponsor-faq__answer ol { list-style: decimal outside !important; }
+
+:is(html, #faq-lists) body .sponsor-faq__answer li {
+  display: list-item !important;
+  margin: 0 0 0.25rem !important;
+}
