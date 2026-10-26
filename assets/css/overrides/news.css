@@ -141,3 +141,17 @@ html body .news-pager .openms-lib-btn.news-pager__btn:disabled {
 :is(html, #news-bottom) body .openms-lib-page--news-article .news-story__body > :last-child {
   margin-bottom: 0 !important;
 }
+
+/* Links written in a news card summary (news list and home page): blue like
+   every text link, underlined on hover and keyboard focus. They are spans
+   opened by assets/js/news-summary-links.js, because the card is a link. */
+:is(html, #news-summary-links) body .news-home__card-summary .news-summary-link {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  cursor: pointer;
+}
+
+:is(html, #news-summary-links) body .news-home__card-summary .news-summary-link:is(:hover, :focus-visible) {
+  text-decoration: underline !important;
+  text-underline-offset: 0.2em;
+}

@@ -122,11 +122,13 @@ html body .openms-lib-page--contribute .coc-agreement {
   color: rgba(var(--openms-dark-rgb), 0.72);
 }
 
-/* ---------- report callout ---------- */
+/* ---------- report callout ----------
+   Shield icon on the left, the text next to it, and the buttons at the
+   bottom, under the text (not to the right of it). */
 html body .openms-lib-page--contribute .coc-callout {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
   gap: 1rem clamp(1rem, 2.5vw, 1.75rem);
   margin: clamp(2rem, 4vw, 3rem) 0 0;
   padding: clamp(1.25rem, 2.5vw, 1.75rem) clamp(1.25rem, 3vw, 2rem);
@@ -193,17 +195,8 @@ html body .openms-lib-page--contribute .coc-callout__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
-  justify-content: flex-end;
-}
-
-@media (max-width: 900px) {
-  html body .openms-lib-page--contribute .coc-callout {
-    grid-template-columns: auto minmax(0, 1fr);
-  }
-  html body .openms-lib-page--contribute .coc-callout__actions {
-    grid-column: 1 / -1;
-    justify-content: flex-start;
-  }
+  grid-column: 2;
+  justify-content: flex-start;
 }
 
 @media (max-width: 560px) {
@@ -213,6 +206,7 @@ html body .openms-lib-page--contribute .coc-callout__actions {
   /* buttons keep their natural size at every screen size (they wrap onto
      the next line instead of stretching to full width) */
   html body .openms-lib-page--contribute .coc-callout__actions {
+    grid-column: 1;
     justify-content: flex-start;
   }
 }
@@ -251,13 +245,6 @@ html body .openms-lib-page--contribute .coc-callout__email a {
 }
 
 html body .openms-lib-page--contribute .coc-callout__actions {
-  justify-content: flex-end !important;
-  margin-left: auto;
-}
-
-@media (max-width: 900px) {
-  html body .openms-lib-page--contribute .coc-callout__actions {
-    justify-content: flex-start !important;
-    margin-left: 0;
-  }
+  justify-content: flex-start !important;
+  margin-left: 0;
 }

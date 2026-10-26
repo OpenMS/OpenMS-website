@@ -997,9 +997,17 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
 }
 
 /* OpenMS-lib "TOPP Tools" features: the optional link (linkText / linkUrl
-   in config.yaml) sits close under its text. */
+   in config.yaml) sits close under its text, in the same size and weight
+   as the other card links ("Learn more", "Open on GitHub"…). */
 :is(html, #topp-feature-link) body .openms-lib-topp-split__nested-item > .openms-lib-topp-split__nested-link {
   margin: 0.5rem 0 0 !important;
+  font-size: var(--openms-text-min) !important;
+  line-height: 1.4;
+}
+
+:is(html, #topp-feature-link) body .openms-lib-topp-split__nested-item > .openms-lib-topp-split__nested-link a {
+  font-size: inherit !important;
+  font-weight: 700 !important;
 }
 
 /* Contribute boxes with several links (type: links in config.yaml, such as
