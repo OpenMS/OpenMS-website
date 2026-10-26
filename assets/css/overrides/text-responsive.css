@@ -74,3 +74,21 @@
   white-space: normal !important;
   text-wrap: balance;
 }
+
+/* ---------- Button labels never run out of their button ----------
+   Button labels were set never to wrap, so a long label (an editor's
+   "Follow all OpenMS publications and citations on Google Scholar" on
+   Publications) ran out of the button on both sides on phones. A label now
+   wraps onto a second line, centred, only when the button cannot get wider;
+   buttons whose label fits are unchanged. Two IDs in :is() so this outranks
+   per-section rules that force one line (e.g. #cite-openms). */
+:is(html, #btn-wrap) body :is(*, #btn-wrap-2) .openms-lib-btn {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+:is(html, #btn-wrap) body :is(*, #btn-wrap-2) .openms-lib-btn .openms-lib-btn__label {
+  white-space: normal !important;
+  min-width: 0;
+  text-align: center;
+}
