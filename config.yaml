@@ -366,7 +366,7 @@ languages:
             text: TEST fourth card with a longer text than the others, to check the grid with four cards.
       publicationsPage:
         googleScholarUrl: https://scholar.google.ca/citations?user=tQ26gxIAAAAJ&hl
-        googleScholarText: Follow us on Google Scholar
+        googleScholarText: TEST Follow all OpenMS publications and citations on Google Scholar
       contactPage:
         eyebrow: Contact
         subtitle: >-
