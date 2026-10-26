@@ -267,6 +267,66 @@ languages:
         subtitle: >-
           OpenMS combines a nonprofit corporation for legal and financial stewardship
           with an Executive Committee that leads technical direction and community governance. TEST extra sentence to check how a longer intro wraps under the page title, on laptops and on phones.
+        # Cards on /governance/. To add a card, copy a whole card (from its
+        # "- title:" or "- tag:" line down to the next one) and change the words.
+        # Icons are Font Awesome names, e.g. "fas fa-users" (fontawesome.com/icons).
+        # "Two layers of governance": numbered 01, 02... automatically.
+        layers:
+          - id: openms-inc
+            title: OpenMS Inc.
+            text: >-
+              A U.S. 501(c)(3) nonprofit that holds the project’s legal entity,
+              compliance, and financial continuity.
+            points:
+              - Board of Directors oversees fiduciary and legal duties
+              - Supports fundraising, grants, and organizational continuity
+            linkText: See board of directors
+            linkUrl: /contributors/#leadership
+          - id: executive-committee
+            title: Executive Committee
+            text: >-
+              A committee composed of core developers responsible for setting the
+              software roadmap, community policies, and day-to-day technical decisions.
+            points:
+              - Define long-term vision and ensure project sustainability
+              - Establish and maintain governance and code of conduct policies
+              - Support a healthy and welcoming open-source community
+            linkText: Learn more
+            linkUrl: /exec_committee/
+        # "How Core Developers Fit In": the blue cards.
+        coreRoles:
+          - icon: fas fa-code-branch
+            tag: Review
+            title: Review and approve contributions
+          - icon: fas fa-compass
+            tag: Direction
+            title: Guide technical direction
+          - icon: fas fa-user-friends
+            tag: Mentorship
+            title: Mentor new contributors
+          - icon: fas fa-vote-yea
+            tag: Votes
+            title: Participate in governance votes
+        # "Membership": how people join and leave.
+        membership:
+          - icon: fas fa-user-plus
+            tag: Joining
+            text: New core developers are added by majority vote of the Executive Committee.
+          - icon: fas fa-user-minus
+            tag: Leaving
+            text: >-
+              Core developers may step down voluntarily or be removed for inactivity
+              or Code of Conduct violations by a two-thirds vote.
+        # "Separation of Responsibilities".
+        responsibilities:
+          - icon: fas fa-landmark
+            tag: Board of Directors
+            title: Corporate
+            text: Legal entity, nonprofit compliance, and financial stewardship.
+          - icon: fas fa-code
+            tag: Executive Committee
+            title: Project
+            text: Software roadmap, contributor governance, and technical or community decisions.
       publicationsPage:
         googleScholarUrl: https://scholar.google.ca/citations?user=tQ26gxIAAAAJ&hl
         googleScholarText: Follow us on Google Scholar

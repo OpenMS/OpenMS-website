@@ -1,6 +1,11 @@
 {{- $cfg := .Site.Params.governancePage | default dict -}}
 {{- $eyebrow := index $cfg "eyebrow" | default "OpenMS governance" -}}
 {{- $subtitle := index $cfg "subtitle" | default "OpenMS combines a nonprofit corporation for legal and financial stewardship with an Executive Committee that leads technical direction and community governance." -}}
+{{- /* Card lists: config.yaml → governancePage (layers, coreRoles, membership, responsibilities). */ -}}
+{{- $layers := index $cfg "layers" | default slice -}}
+{{- $coreRoles := index $cfg "coreRoles" | default slice -}}
+{{- $membership := index $cfg "membership" | default slice -}}
+{{- $responsibilities := index $cfg "responsibilities" | default slice -}}
 <section class="openms-lib-layout">
 <article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--governance">
 <div class="openms-lib-page__intro">
@@ -44,28 +49,25 @@
         </header>
 
         <div class="openms-lib-about__mosaic" role="list">
-          <article class="openms-lib-about__tile" role="listitem" id="openms-inc">
-            <span class="openms-lib-about__num" aria-hidden="true">01</span>
-            <h3 class="openms-lib-about__tile-title">OpenMS Inc.</h3>
-            <p class="openms-lib-about__tile-text">A U.S. 501(c)(3) nonprofit that holds the project’s legal entity, compliance, and financial continuity.</p>
+          {{- range $i, $tile := $layers }}
+          <article class="openms-lib-about__tile" role="listitem"{{ with $tile.id }} id="{{ . }}"{{ end }}>
+            <span class="openms-lib-about__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+            <h3 class="openms-lib-about__tile-title">{{ $tile.title }}</h3>
+            {{- with $tile.text }}
+            <p class="openms-lib-about__tile-text">{{ . }}</p>
+            {{- end }}
+            {{- with $tile.points }}
             <ul class="governance-tile__list" role="list">
-              <li>Board of Directors oversees fiduciary and legal duties</li>
-              <li>Supports fundraising, grants, and organizational continuity</li>
+              {{- range . }}
+              <li>{{ . }}</li>
+              {{- end }}
             </ul>
-            <a class="openms-lib-about__tile-link" href="/contributors/#leadership">See board of directors<span aria-hidden="true"> →</span></a>
+            {{- end }}
+            {{- with $tile.linkUrl }}
+            <a class="openms-lib-about__tile-link" href="{{ . }}">{{ $tile.linkText | default "Learn more" }}<span aria-hidden="true"> →</span></a>
+            {{- end }}
           </article>
-
-          <article class="openms-lib-about__tile" role="listitem" id="executive-committee">
-            <span class="openms-lib-about__num" aria-hidden="true">02</span>
-            <h3 class="openms-lib-about__tile-title">Executive Committee</h3>
-            <p class="openms-lib-about__tile-text">A committee composed of core developers responsible for setting the software roadmap, community policies, and day-to-day technical decisions.</p>
-            <ul class="governance-tile__list" role="list">
-              <li>Define long-term vision and ensure project sustainability</li>
-              <li>Establish and maintain governance and code of conduct policies</li>
-              <li>Support a healthy and welcoming open-source community</li>
-            </ul>
-            <a class="openms-lib-about__tile-link" href="/exec_committee/">Learn more<span aria-hidden="true"> →</span></a>
-          </article>
+          {{- end }}
         </div>
       </div>
     </section>
@@ -84,34 +86,20 @@
 
         <div class="openms-lib-resources__toolkit">
           <div class="openms-lib-resources__grid governance-pillars-grid" role="list">
+            {{- range $coreRoles }}
             <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
               <div class="openms-lib-resources__item-top">
-                <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-code-branch"></i></span>
-                <span class="openms-lib-resources__item-tag">Review</span>
+                <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="{{ .icon | default "fas fa-circle" }}"></i></span>
+                {{- with .tag }}
+                <span class="openms-lib-resources__item-tag">{{ . }}</span>
+                {{- end }}
               </div>
-              <h3 class="openms-lib-resources__item-title">Review and approve contributions</h3>
+              <h3 class="openms-lib-resources__item-title">{{ .title }}</h3>
+              {{- with .text }}
+              <p class="openms-lib-resources__item-text">{{ . }}</p>
+              {{- end }}
             </article>
-            <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
-              <div class="openms-lib-resources__item-top">
-                <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-compass"></i></span>
-                <span class="openms-lib-resources__item-tag">Direction</span>
-              </div>
-              <h3 class="openms-lib-resources__item-title">Guide technical direction</h3>
-            </article>
-            <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
-              <div class="openms-lib-resources__item-top">
-                <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></span>
-                <span class="openms-lib-resources__item-tag">Mentorship</span>
-              </div>
-              <h3 class="openms-lib-resources__item-title">Mentor new contributors</h3>
-            </article>
-            <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
-              <div class="openms-lib-resources__item-top">
-                <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-vote-yea"></i></span>
-                <span class="openms-lib-resources__item-tag">Votes</span>
-              </div>
-              <h3 class="openms-lib-resources__item-title">Participate in governance votes</h3>
-            </article>
+            {{- end }}
           </div>
         </div>
 
@@ -123,16 +111,13 @@
           </header>
           <div class="governance-membership__track">
             <div class="governance-membership__cards" role="list">
+              {{- range $membership }}
               <article class="governance-membership__card" role="listitem">
-                <span class="governance-membership__icon" aria-hidden="true"><i class="fas fa-user-plus"></i></span>
-                <p class="governance-membership__tag">Joining</p>
-                <p class="governance-membership__text">New core developers are added by majority vote of the Executive Committee.</p>
+                <span class="governance-membership__icon" aria-hidden="true"><i class="{{ .icon | default "fas fa-circle" }}"></i></span>
+                <p class="governance-membership__tag">{{ .tag }}</p>
+                <p class="governance-membership__text">{{ .text }}</p>
               </article>
-              <article class="governance-membership__card" role="listitem">
-                <span class="governance-membership__icon" aria-hidden="true"><i class="fas fa-user-minus"></i></span>
-                <p class="governance-membership__tag">Leaving</p>
-                <p class="governance-membership__text">Core developers may step down voluntarily or be removed for inactivity or Code of Conduct violations by a two-thirds vote.</p>
-              </article>
+              {{- end }}
             </div>
           </div>
         </aside>
@@ -155,22 +140,20 @@
         </header>
 
         <div class="openms-lib-resources__grid governance-compare-grid" role="list">
+          {{- range $responsibilities }}
           <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
             <div class="openms-lib-resources__item-top">
-              <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-landmark"></i></span>
-              <span class="openms-lib-resources__item-tag">Board of Directors</span>
+              <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="{{ .icon | default "fas fa-circle" }}"></i></span>
+              {{- with .tag }}
+              <span class="openms-lib-resources__item-tag">{{ . }}</span>
+              {{- end }}
             </div>
-            <h3 class="openms-lib-resources__item-title">Corporate</h3>
-            <p class="openms-lib-resources__item-text">Legal entity, nonprofit compliance, and financial stewardship.</p>
+            <h3 class="openms-lib-resources__item-title">{{ .title }}</h3>
+            {{- with .text }}
+            <p class="openms-lib-resources__item-text">{{ . }}</p>
+            {{- end }}
           </article>
-          <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
-            <div class="openms-lib-resources__item-top">
-              <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="fas fa-code"></i></span>
-              <span class="openms-lib-resources__item-tag">Executive Committee</span>
-            </div>
-            <h3 class="openms-lib-resources__item-title">Project</h3>
-            <p class="openms-lib-resources__item-text">Software roadmap, contributor governance, and technical or community decisions.</p>
-          </article>
+          {{- end }}
         </div>
       </div>
     </section>

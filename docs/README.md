@@ -33,7 +33,7 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | **Annual Developer Retreat** | [Update the page (once a year)](common-tasks/developer-retreat/update-retreat.md) |
 | **Code of Conduct** | [Change the text](common-tasks/code-of-conduct/edit-text.md) · [Report Handling Manual](common-tasks/code-of-conduct-enforcement-procedures/edit-text.md) |
 | **Scientific and Technical Support** | [Intro text](common-tasks/scientific-and-technical-support/edit-intro-text.md) |
-| **Governance** | [Intro text](common-tasks/governance/edit-intro-text.md) |
+| **Governance** | [Intro text](common-tasks/governance/edit-intro-text.md) · [Cards](common-tasks/governance/edit-cards.md) |
 | **Our Sponsors** | [Add, change or remove a sponsor logo](common-tasks/our-sponsors/update-sponsors.md) |
 | **Our Sponsorship Program** | [Levels](common-tasks/sponsorship-program/update-levels.md) · [Benefits](common-tasks/sponsorship-program/update-benefits.md) · [FAQ](common-tasks/sponsorship-program/update-faq.md) |
 | **Research Partnerships** | [Intro text](common-tasks/research-partnerships/edit-partners.md) · [Partner logos](common-tasks/research-partnerships/update-partner-logos.md) |
