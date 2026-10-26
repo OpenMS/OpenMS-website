@@ -1100,9 +1100,16 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
 /* Contribute boxes: a long subtitle is cut after 3 lines with "…". The
    subtitle used to stretch to fill the box (to push the link down), so the
    text after the "…" still showed half a line below it. Now the subtitle is
-   at most 3 lines tall and the link is pushed to the bottom on its own. */
+   clamped to 3 whole lines (no fixed height, which clipped the last line)
+   and does not stretch; the link is pushed to the bottom on its own. */
 :is(html, #dev-subtitle-clamp) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__card-subtitle {
-  max-height: calc(3 * 1lh) !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 3 !important;
+  line-clamp: 3;
+  overflow: hidden !important;
+  flex: 0 0 auto !important;
+  max-height: none !important;
 }
 
 :is(html, #dev-subtitle-clamp) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card .openms-lib-developers__card-subtitle ~ .openms-lib-developers__card-cta {
@@ -1131,3 +1138,45 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
 :is(html, #dev-icons-fixed) body .openms-lib-page #for-developers#for-developers#for-developers .openms-lib-developers__platforms a :is(svg, i):is(.fa-apple) { color: #1d1d1f !important; }
 :is(html, #dev-icons-fixed) body .openms-lib-page #for-developers#for-developers#for-developers .openms-lib-developers__platforms a :is(svg, i):is(.fa-windows) { color: #0078d4 !important; }
 :is(html, #dev-icons-fixed) body .openms-lib-page #for-developers#for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a :is(svg, i):is(.fa-book-open) { color: var(--openms-blue) !important; }
+
+/* OpenMS-lib "TOPP Tools" on tablets (701–1100px): the picture kept a third
+   of the width with empty space under it, while the features were squeezed
+   into two ~160px columns beside it (3 words per line). Picture and intro
+   (title, text, button) stay side by side; the features go below both,
+   across the full width, as many columns as fit (2 at 820px, 3 at 1024px).
+   Phones and laptops keep their layout. */
+@media (min-width: 701px) and (max-width: 1100px) {
+  :is(html, #topp-tablet) body .openms-lib-page--solution .openms-lib-topp-split--solution .openms-lib-topp-split__inner.openms-lib-topp-split__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) !important;
+    align-items: center !important;
+    row-gap: clamp(1.75rem, 4vw, 2.5rem) !important;
+  }
+
+  :is(html, #topp-tablet) body .openms-lib-page--solution .openms-lib-topp-split--solution .openms-lib-topp-split__copy {
+    display: contents !important;
+  }
+
+  :is(html, #topp-tablet) body .openms-lib-page--solution .openms-lib-topp-split--solution .openms-lib-topp-split__visual {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  :is(html, #topp-tablet) body .openms-lib-page--solution .openms-lib-topp-split--solution .openms-lib-topp-split__intro {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+
+  :is(html, #topp-tablet) body .openms-lib-page--solution .openms-lib-topp-split--solution .openms-lib-topp-split__nested.openms-lib-topp-split__nested {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)) !important;
+  }
+}
+
+/* "Explore OpenMS-lib" cards: an older rule (written for a 2-column grid)
+   stretched an odd last card across the whole row. With the 3-column grid
+   on tablets, a single last card filled the row on its own. Every card keeps
+   the width of its column, like the other card grids. */
+:is(html, #explore-last-card) body .openms-lib-page .openms-lib-resources__explore-grid > .openms-lib-resources__explore-item:last-child {
+  grid-column: auto !important;
+}
