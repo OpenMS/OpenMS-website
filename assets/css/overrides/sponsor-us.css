@@ -389,3 +389,82 @@ html body .openms-lib-page--sponsor-us .sponsor-faq__list {
     --tiers-cols: 4;
   }
 }
+
+/* ---------- Benefit comparison: works for any level id ----------
+   The rules for the selected (and hovered) level were written out for
+   bronze, silver, gold and platinum only. With another level in config.yaml
+   (tested with "diamond"), choosing it on small and medium screens hid no
+   column, so all five columns squeezed into the space for one, and on
+   laptops its column was not highlighted. assets/js/sponsor-tiers.js now
+   marks the cells of the selected level with .is-active-tier and of the
+   hovered level with .is-hover-tier; the rules below repeat each named rule
+   for those classes, in the same order and with the same specificity, so
+   the four existing levels look exactly as before. */
+
+/* Laptops and up: selected column highlight (openms-overrides.css ~19198) */
+.openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier] .is-active-tier {
+  background: color-mix(in srgb, var(--openms-blue) 8%, var(--openms-white)) !important;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--openms-blue) 22%, transparent);
+}
+
+.openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier] .sponsor-benefits__matrix-row--head .is-active-tier {
+  background: color-mix(in srgb, var(--openms-blue) 14%, var(--openms-white)) !important;
+  box-shadow: inset 0 -3px 0 var(--openms-blue);
+}
+
+.openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier] .is-active-tier .sponsor-benefits__col-name {
+  color: var(--openms-blue);
+}
+
+/* Hovered and selected column colours (this file, above) */
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-hover-tier] .is-hover-tier {
+  background: var(--benefits-col-hover) !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier] .is-active-tier {
+  background: var(--benefits-col-active) !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier][data-hover-tier] .is-active-tier.is-hover-tier {
+  background: var(--benefits-col-active) !important;
+}
+
+/* Small and medium screens: one level at a time (openms-overrides.css
+   ~13523, ~19664) */
+@media (max-width: 992px) {
+  .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier] [data-sponsor-benefits]:not(.is-active-tier) {
+    display: none !important;
+  }
+
+  .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier] .is-active-tier {
+    display: flex !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier] .sponsor-benefits__matrix-row--head .is-active-tier {
+    background: var(--pro-band-soft) !important;
+    box-shadow: none !important;
+  }
+
+  .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier] .is-active-tier .sponsor-benefits__col-name {
+    color: var(--openms-navy);
+  }
+}
+
+/* Phones (openms-overrides.css ~19716, ~19775) */
+@media (max-width: 768px) {
+  .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier] .is-active-tier,
+  .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier] .sponsor-benefits__matrix-row--head .is-active-tier {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier] .is-active-tier .sponsor-benefits__col-name {
+    color: var(--openms-navy);
+  }
+
+  .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier] .is-active-tier {
+    display: flex !important;
+  }
+}

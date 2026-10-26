@@ -64,7 +64,7 @@ Each row of the table is one `category`, with one entry per level:
 | `["✓"]` | a tick: included |
 | lines starting with `- ` | each line as text |
 
-To **add a row**, copy a whole `- category:` block and change it. To **remove a row**, delete its whole block. Every row needs one line per level, even if it is only `[]`: a missing line makes the build fail. **If you add a level**, add its line to every row.
+To **add a row**, copy a whole `- category:` block and change it. To **remove a row**, delete its whole block. Every row needs one line per level, even if it is only `[]`: a missing line makes the build fail. **If you add a level**, copy a whole level block under `levels:`, give it a new `id` (small letters, no spaces, for example `diamond`), and add a line with that `id` to every row. The level cards and the table adjust by themselves: a card alone in the last row is centred, and on phones the new level appears in the level menu above the table.
 
 The full guide for the benefits, with pictures: [Change the benefits of the sponsorship levels](update-benefits.md).
 
