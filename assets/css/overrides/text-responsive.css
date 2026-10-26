@@ -39,3 +39,28 @@
 :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) {
   overflow-x: clip;
 }
+
+/* ---------- Page titles and intros: no stray punctuation, no hyphens ----------
+   Older rules let hero titles break between any two letters
+   (overflow-wrap: anywhere) and hyphenated titles and intros on phones
+   (hyphens: auto). On /governance/ at 375px the full stop of "guided by
+   community." dropped onto a line of its own, and the intro read
+   "direc-tion", "un-der". Titles now only split a word that cannot fit on a
+   line by itself (so punctuation stays with its word), and headings and the
+   hero intro are not hyphenated. Body text is unchanged. */
+:is(html, #title-wrap) body .openms-lib-hero__title,
+:is(html, #title-wrap) body .openms-lib-hero__title .openms-lib-hero__title-line,
+:is(html, #title-wrap) body .openms-lib-hero__title .openms-lib-hero__accent {
+  overflow-wrap: break-word !important;
+}
+
+/* A coloured word inside a title line follows that line's wrapping, so no
+   line break can fall between it and the punctuation after it. */
+:is(html, #title-wrap) body .openms-lib-hero__title .openms-lib-hero__title-line .openms-lib-hero__accent {
+  white-space: inherit !important;
+}
+
+:is(html, #title-wrap) body .openms-lib-page :is(h1, h2, h3, .openms-lib-hero__lead, .openms-lib-hero__lead *) {
+  hyphens: manual !important;
+  -webkit-hyphens: manual !important;
+}

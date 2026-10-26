@@ -98,3 +98,23 @@
     justify-self: start !important;
   }
 }
+
+/* "Two layers of governance" intro: each of its two lines was set never to
+   wrap above 900px, so at ~1000-1100px the second line ("while preserving
+   independent technical governance by the active maintainer community.")
+   was wider than its box and ran past it, off-centre. The lines may wrap
+   when they do not fit (balanced, so no single word is left alone); where
+   they fit they stay on one line each, as before. */
+:is(html, #gov-lead-wrap) body .openms-lib-page--governance #governance-bodies .governance-lead-line {
+  white-space: normal !important;
+  text-wrap: balance;
+}
+
+/* "Two layers of governance" cards: the bullet list grows to fill the card
+   (so the link stays at the bottom), and its rows stretched with it, leaving
+   a big gap between the two OpenMS Inc. bullets next to the taller Executive
+   Committee card. The rows stay at the top of the list now; the link is still
+   at the bottom of the card. */
+:is(html, #gov-list-rows) body .openms-lib-page--governance .governance-tile__list {
+  align-content: start !important;
+}
