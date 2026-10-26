@@ -356,3 +356,36 @@ html body .openms-lib-page--sponsor-us .sponsor-faq__list {
   display: list-item !important;
   margin: 0 0 0.25rem !important;
 }
+
+/* Level cards: laid out 2 per row (769-1100px) or 4 per row (from 1101px).
+   With a number of levels that does not fill the last row (e.g. a 5th
+   level), the extra card sat alone at the left of an empty row. Same card
+   widths, but as a wrapping row: cards in an incomplete last row are
+   centred. Equal heights within a row are kept. Phones (one column) are
+   unchanged. */
+@media (min-width: 769px) {
+  :is(html, #tiers-center) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tiers__grid.sponsor-tiers__grid {
+    --tiers-gap: clamp(0.85rem, 2vw, 1.5rem);
+    --tiers-cols: 2;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: var(--tiers-gap) !important;
+  }
+
+  :is(html, #tiers-center) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tiers__grid.sponsor-tiers__grid > * {
+    flex: 0 0 calc((100% - (var(--tiers-cols) - 1) * var(--tiers-gap)) / var(--tiers-cols)) !important;
+    max-width: calc((100% - (var(--tiers-cols) - 1) * var(--tiers-gap)) / var(--tiers-cols)) !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    align-self: stretch !important;
+    height: auto !important;
+  }
+}
+
+@media (min-width: 1101px) {
+  :is(html, #tiers-center) body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-tiers__grid.sponsor-tiers__grid {
+    --tiers-cols: 4;
+  }
+}
