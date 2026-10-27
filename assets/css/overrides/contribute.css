@@ -485,3 +485,19 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
   }
 }
 
+
+/* ---------- Funding panel ("Sponsor OpenMS"): button level with the text ----------
+   From 768px the button sits to the right of the text. It was centred
+   vertically, so it floated above the last line of the description. The
+   button's bottom now lines up with the bottom of the text. Phones keep the
+   stacked, centred layout. */
+@media (min-width: 768px) {
+  :is(html, #funding-bottom) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support.contribute-support {
+    align-items: flex-end !important;
+  }
+
+  :is(html, #funding-bottom) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-support .contribute-support__cta.openms-lib-btn.openms-lib-btn {
+    align-self: flex-end !important;
+    margin-bottom: 0 !important;
+  }
+}
