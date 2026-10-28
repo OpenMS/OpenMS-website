@@ -524,10 +524,7 @@ languages:
         eyebrow: Contact
         subtitle: >-
           Whether you need help with pipelines, integrations, consulting, or joining the
-<<<<<<< HEAD
           community — reach out and we will point you to the right next step. TEST extra sentence to check a longer intro on phones.
-=======
-          community — reach out and we will point you to the right next step.
         # "Ways to reach us" cards, in order. Each card starts with "- title:".
         #   linkText + linkUrl -> the whole card is one link
         #   links (text + url) -> a row of separate links instead
@@ -565,7 +562,29 @@ languages:
             text: Let's explore building that new algorithm together.
             linkText: Research Partnerships
             linkUrl: /research-partnerships/#partnership-form
->>>>>>> website-update-oct-2026
+          - title: "TEST: Press and media enquiries for journalists and science writers"
+            icon: fas fa-newspaper
+            tag: "TEST: Press"
+            text: "TEST: a much longer text to check that the card grows and that cards in the same row keep the same height, with the link at the bottom. Supercalifragilisticexpialidociouslylongwordwithoutanyspaces."
+            linkText: "TEST: press@openms.de and the press kit for logos"
+            linkUrl: /press-kit/
+          - title: "TEST: Training"
+            icon: fas fa-chalkboard-teacher
+            tag: "TEST: Learn"
+            text: "TEST: card with no link."
+          - title: "TEST: Social media"
+            icon: fas fa-share-alt
+            tag: "TEST: Follow"
+            text: "TEST: card with several links."
+            links:
+              - text: LinkedIn
+                url: https://www.linkedin.com/company/openms-org
+              - text: Bluesky
+                url: https://bsky.app/profile/openms.bsky.social
+              - text: X
+                url: https://twitter.com/OpenMSTeam
+              - text: Mastodon
+                url: https://mastodon.social
       researchPartnershipsPage:
         eyebrow: Partner with OpenMS
         subtitle: We’re interested in hearing your idea for a partnership. TEST extra sentence to check how a longer intro wraps under the title.
