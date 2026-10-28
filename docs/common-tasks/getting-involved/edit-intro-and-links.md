@@ -12,7 +12,7 @@ The page **Getting Involved** has the address **https://openms.de/contribute/** 
 
 ![The contributePage lines in config.yaml, numbered](../../common-tasks-screenshot-images/getting-involved/2-config.png)
 
-The numbers match: the part marked **1** on the website is the line marked **1** in the file. Lines **3** to **5** are addresses used by the buttons and links further down the page.
+The numbers match: the part marked **1** on the website is the line marked **1** in the file. Lines **3** and **4** are used further down the page.
 
 ## What you will change
 
@@ -20,11 +20,12 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 |------------------|----------------------------|
 | The small word above the title | `eyebrow` |
 | The intro sentence | `subtitle` |
-| The links used on the page (Discord, GitHub Discussions, GitHub Issues, Governance, the website repository…) | `links`: change the address after each name |
-| The social links (Discord, LinkedIn, X, Bluesky) | `social` |
-| The community e-mail address | `communityEmail` |
+| The address of the **Join Discord** button at the top | `links` → `discord` |
+| The community e-mail address (shown in the Outreach box) | `communityEmail` |
 
-The **headings and texts** of the page ("Ways to contribute", "Contribute to development", "Stay in touch"…) are part of the design. To change them, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
+The cards further down the page ("Ways to contribute", "Stay in touch", "We encourage") and the Outreach links have their own guide: [Add or change the cards](edit-cards.md).
+
+The **section headings and their texts** ("Ways to contribute", "Stay in touch", the Funding, Outreach and Code of Conduct boxes…) are part of the design. To change them, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
 
 ## Step by step
 
@@ -36,4 +37,5 @@ The **headings and texts** of the page ("Ways to contribute", "Contribute to dev
 
 ## Related guides
 
+- [Add or change the cards on this page](edit-cards.md)
 - Back to the [list of all tasks](../README.md)
