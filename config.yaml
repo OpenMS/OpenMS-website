@@ -122,6 +122,42 @@ languages:
             text: Fix bugs, improve layout, or add content on the website repo.
             linkText: Browse open issues
             linkUrl: https://github.com/OpenMS/OpenMS-website/issues
+          - title: "TEST: Translate the User Guide into other languages for researchers worldwide"
+            icon: fas fa-language
+            text: "TEST: a longer description to check that the card grows, keeps its link at the bottom and that the cards in the same row stay the same height even when one has much more text than its neighbours. Supercalifragilisticexpialidociouslylongwordwithoutanyspaces."
+            linkText: "TEST: Read the translation guidelines and get started today"
+            linkUrl: https://github.com/OpenMS/OpenMS-docs
+          - title: "TEST: Testing and QA"
+            icon: fas fa-vial
+            text: "TEST: card with no link."
+          - title: "TEST: Packaging"
+            icon: fas fa-box
+            text: "TEST: card with many platform links."
+            platforms:
+              - name: Conda
+                icon: fas fa-cube
+                url: https://anaconda.org
+              - name: Docker
+                icon: fab fa-docker
+                url: https://hub.docker.com
+              - name: Homebrew
+                icon: fas fa-beer
+                url: https://brew.sh
+              - name: Debian / Ubuntu
+                icon: fab fa-ubuntu
+                url: https://ubuntu.com
+              - name: Windows installer
+                icon: fab fa-windows
+                url: https://openms.de
+          - title: "TEST: Mentoring"
+            icon: fas fa-chalkboard-teacher
+            badge: "TEST: New"
+            text: "TEST: card with a badge and project chips."
+            projects:
+              - name: Fellowship
+                url: /fellowship/
+              - name: Developer retreat
+                url: /developer-retreat/
         # "Outreach" links (the list on the right of the blue box).
         #   icon: bluesky or x -> those logos; otherwise a Font Awesome name
         outreachLinks:
@@ -141,6 +177,14 @@ languages:
             hint: News and announcements
             icon: x
             url: https://twitter.com/OpenMSTeam
+          - label: "TEST: Mastodon"
+            hint: "TEST: a much longer hint to check how the text wraps next to the icon"
+            icon: fab fa-mastodon
+            url: https://mastodon.social
+          - label: "TEST: YouTube"
+            hint: Tutorials
+            icon: fab fa-youtube
+            url: https://youtube.com
         # "Stay in touch" cards
         channels:
           - title: GitHub Issues & PRs
@@ -158,6 +202,16 @@ languages:
             text: How OpenMS is organized and how project decisions get made.
             linkText: Read governance
             linkUrl: /governance/
+          - title: "TEST: Mailing list for announcements and release notes"
+            icon: fas fa-envelope
+            text: "TEST: a longer text in a channel card so the cards in the row have different lengths of text and we can see whether the links still line up at the bottom."
+            linkText: "TEST: Subscribe to the mailing list"
+            linkUrl: https://openms.de
+          - title: "TEST: Forum"
+            icon: fas fa-comments
+            text: "TEST: short."
+            linkText: Visit
+            linkUrl: https://openms.de
         # Code of Conduct → "We encourage" cards
         values:
           - title: Welcoming language
@@ -175,6 +229,15 @@ languages:
           - title: Courtesy
             icon: fas fa-heart
             text: Show courtesy and respect towards other community members.
+          - title: "TEST: Patience"
+            icon: fas fa-hourglass-half
+            text: "TEST: Give people time to answer."
+          - title: "TEST: Assume good intentions and ask before judging"
+            icon: fas fa-hands-helping
+            text: "TEST: a longer value text to check that the cards in a row keep the same height and that the text wraps nicely in narrow columns."
+          - title: "TEST: Credit"
+            icon: fas fa-award
+            text: "TEST: Credit the work of others."
       fellowshipPage:
         eyebrow: Community
         headline: >-
