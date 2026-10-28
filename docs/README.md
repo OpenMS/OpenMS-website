@@ -39,7 +39,7 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | **Research Partnerships** | [Intro text](common-tasks/research-partnerships/edit-partners.md) · [Partner logos](common-tasks/research-partnerships/update-partner-logos.md) |
 | **Publications** | [Add or remove a paper](common-tasks/publications/add-or-remove-paper.md) · [Google Scholar link](common-tasks/publications/edit-google-scholar-link.md) |
 | **Leadership** | [Board of directors](common-tasks/leadership/update-board-of-directors.md) · [Executive Committee](common-tasks/leadership/update-executive-committee.md) |
-| **Contact** | [Intro text](common-tasks/contact/edit-intro-text.md) |
+| **Contact** | [Intro text](common-tasks/contact/edit-intro-text.md) · [Cards](common-tasks/contact/edit-cards.md) |
 | **Donate** | [Connect to Zeffy](common-tasks/donate/connect-zeffy.md) · [Intro text](common-tasks/donate/edit-intro-text.md) |
 | **Executive Committee Charter** | [Change the text](common-tasks/executive-committee-charter/edit-text.md) |
 | **Code of Conduct Enforcement Procedures** (Report Handling Manual) | [Change the text](common-tasks/code-of-conduct-enforcement-procedures/edit-text.md) |

@@ -21,7 +21,7 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 | The small word above the title | `eyebrow` |
 | The intro sentence | `subtitle` |
 
-The other words ("Ways to reach us", the e-mail box, Discord & GitHub, Consulting, Sponsorship and Research Partnerships) are part of the design (`layouts/partials/contact-main.html`, `contact-email-aside.html`, `contact-alternatives.html`). To change them, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
+The cards under "Ways to reach us" have their own guide: [Add or change the cards](edit-cards.md). The headings ("Ways to reach us" and the sentence under it) and the "Need a hand?" box are part of the design (`layouts/partials/contact-main.html`). To change them, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
 
 ## Step by step
 
@@ -33,5 +33,6 @@ The other words ("Ways to reach us", the e-mail box, Discord & GitHub, Consultin
 
 ## Related guides
 
+- [Add or change the cards on this page](edit-cards.md)
 - [Which files are behind this page](../../reference/file-locations.md#everything-in-the-navbar-and-the-footer-where-is-each-page)
 - Back to the [list of all tasks](../README.md)
