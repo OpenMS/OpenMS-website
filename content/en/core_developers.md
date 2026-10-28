@@ -1,5 +1,6 @@
 ---
 title: "Core Developers"
+hideShortcuts: true
 ---
 
 # Core Developers

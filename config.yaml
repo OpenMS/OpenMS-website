@@ -65,26 +65,179 @@ languages:
       newsBanner:
         enabled: true
         label: News
-        text: 'MS Analysis with OpenMS: Free Workshop at The National University of Singapore.'
+        text: 'TEST long banner: MS Analysis with OpenMS, a free three-day hands-on workshop at The National University of Singapore, with talks, tutorials and a poster session.'
         link: /news/hupo_workshop_26/
       contributePage:
         eyebrow: Community
         subtitle: >-
-          Code, docs, design, outreach, and more — pick a path that matches your skills.
+          TEST longer intro. Code, docs, design, outreach, and more — pick a path that matches your skills. This sentence is added to check how a two or three line intro looks under the page title on laptops and phones.
         links:
-          discord: https://discord.com/invite/v9tv5BxPch
-          githubDiscussions: https://github.com/OpenMS/OpenMS/discussions
-          githubIssues: https://github.com/openms/openms/issues/new/choose
-          governance: /governance/
-          websiteRepo: https://github.com/OpenMS/OpenMS-website
-          websiteIssues: https://github.com/OpenMS/OpenMS-website/issues
-          editContributePage: https://github.com/OpenMS/OpenMS-website/edit/main/content/en/contribute.md
-        social:
-          discord: https://discord.com/invite/v9tv5BxPch
-          linkedin: https://www.linkedin.com/company/openms-org
-          x: https://twitter.com/OpenMSTeam
-          bluesky: https://bsky.app/profile/openms.bsky.social
+          discord: https://discord.com/invite/v9tv5BxPch   # the "Join Discord" button at the top
         communityEmail: communitymanager@openms.de
+        # "Ways to contribute" cards, in order. Each card starts with "- title:".
+        #   featured: true  -> the card is twice as wide (use it on one card only)
+        #   badge           -> small label in the top-right corner (optional)
+        #   projects        -> round link chips;  platforms -> a row of small links
+        #   linkText + linkUrl -> one link at the bottom of the card
+        ways:
+          - title: Contribute to development
+            icon: fas fa-code
+            badge: Most common
+            featured: true
+            text: "Start small — docs, bug reports, or focused fixes. You do not need the whole codebase. Choose a project:"
+            projects:
+              - name: OpenMS-lib
+                url: /openms-lib/#for-developers
+              - name: pyOpenMS
+                url: /pyopenms/#for-developers
+              - name: pyOpenMS Viz
+                url: /pyopenms-viz/#for-developers
+              - name: OpenMS WebApps
+                url: /webapps/#for-developers
+          - title: Build from source
+            icon: fas fa-hammer
+            text: Compile the latest OpenMS with platform guides for Windows, macOS, and Linux.
+            platforms:
+              - name: Windows
+                icon: fab fa-windows
+                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_win.html
+              - name: macOS
+                icon: fab fa-apple
+                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_mac.html
+              - name: Linux
+                icon: fab fa-linux
+                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_linux.html
+          - title: Educational materials
+            icon: fas fa-book-open
+            text: Tutorials, how-tos, notebooks, and videos for the User Guide.
+            linkText: Explore OpenMS-Docs
+            linkUrl: https://github.com/OpenMS/OpenMS-docs/issues
+          - title: Graphic design
+            icon: fas fa-palette
+            text: Illustrations for docs, site imagery, and visual polish across the project.
+            linkText: Email the community team
+            linkUrl: mailto:communitymanager@openms.de
+          - title: Website development
+            icon: fas fa-globe
+            text: Fix bugs, improve layout, or add content on the website repo.
+            linkText: Browse open issues
+            linkUrl: https://github.com/OpenMS/OpenMS-website/issues
+          - title: "TEST: Translate the User Guide into other languages for researchers worldwide"
+            icon: fas fa-language
+            text: "TEST: a longer description to check that the card grows, keeps its link at the bottom and that the cards in the same row stay the same height even when one has much more text than its neighbours. Supercalifragilisticexpialidociouslylongwordwithoutanyspaces."
+            linkText: "TEST: Read the translation guidelines and get started today"
+            linkUrl: https://github.com/OpenMS/OpenMS-docs
+          - title: "TEST: Testing and QA"
+            icon: fas fa-vial
+            text: "TEST: card with no link."
+          - title: "TEST: Packaging"
+            icon: fas fa-box
+            text: "TEST: card with many platform links."
+            platforms:
+              - name: Conda
+                icon: fas fa-cube
+                url: https://anaconda.org
+              - name: Docker
+                icon: fab fa-docker
+                url: https://hub.docker.com
+              - name: Homebrew
+                icon: fas fa-beer
+                url: https://brew.sh
+              - name: Debian / Ubuntu
+                icon: fab fa-ubuntu
+                url: https://ubuntu.com
+              - name: Windows installer
+                icon: fab fa-windows
+                url: https://openms.de
+          - title: "TEST: Mentoring"
+            icon: fas fa-chalkboard-teacher
+            badge: "TEST: New"
+            text: "TEST: card with a badge and project chips."
+            projects:
+              - name: Fellowship
+                url: /fellowship/
+              - name: Developer retreat
+                url: /developer-retreat/
+        # "Outreach" links (the list on the right of the blue box).
+        #   icon: bluesky or x -> those logos; otherwise a Font Awesome name
+        outreachLinks:
+          - label: Discord
+            hint: Chat with the community
+            icon: fab fa-discord
+            url: https://discord.com/invite/v9tv5BxPch
+          - label: LinkedIn
+            hint: Follow OpenMS updates
+            icon: fab fa-linkedin-in
+            url: https://www.linkedin.com/company/openms-org
+          - label: Bluesky
+            hint: Share and amplify
+            icon: bluesky
+            url: https://bsky.app/profile/openms.bsky.social
+          - label: X
+            hint: News and announcements
+            icon: x
+            url: https://twitter.com/OpenMSTeam
+          - label: "TEST: Mastodon"
+            hint: "TEST: a much longer hint to check how the text wraps next to the icon"
+            icon: fab fa-mastodon
+            url: https://mastodon.social
+          - label: "TEST: YouTube"
+            hint: Tutorials
+            icon: fab fa-youtube
+            url: https://youtube.com
+        # "Stay in touch" cards
+        channels:
+          - title: GitHub Issues & PRs
+            icon: fab fa-github
+            text: Bug reports, feature requests, and code review — searchable and durable.
+            linkText: Open a new issue
+            linkUrl: https://github.com/openms/openms/issues/new/choose
+          - title: Discord
+            icon: fab fa-discord
+            text: Real-time help, early ideas, and day-to-day conversation with contributors.
+            linkText: Join Discord
+            linkUrl: https://discord.com/invite/v9tv5BxPch
+          - title: Governance
+            icon: fas fa-sitemap
+            text: How OpenMS is organized and how project decisions get made.
+            linkText: Read governance
+            linkUrl: /governance/
+          - title: "TEST: Mailing list for announcements and release notes"
+            icon: fas fa-envelope
+            text: "TEST: a longer text in a channel card so the cards in the row have different lengths of text and we can see whether the links still line up at the bottom."
+            linkText: "TEST: Subscribe to the mailing list"
+            linkUrl: https://openms.de
+          - title: "TEST: Forum"
+            icon: fas fa-comments
+            text: "TEST: short."
+            linkText: Visit
+            linkUrl: https://openms.de
+        # Code of Conduct → "We encourage" cards
+        values:
+          - title: Welcoming language
+            icon: fas fa-comment-dots
+            text: Use welcoming and inclusive language.
+          - title: Respect viewpoints
+            icon: fas fa-balance-scale
+            text: Be respectful of different viewpoints and experiences.
+          - title: Accept feedback
+            icon: fas fa-handshake
+            text: Gracefully accept constructive criticism.
+          - title: Community first
+            icon: fas fa-users
+            text: Focus on what is best for the community.
+          - title: Courtesy
+            icon: fas fa-heart
+            text: Show courtesy and respect towards other community members.
+          - title: "TEST: Patience"
+            icon: fas fa-hourglass-half
+            text: "TEST: Give people time to answer."
+          - title: "TEST: Assume good intentions and ask before judging"
+            icon: fas fa-hands-helping
+            text: "TEST: a longer value text to check that the cards in a row keep the same height and that the text wraps nicely in narrow columns."
+          - title: "TEST: Credit"
+            icon: fas fa-award
+            text: "TEST: Credit the work of others."
       fellowshipPage:
         eyebrow: Community
         headline: >-
@@ -153,6 +306,15 @@ languages:
             text: >-
               Design custom tools and workflows together with instructors, and
               get involved with the OpenMS community.
+          - title: TEST Highlight Four
+            text: >-
+              TEST fourth highlight, to check how the row handles more than
+              three cards.
+          - title: TEST Highlight Five with a much longer title
+            text: >-
+              TEST fifth highlight with a much longer text than the others, to
+              check that the cards keep the same height and the text wraps
+              nicely on small screens.
         pastPhoto:
           src: /images/dev_retreat_2026.jpeg
           alt: OpenMS contributors at the 2026 developer retreat in Poland
@@ -164,6 +326,10 @@ languages:
               text: March 14–21, 2027
             - icon: fas fa-map-marker-alt
               text: Resort Natura, Algarve, Portugal
+            - icon: fas fa-users
+              text: TEST about 40 participants, from new contributors to core developers
+            - icon: fas fa-euro-sign
+              text: TEST fee covers food and accommodation
           poster:
             src: /images/dev_retreat_2027_poster.png
             alt: OpenMS Developer Retreat 2027 — Algarve, Portugal
@@ -215,6 +381,21 @@ languages:
             alt: deNBI — German Network for Bioinformatics Infrastructure
             description: German Network for Bioinformatics Infrastructure
             # tier: silver
+          - name: TEST Sponsor With A Very Long Organisation Name
+            url: https://openms.de/
+            logo: /images/logos/fu-berlin.png
+            alt: TEST sponsor logo
+            description: TEST description that is much longer than the others, to check the card
+          - name: TEST Sponsor Two
+            url: https://openms.de/
+            logo: /images/logos/logo-sanger.png
+            alt: TEST sponsor two
+            description: TEST short
+          - name: TEST Sponsor Three
+            url: https://openms.de/
+            logo: /images/logos/zurich.jpeg
+            alt: TEST sponsor three
+            description: TEST third sponsor
         sponsorshipProgram:
           title: Our Sponsorship Program
           headline: With Open Science, both industry and community profit
@@ -238,23 +419,180 @@ languages:
         eyebrow: OpenMS governance
         subtitle: >-
           OpenMS combines a nonprofit corporation for legal and financial stewardship
-          with an Executive Committee that leads technical direction and community governance.
+          with an Executive Committee that leads technical direction and community governance. TEST extra sentence to check how a longer intro wraps under the page title, on laptops and on phones.
+        # Cards on /governance/. To add a card, copy a whole card (from its
+        # "- title:" or "- tag:" line down to the next one) and change the words.
+        # Icons are Font Awesome names, e.g. "fas fa-users" (fontawesome.com/icons).
+        # "Two layers of governance": numbered 01, 02... automatically.
+        layers:
+          - id: openms-inc
+            title: OpenMS Inc.
+            text: >-
+              A U.S. 501(c)(3) nonprofit that holds the project’s legal entity,
+              compliance, and financial continuity.
+            points:
+              - Board of Directors oversees fiduciary and legal duties
+              - Supports fundraising, grants, and organizational continuity
+            linkText: See board of directors
+            linkUrl: /contributors/#leadership
+          - id: executive-committee
+            title: Executive Committee
+            text: >-
+              A committee composed of core developers responsible for setting the
+              software roadmap, community policies, and day-to-day technical decisions.
+            points:
+              - Define long-term vision and ensure project sustainability
+              - Establish and maintain governance and code of conduct policies
+              - Support a healthy and welcoming open-source community
+            linkText: Learn more
+            linkUrl: /exec_committee/
+          - title: TEST Third Layer
+            text: >-
+              TEST card added by an editor, with a longer description to check
+              that three cards in a row keep the same height.
+            points:
+              - TEST first point
+              - TEST second point that is longer than the others to check wrapping
+              - TEST third point
+              - TEST fourth point
+            linkText: TEST link
+            linkUrl: /contribute/
+          - title: TEST Fourth Layer without link or points
+            text: TEST card with only a title and a text.
+        # "How Core Developers Fit In": the blue cards.
+        coreRoles:
+          - icon: fas fa-code-branch
+            tag: Review
+            title: Review and approve contributions
+          - icon: fas fa-compass
+            tag: Direction
+            title: Guide technical direction
+          - icon: fas fa-user-friends
+            tag: Mentorship
+            title: Mentor new contributors
+          - icon: fas fa-vote-yea
+            tag: Votes
+            title: Participate in governance votes
+          - icon: fas fa-book
+            tag: Docs
+            title: TEST Write and review documentation
+          - icon: fas fa-bug
+            tag: Triage
+            title: TEST Triage bug reports with a much longer title than the others
+            text: TEST optional text under the title.
+          - icon: fas fa-users
+            tag: Events
+            title: TEST Organise events
+        # "Membership": how people join and leave.
+        membership:
+          - icon: fas fa-user-plus
+            tag: Joining
+            text: New core developers are added by majority vote of the Executive Committee.
+          - icon: fas fa-user-minus
+            tag: Leaving
+            text: >-
+              Core developers may step down voluntarily or be removed for inactivity
+              or Code of Conduct violations by a two-thirds vote.
+          - icon: fas fa-pause-circle
+            tag: TEST Pausing
+            text: TEST third membership card, to check how three cards sit on the track.
+          - icon: fas fa-redo
+            tag: TEST Returning
+            text: TEST fourth card with a longer text than the others, to check that it wraps and the cards keep a similar height on phones.
+        # "Separation of Responsibilities".
+        responsibilities:
+          - icon: fas fa-landmark
+            tag: Board of Directors
+            title: Corporate
+            text: Legal entity, nonprofit compliance, and financial stewardship.
+          - icon: fas fa-code
+            tag: Executive Committee
+            title: Project
+            text: Software roadmap, contributor governance, and technical or community decisions.
+          - icon: fas fa-users
+            tag: Core developers
+            title: TEST Community
+            text: TEST third responsibility card added by an editor.
+          - icon: fas fa-hands-helping
+            tag: TEST Volunteers with a long tag
+            title: TEST Outreach
+            text: TEST fourth card with a longer text than the others, to check the grid with four cards.
       publicationsPage:
         googleScholarUrl: https://scholar.google.ca/citations?user=tQ26gxIAAAAJ&hl
-        googleScholarText: Follow us on Google Scholar
+        googleScholarText: TEST Follow all OpenMS publications and citations on Google Scholar
       contactPage:
         eyebrow: Contact
         subtitle: >-
           Whether you need help with pipelines, integrations, consulting, or joining the
-          community — reach out and we will point you to the right next step.
+          community — reach out and we will point you to the right next step. TEST extra sentence to check a longer intro on phones.
+        # "Ways to reach us" cards, in order. Each card starts with "- title:".
+        #   linkText + linkUrl -> the whole card is one link
+        #   links (text + url) -> a row of separate links instead
+        cards:
+          - title: Email us
+            icon: fas fa-envelope
+            tag: Direct
+            text: Reach the OpenMS team for website, docs, and general project questions.
+            linkText: webmaster@openms.de
+            linkUrl: mailto:webmaster@openms.de
+          - title: Discord & GitHub
+            icon: fas fa-comments
+            tag: Community
+            text: Get general help, join discussions, report issues, and connect with contributors
+            links:
+              - text: Discord
+                url: https://discord.com/invite/v9tv5BxPch
+              - text: GitHub
+                url: https://github.com/OpenMS/OpenMS/issues
+          - title: Consulting Services
+            icon: fas fa-life-ring
+            tag: Support
+            text: We offer paid scientific and technical support to get your pipeline up and running fast.
+            linkText: Learn more
+            linkUrl: /scientific-and-technical-support/
+          - title: Sponsorship Opportunities
+            icon: fas fa-hand-holding-heart
+            tag: Sponsorship
+            text: Email fundraising@openms.de for more information.
+            linkText: fundraising@openms.de
+            linkUrl: mailto:fundraising@openms.de
+          - title: Research Partnerships
+            icon: fas fa-handshake
+            tag: Partner with Us
+            text: Let's explore building that new algorithm together.
+            linkText: Research Partnerships
+            linkUrl: /research-partnerships/#partnership-form
+          - title: "TEST: Press and media enquiries for journalists and science writers"
+            icon: fas fa-newspaper
+            tag: "TEST: Press"
+            text: "TEST: a much longer text to check that the card grows and that cards in the same row keep the same height, with the link at the bottom. Supercalifragilisticexpialidociouslylongwordwithoutanyspaces."
+            linkText: "TEST: press@openms.de and the press kit for logos"
+            linkUrl: /press-kit/
+          - title: "TEST: Training"
+            icon: fas fa-chalkboard-teacher
+            tag: "TEST: Learn"
+            text: "TEST: card with no link."
+          - title: "TEST: Social media"
+            icon: fas fa-share-alt
+            tag: "TEST: Follow"
+            text: "TEST: card with several links."
+            links:
+              - text: LinkedIn
+                url: https://www.linkedin.com/company/openms-org
+              - text: Bluesky
+                url: https://bsky.app/profile/openms.bsky.social
+              - text: X
+                url: https://twitter.com/OpenMSTeam
+              - text: Mastodon
+                url: https://mastodon.social
       researchPartnershipsPage:
         eyebrow: Partner with OpenMS
-        subtitle: We’re interested in hearing your idea for a partnership.
+        subtitle: We’re interested in hearing your idea for a partnership. TEST extra sentence to check how a longer intro wraps under the title.
       sponsorUsPage:
         eyebrow: Support OpenMS
         subtitle: >-
           Sponsorship provides direct funding for software engineering, documentation,
-          community events, and the long-term sustainability of the OpenMS ecosystem.
+          community events, and the long-term sustainability of the OpenMS ecosystem. TEST extra sentence to check a longer intro.
       helpPage:
         eyebrow: Support
         subtitle: >-
@@ -366,6 +704,14 @@ languages:
               For organizations committed to shaping the future of open scientific
               infrastructure.
             showInProgram: true
+          - id: diamond
+            name: TEST Diamond
+            contribution: $500,000 / year
+            motto: TEST fifth level added by an editor
+            summary: >-
+              TEST level with a longer summary, to check how five level cards
+              sit in a row and wrap on smaller screens.
+            showInProgram: true
         # ── Sponsorship Benefits comparison ──────────────────────────────────────
         # Rendered as an interactive breakdown under the tier cards: visitors click a
         # level (Bronze/Silver/Gold/Platinum) to reveal that tier's benefits below.
@@ -388,6 +734,8 @@ languages:
             platinum:
               - 3 free registration passes
               - Opportunity to host a technical session, workshop, or case study presentation
+            diamond:
+              - TEST included, with a longer line of text
           - category: Logo placement
             bronze:
               - Website
@@ -397,6 +745,8 @@ languages:
               - Website & presentations
             platinum:
               - Prominent placement on website, presentations & social media
+            diamond:
+              - TEST included, with a longer line of text
           - category: Named recognition
             bronze:
               - Sponsorship listings, community communications
@@ -406,27 +756,54 @@ languages:
               - Sponsorship listings, community communications, annual reports
             platinum:
               - Sponsorship listings, announcements & strategic partnership recognition on website & social media
+            diamond:
+              - TEST included, with a longer line of text
           - category: Dedicated engagement meeting
             bronze: []
             silver: []
             gold: []
             platinum: ["✓"]
+            diamond:
+              - TEST included, with a longer line of text
           - category: Sponsorship opportunity for roadmap and executive initiatives
             bronze: []
             silver: ["✓"]
             gold: ["✓"]
             platinum: ["✓"]
+            diamond:
+              - TEST included, with a longer line of text
           - category: Permission to display OpenMS supporter badge
             bronze: ["✓"]
             silver: ["✓"]
             gold: ["✓"]
             platinum: ["✓"]
+            diamond:
+              - TEST included, with a longer line of text
           - category: Tax-deductible*
             bronze: ["✓"]
             silver: ["✓"]
             gold: ["✓"]
             platinum: ["✓"]
+            diamond:
+              - TEST included, with a longer line of text
+          - category: TEST New benefit row with a longer name than the others
+            bronze: []
+            silver: []
+            gold: ["✓"]
+            platinum: ["✓"]
+            diamond:
+              - TEST first line
+              - TEST second line
       universityPartners:
+        - name: TEST Partner Two
+          logo: /images/logos/emblebi.png
+          url: https://openms.de/
+        - name: TEST Partner Three
+          logo: /images/logos/toronto.jpeg
+          url: https://openms.de/
+        - name: TEST Partner
+          logo: /images/logos/fu-berlin.png
+          url: https://openms.de/
         - name: University of Tübingen
           logo: /images/logos/logo-uni-tuebingen.png
           url: https://kohlbacherlab.org/
@@ -525,6 +902,11 @@ languages:
             icon: people
             label: Contributors
             description: Developers, researchers, and community members advancing OpenMS worldwide.
+          - value: 200
+            suffix: "+"
+            icon: calendar
+            label: TEST Tools
+            description: TEST stat card with a longer description, to check that four stats still line up and wrap nicely on phones.
 
       communitySection:
         eyebrow: Community
@@ -662,6 +1044,12 @@ languages:
           - title: TOPP pipeline
             tag: 200+ tools
             text: Ready-made command-line utilities for proteomics and metabolomics analysis.
+          - title: TEST Feature Five
+            tag: TEST · Tag
+            text: TEST card. A fifth feature to check how the grid handles an odd number of cards.
+          - title: TEST Feature Six with a much longer title
+            tag: Long tag · Two · Three
+            text: TEST card with a much longer text than the others, to check that the cards stay the same height and the text wraps without overflowing the card on small screens.
         note: >-
           Our community is committed to being open, inclusive, and welcoming.
           Read the [OpenMS Code of Conduct](/code-of-conduct) for guidance on
@@ -682,6 +1070,14 @@ languages:
               researchers and developers
           - title: Built for scale
             text: High performance and optimized for scale
+          - title: TEST Highlight Five
+            text: TEST item with a longer line of text to see how it wraps
+          - title: TEST Highlight Six with a longer title
+            text: TEST
+          - title: TEST Highlight Seven
+            text: TEST seventh highlight
+          - title: TEST Highlight Eight
+            text: TEST eighth highlight, to fill a second full row
 
       openmsLibTopp:
         eyebrow: TOPP Tools
@@ -701,6 +1097,14 @@ languages:
           - title: Ongoing coverage
             icon: fas fa-layer-group
             text: 200+ modular tools for every stage of the mass spectrometry pipeline, with docs and community support.
+          - title: TEST Feature Four
+            icon: fas fa-flask
+            text: TEST feature with a link, to check that a fourth item lines up with the others.
+            linkText: TEST link
+            linkUrl: https://openms.de/
+          - title: TEST Feature Five with a much longer title than the others
+            icon: fas fa-vial
+            text: TEST feature with a much longer text than the others, to check that it wraps nicely beside the picture and does not push the layout out of shape on small screens.
         ctaText: Explore TOPP tools
         ctaUrl: https://archive.openms.de/openms/Documentation/release/latest/html/TOPP_documentation.html
 
@@ -740,6 +1144,31 @@ languages:
             text: Full C++ class and method reference for OpenMS-lib.
             url: https://archive.openms.de/openms/Documentation/release/latest/
             linkText: View reference
+          - title: TEST Card Seven
+            tag: TEST
+            icon: fas fa-flask
+            text: TEST card to check how the grid handles one more card.
+            url: https://openms.de/
+            linkText: TEST link
+          - title: TEST Card Eight with a much longer title
+            tag: Long TEST tag
+            icon: fas fa-vial
+            text: TEST card with a much longer text than the others, to check that cards in the same row keep the same height and the link stays at the bottom.
+            url: https://openms.de/
+            linkText: TEST link with longer text
+          - title: TEST Card Nine (featured)
+            tag: TEST
+            icon: fas fa-star
+            text: TEST card with featured set to true, to check the highlighted style on a later card.
+            url: https://openms.de/
+            linkText: TEST link
+            featured: true
+          - title: TEST Card Ten
+            tag: TEST
+            icon: fas fa-cube
+            text: TEST card to complete a second row of five.
+            url: https://openms.de/
+            linkText: TEST link
           - title: Need help?
             type: online
             text: Chat with the community on Discord, or open a GitHub issue for bugs and feature requests.
@@ -752,6 +1181,10 @@ languages:
                 icon: fab fa-github
                 text: Bugs and feature requests
                 url: https://github.com/OpenMS/OpenMS/issues/new/choose
+              - name: TEST third button
+                icon: fas fa-envelope
+                text: TEST
+                url: https://openms.de/contact/
 
       openmsLibDevelopers:
         eyebrow: For Developers
@@ -847,7 +1280,56 @@ languages:
                 url: https://github.com/OpenMS/OpenMS/pulls
               - name: How to review PRs
                 icon: fas fa-book-open
-                url: https://github.com/ParadiseSS13/Paradise/discussions/19410
+                url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
+          - title: TEST Box One
+            tag: TEST
+            icon: fas fa-flask
+            subtitle: TEST box with a short subtitle.
+            hoverText: TEST hover text for the first test box.
+            url: https://openms.de/
+            linkText: TEST link
+          - title: TEST Box Two with a much longer title than the rest
+            tag: Long TEST tag
+            icon: fas fa-vial
+            subtitle: TEST box with a much longer subtitle, to check that the boxes keep the same height and nothing overflows.
+            hoverText: TEST hover text that is quite a bit longer than the others, to check that it still fits inside the box when you hover over it on a laptop.
+            url: https://openms.de/
+            linkText: TEST link with longer text
+          - title: TEST Featured Box
+            group: TEST new group
+            featured: true
+            tag: TEST
+            icon: fas fa-star
+            subtitle: TEST featured box that starts a new group.
+            hoverText: TEST hover text for the featured box.
+            url: https://openms.de/
+            linkText: TEST button
+          - title: TEST Links Box
+            type: links
+            tag: TEST
+            icon: fas fa-link
+            subtitle: TEST box with four links in a row.
+            hoverText: TEST hover text for the links box.
+            platforms:
+              - name: TEST One
+                icon: fab fa-github
+                url: https://github.com/OpenMS/OpenMS
+              - name: TEST Two
+                icon: fas fa-book
+                url: https://openms.de/
+              - name: TEST Three with longer name
+                icon: fab fa-discord
+                url: https://openms.de/
+              - name: TEST Four
+                icon: fas fa-envelope
+                url: https://openms.de/contact/
+          - title: TEST Box Five
+            tag: TEST
+            icon: fas fa-cube
+            subtitle: TEST plain box in the new group.
+            hoverText: TEST hover text.
+            url: https://openms.de/
+            linkText: TEST link
 
       pyopenmsPage:
         highlights:
@@ -863,6 +1345,10 @@ languages:
               text: Run in scripts or Jupyter notebooks
             - title: Scientific stack
               text: Seamless integration with the scientific Python stack
+            - title: TEST Highlight A
+              text: TEST extra highlight
+            - title: TEST Highlight B with a longer title
+              text: TEST second extra highlight with a longer text to see the wrap
 
         gettingStarted:
           eyebrow: Get started
@@ -912,6 +1398,24 @@ languages:
                   icon: fab fa-github
                   text: Bugs and feature requests
                   url: https://github.com/OpenMS/OpenMS/issues/new/choose
+            - title: TEST Card A
+              tag: TEST
+              icon: fas fa-flask
+              text: TEST card to check one more card in the grid.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Card B with a much longer title
+              tag: TEST
+              icon: fas fa-vial
+              text: TEST card with a much longer text than the others, to check the cards in a row keep the same height and nothing overflows.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Card C
+              tag: TEST
+              icon: fas fa-cube
+              text: TEST third extra card.
+              url: https://openms.de/
+              linkText: TEST link
 
         developers:
           eyebrow: For Developers
@@ -972,7 +1476,34 @@ languages:
                   url: https://github.com/OpenMS/OpenMS/pulls
                 - name: How to review PRs
                   icon: fas fa-book-open
-                  url: https://github.com/ParadiseSS13/Paradise/discussions/19410
+                  url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
+            - title: TEST Box A
+              tag: TEST
+              icon: fas fa-flask
+              subtitle: TEST plain box with a short subtitle.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Box B with a much longer title than the rest
+              tag: TEST
+              icon: fas fa-vial
+              subtitle: TEST box with a much longer subtitle, to check the boxes keep the same height and nothing overflows.
+              url: https://openms.de/
+              linkText: TEST link with longer text
+            - title: TEST Links Box
+              type: links
+              tag: TEST
+              icon: fas fa-link
+              subtitle: TEST box with three links.
+              platforms:
+                - name: TEST One
+                  icon: fab fa-github
+                  url: https://github.com/OpenMS/OpenMS
+                - name: TEST Two
+                  icon: fas fa-book
+                  url: https://openms.de/
+                - name: TEST Three with longer name
+                  icon: fas fa-envelope
+                  url: https://openms.de/contact/
 
 
       pyopenmsVizPage:
@@ -989,6 +1520,10 @@ languages:
               text: Matplotlib, Bokeh, and Plotly
             - title: One-line API
               text: Publication-ready figures from a single call
+            - title: TEST Highlight A
+              text: TEST extra highlight
+            - title: TEST Highlight B with a longer title
+              text: TEST second extra highlight with a longer text to see the wrap
 
         gettingStarted:
           eyebrow: Get started
@@ -1038,6 +1573,24 @@ languages:
                   icon: fab fa-github
                   text: Bugs and feature requests
                   url: https://github.com/OpenMS/pyopenms_viz/issues/new
+            - title: TEST Card A
+              tag: TEST
+              icon: fas fa-flask
+              text: TEST card to check one more card in the grid.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Card B with a much longer title
+              tag: TEST
+              icon: fas fa-vial
+              text: TEST card with a much longer text than the others, to check the cards in a row keep the same height and nothing overflows.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Card C
+              tag: TEST
+              icon: fas fa-cube
+              text: TEST third extra card.
+              url: https://openms.de/
+              linkText: TEST link
 
         developers:
           eyebrow: For Developers
@@ -1089,7 +1642,34 @@ languages:
                   url: https://github.com/OpenMS/pyopenms_viz/pulls
                 - name: How to review PRs
                   icon: fas fa-book-open
-                  url: https://github.com/ParadiseSS13/Paradise/discussions/19410
+                  url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
+            - title: TEST Box A
+              tag: TEST
+              icon: fas fa-flask
+              subtitle: TEST plain box with a short subtitle.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Box B with a much longer title than the rest
+              tag: TEST
+              icon: fas fa-vial
+              subtitle: TEST box with a much longer subtitle, to check the boxes keep the same height and nothing overflows.
+              url: https://openms.de/
+              linkText: TEST link with longer text
+            - title: TEST Links Box
+              type: links
+              tag: TEST
+              icon: fas fa-link
+              subtitle: TEST box with three links.
+              platforms:
+                - name: TEST One
+                  icon: fab fa-github
+                  url: https://github.com/OpenMS/OpenMS
+                - name: TEST Two
+                  icon: fas fa-book
+                  url: https://openms.de/
+                - name: TEST Three with longer name
+                  icon: fas fa-envelope
+                  url: https://openms.de/contact/
 
       webappsPage:
         highlights:
@@ -1107,6 +1687,10 @@ languages:
               text: Customizable visualizations and results display
             - title: Shareable workspaces
               text: Workspaces for user data with unique shareable IDs
+            - title: TEST Highlight A
+              text: TEST extra highlight
+            - title: TEST Highlight B with a longer title
+              text: TEST second extra highlight with a longer text to see the wrap
 
         usingTemplate:
           eyebrow: Get started
@@ -1156,6 +1740,24 @@ languages:
                   icon: fab fa-github
                   text: Bugs and feature requests
                   url: https://github.com/OpenMS/streamlit-template/issues/new
+            - title: TEST Card A
+              tag: TEST
+              icon: fas fa-flask
+              text: TEST card to check one more card in the grid.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Card B with a much longer title
+              tag: TEST
+              icon: fas fa-vial
+              text: TEST card with a much longer text than the others, to check the cards in a row keep the same height and nothing overflows.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Card C
+              tag: TEST
+              icon: fas fa-cube
+              text: TEST third extra card.
+              url: https://openms.de/
+              linkText: TEST link
 
         examples:
           eyebrow: Examples
@@ -1174,6 +1776,12 @@ languages:
               logo: /images/webapp/logo/openDDA.svg
               logoSize: large
               url: http://opendda.webapps.openms.org/
+            - name: TEST App A
+              logo: /images/webapp/logo/nuxl.png
+              url: https://openms.de/
+            - name: TEST App B
+              logo: /images/webapp/logo/mhcquant.svg
+              url: https://openms.de/
 
         developers:
           eyebrow: For Developers
@@ -1225,7 +1833,34 @@ languages:
                   url: https://github.com/OpenMS/streamlit-template/pulls
                 - name: How to review PRs
                   icon: fas fa-book-open
-                  url: https://github.com/ParadiseSS13/Paradise/discussions/19410
+                  url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
+            - title: TEST Box A
+              tag: TEST
+              icon: fas fa-flask
+              subtitle: TEST plain box with a short subtitle.
+              url: https://openms.de/
+              linkText: TEST link
+            - title: TEST Box B with a much longer title than the rest
+              tag: TEST
+              icon: fas fa-vial
+              subtitle: TEST box with a much longer subtitle, to check the boxes keep the same height and nothing overflows.
+              url: https://openms.de/
+              linkText: TEST link with longer text
+            - title: TEST Links Box
+              type: links
+              tag: TEST
+              icon: fas fa-link
+              subtitle: TEST box with three links.
+              platforms:
+                - name: TEST One
+                  icon: fab fa-github
+                  url: https://github.com/OpenMS/OpenMS
+                - name: TEST Two
+                  icon: fas fa-book
+                  url: https://openms.de/
+                - name: TEST Three with longer name
+                  icon: fas fa-envelope
+                  url: https://openms.de/contact/
 
       webappsSection:
         eyebrow: Community tools
@@ -1311,7 +1946,20 @@ languages:
               url: https://github.com/PyProphet/pyprophet
             - type: pypi
               url: https://pypi.org/project/pyprophet/
-
+        - name: TEST Pyprophet
+          logo: /images/webapp/logo/affiliate/pyprophet.png
+          logoSize: large
+          description: Semi-supervised learning and scoring of OpenSWATH results
+          maintainers: Justin Sing
+          links:
+            - type: github
+              url: https://github.com/PyProphet/pyprophet
+            - type: pypi
+              url: https://pypi.org/project/pyprophet/
+            - type: pypi
+              url: https://pypi.org/project/pyprophet/
+            - type: pypi
+              url: https://pypi.org/project/pyprophet/
       archivedSection:
         eyebrow: Legacy
         title: Archived Apps
@@ -1349,8 +1997,49 @@ languages:
               url: https://nf-co.re/diaproteomics/1.2.4/
             - type: github
               url: https://github.com/nf-core/diaproteomics
+        - name: test-archived-one
+          displayName: TEST Archived One
+          tag: Web app
+          logo: /images/webapp/logo/template.svg
+          logoSize: large
+          description: >-
+            TEST card with a single link, to check that one button shows
+            filled in blue.
+          links:
+            - type: github
+              url: https://github.com/OpenMS/OpenMS
+        - name: test-archived-two
+          displayName: TEST Archived Two
+          tag: Web app
+          logo: /images/webapp/logo/flashapp.png
+          logoSize: large
+          description: >-
+            TEST card with three links. GitHub is listed first here, but it
+            should still show last; the first button is blue, the others outlined.
+          links:
+            - type: github
+              url: https://github.com/OpenMS/OpenMS
+            - type: homepage
+              url: https://openms.de/
+            - type: demo
+              url: https://openms.de/featured-apps/
 
       webapps:
+        - name: TEST WebApp
+          url: https://openms.de/
+          logo: /images/webapp/logo/template.svg
+          logoSize: large
+          description: >-
+            TEST app card with a long description, to check that the home page
+            app cards keep the same height and the buttons line up at the bottom.
+          maintainers: Test Person, Another Person
+          links:
+            - type: github
+              url: https://github.com/OpenMS/OpenMS
+            - type: homepage
+              url: https://openms.de/
+            - type: demo
+              url: https://openms.de/webapps/
         - name: FLASH App
           url: http://flashapp.webapps.openms.org/
           logo: /images/webapp/logo/flashapp.png
@@ -1435,8 +2124,12 @@ languages:
           description: Web-based analysis pipeline for immunopeptidomics
           maintainers: Jonas Scheid
           links:
+            - type: homepage
+              url: https://nf-co.re/mhcquant/latest
             - type: demo
               url: https://abi-services.cs.uni-tuebingen.de/mhcquant/
+            - type: github
+              url: https://github.com/nf-core/mhcquant
 
       ecosystemSection:
         eyebrow: Developer tools
@@ -1480,6 +2173,15 @@ languages:
             description: >-
               Visualization library for mass spectrometry data. Create interactive
               and static plots directly from Python dataframes.
+          - name: TEST Ecosystem Tool
+            url: /webapps/
+            tag: TEST
+            accent: webapps
+            size: standard
+            icon: /images/webapp/logo/template.svg
+            description: >-
+              TEST card added to the Ecosystem list, to check the grid with five
+              items and a standard size.
 
       section5: false
 

@@ -71,6 +71,21 @@ In cases not involving clear severe and obvious breaches of this Code of Conduct
 
 The Committee will respond to any report as soon as possible, and at most within 72 hours.
 
+## TEST Part 3 - A new section added by an editor
+
+TEST paragraph with **bold**, *italic* and a [link](https://openms.de/contact/).
+
+### TEST Part 3.1 - A smaller title
+
+- TEST first point
+- TEST second point that is much longer, to check that it wraps onto a second line on a phone without breaking the layout
+  - TEST nested point
+
+1. TEST numbered step one
+2. TEST numbered step two
+
+> TEST quote, to check how block quotes look on this page.
+
 ## About this Document
 
 This document is adapted from guidelines written by the [The Carpentries Project](https://github.com/carpentries/handbook/blob/master/topic_folders/policies/code-of-conduct.md), which was itself based on the [Django Project](https://www.djangoproject.com/conduct/enforcement-manual/) and [Ada Initiative](http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Responding_to_reports) template and the [PyCon 2013 Procedure for Handling Harassment Incidents](https://us.pycon.org/2013/about/code-of-conduct/harassment-incidents/).

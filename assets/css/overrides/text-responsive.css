@@ -1,0 +1,94 @@
+/* ---------- Page text fits every screen ----------
+   In page files and news articles, long words that cannot break (web
+   addresses, code names, file names) and wide tables made the page scroll
+   sideways on phones. Inside these text areas:
+   - long words, links and code break onto the next line when needed
+     (except in tables);
+   - a wide table scrolls sideways inside its own box, not the whole page;
+   - pictures and code blocks are never wider than the text. */
+:is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) :is(p, li, dd, dt, blockquote, figcaption, h1, h2, h3, h4, h5, h6, a, code) {
+  overflow-wrap: anywhere;
+}
+
+/* In tables, keep words whole (breaking them would squeeze every column to a
+   letter); a wide table scrolls inside its box instead (below). */
+:is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) table :is(td, th, a, code) {
+  overflow-wrap: normal;
+}
+
+:is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+:is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) :is(img, video, iframe) {
+  max-width: 100%;
+  height: auto;
+}
+
+:is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Safety net: nothing inside these text areas may make the page scroll
+   sideways (clip hides it without creating a scrollbar; tables and code
+   blocks above already scroll inside their own box). */
+:is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) {
+  overflow-x: clip;
+}
+
+/* ---------- Page titles and intros: no stray punctuation, no hyphens ----------
+   Older rules let hero titles break between any two letters
+   (overflow-wrap: anywhere) and hyphenated titles and intros on phones
+   (hyphens: auto). On /governance/ at 375px the full stop of "guided by
+   community." dropped onto a line of its own, and the intro read
+   "direc-tion", "un-der". Titles now only split a word that cannot fit on a
+   line by itself (so punctuation stays with its word), and headings and the
+   hero intro are not hyphenated. Body text is unchanged. */
+:is(html, #title-wrap) body .openms-lib-hero__title,
+:is(html, #title-wrap) body .openms-lib-hero__title .openms-lib-hero__title-line,
+:is(html, #title-wrap) body .openms-lib-hero__title .openms-lib-hero__accent {
+  overflow-wrap: break-word !important;
+}
+
+/* A coloured word inside a title line follows that line's wrapping, so no
+   line break can fall between it and the punctuation after it. */
+:is(html, #title-wrap) body .openms-lib-hero__title .openms-lib-hero__title-line .openms-lib-hero__accent {
+  white-space: inherit !important;
+}
+
+:is(html, #title-wrap) body .openms-lib-page :is(h1, h2, h3, .openms-lib-hero__lead, .openms-lib-hero__lead *) {
+  hyphens: manual !important;
+  -webkit-hyphens: manual !important;
+}
+
+/* Title lines set never to wrap (Research Partnerships, Governance,
+   Developer Retreat) ran past their box where the line was wider than the
+   page, e.g. "RESEARCH PARTNERSHIPS" at 729px (505px in a 473px box). A
+   title line now wraps at a space when it does not fit (balanced); where it
+   fits it stays on one line, as designed. Words are not split (see above). */
+:is(html, #title-wrap) body .openms-lib-hero__title .openms-lib-hero__title-line.openms-lib-hero__title-line {
+  white-space: normal !important;
+  text-wrap: balance;
+}
+
+/* ---------- Button labels never run out of their button ----------
+   Button labels were set never to wrap, so a long label (an editor's
+   "Follow all OpenMS publications and citations on Google Scholar" on
+   Publications) ran out of the button on both sides on phones. A label now
+   wraps onto a second line, centred, only when the button cannot get wider;
+   buttons whose label fits are unchanged. Two IDs in :is() so this outranks
+   per-section rules that force one line (e.g. #cite-openms). */
+:is(html, #btn-wrap) body :is(*, #btn-wrap-2) .openms-lib-btn {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+:is(html, #btn-wrap) body :is(*, #btn-wrap-2) .openms-lib-btn .openms-lib-btn__label {
+  white-space: normal !important;
+  min-width: 0;
+  text-align: center;
+}
