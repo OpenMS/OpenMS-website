@@ -28,7 +28,7 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | **Learn** (menu links to other websites) | [Change the Learn links](common-tasks/learn/edit-learn-links.md) |
 | **Calendar** | [Add or change an event](common-tasks/calendar/add-or-change-event.md) |
 | **News** | [Add a news article](common-tasks/news/add-news-post.md) |
-| **Getting Involved** | [Intro and links](common-tasks/getting-involved/edit-intro-and-links.md) |
+| **Getting Involved** | [Intro and links](common-tasks/getting-involved/edit-intro-and-links.md) · [Cards](common-tasks/getting-involved/edit-cards.md) |
 | **OpenMS Fellowship** | [Text and labels](common-tasks/fellowship/update-fellowship.md) |
 | **Annual Developer Retreat** | [Update the page (once a year)](common-tasks/developer-retreat/update-retreat.md) |
 | **Code of Conduct** | [Change the text](common-tasks/code-of-conduct/edit-text.md) · [Report Handling Manual](common-tasks/code-of-conduct-enforcement-procedures/edit-text.md) |

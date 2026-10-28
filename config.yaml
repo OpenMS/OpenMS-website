@@ -72,19 +72,109 @@ languages:
         subtitle: >-
           Code, docs, design, outreach, and more — pick a path that matches your skills.
         links:
-          discord: https://discord.com/invite/v9tv5BxPch
-          githubDiscussions: https://github.com/OpenMS/OpenMS/discussions
-          githubIssues: https://github.com/openms/openms/issues/new/choose
-          governance: /governance/
-          websiteRepo: https://github.com/OpenMS/OpenMS-website
-          websiteIssues: https://github.com/OpenMS/OpenMS-website/issues
-          editContributePage: https://github.com/OpenMS/OpenMS-website/edit/main/content/en/contribute.md
-        social:
-          discord: https://discord.com/invite/v9tv5BxPch
-          linkedin: https://www.linkedin.com/company/openms-org
-          x: https://twitter.com/OpenMSTeam
-          bluesky: https://bsky.app/profile/openms.bsky.social
+          discord: https://discord.com/invite/v9tv5BxPch   # the "Join Discord" button at the top
         communityEmail: communitymanager@openms.de
+        # "Ways to contribute" cards, in order. Each card starts with "- title:".
+        #   featured: true  -> the card is twice as wide (use it on one card only)
+        #   badge           -> small label in the top-right corner (optional)
+        #   projects        -> round link chips;  platforms -> a row of small links
+        #   linkText + linkUrl -> one link at the bottom of the card
+        ways:
+          - title: Contribute to development
+            icon: fas fa-code
+            badge: Most common
+            featured: true
+            text: "Start small — docs, bug reports, or focused fixes. You do not need the whole codebase. Choose a project:"
+            projects:
+              - name: OpenMS-lib
+                url: /openms-lib/#for-developers
+              - name: pyOpenMS
+                url: /pyopenms/#for-developers
+              - name: pyOpenMS Viz
+                url: /pyopenms-viz/#for-developers
+              - name: OpenMS WebApps
+                url: /webapps/#for-developers
+          - title: Build from source
+            icon: fas fa-hammer
+            text: Compile the latest OpenMS with platform guides for Windows, macOS, and Linux.
+            platforms:
+              - name: Windows
+                icon: fab fa-windows
+                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_win.html
+              - name: macOS
+                icon: fab fa-apple
+                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_mac.html
+              - name: Linux
+                icon: fab fa-linux
+                url: https://archive.openms.de/openms/Documentation/release/latest/html/install_linux.html
+          - title: Educational materials
+            icon: fas fa-book-open
+            text: Tutorials, how-tos, notebooks, and videos for the User Guide.
+            linkText: Explore OpenMS-Docs
+            linkUrl: https://github.com/OpenMS/OpenMS-docs/issues
+          - title: Graphic design
+            icon: fas fa-palette
+            text: Illustrations for docs, site imagery, and visual polish across the project.
+            linkText: Email the community team
+            linkUrl: mailto:communitymanager@openms.de
+          - title: Website development
+            icon: fas fa-globe
+            text: Fix bugs, improve layout, or add content on the website repo.
+            linkText: Browse open issues
+            linkUrl: https://github.com/OpenMS/OpenMS-website/issues
+        # "Outreach" links (the list on the right of the blue box).
+        #   icon: bluesky or x -> those logos; otherwise a Font Awesome name
+        outreachLinks:
+          - label: Discord
+            hint: Chat with the community
+            icon: fab fa-discord
+            url: https://discord.com/invite/v9tv5BxPch
+          - label: LinkedIn
+            hint: Follow OpenMS updates
+            icon: fab fa-linkedin-in
+            url: https://www.linkedin.com/company/openms-org
+          - label: Bluesky
+            hint: Share and amplify
+            icon: bluesky
+            url: https://bsky.app/profile/openms.bsky.social
+          - label: X
+            hint: News and announcements
+            icon: x
+            url: https://twitter.com/OpenMSTeam
+        # "Stay in touch" cards
+        channels:
+          - title: GitHub Issues & PRs
+            icon: fab fa-github
+            text: Bug reports, feature requests, and code review — searchable and durable.
+            linkText: Open a new issue
+            linkUrl: https://github.com/openms/openms/issues/new/choose
+          - title: Discord
+            icon: fab fa-discord
+            text: Real-time help, early ideas, and day-to-day conversation with contributors.
+            linkText: Join Discord
+            linkUrl: https://discord.com/invite/v9tv5BxPch
+          - title: Governance
+            icon: fas fa-sitemap
+            text: How OpenMS is organized and how project decisions get made.
+            linkText: Read governance
+            linkUrl: /governance/
+        # Code of Conduct → "We encourage" cards
+        values:
+          - title: Welcoming language
+            icon: fas fa-comment-dots
+            text: Use welcoming and inclusive language.
+          - title: Respect viewpoints
+            icon: fas fa-balance-scale
+            text: Be respectful of different viewpoints and experiences.
+          - title: Accept feedback
+            icon: fas fa-handshake
+            text: Gracefully accept constructive criticism.
+          - title: Community first
+            icon: fas fa-users
+            text: Focus on what is best for the community.
+          - title: Courtesy
+            icon: fas fa-heart
+            text: Show courtesy and respect towards other community members.
       fellowshipPage:
         eyebrow: Community
         headline: >-

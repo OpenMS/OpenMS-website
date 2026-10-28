@@ -29,7 +29,7 @@ The menu itself (labels, order, links) is **`config.yaml` → `navbar`**. Its de
 | **Learn** → six links (Liquid Chromatography, Mass Spectrometry, Identification and Quantification, Background, Glossary, Dave Tabb's Tutorials) | external websites | *no page on this site* | – | `config.yaml` → `navbar` (only the label and address) | – |
 | **Community** → Calendar | `/calendar/` | `content/en/calendar.md` | `community-calendar-main.html` | the OpenMS Google Calendar (events, copied into `data/community_events.yaml` by a robot), `config.yaml` → `calendarSection` | `overrides/calendar.css` |
 | Community → News | `/news/` | `content/en/news/_index.md` (the list) and one file per article in `content/en/news/` | `layouts/news/section.html` and `news-single-main.html` | each article's file; `config.yaml` → `newsSection` | `overrides/news.css` |
-| Community → **Getting Involved** | `/contribute/` | `content/en/contribute.md` | `contribute-main.html` | `config.yaml` → `contributePage` (intro and links); the rest is written in the design file | `overrides/contribute.css` |
+| Community → **Getting Involved** | `/contribute/` | `content/en/contribute.md` | `contribute-main.html` | `config.yaml` → `contributePage` (intro, all the cards and the outreach links); the headings and the Funding, Outreach and Code of Conduct texts are written in the design file | `overrides/contribute.css` |
 | Community → OpenMS Fellowship | `/fellowship/` | `content/en/fellowship.md` | `fellowship-main.html` (form: `fellowship-form-embed.html`) | `config.yaml` → `fellowshipPage` | `overrides/fellowship.css` |
 | Community → Annual Developer Retreat | `/developer-retreat/` | `content/en/developer-retreat.md` | `developer-retreat-main.html` | `config.yaml` → `developerRetreatPage` | `overrides/developer-retreat.css` |
 | Community → Code of Conduct | `/code-of-conduct/` | `content/en/code-of-conduct.md` | `code-of-conduct-main.html` | the page file | `overrides/code-of-conduct.css` and `coc-charter.css` |
@@ -65,7 +65,7 @@ The footer's columns, links and social icons are **`config.yaml` → `footer`** 
 - Its address is `/contribute/` (the menu label and the address differ).
 - The page file is `content/en/contribute.md` (only the title and a few settings).
 - The design is `layouts/partials/contribute-main.html`.
-- The intro text and links are in `config.yaml` under `contributePage`.
+- The intro text, the cards (`ways`, `channels`, `values`) and the outreach links (`outreachLinks`) are in `config.yaml` under `contributePage`.
 - The look is in `assets/css/overrides/contribute.css`.
 
 Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/` (linked from Governance), and `/help/` (linked from Contact). The unused pages `/help-request/`, `/jobs/`, `/getting-started/develop-your-own-openms-tools/` and `/keyfeatures/…` are removed by PR #51; their addresses redirect to other pages. Folders and pictures the site does not use are listed in [Archive folders](archive-folders.md). The home page is `layouts/index.html` with its text in `config.yaml` (see [Edit the home page](../common-tasks/home-page/README.md)).

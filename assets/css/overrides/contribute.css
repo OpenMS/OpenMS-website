@@ -501,3 +501,109 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
     margin-bottom: 0 !important;
   }
 }
+
+/* ---------- Any number of cards (the lists are in config.yaml → contributePage) ----------
+   The grids above were drawn for exactly five / three / five cards. These rules
+   keep the same look with more or fewer cards:
+   - Ways to contribute: rows of 3 (2 below 901px, 1 below 621px); the featured
+     card is two columns wide; a card alone in the last row is centred.
+   - Stay in touch and We encourage: rows of 3; the cards of the last row share
+     its width (5 cards = 3 + 2 wider ones, as before).
+   - The link of a channel card sits at the bottom, level with its neighbours.
+   - A very long word breaks instead of running out of the card. */
+:is(html, #ways-any) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track.contribute-track {
+  --ways-cols: 3;
+  --ways-gap: var(--pro-card-gap, 1.25rem);
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  gap: var(--ways-gap) !important;
+}
+
+:is(html, #ways-any) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item.contribute-track__item {
+  --ways-col: calc((100% - (var(--ways-cols) - 1) * var(--ways-gap)) / var(--ways-cols));
+  flex: 0 0 var(--ways-col) !important;
+  max-width: var(--ways-col) !important;
+  height: auto !important;
+}
+
+:is(html, #ways-any) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item--wide.contribute-track__item--wide {
+  flex-basis: calc(2 * var(--ways-col) + var(--ways-gap)) !important;
+  max-width: calc(2 * var(--ways-col) + var(--ways-gap)) !important;
+}
+
+@media (max-width: 900px) {
+  :is(html, #ways-any) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track.contribute-track {
+    --ways-cols: 2;
+  }
+  :is(html, #ways-any) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item--wide.contribute-track__item--wide {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 620px) {
+  :is(html, #ways-any) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track.contribute-track {
+    --ways-cols: 1;
+  }
+}
+
+/* We encourage */
+:is(html, #values-any) body .openms-lib-page--contribute .coc-values.coc-values {
+  --values-cols: 3;
+  --values-gap: var(--pro-card-gap, 1.25rem);
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: var(--values-gap) !important;
+}
+
+:is(html, #values-any) body .openms-lib-page--contribute .coc-values .coc-value.coc-value {
+  flex: 1 1 calc((100% - (var(--values-cols) - 1) * var(--values-gap)) / var(--values-cols)) !important;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  :is(html, #values-any) body .openms-lib-page--contribute .coc-values.coc-values {
+    --values-cols: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  :is(html, #values-any) body .openms-lib-page--contribute .coc-values.coc-values {
+    --values-cols: 1;
+  }
+}
+
+/* Stay in touch (one card per row below 901px, as before) */
+@media (min-width: 901px) {
+  :is(html, #channels-any) body .openms-lib-page--contribute .contribute-channels__strip.contribute-channels__strip {
+    --channels-gap: var(--pro-card-gap, 1.25rem);
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--channels-gap) !important;
+  }
+
+  :is(html, #channels-any) body .openms-lib-page--contribute .contribute-channels__strip .contribute-channel.contribute-channel {
+    flex: 1 1 calc((100% - 2 * var(--channels-gap)) / 3) !important;
+    min-width: 0;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+}
+
+@media (min-width: 768px) {
+  /* the empty last row takes the spare height, and the link sits in it */
+  :is(html, #channels-any) body .openms-lib-page--contribute .contribute-channel.contribute-channel:has(> .contribute-channel__icon) {
+    grid-template-rows: repeat(5, auto) minmax(0, 1fr) !important;
+  }
+
+  :is(html, #channels-any) body .openms-lib-page--contribute .contribute-channel.contribute-channel > .contribute-channel__link {
+    grid-row: 6 !important;
+    align-self: end !important;
+  }
+}
+
+:is(html, #cards-long-words) body .openms-lib-page--contribute :is(.contribute-track__item, .contribute-channel, .coc-value, .contribute-outreach__social-link) :is(h3, p, a, span) {
+  overflow-wrap: anywhere;
+}
