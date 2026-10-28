@@ -397,6 +397,43 @@ languages:
         subtitle: >-
           Whether you need help with pipelines, integrations, consulting, or joining the
           community — reach out and we will point you to the right next step.
+        # "Ways to reach us" cards, in order. Each card starts with "- title:".
+        #   linkText + linkUrl -> the whole card is one link
+        #   links (text + url) -> a row of separate links instead
+        cards:
+          - title: Email us
+            icon: fas fa-envelope
+            tag: Direct
+            text: Reach the OpenMS team for website, docs, and general project questions.
+            linkText: webmaster@openms.de
+            linkUrl: mailto:webmaster@openms.de
+          - title: Discord & GitHub
+            icon: fas fa-comments
+            tag: Community
+            text: Get general help, join discussions, report issues, and connect with contributors
+            links:
+              - text: Discord
+                url: https://discord.com/invite/v9tv5BxPch
+              - text: GitHub
+                url: https://github.com/OpenMS/OpenMS/issues
+          - title: Consulting Services
+            icon: fas fa-life-ring
+            tag: Support
+            text: We offer paid scientific and technical support to get your pipeline up and running fast.
+            linkText: Learn more
+            linkUrl: /scientific-and-technical-support/
+          - title: Sponsorship Opportunities
+            icon: fas fa-hand-holding-heart
+            tag: Sponsorship
+            text: Email fundraising@openms.de for more information.
+            linkText: fundraising@openms.de
+            linkUrl: mailto:fundraising@openms.de
+          - title: Research Partnerships
+            icon: fas fa-handshake
+            tag: Partner with Us
+            text: Let's explore building that new algorithm together.
+            linkText: Research Partnerships
+            linkUrl: /research-partnerships/#partnership-form
       researchPartnershipsPage:
         eyebrow: Partner with OpenMS
         subtitle: We’re interested in hearing your idea for a partnership.

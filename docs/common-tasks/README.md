@@ -62,7 +62,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 | **Research Partnerships** (`/research-partnerships/`, also the **Partner with OpenMS** button) | `research-partnerships/` | [Change the intro](research-partnerships/edit-partners.md) · [Add, change or remove a partner logo](research-partnerships/update-partner-logos.md) |
 | **Publications** (`/publications/`) | `publications/` | [Add or remove a paper](publications/add-or-remove-paper.md) · [Google Scholar link](publications/edit-google-scholar-link.md) |
 | **Leadership** (`/contributors/`) | `leadership/` | [Update the board of directors](leadership/update-board-of-directors.md) · [Update the Executive Committee](leadership/update-executive-committee.md) |
-| **Contact** (`/contact/`) | `contact/` | [Change the intro text](contact/edit-intro-text.md) |
+| **Contact** (`/contact/`) | `contact/` | [Change the intro text](contact/edit-intro-text.md) · [Add or change the cards](contact/edit-cards.md) |
 
 ## Footer only
 

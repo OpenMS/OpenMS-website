@@ -1,6 +1,7 @@
 {{- $cfg := .Site.Params.contactPage | default dict -}}
 {{- $eyebrow := index $cfg "eyebrow" | default "Contact" -}}
 {{- $subtitle := index $cfg "subtitle" | default "Whether you need help with pipelines, integrations, consulting, or joining the community — reach out and we will point you to the right next step." -}}
+{{- $cards := index $cfg "cards" | default slice -}}
 <section class="openms-lib-layout">
 <article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--contact">
 <div class="openms-lib-page__intro">
@@ -29,8 +30,56 @@
         </header>
         <div class="openms-lib-resources__toolkit">
           <div class="openms-lib-resources__grid contact-paths-grid" role="list">
-            {{ partial "contact-email-aside.html" . }}
-            {{ partial "contact-alternatives.html" . }}
+            {{- /* Cards: contactPage.cards in config.yaml. A card with one link
+                   (linkText / linkUrl) is a link as a whole; a card with "links"
+                   shows a row of separate links. */}}
+            {{- range $card := $cards }}
+            {{- $url := .linkUrl | default "" }}
+            {{- if .links }}
+            <article class="openms-lib-resources__item openms-lib-resources__item--static contact-path-card--community" role="listitem">
+            {{- else if $url }}
+            <a class="openms-lib-resources__item" role="listitem" href="{{ $url }}"{{ if hasPrefix $url "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>
+            {{- else }}
+            <article class="openms-lib-resources__item openms-lib-resources__item--static" role="listitem">
+            {{- end }}
+              <div class="openms-lib-resources__item-top">
+                {{- with .icon }}
+                <span class="openms-lib-resources__item-icon" aria-hidden="true"><i class="{{ . }}"></i></span>
+                {{- end }}
+                {{- with .tag }}
+                <span class="openms-lib-resources__item-tag">{{ . }}</span>
+                {{- end }}
+              </div>
+              <h3 class="openms-lib-resources__item-title">{{ .title }}</h3>
+              {{- with .text }}
+              <p class="openms-lib-resources__item-text">{{ . }}</p>
+              {{- end }}
+              {{- with .links }}
+              <div class="contact-path-links" role="group" aria-label="{{ $card.title }}">
+                {{- range . }}
+                <a
+                  class="openms-lib-resources__item-link"
+                  href="{{ .url }}"
+                  {{- if hasPrefix .url "http" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  {{- end }}
+                >
+                  {{ .text }}<span aria-hidden="true"> →</span>
+                </a>
+                {{- end }}
+              </div>
+              {{- else }}
+              {{- with .linkText }}
+              <span class="openms-lib-resources__item-link">{{ . }}<span aria-hidden="true"> →</span></span>
+              {{- end }}
+              {{- end }}
+            {{- if or .links (not $url) }}
+            </article>
+            {{- else }}
+            </a>
+            {{- end }}
+            {{- end }}
           </div>
         </div>
       </div>
