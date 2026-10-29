@@ -19,7 +19,7 @@ Site-wide settings and most homepage content live in **`config.yaml`** at the re
 
 ### newsBanner
 
-Homepage announcement strip. See [Update the news banner](../common-tasks/update-news-banner.md).
+Homepage announcement strip. See [Change the announcement bar](../common-tasks/navbar/update-announcement-bar.md).
 
 ### newsSection
 
@@ -51,7 +51,7 @@ Main homepage hero: titles, description, CTA button, `stats` array.
 
 ### donatePage
 
-**`/donate/`** — Zeffy embed. See [Configure the donate page (Zeffy)](../common-tasks/configure-donate-zeffy.md).
+**`/donate/`** — Zeffy embed. See [Configure the donate page (Zeffy)](../common-tasks/donate/connect-zeffy.md).
 
 | Key | Purpose |
 |-----|---------|
@@ -77,15 +77,15 @@ Two large sections (users / developers) with `heroItems` cards.
 
 ### webappsSection + webapps
 
-Homepage projects carousel. See [Add a webapp](../common-tasks/add-webapp-to-homepage.md).
+Homepage projects carousel. See [Add an app to the home page](../common-tasks/featured-apps/update-featured-apps.md).
 
 ### footer
 
-Tagline, quick link columns, social links, sponsor footer logos.
+Tagline, quick link columns, social links, sponsor footer logos. See [Change the footer links](../common-tasks/footer/edit-footer-links.md) and [Change the social media icons](../common-tasks/footer/edit-social-icons.md).
 
 ### navbar
 
-Top navigation menu and dropdowns. See [Edit footer or navbar](../common-tasks/edit-footer-or-navbar.md).
+Top navigation menu and dropdowns. See [Change the top menu](../common-tasks/navbar/edit-menu-items.md).
 
 ## Analytics (do not remove without discussion)
 

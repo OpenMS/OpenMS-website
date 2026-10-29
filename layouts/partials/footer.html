@@ -75,7 +75,8 @@
   </div>
 
   <div class="footer-bottom">
-    <p class="footer-copyright">&copy; {{ now.Year }} OpenMS Inc. All rights reserved.
+    {{- /* The build year is the fallback; the script keeps it current between builds. */}}
+    <p class="footer-copyright">&copy; <span class="footer-year">{{ now.Year }}</span> OpenMS Inc. All rights reserved.
       <span class="footer-credit"><span class="footer-credit__sep" aria-hidden="true">·</span> Developed by <a href="https://raphagil.github.io/RaphaelaPortfolio/" target="_blank" rel="noopener noreferrer">Raphaela Gil</a></span>
     </p>
     {{- with $deployedBy }}
@@ -90,6 +91,11 @@
     </a>
     {{- end }}
   </div>
+  <script>
+    document.querySelectorAll(".footer-year").forEach(function (el) {
+      el.textContent = new Date().getFullYear();
+    });
+  </script>
 </footer>
 
 <button class="back-to-top" type="button" aria-label="Back to top">

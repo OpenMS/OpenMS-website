@@ -23,10 +23,23 @@
     (featured && featured.getAttribute("data-sponsor-tier")) ||
     toggles[0].getAttribute("data-sponsor-tier");
 
+  // Mark the cells of one level with a class, so the styles work for any
+  // level id in config.yaml (not only bronze/silver/gold/platinum).
+  function markCells(className, tierId) {
+    tierCells.forEach(function (cell) {
+      cell.classList.toggle(
+        className,
+        !!tierId && cell.getAttribute("data-sponsor-benefits") === tierId
+      );
+    });
+  }
+
   function activate(tierId, options) {
     var opts = options || {};
     benefits.setAttribute("data-active-tier", tierId);
     benefits.removeAttribute("data-hover-tier");
+    markCells("is-active-tier", tierId);
+    markCells("is-hover-tier", null);
 
     toggles.forEach(function (toggle) {
       var match = toggle.getAttribute("data-sponsor-tier") === tierId;
@@ -53,6 +66,7 @@
   }
 
   function setHoverTier(tierId) {
+    markCells("is-hover-tier", tierId);
     if (!tierId) {
       benefits.removeAttribute("data-hover-tier");
       return;

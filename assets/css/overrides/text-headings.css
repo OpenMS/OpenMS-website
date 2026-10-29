@@ -1,0 +1,33 @@
+/* ---------- Headings inside page text ----------
+   In page files and news articles, Heading 1 and Heading 2 had the same size,
+   and Headings 3 to 6 were the same size as the text. Give the six levels a
+   clear, decreasing scale, measured against the text size of the area (em),
+   so it also scales down on phones:
+     Heading 1  1.7 x text     Heading 4  1.1 x text
+     Heading 2  1.45 x text    Heading 5  1 x text
+     Heading 3  1.25 x text    Heading 6  0.875 x text
+   All levels use the heading font, bold and in capitals, like the site's other headings. The Privacy page is not included: it builds its
+   sections from its headings and has its own design. The ID in :is() makes
+   these rules outrank older page-specific heading sizes. */
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) :is(h1, h2, h3, h4, h5, h6) {
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  font-family: var(--openms-font-heading) !important;
+}
+
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h1 { font-size: 1.7em !important; }
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h2 { font-size: 1.45em !important; }
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h3 { font-size: 1.25em !important; }
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h4 { font-size: 1.1em !important; }
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h5 { font-size: 1em !important; }
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h6 { font-size: 0.875em !important; }
+
+/* Phones: a slightly flatter scale, so a Heading 1 in the text never comes
+   out bigger than the page's own title (about 25px on a phone). The six
+   levels still get smaller step by step. */
+@media (max-width: 767px) {
+  :is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h1 { font-size: 1.5em !important; }
+  :is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h2 { font-size: 1.35em !important; }
+  :is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h3 { font-size: 1.2em !important; }
+}

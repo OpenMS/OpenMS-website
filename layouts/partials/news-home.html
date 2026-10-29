@@ -43,10 +43,6 @@
   {{- if gt $newsCount 0 -}}
   <ul class="community-events-home__grid news-home__list" role="list" aria-label="Latest OpenMS news">
     {{- range $latest -}}
-    {{- $summary := .Summary -}}
-    {{- with .Params.summary -}}
-      {{- $summary = . -}}
-    {{- end -}}
     {{- $label := .Params.category | default "News" -}}
     <li class="community-events-home__item news-home__item" role="listitem">
       <article class="community-events-home__card news-home__card community-news-events__press-card">
@@ -66,9 +62,7 @@
             {{- end }}
           </p>
           <h3 class="community-news-events__press-title news-home__card-title">{{ .Title }}</h3>
-          {{- with $summary -}}
-          <p class="community-news-events__press-summary news-home__card-summary">{{ . | plainify | truncate 160 }}</p>
-          {{- end -}}
+          {{- partial "news-card-summary.html" (dict "page" . "length" 160) -}}
         </a>
       </article>
     </li>

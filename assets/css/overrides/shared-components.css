@@ -1,0 +1,1550 @@
+/* Title block → cards: one site-wide distance */
+
+html body .openms-lib-page.openms-lib-page,
+html body .home-page.home-page,
+html body .openms-lib-page--news.openms-lib-page--news,
+html body .openms-lib-page--calendar.openms-lib-page--calendar {
+  --openms-stack-cards: clamp(1.2rem, 2.5vw, 1.75rem) !important;
+  --pro-head-to-content: clamp(1.2rem, 2.5vw, 1.75rem) !important;
+  --home-section-head-gap: clamp(1.2rem, 2.5vw, 1.75rem) !important;
+}
+
+html body .openms-lib-page .openms-lib-resources__inner,
+html body .openms-lib-page .openms-lib-resources--explore .openms-lib-resources__inner,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__inner,
+html body .openms-lib-page .openms-lib-about__inner,
+html body .openms-lib-page .openms-lib-developers--cards:not(.openms-lib-developers--split) {
+  gap: var(--pro-head-to-content) !important;
+}
+
+html body .openms-lib-page .openms-lib-resources__head,
+html body .openms-lib-page .openms-lib-resources--explore .openms-lib-resources__head,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources__head,
+html body .openms-lib-page--solution #getting-started .openms-lib-resources--explore .openms-lib-resources__head,
+html body .openms-lib-page .openms-lib-about__head {
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute .openms-lib-resources__inner {
+  gap: var(--pro-card-gap) clamp(1.5rem, 3vw, 2.5rem) !important;
+}
+
+html body .openms-lib-page--webapps-pro .openms-lib-resources--examples .openms-lib-resources__inner,
+html body .openms-lib-page--webapps-pro .openms-lib-resources__examples-layout {
+  gap: clamp(1.75rem, 4vw, 3.25rem) !important;
+}
+
+html body .openms-lib-page .openms-lib-developers__cards-head,
+html body .openms-lib-page--solution .openms-lib-developers--cards .openms-lib-developers__cards-head,
+html body .openms-lib-page--solution.openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards .openms-lib-developers__cards-head,
+html body .openms-lib-page--solution.openms-lib-page--pyopenms-viz-pro .openms-lib-developers--cards:not(.openms-lib-developers--split) .openms-lib-developers__cards-head,
+html body .openms-lib-page--solution.openms-lib-page--webapps-pro .openms-lib-developers--cards .openms-lib-developers__cards-head {
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-page--sponsor-us .sponsor-tiers-band .sponsor-section__head {
+  margin-bottom: var(--pro-head-to-content) !important;
+}
+
+html body .webapps-featured__header,
+html body .openms-lib-page .webapps-featured__header,
+html body .openms-lib-page .webapps-affiliates__header,
+html body .openms-lib-page .webapps-archived__intro {
+  margin-bottom: var(--pro-head-to-content) !important;
+}
+
+html body .openms-lib-page--featured .webapps-featured__header,
+html body .openms-lib-page--affiliated .webapps-affiliates__header,
+html body .openms-lib-page--archived .webapps-archived__intro {
+  margin-bottom: 0 !important;
+}
+
+html body .community-news-events__column {
+  gap: var(--pro-head-to-content) !important;
+}
+
+@media (max-width: 900px) {
+  html body .openms-lib-page--contribute #ways-to-contribute .openms-lib-resources__inner {
+    gap: var(--pro-head-to-content) !important;
+  }
+}
+
+html body .openms-lib-page--publications .openms-lib-resources__head,
+html body .openms-lib-page--publications .publications-featured .openms-lib-resources__head,
+html body .openms-lib-page--publications .publications-bibliography > .openms-lib-resources__head {
+  margin-bottom: 0 !important;
+}
+
+html body .openms-lib-page #for-developers .openms-lib-developers__card--review a.openms-lib-btn.openms-lib-developers__platform-btn,
+html body .openms-lib-page #for-developers .openms-lib-developers__card--review a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page #for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) a.openms-lib-btn.openms-lib-developers__platform-btn,
+html body .openms-lib-page #for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page .openms-lib-developers__route--review a.openms-lib-btn.openms-lib-developers__platform-btn,
+html body .openms-lib-page .openms-lib-developers__route--review a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible, :active),
+html body .openms-lib-page .openms-lib-developers__route--review:is(:hover, :focus-within) a.openms-lib-btn.openms-lib-developers__platform-btn {
+  transform: none !important;
+  flex: 0 0 auto !important;
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+  border-width: 2px !important;
+  white-space: nowrap !important;
+}
+
+/* Site-wide section head stack: eyebrow → title → lead
+   Canonical: 12px after top title, 20px after title before paragraph */
+html,
+body,
+.home-page,
+.openms-lib-page,
+.openms-lib-page--solution,
+.openms-lib-page--hub {
+  --openms-stack-eyebrow: 12px;
+  --openms-stack-lead: 20px;
+  --openms-stack-paragraph: 16px;
+  --pro-stack-eyebrow: var(--openms-stack-eyebrow);
+  --pro-stack-lead: var(--openms-stack-lead);
+  --sol-stack-eyebrow: var(--openms-stack-eyebrow);
+  --sol-stack-lead: var(--openms-stack-lead);
+  --home-section-head-eyebrow-gap: var(--openms-stack-eyebrow);
+  --home-section-head-lead-gap: var(--openms-stack-lead);
+}
+
+/* Navy CTA band outline (ghost) buttons — match Become a sponsor “Make a donation”
+   Rest: transparent + 2px white border. Hover: white fill, navy text, scale + white glow. */
+
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost,
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn--ghost,
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-cta-band__btn-ghost,
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-cta-band__btn-ghost:visited,
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-btn--ghost,
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-cta-band__btn-ghost,
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-cta-band__btn-ghost:visited,
+html body .openms-lib-page--contact #get-help a.openms-lib-btn--ghost,
+html body .openms-lib-page--contact #get-help a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--contact #get-help a.openms-lib-cta-band__btn-ghost,
+html body .openms-lib-page--contact #get-help a.openms-lib-cta-band__btn-ghost:visited,
+html body .openms-lib-page--publications #cite-openms a.openms-lib-btn--ghost,
+html body .openms-lib-page--publications #cite-openms a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--publications #cite-openms a.openms-lib-cta-band__btn-ghost,
+html body .openms-lib-page--publications #cite-openms a.openms-lib-cta-band__btn-ghost:visited,
+html body .openms-lib-page--contributors #join-community a.openms-lib-btn--ghost,
+html body .openms-lib-page--contributors #join-community a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--contributors #join-community a.openms-lib-cta-band__btn-ghost,
+html body .openms-lib-page--contributors #join-community a.openms-lib-cta-band__btn-ghost:visited,
+html body .openms-lib-page--contribute .contribute-coc-band__actions a.openms-lib-btn--ghost,
+html body .openms-lib-page--contribute .contribute-coc-band__actions a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-btn--ghost,
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-btn--ghost:visited,
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-cta-band__btn-ghost,
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-cta-band__btn-ghost:visited {
+  display: inline-flex !important;
+  box-sizing: border-box;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  height: auto !important;
+  padding: var(--openms-btn-padding, 0.7rem 1.25rem) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  white-space: nowrap !important;
+  box-shadow: 0 0 0 0 var(--openms-btn-glow-white, rgba(255, 255, 255, 0.22)) !important;
+  transition: var(--openms-btn-motion) !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost :is(.openms-lib-btn__label, span),
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost:visited :is(.openms-lib-btn__label, span) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  background: transparent !important;
+}
+
+/* Hover — same language as navy-band primary (Contact us): white fill + scale + white glow */
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contact #get-help a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contact #get-help a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--publications #cite-openms a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--publications #cite-openms a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contributors #join-community a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contributors #join-community a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--contribute .contribute-coc-band__actions a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active),
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-cta-band__btn-ghost:is(:hover, :focus-visible, :active) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) var(--openms-btn-glow-white, rgba(255, 255, 255, 0.22)) !important;
+  outline: none;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(
+  .openms-lib-btn__label,
+  span,
+  i,
+  .fab,
+  .fas,
+  svg,
+  svg path,
+  .openms-lib-btn__icon,
+  .openms-lib-btn__icon svg,
+  .openms-lib-btn__icon svg path
+),
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span),
+html body .openms-lib-page--our-sponsors #sponsor-cta a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span),
+html body .openms-lib-page--contact #get-help a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span),
+html body .openms-lib-page--publications #cite-openms a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span, .openms-lib-btn__icon, svg, svg path),
+html body .openms-lib-page--contributors #join-community a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span),
+html body .openms-lib-page--archived .webapps-archived__revival-actions a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span),
+html body .openms-lib-page :is(.contribute-coc-band, .governance-cta-band, .webapps-archived__revival) a.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(
+  .openms-lib-btn__label,
+  span,
+  i,
+  .fab,
+  .fas,
+  svg,
+  svg path,
+  .openms-lib-btn__icon,
+  .openms-lib-btn__icon svg,
+  .openms-lib-btn__icon svg path
+) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  fill: var(--openms-navy) !important;
+  background: transparent !important;
+}
+
+html body .openms-lib-page :is(
+  .governance-cta-band__actions,
+  .contribute-coc-band__actions,
+  .webapps-archived__revival-actions
+) a.openms-lib-btn.openms-lib-btn--ghost:focus-visible,
+html body .openms-lib-page--sponsor-us #become-a-sponsor a.openms-lib-btn--ghost:focus-visible,
+html body .openms-lib-page--contact #get-help a.openms-lib-btn--ghost:focus-visible {
+  box-shadow:
+    0 0 0 3px var(--openms-navy),
+    0 0 0 5px rgba(var(--openms-white-rgb), 0.55),
+    0 0 0 calc(5px + var(--openms-btn-glow-size, 6px)) var(--openms-btn-glow-white, rgba(255, 255, 255, 0.22)) !important;
+}
+
+/* Numbered cards — white cards with gaps (page/band shows between), site-wide
+   Matches Governance Structure: white fill on cards only, not a continuous strip. */
+
+html body :is(
+  .contribute-channels__strip,
+  .openms-lib-about__mosaic,
+  .openms-lib-about__benefits,
+  .coc-overview__principles,
+  .privacy-overview__list,
+  .rp-include__mosaic,
+  .retreat-highlights__mosaic,
+  .fellowship-facts
+),
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__mosaic,
+html body .openms-lib-page--developer-retreat .retreat-highlights__mosaic,
+html body .openms-lib-page--developer-retreat #about-the-retreat .openms-lib-about__mosaic.retreat-highlights__mosaic,
+html body .openms-lib-page--code-of-conduct .coc-overview__principles,
+html body .openms-lib-page--research-partnerships .rp-include__mosaic,
+html body .openms-lib-page--research-partnerships #partnerships-include .rp-include__mosaic,
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefits,
+html body .openms-lib-page--webapps-pro .openms-lib-about__mosaic,
+html body .openms-lib-page--pyopenms-pro .openms-lib-about__mosaic,
+html body .openms-lib-page--pyopenms-viz-pro .openms-lib-about__mosaic,
+html body .openms-lib-page--privacy .privacy-overview__list,
+html body .openms-lib-page--contribute .contribute-channels__strip,
+html body .openms-lib-page--governance #governance-bodies .openms-lib-about__mosaic,
+html body .openms-lib-page--fellowship .fellowship-facts {
+  gap: var(--pro-card-gap, clamp(1rem, 2vw, 1.5rem)) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: none !important;
+}
+
+/* Shared card chrome — same padding/margin on Sponsor Us, Partner with OpenMS, OpenMS-lib, etc. */
+html body {
+  --openms-num-card-pad: clamp(1.15rem, 2.5vw, 1.5rem);
+  --openms-num-card-gap: 0.45rem;
+}
+
+/* Cards themselves — white surfaces + unified pad */
+html body :is(
+  .contribute-channel,
+  .openms-lib-about__tile,
+  .openms-lib-about__benefit,
+  .coc-principle,
+  .privacy-overview__item,
+  .fellowship-facts__item
+),
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__tile,
+html body .openms-lib-page--sponsor-us .openms-lib-about__tile,
+html body .openms-lib-page--developer-retreat .retreat-highlights__mosaic > .openms-lib-about__tile,
+html body .openms-lib-page--code-of-conduct .coc-principle,
+html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile,
+html body .openms-lib-page--research-partnerships.openms-lib-page--openms-lib .rp-include__mosaic > .openms-lib-about__tile,
+html body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__tile,
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit,
+html body .openms-lib-page--webapps-pro .openms-lib-about__tile,
+html body .openms-lib-page--pyopenms-pro .openms-lib-about__tile,
+html body .openms-lib-page--pyopenms-viz-pro .openms-lib-about__tile,
+html body .openms-lib-page--privacy .privacy-overview__item,
+html body .openms-lib-page--contribute .contribute-channel,
+html body .openms-lib-page--governance #governance-bodies .openms-lib-about__tile,
+html body .openms-lib-page--fellowship .fellowship-facts__item {
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: var(--openms-num-card-pad) !important;
+  gap: var(--openms-num-card-gap) !important;
+  background: var(--openms-white, #fff) !important;
+  background-color: var(--openms-white, #fff) !important;
+  border: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
+  border-radius: var(--pro-radius, 1rem) !important;
+  box-shadow: var(--pro-shadow, 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05)) !important;
+  transform: none !important;
+}
+
+/* Kill strip-era first/last column insets so every card matches */
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit:first-child,
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit:last-child,
+html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:first-child,
+html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:last-child,
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__tile:first-child,
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__tile:last-child {
+  padding: var(--openms-num-card-pad) !important;
+  padding-left: var(--openms-num-card-pad) !important;
+  padding-right: var(--openms-num-card-pad) !important;
+}
+
+/* Title spacing under numbers — same on Sponsor Us / Partner / OpenMS-lib */
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__tile-title,
+html body .openms-lib-page--sponsor-us .openms-lib-about__mosaic .openms-lib-about__tile-title,
+html body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__tile-title,
+html body .openms-lib-page--research-partnerships .rp-include__mosaic .openms-lib-about__tile-title,
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit-title {
+  margin: 0 0 0.35rem !important;
+}
+
+/* Hover — keep white card, slightly stronger edge */
+html body :is(
+  .contribute-channel,
+  .openms-lib-about__tile,
+  .openms-lib-about__benefit,
+  .coc-principle,
+  .privacy-overview__item,
+  .fellowship-facts__item
+):is(:hover, :focus-within),
+html body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--developer-retreat .retreat-highlights__mosaic > .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--code-of-conduct .coc-principle:is(:hover, :focus-within),
+html body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--research-partnerships .rp-include__mosaic > .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--contribute:not(.openms-lib-page--report-handling) .contribute-channel:is(:hover, :focus-within),
+html body .openms-lib-page--governance #governance-bodies .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit:is(:hover, :focus-within),
+html body .openms-lib-page--webapps-pro .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--pyopenms-pro .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--pyopenms-viz-pro .openms-lib-about__tile:is(:hover, :focus-within),
+html body .openms-lib-page--fellowship .fellowship-facts__item:is(:hover, :focus-within) {
+  background: var(--openms-white, #fff) !important;
+  background-color: var(--openms-white, #fff) !important;
+  border-color: var(--pro-line-strong, rgba(var(--openms-navy-rgb), 0.22)) !important;
+  box-shadow: var(--pro-shadow-hover, 0 0.65rem 1.5rem rgba(var(--openms-navy-rgb), 0.1)) !important;
+  transform: none !important;
+}
+
+/* Research Partnerships include — don’t force the whole band white (gaps need band color) */
+html body .openms-lib-page--research-partnerships #partnerships-include,
+html body .openms-lib-page--hub.openms-lib-page--research-partnerships #partnerships-include.openms-lib-page__anchor,
+html body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about {
+  background: var(--pro-band-soft, #f4f6f9) !important;
+  background-color: var(--pro-band-soft, #f4f6f9) !important;
+}
+
+/* Contribute channels — keep equal-height CTAs inside cards */
+html body .openms-lib-page--contribute .contribute-channel {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+html body .openms-lib-page--contribute .contribute-channel__link {
+  margin-top: auto !important;
+  padding-top: 0.85rem !important;
+}
+
+@media (max-width: 960px) {
+  html body .openms-lib-page--contribute .contribute-channel {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  html body .openms-lib-page--contribute .contribute-channel__link {
+    margin-top: 0.35rem !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* Sizing/breakpoint for these bands now lives in
+   z-zzzzzz-navy-cta-standard.css (one standard shared by every navy CTA band
+   on the site). This file keeps only what's specific to these two pages:
+   colours, hover, the note text, and phone-only overrides that survive it. */
+
+/* The Sponsor us ghost button had a faint 34% white outline; use the same solid
+   white outline as the other navy CTA bands. */
+html body .openms-lib-page--our-sponsors #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost,
+html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost {
+  border: 2px solid var(--openms-white) !important;
+  border-color: var(--openms-white) !important;
+}
+
+/* Sponsor us → "Get started" note: one paragraph that wraps naturally at every
+   screen size (it was three fixed lines on desktop). */
+html body .openms-lib-page--sponsor-us #become-a-sponsor .sponsor-cta-note-line.sponsor-cta-note-line {
+  display: inline !important;
+  white-space: normal !important;
+}
+
+html body .openms-lib-page--sponsor-us #become-a-sponsor .sponsor-cta-note-line::after {
+  content: " ";
+}
+
+html body .openms-lib-page--sponsor-us #become-a-sponsor .governance-cta-band__note.governance-cta-band__note {
+  max-width: 44rem !important;
+  margin-inline: auto !important;
+  text-wrap: balance;
+}
+
+/* "Make a donation" hover — same as the other navy CTA bands (Cite OpenMS…):
+   white fill, navy text, slight scale and a white glow. Older page-scoped rules
+   forced a transparent, blue-glow hover here, so this out-ranks them. */
+:is(html, #cta-hover-specificity-boost) body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  border: 2px solid var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(255, 255, 255, 0.22) !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--sponsor-us #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+/* Contact -> "Need a hand?": the Contribute button gets the same hover as the
+   other navy CTA bands (white fill, navy text, white glow). */
+:is(html, #contact-hover-specificity-boost) body .openms-lib-page--contact #get-help .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  border: 2px solid var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  transform: scale(var(--openms-btn-hover-scale, 1.03)) !important;
+  box-shadow: 0 0 0 var(--openms-btn-glow-size, 6px) rgba(255, 255, 255, 0.22) !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+html body .openms-lib-page--contact #get-help .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible, :active) :is(.openms-lib-btn__label, span) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+/* Contact → Community card (Discord & GitHub): side by side at every screen
+   size — the base flex:1 1 0 row in contact-page.css already keeps both
+   buttons equal width, so no stacking override is needed here any more. */
+
+/* Section eyebrow → title spacing, sitewide.
+   The small label above a section title ("Developer tools", "Community", …)
+   sat 12–27px above it (12px margin, often plus 10–15px of title padding). Pull
+   every section title up under its eyebrow to ~6px, like the homepage
+   Ecosystem section. Hero eyebrows are pills with their own spacing and are left
+   alone. `:is(html, #id)` only adds specificity so this wins over the many older
+   !important spacing rules. */
+:is(html, #eyebrow-title-specificity-boost) body :is([class*="eyebrow"], [class*="kicker"]):not([class*="hero"]):not([class*="icon"]):has(+ :is(h2, h3)) {
+  margin-bottom: 0.35rem !important;
+}
+
+:is(html, #eyebrow-title-specificity-boost) body :is([class*="eyebrow"], [class*="kicker"]):not([class*="hero"]):not([class*="icon"]) + :is(h2, h3) {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Card titles are in capitals everywhere (news / event cards, "What is OpenMS?"
+   cards, tiles, principle cards, …). Some cards had sentence-case titles.
+   Only headings inside a card-like container are affected; the Contribute
+   developer cards are handled in z-zzzzz-developers-cards.css. */
+:is(html, #card-titles-upper-boost) body :is(
+  [class*="card"],
+  [class*="tile"],
+  [class*="principle"],
+  [class*="resources__item"],
+  [class*="leadership"]
+):not(.navbar, .navbar *, .footer-redesign *) :is(h3, h4, h3 > span, h4 > span) {
+  text-transform: uppercase;
+}
+
+:is(html, #card-titles-upper-boost) body .community-news-events__press-card .community-news-events__press-title,
+:is(html, #card-titles-upper-boost) body .keyfeatures-modern__topic-card .keyfeatures-modern__topic-title {
+  text-transform: uppercase !important;
+  letter-spacing: 0.01em;
+}
+
+/* Sponsor us — "Benefit comparison" heading in capitals. */
+:is(html, #benefit-title-upper-boost) body .sponsor-benefits__title.sponsor-benefits__title {
+  text-transform: uppercase !important;
+}
+
+/* One card-title standard: capitals, the shared --openms-card-title-size,
+   weight 700. These cards had drifted (19px / 800 / 16px). The featured
+   Contribute card keeps its deliberately larger white title. */
+:is(html, #card-title-std-boost) body .keyfeatures-modern__topic-card .keyfeatures-modern__topic-title.keyfeatures-modern__topic-title,
+:is(html, #card-title-std-boost) body .openms-lib-resources__item .openms-lib-resources__item-title.openms-lib-resources__item-title,
+:is(html, #card-title-std-boost) body .community-news-events__press-card .community-news-events__press-title.community-news-events__press-title,
+:is(html, #card-title-std-boost) body .contribute-support__title.contribute-support__title {
+  font-size: var(--openms-card-title-size) !important;
+  font-weight: var(--openms-card-title-weight, 700) !important;
+}
+
+/* ============================================================================
+   Navy CTA bands — one consistent standard for every "bottom of page" navy
+   band on the site (Support OpenMS → Become a sponsor, Sponsor us → Get
+   started, Contact → Need a hand, Publications → Cite OpenMS, Archived apps →
+   Community opportunity, Contributors → Want to contribute, Governance/Privacy
+   → related pages):
+     - the site's standard button size (--openms-btn-*), matching every other
+       button on the same page (hero buttons, sponsorship tier "Learn more",
+       other "Contact us" instances) instead of a smaller custom pill
+     - side by side, as long as both buttons fit at a readable width (each at
+       least 9rem, enough for labels like "Make a donation" at the larger
+       standard size) — `auto-fit`/`minmax` below drops the second button
+       onto its own full-width row only once the screen is too narrow for
+       both to sit comfortably side by side
+     - within a two-button band, both buttons are exactly the same width
+   These bands had each grown their own size/breakpoint over time (button
+   heights from 39–46px, widths from 117–309px, breakpoints at 560/561/600/
+   639/720px, and two bands — Contact and Archived apps — had unequal-width
+   button pairs). `:is(html, #id)` only adds specificity to beat those older
+   page-scoped !important rules; `html` always matches, so it changes nothing
+   about which pages/elements this file targets.
+   ============================================================================ */
+
+/* ---------- two-button bands: equal-width grid, breaks down if it doesn't fit ---------- */
+:is(html, #navy-cta-boost) body #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions,
+:is(html, #navy-cta-boost) body #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions,
+:is(html, #navy-cta-boost) body #get-help .contribute-coc-band__actions.contribute-coc-band__actions,
+:is(html, #navy-cta-boost) body #cite-openms .contribute-coc-band__actions.contribute-coc-band__actions,
+:is(html, #navy-cta-boost) body #join-community .webapps-archived__revival-actions.webapps-archived__revival-actions,
+:is(html, #navy-cta-boost) body .openms-lib-page--archived .webapps-archived__revival-actions.webapps-archived__revival-actions {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)) !important;
+  gap: 0.9rem !important;
+  width: min(100%, 28rem) !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+  justify-items: stretch !important;
+}
+
+:is(html, #navy-cta-boost) body #sponsor-cta .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+:is(html, #navy-cta-boost) body #become-a-sponsor .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+:is(html, #navy-cta-boost) body #get-help .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+:is(html, #navy-cta-boost) body #cite-openms .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn,
+:is(html, #navy-cta-boost) body #join-community .webapps-archived__revival-actions.webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn,
+:is(html, #navy-cta-boost) body .openms-lib-page--archived .webapps-archived__revival-actions.webapps-archived__revival-actions a.openms-lib-btn.openms-lib-btn,
+:is(html, #navy-cta-boost) body #related-pages .governance-cta-band__actions.governance-cta-band__actions a.openms-lib-btn.openms-lib-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  white-space: normal !important;
+  text-align: center !important;
+  height: auto !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 0.9rem !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  font-weight: var(--openms-btn-weight, 600) !important;
+}
+
+/* ---------- single-button bands: hug their own text ---------- */
+:is(html, #navy-cta-boost) body #related-pages .governance-cta-band__actions.governance-cta-band__actions {
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+}
+
+:is(html, #navy-cta-boost) body #related-pages .governance-cta-band__actions.governance-cta-band__actions a.openms-lib-btn.openms-lib-btn {
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+}
+
+/* ============================================================================
+   Hero action buttons — side by side, one consistent button size (the site's
+   standard button size, --openms-btn-*, matching every other button on the
+   page — e.g. the homepage's "Get involved"/"Contact us"/nav CTAs — so hero
+   buttons aren't a visibly different height from everything below them), as
+   long as every button fits at a readable width (each at least 12.5rem,
+   tuned to labels like "Sponsorship program" / "Executive committee" /
+   "Discuss a partnership" so they stay on one line at this larger size).
+   `auto-fit` drops whichever buttons don't fit onto their own full-width
+   row(s) once the screen is too narrow, instead of squeezing, wrapping the
+   label onto two lines, or overflowing. A couple of pages with an even
+   longer label ("Explore ways to contribute", "Report handling manual") can
+   still wrap in a narrow in-between range — going wide enough to prevent
+   that everywhere would make every hero stack much sooner on phones, undoing
+   "side by side on phones" for the shorter labels that are the common case.
+   `:is(html, #id)` only adds specificity to beat a sitewide two-button
+   width:100% rule (built on :has()/:not(), which alone out-specifies a plain
+   class selector) and the homepage hero's own older breakpoint rule; html
+   always matches, so it changes nothing about which pages/elements this file
+   targets.
+   ============================================================================ */
+
+:is(html, #hero-actions-boost) .openms-lib-hero__actions,
+:is(html, #hero-actions-boost) .home-page .hero-home__actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  justify-self: stretch !important;
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-inline: 0 !important;
+  gap: 0.75rem !important;
+}
+
+/* Buttons always fit their own text (never stretched to a shared column
+   width); they sit side by side while they fit and wrap onto the next row
+   when they don't. */
+:is(html, #hero-actions-boost) .openms-lib-hero__actions .openms-lib-btn,
+:is(html, #hero-actions-boost) .home-page .hero-home__actions .hero-home__btn {
+  width: auto !important;
+  align-self: auto !important;
+  flex: 0 0 auto !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+  height: auto !important;
+  min-height: var(--openms-btn-min-height, 2.75rem) !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 1.25rem !important;
+  font-size: var(--openms-btn-font-size, var(--openms-text-min)) !important;
+  font-weight: var(--openms-btn-weight, 600) !important;
+}
+
+/* Homepage hero: left aligned. */
+:is(html, #hero-actions-boost) .home-page .hero-home__actions {
+  justify-content: flex-start !important;
+}
+
+/* Developers "Contribute" lead ("Your improvements help researchers
+   worldwide."): fill the full width on phones instead of being balanced into
+   two short, equal lines. */
+@media (max-width: 767px) {
+  html body .openms-lib-developers__lead {
+    text-wrap: wrap !important;
+    max-width: 100% !important;
+    width: 100%;
+  }
+}
+
+/* Citation cards (OpenMS 3 / pyOpenMS-viz / ... — "View on PubMed", "More
+   citations"): buttons fit their own text instead of stretching to full
+   width, side by side while they fit and wrapping when they don't. */
+:is(html, #cite-actions-boost) body .openms-lib-cite__actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.9rem !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+:is(html, #cite-actions-boost) body .openms-lib-cite__actions > a.openms-lib-btn,
+:is(html, #cite-actions-boost) body .openms-lib-cite__actions > .openms-lib-btn {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+}
+
+:is(html, #pager-disabled-boost) body .news-pager .openms-lib-btn.news-pager__btn:disabled {
+  opacity: 0.4 !important;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Buttons that keep their natural (desktop) size at every screen size instead
+   of stretching to full width on phones: Developer retreat "Register here",
+   Code of Conduct "Report an incident". */
+:is(html, #keep-size-boost) body .openms-lib-page .retreat-register--closed.openms-lib-btn,
+:is(html, #keep-size-boost) body .openms-lib-page--code-of-conduct .coc-report__actions .openms-lib-btn,
+:is(html, #keep-size-boost) body .openms-lib-page--code-of-conduct .coc-report__actions {
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+  justify-self: start !important;
+}
+
+/* ============================================================================
+   White cards with a blue icon — one standard.
+   Reference: the resource cards on Contact / Donate / Press kit / Governance
+   (.openms-lib-resources__item): 16px radius, soft border + shadow, standard
+   padding, a big soft-blue icon top-left that turns full blue on hover,
+   uppercase 17.7px Montserrat title, 16px Raleway text, 14px blue link.
+   The Contribute track cards, Contribute channel cards and the developer
+   cards (OpenMS-lib / pyOpenMS / ...) had drifted (icons 13–30px and solid
+   or soft, no shadow, different padding/gap). The navy "featured" developer
+   card keeps its dark design.
+   ============================================================================ */
+
+:root {
+  --card-std-icon-size: clamp(2.5rem, 3.8vw, 3rem);
+  --card-std-icon-color: rgba(var(--openms-blue-rgb), 0.28);
+}
+
+/* ---------- shared card frame ---------- */
+:is(html, #card-std-boost) body .openms-lib-page .contribute-track__item,
+:is(html, #card-std-boost) body .openms-lib-page .contribute-channel,
+:is(html, #card-std-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured) {
+  border-radius: var(--pro-radius, 1rem) !important;
+  border: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
+  background: var(--openms-white) !important;
+  box-shadow: var(--pro-shadow, 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05)) !important;
+  padding: var(--pro-card-pad-lg, 1.2rem) !important;
+  gap: 0.45rem !important;
+}
+
+/* ---------- icons: big, soft blue, full blue on hover ---------- */
+:is(html, #card-std-boost) body .openms-lib-page .contribute-track__icon,
+:is(html, #card-std-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured) .openms-lib-developers__card-icon {
+  display: grid;
+  place-items: center;
+  width: auto !important;
+  height: auto !important;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none;
+  font-size: var(--card-std-icon-size) !important;
+  line-height: 1;
+  color: var(--card-std-icon-color) !important;
+  transition: color 0.2s ease;
+}
+
+:is(html, #card-std-boost) body .openms-lib-page .contribute-track__icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa),
+:is(html, #card-std-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured) .openms-lib-developers__card-icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa) {
+  color: var(--card-std-icon-color) !important;
+  font-size: 1em !important;
+  width: 1em !important;
+  height: 1em !important;
+}
+
+:is(html, #card-std-boost) body .openms-lib-page .contribute-track__icon svg path,
+:is(html, #card-std-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured) .openms-lib-developers__card-icon svg path {
+  fill: currentColor !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :is(html, #card-std-boost) body .openms-lib-page .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon,
+  :is(html, #card-std-boost) body .openms-lib-page .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa),
+  :is(html, #card-std-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-icon,
+  :is(html, #card-std-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__card-icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa) {
+    color: var(--openms-blue) !important;
+  }
+}
+
+/* ---------- text: same fonts / sizes / colours ---------- */
+:is(html, #card-std-boost) body .openms-lib-page :is(.contribute-track__item, .contribute-channel, .openms-lib-developers__card:not(.openms-lib-developers__card--featured)) :is(h3, h4) {
+  font-family: var(--openms-font-heading);
+  font-size: var(--openms-card-title-size, 1.1rem);
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+:is(html, #card-std-boost) body .openms-lib-page :is(.contribute-track__item, .contribute-channel, .openms-lib-developers__card:not(.openms-lib-developers__card--featured)) p:not(.openms-lib-developers__card-tag):not(.contribute-track__badge) {
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-body-size);
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(var(--openms-dark-rgb), 0.72);
+}
+
+:is(html, #card-std-boost) body .openms-lib-page :is(.contribute-track__item, .contribute-channel, .openms-lib-developers__card:not(.openms-lib-developers__card--featured)) :is(.contribute-track__cta, .contribute-channel__link, .openms-lib-developers__card-link) {
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 700;
+  color: var(--openms-blue);
+}
+
+/* ---------- developer cards: the #for-developers rules are id-scoped, so
+   match them with the same ids ---------- */
+html body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured) {
+  border-radius: var(--pro-radius, 1rem) !important;
+  border: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
+  box-shadow: var(--pro-shadow, 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb), 0.05)) !important;
+  padding: var(--pro-card-pad-lg, 1.2rem) !important;
+  gap: 0.45rem !important;
+}
+
+/* ---------- contribute tracks: the section-id rule made these icons
+   smaller than every other card; match it ---------- */
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__icon {
+  font-size: var(--card-std-icon-size) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa) {
+  font-size: 1em !important;
+  width: 1em !important;
+  height: 1em !important;
+}
+
+/* ============================================================================
+   Hover: the cards stay white. Older rules turned some of them navy on hover
+   (white text) while the standard frame keeps the white background — so the
+   text vanished. Hover is now: subtle lift/shadow, icon turns blue, link
+   turns darker blue; text keeps its normal colours.
+   ============================================================================ */
+:is(html, #card-hover-boost) body .openms-lib-page .contribute-track__item:is(:hover, :focus-within),
+:is(html, #card-hover-boost) body .openms-lib-page .contribute-channel:is(:hover, :focus-within),
+:is(html, #card-hover-boost) body .openms-lib-page .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+  border-color: rgba(var(--openms-blue-rgb), 0.35) !important;
+  box-shadow: var(--pro-shadow-hover, 0 0.5rem 1.25rem rgba(var(--openms-navy-rgb), 0.1)) !important;
+  transform: translateY(-2px) !important;
+}
+
+:is(html, #card-hover-boost) body .openms-lib-page :is(.contribute-track__item, .contribute-channel, .openms-lib-developers__card:not(.openms-lib-developers__card--featured)):is(:hover, :focus-within) :is(h3, h4, .contribute-track__title, .contribute-channel__title, .openms-lib-developers__card-title) {
+  color: rgba(var(--openms-dark-rgb), 0.85) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.85) !important;
+}
+
+:is(html, #card-hover-boost) body .openms-lib-page :is(.contribute-track__item, .contribute-channel, .openms-lib-developers__card:not(.openms-lib-developers__card--featured)):is(:hover, :focus-within) :is(p, .contribute-track__text, .contribute-channel__text, .openms-lib-developers__card-text, .openms-lib-developers__card-subtitle) {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+:is(html, #card-hover-boost) body .openms-lib-page :is(.contribute-track__item, .contribute-channel, .openms-lib-developers__card:not(.openms-lib-developers__card--featured)):is(:hover, :focus-within) :is(.contribute-track__cta, .contribute-channel__link, .openms-lib-developers__card-link, .contribute-os-links a) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+/* project chips inside the featured development card */
+:is(html, #card-hover-boost) body .openms-lib-page--contribute .contribute-track__item:is(:hover, :focus-within) .contribute-project-link,
+:is(html, #card-hover-boost) body .openms-lib-page--contribute .contribute-track__item:is(:hover, :focus-within) .contribute-project-link .contribute-project-link__name {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  background: rgba(var(--openms-blue-rgb), 0.05);
+}
+
+/* ghost platform buttons on hovered developer cards (were white on white) */
+:is(html, #card-hover-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__platform-btn,
+:is(html, #card-hover-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card:not(.openms-lib-developers__card--featured):is(:hover, :focus-within) .openms-lib-developers__platform-btn :is(.openms-lib-btn__label, i, svg) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  border-color: var(--openms-navy) !important;
+  background: transparent !important;
+}
+
+/* Contribute tracks: an id-scoped rule (#ways-to-contribute) painted every
+   descendant white on hover; match its ids so the hover state stays readable. */
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) {
+  background: var(--openms-white) !important;
+  background-color: var(--openms-white) !important;
+  color: var(--openms-navy) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__title {
+  color: rgba(var(--openms-dark-rgb), 0.85) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.85) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__text {
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__cta,
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-os-links a,
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-project-link,
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-project-link__name {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon,
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon :is(i, svg, .fas, .fab, .far, .svg-inline--fa) {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__badge {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+}
+
+/* descendants (svg paths, arrow spans) were still painted white on hover */
+html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) :is(.contribute-track__icon, .contribute-track__cta, .contribute-os-links a, .contribute-project-link, .contribute-track__badge) * {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  fill: currentColor !important;
+}
+
+/* ---------- Cite OpenMS band: buttons fit their text ---------- */
+:is(html, #cite-hug-boost) body #cite-openms .contribute-coc-band__actions.contribute-coc-band__actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: auto !important;
+  max-width: 100% !important;
+  gap: 0.9rem !important;
+}
+
+:is(html, #cite-hug-boost) body #cite-openms .contribute-coc-band__actions.contribute-coc-band__actions a.openms-lib-btn.openms-lib-btn {
+  width: auto !important;
+  align-self: auto !important;
+  flex: 0 0 auto !important;
+  max-width: 100% !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) 1.25rem !important;
+}
+
+/* ---------- "For Developers / Contribute" cards: icons on the left on mobile ---------- */
+
+/* ---------- "Reviewing Pull Requests" on every page: links, not buttons ---------- */
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.4rem 1.1rem !important;
+  margin-top: auto !important;
+  padding-top: 0.75rem !important;
+  border-top: 1px solid var(--pro-line, rgba(var(--openms-navy-rgb), 0.1)) !important;
+  grid-template-columns: none !important;
+}
+
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  font-family: var(--openms-font-body) !important;
+  font-size: var(--openms-text-min) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn .openms-lib-btn__label {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn :is(svg, i) {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  font-size: 1.25rem !important;
+  flex: 0 0 auto;
+}
+
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn .fa-github, :is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn .fa-github path { color: #181717 !important; fill: #181717 !important; }
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn .fa-book-open, :is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn .fa-book-open path { color: var(--openms-blue) !important; fill: var(--openms-blue) !important; }
+
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn::after {
+  content: "\2192";
+  display: inline-block;
+  font-weight: 700;
+  color: var(--openms-blue);
+  transition: transform 0.2s ease;
+}
+
+:is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible)::after {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn::after { transition: none; }
+}
+
+/* ---------- Resource cards (Press kit, Contact, Governance, Donate…): the link reacts only when the link itself is hovered ---------- */
+:is(html, #item-link-only-boost) body .openms-lib-page .openms-lib-resources__item:is(:hover, :focus-within) .openms-lib-resources__item-link:not(:hover):not(:focus-visible) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  gap: 0.4rem !important;
+  text-decoration: none !important;
+}
+
+:is(html, #item-link-only-boost) body .openms-lib-page .openms-lib-resources__item .openms-lib-resources__item-link:is(:hover, :focus-visible) {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  gap: 0.6rem !important;
+  text-decoration: none !important;
+}
+
+/* the arrow stays put while the card is hovered; it only slides when the link itself is hovered */
+:is(html, #item-link-only-boost) body .openms-lib-page .openms-lib-resources__item:is(:hover, :focus-within) .openms-lib-resources__item-link:not(:hover):not(:focus-visible) > * {
+  transform: none !important;
+  margin-left: 0 !important;
+}
+
+:is(html, #item-link-only-boost) body .openms-lib-page .openms-lib-resources__item .openms-lib-resources__item-link:is(:hover, :focus-visible) > * {
+  transform: translateX(3px) !important;
+  transition: transform 0.2s ease;
+}
+
+/* ============================================================================
+   Mobile (<= 767px): cards that have an icon or a number keep it on the left,
+   with the title and the description to its right (title level with the top of
+   the icon / number). Desktop and tablet layouts are unchanged.
+   ============================================================================ */
+@media (max-width: 767px) {
+
+  /* ---- numbered tiles (Sponsor Us, Governance, Developer Retreat, Partnerships…) ---- */
+  :is(html, #m-cards-tile) body .openms-lib-about__tile {
+    display: grid !important;
+    grid-template-columns: 3.75rem minmax(0, 1fr) !important;
+    grid-template-rows: repeat(6, auto) !important;
+    column-gap: 1rem !important;
+    row-gap: 0 !important;
+    align-items: start !important;
+  }
+
+  :is(html, #m-cards-tile) body .openms-lib-about__tile > .openms-lib-about__num {
+    grid-column: 1 !important;
+    grid-row: 1 / span 6 !important;
+    margin: 0 !important;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  :is(html, #m-cards-tile) body .openms-lib-about__tile > :not(.openms-lib-about__num) {
+    grid-column: 2 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    min-width: 0;
+  }
+
+  :is(html, #m-cards-tile) body .openms-lib-about__tile > :not(.openms-lib-about__num) ~ :not(.openms-lib-about__num) {
+    margin-top: 0.35rem !important;
+  }
+
+  /* ---- generic icon cards: icon | (kicker) title, text, link ---- */
+  :is(html, #m-cards-icon) body :is(
+    .openms-lib-resources__item:not(:has(.press-kit-item__preview)),
+    .contribute-channel,
+    .openms-lib-resources__explore-card,
+    .governance-membership__card
+  ) {
+    display: grid !important;
+    grid-template-columns: 3rem minmax(0, 1fr) !important;
+    grid-template-rows: repeat(6, auto) !important;
+    grid-auto-flow: row !important;
+    column-gap: 1rem !important;
+    row-gap: 0 !important;
+    align-items: start !important;
+    justify-items: start !important;
+  }
+
+  /* the icon + tag row dissolves so the icon and tag become grid items */
+  :is(html, #m-cards-icon) body .openms-lib-resources__item > .openms-lib-resources__item-top {
+    display: contents !important;
+  }
+
+  :is(html, #m-cards-icon) body :is(
+    .openms-lib-resources__item-icon,
+    .contribute-channel__icon,
+    .openms-lib-resources__explore-icon,
+    .governance-membership__icon
+  ) {
+    grid-column: 1 !important;
+    grid-row: 1 / span 6 !important;
+    align-self: start !important;
+    margin: 0 !important;
+  }
+
+  :is(html, #m-cards-icon) body :is(
+    .openms-lib-resources__item > *:not(.openms-lib-resources__item-top):not(.openms-lib-resources__item-icon),
+    .openms-lib-resources__item-tag,
+    .contribute-channel > :not(.contribute-channel__icon),
+    .openms-lib-resources__explore-card > :not(.openms-lib-resources__explore-icon),
+    .governance-membership__card > :not(.governance-membership__icon)
+  ) {
+    grid-column: 2 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* spacing between the stacked text rows (the first one sits at the icon's top) */
+  :is(html, #m-cards-icon) body :is(
+    .openms-lib-resources__item-tag ~ *,
+    .openms-lib-resources__item-title ~ *,
+    .contribute-channel__title ~ *,
+    .openms-lib-resources__explore-tag ~ *,
+    .openms-lib-resources__explore-title ~ *,
+    .governance-membership__tag ~ *
+  ):not(.openms-lib-resources__item-icon):not(.contribute-channel__icon):not(.openms-lib-resources__explore-icon) {
+    margin-top: 0.35rem !important;
+  }
+
+  /* ---- developer cards: icon left, body right ---- */
+  :is(html, #m-cards-dev) body .openms-lib-developers__card {
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+  :is(html, #m-cards-dev) body .openms-lib-developers__card > .openms-lib-developers__card-body {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+  }
+
+  /* ---- higher-specificity variants for pages whose cards carry an id-scoped layout ---- */
+  :is(html, #m-cards-dev2) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+  :is(html, #m-cards-dev2) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card > .openms-lib-developers__card-body {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+  }
+
+  :is(html, #m-cards-tile2) body .openms-lib-page #governance-bodies .openms-lib-about__tile,
+  :is(html, #m-cards-tile2) body .openms-lib-page--governance .openms-lib-about__tile {
+    display: grid !important;
+    grid-template-columns: 3.75rem minmax(0, 1fr) !important;
+    grid-template-rows: repeat(6, auto) !important;
+    column-gap: 1rem !important;
+    row-gap: 0 !important;
+    align-items: start !important;
+  }
+
+  :is(html, #m-cards-tile2) body .openms-lib-page #governance-bodies .openms-lib-about__tile > .openms-lib-about__num,
+  :is(html, #m-cards-tile2) body .openms-lib-page--governance .openms-lib-about__tile > .openms-lib-about__num {
+    grid-column: 1 !important;
+    grid-row: 1 / span 6 !important;
+    margin: 0 !important;
+  }
+
+  :is(html, #m-cards-tile2) body .openms-lib-page #governance-bodies .openms-lib-about__tile > :not(.openms-lib-about__num),
+  :is(html, #m-cards-tile2) body .openms-lib-page--governance .openms-lib-about__tile > :not(.openms-lib-about__num) {
+    grid-column: 2 !important;
+    margin-top: 0 !important;
+    min-width: 0;
+  }
+
+  :is(html, #m-cards-tile2) body .openms-lib-page #governance-bodies .openms-lib-about__tile > :not(.openms-lib-about__num) ~ :not(.openms-lib-about__num),
+  :is(html, #m-cards-tile2) body .openms-lib-page--governance .openms-lib-about__tile > :not(.openms-lib-about__num) ~ :not(.openms-lib-about__num) {
+    margin-top: 0.35rem !important;
+  }
+
+
+  /* empty kicker labels take no row, so the title starts level with the icon */
+  :is(html, #m-cards-empty) body :is(.openms-lib-resources__explore-tag, .openms-lib-resources__item-tag, .governance-membership__tag):empty {
+    display: none !important;
+  }
+
+  /* first text row starts level with the top of the icon / number */
+  :is(html, #m-cards-first) body .openms-lib-page :is(
+    .openms-lib-resources__explore-title.openms-lib-resources__explore-title,
+    .contribute-channel__title.contribute-channel__title,
+    .openms-lib-about__tile-title.openms-lib-about__tile-title,
+    .governance-membership__tag.governance-membership__tag,
+    .openms-lib-developers__card-title-row.openms-lib-developers__card-title-row,
+    .openms-lib-developers__card-body > .openms-lib-developers__card-title
+  ) {
+    margin-top: -0.3rem !important;
+    line-height: 1.3 !important;
+  }
+
+  :is(html, #m-cards-first) body .openms-lib-page .openms-lib-resources__item > .openms-lib-resources__item-tag,
+  :is(html, #m-cards-first) body .openms-lib-page .openms-lib-resources__item > .openms-lib-resources__item-title:first-of-type {
+    margin-top: -0.15rem !important;
+  }
+
+  /* "Explore OpenMS-lib" navy cards: title level with the top of the icon (beats the id-scoped margin) */
+  :is(html, #m-cards-explore) body .openms-lib-page #getting-started#getting-started .openms-lib-resources__explore-card > .openms-lib-resources__explore-title {
+    margin-top: -0.3rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* ---- TOPP split section ("Compose workflows", "Engine integration"): icon left, text right ---- */
+  :is(html, #m-cards-topp) body .openms-lib-topp-split__nested-item {
+    display: grid !important;
+    grid-template-columns: 2.25rem minmax(0, 1fr) !important;
+    grid-template-rows: repeat(4, auto) !important;
+    column-gap: 1rem !important;
+    row-gap: 0 !important;
+    align-items: start !important;
+  }
+
+  :is(html, #m-cards-topp) body .openms-lib-topp-split__nested-item > .openms-lib-topp-split__nested-icon {
+    grid-column: 1 !important;
+    grid-row: 1 / span 4 !important;
+    margin: 0 !important;
+  }
+
+  :is(html, #m-cards-topp) body .openms-lib-topp-split__nested-item > :not(.openms-lib-topp-split__nested-icon) {
+    grid-column: 2 !important;
+    min-width: 0;
+    margin-bottom: 0 !important;
+  }
+
+  :is(html, #m-cards-topp) body .openms-lib-topp-split__nested-item > .openms-lib-topp-split__nested-title {
+    margin-top: -0.3rem !important;
+    line-height: 1.3 !important;
+  }
+
+  :is(html, #m-cards-topp) body .openms-lib-topp-split__nested-item > .openms-lib-topp-split__nested-text {
+    margin-top: 0.35rem !important;
+  }
+
+  /* developer cards size to their content (no tall empty card, link right under the text) */
+  :is(html, #m-cards-dev-space) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card {
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 1.15rem 1.15rem 1.15rem 1.15rem !important;
+    align-content: flex-start !important;
+  }
+
+  :is(html, #m-cards-dev-space) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card > .openms-lib-developers__card-body {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-self: flex-start !important;
+    gap: 0.35rem !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  :is(html, #m-cards-dev-space) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card-body > :is(.openms-lib-developers__card-cta, .openms-lib-developers__card-link, .openms-lib-developers__platforms) {
+    margin-top: 0.15rem !important;
+    padding-top: 0 !important;
+    align-self: flex-start !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* "Reviewing Pull Requests": the links row sits lower, with clear space under the description */
+  :is(html, #m-cards-review-links) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__card-body > .openms-lib-developers__platforms {
+    margin-top: 1rem !important;
+    padding-top: 0.9rem !important;
+  }
+}
+
+/* ---- "For Developers / Contribute" cards from sm up: icon on the left, text on the right (same as phones) ---- */
+@media (min-width: 768px) {
+  :is(html, #dev-cards-side) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    text-align: left !important;
+  }
+  :is(html, #dev-cards-side) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card > .openms-lib-developers__card-body {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    align-self: stretch !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  :is(html, #dev-cards-side) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card-body :is(.openms-lib-developers__card-title-row, .openms-lib-developers__card-title, .openms-lib-developers__card-subtitle) {
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+}
+
+/* ---- developer cards, every screen size: the link sits a fixed, small distance under the text
+   (no stretching gap when the cards in a row have different heights) ---- */
+:is(html, #dev-cards-gap) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card > .openms-lib-developers__card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  gap: 0.5rem !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+:is(html, #dev-cards-gap) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card-body > :is(.openms-lib-developers__card-cta, .openms-lib-developers__card-link, .openms-lib-developers__platforms) {
+  margin-top: 0.35rem !important;
+  align-self: flex-start !important;
+}
+
+:is(html, #dev-cards-gap) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card {
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+@media (max-width: 767px) {
+  /* ---- cards without an icon (e.g. Archived apps "Still usable" / "Check first"): the text uses the whole card ---- */
+  :is(html, #m-cards-noicon) body .contribute-channel:not(:has(> .contribute-channel__icon)) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-items: normal !important;
+  }
+
+  :is(html, #m-cards-noicon) body .contribute-channel:not(:has(> .contribute-channel__icon)) > * {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+  }
+
+  /* and the two cards stack so each text line is a comfortable width */
+  :is(html, #m-cards-noicon) body .contribute-channels__strip:not(:has(.contribute-channel__icon)) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* numbered tiles fit their content: no extra row gaps from empty grid rows (beats id-scoped page rules) */
+  :is(html, #m-cards-tile-fit) body .openms-lib-page .openms-lib-about__tile.openms-lib-about__tile {
+    row-gap: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    align-content: start !important;
+  }
+
+  :is(html, #m-cards-tile-fit) body .openms-lib-page .openms-lib-about__tile.openms-lib-about__tile > .openms-lib-about__tile-title {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* ---- Fellowship hero facts: the same three cards side by side on every screen size ---- */
+@media (max-width: 767px) {
+  :is(html, #fellow-facts-row) body .openms-lib-page--fellowship .fellowship-facts {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+  }
+
+  :is(html, #fellow-facts-row) body .openms-lib-page--fellowship .fellowship-facts__item {
+    padding: 0.85rem 0.4rem !important;
+    gap: 0.4rem !important;
+    min-width: 0;
+    align-content: start !important;
+    justify-content: flex-start !important;
+    align-items: start !important;
+    justify-items: center !important;
+  }
+
+  :is(html, #fellow-facts-row) body .openms-lib-page--fellowship .fellowship-facts__text {
+    font-size: 0.8125rem !important;
+    line-height: 1.25 !important;
+    overflow-wrap: break-word;
+    hyphens: manual;
+  }
+
+  :is(html, #fellow-facts-row) body .openms-lib-page--fellowship .fellowship-facts__icon {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* ---- Mobile: cards are as tall as their content (no forced minimum height that leaves a blank band) ---- */
+@media (max-width: 767px) {
+  :is(html, #m-cards-nominh) body .openms-lib-page :is(
+    .openms-lib-resources__item.openms-lib-resources__item,
+    .governance-card.governance-card,
+    .press-kit-grid > .openms-lib-resources__item
+  ) {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+}
+
+/* ---- Contribute "Stay in touch" channel cards from sm up: icon on the left, text on the right ---- */
+@media (min-width: 768px) {
+  :is(html, #channel-side) body .openms-lib-page--contribute .contribute-channel:has(> .contribute-channel__icon) {
+    display: grid !important;
+    grid-template-columns: 3rem minmax(0, 1fr) !important;
+    grid-template-rows: repeat(6, auto) !important;
+    column-gap: 1rem !important;
+    row-gap: 0 !important;
+    align-items: start !important;
+    justify-items: start !important;
+    text-align: left !important;
+  }
+
+  :is(html, #channel-side) body .openms-lib-page--contribute .contribute-channel > .contribute-channel__icon {
+    grid-column: 1 !important;
+    grid-row: 1 / span 6 !important;
+    margin: 0 !important;
+    align-self: start !important;
+  }
+
+  :is(html, #channel-side) body .openms-lib-page--contribute .contribute-channel:has(> .contribute-channel__icon) > :not(.contribute-channel__icon) {
+    grid-column: 2 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    min-width: 0;
+    text-align: left !important;
+  }
+
+  :is(html, #channel-side) body .openms-lib-page--contribute .contribute-channel:has(> .contribute-channel__icon) > .contribute-channel__title {
+    margin-top: -0.3rem !important;
+    line-height: 1.3 !important;
+  }
+
+  :is(html, #channel-side) body .openms-lib-page--contribute .contribute-channel:has(> .contribute-channel__icon) > .contribute-channel__title ~ * {
+    margin-top: 0.4rem !important;
+  }
+}
+
+/* ---- Research Partnerships "Partnerships include" tiles from sm up: number on the left, text on the right ---- */
+@media (min-width: 768px) {
+  :is(html, #rp-tiles-side) body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__tile.openms-lib-about__tile {
+    display: grid !important;
+    grid-template-columns: 5rem minmax(0, 1fr) !important;
+    grid-template-rows: repeat(6, auto) !important;
+    column-gap: 1.75rem !important;
+    row-gap: 0 !important;
+    align-items: start !important;
+    align-content: start !important;
+    text-align: left !important;
+    min-height: 0 !important;
+  }
+
+  :is(html, #rp-tiles-side) body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__tile > .openms-lib-about__num {
+    grid-column: 1 !important;
+    grid-row: 1 / span 6 !important;
+    margin: 0 !important;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  :is(html, #rp-tiles-side) body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__tile > :not(.openms-lib-about__num) {
+    grid-column: 2 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    min-width: 0;
+    text-align: left !important;
+  }
+
+  :is(html, #rp-tiles-side) body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__tile > .openms-lib-about__tile-title {
+    margin-top: -0.3rem !important;
+    line-height: 1.3 !important;
+  }
+
+  :is(html, #rp-tiles-side) body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__tile > .openms-lib-about__tile-title ~ * {
+    margin-top: 0.35rem !important;
+  }
+}
+
+/* ---- Research Partnerships tiles: enough width for the number-left layout (no five-across squeeze) ---- */
+@media (min-width: 768px) {
+  :is(html, #rp-tiles-fit) body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  :is(html, #rp-tiles-fit) body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__tile > :not(.openms-lib-about__num) {
+    overflow-wrap: anywhere;
+    hyphens: manual;
+  }
+}
+
+@media (min-width: 1200px) {
+  :is(html, #rp-tiles-fit) body .openms-lib-page--research-partnerships #partnerships-include .openms-lib-about__mosaic {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}

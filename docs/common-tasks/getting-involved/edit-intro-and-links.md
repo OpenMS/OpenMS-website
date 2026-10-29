@@ -1,0 +1,41 @@
+# Change the intro and links of the Getting Involved page
+
+The page **Getting Involved** has the address **https://openms.de/contribute/** (the address and the menu label are different).
+
+**You will change:** a few lines in `config.yaml` (search for `contributePage:`)  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
+
+**On the website**
+
+![The top of the Getting Involved page with the small word and the intro numbered](../../common-tasks-screenshot-images/getting-involved/1-intro-on-site.png)
+
+**In `config.yaml`**
+
+![The contributePage lines in config.yaml, numbered](../../common-tasks-screenshot-images/getting-involved/2-config.png)
+
+The numbers match: the part marked **1** on the website is the line marked **1** in the file. Lines **3** and **4** are used further down the page.
+
+## What you will change
+
+| Part of the page | Lines in `contributePage` |
+|------------------|----------------------------|
+| The small word above the title | `eyebrow` |
+| The intro sentence | `subtitle` |
+| The address of the **Join Discord** button at the top | `links` → `discord` |
+| The community e-mail address (shown in the Outreach box) | `communityEmail` |
+
+The cards further down the page ("Ways to contribute", "Stay in touch", "We encourage") and the Outreach links have their own guide: [Add or change the cards](edit-cards.md).
+
+The **section headings and their texts** ("Ways to contribute", "Stay in touch", the Funding, Outreach and Code of Conduct boxes…) are part of the design. To change them, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
+
+## Step by step
+
+1. Open **https://github.com/OpenMS/OpenMS-website/blob/main/config.yaml** and click the **pencil icon**. ([Need help?](../../getting-started/edit-via-github.md#step-1--open-the-file))
+2. Click inside the text box, press **Ctrl + F** (Windows) or **Cmd + F** (Mac) and search for `contributePage:`.
+3. Change **only the words after the colon**. Keep the quotes and the spaces at the start of each line. See [Spaces matter](../../getting-started/edit-via-github.md#spaces-matter-in-configyaml).
+4. Save and send for review: [How to make a change, steps 3 to 6](../../getting-started/edit-via-github.md#step-3--save-commit-changes).
+5. Open the **Deploy Preview** and check **/contribute/**. Click the links you changed.
+
+## Related guides
+
+- [Add or change the cards on this page](edit-cards.md)
+- Back to the [list of all tasks](../README.md)

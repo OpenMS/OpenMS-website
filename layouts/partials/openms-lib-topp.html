@@ -43,7 +43,6 @@
       {{- with $features }}
       <ul class="openms-lib-topp-split__nested" role="list">
         {{- range $i, $feature := . }}
-        {{- if lt $i 2 }}
         {{- $icon := $feature.icon | default (index $defaultIcons $i) | default "fas fa-layer-group" -}}
         <li class="openms-lib-topp-split__nested-item openms-lib-hub__reveal" role="listitem">
           <span class="openms-lib-topp-split__nested-icon" aria-hidden="true"><i class="{{ $icon }}"></i></span>
@@ -51,8 +50,13 @@
           <h3 class="openms-lib-topp-split__nested-title">{{ . }}</h3>
           {{- end }}
           <p class="openms-lib-topp-split__nested-text">{{ $feature.text }}</p>
+          {{- with $feature.linkUrl }}
+          <p class="openms-lib-topp-split__nested-link"><a
+            href="{{ . }}"
+            {{- if in . "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+          >{{ $feature.linkText | default "Learn more" }}</a></p>
+          {{- end }}
         </li>
-        {{- end }}
         {{- end }}
       </ul>
       {{- end }}
