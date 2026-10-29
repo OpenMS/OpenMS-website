@@ -65,7 +65,7 @@ languages:
       newsBanner:
         enabled: true
         label: News
-        text: 'OpenMS 3.6.0 released — a substantial update and an important step toward our next major version!'
+        text: '🎉 OpenMS 3.6.0 is released!'
         link: /news/release3.6/
       contributePage:
         eyebrow: Community
