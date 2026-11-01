@@ -755,6 +755,16 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   transform: none !important;
 }
 
+/* on phones as big as the card text (see "Arrow links on phones" in
+   text-links.css) */
+@media (max-width: 767px) {
+  :is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+  :is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+  :is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn {
+    font-size: var(--openms-body-size) !important;
+  }
+}
+
 :is(html, #lib-dev-links-boost) body .openms-lib-page--openms-lib:not(.openms-lib-page--pyopenms-pro):not(.openms-lib-page--pyopenms-viz-pro):not(.openms-lib-page--webapps) #for-developers#for-developers .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn:is(:hover, :focus-visible) {
   text-decoration: none !important;
   background: transparent !important;
