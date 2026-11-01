@@ -1433,9 +1433,14 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
     gap: 0.4rem !important;
     min-width: 0;
     align-content: start !important;
-    justify-content: flex-start !important;
+    /* one column as wide as the card, so the icon and text stay in the
+       middle even when the text is shorter than the card (it used to sit
+       on the left between about 430px and 767px) */
+    grid-template-columns: minmax(0, 1fr) !important;
+    justify-content: center !important;
     align-items: start !important;
     justify-items: center !important;
+    text-align: center !important;
   }
 
   :is(html, #fellow-facts-row) body .openms-lib-page--fellowship .fellowship-facts__text {
