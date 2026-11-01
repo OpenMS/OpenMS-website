@@ -3,8 +3,6 @@ title: "Core Developers"
 hideShortcuts: true
 ---
 
-# Core Developers
-
 Core developers are trusted contributors who play a central role in maintaining and guiding the OpenMS project. They are active participants in the development of the software and the governance of the project.
 
 Core developers collectively form the **Executive Committee**, which is responsible for the long-term direction and governance of OpenMS.

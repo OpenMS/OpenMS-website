@@ -947,6 +947,14 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
     align-items: start !important;
   }
 
+  /* same space on the right as on the left: an older phone rule (with the
+     #what-is-openms ID) removed the side padding and only the left came
+     back, so the text touched the right edge of the card. The repeated
+     class outranks that ID rule. */
+  :is(html, #lib-benefit-side-boost) body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit.openms-lib-about__benefit.openms-lib-about__benefit {
+    padding-inline: var(--openms-num-card-pad) !important;
+  }
+
   :is(html, #lib-benefit-side-boost) body .openms-lib-page--openms-lib .openms-lib-about--benefits .openms-lib-about__benefit-num {
     grid-area: num !important;
     align-self: start;

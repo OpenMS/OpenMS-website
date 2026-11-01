@@ -1105,6 +1105,15 @@ html body .home-page__block--partners .uni-partners--home {
   --uni-home-gap: clamp(1.5rem, 2.5vw, 2.25rem);
 }
 
+/* The section around the rows is already as wide as the screen, so the
+   rows must not stretch past it: an older rule pulled them out by the
+   page gutter on each side, which made the home page 40px (on wide
+   screens up to 120px) wider than the screen. */
+html body .home-page .home-page__block--partners .uni-partners--home .uni-partners__marquee {
+  margin-inline: 0;
+  width: 100%;
+}
+
 html body .home-page__block--partners .uni-partners--home .uni-partners__marquee .uni-partners__row {
   gap: var(--uni-home-gap) !important;
   padding-inline: 0 var(--uni-home-gap) !important;
