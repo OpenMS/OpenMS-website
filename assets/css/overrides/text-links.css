@@ -42,3 +42,17 @@
   font-family: inherit !important;
   font-style: italic !important;
 }
+
+/* ---------- Arrow links on phones ----------
+   Card links that end with an arrow ("Learn more →", "Read paper →",
+   "Back to news") use the small text size on large screens. On phones that
+   looked too small next to the card text, so there they use the body text
+   size. The ID in the last :is() makes this outrank the page-specific rules
+   that set the small size with !important. The OpenMS library cards have a
+   stronger rule of their own, so product-pages.css repeats this for them.
+   Buttons with an arrow keep the button size. */
+@media (max-width: 767px) {
+  :is(html, #arrow-link-size) body :is(#arrow-link-size, .openms-lib-resources__item-link, .openms-lib-about__tile-link, .webapps-project-card__cta, .openms-lib-developers__card-link, .openms-lib-topp-split__nested-link, .publications-cite-card__action, .publications-more__btn, .news-story__back, .contribute-track__cta, .contribute-channel__link) {
+    font-size: var(--openms-body-size) !important;
+  }
+}

@@ -459,6 +459,14 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   -webkit-text-fill-color: var(--openms-blue) !important;
 }
 
+/* on phones the link is as big as the card text (see "Arrow links on phones"
+   in text-links.css) */
+@media (max-width: 767px) {
+  html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--link .openms-lib-developers__card-link.openms-lib-developers__card-link {
+    font-size: var(--openms-body-size) !important;
+  }
+}
+
 html body #for-developers#for-developers.openms-lib-developers--grouped .openms-lib-developers__card--link .openms-lib-developers__card-link span {
   display: inline-block;
   transition: transform 0.2s ease;
