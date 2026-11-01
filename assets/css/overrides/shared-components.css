@@ -1026,9 +1026,10 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
 }
 
 /* on phones as big as the card text (see "Arrow links on phones" in
-   text-links.css) */
+   text-links.css), also while the card is hovered, so the size never jumps */
 @media (max-width: 767px) {
-  :is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn {
+  :is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn,
+  :is(html, #dev-review-links-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--review:is(:hover, :focus-within) .openms-lib-developers__platforms a.openms-lib-btn.openms-lib-developers__platform-btn {
     font-size: var(--openms-body-size) !important;
   }
 }
