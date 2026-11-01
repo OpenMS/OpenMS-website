@@ -1,4 +1,10 @@
+// Terminal animation (partials/terminal.html, used by the heroitems shortcode).
+// Wrapped so it keeps the jQuery that typed.js extends: baseof.html loads a
+// second jQuery afterwards, and that one has no .typed(). Pages without a
+// terminal do nothing.
+(function ($) {
 $(function() {
+    if (!$('.prompt').length || !$.fn.typed) return;
     var data = [
     // { 
     //   action: 'type',
@@ -69,4 +75,4 @@ $(function() {
             break;
       }
   }
-  
+})(jQuery);
