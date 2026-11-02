@@ -1204,14 +1204,25 @@ html body .home-page__block--partners .uni-partners--home .uni-partners__marquee
    slid the arrow 2px. These links are aligned to the right of their
    heading, so the words jumped left whenever the mouse touched them. The
    gap is now the same with and without hover (and the same on both
-   links), and the arrow does not slide. */
+   links); only the arrow slides, by 2px like the arrows on the app cards.
+   A transform does not change the layout, so the words stay put. */
 html body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all),
 html body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all):is(:hover, :focus-visible) {
   gap: 0.35rem !important;
   column-gap: 0.35rem !important;
 }
 
-html body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all) :is(.webapps-featured__show-all-icon, .community-news-events__view-all-icon),
-html body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all):is(:hover, :focus-visible) :is(.webapps-featured__show-all-icon, .community-news-events__view-all-icon) {
+html body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all) :is(.webapps-featured__show-all-icon, .community-news-events__view-all-icon) {
   transform: none !important;
+  transition: transform 0.2s ease;
+}
+
+html body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all):is(:hover, :focus-visible) :is(.webapps-featured__show-all-icon, .community-news-events__view-all-icon) {
+  transform: translateX(2px) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all) :is(.webapps-featured__show-all-icon, .community-news-events__view-all-icon) {
+    transition: none;
+  }
 }
