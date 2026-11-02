@@ -76,3 +76,12 @@ html body .openms-lib-page--developer-retreat .retreat-upcoming__actions .openms
 html body .openms-lib-page--developer-retreat .retreat-upcoming__actions .openms-lib-btn .openms-lib-btn__label {
   font-size: var(--openms-body-size-lg) !important;
 }
+
+/* The button is only as wide as its text (plus its padding) at every width;
+   sitewide phone rules stretch single buttons to the full row. The ID in
+   :is() outranks those rules. */
+:is(html, #retreat-register-fit) body .openms-lib-page--developer-retreat .retreat-upcoming__actions .openms-lib-btn {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+}
