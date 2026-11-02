@@ -1198,3 +1198,20 @@ html body .home-page__block--partners .uni-partners--home .uni-partners__marquee
     font-size: 1.3rem !important;
   }
 }
+
+/* ---------- "Show all apps" and "View all" stay still on hover ----------
+   Older hover rules widened the gap between the words and the arrow and
+   slid the arrow 2px. These links are aligned to the right of their
+   heading, so the words jumped left whenever the mouse touched them. The
+   gap is now the same with and without hover (and the same on both
+   links), and the arrow does not slide. */
+html body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all),
+html body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all):is(:hover, :focus-visible) {
+  gap: 0.35rem !important;
+  column-gap: 0.35rem !important;
+}
+
+html body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all) :is(.webapps-featured__show-all-icon, .community-news-events__view-all-icon),
+html body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all):is(:hover, :focus-visible) :is(.webapps-featured__show-all-icon, .community-news-events__view-all-icon) {
+  transform: none !important;
+}
