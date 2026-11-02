@@ -67,3 +67,12 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
   white-space: nowrap !important;
   padding: var(--openms-btn-padding-y, 0.7rem) 1.25rem !important;
 }
+
+/* ---------- "Register here" is as big as the date and place above it ----------
+   Buttons use the small text size site-wide, which looked too small next to
+   the date and place of the retreat. This button (open or closed) uses the
+   same size as those two lines at every screen width. */
+html body .openms-lib-page--developer-retreat .retreat-upcoming__actions .openms-lib-btn,
+html body .openms-lib-page--developer-retreat .retreat-upcoming__actions .openms-lib-btn .openms-lib-btn__label {
+  font-size: var(--openms-body-size-lg) !important;
+}
