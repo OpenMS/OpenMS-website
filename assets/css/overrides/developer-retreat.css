@@ -68,18 +68,10 @@ html:is(html, #hero-eyebrow-chip-boost) body .home-page__hero p.hero-home__eyebr
   padding: var(--openms-btn-padding-y, 0.7rem) 1.25rem !important;
 }
 
-/* ---------- "Register here" is as big as the date and place above it ----------
-   Buttons use the small text size site-wide, which looked too small next to
-   the date and place of the retreat. This button (open or closed) uses the
-   same size as those two lines at every screen width. */
-html body .openms-lib-page--developer-retreat .retreat-upcoming__actions .openms-lib-btn,
-html body .openms-lib-page--developer-retreat .retreat-upcoming__actions .openms-lib-btn .openms-lib-btn__label {
-  font-size: var(--openms-body-size-lg) !important;
-}
-
-/* The button is only as wide as its text (plus its padding) at every width;
-   sitewide phone rules stretch single buttons to the full row. The ID in
-   :is() outranks those rules. */
+/* ---------- "Register here" is only as wide as its text ----------
+   Sitewide phone rules stretch single buttons to the full row. This button
+   keeps the normal button text size and is as wide as its text (plus its
+   padding) at every width. The ID in :is() outranks those rules. */
 :is(html, #retreat-register-fit) body .openms-lib-page--developer-retreat .retreat-upcoming__actions .openms-lib-btn {
   width: auto !important;
   flex: 0 0 auto !important;
