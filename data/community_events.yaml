@@ -44,12 +44,6 @@ events:
   category: workshop
   summary: Hands-on training on proteomics and metabolomics workflows with OpenMS
     and TOPP tools.
-- title: OpenMS Developer Meeting 2027
-  start: 2027-03-15
-  end: 2027-03-19
-  location: To be announced
-  category: developer-meeting
-  summary: Annual developer meeting with tutorials, talks, and code sprints.
 - title: OpenMS Open House 2025
   start: 2025-11-09
   location: University of Toronto, Canada
