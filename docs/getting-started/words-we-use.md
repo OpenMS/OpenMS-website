@@ -38,7 +38,7 @@ Most blocks on the website follow the same pattern: an eyebrow, a title (sometim
 | 3 | **Name** | The title of the card. | `name`, `title` |
 | 4 | **Description** | The short text of the card. | `description`, `text` |
 | 5 | **Maintainers** | The people who look after the app. | `maintainers` |
-| 6 | **Links** (the buttons of a card) | Each `- type:` line under `links:` is one button. How many fit: see [Featured Apps](../common-tasks/featured-apps/featured-apps-update-featured-apps.md#how-many-buttons-links-can-an-app-have) and [Affiliated Apps](../common-tasks/affiliated-apps/affiliated-apps-update-affiliated-apps.md#how-many-buttons-links-can-a-project-have). | `links` |
+| 6 | **Links** (the buttons of a card) | Each `- type:` line under `links:` is one button. How many fit: see [Featured Apps](../common-tasks/featured-apps-page/featured-apps-update-featured-apps.md#how-many-buttons-links-can-an-app-have) and [Affiliated Apps](../common-tasks/affiliated-apps-page/affiliated-apps-update-affiliated-apps.md#how-many-buttons-links-can-a-project-have). | `links` |
 
 ## Other words on the website
 

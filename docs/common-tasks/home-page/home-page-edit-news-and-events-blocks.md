@@ -16,13 +16,13 @@ Near the bottom of the home page, two columns show the **latest news** and the *
 
 ## Latest news
 
-- **The articles** are the newest ones from the News page. To add one, see [Add a news article](../news/news-add-news-post.md).
+- **The articles** are the newest ones from the News page. To add one, see [Add a news article](../news-page/news-add-news-post.md).
 - **The heading and the link:** search for `newsSection` and change `homeTitle` (the heading), `homeTitleHighlight` (the coloured word, which must be in the heading) and `homeViewAllText` (the "View all" link).
 - **How many articles are shown:** `homeLimit: 4`.
 
 ## Upcoming events
 
-- **The events** come from the calendar. To add one, see [Add or change an event](../calendar/calendar-add-or-change-event.md).
+- **The events** come from the calendar. To add one, see [Add or change an event](../calendar-page/calendar-add-or-change-event.md).
 - **The heading and the text:** search for `eventsSection` and change `title`, `titleHighlight`, `lead` and `calendarText` (the "View all" link).
 - **How many events are shown:** `limit: 4`.
 - **The message when there are no events:** `emptyEvents`.

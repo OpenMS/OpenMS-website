@@ -104,5 +104,5 @@ Never put the token in this repository.
 ## Related guides
 
 - [Edit the news and events blocks on the home page](../home-page/home-page-edit-news-and-events-blocks.md)
-- [Add a news article](../news/news-add-news-post.md), then link it from the event's description with `News: https://openms.de/news/…`
+- [Add a news article](../news-page/news-add-news-post.md), then link it from the event's description with `News: https://openms.de/news/…`
 - Back to the [list of all tasks](../README.md)

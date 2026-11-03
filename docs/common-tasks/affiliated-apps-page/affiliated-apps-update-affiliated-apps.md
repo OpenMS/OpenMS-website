@@ -4,7 +4,7 @@
 
 **You will change:** one block in `config.yaml`  ·  **Time:** about 15 minutes  ·  **Skills needed:** none
 
-> Apps the OpenMS team **does** maintain are different: see [Featured Apps](../featured-apps/featured-apps-update-featured-apps.md).
+> Apps the OpenMS team **does** maintain are different: see [Featured Apps](../featured-apps-page/featured-apps-update-featured-apps.md).
 
 ## What you will change
 
@@ -110,5 +110,5 @@ The text above the cards ("Partner ecosystem / Affiliated Apps / These projects 
 ## Related guides
 
 - [Add images](../any-page/add-images.md)
-- [Featured Apps](../featured-apps/featured-apps-update-featured-apps.md)
+- [Featured Apps](../featured-apps-page/featured-apps-update-featured-apps.md)
 - Back to the [list of all guides](../../README.md)

@@ -21,31 +21,31 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | **Home page** ([all its blocks](common-tasks/home-page/README.md)) | [Top banner](common-tasks/home-page/home-page-edit-top-banner.md) · [Adopted-by logos](common-tasks/home-page/home-page-update-adopted-by-logos.md) · [Three big numbers](common-tasks/home-page/home-page-update-big-numbers.md) · ["What is OpenMS?"](common-tasks/home-page/home-page-edit-what-is-openms.md) · [Ecosystem](common-tasks/home-page/home-page-edit-ecosystem.md) · ["Everyone is welcome"](common-tasks/home-page/home-page-edit-everyone-is-welcome.md) · [News and events blocks](common-tasks/home-page/home-page-edit-news-and-events-blocks.md) |
 | **Top menu** (every page) | [Announcement bar](common-tasks/navbar/update-announcement-bar.md) · [Menu items](common-tasks/navbar/edit-menu-items.md) |
 | **Footer** (every page) | [Footer links](common-tasks/footer/edit-footer-links.md) · [Social media icons](common-tasks/footer/edit-social-icons.md) |
-| **OpenMS-lib, pyOpenMS, pyOpenMS Viz, OpenMS Web Apps** | [OpenMS-lib](common-tasks/openms-lib/openms-lib-edit-page-blocks.md) · [pyOpenMS](common-tasks/pyopenms/pyopenms-edit-page-blocks.md) · [pyOpenMS Viz](common-tasks/pyopenms-viz/pyopenms-viz-edit-page-blocks.md) · [Web Apps](common-tasks/openms-web-apps/openms-web-apps-edit-page-blocks.md) |
-| **Featured Apps** | [Add, change or remove an app](common-tasks/featured-apps/featured-apps-update-featured-apps.md) |
-| **Affiliated Apps** | [Add, change or remove a project](common-tasks/affiliated-apps/affiliated-apps-update-affiliated-apps.md) |
-| **Archived Apps** | [Add, change or remove a project](common-tasks/archived-apps/archived-apps-update-archived-apps.md) |
+| **OpenMS-lib, pyOpenMS, pyOpenMS Viz, OpenMS Web Apps** | [OpenMS-lib](common-tasks/openms-lib-page/openms-lib-edit-page-blocks.md) · [pyOpenMS](common-tasks/pyopenms-page/pyopenms-edit-page-blocks.md) · [pyOpenMS Viz](common-tasks/pyopenms-viz-page/pyopenms-viz-edit-page-blocks.md) · [Web Apps](common-tasks/openms-web-apps-page/openms-web-apps-edit-page-blocks.md) |
+| **Featured Apps** | [Add, change or remove an app](common-tasks/featured-apps-page/featured-apps-update-featured-apps.md) |
+| **Affiliated Apps** | [Add, change or remove a project](common-tasks/affiliated-apps-page/affiliated-apps-update-affiliated-apps.md) |
+| **Archived Apps** | [Add, change or remove a project](common-tasks/archived-apps-page/archived-apps-update-archived-apps.md) |
 | **Learn** (menu links to other websites) | [Change the Learn links](common-tasks/learn/edit-learn-links.md) |
-| **Calendar** | [Add or change an event](common-tasks/calendar/calendar-add-or-change-event.md) |
-| **News** | [Add a news article](common-tasks/news/news-add-news-post.md) |
-| **Getting Involved** | [Intro and links](common-tasks/getting-involved/getting-involved-edit-intro-and-links.md) · [Cards](common-tasks/getting-involved/getting-involved-edit-cards.md) |
-| **OpenMS Fellowship** | [Text and labels](common-tasks/fellowship/fellowship-update-fellowship.md) |
-| **Annual Developer Retreat** | [Update the page (once a year)](common-tasks/developer-retreat/developer-retreat-update-retreat.md) |
-| **Code of Conduct** | [Change the text](common-tasks/code-of-conduct/code-of-conduct-edit-text.md) · [Report Handling Manual](common-tasks/code-of-conduct-enforcement-procedures/code-of-conduct-enforcement-procedures-edit-text.md) |
-| **Scientific and Technical Support** | [Intro text](common-tasks/scientific-and-technical-support/scientific-and-technical-support-edit-intro-text.md) |
-| **Governance** | [Intro text](common-tasks/governance/governance-edit-intro-text.md) · [Cards](common-tasks/governance/governance-edit-cards.md) |
-| **Our Sponsors** | [Add, change or remove a sponsor logo](common-tasks/our-sponsors/our-sponsors-update-sponsors.md) |
-| **Our Sponsorship Program** | [Levels](common-tasks/sponsorship-program/sponsorship-program-update-levels.md) · [Benefits](common-tasks/sponsorship-program/sponsorship-program-update-benefits.md) · [FAQ](common-tasks/sponsorship-program/sponsorship-program-update-faq.md) |
-| **Research Partnerships** | [Intro text](common-tasks/research-partnerships/research-partnerships-edit-partners.md) · [Partner logos](common-tasks/research-partnerships/research-partnerships-update-partner-logos.md) |
-| **Publications** | [Add or remove a paper](common-tasks/publications/publications-add-or-remove-paper.md) · [Google Scholar link](common-tasks/publications/publications-edit-google-scholar-link.md) |
-| **Leadership** | [Board of directors](common-tasks/leadership/leadership-update-board-of-directors.md) · [Executive Committee](common-tasks/leadership/leadership-update-executive-committee.md) |
-| **Contact** | [Intro text](common-tasks/contact/contact-edit-intro-text.md) · [Cards](common-tasks/contact/contact-edit-cards.md) |
-| **Donate** | [Connect to Zeffy](common-tasks/donate/donate-connect-zeffy.md) · [Intro text](common-tasks/donate/donate-edit-intro-text.md) |
-| **Executive Committee Charter** | [Change the text](common-tasks/executive-committee-charter/executive-committee-charter-edit-text.md) |
-| **Code of Conduct Enforcement Procedures** (Report Handling Manual) | [Change the text](common-tasks/code-of-conduct-enforcement-procedures/code-of-conduct-enforcement-procedures-edit-text.md) |
-| **Privacy** | [Change the text](common-tasks/privacy/privacy-edit-text.md) |
-| **Press kit** | [Replace a download](common-tasks/press-kit/press-kit-replace-a-download.md) |
-| **Impressum** | [Change the text](common-tasks/impressum/impressum-edit-text.md) |
+| **Calendar** | [Add or change an event](common-tasks/calendar-page/calendar-add-or-change-event.md) |
+| **News** | [Add a news article](common-tasks/news-page/news-add-news-post.md) |
+| **Getting Involved** | [Intro and links](common-tasks/getting-involved-page/getting-involved-edit-intro-and-links.md) · [Cards](common-tasks/getting-involved-page/getting-involved-edit-cards.md) |
+| **OpenMS Fellowship** | [Text and labels](common-tasks/fellowship-page/fellowship-update-fellowship.md) |
+| **Annual Developer Retreat** | [Update the page (once a year)](common-tasks/developer-retreat-page/developer-retreat-update-retreat.md) |
+| **Code of Conduct** | [Change the text](common-tasks/code-of-conduct-page/code-of-conduct-edit-text.md) · [Report Handling Manual](common-tasks/code-of-conduct-enforcement-procedures-page/code-of-conduct-enforcement-procedures-edit-text.md) |
+| **Scientific and Technical Support** | [Intro text](common-tasks/scientific-and-technical-support-page/scientific-and-technical-support-edit-intro-text.md) |
+| **Governance** | [Intro text](common-tasks/governance-page/governance-edit-intro-text.md) · [Cards](common-tasks/governance-page/governance-edit-cards.md) |
+| **Our Sponsors** | [Add, change or remove a sponsor logo](common-tasks/our-sponsors-page/our-sponsors-update-sponsors.md) |
+| **Our Sponsorship Program** | [Levels](common-tasks/sponsorship-program-page/sponsorship-program-update-levels.md) · [Benefits](common-tasks/sponsorship-program-page/sponsorship-program-update-benefits.md) · [FAQ](common-tasks/sponsorship-program-page/sponsorship-program-update-faq.md) |
+| **Research Partnerships** | [Intro text](common-tasks/research-partnerships-page/research-partnerships-edit-partners.md) · [Partner logos](common-tasks/research-partnerships-page/research-partnerships-update-partner-logos.md) |
+| **Publications** | [Add or remove a paper](common-tasks/publications-page/publications-add-or-remove-paper.md) · [Google Scholar link](common-tasks/publications-page/publications-edit-google-scholar-link.md) |
+| **Leadership** | [Board of directors](common-tasks/leadership-page/leadership-update-board-of-directors.md) · [Executive Committee](common-tasks/leadership-page/leadership-update-executive-committee.md) |
+| **Contact** | [Intro text](common-tasks/contact-page/contact-edit-intro-text.md) · [Cards](common-tasks/contact-page/contact-edit-cards.md) |
+| **Donate** | [Connect to Zeffy](common-tasks/donate-page/donate-connect-zeffy.md) · [Intro text](common-tasks/donate-page/donate-edit-intro-text.md) |
+| **Executive Committee Charter** | [Change the text](common-tasks/executive-committee-charter-page/executive-committee-charter-edit-text.md) |
+| **Code of Conduct Enforcement Procedures** (Report Handling Manual) | [Change the text](common-tasks/code-of-conduct-enforcement-procedures-page/code-of-conduct-enforcement-procedures-edit-text.md) |
+| **Privacy** | [Change the text](common-tasks/privacy-page/privacy-edit-text.md) |
+| **Press kit** | [Replace a download](common-tasks/press-kit-page/press-kit-replace-a-download.md) |
+| **Impressum** | [Change the text](common-tasks/impressum-page/impressum-edit-text.md) |
 | **Help for any page** | [Find and change the text of a page](common-tasks/any-page/edit-page-text.md) · [Add a picture or logo](common-tasks/any-page/add-images.md) |
 
 ## Working on the site

@@ -39,8 +39,8 @@ Do **not** delete these:
 | `demo_nbs/` | The pyOpenMS notebook that the pyOpenMS page opens in Google Colab (the card "Try Online", button "Open in Colab"). |
 | `.netlify/` | A small Netlify function (`addSlash`) used by some redirects in `static/_redirects`. |
 | `archetypes/` | Templates Hugo uses when someone runs `hugo new` (for example a new news article). |
-| `data/` | `community_events.yaml`, the events of the [Calendar](../common-tasks/calendar/calendar-add-or-change-event.md). |
-| `static/gallery/` | `members.html`, the [Executive Committee](../common-tasks/leadership/leadership-update-executive-committee.md) on the Leadership page. |
+| `data/` | `community_events.yaml`, the events of the [Calendar](../common-tasks/calendar-page/calendar-add-or-change-event.md). |
+| `static/gallery/` | `members.html`, the [Executive Committee](../common-tasks/leadership-page/leadership-update-executive-committee.md) on the Leadership page. |
 
 ## Using an archived picture again
 

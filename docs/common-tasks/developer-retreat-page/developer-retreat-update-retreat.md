@@ -73,7 +73,7 @@ pastPhoto
 - [ ] The poster shows and is not cut.
 - [ ] The register button does what you expect.
 
-> The retreat also shows in the **Community calendar**. See [Add or change an event](../calendar/calendar-add-or-change-event.md).
+> The retreat also shows in the **Community calendar**. See [Add or change an event](../calendar-page/calendar-add-or-change-event.md).
 
 ## Replace the photos (poster and last retreat's photo)
 

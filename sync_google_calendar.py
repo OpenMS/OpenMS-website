@@ -222,7 +222,7 @@ def main():
     with open(DATA_FILE, "w") as f:
         f.write(
             "# Community calendar — edit this file to add or update events "
-            "(see docs/common-tasks/calendar/calendar-add-or-change-event.md).\n"
+            "(see docs/common-tasks/calendar-page/calendar-add-or-change-event.md).\n"
             "# Entries marked `synced: true` are managed automatically by "
             "sync_google_calendar.py — edit the source calendar event "
             "instead of this file for those.\n"

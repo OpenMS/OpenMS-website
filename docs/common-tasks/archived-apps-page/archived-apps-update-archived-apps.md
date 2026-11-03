@@ -83,9 +83,9 @@ To change the button text, add a line `label:` (for example `label: Install (Win
 
 ## Moving an app to the archive
 
-To move an app from **Featured** or **Affiliated** to **Archived**, remove its block there (see [Featured Apps](../featured-apps/featured-apps-update-featured-apps.md) or [Affiliated Apps](../affiliated-apps/affiliated-apps-update-affiliated-apps.md)) and add a new block here.
+To move an app from **Featured** or **Affiliated** to **Archived**, remove its block there (see [Featured Apps](../featured-apps-page/featured-apps-update-featured-apps.md) or [Affiliated Apps](../affiliated-apps-page/affiliated-apps-update-affiliated-apps.md)) and add a new block here.
 
 ## Related guides
 
-- [Affiliated Apps](../affiliated-apps/affiliated-apps-update-affiliated-apps.md)
+- [Affiliated Apps](../affiliated-apps-page/affiliated-apps-update-affiliated-apps.md)
 - Back to the [list of all tasks](../README.md)

@@ -51,7 +51,7 @@ Main homepage hero: titles, description, CTA button, `stats` array.
 
 ### donatePage
 
-**`/donate/`** — Zeffy embed. See [Configure the donate page (Zeffy)](../common-tasks/donate/donate-connect-zeffy.md).
+**`/donate/`** — Zeffy embed. See [Configure the donate page (Zeffy)](../common-tasks/donate-page/donate-connect-zeffy.md).
 
 | Key | Purpose |
 |-----|---------|
@@ -77,7 +77,7 @@ Two large sections (users / developers) with `heroItems` cards.
 
 ### webappsSection + webapps
 
-Homepage projects carousel. See [Add an app to the home page](../common-tasks/featured-apps/featured-apps-update-featured-apps.md).
+Homepage projects carousel. See [Add an app to the home page](../common-tasks/featured-apps-page/featured-apps-update-featured-apps.md).
 
 ### footer
 

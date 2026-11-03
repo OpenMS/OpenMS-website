@@ -80,5 +80,5 @@ The full guide for the benefits, with pictures: [Change the benefits of the spon
 
 - [Add or change a question in the sponsorship FAQ](sponsorship-program-update-faq.md)
 - [Change the benefits of the sponsorship levels](sponsorship-program-update-benefits.md)
-- [Add, change or remove a sponsor logo](../our-sponsors/our-sponsors-update-sponsors.md)
+- [Add, change or remove a sponsor logo](../our-sponsors-page/our-sponsors-update-sponsors.md)
 - Back to the [list of all tasks](../README.md)

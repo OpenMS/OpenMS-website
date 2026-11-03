@@ -8,7 +8,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 
 | Page | Folder | Tasks |
 |------|--------|-------|
-| **Home page** ([openms.de](https://openms.de/)) | `home-page/` | [All the blocks of the home page](home-page/README.md) (start here) · [What is not shown](home-page/README.md#what-is-in-the-files-but-not-shown) · [Top banner](home-page/home-page-edit-top-banner.md) · ["Adopted by" logos](home-page/home-page-update-adopted-by-logos.md) · [Three big numbers](home-page/home-page-update-big-numbers.md) · ["What is OpenMS?"](home-page/home-page-edit-what-is-openms.md) · [Ecosystem](home-page/home-page-edit-ecosystem.md) · ["Everyone is welcome"](home-page/home-page-edit-everyone-is-welcome.md) · [News and events blocks](home-page/home-page-edit-news-and-events-blocks.md) · Featured Apps block: see [Featured Apps](featured-apps/featured-apps-update-featured-apps.md) |
+| **Home page** ([openms.de](https://openms.de/)) | `home-page/` | [All the blocks of the home page](home-page/README.md) (start here) · [What is not shown](home-page/README.md#what-is-in-the-files-but-not-shown) · [Top banner](home-page/home-page-edit-top-banner.md) · ["Adopted by" logos](home-page/home-page-update-adopted-by-logos.md) · [Three big numbers](home-page/home-page-update-big-numbers.md) · ["What is OpenMS?"](home-page/home-page-edit-what-is-openms.md) · [Ecosystem](home-page/home-page-edit-ecosystem.md) · ["Everyone is welcome"](home-page/home-page-edit-everyone-is-welcome.md) · [News and events blocks](home-page/home-page-edit-news-and-events-blocks.md) · Featured Apps block: see [Featured Apps](featured-apps-page/featured-apps-update-featured-apps.md) |
 | **Top menu** (every page) | `navbar/` | [Announcement bar](navbar/update-announcement-bar.md) · [Menu items, buttons, search box](navbar/edit-menu-items.md) |
 | **Footer** (every page) | `footer/` | [Footer links](footer/edit-footer-links.md) · [Social media icons](footer/edit-social-icons.md) |
 
@@ -16,18 +16,18 @@ Every page of the website has **its own folder** here. The folders follow the **
 
 | Page | Folder | Tasks |
 |------|--------|-------|
-| **OpenMS-lib** (`/openms-lib/`) | `openms-lib/` | [Change the blocks of the page](openms-lib/openms-lib-edit-page-blocks.md) |
-| **pyOpenMS** (`/pyopenms/`) | `pyopenms/` | [Change the blocks of the page](pyopenms/pyopenms-edit-page-blocks.md) |
-| **pyOpenMS Viz** (`/pyopenms-viz/`) | `pyopenms-viz/` | [Change the blocks of the page](pyopenms-viz/pyopenms-viz-edit-page-blocks.md) |
-| **OpenMS Web Apps** (`/webapps/`) | `openms-web-apps/` | [Change the blocks of the page](openms-web-apps/openms-web-apps-edit-page-blocks.md) |
+| **OpenMS-lib** (`/openms-lib/`) | `openms-lib-page/` | [Change the blocks of the page](openms-lib-page/openms-lib-edit-page-blocks.md) |
+| **pyOpenMS** (`/pyopenms/`) | `pyopenms-page/` | [Change the blocks of the page](pyopenms-page/pyopenms-edit-page-blocks.md) |
+| **pyOpenMS Viz** (`/pyopenms-viz/`) | `pyopenms-viz-page/` | [Change the blocks of the page](pyopenms-viz-page/pyopenms-viz-edit-page-blocks.md) |
+| **OpenMS Web Apps** (`/webapps/`) | `openms-web-apps-page/` | [Change the blocks of the page](openms-web-apps-page/openms-web-apps-edit-page-blocks.md) |
 
 ## Top menu → Apps
 
 | Page | Folder | Tasks |
 |------|--------|-------|
-| **Featured Apps** (`/featured-apps/`) | `featured-apps/` | [Add, change or remove an app](featured-apps/featured-apps-update-featured-apps.md) (also changes the home page block) |
-| **Affiliated Apps** (`/affiliated-apps/`) | `affiliated-apps/` | [Add, change or remove a project](affiliated-apps/affiliated-apps-update-affiliated-apps.md) |
-| **Archived Apps** (`/archived-apps/`) | `archived-apps/` | [Add, change or remove a project](archived-apps/archived-apps-update-archived-apps.md) |
+| **Featured Apps** (`/featured-apps/`) | `featured-apps-page/` | [Add, change or remove an app](featured-apps-page/featured-apps-update-featured-apps.md) (also changes the home page block) |
+| **Affiliated Apps** (`/affiliated-apps/`) | `affiliated-apps-page/` | [Add, change or remove a project](affiliated-apps-page/affiliated-apps-update-affiliated-apps.md) |
+| **Archived Apps** (`/archived-apps/`) | `archived-apps-page/` | [Add, change or remove a project](archived-apps-page/archived-apps-update-archived-apps.md) |
 
 ## Top menu → Learn
 
@@ -39,41 +39,41 @@ Every page of the website has **its own folder** here. The folders follow the **
 
 | Page | Folder | Tasks |
 |------|--------|-------|
-| **Calendar** (`/calendar/`) | `calendar/` | [Add or change an event](calendar/calendar-add-or-change-event.md) |
-| **News** (`/news/`) | `news/` | [Add a news article](news/news-add-news-post.md) |
-| **Getting Involved** (`/contribute/`) | `getting-involved/` | [Change the intro and links](getting-involved/getting-involved-edit-intro-and-links.md) · [Add or change the cards](getting-involved/getting-involved-edit-cards.md) |
-| **OpenMS Fellowship** (`/fellowship/`) | `fellowship/` | [Change the text and labels](fellowship/fellowship-update-fellowship.md) |
-| **Annual Developer Retreat** (`/developer-retreat/`) | `developer-retreat/` | [Update the page (once a year)](developer-retreat/developer-retreat-update-retreat.md) |
-| **Code of Conduct** (`/code-of-conduct/`) | `code-of-conduct/` | [Change the text](code-of-conduct/code-of-conduct-edit-text.md) · its [Report Handling Manual](code-of-conduct-enforcement-procedures/code-of-conduct-enforcement-procedures-edit-text.md) |
+| **Calendar** (`/calendar/`) | `calendar-page/` | [Add or change an event](calendar-page/calendar-add-or-change-event.md) |
+| **News** (`/news/`) | `news-page/` | [Add a news article](news-page/news-add-news-post.md) |
+| **Getting Involved** (`/contribute/`) | `getting-involved-page/` | [Change the intro and links](getting-involved-page/getting-involved-edit-intro-and-links.md) · [Add or change the cards](getting-involved-page/getting-involved-edit-cards.md) |
+| **OpenMS Fellowship** (`/fellowship/`) | `fellowship-page/` | [Change the text and labels](fellowship-page/fellowship-update-fellowship.md) |
+| **Annual Developer Retreat** (`/developer-retreat/`) | `developer-retreat-page/` | [Update the page (once a year)](developer-retreat-page/developer-retreat-update-retreat.md) |
+| **Code of Conduct** (`/code-of-conduct/`) | `code-of-conduct-page/` | [Change the text](code-of-conduct-page/code-of-conduct-edit-text.md) · its [Report Handling Manual](code-of-conduct-enforcement-procedures-page/code-of-conduct-enforcement-procedures-edit-text.md) |
 
 ## Top menu → Services
 
 | Page | Folder | Tasks |
 |------|--------|-------|
-| **Scientific and Technical Support** (`/scientific-and-technical-support/`) | `scientific-and-technical-support/` | [Change the intro text](scientific-and-technical-support/scientific-and-technical-support-edit-intro-text.md) |
+| **Scientific and Technical Support** (`/scientific-and-technical-support/`) | `scientific-and-technical-support-page/` | [Change the intro text](scientific-and-technical-support-page/scientific-and-technical-support-edit-intro-text.md) |
 
 ## Top menu → About (also in the footer)
 
 | Page | Folder | Tasks |
 |------|--------|-------|
-| **Governance** (`/governance/`) | `governance/` | [Change the intro text](governance/governance-edit-intro-text.md) · [Add or change the cards](governance/governance-edit-cards.md) |
-| **Our Sponsors** (`/our-sponsors/`) | `our-sponsors/` | [Add, change or remove a sponsor logo](our-sponsors/our-sponsors-update-sponsors.md) |
-| **Our Sponsorship Program** (`/sponsor-us/`, also the **Sponsor Us** button) | `sponsorship-program/` | [Change the levels](sponsorship-program/sponsorship-program-update-levels.md) · [Change the benefits](sponsorship-program/sponsorship-program-update-benefits.md) · [Add or change an FAQ question](sponsorship-program/sponsorship-program-update-faq.md) |
-| **Research Partnerships** (`/research-partnerships/`, also the **Partner with OpenMS** button) | `research-partnerships/` | [Change the intro](research-partnerships/research-partnerships-edit-partners.md) · [Add, change or remove a partner logo](research-partnerships/research-partnerships-update-partner-logos.md) |
-| **Publications** (`/publications/`) | `publications/` | [Add or remove a paper](publications/publications-add-or-remove-paper.md) · [Google Scholar link](publications/publications-edit-google-scholar-link.md) |
-| **Leadership** (`/contributors/`) | `leadership/` | [Update the board of directors](leadership/leadership-update-board-of-directors.md) · [Update the Executive Committee](leadership/leadership-update-executive-committee.md) |
-| **Contact** (`/contact/`) | `contact/` | [Change the intro text](contact/contact-edit-intro-text.md) · [Add or change the cards](contact/contact-edit-cards.md) |
+| **Governance** (`/governance/`) | `governance-page/` | [Change the intro text](governance-page/governance-edit-intro-text.md) · [Add or change the cards](governance-page/governance-edit-cards.md) |
+| **Our Sponsors** (`/our-sponsors/`) | `our-sponsors-page/` | [Add, change or remove a sponsor logo](our-sponsors-page/our-sponsors-update-sponsors.md) |
+| **Our Sponsorship Program** (`/sponsor-us/`, also the **Sponsor Us** button) | `sponsorship-program-page/` | [Change the levels](sponsorship-program-page/sponsorship-program-update-levels.md) · [Change the benefits](sponsorship-program-page/sponsorship-program-update-benefits.md) · [Add or change an FAQ question](sponsorship-program-page/sponsorship-program-update-faq.md) |
+| **Research Partnerships** (`/research-partnerships/`, also the **Partner with OpenMS** button) | `research-partnerships-page/` | [Change the intro](research-partnerships-page/research-partnerships-edit-partners.md) · [Add, change or remove a partner logo](research-partnerships-page/research-partnerships-update-partner-logos.md) |
+| **Publications** (`/publications/`) | `publications-page/` | [Add or remove a paper](publications-page/publications-add-or-remove-paper.md) · [Google Scholar link](publications-page/publications-edit-google-scholar-link.md) |
+| **Leadership** (`/contributors/`) | `leadership-page/` | [Update the board of directors](leadership-page/leadership-update-board-of-directors.md) · [Update the Executive Committee](leadership-page/leadership-update-executive-committee.md) |
+| **Contact** (`/contact/`) | `contact-page/` | [Change the intro text](contact-page/contact-edit-intro-text.md) · [Add or change the cards](contact-page/contact-edit-cards.md) |
 
 ## Footer only
 
 | Column | Page | Folder | Tasks |
 |--------|------|--------|-------|
-| SUPPORT | **Donate** (`/donate/`) | `donate/` | [Connect the donation form to Zeffy](donate/donate-connect-zeffy.md) · [Change the intro text](donate/donate-edit-intro-text.md) |
-| COMMUNITY | **Executive Committee Charter** (`/exec_committee/`) | `executive-committee-charter/` | [Change the text](executive-committee-charter/executive-committee-charter-edit-text.md) |
-| COMMUNITY | **Code of Conduct Enforcement Procedures** (Report Handling Manual, `/report-handling-manual/`) | `code-of-conduct-enforcement-procedures/` | [Change the text](code-of-conduct-enforcement-procedures/code-of-conduct-enforcement-procedures-edit-text.md) |
-| LEGAL | **Privacy** (`/privacy/`) | `privacy/` | [Change the text](privacy/privacy-edit-text.md) |
-| LEGAL | **Press kit** (`/press-kit/`) | `press-kit/` | [Replace a download](press-kit/press-kit-replace-a-download.md) |
-| LEGAL | **Impressum** (`/impressum/`) | `impressum/` | [Change the text](impressum/impressum-edit-text.md) |
+| SUPPORT | **Donate** (`/donate/`) | `donate-page/` | [Connect the donation form to Zeffy](donate-page/donate-connect-zeffy.md) · [Change the intro text](donate-page/donate-edit-intro-text.md) |
+| COMMUNITY | **Executive Committee Charter** (`/exec_committee/`) | `executive-committee-charter-page/` | [Change the text](executive-committee-charter-page/executive-committee-charter-edit-text.md) |
+| COMMUNITY | **Code of Conduct Enforcement Procedures** (Report Handling Manual, `/report-handling-manual/`) | `code-of-conduct-enforcement-procedures-page/` | [Change the text](code-of-conduct-enforcement-procedures-page/code-of-conduct-enforcement-procedures-edit-text.md) |
+| LEGAL | **Privacy** (`/privacy/`) | `privacy-page/` | [Change the text](privacy-page/privacy-edit-text.md) |
+| LEGAL | **Press kit** (`/press-kit/`) | `press-kit-page/` | [Replace a download](press-kit-page/press-kit-replace-a-download.md) |
+| LEGAL | **Impressum** (`/impressum/`) | `impressum-page/` | [Change the text](impressum-page/impressum-edit-text.md) |
 
 ## Help for any page · folder `any-page/`
 

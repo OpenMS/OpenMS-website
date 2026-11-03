@@ -24,27 +24,27 @@ Words on a page can be in **one of three places**:
 
 | Page | Words are in | How to change |
 |------|--------------|---------------|
-| Code of Conduct (`/code-of-conduct/`) | `content/en/code-of-conduct.md` | This guide, or [Code of Conduct](../code-of-conduct/code-of-conduct-edit-text.md) |
-| Code of Conduct **Report Handling Manual** (the page *Code of Conduct Enforcement Procedures*, `/report-handling-manual/`) | `content/en/report-handling-manual.md` | This guide, or [Report Handling Manual](../code-of-conduct-enforcement-procedures/code-of-conduct-enforcement-procedures-edit-text.md) |
-| Executive Committee Charter (`/exec_committee/`) | `content/en/exec_committee.md` | This guide, or [Executive Committee Charter](../executive-committee-charter/executive-committee-charter-edit-text.md) |
-| Impressum | `content/en/impressum.md` | This guide, or [Impressum](../impressum/impressum-edit-text.md) |
+| Code of Conduct (`/code-of-conduct/`) | `content/en/code-of-conduct.md` | This guide, or [Code of Conduct](../code-of-conduct-page/code-of-conduct-edit-text.md) |
+| Code of Conduct **Report Handling Manual** (the page *Code of Conduct Enforcement Procedures*, `/report-handling-manual/`) | `content/en/report-handling-manual.md` | This guide, or [Report Handling Manual](../code-of-conduct-enforcement-procedures-page/code-of-conduct-enforcement-procedures-edit-text.md) |
+| Executive Committee Charter (`/exec_committee/`) | `content/en/exec_committee.md` | This guide, or [Executive Committee Charter](../executive-committee-charter-page/executive-committee-charter-edit-text.md) |
+| Impressum | `content/en/impressum.md` | This guide, or [Impressum](../impressum-page/impressum-edit-text.md) |
 | Core Developers | `content/en/core_developers.md` | This guide |
-| Privacy Policy | `content/en/privacy.md` | [Privacy](../privacy/privacy-edit-text.md): keep the `###` and `####` heading lines exactly, the page is built from them. |
+| Privacy Policy | `content/en/privacy.md` | [Privacy](../privacy-page/privacy-edit-text.md): keep the `###` and `####` heading lines exactly, the page is built from them. |
 | Help | `content/en/help.md` | This guide. It contains some formatting symbols (`<p>`, `<strong>`): change only the words between them. |
-| News articles | `content/en/news/…` | [Add a news article](../news/news-add-news-post.md) |
+| News articles | `content/en/news/…` | [Add a news article](../news-page/news-add-news-post.md) |
 | Home page | `config.yaml` | [Edit the home page](../home-page/README.md) |
-| Community calendar | the OpenMS **Google Calendar** (copied into `data/community_events.yaml` by a robot: do not edit that file) | [Calendar](../calendar/calendar-add-or-change-event.md) |
-| Featured / Affiliated Apps | `config.yaml` | [Featured](../featured-apps/featured-apps-update-featured-apps.md) · [Affiliated](../affiliated-apps/affiliated-apps-update-affiliated-apps.md) |
-| Our Sponsors | `config.yaml` | [Sponsors](../our-sponsors/our-sponsors-update-sponsors.md) |
-| Developer Retreat | `config.yaml` | [Retreat](../developer-retreat/developer-retreat-update-retreat.md) |
-| Publications | `pmids.txt` | [Publications](../publications/publications-add-or-remove-paper.md) |
-| Donate | `config.yaml` | [Zeffy form](../donate/donate-connect-zeffy.md) · [Intro text](../donate/donate-edit-intro-text.md) |
+| Community calendar | the OpenMS **Google Calendar** (copied into `data/community_events.yaml` by a robot: do not edit that file) | [Calendar](../calendar-page/calendar-add-or-change-event.md) |
+| Featured / Affiliated Apps | `config.yaml` | [Featured](../featured-apps-page/featured-apps-update-featured-apps.md) · [Affiliated](../affiliated-apps-page/affiliated-apps-update-affiliated-apps.md) |
+| Our Sponsors | `config.yaml` | [Sponsors](../our-sponsors-page/our-sponsors-update-sponsors.md) |
+| Developer Retreat | `config.yaml` | [Retreat](../developer-retreat-page/developer-retreat-update-retreat.md) |
+| Publications | `pmids.txt` | [Publications](../publications-page/publications-add-or-remove-paper.md) |
+| Donate | `config.yaml` | [Zeffy form](../donate-page/donate-connect-zeffy.md) · [Intro text](../donate-page/donate-edit-intro-text.md) |
 | Top menu and footer links | `config.yaml` | [Top menu](../navbar/edit-menu-items.md) · [Footer](../footer/edit-footer-links.md) |
-| Getting Involved, Fellowship, Governance, Contact, Research Partnerships, Sponsorship Program, Services | the **intro** is in `config.yaml`; most **other words** are part of the design (layout) | [Getting Involved](../getting-involved/getting-involved-edit-intro-and-links.md) · [Fellowship](../fellowship/fellowship-update-fellowship.md) · [Governance](../governance/governance-edit-intro-text.md) · [Contact](../contact/contact-edit-intro-text.md) · [Research Partnerships](../research-partnerships/research-partnerships-edit-partners.md) · [Sponsorship Program](../sponsorship-program/sponsorship-program-update-levels.md) · [Services](../scientific-and-technical-support/scientific-and-technical-support-edit-intro-text.md) |
-| OpenMS-lib, pyOpenMS, pyOpenMS Viz, OpenMS Web Apps | `config.yaml` (the big title is part of the design) | [OpenMS-lib](../openms-lib/openms-lib-edit-page-blocks.md) · [pyOpenMS](../pyopenms/pyopenms-edit-page-blocks.md) · [pyOpenMS Viz](../pyopenms-viz/pyopenms-viz-edit-page-blocks.md) · [Web Apps](../openms-web-apps/openms-web-apps-edit-page-blocks.md) |
-| Leadership: board of directors | `layouts/partials/contributors-leadership.html` (photos in `static/images/leadership_photos/`) | [Board of directors](../leadership/leadership-update-board-of-directors.md) |
-| Leadership: Executive Committee | `static/gallery/members.html` | [Executive Committee](../leadership/leadership-update-executive-committee.md) |
-| Press kit | the layout (downloads in `static/press-kit/`) | [Press kit](../press-kit/press-kit-replace-a-download.md) |
+| Getting Involved, Fellowship, Governance, Contact, Research Partnerships, Sponsorship Program, Services | the **intro** is in `config.yaml`; most **other words** are part of the design (layout) | [Getting Involved](../getting-involved-page/getting-involved-edit-intro-and-links.md) · [Fellowship](../fellowship-page/fellowship-update-fellowship.md) · [Governance](../governance-page/governance-edit-intro-text.md) · [Contact](../contact-page/contact-edit-intro-text.md) · [Research Partnerships](../research-partnerships-page/research-partnerships-edit-partners.md) · [Sponsorship Program](../sponsorship-program-page/sponsorship-program-update-levels.md) · [Services](../scientific-and-technical-support-page/scientific-and-technical-support-edit-intro-text.md) |
+| OpenMS-lib, pyOpenMS, pyOpenMS Viz, OpenMS Web Apps | `config.yaml` (the big title is part of the design) | [OpenMS-lib](../openms-lib-page/openms-lib-edit-page-blocks.md) · [pyOpenMS](../pyopenms-page/pyopenms-edit-page-blocks.md) · [pyOpenMS Viz](../pyopenms-viz-page/pyopenms-viz-edit-page-blocks.md) · [Web Apps](../openms-web-apps-page/openms-web-apps-edit-page-blocks.md) |
+| Leadership: board of directors | `layouts/partials/contributors-leadership.html` (photos in `static/images/leadership_photos/`) | [Board of directors](../leadership-page/leadership-update-board-of-directors.md) |
+| Leadership: Executive Committee | `static/gallery/members.html` | [Executive Committee](../leadership-page/leadership-update-executive-committee.md) |
+| Press kit | the layout (downloads in `static/press-kit/`) | [Press kit](../press-kit-page/press-kit-replace-a-download.md) |
 
 ## Step 2 – Edit a page file (type A)
 
