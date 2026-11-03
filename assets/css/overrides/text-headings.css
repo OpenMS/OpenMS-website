@@ -31,3 +31,30 @@
   :is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h2 { font-size: 1.35em !important; }
   :is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h3 { font-size: 1.2em !important; }
 }
+
+/* ---------- One size per heading level, across the site ----------
+   Headings in page text (Code of Conduct, Privacy-style text pages, charters,
+   news articles) use the same sizes as the rest of the site:
+     Heading 2 = section titles (about 23px on phones, 31px on laptops)
+     Heading 3 = card titles (about 16px on phones, 18px on laptops)
+   Heading 1 sits a little above Heading 2, and 4 to 6 step down from 3,
+   so the order of sizes always holds. Later in the file, so it wins over the
+   scale above at the same strength. */
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h1 { font-size: calc(var(--openms-section-title-size) * 1.12) !important; }
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h2 { font-size: var(--openms-section-title-size) !important; }
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h3 { font-size: var(--openms-card-title-size) !important; }
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h4 { font-size: calc(var(--openms-card-title-size) * 0.94) !important; }
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h5 { font-size: calc(var(--openms-card-title-size) * 0.87) !important; }
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h6 { font-size: calc(var(--openms-card-title-size) * 0.8) !important; }
+
+/* Section and card titles that had their own sizes: OpenMS-lib "Used
+   OpenMS-lib in your work?" (h2), the developer cards and the Sponsor us
+   "Benefit comparison" and level names (h3), including the featured
+   developer card. Three IDs outrank the featured card's own size. */
+:is(html, #heading-std#heading-std) body .openms-lib-cite__title {
+  font-size: var(--openms-section-title-size) !important;
+}
+
+:is(html, #heading-std#heading-std#heading-std) body :is(h3.openms-lib-developers__card-title, h3.sponsor-benefits__title, h3.sponsor-tier__name) {
+  font-size: var(--openms-card-title-size) !important;
+}
