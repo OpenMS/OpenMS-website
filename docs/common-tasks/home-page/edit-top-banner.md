@@ -1,4 +1,4 @@
-# Edit the top banner of the home page
+# Home page: Edit the top banner
 
 The big banner at the top of the home page: headline, short text and two buttons.
 

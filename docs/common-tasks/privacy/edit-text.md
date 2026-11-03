@@ -1,4 +1,4 @@
-# Change the text of the Privacy page
+# Privacy page: Change the text
 
 The page **https://openms.de/privacy/** (footer → **LEGAL**) has **all its words in one page file**: `content/en/privacy.md`.
 

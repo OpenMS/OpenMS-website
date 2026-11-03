@@ -1,4 +1,4 @@
-# Add a news article
+# News page: Add a news article
 
 News articles (releases, workshops, announcements) appear on **https://openms.de/news/**. Each article is **one small text file**. You create it on GitHub, in your browser.
 

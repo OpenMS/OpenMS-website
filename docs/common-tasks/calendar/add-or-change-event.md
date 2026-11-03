@@ -1,4 +1,4 @@
-# Add or change an event on the Community calendar
+# Calendar page: Add or change an event
 
 The **Community events** page (**https://openms.de/calendar/**) lists upcoming and past meetings, workshops and outreach events. The **Upcoming events** on the home page come from the same list.
 

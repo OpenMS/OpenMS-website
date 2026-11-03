@@ -1,4 +1,4 @@
-# Change the intro text of the Scientific and Technical Support page
+# Scientific and Technical Support page: Change the intro text
 
 The page **https://openms.de/scientific-and-technical-support/** (top menu → **Services**) starts with a small word above the title and an intro sentence. These are in `config.yaml`.
 

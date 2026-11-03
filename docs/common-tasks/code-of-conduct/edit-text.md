@@ -1,4 +1,4 @@
-# Change the text of the Code of Conduct page
+# Code of Conduct page: Change the text
 
 The page **https://openms.de/code-of-conduct/** (top menu → **Community** → **Code of Conduct**, and the footer) has **all its words in one page file**: `content/en/code-of-conduct.md`.
 

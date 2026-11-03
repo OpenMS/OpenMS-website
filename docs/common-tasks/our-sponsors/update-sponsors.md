@@ -1,4 +1,4 @@
-# Add, change or remove a sponsor logo
+# Our Sponsors page: Add, change or remove a sponsor logo
 
 Sponsors are shown on **https://openms.de/our-sponsors/**. Each sponsor is **one logo** that links to the sponsor's website.
 

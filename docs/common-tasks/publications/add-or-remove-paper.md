@@ -1,4 +1,4 @@
-# Add or remove a paper on the Publications page
+# Publications page: Add or remove a paper
 
 The page **https://openms.de/publications/** has two parts:
 

@@ -1,4 +1,4 @@
-# Change the intro text of the Contact page
+# Contact page: Change the intro text
 
 The page **https://openms.de/contact/** (top menu → **About** → **Contact**) starts with a small word above the title and an intro sentence. These are in `config.yaml`.
 

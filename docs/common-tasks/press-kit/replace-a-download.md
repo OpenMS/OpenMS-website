@@ -1,4 +1,4 @@
-# Replace a file on the Press kit page
+# Press kit page: Replace a file
 
 The page **https://openms.de/press-kit/** (footer → **LEGAL** → **Press kit**) offers logos and templates to download. The files are in the folder **`static/press-kit/`**.
 

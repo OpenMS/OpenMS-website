@@ -1,4 +1,4 @@
-# Edit "What is OpenMS?" on the home page
+# Home page: Edit "What is OpenMS?"
 
 The block with a title, a short text and **four boxes** (Open source, C++ & Python, Cross-platform, TOPP pipeline).
 

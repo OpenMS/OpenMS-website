@@ -1,4 +1,4 @@
-# Change the intro text of the Donate page
+# Donate page: Change the intro text
 
 The page **https://openms.de/donate/** (footer → **SUPPORT** → **Donate**) starts with a small word above the title and an intro sentence. These are in `config.yaml`.
 

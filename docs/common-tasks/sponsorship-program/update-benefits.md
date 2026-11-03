@@ -1,4 +1,4 @@
-# Change the benefits of the sponsorship levels
+# Our Sponsorship Program page: Change the benefits of the sponsorship levels
 
 The page **Our Sponsorship Program** (**https://openms.de/sponsor-us/**) shows what each sponsorship level (Bronze, Silver, Gold, Platinum) gets. The benefits are written **once**, in one list in `config.yaml` called `benefitsMatrix`, and the page shows them in **two places**:
 

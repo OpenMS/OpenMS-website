@@ -1,4 +1,4 @@
-# Add or change the cards on the Getting Involved page
+# Getting Involved page: Add or change the cards
 
 The page **https://openms.de/contribute/** (top menu → **Community** → **Getting Involved**) has three groups of cards and a list of outreach links. Each card is a small block in `config.yaml`, under `contributePage`. You can change the words, add a card or remove one.
 

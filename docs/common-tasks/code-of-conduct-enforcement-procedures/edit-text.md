@@ -1,4 +1,4 @@
-# Change the text of the Report Handling Manual (Code of Conduct Enforcement Procedures)
+# Report Handling Manual page (Code of Conduct Enforcement Procedures): Change the text
 
 The **Report Handling Manual** is the Code of Conduct Committee's guide for handling reports. On the website it is the page **Code of Conduct Enforcement Procedures**, **https://openms.de/report-handling-manual/** (footer → **COMMUNITY**, and the button on the Code of Conduct page). It has **all its words in one page file**: `content/en/report-handling-manual.md`.
 

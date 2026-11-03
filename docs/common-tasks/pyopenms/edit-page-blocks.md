@@ -1,4 +1,4 @@
-# Change the blocks of the pyOpenMS page
+# pyOpenMS page: Change the blocks
 
 The page **https://openms.de/pyopenms/** (top menu → **Projects** → **pyOpenMS**) is made of blocks, one under the other. Most of its words are in `config.yaml`.
 

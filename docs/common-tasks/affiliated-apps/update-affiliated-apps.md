@@ -1,4 +1,4 @@
-# Add, change or remove an Affiliated App
+# Affiliated Apps page: Add, change or remove an app
 
 **Affiliated Apps** are projects from partners and the community that **use OpenMS** but are **not maintained by the OpenMS team** (for example QuantMS, Casanovo, Pyprophet). They appear on **https://openms.de/affiliated-apps/**.
 

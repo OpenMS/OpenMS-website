@@ -1,4 +1,4 @@
-# Add, change or remove a logo in "Adopted by labs and institutions worldwide"
+# Home page: Add, change or remove a logo in "Adopted by labs and institutions worldwide"
 
 On the **home page**, just under the top banner, two rows of logos slowly move sideways. These are the labs, universities and companies that use OpenMS. Each logo is **one small block** in `config.yaml`, and each logo is a link to that organisation's website.
 

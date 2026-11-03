@@ -1,4 +1,4 @@
-# Change the Google Scholar link on the Publications page
+# Publications page: Change the Google Scholar link
 
 The page **https://openms.de/publications/** has a link "Follow us on Google Scholar". Its words and address are in `config.yaml`.
 

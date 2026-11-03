@@ -1,4 +1,4 @@
-# Update the OpenMS Fellowship page
+# OpenMS Fellowship page: Update the page
 
 The page **https://openms.de/fellowship/** presents the fellowship and shows the application form.
 

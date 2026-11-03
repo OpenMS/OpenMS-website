@@ -1,4 +1,4 @@
-# Add, change or remove a Featured App
+# Featured Apps page: Add, change or remove an app
 
 **Featured Apps** are the web apps that the OpenMS team looks after (FLASH App, OpenDIAKiosk, NuXL…). They appear in **two places**, both from one list in `config.yaml`:
 

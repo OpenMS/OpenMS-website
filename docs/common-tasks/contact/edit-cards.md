@@ -1,4 +1,4 @@
-# Add or change the cards on the Contact page
+# Contact page: Add or change the cards
 
 The page **https://openms.de/contact/** (top menu → **About** → **Contact**) lists the ways to reach OpenMS as cards under **Ways to reach us**. Each card is a small block in `config.yaml`, under `contactPage` → `cards`. You can change the words, add a card or remove one.
 

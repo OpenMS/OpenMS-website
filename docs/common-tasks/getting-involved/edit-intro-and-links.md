@@ -1,4 +1,4 @@
-# Change the intro and links of the Getting Involved page
+# Getting Involved page: Change the intro and links
 
 The page **Getting Involved** has the address **https://openms.de/contribute/** (the address and the menu label are different).
 

@@ -1,4 +1,4 @@
-# Add or change a question in the sponsorship FAQ
+# Our Sponsorship Program page: Add or change a question in the FAQ
 
 The page **Our Sponsorship Program** (**https://openms.de/sponsor-us/**) ends with an **FAQ**: a list of questions. Clicking a question opens its answer.
 

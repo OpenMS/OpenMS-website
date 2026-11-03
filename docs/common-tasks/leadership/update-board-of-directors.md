@@ -1,4 +1,4 @@
-# Update the board of directors
+# Leadership page: Update the board of directors
 
 The page **Leadership** has the address **https://openms.de/contributors/** (top menu → **About** → **Leadership**). Its first part, **Board of directors**, shows one **card** per person: a photo, a name, a role and a short text (the bio).
 

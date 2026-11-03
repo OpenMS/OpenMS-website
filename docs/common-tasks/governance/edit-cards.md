@@ -1,4 +1,4 @@
-# Add or change the cards on the Governance page
+# Governance page: Add or change the cards
 
 The page **https://openms.de/governance/** (top menu → **About** → **Governance**) has four groups of cards. Each card is a small block in `config.yaml`, under `governancePage`. You can change the words, add a card or remove one.
 

@@ -1,4 +1,4 @@
-# Change the blocks of the OpenMS-lib page
+# OpenMS-lib page: Change the blocks
 
 The page **https://openms.de/openms-lib/** (top menu → **Projects** → **OpenMS-lib**) is made of blocks, one under the other. Most of its words are in `config.yaml`.
 

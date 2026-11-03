@@ -1,4 +1,4 @@
-# Update the Executive Committee
+# Leadership page: Update the Executive Committee
 
 The page **Leadership** (**https://openms.de/contributors/**) has a second part, **Executive Committee**. It shows each member with their **GitHub picture** and **name**. Clicking a member opens their GitHub profile. The **chair** comes first and has a coloured border.
 

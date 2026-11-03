@@ -1,4 +1,4 @@
-# Change the intro text of the Governance page
+# Governance page: Change the intro text
 
 The page **https://openms.de/governance/** (top menu → **About** → **Governance**) starts with a small word above the title and an intro sentence. These are in `config.yaml`.
 

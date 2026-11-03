@@ -1,4 +1,4 @@
-# Edit the news and events blocks on the home page
+# Home page: Edit the news and events blocks
 
 Near the bottom of the home page, two columns show the **latest news** and the **upcoming events**. Only their **headings** are written here. The articles and the events come from other places.
 

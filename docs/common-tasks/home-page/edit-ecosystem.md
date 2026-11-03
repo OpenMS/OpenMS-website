@@ -1,4 +1,4 @@
-# Edit the Ecosystem block on the home page
+# Home page: Edit the Ecosystem block
 
 The block **Ecosystem** shows cards for OpenMS-lib, pyOpenMS and the other tools, each with a link.
 

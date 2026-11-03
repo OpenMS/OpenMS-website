@@ -1,4 +1,4 @@
-# Change the three big numbers on the home page
+# Home page: Change the three big numbers
 
 On the home page, in a dark blue panel, there are three big numbers: **20+ Years active**, **10,000+ Citations**, **180+ Contributors**. Each number is one small block in `config.yaml`.
 

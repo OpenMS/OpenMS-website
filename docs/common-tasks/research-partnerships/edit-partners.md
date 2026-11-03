@@ -1,4 +1,4 @@
-# Change the intro of the Research Partnerships page
+# Research Partnerships page: Change the intro
 
 The page **https://openms.de/research-partnerships/** explains how research groups can work with OpenMS and shows the **partner logos**.
 

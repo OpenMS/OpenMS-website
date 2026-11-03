@@ -1,4 +1,4 @@
-# Change the blocks of the pyOpenMS Viz page
+# pyOpenMS Viz page: Change the blocks
 
 The page **https://openms.de/pyopenms-viz/** (top menu → **Projects** → **pyOpenMS Viz**) is made of blocks, one under the other. Most of its words are in `config.yaml`.
 

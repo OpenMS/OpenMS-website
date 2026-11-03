@@ -1,4 +1,4 @@
-# Add, change or remove an Archived App
+# Archived Apps page: Add, change or remove an app
 
 **Archived Apps** are old projects that still work but are no longer updated. They appear on **https://openms.de/archived-apps/**.
 

@@ -1,4 +1,4 @@
-# Change the text of the Executive Committee Charter page
+# Executive Committee Charter page: Change the text
 
 The page **https://openms.de/exec_committee/** (footer → **COMMUNITY**) has **all its words in one page file**: `content/en/exec_committee.md`.
 

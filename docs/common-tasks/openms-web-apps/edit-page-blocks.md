@@ -1,4 +1,4 @@
-# Change the blocks of the OpenMS Web Apps page
+# OpenMS Web Apps page: Change the blocks
 
 The page **https://openms.de/webapps/** (top menu → **Projects** → **OpenMS Web Apps**) is made of blocks, one under the other. Most of its words are in `config.yaml`.
 

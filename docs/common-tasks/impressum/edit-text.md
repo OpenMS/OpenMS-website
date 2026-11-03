@@ -1,4 +1,4 @@
-# Change the text of the Impressum page
+# Impressum page: Change the text
 
 The page **https://openms.de/impressum/** (footer → **LEGAL**) has **all its words in one page file**: `content/en/impressum.md`.
 

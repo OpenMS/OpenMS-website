@@ -1,4 +1,4 @@
-# Add, change or remove a partner logo
+# Research Partnerships page: Add, change or remove a partner logo
 
 The page **Research Partnerships** (**https://openms.de/research-partnerships/**) shows the **partner logos** in the block **Our partners**. Each logo is **one small block** in `config.yaml`, and each logo is a link to that organisation's website.
 

@@ -1,4 +1,4 @@
-# Connect the Donate page to Zeffy
+# Donate page: Connect the page to Zeffy
 
 The **Donate** page (**https://openms.de/donate/**) collects gifts through **Zeffy**, a free donation service. For the donation form to appear, the website needs **one web address** from Zeffy.
 

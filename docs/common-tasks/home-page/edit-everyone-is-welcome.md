@@ -1,4 +1,4 @@
-# Edit "Everyone is welcome" on the home page
+# Home page: Edit "Everyone is welcome"
 
 The block with the community photo, two short paragraphs and a button.
 

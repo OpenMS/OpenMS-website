@@ -1,4 +1,4 @@
-# Change the sponsorship levels and benefits
+# Our Sponsorship Program page: Change the sponsorship levels and benefits
 
 The page **Our Sponsorship Program** (**https://openms.de/sponsor-us/**) shows four **sponsorship levels** (Bronze, Silver, Gold, Platinum) and a **Benefit comparison** table.
 

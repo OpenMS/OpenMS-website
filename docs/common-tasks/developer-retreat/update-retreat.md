@@ -1,4 +1,4 @@
-# Update the Developer Retreat page (once a year)
+# Developer Retreat page: Update the page (once a year)
 
 The page **https://openms.de/developer-retreat/** tells people about the next retreat and shows a photo of the last one. Once a year, after a retreat has finished, you update a few lines.
 
