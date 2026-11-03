@@ -1246,3 +1246,24 @@ html body .home-page :is(.webapps-featured__show-all, .community-news-events__vi
     transition: none;
   }
 }
+
+/* ---------- Home page: every section title (h2) the same size ----------
+   "Adopted by labs and institutions worldwide", "Latest news" and "Upcoming
+   events" had their own, smaller sizes. They now use the same size as
+   Featured Apps, Ecosystem, "Everyone is welcome"... at every width. */
+:is(html, #home-h2-same#home-h2-same) body .home-page :is(h2.uni-partners__trust-title, h2.community-news-events__column-title) {
+  font-size: var(--openms-section-title-size) !important;
+  line-height: 1.2 !important;
+}
+
+:is(html, #home-h2-same#home-h2-same) body .home-page h2.community-news-events__column-title .community-news-events__column-title-accent {
+  font-size: 1em !important;
+}
+
+/* On the smallest phones (under 370px) the section titles come down to
+   1.3rem (see "home-small-h2" above); these follow them. */
+@media (max-width: 369px) {
+  :is(html, #home-h2-same#home-h2-same) body .home-page :is(h2.uni-partners__trust-title, h2.community-news-events__column-title) {
+    font-size: 1.3rem !important;
+  }
+}
