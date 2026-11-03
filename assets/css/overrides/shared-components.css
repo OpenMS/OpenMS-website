@@ -1613,3 +1613,19 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
     fill: currentColor !important;
   }
 }
+
+/* ---------- Tally "Welcome" pop-up: always fully on screen ----------
+   Tally lets the pop-up grow to almost the full screen height (100vh). On an
+   iPad, Safari's address bar and toolbar cover part of that height, so the
+   top of the pop-up, with its close (x) button, was hidden. Cap it to the
+   part of the screen that is always visible (svh); the form scrolls inside. */
+html body .tally-popup iframe {
+  max-height: calc(100vh - 140px) !important;
+  max-height: calc(100svh - 60px) !important;
+}
+
+@media (max-width: 1366px) {
+  html body .tally-popup iframe {
+    max-height: min(calc(100svh - 96px), 760px) !important;
+  }
+}
