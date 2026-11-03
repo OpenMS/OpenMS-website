@@ -58,3 +58,17 @@
 :is(html, #heading-std#heading-std#heading-std) body :is(h3.openms-lib-developers__card-title, h3.sponsor-benefits__title, h3.sponsor-tier__name) {
   font-size: var(--openms-card-title-size) !important;
 }
+
+/* ---------- Heading scale (the team's hierarchy table) ----------
+     H1 32-36px · H2 28-30px · H3 20-22px · H4 18px · H5 16px · H6 14px
+   H3 is the card-title size used across the site: 21px on laptops, easing
+   to 18px on phones (always below the 23px section titles there).
+   H4 to H6 in page text follow the table, at weight 600. Loaded after the
+   older settings, so these win. */
+:root {
+  --openms-card-title-size: clamp(1.125rem, 0.95rem + 0.6vw, 1.3125rem) !important;
+}
+
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h4 { font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem) !important; font-weight: 600 !important; }
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h5 { font-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem) !important; font-weight: 600 !important; }
+:is(html, #text-headings) body :is(.news-story__body, .openms-lib-prose, .coc-charter__inner, .exec-charter__inner, .rhm-charter__inner) h6 { font-size: 0.875rem !important; font-weight: 600 !important; }
