@@ -1575,12 +1575,13 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
 
 /* ---------- Card icons turn blue on hover, on every card ----------
    Cards with a light blue icon light it up in the full OpenMS blue when the
-   card is hovered, whether or not the card is a link. One rule per card type,
+   card is hovered, whether or not the card is a link (not the Governance
+   cards that are navy, or turn navy on hover: their icon keeps its own white hover). One rule per card type,
    so any new card added to these lists (config.yaml) gets it too. The IDs in
    :is() outrank the older page rules that only did it for link cards. */
 @media (hover: hover) and (pointer: fine) {
   :is(html, #icon-hover-blue#icon-hover-blue) body :is(
-    .openms-lib-resources__item:is(:hover, :focus-within) .openms-lib-resources__item-icon,
+    .openms-lib-resources__item:not(:is(.governance-pillars-grid, .governance-compare-grid) > *):is(:hover, :focus-within) .openms-lib-resources__item-icon,
     .coc-value:is(:hover, :focus-within) .coc-value__icon,
     .fellowship-facts__item:is(:hover, :focus-within) .fellowship-facts__icon,
     .governance-membership__card:is(:hover, :focus-within) .governance-membership__icon,
@@ -1589,7 +1590,7 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
     .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon
   ),
   :is(html, #icon-hover-blue#icon-hover-blue) body :is(
-    .openms-lib-resources__item:is(:hover, :focus-within) .openms-lib-resources__item-icon,
+    .openms-lib-resources__item:not(:is(.governance-pillars-grid, .governance-compare-grid) > *):is(:hover, :focus-within) .openms-lib-resources__item-icon,
     .coc-value:is(:hover, :focus-within) .coc-value__icon,
     .fellowship-facts__item:is(:hover, :focus-within) .fellowship-facts__icon,
     .governance-membership__card:is(:hover, :focus-within) .governance-membership__icon,
@@ -1603,7 +1604,7 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
   }
 
   :is(html, #icon-hover-blue#icon-hover-blue) body :is(
-    .openms-lib-resources__item:is(:hover, :focus-within) .openms-lib-resources__item-icon,
+    .openms-lib-resources__item:not(:is(.governance-pillars-grid, .governance-compare-grid) > *):is(:hover, :focus-within) .openms-lib-resources__item-icon,
     .coc-value:is(:hover, :focus-within) .coc-value__icon,
     .fellowship-facts__item:is(:hover, :focus-within) .fellowship-facts__icon,
     .governance-membership__card:is(:hover, :focus-within) .governance-membership__icon,
