@@ -1572,3 +1572,43 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
 :is(html, #text-page-gap) body :is(.openms-lib-page--code-of-conduct, .openms-lib-page--privacy, .openms-lib-page--doc:not(.openms-lib-page--impressum), .openms-lib-page--exec-committee, .openms-lib-page--report-handling) .openms-lib-page__body > .openms-lib-page__anchor:first-child {
   padding-top: clamp(1.5rem, 4vw, 2.5rem) !important;
 }
+
+/* ---------- Card icons turn blue on hover, on every card ----------
+   Cards with a light blue icon light it up in the full OpenMS blue when the
+   card is hovered, whether or not the card is a link. One rule per card type,
+   so any new card added to these lists (config.yaml) gets it too. The IDs in
+   :is() outrank the older page rules that only did it for link cards. */
+@media (hover: hover) and (pointer: fine) {
+  :is(html, #icon-hover-blue#icon-hover-blue) body :is(
+    .openms-lib-resources__item:is(:hover, :focus-within) .openms-lib-resources__item-icon,
+    .coc-value:is(:hover, :focus-within) .coc-value__icon,
+    .fellowship-facts__item:is(:hover, :focus-within) .fellowship-facts__icon,
+    .governance-membership__card:is(:hover, :focus-within) .governance-membership__icon,
+    .openms-lib-topp-split__nested-item:is(:hover, :focus-within) .openms-lib-topp-split__nested-icon,
+    .contribute-channel:is(:hover, :focus-within) .contribute-channel__icon,
+    .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon
+  ),
+  :is(html, #icon-hover-blue#icon-hover-blue) body :is(
+    .openms-lib-resources__item:is(:hover, :focus-within) .openms-lib-resources__item-icon,
+    .coc-value:is(:hover, :focus-within) .coc-value__icon,
+    .fellowship-facts__item:is(:hover, :focus-within) .fellowship-facts__icon,
+    .governance-membership__card:is(:hover, :focus-within) .governance-membership__icon,
+    .openms-lib-topp-split__nested-item:is(:hover, :focus-within) .openms-lib-topp-split__nested-icon,
+    .contribute-channel:is(:hover, :focus-within) .contribute-channel__icon,
+    .contribute-track__item:is(:hover, :focus-within) .contribute-track__icon
+  ) :is(i, svg, .fas, .fab, .far, .svg-inline--fa) {
+    color: var(--openms-blue) !important;
+    -webkit-text-fill-color: var(--openms-blue) !important;
+    opacity: 1 !important;
+  }
+
+  :is(html, #icon-hover-blue#icon-hover-blue) body :is(
+    .openms-lib-resources__item:is(:hover, :focus-within) .openms-lib-resources__item-icon,
+    .coc-value:is(:hover, :focus-within) .coc-value__icon,
+    .fellowship-facts__item:is(:hover, :focus-within) .fellowship-facts__icon,
+    .governance-membership__card:is(:hover, :focus-within) .governance-membership__icon,
+    .openms-lib-topp-split__nested-item:is(:hover, :focus-within) .openms-lib-topp-split__nested-icon
+  ) svg path {
+    fill: currentColor !important;
+  }
+}
