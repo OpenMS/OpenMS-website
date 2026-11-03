@@ -224,3 +224,13 @@
     background-attachment: scroll;
   }
 }
+
+/* iPads and other tablets / touch screens: a fixed background is sized to the
+   whole screen, not to the block, so on a tall iPad the photo is blown up and
+   only a small piece shows (and iPad Safari doesn't support it properly).
+   Scrolling with the page makes the photo fit the block. */
+@media (max-width: 1024px), (hover: none), (pointer: coarse) {
+  .community-home__media {
+    background-attachment: scroll;
+  }
+}
