@@ -103,16 +103,6 @@ events:
   start: '2026-11-02'
   category: outreach
   synced: true
-- title: OpenMS Hackathon
-  start: '2026-11-05'
-  category: event
-  synced: true
-  location: Maria-von-Linden-Straße 6, 72076 Tübingen, Germany
-- title: de.NBI All Hands
-  start: '2026-11-25'
-  category: event
-  synced: true
-  end: '2026-11-27'
 - title: EuPA Annual Congress
   start: '2026-11-29'
   category: event
@@ -143,4 +133,4 @@ events:
   summary: 'Yearly HUPO-PSI Meeting.
 
     https://www.psidev.info/spring-meeting-2027'
-last_synced: '2026-11-03T16:29:10Z'
+last_synced: '2026-11-03T17:24:19Z'
