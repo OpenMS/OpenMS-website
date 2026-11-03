@@ -28460,6 +28460,24 @@ html body .home-page__hero .hero-home__note-dot {
   border: 1px solid rgba(var(--openms-navy-rgb), 0.1) !important;
   box-shadow: 0 0.55rem 1.35rem rgba(var(--openms-navy-rgb), 0.07) !important;
   text-decoration: none !important;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease !important;
+}
+
+/* Hover highlight — match the home page featured app cards */
+.openms-lib-page--solution #examples .openms-lib-resources__examples-card:hover,
+.openms-lib-page--solution #examples .openms-lib-resources__examples-card:focus-visible,
+.openms-lib-page--solution #examples .openms-lib-resources__examples-card:active {
+  border-color: rgba(var(--openms-navy-rgb), 0.35) !important;
+  box-shadow: 0 0.55rem 1.5rem rgba(var(--openms-navy-rgb), 0.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .openms-lib-page--solution #examples .openms-lib-resources__examples-card:hover,
+  .openms-lib-page--solution #examples .openms-lib-resources__examples-card:focus-visible,
+  .openms-lib-page--solution #examples .openms-lib-resources__examples-card:active {
+    transform: none !important;
+  }
 }
 
 .openms-lib-page--solution #examples .openms-lib-resources__examples-logo,
