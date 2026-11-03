@@ -1034,6 +1034,26 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
   }
 }
 
+/* Homepage Upcoming events / Latest news — "View all →" sits level with the
+   title (centred on the title line) at every screen size. Two IDs outrank the
+   phone, tablet and laptop rules that put it on the baseline, top or bottom.
+   The theme's 15px space above every h2 moves onto the header row, so the
+   title's text (not its box) is what the link is centred on. */
+:is(html, #view-all-level#view-all-level) body .home-page .community-news-events__column .community-news-events__column-header {
+  align-items: center !important;
+  padding-top: 15px !important;
+}
+
+:is(html, #view-all-level#view-all-level) body .home-page .community-news-events__column .community-news-events__column-header > .community-news-events__column-title {
+  padding-top: 0 !important;
+}
+
+:is(html, #view-all-level#view-all-level) body .home-page .community-news-events__column .community-news-events__column-header > a.community-news-events__view-all {
+  align-self: center !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 /* Homepage "View all →" (News and Events headers): nudge it in a little from
    the right edge. */
 html body .home-page .community-news-events__column-header {
