@@ -81,6 +81,6 @@ The headings and text above the cards ("Nonprofit", "Board of directors", "The b
 
 ## Related guides
 
-- [Update the Executive Committee](update-executive-committee.md)
+- [Update the Executive Committee](leadership-update-executive-committee.md)
 - [Add a picture or logo](../any-page/add-images.md)
 - Back to the [list of all tasks](../README.md)

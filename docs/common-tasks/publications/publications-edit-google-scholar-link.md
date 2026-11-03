@@ -19,7 +19,7 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 | The words of the link | `googleScholarText` |
 | Where it goes | `googleScholarUrl` |
 
-For the papers themselves, see [Add or remove a paper](add-or-remove-paper.md).
+For the papers themselves, see [Add or remove a paper](publications-add-or-remove-paper.md).
 
 ## Step by step
 

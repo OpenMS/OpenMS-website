@@ -37,6 +37,6 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 
 ## Related guides
 
-- [Change the text of the Code of Conduct](../code-of-conduct/edit-text.md)
+- [Change the text of the Code of Conduct](../code-of-conduct/code-of-conduct-edit-text.md)
 - [Change the text of a page](../any-page/edit-page-text.md): a picture of a page next to its file, and the writing symbols you can use (bold, links, lists…)
 - Back to the [list of all tasks](../README.md)

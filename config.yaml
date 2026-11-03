@@ -270,7 +270,7 @@ languages:
           governance, and long-term stewardship of the OpenMS ecosystem.
         # ── Our Sponsors page (/our-sponsors/) ──────────────────────────────────
         # To ADD A SPONSOR: append an entry to `sponsors:` below.
-        # Full instructions: docs/common-tasks/update-sponsors.md
+        # Full instructions: docs/common-tasks/our-sponsors/our-sponsors-update-sponsors.md
         #
         # Tiers: keep `tier` commented out until there are enough sponsors to
         # group by level. Then set `groupByTier: true` below and give each

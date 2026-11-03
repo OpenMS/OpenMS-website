@@ -7,7 +7,7 @@
 
 **You will change:** one block in `config.yaml`  ·  **Time:** about 15 minutes  ·  **Skills needed:** none
 
-> Apps that the OpenMS team does **not** maintain go in [Affiliated Apps](../affiliated-apps/update-affiliated-apps.md).
+> Apps that the OpenMS team does **not** maintain go in [Affiliated Apps](../affiliated-apps/affiliated-apps-update-affiliated-apps.md).
 
 ## What you will change
 
@@ -129,5 +129,5 @@ The big heading and the introduction above the apps ("Community tools / Featured
 ## Related guides
 
 - [Add images](../any-page/add-images.md)
-- [Affiliated Apps](../affiliated-apps/update-affiliated-apps.md)
+- [Affiliated Apps](../affiliated-apps/affiliated-apps-update-affiliated-apps.md)
 - Back to the [list of all guides](../../README.md)

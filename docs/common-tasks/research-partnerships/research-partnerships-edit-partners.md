@@ -22,7 +22,7 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 | The partner logos ("Adopted by labs and institutions worldwide") | `universityPartners:` | One group of three lines per logo: `name`, `logo`, `url` |
 | "Partnerships include" and the other texts | — | These are part of the design. Ask the web team ([Who to ask](../../workflow/who-to-ask.md)). |
 
-> To add, change or remove a **partner logo**, see [Add, change or remove a partner logo](update-partner-logos.md). The logos are **the same list** as the moving logos on the home page, so a change there changes both.
+> To add, change or remove a **partner logo**, see [Add, change or remove a partner logo](research-partnerships-update-partner-logos.md). The logos are **the same list** as the moving logos on the home page, so a change there changes both.
 
 ## Step by step
 
@@ -34,5 +34,5 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 
 ## Related guides
 
-- [Add, change or remove a partner logo](update-partner-logos.md)
+- [Add, change or remove a partner logo](research-partnerships-update-partner-logos.md)
 - Back to the [list of all tasks](../README.md)

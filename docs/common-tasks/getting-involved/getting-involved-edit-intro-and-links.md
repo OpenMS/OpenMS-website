@@ -23,7 +23,7 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 | The address of the **Join Discord** button at the top | `links` → `discord` |
 | The community e-mail address (shown in the Outreach box) | `communityEmail` |
 
-The cards further down the page ("Ways to contribute", "Stay in touch", "We encourage") and the Outreach links have their own guide: [Add or change the cards](edit-cards.md).
+The cards further down the page ("Ways to contribute", "Stay in touch", "We encourage") and the Outreach links have their own guide: [Add or change the cards](getting-involved-edit-cards.md).
 
 The **section headings and their texts** ("Ways to contribute", "Stay in touch", the Funding, Outreach and Code of Conduct boxes…) are part of the design. To change them, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
 
@@ -37,5 +37,5 @@ The **section headings and their texts** ("Ways to contribute", "Stay in touch",
 
 ## Related guides
 
-- [Add or change the cards on this page](edit-cards.md)
+- [Add or change the cards on this page](getting-involved-edit-cards.md)
 - Back to the [list of all tasks](../README.md)

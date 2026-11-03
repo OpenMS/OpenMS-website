@@ -90,5 +90,5 @@ Change it back to `true` when you want the banner again.
 
 ## Related guides
 
-- Write the full article that the banner links to: [Add a news post](../news/add-news-post.md)
+- Write the full article that the banner links to: [Add a news post](../news/news-add-news-post.md)
 - Back to the [list of all guides](../../README.md)

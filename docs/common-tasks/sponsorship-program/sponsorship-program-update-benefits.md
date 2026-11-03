@@ -75,7 +75,7 @@ Delete its whole row, from `- category:` to the line before the next `- category
 
 ## Add a new level (a new column)
 
-1. Add the level under `levels:` (see [Change the sponsorship levels](update-levels.md)): copy a whole level, give it a new `id` (small letters, for example `diamond`), a name, a price, a motto and a text.
+1. Add the level under `levels:` (see [Change the sponsorship levels](sponsorship-program-update-levels.md)): copy a whole level, give it a new `id` (small letters, for example `diamond`), a name, a price, a motto and a text.
 2. In `benefitsMatrix`, add a line for the new `id` to **every** row, for example `diamond: []`, `diamond: ["✓"]` or text lines. A row without it makes the build fail.
 3. Save, send for review, and check the Deploy Preview at different screen sizes (see below).
 
@@ -120,7 +120,7 @@ The sentence under the table heading ("Compare acknowledgment and engagement ben
 
 ## Related guides
 
-- [Add or change a question in the sponsorship FAQ](update-faq.md)
-- [Change the sponsorship levels](update-levels.md) (name, price, motto, text of each level)
-- [Add, change or remove a sponsor logo](../our-sponsors/update-sponsors.md)
+- [Add or change a question in the sponsorship FAQ](sponsorship-program-update-faq.md)
+- [Change the sponsorship levels](sponsorship-program-update-levels.md) (name, price, motto, text of each level)
+- [Add, change or remove a sponsor logo](../our-sponsors/our-sponsors-update-sponsors.md)
 - Back to the [list of all tasks](../README.md)

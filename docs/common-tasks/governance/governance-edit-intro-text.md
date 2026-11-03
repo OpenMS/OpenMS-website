@@ -21,7 +21,7 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 | The small word above the title | `eyebrow` |
 | The intro sentence | `subtitle` |
 
-The cards further down the page are in `config.yaml` too: see [Add or change the cards](edit-cards.md). The section titles and the sentence under each title are part of the design (`layouts/partials/governance-main.html`). To change them, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
+The cards further down the page are in `config.yaml` too: see [Add or change the cards](governance-edit-cards.md). The section titles and the sentence under each title are part of the design (`layouts/partials/governance-main.html`). To change them, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
 
 ## Step by step
 
@@ -33,6 +33,6 @@ The cards further down the page are in `config.yaml` too: see [Add or change the
 
 ## Related guides
 
-- [Add or change the cards on the Governance page](edit-cards.md)
+- [Add or change the cards on the Governance page](governance-edit-cards.md)
 - [Which files are behind this page](../../reference/file-locations.md#everything-in-the-navbar-and-the-footer-where-is-each-page)
 - Back to the [list of all tasks](../README.md)

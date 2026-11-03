@@ -26,7 +26,7 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 
 The other words (the big title and "Where your gift goes" with its three boxes) are part of the design (`layouts/partials/donate-main.html`). To change them, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
 
-For the donation form itself, see [Connect the Donate page to Zeffy](connect-zeffy.md).
+For the donation form itself, see [Connect the Donate page to Zeffy](donate-connect-zeffy.md).
 
 ## Step by step
 

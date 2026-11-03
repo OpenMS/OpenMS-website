@@ -86,7 +86,7 @@ The heading "Our partners" and the sentence under it, the size of the logos and 
 
 ## Related guides
 
-- [Change the intro of the Research Partnerships page](edit-partners.md)
-- [The same logos on the home page](../home-page/update-adopted-by-logos.md)
+- [Change the intro of the Research Partnerships page](research-partnerships-edit-partners.md)
+- [The same logos on the home page](../home-page/home-page-update-adopted-by-logos.md)
 - [Add a picture or logo](../any-page/add-images.md)
 - Back to the [list of all tasks](../README.md)

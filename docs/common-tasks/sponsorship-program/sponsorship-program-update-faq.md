@@ -85,6 +85,6 @@ They are in the same file, just above the first question: the small word `Questi
 
 ## Related guides
 
-- [Change the sponsorship levels](update-levels.md)
-- [Change the benefits of the sponsorship levels](update-benefits.md)
+- [Change the sponsorship levels](sponsorship-program-update-levels.md)
+- [Change the benefits of the sponsorship levels](sponsorship-program-update-benefits.md)
 - Back to the [list of all tasks](../README.md)

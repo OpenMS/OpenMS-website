@@ -118,9 +118,9 @@ Some theme images are referenced by **file name only** (for example in `heroGrou
 
 ## Related guides
 
-- [Featured Apps](../featured-apps/update-featured-apps.md)
-- [Sponsors](../our-sponsors/update-sponsors.md)
-- [Developer Retreat photos](../developer-retreat/update-retreat.md)
-- [Logos on the home page](../home-page/update-adopted-by-logos.md)
-- [Add a news article](../news/add-news-post.md)
+- [Featured Apps](../featured-apps/featured-apps-update-featured-apps.md)
+- [Sponsors](../our-sponsors/our-sponsors-update-sponsors.md)
+- [Developer Retreat photos](../developer-retreat/developer-retreat-update-retreat.md)
+- [Logos on the home page](../home-page/home-page-update-adopted-by-logos.md)
+- [Add a news article](../news/news-add-news-post.md)
 - Back to the [list of all guides](../../README.md)

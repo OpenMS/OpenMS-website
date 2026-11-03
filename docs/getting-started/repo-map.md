@@ -27,13 +27,13 @@ Other folders and files you may see (you don't need to touch them): `themes/` (t
 | I want to change… | Look here | Guide |
 |-------------------|-----------|-------|
 | The words of a page like Impressum or the Code of Conduct | `content/en/<page-name>.md` | [Change the text of a page](../common-tasks/any-page/edit-page-text.md) |
-| A news article | `content/en/news/` | [Add a news article](../common-tasks/news/add-news-post.md) |
+| A news article | `content/en/news/` | [Add a news article](../common-tasks/news/news-add-news-post.md) |
 | The words on the home page | `config.yaml` | [Edit the home page](../common-tasks/home-page/README.md) |
 | The top banner strip | `config.yaml` → `newsBanner` | [Announcement bar](../common-tasks/navbar/update-announcement-bar.md) |
-| The three big numbers | `config.yaml` → `homeMetrics` | [Home page numbers](../common-tasks/home-page/update-big-numbers.md) |
-| The "Adopted by" logos | `config.yaml` → `universityPartners` | [Logos](../common-tasks/home-page/update-adopted-by-logos.md) |
+| The three big numbers | `config.yaml` → `homeMetrics` | [Home page numbers](../common-tasks/home-page/home-page-update-big-numbers.md) |
+| The "Adopted by" logos | `config.yaml` → `universityPartners` | [Logos](../common-tasks/home-page/home-page-update-adopted-by-logos.md) |
 | Menu and footer | `config.yaml` → `navbar`, `footer` | [Top menu](../common-tasks/navbar/edit-menu-items.md) · [Footer](../common-tasks/footer/edit-footer-links.md) |
-| Calendar events | the OpenMS **Google Calendar** (a robot copies it into `data/community_events.yaml`; do not edit that file) | [Calendar](../common-tasks/calendar/add-or-change-event.md) |
+| Calendar events | the OpenMS **Google Calendar** (a robot copies it into `data/community_events.yaml`; do not edit that file) | [Calendar](../common-tasks/calendar/calendar-add-or-change-event.md) |
 | Sponsors, apps, retreat, Zeffy | `config.yaml` | See the [list of guides](../README.md) |
 | A picture or logo | `static/images/…` | [Add images](../common-tasks/any-page/add-images.md) |
 | Colours, spacing, fonts, how a button looks | `assets/css/` | Web team (see below) |

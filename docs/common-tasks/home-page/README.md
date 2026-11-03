@@ -8,14 +8,14 @@ The home page (**https://openms.de/**) is built from **blocks**, one under the o
 
 | Number | Block on the page | Search for this word in `config.yaml` | Guide |
 |:--:|-------------------|--------------------------------------|-------|
-| 1 | **Top banner** ("Open science. Clear results…") | `hero:` | [Edit the top banner](edit-top-banner.md) |
-| 2 | **Adopted by labs and institutions** (logos) | `universityPartners` | [Add, change or remove a logo](update-adopted-by-logos.md) |
-| 3 | **Featured Apps** | `webapps` | [Featured Apps](../featured-apps/update-featured-apps.md) (the same list as the Featured Apps page) |
-| 4 | **Three big numbers** (20+, 10,000+, 180+) | `homeMetrics` | [Change the three big numbers](update-big-numbers.md) |
-| 5 | **What is OpenMS?** (four boxes) | `keyfeatures` | [Edit "What is OpenMS?"](edit-what-is-openms.md) |
-| 6 | **Ecosystem** (OpenMS-lib, pyOpenMS…) | `ecosystemSection` | [Edit the Ecosystem block](edit-ecosystem.md) |
-| 7 | **Everyone is welcome** | `communitySection` | [Edit "Everyone is welcome"](edit-everyone-is-welcome.md) |
-| 8 | **Latest news** and **Upcoming events** | `newsSection`, `eventsSection` | [Edit the news and events blocks](edit-news-and-events-blocks.md) |
+| 1 | **Top banner** ("Open science. Clear results…") | `hero:` | [Edit the top banner](home-page-edit-top-banner.md) |
+| 2 | **Adopted by labs and institutions** (logos) | `universityPartners` | [Add, change or remove a logo](home-page-update-adopted-by-logos.md) |
+| 3 | **Featured Apps** | `webapps` | [Featured Apps](../featured-apps/featured-apps-update-featured-apps.md) (the same list as the Featured Apps page) |
+| 4 | **Three big numbers** (20+, 10,000+, 180+) | `homeMetrics` | [Change the three big numbers](home-page-update-big-numbers.md) |
+| 5 | **What is OpenMS?** (four boxes) | `keyfeatures` | [Edit "What is OpenMS?"](home-page-edit-what-is-openms.md) |
+| 6 | **Ecosystem** (OpenMS-lib, pyOpenMS…) | `ecosystemSection` | [Edit the Ecosystem block](home-page-edit-ecosystem.md) |
+| 7 | **Everyone is welcome** | `communitySection` | [Edit "Everyone is welcome"](home-page-edit-everyone-is-welcome.md) |
+| 8 | **Latest news** and **Upcoming events** | `newsSection`, `eventsSection` | [Edit the news and events blocks](home-page-edit-news-and-events-blocks.md) |
 | 9 | **"Take control of your mass spec workflows"** (contact) | *not in `config.yaml`* | Ask the web team. |
 
 The announcement bar and the top menu are on every page: see [Navbar](../navbar/). The footer: see [Footer](../footer/).
@@ -38,7 +38,7 @@ The same steps work for every block. Only the key word you search for is differe
 
 | Block | Search for in `config.yaml` | Why you don't see it | To show it again |
 |-------|-----------------------------|----------------------|------------------|
-| **"Supported by"**: the sponsor logos deNBI, ELIXIR, LiBiS, with a link "Our sponsors" | `homeSponsors` | It has `enabled: false`, **and** no design file uses it any more. Setting `enabled: true` changes nothing. The sponsors are shown on the [Our Sponsors](../our-sponsors/update-sponsors.md) page instead. | Ask the web team: the block has to be built again. |
+| **"Supported by"**: the sponsor logos deNBI, ELIXIR, LiBiS, with a link "Our sponsors" | `homeSponsors` | It has `enabled: false`, **and** no design file uses it any more. Setting `enabled: true` changes nothing. The sponsors are shown on the [Our Sponsors](../our-sponsors/our-sponsors-update-sponsors.md) page instead. | Ask the web team: the block has to be built again. |
 | **"Choose your entry point"**: three steps (Documentation, OpenMS library, Featured Apps) | `homePage` → `pathways` | The design for it exists (`layouts/partials/home-pathways.html`) but is not placed on the home page. | Ask the web team to add it to `layouts/index.html`. |
 | **"Three ways to use OpenMS"** and **"Scale OpenMS for advanced work"** | `heroGroup` | It is only shown by a building block (`heroitems`) that no page uses. | Ask the web team. |
 | **Small highlights under the banner buttons** | `hero` → `microcopy` | The line is empty, **and** the design hides this part. Filling it in shows nothing. | Ask the web team. |

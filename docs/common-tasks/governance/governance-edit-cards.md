@@ -54,6 +54,6 @@ An icon is a Font Awesome name, for example `fas fa-users` or `fas fa-book`. Sea
 
 ## Related guides
 
-- [Change the intro text of the Governance page](edit-intro-text.md)
+- [Change the intro text of the Governance page](governance-edit-intro-text.md)
 - [Which files are behind this page](../../reference/file-locations.md#everything-in-the-navbar-and-the-footer-where-is-each-page)
 - Back to the [list of all tasks](../README.md)

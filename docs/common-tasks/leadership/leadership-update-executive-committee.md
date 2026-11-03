@@ -74,9 +74,9 @@ Delete their whole block, from `<div class="member">` to its closing `</div>` (1
 
 The headings and text above the list ("Scientific Leadership", "Executive Committee", "The Executive Committee leads…") and the link to the Governance page are in `layouts/partials/contributors-main.html`. Ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
 
-The rules of the committee are on its own page: [Change the text of the Executive Committee Charter](../executive-committee-charter/edit-text.md).
+The rules of the committee are on its own page: [Change the text of the Executive Committee Charter](../executive-committee-charter/executive-committee-charter-edit-text.md).
 
 ## Related guides
 
-- [Update the board of directors](update-board-of-directors.md)
+- [Update the board of directors](leadership-update-board-of-directors.md)
 - Back to the [list of all tasks](../README.md)

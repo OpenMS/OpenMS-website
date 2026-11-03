@@ -56,6 +56,6 @@ An icon is a Font Awesome name, for example `fas fa-users` or `fab fa-github`. S
 
 ## Related guides
 
-- [Change the intro and links of this page](edit-intro-and-links.md)
+- [Change the intro and links of this page](getting-involved-edit-intro-and-links.md)
 - [Which files are behind this page](../../reference/file-locations.md#everything-in-the-navbar-and-the-footer-where-is-each-page)
 - Back to the [list of all tasks](../README.md)
