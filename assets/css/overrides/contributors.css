@@ -216,3 +216,14 @@ html body .openms-lib-page--contributors #executive-committee#executive-committe
 html body .openms-lib-page--contributors #executive-committee#executive-committee .openms-lib-resources {
   padding-top: 0 !important;
 }
+
+/* ---------- Board of directors: every card the same height ----------
+   When the cards sit side by side (2 per row, above 860px), every row is as
+   tall as the tallest card, so the grid lines up instead of each row having
+   its own height. Stacked on phones/tablets each card keeps its own height. */
+@media (min-width: 861px) {
+  html body .openms-lib-page--contributors .leadership-grid {
+    grid-auto-rows: 1fr !important;
+    align-items: stretch !important;
+  }
+}
