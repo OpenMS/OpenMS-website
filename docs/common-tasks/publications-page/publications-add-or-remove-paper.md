@@ -28,7 +28,7 @@ Every paper in the archive looks like this:
 1. Go to **https://pubmed.ncbi.nlm.nih.gov/** and search for the paper's title.
 2. Open the paper. Under the title you see **PMID:** followed by a number, for example `38366242`. That number is also at the end of the page's web address. Copy it.
 
-No PubMed entry? Then the paper cannot be added with this method. Ask the web team.
+No PubMed entry? Then the paper cannot be added with this method. Ask the web team: they add it by hand (see the end of this page).
 
 ### Step 2 – Add it to `pmids.txt`
 
@@ -64,7 +64,10 @@ Open `pmids.txt`, delete the line with the number (the whole line), and save as 
 
 ## For the web team (advanced)
 
-- The robot is `.github/workflows/update_publications.yml`. It runs when `pmids.txt` changes on `main`, every Sunday at 06:00 UTC, and on demand (**Actions → Update Publications List → Run workflow**). It runs `generate_bib.py` and rewrites `content/en/publications.md`. The resulting pull request is **not merged automatically**.
+- The robot is `.github/workflows/update_publications.yml`. It runs when `pmids.txt` changes on `main`, every Sunday at 06:00 UTC, and on demand (**Actions → Update Publications List → Run workflow**). It runs `generate_bib.py`, which **edits** `content/en/publications.md` instead of rewriting it: papers already on the page stay exactly as they are, a new number gets its details from PubMed and goes at the **top of its year**, and a deleted number takes its paper off the page. The resulting pull request is **not merged automatically**.
+- **Papers with no PubMed entry** (posters, proceedings…) are written by hand in `content/en/publications.md`: copy an existing `<li class="publication-entry">` line in the right year and change the text. The robot never touches a paper that has no PubMed link.
+- To fix how a PubMed paper looks (for example full first names), edit its line in `content/en/publications.md`: the robot keeps your version.
+- More than 7 authors: the page shows the first ones, "...", then the last author. This is done when the page loads, so write the full list.
 - The **Key publications** cards are written by hand in `layouts/partials/publications-key.html`: each `<li>` holds one paper's title, link, journal, year and authors. Copy an existing block and change the text only.
 - The Google Scholar button text and link: `config.yaml` → `publicationsPage`.
 
