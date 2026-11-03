@@ -125,13 +125,15 @@ events:
   end: '2027-02-05'
   location: Gimo, 747 43 Gimo, Sweden
   summary: https://eubic-ms.org/events/hackathon-2027/
-- title: Developers Retreat
+- title: Annual Developer's Retreat
   start: '2027-03-14'
   category: event
   synced: true
   end: '2027-03-20'
   location: Resort Natura, 8100-266 Loulé, Portugal
-  summary: 'Registration and Info: https://tally.so/r/aQL8XW'
+  summary: 'Annual developer meeting with tutorials, talks, and code sprints.
+
+    Registration and Info: https://openms.de/developer-retreat/'
 - title: HUPO-PSI Meeting
   start: '2027-04-06'
   category: event
@@ -141,4 +143,4 @@ events:
   summary: 'Yearly HUPO-PSI Meeting.
 
     https://www.psidev.info/spring-meeting-2027'
-last_synced: '2026-10-21T18:04:09Z'
+last_synced: '2026-11-03T16:29:10Z'
