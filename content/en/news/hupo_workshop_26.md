@@ -34,4 +34,3 @@ Bring your own data and discuss it directly with our mass spectrometry data anal
 Participants should bring laptops to carry out the hands-on training.
 <br><br>
 **Contact:** Sam Wein: sam@openms.de | Tom David Müller: tom@openms.de
-<br><br>

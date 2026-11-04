@@ -189,6 +189,19 @@
         return;
       }
 
+      // Show feedback right away — on a slow connection the index fetch
+      // (first search only; cached after that) can take a moment, and with
+      // nothing shown in that gap the panel looks broken rather than busy.
+      if (!indexPromise) {
+        results.innerHTML = "";
+        var loading = document.createElement("p");
+        loading.className = "navbar-search__empty navbar-search__loading";
+        loading.textContent = "Searching…";
+        results.appendChild(loading);
+        results.hidden = false;
+        input.setAttribute("aria-expanded", "true");
+      }
+
       loadIndex(indexUrl).then(function (pages) {
         if (input.value.trim() !== query) return;
         var matches = filterPages(pages, query, maxResults);

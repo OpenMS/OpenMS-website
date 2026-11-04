@@ -16,12 +16,6 @@
   --events-grid-gap: var(--news-events-item-gap);
   background: var(--home-bg-soft, #f4f6fa) !important;
 }
-
-.community-events-home--with-news .community-events-home__header,
-.community-events-home--with-news .community-events-home__footer {
-  display: none;
-}
-
 .community-news-events__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -396,11 +390,6 @@ html body .home-page .community-events-home__item .community-news-events__press-
   padding: clamp(1.25rem, 2.5vw, 1.75rem);
   text-align: left;
 }
-
-.community-events-home__empty--compact .community-events-home__empty-visual {
-  display: none;
-}
-
 .community-events-home__view-all--inline {
   min-width: 0;
 }

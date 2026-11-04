@@ -1,0 +1,23 @@
+{{- /*
+  Summary text on a news card (news list and home page).
+  The whole card is one link, and a link cannot contain another link, so a
+  link written in the summary (`[text](https://…)`) becomes a
+  <span role="link" data-href> that assets/js/news-summary-links.js opens.
+  An automatic summary (no `summary:` line) is plain text.
+  Usage: partial "news-card-summary.html" (dict "page" . "length" 240)
+*/ -}}
+{{- $page := .page -}}
+{{- $length := .length | default 240 -}}
+{{- $html := "" -}}
+{{- with $page.Params.summary -}}
+  {{- $html = . | markdownify | truncate $length -}}
+  {{- $html = replaceRE `<a href="([^"]*)"[^>]*>` `<span class="news-summary-link" role="link" tabindex="0" data-href="$1">` $html -}}
+  {{- $html = replace $html "</a>" "</span>" -}}
+{{- else -}}
+  {{- with $page.Summary -}}
+    {{- $html = . | plainify | truncate $length -}}
+  {{- end -}}
+{{- end -}}
+{{- with $html }}
+<p class="community-news-events__press-summary news-home__card-summary">{{ . | safeHTML }}</p>
+{{- end -}}

@@ -15,6 +15,13 @@
    load order (equal-specificity single-class rules lose to whichever
    loads last, which isn't always us). Padding-inline is set here too,
    rather than relying on the parent anchor. */
+/* The anchor around the text has no side padding of its own (like on the
+   Code of Conduct page); otherwise the two paddings add up and the text
+   sits further in than on the Code of Conduct. */
+.openms-lib-page--report-handling .openms-lib-page__body > .openms-lib-page__anchor:has(> .rhm-charter__inner) {
+  padding-inline: 0;
+}
+
 .rhm-charter__inner.openms-lib-prose {
   box-sizing: border-box;
   width: 100%;

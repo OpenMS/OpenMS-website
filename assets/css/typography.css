@@ -36,15 +36,6 @@ button,
   font-family: var(--openms-font-body);
   font-weight: var(--openms-body-weight);
 }
-
-.openms-text-sm {
-  font-size: var(--openms-text-min);
-}
-
-.openms-text-lg {
-  font-size: var(--openms-body-size-lg);
-}
-
 /* Presentations — 18pt */
 .openms-text-presentation,
 .keyfeatures > .container > p {

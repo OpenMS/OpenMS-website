@@ -163,15 +163,6 @@
 .contact-area__actions .openms-step__cta {
   width: 100%;
 }
-
-.hero-modern__btn.openms-btn-primary {
-  font-family: var(--openms-font-body);
-  font-size: var(--openms-btn-font-size, var(--openms-text-min));
-  background: var(--openms-blue) !important;
-  border-color: var(--openms-blue) !important;
-  color: var(--openms-white) !important;
-}
-
 .navbar.is-fresh a.navbar-item.navbar-cta-item.openms-btn-primary,
 .navbar.is-fresh a.navbar-item.navbar-cta-item.openms-step__cta,
 .navbar.is-fresh a.navbar-item.navbar-cta-item.about-cta-btn--donate,
@@ -468,13 +459,6 @@
   color: var(--openms-blue) !important;
   text-decoration: none;
 }
-
-.openms-lib-btn--navy {
-  border-color: var(--openms-navy);
-  background: var(--openms-navy);
-  color: var(--openms-white) !important;
-}
-
 .openms-lib-btn--primary:hover,
 .openms-lib-btn--primary:focus-visible,
 .openms-lib-btn--primary:active,
@@ -494,15 +478,6 @@
   border-color: var(--openms-blue);
   color: var(--openms-white) !important;
 }
-
-.openms-lib-btn--navy:hover,
-.openms-lib-btn--navy:focus-visible,
-.openms-lib-btn--navy:active {
-  background: var(--openms-navy);
-  border-color: var(--openms-navy);
-  color: var(--openms-white) !important;
-}
-
 .openms-lib-btn--ghost:hover,
 .openms-lib-btn--ghost:focus-visible,
 .openms-lib-btn--ghost:active,

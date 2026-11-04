@@ -1,4 +1,4 @@
-{{- /* Show a few authors, an ellipsis, then always the last author. */ -}}
+{{- /* More than 7 authors: a few authors, an ellipsis, then always the last author. */ -}}
 {{- $raw := . | string -}}
 {{- $parts := split $raw ";" -}}
 {{- $authors := slice -}}
@@ -13,13 +13,11 @@
 {{- if le $total $limit -}}
   {{- delimit $authors "; " -}}
 {{- else -}}
+  {{- /* Up to 7 first, but at least one name hidden (8 authors: 6, "...", the last). */ -}}
   {{- $last := index $authors (sub $total 1) -}}
   {{- $rest := first (sub $total 1) $authors -}}
-  {{- if le (len $rest) $limit -}}
-    {{- delimit $authors "; " -}}
-  {{- else -}}
-    {{- $visible := first $limit $rest -}}
-    {{- $more := sub (len $rest) $limit -}}
-    {{- delimit $visible "; " }} <span class="publications-cite-card__authors-more" title="{{ $total }} authors total · {{ $more }} more not shown">...</span>; {{ $last -}}
-  {{- end -}}
+  {{- $shown := math.Min $limit (sub (len $rest) 1) | int -}}
+  {{- $visible := first $shown $rest -}}
+  {{- $more := sub (len $rest) $shown -}}
+  {{- delimit $visible "; " }} <span class="publications-cite-card__authors-more" title="{{ $total }} authors total · {{ $more }} more not shown">...</span>; {{ $last -}}
 {{- end -}}

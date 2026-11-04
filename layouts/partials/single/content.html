@@ -3,10 +3,6 @@
 {{- $eyebrow := .Params.eyebrow | default "OpenMS" -}}
 {{- $showTitle := and (not (.Params.hidePageTitle | default false)) $title -}}
 {{- $showIntro := or $showTitle $subtitle -}}
-{{- $showShortcuts := not (.Params.hideShortcuts | default false) -}}
-{{- $toc := .TableOfContents -}}
-{{- $hasToc := and $showShortcuts $toc (in (printf "%s" $toc) "<li") -}}
-{{- $tocInner := replaceRE `(?s)^\s*<nav[^>]*>(.*)</nav>\s*$` "$1" (printf "%s" $toc) | safeHTML -}}
 <section class="openms-lib-layout">
 <article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--doc">
   {{- if $showIntro }}
@@ -31,12 +27,6 @@
     <div class="openms-lib-page__anchor">
       <section class="openms-lib-resources openms-lib-resources--no-feature openms-lib-prose-section">
         <div class="openms-lib-resources__inner">
-          {{- if $hasToc }}
-          <nav class="openms-lib-prose__toc" aria-label="On this page">
-            <p class="openms-lib-prose__toc-title">On this page</p>
-            {{ $tocInner }}
-          </nav>
-          {{- end }}
           <div class="openms-lib-prose post-content">
             {{ .Content }}
           </div>

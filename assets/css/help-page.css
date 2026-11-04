@@ -15,17 +15,7 @@
 .openms-lib-page--help .help-page__resources {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-
-.help-page__card--wide {
-  grid-column: 1 / -1;
-}
-
 @media (max-width: 860px) {
   .openms-lib-page--help .help-page__resources {
     grid-template-columns: 1fr;
-  }
-
-  .help-page__card--wide {
-    grid-column: auto;
-  }
-}
+  }}

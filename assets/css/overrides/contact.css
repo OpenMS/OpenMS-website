@@ -1,0 +1,43 @@
+/* ---------- Contact: Discord / GitHub as text links (like the other cards) ---------- */
+html body .openms-lib-page--contact .contact-path-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  margin-top: auto;
+}
+
+/* The other Contact cards light their icon on hover, but that rule skips
+   static cards. This card is static (it holds two links), so light its icon
+   the same way when the card is hovered or one of its links has focus. */
+html body .openms-lib-page--contact .contact-path-card--community:is(:hover, :focus-within) .openms-lib-resources__item-icon,
+html body .openms-lib-page--contact .contact-path-card--community:is(:hover, :focus-within) .openms-lib-resources__item-icon :is(.fab, .fas, .svg-inline--fa) {
+  color: var(--openms-blue) !important;
+}
+
+html body .openms-lib-page--contact .contact-path-card--community:is(:hover, :focus-within) .openms-lib-resources__item-icon .svg-inline--fa path {
+  fill: currentColor !important;
+}
+
+/* A hovered link used to widen the gap before its arrow (a global rule sets
+   0.6rem on hover, boosted with an ID selector), which pushed the next link
+   sideways. Keep the gap fixed and slide only the arrow. The #contact-paths
+   ID is needed to outrank that rule. */
+html body .openms-lib-page--contact #contact-paths .contact-path-card--community .contact-path-links .openms-lib-resources__item-link,
+html body .openms-lib-page--contact #contact-paths .contact-path-card--community .contact-path-links .openms-lib-resources__item-link:is(:hover, :focus-visible) {
+  gap: 0.4rem !important;
+}
+
+html body .openms-lib-page--contact .contact-path-links .openms-lib-resources__item-link span[aria-hidden="true"] {
+  display: inline-block;
+  transition: transform 0.18s ease;
+}
+
+html body .openms-lib-page--contact .contact-path-links .openms-lib-resources__item-link:is(:hover, :focus-visible) span[aria-hidden="true"] {
+  transform: translateX(0.2rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .openms-lib-page--contact .contact-path-links .openms-lib-resources__item-link span[aria-hidden="true"] {
+    transition: none;
+  }
+}

@@ -50,6 +50,15 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 /communication /contribute/ 301
 /communication/ /contribute/ 301
 
+# Unused pages removed (October 2026)
+/help-request /help/ 301
+/help-request/ /help/ 301
+/jobs /contribute/ 301
+/jobs/ /contribute/ 301
+/getting-started/develop-your-own-openms-tools /openms-lib/ 301
+/getting-started/develop-your-own-openms-tools/ /openms-lib/ 301
+/keyfeatures/* / 301
+
 # Applications section retired — apps live on /webapps/
 /applications /webapps/ 301
 /applications/* /webapps/ 301

@@ -1,8 +1,4 @@
 {{- $page := .page -}}
-{{- $summary := $page.Summary -}}
-{{- with $page.Params.summary -}}
-  {{- $summary = . -}}
-{{- end -}}
 {{- $label := $page.Params.category | default "News" -}}
 <li
   class="news-entry community-events-home__item news-home__item"
@@ -26,9 +22,7 @@
         {{- end }}
       </p>
       <h3 class="community-news-events__press-title news-home__card-title">{{ $page.Title }}</h3>
-      {{- with $summary }}
-      <p class="community-news-events__press-summary news-home__card-summary">{{ . | plainify | truncate 240 }}</p>
-      {{- end }}
+      {{- partial "news-card-summary.html" (dict "page" $page "length" 240) }}
       {{- with or $page.Params.authors $page.Params.Authors }}
       <p class="community-news-events__press-location news-entry__authors news-home__card-authors">
         {{- range $i, $author := . }}{{ if $i }}, {{ end }}{{ $author }}{{ end -}}

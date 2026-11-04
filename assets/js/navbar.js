@@ -454,6 +454,14 @@
     syncMenuAccessibility(nodes.clone, false);
     initDropdownPanels(nodes.nav);
     initDropdownPanels(nodes.clone);
+    // The first layout choice can switch to the drawer layout (tablets, or a
+    // menu too wide for the bar); without the settling class the drawer
+    // visibly slid out on every page load.
+    document.documentElement.classList.add("navbar-layout-settling");
+    settleTimer = window.setTimeout(function () {
+      settleTimer = 0;
+      document.documentElement.classList.remove("navbar-layout-settling");
+    }, 200);
     updateNavbarLayoutMode();
     updateHeaderHeight();
     updateScrolledState();

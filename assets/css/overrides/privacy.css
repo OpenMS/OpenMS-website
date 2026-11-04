@@ -1,0 +1,39 @@
+/* Privacy — follow the standard hub-page design. */
+
+/* "Who we are": standard stacked head (eyebrow, title, lead, left-aligned)
+   like the other sections, instead of the lead floating off to the right. */
+html body .openms-lib-page--privacy #privacy-who-we-are .openms-lib-about__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.9rem;
+  justify-items: start;
+  text-align: left;
+}
+
+html body .openms-lib-page--privacy #privacy-who-we-are .openms-lib-about__lead {
+  max-width: 44rem;
+  margin: 0;
+  text-align: left;
+}
+
+/* ---------- Privacy "Who we are": always left-aligned, at every screen size ---------- */
+html:is(html, #privacy-who-left-boost) body .openms-lib-page--privacy #privacy-who-we-are :is(.openms-lib-about__head, .openms-lib-about__head-copy, .openms-lib-about__eyebrow, .openms-lib-about__title, .openms-lib-about__lead) {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  justify-items: start !important;
+  align-items: flex-start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* ---------- Privacy: "Who we are" heading sits closer to its paragraph ---------- */
+:is(html, #privacy-who-tight-boost) body .openms-lib-page--privacy #privacy-who-we-are {
+  margin-bottom: -0.1rem !important;
+}
+
+/* ---------- Generic plain pages (Develop Your Own OpenMS Tools, and any other
+   page using the default doc layout): less empty space between the last line
+   and the footer — these pages have no outro CTA band to fill that space. ---------- */
+:is(html, #doc-page-tight-footer-boost) body .openms-lib-layout:has(> .openms-lib-page--doc) {
+  padding-bottom: 1.5rem !important;
+}

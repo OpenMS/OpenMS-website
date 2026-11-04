@@ -1,0 +1,22 @@
+/* ---------- WebApps page: Featured WebApps logos ----------
+   Every logo in the "Featured WebApps" cards sits in the same square box
+   and is scaled to fit inside it. Before, each box shrank to its picture
+   (FLASH App 111px, umetaflow 101px) and older rules made OpenDDA bigger on
+   purpose (178px, chosen by its file name). Logos added later get the same
+   box. The ID in :is() makes these rules outrank those older ones. */
+:is(html, #webapps-example-logos) body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-logo.openms-lib-resources__examples-logo {
+  width: min(7rem, 100%) !important;
+  height: auto !important;
+  max-width: 7rem !important;
+  aspect-ratio: 1 !important;
+  padding: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+:is(html, #webapps-example-logos) body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-logo.openms-lib-resources__examples-logo img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+}

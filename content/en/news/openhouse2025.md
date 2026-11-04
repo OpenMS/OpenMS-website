@@ -22,4 +22,3 @@ This event offers a great opportunity to:
 The meeting is planned such that one can attend the Open House and [HUPO](https://2025.hupo.org) the following week. Note that HUPO requires separate registration.
 <br>
 [Click here to register](https://docs.google.com/forms/d/e/1FAIpQLSdw2ImeFcRV133QPOTJonSYL0YIgrpECR0DYuI09eAGuCKB-w/viewform?usp=sharing&ouid=108652614770772705581)
-<br><br>

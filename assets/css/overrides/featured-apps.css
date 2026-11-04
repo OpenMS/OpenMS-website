@@ -1,0 +1,97 @@
+@media (max-width: 800px) {
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__item .webapps-project-detail-card,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__grid--detail .webapps-project-detail-card,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__item .webapps-project-detail-card,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-featured__grid--detail .webapps-project-detail-card,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card--featured {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-areas:
+      "name logo"
+      "text logo"
+      "maintainers maintainers"
+      "actions actions" !important;
+    grid-template-rows: auto auto auto auto !important;
+  }
+
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap--large,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap--xlarge,
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap--wide,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__logo-wrap {
+    grid-area: logo !important;
+    justify-self: end !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__body,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__body {
+    display: contents !important;
+  }
+
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__name,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__name {
+    grid-area: name !important;
+  }
+
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__text,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__text {
+    grid-area: text !important;
+  }
+
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__maintainers,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__maintainers {
+    grid-area: maintainers !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-self: stretch !important;
+  }
+
+  html body .openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__actions,
+  html body .openms-lib-page--solution.openms-lib-page--featured.openms-lib-page--featured-pro .webapps-project-detail-card__actions {
+    grid-area: actions !important;
+  }
+}
+
+/* ---------- App card buttons (Featured, Affiliated and Archived Apps) ----------
+   The look depends only on the button's place, never on its type, so adding,
+   removing or reordering links in config.yaml always gives:
+   - the FIRST button: filled blue, white text and icon;
+   - every OTHER button: white (transparent) with a dark blue border, dark blue
+     text and icon, and a light tint on hover.
+   Older rules colour some types (demo, homepage, pypi) as if they were always
+   first; the ID in :is() makes these rules outrank them. */
+:is(html, #app-card-buttons) body :is(.openms-lib-page--featured, .openms-lib-page--affiliated, .openms-lib-page--archived) .webapps-project-links__item:first-child .webapps-project-links__btn,
+:is(html, #app-card-buttons) body :is(.openms-lib-page--featured, .openms-lib-page--affiliated, .openms-lib-page--archived) .webapps-project-links__item:first-child .webapps-project-links__btn:is(:hover, :focus-visible) {
+  background: var(--openms-blue) !important;
+  border-color: var(--openms-blue) !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+:is(html, #app-card-buttons) body :is(.openms-lib-page--featured, .openms-lib-page--affiliated, .openms-lib-page--archived) .webapps-project-links__item:first-child .webapps-project-links__btn :is(i, .fab, .fas, svg, .svg-inline--fa, path, span) {
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+  fill: currentColor !important;
+}
+
+:is(html, #app-card-buttons) body :is(.openms-lib-page--featured, .openms-lib-page--affiliated, .openms-lib-page--archived) .webapps-project-links__item:not(:first-child) .webapps-project-links__btn {
+  background: transparent !important;
+  border-color: rgba(var(--openms-navy-rgb), 0.72) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+:is(html, #app-card-buttons) body :is(.openms-lib-page--featured, .openms-lib-page--affiliated, .openms-lib-page--archived) .webapps-project-links__item:not(:first-child) .webapps-project-links__btn:is(:hover, :focus-visible) {
+  background: rgba(var(--openms-navy-rgb), 0.08) !important;
+  border-color: var(--openms-navy) !important;
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+}
+
+:is(html, #app-card-buttons) body :is(.openms-lib-page--featured, .openms-lib-page--affiliated, .openms-lib-page--archived) .webapps-project-links__item:not(:first-child) .webapps-project-links__btn :is(i, .fab, .fas, svg, .svg-inline--fa, path, span) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  fill: currentColor !important;
+}

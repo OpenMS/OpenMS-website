@@ -166,12 +166,6 @@
     transparent 100%
   );
 }
-
-.trusted-by__card--logo-large .trusted-by__card-media {
-  min-height: 9rem;
-  padding-block: clamp(1.15rem, 2.8vh, 1.5rem);
-}
-
 .trusted-by__logo {
   display: block;
   max-height: 2.75rem;
@@ -182,12 +176,6 @@
   filter: grayscale(0.15) contrast(1.02);
   transition: filter 0.22s ease, transform 0.22s ease;
 }
-
-.trusted-by__card--logo-large .trusted-by__logo {
-  max-height: 5.5rem;
-  max-width: min(100%, 11rem);
-}
-
 .trusted-by__monogram {
   display: grid;
   place-items: center;

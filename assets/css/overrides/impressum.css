@@ -1,0 +1,25 @@
+/* ---------- No white strip above the footer ----------
+   Impressum and the plain text pages (layouts/partials/single/content.html,
+   e.g. /core_developers/) have a light grey page, but its wrapper had 24px
+   of bottom padding with no background, so a white strip showed between the
+   grey page and the footer. The wrapper has no bottom padding now; the same
+   24px sit inside the grey page, so the text keeps its distance from the
+   footer. (impressum.css sets padding-bottom: 0 too, and privacy.css gives
+   these pages 1.5rem; two IDs in :is() make this rule win.) */
+:is(html, #page-bottom) :is(body, #page-bottom-2) > .openms-lib-layout:is(.impressum-layout, :has(> .openms-lib-page--doc)) {
+  padding-bottom: 0 !important;
+}
+
+:is(html, #page-bottom) :is(body, #page-bottom-2) > .openms-lib-layout:is(.impressum-layout, :has(> .openms-lib-page--doc)) > .openms-lib-page {
+  padding-bottom: 24px !important;
+}
+
+/* Help (/help/): same white strip, 81px tall (the wrapper's standard bottom
+   padding) under its grey page. The same space moves inside the grey page. */
+:is(html, #page-bottom) :is(body, #page-bottom-2) > .openms-lib-layout:has(> .openms-lib-page--help) {
+  padding-bottom: 0 !important;
+}
+
+:is(html, #page-bottom) :is(body, #page-bottom-2) > .openms-lib-layout:has(> .openms-lib-page--help) > .openms-lib-page {
+  padding-bottom: clamp(4.5rem, 9vh, 6.5rem) !important;
+}

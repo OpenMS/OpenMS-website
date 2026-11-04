@@ -1,0 +1,157 @@
+/* News index — full solution-page width; cards stacked one under the other */
+
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) {
+  --news-max: var(--pro-max, 75rem) !important;
+}
+
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .openms-lib-page__body > .openms-lib-page__anchor > .openms-lib-block,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-page-block,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-page,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-body,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-bibliography,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-bibliography__entries {
+  width: 100% !important;
+  max-width: var(--pro-max, 75rem) !important;
+}
+
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-bibliography,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-body {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: var(--pro-head-to-content, clamp(2.25rem, 4.5vw, 3.25rem)) !important;
+}
+
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .events-past-toolbar,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-year-toolbar,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-bibliography__entries,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-list,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-home__list,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .community-events-home__grid {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Stack cards one under the other */
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-list,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-home__list,
+html body .openms-lib-page--news:not(.openms-lib-page--news-article) .community-events-home__grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  column-gap: 0 !important;
+  row-gap: clamp(1.15rem, 2.2vw, 1.5rem) !important;
+}
+
+/* News pager (← Newer / Older →): the standard primary button; only the
+   disabled state (first/last page) is faded. */
+html body .news-pager .openms-lib-btn.news-pager__btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ---------- News page (mobile): the "All years" filter sits closer to the hero ---------- */
+@media (max-width: 767px) {
+  :is(html, #news-filter-up-boost) body .openms-lib-page__anchor:has(> .news-page-block) {
+    padding-top: 0.75rem !important;
+  }
+}
+
+/* ---------- News articles: lists and italics ----------
+   Found by writing a test article with every kind of formatting.
+   A site-wide reset hides list markers (ul { list-style: none }), so bullet
+   lists in articles showed no bullets. News articles are prose: bullets and
+   numbers show, nested lists use circles then squares. Same rules as
+   OpenMS/OpenMS-website#292, with an ID so they outrank the reset. */
+:is(html, #news-lists) body .news-story__body :is(ul, ol) {
+  margin: 0 0 1.05rem !important;
+  padding-left: 1.5rem !important;
+}
+
+:is(html, #news-lists) body .news-story__body ul { list-style: disc outside !important; }
+:is(html, #news-lists) body .news-story__body ol { list-style: decimal outside !important; }
+:is(html, #news-lists) body .news-story__body ul ul { list-style-type: circle !important; }
+:is(html, #news-lists) body .news-story__body ul ul ul { list-style-type: square !important; }
+
+:is(html, #news-lists) body .news-story__body li {
+  display: list-item !important;
+  list-style: inherit !important;
+  margin: 0 0 0.35rem !important;
+}
+
+:is(html, #news-lists) body .news-story__body li > :is(ul, ol) {
+  margin: 0.35rem 0 0 !important;
+}
+
+/* *Italic* (em, i) in article text is italic in the text font. The site
+   typography sets em and i in the code font, upright. Icons (<i class="fa…">)
+   are left alone. */
+:is(html, #news-lists) body .news-story__body :is(em, i:not([class])) {
+  font-family: inherit !important;
+  font-style: italic !important;
+}
+
+/* Tables in articles: the table is display: block (so it can scroll
+   sideways on phones), which kept its columns at their narrowest while the
+   frame spanned the full width. From 768px it is a real table at full
+   width; on phones it stays scrollable. */
+@media (min-width: 768px) {
+  :is(html, #news-lists) body .news-story__body table {
+    display: table !important;
+    width: 100% !important;
+  }
+}
+
+/* Code blocks in articles (```bash … ```): the highlighter writes a near-black
+   background (#272822) on the block, and the site's text colour made the
+   code dark too, so it was unreadable. Light grey box with navy code, like
+   the quotes; long lines scroll sideways. */
+:is(html, #news-lists) body .news-story__body :is(.highlight pre, pre) {
+  background: rgba(var(--openms-navy-rgb), 0.05) !important;
+  background-color: rgba(var(--openms-navy-rgb), 0.05) !important;
+  border: 1px solid rgba(var(--openms-navy-rgb), 0.12) !important;
+  border-radius: 0.6rem !important;
+  padding: 0.9rem 1.1rem !important;
+  overflow-x: auto !important;
+}
+
+:is(html, #news-lists) body .news-story__body :is(.highlight pre, pre) :is(code, span) {
+  color: var(--openms-navy) !important;
+  -webkit-text-fill-color: var(--openms-navy) !important;
+  background: transparent !important;
+}
+
+/* ---------- Space above the footer ----------
+   The news pages ended at different distances from the footer: 68px under
+   the pager (42px on phones), 0px when a year is selected (no pager, so the
+   last card touched the footer), and 118px under an article. Every news page
+   now ends 2rem above the footer. */
+:is(html, #news-bottom) body .openms-lib-page--news:not(.openms-lib-page--news-article) .news-pager {
+  margin-bottom: 0 !important;
+}
+
+:is(html, #news-bottom) body .openms-lib-page--news:not(.openms-lib-page--news-article) .openms-lib-page__body {
+  padding-bottom: 2rem !important;
+}
+
+:is(html, #news-bottom) body .openms-lib-page--news-article .news-story {
+  padding-bottom: 2rem !important;
+}
+
+:is(html, #news-bottom) body .openms-lib-page--news-article .news-story__body > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Links written in a news card summary (news list and home page): blue like
+   every text link, underlined on hover and keyboard focus. They are spans
+   opened by assets/js/news-summary-links.js, because the card is a link. */
+:is(html, #news-summary-links) body .news-home__card-summary .news-summary-link {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  cursor: pointer;
+}
+
+:is(html, #news-summary-links) body .news-home__card-summary .news-summary-link:is(:hover, :focus-visible) {
+  text-decoration: underline !important;
+  text-underline-offset: 0.2em;
+}

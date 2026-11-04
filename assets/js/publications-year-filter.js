@@ -229,16 +229,16 @@
         return;
       }
 
+      // More than 7 authors: the first ones, "...", then always the last
+      // author. Up to 7 come first, but at least one name is hidden (with 8
+      // authors: 6, "...", the last).
       var sep = el.textContent.indexOf(";") !== -1 ? "; " : ", ";
       var last = authors[authors.length - 1];
       var rest = authors.slice(0, -1);
-      if (rest.length <= LIMIT) {
-        el.setAttribute("data-authors-truncated", "1");
-        return;
-      }
+      var shown = Math.min(LIMIT, rest.length - 1);
 
-      var visible = rest.slice(0, LIMIT);
-      var more = rest.length - LIMIT;
+      var visible = rest.slice(0, shown);
+      var more = rest.length - shown;
 
       el.textContent = "";
       el.appendChild(document.createTextNode(visible.join(sep) + " "));

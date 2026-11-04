@@ -30,4 +30,3 @@ Participants should bring laptops to be able to carry out this training on their
 **Keywords:** Proteomics, Mass spectrometry, Bioinformatics, LC-MS/MS, Data Independent Acquisition
 <br><br>
 **Contact:** Sam Wein: sam@openms.de
-<br><br>
