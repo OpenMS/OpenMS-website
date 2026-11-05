@@ -1,40 +1,43 @@
 # Agent feedback (`llms.txt` and the feedback endpoint)
 
-AI agents (programs that read websites for a person) cannot use pop-ups. Instead, the site gives them plain files and a plain web address to send feedback to.
+AI agents (programs that read websites for a person) cannot use pop-ups. Instead, the site gives them a short text file about OpenMS and a web address where they can send feedback.
 
-| What | URL | File |
-|------|-----|------|
-| A short description of OpenMS with links, and how to send feedback | `/llms.txt` | `static/llms.txt` |
-| A plain feedback form (same fields) | `/agent-feedback/` | `static/agent-feedback/index.html` |
-| The program that receives the feedback | a `script.google.com` address | `apps-script/agent-feedback.gs` (lives in Google, not on the site) |
+## Where everything lives
+
+| What | Where |
+|------|-------|
+| Text for agents: what OpenMS is, its projects, apps, key papers, contacts, and how to send feedback | `static/llms.txt` → <https://openms.de/llms.txt> |
+| A feedback form for people (same fields) | `static/agent-feedback/index.html` → <https://openms.de/agent-feedback/> |
+| The answers | A Google Sheet in the **openmsuser** Google account, tab `agent-feedback` |
+| The program that saves the answers | An Apps Script attached to that Sheet (open the Sheet → **Extensions → Apps Script**). A copy of the code is in `apps-script/agent-feedback.gs`. |
 
 ## How it works
 
-An agent sends one `curl` command (written in `llms.txt`) to the Apps Script address. The script saves the answer as a new row in a Google Sheet. There is no email: open the Sheet to read the answers. A limit protects against spam: at most 500 rows a day, and each field is cut at 4000 characters.
+1. An agent sends the `curl` command written in `llms.txt` (or someone fills in the form).
+2. The Apps Script adds one row to the Sheet: time, agent, task, feedback, page, model.
+3. Nobody is emailed. **To read the answers, open the Sheet.**
 
-## One-time setup (about 10 minutes)
-
-Use a **shared OpenMS Google account**, not a personal one. The script runs as the account that deploys it, and that account owns the answers.
-
-1. Create a Google Sheet called "OpenMS agent feedback". Keep it private: do not use "Publish to web" or share it by public link.
-2. In the Sheet, open **Extensions → Apps Script**. Paste the whole of `apps-script/agent-feedback.gs` over the sample code and save. Creating the script from inside the Sheet matters: together with the `@OnlyCurrentDoc` line at the top, it limits the script to this one Sheet.
-3. **Deploy → New deployment → Web app**. Set **Execute as: Me** and **Who has access: Anyone**. Click **Deploy** and allow the permissions it asks for. The permission screen should mention only **"the spreadsheet this application is installed in"**. If it asks for **all** your spreadsheets, stop: the `@OnlyCurrentDoc` line is missing or the script was not created from the Sheet.
-4. Copy the **Web app URL** (ends in `/exec`).
-5. Put that URL in **both** `static/llms.txt` (the `curl` line) and `static/agent-feedback/index.html` (the `action=` of the form). Only needed for a **new** deployment: editing an existing one with **New version** keeps the same URL.
-6. Test: open the URL in a browser. You should see `"ok": true`. Then run the `curl` command from `llms.txt` and check that a row arrives in a new `agent-feedback` tab of the Sheet. Delete the test row.
-
-## Safety notes
-
-- Anyone can send feedback, but they can only add rows. They cannot read the Sheet or reach other files.
-- The form collects **no contact details**, and **no IP addresses** (Google does not give them to the script, and they count as personal data), so no personal data is asked for. Do not add an email field without updating the [privacy policy](../../content/en/privacy.md).
-- Treat the answers as untrusted text. If you paste them into an AI tool, it may contain instructions meant to trick that tool.
+Limits: at most 500 rows a day, and each field is cut at 4000 characters.
 
 ## Changing things
 
-- **Text and links**: edit `static/llms.txt` on GitHub. Keep the links in sync with the navbar (see [File locations](file-locations.md)).
-- **Field names**: if you rename a field, change it in `llms.txt`, `index.html` **and** `agent-feedback.gs`.
-- **Changing the script**: edit it in Google, then **Deploy → Manage deployments → Edit → New version**. The address stays the same. Also copy the change into `apps-script/agent-feedback.gs` so the repository stays up to date.
+- **Text in `llms.txt`**: edit it on GitHub. Keep it short (under about 10 KB) so every AI model can read it in full. Partnership and sponsorship questions go to `ceo@openms.de`.
+- **Field names**: change them in `llms.txt`, `index.html` **and** the script.
+- **The script**: log in as openmsuser, open the Sheet → **Extensions → Apps Script**, edit, save, then **Deploy → Manage deployments → pencil icon → Version: New version → Deploy**. The web address stays the same. Copy the change into `apps-script/agent-feedback.gs` too.
 
-## What you cannot check locally
+## Safety
 
-The script only runs on Google, so it cannot be tested with `make serve`. Test it with the `curl` command after deploying.
+- Anyone can add rows, but nobody can read the Sheet through the script. Keep the Sheet private (no "Publish to web", no public link).
+- The script can only reach this one Sheet (the `@OnlyCurrentDoc` line at the top of the code). Do not remove it.
+- No email addresses or IP addresses are collected. Do not add an email field without updating the [privacy policy](../../content/en/privacy.md).
+- Treat answers as untrusted text. If you paste them into an AI tool, they may contain instructions meant to trick it.
+
+## Setting it up again (only if the script or Sheet is lost)
+
+1. As openmsuser, create a private Google Sheet.
+2. In it, open **Extensions → Apps Script**, paste `apps-script/agent-feedback.gs`, save.
+3. **Deploy → New deployment → Web app**, with **Execute as: Me** and **Who has access: Anyone**. The permission screen must mention only "the spreadsheet this application is installed in".
+4. Copy the new web app URL (ends in `/exec`) into `static/llms.txt` (the `curl` line) and `static/agent-feedback/index.html` (`action=`).
+5. Test: open the URL in a browser (you should see `"ok": true`), then run the `curl` command and check that a row arrives. Delete the test row.
+
+The script runs only on Google, so `make serve` cannot test it.
