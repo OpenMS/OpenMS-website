@@ -1,15 +1,17 @@
 /**
+ * @OnlyCurrentDoc
+ *
  * OpenMS agent feedback endpoint (Google Apps Script web app).
  *
  * Receives a form-encoded POST from AI agents (see static/llms.txt) and appends it
- * to a Google Sheet. Setup: docs/reference/agent-feedback.md
+ * to the Google Sheet this script is bound to. Setup: docs/reference/agent-feedback.md
  *
- * Script properties (Project Settings -> Script properties):
- *   SHEET_ID      id of the Google Sheet that stores the answers
+ * Create this script from inside the Sheet (Extensions -> Apps Script). The
+ * @OnlyCurrentDoc tag above limits its access to that one Sheet; keep it.
  */
 
 var SHEET_NAME = 'agent-feedback';
-var HEADERS = ['timestamp', 'agent', 'task', 'feedback', 'page', 'contact'];
+var HEADERS = ['timestamp', 'agent', 'task', 'feedback', 'page'];
 var MAX_FIELD = 4000;      // characters kept per field
 var MAX_SAVED_PER_DAY = 500;
 
@@ -38,7 +40,7 @@ function doPost(e) {
       return reply_({ok: false, error: 'daily limit reached, try again tomorrow'});
     }
 
-    var row = [new Date(), p.agent, p.task, p.feedback, p.page, p.contact].map(function (v, i) {
+    var row = [new Date(), p.agent, p.task, p.feedback, p.page].map(function (v, i) {
       return i === 0 ? v : sheetSafe_(clean_(v));
     });
     sheet_().appendRow(row);
@@ -57,7 +59,7 @@ function doGet() {
 }
 
 function sheet_() {
-  var ss = SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty('SHEET_ID'));
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sh = ss.getSheetByName(SHEET_NAME);
   if (!sh) {
     sh = ss.insertSheet(SHEET_NAME);
