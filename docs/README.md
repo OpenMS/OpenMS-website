@@ -60,6 +60,7 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | Understand what happens when we merge | [Deployment](workflow/deployment.md) |
 | Find who can approve or help | [Who to ask](workflow/who-to-ask.md) |
 | Which folders and pictures are **not used** by the site (archive) | [Archive folders](reference/archive-folders.md) |
+| The `llms.txt` file and the feedback form for AI agents | [Agent feedback](reference/agent-feedback.md) |
 
 ## What you can change safely
 
