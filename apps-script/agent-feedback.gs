@@ -1,19 +1,17 @@
 /**
  * OpenMS agent feedback endpoint (Google Apps Script web app).
  *
- * Receives a form-encoded POST from AI agents (see static/llms.txt), appends it
- * to a Google Sheet and emails a notification. Setup: docs/reference/agent-feedback.md
+ * Receives a form-encoded POST from AI agents (see static/llms.txt) and appends it
+ * to a Google Sheet. Setup: docs/reference/agent-feedback.md
  *
  * Script properties (Project Settings -> Script properties):
  *   SHEET_ID      id of the Google Sheet that stores the answers
- *   NOTIFY_EMAIL  address that gets a notification email
  */
 
 var SHEET_NAME = 'agent-feedback';
 var HEADERS = ['timestamp', 'agent', 'task', 'feedback', 'page', 'contact'];
 var MAX_FIELD = 4000;      // characters kept per field
 var MAX_SAVED_PER_DAY = 500;
-var MAX_EMAILS_PER_DAY = 20;
 
 function doPost(e) {
   var p = (e && e.parameter) || {};
@@ -34,7 +32,7 @@ function doPost(e) {
     var props = PropertiesService.getScriptProperties();
     var today = Utilities.formatDate(new Date(), 'UTC', 'yyyy-MM-dd');
     var counts = JSON.parse(props.getProperty('counts') || '{}');
-    if (counts.day !== today) counts = {day: today, saved: 0, emailed: 0};
+    if (counts.day !== today) counts = {day: today, saved: 0};
 
     if (counts.saved >= MAX_SAVED_PER_DAY) {
       return reply_({ok: false, error: 'daily limit reached, try again tomorrow'});
@@ -46,17 +44,6 @@ function doPost(e) {
     sheet_().appendRow(row);
     counts.saved++;
 
-    var to = props.getProperty('NOTIFY_EMAIL');
-    if (to && counts.emailed < MAX_EMAILS_PER_DAY) {
-      MailApp.sendEmail(
-        to,
-        'OpenMS agent feedback from ' + clean_(p.agent).slice(0, 80),
-        'Task: ' + clean_(p.task) + '\n\nFeedback: ' + clean_(p.feedback) +
-        '\n\nPage: ' + clean_(p.page) + '\nContact: ' + clean_(p.contact) +
-        '\n\n(All answers are in the Google Sheet.)'
-      );
-      counts.emailed++;
-    }
     props.setProperty('counts', JSON.stringify(counts));
   } finally {
     lock.releaseLock();
