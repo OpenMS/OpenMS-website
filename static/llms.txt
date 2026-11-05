@@ -1,21 +1,32 @@
 # OpenMS
 
-> OpenMS is an open-source C++ library and toolset for mass spectrometry data analysis (proteomics, metabolomics), with Python bindings (pyOpenMS), visualization (pyOpenMS Viz) and web apps. This site, https://openms.de, is the project's home page.
+> OpenMS is an open-source ecosystem for computational mass spectrometry in the life sciences: bottom-up and top-down proteomics, immunopeptidomics, metabolomics, cross-linking and nucleic acid mass spectrometry. BSD-licensed and community-developed. This site, https://openms.de, is the project's home.
+
+## Core projects
+- [OpenMS-lib](https://openms.de/openms-lib/): the C++ library and TOPP command-line tools (long known simply as "OpenMS"). Cite: Pfeuffer et al., "OpenMS 3 enables reproducible analysis of large-scale mass spectrometry data", Nature Methods 21, 365–367 (2024), doi:10.1038/s41592-024-02197-7, https://pubmed.ncbi.nlm.nih.gov/38366242/
+- [pyOpenMS](https://openms.de/pyopenms/): Python bindings to OpenMS-lib. Cite: Röst et al., Proteomics (2014), https://pubmed.ncbi.nlm.nih.gov/24420968/
+- [pyOpenMS-viz](https://openms.de/pyopenms-viz/): plotting mass spectrometry data from pandas DataFrames. Cite: Sing et al., Journal of Proteome Research (2025), https://pubmed.ncbi.nlm.nih.gov/40019346/
+- [OpenMS WebApps](https://openms.de/webapps/): a framework for building browser apps on OpenMS. Cite: Müller et al., Journal of Proteome Research (2025), https://pubmed.ncbi.nlm.nih.gov/39881492/
+
+## Featured apps (built on OpenMS WebApps)
+- [FLASHApp](http://flashapp.webapps.openms.org/): top-down proteomics (FLASHDeconv deconvolution, proteoform analysis). Key paper: FLASHDeconv, Jeong et al., Cell Systems (2020), https://pubmed.ncbi.nlm.nih.gov/32078799/
+- [MHCquant](https://abi-services.cs.uni-tuebingen.de/mhcquant/): immunopeptidomics, a web front end to the nf-core/mhcquant pipeline. Key papers: Bichmann et al., Journal of Proteome Research (2019), https://pubmed.ncbi.nlm.nih.gov/31589052/; MHCquant2, Scheid et al., Genome Biology (2025), https://pubmed.ncbi.nlm.nih.gov/40983925/
+- [naseweis](https://abi-services.cs.uni-tuebingen.de/naseweis/): RNA / oligonucleotide search with the NucleicAcidSearchEngine (NASE). Key paper: Wein et al., Nature Communications (2020), https://pubmed.ncbi.nlm.nih.gov/32066737/
+- [umetaflow](https://abi-services.cs.uni-tuebingen.de/umetaflow/): untargeted metabolomics. Key paper: Kontou et al., Journal of Cheminformatics (2023), https://pubmed.ncbi.nlm.nih.gov/37173725/
+- [NuXL](https://nuxl.webapps.openms.org/): protein–nucleic acid cross-linking mass spectrometry. Key paper: Siraj et al., Proteomics (2024), https://pubmed.ncbi.nlm.nih.gov/38629965/
+- All apps: https://openms.de/featured-apps/
+
+## Built on OpenMS
+- [quantms](https://quantms.org/) (code: https://github.com/bigbio/quantms): cloud-based pipeline for large-scale quantitative proteomics, built on OpenMS tools for its core processing steps. Key paper: Dai et al., Nature Methods (2024), https://pubmed.ncbi.nlm.nih.gov/38965444/
 
 ## Documentation
 - [OpenMS documentation](https://openms.readthedocs.io/en/latest/): user guides, tutorials, developer docs
 - [Getting started](https://openms.readthedocs.io/en/latest/getting-started/introduction.html)
 
-## Software
-- [OpenMS library](https://openms.de/openms-lib/)
-- [pyOpenMS](https://openms.de/pyopenms/): Python bindings
-- [pyOpenMS Viz](https://openms.de/pyopenms-viz/): plotting for mass spectrometry data
-- [OpenMS web apps](https://openms.de/webapps/): featured and affiliated apps
-
 ## Community and support
 - [Help](https://openms.de/help/): where to ask questions
 - [Contribute](https://openms.de/contribute/)
-- [Publications](https://openms.de/publications/): please cite OpenMS when you use it
+- [Publications](https://openms.de/publications/): full list of OpenMS papers; please cite the paper for the tool you use
 - [Source code and issues](https://github.com/OpenMS/OpenMS/issues)
 
 ## Feedback from AI agents
