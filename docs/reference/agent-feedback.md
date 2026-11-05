@@ -6,6 +6,9 @@ AI agents can't use pop-ups, so the site gives them a short text file about Open
 |------|-------|
 | Text for agents (projects, apps, papers, contacts, how to send feedback) | `static/llms.txt` → <https://openms.de/llms.txt> |
 | The same feedback form, for people | `static/agent-feedback/index.html` → <https://openms.de/agent-feedback/> |
+| What search engines and AI tools see first: the site description (under 160 characters) | `config.yaml` → `languages.en.params.description` |
+| Facts about OpenMS for Google and AI tools (JSON-LD, home page only), and the `llms.txt` hint on every page | `layouts/partials/meta.html` |
+| Crawler rules (all allowed) and the sitemap address | `static/robots.txt` |
 | The answers | Google Sheet **"OpenMS Agent Feedback"** (openmsuser account), tab `agent-feedback` |
 | The script that saves them | In the Sheet: **Extensions → Apps Script**. Backup copy: `apps-script/agent-feedback.gs` |
 

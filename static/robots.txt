@@ -1,0 +1,7 @@
+# All crawlers, including AI crawlers, are welcome.
+User-agent: *
+Allow: /
+
+Sitemap: https://openms.de/sitemap.xml
+
+# Summary for AI agents: https://openms.de/llms.txt

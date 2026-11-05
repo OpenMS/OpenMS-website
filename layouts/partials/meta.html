@@ -5,3 +5,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
+<link rel="alternate" type="text/plain" href="{{ "llms.txt" | absURL }}" title="OpenMS summary for AI agents (llms.txt)">
+{{- if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OpenMS",
+  "url": {{ .Site.BaseURL }},
+  "description": {{ .Site.Params.description }},
+  "applicationCategory": "Scientific software for mass spectrometry",
+  "operatingSystem": "Windows, macOS, Linux",
+  "license": "https://opensource.org/licenses/BSD-3-Clause",
+  "isAccessibleForFree": true,
+  "codeRepository": "https://github.com/OpenMS/OpenMS",
+  "sameAs": [
+    "https://github.com/OpenMS",
+    "https://en.wikipedia.org/wiki/OpenMS",
+    "https://bio.tools/openms"
+  ],
+  "citation": {
+    "@type": "ScholarlyArticle",
+    "name": "OpenMS 3 enables reproducible analysis of large-scale mass spectrometry data",
+    "sameAs": "https://doi.org/10.1038/s41592-024-02197-7"
+  }
+}
+</script>
+{{- end }}

@@ -61,7 +61,9 @@ languages:
     contentDir: content/en
     languageName: English
     params:
-      description: Why OpenMS? Mass Spectrometry. Visualizations. Open source.
+      description: >-
+        Open-source ecosystem for computational mass spectrometry in the life
+        sciences: C++ library, Python bindings (pyOpenMS) and web apps.
       newsBanner:
         enabled: true
         label: News
