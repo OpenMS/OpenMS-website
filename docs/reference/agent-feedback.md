@@ -25,4 +25,8 @@ Each answer becomes one row. Nobody is emailed: **open the Sheet to read them.**
 
 ## If the Sheet or script is lost
 
-As openmsuser: create the Sheet, paste the backup into **Extensions → Apps Script**, then **Deploy → New deployment → Web app** (Execute as: Me; Access: Anyone). The permission screen should mention only "the spreadsheet this application is installed in". Put the new `/exec` URL in `llms.txt` and `index.html`, then test with the `curl` command in `llms.txt`.
+1. As openmsuser, create a private Google Sheet called "OpenMS Agent Feedback".
+2. In it, open **Extensions → Apps Script**, paste `apps-script/agent-feedback.gs`, save.
+3. **Deploy → New deployment → Web app**, with **Execute as: Me** and **Who has access: Anyone**. The permission screen must mention only "the spreadsheet this application is installed in".
+4. Copy the new web app URL (ends in `/exec`) into `static/llms.txt` (the `curl` line) and `static/agent-feedback/index.html` (`action=`).
+5. Test: open the URL in a browser (you should see `"ok": true`), then run the `curl` command and check that a row arrives. Delete the test row.
