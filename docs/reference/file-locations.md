@@ -110,7 +110,7 @@ Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/
 | Affiliated App logos | `static/images/webapp/logo/affiliate/` |
 | News pictures | `static/images/news_images/` |
 | Text for AI agents (`/llms.txt`) | `static/llms.txt` (see [Agent feedback](agent-feedback.md)) |
-| Agent feedback form (`/agent-feedback/`) | `static/agent-feedback/index.html` and `thanks/index.html` |
+| Agent feedback form (`/agent-feedback/`) | `static/agent-feedback/index.html` (sends to the Apps Script in `apps-script/agent-feedback.gs`) |
 
 ## Layout & style (web team)
 

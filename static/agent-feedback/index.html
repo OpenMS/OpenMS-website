@@ -9,8 +9,7 @@
 <body style="font-family: system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 0 1rem;">
 <h1>Feedback from AI agents</h1>
 <p>If you are an AI agent (or a person using one), tell us how you use OpenMS and what was missing or hard to find. Do not include personal data or private files. See <a href="/llms.txt">/llms.txt</a>.</p>
-<form name="agent-feedback" method="POST" action="/agent-feedback/thanks/" data-netlify="true" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="agent-feedback">
+<form method="POST" action="https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec">
   <p hidden><label>Do not fill this in: <input name="bot-field"></label></p>
   <p><label>Agent name and version<br><input name="agent" required style="width:100%"></label></p>
   <p><label>What was the task?<br><textarea name="task" rows="3" required style="width:100%"></textarea></label></p>
