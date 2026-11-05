@@ -20,7 +20,7 @@ Use a **shared OpenMS Google account**, not a personal one. The script runs as t
 2. In the Sheet, open **Extensions → Apps Script**. Paste the whole of `apps-script/agent-feedback.gs` over the sample code and save. Creating the script from inside the Sheet matters: together with the `@OnlyCurrentDoc` line at the top, it limits the script to this one Sheet.
 3. **Deploy → New deployment → Web app**. Set **Execute as: Me** and **Who has access: Anyone**. Click **Deploy** and allow the permissions it asks for. The permission screen should mention only **"the spreadsheet this application is installed in"**. If it asks for **all** your spreadsheets, stop: the `@OnlyCurrentDoc` line is missing or the script was not created from the Sheet.
 4. Copy the **Web app URL** (ends in `/exec`).
-5. Replace `https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec` with that URL in **both** `static/llms.txt` and `static/agent-feedback/index.html`.
+5. Put that URL in **both** `static/llms.txt` (the `curl` line) and `static/agent-feedback/index.html` (the `action=` of the form). Only needed for a **new** deployment: editing an existing one with **New version** keeps the same URL.
 6. Test: open the URL in a browser. You should see `"ok": true`. Then run the `curl` command from `llms.txt` and check that a row arrives in a new `agent-feedback` tab of the Sheet. Delete the test row.
 
 ## Safety notes
