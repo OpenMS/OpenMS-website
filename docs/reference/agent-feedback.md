@@ -8,7 +8,7 @@ AI agents (programs that read websites for a person) cannot use pop-ups. Instead
 |------|-------|
 | Text for agents: what OpenMS is, its projects, apps, key papers, contacts, and how to send feedback | `static/llms.txt` → <https://openms.de/llms.txt> |
 | A feedback form for people (same fields) | `static/agent-feedback/index.html` → <https://openms.de/agent-feedback/> |
-| The answers | A Google Sheet in the **openmsuser** Google account, tab `agent-feedback` |
+| The answers | The Google Sheet **"OpenMS Agent Feedback"** in the **openmsuser** Google account, tab `agent-feedback` |
 | The program that saves the answers | An Apps Script attached to that Sheet (open the Sheet → **Extensions → Apps Script**). A copy of the code is in `apps-script/agent-feedback.gs`. |
 
 ## How it works
@@ -34,7 +34,7 @@ Limits: at most 500 rows a day, and each field is cut at 4000 characters.
 
 ## Setting it up again (only if the script or Sheet is lost)
 
-1. As openmsuser, create a private Google Sheet.
+1. As openmsuser, create a private Google Sheet called "OpenMS Agent Feedback".
 2. In it, open **Extensions → Apps Script**, paste `apps-script/agent-feedback.gs`, save.
 3. **Deploy → New deployment → Web app**, with **Execute as: Me** and **Who has access: Anyone**. The permission screen must mention only "the spreadsheet this application is installed in".
 4. Copy the new web app URL (ends in `/exec`) into `static/llms.txt` (the `curl` line) and `static/agent-feedback/index.html` (`action=`).
