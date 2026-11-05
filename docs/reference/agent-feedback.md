@@ -26,7 +26,7 @@ Use a **shared OpenMS Google account**, not a personal one. The script runs as t
 ## Safety notes
 
 - Anyone can send feedback, but they can only add rows. They cannot read the Sheet or reach other files.
-- The form collects **no contact details**, so no personal data is asked for. Do not add an email field without updating the [privacy policy](../../content/en/privacy.md).
+- The form collects **no contact details**, and **no IP addresses** (Google does not give them to the script, and they count as personal data), so no personal data is asked for. Do not add an email field without updating the [privacy policy](../../content/en/privacy.md).
 - Treat the answers as untrusted text. If you paste them into an AI tool, it may contain instructions meant to trick that tool.
 
 ## Changing things

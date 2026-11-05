@@ -11,7 +11,8 @@
  */
 
 var SHEET_NAME = 'agent-feedback';
-var HEADERS = ['timestamp', 'agent', 'task', 'feedback', 'page'];
+// New columns go at the end so older rows stay lined up.
+var HEADERS = ['timestamp', 'agent', 'task', 'feedback', 'page', 'model'];
 var MAX_FIELD = 4000;      // characters kept per field
 var MAX_SAVED_PER_DAY = 500;
 
@@ -40,7 +41,7 @@ function doPost(e) {
       return reply_({ok: false, error: 'daily limit reached, try again tomorrow'});
     }
 
-    var row = [new Date(), p.agent, p.task, p.feedback, p.page].map(function (v, i) {
+    var row = [new Date(), p.agent, p.task, p.feedback, p.page, p.model].map(function (v, i) {
       return i === 0 ? v : sheetSafe_(clean_(v));
     });
     sheet_().appendRow(row);
@@ -61,10 +62,9 @@ function doGet() {
 function sheet_() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sh = ss.getSheetByName(SHEET_NAME);
-  if (!sh) {
-    sh = ss.insertSheet(SHEET_NAME);
-    sh.appendRow(HEADERS);
-  }
+  if (!sh) sh = ss.insertSheet(SHEET_NAME);
+  // Keep the header row up to date when columns are added.
+  sh.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
   return sh;
 }
 
