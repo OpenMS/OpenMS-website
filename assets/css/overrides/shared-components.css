@@ -1753,3 +1753,67 @@ html body .tally-popup iframe {
 :is(html, #about-best-practice#about-best-practice#about-best-practice) body .openms-lib-page--sponsor-us :is(.sponsor-section__lead, .openms-lib-about__lead) {
   max-width: min(50vw, 30em) !important;
 }
+
+/* ---------- Buttons: one text size everywhere ----------
+   Standard button text: var(--openms-text-min) at weight 600 (13px on
+   phones, 14.3px on laptops). From a test of every button on every page:
+   - Help page card buttons were 14.6px on phones.
+   - Getting Involved project chips (OpenMS-lib, pyOpenMS...) were bold 700.
+   - The two-button rows on Leadership ("Contributing Guide / Contact us")
+     and Archived Apps were a fixed 2-column grid: at 375px each button was
+     144px wide and "Contributing Guide" broke onto two lines (59px tall).
+     They are now as wide as their text, side by side when they fit and
+     stacked when they do not, never wrapping inside a button. */
+:is(html, #btn-standard#btn-standard) body .help-page__resources .governance-card__link a {
+  font-size: var(--openms-text-min) !important;
+}
+
+:is(html, #btn-standard#btn-standard) body .contribute-project-link {
+  font-size: var(--openms-text-min) !important;
+  font-weight: 600 !important;
+}
+
+:is(html, #btn-standard#btn-standard) body .webapps-archived__revival-actions.webapps-archived__revival-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+}
+
+:is(html, #btn-standard#btn-standard) body .webapps-archived__revival-actions .openms-lib-btn.openms-lib-btn {
+  flex: 0 1 auto !important;
+  width: auto !important;
+  white-space: nowrap !important;
+}
+
+:is(html, #btn-standard#btn-standard) body .webapps-archived__revival-actions .openms-lib-btn .openms-lib-btn__label {
+  white-space: nowrap !important;
+}
+
+/* Getting Involved "Need to report something?" buttons: on the smallest
+   phones "Read the report handling manual" was 2px too wide for the box and
+   broke onto two lines. Slightly less side padding keeps it on one line. */
+@media (max-width: 359px) {
+  :is(html, #btn-standard#btn-standard) body .coc-callout__actions .openms-lib-btn.openms-lib-btn {
+    padding-inline: 0.85rem !important;
+  }
+
+  :is(html, #btn-standard#btn-standard) body .coc-callout__actions .openms-lib-btn .openms-lib-btn__label {
+    white-space: nowrap !important;
+  }
+}
+
+/* Smallest phones (under 360px): all standard buttons use slightly less side
+   padding, so long labels ("Follow us on Google Scholar") stay on one line. */
+@media (max-width: 359px) {
+  :is(html, #btn-standard) body .openms-lib-btn:not(.openms-lib-developers__platform-btn) {
+    padding-inline: 0.85rem !important;
+  }
+}
+
+/* "Follow us on Google Scholar" (Publications) broke onto two lines at 320px
+   by a rounding pixel; there is room for it on one line. */
+:is(html, #btn-standard#btn-standard) body .openms-lib-btn--scholar .openms-lib-btn__label,
+:is(html, #btn-standard#btn-standard) body .openms-lib-btn--scholar {
+  white-space: nowrap !important;
+}
