@@ -9,7 +9,7 @@
   <div class="webapps-notebook__inner">
     <header class="webapps-notebook__head">
       {{- with .eyebrow }}
-      <p class="webapps-notebook__eyebrow">{{ . }}</p>
+      <p class="openms-lib-resources__eyebrow webapps-notebook__eyebrow">{{ partial "section-eyebrow-icon.html" "terminal" }}{{ . }}</p>
       {{- end }}
       <h2 id="webapps-notebook-title" class="webapps-notebook__title">{{ .title }}</h2>
       {{- with .lead }}

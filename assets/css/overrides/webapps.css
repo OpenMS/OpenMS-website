@@ -43,14 +43,11 @@
   margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
 }
 
-:is(html, #webapps-notebook) body .webapps-notebook__eyebrow {
-  margin: 0 0 0.75rem;
-  font-family: var(--openms-font-heading);
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--openms-orange, #f2994a) !important;
+/* The small label uses the site's standard label (openms-lib-resources__eyebrow
+   and its icon), in the light colour used on the page's other dark section. */
+:is(html, #webapps-notebook) body .webapps-notebook__eyebrow.openms-lib-resources__eyebrow {
+  color: rgba(255, 255, 255, 0.62) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.62) !important;
 }
 
 :is(html, #webapps-notebook) body .webapps-notebook__title.webapps-notebook__title {
