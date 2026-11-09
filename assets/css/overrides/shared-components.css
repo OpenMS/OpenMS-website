@@ -1634,8 +1634,9 @@ html body .tally-popup iframe {
    The small capital labels above section titles ("Get started", "For
    Developers", "Research impact"...) were 11.4-11.8px on phones and tablets.
    12px is the floor for readable text; laptops already show 12px, so they
-   do not change. (The home hero's "Open-source · Free forever" keeps its own,
-   deliberately smaller size.) */
+   do not change. Also the app card labels ("Maintainers", archived "NF-Core
+   pipeline" tags, which were 9.5-10px). (The home hero's "Open-source · Free
+   forever" keeps its own, deliberately smaller size.) */
 :is(html, #label-min-12) body :is(
   .openms-lib-hero__eyebrow,
   .openms-lib-resources__eyebrow,
@@ -1648,7 +1649,19 @@ html body .tally-popup iframe {
   .keyfeatures-modern__eyebrow,
   .ecosystem-home__eyebrow,
   .community-home__eyebrow,
-  .contact-home__eyebrow
+  .contact-home__eyebrow,
+  .contribute-channels__eyebrow,
+  .contribute-ways__eyebrow,
+  .webapps-archived__revival-kicker,
+  .webapps-project-detail-card__maintainers-label,
+  .webapps-archived-entry__type
 ) {
   font-size: max(12px, 0.75rem) !important;
+}
+
+/* App cards (Featured, Affiliated and Archived Apps): descriptions and the
+   maintainer list stop at about 75 characters a line (they reached 84-105
+   on wide screens). */
+:is(html, #label-min-12) body :is(.webapps-project-detail-card__text, .webapps-project-detail-card__maintainers, .webapps-archived-entry__text) {
+  max-width: 34em !important;
 }
