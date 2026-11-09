@@ -1701,12 +1701,6 @@ html body .tally-popup iframe {
   max-width: 30em !important;
 }
 
-/* Text pages (Code of Conduct, Executive Committee Charter, Report Handling
-   Manual, Core Developers...): paragraphs and list items keep a reading
-   width of about 75 characters; headings and the page layout do not move. */
-:is(html, #community-best-practice) body :is(.coc-charter__inner, .exec-charter__inner, .rhm-charter__inner, .openms-lib-prose) :is(p, li) {
-  max-width: 34em !important;
-}
 
 /* Getting Involved: these three have their own width rules (two IDs). */
 :is(html, #community-best-practice#community-best-practice#community-best-practice) body .openms-lib-page--contribute :is(.contribute-outreach__text, .coc-agreement) {
