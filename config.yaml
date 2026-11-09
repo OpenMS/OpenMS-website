@@ -1325,7 +1325,11 @@ languages:
               text: Work with the agent to shape your web app — Upload, Configure and Results pages, until each one fits your analysis.
           buttons:
             - text: Read the walkthrough
-              url: https://github.com/OpenMS/streamlit-template/blob/main/docs/notebook_to_webapp.md
+              url: https://template.webapps.openms.org/documentation
+            - text: Live demo
+              url: https://template.webapps.openms.org/
+            - text: Template on GitHub
+              url: https://github.com/OpenMS/streamlit-template
 
         usingTemplate:
           eyebrow: Get started

@@ -231,6 +231,27 @@
   flex: 0 0 auto !important;
 }
 
+/* Outlined buttons (all but the first) in white on the navy band; filled
+   white on hover, like the site's other navy bands. */
+:is(html, #webapps-notebook#webapps-notebook) body .webapps-notebook__actions a.openms-lib-btn.openms-lib-btn--ghost {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.85) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+:is(html, #webapps-notebook#webapps-notebook) body .webapps-notebook__actions a.openms-lib-btn.openms-lib-btn--ghost :is(.openms-lib-btn__label, i) {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+:is(html, #webapps-notebook#webapps-notebook) body .webapps-notebook__actions a.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible) {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: var(--openms-navy, #0c2171) !important;
+  -webkit-text-fill-color: var(--openms-navy, #0c2171) !important;
+}
+
 @media (max-width: 1023px) {
   :is(html, #webapps-notebook) body .webapps-notebook__grid {
     grid-template-columns: minmax(0, 1fr);
