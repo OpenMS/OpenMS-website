@@ -96,6 +96,7 @@
           <img
             src="{{ .src }}"
             alt="{{ .alt | default "Upcoming developer retreat poster" }}"
+            {{ partial "img-responsive-attrs.html" (dict "src" .src "small" 640 "sizes" "(max-width: 1023px) 100vw, 50vw") | safeHTMLAttr }}
             loading="lazy"
             decoding="async"
           />
@@ -137,6 +138,7 @@
         class="retreat-photo__image"
         src="{{ .src }}"
         alt="{{ .alt | default "OpenMS developer retreat" }}"
+        {{ partial "img-responsive-attrs.html" (dict "src" .src "small" 1024 "sizes" "100vw") | safeHTMLAttr }}
         loading="lazy"
         decoding="async"
       />

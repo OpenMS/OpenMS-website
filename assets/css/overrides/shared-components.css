@@ -1654,7 +1654,12 @@ html body .tally-popup iframe {
   .contribute-ways__eyebrow,
   .webapps-archived__revival-kicker,
   .webapps-project-detail-card__maintainers-label,
-  .webapps-archived-entry__type
+  .webapps-archived-entry__type,
+  .community-news-events__press-date,
+  .contribute-track__badge,
+  .contribute-support__kicker,
+  .contribute-outreach__eyebrow,
+  .openms-lib-about__eyebrow
 ) {
   font-size: max(12px, 0.75rem) !important;
 }
@@ -1664,4 +1669,50 @@ html body .tally-popup iframe {
    on wide screens). */
 :is(html, #label-min-12) body :is(.webapps-project-detail-card__text, .webapps-project-detail-card__maintainers, .webapps-archived-entry__text) {
   max-width: 34em !important;
+}
+
+/* ---------- Community pages: tap areas and line length (best practice) ----------
+   Calendar, News, Getting Involved, Developer Retreat and the text pages.
+   Small standalone links get a 24px-tall tap area (they were 16-21px): event
+   card links, the Getting Involved card links, OS links and channel links. */
+:is(html, #community-best-practice#community-best-practice) body :is(
+  .openms-cta-link,
+  .contribute-os-links a,
+  .contribute-track__cta,
+  .contribute-channel__link
+) {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 24px !important;
+}
+
+/* Long text stops at about 75 characters a line (reached 87-206). */
+:is(html, #community-best-practice) body :is(
+  .community-news-events__press-summary,
+  .contribute-track__text,
+  .contribute-outreach__text,
+  .openms-lib-about__tile-text,
+  .coc-agreement
+) {
+  max-width: 34em !important;
+}
+
+:is(html, #community-best-practice) body :is(.contribute-channels__lead, .contribute-ways__lead) {
+  max-width: 30em !important;
+}
+
+/* Text pages (Code of Conduct, Executive Committee Charter, Report Handling
+   Manual, Core Developers...): paragraphs and list items keep a reading
+   width of about 75 characters; headings and the page layout do not move. */
+:is(html, #community-best-practice) body :is(.coc-charter__inner, .exec-charter__inner, .rhm-charter__inner, .openms-lib-prose) :is(p, li) {
+  max-width: 34em !important;
+}
+
+/* Getting Involved: these three have their own width rules (two IDs). */
+:is(html, #community-best-practice#community-best-practice#community-best-practice) body .openms-lib-page--contribute :is(.contribute-outreach__text, .coc-agreement) {
+  max-width: 34em !important;
+}
+
+:is(html, #community-best-practice#community-best-practice#community-best-practice#community-best-practice#community-best-practice) body .openms-lib-page--contribute .contribute-ways__lead.contribute-ways__lead {
+  max-width: 30em !important;
 }
