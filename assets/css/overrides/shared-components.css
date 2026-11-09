@@ -1629,3 +1629,26 @@ html body .tally-popup iframe {
     max-height: min(calc(100svh - 96px), 760px) !important;
   }
 }
+
+/* ---------- Section labels: never under 12px ----------
+   The small capital labels above section titles ("Get started", "For
+   Developers", "Research impact"...) were 11.4-11.8px on phones and tablets.
+   12px is the floor for readable text; laptops already show 12px, so they
+   do not change. (The home hero's "Open-source · Free forever" keeps its own,
+   deliberately smaller size.) */
+:is(html, #label-min-12) body :is(
+  .openms-lib-hero__eyebrow,
+  .openms-lib-resources__eyebrow,
+  .openms-lib-block__eyebrow,
+  .openms-lib-cite__eyebrow,
+  .openms-lib-topp-split__eyebrow,
+  .openms-lib-developers__group,
+  .publications-cite-card__topic,
+  .webapps-featured__eyebrow,
+  .keyfeatures-modern__eyebrow,
+  .ecosystem-home__eyebrow,
+  .community-home__eyebrow,
+  .contact-home__eyebrow
+) {
+  font-size: max(12px, 0.75rem) !important;
+}

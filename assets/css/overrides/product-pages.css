@@ -1225,3 +1225,38 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
     margin-top: 0 !important;
   }
 }
+
+/* ---------- Project pages (OpenMS-lib, pyOpenMS, pyOpenMS Viz, Web Apps):
+   tap areas and line length (best practice) ----------
+   Small standalone links get a 24px-tall tap area (WCAG 2.2 target size):
+   the Linux / macOS / Windows and View open PRs / How to review PRs buttons,
+   "Browse all apps" and the TOPP "Learn more" links were 16-20px tall.
+   Long intros stop at about 70-75 characters a line (they reached 82-93). */
+:is(html, #project-best-practice#project-best-practice#project-best-practice#project-best-practice) body .openms-lib-page :is(
+  a.openms-lib-developers__platform-btn,
+  .openms-lib-resources__examples-link,
+  .openms-lib-topp-split__nested-link a
+) {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 24px !important;
+}
+
+:is(html, #project-best-practice) body .openms-lib-page :is(.openms-lib-hero__lead, .webapps-notebook__lead) {
+  max-width: 30em !important;
+}
+
+:is(html, #project-best-practice) body .openms-lib-page .openms-lib-hero__lead {
+  margin-inline: auto !important;
+}
+
+:is(html, #project-best-practice) body .openms-lib-page .webapps-notebook__step-text {
+  max-width: 34em !important;
+}
+
+/* The "Get involved" / "Learn and build" group labels on OpenMS-lib have
+   their own 0.75rem rule (two IDs); keep them at 12px or more like the other
+   section labels. */
+:is(html, #project-best-practice#project-best-practice#project-best-practice) body .openms-lib-developers__group {
+  font-size: max(12px, 0.75rem) !important;
+}

@@ -16,6 +16,12 @@
           class="openms-lib-topp-split__visual-img"
           src="{{ $image | relURL }}"
           alt="{{ $imageAlt }}"
+          {{- /* Width and height from the file, so the page keeps the picture's
+                 space while it loads (no jump). */}}
+          {{- $file := path.Join "static" $image }}
+          {{- if and (fileExists $file) (not (strings.HasSuffix $image ".svg")) }}
+          {{- with imageConfig $file }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}
+          {{- end }}
           loading="lazy"
           decoding="async"
         />
