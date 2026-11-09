@@ -1323,6 +1323,11 @@ languages:
               text: It asks for your notebook path and an app name, then explains how it read your analysis.
             - title: Shape your web app
               text: Work with the agent to shape your web app — Upload, Configure and Results pages, until each one fits your analysis.
+            - title: Deploy your app
+              text: >-
+                Deploy with [Docker Compose](https://github.com/OpenMS/streamlit-deployment)
+                or build an [executable](https://github.com/OpenMS/streamlit-template/releases/latest)
+                for running locally.
           buttons:
             - text: Read the walkthrough
               url: https://template.webapps.openms.org/documentation

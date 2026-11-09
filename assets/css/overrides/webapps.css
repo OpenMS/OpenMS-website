@@ -215,6 +215,20 @@
   color: rgba(255, 255, 255, 0.78) !important;
 }
 
+/* Links inside a step (e.g. Docker Compose, executable) */
+:is(html, #webapps-notebook#webapps-notebook#webapps-notebook) body .webapps-notebook__step-text a {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-weight: 600;
+  text-decoration: underline !important;
+  text-decoration-color: rgba(255, 255, 255, 0.55) !important;
+  text-underline-offset: 0.18em;
+}
+
+:is(html, #webapps-notebook#webapps-notebook#webapps-notebook) body .webapps-notebook__step-text a:is(:hover, :focus-visible) {
+  text-decoration-color: #fff !important;
+}
+
 /* Button row */
 :is(html, #webapps-notebook) body .webapps-notebook__actions {
   display: flex;

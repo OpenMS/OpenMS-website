@@ -18,7 +18,7 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 
 | Block on the page | Search for | Lines you can change |
 |---|---|---|
-| Turn a Jupyter notebook into a web app (the navy block under the big title) | `webappsPage` → `notebook` | `eyebrow` (small label), `title`, `lead`, the `prompt` people copy, `note`, the three `steps` (each has `title` and `text`), and `buttons` (each has `text` and `url`). Any number of steps and buttons works. The first button is blue, the others outlined. |
+| Turn a Jupyter notebook into a web app (the navy block under the big title) | `webappsPage` → `notebook` | `eyebrow` (small label), `title`, `lead`, the `prompt` people copy, `note`, the numbered `steps` (each has `title` and `text`), and `buttons` (each has `text` and `url`). Any number of steps and buttons works. The first button is blue, the others outlined. |
 | Highlights | `webappsPage` → `highlights` | `items`: each box has `title` and `text` |
 | Using the template | `webappsPage` → `usingTemplate` | `title`, `lead`, and the cards under `items` |
 | Examples | `webappsPage` → `examples` | the example apps shown |
@@ -29,6 +29,8 @@ The **big title at the top** is part of the design (`layouts/partials/webapps-he
 In each block, change the words after `title:`, `lead:`, `text:` and similar lines. Leave lines like `layout:`, `icon:`, `accent:`, `featured:` or `group:` as they are: they set how the block looks.
 
 The **Copy prompt** button copies exactly the words after `prompt:`. Write the prompt as one paragraph: line breaks in `config.yaml` become spaces.
+
+To put a **link inside a step's text**, write the words in square brackets and the web address in round brackets right after, with no space: `[Docker Compose](https://github.com/OpenMS/streamlit-deployment)`. Links to other websites open in a new tab.
 
 To **add a card**, copy a whole card (from its `- title:` line to the line before the next `- title:`), paste it under the last one and change the words. To **remove a card**, delete all its lines.
 

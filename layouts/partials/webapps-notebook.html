@@ -45,7 +45,9 @@
           <span class="webapps-notebook__step-num" aria-hidden="true">{{ add $i 1 }}</span>
           <div class="webapps-notebook__step-copy">
             <h3 class="webapps-notebook__step-title">{{ $step.title }}</h3>
-            <p class="webapps-notebook__step-text">{{ $step.text }}</p>
+            {{- /* Links can be written as [text](https://…); outside links open in a new tab. */ -}}
+            {{- $text := $step.text | markdownify | replaceRE `<a href="(https?://[^"]+)">` `<a href="$1" target="_blank" rel="noopener noreferrer">` }}
+            <p class="webapps-notebook__step-text">{{ $text | safeHTML }}</p>
           </div>
         </li>
         {{- end }}
