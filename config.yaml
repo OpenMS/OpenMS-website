@@ -1334,21 +1334,15 @@ languages:
         usingTemplate:
           eyebrow: Get started
           title: Using the template
-          lead: Documentation, deployment options, and example apps built on the OpenMS WebApps framework.
+          lead: Fork the template, host several WebApps together, or package one as a Windows app.
           items:
-            - tag: Docs
-              title: Documentation
-              icon: fas fa-book-open
-              text: Guides for customizing and extending the Streamlit template.
-              url: https://template.webapps.openms.org/documentation
-              linkText: Open docs
-              featured: true
             - tag: Getting Started
               title: Getting Started
               icon: fas fa-rocket
               text: Fork and customize the template for your pipeline.
               url: https://github.com/OpenMS/streamlit-template/fork
               linkText: Fork template
+              featured: true
             - tag: Deploy
               title: streamlit-deployment
               icon: fab fa-docker
@@ -1363,16 +1357,12 @@ languages:
               linkText: Download installer
             - title: Need help?
               type: online
-              text: Chat with the community on Discord, or open a GitHub issue for bugs and feature requests.
+              text: Chat with the community on Discord. To report a bug or ask for a feature, see For Developers below.
               links:
                 - name: Ask on Discord
                   icon: fab fa-discord
                   text: Quick questions and community chat
                   url: https://discord.com/invite/v9tv5BxPch
-                - name: Report an issue
-                  icon: fab fa-github
-                  text: Bugs and feature requests
-                  url: https://github.com/OpenMS/streamlit-template/issues/new
 
         examples:
           eyebrow: Examples
@@ -1420,12 +1410,6 @@ languages:
               subtitle: Report bugs or suggest features for the Streamlit template.
               url: https://github.com/OpenMS/streamlit-template/issues/new
               linkText: Open on GitHub
-            - title: Template repository
-              tag: Source
-              icon: fas fa-code-branch
-              subtitle: Explore the Streamlit template, fork it, and open a pull request.
-              url: https://github.com/OpenMS/streamlit-template
-              linkText: View repository
             - title: Reviewing Pull Requests
               type: links
               tag: Review
