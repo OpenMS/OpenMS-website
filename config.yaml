@@ -1336,18 +1336,10 @@ languages:
             - text: Template on GitHub
               url: https://github.com/OpenMS/streamlit-template
 
+        # Only the "Need help?" box is shown. Adding a title or a card with a
+        # url brings back the dark "Get started" band above it.
         usingTemplate:
-          eyebrow: Get started
-          title: Using the template
-          lead: Start your own WebApp from the template, and get help from the community.
           items:
-            - tag: Getting Started
-              title: Getting Started
-              icon: fas fa-rocket
-              text: Fork and customize the template for your pipeline.
-              url: https://github.com/OpenMS/streamlit-template/fork
-              linkText: Fork template
-              featured: true
             - title: Need help?
               type: online
               text: Chat with the community on Discord. To report a bug or ask for a feature, see For Developers below.
