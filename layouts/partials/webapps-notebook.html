@@ -1,0 +1,72 @@
+{{- /*
+  Web Apps page: "Turn a Jupyter notebook into a web app" band.
+  Text from config.yaml → webappsPage.notebook. The Copy prompt button is
+  wired in assets/js/webapps-notebook.js.
+*/ -}}
+{{- $cfg := site.Params.webappsPage.notebook | default dict -}}
+{{- with $cfg -}}
+<section class="webapps-notebook" aria-labelledby="webapps-notebook-title">
+  <div class="webapps-notebook__inner">
+    <header class="webapps-notebook__head">
+      {{- with .eyebrow }}
+      <p class="webapps-notebook__eyebrow">{{ . }}</p>
+      {{- end }}
+      <h2 id="webapps-notebook-title" class="webapps-notebook__title">{{ .title }}</h2>
+      {{- with .lead }}
+      <p class="webapps-notebook__lead">{{ . }}</p>
+      {{- end }}
+    </header>
+
+    <div class="webapps-notebook__grid">
+      <div class="webapps-notebook__prompt">
+        <div class="webapps-notebook__prompt-bar">
+          <span class="webapps-notebook__prompt-label"><span aria-hidden="true">&gt;_</span> {{ .promptLabel | default "Prompt for Claude Code" }}</span>
+          <button
+            type="button"
+            class="webapps-notebook__copy"
+            data-notebook-copy
+            data-copied-label="{{ .copiedText | default "Copied" }}"
+            aria-describedby="webapps-notebook-prompt"
+          >
+            <i class="far fa-copy" aria-hidden="true"></i>
+            <span data-notebook-copy-label>{{ .copyText | default "Copy prompt" }}</span>
+          </button>
+        </div>
+        <pre class="webapps-notebook__prompt-text" id="webapps-notebook-prompt"><code>{{ .prompt }}</code></pre>
+        {{- with .note }}
+        <p class="webapps-notebook__note">{{ . }}</p>
+        {{- end }}
+      </div>
+
+      {{- with .steps }}
+      <ol class="webapps-notebook__steps">
+        {{- range $i, $step := . }}
+        <li class="webapps-notebook__step">
+          <span class="webapps-notebook__step-num" aria-hidden="true">{{ add $i 1 }}</span>
+          <div class="webapps-notebook__step-copy">
+            <h3 class="webapps-notebook__step-title">{{ $step.title }}</h3>
+            <p class="webapps-notebook__step-text">{{ $step.text }}</p>
+          </div>
+        </li>
+        {{- end }}
+      </ol>
+      {{- end }}
+    </div>
+
+    {{- with .buttons }}
+    <div class="webapps-notebook__actions">
+      {{- range $i, $btn := . }}
+      {{- $external := hasPrefix $btn.url "http" }}
+      <a
+        class="openms-lib-btn {{ if eq $i 0 }}openms-lib-btn--primary{{ else }}openms-lib-btn--ghost openms-lib-cta-band__btn-ghost{{ end }}"
+        href="{{ $btn.url }}"
+        {{- if $external }} target="_blank" rel="noopener noreferrer"{{ end }}
+      >
+        <span class="openms-lib-btn__label">{{ $btn.text }}</span>
+      </a>
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+</section>
+{{- end -}}

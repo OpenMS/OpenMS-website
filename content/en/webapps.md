@@ -11,6 +11,9 @@ sidebar: false
 </div>
 
 <div class="openms-lib-page__body" aria-label="OpenMS WebApps features and resources">
+  <div id="notebook-to-webapp" class="openms-lib-page__anchor">
+    {{< webapps-notebook >}}
+  </div>
   <div id="what-is-openms" class="openms-lib-page__anchor">
     {{< webapps-highlights >}}
   </div>

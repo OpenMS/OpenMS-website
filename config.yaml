@@ -1297,6 +1297,36 @@ languages:
             - title: Shareable workspaces
               text: Workspaces for user data with unique shareable IDs
 
+        # "Turn a Jupyter notebook into a web app" band, right under the page
+        # header. Guide: docs/common-tasks/openms-web-apps-page/.
+        notebook:
+          eyebrow: Build your own
+          title: Turn a Jupyter notebook into a web app.
+          lead: >-
+            Paste one prompt into Claude Code. It reads your notebook, shows you how it
+            read it, then builds the Upload, Configure and Results pages with you, in
+            your own browser, until each page is the one you wanted.
+          promptLabel: Prompt for Claude Code
+          copyText: Copy prompt
+          copiedText: Copied
+          prompt: >-
+            Clone https://github.com/OpenMS/streamlit-template into a new folder, then
+            read .claude/skills/notebook-to-webapp/SKILL.md inside that clone and
+            follow it to turn my Jupyter notebook into a web app. Ask me for the path to
+            the notebook, what to call the app, and how each page should look as you
+            build it.
+          note: Support for other agentic terminals is in the works.
+          steps:
+            - title: Copy the prompt
+              text: It clones the template and points the agent at the framework. Nothing else to install first.
+            - title: Paste it into Claude Code
+              text: It asks for your notebook path and an app name, then explains how it read your analysis.
+            - title: Shape your web app
+              text: Work with the agent to shape your web app — Upload, Configure and Results pages, until each one fits your analysis.
+          buttons:
+            - text: Read the walkthrough
+              url: https://github.com/OpenMS/streamlit-template/blob/main/docs/notebook_to_webapp.md
+
         usingTemplate:
           eyebrow: Get started
           title: Using the template
@@ -1315,12 +1345,6 @@ languages:
               text: Fork and customize the template for your pipeline.
               url: https://github.com/OpenMS/streamlit-template/fork
               linkText: Fork template
-            - tag: AI
-              title: Jupyter Notebook → WebApp
-              icon: fas fa-robot
-              text: Transform your Jupyter notebook into a WebApp with a single prompt.
-              url: https://template.webapps.openms.org/
-              linkText: Try it now
             - tag: Deploy
               title: streamlit-deployment
               icon: fab fa-docker
