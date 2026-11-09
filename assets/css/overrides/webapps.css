@@ -277,8 +277,10 @@
 
 /* ---------- WebApps page: "Using the template" cards fill the row ----------
    Product pages lay these cards out in 5 columns. With fewer cards on a
-   laptop, use one column per card so the row is not left half empty. */
+   laptop, use one column per card so the row is not left half empty (a
+   single card takes the whole row). */
 @media (min-width: 1024px) {
+  :is(html, #webapps-template-row) body .openms-lib-page--webapps #getting-started .openms-lib-resources__explore-grid:has(> :only-child) { grid-template-columns: minmax(0, 1fr) !important; }
   :is(html, #webapps-template-row) body .openms-lib-page--webapps #getting-started .openms-lib-resources__explore-grid:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
   :is(html, #webapps-template-row) body .openms-lib-page--webapps #getting-started .openms-lib-resources__explore-grid:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
   :is(html, #webapps-template-row) body .openms-lib-page--webapps #getting-started .openms-lib-resources__explore-grid:has(> :nth-child(4):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }

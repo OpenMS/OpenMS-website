@@ -1339,7 +1339,7 @@ languages:
         usingTemplate:
           eyebrow: Get started
           title: Using the template
-          lead: Fork the template, host several WebApps together, or package one as a Windows app.
+          lead: Start your own WebApp from the template, and get help from the community.
           items:
             - tag: Getting Started
               title: Getting Started
@@ -1348,18 +1348,6 @@ languages:
               url: https://github.com/OpenMS/streamlit-template/fork
               linkText: Fork template
               featured: true
-            - tag: Deploy
-              title: streamlit-deployment
-              icon: fab fa-docker
-              text: Host multiple WebApps together with Docker Compose.
-              url: https://github.com/OpenMS/streamlit-deployment
-              linkText: Deploy with Docker
-            - tag: Windows
-              title: Windows executable
-              icon: fab fa-windows
-              text: Package your WebApp as a standalone Windows executable.
-              url: https://github.com/OpenMS/streamlit-template/releases/latest
-              linkText: Download installer
             - title: Need help?
               type: online
               text: Chat with the community on Discord. To report a bug or ask for a feature, see For Developers below.
