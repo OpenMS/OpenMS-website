@@ -1267,3 +1267,54 @@ html body .home-page :is(.webapps-featured__show-all, .community-news-events__vi
     font-size: 1.3rem !important;
   }
 }
+
+/* ---------- Home page: readability and tap-target fixes (best practice) ----------
+   From a responsive test at 320-1920px. Text people need to read is never
+   under 12px; small standalone links get a 24px-tall tap area (WCAG 2.2
+   target size); long paragraphs stop at about 70 characters a line. */
+
+/* Hero "Ready-to-use apps · Modular workflows · Built by the community":
+   was 8.5px at 320px and 10-11px on other phones. */
+@media (max-width: 479px) {
+  :is(html, #home-best-practice#home-best-practice) body .home-page__hero .hero-home__note.hero-home__note--under-graphic {
+    font-size: 12px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    row-gap: 0.25rem !important;
+  }
+
+  :is(html, #home-best-practice#home-best-practice) body .home-page__hero .hero-home__note.hero-home__note--under-graphic .hero-home__note-item {
+    font-size: 12px !important;
+  }
+}
+
+/* "What is OpenMS?" card tags (BSD LICENSED, C++ · PYTHON...): were 9.5-9.9px.
+   News / event dates: were 10.5-11px. */
+:is(html, #home-best-practice) body .home-page :is(.keyfeatures-modern__topic-tag, .community-news-events__press-date) {
+  font-size: max(12px, 0.75rem) !important;
+}
+
+/* "Show all apps", "View all" and the event card links: were 17-21px tall. */
+:is(html, #home-best-practice#home-best-practice) body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all, .openms-cta-link) {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 24px !important;
+}
+
+/* Section intros, the hero text and card summaries: about 70-75 characters a
+   line at most (they reached 81-98 on tablets and very wide screens). Set in
+   em, measured on this font: "ch" (the width of a zero) let ~95 letters in. */
+:is(html, #home-best-practice) body .home-page :is(.webapps-featured__lead, .ecosystem-home__lead, .contact-home__description, .hero-home__description) {
+  max-width: 30em !important;
+}
+
+:is(html, #home-best-practice) body .home-page :is(.community-news-events__press-summary, .webapps-project-card__text) {
+  max-width: 34em !important;
+}
+
+/* Hero text on very wide screens: was 21px at 1440px and 25.6px at 1920px. */
+@media (min-width: 1440px) {
+  :is(html, #home-best-practice) body .home-page__hero .hero-home__description {
+    font-size: 1.25rem !important;
+  }
+}
