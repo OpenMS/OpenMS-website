@@ -1659,7 +1659,12 @@ html body .tally-popup iframe {
   .contribute-track__badge,
   .contribute-support__kicker,
   .contribute-outreach__eyebrow,
-  .openms-lib-about__eyebrow
+  .openms-lib-about__eyebrow,
+  .openms-lib-resources__item-tag,
+  .governance-membership__eyebrow,
+  .sponsor-tier__motto,
+  .sponsor-tier__badge,
+  .leadership-card__role
 ) {
   font-size: max(12px, 0.75rem) !important;
 }
@@ -1709,4 +1714,42 @@ html body .tally-popup iframe {
 
 :is(html, #community-best-practice#community-best-practice#community-best-practice#community-best-practice#community-best-practice) body .openms-lib-page--contribute .contribute-ways__lead.contribute-ways__lead {
   max-width: 30em !important;
+}
+
+/* ---------- About pages: labels, tap areas and line length (best practice) ----------
+   Governance, Our Sponsors, Sponsor us, Research Partnerships, Publications,
+   Leadership and Contact. Card tags (9.5-10px), sponsorship mottos and badge
+   (10.3-10.9px) and leadership roles (11-11.5px) are in the 12px rule above;
+   the Contact page labels have their own stronger rule, so they get one here. */
+:is(html, #about-best-practice#about-best-practice#about-best-practice) body :is(.openms-lib-page--contact .openms-lib-resources__eyebrow, .governance-membership__eyebrow) {
+  font-size: max(12px, 0.75rem) !important;
+}
+
+/* "View on PubMed" and the Contact "Discord" / "GitHub" links were 16-19px tall. */
+:is(html, #about-best-practice#about-best-practice#about-best-practice) body :is(.publications-cite-card__action, .openms-lib-resources__item-link) {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 24px !important;
+}
+
+/* Intros, sponsorship level texts and FAQ answers stop at about 75-83
+   characters a line (reached 86-131). Leadership bios and the publications
+   list keep the full width, like the text pages. */
+:is(html, #about-best-practice#about-best-practice) body :is(.openms-lib-about__lead, .openms-lib-resources__lead, .sponsor-section__lead, .sponsor-faq-pro__lead) {
+  max-width: 30em !important;
+}
+
+:is(html, #about-best-practice#about-best-practice) body :is(.sponsor-tier__summary, .sponsor-tier__benefits li, .sponsor-faq__answer p, .publications-cite-card__authors) {
+  max-width: 34em !important;
+}
+
+/* Card tags on Contact and Governance have their own 0.625rem rule (an ID);
+   the Sponsor us section intros are set to half the screen width (an ID),
+   960px on a 1920px screen. */
+:is(html, #about-best-practice#about-best-practice#about-best-practice) body .openms-lib-page .openms-lib-resources__item-tag {
+  font-size: max(12px, 0.75rem) !important;
+}
+
+:is(html, #about-best-practice#about-best-practice#about-best-practice) body .openms-lib-page--sponsor-us :is(.sponsor-section__lead, .openms-lib-about__lead) {
+  max-width: min(50vw, 30em) !important;
 }
