@@ -325,3 +325,35 @@ html body .openms-lib-page .webapps-archived__revival-actions.webapps-archived__
   color: var(--openms-navy) !important;
   -webkit-text-fill-color: var(--openms-navy) !important;
 }
+
+/* ---------- Archived app cards on small phones ----------
+   At 320px the text column was 120px wide, so the "NF-CORE PIPELINE" tag
+   (143px) ran into the logo. Under 480px the logo shrinks with the screen
+   (72-114px) and the tag may wrap instead of overflowing. */
+@media (max-width: 479px) {
+  :is(html, #archived-small#archived-small) body .webapps-archived-entry.webapps-archived-entry {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+  }
+
+  :is(html, #archived-small#archived-small) body .webapps-archived-entry .webapps-archived-entry__media {
+    width: clamp(72px, 26vw, 114px) !important;
+    min-width: 0 !important;
+  }
+
+  :is(html, #archived-small#archived-small) body .webapps-archived-entry .webapps-archived-entry__logo {
+    width: clamp(72px, 26vw, 114px) !important;
+    max-width: clamp(72px, 26vw, 114px) !important;
+    height: auto !important;
+  }
+
+  :is(html, #archived-small#archived-small) body .webapps-archived-entry .webapps-archived-entry__logo img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  :is(html, #archived-small#archived-small) body .webapps-archived-entry .webapps-archived-entry__type {
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+  }
+}
