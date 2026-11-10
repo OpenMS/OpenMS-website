@@ -1834,3 +1834,10 @@ html body .tally-popup iframe {
 :is(html, #back-to-top-up) body .back-to-top {
   bottom: calc(clamp(1.75rem, 3vw, 3rem) + env(safe-area-inset-bottom, 0px)) !important;
 }
+
+/* Sponsor us "Why sponsor OpenMS" intro: a bit wider (up to 38em, about a
+   third wider than before) and the full width on phones, where the half-screen
+   rule above had squeezed it to 180px (24 characters a line). */
+:is(html, #about-best-practice#about-best-practice#about-best-practice#about-best-practice) body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__lead {
+  max-width: min(100%, 38em) !important;
+}
