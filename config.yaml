@@ -1163,6 +1163,9 @@ languages:
               subtitle: Architecture and contribution workflows.
               url: https://pyopenms.readthedocs.io/en/latest/community/index.html
               linkText: Open docs
+              extraLinks:
+                - text: AI Policy
+                  url: /ai-policy/
             - title: Reviewing Pull Requests
               type: links
               tag: Review
@@ -1280,6 +1283,12 @@ languages:
               subtitle: Browse the source, open pull requests, and share examples.
               url: https://github.com/OpenMS/pyopenms_viz
               linkText: View repository
+            - title: AI Contribution Policy
+              tag: Policy
+              icon: fas fa-robot
+              subtitle: Using AI tools? Read how to disclose and stay accountable.
+              url: /ai-policy/
+              linkText: Read the policy
             - title: Reviewing Pull Requests
               type: links
               tag: Review

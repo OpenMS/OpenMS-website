@@ -1233,7 +1233,7 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.6rem 1.25rem;
   margin-top: auto;
 }
 
