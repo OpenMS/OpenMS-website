@@ -735,7 +735,8 @@ languages:
           is a place for you in our community.
         welcomeNote: >-
           We are committed to being open, inclusive, and welcoming — read the
-          [Code of Conduct](/code-of-conduct) for how we work together.
+          [Code of Conduct](/code-of-conduct) for how we work together, and our
+          [AI Policy](/ai-policy/) if you use AI tools when contributing.
         image: /images/community/openms-20th-anniversary.jpg
         imageAlt: OpenMS community at the 20th anniversary gathering
         ctaText: Get involved
@@ -1733,6 +1734,8 @@ languages:
                 link: /exec_committee/
               - text: Code of Conduct Enforcement Procedures
                 link: /report-handling-manual/
+              - text: AI Contribution Policy
+                link: /ai-policy/
           column3:
             heading: ABOUT
             links:
@@ -1816,6 +1819,8 @@ languages:
               url: /developer-conference/
             - title: Code of Conduct
               url: /code-of-conduct/
+            - title: AI Policy
+              url: /ai-policy/
         - title: Services
           url: /scientific-and-technical-support/
           sublinks:

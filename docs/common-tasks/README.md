@@ -71,6 +71,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 | SUPPORT | **Donate** (`/donate/`) | `donate-page/` | [Connect the donation form to Zeffy](donate-page/donate-connect-zeffy.md) · [Change the intro text](donate-page/donate-edit-intro-text.md) |
 | COMMUNITY | **Executive Committee Charter** (`/exec_committee/`) | `executive-committee-charter-page/` | [Change the text](executive-committee-charter-page/executive-committee-charter-edit-text.md) |
 | COMMUNITY | **Code of Conduct Enforcement Procedures** (Report Handling Manual, `/report-handling-manual/`) | `code-of-conduct-enforcement-procedures-page/` | [Change the text](code-of-conduct-enforcement-procedures-page/code-of-conduct-enforcement-procedures-edit-text.md) |
+| COMMUNITY | **AI Policy** (`/ai-policy/`) | `ai-policy-page/` | [Change the text](ai-policy-page/ai-policy-edit-text.md) |
 | LEGAL | **Privacy** (`/privacy/`) | `privacy-page/` | [Change the text](privacy-page/privacy-edit-text.md) |
 | LEGAL | **Press kit** (`/press-kit/`) | `press-kit-page/` | [Replace a download](press-kit-page/press-kit-replace-a-download.md) |
 | LEGAL | **Impressum** (`/impressum/`) | `impressum-page/` | [Change the text](impressum-page/impressum-edit-text.md) |
