@@ -1,4 +1,4 @@
-# Community calendar — edit this file to add or update events (see docs/common-tasks/update-community-calendar.md).
+# Community calendar — edit this file to add or update events (see docs/common-tasks/calendar-page/calendar-add-or-change-event.md).
 # Entries marked `synced: true` are managed automatically by sync_google_calendar.py — edit the source calendar event instead of this file for those.
 events:
 - title: OpenMS Developer Meeting 2026
@@ -109,7 +109,7 @@ events:
   end: '2027-02-05'
   location: Gimo, 747 43 Gimo, Sweden
   summary: https://eubic-ms.org/events/hackathon-2027/
-- title: Annual Developer's Retreat
+- title: Annual Developer Conference
   start: '2027-03-14'
   category: event
   synced: true
@@ -127,4 +127,4 @@ events:
   summary: 'Yearly HUPO-PSI Meeting.
 
     https://www.psidev.info/spring-meeting-2027'
-last_synced: '2026-11-03T17:37:39Z'
+last_synced: '2026-11-10T00:36:30Z'
