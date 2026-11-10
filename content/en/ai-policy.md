@@ -1,16 +1,15 @@
 ---
 title: OpenMS AI Policy
-eyebrow: Community
 subtitle: How AI assistance may be used when contributing to OpenMS, and why a human always stays accountable.
 sidebar: false
 hideShortcuts: true
 ---
 
-*Author: Joshua Charkow*
-*Assisted-by: DeepSeek V4.0 Flash*
+*Author: Joshua Charkow*\
+*Assisted-by: DeepSeek V4.0 Flash*\
 *Approved by the OpenMS Executive Board, 5 November 2026.*
 
-We reserve the right to take measures to enforce this policy up to and including banning.
+**We reserve the right to take measures to enforce this policy up to and including banning.**
 
 OpenMS monitors AI-assisted contributions to its code and other content to protect the integrity of the project and maintain the scientific rigour expected of researchers. This policy keeps AI assistance useful without letting unverified or opaque AI output weaken the quality of OpenMS, and makes clear that a human always remains accountable.
 

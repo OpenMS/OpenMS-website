@@ -15,6 +15,8 @@ The **AI Policy** is the rule book for using AI tools when contributing to OpenM
 | A line starting with `## ` or `### ` | A section heading. |
 | A line starting with `- ` | A bullet point (indent by 4 spaces for a bullet inside a bullet). |
 | A normal line | A paragraph of text. |
+| A line ending with `\` | The next line starts on a new line, in the same paragraph (used for the Author / Assisted-by / Approved lines). |
+| `**text**` | **Bold** text. |
 
 ## Step by step
 

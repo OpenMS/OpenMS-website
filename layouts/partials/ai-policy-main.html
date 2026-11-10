@@ -1,0 +1,29 @@
+{{- /* AI Policy page: same plain "document" design as the Executive Committee
+       Charter. All the words are in content/en/ai-policy.md (subtitle = lead). */ -}}
+<section class="openms-lib-layout">
+<article class="openms-lib-page openms-lib-page--hub openms-lib-page--openms-lib openms-lib-page--solution openms-lib-page--ai-policy">
+<div class="openms-lib-page__intro">
+  <header class="openms-lib-hero openms-lib-hero--pro openms-lib-hero--solution" aria-label="{{ .Title }}">
+    <div class="openms-lib-hero__panel">
+      <div class="openms-lib-hero__content">
+        <p class="openms-lib-hero__eyebrow">{{ partial "section-eyebrow-icon.html" "people" }}Community</p>
+        <h1 class="openms-lib-hero__title">{{ .Title }}</h1>
+        {{- with .Params.subtitle }}
+        <p class="openms-lib-hero__lead">
+          <span class="openms-lib-hero__lead-line">{{ . }}</span>
+        </p>
+        {{- end }}
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="openms-lib-page__body">
+  <div class="openms-lib-page__anchor">
+    <div class="ai-policy__inner openms-lib-prose">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+</article>
+</section>

@@ -1,0 +1,45 @@
+/* AI Policy page: same plain document layout as the Executive Committee
+   Charter (see exec-charter.css for the reasons behind each rule). */
+.openms-lib-page--ai-policy .openms-lib-page__body > .openms-lib-page__anchor:first-child {
+  padding-top: clamp(1.5rem, 4vw, 2.5rem) !important;
+}
+
+.openms-lib-page--ai-policy .openms-lib-page__body > .openms-lib-page__anchor:has(> .ai-policy__inner) {
+  padding-inline: 0;
+}
+
+.ai-policy__inner.openms-lib-prose {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--pro-max, 75rem);
+  margin-inline: auto;
+  padding-inline: var(--openms-page-inline, 1.5rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  overflow: hidden;
+}
+
+.openms-lib-layout:has(.openms-lib-page--ai-policy) {
+  padding-bottom: 0;
+}
+
+/* A site-wide reset hides list markers; show bullets and numbers, nested
+   lists as circles. Same rules as the news articles (news.css), with an ID
+   so they outrank the reset. */
+:is(html, #ai-policy-lists) body .ai-policy__inner :is(ul, ol) {
+  margin: 0 0 1.05rem !important;
+  padding-left: 1.5rem !important;
+}
+
+:is(html, #ai-policy-lists) body .ai-policy__inner li > :is(ul, ol) {
+  margin: 0.35rem 0 0 !important;
+}
+
+:is(html, #ai-policy-lists) body .ai-policy__inner ul { list-style: disc outside !important; }
+:is(html, #ai-policy-lists) body .ai-policy__inner ol { list-style: decimal outside !important; }
+:is(html, #ai-policy-lists) body .ai-policy__inner ul ul { list-style-type: circle !important; }
+
+:is(html, #ai-policy-lists) body .ai-policy__inner li {
+  display: list-item !important;
+  list-style: inherit !important;
+  margin: 0 0 0.35rem !important;
+}
