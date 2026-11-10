@@ -30,19 +30,27 @@
     </header>
 
     {{- with $apps }}
-    <ul class="openms-lib-resources__examples-grid openms-lib-hub__reveal" role="list">
+    {{- /* App cards: logo on a tinted panel, name, one-line description and an
+           "Open app" link. The description comes from the Featured Apps list
+           (config.yaml -> webapps) by name, unless the app sets its own. */ -}}
+    <ul class="webapps-showcase openms-lib-hub__reveal" role="list">
       {{- range . }}
-      {{- $appName := .name -}}
-      {{- $logoSize := .logoSize -}}
-      <li class="openms-lib-resources__examples-item" role="listitem">
+      {{- $app := . -}}
+      {{- $desc := .description -}}
+      {{- if not $desc -}}
+        {{- range site.Params.webapps -}}
+          {{- if eq (lower .name) (lower $app.name) }}{{ $desc = .description }}{{ end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $external := in .url "://" -}}
+      <li class="webapps-showcase__item" role="listitem">
         <a
-          class="openms-lib-resources__examples-card"
+          class="webapps-showcase__card"
           href="{{ .url }}"
-          aria-label="{{ $appName }}"
-          {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+          {{- if $external }} target="_blank" rel="noopener noreferrer"{{- end }}
         >
           {{- with .logo }}
-          <span class="openms-lib-resources__examples-logo{{- with $logoSize }} openms-lib-resources__examples-logo--{{ . }}{{- end }}">
+          <span class="webapps-showcase__logo" aria-hidden="true">
             <img
               src="{{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}{{ . }}{{ else }}{{ . | relURL }}{{ end }}"
               alt=""
@@ -51,6 +59,13 @@
             />
           </span>
           {{- end }}
+          <span class="webapps-showcase__body">
+            <h3 class="webapps-showcase__name">{{ .name }}</h3>
+            {{- with $desc }}
+            <span class="webapps-showcase__desc">{{ . }}</span>
+            {{- end }}
+            <span class="webapps-showcase__cta">{{ $.cfg.openText | default "Open app" }}<span class="webapps-showcase__arrow" aria-hidden="true">→</span>{{ if $external }}<span class="visually-hidden"> (opens in a new tab)</span>{{ end }}</span>
+          </span>
         </a>
       </li>
       {{- end }}

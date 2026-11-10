@@ -10,7 +10,7 @@ The page **https://openms.de/webapps/** (top menu → **Projects** → **OpenMS 
 |---|---|---|
 | Turn a Jupyter notebook into a web app (the navy block under the big title) | `webappsPage` → `notebook` | `eyebrow` (small label), `title`, `lead`, the `prompt` people copy, `note`, the numbered `steps` (each has `title` and `text`), and `buttons` (each has `text` and `url`). Any number of steps and buttons works. The first button is blue, the others outlined. |
 | Need help? | `webappsPage` → `usingTemplate` | The "Need help?" box under `items`: its `title`, `text` and `links` (the buttons). There is no "Get started" band any more. Adding a `title:` line, or a card with a `url`, brings that dark band back above the box. |
-| Examples | `webappsPage` → `examples` | the example apps shown |
+| Featured WebApps (examples) | `webappsPage` → `examples` | `title`, `lead`, and the cards under `apps`: each has `name`, `logo` and `url`. The one-line description under the name comes from the same app in the Featured Apps list (`webapps` → `description`); add a `description:` line to an app here to use different words. |
 | For developers, and the citation | `webappsPage` → `developers` | `title`, `lead`, `citeText`, the paper under `citation`, and the cards under `boxes`. Any number of boxes works: the usual numbers have their own layout, others sit in equal columns (3 or 4 per row on a laptop, 1 on a phone). A box with `type: links` shows its `platforms` as blue links in a row, like on OpenMS-lib. |
 
 The **big title at the top** is part of the design (`layouts/partials/webapps-hero.html`). To change it, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
