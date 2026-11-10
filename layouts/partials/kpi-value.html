@@ -1,0 +1,31 @@
+{{- /*
+  Returns the number to show for one homeMetrics stat.
+
+  If the stat has `kpi:` (a Metric name in KPI.csv, which the update_kpis.yml
+  robot keeps up to date), the value is read from KPI.csv and rounded DOWN to a
+  multiple of `kpiRoundTo` (default 10), so a "+" suffix stays true:
+  11183 with kpiRoundTo 1000 -> 11000; 185 with kpiRoundTo 10 -> 180.
+
+  Otherwise, or if KPI.csv / the metric is missing, `value:` is used as written.
+*/ -}}
+{{- $stat := . -}}
+{{- $result := $stat.value -}}
+{{- with $stat.kpi -}}
+  {{- $metric := . -}}
+  {{- if fileExists "KPI.csv" -}}
+    {{- range split (readFile "KPI.csv") "\n" -}}
+      {{- $cols := split (trim . " \r") "," -}}
+      {{- if and (eq (len $cols) 2) (eq (trim (index $cols 0) " ") $metric) -}}
+        {{- $raw := trim (index $cols 1) " " -}}
+        {{- if findRE `^[0-9]+$` $raw -}}
+          {{- $n := int $raw -}}
+          {{- $step := int ($stat.kpiRoundTo | default 10) -}}
+          {{- $result = mul (div $n $step) $step -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else -}}
+    {{- warnf "home-metrics: KPI.csv not found, using value %v for %q" $stat.value $metric -}}
+  {{- end -}}
+{{- end -}}
+{{- return $result -}}

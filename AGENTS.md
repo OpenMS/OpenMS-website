@@ -48,7 +48,7 @@ GitHub Actions write these files (the publications and KPI robots open pull requ
 |----------|--------|--------|
 | `update_publications.yml` (weekly, and on push of `pmids.txt`) | `generate_bib.py` | `content/en/publications.md`, edited in place: existing entries and papers without a PubMed link are kept as written, new PMIDs are added at the top of their year, removed PMIDs are dropped. To add a PubMed paper, edit `pmids.txt`. |
 | `update_calendar.yml` (when the Google Calendar changes: the `calendar-notify-github` Apps Script sends a `calendar-updated` event) | `sync_google_calendar.py` | `data/community_events.yaml`, committed straight to `main` |
-| `update_kpis.yml` (weekly) | `get_total_citations.py` | `KPI.csv` |
+| `update_kpis.yml` (weekly, and on push of `pmids.txt`) | `get_total_citations.py` | `KPI.csv`. The home page reads it at build time: a `homeMetrics` stat with `kpi: <Metric>` shows that value rounded **down** to `kpiRoundTo` (`layouts/partials/kpi-value.html`); `value:` is only the fallback. |
 
 ## Pitfalls found the hard way
 

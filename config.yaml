@@ -711,11 +711,15 @@ languages:
             label: Years active
             description: Over two decades of open-source development for mass spectrometry workflows.
           - value: 10000
+            kpi: Total Citations (with overlap)
+            kpiRoundTo: 1000
             suffix: "+"
             icon: quote
             label: Citations
             description: Peer-reviewed research citing OpenMS tools and algorithms worldwide.
           - value: 180
+            kpi: Contributors
+            kpiRoundTo: 10
             suffix: "+"
             icon: people
             label: Contributors
