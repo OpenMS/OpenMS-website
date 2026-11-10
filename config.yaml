@@ -221,17 +221,17 @@ languages:
             external: true
             contributeUrl: https://github.com/OpenMS/OpenMS-docs/issues
       developerRetreatPage:
-        eyebrow: Annual Developer Retreat
-        pageTitle: Annual Developer Retreat
+        eyebrow: Annual Developer Conference
+        pageTitle: Annual Developer Conference
         headline: >-
           <span class="openms-lib-hero__title-line">Shape the <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">future</span></span>
           <span class="openms-lib-hero__title-line">of computational</span>
           <span class="openms-lib-hero__title-line">mass spectrometry.</span>
         about: >-
-          The annual OpenMS developers retreat brings together researchers
+          The annual OpenMS developers conference brings together researchers
           from around the world for a week of talks, tutorials, and code
           sprints.
-        highlightsTitle: About the retreat
+        highlightsTitle: About the conference
         highlights:
           - title: Who it's for
             text: >-
@@ -247,10 +247,10 @@ languages:
               get involved with the OpenMS community.
         pastPhoto:
           src: /images/dev_retreat_2026.jpeg
-          alt: OpenMS contributors at the 2026 developer retreat in Poland
-          caption: 2026 Developer retreat at the Piotrowice Nyskie Palace in Poland
+          alt: OpenMS contributors at the 2026 developer conference in Poland
+          caption: 2026 Developer conference at the Piotrowice Nyskie Palace in Poland
         upcoming:
-          title: Upcoming retreat
+          title: Upcoming conference
           facts:
             - icon: far fa-calendar
               text: March 14–21, 2027
@@ -258,7 +258,7 @@ languages:
               text: Resort Natura, Algarve, Portugal
           poster:
             src: /images/dev_retreat_2027_poster.png
-            alt: OpenMS Developer Retreat 2027 — Algarve, Portugal
+            alt: OpenMS Developer Conference 2027 — Algarve, Portugal
         registration:
           open: true
           url: https://tally.so/r/aQL8XW
@@ -486,8 +486,8 @@ languages:
         pastHint: Browse events from previous years.
         readMoreLabel: View details
         developerRetreat:
-          text: Developer Retreat
-          url: /developer-retreat/
+          text: Developer Conference
+          url: /developer-conference/
         # Public "Add to Google Calendar" subscribe link for site visitors
         # (safe to be public — this is what viewers use to subscribe, not
         # the sync feed). Leave blank to hide the button. Fill in once you
@@ -567,7 +567,7 @@ languages:
         featuredLevel: gold
         taxFootnote: "*where applicable by law"
         benefitsMatrix:
-          - category: Annual Developer Retreat perks
+          - category: Annual Developer Conference perks
             bronze: []
             silver:
               - 1 discounted registration pass (20% off)
@@ -1713,8 +1713,8 @@ languages:
                 link: /contribute
               - text: OpenMS Fellowship
                 link: /fellowship/
-              - text: Annual Developer Retreat
-                link: /developer-retreat/
+              - text: Annual Developer Conference
+                link: /developer-conference/
               - text: Code of Conduct
                 link: /code-of-conduct/
               - text: Executive Committee Charter
@@ -1800,8 +1800,8 @@ languages:
               url: /contribute
             - title: OpenMS Fellowship
               url: /fellowship/
-            - title: Annual Developer Retreat
-              url: /developer-retreat/
+            - title: Annual Developer Conference
+              url: /developer-conference/
             - title: Code of Conduct
               url: /code-of-conduct/
         - title: Services
