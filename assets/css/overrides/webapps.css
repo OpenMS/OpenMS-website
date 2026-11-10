@@ -342,9 +342,8 @@
 
 /* ---------- WebApps page: Featured WebApps cards ----------
    Each card: the logo centred on a soft tinted panel (every logo at the same
-   share of the panel, whatever its shape), the app name, its one-line
-   description and an "Open app →" line. The whole card is one link and lifts
-   slightly on hover. Phones: logo panel on the left, text on the right.
+   share of the panel, whatever its shape), the app name and its one-line
+   description. The whole card is one link and lifts slightly on hover. Phones: logo panel on the left, text on the right.
    From 768px: three cards side by side, logo panel on top. */
 :is(html, #webapps-showcase) body .webapps-showcase {
   display: grid;
@@ -426,34 +425,6 @@
   color: rgba(35, 31, 32, 0.72);
 }
 
-:is(html, #webapps-showcase) body .webapps-showcase__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  min-height: 24px;
-  margin-top: auto;
-  font-size: var(--openms-text-min);
-  font-weight: 600;
-  color: var(--openms-blue, #3157e9);
-}
-
-:is(html, #webapps-showcase) body .webapps-showcase__arrow {
-  transition: transform 0.2s ease;
-}
-
-:is(html, #webapps-showcase) body .webapps-showcase__card:is(:hover, :focus-visible) .webapps-showcase__arrow {
-  transform: translateX(2px);
-}
-
-:is(html, #webapps-showcase) body .webapps-showcase .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
 @media (min-width: 768px) {
   :is(html, #webapps-showcase) body .webapps-showcase {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -488,7 +459,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :is(html, #webapps-showcase) body :is(.webapps-showcase__card, .webapps-showcase__arrow) {
+  :is(html, #webapps-showcase) body .webapps-showcase__card {
     transition: none;
   }
 }

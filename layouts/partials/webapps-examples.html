@@ -30,9 +30,9 @@
     </header>
 
     {{- with $apps }}
-    {{- /* App cards: logo on a tinted panel, name, one-line description and an
-           "Open app" link. The description comes from the Featured Apps list
-           (config.yaml -> webapps) by name, unless the app sets its own. */ -}}
+    {{- /* App cards: logo on a tinted panel, name and one-line description. The description comes from the Featured Apps list
+           (config.yaml -> webapps) by name, unless the app sets its own.
+           The whole card is the link. */ -}}
     <ul class="webapps-showcase openms-lib-hub__reveal" role="list">
       {{- range . }}
       {{- $app := . -}}
@@ -48,6 +48,7 @@
           class="webapps-showcase__card"
           href="{{ .url }}"
           {{- if $external }} target="_blank" rel="noopener noreferrer"{{- end }}
+          {{- if $external }} aria-label="{{ .name }} (opens in a new tab)"{{- end }}
         >
           {{- with .logo }}
           <span class="webapps-showcase__logo" aria-hidden="true">
@@ -64,7 +65,6 @@
             {{- with $desc }}
             <span class="webapps-showcase__desc">{{ . }}</span>
             {{- end }}
-            <span class="webapps-showcase__cta">{{ $.cfg.openText | default "Open app" }}<span class="webapps-showcase__arrow" aria-hidden="true">→</span>{{ if $external }}<span class="visually-hidden"> (opens in a new tab)</span>{{ end }}</span>
           </span>
         </a>
       </li>
