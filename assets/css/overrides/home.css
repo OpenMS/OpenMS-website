@@ -1304,7 +1304,7 @@ html body .home-page :is(.webapps-featured__show-all, .community-news-events__vi
 /* Section intros, the hero text and card summaries: about 70-75 characters a
    line at most (they reached 81-98 on tablets and very wide screens). Set in
    em, measured on this font: "ch" (the width of a zero) let ~95 letters in. */
-:is(html, #home-best-practice) body .home-page :is(.webapps-featured__lead, .ecosystem-home__lead, .contact-home__description, .hero-home__description) {
+:is(html, #home-best-practice) body .home-page :is(.ecosystem-home__lead, .contact-home__description, .hero-home__description) {
   max-width: 30em !important;
 }
 
@@ -1317,4 +1317,10 @@ html body .home-page :is(.webapps-featured__show-all, .community-news-events__vi
   :is(html, #home-best-practice) body .home-page__hero .hero-home__description {
     font-size: 1.25rem !important;
   }
+}
+
+/* Featured Apps intro ("Apps are scientifically validated…"): uses the full
+   width it has next to "Show all apps" (no line-length limit, by request). */
+:is(html, #home-best-practice#home-best-practice) body .home-page .webapps-featured__lead {
+  max-width: none !important;
 }

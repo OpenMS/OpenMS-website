@@ -306,3 +306,16 @@
   flex: 0 0 auto !important;
   white-space: nowrap !important;
 }
+
+/* ---------- WebApps page: "Browse all apps →" on the right on phones ----------
+   On small screens the link drops onto its own line under the intro; keep it
+   at the right edge there, as on wider screens. */
+@media (max-width: 767px) {
+  :is(html, #webapps-browse-right) body .openms-lib-page--webapps #examples .openms-lib-resources__examples-lead-row {
+    flex-wrap: wrap !important;
+  }
+
+  :is(html, #webapps-browse-right) body .openms-lib-page--webapps #examples .openms-lib-resources__examples-link {
+    margin-left: auto !important;
+  }
+}
