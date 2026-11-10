@@ -81,6 +81,7 @@ languages:
         #   badge           -> small label in the top-right corner (optional)
         #   projects        -> round link chips;  platforms -> a row of small links
         #   linkText + linkUrl -> one link at the bottom of the card
+        #   note            -> small note under the card text (markdown links work)
         ways:
           - title: Contribute to development
             icon: fas fa-code
@@ -96,6 +97,7 @@ languages:
                 url: /pyopenms-viz/#for-developers
               - name: OpenMS WebApps
                 url: /webapps/#for-developers
+            note: OpenMS is open to both independent and AI-assisted contributions. If you are planning to use AI in any capacity, please familiarize yourself with our [AI Policy](/ai-policy/).
           - title: Build from source
             icon: fas fa-hammer
             text: Compile the latest OpenMS with platform guides for Windows, macOS, and Linux.
@@ -735,8 +737,7 @@ languages:
           is a place for you in our community.
         welcomeNote: >-
           We are committed to being open, inclusive, and welcoming — read the
-          [Code of Conduct](/code-of-conduct) for how we work together, and our
-          [AI Policy](/ai-policy/) if you use AI tools when contributing.
+          [Code of Conduct](/code-of-conduct) for how we work together.
         image: /images/community/openms-20th-anniversary.jpg
         imageAlt: OpenMS community at the 20th anniversary gathering
         ctaText: Get involved
@@ -1819,8 +1820,6 @@ languages:
               url: /developer-conference/
             - title: Code of Conduct
               url: /code-of-conduct/
-            - title: AI Policy
-              url: /ai-policy/
         - title: Services
           url: /scientific-and-technical-support/
           sublinks:

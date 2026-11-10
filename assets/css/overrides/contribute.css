@@ -607,3 +607,11 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
 :is(html, #cards-long-words) body .openms-lib-page--contribute :is(.contribute-track__item, .contribute-channel, .coc-value, .contribute-outreach__social-link) :is(h3, p, a, span) {
   overflow-wrap: anywhere;
 }
+
+/* Small note inside a "Ways to contribute" card (e.g. AI policy pointer). */
+.openms-lib-page--contribute .contribute-track__note {
+  margin: 0.9rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}

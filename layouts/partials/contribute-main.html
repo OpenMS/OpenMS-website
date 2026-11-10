@@ -86,6 +86,9 @@
               {{- end }}
             </ul>
             {{- end }}
+            {{- with .note }}
+            <p class="contribute-track__note">{{ . | markdownify }}</p>
+            {{- end }}
             {{- if and .linkText $url }}
             <a
               class="contribute-track__cta"
@@ -216,11 +219,6 @@
         <p class="coc-agreement">
           By participating, you agree to this Code of Conduct and the procedures used to resolve incidents.
           Any behaviour that excludes, intimidates, or causes discomfort is a violation.
-        </p>
-
-        <p class="coc-agreement">
-          Using AI tools to contribute? That is welcome, with a few simple rules about accountability and disclosure.
-          Read the <a href="/ai-policy/">OpenMS AI Policy</a>.
         </p>
 
         <aside class="coc-callout" role="note" aria-label="How to report">

@@ -1,6 +1,6 @@
 # AI Policy page: Change the text
 
-The **AI Policy** is the rule book for using AI tools when contributing to OpenMS. On the website it is **https://openms.de/ai-policy/** (footer → **COMMUNITY** → **AI Contribution Policy**, top menu → **Community** → **AI Policy**, and a link on the Getting Involved page). It has **all its words in one page file**: `content/en/ai-policy.md`.
+The **AI Policy** is the rule book for using AI tools when contributing to OpenMS. On the website it is **https://openms.de/ai-policy/** (footer → **COMMUNITY** → **AI Contribution Policy**, and a note on the Getting Involved page). It has **all its words in one page file**: `content/en/ai-policy.md`.
 
 **You will change:** a few words in one file  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
@@ -26,8 +26,8 @@ The **AI Policy** is the rule book for using AI tools when contributing to OpenM
 
 ## Where the links to the policy are
 
-- Footer and top menu: `config.yaml` → `navbar` and `footer` (look for `/ai-policy/`).
-- Getting Involved page: the sentence above the "Need to report something?" box is written in `layouts/partials/contribute-main.html` (ask the web team to change it), and the intro sentence is `config.yaml` → `contributePage` → `welcomeNote`.
+- Footer (**COMMUNITY**): `config.yaml` → `footer` (look for `/ai-policy/`).
+- Getting Involved page: the note in the **Contribute to development** card. It is the `note:` line of that card in `config.yaml` → `contributePage` → `ways`.
 
 ## Do not touch
 
