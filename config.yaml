@@ -487,7 +487,7 @@ languages:
         readMoreLabel: View details
         developerRetreat:
           text: Developer Conference
-          url: /developer-retreat/
+          url: /developer-conference/
         # Public "Add to Google Calendar" subscribe link for site visitors
         # (safe to be public — this is what viewers use to subscribe, not
         # the sync feed). Leave blank to hide the button. Fill in once you
@@ -1714,7 +1714,7 @@ languages:
               - text: OpenMS Fellowship
                 link: /fellowship/
               - text: Annual Developer Conference
-                link: /developer-retreat/
+                link: /developer-conference/
               - text: Code of Conduct
                 link: /code-of-conduct/
               - text: Executive Committee Charter
@@ -1801,7 +1801,7 @@ languages:
             - title: OpenMS Fellowship
               url: /fellowship/
             - title: Annual Developer Conference
-              url: /developer-retreat/
+              url: /developer-conference/
             - title: Code of Conduct
               url: /code-of-conduct/
         - title: Services

@@ -43,7 +43,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 | **News** (`/news/`) | `news-page/` | [Add a news article](news-page/news-add-news-post.md) |
 | **Getting Involved** (`/contribute/`) | `getting-involved-page/` | [Change the intro and links](getting-involved-page/getting-involved-edit-intro-and-links.md) · [Add or change the cards](getting-involved-page/getting-involved-edit-cards.md) |
 | **OpenMS Fellowship** (`/fellowship/`) | `fellowship-page/` | [Change the text and labels](fellowship-page/fellowship-update-fellowship.md) |
-| **Annual Developer Retreat** (`/developer-retreat/`) | `developer-retreat-page/` | [Update the page (once a year)](developer-retreat-page/developer-retreat-update-retreat.md) |
+| **Annual Developer Retreat** (`/developer-conference/`) | `developer-retreat-page/` | [Update the page (once a year)](developer-retreat-page/developer-retreat-update-retreat.md) |
 | **Code of Conduct** (`/code-of-conduct/`) | `code-of-conduct-page/` | [Change the text](code-of-conduct-page/code-of-conduct-edit-text.md) · its [Report Handling Manual](code-of-conduct-enforcement-procedures-page/code-of-conduct-enforcement-procedures-edit-text.md) |
 
 ## Top menu → Services

@@ -202,3 +202,7 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 /workshops/roadshow/umetaflow http://abi-services.cs.uni-tuebingen.de/umetaflow/?workspace=workshop
 /workshops/roadshow/quantms http://opendda.webapps.openms.org/?workspace=workshop
 /workshops/upss26 https://colab.research.google.com/github/t0mdavid-m/Notebooks-ZA2026/blob/master/PeptideSearch.ipynb
+
+# Developer Retreat page renamed to Developer Conference
+/developer-retreat    /developer-conference/  301!
+/developer-retreat/   /developer-conference/  301!

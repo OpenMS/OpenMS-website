@@ -7,8 +7,8 @@
 {{- $emptyUpcoming := index $cfg "emptyUpcoming" | default "No upcoming events scheduled right now. Check back soon or join the community to hear about the next meetup." -}}
 {{- $readMore := index $cfg "readMoreLabel" | default "View details" -}}
 {{- $retreat := index $cfg "developerRetreat" | default dict -}}
-{{- $retreatText := index $retreat "text" | default "Developer Retreat" -}}
-{{- $retreatUrl := index $retreat "url" | default "/developer-retreat/" -}}
+{{- $retreatText := index $retreat "text" | default "Developer Conference" -}}
+{{- $retreatUrl := index $retreat "url" | default "/developer-conference/" -}}
 {{- $googleCalendarUrl := index $cfg "googleCalendarSubscribeUrl" | default "" -}}
 {{- $communityEventsData := .Site.Data.community_events | default dict -}}
 {{- $allEvents := index $communityEventsData "events" | default (slice) -}}
