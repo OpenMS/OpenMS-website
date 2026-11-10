@@ -1318,3 +1318,17 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
 :is(html, #project-best-practice#project-best-practice) body .openms-lib-page .openms-lib-hero__lead:has(.openms-lib-hero__lead-line) {
   max-width: none !important;
 }
+
+/* "For Developers / Contribute" cards use the full page width: with four
+   cards (e.g. pyOpenMS Viz) the shared rule made as many 15rem columns as fit,
+   so on very wide screens there were 6 columns and the cards filled only the
+   left two-thirds. Four cards now make four equal columns from 1100px. */
+@media (min-width: 1100px) {
+  :is(html, #dev-cards-full#dev-cards-full#dev-cards-full) body .openms-lib-page #for-developers:not(.openms-lib-developers--grouped) .openms-lib-developers__cards-grid:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  :is(html, #dev-cards-full#dev-cards-full#dev-cards-full) body .openms-lib-page #for-developers:not(.openms-lib-developers--grouped) .openms-lib-developers__cards-grid:has(> :nth-child(4):last-child) > * {
+    grid-column: auto !important;
+  }
+}
