@@ -1,6 +1,6 @@
 {{- $cfg := .Site.Params.developerRetreatPage | default dict -}}
 {{- $eyebrow := index $cfg "eyebrow" | default "Community" -}}
-{{- $pageTitle := index $cfg "pageTitle" | default "Annual Developer Retreat" -}}
+{{- $pageTitle := index $cfg "pageTitle" | default "Annual Developer Conference" -}}
 {{- $headline := index $cfg "headline" | default "Take part in shaping the future of computational mass spectrometry." -}}
 {{- $about := index $cfg "about" | default "" -}}
 {{- $pastPhoto := index $cfg "pastPhoto" | default dict -}}
@@ -13,11 +13,11 @@
 {{- $sponsorText := index $cfg "sponsorText" | default "Want to sponsor this event? Learn more on our" -}}
 {{- $sponsorLinkText := index $cfg "sponsorLinkText" | default "Sponsorship Page" -}}
 {{- $sponsorUrl := index $cfg "sponsorUrl" | default "/sponsor-us/" -}}
-{{- $upcomingTitle := index $upcoming "title" | default "Upcoming retreat" -}}
+{{- $upcomingTitle := index $upcoming "title" | default "Upcoming conference" -}}
 {{- $bullets := index $upcoming "bullets" | default slice -}}
 {{- $facts := index $upcoming "facts" | default (slice) -}}
 {{- $poster := index $upcoming "poster" | default dict -}}
-{{- $highlightsTitle := index $cfg "highlightsTitle" | default "About the retreat" -}}
+{{- $highlightsTitle := index $cfg "highlightsTitle" | default "About the conference" -}}
 {{- $highlights := index $cfg "highlights" | default (slice) -}}
 {{- $highlightsEyebrow := index $cfg "highlightsEyebrow" | default "Community" -}}
 {{- $upcomingEyebrow := index $upcoming "eyebrow" | default "Save the date" -}}
@@ -37,7 +37,7 @@
   </header>
 </div>
 
-<div class="openms-lib-page__body" aria-label="Developer retreat details">
+<div class="openms-lib-page__body" aria-label="Developer conference details">
   <div id="upcoming-retreat" class="openms-lib-page__anchor">
     <section class="openms-lib-about retreat-upcoming" aria-labelledby="upcoming-retreat-title">
       <div class="openms-lib-about__inner retreat-upcoming__inner">

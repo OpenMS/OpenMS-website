@@ -43,7 +43,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 | **News** (`/news/`) | `news-page/` | [Add a news article](news-page/news-add-news-post.md) |
 | **Getting Involved** (`/contribute/`) | `getting-involved-page/` | [Change the intro and links](getting-involved-page/getting-involved-edit-intro-and-links.md) · [Add or change the cards](getting-involved-page/getting-involved-edit-cards.md) |
 | **OpenMS Fellowship** (`/fellowship/`) | `fellowship-page/` | [Change the text and labels](fellowship-page/fellowship-update-fellowship.md) |
-| **Annual Developer Retreat** (`/developer-retreat/`) | `developer-retreat-page/` | [Update the page (once a year)](developer-retreat-page/developer-retreat-update-retreat.md) |
+| **Annual Developer Retreat** (`/developer-conference/`) | `developer-retreat-page/` | [Update the page (once a year)](developer-retreat-page/developer-retreat-update-retreat.md) |
 | **Code of Conduct** (`/code-of-conduct/`) | `code-of-conduct-page/` | [Change the text](code-of-conduct-page/code-of-conduct-edit-text.md) · its [Report Handling Manual](code-of-conduct-enforcement-procedures-page/code-of-conduct-enforcement-procedures-edit-text.md) |
 
 ## Top menu → Services
@@ -71,6 +71,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 | SUPPORT | **Donate** (`/donate/`) | `donate-page/` | [Connect the donation form to Zeffy](donate-page/donate-connect-zeffy.md) · [Change the intro text](donate-page/donate-edit-intro-text.md) |
 | COMMUNITY | **Executive Committee Charter** (`/exec_committee/`) | `executive-committee-charter-page/` | [Change the text](executive-committee-charter-page/executive-committee-charter-edit-text.md) |
 | COMMUNITY | **Code of Conduct Enforcement Procedures** (Report Handling Manual, `/report-handling-manual/`) | `code-of-conduct-enforcement-procedures-page/` | [Change the text](code-of-conduct-enforcement-procedures-page/code-of-conduct-enforcement-procedures-edit-text.md) |
+| COMMUNITY | **AI Policy** (`/ai-policy/`) | `ai-policy-page/` | [Change the text](ai-policy-page/ai-policy-edit-text.md) |
 | LEGAL | **Privacy** (`/privacy/`) | `privacy-page/` | [Change the text](privacy-page/privacy-edit-text.md) |
 | LEGAL | **Press kit** (`/press-kit/`) | `press-kit-page/` | [Replace a download](press-kit-page/press-kit-replace-a-download.md) |
 | LEGAL | **Impressum** (`/impressum/`) | `impressum-page/` | [Change the text](impressum-page/impressum-edit-text.md) |

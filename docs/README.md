@@ -43,6 +43,7 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | **Donate** | [Connect to Zeffy](common-tasks/donate-page/donate-connect-zeffy.md) · [Intro text](common-tasks/donate-page/donate-edit-intro-text.md) |
 | **Executive Committee Charter** | [Change the text](common-tasks/executive-committee-charter-page/executive-committee-charter-edit-text.md) |
 | **Code of Conduct Enforcement Procedures** (Report Handling Manual) | [Change the text](common-tasks/code-of-conduct-enforcement-procedures-page/code-of-conduct-enforcement-procedures-edit-text.md) |
+| **AI Policy** (`/ai-policy/`) | [Change the text](common-tasks/ai-policy-page/ai-policy-edit-text.md) |
 | **Privacy** | [Change the text](common-tasks/privacy-page/privacy-edit-text.md) |
 | **Press kit** | [Replace a download](common-tasks/press-kit-page/press-kit-replace-a-download.md) |
 | **Impressum** | [Change the text](common-tasks/impressum-page/impressum-edit-text.md) |

@@ -81,12 +81,16 @@ languages:
         #   badge           -> small label in the top-right corner (optional)
         #   projects        -> round link chips;  platforms -> a row of small links
         #   linkText + linkUrl -> one link at the bottom of the card
+        #   note            -> small note under the card text (markdown links work)
+        #   projectsLabel   -> short line just above the project chips (optional)
         ways:
           - title: Contribute to development
             icon: fas fa-code
             badge: Most common
             featured: true
-            text: "Start small — docs, bug reports, or focused fixes. You do not need the whole codebase. Choose a project:"
+            text: "Start small — docs, bug reports, or focused fixes. You do not need the whole codebase."
+            note: OpenMS is open to both independent and AI-assisted contributions. If you are planning to use AI in any capacity, please familiarize yourself with our [AI Policy](/ai-policy/).
+            projectsLabel: "Choose a project:"
             projects:
               - name: OpenMS-lib
                 url: /openms-lib/#for-developers
@@ -221,17 +225,17 @@ languages:
             external: true
             contributeUrl: https://github.com/OpenMS/OpenMS-docs/issues
       developerRetreatPage:
-        eyebrow: Annual Developer Retreat
-        pageTitle: Annual Developer Retreat
+        eyebrow: Annual Developer Conference
+        pageTitle: Annual Developer Conference
         headline: >-
           <span class="openms-lib-hero__title-line">Shape the <span class="openms-lib-hero__accent openms-lib-hero__accent--warm">future</span></span>
           <span class="openms-lib-hero__title-line">of computational</span>
           <span class="openms-lib-hero__title-line">mass spectrometry.</span>
         about: >-
-          The annual OpenMS developers retreat brings together researchers
+          The annual OpenMS developers conference brings together researchers
           from around the world for a week of talks, tutorials, and code
           sprints.
-        highlightsTitle: About the retreat
+        highlightsTitle: About the conference
         highlights:
           - title: Who it's for
             text: >-
@@ -247,10 +251,10 @@ languages:
               get involved with the OpenMS community.
         pastPhoto:
           src: /images/dev_retreat_2026.jpeg
-          alt: OpenMS contributors at the 2026 developer retreat in Poland
-          caption: 2026 Developer retreat at the Piotrowice Nyskie Palace in Poland
+          alt: OpenMS contributors at the 2026 developer conference in Poland
+          caption: 2026 Developer conference at the Piotrowice Nyskie Palace in Poland
         upcoming:
-          title: Upcoming retreat
+          title: Upcoming conference
           facts:
             - icon: far fa-calendar
               text: March 14–21, 2027
@@ -258,7 +262,7 @@ languages:
               text: Resort Natura, Algarve, Portugal
           poster:
             src: /images/dev_retreat_2027_poster.png
-            alt: OpenMS Developer Retreat 2027 — Algarve, Portugal
+            alt: OpenMS Developer Conference 2027 — Algarve, Portugal
         registration:
           open: true
           url: https://tally.so/r/aQL8XW
@@ -486,8 +490,8 @@ languages:
         pastHint: Browse events from previous years.
         readMoreLabel: View details
         developerRetreat:
-          text: Developer Retreat
-          url: /developer-retreat/
+          text: Developer Conference
+          url: /developer-conference/
         # Public "Add to Google Calendar" subscribe link for site visitors
         # (safe to be public — this is what viewers use to subscribe, not
         # the sync feed). Leave blank to hide the button. Fill in once you
@@ -567,7 +571,7 @@ languages:
         featuredLevel: gold
         taxFootnote: "*where applicable by law"
         benefitsMatrix:
-          - category: Annual Developer Retreat perks
+          - category: Annual Developer Conference perks
             bronze: []
             silver:
               - 1 discounted registration pass (20% off)
@@ -664,6 +668,12 @@ languages:
         - name: HUPO-PSI
           logo: /images/logos/hupo-psi.png
           url: https://www.psidev.info/
+        - name: Massachusetts Institute of Technology
+          logo: /images/logos/logo-mit-full.svg
+          url: https://www.mit.edu/
+        - name: National University of Singapore
+          logo: /images/logos/logo-nus.png
+          url: https://www.nus.edu.sg/
       navbarlogo:
         image: logos/OpenMS_transparent_blackFont.svg
         link: /
@@ -705,11 +715,15 @@ languages:
             label: Years active
             description: Over two decades of open-source development for mass spectrometry workflows.
           - value: 10000
+            kpi: Total Citations (with overlap)
+            kpiRoundTo: 1000
             suffix: "+"
             icon: quote
             label: Citations
             description: Peer-reviewed research citing OpenMS tools and algorithms worldwide.
           - value: 180
+            kpi: Contributors
+            kpiRoundTo: 10
             suffix: "+"
             icon: people
             label: Contributors
@@ -975,6 +989,10 @@ languages:
             hoverText: Learn how to open pull requests, follow our contribution workflow, and collaborate with OpenMS maintainers.
             url: https://openms.readthedocs.io/en/latest/manual/develop.html#contribution-guidelines
             linkText: Read guidelines
+            # extraLinks -> more buttons in the same card (outlined), each with text + url
+            extraLinks:
+              - text: AI Policy
+                url: /ai-policy/
           - title: Report an Issue
             tag: GitHub
             icon: fab fa-github
@@ -1145,6 +1163,9 @@ languages:
               subtitle: Architecture and contribution workflows.
               url: https://pyopenms.readthedocs.io/en/latest/community/index.html
               linkText: Open docs
+              extraLinks:
+                - text: AI Policy
+                  url: /ai-policy/
             - title: Reviewing Pull Requests
               type: links
               tag: Review
@@ -1262,6 +1283,12 @@ languages:
               subtitle: Browse the source, open pull requests, and share examples.
               url: https://github.com/OpenMS/pyopenms_viz
               linkText: View repository
+            - title: AI Contribution Policy
+              tag: Policy
+              icon: fas fa-robot
+              subtitle: Using AI tools? Read how to disclose and stay accountable.
+              url: /ai-policy/
+              linkText: Read the policy
             - title: Reviewing Pull Requests
               type: links
               tag: Review
@@ -1570,7 +1597,7 @@ languages:
           url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
           logo: /images/webapp/logo/umetaflow.png
           logoSize: large
-          description: Web-based access to the umetaflow pipeline
+          description: Web-based pipeline for untargeted metabolomics
           links:
             - type: demo
               url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
@@ -1604,7 +1631,9 @@ languages:
           url: https://nuxl.webapps.openms.org/
           logo: /images/webapp/logo/nuxl.png
           logoSize: large
-          description: Web-based analysis pipeline for XL-MS data
+          description: >-
+            Web-based analysis for chemical crosslinking-mass spectrometry (XL-MS)
+            data
           maintainers: Arslan Siraj
           links:
             - type: demo
@@ -1618,7 +1647,7 @@ languages:
           url: https://abi-services.cs.uni-tuebingen.de/mhcquant/
           logo: /images/webapp/logo/mhcquant.svg
           logoSize: xlarge
-          description: Web-based analysis pipeline for immunopeptidomics
+          description: Analysis pipeline for immunopeptidomics
           maintainers: Jonas Scheid
           links:
             - type: homepage
@@ -1710,14 +1739,16 @@ languages:
                 link: /contribute
               - text: OpenMS Fellowship
                 link: /fellowship/
-              - text: Annual Developer Retreat
-                link: /developer-retreat/
+              - text: Annual Developer Conference
+                link: /developer-conference/
               - text: Code of Conduct
                 link: /code-of-conduct/
               - text: Executive Committee Charter
                 link: /exec_committee/
               - text: Code of Conduct Enforcement Procedures
                 link: /report-handling-manual/
+              - text: AI Contribution Policy
+                link: /ai-policy/
           column3:
             heading: ABOUT
             links:
@@ -1797,8 +1828,8 @@ languages:
               url: /contribute
             - title: OpenMS Fellowship
               url: /fellowship/
-            - title: Annual Developer Retreat
-              url: /developer-retreat/
+            - title: Annual Developer Conference
+              url: /developer-conference/
             - title: Code of Conduct
               url: /code-of-conduct/
         - title: Services

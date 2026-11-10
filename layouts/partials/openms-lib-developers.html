@@ -70,6 +70,31 @@
         </div>
       </div>
     </article>
+    {{- else if .extraLinks }}
+    {{- /* Card with more than one button (e.g. Contributing Guidelines + AI Policy):
+           the card cannot be one big link, so each button is its own link. */}}
+    <article class="openms-lib-developers__card openms-lib-developers__card--box openms-lib-developers__card--interactive openms-lib-developers__card--link openms-lib-developers__card--multi{{ if .featured }} openms-lib-developers__card--featured{{ end }}">
+      <div class="openms-lib-developers__card-body">
+        <h3 class="openms-lib-developers__card-title"><span>{{ .title }}</span></h3>
+        {{- with $subtitle }}
+        <p class="openms-lib-developers__card-subtitle">{{ . }}</p>
+        {{- end }}
+        <div class="openms-lib-developers__card-actions">
+          <a
+            class="openms-lib-developers__card-cta openms-lib-developers__card-link"
+            href="{{ .url }}"
+            {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+          >{{ .linkText | default "Learn more" }}<span aria-hidden="true"> →</span></a>
+          {{- range .extraLinks }}
+          <a
+            class="openms-lib-developers__card-cta openms-lib-developers__card-link openms-lib-developers__card-link--secondary"
+            href="{{ .url }}"
+            {{- if in .url "://" }} target="_blank" rel="noopener noreferrer"{{- end }}
+          >{{ .text }}<span aria-hidden="true"> →</span></a>
+          {{- end }}
+        </div>
+      </div>
+    </article>
     {{- else }}
     <a
       class="openms-lib-developers__card openms-lib-developers__card--box openms-lib-developers__card--interactive openms-lib-developers__card--link{{ if .featured }} openms-lib-developers__card--featured{{ end }}"

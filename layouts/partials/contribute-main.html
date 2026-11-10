@@ -68,6 +68,12 @@
             {{- with .text }}
             <p class="contribute-track__text">{{ . | safeHTML }}</p>
             {{- end }}
+            {{- with .note }}
+            <p class="contribute-track__note">{{ . | markdownify }}</p>
+            {{- end }}
+            {{- with .projectsLabel }}
+            <p class="contribute-track__text">{{ . }}</p>
+            {{- end }}
             {{- with .projects }}
             <ul class="contribute-project-links" role="list">
               {{- range . }}

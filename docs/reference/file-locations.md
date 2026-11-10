@@ -31,7 +31,7 @@ The menu itself (labels, order, links) is **`config.yaml` → `navbar`**. Its de
 | Community → News | `/news/` | `content/en/news/_index.md` (the list) and one file per article in `content/en/news/` | `layouts/news/section.html` and `news-single-main.html` | each article's file; `config.yaml` → `newsSection` | `overrides/news.css` |
 | Community → **Getting Involved** | `/contribute/` | `content/en/contribute.md` | `contribute-main.html` | `config.yaml` → `contributePage` (intro, all the cards and the outreach links); the headings and the Funding, Outreach and Code of Conduct texts are written in the design file | `overrides/contribute.css` |
 | Community → OpenMS Fellowship | `/fellowship/` | `content/en/fellowship.md` | `fellowship-main.html` (form: `fellowship-form-embed.html`) | `config.yaml` → `fellowshipPage` | `overrides/fellowship.css` |
-| Community → Annual Developer Retreat | `/developer-retreat/` | `content/en/developer-retreat.md` | `developer-retreat-main.html` | `config.yaml` → `developerRetreatPage` | `overrides/developer-retreat.css` |
+| Community → Annual Developer Retreat | `/developer-conference/` | `content/en/developer-conference.md` | `developer-retreat-main.html` | `config.yaml` → `developerRetreatPage` | `overrides/developer-retreat.css` |
 | Community → Code of Conduct | `/code-of-conduct/` | `content/en/code-of-conduct.md` | `code-of-conduct-main.html` | the page file | `overrides/code-of-conduct.css` and `coc-charter.css` |
 | **Services** → Scientific and Technical Support | `/scientific-and-technical-support/` | `content/en/scientific-and-technical-support.md` | `scientific-and-technical-support-main.html` | `config.yaml` → `servicesSupportPage` (intro); the rest in the design file | `overrides/scientific-and-technical-support.css` |
 | **About** → Governance | `/governance/` | `content/en/governance.md` | `governance-main.html` | `config.yaml` → `governancePage` (intro and the cards: `layers`, `coreRoles`, `membership`, `responsibilities`); section titles are written in the design file | `overrides/governance.css` |
@@ -55,6 +55,7 @@ The footer's columns, links and social icons are **`config.yaml` → `footer`** 
 | **Community** | Calendar, News, **Getting Involved**, OpenMS Fellowship, Annual Developer Retreat, Code of Conduct | see the navbar table | | | | |
 | Community | Executive Committee Charter | `/exec_committee/` | `content/en/exec_committee.md` | `exec-committee-main.html` | the page file | `exec-charter.css` |
 | Community | Code of Conduct Enforcement Procedures | `/report-handling-manual/` | `content/en/report-handling-manual.md` | `report-handling-main.html` | the page file | `rhm-charter.css` |
+| Community | AI Contribution Policy | `/ai-policy/` | `content/en/ai-policy.md` | `ai-policy-main.html` | the page file | `ai-policy.css` |
 | **About** | Governance, Our Sponsors, Our Sponsorship Program, Research Partnerships, Publications, Leadership, Contact | see the navbar table | | | | |
 | **Legal** | Privacy | `/privacy/` | `content/en/privacy.md` | `privacy-main.html` (the page is built from the `###` headings of the page file) | the page file; the short summaries are in the design file | `overrides/privacy.css` |
 | Legal | Press kit | `/press-kit/` | `content/en/press-kit.md` (title only) | `press-kit-main.html` | all text is written in the design file; downloads in `static/press-kit/` | `overrides/press-kit.css` |
@@ -84,7 +85,7 @@ Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/
 | What | Where |
 |------|--------|
 | Homepage hero | `config.yaml` → `params.hero` |
-| Homepage big numbers | `config.yaml` → `params.homeMetrics` |
+| Homepage big numbers | `config.yaml` → `params.homeMetrics` (Citations and Contributors: from `KPI.csv`, via `layouts/partials/kpi-value.html`) |
 | News banner (top strip) | `config.yaml` → `params.newsBanner` |
 | News page labels / filter | `config.yaml` → `params.newsSection` |
 | Key features (“What is OpenMS?”) | `config.yaml` → `params.keyfeatures` |

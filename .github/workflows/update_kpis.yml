@@ -6,6 +6,12 @@ on:
   schedule:
     # Every Monday at 09:00 UTC
     - cron: '0 9 * * 1'
+  push:
+    # Recount citations as soon as the list of papers changes
+    branches:
+      - main
+    paths:
+      - 'pmids.txt'
   workflow_dispatch:
 
 permissions:

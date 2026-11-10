@@ -4,6 +4,8 @@ On the home page, in a dark blue panel, there are three big numbers: **20+ Years
 
 **You will change:** a few lines in `config.yaml`  ·  **Time:** about 5 minutes  ·  **Skills needed:** none
 
+> **Citations and Contributors update themselves.** These two blocks have a `kpi:` line. The website reads their number from `KPI.csv` (kept up to date by a robot, see [below](#numbers-that-update-themselves)) and **ignores** `value:`. You only need this guide to change their label, sentence or icon.
+
 ## What you will change
 
 ![The three numbers on the home page, with the first one's parts marked](../../common-tasks-screenshot-images/edit-homepage-text/4-metrics-on-site.png)
@@ -58,6 +60,23 @@ And the same block in `config.yaml`:
 - **Add a fourth number or remove one:** copy or delete a whole block of five lines (it starts with `- value:`). The panel adjusts by itself: with **3** numbers they sit in one row; with **4 or more**, they sit in one row on big screens and in rows of two on tablets. On phones they are always stacked. Check the preview at laptop and phone width.
 - Descriptions should stay **short** (about 12 to 15 words) so the cards stay the same height. Keep numbers short too (for example `10000` with suffix `+`): with 4 in a row there is just enough room for "10,000+".
 
+## Numbers that update themselves
+
+A block with a `kpi:` line takes its number from **`KPI.csv`**, not from `value:`:
+
+```yaml
+- value: 10000                              # used only if KPI.csv can't be read
+  kpi: Total Citations (with overlap)       # a name from the Metric column of KPI.csv
+  kpiRoundTo: 1000                          # round down to a multiple of this
+  suffix: "+"
+```
+
+- **Rounding:** the number is always rounded **down**, so the `+` stays true. With `kpiRoundTo: 1000`, 11,183 shows as **11,000+**. With `kpiRoundTo: 10`, 185 contributors show as **180+**.
+- **Who updates `KPI.csv`:** the *KPI Updates* robot (GitHub Actions). It runs every Monday, and also each time `pmids.txt` changes. It opens a pull request called **Automated KPIs update**. When that pull request is merged, the home page shows the new numbers.
+- **Names you can use in `kpi:`** (the `Metric` column of `KPI.csv`): `Contributors`, `Year to Date Contributors`, `Total Unique Citations`, `Total Citations (with overlap)`. Copy the name exactly.
+- **To set a number by hand again**, delete the `kpi:` and `kpiRoundTo:` lines. Then `value:` is used.
+- **Never edit `KPI.csv` by hand:** the robot rewrites it.
+
 ## Common mistakes
 
 | What went wrong | How to fix it |
@@ -65,6 +84,7 @@ And the same block in `config.yaml`:
 | The preview says **Failed** | The spaces at the start of the lines are wrong, or a quote is missing around `"+"`. See [Spaces matter](../../getting-started/edit-via-github.md#spaces-matter-in-configyaml). |
 | The number shows as `10` instead of `10,000` | You wrote `10,000` with a comma. Write `10000`. |
 | The icon is missing | The `icon:` name is not in the list above (check the spelling). |
+| The number did not change after I edited `value:` | That block has a `kpi:` line, so the number comes from `KPI.csv`. See [Numbers that update themselves](#numbers-that-update-themselves). |
 | The numbers don't count up | They count up when you scroll to them. In the preview, scroll down slowly. |
 
 ## Related guides

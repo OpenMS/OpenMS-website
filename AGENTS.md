@@ -9,6 +9,17 @@ Guidance for AI coding agents (and humans) working in this repository: the Hugo 
 - Most visible text lives in **`config.yaml`** (under `languages.en.params`), not in the page files.
 - `docs/` is maintainer documentation written for **non-developers**. Keep it in sync with the code (see *Documentation* below).
 
+## AI contribution policy
+
+**Read the OpenMS AI Policy before contributing:** `content/en/ai-policy.md` (published at https://openms.de/ai-policy/). It applies to every OpenMS repository, including this one. In short:
+
+- The human contributor is the author and is fully accountable. They must understand, review and test every AI-assisted change before it is submitted. Make changes they can review: small, explained, and checked.
+- **Disclose AI use where authorship is recorded.** Substantial AI work (e.g. agentic tools like you) needs a `Co-authored-by:` trailer in the commit message. Lighter use should get an `Assisted-by:` trailer.
+- For significant changes, the PR description should give the design intent and rationale. The human should be able to explain it in their own words.
+- Do not use AI as the sole or final judge of a contribution or of a person's standing in the community.
+
+`content/en/ai-policy.md` is the page source. If you change the policy text, also update `docs/common-tasks/ai-policy-page/`.
+
 ## Commands
 
 ```bash
@@ -48,7 +59,7 @@ GitHub Actions write these files (the publications and KPI robots open pull requ
 |----------|--------|--------|
 | `update_publications.yml` (weekly, and on push of `pmids.txt`) | `generate_bib.py` | `content/en/publications.md`, edited in place: existing entries and papers without a PubMed link are kept as written, new PMIDs are added at the top of their year, removed PMIDs are dropped. To add a PubMed paper, edit `pmids.txt`. |
 | `update_calendar.yml` (when the Google Calendar changes: the `calendar-notify-github` Apps Script sends a `calendar-updated` event) | `sync_google_calendar.py` | `data/community_events.yaml`, committed straight to `main` |
-| `update_kpis.yml` (weekly) | `get_total_citations.py` | `KPI.csv` |
+| `update_kpis.yml` (weekly, and on push of `pmids.txt`) | `get_total_citations.py` | `KPI.csv`. The home page reads it at build time: a `homeMetrics` stat with `kpi: <Metric>` shows that value rounded **down** to `kpiRoundTo` (`layouts/partials/kpi-value.html`); `value:` is only the fallback. |
 
 ## Pitfalls found the hard way
 
