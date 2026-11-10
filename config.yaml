@@ -1609,7 +1609,7 @@ languages:
           logoSize: large
           description: >-
             Web-based analysis for chemical crosslinking-mass spectrometry (XL-MS)
-            data.
+            data
           maintainers: Arslan Siraj
           links:
             - type: demo
