@@ -82,12 +82,15 @@ languages:
         #   projects        -> round link chips;  platforms -> a row of small links
         #   linkText + linkUrl -> one link at the bottom of the card
         #   note            -> small note under the card text (markdown links work)
+        #   projectsLabel   -> short line just above the project chips (optional)
         ways:
           - title: Contribute to development
             icon: fas fa-code
             badge: Most common
             featured: true
-            text: "Start small — docs, bug reports, or focused fixes. You do not need the whole codebase. Choose a project:"
+            text: "Start small — docs, bug reports, or focused fixes. You do not need the whole codebase."
+            note: OpenMS is open to both independent and AI-assisted contributions. If you are planning to use AI in any capacity, please familiarize yourself with our [AI Policy](/ai-policy/).
+            projectsLabel: "Choose a project:"
             projects:
               - name: OpenMS-lib
                 url: /openms-lib/#for-developers
@@ -97,7 +100,6 @@ languages:
                 url: /pyopenms-viz/#for-developers
               - name: OpenMS WebApps
                 url: /webapps/#for-developers
-            note: OpenMS is open to both independent and AI-assisted contributions. If you are planning to use AI in any capacity, please familiarize yourself with our [AI Policy](/ai-policy/).
           - title: Build from source
             icon: fas fa-hammer
             text: Compile the latest OpenMS with platform guides for Windows, macOS, and Linux.

@@ -68,6 +68,12 @@
             {{- with .text }}
             <p class="contribute-track__text">{{ . | safeHTML }}</p>
             {{- end }}
+            {{- with .note }}
+            <p class="contribute-track__note">{{ . | markdownify }}</p>
+            {{- end }}
+            {{- with .projectsLabel }}
+            <p class="contribute-track__text">{{ . }}</p>
+            {{- end }}
             {{- with .projects }}
             <ul class="contribute-project-links" role="list">
               {{- range . }}
@@ -85,9 +91,6 @@
               <li><a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ with .icon }}<i class="{{ . }}" aria-hidden="true"></i> {{ end }}{{ .name }}</a></li>
               {{- end }}
             </ul>
-            {{- end }}
-            {{- with .note }}
-            <p class="contribute-track__note">{{ . | markdownify }}</p>
             {{- end }}
             {{- if and .linkText $url }}
             <a
