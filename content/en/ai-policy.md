@@ -69,6 +69,6 @@ Low-quality, unverified, or license-ambiguous contributions may be closed regard
 
 ## Questions and Reports
 
-Questions about the policy should be asked via issues in the [OpenMS repository](https://github.com/OpenMS/OpenMS). Concerns about possible policy violations should be reported to [conduct@openms.de](mailto:conduct@openms.de) and will be discussed by the [OpenMS Executive Committee](/exec_committee/).
+Questions about the policy should be asked via issues in the [OpenMS repository](https://github.com/OpenMS/OpenMS). Concerns about possible policy violations should be reported to [conduct@openms.org](mailto:conduct@openms.org) and will be discussed by the [OpenMS Executive Committee](/exec_committee/).
 
 The key words "MAY", "MUST", "MUST NOT", and "SHOULD" in this document are to be interpreted as described in [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119).
