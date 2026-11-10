@@ -1308,22 +1308,6 @@ languages:
                   url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
 
       webappsPage:
-        highlights:
-          eyebrow: ""
-          title: ""
-          layout: benefits
-          items:
-            - title: Local or cloud
-              text: Run locally or deploy with docker-compose
-            - title: Python-first
-              text: Python-based pipeline creation and frontend development
-            - title: TOPP UI
-              text: Auto-generates UI for TOPP tools
-            - title: Custom visuals
-              text: Customizable visualizations and results display
-            - title: Shareable workspaces
-              text: Workspaces for user data with unique shareable IDs
-
         # "Turn a Jupyter notebook into a web app" band, right under the page
         # header. Guide: docs/common-tasks/openms-web-apps-page/.
         notebook:

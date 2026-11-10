@@ -14,9 +14,6 @@ sidebar: false
   <div id="notebook-to-webapp" class="openms-lib-page__anchor">
     {{< webapps-notebook >}}
   </div>
-  <div id="what-is-openms" class="openms-lib-page__anchor">
-    {{< webapps-highlights >}}
-  </div>
   <div id="getting-started" class="openms-lib-page__anchor">
     {{< webapps-using-template >}}
   </div>
