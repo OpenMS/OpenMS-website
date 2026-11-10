@@ -1827,3 +1827,10 @@ html body .tally-popup iframe {
   line-height: 1.3 !important;
   padding: var(--openms-btn-padding-y, 0.7rem) var(--openms-btn-padding-x, 1.25rem) !important;
 }
+
+/* ---------- "Back to top" arrow button: a bit higher ----------
+   It sat 16-24px from the bottom edge; now about 28-48px, plus the phone's
+   home-bar area where there is one. */
+:is(html, #back-to-top-up) body .back-to-top {
+  bottom: calc(clamp(1.75rem, 3vw, 3rem) + env(safe-area-inset-bottom, 0px)) !important;
+}
