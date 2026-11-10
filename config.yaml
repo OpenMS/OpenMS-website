@@ -1573,9 +1573,7 @@ languages:
           url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
           logo: /images/webapp/logo/umetaflow.png
           logoSize: large
-          description: >-
-            A web-based pipeline for untargeted metabolomics: detect, align and
-            quantify metabolite features across LC-MS runs.
+          description: A web-based pipeline for untargeted metabolomics
           links:
             - type: demo
               url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
@@ -1610,8 +1608,8 @@ languages:
           logo: /images/webapp/logo/nuxl.png
           logoSize: large
           description: >-
-            Identify RNA- and DNA-protein interaction sites from chemical
-            crosslinking and mass spectrometry (XL-MS) data.
+            Web-based analysis for chemical crosslinking-mass spectrometry (XL-MS)
+            data.
           maintainers: Arslan Siraj
           links:
             - type: demo
