@@ -1324,3 +1324,39 @@ html body .home-page :is(.webapps-featured__show-all, .community-news-events__vi
 :is(html, #home-best-practice#home-best-practice) body .home-page .webapps-featured__lead {
   max-width: none !important;
 }
+
+/* ---------- Ecosystem cards: every logo in the same box ----------
+   The logos took their own width and could shrink, so at 1280px they were
+   77, 92, 78 and 46px wide. Every logo now sits in the same 5:3 box that
+   scales with the screen (about 100-120px wide), but never more than 42% of
+   the card's top row, so with four narrow cards in a row it stays inside the
+   card. Each logo fits inside the box without being stretched. */
+:is(html, #eco-logo-box#eco-logo-box) body .home-page .ecosystem-home__card .ecosystem-home__card-icon.ecosystem-home__card-icon {
+  flex: 0 0 auto !important;
+  width: min(clamp(6.5rem, 5.5rem + 2vw, 7.5rem), 42%) !important;
+  max-width: none !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: 5 / 3 !important;
+  object-fit: contain !important;
+  object-position: right center !important;
+}
+
+/* Four cards in a row (1280px and up): long one-word titles ("PYOPENMS_VIZ")
+   and the logo do not fit side by side, so in every card the logo sits
+   above the title (on the right, same size) instead of being cut off at the
+   card edge. One or two cards per row keep the logo beside the title. */
+:is(html, #eco-logo-box#eco-logo-box) body .home-page .ecosystem-home__card .ecosystem-home__card-head {
+  flex-wrap: wrap-reverse !important;
+  row-gap: 0.5rem !important;
+}
+
+@media (min-width: 1280px) {
+  :is(html, #eco-logo-box#eco-logo-box) body .home-page .ecosystem-home__card .ecosystem-home__card-head > .ecosystem-home__card-intro {
+    flex: 1 0 100% !important;
+  }
+
+  :is(html, #eco-logo-box#eco-logo-box) body .home-page .ecosystem-home__card .ecosystem-home__card-icon.ecosystem-home__card-icon {
+    width: clamp(6.5rem, 5.5rem + 2vw, 7.5rem) !important;
+  }
+}
