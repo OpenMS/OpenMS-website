@@ -1695,7 +1695,7 @@ languages:
             tag: Visualization
             accent: viz
             size: wide
-            icon: /images/logos/pyopenms-viz-logo.png
+            icon: /images/logos/pyopenms-viz-logo-trim.png
             description: >-
               Visualization library for mass spectrometry data. Create interactive
               and static plots directly from Python dataframes.
