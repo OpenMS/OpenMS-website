@@ -1319,10 +1319,17 @@ html body .home-page :is(.webapps-featured__show-all, .community-news-events__vi
   }
 }
 
-/* Featured Apps intro ("Apps are scientifically validated…"): uses the full
-   width it has next to "Show all apps" (no line-length limit, by request). */
+/* Featured Apps intro ("Apps are scientifically validated…"): half the page
+   width (half of the content area) from 768px, by request; full width on
+   phones. */
 :is(html, #home-best-practice#home-best-practice) body .home-page .webapps-featured__lead {
   max-width: none !important;
+}
+
+@media (min-width: 768px) {
+  :is(html, #home-best-practice#home-best-practice) body .home-page .webapps-featured__lead {
+    max-width: calc(min(100vw - 2 * var(--openms-page-inline, 1.5rem), var(--pro-max, 75rem)) / 2) !important;
+  }
 }
 
 /* ---------- Ecosystem cards: every logo in the same box ----------
