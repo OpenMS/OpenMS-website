@@ -1,6 +1,6 @@
 ---
 title: OpenMS AI Policy
-subtitle: How AI assistance may be used when contributing to OpenMS, and why a human always stays accountable.
+subtitle: How AI assistance may be used when contributing to OpenMS.
 sidebar: false
 hideShortcuts: true
 ---
