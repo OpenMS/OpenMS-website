@@ -357,3 +357,50 @@ html body .openms-lib-page .webapps-archived__revival-actions.webapps-archived__
     overflow-wrap: anywhere;
   }
 }
+
+/* "What to expect" intro ("You can still run these apps, but review known
+   limits before you start."): full width of its box, by request (no
+   line-length limit). */
+:is(html, #archived-full#archived-full#archived-full) body .openms-lib-page--archived .contribute-channels__lead {
+  max-width: none !important;
+}
+
+/* Tablets (480-899px): the logo (about 200 x 82px) is taller than the
+   tag-and-title row (about 56px), so it overlapped the description below.
+   The logo now takes both rows and the description sits beside it. */
+@media (min-width: 480px) and (max-width: 899px) {
+  :is(html, #archived-tablet#archived-tablet) body .webapps-archived-entry.webapps-archived-entry {
+    grid-template-areas:
+      "heading logo"
+      "text logo"
+      "maintainers maintainers"
+      "actions actions" !important;
+  }
+
+  :is(html, #archived-tablet#archived-tablet) body .webapps-archived-entry .webapps-archived-entry__media {
+    align-self: start !important;
+  }
+}
+
+/* ---------- Archived Apps on tablets and every width ----------
+   - The card list was capped at 500px on tablets (628px available).
+   - Card descriptions were cut to 3 lines with "…" when the column is
+     narrow; show the whole text.
+   - The "These projects remain available as-is…" intro dropped to 13px on
+     tablets (smaller than on phones); it now uses the section intro size
+     (about 15.6px on phones to 18px on laptops), like the other intros. */
+:is(html, #archived-md#archived-md) body .openms-lib-page--archived .webapps-archived__grid {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+:is(html, #archived-md#archived-md) body .openms-lib-page--archived .webapps-archived-entry__text {
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  display: block !important;
+  overflow: visible !important;
+}
+
+:is(html, #archived-md#archived-md) body .openms-lib-page--archived .contribute-ways__lead {
+  font-size: var(--openms-body-size-lg) !important;
+}
