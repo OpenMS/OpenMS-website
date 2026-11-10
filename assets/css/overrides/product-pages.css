@@ -1225,3 +1225,27 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
     margin-top: 0 !important;
   }
 }
+
+/* ---------- Developer card with several buttons (extraLinks in config.yaml),
+   e.g. "Contributing Guidelines" + "AI Policy". The first button keeps the
+   normal style; the others are outlined. ---------- */
+:is(html, #dev-multi-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+:is(html, #dev-multi-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--featured .openms-lib-developers__card-link--secondary.openms-lib-developers__card-link {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--openms-white) !important;
+  -webkit-text-fill-color: var(--openms-white) !important;
+}
+
+/* In a multi-button card only the hovered button grows, not all of them. */
+:is(html, #dev-multi-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--multi:is(:hover, :focus-within) .openms-lib-developers__card-link.openms-lib-developers__card-link:not(:hover):not(:focus-visible) {
+  transform: none !important;
+  box-shadow: none !important;
+}

@@ -989,13 +989,10 @@ languages:
             hoverText: Learn how to open pull requests, follow our contribution workflow, and collaborate with OpenMS maintainers.
             url: https://openms.readthedocs.io/en/latest/manual/develop.html#contribution-guidelines
             linkText: Read guidelines
-          - title: AI Contribution Policy
-            tag: Policy
-            icon: fas fa-robot
-            subtitle: Using AI tools? Read how to disclose and stay accountable.
-            hoverText: OpenMS welcomes independent and AI-assisted contributions. Read the rules on accountability, disclosure, and review before you use AI.
-            url: /ai-policy/
-            linkText: Read the policy
+            # extraLinks -> more buttons in the same card (outlined), each with text + url
+            extraLinks:
+              - text: AI Policy
+                url: /ai-policy/
           - title: Report an Issue
             tag: GitHub
             icon: fab fa-github
@@ -1147,13 +1144,6 @@ languages:
               subtitle: File bugs or request new features.
               url: https://github.com/OpenMS/OpenMS/issues/new/choose
               linkText: Open on GitHub
-            - title: AI Contribution Policy
-              tag: Policy
-              icon: fas fa-robot
-              subtitle: Using AI tools? Read how to disclose and stay accountable.
-              hoverText: OpenMS welcomes independent and AI-assisted contributions. Read the rules on accountability, disclosure, and review before you use AI.
-              url: /ai-policy/
-              linkText: Read the policy
             - title: Build from Source
               tag: Build
               icon: fas fa-hammer
@@ -1284,13 +1274,6 @@ languages:
               subtitle: Report bugs or request new plot types on GitHub.
               url: https://github.com/OpenMS/pyopenms_viz/issues/new
               linkText: Open on GitHub
-            - title: AI Contribution Policy
-              tag: Policy
-              icon: fas fa-robot
-              subtitle: Using AI tools? Read how to disclose and stay accountable.
-              hoverText: OpenMS welcomes independent and AI-assisted contributions. Read the rules on accountability, disclosure, and review before you use AI.
-              url: /ai-policy/
-              linkText: Read the policy
             - title: Contribute on GitHub
               tag: Source
               icon: fab fa-github
@@ -1427,13 +1410,6 @@ languages:
               subtitle: Report bugs or suggest features for the Streamlit template.
               url: https://github.com/OpenMS/streamlit-template/issues/new
               linkText: Open on GitHub
-            - title: AI Contribution Policy
-              tag: Policy
-              icon: fas fa-robot
-              subtitle: Using AI tools? Read how to disclose and stay accountable.
-              hoverText: OpenMS welcomes independent and AI-assisted contributions. Read the rules on accountability, disclosure, and review before you use AI.
-              url: /ai-policy/
-              linkText: Read the policy
             - title: Template repository
               tag: Source
               icon: fas fa-code-branch
