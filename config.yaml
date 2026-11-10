@@ -1623,7 +1623,7 @@ languages:
           url: https://abi-services.cs.uni-tuebingen.de/mhcquant/
           logo: /images/webapp/logo/mhcquant.svg
           logoSize: xlarge
-          description: Web-based analysis pipeline for immunopeptidomics
+          description: Analysis pipeline for immunopeptidomics
           maintainers: Jonas Scheid
           links:
             - type: homepage
