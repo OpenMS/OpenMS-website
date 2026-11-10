@@ -1353,7 +1353,7 @@ languages:
           items:
             - title: Need help?
               type: online
-              text: Chat with the community on Discord. To report a bug or ask for a feature, see For Developers below.
+              text: Chat with the community on Discord. To report a bug or ask for a feature, see For Developers above.
               links:
                 - name: Ask on Discord
                   icon: fab fa-discord

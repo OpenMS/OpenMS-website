@@ -14,15 +14,17 @@ sidebar: false
   <div id="notebook-to-webapp" class="openms-lib-page__anchor">
     {{< webapps-notebook >}}
   </div>
-  <div id="getting-started" class="openms-lib-page__anchor">
-    {{< webapps-using-template >}}
-  </div>
   <div id="examples" class="openms-lib-page__anchor">
     {{< webapps-examples >}}
   </div>
 </div>
 <div class="openms-lib-page__outro">
   {{< webapps-developers >}}
+</div>
+<div class="openms-lib-page__outro openms-lib-page__outro--help">
+  <div id="getting-started" class="openms-lib-page__anchor">
+    {{< webapps-using-template >}}
+  </div>
 </div>
 <div class="openms-lib-page__cite">
   {{< webapps-cite >}}
