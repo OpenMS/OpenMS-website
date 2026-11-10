@@ -1310,3 +1310,11 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   line-height: 1.2 !important;
   letter-spacing: -0.02em !important;
 }
+
+/* Header intros written as set lines (.openms-lib-hero__lead-line, e.g. Sponsor
+   us, Governance, Code of Conduct): no reading-width limit. The 30em limit
+   above made the box narrower than its lines, so they spilled to the right
+   and the intro looked off-centre. */
+:is(html, #project-best-practice#project-best-practice) body .openms-lib-page .openms-lib-hero__lead:has(.openms-lib-hero__lead-line) {
+  max-width: none !important;
+}
