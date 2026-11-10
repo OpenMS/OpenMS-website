@@ -607,3 +607,21 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
 :is(html, #cards-long-words) body .openms-lib-page--contribute :is(.contribute-track__item, .contribute-channel, .coc-value, .contribute-outreach__social-link) :is(h3, p, a, span) {
   overflow-wrap: anywhere;
 }
+
+/* Small note inside a "Ways to contribute" card (e.g. AI policy pointer).
+   Same colours at rest and on hover: the card hover rules paint text white. */
+:is(html, #track-note-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__note,
+:is(html, #track-note-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__note {
+  margin: 0.75rem 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgba(var(--openms-dark-rgb), 0.72) !important;
+  -webkit-text-fill-color: rgba(var(--openms-dark-rgb), 0.72) !important;
+}
+
+:is(html, #track-note-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__note a,
+:is(html, #track-note-boost) body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .contribute-track__item:is(:hover, :focus-within) .contribute-track__note a {
+  color: var(--openms-blue) !important;
+  -webkit-text-fill-color: var(--openms-blue) !important;
+  text-decoration: underline;
+}

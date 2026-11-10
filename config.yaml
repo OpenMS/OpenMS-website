@@ -81,12 +81,16 @@ languages:
         #   badge           -> small label in the top-right corner (optional)
         #   projects        -> round link chips;  platforms -> a row of small links
         #   linkText + linkUrl -> one link at the bottom of the card
+        #   note            -> small note under the card text (markdown links work)
+        #   projectsLabel   -> short line just above the project chips (optional)
         ways:
           - title: Contribute to development
             icon: fas fa-code
             badge: Most common
             featured: true
-            text: "Start small — docs, bug reports, or focused fixes. You do not need the whole codebase. Choose a project:"
+            text: "Start small — docs, bug reports, or focused fixes. You do not need the whole codebase."
+            note: OpenMS is open to both independent and AI-assisted contributions. If you are planning to use AI in any capacity, please familiarize yourself with our [AI Policy](/ai-policy/).
+            projectsLabel: "Choose a project:"
             projects:
               - name: OpenMS-lib
                 url: /openms-lib/#for-developers
@@ -985,6 +989,10 @@ languages:
             hoverText: Learn how to open pull requests, follow our contribution workflow, and collaborate with OpenMS maintainers.
             url: https://openms.readthedocs.io/en/latest/manual/develop.html#contribution-guidelines
             linkText: Read guidelines
+            # extraLinks -> more buttons in the same card (outlined), each with text + url
+            extraLinks:
+              - text: AI Policy
+                url: /ai-policy/
           - title: Report an Issue
             tag: GitHub
             icon: fab fa-github
@@ -1155,6 +1163,9 @@ languages:
               subtitle: Architecture and contribution workflows.
               url: https://pyopenms.readthedocs.io/en/latest/community/index.html
               linkText: Open docs
+              extraLinks:
+                - text: AI Policy
+                  url: /ai-policy/
             - title: Reviewing Pull Requests
               type: links
               tag: Review
@@ -1272,6 +1283,12 @@ languages:
               subtitle: Browse the source, open pull requests, and share examples.
               url: https://github.com/OpenMS/pyopenms_viz
               linkText: View repository
+            - title: AI Contribution Policy
+              tag: Policy
+              icon: fas fa-robot
+              subtitle: Using AI tools? Read how to disclose and stay accountable.
+              url: /ai-policy/
+              linkText: Read the policy
             - title: Reviewing Pull Requests
               type: links
               tag: Review
@@ -1733,6 +1750,8 @@ languages:
                 link: /exec_committee/
               - text: Code of Conduct Enforcement Procedures
                 link: /report-handling-manual/
+              - text: AI Contribution Policy
+                link: /ai-policy/
           column3:
             heading: ABOUT
             links:

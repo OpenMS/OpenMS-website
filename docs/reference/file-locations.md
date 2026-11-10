@@ -55,6 +55,7 @@ The footer's columns, links and social icons are **`config.yaml` → `footer`** 
 | **Community** | Calendar, News, **Getting Involved**, OpenMS Fellowship, Annual Developer Retreat, Code of Conduct | see the navbar table | | | | |
 | Community | Executive Committee Charter | `/exec_committee/` | `content/en/exec_committee.md` | `exec-committee-main.html` | the page file | `exec-charter.css` |
 | Community | Code of Conduct Enforcement Procedures | `/report-handling-manual/` | `content/en/report-handling-manual.md` | `report-handling-main.html` | the page file | `rhm-charter.css` |
+| Community | AI Contribution Policy | `/ai-policy/` | `content/en/ai-policy.md` | `ai-policy-main.html` | the page file | `ai-policy.css` |
 | **About** | Governance, Our Sponsors, Our Sponsorship Program, Research Partnerships, Publications, Leadership, Contact | see the navbar table | | | | |
 | **Legal** | Privacy | `/privacy/` | `content/en/privacy.md` | `privacy-main.html` (the page is built from the `###` headings of the page file) | the page file; the short summaries are in the design file | `overrides/privacy.css` |
 | Legal | Press kit | `/press-kit/` | `content/en/press-kit.md` (title only) | `press-kit-main.html` | all text is written in the design file; downloads in `static/press-kit/` | `overrides/press-kit.css` |
