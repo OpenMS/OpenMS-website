@@ -84,7 +84,7 @@ Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/
 | What | Where |
 |------|--------|
 | Homepage hero | `config.yaml` → `params.hero` |
-| Homepage big numbers | `config.yaml` → `params.homeMetrics` |
+| Homepage big numbers | `config.yaml` → `params.homeMetrics` (Citations and Contributors: from `KPI.csv`, via `layouts/partials/kpi-value.html`) |
 | News banner (top strip) | `config.yaml` → `params.newsBanner` |
 | News page labels / filter | `config.yaml` → `params.newsSection` |
 | Key features (“What is OpenMS?”) | `config.yaml` → `params.keyfeatures` |
