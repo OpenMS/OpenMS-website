@@ -1573,7 +1573,7 @@ languages:
           url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
           logo: /images/webapp/logo/umetaflow.png
           logoSize: large
-          description: Web-based access to the umetaflow pipeline
+          description: Web-based pipeline for untargeted metabolomics
           links:
             - type: demo
               url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
@@ -1607,7 +1607,9 @@ languages:
           url: https://nuxl.webapps.openms.org/
           logo: /images/webapp/logo/nuxl.png
           logoSize: large
-          description: Web-based analysis pipeline for XL-MS data
+          description: >-
+            Web-based analysis for chemical crosslinking-mass spectrometry (XL-MS)
+            data
           maintainers: Arslan Siraj
           links:
             - type: demo
@@ -1621,7 +1623,7 @@ languages:
           url: https://abi-services.cs.uni-tuebingen.de/mhcquant/
           logo: /images/webapp/logo/mhcquant.svg
           logoSize: xlarge
-          description: Web-based analysis pipeline for immunopeptidomics
+          description: Analysis pipeline for immunopeptidomics
           maintainers: Jonas Scheid
           links:
             - type: homepage
