@@ -1284,3 +1284,20 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   transform: none !important;
   box-shadow: none !important;
 }
+
+/* Outlined second button in a developer card (e.g. "AI Policy" next to
+   "Read guidelines"): on hover / keyboard focus it fills white with navy text,
+   like the site's other outlined buttons on navy ("Contact Us" on Archived
+   Apps). The grow and soft ring come from the shared button hover. */
+:is(html, #dev-multi-hover#dev-multi-hover#dev-multi-hover) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--featured .openms-lib-developers__card-link--secondary.openms-lib-developers__card-link:is(:hover, :focus-visible) {
+  background: #fff !important;
+  background-color: #fff !important;
+  border-color: #fff !important;
+  color: var(--openms-navy, #0c2171) !important;
+  -webkit-text-fill-color: var(--openms-navy, #0c2171) !important;
+}
+
+:is(html, #dev-multi-hover#dev-multi-hover#dev-multi-hover) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--featured .openms-lib-developers__card-link--secondary.openms-lib-developers__card-link:is(:hover, :focus-visible) * {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
