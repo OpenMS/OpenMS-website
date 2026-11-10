@@ -665,7 +665,7 @@ languages:
           logo: /images/logos/hupo-psi.png
           url: https://www.psidev.info/
         - name: Massachusetts Institute of Technology
-          logo: /images/logos/logo-mit.svg
+          logo: /images/logos/logo-mit-full.svg
           url: https://www.mit.edu/
         - name: National University of Singapore
           logo: /images/logos/logo-nus.png
