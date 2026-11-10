@@ -9,6 +9,17 @@ Guidance for AI coding agents (and humans) working in this repository: the Hugo 
 - Most visible text lives in **`config.yaml`** (under `languages.en.params`), not in the page files.
 - `docs/` is maintainer documentation written for **non-developers**. Keep it in sync with the code (see *Documentation* below).
 
+## AI contribution policy
+
+**Read the OpenMS AI Policy before contributing:** `content/en/ai-policy.md` (published at https://openms.de/ai-policy/). It applies to every OpenMS repository, including this one. In short:
+
+- The human contributor is the author and is fully accountable. They must understand, review and test every AI-assisted change before it is submitted. Make changes they can review: small, explained, and checked.
+- **Disclose AI use where authorship is recorded.** Substantial AI work (e.g. agentic tools like you) needs a `Co-authored-by:` trailer in the commit message. Lighter use should get an `Assisted-by:` trailer.
+- For significant changes, the PR description should give the design intent and rationale. The human should be able to explain it in their own words.
+- Do not use AI as the sole or final judge of a contribution or of a person's standing in the community.
+
+`content/en/ai-policy.md` is the page source. If you change the policy text, also update `docs/common-tasks/ai-policy-page/`.
+
 ## Commands
 
 ```bash
