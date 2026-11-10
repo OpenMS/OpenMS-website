@@ -1354,3 +1354,11 @@ html body .home-page :is(.webapps-featured__show-all, .community-news-events__vi
 :is(html, #eco-logo-box#eco-logo-box) body .home-page .ecosystem-home__card .ecosystem-home__card-head {
   flex-wrap: nowrap !important;
 }
+
+/* OpenMS-Web apps card: its logo (a detailed screen picture with small text)
+   looked smaller than the others in the same box; it is shown 20% bigger,
+   growing from the right edge so it stays aligned with the other logos. */
+:is(html, #eco-logo-box#eco-logo-box) body .home-page .ecosystem-home__card--webapps .ecosystem-home__card-icon.ecosystem-home__card-icon {
+  transform: scale(1.2);
+  transform-origin: right center;
+}
