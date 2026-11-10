@@ -471,3 +471,16 @@
     transition: none;
   }
 }
+
+/* Notebook section intro ("Paste one prompt into Claude Code…"): half the page
+   width (half of the content area) from 768px, by request; full width on
+   phones. Its header box is no longer capped at 46rem. */
+@media (min-width: 768px) {
+  :is(html, #webapps-notebook#webapps-notebook) body .webapps-notebook__head {
+    max-width: none !important;
+  }
+
+  :is(html, #webapps-notebook#webapps-notebook#webapps-notebook) body .openms-lib-page .webapps-notebook__lead {
+    max-width: calc(min(100vw - 2 * var(--openms-page-inline, 1.5rem), var(--pro-max, 75rem)) / 2) !important;
+  }
+}
