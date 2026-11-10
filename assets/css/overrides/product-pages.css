@@ -1301,3 +1301,12 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   color: inherit !important;
   -webkit-text-fill-color: inherit !important;
 }
+
+/* "Used OpenMS-lib in your work? If so, please cite." (Research impact):
+   same as on pyOpenMS, pyOpenMS Viz and Web Apps (capitals, line height 1.2,
+   slightly tight letter spacing). OpenMS-lib had normal case. */
+:is(html, #cite-title-same#cite-title-same) body .openms-lib-page--openms-lib .openms-lib-cite__title.openms-lib-cite__title {
+  text-transform: uppercase !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
