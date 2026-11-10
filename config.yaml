@@ -1573,7 +1573,7 @@ languages:
           url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
           logo: /images/webapp/logo/umetaflow.png
           logoSize: large
-          description: A web-based pipeline for untargeted metabolomics
+          description: Web-based pipeline for untargeted metabolomics
           links:
             - type: demo
               url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
