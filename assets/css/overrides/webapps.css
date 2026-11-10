@@ -370,13 +370,50 @@
   background: #fff;
   color: inherit;
   text-decoration: none !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.2s ease;
 }
 
-:is(html, #webapps-showcase) body .webapps-showcase__card:is(:hover, :focus-visible) {
-  transform: translateY(-2px);
-  border-color: var(--openms-blue, #3157e9);
-  box-shadow: 0 10px 24px rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1);
+/* Hover / keyboard focus: the card lifts with a soft shadow, its border turns
+   blue, the logo panel takes a light blue tint, the logo grows a touch and
+   the app name turns blue. */
+/* IDs and !important: a sitewide link-hover rule otherwise clears the card's
+   white background, border and shadow. */
+:is(html, #webapps-showcase#webapps-showcase#webapps-showcase) body .webapps-showcase__card.webapps-showcase__card:is(:hover, :focus-visible) {
+  transform: translateY(-4px) !important;
+  background: #fff !important;
+  background-color: #fff !important;
+  border: 1px solid rgba(var(--openms-blue-rgb, 49, 87, 233), 0.55) !important;
+  box-shadow:
+    0 2px 6px rgba(var(--openms-navy-rgb, 12, 33, 113), 0.06),
+    0 16px 32px rgba(var(--openms-navy-rgb, 12, 33, 113), 0.12) !important;
+}
+
+:is(html, #webapps-showcase) body .webapps-showcase__logo {
+  transition: background-color 0.25s ease;
+}
+
+:is(html, #webapps-showcase) body .webapps-showcase__logo img {
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+:is(html, #webapps-showcase#webapps-showcase) body .webapps-showcase__card:is(:hover, :focus-visible) .webapps-showcase__logo {
+  background: #e8eefd !important;
+}
+
+:is(html, #webapps-showcase#webapps-showcase) body .webapps-showcase__card:is(:hover, :focus-visible) .webapps-showcase__logo img {
+  transform: scale(1.04) !important;
+}
+
+:is(html, #webapps-showcase#webapps-showcase) body .webapps-showcase__card:is(:hover, :focus-visible) .webapps-showcase__name.webapps-showcase__name {
+  color: var(--openms-blue, #3157e9) !important;
+  -webkit-text-fill-color: var(--openms-blue, #3157e9) !important;
+}
+
+:is(html, #webapps-showcase) body .webapps-showcase__name.webapps-showcase__name {
+  transition: color 0.2s ease, -webkit-text-fill-color 0.2s ease;
 }
 
 :is(html, #webapps-showcase) body .webapps-showcase__card:focus-visible {
@@ -459,7 +496,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :is(html, #webapps-showcase) body .webapps-showcase__card {
+  :is(html, #webapps-showcase) body :is(.webapps-showcase__card, .webapps-showcase__logo img) {
     transition: none;
+  }
+
+  :is(html, #webapps-showcase#webapps-showcase#webapps-showcase#webapps-showcase) body .webapps-showcase__card.webapps-showcase__card:is(:hover, :focus-visible),
+  :is(html, #webapps-showcase#webapps-showcase#webapps-showcase#webapps-showcase) body .webapps-showcase__card:is(:hover, :focus-visible) .webapps-showcase__logo img {
+    transform: none !important;
   }
 }
