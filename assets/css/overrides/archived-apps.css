@@ -404,3 +404,16 @@ html body .openms-lib-page .webapps-archived__revival-actions.webapps-archived__
 :is(html, #archived-md#archived-md) body .openms-lib-page--archived .contribute-ways__lead {
   font-size: var(--openms-body-size-lg) !important;
 }
+
+/* "What to expect" cards (Still usable / Check first): the same calm hover as
+   the other cards (OpenMS-lib benefit cards, Featured WebApps): no lift, the
+   border darkens a little (navy 10% -> 22%) and the shadow grows softer. */
+:is(html, #archived-card-hover#archived-card-hover#archived-card-hover) body .openms-lib-page--archived .contribute-channel.contribute-channel:is(:hover, :focus-within) {
+  transform: none !important;
+  border-color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.22) !important;
+  box-shadow: 0 0.65rem 1.5rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1) !important;
+}
+
+:is(html, #archived-card-hover) body .openms-lib-page--archived .contribute-channel {
+  transition: border-color 0.22s ease, box-shadow 0.22s ease !important;
+}
