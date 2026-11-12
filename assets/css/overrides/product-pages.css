@@ -1332,3 +1332,16 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
     grid-column: auto !important;
   }
 }
+
+/* "For Developers" cards: the arrow (→) of a button moves only when that
+   button is hovered (or focused with the keyboard), not when the mouse is
+   anywhere on the card. */
+:is(html, #dev-arrow-own#dev-arrow-own#dev-arrow-own) body #for-developers .openms-lib-developers__card .openms-lib-developers__card-link > span[aria-hidden="true"] {
+  transform: none !important;
+  translate: none !important;
+  transition: transform 0.2s ease !important;
+}
+
+:is(html, #dev-arrow-own#dev-arrow-own#dev-arrow-own) body #for-developers .openms-lib-developers__card .openms-lib-developers__card-link:is(:hover, :focus-visible) > span[aria-hidden="true"] {
+  transform: translateX(3px) !important;
+}
