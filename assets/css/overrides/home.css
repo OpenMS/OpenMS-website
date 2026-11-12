@@ -1369,3 +1369,43 @@ html body .home-page :is(.webapps-featured__show-all, .community-news-events__vi
   transform: scale(1.2);
   transform-origin: right center;
 }
+
+/* "What is OpenMS?" cards: the small tags at the top of each card
+   ("BSD licensed", "Windows · macOS · Linux"…) are a little smaller, so they
+   read as labels and do not compete with the card title. */
+:is(html, #keyfeature-tag#keyfeature-tag) body .keyfeatures-modern__topic-tag {
+  font-size: max(11px, 0.6875rem) !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.05em !important;
+  padding: 0.2rem 0.5rem !important;
+}
+
+/* Same cards: when a card is too narrow for the title and the tag side by
+   side (e.g. "CROSS-PLATFORM" next to "WINDOWS · MACOS · LINUX" broke into
+   "CROSS- / PLATFOR / M"), the tag moves above the title instead. All four
+   cards are the same width, so they switch together. */
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic {
+  container-type: inline-size;
+}
+
+@container (max-width: 26rem) {
+  :is(html, #keyfeature-tag#keyfeature-tag) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto auto 1fr !important;
+    grid-template-areas:
+      "badge"
+      "title"
+      "text" !important;
+  }
+
+  :is(html, #keyfeature-tag#keyfeature-tag) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-head {
+    justify-content: flex-start !important;
+  }
+}
+
+/* Card titles never break inside a word. */
+:is(html, #keyfeature-tag#keyfeature-tag) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-title {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: manual !important;
+}
