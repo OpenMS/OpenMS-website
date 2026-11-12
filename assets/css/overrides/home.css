@@ -1401,6 +1401,12 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
   :is(html, #keyfeature-tag#keyfeature-tag) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-head {
     justify-content: flex-start !important;
   }
+
+  /* Title closer to the tag above it (no extra space on top of the title). */
+  :is(html, #keyfeature-tag#keyfeature-tag) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-title {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
 }
 
 /* Card titles never break inside a word. */
