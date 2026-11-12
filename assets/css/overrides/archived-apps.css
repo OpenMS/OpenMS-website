@@ -417,3 +417,12 @@ html body .openms-lib-page .webapps-archived__revival-actions.webapps-archived__
 :is(html, #archived-card-hover) body .openms-lib-page--archived .contribute-channel {
   transition: border-color 0.22s ease, box-shadow 0.22s ease !important;
 }
+
+/* "Available references" cards are no wider than 50rem (about 800px), left
+   aligned under the heading. They stretched to 1340px on laptops. Phones
+   and tablets keep the full width. */
+:is(html, #archived-card-width#archived-card-width) body .openms-lib-page--archived .webapps-archived__item {
+  width: 100% !important;
+  max-width: 50rem !important;
+  justify-self: start !important;
+}
