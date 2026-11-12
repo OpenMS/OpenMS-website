@@ -912,7 +912,7 @@ html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-
   }
 }
 
-/* Homepage Featured Apps — "Show all apps →" uses the same text size as the
+/* Homepage Featured Apps — "Browse all apps →" uses the same text size as the
    other card links (View app →, Learn more →). */
 :is(html, #home-links-specificity-boost) body .home-page .home-page__block--projects a.webapps-featured__show-all.webapps-featured__show-all {
   font-size: var(--openms-text-min, 0.8125rem) !important;
@@ -1025,7 +1025,7 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
   fill: var(--openms-navy) !important;
 }
 
-/* Homepage "Show all apps →": nudge it in a little from the right edge on
+/* Homepage "Browse all apps →": nudge it in a little from the right edge on
    stacked (<900px) layouts. */
 @media (max-width: 899px) {
   html body .home-page .home-page__block--projects .webapps-featured__header-action {
@@ -1219,7 +1219,7 @@ html body .home-page__block--partners .uni-partners--home .uni-partners__marquee
   }
 }
 
-/* ---------- "Show all apps" and "View all" stay still on hover ----------
+/* ---------- "Browse all apps" and "View all" stay still on hover ----------
    Older hover rules widened the gap between the words and the arrow and
    slid the arrow 2px. These links are aligned to the right of their
    heading, so the words jumped left whenever the mouse touched them. The
@@ -1294,7 +1294,7 @@ html body .home-page :is(.webapps-featured__show-all, .community-news-events__vi
   font-size: max(12px, 0.75rem) !important;
 }
 
-/* "Show all apps", "View all" and the event card links: were 17-21px tall. */
+/* "Browse all apps", "View all" and the event card links: were 17-21px tall. */
 :is(html, #home-best-practice#home-best-practice) body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all, .openms-cta-link) {
   display: inline-flex !important;
   align-items: center !important;
@@ -1477,7 +1477,7 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
   max-height: 72px !important;
 }
 
-/* Home "App details →" link on phones and tablets (below 900px), where it
+/* Home "Browse all apps →" link on phones and tablets (below 900px), where it
    sits under the intro: it touched the first card (3–5px), so it looked like
    part of that card. Now it is close to the intro and has room before the
    cards. */
