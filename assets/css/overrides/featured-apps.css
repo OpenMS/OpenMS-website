@@ -95,3 +95,10 @@
   -webkit-text-fill-color: var(--openms-navy) !important;
   fill: currentColor !important;
 }
+
+/* Featured Apps: the cards sit closer to the header, the same space as on
+   Affiliated Apps (they were 55px below it on tablets, 84px on laptops). */
+:is(html, #featured-cards-up#featured-cards-up) body .webapps-featured.webapps-featured--page {
+  padding-top: clamp(2rem, 4vw, 3rem) !important;
+  padding-block-start: clamp(2rem, 4vw, 3rem) !important;
+}
