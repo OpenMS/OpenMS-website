@@ -1476,3 +1476,14 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
   height: 72px !important;
   max-height: 72px !important;
 }
+
+/* Home "App details →" link on phones and tablets (below 900px), where it
+   sits under the intro: it touched the first card (3–5px), so it looked like
+   part of that card. Now it is close to the intro and has room before the
+   cards. */
+@media (max-width: 899px) {
+  :is(html, #home-apps-link#home-apps-link) body .home-page .webapps-featured__header--home .webapps-featured__header-action {
+    margin-top: -0.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+}

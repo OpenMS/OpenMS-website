@@ -10,7 +10,7 @@ The home page (**https://openms.de/**) is built from **blocks**, one under the o
 |:--:|-------------------|--------------------------------------|-------|
 | 1 | **Top banner** ("Open science. Clear results…") | `hero:` | [Edit the top banner](home-page-edit-top-banner.md) |
 | 2 | **Adopted by labs and institutions** (logos) | `universityPartners` | [Add, change or remove a logo](home-page-update-adopted-by-logos.md) |
-| 3 | **Featured Apps** | `webapps` | [Featured Apps](../featured-apps-page/featured-apps-update-featured-apps.md) (the same list as the Featured Apps page) |
+| 3 | **Featured Apps** | `webapps` | [Featured Apps](../featured-apps-page/featured-apps-update-featured-apps.md) (the same list as the Featured Apps page). The "App details →" link next to the intro is `showAll` → `text` (its address is `url`). |
 | 4 | **Three big numbers** (20+, 10,000+, 180+) | `homeMetrics` | [Change the three big numbers](home-page-update-big-numbers.md) |
 | 5 | **What is OpenMS?** (four boxes) | `keyfeatures` | [Edit "What is OpenMS?"](home-page-edit-what-is-openms.md) |
 | 6 | **Ecosystem** (OpenMS-lib, pyOpenMS…) | `ecosystemSection` | [Edit the Ecosystem block](home-page-edit-ecosystem.md) |
