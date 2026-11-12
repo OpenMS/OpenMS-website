@@ -48,7 +48,8 @@
         >
           <div class="ecosystem-home__card-head">
             <div class="ecosystem-home__card-intro">
-              <h3 class="ecosystem-home__card-title">{{ $item.name }}</h3>
+              {{- /* Long names may break after "_" or "-" (pyopenms_ / viz) so the title and the logo share one line. */}}
+              <h3 class="ecosystem-home__card-title">{{ $item.name | htmlEscape | replaceRE "([_-])" "$1<wbr>" | safeHTML }}</h3>
             </div>
             {{- with $item.icon }}
             <img

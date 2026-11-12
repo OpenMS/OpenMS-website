@@ -635,3 +635,10 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
    broad white-text utility rule above (which forces white on any span/p
    inside .keyfeatures-modern__topic-card) already gives it the color it
    needs — no override required here. */
+
+/* Affiliated Apps: the cards sit closer to the header (the space above them
+   was about 57px on tablets and more on laptops). */
+:is(html, #affiliated-cards-up#affiliated-cards-up) body .openms-lib-page--affiliated .webapps-affiliates {
+  padding-top: clamp(2rem, 4vw, 3rem) !important;
+  padding-block-start: clamp(2rem, 4vw, 3rem) !important;
+}

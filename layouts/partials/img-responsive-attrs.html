@@ -1,0 +1,20 @@
+{{- /*
+  Extra <img> attributes for a picture in static/:
+  - width and height from the file, so the page keeps its space while it
+    loads (no jump);
+  - srcset + sizes when a smaller copy named "<name>-<smallWidth>w.<ext>"
+    sits next to it (e.g. photo-1024w.jpeg), so phones download the small one.
+  Usage: <img src="…" {{ partial "img-responsive-attrs.html" (dict "src" .src "small" 1024 "sizes" "100vw") }}>
+*/ -}}
+{{- $src := .src | default "" -}}
+{{- $file := path.Join "static" $src -}}
+{{- if and $src (fileExists $file) (not (strings.HasSuffix (lower $src) ".svg")) -}}
+  {{- with imageConfig $file }} width="{{ .Width }}" height="{{ .Height }}"{{ end -}}
+  {{- with $.small -}}
+    {{- $ext := path.Ext $src -}}
+    {{- $smallSrc := printf "%s-%dw%s" (strings.TrimSuffix $ext $src) . $ext -}}
+    {{- if fileExists (path.Join "static" $smallSrc) -}}
+      {{- $big := imageConfig $file }} srcset="{{ $smallSrc }} {{ . }}w, {{ $src }} {{ $big.Width }}w" sizes="{{ $.sizes | default "100vw" }}"
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

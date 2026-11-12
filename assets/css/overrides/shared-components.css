@@ -1629,3 +1629,301 @@ html body .tally-popup iframe {
     max-height: min(calc(100svh - 96px), 760px) !important;
   }
 }
+
+/* ---------- Section labels: never under 12px ----------
+   The small capital labels above section titles ("Get started", "For
+   Developers", "Research impact"...) were 11.4-11.8px on phones and tablets.
+   12px is the floor for readable text; laptops already show 12px, so they
+   do not change. Also the app card labels ("Maintainers", archived "NF-Core
+   pipeline" tags, which were 9.5-10px). (The home hero's "Open-source · Free
+   forever" keeps its own, deliberately smaller size.) */
+:is(html, #label-min-12) body :is(
+  .openms-lib-hero__eyebrow,
+  .openms-lib-resources__eyebrow,
+  .openms-lib-block__eyebrow,
+  .openms-lib-cite__eyebrow,
+  .openms-lib-topp-split__eyebrow,
+  .openms-lib-developers__group,
+  .publications-cite-card__topic,
+  .webapps-featured__eyebrow,
+  .keyfeatures-modern__eyebrow,
+  .ecosystem-home__eyebrow,
+  .community-home__eyebrow,
+  .contact-home__eyebrow,
+  .contribute-channels__eyebrow,
+  .contribute-ways__eyebrow,
+  .webapps-archived__revival-kicker,
+  .webapps-project-detail-card__maintainers-label,
+  .webapps-archived-entry__type,
+  .community-news-events__press-date,
+  .contribute-track__badge,
+  .contribute-support__kicker,
+  .contribute-outreach__eyebrow,
+  .openms-lib-about__eyebrow,
+  .openms-lib-resources__item-tag,
+  .governance-membership__eyebrow,
+  .sponsor-tier__motto,
+  .sponsor-tier__badge,
+  .leadership-card__role
+) {
+  font-size: max(12px, 0.75rem) !important;
+}
+
+/* App cards (Featured, Affiliated and Archived Apps): descriptions and the
+   maintainer list stop at about 75 characters a line (they reached 84-105
+   on wide screens). */
+:is(html, #label-min-12) body :is(.webapps-project-detail-card__text, .webapps-project-detail-card__maintainers, .webapps-archived-entry__text) {
+  max-width: 34em !important;
+}
+
+/* ---------- Community pages: tap areas and line length (best practice) ----------
+   Calendar, News, Getting Involved, Developer Retreat and the text pages.
+   Small standalone links get a 24px-tall tap area (they were 16-21px): event
+   card links, the Getting Involved card links, OS links and channel links. */
+:is(html, #community-best-practice#community-best-practice) body :is(
+  .openms-cta-link,
+  .contribute-os-links a,
+  .contribute-track__cta,
+  .contribute-channel__link
+) {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 24px !important;
+}
+
+/* Long text stops at about 75 characters a line (reached 87-206). */
+:is(html, #community-best-practice) body :is(
+  .community-news-events__press-summary,
+  .contribute-track__text,
+  .contribute-outreach__text,
+  .openms-lib-about__tile-text,
+  .coc-agreement
+) {
+  max-width: 34em !important;
+}
+
+:is(html, #community-best-practice) body :is(.contribute-channels__lead, .contribute-ways__lead) {
+  max-width: 30em !important;
+}
+
+
+/* Getting Involved: these three have their own width rules (two IDs). */
+:is(html, #community-best-practice#community-best-practice#community-best-practice) body .openms-lib-page--contribute :is(.contribute-outreach__text, .coc-agreement) {
+  max-width: 34em !important;
+}
+
+:is(html, #community-best-practice#community-best-practice#community-best-practice#community-best-practice#community-best-practice) body .openms-lib-page--contribute .contribute-ways__lead.contribute-ways__lead {
+  max-width: 30em !important;
+}
+
+/* ---------- About pages: labels, tap areas and line length (best practice) ----------
+   Governance, Our Sponsors, Sponsor us, Research Partnerships, Publications,
+   Leadership and Contact. Card tags (9.5-10px), sponsorship mottos and badge
+   (10.3-10.9px) and leadership roles (11-11.5px) are in the 12px rule above;
+   the Contact page labels have their own stronger rule, so they get one here. */
+:is(html, #about-best-practice#about-best-practice#about-best-practice) body :is(.openms-lib-page--contact .openms-lib-resources__eyebrow, .governance-membership__eyebrow) {
+  font-size: max(12px, 0.75rem) !important;
+}
+
+/* "View on PubMed" and the Contact "Discord" / "GitHub" links were 16-19px tall. */
+:is(html, #about-best-practice#about-best-practice#about-best-practice) body :is(.publications-cite-card__action, .openms-lib-resources__item-link) {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 24px !important;
+}
+
+/* Intros, sponsorship level texts and FAQ answers stop at about 75-83
+   characters a line (reached 86-131). Leadership bios and the publications
+   list keep the full width, like the text pages. */
+:is(html, #about-best-practice#about-best-practice) body :is(.openms-lib-about__lead, .openms-lib-resources__lead, .sponsor-section__lead, .sponsor-faq-pro__lead) {
+  max-width: 30em !important;
+}
+
+:is(html, #about-best-practice#about-best-practice) body :is(.sponsor-tier__summary, .sponsor-tier__benefits li, .sponsor-faq__answer p, .publications-cite-card__authors) {
+  max-width: 34em !important;
+}
+
+/* Card tags on Contact and Governance have their own 0.625rem rule (an ID);
+   the Sponsor us section intros are set to half the screen width (an ID),
+   960px on a 1920px screen. */
+:is(html, #about-best-practice#about-best-practice#about-best-practice) body .openms-lib-page .openms-lib-resources__item-tag {
+  font-size: max(12px, 0.75rem) !important;
+}
+
+:is(html, #about-best-practice#about-best-practice#about-best-practice) body .openms-lib-page--sponsor-us :is(.sponsor-section__lead, .openms-lib-about__lead) {
+  max-width: min(50vw, 30em) !important;
+}
+
+/* ---------- Buttons: one text size everywhere ----------
+   Standard button text: var(--openms-text-min) at weight 600 (13px on
+   phones, 14.3px on laptops). From a test of every button on every page:
+   - Help page card buttons were 14.6px on phones.
+   - Getting Involved project chips (OpenMS-lib, pyOpenMS...) were bold 700.
+   - The two-button rows on Leadership ("Contributing Guide / Contact us")
+     and Archived Apps were a fixed 2-column grid: at 375px each button was
+     144px wide and "Contributing Guide" broke onto two lines (59px tall).
+     They are now as wide as their text, side by side when they fit and
+     stacked when they do not, never wrapping inside a button. */
+:is(html, #btn-standard#btn-standard) body .help-page__resources .governance-card__link a {
+  font-size: var(--openms-text-min) !important;
+}
+
+:is(html, #btn-standard#btn-standard) body .contribute-project-link {
+  font-size: var(--openms-text-min) !important;
+  font-weight: 600 !important;
+}
+
+:is(html, #btn-standard#btn-standard) body .webapps-archived__revival-actions.webapps-archived__revival-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+}
+
+:is(html, #btn-standard#btn-standard) body .webapps-archived__revival-actions .openms-lib-btn.openms-lib-btn {
+  flex: 0 1 auto !important;
+  width: auto !important;
+  white-space: nowrap !important;
+}
+
+:is(html, #btn-standard#btn-standard) body .webapps-archived__revival-actions .openms-lib-btn .openms-lib-btn__label {
+  white-space: nowrap !important;
+}
+
+/* Getting Involved "Need to report something?" buttons: on the smallest
+   phones "Read the report handling manual" was 2px too wide for the box and
+   broke onto two lines. Slightly less side padding keeps it on one line. */
+@media (max-width: 359px) {
+  :is(html, #btn-standard#btn-standard) body .coc-callout__actions .openms-lib-btn.openms-lib-btn {
+    padding-inline: 0.85rem !important;
+  }
+
+  :is(html, #btn-standard#btn-standard) body .coc-callout__actions .openms-lib-btn .openms-lib-btn__label {
+    white-space: nowrap !important;
+  }
+}
+
+/* Smallest phones (under 360px): all standard buttons use slightly less side
+   padding, so long labels ("Follow us on Google Scholar") stay on one line. */
+@media (max-width: 359px) {
+  :is(html, #btn-standard) body .openms-lib-btn:not(.openms-lib-developers__platform-btn) {
+    padding-inline: 0.85rem !important;
+  }
+}
+
+/* "Follow us on Google Scholar" (Publications) broke onto two lines at 320px
+   by a rounding pixel; there is room for it on one line. */
+:is(html, #btn-standard#btn-standard) body .openms-lib-btn--scholar .openms-lib-btn__label,
+:is(html, #btn-standard#btn-standard) body .openms-lib-btn--scholar {
+  white-space: nowrap !important;
+}
+
+/* OpenMS-lib "Contributing Guidelines" featured card: its "Read guidelines"
+   button was 14.6px bold on phones and 38-41px tall. Same text size, weight,
+   padding and height as the other buttons now. */
+:is(html, #btn-standard#btn-standard#btn-standard#btn-standard) body .openms-lib-developers__card--featured .openms-lib-developers__card-cta.openms-lib-developers__card-cta {
+  font-size: var(--openms-text-min) !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) var(--openms-btn-padding-x, 1.25rem) !important;
+}
+
+/* ---------- "Back to top" arrow button: a bit higher ----------
+   It sat 16-24px from the bottom edge; now about 28-48px, plus the phone's
+   home-bar area where there is one. */
+:is(html, #back-to-top-up) body .back-to-top {
+  bottom: calc(clamp(1.75rem, 3vw, 3rem) + env(safe-area-inset-bottom, 0px)) !important;
+}
+
+/* Sponsor us "Why sponsor OpenMS" intro: a bit wider (up to 38em, about a
+   third wider than before) and the full width on phones, where the half-screen
+   rule above had squeezed it to 180px (24 characters a line). */
+:is(html, #about-best-practice#about-best-practice#about-best-practice#about-best-practice) body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__lead {
+  max-width: min(100%, 38em) !important;
+}
+
+/* Getting Involved "Contribute to development": the AI note ("OpenMS is open
+   to both independent and AI-assisted contributions…") uses the card's
+   standard text size, line height and width, like "Start small…" above it.
+   It was 13.4-14px and wider; its "AI Policy" link matches the text. */
+:is(html, #contribute-note-std#contribute-note-std) body .openms-lib-page--contribute .contribute-track__note.contribute-track__note {
+  font-size: var(--openms-body-size) !important;
+  line-height: 1.55 !important;
+  max-width: 34em !important;
+}
+
+:is(html, #contribute-note-std#contribute-note-std) body .openms-lib-page--contribute .contribute-track__note a {
+  font-size: inherit !important;
+}
+
+/* ---------- All white cards: one hover effect ----------
+   Same as the OpenMS-lib benefit cards ("01 Two decades of expertise"):
+   at rest a light border and soft shadow; on hover the border and shadow
+   get a little darker. No lift, no colour change. Navy cards (e.g. the
+   featured For Developers card, Governance resources) keep their own hover.
+   Forms and image panels are not cards and are left out. */
+:is(html, #white-card-hover#white-card-hover#white-card-hover) body :is(
+  .openms-lib-about__benefit,
+  .openms-lib-about__tile,
+  .webapps-showcase__card,
+  .webapps-project-card__surface,
+  .webapps-project-detail-card,
+  .webapps-archived-entry,
+  .keyfeatures-modern__topic-card,
+  .ecosystem-home__card,
+  .community-news-events__press-link,
+  .openms-lib-developers__card--box:not(.openms-lib-developers__card--featured),
+  .contribute-track__item,
+  .contribute-channel,
+  .coc-value,
+  .fellowship-facts__item,
+  .member,
+  .publication-entry,
+  .publications-featured .publications-cite-card,
+  .openms-lib-page--contact .openms-lib-resources__item,
+  .openms-lib-page--donate .openms-lib-resources__item
+) {
+  border-color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1) !important;
+  box-shadow: 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.05) !important;
+}
+
+:is(html, #white-card-hover#white-card-hover#white-card-hover) body :is(
+  .openms-lib-about__benefit,
+  .openms-lib-about__tile,
+  .webapps-showcase__card,
+  .webapps-project-card__surface,
+  .webapps-project-detail-card,
+  .webapps-archived-entry,
+  .keyfeatures-modern__topic-card,
+  .ecosystem-home__card,
+  .community-news-events__press-link,
+  .openms-lib-developers__card--box:not(.openms-lib-developers__card--featured),
+  .contribute-track__item,
+  .contribute-channel,
+  .coc-value,
+  .fellowship-facts__item,
+  .member,
+  .publication-entry,
+  .publications-featured .publications-cite-card,
+  .openms-lib-page--contact .openms-lib-resources__item,
+  .openms-lib-page--donate .openms-lib-resources__item
+):is(:hover, :focus-within) {
+  border-color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.22) !important;
+  box-shadow: 0 0.65rem 1.5rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1) !important;
+  transform: none !important;
+  translate: none !important;
+}
+
+/* The chair's card keeps its blue outline. */
+:is(html, #white-card-hover#white-card-hover#white-card-hover#white-card-hover) body .member.member--chair {
+  border-color: rgba(var(--openms-blue-rgb, 49, 87, 233), 0.35) !important;
+}
+
+/* Developer Conference "About the conference": these are not white cards but
+   transparent columns with a thin divider. The shared white-card rule above
+   gave them a shadow, which was cut off just above the conference photo, so
+   the photo looked like it covered the cards. No shadow here. */
+:is(html, #white-card-hover#white-card-hover#white-card-hover#white-card-hover) body .retreat-highlights__mosaic .openms-lib-about__tile,
+:is(html, #white-card-hover#white-card-hover#white-card-hover#white-card-hover) body .retreat-highlights__mosaic .openms-lib-about__tile:is(:hover, :focus-within) {
+  box-shadow: none !important;
+}

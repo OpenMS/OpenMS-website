@@ -912,7 +912,7 @@ html body .home-page__hero a.hero-home__btn.hero-home__btn--secondary.about-cta-
   }
 }
 
-/* Homepage Featured Apps — "Show all apps →" uses the same text size as the
+/* Homepage Featured Apps — "Browse all apps →" uses the same text size as the
    other card links (View app →, Learn more →). */
 :is(html, #home-links-specificity-boost) body .home-page .home-page__block--projects a.webapps-featured__show-all.webapps-featured__show-all {
   font-size: var(--openms-text-min, 0.8125rem) !important;
@@ -1025,7 +1025,7 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
   fill: var(--openms-navy) !important;
 }
 
-/* Homepage "Show all apps →": nudge it in a little from the right edge on
+/* Homepage "Browse all apps →": nudge it in a little from the right edge on
    stacked (<900px) layouts. */
 @media (max-width: 899px) {
   html body .home-page .home-page__block--projects .webapps-featured__header-action {
@@ -1219,7 +1219,7 @@ html body .home-page__block--partners .uni-partners--home .uni-partners__marquee
   }
 }
 
-/* ---------- "Show all apps" and "View all" stay still on hover ----------
+/* ---------- "Browse all apps" and "View all" stay still on hover ----------
    Older hover rules widened the gap between the words and the arrow and
    slid the arrow 2px. These links are aligned to the right of their
    heading, so the words jumped left whenever the mouse touched them. The
@@ -1265,5 +1265,225 @@ html body .home-page :is(.webapps-featured__show-all, .community-news-events__vi
 @media (max-width: 369px) {
   :is(html, #home-h2-same#home-h2-same) body .home-page :is(h2.uni-partners__trust-title, h2.community-news-events__column-title) {
     font-size: 1.3rem !important;
+  }
+}
+
+/* ---------- Home page: readability and tap-target fixes (best practice) ----------
+   From a responsive test at 320-1920px. Text people need to read is never
+   under 12px; small standalone links get a 24px-tall tap area (WCAG 2.2
+   target size); long paragraphs stop at about 70 characters a line. */
+
+/* Hero "Ready-to-use apps · Modular workflows · Built by the community":
+   was 8.5px at 320px and 10-11px on other phones. */
+@media (max-width: 479px) {
+  :is(html, #home-best-practice#home-best-practice) body .home-page__hero .hero-home__note.hero-home__note--under-graphic {
+    font-size: 12px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    row-gap: 0.25rem !important;
+  }
+
+  :is(html, #home-best-practice#home-best-practice) body .home-page__hero .hero-home__note.hero-home__note--under-graphic .hero-home__note-item {
+    font-size: 12px !important;
+  }
+}
+
+/* "What is OpenMS?" card tags (BSD LICENSED, C++ · PYTHON...): were 9.5-9.9px.
+   News / event dates: were 10.5-11px. */
+:is(html, #home-best-practice) body .home-page :is(.keyfeatures-modern__topic-tag, .community-news-events__press-date) {
+  font-size: max(12px, 0.75rem) !important;
+}
+
+/* "Browse all apps", "View all" and the event card links: were 17-21px tall. */
+:is(html, #home-best-practice#home-best-practice) body .home-page :is(.webapps-featured__show-all, .community-news-events__view-all, .openms-cta-link) {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 24px !important;
+}
+
+/* Section intros, the hero text and card summaries: about 70-75 characters a
+   line at most (they reached 81-98 on tablets and very wide screens). Set in
+   em, measured on this font: "ch" (the width of a zero) let ~95 letters in. */
+:is(html, #home-best-practice) body .home-page :is(.ecosystem-home__lead, .contact-home__description, .hero-home__description) {
+  max-width: 30em !important;
+}
+
+:is(html, #home-best-practice) body .home-page :is(.community-news-events__press-summary, .webapps-project-card__text) {
+  max-width: 34em !important;
+}
+
+/* Hero text on very wide screens: was 21px at 1440px and 25.6px at 1920px. */
+@media (min-width: 1440px) {
+  :is(html, #home-best-practice) body .home-page__hero .hero-home__description {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Featured Apps intro ("Apps are scientifically validated…"): half the page
+   width (half of the content area) from 768px, by request; full width on
+   phones. */
+:is(html, #home-best-practice#home-best-practice) body .home-page .webapps-featured__lead {
+  max-width: none !important;
+}
+
+@media (min-width: 768px) {
+  :is(html, #home-best-practice#home-best-practice) body .home-page .webapps-featured__lead {
+    max-width: calc(min(100vw - 2 * var(--openms-page-inline, 1.5rem), var(--pro-max, 75rem)) / 2) !important;
+  }
+}
+
+/* ---------- Ecosystem cards: every logo in the same box ----------
+   The logos took their own width and could shrink, so at 1280px they were
+   77, 92, 78 and 46px wide. Every logo now sits in the same 5:3 box that
+   scales with the screen (about 100-120px wide; the width is capped further
+   down so it fits beside the title). Each logo fits inside the box without
+   being stretched. */
+:is(html, #eco-logo-box#eco-logo-box) body .home-page .ecosystem-home__card .ecosystem-home__card-icon.ecosystem-home__card-icon {
+  flex: 0 0 auto !important;
+  width: clamp(6.5rem, 5.5rem + 2vw, 7.5rem) !important;
+  max-width: none !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: 5 / 3 !important;
+  object-fit: contain !important;
+  object-position: right center !important;
+}
+
+/* Title and logo always share the top line. Long names may break after
+   "_" or "-" (see ecosystem-home.html); the longest piece, "PYOPENMS_", is
+   about 137px, so every logo is at most the width left next to it
+   (100% - 9.5rem): about 80px at 1280px with four cards in a row, the full
+   size from about 1440px. All four logos stay the same size. */
+:is(html, #eco-logo-box#eco-logo-box) body .home-page .ecosystem-home__card .ecosystem-home__card-icon.ecosystem-home__card-icon {
+  width: min(clamp(6.5rem, 5.5rem + 2vw, 7.5rem), calc(100% - 9.5rem)) !important;
+}
+
+:is(html, #eco-logo-box#eco-logo-box) body .home-page .ecosystem-home__card .ecosystem-home__card-head {
+  flex-wrap: nowrap !important;
+}
+
+/* OpenMS-Web apps card: its logo (a detailed screen picture with small text)
+   looked smaller than the others in the same box; it is shown 20% bigger,
+   growing from the right edge so it stays aligned with the other logos. */
+:is(html, #eco-logo-box#eco-logo-box) body .home-page .ecosystem-home__card--webapps .ecosystem-home__card-icon.ecosystem-home__card-icon {
+  transform: scale(1.2);
+  transform-origin: right center;
+}
+
+/* "What is OpenMS?" cards: the small tags at the top of each card
+   ("BSD licensed", "Windows · macOS · Linux"…) are a little smaller, so they
+   read as labels and do not compete with the card title. */
+:is(html, #keyfeature-tag#keyfeature-tag) body .keyfeatures-modern__topic-tag {
+  font-size: max(11px, 0.6875rem) !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.05em !important;
+  padding: 0.2rem 0.5rem !important;
+}
+
+/* Same cards: when a card is too narrow for the title and the tag side by
+   side (e.g. "CROSS-PLATFORM" next to "WINDOWS · MACOS · LINUX" broke into
+   "CROSS- / PLATFOR / M"), the tag moves above the title instead. All four
+   cards are the same width, so they switch together. */
+html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic {
+  container-type: inline-size;
+}
+
+@container (max-width: 26rem) {
+  :is(html, #keyfeature-tag#keyfeature-tag) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto auto 1fr !important;
+    grid-template-areas:
+      "badge"
+      "title"
+      "text" !important;
+  }
+
+  :is(html, #keyfeature-tag#keyfeature-tag) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-head {
+    justify-content: flex-start !important;
+  }
+
+  /* Title closer to the tag above it (no extra space on top of the title). */
+  :is(html, #keyfeature-tag#keyfeature-tag) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-title {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+
+/* Card titles never break inside a word. */
+:is(html, #keyfeature-tag#keyfeature-tag) body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-modern__topic-title {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: manual !important;
+}
+
+/* ---------- Home: Featured Apps cards ----------
+   1. Two cards per row from 640px (tablets showed one 678px-wide card per
+      row), three from 1100px.
+   2. The last row is centred, so a 7th app does not sit alone on the left.
+      The cards stay in a grid (their logo, name, text and link line up
+      across a row), so each row is split into twice as many tracks: every
+      card takes two, and a lonely last card starts one track in.
+   3. App names keep their own spelling (umetaflow, naseweis, OpenDIAKiosk…)
+      instead of being forced to capitals.
+   4. Shorter cards: a smaller logo area (72px instead of 104px). */
+:is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  column-gap: 2.25rem !important;
+}
+
+:is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog > .webapps-featured__item {
+  grid-column: span 2 !important;
+}
+
+@media (min-width: 640px) {
+  :is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  :is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog > .webapps-featured__item:last-child:nth-child(2n + 1) {
+    grid-column: 2 / span 2 !important;
+  }
+}
+
+@media (min-width: 1100px) {
+  :is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  }
+
+  :is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog > .webapps-featured__item:last-child:nth-child(2n + 1) {
+    grid-column: span 2 !important;
+  }
+
+  :is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog > .webapps-featured__item:last-child:nth-child(3n + 1) {
+    grid-column: 3 / span 2 !important;
+  }
+
+  :is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog > .webapps-featured__item:nth-last-child(2):nth-child(3n + 1) {
+    grid-column: 2 / span 2 !important;
+  }
+}
+
+:is(html, #home-apps#home-apps) body .home-page .webapps-project-card--catalog .webapps-project-card__name {
+  text-transform: none !important;
+}
+
+:is(html, #home-apps#home-apps) body .home-page .webapps-project-card--catalog .webapps-project-card__logo-wrap {
+  height: 72px !important;
+  min-height: 0 !important;
+}
+
+:is(html, #home-apps#home-apps) body .home-page .webapps-project-card--catalog .webapps-project-card__logo {
+  height: 72px !important;
+  max-height: 72px !important;
+}
+
+/* Home "Browse all apps →" link on phones and tablets (below 900px), where it
+   sits under the intro: it touched the first card (3–5px), so it looked like
+   part of that card. Now it is close to the intro and has room before the
+   cards. */
+@media (max-width: 899px) {
+  :is(html, #home-apps-link#home-apps-link) body .home-page .webapps-featured__header--home .webapps-featured__header-action {
+    margin-top: -0.25rem !important;
+    margin-bottom: 0.5rem !important;
   }
 }

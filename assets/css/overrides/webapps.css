@@ -1,22 +1,487 @@
-/* ---------- WebApps page: Featured WebApps logos ----------
-   Every logo in the "Featured WebApps" cards sits in the same square box
-   and is scaled to fit inside it. Before, each box shrank to its picture
-   (FLASH App 111px, umetaflow 101px) and older rules made OpenDDA bigger on
-   purpose (178px, chosen by its file name). Logos added later get the same
-   box. The ID in :is() makes these rules outrank those older ones. */
-:is(html, #webapps-example-logos) body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-logo.openms-lib-resources__examples-logo {
-  width: min(7rem, 100%) !important;
-  height: auto !important;
-  max-width: 7rem !important;
-  aspect-ratio: 1 !important;
+
+/* ---------- WebApps page: "Turn a Jupyter notebook into a web app" ----------
+   Navy band right under the page header (layouts/partials/webapps-notebook.html,
+   text in config.yaml → webappsPage.notebook). Prompt box on the left, the
+   three steps on the right; stacked on phones and tablets. The ID in :is()
+   outranks the sitewide heading, anchor and button rules. */
+:is(html, #webapps-notebook) body .openms-lib-page--webapps #notebook-to-webapp.openms-lib-page__anchor {
+  background: var(--openms-navy, #0c2171) !important;
+  padding: clamp(2.5rem, 6vw, 4.5rem) var(--openms-page-inline, 1.5rem) !important;
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--pro-max, 75rem);
+  margin-inline: auto;
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__head {
+  max-width: 46rem;
+  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+}
+
+/* The small label uses the site's standard label (openms-lib-resources__eyebrow
+   and its icon), in the light colour used on the page's other dark section. */
+:is(html, #webapps-notebook) body .webapps-notebook__eyebrow.openms-lib-resources__eyebrow {
+  color: rgba(255, 255, 255, 0.62) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.62) !important;
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__title.webapps-notebook__title {
+  margin: 0 0 1rem !important;
   padding: 0 !important;
+  font-family: var(--openms-font-heading) !important;
+  font-size: var(--openms-section-title-size) !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+  color: var(--openms-white, #fff) !important;
+  -webkit-text-fill-color: var(--openms-white, #fff) !important;
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__lead {
+  margin: 0;
+  font-size: var(--openms-body-size-lg);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+/* Below 1200px: prompt box across the full width, the steps under it
+   (2 x 2 from 640px, stacked on phones). From 1200px the steps and the
+   prompt sit side by side (see the end of this file). */
+:is(html, #webapps-notebook) body .webapps-notebook__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  align-items: start;
+}
+
+/* Prompt box */
+:is(html, #webapps-notebook) body .webapps-notebook__prompt {
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--openms-radius-lg, 14px);
+  background: rgba(3, 10, 40, 0.55);
+  overflow: hidden;
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__prompt-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__prompt-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--openms-font-mono, "JetBrains Mono", monospace);
+  font-size: var(--openms-text-min);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex: 0 0 auto;
+  padding: 0.5rem 0.9rem;
+  border: 0;
+  border-radius: 8px;
+  background: var(--openms-blue, #3157e9);
+  color: #fff;
+  font-family: var(--openms-font-body);
+  font-size: var(--openms-text-min);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__copy:is(:hover, :focus-visible) {
+  background: #fff;
+  color: var(--openms-navy, #0c2171);
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__copy:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__copy.is-copied {
+  background: #1f9d55;
+  color: #fff;
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__prompt-text {
+  margin: 0;
+  padding: 1.1rem 1.25rem;
+  background: transparent !important;
+  border: 0 !important;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__prompt-text code {
+  padding: 0 !important;
+  background: transparent !important;
+  font-family: var(--openms-font-mono, "JetBrains Mono", monospace);
+  font-size: var(--openms-text-min);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__note {
+  margin: 0;
+  padding: 0.7rem 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: var(--openms-text-min);
+  color: rgba(255, 255, 255, 0.62) !important;
+}
+
+/* Steps */
+:is(html, #webapps-notebook) body .webapps-notebook__steps {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__step {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--openms-radius-lg, 14px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__step-num {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--openms-blue, #3157e9);
+  color: #fff;
+  font-family: var(--openms-font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__step-title.webapps-notebook__step-title {
+  margin: 0 0 0.3rem !important;
+  padding: 0 !important;
+  font-family: var(--openms-font-heading) !important;
+  font-size: var(--openms-card-title-size) !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__step-text {
+  margin: 0;
+  font-size: var(--openms-body-size);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+/* Links inside a step (e.g. Docker Compose, executable) */
+:is(html, #webapps-notebook#webapps-notebook#webapps-notebook) body .webapps-notebook__step-text a {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-weight: 600;
+  text-decoration: underline !important;
+  text-decoration-color: rgba(255, 255, 255, 0.55) !important;
+  text-underline-offset: 0.18em;
+}
+
+:is(html, #webapps-notebook#webapps-notebook#webapps-notebook) body .webapps-notebook__step-text a:is(:hover, :focus-visible) {
+  text-decoration-color: #fff !important;
+}
+
+/* Button row */
+:is(html, #webapps-notebook) body .webapps-notebook__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+:is(html, #webapps-notebook) body .webapps-notebook__actions .openms-lib-btn {
+  width: auto !important;
   flex: 0 0 auto !important;
 }
 
-:is(html, #webapps-example-logos) body .openms-lib-page--webapps-pro #examples .openms-lib-resources__examples-logo.openms-lib-resources__examples-logo img {
-  width: 100% !important;
-  height: 100% !important;
+/* Outlined buttons (all but the first) in white on the navy band; filled
+   white on hover, like the site's other navy bands. */
+:is(html, #webapps-notebook#webapps-notebook) body .webapps-notebook__actions a.openms-lib-btn.openms-lib-btn--ghost {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.85) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+:is(html, #webapps-notebook#webapps-notebook) body .webapps-notebook__actions a.openms-lib-btn.openms-lib-btn--ghost :is(.openms-lib-btn__label, i) {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+:is(html, #webapps-notebook#webapps-notebook) body .webapps-notebook__actions a.openms-lib-btn.openms-lib-btn--ghost:is(:hover, :focus-visible) {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: var(--openms-navy, #0c2171) !important;
+  -webkit-text-fill-color: var(--openms-navy, #0c2171) !important;
+}
+
+@media (max-width: 1023px) {
+  :is(html, #webapps-notebook) body .webapps-notebook__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(html, #webapps-notebook) body .webapps-notebook__copy {
+    transition: none;
+  }
+}
+
+/* ---------- WebApps page: "Using the template" cards fill the row ----------
+   Product pages lay these cards out in 5 columns. With fewer cards on a
+   laptop, use one column per card so the row is not left half empty (a
+   single card takes the whole row). */
+@media (min-width: 1024px) {
+  :is(html, #webapps-template-row) body .openms-lib-page--webapps #getting-started .openms-lib-resources__explore-grid:has(> :only-child) { grid-template-columns: minmax(0, 1fr) !important; }
+  :is(html, #webapps-template-row) body .openms-lib-page--webapps #getting-started .openms-lib-resources__explore-grid:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  :is(html, #webapps-template-row) body .openms-lib-page--webapps #getting-started .openms-lib-resources__explore-grid:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  :is(html, #webapps-template-row) body .openms-lib-page--webapps #getting-started .openms-lib-resources__explore-grid:has(> :nth-child(4):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+}
+
+/* ---------- WebApps page: "Need help?" buttons fit their text ----------
+   Sitewide rules stretch these buttons to the full width of the box. Here
+   they are as wide as their text (plus padding), side by side and centred,
+   like the Need help? strip on OpenMS-lib. The IDs outrank those rules. */
+:is(html, #webapps-help-fit) body .openms-lib-page--webapps #getting-started#getting-started .openms-lib-resources__assist .openms-lib-resources__assist-actions.openms-lib-resources__assist-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  width: auto !important;
   max-width: 100% !important;
-  max-height: 100% !important;
-  object-fit: contain !important;
+  margin-inline: auto !important;
+  gap: 0.75rem !important;
+}
+
+:is(html, #webapps-help-fit) body .openms-lib-page--webapps #getting-started#getting-started .openms-lib-resources__assist-actions .openms-lib-resources__assist-btn.openms-lib-resources__assist-btn.openms-lib-btn {
+  width: auto !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+}
+
+/* ---------- WebApps page: "Browse all apps →" on the right on phones ----------
+   On small screens the link drops onto its own line under the intro; keep it
+   at the right edge there, as on wider screens. */
+@media (max-width: 767px) {
+  :is(html, #webapps-browse-right) body .openms-lib-page--webapps #examples .openms-lib-resources__examples-lead-row {
+    flex-wrap: wrap !important;
+  }
+
+  :is(html, #webapps-browse-right) body .openms-lib-page--webapps #examples .openms-lib-resources__examples-link {
+    margin-left: auto !important;
+  }
+}
+
+/* Steps: 2 per row from 640px (stacked on phones). */
+@media (min-width: 640px) {
+  :is(html, #webapps-notebook) body .webapps-notebook__steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+}
+
+
+/* ---------- Notebook section on laptops: prompt left, steps right ----------
+   From 1200px: a narrower prompt box on the left (about 40%) and the four
+   steps on the right (two per row, about 60% of the width). Both halves are the same height (the
+   prompt box stretches, its text area grows), so there is no empty space.
+   Below 1200px the prompt comes first, then the steps (2 per row from 640px). */
+@media (min-width: 1200px) {
+  :is(html, #webapps-notebook#webapps-notebook) body .webapps-notebook__grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) !important;
+    grid-template-areas: "prompt steps" !important;
+    align-items: stretch !important;
+  }
+
+  :is(html, #webapps-notebook#webapps-notebook) body .webapps-notebook__steps {
+    grid-area: steps !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-content: start;
+  }
+
+  :is(html, #webapps-notebook#webapps-notebook) body .webapps-notebook__prompt {
+    grid-area: prompt !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  :is(html, #webapps-notebook#webapps-notebook) body .webapps-notebook__prompt-text {
+    flex: 1 1 auto !important;
+  }
+}
+
+
+/* ---------- WebApps page: Featured WebApps cards ----------
+   Each card: the logo centred on a soft tinted panel (every logo at the same
+   share of the panel, whatever its shape), the app name and its one-line
+   description. The whole card is one link; on hover its border and shadow darken. Phones: logo panel on the left, text on the right.
+   From 768px: three cards side by side, logo panel on top. */
+:is(html, #webapps-showcase) body .webapps-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  /* No extra space on top: the section's own gap under the intro is enough. */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:is(html, #webapps-showcase) body .webapps-showcase__item {
+  margin: 0;
+  list-style: none;
+}
+
+:is(html, #webapps-showcase) body .webapps-showcase__card {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  align-items: stretch;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1);
+  border-radius: var(--openms-radius-lg, 14px);
+  background: #fff;
+  box-shadow: 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.05);
+  color: inherit;
+  text-decoration: none !important;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+/* Hover / keyboard focus: the same calm effect as the numbered benefit cards
+   on OpenMS-lib ("01 Two decades of expertise"): no movement, the border
+   darkens a little and the shadow grows softer and deeper. IDs and !important:
+   a sitewide link-hover rule otherwise clears the card's white background,
+   border and shadow. */
+:is(html, #webapps-showcase#webapps-showcase#webapps-showcase) body .webapps-showcase__card.webapps-showcase__card:is(:hover, :focus-visible) {
+  transform: none !important;
+  background: #fff !important;
+  background-color: #fff !important;
+  border: 1px solid rgba(var(--openms-navy-rgb, 12, 33, 113), 0.22) !important;
+  box-shadow: 0 0.65rem 1.5rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1) !important;
+}
+
+:is(html, #webapps-showcase) body .webapps-showcase__card:focus-visible {
+  outline: 2px solid var(--openms-blue, #3157e9);
+  outline-offset: 2px;
+}
+
+:is(html, #webapps-showcase) body .webapps-showcase__logo {
+  display: grid;
+  place-items: center;
+  padding: 0.75rem;
+  background: #f3f5fb;
+}
+
+:is(html, #webapps-showcase) body .webapps-showcase__logo img {
+  display: block;
+  width: 100%;
+  height: 4.5rem;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+:is(html, #webapps-showcase) body .webapps-showcase__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem;
+  min-width: 0;
+}
+
+:is(html, #webapps-showcase) body .webapps-showcase__name.webapps-showcase__name {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--openms-font-heading) !important;
+  font-size: var(--openms-card-title-size) !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  color: var(--openms-navy, #0c2171) !important;
+  -webkit-text-fill-color: var(--openms-navy, #0c2171) !important;
+}
+
+:is(html, #webapps-showcase) body .webapps-showcase__desc {
+  font-size: var(--openms-body-size);
+  line-height: 1.5;
+  color: rgba(35, 31, 32, 0.72);
+}
+
+@media (min-width: 768px) {
+  :is(html, #webapps-showcase) body .webapps-showcase {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  :is(html, #webapps-showcase) body .webapps-showcase__card {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+  }
+
+  :is(html, #webapps-showcase) body .webapps-showcase__logo {
+    position: relative;
+    min-width: 0;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+  }
+
+  /* The logo is placed inside the panel so its own size never widens the card. */
+  :is(html, #webapps-showcase) body .webapps-showcase__logo img {
+    position: absolute;
+    inset: 14% 18%;
+    width: auto;
+    height: auto;
+    max-width: none;
+    width: 64%;
+    height: 72%;
+  }
+
+  :is(html, #webapps-showcase) body .webapps-showcase__body {
+    padding: 1.1rem 1.25rem 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(html, #webapps-showcase) body .webapps-showcase__card {
+    transition: none;
+  }
+}
+
+/* Notebook section intro ("Paste one prompt into Claude Code…"): half the page
+   width (half of the content area) from 768px, by request; full width on
+   phones. Its header box is no longer capped at 46rem. */
+@media (min-width: 768px) {
+  :is(html, #webapps-notebook#webapps-notebook) body .webapps-notebook__head {
+    max-width: none !important;
+  }
+
+  :is(html, #webapps-notebook#webapps-notebook#webapps-notebook) body .openms-lib-page .webapps-notebook__lead {
+    max-width: calc(min(100vw - 2 * var(--openms-page-inline, 1.5rem), var(--pro-max, 75rem)) / 2) !important;
+  }
 }

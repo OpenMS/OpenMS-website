@@ -1226,6 +1226,41 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
   }
 }
 
+/* ---------- Project pages (OpenMS-lib, pyOpenMS, pyOpenMS Viz, Web Apps):
+   tap areas and line length (best practice) ----------
+   Small standalone links get a 24px-tall tap area (WCAG 2.2 target size):
+   the Linux / macOS / Windows and View open PRs / How to review PRs buttons,
+   "Browse all apps" and the TOPP "Learn more" links were 16-20px tall.
+   Long intros stop at about 70-75 characters a line (they reached 82-93). */
+:is(html, #project-best-practice#project-best-practice#project-best-practice#project-best-practice) body .openms-lib-page :is(
+  a.openms-lib-developers__platform-btn,
+  .openms-lib-resources__examples-link,
+  .openms-lib-topp-split__nested-link a
+) {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 24px !important;
+}
+
+:is(html, #project-best-practice) body .openms-lib-page :is(.openms-lib-hero__lead, .webapps-notebook__lead) {
+  max-width: 30em !important;
+}
+
+:is(html, #project-best-practice) body .openms-lib-page .openms-lib-hero__lead {
+  margin-inline: auto !important;
+}
+
+:is(html, #project-best-practice) body .openms-lib-page .webapps-notebook__step-text {
+  max-width: 34em !important;
+}
+
+/* The "Get involved" / "Learn and build" group labels on OpenMS-lib have
+   their own 0.75rem rule (two IDs); keep them at 12px or more like the other
+   section labels. */
+:is(html, #project-best-practice#project-best-practice#project-best-practice) body .openms-lib-developers__group {
+  font-size: max(12px, 0.75rem) !important;
+}
+
 /* ---------- Developer card with several buttons (extraLinks in config.yaml),
    e.g. "Contributing Guidelines" + "AI Policy". The first button keeps the
    normal style; the others are outlined. ---------- */
@@ -1248,4 +1283,65 @@ html body #for-developers#for-developers.openms-lib-developers--grouped .openms-
 :is(html, #dev-multi-boost) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--multi:is(:hover, :focus-within) .openms-lib-developers__card-link.openms-lib-developers__card-link:not(:hover):not(:focus-visible) {
   transform: none !important;
   box-shadow: none !important;
+}
+
+/* Outlined second button in a developer card (e.g. "AI Policy" next to
+   "Read guidelines"): on hover / keyboard focus it fills white with navy text,
+   like the site's other outlined buttons on navy ("Contact Us" on Archived
+   Apps). The grow and soft ring come from the shared button hover. */
+:is(html, #dev-multi-hover#dev-multi-hover#dev-multi-hover) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--featured .openms-lib-developers__card-link--secondary.openms-lib-developers__card-link:is(:hover, :focus-visible) {
+  background: #fff !important;
+  background-color: #fff !important;
+  border-color: #fff !important;
+  color: var(--openms-navy, #0c2171) !important;
+  -webkit-text-fill-color: var(--openms-navy, #0c2171) !important;
+}
+
+:is(html, #dev-multi-hover#dev-multi-hover#dev-multi-hover) body .openms-lib-page #for-developers#for-developers .openms-lib-developers__card--featured .openms-lib-developers__card-link--secondary.openms-lib-developers__card-link:is(:hover, :focus-visible) * {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+/* "Used OpenMS-lib in your work? If so, please cite." (Research impact):
+   same as on pyOpenMS, pyOpenMS Viz and Web Apps (capitals, line height 1.2,
+   slightly tight letter spacing). OpenMS-lib had normal case. */
+:is(html, #cite-title-same#cite-title-same) body .openms-lib-page--openms-lib .openms-lib-cite__title.openms-lib-cite__title {
+  text-transform: uppercase !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Header intros written as set lines (.openms-lib-hero__lead-line, e.g. Sponsor
+   us, Governance, Code of Conduct): no reading-width limit. The 30em limit
+   above made the box narrower than its lines, so they spilled to the right
+   and the intro looked off-centre. */
+:is(html, #project-best-practice#project-best-practice) body .openms-lib-page .openms-lib-hero__lead:has(.openms-lib-hero__lead-line) {
+  max-width: none !important;
+}
+
+/* "For Developers / Contribute" cards use the full page width: with four
+   cards (e.g. pyOpenMS Viz) the shared rule made as many 15rem columns as fit,
+   so on very wide screens there were 6 columns and the cards filled only the
+   left two-thirds. Four cards now make four equal columns from 1100px. */
+@media (min-width: 1100px) {
+  :is(html, #dev-cards-full#dev-cards-full#dev-cards-full) body .openms-lib-page #for-developers:not(.openms-lib-developers--grouped) .openms-lib-developers__cards-grid:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  :is(html, #dev-cards-full#dev-cards-full#dev-cards-full) body .openms-lib-page #for-developers:not(.openms-lib-developers--grouped) .openms-lib-developers__cards-grid:has(> :nth-child(4):last-child) > * {
+    grid-column: auto !important;
+  }
+}
+
+/* "For Developers" cards: the arrow (→) of a button moves only when that
+   button is hovered (or focused with the keyboard), not when the mouse is
+   anywhere on the card. */
+:is(html, #dev-arrow-own#dev-arrow-own#dev-arrow-own) body #for-developers .openms-lib-developers__card .openms-lib-developers__card-link > span[aria-hidden="true"] {
+  transform: none !important;
+  translate: none !important;
+  transition: transform 0.2s ease !important;
+}
+
+:is(html, #dev-arrow-own#dev-arrow-own#dev-arrow-own) body #for-developers .openms-lib-developers__card .openms-lib-developers__card-link:is(:hover, :focus-visible) > span[aria-hidden="true"] {
+  transform: translateX(3px) !important;
 }

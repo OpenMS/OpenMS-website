@@ -11,11 +11,8 @@ sidebar: false
 </div>
 
 <div class="openms-lib-page__body" aria-label="OpenMS WebApps features and resources">
-  <div id="what-is-openms" class="openms-lib-page__anchor">
-    {{< webapps-highlights >}}
-  </div>
-  <div id="getting-started" class="openms-lib-page__anchor">
-    {{< webapps-using-template >}}
+  <div id="notebook-to-webapp" class="openms-lib-page__anchor">
+    {{< webapps-notebook >}}
   </div>
   <div id="examples" class="openms-lib-page__anchor">
     {{< webapps-examples >}}
@@ -23,6 +20,11 @@ sidebar: false
 </div>
 <div class="openms-lib-page__outro">
   {{< webapps-developers >}}
+</div>
+<div class="openms-lib-page__outro openms-lib-page__outro--help">
+  <div id="getting-started" class="openms-lib-page__anchor">
+    {{< webapps-using-template >}}
+  </div>
 </div>
 <div class="openms-lib-page__cite">
   {{< webapps-cite >}}
