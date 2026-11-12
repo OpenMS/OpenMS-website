@@ -310,15 +310,15 @@
 }
 
 
-/* ---------- Notebook section on laptops: steps left, prompt right ----------
-   From 1200px: the four steps on the left (two per row, about 60% of the
-   width) and a narrower prompt box on the right (about 40%). Both halves are the same height (the
+/* ---------- Notebook section on laptops: prompt left, steps right ----------
+   From 1200px: a narrower prompt box on the left (about 40%) and the four
+   steps on the right (two per row, about 60% of the width). Both halves are the same height (the
    prompt box stretches, its text area grows), so there is no empty space.
    Below 1200px the prompt comes first, then the steps (2 per row from 640px). */
 @media (min-width: 1200px) {
   :is(html, #webapps-notebook#webapps-notebook) body .webapps-notebook__grid {
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr) !important;
-    grid-template-areas: "steps prompt" !important;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) !important;
+    grid-template-areas: "prompt steps" !important;
     align-items: stretch !important;
   }
 
@@ -343,13 +343,14 @@
 /* ---------- WebApps page: Featured WebApps cards ----------
    Each card: the logo centred on a soft tinted panel (every logo at the same
    share of the panel, whatever its shape), the app name and its one-line
-   description. The whole card is one link and lifts slightly on hover. Phones: logo panel on the left, text on the right.
+   description. The whole card is one link; on hover its border and shadow darken. Phones: logo panel on the left, text on the right.
    From 768px: three cards side by side, logo panel on top. */
 :is(html, #webapps-showcase) body .webapps-showcase {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: clamp(0.75rem, 2vw, 1.25rem);
-  margin: clamp(1.25rem, 3vw, 2rem) 0 0;
+  /* No extra space on top: the section's own gap under the intro is enough. */
+  margin: 0;
   padding: 0;
   list-style: none;
 }
