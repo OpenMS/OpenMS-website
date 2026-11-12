@@ -187,9 +187,9 @@ languages:
           Gain <span class="openms-lib-hero__accent">hands-on</span> experience
           in open-source science.
         blurb: >-
-          Work alongside researchers worldwide on the OpenMS ecosystem —<br>
-          develop algorithms, test software, and write tutorials for
-          computational mass spectrometry.
+          <span class="openms-lib-hero__lead-line">Work alongside researchers worldwide on the OpenMS ecosystem —</span>
+          <span class="openms-lib-hero__lead-line">develop algorithms, test software, and write tutorials</span>
+          <span class="openms-lib-hero__lead-line">for computational mass spectrometry.</span>
         chips:
           - icon: fas fa-globe
             text: Fully remote & unpaid

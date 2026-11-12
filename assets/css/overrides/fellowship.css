@@ -20,3 +20,16 @@
     padding: 0.35rem !important;
   }
 }
+
+/* Header intro on set lines (config.yaml → fellowshipPage.blurb, one
+   .openms-lib-hero__lead-line per line): each line stays whole from 768px;
+   on phones the words wrap freely. */
+html body .openms-lib-page--fellowship .openms-lib-hero__lead-line {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  html body .openms-lib-page--fellowship .openms-lib-hero__lead-line {
+    white-space: nowrap;
+  }
+}
