@@ -1841,3 +1841,17 @@ html body .tally-popup iframe {
 :is(html, #about-best-practice#about-best-practice#about-best-practice#about-best-practice) body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__lead {
   max-width: min(100%, 38em) !important;
 }
+
+/* Getting Involved "Contribute to development": the AI note ("OpenMS is open
+   to both independent and AI-assisted contributions…") uses the card's
+   standard text size, line height and width, like "Start small…" above it.
+   It was 13.4-14px and wider; its "AI Policy" link matches the text. */
+:is(html, #contribute-note-std#contribute-note-std) body .openms-lib-page--contribute .contribute-track__note.contribute-track__note {
+  font-size: var(--openms-body-size) !important;
+  line-height: 1.55 !important;
+  max-width: 34em !important;
+}
+
+:is(html, #contribute-note-std#contribute-note-std) body .openms-lib-page--contribute .contribute-track__note a {
+  font-size: inherit !important;
+}
