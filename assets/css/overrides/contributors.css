@@ -227,3 +227,22 @@ html body .openms-lib-page--contributors #executive-committee#executive-committe
     align-items: stretch !important;
   }
 }
+
+/* "Want to contribute?" band: the buttons are as wide as their text and sit
+   side by side, centred, like the same band on Archived Apps. They used to
+   stretch across the whole box (up to 448px) and stack. If the row is too
+   narrow they wrap onto a second line. */
+:is(html, #contributors-cta-fit#contributors-cta-fit) body #join-community .webapps-archived__revival-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+}
+
+:is(html, #contributors-cta-fit#contributors-cta-fit) body #join-community .webapps-archived__revival-actions > a.openms-lib-btn {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
