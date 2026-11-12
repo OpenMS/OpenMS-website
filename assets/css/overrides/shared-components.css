@@ -1855,3 +1855,66 @@ html body .tally-popup iframe {
 :is(html, #contribute-note-std#contribute-note-std) body .openms-lib-page--contribute .contribute-track__note a {
   font-size: inherit !important;
 }
+
+/* ---------- All white cards: one hover effect ----------
+   Same as the OpenMS-lib benefit cards ("01 Two decades of expertise"):
+   at rest a light border and soft shadow; on hover the border and shadow
+   get a little darker. No lift, no colour change. Navy cards (e.g. the
+   featured For Developers card, Governance resources) keep their own hover.
+   Forms and image panels are not cards and are left out. */
+:is(html, #white-card-hover#white-card-hover#white-card-hover) body :is(
+  .openms-lib-about__benefit,
+  .openms-lib-about__tile,
+  .webapps-showcase__card,
+  .webapps-project-card__surface,
+  .webapps-project-detail-card,
+  .webapps-archived-entry,
+  .keyfeatures-modern__topic-card,
+  .ecosystem-home__card,
+  .community-news-events__press-link,
+  .openms-lib-developers__card--box:not(.openms-lib-developers__card--featured),
+  .contribute-track__item,
+  .contribute-channel,
+  .coc-value,
+  .fellowship-facts__item,
+  .member,
+  .publication-entry,
+  .publications-featured .publications-cite-card,
+  .openms-lib-page--contact .openms-lib-resources__item,
+  .openms-lib-page--donate .openms-lib-resources__item
+) {
+  border-color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1) !important;
+  box-shadow: 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.05) !important;
+}
+
+:is(html, #white-card-hover#white-card-hover#white-card-hover) body :is(
+  .openms-lib-about__benefit,
+  .openms-lib-about__tile,
+  .webapps-showcase__card,
+  .webapps-project-card__surface,
+  .webapps-project-detail-card,
+  .webapps-archived-entry,
+  .keyfeatures-modern__topic-card,
+  .ecosystem-home__card,
+  .community-news-events__press-link,
+  .openms-lib-developers__card--box:not(.openms-lib-developers__card--featured),
+  .contribute-track__item,
+  .contribute-channel,
+  .coc-value,
+  .fellowship-facts__item,
+  .member,
+  .publication-entry,
+  .publications-featured .publications-cite-card,
+  .openms-lib-page--contact .openms-lib-resources__item,
+  .openms-lib-page--donate .openms-lib-resources__item
+):is(:hover, :focus-within) {
+  border-color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.22) !important;
+  box-shadow: 0 0.65rem 1.5rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1) !important;
+  transform: none !important;
+  translate: none !important;
+}
+
+/* The chair's card keeps its blue outline. */
+:is(html, #white-card-hover#white-card-hover#white-card-hover#white-card-hover) body .member.member--chair {
+  border-color: rgba(var(--openms-blue-rgb, 49, 87, 233), 0.35) !important;
+}
