@@ -1415,3 +1415,64 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
   word-break: normal !important;
   hyphens: manual !important;
 }
+
+/* ---------- Home: Featured Apps cards ----------
+   1. Two cards per row from 640px (tablets showed one 678px-wide card per
+      row), three from 1100px.
+   2. The last row is centred, so a 7th app does not sit alone on the left.
+      The cards stay in a grid (their logo, name, text and link line up
+      across a row), so each row is split into twice as many tracks: every
+      card takes two, and a lonely last card starts one track in.
+   3. App names keep their own spelling (umetaflow, naseweis, OpenDIAKiosk…)
+      instead of being forced to capitals.
+   4. Shorter cards: a smaller logo area (72px instead of 104px). */
+:is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  column-gap: 2.25rem !important;
+}
+
+:is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog > .webapps-featured__item {
+  grid-column: span 2 !important;
+}
+
+@media (min-width: 640px) {
+  :is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  :is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog > .webapps-featured__item:last-child:nth-child(2n + 1) {
+    grid-column: 2 / span 2 !important;
+  }
+}
+
+@media (min-width: 1100px) {
+  :is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  }
+
+  :is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog > .webapps-featured__item:last-child:nth-child(2n + 1) {
+    grid-column: span 2 !important;
+  }
+
+  :is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog > .webapps-featured__item:last-child:nth-child(3n + 1) {
+    grid-column: 3 / span 2 !important;
+  }
+
+  :is(html, #home-apps#home-apps) body .home-page .webapps-featured__grid--catalog > .webapps-featured__item:nth-last-child(2):nth-child(3n + 1) {
+    grid-column: 2 / span 2 !important;
+  }
+}
+
+:is(html, #home-apps#home-apps) body .home-page .webapps-project-card--catalog .webapps-project-card__name {
+  text-transform: none !important;
+}
+
+:is(html, #home-apps#home-apps) body .home-page .webapps-project-card--catalog .webapps-project-card__logo-wrap {
+  height: 72px !important;
+  min-height: 0 !important;
+}
+
+:is(html, #home-apps#home-apps) body .home-page .webapps-project-card--catalog .webapps-project-card__logo {
+  height: 72px !important;
+  max-height: 72px !important;
+}
