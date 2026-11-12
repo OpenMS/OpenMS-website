@@ -1918,3 +1918,12 @@ html body .tally-popup iframe {
 :is(html, #white-card-hover#white-card-hover#white-card-hover#white-card-hover) body .member.member--chair {
   border-color: rgba(var(--openms-blue-rgb, 49, 87, 233), 0.35) !important;
 }
+
+/* Developer Conference "About the conference": these are not white cards but
+   transparent columns with a thin divider. The shared white-card rule above
+   gave them a shadow, which was cut off just above the conference photo, so
+   the photo looked like it covered the cards. No shadow here. */
+:is(html, #white-card-hover#white-card-hover#white-card-hover#white-card-hover) body .retreat-highlights__mosaic .openms-lib-about__tile,
+:is(html, #white-card-hover#white-card-hover#white-card-hover#white-card-hover) body .retreat-highlights__mosaic .openms-lib-about__tile:is(:hover, :focus-within) {
+  box-shadow: none !important;
+}
