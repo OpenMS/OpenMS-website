@@ -296,18 +296,21 @@ languages:
           - name: LiBiS
             url: https://libis.uni-heidelberg.de/
             logo: /images/logos/LiBiS-Logo.svg
+            logoScale: 0.9
             alt: LiBiS — Life Science Informatics
             description: Life Science Informatics
             # tier: gold
           - name: ELIXIR
             url: https://elixir-europe.org/platforms/data/core-data-resources
             logo: /images/logos/Elixir.png
+            logoScale: 1.2
             alt: ELIXIR Core Data Resource
             description: Core Data Resource
             # tier: platinum
           - name: deNBI
             url: https://www.denbi.de/
             logo: /images/logos/denbi.jpeg
+            logoScale: 1.05
             alt: deNBI — German Network for Bioinformatics Infrastructure
             description: German Network for Bioinformatics Infrastructure
             # tier: silver

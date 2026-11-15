@@ -1969,10 +1969,12 @@ html body .tally-popup iframe {
    a 100x100px square, so the nearly square ELIXIR logo is no longer much
    bigger than the long LiBiS and de.NBI logos. --logo-ar comes from the
    file (layouts/partials/about-sponsor-logo.html). Very wide logos stop at
-   210px wide (84x84px area on phones). */
+   240px wide (84x84px area on phones). Logos with thin lines or a line of
+   small text can still look smaller: `logoScale:` in config.yaml
+   (--logo-scale) makes one logo a bit bigger or smaller by eye. */
 :is(html, #sponsor-logo-size#sponsor-logo-size) body .about-sponsors-logos__item .about-sponsors-logos__logo {
   --logo-size: 100px;
-  width: min(210px, calc(var(--logo-size) * sqrt(var(--logo-ar, 1)))) !important;
+  width: min(240px, calc(var(--logo-size) * var(--logo-scale, 1) * sqrt(var(--logo-ar, 1)))) !important;
   height: auto !important;
   max-width: none !important;
   max-height: none !important;
