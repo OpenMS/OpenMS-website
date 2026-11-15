@@ -24,7 +24,7 @@ And this is the block for **one** sponsor in `config.yaml`:
 
 ### Step 1 – Upload the logo
 
-Put the logo in the folder **`static/images/logos/`**. See [Add images](../any-page/add-images.md). Remember the file name, for example `example-institute.svg`. A `.svg` or a `.png` with a transparent background looks best.
+Put the logo in the folder **`static/images/logos/`**. See [Add images](../any-page/add-images.md). Remember the file name, for example `example-institute.svg`. A `.svg` or a `.png` with a transparent background looks best. Crop the empty space around the logo before you upload it. The website sizes every logo by itself so they all look the same size (a long logo gets more width than a square one), but it counts empty space as part of the logo, so a logo with a wide empty border looks smaller.
 
 ### Step 2 – Add the block
 

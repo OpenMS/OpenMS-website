@@ -1963,3 +1963,43 @@ html body .tally-popup iframe {
     justify-content: flex-start !important;
   }
 }
+
+/* ---------- Our Sponsors: logos look the same size ----------
+   Same idea as the app cards above: each sponsor logo gets about the area of
+   a 100x100px square, so the nearly square ELIXIR logo is no longer much
+   bigger than the long LiBiS and de.NBI logos. --logo-ar comes from the
+   file (layouts/partials/about-sponsor-logo.html). Very wide logos stop at
+   210px wide (84x84px area on phones). */
+:is(html, #sponsor-logo-size#sponsor-logo-size) body .about-sponsors-logos__item .about-sponsors-logos__logo {
+  --logo-size: 100px;
+  width: min(210px, calc(var(--logo-size) * sqrt(var(--logo-ar, 1)))) !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  aspect-ratio: var(--logo-ar, 1) !important;
+  object-fit: contain !important;
+}
+
+/* The logos sit in a centred row instead of three equal columns, so each box
+   is as wide as its logo (the columns held the long logos to 111–184px).
+   When the row is too narrow (phones) they wrap onto a second line. */
+:is(html, #sponsor-logo-size#sponsor-logo-size) body .about-sponsors-logos.sponsors-logo-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1.25rem 2.5rem !important;
+  max-width: 100% !important;
+}
+
+:is(html, #sponsor-logo-size#sponsor-logo-size) body .about-sponsors-logos.sponsors-logo-grid > .about-sponsors-logos__item {
+  flex: 0 1 auto !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 767px) {
+  :is(html, #sponsor-logo-size#sponsor-logo-size) body .about-sponsors-logos__item .about-sponsors-logos__logo {
+    --logo-size: 84px;
+  }
+}

@@ -3,6 +3,7 @@
 {{- $logo := .logo | default "" -}}
 {{- $alt := .alt | default $name -}}
 {{- $onDark := .logoOnDark | default false -}}
+{{- $logoAr := partial "logo-aspect-ratio.html" $logo -}}
 <a
   class="about-sponsors-logos__item{{ if $onDark }} about-sponsors-logos__item--dark{{ end }}"
   role="listitem"
@@ -11,7 +12,7 @@
   rel="noopener noreferrer sponsored"
 >
   {{- if $logo -}}
-  <img class="about-sponsors-logos__logo" src="{{ $logo }}" alt="{{ $alt }}" loading="lazy" decoding="async" />
+  <img class="about-sponsors-logos__logo" style="{{ printf "--logo-ar: %.3f" $logoAr | safeCSS }}" src="{{ $logo }}" alt="{{ $alt }}" loading="lazy" decoding="async" />
   {{- else -}}
   <span class="about-sponsors-logos__name">{{ $name }}</span>
   {{- end -}}

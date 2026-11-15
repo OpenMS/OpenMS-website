@@ -6,17 +6,7 @@
 {{- /* The logo's width-to-height ratio (from the file), so the CSS can give
      every logo about the same area: wide logos get more width, square ones
      less, and they all look the same size. Defaults to square. */ -}}
-{{- $logoAr := 1.0 -}}
-{{- $logoFile := path.Join "static" $logo -}}
-{{- if and (not $useTextLogo) (not (hasPrefix $logo "http")) (fileExists $logoFile) -}}
-  {{- if strings.HasSuffix (lower $logo) ".svg" -}}
-    {{- with findRESubmatch `viewBox="\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)` (readFile $logoFile) 1 -}}
-      {{- $logoAr = div (float (index (index . 0) 1)) (float (index (index . 0) 2)) -}}
-    {{- end -}}
-  {{- else -}}
-    {{- with imageConfig $logoFile }}{{ $logoAr = div (float .Width) (float .Height) }}{{ end -}}
-  {{- end -}}
-{{- end -}}
+{{- $logoAr := cond $useTextLogo 1.0 (partial "logo-aspect-ratio.html" $logo) -}}
 <article class="webapps-project-detail-card{{ with $class }} {{ . }}{{ end }}{{ if $hideName }} webapps-project-detail-card--logo-title{{ end }}{{ if $useTextLogo }} webapps-project-detail-card--text-logo{{ end }}">
   <div class="webapps-project-detail-card__logo-wrap{{ if $useTextLogo }} webapps-project-detail-card__logo-wrap--text{{ end }}">
     {{- if not $useTextLogo }}
