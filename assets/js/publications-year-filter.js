@@ -117,6 +117,11 @@
 
     root.setAttribute("data-active-year", showAll ? ALL : currentYear);
     updateNavActive(showAll ? ALL : currentYear);
+    if (ddValue) {
+      ddValue.textContent = showAll
+        ? selectEl.getAttribute("data-all-label") || "All years"
+        : currentYear;
+    }
 
     moreWrap.hidden = remaining <= 0;
     if (remaining > 0) {
@@ -254,8 +259,103 @@
     });
   }
 
+  /* Year dropdown: a button that opens a white panel with "All years" and
+     a grid of year buttons (the year buttons built by buildNav). It replaces
+     the browser's own select list, whose grey menu cannot be styled. The
+     select stays in the page (hidden) and keeps the chosen year. */
+  var ddValue = null;
+
+  function buildDropdown() {
+    var toolbar = selectEl.closest(".publications-toolbar");
+    var filter = selectEl.closest(".publications-toolbar__filter");
+    if (!toolbar || !navEl) return;
+
+    var wrap = document.createElement("div");
+    wrap.className = "publications-year-dd";
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "publications-year-dd__btn";
+    btn.id = "publications-year-dd-btn";
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-controls", "publications-year-dd-panel");
+    btn.innerHTML =
+      '<i class="far fa-calendar-alt publications-year-dd__icon" aria-hidden="true"></i>' +
+      '<span class="publications-year-dd__label">Year</span>' +
+      '<span class="publications-year-dd__value"></span>' +
+      '<i class="fas fa-chevron-down publications-year-dd__chevron" aria-hidden="true"></i>';
+    ddValue = btn.querySelector(".publications-year-dd__value");
+
+    var panel = document.createElement("div");
+    panel.className = "publications-year-dd__panel";
+    panel.id = "publications-year-dd-panel";
+    panel.hidden = true;
+
+    var title = document.createElement("p");
+    title.className = "publications-year-dd__title";
+    title.textContent = "Show publications from";
+    panel.appendChild(title);
+
+    navEl.hidden = false;
+    navEl.classList.add("publications-year-dd__grid");
+    panel.appendChild(navEl);
+
+    wrap.appendChild(btn);
+    wrap.appendChild(panel);
+    toolbar.appendChild(wrap);
+    if (filter) filter.hidden = true;
+
+    function open() {
+      panel.hidden = false;
+      btn.setAttribute("aria-expanded", "true");
+      wrap.classList.add("is-open");
+      var active = navEl.querySelector(".is-active") || navEl.querySelector("button");
+      if (active) active.focus();
+    }
+
+    function close(returnFocus) {
+      if (panel.hidden) return;
+      panel.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+      wrap.classList.remove("is-open");
+      if (returnFocus) btn.focus();
+    }
+
+    btn.addEventListener("click", function () {
+      if (panel.hidden) open();
+      else close(false);
+    });
+
+    navEl.addEventListener("click", function (event) {
+      if (event.target.closest("[data-year-filter]")) close(true);
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!wrap.contains(event.target)) close(false);
+    });
+
+    wrap.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        close(true);
+        return;
+      }
+      // Arrow keys move between the year buttons.
+      var keys = ["ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp"];
+      if (panel.hidden || keys.indexOf(event.key) === -1) return;
+      var items = Array.prototype.slice.call(navEl.querySelectorAll("button"));
+      var i = items.indexOf(document.activeElement);
+      if (i === -1) return;
+      event.preventDefault();
+      var cols = Math.max(1, Math.round(navEl.clientWidth / (items[items.length - 1].offsetWidth || 1)));
+      var step = { ArrowRight: 1, ArrowLeft: -1, ArrowDown: cols, ArrowUp: -cols }[event.key];
+      var next = Math.min(items.length - 1, Math.max(0, i + step));
+      items[next].focus();
+    });
+  }
+
   buildSelect();
   buildNav();
+  buildDropdown();
   truncateAuthors();
   selectYear(initYear());
   root.classList.add("publications-year-filter--ready");
