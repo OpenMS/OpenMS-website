@@ -92,3 +92,97 @@ html body .openms-lib-page--publications #key-publications .publications-cite-ca
 :is(html, #pubs-more-arrow#pubs-more-arrow) body .publications-more__btn .publications-more__arrow {
   margin-left: 0 !important;
 }
+
+/* ---------- Publications: "Year" filter ----------
+   A visible "Year" label (with a calendar icon) next to a larger, rounded
+   control: readable text (button size), 44px tall so it is easy to tap,
+   navy chevron, and a clear hover and keyboard-focus state. It was a small
+   12px box with no label. Sits on the right on wide screens, full width on
+   phones. The year list itself comes from assets/js/publications-year-filter.js. */
+:is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  height: auto !important;
+}
+
+:is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar__filter {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+:is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--openms-navy, #0c2171);
+  font-size: var(--openms-text-min, 0.875rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+:is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar__label i {
+  color: var(--openms-blue, #3157e9);
+}
+
+:is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar__control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+:is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar__select.publications-toolbar__select {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  min-width: 10.5rem !important;
+  height: 44px !important;
+  padding: 0 2.75rem 0 1.1rem !important;
+  border: 1px solid rgba(var(--openms-navy-rgb, 12, 33, 113), 0.22) !important;
+  border-radius: 999px !important;
+  background: #fff none !important;
+  box-shadow: 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.05) !important;
+  color: var(--openms-navy, #0c2171) !important;
+  font-size: var(--openms-text-min, 0.875rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+:is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar__select.publications-toolbar__select:hover {
+  border-color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.45) !important;
+  box-shadow: 0 0.45rem 1.1rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1) !important;
+}
+
+:is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar__select.publications-toolbar__select:focus-visible {
+  outline: none !important;
+  border-color: var(--openms-blue, #3157e9) !important;
+  box-shadow: 0 0 0 3px rgba(var(--openms-blue-rgb, 49, 87, 233), 0.25) !important;
+}
+
+:is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar__chevron {
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--openms-navy, #0c2171);
+  pointer-events: none;
+}
+
+@media (max-width: 639px) {
+  :is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar__filter,
+  :is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar__control,
+  :is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar__select.publications-toolbar__select {
+    width: 100% !important;
+  }
+
+  :is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar__control {
+    flex: 1 1 auto;
+  }
+}
