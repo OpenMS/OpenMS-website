@@ -1927,3 +1927,39 @@ html body .tally-popup iframe {
 :is(html, #white-card-hover#white-card-hover#white-card-hover#white-card-hover) body .retreat-highlights__mosaic .openms-lib-about__tile:is(:hover, :focus-within) {
   box-shadow: none !important;
 }
+
+/* ---------- Featured and Affiliated Apps: logos look the same size ----------
+   Every logo used to fit the same square, so wide logos came out very short
+   (naseweis 99x33px, mzPeak 99x17px) next to square ones (99x99px). Now each
+   logo gets about the same area as an 84x84px square: wide logos are wider,
+   square ones smaller. --logo-ar (width / height) comes from the image file,
+   set in layouts/partials/webapps-project-detail-card.html. Very wide logos
+   stop at 150px wide (170px on phones, where the logo sits above the name).
+   The logo area has one width and height, so the text lines up. */
+:is(html, #app-logo-size#app-logo-size) body .webapps-project-detail-card .webapps-project-detail-card__logo-wrap:not(.webapps-project-detail-card__logo-wrap--text) {
+  --logo-size: 84px;
+  --logo-max-w: 150px;
+  width: var(--logo-max-w) !important;
+  height: calc(var(--logo-size) * 1.15) !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+:is(html, #app-logo-size#app-logo-size) body .webapps-project-detail-card .webapps-project-detail-card__logo-wrap .webapps-project-detail-card__logo {
+  width: min(var(--logo-max-w), calc(var(--logo-size) * sqrt(var(--logo-ar, 1)))) !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: calc(var(--logo-size) * 1.15) !important;
+  aspect-ratio: var(--logo-ar, 1) !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 767px) {
+  :is(html, #app-logo-size#app-logo-size) body .webapps-project-detail-card .webapps-project-detail-card__logo-wrap:not(.webapps-project-detail-card__logo-wrap--text) {
+    --logo-max-w: 170px;
+    justify-content: flex-start !important;
+  }
+}

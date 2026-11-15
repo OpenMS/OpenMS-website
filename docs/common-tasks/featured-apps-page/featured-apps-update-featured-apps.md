@@ -21,7 +21,7 @@ And one card is one **block of lines** in `config.yaml`:
 
 | Number | Line | What it is |
 |:--:|------|-----------|
-| 1 | `logo:` and `logoSize:` | The picture. `logo` is its place in the website (always starts with `/images/…`). `logoSize` can be `standard`, `large` or `xlarge`. Use a bigger size if the logo looks small next to the others. |
+| 1 | `logo:` | The picture. `logo` is its place in the website (always starts with `/images/…`). The website sizes every logo by itself, so they all look the same size (a long logo gets more width than a square one). `logoSize:` lines have no effect on these cards: you can leave them or delete them. |
 | 2 | `name:` | The app's name. |
 | 3 | `description:` | One sentence about the app. |
 | 4 | `maintainers:` | Who looks after the app. Optional. |
@@ -123,7 +123,7 @@ The big heading and the introduction above the apps ("Community tools / Featured
 |-----------------|---------------|
 | The preview says **Failed** | The spaces are wrong. The new block must start with exactly the same number of spaces as the other `- name:` lines. See [Spaces matter](../../getting-started/edit-via-github.md#spaces-matter-in-configyaml). |
 | The logo is a broken picture | The path in `logo:` must match the uploaded file name exactly (capital letters count) and start with `/images/`. |
-| The logo looks too small | Change `logoSize: large` to `xlarge`. |
+| The logo looks smaller than the others | Crop the empty space around the picture before you upload it: the website treats empty space as part of the logo, so it looks smaller. |
 | A button is missing | Each button needs its own `- type:` and `url:` lines. |
 
 ## Related guides
