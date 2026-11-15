@@ -102,3 +102,25 @@
   padding-top: clamp(2rem, 4vw, 3rem) !important;
   padding-block-start: clamp(2rem, 4vw, 3rem) !important;
 }
+
+/* Phones (up to 767px): the app logo sits at the top of its card, above the
+   name, aligned left with the text. (Next to the name it squeezed the
+   description into a narrow column.) Tablets keep the logo on the right. */
+@media (max-width: 767px) {
+  :is(html, #featured-logo-top#featured-logo-top) body .openms-lib-page--featured .webapps-project-detail-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "logo"
+      "name"
+      "text"
+      "maintainers"
+      "actions" !important;
+    grid-template-rows: auto !important;
+  }
+
+  :is(html, #featured-logo-top#featured-logo-top) body .openms-lib-page--featured .webapps-project-detail-card__logo-wrap {
+    justify-self: start !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
