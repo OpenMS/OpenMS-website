@@ -2005,3 +2005,164 @@ html body .tally-popup iframe {
     --logo-size: 84px;
   }
 }
+
+/* ---------- Year dropdown (News and Publications) ----------
+   Built by assets/js/year-dropdown.js from a <select data-year-dropdown>.
+   A white button ("Year · All years ⌄") opens a white panel with
+   "All years" and a 5-column grid of year buttons; the chosen year is navy.
+   It replaces the browser's own select list, whose grey menu cannot be
+   styled. Full width on phones. */
+:is(html, #year-dd#year-dd) body label[hidden]:has(> select[data-year-dropdown]) {
+  display: none !important;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd {
+  position: relative;
+  z-index: 5;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 1.1rem;
+  border: 1px solid rgba(var(--openms-navy-rgb, 12, 33, 113), 0.16);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.06);
+  color: var(--openms-navy, #0c2171);
+  font: inherit;
+  font-size: var(--openms-text-min, 0.875rem);
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__btn:hover,
+:is(html, #year-dd#year-dd) body .year-dd.is-open .year-dd__btn {
+  border-color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.35);
+  box-shadow: 0 0.55rem 1.25rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1);
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__btn:focus-visible {
+  outline: none;
+  border-color: var(--openms-blue, #3157e9);
+  box-shadow: 0 0 0 3px rgba(var(--openms-blue-rgb, 49, 87, 233), 0.25);
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__icon {
+  color: var(--openms-blue, #3157e9);
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__label {
+  color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.65);
+  font-weight: 600;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__value {
+  min-width: 4.5em;
+  font-weight: 700;
+  text-align: left;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__chevron {
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd.is-open .year-dd__chevron {
+  transform: rotate(180deg);
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: min(24rem, calc(100vw - 2 * var(--openms-page-inline, 1rem)));
+  padding: 1rem;
+  border: 1px solid rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 1rem 2.5rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.16);
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__panel[hidden] {
+  display: none;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__title {
+  margin: 0 0 0.75rem;
+  color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.65);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.4rem;
+  max-height: min(24rem, 65vh);
+  overflow-y: auto;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin: 0;
+  padding: 0 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.04);
+  color: var(--openms-navy, #0c2171);
+  font: inherit;
+  font-size: var(--openms-text-min, 0.875rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+/* "All years" takes the whole first row. */
+:is(html, #year-dd#year-dd) body .year-dd__item:first-child {
+  grid-column: 1 / -1;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__item:hover {
+  background: rgba(var(--openms-blue-rgb, 49, 87, 233), 0.1);
+  color: var(--openms-blue, #3157e9);
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__item:focus-visible {
+  outline: none;
+  border-color: var(--openms-blue, #3157e9);
+  box-shadow: 0 0 0 3px rgba(var(--openms-blue-rgb, 49, 87, 233), 0.25);
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__item.is-active {
+  background: var(--openms-navy, #0c2171);
+  color: #fff;
+}
+
+@media (max-width: 639px) {
+  :is(html, #year-dd#year-dd) body .year-dd,
+  :is(html, #year-dd#year-dd) body .year-dd__btn {
+    width: 100%;
+  }
+
+  :is(html, #year-dd#year-dd) body .year-dd__value {
+    flex: 1 1 auto;
+  }
+
+  :is(html, #year-dd#year-dd) body .year-dd__panel {
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+}
