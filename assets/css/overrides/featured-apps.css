@@ -129,3 +129,12 @@
     margin-top: 0 !important;
   }
 }
+
+/* App card buttons on small screens (below 768px): 18px apart instead of
+   10px, side by side and between rows, so a hovered button's glow and
+   slight grow do not touch its neighbour. Same cards on Affiliated Apps. */
+@media (max-width: 767px) {
+  :is(html, #app-btn-gap#app-btn-gap) body .webapps-project-detail-card .webapps-project-links {
+    gap: 1.125rem !important;
+  }
+}
