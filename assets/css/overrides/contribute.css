@@ -375,12 +375,8 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
   }
 }
 
-/* ---------- Contribute hero: "Join Discord" first on mobile ---------- */
-@media (max-width: 639px) {
-  html:is(html, #contribute-hero-order-boost) body .openms-lib-page--contribute:not(.openms-lib-page--report-handling) .openms-lib-hero__actions > a[href*="discord"] {
-    order: -1;
-  }
-}
+/* Contribute hero: "Join Discord" comes after the blue "Explore ways to
+   contribute" button at every screen size (it used to move first on phones). */
 
 /* ---------- Contribute "Need to report something?": the email always sits
    on its own line right under the title, then the description (the order
