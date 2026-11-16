@@ -1513,3 +1513,10 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
+
+/* Home top banner: a little more space between "Get started" and "Explore
+   the library" (was 12px), so the hover growth and glow of one button do
+   not touch the other. */
+:is(html, #hero-btn-gap#hero-btn-gap) body .hero-home__actions {
+  gap: 1.25rem !important;
+}
