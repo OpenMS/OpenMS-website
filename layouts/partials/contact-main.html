@@ -65,13 +65,14 @@
                   rel="noopener noreferrer"
                   {{- end }}
                 >
-                  {{ .text }}<span aria-hidden="true"> →</span>
+                  {{ .text }}{{ if not (hasPrefix .url "mailto:") }}<span aria-hidden="true"> →</span>{{ end }}
                 </a>
                 {{- end }}
               </div>
               {{- else }}
               {{- with .linkText }}
-              <span class="openms-lib-resources__item-link">{{ . }}<span aria-hidden="true"> →</span></span>
+              {{- /* No arrow after an email address. */}}
+              <span class="openms-lib-resources__item-link">{{ . }}{{ if not (hasPrefix $url "mailto:") }}<span aria-hidden="true"> →</span>{{ end }}</span>
               {{- end }}
               {{- end }}
             {{- if or .links (not $url) }}
