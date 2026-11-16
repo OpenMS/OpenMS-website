@@ -3,7 +3,7 @@
 > OpenMS is an open-source ecosystem for computational mass spectrometry in the life sciences: bottom-up and top-down proteomics, immunopeptidomics, metabolomics, cross-linking and nucleic acid mass spectrometry. BSD-licensed and community-developed. This site, https://openms.de, is the project's home.
 
 ## Core projects
-- [OpenMS-lib](https://openms.de/openms-lib/): the C++ library and TOPP command-line tools (long known simply as "OpenMS"). Cite: Pfeuffer et al., "OpenMS 3 enables reproducible analysis of large-scale mass spectrometry data", Nature Methods 21, 365–367 (2024), doi:10.1038/s41592-024-02197-7, https://pubmed.ncbi.nlm.nih.gov/38366242/
+- [OpenMS-lib](https://openms.de/openms-lib/): the C++ library and its command-line tools, the OpenMS-tools (formerly TOPP, The OpenMS Pipeline); long known simply as "OpenMS". Cite: Pfeuffer et al., "OpenMS 3 enables reproducible analysis of large-scale mass spectrometry data", Nature Methods 21, 365–367 (2024), doi:10.1038/s41592-024-02197-7, https://pubmed.ncbi.nlm.nih.gov/38366242/
 - [pyOpenMS](https://openms.de/pyopenms/): Python bindings to OpenMS-lib. Cite: Röst et al., Proteomics (2014), https://pubmed.ncbi.nlm.nih.gov/24420968/
 - [pyOpenMS-viz](https://openms.de/pyopenms-viz/): plotting mass spectrometry data from pandas DataFrames. Cite: Sing et al., Journal of Proteome Research (2025), https://pubmed.ncbi.nlm.nih.gov/40019346/
 - [OpenMS WebApps](https://openms.de/webapps/): a framework for building browser apps on OpenMS. Cite: Müller et al., Journal of Proteome Research (2025), https://pubmed.ncbi.nlm.nih.gov/39881492/

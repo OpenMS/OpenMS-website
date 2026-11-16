@@ -204,7 +204,7 @@ languages:
           projects. Browse each project to learn more and see how to contribute.
         projects:
           - title: OpenMS-lib
-            description: Core C++ library and TOPP tools for LC-MS data management and analysis.
+            description: Core C++ library and OpenMS-tools for LC-MS data management and analysis.
             url: /openms-lib/
             contributeUrl: "/openms-lib/#for-developers"
           - title: pyOpenMS
@@ -862,7 +862,7 @@ languages:
           - title: Cross-platform
             tag: Windows · macOS · Linux
             text: Build and run on all major platforms with the same toolchain.
-          - title: TOPP pipeline
+          - title: OpenMS-tools
             tag: 200+ tools
             text: Ready-made command-line utilities for proteomics and metabolomics analysis.
         note: >-
@@ -887,15 +887,17 @@ languages:
             text: High performance and optimized for scale
 
       openmsLibTopp:
-        eyebrow: TOPP Tools
-        title: Ships with the TOPP command-line tools
-        lead: 150+ modular tools covering the complete mass spectrometry pipeline.
+        eyebrow: OpenMS-tools
+        title: Ships with the OpenMS-tools
+        lead: >-
+          150+ modular command-line tools covering the complete mass spectrometry
+          pipeline, formerly known as TOPP (The OpenMS Pipeline).
         image: /images/content_images/topp-tool-list.png
-        imageAlt: Browse OpenMS TOPP tools such as MSFraggerAdapter, ProteinQuantifier, and OpenSwathWorkflow
+        imageAlt: Browse OpenMS tools such as MSFraggerAdapter, ProteinQuantifier, and OpenSwathWorkflow
         features:
           - title: Compose workflows
             icon: fas fa-project-diagram
-            text: Chain TOPP tools together to build custom workflows tailored to your data.
+            text: Chain OpenMS tools together to build custom workflows tailored to your data.
           - title: Engine integration
             icon: fas fa-cogs
             text: Integrates with common workflow engines like Nextflow and KNIME.
@@ -904,7 +906,7 @@ languages:
           - title: Ongoing coverage
             icon: fas fa-layer-group
             text: 200+ modular tools for every stage of the mass spectrometry pipeline, with docs and community support.
-        ctaText: Explore TOPP tools
+        ctaText: Explore OpenMS-tools
         ctaUrl: https://archive.openms.de/openms/Documentation/release/latest/html/TOPP_documentation.html
 
       openmsLibGettingStarted:
@@ -919,10 +921,10 @@ languages:
             url: https://openms.readthedocs.io/en/latest/getting-started/introduction.html
             linkText: Open docs
             featured: true
-          - title: TOPP Tools
+          - title: OpenMS-tools
             tag: Pipeline
             icon: fas fa-terminal
-            text: Browse the full suite of processing and analysis tools in the TOPP pipeline.
+            text: Browse the full suite of OpenMS processing and analysis tools (TOPP).
             url: https://archive.openms.de/openms/Documentation/release/latest/html/TOPP_documentation.html
             linkText: Browse tools
           - title: Featured Apps
@@ -1000,11 +1002,11 @@ languages:
             hoverText: Open a bug report, feature request, or discussion on the OpenMS GitHub tracker.
             url: https://github.com/OpenMS/OpenMS/issues/new/choose
             linkText: Open on GitHub
-          - title: Add a TOPP tool
+          - title: Add an OpenMS tool
             tag: Extend
             icon: fas fa-puzzle-piece
-            subtitle: Extend the TOPP pipeline suite.
-            hoverText: Follow the step-by-step guide to add a new tool to the TOPP command-line pipeline suite.
+            subtitle: Extend the OpenMS-tools.
+            hoverText: Follow the step-by-step guide to add a new tool to the OpenMS-tools.
             url: https://openms.readthedocs.io/en/latest/manual/develop/adding-new-tool-to-topp.html
             linkText: Follow the guide
           - title: Developer manual
@@ -1318,7 +1320,7 @@ languages:
             - title: Python-first
               text: Python-based pipeline creation and frontend development
             - title: TOPP UI
-              text: Auto-generates UI for TOPP tools
+              text: Auto-generates UI for OpenMS tools
             - title: Custom visuals
               text: Customizable visualizations and results display
             - title: Shareable workspaces
@@ -1673,8 +1675,8 @@ languages:
             icon: /images/logos/OpenMS_transparent_blackFont.svg
             description: >-
               Reusable C++ algorithms and data structures for mass spectrometry
-              software. Ships with The OpenMS Pipeline (TOPP) command line tools
-              for mass spectrometry analysis.
+              software. Ships with the OpenMS-tools, command-line tools for mass spectrometry
+              analysis formerly known as TOPP (The OpenMS Pipeline).
           - name: pyOpenMS
             url: /pyopenms/
             tag: Python
