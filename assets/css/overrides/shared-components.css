@@ -2166,3 +2166,19 @@ html body .tally-popup iframe {
     width: auto;
   }
 }
+
+/* ---------- Numbered cards: the number turns blue on hover ----------
+   "01 Two decades of expertise", "01 Who it's for"…: when the card is
+   hovered (or a link in it has keyboard focus), its number turns solid
+   blue, on every page. It used to differ: grey on pyOpenMS, unchanged on
+   OpenMS-lib, a slightly stronger blue on most other pages. The number's
+   colour at rest stays as it was. */
+:is(html, #card-num-hover#card-num-hover#card-num-hover) body :is(.openms-lib-about__benefit, .openms-lib-about__tile):is(:hover, :focus-within) :is(.openms-lib-about__benefit-num, .openms-lib-about__num) {
+  color: var(--openms-blue, #3157e9) !important;
+  -webkit-text-fill-color: var(--openms-blue, #3157e9) !important;
+  opacity: 1 !important;
+}
+
+:is(html, #card-num-hover#card-num-hover#card-num-hover) body :is(.openms-lib-about__benefit-num, .openms-lib-about__num) {
+  transition: color 0.22s ease, -webkit-text-fill-color 0.22s ease, opacity 0.22s ease !important;
+}
