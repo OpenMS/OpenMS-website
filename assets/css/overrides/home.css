@@ -1487,3 +1487,22 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
     margin-bottom: 0.5rem !important;
   }
 }
+
+/* Home "Featured Apps" logos look the same size: each gets about the area
+   of a 68x68px square instead of the same 72px height (the wide naseweis
+   logo was 216x72px, more than twice the others). --logo-ar comes from the
+   file (layouts/partials/webapps-project-card.html), as on the Featured Apps
+   page. The logo area keeps its 72px height, so the cards line up. */
+:is(html, #home-apps#home-apps) body .home-page .webapps-project-card--catalog .webapps-project-card__logo.webapps-project-card__logo {
+  --logo-size: 68px;
+  width: min(100%, calc(var(--logo-size) * sqrt(var(--logo-ar, 1)))) !important;
+  height: auto !important;
+  max-height: 72px !important;
+  aspect-ratio: var(--logo-ar, 1) !important;
+  object-fit: contain !important;
+}
+
+:is(html, #home-apps#home-apps) body .home-page .webapps-project-card--catalog .webapps-project-card__logo-wrap {
+  display: flex !important;
+  align-items: center !important;
+}

@@ -7,6 +7,8 @@
 {{- $logo := $project.logo | default "" }}
 {{- $useTextLogo := or (not $logo) (eq $project.logoKind "text") }}
 {{- $isHomeCatalog := eq $embed "home" }}
+{{- /* Width / height of the logo file, so every logo can get the same area. */}}
+{{- $logoAr := cond $useTextLogo 1.0 (partial "logo-aspect-ratio.html" $logo) }}
 {{- if $isExternal }}
   {{- $ariaLabel = printf "%s (opens in new tab)" $ariaLabel }}
 {{- end }}
@@ -24,6 +26,7 @@
       {{- if not $useTextLogo }}
       <img
         class="webapps-project-card__logo"
+        style="{{ printf "--logo-ar: %.3f" $logoAr | safeCSS }}"
         src="{{ $logo | relURL }}"
         alt=""
         loading="lazy"
