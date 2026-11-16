@@ -60,6 +60,7 @@ The footer's columns, links and social icons are **`config.yaml` → `footer`** 
 | **Legal** | Privacy | `/privacy/` | `content/en/privacy.md` | `privacy-main.html` (the page is built from the `###` headings of the page file) | the page file; the short summaries are in the design file | `overrides/privacy.css` |
 | Legal | Press kit | `/press-kit/` | `content/en/press-kit.md` (title only) | `press-kit-main.html` | all text is written in the design file; downloads in `static/press-kit/` | `overrides/press-kit.css` |
 | Legal | Impressum | `/impressum/` | `content/en/impressum.md` | `impressum-main.html` | the page file | `impressum.css` |
+| Legal | llms.txt (for AI agents) | `/llms.txt` | none: it links to the text file `static/llms.txt`, not to a page (see [Images & static files](#images--static-files)) | none | `static/llms.txt` | none |
 
 **Example: where is the "Getting Involved" page?**
 
@@ -110,7 +111,7 @@ Pages **not** in the menu or footer: `/404` (the error page), `/core_developers/
 | Webapp logos | `static/images/webapp/logo/` |
 | Affiliated App logos | `static/images/webapp/logo/affiliate/` |
 | News pictures | `static/images/news_images/` |
-| Text for AI agents (`/llms.txt`) | `static/llms.txt` (see [Agent feedback](agent-feedback.md)) |
+| Text for AI agents (`/llms.txt`) | `static/llms.txt`, also linked from the footer (**LEGAL**). How it works: [Agent feedback](agent-feedback.md) |
 | Agent feedback form (`/agent-feedback/`) | `static/agent-feedback/index.html` (sends to the Apps Script in `apps-script/agent-feedback.gs`) |
 
 ## Layout & style (web team)
