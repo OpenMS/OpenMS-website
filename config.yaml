@@ -862,7 +862,7 @@ languages:
           - title: Cross-platform
             tag: Windows · macOS · Linux
             text: Build and run on all major platforms with the same toolchain.
-          - title: OpenMS-tools
+          - title: OpenMS-tools (TOPP)
             tag: 200+ tools
             text: Ready-made command-line utilities for proteomics and metabolomics analysis.
         note: >-
@@ -888,7 +888,7 @@ languages:
 
       openmsLibTopp:
         eyebrow: OpenMS-tools
-        title: Ships with the OpenMS-tools
+        title: Ships with the OpenMS-tools (TOPP)
         lead: >-
           150+ modular command-line tools covering the complete mass spectrometry
           pipeline, formerly known as TOPP (The OpenMS Pipeline).
@@ -921,7 +921,7 @@ languages:
             url: https://openms.readthedocs.io/en/latest/getting-started/introduction.html
             linkText: Open docs
             featured: true
-          - title: OpenMS-tools
+          - title: OpenMS-tools (TOPP)
             tag: Pipeline
             icon: fas fa-terminal
             text: Browse the full suite of OpenMS processing and analysis tools (TOPP).
