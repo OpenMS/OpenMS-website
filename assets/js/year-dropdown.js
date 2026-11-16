@@ -2,7 +2,8 @@
   Year dropdown (News and Publications).
 
   Turns a year <select> marked with data-year-dropdown into a white button
-  ("Year · All years") that opens a white panel with "All years" and a grid
+  (calendar icon, "All years"; the word "Year" is only for screen readers)
+  that opens a white panel with "All years" and a grid
   of year buttons. The browser's own select list is grey and cannot be
   styled, so it is hidden; the select stays in the page and still holds the
   chosen year. Picking a year sets the select and fires its "change" event,

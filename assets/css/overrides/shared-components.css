@@ -2008,7 +2008,7 @@ html body .tally-popup iframe {
 
 /* ---------- Year dropdown (News and Publications) ----------
    Built by assets/js/year-dropdown.js from a <select data-year-dropdown>.
-   A white button ("Year · All years ⌄") opens a white panel with
+   A white button (calendar icon, "All years ⌄") opens a white panel with
    "All years" and a 5-column grid of year buttons; the chosen year is navy.
    It replaces the browser's own select list, whose grey menu cannot be
    styled. Full width on phones. */
@@ -2056,9 +2056,18 @@ html body .tally-popup iframe {
   color: var(--openms-blue, #3157e9);
 }
 
+/* The word "Year" is not shown (the calendar icon says it), but screen
+   readers still read it before the chosen year. */
 :is(html, #year-dd#year-dd) body .year-dd__label {
-  color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.65);
-  font-weight: 600;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 :is(html, #year-dd#year-dd) body .year-dd__value {
