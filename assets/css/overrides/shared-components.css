@@ -2013,7 +2013,8 @@ html body .tally-popup iframe {
    "All years" and a 5-column grid of year buttons; the chosen year is navy.
    It replaces the browser's own select list, whose grey menu cannot be
    styled. Full width on phones. */
-:is(html, #year-dd#year-dd) body label[hidden]:has(> select[data-year-dropdown]) {
+:is(html, #year-dd#year-dd) body label[hidden]:has(> select[data-year-dropdown]),
+:is(html, #year-dd#year-dd) body select[data-year-dropdown][hidden] {
   display: none !important;
 }
 
@@ -2114,7 +2115,7 @@ html body .tally-popup iframe {
 
 :is(html, #year-dd#year-dd) body .year-dd__grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--year-dd-cols, 5), minmax(0, 1fr));
   gap: 0.4rem;
   max-height: min(24rem, 65vh);
   overflow-y: auto;
@@ -2140,8 +2141,25 @@ html body .tally-popup iframe {
 }
 
 /* "All years" takes the whole first row. */
-:is(html, #year-dd#year-dd) body .year-dd__item:first-child {
+:is(html, #year-dd#year-dd) body .year-dd:not(.year-dd--no-wide-first) .year-dd__item:first-child {
   grid-column: 1 / -1;
+}
+
+/* Full-width version (Sponsor Us level chooser): the button and the panel
+   fill the space they are given, at every screen size. */
+:is(html, #year-dd#year-dd) body .year-dd.year-dd--full,
+:is(html, #year-dd#year-dd) body .year-dd.year-dd--full .year-dd__btn {
+  width: 100%;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd.year-dd--full .year-dd__value {
+  flex: 1 1 auto;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd.year-dd--full .year-dd__panel {
+  left: 0;
+  right: 0;
+  width: auto;
 }
 
 :is(html, #year-dd#year-dd) body .year-dd__item:hover {

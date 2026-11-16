@@ -13,6 +13,15 @@
   This file is named so that it loads after those scripts (all files in
   assets/js are joined in name order): their year options already exist.
   Styles: assets/css/overrides/shared-components.css ("Year dropdown").
+
+  Options (attributes on the select), for lists other than years:
+    data-year-dropdown-label  words read by screen readers before the value
+    data-year-dropdown-title  small heading in the panel
+    data-year-dropdown-icon   Font Awesome classes (default: calendar)
+    data-year-dropdown-cols   buttons per row in the panel (default 5)
+    data-year-dropdown-first-wide="false"  the first choice is not a full row
+    data-year-dropdown-full   the button and panel fill the width
+  Also used by the Sponsor Us "Benefit comparison" level chooser.
 */
 (function () {
   "use strict";
@@ -28,9 +37,19 @@
     var title =
       selectEl.getAttribute("data-year-dropdown-title") || "Show items from";
     var panelId = "year-dd-panel-" + n;
+    var icon =
+      selectEl.getAttribute("data-year-dropdown-icon") || "far fa-calendar-alt";
+    var cols = selectEl.getAttribute("data-year-dropdown-cols");
 
     var wrap = document.createElement("div");
     wrap.className = "year-dd";
+    if (selectEl.getAttribute("data-year-dropdown-first-wide") === "false") {
+      wrap.classList.add("year-dd--no-wide-first");
+    }
+    if (selectEl.hasAttribute("data-year-dropdown-full")) {
+      wrap.classList.add("year-dd--full");
+    }
+    if (cols) wrap.style.setProperty("--year-dd-cols", cols);
 
     var btn = document.createElement("button");
     btn.type = "button";
@@ -38,10 +57,11 @@
     btn.setAttribute("aria-expanded", "false");
     btn.setAttribute("aria-controls", panelId);
     btn.innerHTML =
-      '<i class="far fa-calendar-alt year-dd__icon" aria-hidden="true"></i>' +
+      '<i class="year-dd__icon" aria-hidden="true"></i>' +
       '<span class="year-dd__label"></span>' +
       '<span class="year-dd__value"></span>' +
       '<i class="fas fa-chevron-down year-dd__chevron" aria-hidden="true"></i>';
+    btn.querySelector(".year-dd__icon").className = icon + " year-dd__icon";
     btn.querySelector(".year-dd__label").textContent = label;
     var valueEl = btn.querySelector(".year-dd__value");
 
