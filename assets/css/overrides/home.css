@@ -1477,11 +1477,11 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
   max-height: 72px !important;
 }
 
-/* Home "Browse all apps →" link on phones and tablets (below 900px), where it
+/* Home "Browse all apps →" link on phones (below 768px), where it
    sits under the intro: it touched the first card (3–5px), so it looked like
    part of that card. Now it is close to the intro and has room before the
    cards. */
-@media (max-width: 899px) {
+@media (max-width: 767px) {
   :is(html, #home-apps-link#home-apps-link) body .home-page .webapps-featured__header--home .webapps-featured__header-action {
     margin-top: -0.25rem !important;
     margin-bottom: 0.5rem !important;
@@ -1519,4 +1519,32 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
    not touch the other. */
 :is(html, #hero-btn-gap#hero-btn-gap) body .hero-home__actions {
   gap: 1.25rem !important;
+}
+
+/* Home "Browse all apps →" from 768px: always on the same line as the last
+   line of the intro, at the right. The heading is two columns (text | link)
+   and the link lines up with the baseline of the intro's last line, however
+   many lines the intro wraps to (it used to drop below the intro between
+   768 and 1023px). */
+@media (min-width: 768px) {
+  :is(html, #home-apps-link#home-apps-link) body .home-page .webapps-featured__header.webapps-featured__header--home {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-areas: none !important;
+    align-items: last baseline !important;
+    column-gap: 1.5rem !important;
+  }
+
+  :is(html, #home-apps-link#home-apps-link) body .home-page .webapps-featured__header--home .webapps-featured__header-action {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    align-self: last baseline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  :is(html, #home-apps-link#home-apps-link) body .home-page .webapps-featured__header--home .webapps-featured__header-main {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
 }
