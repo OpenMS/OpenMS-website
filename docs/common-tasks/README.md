@@ -75,6 +75,7 @@ Every page of the website has **its own folder** here. The folders follow the **
 | LEGAL | **Privacy** (`/privacy/`) | `privacy-page/` | [Change the text](privacy-page/privacy-edit-text.md) |
 | LEGAL | **Press kit** (`/press-kit/`) | `press-kit-page/` | [Replace a download](press-kit-page/press-kit-replace-a-download.md) |
 | LEGAL | **Impressum** (`/impressum/`) | `impressum-page/` | [Change the text](impressum-page/impressum-edit-text.md) |
+| LEGAL | **llms.txt (for AI agents)** (`/llms.txt`, a text file, not a page) | none | [Agent feedback](../reference/agent-feedback.md) |
 
 ## Help for any page · folder `any-page/`
 
