@@ -47,6 +47,7 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | **Privacy** | [Change the text](common-tasks/privacy-page/privacy-edit-text.md) |
 | **Press kit** | [Replace a download](common-tasks/press-kit-page/press-kit-replace-a-download.md) |
 | **Impressum** | [Change the text](common-tasks/impressum-page/impressum-edit-text.md) |
+| **llms.txt (for AI agents)** (`/llms.txt`) | [Agent feedback](reference/agent-feedback.md) |
 | **Help for any page** | [Find and change the text of a page](common-tasks/any-page/edit-page-text.md) · [Add a picture or logo](common-tasks/any-page/add-images.md) |
 
 ## Working on the site

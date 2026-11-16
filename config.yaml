@@ -1762,6 +1762,8 @@ languages:
                 link: /press-kit
               - text: Impressum
                 link: /impressum
+              - text: llms.txt (for AI agents)
+                link: /llms.txt
 
       navbar:
         - title: Projects

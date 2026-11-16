@@ -40,9 +40,7 @@ You MUST disclose the use of AI tools when a significant part of the contributio
 
 Information about the use of AI tools will help us evaluate their impact, build new best practices and adjust existing processes.
 
-- For contributions tracked in Git, disclosures MUST be made where authorship is normally indicated.
-    - If substantial AI is used (e.g. agentic AI), the `Co-authored-by` commit message trailer MUST be used. Even if AI is a co-author, the human contributor always takes full responsibility for the contribution.
-    - If AI is used in another capacity, the recommended method is an `Assisted-by:` commit message trailer.
+- For contributions tracked in Git, disclosures MUST be made where authorship is normally indicated. If substantial AI is used (e.g. agentic AI), the `Co-authored-by` commit message trailer MUST be used. Even if AI is a co-author, the human contributor always takes full responsibility for the contribution.
 - For other contributions, disclosure may include document preambles, design file metadata, translation notes, or wiki page categories.
 
 ### 3. Human Understanding
