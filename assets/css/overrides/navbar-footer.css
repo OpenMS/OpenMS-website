@@ -180,3 +180,18 @@ html:is(html, #footer-copy-small-boost) body .footer-copyright {
   max-height: 2.75rem !important;
   max-width: 100% !important;
 }
+
+/* Footer links a little closer together: each link is a 30px-tall tap area
+   (was 36px on laptops, 31px on phones) with 4px between links (was 8px),
+   so about 16px of space between two lines of text instead of 22px. The tap
+   area stays well above the 24px minimum. */
+:is(html, #footer-tight#footer-tight) body .footer-nav .footer-link-group ul {
+  row-gap: 0.25rem !important;
+  gap: 0.25rem !important;
+}
+
+:is(html, #footer-tight#footer-tight) body .footer-nav .footer-link-group ul > li > a {
+  min-height: 30px !important;
+  padding-top: 0.15rem !important;
+  padding-bottom: 0.15rem !important;
+}
