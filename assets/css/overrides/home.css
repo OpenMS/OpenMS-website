@@ -1504,5 +1504,12 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
 
 :is(html, #home-apps#home-apps) body .home-page .webapps-project-card--catalog .webapps-project-card__logo-wrap {
   display: flex !important;
-  align-items: center !important;
+  align-items: flex-end !important;
+}
+
+/* The title sits close under the logo: every logo rests on the bottom of
+   the logo area, and the title has no extra space above it. */
+:is(html, #home-apps#home-apps) body .home-page .webapps-project-card--catalog .webapps-project-card__name.webapps-project-card__name {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
