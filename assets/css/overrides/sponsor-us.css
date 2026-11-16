@@ -484,3 +484,9 @@ html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier][data-
 :is(html, #tiers-head#tiers-head) body .openms-lib-page--sponsor-us #sponsorship-levels .sponsor-section__head .sponsor-section__lead {
   max-width: min(100%, 40em) !important;
 }
+
+/* Benefit comparison "Sponsorship level" chooser (phones and tablets): more
+   space between the line above it and the button (was 20px). */
+:is(html, #tiers-switcher#tiers-switcher) body .openms-lib-page--sponsor-us .sponsor-benefits__switcher {
+  margin-top: 2rem !important;
+}
