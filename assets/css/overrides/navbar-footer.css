@@ -195,3 +195,23 @@ html:is(html, #footer-copy-small-boost) body .footer-copyright {
   padding-top: 0.15rem !important;
   padding-bottom: 0.15rem !important;
 }
+
+/* Footer social icons a bit closer together and to the tagline above: each
+   icon sits in a 40x40px tap area (was 46px, plus 4px between them), and the
+   row starts a little nearer the tagline. */
+:is(html, #footer-socials#footer-socials) body .footer-brand .footer-socials {
+  gap: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+:is(html, #footer-socials#footer-socials) body .footer-brand .footer-socials > a {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+}
+
+:is(html, #footer-socials#footer-socials) body .footer-brand .footer-socials > a:first-child {
+  margin-left: -9px !important;
+}
