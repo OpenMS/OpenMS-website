@@ -23,13 +23,14 @@
 
 /* Header intro on set lines (config.yaml → fellowshipPage.blurb, one
    .openms-lib-hero__lead-line per line): each line stays whole from 768px;
-   on phones the words wrap freely. */
+   on phones the lines run together as one paragraph and wrap freely. */
 html body .openms-lib-page--fellowship .openms-lib-hero__lead-line {
-  display: block;
+  display: inline;
 }
 
 @media (min-width: 768px) {
   html body .openms-lib-page--fellowship .openms-lib-hero__lead-line {
+    display: block;
     white-space: nowrap;
   }
 }

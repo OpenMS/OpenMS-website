@@ -1450,8 +1450,9 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
     hyphens: manual;
   }
 
+  /* Icons a bit bigger on small screens (were 17px; 34px on laptops). */
   :is(html, #fellow-facts-row) body .openms-lib-page--fellowship .fellowship-facts__icon {
-    font-size: 1.1rem !important;
+    font-size: 1.5rem !important;
   }
 }
 
