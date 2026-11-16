@@ -2210,3 +2210,13 @@ html body .tally-popup iframe {
 :is(html, #card-num-hover#card-num-hover#card-num-hover) body :is(.openms-lib-about__benefit-num, .openms-lib-about__num) {
   transition: color 0.22s ease, -webkit-text-fill-color 0.22s ease, opacity 0.22s ease !important;
 }
+
+/* "Back to top" arrow on phones and tablets (below 1024px): higher up, about
+   65px from the bottom edge (it was 21px), plus the phone's home-bar area,
+   so it is easy to reach with a thumb and clear of the browser's own
+   bottom bar. Laptops keep their position. */
+@media (max-width: 1023px) {
+  :is(html, #back-to-top-sm#back-to-top-sm#back-to-top-sm) body .back-to-top.back-to-top {
+    bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
