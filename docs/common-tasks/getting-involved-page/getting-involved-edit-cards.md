@@ -45,7 +45,7 @@ The section headings and the sentences under them, and the Funding, Outreach and
 
 ## Icons
 
-An icon is a Font Awesome name, for example `fas fa-users` or `fab fa-github`. Search for one on **https://fontawesome.com/v5/search?m=free** (version 5, free icons) and copy its name, starting with `fas`, `far` or `fab`. In `outreachLinks`, `icon: bluesky` and `icon: x` draw the Bluesky and X logos.
+An icon is a Font Awesome name, for example `fas fa-users` or `fab fa-github`. Search for one on **https://fontawesome.com/v5/search?m=free** (version 5, free icons) and copy its name, starting with `fas`, `far` or `fab`. In `outreachLinks`, `icon: bluesky` and `icon: x` draw the Bluesky and X logos. The Linux button uses the site's own Linux icon: `icon: openms-icon openms-icon--linux` (the picture is `static/images/icons/linux.svg`, from SVG Repo, GPL licence; the source note is inside the file).
 
 ## Good to know
 

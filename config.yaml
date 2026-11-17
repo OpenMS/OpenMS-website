@@ -111,7 +111,7 @@ languages:
                 icon: fab fa-apple
                 url: https://archive.openms.de/openms/Documentation/release/latest/html/install_mac.html
               - name: Linux
-                icon: fab fa-linux
+                icon: openms-icon openms-icon--linux
                 url: https://archive.openms.de/openms/Documentation/release/latest/html/install_linux.html
           - title: Educational materials
             icon: fas fa-book-open
@@ -1033,7 +1033,7 @@ languages:
             hoverText: Follow the platform guide for Linux, macOS, or Windows to build the C++ core and tools.
             platforms:
               - name: Linux
-                icon: fab fa-linux
+                icon: openms-icon openms-icon--linux
                 url: https://archive.openms.de/openms/Documentation/release/latest/html/install_linux.html
               - name: macOS
                 icon: fab fa-apple
