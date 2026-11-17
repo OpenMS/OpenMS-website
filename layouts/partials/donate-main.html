@@ -77,15 +77,14 @@
           <p class="openms-lib-resources__lead">If OpenMS has been useful in your research, teaching, or company work, please consider a gift commensurate with your resources.</p>
         </header>
 
+        {{- if not (or $hasZeffyEmbed $hasZeffyForm) }}
         <div class="donate-application__note">
-          {{- if not (or $hasZeffyEmbed $hasZeffyForm) }}
           <p class="donate-page__pending-note" role="status">
             The online donation link is not working yet. In the meantime,
             please <a href="/contact/">contact us</a> and we will help you make your donation.
           </p>
-          {{- end }}
-          <p class="donate-page__tax-note">{{ $taxNote }}</p>
         </div>
+        {{- end }}
 
         {{- if $hasZeffyEmbed -}}
         {{- /* Zeffy's embed (v2): zeffy-embed.js draws the form in the
@@ -118,7 +117,12 @@
             <span class="openms-lib-btn__label">Governance</span>
           </a>
         </div>
-        {{- end -}}
+        {{- end }}
+
+        {{- /* The tax note comes after the donation form. */}}
+        <div class="donate-application__note donate-application__note--after">
+          <p class="donate-page__tax-note">{{ $taxNote }}</p>
+        </div>
       </div>
     </section>
   </div>
