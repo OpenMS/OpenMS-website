@@ -48,6 +48,8 @@
           <p class="webapps-featured__lead">{{ . }}</p>
           {{- end }}
         </div>
+        {{- /* On the home page the "Browse all apps" link sits after the cards (below). */}}
+        {{- if ne $embed "home" }}
         {{- with $showAll }}
         <div class="webapps-featured__header-action">
           <a
@@ -55,6 +57,7 @@
             href="{{ .url }}"
           >{{ .text }}<span class="webapps-featured__show-all-icon" aria-hidden="true">→</span></a>
         </div>
+        {{- end }}
         {{- end }}
       </header>
       {{- else if not $isPage }}
@@ -99,6 +102,15 @@
         </li>
         {{- end }}
       </ul>
+
+      {{- if and $showAll (eq $embed "home") }}
+      <div class="webapps-featured__more">
+        <a
+          class="webapps-featured__show-all"
+          href="{{ $showAll.url }}"
+        >{{ $showAll.text }}<span class="webapps-featured__show-all-icon" aria-hidden="true">→</span></a>
+      </div>
+      {{- end }}
 
       {{- if $isPage }}
       {{- with $contactNote }}

@@ -1477,17 +1477,6 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
   max-height: 72px !important;
 }
 
-/* Home "Browse all apps →" link on phones (below 768px), where it
-   sits under the intro: it touched the first card (3–5px), so it looked like
-   part of that card. Now it is close to the intro and has room before the
-   cards. */
-@media (max-width: 767px) {
-  :is(html, #home-apps-link#home-apps-link) body .home-page .webapps-featured__header--home .webapps-featured__header-action {
-    margin-top: -0.25rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-}
-
 /* Home "Featured Apps" logos look the same size: each gets about the area
    of a 68x68px square instead of the same 72px height (the wide naseweis
    logo was 216x72px, more than twice the others). --logo-ar comes from the
@@ -1521,62 +1510,12 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
   gap: 1.25rem !important;
 }
 
-/* Home "Browse all apps →" from 768px: always on the same line as the last
-   line of the intro, at the right. The heading is two columns (text | link)
-   and the link lines up with the baseline of the intro's last line, however
-   many lines the intro wraps to (it used to drop below the intro between
-   768 and 1023px). */
-@media (min-width: 768px) {
-  :is(html, #home-apps-link#home-apps-link) body .home-page .webapps-featured__header.webapps-featured__header--home {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) auto !important;
-    grid-template-areas: none !important;
-    align-items: last baseline !important;
-    column-gap: 1.5rem !important;
-  }
-
-  :is(html, #home-apps-link#home-apps-link) body .home-page .webapps-featured__header--home .webapps-featured__header-action {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
-    align-self: last baseline !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  :is(html, #home-apps-link#home-apps-link) body .home-page .webapps-featured__header--home .webapps-featured__header-main {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-  }
-}
-
-/* Home "Browse all apps →" on phones (below 768px): also on the intro's last
-   line, at the right. The link sits at the bottom right of the heading, and
-   the intro ends with an empty space as wide as the link, so the last line
-   of text never runs under it. If the last line is already full, the empty
-   space moves to a new line and the link sits there, at the right, just
-   under the text. (From 768px the heading is two columns; see above.) */
-@media (max-width: 767px) {
-  :is(html, #home-apps-lastline#home-apps-lastline) body .home-page .webapps-featured__header.webapps-featured__header--home {
-    position: relative !important;
-  }
-
-  :is(html, #home-apps-lastline#home-apps-lastline) body .home-page .webapps-featured__header--home .webapps-featured__header-action {
-    position: absolute !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  :is(html, #home-apps-lastline#home-apps-lastline) body .home-page .webapps-featured__header--home .webapps-featured__lead::after {
-    content: "";
-    display: inline-block;
-    width: 8.5rem;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 767px) {
-  :is(html, #home-apps-lastline#home-apps-lastline) body .home-page .webapps-featured__header--home .webapps-featured__lead::after {
-    width: 9rem;
-  }
+/* Home "Browse all apps →": after the cards, at the right, lined up with the
+   cards' right edge (it used to sit in the heading). Text link with arrow.
+   The cards run about 22px past the bottom of their grid (their insides line
+   up on the grid's rows), so that is added to the space above the link. */
+:is(html, #home-apps-more#home-apps-more) body .home-page .webapps-featured__more {
+  display: flex !important;
+  justify-content: flex-end !important;
+  margin-top: calc(clamp(1rem, 2vw, 1.5rem) + 1.375rem) !important;
 }
