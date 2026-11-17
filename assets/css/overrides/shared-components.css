@@ -2266,3 +2266,11 @@ html body .tally-popup iframe {
 .openms-icon--linux {
   --openms-icon-url: url("/images/icons/linux.svg?v=2");
 }
+
+/* The Linux icon is black on light backgrounds (the Contribute page
+   "Build from source" links), like the Tux logo, instead of the link
+   colour. On navy buttons (OpenMS-lib) it stays white: black would not
+   show there. */
+:is(html, #linux-black#linux-black) body .openms-lib-page--contribute .openms-icon--linux {
+  background-color: #000 !important;
+}
