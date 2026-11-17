@@ -2261,6 +2261,8 @@ html body .tally-popup iframe {
   mask: var(--openms-icon-url) center / contain no-repeat;
 }
 
+/* "?v=2": a first copy of the file was broken; the version tag makes
+   browsers fetch the fixed one instead of a cached copy. */
 .openms-icon--linux {
-  --openms-icon-url: url("/images/icons/linux.svg");
+  --openms-icon-url: url("/images/icons/linux.svg?v=2");
 }
