@@ -2221,12 +2221,25 @@ html body .tally-popup iframe {
   }
 }
 
-/* Featured and Affiliated Apps on phones (logo above the name): every logo
-   rests on the bottom of the logo area, so the name sits the same short
-   distance under every logo. A wide, short logo (mzPeak, naseweis) used to
-   float in the middle of the area, 45px above its name. */
+/* Featured and Affiliated Apps on phones (logo above the name): the logo
+   area is exactly as tall and wide as its logo, so the logo starts near the
+   top of the card and the name sits the same short distance under every
+   logo. A wide, short logo (mzPeak, naseweis) used to float in a fixed 103px
+   area (about 90px from the card's top, 45px above its name), and mzPeak was
+   clipped at the sides by the area's padding. */
 @media (max-width: 767px) {
   :is(html, #app-logo-size#app-logo-size#app-logo-size) body .webapps-project-detail-card .webapps-project-detail-card__logo-wrap:not(.webapps-project-detail-card__logo-wrap--text) {
-    align-items: flex-end !important;
+    height: auto !important;
+    min-height: 0 !important;
+    width: auto !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    aspect-ratio: auto !important;
+  }
+
+  :is(html, #app-logo-size#app-logo-size#app-logo-size) body .webapps-project-detail-card .webapps-project-detail-card__logo-wrap .webapps-project-detail-card__logo {
+    display: block !important;
   }
 }
