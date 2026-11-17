@@ -1548,3 +1548,35 @@ html body .home-page__block--overview .keyfeatures-modern--home .keyfeatures-mod
     grid-row: 1 !important;
   }
 }
+
+/* Home "Browse all apps →" on phones (below 768px): also on the intro's last
+   line, at the right. The link sits at the bottom right of the heading, and
+   the intro ends with an empty space as wide as the link, so the last line
+   of text never runs under it. If the last line is already full, the empty
+   space moves to a new line and the link sits there, at the right, just
+   under the text. (From 768px the heading is two columns; see above.) */
+@media (max-width: 767px) {
+  :is(html, #home-apps-lastline#home-apps-lastline) body .home-page .webapps-featured__header.webapps-featured__header--home {
+    position: relative !important;
+  }
+
+  :is(html, #home-apps-lastline#home-apps-lastline) body .home-page .webapps-featured__header--home .webapps-featured__header-action {
+    position: absolute !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  :is(html, #home-apps-lastline#home-apps-lastline) body .home-page .webapps-featured__header--home .webapps-featured__lead::after {
+    content: "";
+    display: inline-block;
+    width: 8.5rem;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  :is(html, #home-apps-lastline#home-apps-lastline) body .home-page .webapps-featured__header--home .webapps-featured__lead::after {
+    width: 9rem;
+  }
+}
