@@ -2220,3 +2220,13 @@ html body .tally-popup iframe {
     bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px)) !important;
   }
 }
+
+/* Featured and Affiliated Apps on phones (logo above the name): every logo
+   rests on the bottom of the logo area, so the name sits the same short
+   distance under every logo. A wide, short logo (mzPeak, naseweis) used to
+   float in the middle of the area, 45px above its name. */
+@media (max-width: 767px) {
+  :is(html, #app-logo-size#app-logo-size#app-logo-size) body .webapps-project-detail-card .webapps-project-detail-card__logo-wrap:not(.webapps-project-detail-card__logo-wrap--text) {
+    align-items: flex-end !important;
+  }
+}
