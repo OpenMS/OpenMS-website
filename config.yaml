@@ -512,8 +512,9 @@ languages:
         taxNote: >-
           OpenMS Inc. is a U.S. 501(c)(3) public charity. Donations may be
           tax-deductible for U.S. donors where permitted by law.
-        # iframe src from Zeffy “Embed your form on your site” (recommended)
-        zeffyEmbedUrl: ""
+        # Zeffy form address from Zeffy "Embed your form on your site"
+        # (starts with https://www.zeffy.com/embed/donation-form/)
+        zeffyEmbedUrl: "https://www.zeffy.com/embed/donation-form/free-to-use-not-free-to-make"
         # Full Zeffy form URL if you prefer a button instead of embed
         zeffyFormUrl: ""
       sponsorTiers:
