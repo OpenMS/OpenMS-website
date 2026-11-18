@@ -1627,7 +1627,7 @@ languages:
           maintainers: Sam Wein
           links:
             - type: demo
-              url: https://abi-services.cs.uni-tuebingen.de/naseweis/?workspace=032ba1ba-578a-11f1-92ec-7e2f2bc7f0f7
+              url: https://naseweis.webapps.openms.org/
             - type: github
               url: https://github.com/poshul/nase-weis/
         - name: NuXL
