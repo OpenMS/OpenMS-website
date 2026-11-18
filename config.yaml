@@ -1621,13 +1621,13 @@ languages:
               label: Install (Windows)
               url: https://github.com/OpenMS/quantms-web/releases/tag/OpenDDA-1.0
         - name: naseweis
-          url: https://abi-services.cs.uni-tuebingen.de/naseweis/
+          url: https://naseweis.webapps.openms.org/
           logo: /images/webapp/logo/naseweis.png
           description: Web-based access to the nucleic acid search engine (NASE)
           maintainers: Sam Wein
           links:
             - type: demo
-              url: https://abi-services.cs.uni-tuebingen.de/naseweis/?workspace=032ba1ba-578a-11f1-92ec-7e2f2bc7f0f7
+              url: https://naseweis.webapps.openms.org/
             - type: github
               url: https://github.com/poshul/nase-weis/
         - name: NuXL
