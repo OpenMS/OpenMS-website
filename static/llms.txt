@@ -11,7 +11,7 @@
 ## Featured apps (built on OpenMS WebApps)
 - [FLASHApp](http://flashapp.webapps.openms.org/): top-down proteomics (FLASHDeconv deconvolution, proteoform analysis). Key paper: FLASHDeconv, Jeong et al., Cell Systems (2020), https://pubmed.ncbi.nlm.nih.gov/32078799/
 - [MHCquant](https://abi-services.cs.uni-tuebingen.de/mhcquant/): immunopeptidomics, a web front end to the nf-core/mhcquant pipeline. Key papers: Bichmann et al., Journal of Proteome Research (2019), https://pubmed.ncbi.nlm.nih.gov/31589052/; MHCquant2, Scheid et al., Genome Biology (2025), https://pubmed.ncbi.nlm.nih.gov/40983925/
-- [naseweis](https://abi-services.cs.uni-tuebingen.de/naseweis/): RNA / oligonucleotide search with the NucleicAcidSearchEngine (NASE). Key paper: Wein et al., Nature Communications (2020), https://pubmed.ncbi.nlm.nih.gov/32066737/
+- [naseweis](https://naseweis.webapps.openms.org/): RNA / oligonucleotide search with the NucleicAcidSearchEngine (NASE). Key paper: Wein et al., Nature Communications (2020), https://pubmed.ncbi.nlm.nih.gov/32066737/
 - [umetaflow](https://abi-services.cs.uni-tuebingen.de/umetaflow/): untargeted metabolomics. Key paper: Kontou et al., Journal of Cheminformatics (2023), https://pubmed.ncbi.nlm.nih.gov/37173725/
 - [NuXL](https://nuxl.webapps.openms.org/): protein–nucleic acid cross-linking mass spectrometry. Key paper: Siraj et al., Proteomics (2024), https://pubmed.ncbi.nlm.nih.gov/38629965/
 - All apps: https://openms.de/featured-apps/

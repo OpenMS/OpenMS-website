@@ -100,11 +100,11 @@ https://cdash.openms.de/* https://cdash.seqan.de/:splat 301!
 /flashida /webapps/ 301
 /FlashIda /webapps/ 301
 
-/NASEWEIS https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
-/naseweis https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
-/NaseWeis https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
-/nase-weis https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
-/NASE-WEIS https://abi-services.cs.uni-tuebingen.de/naseweis/ 301
+/NASEWEIS https://naseweis.webapps.openms.org/ 301
+/naseweis https://naseweis.webapps.openms.org/ 301
+/NaseWeis https://naseweis.webapps.openms.org/ 301
+/nase-weis https://naseweis.webapps.openms.org/ 301
+/NASE-WEIS https://naseweis.webapps.openms.org/ 301
 
 /UMETAFLOW https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
 /umetaflow https://abi-services.cs.uni-tuebingen.de/umetaflow/ 301
