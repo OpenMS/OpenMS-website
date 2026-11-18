@@ -25,6 +25,7 @@ And one card is one **block of lines** in `config.yaml`:
 | 2 | `name:` | The app's name. |
 | 3 | `description:` | One sentence about the app. |
 | 4 | `maintainers:` | Who looks after the app. Optional. |
+| – | `citation:` | The paper to cite for the app. Optional. It shows as a **Cite** line above the buttons. Write three indented lines under it: `text:` (what people see, for example `Kontou et al., J Cheminform 2023`), `url:` (the paper's DOI link, `https://doi.org/…`) and `title:` (the paper's title, shown when the mouse is on the link; optional). Example: the umetaflow, FLASH App and NuXL entries. |
 | 5 | `links:` | The buttons: **Demo**, **Install**, **GitHub**. Each button is two or three lines. How many: [see below](#how-many-buttons-links-can-an-app-have). |
 
 The `url:` line (just under `name:`) is the app's main web address.
@@ -71,6 +72,7 @@ Change `MyNewApp`, the web addresses, the logo file name, the description, and t
 
 - No Windows installer? Delete the three lines of `type: install`.
 - No `maintainers`? Delete that line.
+- No paper to cite? Leave out the `citation:` lines.
 - The **order** in the list is the order on the website. Put your app where you want it.
 
 ### Step 4 – Save and send for review

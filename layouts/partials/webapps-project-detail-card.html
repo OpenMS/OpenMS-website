@@ -38,6 +38,17 @@
   </div>
   {{- with $project.links }}
   <footer class="webapps-project-detail-card__actions">
+    {{- /* Optional paper to cite: citation.text (e.g. "Kontou et al., J Cheminform 2023"),
+           citation.url (the paper's DOI link) and citation.title (the paper's title,
+           shown on hover) in config.yaml. It sits on its own line above the buttons. */}}
+    {{- with $project.citation }}
+    {{- if and .text .url }}
+    <p class="webapps-project-detail-card__cite">
+      <span class="webapps-project-detail-card__maintainers-label">Cite</span>
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"{{ with .title }} title="{{ . }}"{{ end }}>{{ .text }}</a>
+    </p>
+    {{- end }}
+    {{- end }}
     {{ partial "webapps-project-links.html" (dict "links" .) }}
   </footer>
   {{- end }}

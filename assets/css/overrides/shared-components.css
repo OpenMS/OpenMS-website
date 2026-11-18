@@ -2274,3 +2274,36 @@ html body .tally-popup iframe {
 :is(html, #linux-black#linux-black) body .openms-lib-page--contribute .openms-icon--linux {
   background-color: #000 !important;
 }
+
+/* ---------- Featured / Affiliated Apps: "Cite" line on app cards ----------
+   Optional (citation in config.yaml). It sits at the top of the buttons area,
+   on its own full-width line just above the buttons, with the same small
+   label as "Maintainers"; the paper reference is a link to its DOI. */
+:is(html, #app-cite#app-cite) body .webapps-project-detail-card .webapps-project-detail-card__actions:has(.webapps-project-detail-card__cite) {
+  flex-wrap: wrap !important;
+  row-gap: 0.85rem !important;
+}
+
+:is(html, #app-cite#app-cite) body .webapps-project-detail-card .webapps-project-detail-card__cite {
+  flex: 0 0 100% !important;
+  margin: 0 !important;
+  font-size: var(--openms-body-size, 1rem);
+  line-height: 1.45;
+  color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.8);
+}
+
+:is(html, #app-cite#app-cite) body .webapps-project-detail-card .webapps-project-detail-card__cite .webapps-project-detail-card__maintainers-label {
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+:is(html, #app-cite#app-cite) body .webapps-project-detail-card .webapps-project-detail-card__cite a {
+  color: var(--openms-blue, #3157e9);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+:is(html, #app-cite#app-cite) body .webapps-project-detail-card .webapps-project-detail-card__cite a:is(:hover, :focus-visible) {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}

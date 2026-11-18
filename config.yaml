@@ -1559,6 +1559,10 @@ languages:
           description: >-
             Web-based analysis and visualization of top-down proteomics data
           maintainers: Tom Muller, Kyowon Jeong
+          citation:
+            text: Müller et al., Proteomics 2025
+            title: "FLASHApp: Interactive Data Analysis and Visualization for Top-Down Proteomics"
+            url: https://doi.org/10.1002/pmic.70042
           links:
             - type: demo
               url: http://flashapp.webapps.openms.org/
@@ -1586,6 +1590,10 @@ languages:
           logo: /images/webapp/logo/umetaflow.png
           logoSize: large
           description: Web-based pipeline for untargeted metabolomics
+          citation:
+            text: Kontou et al., J Cheminform 2023
+            title: "UmetaFlow: an untargeted metabolomics workflow for high-throughput data processing and analysis"
+            url: https://doi.org/10.1186/s13321-023-00724-w
           links:
             - type: demo
               url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
@@ -1623,6 +1631,10 @@ languages:
             Web-based analysis for chemical crosslinking-mass spectrometry (XL-MS)
             data
           maintainers: Arslan Siraj
+          citation:
+            text: Siraj et al., Protein Science 2026
+            title: "NuXLApp: Interactive data analysis and visualization for protein-nucleic acid crosslinking mass spectrometry"
+            url: https://doi.org/10.1002/pro.70820
           links:
             - type: demo
               url: https://nuxl.webapps.openms.org/
