@@ -1,12 +1,12 @@
 {{- $cfg := site.Params.openmsLibTopp | default dict -}}
 {{- $eyebrow := index $cfg "eyebrow" -}}
-{{- $title := index $cfg "title" | default "Ships with the TOPP command-line tools" -}}
+{{- $title := index $cfg "title" | default "Ships with the OpenMS-tools (TOPP)" -}}
 {{- $lead := index $cfg "lead" -}}
 {{- $features := index $cfg "features" | default (slice) -}}
-{{- $ctaText := index $cfg "ctaText" | default "Explore TOPP tools" -}}
+{{- $ctaText := index $cfg "ctaText" | default "Explore OpenMS-tools" -}}
 {{- $ctaUrl := index $cfg "ctaUrl" -}}
 {{- $image := index $cfg "image" | default "/images/content_images/topp-tool-list.png" -}}
-{{- $imageAlt := index $cfg "imageAlt" | default "OpenMS TOPP tools list" -}}
+{{- $imageAlt := index $cfg "imageAlt" | default "OpenMS tools list" -}}
 {{- $defaultIcons := slice "fas fa-project-diagram" "fas fa-cogs" "fas fa-layer-group" -}}
 <section class=" openms-lib-topp-split--cards openms-lib-topp-split--solution" aria-labelledby="openms-lib-topp-title">
   <div class="openms-lib-topp-split__inner">
