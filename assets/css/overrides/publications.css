@@ -82,3 +82,25 @@ html body .openms-lib-page--publications #key-publications .publications-cite-ca
 :is(html, #pub-title-upper-boost) body .publications-page .publication-entry .publication-title .publication-title-link {
   text-transform: uppercase !important;
 }
+
+/* "Show more →": the arrow sits close to the words (it was about 19px away:
+   a 13px gap plus 6px of margin), like the other text links with an arrow. */
+:is(html, #pubs-more-arrow#pubs-more-arrow) body .publications-more__btn {
+  gap: 0.35rem !important;
+}
+
+:is(html, #pubs-more-arrow#pubs-more-arrow) body .publications-more__btn .publications-more__arrow {
+  margin-left: 0 !important;
+}
+
+/* ---------- Publications: "Year" dropdown on the right ----------
+   The dropdown itself (assets/js/year-dropdown.js) is styled in
+   shared-components.css ("Year dropdown"). Full width on phones. */
+:is(html, #pubs-year#pubs-year) body .openms-lib-page--publications .publications-toolbar {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  height: auto !important;
+  position: relative;
+  z-index: 5;
+}

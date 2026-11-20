@@ -1450,8 +1450,9 @@ html body .openms-lib-page--contribute #ways-to-contribute#ways-to-contribute .c
     hyphens: manual;
   }
 
+  /* Icons a bit bigger on small screens (were 17px; 34px on laptops). */
   :is(html, #fellow-facts-row) body .openms-lib-page--fellowship .fellowship-facts__icon {
-    font-size: 1.1rem !important;
+    font-size: 1.5rem !important;
   }
 }
 
@@ -1628,4 +1629,681 @@ html body .tally-popup iframe {
   html body .tally-popup iframe {
     max-height: min(calc(100svh - 96px), 760px) !important;
   }
+}
+
+/* ---------- Section labels: never under 12px ----------
+   The small capital labels above section titles ("Get started", "For
+   Developers", "Research impact"...) were 11.4-11.8px on phones and tablets.
+   12px is the floor for readable text; laptops already show 12px, so they
+   do not change. Also the app card labels ("Maintainers", archived "NF-Core
+   pipeline" tags, which were 9.5-10px). (The home hero's "Open-source · Free
+   forever" keeps its own, deliberately smaller size.) */
+:is(html, #label-min-12) body :is(
+  .openms-lib-hero__eyebrow,
+  .openms-lib-resources__eyebrow,
+  .openms-lib-block__eyebrow,
+  .openms-lib-cite__eyebrow,
+  .openms-lib-topp-split__eyebrow,
+  .openms-lib-developers__group,
+  .publications-cite-card__topic,
+  .webapps-featured__eyebrow,
+  .keyfeatures-modern__eyebrow,
+  .ecosystem-home__eyebrow,
+  .community-home__eyebrow,
+  .contact-home__eyebrow,
+  .contribute-channels__eyebrow,
+  .contribute-ways__eyebrow,
+  .webapps-archived__revival-kicker,
+  .webapps-project-detail-card__maintainers-label,
+  .webapps-archived-entry__type,
+  .community-news-events__press-date,
+  .contribute-track__badge,
+  .contribute-support__kicker,
+  .contribute-outreach__eyebrow,
+  .openms-lib-about__eyebrow,
+  .openms-lib-resources__item-tag,
+  .governance-membership__eyebrow,
+  .sponsor-tier__motto,
+  .sponsor-tier__badge,
+  .leadership-card__role
+) {
+  font-size: max(12px, 0.75rem) !important;
+}
+
+/* App cards (Featured, Affiliated and Archived Apps): descriptions and the
+   maintainer list stop at about 75 characters a line (they reached 84-105
+   on wide screens). */
+:is(html, #label-min-12) body :is(.webapps-project-detail-card__text, .webapps-project-detail-card__maintainers, .webapps-archived-entry__text) {
+  max-width: 34em !important;
+}
+
+/* ---------- Community pages: tap areas and line length (best practice) ----------
+   Calendar, News, Getting Involved, Developer Retreat and the text pages.
+   Small standalone links get a 24px-tall tap area (they were 16-21px): event
+   card links, the Getting Involved card links, OS links and channel links. */
+:is(html, #community-best-practice#community-best-practice) body :is(
+  .openms-cta-link,
+  .contribute-os-links a,
+  .contribute-track__cta,
+  .contribute-channel__link
+) {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 24px !important;
+}
+
+/* Long text stops at about 75 characters a line (reached 87-206). */
+:is(html, #community-best-practice) body :is(
+  .community-news-events__press-summary,
+  .contribute-track__text,
+  .contribute-outreach__text,
+  .openms-lib-about__tile-text,
+  .coc-agreement
+) {
+  max-width: 34em !important;
+}
+
+:is(html, #community-best-practice) body :is(.contribute-channels__lead, .contribute-ways__lead) {
+  max-width: 30em !important;
+}
+
+
+/* Getting Involved: these three have their own width rules (two IDs). */
+:is(html, #community-best-practice#community-best-practice#community-best-practice) body .openms-lib-page--contribute :is(.contribute-outreach__text, .coc-agreement) {
+  max-width: 34em !important;
+}
+
+:is(html, #community-best-practice#community-best-practice#community-best-practice#community-best-practice#community-best-practice) body .openms-lib-page--contribute .contribute-ways__lead.contribute-ways__lead {
+  max-width: 30em !important;
+}
+
+/* ---------- About pages: labels, tap areas and line length (best practice) ----------
+   Governance, Our Sponsors, Sponsor us, Research Partnerships, Publications,
+   Leadership and Contact. Card tags (9.5-10px), sponsorship mottos and badge
+   (10.3-10.9px) and leadership roles (11-11.5px) are in the 12px rule above;
+   the Contact page labels have their own stronger rule, so they get one here. */
+:is(html, #about-best-practice#about-best-practice#about-best-practice) body :is(.openms-lib-page--contact .openms-lib-resources__eyebrow, .governance-membership__eyebrow) {
+  font-size: max(12px, 0.75rem) !important;
+}
+
+/* "View on PubMed" and the Contact "Discord" / "GitHub" links were 16-19px tall. */
+:is(html, #about-best-practice#about-best-practice#about-best-practice) body :is(.publications-cite-card__action, .openms-lib-resources__item-link) {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 24px !important;
+}
+
+/* Intros, sponsorship level texts and FAQ answers stop at about 75-83
+   characters a line (reached 86-131). Leadership bios and the publications
+   list keep the full width, like the text pages. */
+:is(html, #about-best-practice#about-best-practice) body :is(.openms-lib-about__lead, .openms-lib-resources__lead, .sponsor-section__lead, .sponsor-faq-pro__lead) {
+  max-width: 30em !important;
+}
+
+:is(html, #about-best-practice#about-best-practice) body :is(.sponsor-tier__summary, .sponsor-tier__benefits li, .sponsor-faq__answer p, .publications-cite-card__authors) {
+  max-width: 34em !important;
+}
+
+/* Card tags on Contact and Governance have their own 0.625rem rule (an ID);
+   the Sponsor us section intros are set to half the screen width (an ID),
+   960px on a 1920px screen. */
+:is(html, #about-best-practice#about-best-practice#about-best-practice) body .openms-lib-page .openms-lib-resources__item-tag {
+  font-size: max(12px, 0.75rem) !important;
+}
+
+:is(html, #about-best-practice#about-best-practice#about-best-practice) body .openms-lib-page--sponsor-us :is(.sponsor-section__lead, .openms-lib-about__lead) {
+  max-width: min(50vw, 30em) !important;
+}
+
+/* ---------- Buttons: one text size everywhere ----------
+   Standard button text: var(--openms-text-min) at weight 600 (13px on
+   phones, 14.3px on laptops). From a test of every button on every page:
+   - Help page card buttons were 14.6px on phones.
+   - Getting Involved project chips (OpenMS-lib, pyOpenMS...) were bold 700.
+   - The two-button rows on Leadership ("Contributing Guide / Contact us")
+     and Archived Apps were a fixed 2-column grid: at 375px each button was
+     144px wide and "Contributing Guide" broke onto two lines (59px tall).
+     They are now as wide as their text, side by side when they fit and
+     stacked when they do not, never wrapping inside a button. */
+:is(html, #btn-standard#btn-standard) body .help-page__resources .governance-card__link a {
+  font-size: var(--openms-text-min) !important;
+}
+
+:is(html, #btn-standard#btn-standard) body .contribute-project-link {
+  font-size: var(--openms-text-min) !important;
+  font-weight: 600 !important;
+}
+
+:is(html, #btn-standard#btn-standard) body .webapps-archived__revival-actions.webapps-archived__revival-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+}
+
+:is(html, #btn-standard#btn-standard) body .webapps-archived__revival-actions .openms-lib-btn.openms-lib-btn {
+  flex: 0 1 auto !important;
+  width: auto !important;
+  white-space: nowrap !important;
+}
+
+:is(html, #btn-standard#btn-standard) body .webapps-archived__revival-actions .openms-lib-btn .openms-lib-btn__label {
+  white-space: nowrap !important;
+}
+
+/* Getting Involved "Need to report something?" buttons: on the smallest
+   phones "Read the report handling manual" was 2px too wide for the box and
+   broke onto two lines. Slightly less side padding keeps it on one line. */
+@media (max-width: 359px) {
+  :is(html, #btn-standard#btn-standard) body .coc-callout__actions .openms-lib-btn.openms-lib-btn {
+    padding-inline: 0.85rem !important;
+  }
+
+  :is(html, #btn-standard#btn-standard) body .coc-callout__actions .openms-lib-btn .openms-lib-btn__label {
+    white-space: nowrap !important;
+  }
+}
+
+/* Smallest phones (under 360px): all standard buttons use slightly less side
+   padding, so long labels ("Follow us on Google Scholar") stay on one line. */
+@media (max-width: 359px) {
+  :is(html, #btn-standard) body .openms-lib-btn:not(.openms-lib-developers__platform-btn) {
+    padding-inline: 0.85rem !important;
+  }
+}
+
+/* "Follow us on Google Scholar" (Publications) broke onto two lines at 320px
+   by a rounding pixel; there is room for it on one line. */
+:is(html, #btn-standard#btn-standard) body .openms-lib-btn--scholar .openms-lib-btn__label,
+:is(html, #btn-standard#btn-standard) body .openms-lib-btn--scholar {
+  white-space: nowrap !important;
+}
+
+/* OpenMS-lib "Contributing Guidelines" featured card: its "Read guidelines"
+   button was 14.6px bold on phones and 38-41px tall. Same text size, weight,
+   padding and height as the other buttons now. */
+:is(html, #btn-standard#btn-standard#btn-standard#btn-standard) body .openms-lib-developers__card--featured .openms-lib-developers__card-cta.openms-lib-developers__card-cta {
+  font-size: var(--openms-text-min) !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  padding: var(--openms-btn-padding-y, 0.7rem) var(--openms-btn-padding-x, 1.25rem) !important;
+}
+
+/* ---------- "Back to top" arrow button: a bit higher ----------
+   It sat 16-24px from the bottom edge; now about 28-48px, plus the phone's
+   home-bar area where there is one. */
+:is(html, #back-to-top-up) body .back-to-top {
+  bottom: calc(clamp(1.75rem, 3vw, 3rem) + env(safe-area-inset-bottom, 0px)) !important;
+}
+
+/* Sponsor us "Why sponsor OpenMS" intro: a bit wider (up to 38em, about a
+   third wider than before) and the full width on phones, where the half-screen
+   rule above had squeezed it to 180px (24 characters a line). */
+:is(html, #about-best-practice#about-best-practice#about-best-practice#about-best-practice) body .openms-lib-page--sponsor-us #why-sponsor .openms-lib-about__lead {
+  max-width: min(100%, 38em) !important;
+}
+
+/* Getting Involved "Contribute to development": the AI note ("OpenMS is open
+   to both independent and AI-assisted contributions…") uses the card's
+   standard text size, line height and width, like "Start small…" above it.
+   It was 13.4-14px and wider; its "AI Policy" link matches the text. */
+:is(html, #contribute-note-std#contribute-note-std) body .openms-lib-page--contribute .contribute-track__note.contribute-track__note {
+  font-size: var(--openms-body-size) !important;
+  line-height: 1.55 !important;
+  max-width: 34em !important;
+}
+
+:is(html, #contribute-note-std#contribute-note-std) body .openms-lib-page--contribute .contribute-track__note a {
+  font-size: inherit !important;
+}
+
+/* ---------- All white cards: one hover effect ----------
+   Same as the OpenMS-lib benefit cards ("01 Two decades of expertise"):
+   at rest a light border and soft shadow; on hover the border and shadow
+   get a little darker. No lift, no colour change. Navy cards (e.g. the
+   featured For Developers card, Governance resources) keep their own hover.
+   Forms and image panels are not cards and are left out. */
+:is(html, #white-card-hover#white-card-hover#white-card-hover) body :is(
+  .openms-lib-about__benefit,
+  .openms-lib-about__tile,
+  .webapps-showcase__card,
+  .webapps-project-card__surface,
+  .webapps-project-detail-card,
+  .webapps-archived-entry,
+  .keyfeatures-modern__topic-card,
+  .ecosystem-home__card,
+  .community-news-events__press-link,
+  .openms-lib-developers__card--box:not(.openms-lib-developers__card--featured),
+  .contribute-track__item,
+  .contribute-channel,
+  .coc-value,
+  .fellowship-facts__item,
+  .member,
+  .publication-entry,
+  .publications-featured .publications-cite-card,
+  .openms-lib-page--contact .openms-lib-resources__item,
+  .openms-lib-page--donate .openms-lib-resources__item
+) {
+  border-color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1) !important;
+  box-shadow: 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.05) !important;
+}
+
+:is(html, #white-card-hover#white-card-hover#white-card-hover) body :is(
+  .openms-lib-about__benefit,
+  .openms-lib-about__tile,
+  .webapps-showcase__card,
+  .webapps-project-card__surface,
+  .webapps-project-detail-card,
+  .webapps-archived-entry,
+  .keyfeatures-modern__topic-card,
+  .ecosystem-home__card,
+  .community-news-events__press-link,
+  .openms-lib-developers__card--box:not(.openms-lib-developers__card--featured),
+  .contribute-track__item,
+  .contribute-channel,
+  .coc-value,
+  .fellowship-facts__item,
+  .member,
+  .publication-entry,
+  .publications-featured .publications-cite-card,
+  .openms-lib-page--contact .openms-lib-resources__item,
+  .openms-lib-page--donate .openms-lib-resources__item
+):is(:hover, :focus-within) {
+  border-color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.22) !important;
+  box-shadow: 0 0.65rem 1.5rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1) !important;
+  transform: none !important;
+  translate: none !important;
+}
+
+/* The chair's card keeps its blue outline. */
+:is(html, #white-card-hover#white-card-hover#white-card-hover#white-card-hover) body .member.member--chair {
+  border-color: rgba(var(--openms-blue-rgb, 49, 87, 233), 0.35) !important;
+}
+
+/* Developer Conference "About the conference": these are not white cards but
+   transparent columns with a thin divider. The shared white-card rule above
+   gave them a shadow, which was cut off just above the conference photo, so
+   the photo looked like it covered the cards. No shadow here. */
+:is(html, #white-card-hover#white-card-hover#white-card-hover#white-card-hover) body .retreat-highlights__mosaic .openms-lib-about__tile,
+:is(html, #white-card-hover#white-card-hover#white-card-hover#white-card-hover) body .retreat-highlights__mosaic .openms-lib-about__tile:is(:hover, :focus-within) {
+  box-shadow: none !important;
+}
+
+/* ---------- Featured and Affiliated Apps: logos look the same size ----------
+   Every logo used to fit the same square, so wide logos came out very short
+   (naseweis 99x33px, mzPeak 99x17px) next to square ones (99x99px). Now each
+   logo gets about the same area as an 84x84px square: wide logos are wider,
+   square ones smaller. --logo-ar (width / height) comes from the image file,
+   set in layouts/partials/webapps-project-detail-card.html. Very wide logos
+   stop at 150px wide (170px on phones, where the logo sits above the name).
+   The logo area has one width and height, so the text lines up. */
+:is(html, #app-logo-size#app-logo-size) body .webapps-project-detail-card .webapps-project-detail-card__logo-wrap:not(.webapps-project-detail-card__logo-wrap--text) {
+  --logo-size: 84px;
+  --logo-max-w: 150px;
+  width: var(--logo-max-w) !important;
+  height: calc(var(--logo-size) * 1.15) !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+:is(html, #app-logo-size#app-logo-size) body .webapps-project-detail-card .webapps-project-detail-card__logo-wrap .webapps-project-detail-card__logo {
+  width: min(var(--logo-max-w), calc(var(--logo-size) * sqrt(var(--logo-ar, 1)))) !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: calc(var(--logo-size) * 1.15) !important;
+  aspect-ratio: var(--logo-ar, 1) !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 767px) {
+  :is(html, #app-logo-size#app-logo-size) body .webapps-project-detail-card .webapps-project-detail-card__logo-wrap:not(.webapps-project-detail-card__logo-wrap--text) {
+    --logo-max-w: 170px;
+    justify-content: flex-start !important;
+  }
+}
+
+/* ---------- Our Sponsors: logos look the same size ----------
+   Same idea as the app cards above: each sponsor logo gets about the area of
+   a 100x100px square, so the nearly square ELIXIR logo is no longer much
+   bigger than the long LiBiS and de.NBI logos. --logo-ar comes from the
+   file (layouts/partials/about-sponsor-logo.html). Very wide logos stop at
+   240px wide (84x84px area on phones). Logos with thin lines or a line of
+   small text can still look smaller: `logoScale:` in config.yaml
+   (--logo-scale) makes one logo a bit bigger or smaller by eye. */
+:is(html, #sponsor-logo-size#sponsor-logo-size) body .about-sponsors-logos__item .about-sponsors-logos__logo {
+  --logo-size: 100px;
+  width: min(240px, calc(var(--logo-size) * var(--logo-scale, 1) * sqrt(var(--logo-ar, 1)))) !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  aspect-ratio: var(--logo-ar, 1) !important;
+  object-fit: contain !important;
+}
+
+/* The logos sit in a centred row instead of three equal columns, so each box
+   is as wide as its logo (the columns held the long logos to 111–184px).
+   When the row is too narrow (phones) they wrap onto a second line. */
+:is(html, #sponsor-logo-size#sponsor-logo-size) body .about-sponsors-logos.sponsors-logo-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1.25rem 2.5rem !important;
+  max-width: 100% !important;
+}
+
+:is(html, #sponsor-logo-size#sponsor-logo-size) body .about-sponsors-logos.sponsors-logo-grid > .about-sponsors-logos__item {
+  flex: 0 1 auto !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 767px) {
+  :is(html, #sponsor-logo-size#sponsor-logo-size) body .about-sponsors-logos__item .about-sponsors-logos__logo {
+    --logo-size: 84px;
+  }
+}
+
+/* ---------- Year dropdown (News and Publications) ----------
+   Built by assets/js/year-dropdown.js from a <select data-year-dropdown>.
+   A white button (calendar icon, "All years ⌄") opens a white panel with
+   "All years" and a 5-column grid of year buttons; the chosen year is navy.
+   It replaces the browser's own select list, whose grey menu cannot be
+   styled. Full width on phones. */
+:is(html, #year-dd#year-dd) body label[hidden]:has(> select[data-year-dropdown]),
+:is(html, #year-dd#year-dd) body select[data-year-dropdown][hidden] {
+  display: none !important;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd {
+  position: relative;
+  z-index: 5;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 1.1rem;
+  border: 1px solid rgba(var(--openms-navy-rgb, 12, 33, 113), 0.16);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0.2rem 0.65rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.06);
+  color: var(--openms-navy, #0c2171);
+  font: inherit;
+  font-size: var(--openms-text-min, 0.875rem);
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__btn:hover,
+:is(html, #year-dd#year-dd) body .year-dd.is-open .year-dd__btn {
+  border-color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.35);
+  box-shadow: 0 0.55rem 1.25rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1);
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__btn:focus-visible {
+  outline: none;
+  border-color: var(--openms-blue, #3157e9);
+  box-shadow: 0 0 0 3px rgba(var(--openms-blue-rgb, 49, 87, 233), 0.25);
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__icon {
+  color: var(--openms-blue, #3157e9);
+}
+
+/* The word "Year" is not shown (the calendar icon says it), but screen
+   readers still read it before the chosen year. */
+:is(html, #year-dd#year-dd) body .year-dd__label {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__value {
+  min-width: 4.5em;
+  font-weight: 700;
+  text-align: left;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__chevron {
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd.is-open .year-dd__chevron {
+  transform: rotate(180deg);
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: min(24rem, calc(100vw - 2 * var(--openms-page-inline, 1rem)));
+  padding: 1rem;
+  border: 1px solid rgba(var(--openms-navy-rgb, 12, 33, 113), 0.1);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 1rem 2.5rem rgba(var(--openms-navy-rgb, 12, 33, 113), 0.16);
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__panel[hidden] {
+  display: none;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__title {
+  margin: 0 0 0.75rem;
+  color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.65);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--year-dd-cols, 5), minmax(0, 1fr));
+  gap: 0.4rem;
+  max-height: min(24rem, 65vh);
+  overflow-y: auto;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin: 0;
+  padding: 0 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.04);
+  color: var(--openms-navy, #0c2171);
+  font: inherit;
+  font-size: var(--openms-text-min, 0.875rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+/* "All years" takes the whole first row. */
+:is(html, #year-dd#year-dd) body .year-dd:not(.year-dd--no-wide-first) .year-dd__item:first-child {
+  grid-column: 1 / -1;
+}
+
+/* Full-width version (Sponsor Us level chooser): the button and the panel
+   fill the space they are given, at every screen size. */
+:is(html, #year-dd#year-dd) body .year-dd.year-dd--full,
+:is(html, #year-dd#year-dd) body .year-dd.year-dd--full .year-dd__btn {
+  width: 100%;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd.year-dd--full .year-dd__value {
+  flex: 1 1 auto;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd.year-dd--full .year-dd__panel {
+  left: 0;
+  right: 0;
+  width: auto;
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__item:hover {
+  background: rgba(var(--openms-blue-rgb, 49, 87, 233), 0.1);
+  color: var(--openms-blue, #3157e9);
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__item:focus-visible {
+  outline: none;
+  border-color: var(--openms-blue, #3157e9);
+  box-shadow: 0 0 0 3px rgba(var(--openms-blue-rgb, 49, 87, 233), 0.25);
+}
+
+:is(html, #year-dd#year-dd) body .year-dd__item.is-active {
+  background: var(--openms-navy, #0c2171);
+  color: #fff;
+}
+
+@media (max-width: 639px) {
+  :is(html, #year-dd#year-dd) body .year-dd,
+  :is(html, #year-dd#year-dd) body .year-dd__btn {
+    width: 100%;
+  }
+
+  :is(html, #year-dd#year-dd) body .year-dd__value {
+    flex: 1 1 auto;
+  }
+
+  :is(html, #year-dd#year-dd) body .year-dd__panel {
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+}
+
+/* ---------- Numbered cards: the number turns blue on hover ----------
+   "01 Two decades of expertise", "01 Who it's for"…: when the card is
+   hovered (or a link in it has keyboard focus), its number turns solid
+   blue, on every page. It used to differ: grey on pyOpenMS, unchanged on
+   OpenMS-lib, a slightly stronger blue on most other pages. The number's
+   colour at rest stays as it was. */
+:is(html, #card-num-hover#card-num-hover#card-num-hover) body :is(.openms-lib-about__benefit, .openms-lib-about__tile):is(:hover, :focus-within) :is(.openms-lib-about__benefit-num, .openms-lib-about__num) {
+  color: var(--openms-blue, #3157e9) !important;
+  -webkit-text-fill-color: var(--openms-blue, #3157e9) !important;
+  opacity: 1 !important;
+}
+
+:is(html, #card-num-hover#card-num-hover#card-num-hover) body :is(.openms-lib-about__benefit-num, .openms-lib-about__num) {
+  transition: color 0.22s ease, -webkit-text-fill-color 0.22s ease, opacity 0.22s ease !important;
+}
+
+/* "Back to top" arrow on phones and tablets (below 1024px): higher up, about
+   65px from the bottom edge (it was 21px), plus the phone's home-bar area,
+   so it is easy to reach with a thumb and clear of the browser's own
+   bottom bar. Laptops keep their position. */
+@media (max-width: 1023px) {
+  :is(html, #back-to-top-sm#back-to-top-sm#back-to-top-sm) body .back-to-top.back-to-top {
+    bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+/* Featured and Affiliated Apps on phones (logo above the name): the logo
+   area is exactly as tall and wide as its logo, so the logo starts near the
+   top of the card and the name sits the same short distance under every
+   logo. A wide, short logo (mzPeak, naseweis) used to float in a fixed 103px
+   area (about 90px from the card's top, 45px above its name), and mzPeak was
+   clipped at the sides by the area's padding. */
+@media (max-width: 767px) {
+  :is(html, #app-logo-size#app-logo-size#app-logo-size) body .webapps-project-detail-card .webapps-project-detail-card__logo-wrap:not(.webapps-project-detail-card__logo-wrap--text) {
+    height: auto !important;
+    min-height: 0 !important;
+    width: auto !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    aspect-ratio: auto !important;
+  }
+
+  :is(html, #app-logo-size#app-logo-size#app-logo-size) body .webapps-project-detail-card .webapps-project-detail-card__logo-wrap .webapps-project-detail-card__logo {
+    display: block !important;
+  }
+}
+
+/* ---------- Custom icons (instead of a Font Awesome icon) ----------
+   Use in config.yaml like a Font Awesome name: icon: openms-icon openms-icon--linux
+   The icon is a 1em square, so it follows the text size, and it is filled
+   with the text colour (currentColor) through a mask of the SVG file, so it
+   turns white on navy or blue in a link, like the Font Awesome icons.
+   Files: static/images/icons/<name>.svg (see the source note inside). */
+.openms-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex: 0 0 auto;
+  vertical-align: -0.125em;
+  background-color: currentColor;
+  -webkit-mask: var(--openms-icon-url) center / contain no-repeat;
+  mask: var(--openms-icon-url) center / contain no-repeat;
+}
+
+/* "?v=2": a first copy of the file was broken; the version tag makes
+   browsers fetch the fixed one instead of a cached copy. */
+.openms-icon--linux {
+  --openms-icon-url: url("/images/icons/linux.svg?v=2");
+}
+
+/* The Linux icon is black on light backgrounds (the Contribute page
+   "Build from source" links), like the Tux logo, instead of the link
+   colour. On navy buttons (OpenMS-lib) it stays white: black would not
+   show there. */
+:is(html, #linux-black#linux-black) body .openms-lib-page--contribute .openms-icon--linux {
+  background-color: #000 !important;
+}
+
+/* ---------- Featured / Affiliated Apps: "Cite" line on app cards ----------
+   Optional (citation in config.yaml). It sits at the top of the buttons area,
+   on its own full-width line just above the buttons, with the same small
+   label as "Maintainers"; the paper reference is a link to its DOI. */
+:is(html, #app-cite#app-cite) body .webapps-project-detail-card .webapps-project-detail-card__actions:has(.webapps-project-detail-card__cite) {
+  flex-wrap: wrap !important;
+  row-gap: 0.85rem !important;
+}
+
+:is(html, #app-cite#app-cite) body .webapps-project-detail-card .webapps-project-detail-card__cite {
+  flex: 0 0 100% !important;
+  margin: 0 !important;
+  font-size: var(--openms-body-size, 1rem);
+  line-height: 1.45;
+  color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.8);
+}
+
+:is(html, #app-cite#app-cite) body .webapps-project-detail-card .webapps-project-detail-card__cite .webapps-project-detail-card__maintainers-label {
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+:is(html, #app-cite#app-cite) body .webapps-project-detail-card .webapps-project-detail-card__cite a {
+  color: var(--openms-blue, #3157e9);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+:is(html, #app-cite#app-cite) body .webapps-project-detail-card .webapps-project-detail-card__cite a:is(:hover, :focus-visible) {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }

@@ -468,3 +468,25 @@ html body .openms-lib-page--sponsor-us .sponsor-benefits[data-active-tier][data-
     display: flex !important;
   }
 }
+
+/* "Sponsorship levels" heading: the title sits close under the small label
+   (it was 28px below it on phones, 8px on laptops), and the intro paragraph
+   is wider: up to 40em (about 720px on laptops) instead of half the screen,
+   which squeezed it to 188px on phones and 540px on laptops. */
+:is(html, #tiers-head#tiers-head) body .openms-lib-page--sponsor-us #sponsorship-levels .sponsor-section__head {
+  row-gap: 0 !important;
+}
+
+:is(html, #tiers-head#tiers-head) body .openms-lib-page--sponsor-us #sponsorship-levels .sponsor-section__head .sponsor-eyebrow {
+  margin-bottom: 0.1rem !important;
+}
+
+:is(html, #tiers-head#tiers-head) body .openms-lib-page--sponsor-us #sponsorship-levels .sponsor-section__head .sponsor-section__lead {
+  max-width: min(100%, 40em) !important;
+}
+
+/* Benefit comparison "Sponsorship level" chooser (phones and tablets): more
+   space between the line above it and the button (was 20px). */
+:is(html, #tiers-switcher#tiers-switcher) body .openms-lib-page--sponsor-us .sponsor-benefits__switcher {
+  margin-top: 2rem !important;
+}

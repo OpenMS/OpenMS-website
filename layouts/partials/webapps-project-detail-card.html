@@ -3,11 +3,16 @@
 {{- $hideName := .hideName | default false -}}
 {{- $logo := $project.logo | default "" -}}
 {{- $useTextLogo := or (not $logo) (eq $project.logoKind "text") -}}
+{{- /* The logo's width-to-height ratio (from the file), so the CSS can give
+     every logo about the same area: wide logos get more width, square ones
+     less, and they all look the same size. Defaults to square. */ -}}
+{{- $logoAr := cond $useTextLogo 1.0 (partial "logo-aspect-ratio.html" $logo) -}}
 <article class="webapps-project-detail-card{{ with $class }} {{ . }}{{ end }}{{ if $hideName }} webapps-project-detail-card--logo-title{{ end }}{{ if $useTextLogo }} webapps-project-detail-card--text-logo{{ end }}">
   <div class="webapps-project-detail-card__logo-wrap{{ if $useTextLogo }} webapps-project-detail-card__logo-wrap--text{{ end }}">
     {{- if not $useTextLogo }}
     <img
       class="webapps-project-detail-card__logo"
+      style="{{ printf "--logo-ar: %.3f" $logoAr | safeCSS }}"
       src="{{ if or (hasPrefix $logo "http://") (hasPrefix $logo "https://") }}{{ $logo }}{{ else }}{{ $logo | relURL }}{{ end }}"
       alt="{{ if $hideName }}{{ $project.name }}{{ end }}"
       loading="lazy"
@@ -33,6 +38,17 @@
   </div>
   {{- with $project.links }}
   <footer class="webapps-project-detail-card__actions">
+    {{- /* Optional paper to cite: citation.text (e.g. "Kontou et al., J Cheminform 2023"),
+           citation.url (the paper's DOI link) and citation.title (the paper's title,
+           shown on hover) in config.yaml. It sits on its own line above the buttons. */}}
+    {{- with $project.citation }}
+    {{- if and .text .url }}
+    <p class="webapps-project-detail-card__cite">
+      <span class="webapps-project-detail-card__maintainers-label">Cite</span>
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"{{ with .title }} title="{{ . }}"{{ end }}>{{ .text }}</a>
+    </p>
+    {{- end }}
+    {{- end }}
     {{ partial "webapps-project-links.html" (dict "links" .) }}
   </footer>
   {{- end }}

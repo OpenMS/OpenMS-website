@@ -19,12 +19,13 @@ And this is the block for **one** sponsor in `config.yaml`:
 |:--:|------|-----------|
 | 2 | `logo:` and `url:` | The picture (its path always starts with `/images/…`), and the website that opens when someone clicks it. |
 | 3 | `name:`, `alt:`, `description:` | Not shown as text. They describe the logo for people who use screen readers and for search engines. Please fill them in. |
+| – | `logoScale:` (optional) | Makes one logo a little bigger or smaller, if it still looks off next to the others: `1` is normal, `1.1` is 10% bigger, `0.9` is 10% smaller. Logos with thin lines or a line of small text usually need a bit more (ELIXIR has `1.2`). Leave it out for a new logo, then adjust after checking the Deploy Preview. |
 
 ## Add a sponsor
 
 ### Step 1 – Upload the logo
 
-Put the logo in the folder **`static/images/logos/`**. See [Add images](../any-page/add-images.md). Remember the file name, for example `example-institute.svg`. A `.svg` or a `.png` with a transparent background looks best.
+Put the logo in the folder **`static/images/logos/`**. See [Add images](../any-page/add-images.md). Remember the file name, for example `example-institute.svg`. A `.svg` or a `.png` with a transparent background looks best. Crop the empty space around the logo before you upload it. The website sizes every logo by itself so they all look the same size (a long logo gets more width than a square one), but it counts empty space as part of the logo, so a logo with a wide empty border looks smaller.
 
 ### Step 2 – Add the block
 

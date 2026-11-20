@@ -6,6 +6,8 @@
 {{- $items := index $cfg "items" | default (slice) -}}
 {{- $catalog := slice -}}
 {{- $support := false -}}
+{{- /* No title and no cards in config.yaml: skip the dark band, show only "Need help?". */ -}}
+{{- $hasBand := or (index $cfg "title") (gt (len (where $items "url" "!=" nil)) 0) -}}
 {{- range $item := $items -}}
   {{- if and $item.links (not $item.url) -}}
     {{- $support = $item -}}
@@ -13,7 +15,8 @@
     {{- $catalog = $catalog | append $item -}}
   {{- end -}}
 {{- end -}}
-<section class="openms-lib-resources openms-lib-resources--explore" aria-labelledby="{{ $id }}">
+<section class="openms-lib-resources openms-lib-resources--explore"{{ if $hasBand }} aria-labelledby="{{ $id }}"{{ else }} aria-label="Help"{{ end }}>
+  {{- if $hasBand }}
   <div class="openms-lib-resources__dark">
   <div class="openms-lib-resources__inner">
     <header class="openms-lib-resources__head openms-lib-hub__reveal openms-lib-hub__reveal--left">
@@ -77,6 +80,7 @@
     {{- end }}
   </div>
   </div>
+  {{- end }}
 
   {{- with $support }}
   <aside class="openms-lib-resources__assist openms-lib-hub__reveal" aria-label="{{ .title }}">

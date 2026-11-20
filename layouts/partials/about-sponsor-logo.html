@@ -3,6 +3,9 @@
 {{- $logo := .logo | default "" -}}
 {{- $alt := .alt | default $name -}}
 {{- $onDark := .logoOnDark | default false -}}
+{{- $logoAr := partial "logo-aspect-ratio.html" $logo -}}
+{{- /* Optional logoScale in config.yaml: 1 = normal, 1.1 = a bit bigger. */ -}}
+{{- $logoScale := float (.logoScale | default 1) -}}
 <a
   class="about-sponsors-logos__item{{ if $onDark }} about-sponsors-logos__item--dark{{ end }}"
   role="listitem"
@@ -11,7 +14,7 @@
   rel="noopener noreferrer sponsored"
 >
   {{- if $logo -}}
-  <img class="about-sponsors-logos__logo" src="{{ $logo }}" alt="{{ $alt }}" loading="lazy" decoding="async" />
+  <img class="about-sponsors-logos__logo" style="{{ printf "--logo-ar: %.3f; --logo-scale: %.2f" $logoAr $logoScale | safeCSS }}" src="{{ $logo }}" alt="{{ $alt }}" loading="lazy" decoding="async" />
   {{- else -}}
   <span class="about-sponsors-logos__name">{{ $name }}</span>
   {{- end -}}

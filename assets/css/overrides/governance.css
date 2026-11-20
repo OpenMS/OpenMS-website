@@ -118,3 +118,16 @@
 :is(html, #gov-list-rows) body .openms-lib-page--governance .governance-tile__list {
   align-content: start !important;
 }
+
+/* "This model gives OpenMS institutional stability / while preserving
+   independent technical governance by the active maintainer community.":
+   exactly two lines (one per half) wherever the screen is wide enough. The
+   intro and its header are not width-limited here (by request). On phones
+   each half wraps naturally. */
+:is(html, #gov-two-lines#gov-two-lines#gov-two-lines) body .openms-lib-page--governance :is(#governance-bodies, #responsibilities) :is(.openms-lib-about__head, .openms-lib-about__head-copy, .openms-lib-about__lead) {
+  max-width: none !important;
+}
+
+:is(html, #gov-two-lines#gov-two-lines#gov-two-lines) body .openms-lib-page--governance :is(#governance-bodies, #responsibilities) .governance-lead-line {
+  display: block !important;
+}

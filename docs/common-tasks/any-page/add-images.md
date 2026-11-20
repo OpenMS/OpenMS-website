@@ -31,6 +31,7 @@ A file in the folder `static/images/logos/` is shown on the website at the addre
 - Use **PNG** or **SVG** for logos, **JPG** for photos.
 - Use a **small, simple file name**: only small letters, numbers, `-` and `_`, no spaces. For example `my-tool-logo.png`, not `My Tool Logo (1).PNG`. Capital letters matter on the website, so keep them small.
 - Keep the file **under about 500 KB**. For photos, 1600 pixels wide is plenty.
+- **Logos are shown small** (about 40 to 120 pixels). A logo about **360 pixels** on its longest side is sharp on every screen and keeps the page fast. A 1000-pixel logo looks the same but makes the page much slower to load.
 
 ### Step 2 – Open the right folder on GitHub
 

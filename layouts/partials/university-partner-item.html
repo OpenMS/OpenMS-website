@@ -9,7 +9,9 @@
   class="uni-partners__item"
   href="{{ $url }}"
   {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{- end }}
-  {{- if .duplicate }} aria-hidden="true"{{- end }}
+  {{- /* Copies that repeat the logos for the scrolling loop: hidden from screen
+         readers and skipped by the Tab key. */}}
+  {{- if .duplicate }} aria-hidden="true" tabindex="-1"{{- end }}
 >
 {{- else -}}
 <span class="uni-partners__item uni-partners__item--static"{{- if .duplicate }} aria-hidden="true"{{- end }}>

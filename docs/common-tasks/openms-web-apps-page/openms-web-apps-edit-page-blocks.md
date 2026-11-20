@@ -4,28 +4,22 @@ The page **https://openms.de/webapps/** (top menu → **Projects** → **OpenMS 
 
 **You will change:** a few lines in `config.yaml`  ·  **Time:** about 10 minutes  ·  **Skills needed:** none
 
-**On the website**
-
-![The first Highlights box of the page, numbered](../../common-tasks-screenshot-images/openms-web-apps/1-highlights-on-site.png)
-
-**In `config.yaml`**
-
-![The highlights lines in config.yaml, the first box numbered](../../common-tasks-screenshot-images/openms-web-apps/2-highlights-config.png)
-
-The numbers match: the part marked **1** on the website is the line marked **1** in the file.
-
 ## What you will change
 
 | Block on the page | Search for | Lines you can change |
 |---|---|---|
-| Highlights | `webappsPage` → `highlights` | `items`: each box has `title` and `text` |
-| Using the template | `webappsPage` → `usingTemplate` | `title`, `lead`, and the cards under `items` |
-| Examples | `webappsPage` → `examples` | the example apps shown |
+| Turn a Jupyter notebook into a web app (the navy block under the big title) | `webappsPage` → `notebook` | `eyebrow` (small label), `title`, `lead`, the `prompt` people copy, `note`, the numbered `steps` (each has `title` and `text`), and `buttons` (each has `text` and `url`). Any number of steps and buttons works. The first button is blue, the others outlined. |
+| Need help? | `webappsPage` → `usingTemplate` | The "Need help?" box under `items`: its `title`, `text` and `links` (the buttons). There is no "Get started" band any more. Adding a `title:` line, or a card with a `url`, brings that dark band back above the box. |
+| Featured WebApps (examples) | `webappsPage` → `examples` | `title`, `lead`, and the cards under `apps`: each has `name`, `logo` and `url`. The one-line description under the name comes from the same app in the Featured Apps list (`webapps` → `description`); add a `description:` line to an app here to use different words. |
 | For developers, and the citation | `webappsPage` → `developers` | `title`, `lead`, `citeText`, the paper under `citation`, and the cards under `boxes`. Any number of boxes works: the usual numbers have their own layout, others sit in equal columns (3 or 4 per row on a laptop, 1 on a phone). A box with `type: links` shows its `platforms` as blue links in a row, like on OpenMS-lib. |
 
 The **big title at the top** is part of the design (`layouts/partials/webapps-hero.html`). To change it, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
 
 In each block, change the words after `title:`, `lead:`, `text:` and similar lines. Leave lines like `layout:`, `icon:`, `accent:`, `featured:` or `group:` as they are: they set how the block looks.
+
+The **Copy prompt** button copies exactly the words after `prompt:`. Write the prompt as one paragraph: line breaks in `config.yaml` become spaces.
+
+To put a **link inside a step's text**, write the words in square brackets and the web address in round brackets right after, with no space: `[Docker Compose](https://github.com/OpenMS/streamlit-deployment)`. Links to other websites open in a new tab.
 
 To **add a card**, copy a whole card (from its `- title:` line to the line before the next `- title:`), paste it under the last one and change the words. To **remove a card**, delete all its lines.
 

@@ -21,10 +21,11 @@ And one card is one **block of lines** in `config.yaml`:
 
 | Number | Line | What it is |
 |:--:|------|-----------|
-| 1 | `logo:` and `logoSize:` | The picture. `logo` is its place in the website (always starts with `/images/…`). `logoSize` can be `standard`, `large` or `xlarge`. Use a bigger size if the logo looks small next to the others. |
+| 1 | `logo:` | The picture. `logo` is its place in the website (always starts with `/images/…`). The website sizes every logo by itself, so they all look the same size (a long logo gets more width than a square one). `logoSize:` lines have no effect on these cards: you can leave them or delete them. |
 | 2 | `name:` | The app's name. |
 | 3 | `description:` | One sentence about the app. |
 | 4 | `maintainers:` | Who looks after the app. Optional. |
+| – | `citation:` | The paper to cite for the app. Optional. It shows as a **Cite** line above the buttons. Write three indented lines under it: `text:` (what people see, for example `Kontou et al., J Cheminform 2023`), `url:` (the paper's DOI link, `https://doi.org/…`) and `title:` (the paper's title, shown when the mouse is on the link; optional). Example: the umetaflow, FLASH App and NuXL entries. |
 | 5 | `links:` | The buttons: **Demo**, **Install**, **GitHub**. Each button is two or three lines. How many: [see below](#how-many-buttons-links-can-an-app-have). |
 
 The `url:` line (just under `name:`) is the app's main web address.
@@ -71,6 +72,7 @@ Change `MyNewApp`, the web addresses, the logo file name, the description, and t
 
 - No Windows installer? Delete the three lines of `type: install`.
 - No `maintainers`? Delete that line.
+- No paper to cite? Leave out the `citation:` lines.
 - The **order** in the list is the order on the website. Put your app where you want it.
 
 ### Step 4 – Save and send for review
@@ -123,7 +125,7 @@ The big heading and the introduction above the apps ("Community tools / Featured
 |-----------------|---------------|
 | The preview says **Failed** | The spaces are wrong. The new block must start with exactly the same number of spaces as the other `- name:` lines. See [Spaces matter](../../getting-started/edit-via-github.md#spaces-matter-in-configyaml). |
 | The logo is a broken picture | The path in `logo:` must match the uploaded file name exactly (capital letters count) and start with `/images/`. |
-| The logo looks too small | Change `logoSize: large` to `xlarge`. |
+| The logo looks smaller than the others | Crop the empty space around the picture before you upload it: the website treats empty space as part of the logo, so it looks smaller. |
 | A button is missing | Each button needs its own `- type:` and `url:` lines. |
 
 ## Related guides

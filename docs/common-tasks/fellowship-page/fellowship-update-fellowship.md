@@ -19,7 +19,7 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 | Part of the page | Lines in `fellowshipPage` |
 |------------------|----------------------------|
 | The small word above the title | `eyebrow` |
-| The headline and the text under it | `headline`, `blurb` |
+| The headline and the text under it | `headline`, `blurb`. Each line of `blurb` is one `<span class="openms-lib-hero__lead-line">…</span>`, so on a laptop the text shows on exactly those lines (on phones it wraps freely). Change only the words between `>` and `</span>`. |
 | The three small labels ("Fully remote & unpaid"…) | `chips`: each has `icon` and `text`. Change only `text`. |
 | The application form | `tallyFormId`. Ask the web team before changing it ([Who to ask](../../workflow/who-to-ask.md)). |
 

@@ -97,8 +97,7 @@ docs/
 │   └── any-page/             ← help for any page: find text, add images
 ├── common-tasks-screenshot-images/ ← the screenshots used in the guides
 ├── reference/
-│   ├── content-front-matter.md
-│   ├── config-yaml-guide.md
+│   ├── agent-feedback.md     ← llms.txt and the feedback form for AI agents
 │   ├── shortcodes.md
 │   ├── file-locations.md
 │   └── archive-folders.md    ← folders and pictures the site does not use

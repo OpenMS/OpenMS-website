@@ -111,7 +111,7 @@ languages:
                 icon: fab fa-apple
                 url: https://archive.openms.de/openms/Documentation/release/latest/html/install_mac.html
               - name: Linux
-                icon: fab fa-linux
+                icon: openms-icon openms-icon--linux
                 url: https://archive.openms.de/openms/Documentation/release/latest/html/install_linux.html
           - title: Educational materials
             icon: fas fa-book-open
@@ -187,9 +187,9 @@ languages:
           Gain <span class="openms-lib-hero__accent">hands-on</span> experience
           in open-source science.
         blurb: >-
-          Work alongside researchers worldwide on the OpenMS ecosystem —<br>
-          develop algorithms, test software, and write tutorials for
-          computational mass spectrometry.
+          <span class="openms-lib-hero__lead-line">Work alongside researchers worldwide on the OpenMS ecosystem —</span>
+          <span class="openms-lib-hero__lead-line">develop algorithms, test software, and write tutorials</span>
+          <span class="openms-lib-hero__lead-line">for computational mass spectrometry.</span>
         chips:
           - icon: fas fa-globe
             text: Fully remote & unpaid
@@ -296,18 +296,21 @@ languages:
           - name: LiBiS
             url: https://libis.uni-heidelberg.de/
             logo: /images/logos/LiBiS-Logo.svg
+            logoScale: 0.9
             alt: LiBiS — Life Science Informatics
             description: Life Science Informatics
             # tier: gold
           - name: ELIXIR
             url: https://elixir-europe.org/platforms/data/core-data-resources
             logo: /images/logos/Elixir.png
+            logoScale: 1.2
             alt: ELIXIR Core Data Resource
             description: Core Data Resource
             # tier: platinum
           - name: deNBI
             url: https://www.denbi.de/
             logo: /images/logos/denbi.jpeg
+            logoScale: 1.05
             alt: deNBI — German Network for Bioinformatics Infrastructure
             description: German Network for Bioinformatics Infrastructure
             # tier: silver
@@ -509,8 +512,9 @@ languages:
         taxNote: >-
           OpenMS Inc. is a U.S. 501(c)(3) public charity. Donations may be
           tax-deductible for U.S. donors where permitted by law.
-        # iframe src from Zeffy “Embed your form on your site” (recommended)
-        zeffyEmbedUrl: ""
+        # Zeffy form address from Zeffy "Embed your form on your site"
+        # (starts with https://www.zeffy.com/embed/donation-form/)
+        zeffyEmbedUrl: "https://www.zeffy.com/embed/donation-form/free-to-use-not-free-to-make"
         # Full Zeffy form URL if you prefer a button instead of embed
         zeffyFormUrl: ""
       sponsorTiers:
@@ -627,7 +631,7 @@ languages:
           logo: /images/logos/fu-berlin.png
           url: http://www.mi.fu-berlin.de/en/inf/groups/abi/index.html
         - name: ETH Zürich
-          logo: /images/logos/zurich.jpeg
+          logo: /images/logos/zurich-h240.jpeg
           url: https://imsb.ethz.ch/
         - name: Wellcome Sanger Institute
           logo: /images/logos/logo-sanger.png
@@ -636,7 +640,7 @@ languages:
           logo: /images/logos/emblebi.png
           url: https://www.ebi.ac.uk/
         - name: University of Toronto
-          logo: /images/logos/toronto.jpeg
+          logo: /images/logos/toronto-h240.jpeg
           url: https://moleculargenetics.utoronto.ca/faculty/hannes-rost
         - name: DTU Biosustain
           logo: /images/logos/DTU-logo.png
@@ -1030,7 +1034,7 @@ languages:
             hoverText: Follow the platform guide for Linux, macOS, or Windows to build the C++ core and tools.
             platforms:
               - name: Linux
-                icon: fab fa-linux
+                icon: openms-icon openms-icon--linux
                 url: https://archive.openms.de/openms/Documentation/release/latest/html/install_linux.html
               - name: macOS
                 icon: fab fa-apple
@@ -1308,70 +1312,57 @@ languages:
                   url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
 
       webappsPage:
-        highlights:
-          eyebrow: ""
-          title: ""
-          layout: benefits
-          items:
-            - title: Local or cloud
-              text: Run locally or deploy with docker-compose
-            - title: Python-first
-              text: Python-based pipeline creation and frontend development
-            - title: TOPP UI
-              text: Auto-generates UI for TOPP tools
-            - title: Custom visuals
-              text: Customizable visualizations and results display
-            - title: Shareable workspaces
-              text: Workspaces for user data with unique shareable IDs
-
-        usingTemplate:
-          eyebrow: Get started
-          title: Using the template
-          lead: Documentation, deployment options, and example apps built on the OpenMS WebApps framework.
-          items:
-            - tag: Docs
-              title: Documentation
-              icon: fas fa-book-open
-              text: Guides for customizing and extending the Streamlit template.
+        # "Turn a Jupyter notebook into a web app" band, right under the page
+        # header. Guide: docs/common-tasks/openms-web-apps-page/.
+        notebook:
+          eyebrow: Build your own
+          title: Turn a Jupyter notebook into a web app.
+          lead: >-
+            Paste one prompt into Claude Code. It reads your notebook, shows you how it
+            read it, then builds the Upload, Configure and Results pages with you, in
+            your own browser, until each page is the one you wanted.
+          promptLabel: Prompt for Claude Code
+          copyText: Copy prompt
+          copiedText: Copied
+          prompt: >-
+            Clone https://github.com/OpenMS/streamlit-template into a new folder, then
+            read .claude/skills/notebook-to-webapp/SKILL.md inside that clone and
+            follow it to turn my Jupyter notebook into a web app. Ask me for the path to
+            the notebook, what to call the app, and how each page should look as you
+            build it.
+          note: Support for other agentic terminals is in the works.
+          steps:
+            - title: Copy the prompt
+              text: It clones the template and points the agent at the framework. Nothing else to install first.
+            - title: Paste it into Claude Code
+              text: It asks for your notebook path and an app name, then explains how it read your analysis.
+            - title: Shape your web app
+              text: Work with the agent to shape your web app — Upload, Configure and Results pages, until each one fits your analysis.
+            - title: Deploy your app
+              text: >-
+                Deploy with [Docker Compose](https://github.com/OpenMS/streamlit-deployment)
+                or build an [executable](https://github.com/OpenMS/streamlit-template/releases/latest)
+                for running locally.
+          buttons:
+            - text: Read the walkthrough
               url: https://template.webapps.openms.org/documentation
-              linkText: Open docs
-              featured: true
-            - tag: Getting Started
-              title: Getting Started
-              icon: fas fa-rocket
-              text: Fork and customize the template for your pipeline.
-              url: https://github.com/OpenMS/streamlit-template/fork
-              linkText: Fork template
-            - tag: AI
-              title: Jupyter Notebook → WebApp
-              icon: fas fa-robot
-              text: Transform your Jupyter notebook into a WebApp with a single prompt.
+            - text: Live demo
               url: https://template.webapps.openms.org/
-              linkText: Try it now
-            - tag: Deploy
-              title: streamlit-deployment
-              icon: fab fa-docker
-              text: Host multiple WebApps together with Docker Compose.
-              url: https://github.com/OpenMS/streamlit-deployment
-              linkText: Deploy with Docker
-            - tag: Windows
-              title: Windows executable
-              icon: fab fa-windows
-              text: Package your WebApp as a standalone Windows executable.
-              url: https://github.com/OpenMS/streamlit-template/releases/latest
-              linkText: Download installer
+            - text: Template on GitHub
+              url: https://github.com/OpenMS/streamlit-template
+
+        # Only the "Need help?" box is shown. Adding a title or a card with a
+        # url brings back the dark "Get started" band above it.
+        usingTemplate:
+          items:
             - title: Need help?
               type: online
-              text: Chat with the community on Discord, or open a GitHub issue for bugs and feature requests.
+              text: Chat with the community on Discord. To report a bug or ask for a feature, see For Developers above.
               links:
                 - name: Ask on Discord
                   icon: fab fa-discord
                   text: Quick questions and community chat
                   url: https://discord.com/invite/v9tv5BxPch
-                - name: Report an issue
-                  icon: fab fa-github
-                  text: Bugs and feature requests
-                  url: https://github.com/OpenMS/streamlit-template/issues/new
 
         examples:
           eyebrow: Examples
@@ -1419,12 +1410,6 @@ languages:
               subtitle: Report bugs or suggest features for the Streamlit template.
               url: https://github.com/OpenMS/streamlit-template/issues/new
               linkText: Open on GitHub
-            - title: Template repository
-              tag: Source
-              icon: fas fa-code-branch
-              subtitle: Explore the Streamlit template, fork it, and open a pull request.
-              url: https://github.com/OpenMS/streamlit-template
-              linkText: View repository
             - title: Reviewing Pull Requests
               type: links
               tag: Review
@@ -1459,7 +1444,7 @@ languages:
         contactUrl: /contact/
         ctaText: View app
         showAll:
-          text: Show all apps
+          text: Browse all apps
           url: /featured-apps/
 
       affiliateSection:
@@ -1574,6 +1559,10 @@ languages:
           description: >-
             Web-based analysis and visualization of top-down proteomics data
           maintainers: Tom Muller, Kyowon Jeong
+          citation:
+            text: Müller et al., Proteomics 2025
+            title: "FLASHApp: Interactive Data Analysis and Visualization for Top-Down Proteomics"
+            url: https://doi.org/10.1002/pmic.70042
           links:
             - type: demo
               url: http://flashapp.webapps.openms.org/
@@ -1601,6 +1590,10 @@ languages:
           logo: /images/webapp/logo/umetaflow.png
           logoSize: large
           description: Web-based pipeline for untargeted metabolomics
+          citation:
+            text: Kontou et al., J Cheminform 2023
+            title: "UmetaFlow: an untargeted metabolomics workflow for high-throughput data processing and analysis"
+            url: https://doi.org/10.1186/s13321-023-00724-w
           links:
             - type: demo
               url: https://abi-services.cs.uni-tuebingen.de/umetaflow/
@@ -1638,6 +1631,10 @@ languages:
             Web-based analysis for chemical crosslinking-mass spectrometry (XL-MS)
             data
           maintainers: Arslan Siraj
+          citation:
+            text: Siraj et al., Protein Science 2026
+            title: "NuXLApp: Interactive data analysis and visualization for protein-nucleic acid crosslinking mass spectrometry"
+            url: https://doi.org/10.1002/pro.70820
           links:
             - type: demo
               url: https://nuxl.webapps.openms.org/
@@ -1698,7 +1695,7 @@ languages:
             tag: Visualization
             accent: viz
             size: wide
-            icon: /images/logos/pyopenms-viz-logo.png
+            icon: /images/logos/pyopenms-viz-logo-trim.png
             description: >-
               Visualization library for mass spectrometry data. Create interactive
               and static plots directly from Python dataframes.

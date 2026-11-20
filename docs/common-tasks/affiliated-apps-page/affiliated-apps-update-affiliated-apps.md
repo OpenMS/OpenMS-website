@@ -18,10 +18,11 @@ and one card is one **block of lines** in `config.yaml`:
 
 | Number | Line | What it is |
 |:--:|------|-----------|
-| 1 | `logo:` and `logoSize:` | The picture (its path always starts with `/images/…`), and its size: `standard`, `large`, `wide` or `xlarge`. Leave `logoSize` out for the standard size. |
+| 1 | `logo:` | The picture (its path always starts with `/images/…`). The website sizes every logo by itself, so they all look the same size (a long logo gets more width than a square one). `logoSize:` lines have no effect on these cards: you can leave them or delete them. |
 | 2 | `name:` | The project's name. |
 | 3 | `description:` | One sentence about the project. |
 | 4 | `maintainers:` | The people who look after it. Optional. |
+| – | `citation:` | The paper to cite for the app. Optional; it shows as a **Cite** line above the buttons. Same three lines as on Featured Apps: `text:`, `url:` (the DOI link) and `title:` (optional). See [Featured Apps](../featured-apps-page/featured-apps-update-featured-apps.md). |
 | 5 | `links:` | The buttons. Each is a `- type:` line plus a `url:` line. `type` can be `github`, `homepage` or `pypi` (all types: [below](#how-many-buttons-links-can-a-project-have)). |
 
 ## Change an existing project
@@ -105,7 +106,7 @@ The text above the cards ("Partner ecosystem / Affiliated Apps / These projects 
 |-----------------|---------------|
 | The preview says **Failed** | The spaces are wrong. The new block must start with the same number of spaces as the other `- name:` lines. See [Spaces matter](../../getting-started/edit-via-github.md#spaces-matter-in-configyaml). |
 | The logo is a broken picture | The path in `logo:` must match the uploaded file name exactly and start with `/images/`. |
-| A wide logo is cut or tiny | Try `logoSize: wide` (for long logos) or `large`. |
+| A logo looks smaller than the others | Crop the empty space around the picture before you upload it: the website treats empty space as part of the logo, so it looks smaller. |
 
 ## Related guides
 

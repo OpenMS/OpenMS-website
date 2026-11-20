@@ -1,9 +1,13 @@
+{{- /* The select is turned into the designed "Year" dropdown by
+     assets/js/year-dropdown.js; publications-year-filter.js fills it. */ -}}
 <div class="publications-toolbar">
   <label class="publications-toolbar__filter" for="publications-year-select">
     <select
       id="publications-year-select"
       class="publications-toolbar__select"
       data-publications-year-select
+      data-year-dropdown
+      data-year-dropdown-title="Show publications from"
       aria-label="Filter publications by year"
     ></select>
   </label>

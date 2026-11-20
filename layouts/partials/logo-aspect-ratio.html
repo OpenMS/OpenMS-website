@@ -1,0 +1,19 @@
+{{- /*
+  Returns a logo's width / height ratio, read from the file in static/
+  (SVG: its viewBox; PNG/JPEG/…: the image size). 1.0 if unknown.
+  Used to give logos of different shapes the same visual size (same area).
+  Usage: {{ $ar := partial "logo-aspect-ratio.html" "/images/logos/x.svg" }}
+*/ -}}
+{{- $logo := . | default "" -}}
+{{- $ar := 1.0 -}}
+{{- $file := path.Join "static" (index (split $logo "?") 0) -}}
+{{- if and $logo (not (hasPrefix $logo "http")) (fileExists $file) -}}
+  {{- if strings.HasSuffix (lower $file) ".svg" -}}
+    {{- with findRESubmatch `viewBox="\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)` (readFile $file) 1 -}}
+      {{- $ar = div (float (index (index . 0) 1)) (float (index (index . 0) 2)) -}}
+    {{- end -}}
+  {{- else -}}
+    {{- with imageConfig $file }}{{ $ar = div (float .Width) (float .Height) }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $ar -}}

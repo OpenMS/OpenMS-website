@@ -95,3 +95,46 @@
   -webkit-text-fill-color: var(--openms-navy) !important;
   fill: currentColor !important;
 }
+
+/* Featured Apps: the cards sit closer to the header, the same space as on
+   Affiliated Apps (they were 55px below it on tablets, 84px on laptops). */
+:is(html, #featured-cards-up#featured-cards-up) body .webapps-featured.webapps-featured--page {
+  padding-top: clamp(2rem, 4vw, 3rem) !important;
+  padding-block-start: clamp(2rem, 4vw, 3rem) !important;
+}
+
+/* Phones (up to 767px): the app logo sits at the top of its card, above the
+   name, aligned left with the text. (Next to the name it squeezed the
+   description into a narrow column.) Tablets keep the logo on the right. */
+@media (max-width: 767px) {
+  :is(html, #featured-logo-top#featured-logo-top) body .openms-lib-page--featured .webapps-project-detail-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "logo"
+      "name"
+      "text"
+      "maintainers"
+      "actions" !important;
+    grid-template-rows: auto !important;
+  }
+
+  :is(html, #featured-logo-top#featured-logo-top) body .openms-lib-page--featured .webapps-project-detail-card__logo-wrap {
+    justify-self: start !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  /* The name sits close under the logo. */
+  :is(html, #featured-logo-top#featured-logo-top) body .openms-lib-page--featured .webapps-project-detail-card__name {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+
+/* App card buttons on small screens (below 768px): 14px apart instead of
+   10px, side by side and between rows, so a hovered button's glow and
+   slight grow do not touch its neighbour. Same cards on Affiliated Apps. */
+@media (max-width: 767px) {
+  :is(html, #app-btn-gap#app-btn-gap) body .webapps-project-detail-card .webapps-project-links {
+    gap: 0.875rem !important;
+  }
+}
