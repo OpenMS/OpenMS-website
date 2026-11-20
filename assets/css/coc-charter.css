@@ -23,7 +23,12 @@
   width: 100%;
   max-width: var(--pro-max, 75rem);
   margin-inline: auto;
-  padding-inline: var(--openms-page-inline, 1.5rem);
+  /* Plain side gutter, not --openms-page-inline: this box is already capped
+     at --pro-max and centred, and --openms-page-inline adds
+     (width - --pro-max) / 2 per side on top. Above ~3300px (4K screens,
+     zoomed-out browsers) that left no room and the text fell to one
+     letter per line. */
+  padding-inline: var(--olib-pad-x, 1.5rem);
   padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
   overflow: hidden;
 }
