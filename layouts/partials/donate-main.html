@@ -86,6 +86,19 @@
         </div>
         {{- end }}
 
+        {{- /* Campaign text above the form (donatePage.story in config.yaml):
+               a title and one paragraph per item; links in [words](/address/). */}}
+        {{- with index $cfg "story" }}
+        <div class="donate-story">
+          {{- with .title }}
+          <h3 class="donate-story__title">{{ . }}</h3>
+          {{- end }}
+          {{- range .paragraphs }}
+          <p class="donate-story__text">{{ . | markdownify }}</p>
+          {{- end }}
+        </div>
+        {{- end }}
+
         {{- if $hasZeffyEmbed -}}
         {{- /* Zeffy's embed (v2): zeffy-embed.js draws the form in the
                data-zeffy-embed box and sizes it to fit. If the script cannot

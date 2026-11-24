@@ -92,3 +92,40 @@ html body .openms-lib-page--donate .donate-application__note .donate-page__tax-n
     height: auto !important;
   }
 }
+
+/* ---------- Donate: campaign text above the Zeffy form ----------
+   "Free to use. Not free to make." and its paragraphs (donatePage.story in
+   config.yaml). Same width as the form (600px) and centred with it, so the
+   text and the form read as one column; paragraphs are left-aligned for
+   easy reading. */
+:is(html, #donate-story#donate-story) body .openms-lib-page--donate .donate-story {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+:is(html, #donate-story#donate-story) body .openms-lib-page--donate .donate-story__title {
+  margin: 0 0 0.85rem;
+  color: var(--openms-navy, #0c2171);
+  font-size: var(--openms-card-title-size, 1.25rem);
+  font-weight: 700 !important;
+  line-height: 1.3;
+  text-transform: none !important;
+}
+
+:is(html, #donate-story#donate-story) body .openms-lib-page--donate .donate-story__text {
+  margin: 0 0 0.85rem;
+  color: rgba(var(--openms-navy-rgb, 12, 33, 113), 0.8);
+  font-size: var(--openms-body-size, 1rem);
+  line-height: 1.6;
+}
+
+:is(html, #donate-story#donate-story) body .openms-lib-page--donate .donate-story__text:last-child {
+  margin-bottom: 0;
+}
+
+:is(html, #donate-story#donate-story) body .openms-lib-page--donate .donate-story__text a {
+  color: var(--openms-blue, #3157e9);
+  font-weight: 600;
+}
