@@ -514,9 +514,11 @@ languages:
         # page with its title and story, in a fixed-height frame; or the
         # "Embed your form" address (https://www.zeffy.com/embed/donation-form/…):
         # only the form, which resizes itself.
-        zeffyEmbedUrl: "https://www.zeffy.com/en-US/donation-form/free-to-use-not-free-to-make"
-        # Full Zeffy form URL if you prefer a button instead of embed
-        zeffyFormUrl: ""
+        # Leave empty to show a button instead (zeffyFormUrl below).
+        zeffyEmbedUrl: ""
+        # Zeffy campaign page opened by the "Donate on Zeffy" button (used when
+        # zeffyEmbedUrl is empty).
+        zeffyFormUrl: "https://www.zeffy.com/en-DE/donation-form/free-to-use-not-free-to-make"
       sponsorTiers:
         eyebrow: Sponsorship levels
         title: Foundation sponsorship levels

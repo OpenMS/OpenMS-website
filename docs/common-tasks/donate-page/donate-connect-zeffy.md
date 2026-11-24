@@ -18,7 +18,7 @@ The **Donate** page (**https://openms.de/donate/**) collects gifts through **Zef
 2. Go to **Donations → My forms** and find the donation form for OpenMS Inc.
 3. Click **Share**, then **Embed your form on your site** and choose the language.
 4. Choose which address to use:
-   - **The campaign page (used now):** open the form's public page on Zeffy and copy the address from the browser bar, for example `https://www.zeffy.com/en-US/donation-form/free-to-use-not-free-to-make`. The Donate page then shows Zeffy's whole campaign page: "OpenMS Inc", the title, the story with Zeffy's own **More details**, and the form. It sits in a frame of fixed height and scrolls inside it.
+   - **The campaign page:** open the form's public page on Zeffy and copy the address from the browser bar, for example `https://www.zeffy.com/en-US/donation-form/free-to-use-not-free-to-make`. The Donate page then shows Zeffy's whole campaign page: "OpenMS Inc", the title, the story with Zeffy's own **More details**, and the form. It sits in a frame of fixed height and scrolls inside it.
    - **The form only:** in **Embed your form on your site** you see a block of code. Inside it find `https://www.zeffy.com/embed/…` and copy only that address. The Donate page then shows only the form (no title or story), and the form resizes itself to fit.
 
    The website tells the two apart by the word `/embed/` in the address.
@@ -36,8 +36,8 @@ The **Donate** page (**https://openms.de/donate/**) collects gifts through **Zef
 
 | Number | Line | What to do |
 |:--:|------|-----------|
-| 1 | `zeffyEmbedUrl:` | Paste the **campaign page address** or the **embed address** from Zeffy (see Step 1). The form then appears on the Donate page itself. **Use this one.** |
-| 2 | `zeffyFormUrl:` | **Optional.** Only if you prefer a button that opens Zeffy in a new tab. It is used only when `zeffyEmbedUrl` is empty. |
+| 1 | `zeffyEmbedUrl:` | Paste the **campaign page address** or the **embed address** from Zeffy (see Step 1) to show the form on the Donate page itself. Leave it empty (`""`) to show a button instead. |
+| 2 | `zeffyFormUrl:` | The Zeffy campaign page address opened by the **Donate on Zeffy** button (in a new tab). It is used only when `zeffyEmbedUrl` is empty. **This is what the Donate page uses now.** |
 
 **Before**
 
@@ -45,11 +45,14 @@ The **Donate** page (**https://openms.de/donate/**) collects gifts through **Zef
 zeffyEmbedUrl: ""
 ```
 
-**After**
+**After** (a button, as now)
 
 ```yaml
-zeffyEmbedUrl: "https://www.zeffy.com/en-US/donation-form/your-form-name"
+zeffyEmbedUrl: ""
+zeffyFormUrl: "https://www.zeffy.com/en-DE/donation-form/your-form-name"
 ```
+
+To show the form on the page instead, put the address in `zeffyEmbedUrl`.
 
 Only addresses that start with `https://www.zeffy.com/` are accepted. Anything else is ignored.
 
@@ -61,7 +64,7 @@ Only addresses that start with `https://www.zeffy.com/` are accepted. Anything e
 
 Open the **Deploy Preview**, add **/donate/** to the address and scroll to **Make a donation**.
 
-- [ ] The Zeffy form is shown (not the grey message).
+- [ ] The **Donate on Zeffy** button (or the Zeffy form) is shown, not the grey message.
 - [ ] The **Make a donation** button at the top of the page jumps to it.
 
 Please **do not make a real test donation**. Just check that the form loads.
