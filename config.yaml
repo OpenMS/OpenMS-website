@@ -509,34 +509,12 @@ languages:
         subtitle: >-
           Your gift helps sustain open-source mass spectrometry software,
           documentation, and community programs.
-        # The campaign text shown above the donation form (the same as on the
-        # Zeffy campaign page). One "- " line per paragraph; links are written
-        # [words](/address/).
-        story:
-          title: Free to use. Not free to make.
-          paragraphs:
-            - >-
-              OpenMS has been free for over 20 years, and it always will be. If it
-              has saved you time, helped with a paper or rescued a pipeline at 2am,
-              a donation of any size is a great way to say thank you to the core
-              contributors who keep it running smoothly for you.
-            - >-
-              Behind every release is a lot of extra work that often goes unseen:
-              fixing bugs, reviewing code, writing documentation and helping new
-              users find their way. Supporting OpenMS is a way of recognizing that
-              work.
-            - >-
-              Your gift supports the core library and tools, the documentation,
-              and the workshops and meetups that keep the community growing.
-            - >-
-              OpenMS Inc. is a U.S. 501(c)(3) public charity, so your donation may
-              be tax-deductible.
-            - >-
-              Supporting OpenMS through your lab or company? Check out our
-              [sponsorship program](/sponsor-us/).
-        # Zeffy form address from Zeffy "Embed your form on your site"
-        # (starts with https://www.zeffy.com/embed/donation-form/)
-        zeffyEmbedUrl: "https://www.zeffy.com/embed/donation-form/free-to-use-not-free-to-make"
+        # Zeffy form on the Donate page. Either the campaign page address
+        # (https://www.zeffy.com/en-US/donation-form/…): the whole campaign
+        # page with its title and story, in a fixed-height frame; or the
+        # "Embed your form" address (https://www.zeffy.com/embed/donation-form/…):
+        # only the form, which resizes itself.
+        zeffyEmbedUrl: "https://www.zeffy.com/en-US/donation-form/free-to-use-not-free-to-make"
         # Full Zeffy form URL if you prefer a button instead of embed
         zeffyFormUrl: ""
       sponsorTiers:

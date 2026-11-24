@@ -85,44 +85,28 @@
         </div>
         {{- end }}
 
-        {{- /* Campaign text above the form (donatePage.story in config.yaml): the
-               title and the first paragraph, then a "More details" link that opens
-               a pop-up with the whole text (assets/js/donate-story.js). Links in
-               the text are written [words](/address/). */}}
-        {{- with index $cfg "story" }}
-        {{- $paras := .paragraphs | default slice }}
-        <div class="donate-story">
-          {{- with .title }}
-          <h3 class="donate-story__title">{{ . }}</h3>
-          {{- end }}
-          {{- with index $paras 0 }}
-          <p class="donate-story__text">{{ . | markdownify }}</p>
-          {{- end }}
-          {{- if gt (len $paras) 1 }}
-          <button type="button" class="donate-story__more" data-donate-story-open aria-haspopup="dialog" aria-controls="donate-story-dialog">{{ .moreLabel | default "More details" }}</button>
-          <dialog class="donate-story__dialog" id="donate-story-dialog" aria-labelledby="donate-story-dialog-title">
-            <div class="donate-story__dialog-head">
-              <h3 class="donate-story__title" id="donate-story-dialog-title">{{ .title }}</h3>
-              <button type="button" class="donate-story__close" data-donate-story-close aria-label="Close">
-                <i class="fas fa-times" aria-hidden="true"></i>
-              </button>
-            </div>
-            <div class="donate-story__dialog-body">
-              {{- range $paras }}
-              <p class="donate-story__text">{{ . | markdownify }}</p>
-              {{- end }}
-            </div>
-          </dialog>
-          {{- end }}
+        {{- if and $hasZeffyEmbed (not (in $zeffyEmbed "/embed/")) -}}
+        {{- /* Zeffy's full campaign page (an address without /embed/, e.g.
+               https://www.zeffy.com/en-US/donation-form/…): shows the organizer,
+               the campaign title, its story with Zeffy's own "More details",
+               then the form. Zeffy's resizing script only works with /embed/
+               addresses, so this frame has a fixed height and the page scrolls
+               inside it (Zeffy keeps its Continue button at the bottom). */ -}}
+        <div class="donate-application__form donate-page__embed donate-page__embed--page" aria-label="Zeffy donation form">
+          <iframe
+            class="donate-page__zeffy-page"
+            src="{{ $zeffyEmbed }}"
+            title="Donate to OpenMS on Zeffy"
+            allow="payment *"
+            allowpaymentrequest
+          ></iframe>
         </div>
-        {{- end }}
-
-        {{- if $hasZeffyEmbed -}}
-        {{- /* Zeffy's embed (v2): zeffy-embed.js draws the form in the
-               data-zeffy-embed box and sizes it to fit. If the script cannot
+        {{- else if $hasZeffyEmbed -}}
+        {{- /* Zeffy's embed (v2), for an address with /embed/: zeffy-embed.js
+               draws only the form and sizes it to fit. If the script cannot
                load, the fallback box shows the same form in a plain 450px
                frame. The form address is donatePage.zeffyEmbedUrl in
-               config.yaml (https://www.zeffy.com/embed/donation-form/…). */ -}}
+               config.yaml. */ -}}
         {{- $zeffyPath := strings.TrimPrefix "https://www.zeffy.com" $zeffyEmbed }}
         <div class="donate-application__form donate-page__embed" aria-label="Zeffy donation form">
           <div data-zeffy-embed data-form-url="{{ $zeffyPath }}"></div>

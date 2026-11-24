@@ -17,7 +17,11 @@ The **Donate** page (**https://openms.de/donate/**) collects gifts through **Zef
 1. Sign in to **https://www.zeffy.com/** with the OpenMS account.
 2. Go to **Donations → My forms** and find the donation form for OpenMS Inc.
 3. Click **Share**, then **Embed your form on your site** and choose the language.
-4. You see a block of code that starts with `<iframe`. Inside it find `src="https://www.zeffy.com/embed/…"`. **Copy only the address between the quotes** (starting with `https://www.zeffy.com/`).
+4. Choose which address to use:
+   - **The campaign page (used now):** open the form's public page on Zeffy and copy the address from the browser bar, for example `https://www.zeffy.com/en-US/donation-form/free-to-use-not-free-to-make`. The Donate page then shows Zeffy's whole campaign page: "OpenMS Inc", the title, the story with Zeffy's own **More details**, and the form. It sits in a frame of fixed height and scrolls inside it.
+   - **The form only:** in **Embed your form on your site** you see a block of code. Inside it find `https://www.zeffy.com/embed/…` and copy only that address. The Donate page then shows only the form (no title or story), and the form resizes itself to fit.
+
+   The website tells the two apart by the word `/embed/` in the address.
 
 > Zeffy sometimes renames its menus. If you can't find these buttons, ask the web team or look for "Share" or "Embed" on the form's page.
 > The address is public, so it is safe to put on the website. **Never paste a password or any bank detail** into any file.
@@ -32,7 +36,7 @@ The **Donate** page (**https://openms.de/donate/**) collects gifts through **Zef
 
 | Number | Line | What to do |
 |:--:|------|-----------|
-| 1 | `zeffyEmbedUrl:` | Paste the **embed address** from Zeffy. The form then appears on the Donate page itself. **Use this one.** |
+| 1 | `zeffyEmbedUrl:` | Paste the **campaign page address** or the **embed address** from Zeffy (see Step 1). The form then appears on the Donate page itself. **Use this one.** |
 | 2 | `zeffyFormUrl:` | **Optional.** Only if you prefer a button that opens Zeffy in a new tab. It is used only when `zeffyEmbedUrl` is empty. |
 
 **Before**
@@ -44,7 +48,7 @@ zeffyEmbedUrl: ""
 **After**
 
 ```yaml
-zeffyEmbedUrl: "https://www.zeffy.com/embed/donation-form/your-form-name"
+zeffyEmbedUrl: "https://www.zeffy.com/en-US/donation-form/your-form-name"
 ```
 
 Only addresses that start with `https://www.zeffy.com/` are accepted. Anything else is ignored.
