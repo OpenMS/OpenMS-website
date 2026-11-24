@@ -37,7 +37,7 @@ The **Donate** page (**https://openms.de/donate/**) collects gifts through **Zef
 | Number | Line | What to do |
 |:--:|------|-----------|
 | 1 | `zeffyEmbedUrl:` | Paste the **campaign page address** or the **embed address** from Zeffy (see Step 1) to show the form on the Donate page itself. Leave it empty (`""`) to show a button instead. |
-| 2 | `zeffyFormUrl:` | The Zeffy campaign page address opened by the **Donate on Zeffy** button (in a new tab). It is used only when `zeffyEmbedUrl` is empty. **This is what the Donate page uses now.** |
+| 2 | `zeffyFormUrl:` | The Zeffy campaign page address opened by the **Donate** button (in a new tab). It is used only when `zeffyEmbedUrl` is empty. **This is what the Donate page uses now.** |
 
 **Before**
 
@@ -64,7 +64,7 @@ Only addresses that start with `https://www.zeffy.com/` are accepted. Anything e
 
 Open the **Deploy Preview**, add **/donate/** to the address and scroll to **Make a donation**.
 
-- [ ] The **Donate on Zeffy** button (or the Zeffy form) is shown, not the grey message.
+- [ ] The **Donate** button (or the Zeffy form) is shown, not the grey message.
 - [ ] The **Make a donation** button at the top of the page jumps to it.
 
 Please **do not make a real test donation**. Just check that the form loads.

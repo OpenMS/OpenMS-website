@@ -516,7 +516,7 @@ languages:
         # only the form, which resizes itself.
         # Leave empty to show a button instead (zeffyFormUrl below).
         zeffyEmbedUrl: ""
-        # Zeffy campaign page opened by the "Donate on Zeffy" button (used when
+        # Zeffy campaign page opened by the "Donate" button (used when
         # zeffyEmbedUrl is empty).
         zeffyFormUrl: "https://www.zeffy.com/en-DE/donation-form/free-to-use-not-free-to-make"
       sponsorTiers:
