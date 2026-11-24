@@ -22,7 +22,7 @@ and one card is one **block of lines** in `config.yaml`:
 | 2 | `name:` | The project's name. |
 | 3 | `description:` | One sentence about the project. |
 | 4 | `maintainers:` | The people who look after it. Optional. |
-| – | `citation:` | The paper to cite for the app. Optional; it shows as a **Cite** line above the buttons. Same three lines as on Featured Apps: `text:`, `url:` (the DOI link) and `title:` (optional). See [Featured Apps](../featured-apps-page/featured-apps-update-featured-apps.md). |
+| – | `citation:` | The paper to cite for the app. Optional; it shows as a **Cite** line above the buttons. Same three lines as on Featured Apps: `text:`, `url:` (the DOI link) and `title:` (optional); for two or more papers, one `- text:` block each. See [Featured Apps](../featured-apps-page/featured-apps-update-featured-apps.md). |
 | 5 | `links:` | The buttons. Each is a `- type:` line plus a `url:` line. `type` can be `github`, `homepage` or `pypi` (all types: [below](#how-many-buttons-links-can-a-project-have)). |
 
 ## Change an existing project
