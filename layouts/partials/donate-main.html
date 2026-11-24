@@ -86,15 +86,34 @@
         </div>
         {{- end }}
 
-        {{- /* Campaign text above the form (donatePage.story in config.yaml):
-               a title and one paragraph per item; links in [words](/address/). */}}
+        {{- /* Campaign text above the form (donatePage.story in config.yaml): the
+               title and the first paragraph, then a "More details" link that opens
+               a pop-up with the whole text (assets/js/donate-story.js). Links in
+               the text are written [words](/address/). */}}
         {{- with index $cfg "story" }}
+        {{- $paras := .paragraphs | default slice }}
         <div class="donate-story">
           {{- with .title }}
           <h3 class="donate-story__title">{{ . }}</h3>
           {{- end }}
-          {{- range .paragraphs }}
+          {{- with index $paras 0 }}
           <p class="donate-story__text">{{ . | markdownify }}</p>
+          {{- end }}
+          {{- if gt (len $paras) 1 }}
+          <button type="button" class="donate-story__more" data-donate-story-open aria-haspopup="dialog" aria-controls="donate-story-dialog">{{ .moreLabel | default "More details" }}</button>
+          <dialog class="donate-story__dialog" id="donate-story-dialog" aria-labelledby="donate-story-dialog-title">
+            <div class="donate-story__dialog-head">
+              <h3 class="donate-story__title" id="donate-story-dialog-title">{{ .title }}</h3>
+              <button type="button" class="donate-story__close" data-donate-story-close aria-label="Close">
+                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="donate-story__dialog-body">
+              {{- range $paras }}
+              <p class="donate-story__text">{{ . | markdownify }}</p>
+              {{- end }}
+            </div>
+          </dialog>
           {{- end }}
         </div>
         {{- end }}

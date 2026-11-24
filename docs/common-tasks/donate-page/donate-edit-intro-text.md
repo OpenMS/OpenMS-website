@@ -27,7 +27,7 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 
 The other words (the big title and "Where your gift goes" with its three boxes) are part of the design (`layouts/partials/donate-main.html`). To change them, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).
 
-**Campaign text (`story`):** `title` is the bold title. Under `paragraphs`, each paragraph starts with `- >-` and its words go on the indented lines below it. To add a paragraph, copy one whole block (from its `- >-` line to the line before the next `- >-`) and change the words; to remove one, delete its block. A link is written `[words](/address/)`, for example `[sponsorship program](/sponsor-us/)`. It is a good idea to keep this text the same as on the Zeffy campaign page.
+**Campaign text (`story`):** `title` is the bold title. The page shows the title and the **first** paragraph; a **More details** link opens a pop-up with all the paragraphs (its words can be changed with a `moreLabel:` line under `story:`). Under `paragraphs`, each paragraph starts with `- >-` and its words go on the indented lines below it. To add a paragraph, copy one whole block (from its `- >-` line to the line before the next `- >-`) and change the words; to remove one, delete its block. A link is written `[words](/address/)`, for example `[sponsorship program](/sponsor-us/)`. It is a good idea to keep this text the same as on the Zeffy campaign page.
 
 For the donation form itself, see [Connect the Donate page to Zeffy](donate-connect-zeffy.md).
 
