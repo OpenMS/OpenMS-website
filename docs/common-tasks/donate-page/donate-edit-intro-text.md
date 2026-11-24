@@ -8,8 +8,6 @@ The page **https://openms.de/donate/** (footer → **SUPPORT** → **Donate**) s
 
 ![The top of the Donate page with the small word and the intro numbered](../../common-tasks-screenshot-images/donate/1-intro-on-site.png)
 
-![The tax note under the donation block, numbered 3](../../common-tasks-screenshot-images/donate/3-tax-note-on-site.png)
-
 **In `config.yaml`**
 
 ![The donatePage lines in config.yaml with matching numbers](../../common-tasks-screenshot-images/donate/2-config.png)
@@ -22,7 +20,6 @@ The numbers match: the part marked **1** on the website is the line marked **1**
 |---|---|
 | The small word above the title | `eyebrow` |
 | The intro sentence | `subtitle` |
-| The tax note | `taxNote` |
 | The campaign text above the donation form ("Free to use. Not free to make." and its paragraphs) | `story` → `title` and `paragraphs` |
 
 The other words (the big title and "Where your gift goes" with its three boxes) are part of the design (`layouts/partials/donate-main.html`). To change them, ask the web team ([Who to ask](../../workflow/who-to-ask.md)).

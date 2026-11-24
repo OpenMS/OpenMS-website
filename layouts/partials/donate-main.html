@@ -1,7 +1,6 @@
 {{- $cfg := .Site.Params.donatePage | default dict -}}
 {{- $eyebrow := index $cfg "eyebrow" | default "Support OpenMS" -}}
 {{- $subtitle := index $cfg "subtitle" | default "Your gift helps sustain open-source mass spectrometry software, documentation, and community programs." -}}
-{{- $taxNote := index $cfg "taxNote" | default "OpenMS Inc. is a U.S. 501(c)(3) public charity. Donations may be tax-deductible for U.S. donors where permitted by law." -}}
 {{- $zeffyEmbed := strings.TrimSpace (index $cfg "zeffyEmbedUrl" | default "") -}}
 {{- $zeffyForm := strings.TrimSpace (index $cfg "zeffyFormUrl" | default "") -}}
 {{- $hasZeffyEmbed := and $zeffyEmbed (hasPrefix $zeffyEmbed "https://www.zeffy.com/") -}}
@@ -150,11 +149,6 @@
           </a>
         </div>
         {{- end }}
-
-        {{- /* The tax note comes after the donation form. */}}
-        <div class="donate-application__note donate-application__note--after">
-          <p class="donate-page__tax-note">{{ $taxNote }}</p>
-        </div>
       </div>
     </section>
   </div>

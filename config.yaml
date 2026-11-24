@@ -509,9 +509,6 @@ languages:
         subtitle: >-
           Your gift helps sustain open-source mass spectrometry software,
           documentation, and community programs.
-        taxNote: >-
-          OpenMS Inc. is a U.S. 501(c)(3) public charity. Donations may be
-          tax-deductible for U.S. donors where permitted by law.
         # The campaign text shown above the donation form (the same as on the
         # Zeffy campaign page). One "- " line per paragraph; links are written
         # [words](/address/).
