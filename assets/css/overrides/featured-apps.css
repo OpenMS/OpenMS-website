@@ -138,3 +138,22 @@
     gap: 0.875rem !important;
   }
 }
+
+/* ---------- App cards (Featured and Affiliated Apps), from 768px ----------
+   The logo sits beside the name and description. Every name now sits the
+   same distance above its description: the name and description rows take
+   only the height they need, and the description row takes any extra height
+   (a taller logo, or a card stretched to match the others in its row) below
+   its text. Before, the extra height was shared out over all rows, so the
+   gap was 21-49px depending on the card. Maintainers, Cite and the buttons
+   follow at the bottom of the card. Phones (logo on top) were already even. */
+@media (min-width: 768px) {
+  :is(html, #app-card-rows#app-card-rows) body :is(.openms-lib-page--featured, .openms-lib-page--affiliated) .webapps-project-detail-card {
+    grid-template-rows: auto 1fr auto auto !important;
+    align-content: stretch !important;
+  }
+
+  :is(html, #app-card-rows#app-card-rows) body :is(.openms-lib-page--featured, .openms-lib-page--affiliated) .webapps-project-detail-card .webapps-project-detail-card__text {
+    align-self: start !important;
+  }
+}
