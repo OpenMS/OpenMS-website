@@ -2307,3 +2307,21 @@ html body .tally-popup iframe {
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
+
+/* Several papers under one "Cite" label: one per line, no bullets. */
+:is(html, #app-cite#app-cite) body .webapps-project-detail-card .webapps-project-detail-card__cite-list {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:is(html, #app-cite#app-cite) body .webapps-project-detail-card .webapps-project-detail-card__cite-list li {
+  margin: 0;
+  padding: 0;
+}
+
+:is(html, #app-cite#app-cite) body .webapps-project-detail-card .webapps-project-detail-card__cite-list li::before {
+  content: none;
+}

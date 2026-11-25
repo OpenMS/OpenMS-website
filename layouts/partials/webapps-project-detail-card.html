@@ -38,16 +38,28 @@
   </div>
   {{- with $project.links }}
   <footer class="webapps-project-detail-card__actions">
-    {{- /* Optional paper to cite: citation.text (e.g. "Kontou et al., J Cheminform 2023"),
-           citation.url (the paper's DOI link) and citation.title (the paper's title,
-           shown on hover) in config.yaml. It sits on its own line above the buttons. */}}
+    {{- /* Optional papers to cite (config.yaml → citation). One paper:
+             citation: { text, url, title }
+           Several papers: a list under citation, one "- text:" block each.
+           text is what people see (e.g. "Kontou et al., J Cheminform 2023"),
+           url the paper's DOI link, title (optional) the paper's title, shown
+           on hover. They sit under one "Cite" label, one per line, above the
+           buttons. */}}
+    {{- $cites := slice }}
     {{- with $project.citation }}
-    {{- if and .text .url }}
-    <p class="webapps-project-detail-card__cite">
-      <span class="webapps-project-detail-card__maintainers-label">Cite</span>
-      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"{{ with .title }} title="{{ . }}"{{ end }}>{{ .text }}</a>
-    </p>
+      {{- if reflect.IsSlice . }}{{ $cites = . }}{{ else }}{{ $cites = slice . }}{{ end }}
     {{- end }}
+    {{- $shown := slice }}
+    {{- range $cites }}{{ if and .text .url }}{{ $shown = $shown | append . }}{{ end }}{{ end }}
+    {{- with $shown }}
+    <div class="webapps-project-detail-card__cite">
+      <span class="webapps-project-detail-card__maintainers-label">Cite</span>
+      <ul class="webapps-project-detail-card__cite-list" role="list">
+        {{- range . }}
+        <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer"{{ with .title }} title="{{ . }}"{{ end }}>{{ .text }}</a></li>
+        {{- end }}
+      </ul>
+    </div>
     {{- end }}
     {{ partial "webapps-project-links.html" (dict "links" .) }}
   </footer>

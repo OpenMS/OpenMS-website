@@ -1618,6 +1618,10 @@ languages:
           logo: /images/webapp/logo/naseweis.png
           description: Web-based access to the nucleic acid search engine (NASE)
           maintainers: Sam Wein
+          citation:
+            text: Wein et al., Nat Commun 2020
+            title: "A computational platform for high-throughput analysis of RNA sequences and modifications by mass spectrometry"
+            url: https://doi.org/10.1038/s41467-020-14665-7
           links:
             - type: demo
               url: https://naseweis.webapps.openms.org/
@@ -1649,6 +1653,13 @@ languages:
           logoSize: xlarge
           description: Analysis pipeline for immunopeptidomics
           maintainers: Jonas Scheid
+          citation:
+            - text: Bichmann et al., J Proteome Res 2019
+              title: "MHCquant: Automated and Reproducible Data Analysis for Immunopeptidomics"
+              url: https://doi.org/10.1021/acs.jproteome.9b00313
+            - text: Scheid et al., Genome Biol 2025
+              title: "MHCquant2 refines immunopeptidomics tumor antigen discovery"
+              url: https://doi.org/10.1186/s13059-025-03763-8
           links:
             - type: homepage
               url: https://nf-co.re/mhcquant/latest

@@ -22,8 +22,8 @@ The guides are in **[`common-tasks/`](common-tasks/README.md)**, with **one fold
 | **Top menu** (every page) | [Announcement bar](common-tasks/navbar/update-announcement-bar.md) · [Menu items](common-tasks/navbar/edit-menu-items.md) |
 | **Footer** (every page) | [Footer links](common-tasks/footer/edit-footer-links.md) · [Social media icons](common-tasks/footer/edit-social-icons.md) |
 | **OpenMS-lib, pyOpenMS, pyOpenMS Viz, OpenMS Web Apps** | [OpenMS-lib](common-tasks/openms-lib-page/openms-lib-edit-page-blocks.md) · [pyOpenMS](common-tasks/pyopenms-page/pyopenms-edit-page-blocks.md) · [pyOpenMS Viz](common-tasks/pyopenms-viz-page/pyopenms-viz-edit-page-blocks.md) · [Web Apps](common-tasks/openms-web-apps-page/openms-web-apps-edit-page-blocks.md) |
-| **Featured Apps** | [Add, change or remove an app](common-tasks/featured-apps-page/featured-apps-update-featured-apps.md) |
-| **Affiliated Apps** | [Add, change or remove a project](common-tasks/affiliated-apps-page/affiliated-apps-update-affiliated-apps.md) |
+| **Featured Apps** | [Add, change or remove an app](common-tasks/featured-apps-page/featured-apps-update-featured-apps.md) · [Add, change or remove the papers to cite](common-tasks/featured-apps-page/featured-apps-edit-citations.md) |
+| **Affiliated Apps** | [Add, change or remove a project](common-tasks/affiliated-apps-page/affiliated-apps-update-affiliated-apps.md) · [Papers to cite](common-tasks/featured-apps-page/featured-apps-edit-citations.md) |
 | **Archived Apps** | [Add, change or remove a project](common-tasks/archived-apps-page/archived-apps-update-archived-apps.md) |
 | **Learn** (menu links to other websites) | [Change the Learn links](common-tasks/learn/edit-learn-links.md) |
 | **Calendar** | [Add or change an event](common-tasks/calendar-page/calendar-add-or-change-event.md) |

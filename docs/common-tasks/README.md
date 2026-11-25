@@ -25,8 +25,8 @@ Every page of the website has **its own folder** here. The folders follow the **
 
 | Page | Folder | Tasks |
 |------|--------|-------|
-| **Featured Apps** (`/featured-apps/`) | `featured-apps-page/` | [Add, change or remove an app](featured-apps-page/featured-apps-update-featured-apps.md) (also changes the home page block) |
-| **Affiliated Apps** (`/affiliated-apps/`) | `affiliated-apps-page/` | [Add, change or remove a project](affiliated-apps-page/affiliated-apps-update-affiliated-apps.md) |
+| **Featured Apps** (`/featured-apps/`) | `featured-apps-page/` | [Add, change or remove an app](featured-apps-page/featured-apps-update-featured-apps.md) (also changes the home page block) · [Add, change or remove the papers to cite](featured-apps-page/featured-apps-edit-citations.md) |
+| **Affiliated Apps** (`/affiliated-apps/`) | `affiliated-apps-page/` | [Add, change or remove a project](affiliated-apps-page/affiliated-apps-update-affiliated-apps.md) · [Papers to cite](featured-apps-page/featured-apps-edit-citations.md) |
 | **Archived Apps** (`/archived-apps/`) | `archived-apps-page/` | [Add, change or remove a project](archived-apps-page/archived-apps-update-archived-apps.md) |
 
 ## Top menu → Learn
