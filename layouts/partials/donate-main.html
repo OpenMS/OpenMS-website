@@ -1,7 +1,6 @@
 {{- $cfg := .Site.Params.donatePage | default dict -}}
 {{- $eyebrow := index $cfg "eyebrow" | default "Support OpenMS" -}}
 {{- $subtitle := index $cfg "subtitle" | default "Your gift helps sustain open-source mass spectrometry software, documentation, and community programs." -}}
-{{- $taxNote := index $cfg "taxNote" | default "OpenMS Inc. is a U.S. 501(c)(3) public charity. Donations may be tax-deductible for U.S. donors where permitted by law." -}}
 {{- $zeffyEmbed := strings.TrimSpace (index $cfg "zeffyEmbedUrl" | default "") -}}
 {{- $zeffyForm := strings.TrimSpace (index $cfg "zeffyFormUrl" | default "") -}}
 {{- $hasZeffyEmbed := and $zeffyEmbed (hasPrefix $zeffyEmbed "https://www.zeffy.com/") -}}
@@ -86,12 +85,28 @@
         </div>
         {{- end }}
 
-        {{- if $hasZeffyEmbed -}}
-        {{- /* Zeffy's embed (v2): zeffy-embed.js draws the form in the
-               data-zeffy-embed box and sizes it to fit. If the script cannot
+        {{- if and $hasZeffyEmbed (not (in $zeffyEmbed "/embed/")) -}}
+        {{- /* Zeffy's full campaign page (an address without /embed/, e.g.
+               https://www.zeffy.com/en-US/donation-form/…): shows the organizer,
+               the campaign title, its story with Zeffy's own "More details",
+               then the form. Zeffy's resizing script only works with /embed/
+               addresses, so this frame has a fixed height and the page scrolls
+               inside it (Zeffy keeps its Continue button at the bottom). */ -}}
+        <div class="donate-application__form donate-page__embed donate-page__embed--page" aria-label="Zeffy donation form">
+          <iframe
+            class="donate-page__zeffy-page"
+            src="{{ $zeffyEmbed }}"
+            title="Donate to OpenMS on Zeffy"
+            allow="payment *"
+            allowpaymentrequest
+          ></iframe>
+        </div>
+        {{- else if $hasZeffyEmbed -}}
+        {{- /* Zeffy's embed (v2), for an address with /embed/: zeffy-embed.js
+               draws only the form and sizes it to fit. If the script cannot
                load, the fallback box shows the same form in a plain 450px
                frame. The form address is donatePage.zeffyEmbedUrl in
-               config.yaml (https://www.zeffy.com/embed/donation-form/…). */ -}}
+               config.yaml. */ -}}
         {{- $zeffyPath := strings.TrimPrefix "https://www.zeffy.com" $zeffyEmbed }}
         <div class="donate-application__form donate-page__embed" aria-label="Zeffy donation form">
           <div data-zeffy-embed data-form-url="{{ $zeffyPath }}"></div>
@@ -111,18 +126,10 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span class="openms-lib-btn__label">Donate on Zeffy</span>
-          </a>
-          <a class="openms-lib-btn openms-lib-btn--ghost" href="/governance/">
-            <span class="openms-lib-btn__label">Governance</span>
+            <span class="openms-lib-btn__label">Donate</span>
           </a>
         </div>
         {{- end }}
-
-        {{- /* The tax note comes after the donation form. */}}
-        <div class="donate-application__note donate-application__note--after">
-          <p class="donate-page__tax-note">{{ $taxNote }}</p>
-        </div>
       </div>
     </section>
   </div>

@@ -509,14 +509,16 @@ languages:
         subtitle: >-
           Your gift helps sustain open-source mass spectrometry software,
           documentation, and community programs.
-        taxNote: >-
-          OpenMS Inc. is a U.S. 501(c)(3) public charity. Donations may be
-          tax-deductible for U.S. donors where permitted by law.
-        # Zeffy form address from Zeffy "Embed your form on your site"
-        # (starts with https://www.zeffy.com/embed/donation-form/)
-        zeffyEmbedUrl: "https://www.zeffy.com/embed/donation-form/free-to-use-not-free-to-make"
-        # Full Zeffy form URL if you prefer a button instead of embed
-        zeffyFormUrl: ""
+        # Zeffy form on the Donate page. Either the campaign page address
+        # (https://www.zeffy.com/en-US/donation-form/…): the whole campaign
+        # page with its title and story, in a fixed-height frame; or the
+        # "Embed your form" address (https://www.zeffy.com/embed/donation-form/…):
+        # only the form, which resizes itself.
+        # Leave empty to show a button instead (zeffyFormUrl below).
+        zeffyEmbedUrl: ""
+        # Zeffy campaign page opened by the "Donate" button (used when
+        # zeffyEmbedUrl is empty).
+        zeffyFormUrl: "https://www.zeffy.com/en-DE/donation-form/free-to-use-not-free-to-make"
       sponsorTiers:
         eyebrow: Sponsorship levels
         title: Foundation sponsorship levels
